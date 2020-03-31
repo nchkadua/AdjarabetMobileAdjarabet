@@ -1,0 +1,938 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6612F916FC18BFB2C451E2DC /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */; };
+		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
+		D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */; };
+		D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */; };
+		D85C9BEF2433676700F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */; };
+		D85C9BF12433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift */; };
+		D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */; };
+		D85C9BF82433678000F1D4FE /* AdjarabetCoreCodableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF32433678000F1D4FE /* AdjarabetCoreCodableType.swift */; };
+		D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */; };
+		D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */; };
+		D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */; };
+		D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BFD243367B800F1D4FE /* AdjarabetCoreServices.swift */; };
+		D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BFF243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift */; };
+		D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C00243367C900F1D4FE /* AdjarabetWebAPIClient.swift */; };
+		D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C05243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift */; };
+		D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C07243367D800F1D4FE /* AdjarabetWebAPICodable.swift */; };
+		D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C08243367D800F1D4FE /* AdjarabetWebAPIClientError.swift */; };
+		D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C0B243367DE00F1D4FE /* AdjarabetWebAPIServices.swift */; };
+		D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */; };
+		D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1124336B4C00F1D4FE /* R.generated.swift */; };
+		D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */; };
+		D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */; };
+		D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1924336C7100F1D4FE /* Biometry.swift */; };
+		D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1D24336CA400F1D4FE /* UserSessionServices.swift */; };
+		D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1E24336CA400F1D4FE /* UserSession.swift */; };
+		D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */; };
+		D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */; };
+		D85C9C2924336CE800F1D4FE /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2824336CE800F1D4FE /* EmptyViewController.swift */; };
+		D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2A24336CF200F1D4FE /* LoginViewController.swift */; };
+		D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */; };
+		D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */; };
+		D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C3124336D0800F1D4FE /* Login.storyboard */; };
+		D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */; };
+		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
+		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
+		D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD724335B4C0077AA8E /* Assets.xcassets */; };
+		D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD924335B4C0077AA8E /* LaunchScreen.storyboard */; };
+		D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1DC8A4457FEC86A0D27D9864 /* Pods-Mobile.debug-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug-stage.xcconfig"; sourceTree = "<group>"; };
+		48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
+		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
+		D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+BalanceManagementServices.swift"; sourceTree = "<group>"; };
+		D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+AuthenticationService.swift"; sourceTree = "<group>"; };
+		D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClient.swift; sourceTree = "<group>"; };
+		D85C9BF02433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreRequestBuilder.swift; sourceTree = "<group>"; };
+		D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientError.swift; sourceTree = "<group>"; };
+		D85C9BF32433678000F1D4FE /* AdjarabetCoreCodableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreCodableType.swift; sourceTree = "<group>"; };
+		D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreResult.swift; sourceTree = "<group>"; };
+		D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreStatusCode.swift; sourceTree = "<group>"; };
+		D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreCodable.swift; sourceTree = "<group>"; };
+		D85C9BFD243367B800F1D4FE /* AdjarabetCoreServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreServices.swift; sourceTree = "<group>"; };
+		D85C9BFF243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift"; sourceTree = "<group>"; };
+		D85C9C00243367C900F1D4FE /* AdjarabetWebAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClient.swift; sourceTree = "<group>"; };
+		D85C9C05243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClientRequestBuilder.swift; sourceTree = "<group>"; };
+		D85C9C07243367D800F1D4FE /* AdjarabetWebAPICodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPICodable.swift; sourceTree = "<group>"; };
+		D85C9C08243367D800F1D4FE /* AdjarabetWebAPIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClientError.swift; sourceTree = "<group>"; };
+		D85C9C0B243367DE00F1D4FE /* AdjarabetWebAPIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIServices.swift; sourceTree = "<group>"; };
+		D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetEndpoints.swift; sourceTree = "<group>"; };
+		D85C9C1124336B4C00F1D4FE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D85C9C1424336BA600F1D4FE /* Mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mobile.entitlements; sourceTree = "<group>"; };
+		D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainContainer.swift; sourceTree = "<group>"; };
+		D85C9C1924336C7100F1D4FE /* Biometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biometry.swift; sourceTree = "<group>"; };
+		D85C9C1D24336CA400F1D4FE /* UserSessionServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSessionServices.swift; sourceTree = "<group>"; };
+		D85C9C1E24336CA400F1D4FE /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSessionCareTaker.swift; sourceTree = "<group>"; };
+		D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		D85C9C2824336CE800F1D4FE /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
+		D85C9C2A24336CF200F1D4FE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		D85C9C3124336D0800F1D4FE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
+		D8A47DCB24335B4B0077AA8E /* Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D8A47DD724335B4C0077AA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8A47DDA24335B4C0077AA8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8A47DDC24335B4C0077AA8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		D8A47DEF24335ECA0077AA8E /* Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-production.xcconfig"; sourceTree = "<group>"; };
+		FDFC63146B84761D3EA657AA /* Pods-Mobile.debug-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug-production.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8A47DC824335B4B0077AA8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6612F916FC18BFB2C451E2DC /* Pods_Mobile.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31170CB969BE9F4E039A5237 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D1383A490506B12A0598302 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */,
+				B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */,
+				1DC8A4457FEC86A0D27D9864 /* Pods-Mobile.debug-stage.xcconfig */,
+				FDFC63146B84761D3EA657AA /* Pods-Mobile.debug-production.xcconfig */,
+				BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */,
+				FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C00243367C900F1D4FE /* AdjarabetWebAPIClient.swift */,
+				D85C9BE62433674800F1D4FE /* Services */,
+				D85C9BE52433674800F1D4FE /* Models */,
+				D85C9BE72433674800F1D4FE /* Builders */,
+			);
+			path = AdjarabetWebAPIClient;
+			sourceTree = "<group>";
+		};
+		D85C9BE52433674800F1D4FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C08243367D800F1D4FE /* AdjarabetWebAPIClientError.swift */,
+				D85C9C07243367D800F1D4FE /* AdjarabetWebAPICodable.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D85C9BE62433674800F1D4FE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C0B243367DE00F1D4FE /* AdjarabetWebAPIServices.swift */,
+				D85C9BFF243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D85C9BE72433674800F1D4FE /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C05243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		D85C9C1524336BF500F1D4FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D85C9C1C24336C9500F1D4FE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C2324336CAA00F1D4FE /* UserSession */,
+				D85C9C1924336C7100F1D4FE /* Biometry.swift */,
+				D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D85C9C2324336CAA00F1D4FE /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
+				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
+				D85C9C1D24336CA400F1D4FE /* UserSessionServices.swift */,
+			);
+			path = UserSession;
+			sourceTree = "<group>";
+		};
+		D85C9C2424336CCC00F1D4FE /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */,
+				D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */,
+				D85C9C2824336CE800F1D4FE /* EmptyViewController.swift */,
+				D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		D85C9C2524336CD100F1D4FE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C2A24336CF200F1D4FE /* LoginViewController.swift */,
+				D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */,
+				D85C9C3124336D0800F1D4FE /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D85C9C352433749D00F1D4FE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */,
+				D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D85C9C362433754A00F1D4FE /* BuildPhases */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C372433755E00F1D4FE /* RSwift.sh */,
+			);
+			path = BuildPhases;
+			sourceTree = "<group>";
+		};
+		D8A47DC224335B4B0077AA8E = {
+			isa = PBXGroup;
+			children = (
+				D8A47DCD24335B4B0077AA8E /* Mobile */,
+				D8A47DCC24335B4B0077AA8E /* Products */,
+				9D1383A490506B12A0598302 /* Pods */,
+				31170CB969BE9F4E039A5237 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D8A47DCC24335B4B0077AA8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8A47DCB24335B4B0077AA8E /* Mobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8A47DCD24335B4B0077AA8E /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C1424336BA600F1D4FE /* Mobile.entitlements */,
+				D8A47DE624335DC60077AA8E /* App */,
+				D8A47DE724335DCA0077AA8E /* Navigators */,
+				D8A47DE824335DD70077AA8E /* Domain */,
+				D8A47DE924335DDE0077AA8E /* Presentation */,
+				D8A47DEA24335DE40077AA8E /* Data */,
+			);
+			path = Mobile;
+			sourceTree = "<group>";
+		};
+		D8A47DE624335DC60077AA8E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C352433749D00F1D4FE /* AppDelegate */,
+				D85C9C362433754A00F1D4FE /* BuildPhases */,
+				D8A47DEC24335EA10077AA8E /* Extensions */,
+				D8A47DEB24335E070077AA8E /* Resources */,
+				D85C9C1C24336C9500F1D4FE /* Utils */,
+				D85C9C1524336BF500F1D4FE /* Views */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D8A47DE724335DCA0077AA8E /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		D8A47DE824335DD70077AA8E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D8A47DE924335DDE0077AA8E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C2424336CCC00F1D4FE /* MainTabBar */,
+				D85C9C2524336CD100F1D4FE /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D8A47DEA24335DE40077AA8E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D8A47DF3243366F80077AA8E /* NetworkClinet */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D8A47DEB24335E070077AA8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C1124336B4C00F1D4FE /* R.generated.swift */,
+				D8A47DD724335B4C0077AA8E /* Assets.xcassets */,
+				D8A47DDC24335B4C0077AA8E /* Info.plist */,
+				D8A47DEF24335ECA0077AA8E /* Mobile-Bridging-Header.h */,
+				D8A47DD924335B4C0077AA8E /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8A47DEC24335EA10077AA8E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D8A47DF3243366F80077AA8E /* NetworkClinet */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */,
+				D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */,
+				D8A47DF5243367060077AA8E /* AdjarabetCoreClient */,
+			);
+			path = NetworkClinet;
+			sourceTree = "<group>";
+		};
+		D8A47DF5243367060077AA8E /* AdjarabetCoreClient */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */,
+				D8A47DF8243367230077AA8E /* Services */,
+				D8A47DF7243367160077AA8E /* Models */,
+				D8A47DF62433670B0077AA8E /* Builders */,
+			);
+			path = AdjarabetCoreClient;
+			sourceTree = "<group>";
+		};
+		D8A47DF62433670B0077AA8E /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9BF02433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		D8A47DF7243367160077AA8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */,
+				D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */,
+				D85C9BF32433678000F1D4FE /* AdjarabetCoreCodableType.swift */,
+				D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */,
+				D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D8A47DF8243367230077AA8E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9BFD243367B800F1D4FE /* AdjarabetCoreServices.swift */,
+				D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */,
+				D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */,
+				D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8A47DCA24335B4B0077AA8E /* Mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8A47DDF24335B4C0077AA8E /* Build configuration list for PBXNativeTarget "Mobile" */;
+			buildPhases = (
+				E851500A85D349E8F223FF6F /* [CP] Check Pods Manifest.lock */,
+				D85C9C1324336B6F00F1D4FE /* ShellScript */,
+				D8A47DC724335B4B0077AA8E /* Sources */,
+				D8A47DC824335B4B0077AA8E /* Frameworks */,
+				D8A47DC924335B4B0077AA8E /* Resources */,
+				36070DD475217445AF722DC3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mobile;
+			productName = Mobile;
+			productReference = D8A47DCB24335B4B0077AA8E /* Mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8A47DC324335B4B0077AA8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Adjarabet;
+				TargetAttributes = {
+					D8A47DCA24335B4B0077AA8E = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+					};
+				};
+			};
+			buildConfigurationList = D8A47DC624335B4B0077AA8E /* Build configuration list for PBXProject "Mobile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8A47DC224335B4B0077AA8E;
+			productRefGroup = D8A47DCC24335B4B0077AA8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8A47DCA24335B4B0077AA8E /* Mobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8A47DC924335B4B0077AA8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
+				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
+				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,
+				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36070DD475217445AF722DC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D85C9C1324336B6F00F1D4FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/Mobile/App/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/Mobile/App/BuildPhases/RSwift.sh\n";
+		};
+		E851500A85D349E8F223FF6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8A47DC724335B4B0077AA8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */,
+				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
+				D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */,
+				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
+				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
+				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
+				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
+				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
+				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
+				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
+				D85C9BEF2433676700F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift in Sources */,
+				D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */,
+				D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */,
+				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
+				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
+				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
+				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,
+				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
+				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
+				D85C9BF82433678000F1D4FE /* AdjarabetCoreCodableType.swift in Sources */,
+				D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */,
+				D85C9BF12433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift in Sources */,
+				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
+				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
+				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
+				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
+				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
+				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
+				D85C9C2924336CE800F1D4FE /* EmptyViewController.swift in Sources */,
+				D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */,
+				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
+				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
+				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D8A47DD924335B4C0077AA8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8A47DDA24335B4C0077AA8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8A47DDD24335B4C0077AA8E /* Debug-Stage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug-Stage";
+		};
+		D8A47DDE24335B4C0077AA8E /* Release-Stage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release-Stage";
+		};
+		D8A47DE024335B4C0077AA8E /* Debug-Stage */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DC8A4457FEC86A0D27D9864 /* Pods-Mobile.debug-stage.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = RDJN6C84H4;
+				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = "Debug-Stage";
+		};
+		D8A47DE124335B4C0077AA8E /* Release-Stage */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = RDJN6C84H4;
+				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = "Release-Stage";
+		};
+		D8A47DE224335C2E0077AA8E /* Debug-Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug-Production";
+		};
+		D8A47DE324335C2E0077AA8E /* Debug-Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDFC63146B84761D3EA657AA /* Pods-Mobile.debug-production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = RDJN6C84H4;
+				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = "Debug-Production";
+		};
+		D8A47DE424335C3D0077AA8E /* Release-Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release-Production";
+		};
+		D8A47DE524335C3D0077AA8E /* Release-Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = RDJN6C84H4;
+				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = "Release-Production";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8A47DC624335B4B0077AA8E /* Build configuration list for PBXProject "Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8A47DDD24335B4C0077AA8E /* Debug-Stage */,
+				D8A47DE224335C2E0077AA8E /* Debug-Production */,
+				D8A47DDE24335B4C0077AA8E /* Release-Stage */,
+				D8A47DE424335C3D0077AA8E /* Release-Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-Production";
+		};
+		D8A47DDF24335B4C0077AA8E /* Build configuration list for PBXNativeTarget "Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8A47DE024335B4C0077AA8E /* Debug-Stage */,
+				D8A47DE324335C2E0077AA8E /* Debug-Production */,
+				D8A47DE124335B4C0077AA8E /* Release-Stage */,
+				D8A47DE524335C3D0077AA8E /* Release-Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-Production";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8A47DC324335B4B0077AA8E /* Project object */;
+}

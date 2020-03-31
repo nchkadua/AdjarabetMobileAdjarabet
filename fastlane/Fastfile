@@ -1,0 +1,85 @@
+default_platform(:ios)
+
+ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "iotx-ngit-uilg-twvx"
+
+app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+apple_id = CredentialsManager::AppfileConfig.try_fetch_value(:apple_id)
+team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+
+platform :ios do
+
+  slack_hook = "https://hooks.slack.com/services/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"
+
+  lane :register_app do
+    produce
+  end
+
+  lane:stage do
+    cert(development: true)
+    sigh(development: true)
+  end
+
+  lane:production do
+    cert(development: false)
+    sigh(development: false)
+  end
+
+  desc "Build for App Store"
+  lane :build_for_appstore do |options|
+    scheme = options[:scheme]
+    production
+    increment_build_number
+    build_app(
+      workspace: "Mobile.xcworkspace",
+      scheme: scheme,
+      clean: true,
+      export_method: "app-store",
+      output_directory: "build_Appstore",
+      export_xcargs: "-allowProvisioningUpdates"
+    )
+  end
+
+  desc "Build stage for App Store"
+  lane :build_stage_for_appstore do
+    build_for_appstore(scheme: "Release-Stage")
+  end
+
+  desc "Build production for App Store"
+  lane :build_procution_for_appstore do
+    build_for_appstore(scheme: "Release-Production")
+  end
+
+  desc "Distribute stage to testflight"
+  lane :distribute_stage_to_testflight do
+    build_stage_for_appstore
+    pilot(
+      changelog: "The new stage version from the fastlane"
+    )
+    ping_slack(message: "Testflight", env: "Stage")
+  end
+
+  desc "Distribute production to testflight"
+  lane :distribute_production_to_testflight do
+    # build_stage_for_appstore
+    # pilot(
+    #   changelog: "The new production version from the fastlane"
+    # )
+    ping_slack(message: "Testflight", env: "Production")
+  end
+
+  lane :ping_slack do |options|
+    v = lane_context[SharedValues::VERSION_NUMBER]
+    b = lane_context[SharedValues::BUILD_NUMBER]
+
+    slack(
+    message: options[:message],
+    slack_url: slack_hook,
+    payload: { 
+      "🗓 Build Date" => Time.new.to_s,
+      "🌎 Environment" => options[:env],
+      "📱 FASTLANE PRODUCTION" => "#{v}(#{b})"
+    }
+    )
+  end
+  
+end

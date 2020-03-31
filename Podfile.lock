@@ -1,0 +1,42 @@
+PODS:
+  - Nuke (8.4.1)
+  - R.swift (5.1.0):
+    - R.swift.Library (~> 5.1.0)
+  - R.swift.Library (5.1.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - SharedFramework (0.0.5)
+
+DEPENDENCIES:
+  - Nuke (= 8.4.1)
+  - R.swift
+  - RxCocoa
+  - RxSwift
+  - SharedFramework
+
+SPEC REPOS:
+  trunk:
+    - Nuke
+    - R.swift
+    - R.swift.Library
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SharedFramework
+
+SPEC CHECKSUMS:
+  Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
+  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SharedFramework: ecc283fe3cbdb574cd3b5676e5d1fcb36df7dd67
+
+PODFILE CHECKSUM: fbbfdf372637ce7ee8dcd5f612404b05262d18c2
+
+COCOAPODS: 1.9.1
