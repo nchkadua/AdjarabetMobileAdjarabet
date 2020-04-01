@@ -30,8 +30,8 @@ public class AppNavigationController: UINavigationController, UIGestureRecognize
     public override var childForStatusBarHidden: UIViewController? { topViewController }
 }
 
-extension UIViewController {
-    public func wrapInNav() -> UINavigationController {
+public extension UIViewController {
+    func wrapInNav() -> UINavigationController {
         UINavigationController(rootViewController: self)
     }
 }

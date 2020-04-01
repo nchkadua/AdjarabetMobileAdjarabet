@@ -5,7 +5,7 @@ extension AdjarabetCoreClient: SessionManagementServices {
             .set(userId: userId)
             .setHeader(key: .cookie, value: sessionId)
             .build()
-        
+
         performTask(request: request, type: T.self, completion: completion)
     }
 }

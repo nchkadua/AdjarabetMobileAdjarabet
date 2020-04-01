@@ -5,7 +5,7 @@ extension AdjarabetCoreClient: BalanceManagementServices {
             .set(userId: userId, currencyId: currencyId, isSingle: isSingle)
             .setHeader(key: .cookie, value: sessionId)
             .build()
-        
+
         performTask(request: request, type: T.self, completion: completion)
     }
 }

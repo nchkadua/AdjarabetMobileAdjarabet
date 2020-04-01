@@ -1,7 +1,7 @@
 public class MainTabBarViewController: UITabBarController {
     public var animationDuration: TimeInterval { 0.3 }
     private var tabBarTopConstraint: NSLayoutConstraint!
-    
+
     private lazy var tabBarStackView: UIStackView = {
         let sw = UIStackView()
         sw.translatesAutoresizingMaskIntoConstraints = false
@@ -12,7 +12,7 @@ public class MainTabBarViewController: UITabBarController {
         sw.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         return sw
     }()
-    
+
     private var tabBarButtons: [TabBarButton] {
         tabBarStackView.arrangedSubviews.compactMap { $0 as? TabBarButton }
     }
@@ -24,25 +24,25 @@ public class MainTabBarViewController: UITabBarController {
         delegate = self
         hidesBottomBarWhenPushed = true
         setupTabBar()
-        
+
         viewControllers = makeViewControllers()
         setupFloatingTabBar()
     }
-    
+
     func hideHeader() {
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
             self.tabBarTopConstraint.isActive = true
             self.view.layoutIfNeeded()
         })
     }
-    
+
     func showHeader() {
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
             self.tabBarTopConstraint.isActive = false
             self.view.layoutIfNeeded()
         })
     }
-    
+
     private func makeViewControllers() -> [UIViewController] {
         let v1 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
         let v2 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
@@ -61,13 +61,13 @@ public class MainTabBarViewController: UITabBarController {
         v3.view.backgroundColor = .black
         v4.view.backgroundColor = .blue
         v5.view.backgroundColor = .purple
-        
+
         v1.title = "Page 1"
         v2.title = "Page 2"
         v3.title = "Notifications"
         v4.title = "Page 4"
         v5.title = "Page 5"
-        
+
         return [v1, v2, v3, v4, v5].map { $0.wrap(in: AppNavigationController.self) }
     }
 
@@ -84,18 +84,18 @@ public class MainTabBarViewController: UITabBarController {
         tabBar.shadowImage = UIImage()
         tabBar.isHidden = true
     }
-    
+
     private func setupFloatingTabBar() {
         let wrapperView = AppCircularView()
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
         wrapperView.backgroundColor = .white
         wrapperView.hasSquareBorderRadius = true
-        
+
         view.addSubview(wrapperView)
-        
+
         self.tabBarTopConstraint = wrapperView.topAnchor.constraint(equalTo: view.bottomAnchor)
         self.tabBarTopConstraint.isActive = false
-        
+
         wrapperView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         let bottomConstraint = wrapperView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         bottomConstraint.priority = UILayoutPriority(rawValue: 999)
@@ -103,8 +103,8 @@ public class MainTabBarViewController: UITabBarController {
 
         wrapperView.addSubview(tabBarStackView)
         tabBarStackView.placeEdgeToEdge(in: wrapperView)
-        
-        tabBar.items?.enumerated().forEach { (index, barButton) in
+
+        tabBar.items?.enumerated().forEach { index, barButton in
             let button = TabBarButton(index: index)
             button.translatesAutoresizingMaskIntoConstraints = false
             tabBarStackView.addArrangedSubview(button)
@@ -117,16 +117,16 @@ public class MainTabBarViewController: UITabBarController {
             button.widthAnchor.constraint(equalToConstant: 60).isActive = true
             button.addTarget(self, action: #selector(barButtonDidTap(_:)), for: .touchUpInside)
         }
-        
+
         tabBarButtons[0].isSelected = true
     }
-    
+
     @objc private func barButtonDidTap(_ sender: TabBarButton) {
         guard selectedIndex != sender.index else {return}
-        
+
 //        tabBarButtons[selectedIndex].isSelected = false
 //        sender.isSelected = true
-        
+
         UIView.transition(with: tabBarButtons[selectedIndex],
                           duration: 0.2,
                           options: .transitionCrossDissolve,
@@ -149,25 +149,25 @@ public class MainTabBarViewController: UITabBarController {
 
 public class TabBarButton: UIButton {
     public var index: Int = 0
-    
+
     public init(index: Int) {
         self.index = index
         super.init(frame: .zero)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
 }
 
 extension MainTabBarViewController: UITabBarControllerDelegate {
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
 //        if let controllers = tabBarController.viewControllers, let index = controllers.firstIndex(of: viewController), index == 2 {
-////            let vc = R.storyboard.photoCapture().instantiate(controller: PhotoCaptureViewController.self)!
-////            vc.mode = .photoGallery(hasCloseButton: true)
-////            vc.modalPresentationStyle = .fullScreen
-////            vc.hidesBottomBarWhenPushed = true
-////            present(vc, animated: true, completion: nil)
+//            let vc = R.storyboard.photoCapture().instantiate(controller: PhotoCaptureViewController.self)!
+//            vc.mode = .photoGallery(hasCloseButton: true)
+//            vc.modalPresentationStyle = .fullScreen
+//            vc.hidesBottomBarWhenPushed = true
+//            present(vc, animated: true, completion: nil)
 //            return false
 //        }
 
@@ -195,12 +195,12 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
             let toView = tabViewControllers[index].view else {
             return
         }
-        
+
         guard fromIndex != index else {
             selectedViewController.scrollToTop()
             return
         }
-        
+
 //        selectedIndex = index
 //        view.layoutIfNeeded()
 //        selectedIndex = fromIndex
@@ -214,7 +214,7 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
 //        nav.view.translatesAutoresizingMaskIntoConstraints = false
 //        fromView.superview?.addSubview(nav.view)
 //        nav.view.placeEdgeToEdge(in: fromView.superview!)
-        
+
 //        print(tabViewControllers[index].parent?.className)
 //        view.addSubview(toView)
 
@@ -271,7 +271,6 @@ public extension UIView {
         UIGraphicsImageRenderer(bounds: bounds).image { rendererContext in
             layer.render(in: rendererContext.cgContext)
         }
-
     }
 
     @discardableResult
@@ -310,7 +309,6 @@ public struct EdgeConstraint {
     public let traling: NSLayoutConstraint
 }
 
-//// Method used to detect when a tab bar button has been tapped
 //func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
 //
 //    // Creating the 'to' and 'from' views for the transition

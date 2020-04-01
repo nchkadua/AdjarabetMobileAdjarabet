@@ -1,3 +1,4 @@
+// swiftlint:disable identifier_name
 public enum AdjarabetCoreStatusCode: Int, Codable {
     case STATUS_SUCCESS = 10  // Operation was successful
     case WRONG_REQUEST = 99 //Received request had invalid structure

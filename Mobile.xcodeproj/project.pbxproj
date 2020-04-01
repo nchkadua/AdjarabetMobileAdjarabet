@@ -52,6 +52,7 @@
 		48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
 		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
 		D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+BalanceManagementServices.swift"; sourceTree = "<group>"; };
 		D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+AuthenticationService.swift"; sourceTree = "<group>"; };
@@ -230,6 +231,7 @@
 		D85C9C362433754A00F1D4FE /* BuildPhases */ = {
 			isa = PBXGroup;
 			children = (
+				D827961C2434CA81006745E8 /* Swiftlint.sh */,
 				D85C9C372433755E00F1D4FE /* RSwift.sh */,
 			);
 			path = BuildPhases;
@@ -395,6 +397,7 @@
 				D8A47DC824335B4B0077AA8E /* Frameworks */,
 				D8A47DC924335B4B0077AA8E /* Resources */,
 				36070DD475217445AF722DC3 /* [CP] Embed Pods Frameworks */,
+				D827961B2434CA56006745E8 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -470,6 +473,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D827961B2434CA56006745E8 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/Mobile/App/BuildPhases/SwiftLint.sh\n";
 		};
 		D85C9C1324336B6F00F1D4FE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -692,7 +713,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -720,7 +741,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -807,7 +828,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -889,7 +910,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

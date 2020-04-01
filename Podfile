@@ -8,6 +8,7 @@ def pods
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Nuke', '8.4.1'
+  pod 'SwiftLint', '0.39.1'
 end
 
 target 'Mobile' do
