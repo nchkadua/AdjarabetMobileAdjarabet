@@ -60,15 +60,14 @@ platform :ios do
 
   desc "Distribute production to testflight"
   lane :distribute_production_to_testflight do
-    # build_stage_for_appstore
-    # pilot(
-    #   changelog: "The new production version from the fastlane"
-    # )
+    build_stage_for_appstore
+    pilot(
+      changelog: "The new production version from the fastlane"
+    )
     ping_slack(message: "Testflight", env: "Production")
   end
 
   lane :ping_slack do |options|
-    v = lane_context[SharedValues::VERSION_NUMBER]
     b = lane_context[SharedValues::BUILD_NUMBER]
 
     slack(
@@ -77,7 +76,7 @@ platform :ios do
     payload: { 
       "🗓 Build Date" => Time.new.to_s,
       "🌎 Environment" => options[:env],
-      "📱 FASTLANE PRODUCTION" => "#{v}(#{b})"
+      "📱 Build Number" => "#{b}"
     }
     )
   end
