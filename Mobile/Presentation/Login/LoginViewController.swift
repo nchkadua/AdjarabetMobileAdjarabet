@@ -6,18 +6,18 @@ class LoginViewController: UIViewController {
     let username = "shota.io" // "adj_user"
     let password = "Burtiburtibu#1" // "Paroli1"
     #endif
-    
+
     enum Mode {
         case normal
         case smsCode
     }
-    
+
     public var mode: Mode = .normal {
         didSet {
             configureUI()
         }
     }
-    
+
     @IBOutlet private var loginTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
     @IBOutlet private var smsCodeTextField: UITextField! {
@@ -27,13 +27,13 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     @Inject public var adjarabetCoreClient: AdjarabetCoreServices
-    
+
     @IBOutlet private var loginButton: LoadingButton!
     @IBOutlet private var smsCodeButton: LoadingButton!
     @IBOutlet private var biometryButton: UIButton!
-    
+
     private let userSession: UserSessionServices = UserSession.current
 
     override func viewDidLoad() {
@@ -41,41 +41,41 @@ class LoginViewController: UIViewController {
 
         navigationItem.title = Bundle.main.coreAPIUrl.absoluteString
         configureUI()
-        
+
         loginTextField.text = username
         passwordTextField.text = password
-        
+
         loginTextField.textContentType = .username
         passwordTextField.textContentType = .password
-        
+
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
         smsCodeButton.addTarget(self, action: #selector(smsCodeDidTap), for: .touchUpInside)
         biometryButton.addTarget(self, action: #selector(biometryDidTap), for: .touchUpInside)
-        
+
         setupBiometryButton()
     }
-    
+
     private func configureUI() {
         setupNavigationItem()
         passwordTextField.isHidden = mode == .smsCode
         smsCodeTextField.isHidden = !passwordTextField.isHidden
     }
-    
+
     @objc private func closeButtonDidTap() {
         mode = .normal
         passwordTextField.becomeFirstResponder()
     }
-    
+
     private func setupNavigationItem() {
         let button = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action: #selector(closeButtonDidTap))
         navigationItem.rightBarButtonItem = mode == .smsCode ? button : nil
     }
-    
+
     private func setupBiometryButton() {
         biometryButton.isHidden = !(UserSession.current.isLogedIn && Biometry.shared.isAvailable)
         biometryButton.setImage(Biometry.shared.image, for: .normal)
     }
-    
+
     @objc private func biometryDidTap() {
         Biometry.shared.authenticate(successComplition: {
             self.getActiveSession()
@@ -83,17 +83,17 @@ class LoginViewController: UIViewController {
             print(error?.localizedDescription ?? "")
         })
     }
-    
+
     private func getActiveSession() {
         guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
-        
+
         loginButton.showLoading()
-        
+
         adjarabetCoreClient.aliveSession(userId: userId, sessionId: sessionId) { (result: Result<AdjarabetCoreResult.AliveSession, Error>) in
             defer {
                 self.loginButton.hideLoading()
             }
-            
+
             switch result {
             case .success(let value):
                 print(value)
@@ -107,21 +107,21 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     @objc private func smsCodeDidTap() {
         guard let username = loginTextField.text else {return}
-        
+
         mode = .smsCode
-        
+
         smsCodeButton.showLoading()
         smsCodeTextField.text = nil
         smsCodeTextField.becomeFirstResponder()
-        
+
         adjarabetCoreClient.smsCode(username: username, channel: 2) { (result: Result<AdjarabetCoreResult.SmsCode, Error>) in
             defer {
                 self.smsCodeButton.hideLoading()
             }
-            
+
             switch result {
             case .success(let value):
                 print(value)
@@ -130,7 +130,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     @objc private func loginDidTap() {
         switch mode {
         case .normal:
@@ -139,17 +139,17 @@ class LoginViewController: UIViewController {
             loginWithSMSCode()
         }
     }
-    
+
     private func login() {
         guard let username = loginTextField.text, let password = passwordTextField.text else {return}
-        
+
         loginButton.showLoading()
-        
+
         adjarabetCoreClient.login(username: username, password: password, channel: 0) { (result: Result<AdjarabetCoreResult.Login, Error>) in
             defer {
                 self.loginButton.hideLoading()
             }
-            
+
             switch result {
             case .success(let value):
                 print(value)
@@ -165,16 +165,16 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     private func loginWithSMSCode() {
         guard let username = loginTextField.text, let code = smsCodeTextField.text else {return}
-        
+
         loginButton.showLoading()
         adjarabetCoreClient.login(username: username, code: code, loginType: .sms) { (result: Result<AdjarabetCoreResult.Login, Error>) in
             defer {
                 self.loginButton.hideLoading()
             }
-            
+
             switch result {
             case .success(let value):
                 print(value)
@@ -190,7 +190,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     private func navigateToWelcomePage() {
         UIApplication.shared.currentWindow?.rootViewController = R.storyboard.login().instantiate(controller: WelcomeViewController.self)?.wrapInNav()
     }

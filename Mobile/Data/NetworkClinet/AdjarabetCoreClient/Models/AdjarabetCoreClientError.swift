@@ -25,7 +25,7 @@ public extension Error {
             code == .SESSION_NOT_FOUND {
             return true
         }
-        
+
         return false
     }
 }

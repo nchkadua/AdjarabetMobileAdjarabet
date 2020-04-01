@@ -2,27 +2,26 @@ import Foundation
 
 public class AdjarabetWebAPIClient: AdjarabetWebAPIServices {
     public let baseUrl: URL
-    
+
     public init(baseUrl: URL) {
         self.baseUrl = baseUrl
     }
-    
+
     public var baseUrlComponents: URLComponents {
         URLComponents(url: baseUrl, resolvingAgainstBaseURL: false)!
     }
-    
+
     public enum Method: String {
         case userLoggedIn
     }
-    
+
     public func performTask<T: Codable>(request: URLRequest, type: T.Type, completion: ((_ response: Result<T, Error>) -> Void)?) {
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
                 DispatchQueue.main.async { completion?(.failure(error)) }
                 return
             }
-            
+
             guard let data = data else {
                 DispatchQueue.main.async {
                     completion?(.failure(AdjarabetWebAPIClientError.dataIsEmpty(context: request.url!)))
@@ -67,7 +66,7 @@ public class AdjarabetWebAPIClient: AdjarabetWebAPIServices {
                 }
             }
         }
- 
+
         task.resume()
     }
 }

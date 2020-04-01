@@ -1,32 +1,31 @@
 public class AdjarabetCoreCodable {
-    
 }
 
 public extension AdjarabetCoreCodable {
     struct Empty: Codable {
     }
-    
+
     struct StatusCodeChecker: Codable {
         public let code: AdjarabetCoreStatusCode
-        
+
         public var isSuccess: Bool {
             code == .STATUS_SUCCESS
         }
-        
+
         enum CodingKeys: String, CodingKey {
             case code = "StatusCode"
         }
     }
-    
+
     struct Authentication {
         public struct SmsCode: Codable {
             public let statusCode: AdjarabetCoreStatusCode
-            
+
             enum CodingKeys: String, CodingKey {
                 case statusCode = "StatusCode"
             }
         }
-        
+
         public struct Login: Codable {
                public let isLoggedOn: Bool
                public let isOTPRequired: Bool
@@ -57,11 +56,10 @@ public extension AdjarabetCoreCodable {
                }
            }
     }
-    
+
     struct AliveSession: Codable {
-        
     }
-    
+
 //    struct ActiveSession: Codable {
 //        let userID: Int
 //        let lastLoginTime, expirationDate, realityCheckDueDate: String?
@@ -81,7 +79,7 @@ public extension AdjarabetCoreCodable {
         public let balanceAmount: Double
         public let lockedAmount: Double?
         public let bonusAmount: Double?
-        
+
         enum CodingKeys: String, CodingKey {
             case currencyID = "CurrencyID"
             case balanceAmount = "BalanceAmount"

@@ -7,7 +7,7 @@ public class UserSessionCareTaker {
     private let encoder: JSONEncoder
     private let key: String
     private let accessibility: KeychainItemAccessibility
-    
+
     public init(
         storage: KeychainWrapper = KeychainContainer.shared,
         decoder: JSONDecoder = JSONDecoder(),
@@ -28,7 +28,7 @@ public class UserSessionCareTaker {
             let data = try encoder.encode(momento)
             storage.set(data, forKey: key)
         }
-        
+
         #if DEBUG
             print(momento ?? "")
         #endif

@@ -10,6 +10,7 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SharedFramework (0.0.5)
+  - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Nuke (= 8.4.1)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SharedFramework
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
@@ -27,6 +29,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SharedFramework
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
@@ -36,7 +39,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SharedFramework: ecc283fe3cbdb574cd3b5676e5d1fcb36df7dd67
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: fbbfdf372637ce7ee8dcd5f612404b05262d18c2
+PODFILE CHECKSUM: 12075dabead275ffa6bd72abdb2df897bda65081
 
 COCOAPODS: 1.9.1
