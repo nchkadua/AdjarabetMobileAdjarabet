@@ -1,3 +1,11 @@
+//
+//  LoginViewController.swift
+//  Mobile
+//
+//  Created by Shota Ioramashvili on 4/12/20.
+//  Copyright © 2020 Adjarabet. All rights reserved.
+//
+
 class LoginViewController: UIViewController {
     #if DEVELOPMENT
     let username = "p2p16" //"testpng"

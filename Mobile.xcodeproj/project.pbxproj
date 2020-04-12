@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6612F916FC18BFB2C451E2DC /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
+		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */; };
 		D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */; };
@@ -54,6 +55,7 @@
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		D807846A24439E4500003892 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
 		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
 		D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+BalanceManagementServices.swift"; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */,
+				D807846A24439E4500003892 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
+				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				D85C9BEF2433676700F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift in Sources */,

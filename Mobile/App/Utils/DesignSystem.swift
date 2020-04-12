@@ -43,7 +43,6 @@ public class DesignSystem {
             public let lineHeight: CGFloat
         }
 
-        #warning("Fonts needs to be set to PantonMtav3 & FiraGO")
         public static var h1: Description { Description(font: .systemFont(ofSize: 28), lineSpasing: 0.7, lineHeight: 44) }
         public static var h2: Description { Description(font: .systemFont(ofSize: 23), lineSpasing: 0.7, lineHeight: 36) }
         public static var h3: Description { Description(font: .systemFont(ofSize: 16), lineSpasing: 0.5, lineHeight: 24) }
