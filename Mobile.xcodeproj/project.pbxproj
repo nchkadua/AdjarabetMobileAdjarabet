@@ -141,7 +141,7 @@
 		D85C9C3124336D0800F1D4FE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
-		D8A47DCB24335B4B0077AA8E /* Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8A47DD724335B4C0077AA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -355,7 +355,7 @@
 		D8A47DCC24335B4B0077AA8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8A47DCB24335B4B0077AA8E /* Mobile.app */,
+				D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */,
 				D80784972444770F00003892 /* MobileTests.xctest */,
 			);
 			name = Products;
@@ -523,7 +523,7 @@
 			);
 			name = Mobile;
 			productName = Mobile;
-			productReference = D8A47DCB24335B4B0077AA8E /* Mobile.app */;
+			productReference = D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -826,7 +826,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile Stage.app/Mobile Stage";
 			};
 			name = "Debug-Stage";
 		};
@@ -900,7 +900,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile Stage.app/Mobile Stage";
 			};
 			name = "Debug-Production";
 		};
@@ -967,7 +967,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile Stage.app/Mobile Stage";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release-Stage";
@@ -1035,7 +1035,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile Stage.app/Mobile Stage";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release-Production";
@@ -1173,7 +1173,8 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
-				PRODUCT_NAME = Mobile;
+				PRODUCT_MODULE_NAME = Mobile;
+				PRODUCT_NAME = "Mobile Stage";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1201,7 +1202,8 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
-				PRODUCT_NAME = Mobile;
+				PRODUCT_MODULE_NAME = Mobile;
+				PRODUCT_NAME = "Mobile Stage";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1288,6 +1290,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
+				PRODUCT_MODULE_NAME = Mobile;
 				PRODUCT_NAME = Mobile;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1370,6 +1373,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
+				PRODUCT_MODULE_NAME = Mobile;
 				PRODUCT_NAME = Mobile;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
