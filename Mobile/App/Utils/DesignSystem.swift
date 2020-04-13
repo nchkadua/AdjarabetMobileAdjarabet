@@ -77,5 +77,7 @@ public enum DesignSystem {
         case space24 = 24
         case space28 = 28
         case space32 = 32
+
+        public var value: Int { rawValue }
     }
 }

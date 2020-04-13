@@ -28,6 +28,7 @@
 		D80784902444727E00003892 /* PantonMtav3-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848D2444727E00003892 /* PantonMtav3-Bold.otf */; };
 		D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */; };
 		D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848F2444727E00003892 /* PantonMtav3-Regular.otf */; };
+		D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784A424447ABF00003892 /* DesignSystemTests.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */; };
 		D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */; };
@@ -67,6 +68,16 @@
 		D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D807849C2444770F00003892 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8A47DC324335B4B0077AA8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8A47DCA24335B4B0077AA8E;
+			remoteInfo = Mobile;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1DC8A4457FEC86A0D27D9864 /* Pods-Mobile.debug-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug-stage.xcconfig"; sourceTree = "<group>"; };
 		48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +103,9 @@
 		D807848D2444727E00003892 /* PantonMtav3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-Bold.otf"; sourceTree = "<group>"; };
 		D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-ExtraBold.otf"; sourceTree = "<group>"; };
 		D807848F2444727E00003892 /* PantonMtav3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-Regular.otf"; sourceTree = "<group>"; };
+		D80784972444770F00003892 /* MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D807849B2444770F00003892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D80784A424447ABF00003892 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
 		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
 		D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+BalanceManagementServices.swift"; sourceTree = "<group>"; };
@@ -127,7 +141,7 @@
 		D85C9C3124336D0800F1D4FE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
-		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8A47DCB24335B4B0077AA8E /* Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8A47DD724335B4C0077AA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +155,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D80784942444770F00003892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8A47DC824335B4B0077AA8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +217,23 @@
 				D807847A2444727600003892 /* FiraGO-UltraLight.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D80784982444770F00003892 /* MobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				D80784A324447AA400003892 /* Infrastructure */,
+				D807849B2444770F00003892 /* Info.plist */,
+			);
+			path = MobileTests;
+			sourceTree = "<group>";
+		};
+		D80784A324447AA400003892 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */ = {
@@ -307,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				D8A47DCD24335B4B0077AA8E /* Mobile */,
+				D80784982444770F00003892 /* MobileTests */,
 				D8A47DCC24335B4B0077AA8E /* Products */,
 				9D1383A490506B12A0598302 /* Pods */,
 				31170CB969BE9F4E039A5237 /* Frameworks */,
@@ -316,7 +355,8 @@
 		D8A47DCC24335B4B0077AA8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */,
+				D8A47DCB24335B4B0077AA8E /* Mobile.app */,
+				D80784972444770F00003892 /* MobileTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,7 +366,6 @@
 			children = (
 				D85C9C1424336BA600F1D4FE /* Mobile.entitlements */,
 				D8A47DE624335DC60077AA8E /* App */,
-				D8A47DE724335DCA0077AA8E /* Navigators */,
 				D8A47DE824335DD70077AA8E /* Domain */,
 				D8A47DE924335DDE0077AA8E /* Presentation */,
 				D8A47DEA24335DE40077AA8E /* Data */,
@@ -346,13 +385,6 @@
 				D85C9C1524336BF500F1D4FE /* Views */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		D8A47DE724335DCA0077AA8E /* Navigators */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigators;
 			sourceTree = "<group>";
 		};
 		D8A47DE824335DD70077AA8E /* Domain */ = {
@@ -455,6 +487,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D80784962444770F00003892 /* MobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D807849E2444770F00003892 /* Build configuration list for PBXNativeTarget "MobileTests" */;
+			buildPhases = (
+				D80784932444770F00003892 /* Sources */,
+				D80784942444770F00003892 /* Frameworks */,
+				D80784952444770F00003892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D807849D2444770F00003892 /* PBXTargetDependency */,
+			);
+			name = MobileTests;
+			productName = MobileTests;
+			productReference = D80784972444770F00003892 /* MobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D8A47DCA24335B4B0077AA8E /* Mobile */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8A47DDF24335B4C0077AA8E /* Build configuration list for PBXNativeTarget "Mobile" */;
@@ -473,7 +523,7 @@
 			);
 			name = Mobile;
 			productName = Mobile;
-			productReference = D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */;
+			productReference = D8A47DCB24335B4B0077AA8E /* Mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -486,6 +536,10 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Adjarabet;
 				TargetAttributes = {
+					D80784962444770F00003892 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = D8A47DCA24335B4B0077AA8E;
+					};
 					D8A47DCA24335B4B0077AA8E = {
 						CreatedOnToolsVersion = 11.4;
 						LastSwiftMigration = 1140;
@@ -506,11 +560,19 @@
 			projectRoot = "";
 			targets = (
 				D8A47DCA24335B4B0077AA8E /* Mobile */,
+				D80784962444770F00003892 /* MobileTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D80784952444770F00003892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8A47DC924335B4B0077AA8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -622,6 +684,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D80784932444770F00003892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8A47DC724335B4B0077AA8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -666,6 +736,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D807849D2444770F00003892 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8A47DCA24335B4B0077AA8E /* Mobile */;
+			targetProxy = D807849C2444770F00003892 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D8A47DD924335B4C0077AA8E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -678,6 +756,290 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D807849F2444770F00003892 /* Debug-Stage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RDJN6C84H4;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = MobileTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.MobileTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+			};
+			name = "Debug-Stage";
+		};
+		D80784A02444770F00003892 /* Debug-Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RDJN6C84H4;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = MobileTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.MobileTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+			};
+			name = "Debug-Production";
+		};
+		D80784A12444770F00003892 /* Release-Stage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = RDJN6C84H4;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = MobileTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.MobileTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release-Stage";
+		};
+		D80784A22444770F00003892 /* Release-Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = RDJN6C84H4;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = MobileTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.MobileTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release-Production";
+		};
 		D8A47DDD24335B4C0077AA8E /* Debug-Stage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -811,7 +1173,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
-				PRODUCT_NAME = "Mobile Stage";
+				PRODUCT_NAME = Mobile;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -839,7 +1201,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
-				PRODUCT_NAME = "Mobile Stage";
+				PRODUCT_NAME = Mobile;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1008,7 +1370,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Mobile;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1019,6 +1381,17 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D807849E2444770F00003892 /* Build configuration list for PBXNativeTarget "MobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D807849F2444770F00003892 /* Debug-Stage */,
+				D80784A02444770F00003892 /* Debug-Production */,
+				D80784A12444770F00003892 /* Release-Stage */,
+				D80784A22444770F00003892 /* Release-Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-Production";
+		};
 		D8A47DC624335B4B0077AA8E /* Build configuration list for PBXProject "Mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
