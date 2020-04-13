@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public class DesignSystem {
+public enum DesignSystem {
     /// Design system colors
     public enum Color {
         /// Neutral colors
@@ -36,21 +36,35 @@ public class DesignSystem {
 
     /// Design system typography
     public enum Typography {
+        case h1
+        case h2
+        case h3
+        case h4
+        case h5
+        case body1
+        case body2
+        case p
+
+        /// Concrete description for each case
+        public var description: Description {
+            switch self {
+            case .h1:    return Description(font: R.font.pantonMtav3Bold(size: 28)!, lineSpasing: 0.7, lineHeight: 44)
+            case .h2:    return Description(font: R.font.pantonMtav3Bold(size: 23)!, lineSpasing: 0.7, lineHeight: 36)
+            case .h3:    return Description(font: R.font.pantonMtav3Bold(size: 16)!, lineSpasing: 0.5, lineHeight: 24)
+            case .h4:    return Description(font: R.font.pantonMtav3Bold(size: 14)!, lineSpasing: 0.3, lineHeight: 24)
+            case .h5:    return Description(font: R.font.pantonMtav3Bold(size: 11)!, lineSpasing: 0.5, lineHeight: 16)
+            case .body1: return Description(font: R.font.firaGOMedium(size: 13)!, lineSpasing: 0, lineHeight: 20)
+            case .body2: return Description(font: R.font.firaGOMedium(size: 11)!, lineSpasing: 0, lineHeight: 16)
+            case .p:     return Description(font: R.font.firaGORegular(size: 13)!, lineSpasing: 0, lineHeight: 20)
+            }
+        }
+
         /// Availbe information about concrete typography
         public struct Description {
             public let font: UIFont
             public let lineSpasing: CGFloat
             public let lineHeight: CGFloat
         }
-
-        public static var h1: Description { Description(font: R.font.pantonMtav3Bold(size: 28)!, lineSpasing: 0.7, lineHeight: 44) }
-        public static var h2: Description { Description(font: R.font.pantonMtav3Bold(size: 23)!, lineSpasing: 0.7, lineHeight: 36) }
-        public static var h3: Description { Description(font: R.font.pantonMtav3Bold(size: 16)!, lineSpasing: 0.5, lineHeight: 24) }
-        public static var h4: Description { Description(font: R.font.pantonMtav3Bold(size: 14)!, lineSpasing: 0.3, lineHeight: 24) }
-        public static var h5: Description { Description(font: R.font.pantonMtav3Bold(size: 11)!, lineSpasing: 0.5, lineHeight: 16) }
-        public static var body1: Description { Description(font: R.font.firaGOMedium(size: 13)!, lineSpasing: 0, lineHeight: 20) }
-        public static var body2: Description { Description(font: R.font.firaGOMedium(size: 11)!, lineSpasing: 0, lineHeight: 16) }
-        public static var p: Description { Description(font: R.font.firaGORegular(size: 13)!, lineSpasing: 0, lineHeight: 20) }
     }
 
     /// Design system spacing
