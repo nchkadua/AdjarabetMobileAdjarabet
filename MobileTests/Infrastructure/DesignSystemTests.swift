@@ -97,4 +97,24 @@ class DesignSystemTests: XCTestCase {
         XCTAssertEqual(DesignSystem.Spacing.space28.value, 28)
         XCTAssertEqual(DesignSystem.Spacing.space32.value, 32)
     }
+    
+    func testAttributedString() {
+        let typography = DesignSystem.Typography.h1
+        let attributedString = "Text".makeAttributedString(with: typography, alignment: .left)
+        
+        /// Retrieve attributes
+        let attributes = attributedString.attributes(at: 0, effectiveRange: nil)
+
+        /// Retrieve and test font
+        if let font = attributes[.font] as? UIFont {
+            XCTAssertEqual(font.fontName, typography.description.font.fontName)
+            XCTAssertEqual(font.pointSize, typography.description.font.pointSize)
+        }
+
+        /// Retrieve and test style
+        if let style = attributes[.paragraphStyle] as? NSParagraphStyle {
+            XCTAssertEqual(style.lineSpacing, typography.description.lineSpasing)
+            XCTAssertEqual(style.alignment, .left)
+        }
+    }
 }
