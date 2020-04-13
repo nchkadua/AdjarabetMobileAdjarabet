@@ -43,14 +43,14 @@ public class DesignSystem {
             public let lineHeight: CGFloat
         }
 
-        public static var h1: Description { Description(font: .systemFont(ofSize: 28), lineSpasing: 0.7, lineHeight: 44) }
-        public static var h2: Description { Description(font: .systemFont(ofSize: 23), lineSpasing: 0.7, lineHeight: 36) }
-        public static var h3: Description { Description(font: .systemFont(ofSize: 16), lineSpasing: 0.5, lineHeight: 24) }
-        public static var h4: Description { Description(font: .systemFont(ofSize: 14), lineSpasing: 0.3, lineHeight: 24) }
-        public static var h5: Description { Description(font: .systemFont(ofSize: 11), lineSpasing: 0.5, lineHeight: 16) }
-        public static var body1: Description { Description(font: .systemFont(ofSize: 13), lineSpasing: 0, lineHeight: 20) }
-        public static var body2: Description { Description(font: .systemFont(ofSize: 11), lineSpasing: 0, lineHeight: 16) }
-        public static var p: Description { Description(font: .systemFont(ofSize: 13), lineSpasing: 0, lineHeight: 20) }
+        public static var h1: Description { Description(font: R.font.pantonMtav3Bold(size: 28)!, lineSpasing: 0.7, lineHeight: 44) }
+        public static var h2: Description { Description(font: R.font.pantonMtav3Bold(size: 23)!, lineSpasing: 0.7, lineHeight: 36) }
+        public static var h3: Description { Description(font: R.font.pantonMtav3Bold(size: 16)!, lineSpasing: 0.5, lineHeight: 24) }
+        public static var h4: Description { Description(font: R.font.pantonMtav3Bold(size: 14)!, lineSpasing: 0.3, lineHeight: 24) }
+        public static var h5: Description { Description(font: R.font.pantonMtav3Bold(size: 11)!, lineSpasing: 0.5, lineHeight: 16) }
+        public static var body1: Description { Description(font: R.font.firaGOMedium(size: 13)!, lineSpasing: 0, lineHeight: 20) }
+        public static var body2: Description { Description(font: R.font.firaGOMedium(size: 11)!, lineSpasing: 0, lineHeight: 16) }
+        public static var p: Description { Description(font: R.font.firaGORegular(size: 13)!, lineSpasing: 0, lineHeight: 20) }
     }
 
     /// Design system spacing

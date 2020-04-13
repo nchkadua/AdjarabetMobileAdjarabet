@@ -67,5 +67,26 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PantonMtav3-Bold.otf</string>
+		<string>PantonMtav3-ExtraBold.otf</string>
+		<string>PantonMtav3-Regular.otf</string>
+		<string>FiraGO-Bold.ttf</string>
+		<string>FiraGO-Book.ttf</string>
+		<string>FiraGO-Eight.ttf</string>
+		<string>FiraGO-ExtraBold.ttf</string>
+		<string>FiraGO-ExtraLight.ttf</string>
+		<string>FiraGO-Four.ttf</string>
+		<string>FiraGO-Hair.ttf</string>
+		<string>FiraGO-Heavy.ttf</string>
+		<string>FiraGO-Light.ttf</string>
+		<string>FiraGO-Medium.ttf</string>
+		<string>FiraGO-Regular.ttf</string>
+		<string>FiraGO-SemiBold.ttf</string>
+		<string>FiraGO-Thin.ttf</string>
+		<string>FiraGO-Two.ttf</string>
+		<string>FiraGO-UltraLight.ttf</string>
+	</array>
 </dict>
 </plist>

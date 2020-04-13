@@ -10,6 +10,24 @@
 		6612F916FC18BFB2C451E2DC /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
 		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
+		D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807846D2444727500003892 /* FiraGO-Light.ttf */; };
+		D807847E2444727600003892 /* FiraGO-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807846E2444727500003892 /* FiraGO-ExtraLight.ttf */; };
+		D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807846F2444727500003892 /* FiraGO-Four.ttf */; };
+		D80784802444727600003892 /* FiraGO-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784702444727500003892 /* FiraGO-Thin.ttf */; };
+		D80784822444727600003892 /* FiraGO-Two.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784722444727500003892 /* FiraGO-Two.ttf */; };
+		D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784732444727500003892 /* FiraGO-Heavy.ttf */; };
+		D80784842444727600003892 /* FiraGO-Hair.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784742444727500003892 /* FiraGO-Hair.ttf */; };
+		D80784852444727600003892 /* FiraGO-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784752444727500003892 /* FiraGO-SemiBold.ttf */; };
+		D80784862444727600003892 /* FiraGO-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784762444727600003892 /* FiraGO-Book.ttf */; };
+		D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784772444727600003892 /* FiraGO-Medium.ttf */; };
+		D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784782444727600003892 /* FiraGO-Eight.ttf */; };
+		D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784792444727600003892 /* FiraGO-Regular.ttf */; };
+		D807848A2444727600003892 /* FiraGO-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807847A2444727600003892 /* FiraGO-UltraLight.ttf */; };
+		D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807847B2444727600003892 /* FiraGO-ExtraBold.ttf */; };
+		D807848C2444727600003892 /* FiraGO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807847C2444727600003892 /* FiraGO-Bold.ttf */; };
+		D80784902444727E00003892 /* PantonMtav3-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848D2444727E00003892 /* PantonMtav3-Bold.otf */; };
+		D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */; };
+		D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848F2444727E00003892 /* PantonMtav3-Regular.otf */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */; };
 		D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */; };
@@ -56,6 +74,24 @@
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		D807846A24439E4500003892 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D807846D2444727500003892 /* FiraGO-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Light.ttf"; sourceTree = "<group>"; };
+		D807846E2444727500003892 /* FiraGO-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-ExtraLight.ttf"; sourceTree = "<group>"; };
+		D807846F2444727500003892 /* FiraGO-Four.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Four.ttf"; sourceTree = "<group>"; };
+		D80784702444727500003892 /* FiraGO-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Thin.ttf"; sourceTree = "<group>"; };
+		D80784722444727500003892 /* FiraGO-Two.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Two.ttf"; sourceTree = "<group>"; };
+		D80784732444727500003892 /* FiraGO-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Heavy.ttf"; sourceTree = "<group>"; };
+		D80784742444727500003892 /* FiraGO-Hair.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Hair.ttf"; sourceTree = "<group>"; };
+		D80784752444727500003892 /* FiraGO-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-SemiBold.ttf"; sourceTree = "<group>"; };
+		D80784762444727600003892 /* FiraGO-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Book.ttf"; sourceTree = "<group>"; };
+		D80784772444727600003892 /* FiraGO-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Medium.ttf"; sourceTree = "<group>"; };
+		D80784782444727600003892 /* FiraGO-Eight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Eight.ttf"; sourceTree = "<group>"; };
+		D80784792444727600003892 /* FiraGO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Regular.ttf"; sourceTree = "<group>"; };
+		D807847A2444727600003892 /* FiraGO-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-UltraLight.ttf"; sourceTree = "<group>"; };
+		D807847B2444727600003892 /* FiraGO-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-ExtraBold.ttf"; sourceTree = "<group>"; };
+		D807847C2444727600003892 /* FiraGO-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Bold.ttf"; sourceTree = "<group>"; };
+		D807848D2444727E00003892 /* PantonMtav3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-Bold.otf"; sourceTree = "<group>"; };
+		D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-ExtraBold.otf"; sourceTree = "<group>"; };
+		D807848F2444727E00003892 /* PantonMtav3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-Regular.otf"; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
 		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
 		D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+BalanceManagementServices.swift"; sourceTree = "<group>"; };
@@ -135,6 +171,31 @@
 				FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D807846C2444726000003892 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D807848D2444727E00003892 /* PantonMtav3-Bold.otf */,
+				D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */,
+				D807848F2444727E00003892 /* PantonMtav3-Regular.otf */,
+				D807847C2444727600003892 /* FiraGO-Bold.ttf */,
+				D80784762444727600003892 /* FiraGO-Book.ttf */,
+				D80784782444727600003892 /* FiraGO-Eight.ttf */,
+				D807847B2444727600003892 /* FiraGO-ExtraBold.ttf */,
+				D807846E2444727500003892 /* FiraGO-ExtraLight.ttf */,
+				D807846F2444727500003892 /* FiraGO-Four.ttf */,
+				D80784742444727500003892 /* FiraGO-Hair.ttf */,
+				D80784732444727500003892 /* FiraGO-Heavy.ttf */,
+				D807846D2444727500003892 /* FiraGO-Light.ttf */,
+				D80784772444727600003892 /* FiraGO-Medium.ttf */,
+				D80784792444727600003892 /* FiraGO-Regular.ttf */,
+				D80784752444727500003892 /* FiraGO-SemiBold.ttf */,
+				D80784702444727500003892 /* FiraGO-Thin.ttf */,
+				D80784722444727500003892 /* FiraGO-Two.ttf */,
+				D807847A2444727600003892 /* FiraGO-UltraLight.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */ = {
@@ -279,6 +340,7 @@
 				D85C9C352433749D00F1D4FE /* AppDelegate */,
 				D85C9C362433754A00F1D4FE /* BuildPhases */,
 				D8A47DEC24335EA10077AA8E /* Extensions */,
+				D807846C2444726000003892 /* Fonts */,
 				D8A47DEB24335E070077AA8E /* Resources */,
 				D85C9C1C24336C9500F1D4FE /* Utils */,
 				D85C9C1524336BF500F1D4FE /* Views */,
@@ -454,9 +516,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
+				D807848C2444727600003892 /* FiraGO-Bold.ttf in Resources */,
+				D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */,
+				D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */,
+				D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
+				D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */,
+				D807847E2444727600003892 /* FiraGO-ExtraLight.ttf in Resources */,
+				D80784842444727600003892 /* FiraGO-Hair.ttf in Resources */,
+				D80784862444727600003892 /* FiraGO-Book.ttf in Resources */,
+				D807848A2444727600003892 /* FiraGO-UltraLight.ttf in Resources */,
+				D80784852444727600003892 /* FiraGO-SemiBold.ttf in Resources */,
+				D80784902444727E00003892 /* PantonMtav3-Bold.otf in Resources */,
+				D80784802444727600003892 /* FiraGO-Thin.ttf in Resources */,
+				D80784822444727600003892 /* FiraGO-Two.ttf in Resources */,
+				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
+				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
+				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
 				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
+				D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */,
+				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,6 +85,7 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
@@ -378,6 +379,309 @@ struct R: Rswift.Validatable {
       static let appIdentifierPrefixComAdjarabetMobileCredentials = infoPlistString(path: ["keychain-access-groups"], key: "$(AppIdentifierPrefix)com.adjarabet.Mobile.credentials") ?? "$(AppIdentifierPrefix)com.adjarabet.Mobile.credentials"
 
       fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 18 files.
+  struct file {
+    /// Resource file `FiraGO-Bold.ttf`.
+    static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
+    /// Resource file `FiraGO-Book.ttf`.
+    static let firaGOBookTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Book", pathExtension: "ttf")
+    /// Resource file `FiraGO-Eight.ttf`.
+    static let firaGOEightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Eight", pathExtension: "ttf")
+    /// Resource file `FiraGO-ExtraBold.ttf`.
+    static let firaGOExtraBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-ExtraBold", pathExtension: "ttf")
+    /// Resource file `FiraGO-ExtraLight.ttf`.
+    static let firaGOExtraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-ExtraLight", pathExtension: "ttf")
+    /// Resource file `FiraGO-Four.ttf`.
+    static let firaGOFourTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Four", pathExtension: "ttf")
+    /// Resource file `FiraGO-Hair.ttf`.
+    static let firaGOHairTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Hair", pathExtension: "ttf")
+    /// Resource file `FiraGO-Heavy.ttf`.
+    static let firaGOHeavyTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Heavy", pathExtension: "ttf")
+    /// Resource file `FiraGO-Light.ttf`.
+    static let firaGOLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Light", pathExtension: "ttf")
+    /// Resource file `FiraGO-Medium.ttf`.
+    static let firaGOMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Medium", pathExtension: "ttf")
+    /// Resource file `FiraGO-Regular.ttf`.
+    static let firaGORegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Regular", pathExtension: "ttf")
+    /// Resource file `FiraGO-SemiBold.ttf`.
+    static let firaGOSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-SemiBold", pathExtension: "ttf")
+    /// Resource file `FiraGO-Thin.ttf`.
+    static let firaGOThinTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Thin", pathExtension: "ttf")
+    /// Resource file `FiraGO-Two.ttf`.
+    static let firaGOTwoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Two", pathExtension: "ttf")
+    /// Resource file `FiraGO-UltraLight.ttf`.
+    static let firaGOUltraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-UltraLight", pathExtension: "ttf")
+    /// Resource file `PantonMtav3-Bold.otf`.
+    static let pantonMtav3BoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonMtav3-Bold", pathExtension: "otf")
+    /// Resource file `PantonMtav3-ExtraBold.otf`.
+    static let pantonMtav3ExtraBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonMtav3-ExtraBold", pathExtension: "otf")
+    /// Resource file `PantonMtav3-Regular.otf`.
+    static let pantonMtav3RegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonMtav3-Regular", pathExtension: "otf")
+
+    /// `bundle.url(forResource: "FiraGO-Bold", withExtension: "ttf")`
+    static func firaGOBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Book", withExtension: "ttf")`
+    static func firaGOBookTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOBookTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Eight", withExtension: "ttf")`
+    static func firaGOEightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOEightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-ExtraBold", withExtension: "ttf")`
+    static func firaGOExtraBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOExtraBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-ExtraLight", withExtension: "ttf")`
+    static func firaGOExtraLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOExtraLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Four", withExtension: "ttf")`
+    static func firaGOFourTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOFourTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Hair", withExtension: "ttf")`
+    static func firaGOHairTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOHairTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Heavy", withExtension: "ttf")`
+    static func firaGOHeavyTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOHeavyTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Light", withExtension: "ttf")`
+    static func firaGOLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Medium", withExtension: "ttf")`
+    static func firaGOMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Regular", withExtension: "ttf")`
+    static func firaGORegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGORegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-SemiBold", withExtension: "ttf")`
+    static func firaGOSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Thin", withExtension: "ttf")`
+    static func firaGOThinTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOThinTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-Two", withExtension: "ttf")`
+    static func firaGOTwoTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOTwoTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FiraGO-UltraLight", withExtension: "ttf")`
+    static func firaGOUltraLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firaGOUltraLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PantonMtav3-Bold", withExtension: "otf")`
+    static func pantonMtav3BoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonMtav3BoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PantonMtav3-ExtraBold", withExtension: "otf")`
+    static func pantonMtav3ExtraBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonMtav3ExtraBoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PantonMtav3-Regular", withExtension: "otf")`
+    static func pantonMtav3RegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonMtav3RegularOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.font` struct is generated, and contains static references to 18 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `FiraGO-Bold`.
+    static let firaGOBold = Rswift.FontResource(fontName: "FiraGO-Bold")
+    /// Font `FiraGO-Book`.
+    static let firaGOBook = Rswift.FontResource(fontName: "FiraGO-Book")
+    /// Font `FiraGO-Eight`.
+    static let firaGOEight = Rswift.FontResource(fontName: "FiraGO-Eight")
+    /// Font `FiraGO-ExtraBold`.
+    static let firaGOExtraBold = Rswift.FontResource(fontName: "FiraGO-ExtraBold")
+    /// Font `FiraGO-ExtraLight`.
+    static let firaGOExtraLight = Rswift.FontResource(fontName: "FiraGO-ExtraLight")
+    /// Font `FiraGO-Four`.
+    static let firaGOFour = Rswift.FontResource(fontName: "FiraGO-Four")
+    /// Font `FiraGO-Hair`.
+    static let firaGOHair = Rswift.FontResource(fontName: "FiraGO-Hair")
+    /// Font `FiraGO-Heavy`.
+    static let firaGOHeavy = Rswift.FontResource(fontName: "FiraGO-Heavy")
+    /// Font `FiraGO-Light`.
+    static let firaGOLight = Rswift.FontResource(fontName: "FiraGO-Light")
+    /// Font `FiraGO-Medium`.
+    static let firaGOMedium = Rswift.FontResource(fontName: "FiraGO-Medium")
+    /// Font `FiraGO-Regular`.
+    static let firaGORegular = Rswift.FontResource(fontName: "FiraGO-Regular")
+    /// Font `FiraGO-SemiBold`.
+    static let firaGOSemiBold = Rswift.FontResource(fontName: "FiraGO-SemiBold")
+    /// Font `FiraGO-Thin`.
+    static let firaGOThin = Rswift.FontResource(fontName: "FiraGO-Thin")
+    /// Font `FiraGO-Two`.
+    static let firaGOTwo = Rswift.FontResource(fontName: "FiraGO-Two")
+    /// Font `FiraGO-UltraLight`.
+    static let firaGOUltraLight = Rswift.FontResource(fontName: "FiraGO-UltraLight")
+    /// Font `PantonMtav3-Bold`.
+    static let pantonMtav3Bold = Rswift.FontResource(fontName: "PantonMtav3-Bold")
+    /// Font `PantonMtav3-ExtraBold`.
+    static let pantonMtav3ExtraBold = Rswift.FontResource(fontName: "PantonMtav3-ExtraBold")
+    /// Font `PantonMtav3-Regular`.
+    static let pantonMtav3Regular = Rswift.FontResource(fontName: "PantonMtav3-Regular")
+
+    /// `UIFont(name: "FiraGO-Bold", size: ...)`
+    static func firaGOBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOBold, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Book", size: ...)`
+    static func firaGOBook(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOBook, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Eight", size: ...)`
+    static func firaGOEight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOEight, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-ExtraBold", size: ...)`
+    static func firaGOExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOExtraBold, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-ExtraLight", size: ...)`
+    static func firaGOExtraLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOExtraLight, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Four", size: ...)`
+    static func firaGOFour(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOFour, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Hair", size: ...)`
+    static func firaGOHair(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOHair, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Heavy", size: ...)`
+    static func firaGOHeavy(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOHeavy, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Light", size: ...)`
+    static func firaGOLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOLight, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Medium", size: ...)`
+    static func firaGOMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOMedium, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Regular", size: ...)`
+    static func firaGORegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGORegular, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-SemiBold", size: ...)`
+    static func firaGOSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOSemiBold, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Thin", size: ...)`
+    static func firaGOThin(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOThin, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-Two", size: ...)`
+    static func firaGOTwo(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOTwo, size: size)
+    }
+
+    /// `UIFont(name: "FiraGO-UltraLight", size: ...)`
+    static func firaGOUltraLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: firaGOUltraLight, size: size)
+    }
+
+    /// `UIFont(name: "PantonMtav3-Bold", size: ...)`
+    static func pantonMtav3Bold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonMtav3Bold, size: size)
+    }
+
+    /// `UIFont(name: "PantonMtav3-ExtraBold", size: ...)`
+    static func pantonMtav3ExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonMtav3ExtraBold, size: size)
+    }
+
+    /// `UIFont(name: "PantonMtav3-Regular", size: ...)`
+    static func pantonMtav3Regular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonMtav3Regular, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.firaGOBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Bold' could not be loaded, is 'FiraGO-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOBook(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Book' could not be loaded, is 'FiraGO-Book.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOEight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Eight' could not be loaded, is 'FiraGO-Eight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-ExtraBold' could not be loaded, is 'FiraGO-ExtraBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOExtraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-ExtraLight' could not be loaded, is 'FiraGO-ExtraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOFour(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Four' could not be loaded, is 'FiraGO-Four.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOHair(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Hair' could not be loaded, is 'FiraGO-Hair.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOHeavy(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Heavy' could not be loaded, is 'FiraGO-Heavy.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Light' could not be loaded, is 'FiraGO-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Medium' could not be loaded, is 'FiraGO-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGORegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Regular' could not be loaded, is 'FiraGO-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-SemiBold' could not be loaded, is 'FiraGO-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Thin' could not be loaded, is 'FiraGO-Thin.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOTwo(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Two' could not be loaded, is 'FiraGO-Two.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.firaGOUltraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-UltraLight' could not be loaded, is 'FiraGO-UltraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonMtav3Bold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Bold' could not be loaded, is 'PantonMtav3-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonMtav3ExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-ExtraBold' could not be loaded, is 'PantonMtav3-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonMtav3Regular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Regular' could not be loaded, is 'PantonMtav3-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}
