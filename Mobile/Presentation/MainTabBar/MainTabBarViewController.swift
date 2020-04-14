@@ -36,18 +36,48 @@ public class MainTabBarViewController: UITabBarController {
         viewControllers = makeViewControllers()
         setupFloatingTabBar()
     }
+    
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print(#function)
+        
+//        if self.tabBar.frame.origin.y == self.view.bounds.height {
+//            self.tabBar.isHidden = true
+//        } else {
+//            self.tabBar.isHidden = false
+//        }
+        
+        tabBar.frame.size.width = view.frame.width * 0.8
+        tabBar.frame.origin.x = view.frame.width * 0.2 / 2
+        tabBar.backgroundColor = .red
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print(#function)
+
+    }
 
     func hideHeader() {
+        
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
-            self.tabBarTopConstraint.isActive = true
-            self.view.layoutIfNeeded()
+//            self.tabBarTopConstraint.isActive = true
+//            self.view.layoutIfNeeded()
+
+            self.tabBar.frame.origin.y = self.view.bounds.height
+        }, completion: { _ in
+
         })
     }
 
     func showHeader() {
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
-            self.tabBarTopConstraint.isActive = false
-            self.view.layoutIfNeeded()
+//            self.tabBarTopConstraint.isActive = false
+//            self.view.layoutIfNeeded()
+
+            self.tabBar.frame.origin.y = self.view.bounds.height - self.tabBar.frame.height
+        }, completion: { _ in
+            
         })
     }
 
@@ -90,24 +120,25 @@ public class MainTabBarViewController: UITabBarController {
         tabBar.backgroundColor = .clear
         tabBar.backgroundImage = UIImage()
         tabBar.shadowImage = UIImage()
-        tabBar.isHidden = true
+        tabBar.clipsToBounds = false
+        tabBar.backgroundColor = .blue
     }
 
     private func setupFloatingTabBar() {
         let wrapperView = AppCircularView()
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
-        wrapperView.backgroundColor = .white
+        wrapperView.backgroundColor = DesignSystem.Color.neutral600
         wrapperView.hasSquareBorderRadius = true
 
-        view.addSubview(wrapperView)
+        tabBar.addSubview(wrapperView)
 
-        self.tabBarTopConstraint = wrapperView.topAnchor.constraint(equalTo: view.bottomAnchor)
+        self.tabBarTopConstraint = wrapperView.topAnchor.constraint(equalTo: tabBar.bottomAnchor)
         self.tabBarTopConstraint.isActive = false
 
-        wrapperView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        let bottomConstraint = wrapperView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        bottomConstraint.priority = UILayoutPriority(rawValue: 999)
-        bottomConstraint.isActive = true
+        wrapperView.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor).isActive = true
+//        let bottomConstraint = wrapperView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+//        bottomConstraint.priority = UILayoutPriority(rawValue: 999)
+//        bottomConstraint.isActive = true
 
         wrapperView.addSubview(tabBarStackView)
         tabBarStackView.placeEdgeToEdge(in: wrapperView)
@@ -348,3 +379,21 @@ public struct EdgeConstraint {
 //        return true
 //    }
 //}
+
+extension UIViewController {
+
+    func setTabBarHidden(_ hidden: Bool, animated: Bool = true, duration: TimeInterval = 0.3) {
+        if animated {
+            if let frame = self.tabBarController?.tabBar.frame {
+                let factor: CGFloat = hidden ? 1 : -1
+                let y = frame.origin.y + (frame.size.height * factor)
+                UIView.animate(withDuration: duration, animations: {
+                    self.tabBarController?.tabBar.frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: frame.height)
+                })
+                return
+            }
+        }
+        self.tabBarController?.tabBar.isHidden = hidden
+    }
+
+}

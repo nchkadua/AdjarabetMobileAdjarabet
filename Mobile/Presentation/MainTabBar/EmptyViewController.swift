@@ -11,6 +11,8 @@ public class EmptyViewController: UIViewController {
 
     public override func viewDidLoad() {
         scrollView.delegate = self
+//        scrollView.isHidden = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(push))
     }
 
     public override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -19,6 +21,12 @@ public class EmptyViewController: UIViewController {
         } else {
             return .default
         }
+    }
+    
+    @objc func push() {
+        let v1 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
+        v1.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(v1, animated: true)
     }
 }
 
