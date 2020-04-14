@@ -17,6 +17,7 @@ public class HomeViewController: UIViewController {
         view.backgroundColor = DesignSystem.Color.neutral800
         setLeftBarButtonItemTitle(to: "Games")
         bindToAuthButtonActions()
+        setProfileBarButtonItem(text: "₾ 240.56")
     }
 
     private func bindToAuthButtonActions() {

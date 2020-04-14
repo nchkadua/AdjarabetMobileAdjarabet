@@ -69,6 +69,7 @@
 		D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F7E2445A64E004C96DB /* HomeViewController.swift */; };
 		D8C73F812445A656004C96DB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C73F802445A656004C96DB /* Home.storyboard */; };
 		D8C73F832445BB00004C96DB /* CommontBarButtonProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F822445BB00004C96DB /* CommontBarButtonProviding.swift */; };
+		D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F842445C63D004C96DB /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		D8C73F7E2445A64E004C96DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D8C73F802445A656004C96DB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D8C73F822445BB00004C96DB /* CommontBarButtonProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommontBarButtonProviding.swift; sourceTree = "<group>"; };
+		D8C73F842445C63D004C96DB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-production.xcconfig"; sourceTree = "<group>"; };
 		FDFC63146B84761D3EA657AA /* Pods-Mobile.debug-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug-production.xcconfig"; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			children = (
 				D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */,
 				D807846A24439E4500003892 /* String+Extension.swift */,
+				D8C73F842445C63D004C96DB /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				D85C9C2924336CE800F1D4FE /* EmptyViewController.swift in Sources */,
 				D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
+				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
 			);
