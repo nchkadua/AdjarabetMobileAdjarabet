@@ -7,7 +7,6 @@
 //
 
 public class MainTabBarViewController: UITabBarController {
-    public var animationDuration: TimeInterval { 0.3 }
     private var tabBarTopConstraint: NSLayoutConstraint!
 
     private lazy var tabBarStackView: UIStackView = {
@@ -25,120 +24,105 @@ public class MainTabBarViewController: UITabBarController {
         tabBarStackView.arrangedSubviews.compactMap { $0 as? TabBarButton }
     }
 
+    public var animationDuration: TimeInterval { 0.3 }
+
     public override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(true, animated: false)
         delegate = self
-        hidesBottomBarWhenPushed = true
-        setupTabBar()
-
         viewControllers = makeViewControllers()
+
+        setupTabBar()
         setupFloatingTabBar()
     }
-    
+
     public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        print(#function)
-        
-//        if self.tabBar.frame.origin.y == self.view.bounds.height {
-//            self.tabBar.isHidden = true
-//        } else {
-//            self.tabBar.isHidden = false
-//        }
-        
-        tabBar.frame.size.width = view.frame.width * 0.8
-        tabBar.frame.origin.x = view.frame.width * 0.2 / 2
-        tabBar.backgroundColor = .red
+        tabBar.isHidden = true
     }
-    
+
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        print(#function)
-
+        tabBar.isHidden = true
     }
 
-    func hideHeader() {
-        
+    public func hideFloatingTabBar() {
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
-//            self.tabBarTopConstraint.isActive = true
-//            self.view.layoutIfNeeded()
-
-            self.tabBar.frame.origin.y = self.view.bounds.height
+            self.tabBarTopConstraint.isActive = true
+            self.view.layoutIfNeeded()
         }, completion: { _ in
-
         })
     }
 
-    func showHeader() {
+    public func showFloatingTabBar() {
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
-//            self.tabBarTopConstraint.isActive = false
-//            self.view.layoutIfNeeded()
-
-            self.tabBar.frame.origin.y = self.view.bounds.height - self.tabBar.frame.height
+            self.tabBarTopConstraint.isActive = false
+            self.view.layoutIfNeeded()
         }, completion: { _ in
-            
         })
     }
 
     private func makeViewControllers() -> [UIViewController] {
         let v1 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
         let v2 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
-        let v3 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
         let v4 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
         let v5 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
 
-        v1.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: R.image.tabBar.homeSelected())
-        v2.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.discover(), selectedImage: R.image.tabBar.discoverSelected())
-        v3.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.addProduct(), selectedImage: R.image.tabBar.addProduct())
-        v4.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.chat(), selectedImage: R.image.tabBar.chatSelected())
-        v5.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.settgins(), selectedImage: R.image.tabBar.settingsSelected())
+        v1.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: nil)
+        v2.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.sports(), selectedImage: nil)
+        v4.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
+        v5.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
 
         v1.view.backgroundColor = .red
         v2.view.backgroundColor = .yellow
-        v3.view.backgroundColor = .black
         v4.view.backgroundColor = .blue
         v5.view.backgroundColor = .purple
 
-        v1.title = "Page 1"
-        v2.title = "Page 2"
-        v3.title = "Notifications"
-        v4.title = "Page 4"
-        v5.title = "Page 5"
-
-        return [v1, v2, v3, v4, v5].map { $0.wrap(in: AppNavigationController.self) }
+        return [v1, v2, v4, v5].map { $0.wrap(in: AppNavigationController.self) }
     }
 
     private func setupTabBar() {
-        tabBar.tintColor = R.color.tabBar.tintColor()
-        tabBar.unselectedItemTintColor = R.color.tabBar.unselectedItemTintColor()
+        tabBar.tintColor = DesignSystem.Color.secondary400
+        tabBar.unselectedItemTintColor = DesignSystem.Color.neutral100
         tabBar.barTintColor = .clear
         tabBar.isTranslucent = true
         tabBar.layer.masksToBounds = true
         tabBar.layer.borderColor = nil
         tabBar.layer.borderWidth = 0
-        tabBar.backgroundColor = .clear
         tabBar.backgroundImage = UIImage()
         tabBar.shadowImage = UIImage()
         tabBar.clipsToBounds = false
-        tabBar.backgroundColor = .blue
+        tabBar.backgroundColor = DesignSystem.Color.neutral600
+        tabBar.isHidden = true
     }
 
     private func setupFloatingTabBar() {
-        let wrapperView = AppCircularView()
+        let wrapperView = AppShadowView()
+
+        wrapperView.shadowColor = DesignSystem.Color.neutral800
+        wrapperView.shadowOffset = .init(width: 0, height: 5)
+        wrapperView.shadowOpacity = 0.1
+        wrapperView.shadowBlur = 5
+
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
         wrapperView.backgroundColor = DesignSystem.Color.neutral600
         wrapperView.hasSquareBorderRadius = true
 
-        tabBar.addSubview(wrapperView)
+        view.addSubview(wrapperView)
 
-        self.tabBarTopConstraint = wrapperView.topAnchor.constraint(equalTo: tabBar.bottomAnchor)
+        self.tabBarTopConstraint = wrapperView.topAnchor.constraint(equalTo: view.bottomAnchor)
         self.tabBarTopConstraint.isActive = false
 
-        wrapperView.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor).isActive = true
-//        let bottomConstraint = wrapperView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-//        bottomConstraint.priority = UILayoutPriority(rawValue: 999)
-//        bottomConstraint.isActive = true
+        wrapperView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+        let bottomConstraint = view.bottomAnchor.constraint(greaterThanOrEqualTo: wrapperView.bottomAnchor, constant: 20)
+        bottomConstraint.priority = UILayoutPriority(rawValue: 999)
+        bottomConstraint.isActive = true
+
+        let bottomSafeAreaConstraint = wrapperView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        bottomSafeAreaConstraint.priority = UILayoutPriority(rawValue: 998)
+        bottomSafeAreaConstraint.isActive = true
 
         wrapperView.addSubview(tabBarStackView)
         tabBarStackView.placeEdgeToEdge(in: wrapperView)
@@ -148,23 +132,17 @@ public class MainTabBarViewController: UITabBarController {
             button.translatesAutoresizingMaskIntoConstraints = false
             tabBarStackView.addArrangedSubview(button)
             button.setImage(barButton.image, for: .normal)
-            button.setImage(barButton.selectedImage, for: .selected)
-            button.tintColor = tabBar.tintColor
-            button.setTitleColor(tabBar.tintColor, for: .selected)
-            button.setTitleColor(tabBar.unselectedItemTintColor, for: .normal)
-            button.heightAnchor.constraint(equalToConstant: 56).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 60).isActive = true
+            button.tintColor = tabBar.unselectedItemTintColor
+            button.heightAnchor.constraint(equalToConstant: 60).isActive = true
+            button.widthAnchor.constraint(equalToConstant: 66).isActive = true
             button.addTarget(self, action: #selector(barButtonDidTap(_:)), for: .touchUpInside)
         }
 
-        tabBarButtons[0].isSelected = true
+        tabBarButtons[selectedIndex].tintColor = tabBar.tintColor
     }
 
     @objc private func barButtonDidTap(_ sender: TabBarButton) {
         guard selectedIndex != sender.index else {return}
-
-//        tabBarButtons[selectedIndex].isSelected = false
-//        sender.isSelected = true
 
         UIView.transition(with: tabBarButtons[selectedIndex],
                           duration: 0.2,
@@ -179,10 +157,23 @@ public class MainTabBarViewController: UITabBarController {
                           completion: nil)
 
         self.selectedIndex = sender.index
+    }
 
-//        if tabBarController(self, shouldSelect: viewControllers![sender.index]) {
-//
-//        }
+    public override var selectedIndex: Int {
+        get {
+            return super.selectedIndex
+        }
+        set {
+            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
+                tabBarButtons[super.selectedIndex].tintColor = tabBar.unselectedItemTintColor
+            }
+
+            super.selectedIndex = newValue
+
+            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
+                tabBarButtons[super.selectedIndex].tintColor = tabBar.tintColor
+            }
+        }
     }
 }
 
@@ -201,15 +192,6 @@ public class TabBarButton: UIButton {
 
 extension MainTabBarViewController: UITabBarControllerDelegate {
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//        if let controllers = tabBarController.viewControllers, let index = controllers.firstIndex(of: viewController), index == 2 {
-//            let vc = R.storyboard.photoCapture().instantiate(controller: PhotoCaptureViewController.self)!
-//            vc.mode = .photoGallery(hasCloseButton: true)
-//            vc.modalPresentationStyle = .fullScreen
-//            vc.hidesBottomBarWhenPushed = true
-//            present(vc, animated: true, completion: nil)
-//            return false
-//        }
-
         let tabViewControllers = tabBarController.viewControllers!
         guard let toIndex = tabViewControllers.firstIndex(of: viewController) else {
             return false
@@ -240,23 +222,6 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
             return
         }
 
-//        selectedIndex = index
-//        view.layoutIfNeeded()
-//        selectedIndex = fromIndex
-//        view.layoutIfNeeded()
-//
-//        let vc = R.storyboard.main().instantiate(controller: EmptyViewController.self)!
-//        vc.view.backgroundColor = .red
-//        vc.title = "awdawdawd"
-//        let nav = vc.wrap(in: AppNavigationController.self)
-//
-//        nav.view.translatesAutoresizingMaskIntoConstraints = false
-//        fromView.superview?.addSubview(nav.view)
-//        nav.view.placeEdgeToEdge(in: fromView.superview!)
-
-//        print(tabViewControllers[index].parent?.className)
-//        view.addSubview(toView)
-
         fromView.superview?.addSubview(toView)
 
         view.isUserInteractionEnabled = false
@@ -271,16 +236,6 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
         })
     }
 }
-
-//extension UITabBar {
-//    override open var traitCollection: UITraitCollection {
-//        if UIDevice.current.userInterfaceIdiom == .pad {
-//            return UITraitCollection(horizontalSizeClass: .compact)
-//        }
-//
-//        return super.traitCollection
-//    }
-//}
 
 public extension UIViewController {
     func scrollToTop() {
@@ -303,97 +258,4 @@ public extension UIViewController {
 
         scrollToTop(view: view)
     }
-}
-
-public extension UIView {
-    var snapshot: UIImage {
-        UIGraphicsImageRenderer(bounds: bounds).image { rendererContext in
-            layer.render(in: rendererContext.cgContext)
-        }
-    }
-
-    @discardableResult
-    func placeEdgeToEdge(in parentView: UIView) -> EdgeConstraint {
-        let top = topAnchor.constraint(equalTo: parentView.topAnchor)
-        let bottom = bottomAnchor.constraint(equalTo: parentView.bottomAnchor)
-        let left = leadingAnchor.constraint(equalTo: parentView.leadingAnchor)
-        let right = trailingAnchor.constraint(equalTo: parentView.trailingAnchor)
-
-        NSLayoutConstraint.activate([top, bottom, left, right])
-
-        return EdgeConstraint(top: top, bottom: bottom, leading: left, traling: right)
-    }
-
-    @discardableResult
-    func pinSafely(in parentView: UIView) -> EdgeConstraint {
-        let top = topAnchor.constraint(equalTo: parentView.safeAreaLayoutGuide.topAnchor)
-        let bottom = bottomAnchor.constraint(equalTo: parentView.safeAreaLayoutGuide.bottomAnchor)
-        let left = leadingAnchor.constraint(equalTo: parentView.safeAreaLayoutGuide.leadingAnchor)
-        let right = trailingAnchor.constraint(equalTo: parentView.safeAreaLayoutGuide.trailingAnchor)
-
-        NSLayoutConstraint.activate([top, bottom, left, right])
-
-        return EdgeConstraint(top: top, bottom: bottom, leading: left, traling: right)
-    }
-
-    func removeAllSubViews() {
-        subviews.forEach { $0.removeFromSuperview() }
-    }
-}
-
-public struct EdgeConstraint {
-    public let top: NSLayoutConstraint
-    public let bottom: NSLayoutConstraint
-    public let leading: NSLayoutConstraint
-    public let traling: NSLayoutConstraint
-}
-
-//func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-//
-//    // Creating the 'to' and 'from' views for the transition
-//    let fromView = tabBarController.selectedViewController!.view
-//    let toView = viewController.view
-//
-//    if fromView == toView {
-//        // If views are the same, then don't do a transition
-//        return false
-//    }
-//
-//    self.view.userInteractionEnabled = false
-//
-//    if let window = fromView.window {
-//        let overlayView = UIScreen.mainScreen().snapshotViewAfterScreenUpdates(false)
-//        viewController.view.addSubview(overlayView)
-//        UIView.transitionFromView(fromView, toView: toView, duration: 2.0, options: .TransitionCrossDissolve, completion: { (finish) in
-//            window.rootViewController = viewController
-//            UIView.animateWithDuration(0.4, delay: 0.0, options: .TransitionCrossDissolve, animations: {
-//                overlayView.alpha = 0
-//                }, completion: { (finish) in
-//                    overlayView.removeFromSuperview()
-//                })
-//            })
-//        }
-//
-//        self.view.userInteractionEnabled = true
-//
-//        return true
-//    }
-//}
-
-extension UIViewController {
-
-    func setTabBarHidden(_ hidden: Bool, animated: Bool = true, duration: TimeInterval = 0.3) {
-        if animated {
-            if let frame = self.tabBarController?.tabBar.frame {
-                let factor: CGFloat = hidden ? 1 : -1
-                let y = frame.origin.y + (frame.size.height * factor)
-                UIView.animate(withDuration: duration, animations: {
-                    self.tabBarController?.tabBar.frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: frame.height)
-                })
-                return
-            }
-        }
-        self.tabBarController?.tabBar.isHidden = hidden
-    }
-
 }

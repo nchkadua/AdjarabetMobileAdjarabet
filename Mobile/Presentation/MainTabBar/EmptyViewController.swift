@@ -22,7 +22,7 @@ public class EmptyViewController: UIViewController {
             return .default
         }
     }
-    
+
     @objc func push() {
         let v1 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
         v1.hidesBottomBarWhenPushed = true
@@ -63,11 +63,11 @@ extension EmptyViewController: UIScrollViewDelegate {
 
     func hideHeader() {
         let tabBar = self.tabBarController as? MainTabBarViewController
-        tabBar?.hideHeader()
+        tabBar?.hideFloatingTabBar()
     }
 
     func showHeader() {
         let tabBar = self.tabBarController as? MainTabBarViewController
-        tabBar?.showHeader()
+        tabBar?.showFloatingTabBar()
     }
 }
