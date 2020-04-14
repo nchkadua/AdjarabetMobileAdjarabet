@@ -337,7 +337,6 @@
 		D85C9C2424336CCC00F1D4FE /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */,
 				D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */,
 				D85C9C2824336CE800F1D4FE /* EmptyViewController.swift */,
 				D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */,
@@ -391,6 +390,23 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		D87E3C5B244600B1004A4BDF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D87E3C5C244600BF004A4BDF /* Controllers */,
+				D85C9C1524336BF500F1D4FE /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D87E3C5C244600BF004A4BDF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		D8A47DC224335B4B0077AA8E = {
 			isa = PBXGroup;
 			children = (
@@ -428,11 +444,10 @@
 			children = (
 				D85C9C352433749D00F1D4FE /* AppDelegate */,
 				D85C9C362433754A00F1D4FE /* BuildPhases */,
+				D87E3C5B244600B1004A4BDF /* Components */,
 				D8A47DEC24335EA10077AA8E /* Extensions */,
-				D807846C2444726000003892 /* Fonts */,
 				D8A47DEB24335E070077AA8E /* Resources */,
 				D85C9C1C24336C9500F1D4FE /* Utils */,
-				D85C9C1524336BF500F1D4FE /* Views */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -468,6 +483,7 @@
 		D8A47DEB24335E070077AA8E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D807846C2444726000003892 /* Fonts */,
 				D85C9C1124336B4C00F1D4FE /* R.generated.swift */,
 				D8A47DD724335B4C0077AA8E /* Assets.xcassets */,
 				D8A47DDC24335B4C0077AA8E /* Info.plist */,
