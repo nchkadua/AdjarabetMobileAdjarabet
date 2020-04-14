@@ -62,6 +62,12 @@
 		D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */; };
 		D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C3124336D0800F1D4FE /* Login.storyboard */; };
 		D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */; };
+		D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C4F2445FDC3004A4BDF /* SportsViewController.swift */; };
+		D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */; };
+		D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */; };
+		D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C552445FDEF004A4BDF /* Sports.storyboard */; };
+		D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C572445FE08004A4BDF /* Promotions.storyboard */; };
+		D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C592445FE6C004A4BDF /* Notifications.storyboard */; };
 		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
 		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
 		D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD724335B4C0077AA8E /* Assets.xcassets */; };
@@ -147,6 +153,12 @@
 		D85C9C3124336D0800F1D4FE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
+		D87E3C4F2445FDC3004A4BDF /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
+		D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
+		D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		D87E3C552445FDEF004A4BDF /* Sports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sports.storyboard; sourceTree = "<group>"; };
+		D87E3C572445FE08004A4BDF /* Promotions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Promotions.storyboard; sourceTree = "<group>"; };
+		D87E3C592445FE6C004A4BDF /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
 		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +256,15 @@
 				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D845BFBA2445FD7400419A2C /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				D87E3C4F2445FDC3004A4BDF /* SportsViewController.swift */,
+				D87E3C552445FDEF004A4BDF /* Sports.storyboard */,
+			);
+			path = Sports;
 			sourceTree = "<group>";
 		};
 		D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */ = {
@@ -352,6 +373,24 @@
 			path = BuildPhases;
 			sourceTree = "<group>";
 		};
+		D87E3C4D2445FDA3004A4BDF /* Promotions */ = {
+			isa = PBXGroup;
+			children = (
+				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
+				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
+			);
+			path = Promotions;
+			sourceTree = "<group>";
+		};
+		D87E3C4E2445FDAD004A4BDF /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */,
+				D87E3C592445FE6C004A4BDF /* Notifications.storyboard */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		D8A47DC224335B4B0077AA8E = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +449,9 @@
 			children = (
 				D85C9C2424336CCC00F1D4FE /* MainTabBar */,
 				D8C73F7D2445A62D004C96DB /* Home */,
+				D845BFBA2445FD7400419A2C /* Sports */,
+				D87E3C4D2445FDA3004A4BDF /* Promotions */,
+				D87E3C4E2445FDAD004A4BDF /* Notifications */,
 				D85C9C2524336CD100F1D4FE /* Login */,
 			);
 			path = Presentation;
@@ -619,10 +661,13 @@
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
 				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,
+				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
 				D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */,
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,
+				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
 				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
+				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +768,7 @@
 				D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommontBarButtonProviding.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
+				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
 				D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
@@ -752,12 +798,14 @@
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
+				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
 				D85C9C2924336CE800F1D4FE /* EmptyViewController.swift in Sources */,
 				D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
+				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,6 @@ public class EmptyViewController: UIViewController {
 
     public override func viewDidLoad() {
         scrollView.delegate = self
-//        scrollView.isHidden = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(push))
     }
 

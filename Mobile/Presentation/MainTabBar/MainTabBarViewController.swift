@@ -64,22 +64,17 @@ public class MainTabBarViewController: UITabBarController {
     }
 
     private func makeViewControllers() -> [UIViewController] {
-        let v1 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
-        let v2 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
-        let v4 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
-        let v5 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
+        let v1 = R.storyboard.home().instantiate(controller: HomeViewController.self)!
+        let v2 = R.storyboard.sports().instantiate(controller: SportsViewController.self)!
+        let v3 = R.storyboard.promotions().instantiate(controller: PromotionsViewController.self)!
+        let v4 = R.storyboard.notifications().instantiate(controller: NotificationsViewController.self)!
 
         v1.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: nil)
         v2.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.sports(), selectedImage: nil)
-        v4.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
-        v5.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
+        v3.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
+        v4.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
 
-        v1.view.backgroundColor = .red
-        v2.view.backgroundColor = .yellow
-        v4.view.backgroundColor = .blue
-        v5.view.backgroundColor = .purple
-
-        return [v1, v2, v4, v5].map { $0.wrap(in: AppNavigationController.self) }
+        return [v1, v2, v3, v4].map { $0.wrap(in: AppNavigationController.self) }
     }
 
     private func setupTabBar() {
