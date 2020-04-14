@@ -30,6 +30,7 @@ class DesignSystemTests: XCTestCase {
         XCTAssertEqual(DesignSystem.Color.neutral600, R.color.colorGuide.neutral.neutral600()!)
         XCTAssertEqual(DesignSystem.Color.neutral700, R.color.colorGuide.neutral.neutral700()!)
         XCTAssertEqual(DesignSystem.Color.neutral800, R.color.colorGuide.neutral.neutral800()!)
+        XCTAssertEqual(DesignSystem.Color.neutral900, R.color.colorGuide.neutral.neutral900()!)
 
         /// Primary colors
         XCTAssertEqual(DesignSystem.Color.primary200, R.color.colorGuide.primary.primary200()!)

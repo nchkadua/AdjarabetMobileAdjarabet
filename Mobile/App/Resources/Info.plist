@@ -88,5 +88,7 @@
 		<string>FiraGO-Two.ttf</string>
 		<string>FiraGO-UltraLight.ttf</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

@@ -19,6 +19,7 @@ public enum DesignSystem {
         public static var neutral600: UIColor { R.color.colorGuide.neutral.neutral600()! }
         public static var neutral700: UIColor { R.color.colorGuide.neutral.neutral700()! }
         public static var neutral800: UIColor { R.color.colorGuide.neutral.neutral800()! }
+        public static var neutral900: UIColor { R.color.colorGuide.neutral.neutral900()! }
 
         /// Primary colors
         public static var primary200: UIColor { R.color.colorGuide.primary.primary200()! }
