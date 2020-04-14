@@ -95,7 +95,7 @@ public class MainTabBarViewController: UITabBarController {
     private func setupFloatingTabBar() {
         let wrapperView = AppShadowView()
 
-        wrapperView.shadowColor = DesignSystem.Color.neutral800
+        wrapperView.shadowColor = DesignSystem.Color.neutral900
         wrapperView.shadowOffset = .init(width: 0, height: 5)
         wrapperView.shadowOpacity = 0.1
         wrapperView.shadowBlur = 5
