@@ -12,25 +12,26 @@ public class AppNavigationController: UINavigationController, UIGestureRecognize
 
         interactivePopGestureRecognizer?.delegate = self
         delegate = self
-//        let color = DesignSystem.Color.mrktBlack
-//        navigationBar.titleTextAttributes = [
-//            NSAttributedString.Key.foregroundColor: color,
-//            NSAttributedString.Key.font: AppFont.helveticaBold.with(size: 16)]
-//        navigationBar.tintColor = color
 
-        removeDefaultSettings()
+        setupDefaultSettings()
     }
 
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         viewControllers.count > 1
     }
 
-    private func removeDefaultSettings() {
-//        navigationBar.setBackgroundImage(UIImage(), for: .default)
+    private func setupDefaultSettings() {
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = .white
+        navigationBar.barTintColor = DesignSystem.Color.neutral900
         view.backgroundColor = .clear
+
+        let color = DesignSystem.Color.neutral100
+        navigationBar.titleTextAttributes = [
+            .foregroundColor: color,
+            .font: DesignSystem.Typography.h4.description.font]
+        navigationBar.tintColor = color
     }
 
     public override var childForStatusBarStyle: UIViewController? { topViewController }
