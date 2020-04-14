@@ -351,34 +351,6 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.color.tabBar` struct is generated, and contains static references to 2 colors.
-    struct tabBar {
-      /// Color `tintColor`.
-      static let tintColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "TabBar/tintColor")
-      /// Color `unselectedItemTintColor`.
-      static let unselectedItemTintColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "TabBar/unselectedItemTintColor")
-
-      #if os(iOS) || os(tvOS)
-      /// `UIColor(named: "tintColor", bundle: ..., traitCollection: ...)`
-      @available(tvOS 11.0, *)
-      @available(iOS 11.0, *)
-      static func tintColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-        return UIKit.UIColor(resource: R.color.tabBar.tintColor, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIColor(named: "unselectedItemTintColor", bundle: ..., traitCollection: ...)`
-      @available(tvOS 11.0, *)
-      @available(iOS 11.0, *)
-      static func unselectedItemTintColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-        return UIKit.UIColor(resource: R.color.tabBar.unselectedItemTintColor, compatibleWith: traitCollection)
-      }
-      #endif
-
-      fileprivate init() {}
-    }
-
     fileprivate init() {}
   }
 
@@ -748,59 +720,14 @@ struct R: Rswift.Validatable {
 
     /// This `R.image.tabBar` struct is generated, and contains static references to 9 images.
     struct tabBar {
-      /// Image `addProduct`.
-      static let addProduct = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/addProduct")
-      /// Image `chatSelected`.
-      static let chatSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/chatSelected")
-      /// Image `chat`.
-      static let chat = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/chat")
-      /// Image `discoverSelected`.
-      static let discoverSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/discoverSelected")
-      /// Image `discover`.
-      static let discover = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/discover")
-      /// Image `homeSelected`.
-      static let homeSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/homeSelected")
       /// Image `home`.
       static let home = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/home")
-      /// Image `settgins`.
-      static let settgins = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/settgins")
-      /// Image `settingsSelected`.
-      static let settingsSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/settingsSelected")
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "addProduct", bundle: ..., traitCollection: ...)`
-      static func addProduct(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.tabBar.addProduct, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "chat", bundle: ..., traitCollection: ...)`
-      static func chat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.tabBar.chat, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "chatSelected", bundle: ..., traitCollection: ...)`
-      static func chatSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.tabBar.chatSelected, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "discover", bundle: ..., traitCollection: ...)`
-      static func discover(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.tabBar.discover, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "discoverSelected", bundle: ..., traitCollection: ...)`
-      static func discoverSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.tabBar.discoverSelected, compatibleWith: traitCollection)
-      }
-      #endif
+      /// Image `notification`.
+      static let notification = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/notification")
+      /// Image `promotions`.
+      static let promotions = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/promotions")
+      /// Image `sports`.
+      static let sports = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/sports")
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "home", bundle: ..., traitCollection: ...)`
@@ -810,23 +737,23 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "homeSelected", bundle: ..., traitCollection: ...)`
-      static func homeSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.tabBar.homeSelected, compatibleWith: traitCollection)
+      /// `UIImage(named: "notification", bundle: ..., traitCollection: ...)`
+      static func notification(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.tabBar.notification, compatibleWith: traitCollection)
       }
       #endif
 
       #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "settgins", bundle: ..., traitCollection: ...)`
-      static func settgins(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.tabBar.settgins, compatibleWith: traitCollection)
+      /// `UIImage(named: "promotions", bundle: ..., traitCollection: ...)`
+      static func promotions(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.tabBar.promotions, compatibleWith: traitCollection)
       }
       #endif
 
       #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "settingsSelected", bundle: ..., traitCollection: ...)`
-      static func settingsSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.tabBar.settingsSelected, compatibleWith: traitCollection)
+      /// `UIImage(named: "sports", bundle: ..., traitCollection: ...)`
+      static func sports(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.tabBar.sports, compatibleWith: traitCollection)
       }
       #endif
 

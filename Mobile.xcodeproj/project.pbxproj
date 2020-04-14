@@ -29,6 +29,7 @@
 		D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */; };
 		D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848F2444727E00003892 /* PantonMtav3-Regular.otf */; };
 		D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784A424447ABF00003892 /* DesignSystemTests.swift */; };
+		D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845BFB82445F93900419A2C /* UIView+Extension.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */; };
 		D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */; };
@@ -111,6 +112,7 @@
 		D807849B2444770F00003892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D80784A424447ABF00003892 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
+		D845BFB82445F93900419A2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
 		D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+BalanceManagementServices.swift"; sourceTree = "<group>"; };
 		D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+AuthenticationService.swift"; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */,
 				D807846A24439E4500003892 /* String+Extension.swift */,
 				D8C73F842445C63D004C96DB /* UIImage+Extension.swift */,
+				D845BFB82445F93900419A2C /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
+				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
 				D85C9C2924336CE800F1D4FE /* EmptyViewController.swift in Sources */,
 				D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,

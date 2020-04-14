@@ -18,8 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        guard let _ = (scene as? UIWindowScene) else { return }
 
 //        let window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = R.storyboard.home().instantiate(controller: HomeViewController.self)?.wrap(in: AppNavigationController.self)
-//        window?.rootViewController = R.storyboard.mainTabBar().instantiate(controller: MainTabBarViewController.self)?.wrapInNav()
+         window?.rootViewController = R.storyboard.mainTabBar().instantiate(controller: MainTabBarViewController.self)?.wrapInNav()
 //        self.window = window
 //        window.makeKeyAndVisible()
     }
