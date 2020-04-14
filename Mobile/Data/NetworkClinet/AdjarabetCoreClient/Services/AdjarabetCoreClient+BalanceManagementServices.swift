@@ -1,3 +1,11 @@
+//
+//  AdjarabetCoreClient+BalanceManagementServices.swift
+//  Mobile
+//
+//  Created by Shota Ioramashvili on 4/12/20.
+//  Copyright © 2020 Adjarabet. All rights reserved.
+//
+
 extension AdjarabetCoreClient: BalanceManagementServices {
     public func balance<T: AdjarabetCoreCodableType>(userId: Int, currencyId: Int, isSingle: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) {
         let request = standartRequestBuilder

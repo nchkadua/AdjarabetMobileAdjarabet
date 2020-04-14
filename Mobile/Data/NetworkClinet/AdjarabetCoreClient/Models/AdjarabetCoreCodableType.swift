@@ -1,3 +1,11 @@
+//
+//  AdjarabetCoreCodableType.swift
+//  Mobile
+//
+//  Created by Shota Ioramashvili on 4/12/20.
+//  Copyright © 2020 Adjarabet. All rights reserved.
+//
+
 public protocol AdjarabetCoreCodableType {
     associatedtype T where T: Codable
     associatedtype H where H: HeaderProtocol

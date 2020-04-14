@@ -1,3 +1,11 @@
+//
+//  AdjarabetCoreClient+AuthenticationService.swift
+//  Mobile
+//
+//  Created by Shota Ioramashvili on 4/12/20.
+//  Copyright © 2020 Adjarabet. All rights reserved.
+//
+
 extension AdjarabetCoreClient: AuthenticationService {
     public func login<T>(username: String, password: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) where T: AdjarabetCoreCodableType {
         let request = standartRequestBuilder
