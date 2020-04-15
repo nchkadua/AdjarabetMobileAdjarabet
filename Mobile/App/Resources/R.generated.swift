@@ -914,13 +914,8 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
-      let emptyViewController = StoryboardViewControllerResource<EmptyViewController>(identifier: "EmptyViewController")
       let mainTabBarViewController = StoryboardViewControllerResource<MainTabBarViewController>(identifier: "MainTabBarViewController")
       let name = "MainTabBar"
-
-      func emptyViewController(_: Void = ()) -> EmptyViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: emptyViewController)
-      }
 
       func mainTabBarViewController(_: Void = ()) -> MainTabBarViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainTabBarViewController)
@@ -929,7 +924,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.mainTabBar().emptyViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'emptyViewController' could not be loaded from storyboard 'MainTabBar' as 'EmptyViewController'.") }
         if _R.storyboard.mainTabBar().mainTabBarViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarViewController' could not be loaded from storyboard 'MainTabBar' as 'MainTabBarViewController'.") }
       }
 

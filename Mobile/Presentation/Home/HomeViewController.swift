@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 public class HomeViewController: UIViewController {
+    private lazy var floatingTabBarManager = FloatingTabBarManager(viewController: self)
+    private let disposeBag = DisposeBag()
+
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     public override func viewDidLoad() {
@@ -17,6 +22,19 @@ public class HomeViewController: UIViewController {
         view.backgroundColor = DesignSystem.Color.neutral800
         setLeftBarButtonItemTitle(to: "Games")
         setupAuthButtonActions()
+
+        setupScrollView()
+    }
+
+    private func setupScrollView() {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .clear
+        view.addSubview(scrollView)
+        scrollView.pinSafely(in: view)
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 3)
+
+        scrollView.rx.setDelegate(floatingTabBarManager).disposed(by: disposeBag)
     }
 
     private func setupAuthButtonActions() {

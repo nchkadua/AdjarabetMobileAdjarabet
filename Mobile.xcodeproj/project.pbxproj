@@ -29,6 +29,7 @@
 		D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */; };
 		D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848F2444727E00003892 /* PantonMtav3-Regular.otf */; };
 		D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784A424447ABF00003892 /* DesignSystemTests.swift */; };
+		D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */; };
 		D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845BFB82445F93900419A2C /* UIView+Extension.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */; };
@@ -56,7 +57,6 @@
 		D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1E24336CA400F1D4FE /* UserSession.swift */; };
 		D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */; };
 		D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */; };
-		D85C9C2924336CE800F1D4FE /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2824336CE800F1D4FE /* EmptyViewController.swift */; };
 		D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2A24336CF200F1D4FE /* LoginViewController.swift */; };
 		D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */; };
 		D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */; };
@@ -77,6 +77,7 @@
 		D8C73F812445A656004C96DB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C73F802445A656004C96DB /* Home.storyboard */; };
 		D8C73F832445BB00004C96DB /* CommontBarButtonProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F822445BB00004C96DB /* CommontBarButtonProviding.swift */; };
 		D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F842445C63D004C96DB /* UIImage+Extension.swift */; };
+		D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		D80784972444770F00003892 /* MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D807849B2444770F00003892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D80784A424447ABF00003892 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
+		D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
 		D845BFB82445F93900419A2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
@@ -146,7 +148,6 @@
 		D85C9C1E24336CA400F1D4FE /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSessionCareTaker.swift; sourceTree = "<group>"; };
 		D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		D85C9C2824336CE800F1D4FE /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		D85C9C2A24336CF200F1D4FE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
@@ -171,6 +172,7 @@
 		D8C73F802445A656004C96DB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D8C73F822445BB00004C96DB /* CommontBarButtonProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommontBarButtonProviding.swift; sourceTree = "<group>"; };
 		D8C73F842445C63D004C96DB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarManager.swift; sourceTree = "<group>"; };
 		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-production.xcconfig"; sourceTree = "<group>"; };
 		FDFC63146B84761D3EA657AA /* Pods-Mobile.debug-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug-production.xcconfig"; sourceTree = "<group>"; };
@@ -338,8 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */,
-				D85C9C2824336CE800F1D4FE /* EmptyViewController.swift */,
 				D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */,
+				D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -500,6 +502,7 @@
 				D807846A24439E4500003892 /* String+Extension.swift */,
 				D8C73F842445C63D004C96DB /* UIImage+Extension.swift */,
 				D845BFB82445F93900419A2C /* UIView+Extension.swift */,
+				D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommontBarButtonProviding.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
@@ -796,6 +800,7 @@
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				D85C9BEF2433676700F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift in Sources */,
 				D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */,
+				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
@@ -816,7 +821,6 @@
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
-				D85C9C2924336CE800F1D4FE /* EmptyViewController.swift in Sources */,
 				D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,

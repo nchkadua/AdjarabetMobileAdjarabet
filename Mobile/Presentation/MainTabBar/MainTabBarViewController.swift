@@ -47,6 +47,23 @@ public class MainTabBarViewController: UITabBarController {
         tabBar.isHidden = true
     }
 
+    public override var selectedIndex: Int {
+        get {
+            return super.selectedIndex
+        }
+        set {
+            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
+                tabBarButtons[super.selectedIndex].tintColor = tabBar.unselectedItemTintColor
+            }
+
+            super.selectedIndex = newValue
+
+            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
+                tabBarButtons[super.selectedIndex].tintColor = tabBar.tintColor
+            }
+        }
+    }
+
     public func hideFloatingTabBar() {
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
             self.tabBarTopConstraint.isActive = true
@@ -137,7 +154,10 @@ public class MainTabBarViewController: UITabBarController {
     }
 
     @objc private func barButtonDidTap(_ sender: TabBarButton) {
-        guard selectedIndex != sender.index else {return}
+        guard selectedIndex != sender.index else {
+            selectedViewController?.scrollToTop()
+            return
+        }
 
         UIView.transition(with: tabBarButtons[selectedIndex],
                           duration: 0.2,
@@ -152,23 +172,6 @@ public class MainTabBarViewController: UITabBarController {
                           completion: nil)
 
         self.selectedIndex = sender.index
-    }
-
-    public override var selectedIndex: Int {
-        get {
-            return super.selectedIndex
-        }
-        set {
-            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
-                tabBarButtons[super.selectedIndex].tintColor = tabBar.unselectedItemTintColor
-            }
-
-            super.selectedIndex = newValue
-
-            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
-                tabBarButtons[super.selectedIndex].tintColor = tabBar.tintColor
-            }
-        }
     }
 }
 
@@ -233,24 +236,5 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
 }
 
 public extension UIViewController {
-    func scrollToTop() {
-        func scrollToTop(view: UIView?) {
-            guard let view = view else { return }
-
-            switch view {
-            case let scrollView as UIScrollView where scrollView.scrollsToTop:
-                let point = CGPoint(x: 0, y: -(view.safeAreaInsets.top + scrollView.contentInset.top))
-                scrollView.setContentOffset(point, animated: true)
-                return
-            default:
-                break
-            }
-
-            for subView in view.subviews {
-                scrollToTop(view: subView)
-            }
-        }
-
-        scrollToTop(view: view)
-    }
+    var mainTabBarViewController: MainTabBarViewController? { tabBarController as? MainTabBarViewController }
 }
