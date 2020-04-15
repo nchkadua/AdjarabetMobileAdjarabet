@@ -47,6 +47,23 @@ public class MainTabBarViewController: UITabBarController {
         tabBar.isHidden = true
     }
 
+    public override var selectedIndex: Int {
+        get {
+            return super.selectedIndex
+        }
+        set {
+            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
+                tabBarButtons[super.selectedIndex].tintColor = tabBar.unselectedItemTintColor
+            }
+
+            super.selectedIndex = newValue
+
+            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
+                tabBarButtons[super.selectedIndex].tintColor = tabBar.tintColor
+            }
+        }
+    }
+
     public func hideFloatingTabBar() {
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
             self.tabBarTopConstraint.isActive = true
@@ -64,22 +81,17 @@ public class MainTabBarViewController: UITabBarController {
     }
 
     private func makeViewControllers() -> [UIViewController] {
-        let v1 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
-        let v2 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
-        let v4 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
-        let v5 = R.storyboard.mainTabBar().instantiate(controller: EmptyViewController.self)!
+        let v1 = R.storyboard.home().instantiate(controller: HomeViewController.self)!
+        let v2 = R.storyboard.sports().instantiate(controller: SportsViewController.self)!
+        let v3 = R.storyboard.promotions().instantiate(controller: PromotionsViewController.self)!
+        let v4 = R.storyboard.notifications().instantiate(controller: NotificationsViewController.self)!
 
         v1.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: nil)
         v2.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.sports(), selectedImage: nil)
-        v4.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
-        v5.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
+        v3.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
+        v4.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
 
-        v1.view.backgroundColor = .red
-        v2.view.backgroundColor = .yellow
-        v4.view.backgroundColor = .blue
-        v5.view.backgroundColor = .purple
-
-        return [v1, v2, v4, v5].map { $0.wrap(in: AppNavigationController.self) }
+        return [v1, v2, v3, v4].map { $0.wrap(in: AppNavigationController.self) }
     }
 
     private func setupTabBar() {
@@ -100,7 +112,7 @@ public class MainTabBarViewController: UITabBarController {
     private func setupFloatingTabBar() {
         let wrapperView = AppShadowView()
 
-        wrapperView.shadowColor = DesignSystem.Color.neutral800
+        wrapperView.shadowColor = DesignSystem.Color.neutral900
         wrapperView.shadowOffset = .init(width: 0, height: 5)
         wrapperView.shadowOpacity = 0.1
         wrapperView.shadowBlur = 5
@@ -142,7 +154,10 @@ public class MainTabBarViewController: UITabBarController {
     }
 
     @objc private func barButtonDidTap(_ sender: TabBarButton) {
-        guard selectedIndex != sender.index else {return}
+        guard selectedIndex != sender.index else {
+            selectedViewController?.scrollToTop()
+            return
+        }
 
         UIView.transition(with: tabBarButtons[selectedIndex],
                           duration: 0.2,
@@ -157,23 +172,6 @@ public class MainTabBarViewController: UITabBarController {
                           completion: nil)
 
         self.selectedIndex = sender.index
-    }
-
-    public override var selectedIndex: Int {
-        get {
-            return super.selectedIndex
-        }
-        set {
-            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
-                tabBarButtons[super.selectedIndex].tintColor = tabBar.unselectedItemTintColor
-            }
-
-            super.selectedIndex = newValue
-
-            if (0..<tabBarButtons.count).contains(super.selectedIndex) {
-                tabBarButtons[super.selectedIndex].tintColor = tabBar.tintColor
-            }
-        }
     }
 }
 
@@ -238,24 +236,5 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
 }
 
 public extension UIViewController {
-    func scrollToTop() {
-        func scrollToTop(view: UIView?) {
-            guard let view = view else { return }
-
-            switch view {
-            case let scrollView as UIScrollView where scrollView.scrollsToTop:
-                let point = CGPoint(x: 0, y: -(view.safeAreaInsets.top + scrollView.contentInset.top))
-                scrollView.setContentOffset(point, animated: true)
-                return
-            default:
-                break
-            }
-
-            for subView in view.subviews {
-                scrollToTop(view: subView)
-            }
-        }
-
-        scrollToTop(view: view)
-    }
+    var mainTabBarViewController: MainTabBarViewController? { tabBarController as? MainTabBarViewController }
 }

@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
@@ -100,6 +100,12 @@ struct R: Rswift.Validatable {
     static let login = _R.storyboard.login()
     /// Storyboard `MainTabBar`.
     static let mainTabBar = _R.storyboard.mainTabBar()
+    /// Storyboard `Notifications`.
+    static let notifications = _R.storyboard.notifications()
+    /// Storyboard `Promotions`.
+    static let promotions = _R.storyboard.promotions()
+    /// Storyboard `Sports`.
+    static let sports = _R.storyboard.sports()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Home", bundle: ...)`
@@ -126,6 +132,27 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "MainTabBar", bundle: ...)`
     static func mainTabBar(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.mainTabBar)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Notifications", bundle: ...)`
+    static func notifications(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.notifications)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Promotions", bundle: ...)`
+    static func promotions(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.promotions)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Sports", bundle: ...)`
+    static func sports(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.sports)
     }
     #endif
 
@@ -718,7 +745,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.tabBar` struct is generated, and contains static references to 9 images.
+    /// This `R.image.tabBar` struct is generated, and contains static references to 4 images.
     struct tabBar {
       /// Image `home`.
       static let home = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/home")
@@ -797,6 +824,15 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try mainTabBar.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try notifications.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try promotions.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try sports.validate()
       #endif
     }
 
@@ -878,13 +914,8 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
-      let emptyViewController = StoryboardViewControllerResource<EmptyViewController>(identifier: "EmptyViewController")
       let mainTabBarViewController = StoryboardViewControllerResource<MainTabBarViewController>(identifier: "MainTabBarViewController")
       let name = "MainTabBar"
-
-      func emptyViewController(_: Void = ()) -> EmptyViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: emptyViewController)
-      }
 
       func mainTabBarViewController(_: Void = ()) -> MainTabBarViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainTabBarViewController)
@@ -893,8 +924,71 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.mainTabBar().emptyViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'emptyViewController' could not be loaded from storyboard 'MainTabBar' as 'EmptyViewController'.") }
         if _R.storyboard.mainTabBar().mainTabBarViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarViewController' could not be loaded from storyboard 'MainTabBar' as 'MainTabBarViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct notifications: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = NotificationsViewController
+
+      let bundle = R.hostingBundle
+      let name = "Notifications"
+      let notificationsViewController = StoryboardViewControllerResource<NotificationsViewController>(identifier: "NotificationsViewController")
+
+      func notificationsViewController(_: Void = ()) -> NotificationsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: notificationsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.notifications().notificationsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'notificationsViewController' could not be loaded from storyboard 'Notifications' as 'NotificationsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct promotions: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Promotions"
+      let promotionsViewController = StoryboardViewControllerResource<PromotionsViewController>(identifier: "PromotionsViewController")
+
+      func promotionsViewController(_: Void = ()) -> PromotionsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: promotionsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.promotions().promotionsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'promotionsViewController' could not be loaded from storyboard 'Promotions' as 'PromotionsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct sports: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SportsViewController
+
+      let bundle = R.hostingBundle
+      let name = "Sports"
+      let sportsViewController = StoryboardViewControllerResource<SportsViewController>(identifier: "SportsViewController")
+
+      func sportsViewController(_: Void = ()) -> SportsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: sportsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.sports().sportsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sportsViewController' could not be loaded from storyboard 'Sports' as 'SportsViewController'.") }
       }
 
       fileprivate init() {}
