@@ -7,12 +7,9 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 public class HomeViewController: UIViewController {
     private lazy var floatingTabBarManager = FloatingTabBarManager(viewController: self)
-    private let disposeBag = DisposeBag()
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
@@ -63,4 +60,4 @@ public class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: CommontBarButtonProviding { }
+extension HomeViewController: CommonBarButtonProviding { }

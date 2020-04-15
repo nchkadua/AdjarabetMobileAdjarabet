@@ -20,4 +20,4 @@ public class SportsViewController: UIViewController {
     }
 }
 
-extension SportsViewController: CommontBarButtonProviding { }
+extension SportsViewController: CommonBarButtonProviding { }

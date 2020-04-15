@@ -19,4 +19,4 @@ public class NotificationsViewController: UIViewController {
     }
 }
 
-extension NotificationsViewController: CommontBarButtonProviding { }
+extension NotificationsViewController: CommonBarButtonProviding { }
