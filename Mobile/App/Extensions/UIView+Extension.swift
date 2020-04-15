@@ -10,7 +10,7 @@ import Foundation
 
 public extension UIView {
     @discardableResult
-    func placeEdgeToEdge(in parentView: UIView) -> EdgeConstraint {
+    func place(in parentView: UIView) -> EdgeConstraint {
         let top = topAnchor.constraint(equalTo: parentView.topAnchor)
         let bottom = bottomAnchor.constraint(equalTo: parentView.bottomAnchor)
         let left = leadingAnchor.constraint(equalTo: parentView.leadingAnchor)

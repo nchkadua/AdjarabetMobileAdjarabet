@@ -34,7 +34,7 @@ public class HomeViewController: UIViewController {
         scrollView.pinSafely(in: view)
         scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 3)
 
-        scrollView.rx.setDelegate(floatingTabBarManager).disposed(by: disposeBag)
+        floatingTabBarManager.observe(scrollView: scrollView)
     }
 
     private func setupAuthButtonActions() {
