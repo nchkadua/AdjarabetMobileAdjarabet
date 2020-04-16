@@ -19,4 +19,4 @@ public class PromotionsViewController: UIViewController {
     }
 }
 
-extension PromotionsViewController: CommontBarButtonProviding { }
+extension PromotionsViewController: CommonBarButtonProviding { }
