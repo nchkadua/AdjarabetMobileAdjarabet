@@ -66,7 +66,7 @@ class MainTabBarViewModelTests: XCTestCase {
     
     func testMainTabBarViewModelViewDidLoadSelectNewPage() {
         // given
-        var selectedPage = 1
+        var selectedPage = 0
         
         _ = viewModel.action.subscribe(onNext: { action in
             switch action {
