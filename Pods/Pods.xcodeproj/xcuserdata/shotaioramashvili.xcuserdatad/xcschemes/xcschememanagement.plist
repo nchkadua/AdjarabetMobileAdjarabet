@@ -9,17 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Nuke.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Mobile.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Mobile.xcscheme_^#shared#^_</key>
+		<key>Pods-MobileTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,17 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>R.swift.Library.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>R.swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>R.swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,17 +34,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RxCocoa.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>RxRelay.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RxRelay.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -69,17 +44,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RxSwift.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SharedFramework.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SharedFramework.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -91,6 +56,47 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>062A64896E847A6749F58B6BA9A931B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>230984053C6652DFF510F450F21C5CF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>396E045A706DEF537F4C8C6770919B2C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4622BFEF3DC16E8BD15EEFC30D4D0084</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B2D2A575DED95D5E650E76F2E8A4F28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B12748D8506CB48696BD90F2CA4F4E38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA9EA43B3B503823EE36C60D9C8A865F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

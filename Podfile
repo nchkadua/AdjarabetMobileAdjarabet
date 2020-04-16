@@ -13,4 +13,9 @@ end
 
 target 'Mobile' do
   pods
+  
+  target 'MobileTests' do
+    inherit! :search_paths
+    pods
+  end
 end
