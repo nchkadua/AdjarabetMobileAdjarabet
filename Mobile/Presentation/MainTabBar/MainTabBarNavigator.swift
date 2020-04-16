@@ -7,10 +7,10 @@
 //
 
 public class DefaultMainTabBarNavigator: Navigator {
-    public var homeVCFacotry = DefaultHomeViewControllerFactory()
-    public var sportsVCFactory = DefaultSportsViewControllerFactory()
-    public var promotionsVCFactory = DefaultPromotionsViewControllerFactory()
-    public var notificationsVCFacotry = DefaultNotificationsViewControllerFactory()
+    public let homeVCFacotry = DefaultHomeViewControllerFactory()
+    public let sportsVCFactory = DefaultSportsViewControllerFactory()
+    public let promotionsVCFactory = DefaultPromotionsViewControllerFactory()
+    public let notificationsVCFacotry = DefaultNotificationsViewControllerFactory()
 
     private weak var viewController: UIViewController?
 

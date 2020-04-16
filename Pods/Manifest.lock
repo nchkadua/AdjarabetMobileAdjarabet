@@ -18,7 +18,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SharedFramework
-  - SwiftLint
+  - SwiftLint (= 0.39.1)
 
 SPEC REPOS:
   trunk:
@@ -41,6 +41,6 @@ SPEC CHECKSUMS:
   SharedFramework: ecc283fe3cbdb574cd3b5676e5d1fcb36df7dd67
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 12075dabead275ffa6bd72abdb2df897bda65081
+PODFILE CHECKSUM: 7c9d710aef61046ba9f614284e4d618e716fef19
 
 COCOAPODS: 1.9.1
