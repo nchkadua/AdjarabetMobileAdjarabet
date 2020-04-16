@@ -30,6 +30,13 @@
 		D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848F2444727E00003892 /* PantonMtav3-Regular.otf */; };
 		D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784A424447ABF00003892 /* DesignSystemTests.swift */; };
 		D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */; };
+		D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */; };
+		D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098424482BE80001ADC1 /* TabBarButton.swift */; };
+		D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */; };
+		D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098A24482D950001ADC1 /* SportsViewControllerFactory.swift */; };
+		D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */; };
+		D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */; };
+		D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */; };
 		D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845BFB82445F93900419A2C /* UIView+Extension.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */; };
@@ -120,6 +127,13 @@
 		D80784A424447ABF00003892 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
+		D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
+		D842098424482BE80001ADC1 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactory.swift; sourceTree = "<group>"; };
+		D842098A24482D950001ADC1 /* SportsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewControllerFactory.swift; sourceTree = "<group>"; };
+		D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewControllerFactory.swift; sourceTree = "<group>"; };
+		D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewControllerFactory.swift; sourceTree = "<group>"; };
+		D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarNavigator.swift; sourceTree = "<group>"; };
 		D845BFB82445F93900419A2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
 		D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+BalanceManagementServices.swift"; sourceTree = "<group>"; };
@@ -260,6 +274,25 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
+		D842098624482CA20001ADC1 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				D842098724482CAD0001ADC1 /* Controllers */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		D842098724482CAD0001ADC1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */,
+				D842098A24482D950001ADC1 /* SportsViewControllerFactory.swift */,
+				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
+				D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		D845BFBA2445FD7400419A2C /* Sports */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,9 +372,12 @@
 		D85C9C2424336CCC00F1D4FE /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */,
 				D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */,
+				D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */,
 				D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */,
 				D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */,
+				D842098424482BE80001ADC1 /* TabBarButton.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -395,6 +431,7 @@
 		D87E3C5B244600B1004A4BDF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D842098624482CA20001ADC1 /* Factories */,
 				D87E3C5C244600BF004A4BDF /* Controllers */,
 				D85C9C1524336BF500F1D4FE /* Views */,
 			);
@@ -785,6 +822,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
+				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
@@ -793,6 +831,7 @@
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
+				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
@@ -802,14 +841,18 @@
 				D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */,
+				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
+				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
 				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,
+				D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */,
 				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* AdjarabetCoreCodableType.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */,
+				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
@@ -818,6 +861,7 @@
 				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
+				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,

@@ -6,7 +6,13 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
+import RxSwift
+
 public class MainTabBarViewController: UITabBarController {
+    public var viewModel: MainTabBarViewModel = DefaultMainTabBarViewModel()
+    public lazy var navigator = DefaultMainTabBarNavigator(viewController: self)
+    private let disposeBag = DisposeBag()
+
     private var tabBarTopConstraint: NSLayoutConstraint!
 
     private lazy var tabBarStackView: UIStackView = {
@@ -26,27 +32,6 @@ public class MainTabBarViewController: UITabBarController {
 
     public var animationDuration: TimeInterval { 0.3 }
 
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        delegate = self
-        viewControllers = makeViewControllers()
-
-        setupTabBar()
-        setupFloatingTabBar()
-    }
-
-    public override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        tabBar.isHidden = true
-    }
-
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tabBar.isHidden = true
-    }
-
     public override var selectedIndex: Int {
         get {
             return super.selectedIndex
@@ -64,6 +49,50 @@ public class MainTabBarViewController: UITabBarController {
         }
     }
 
+    // MARK: - Lifecycle methods
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupUI()
+        bind(to: viewModel)
+        viewModel.viewDidLoad()
+    }
+
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        tabBar.isHidden = true
+    }
+
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tabBar.isHidden = true
+    }
+
+    // MARK: Bind to viewModel's observable properties
+    private func bind(to viewModel: MainTabBarViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            guard let self = self else {return}
+            switch action {
+            case .setupTabBar:
+                self.setupTabBar()
+                self.setupFloatingTabBar()
+            case .selectPage(let index):
+                self.selectPage(at: index)
+            case .scrollSelectedViewControllerToTop:
+                self.selectedViewController?.scrollToTop()
+            }
+        }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            guard let self = self else {return}
+            switch route {
+            case .initial:
+                self.viewControllers = self.makeViewControllers()
+            }
+        }).disposed(by: disposeBag)
+    }
+
+    // MARK: Floating tab bar methods
     public func hideFloatingTabBar() {
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
             self.tabBarTopConstraint.isActive = true
@@ -80,18 +109,15 @@ public class MainTabBarViewController: UITabBarController {
         })
     }
 
+    // MARK: Factory methods
     private func makeViewControllers() -> [UIViewController] {
-        let v1 = R.storyboard.home().instantiate(controller: HomeViewController.self)!
-        let v2 = R.storyboard.sports().instantiate(controller: SportsViewController.self)!
-        let v3 = R.storyboard.promotions().instantiate(controller: PromotionsViewController.self)!
-        let v4 = R.storyboard.notifications().instantiate(controller: NotificationsViewController.self)!
+        navigator.makePages()
+    }
 
-        v1.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: nil)
-        v2.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.sports(), selectedImage: nil)
-        v3.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
-        v4.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
-
-        return [v1, v2, v3, v4].map { $0.wrap(in: AppNavigationController.self) }
+    // MARK: Basic setup methods
+    private func setupUI() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        delegate = self
     }
 
     private func setupTabBar() {
@@ -153,41 +179,29 @@ public class MainTabBarViewController: UITabBarController {
         tabBarButtons[selectedIndex].tintColor = tabBar.tintColor
     }
 
+    // MARK: Action methods
     @objc private func barButtonDidTap(_ sender: TabBarButton) {
-        guard selectedIndex != sender.index else {
-            selectedViewController?.scrollToTop()
-            return
-        }
+        viewModel.shouldSelectPage(at: sender.index, currentPageIndex: selectedIndex)
+    }
 
+    private func selectPage(at index: Int) {
         UIView.transition(with: tabBarButtons[selectedIndex],
                           duration: 0.2,
                           options: .transitionCrossDissolve,
                           animations: { self.tabBarButtons[self.selectedIndex].isSelected = false },
                           completion: nil)
 
-        UIView.transition(with: sender,
+        UIView.transition(with: tabBarButtons[index],
                           duration: 0.2,
                           options: .transitionCrossDissolve,
-                          animations: { sender.isSelected = true },
+                          animations: { self.tabBarButtons[index].isSelected = true },
                           completion: nil)
 
-        self.selectedIndex = sender.index
+        self.selectedIndex = index
     }
 }
 
-public class TabBarButton: UIButton {
-    public var index: Int = 0
-
-    public init(index: Int) {
-        self.index = index
-        super.init(frame: .zero)
-    }
-
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-}
-
+// MARK: - UITabBarControllerDelegate
 extension MainTabBarViewController: UITabBarControllerDelegate {
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let tabViewControllers = tabBarController.viewControllers!
