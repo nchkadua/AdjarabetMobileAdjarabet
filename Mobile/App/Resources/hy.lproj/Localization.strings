@@ -8,3 +8,20 @@
 
 "login" = "մուտք";
 "join_now" = "գրանցվել";
+
+/* Home */
+"home_page_title" = "Խաղեր";
+
+/* Sports */
+"sports_page_title" = "Սպորտ";
+
+/* Promotions */
+"promotions_page_title" = "Ակցիաներ";
+
+/* Notifications */
+"notifications_page_title" = "Ծանուցումներ";
+
+
+
+
+

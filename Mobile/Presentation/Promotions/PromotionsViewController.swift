@@ -15,7 +15,7 @@ public class PromotionsViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = DesignSystem.Color.neutral800
-        setLeftBarButtonItemTitle(to: "Promotions")
+        setLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
     }
 }
 

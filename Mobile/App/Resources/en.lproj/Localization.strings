@@ -8,3 +8,15 @@
 
 "login" = "Login";
 "join_now" = "Join Now";
+
+/* Home */
+"home_page_title" = "Games";
+
+/* Sports */
+"sports_page_title" = "Sports";
+
+/* Promotions */
+"promotions_page_title" = "Promotions";
+
+/* Notifications */
+"notifications_page_title" = "Notifications";

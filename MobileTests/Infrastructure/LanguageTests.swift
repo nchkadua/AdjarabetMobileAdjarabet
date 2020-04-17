@@ -15,4 +15,8 @@ class LanguageTests: XCTestCase {
         XCTAssertEqual(Language.georgian.localizableIdentifier, "ka")
         XCTAssertEqual(Language.armenian.localizableIdentifier, "hy")
     }
+    
+    func testDefault() {
+        XCTAssertEqual(Language.default, Language.english)
+    }
 }

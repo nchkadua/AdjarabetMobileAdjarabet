@@ -8,3 +8,15 @@
 
 "login" = "შესვლა";
 "join_now" = "რეგისტრაცია";
+
+/* Home */
+"home_page_title" = "თამაშები";
+
+/* Sports */
+"sports_page_title" = "სპორტი";
+
+/* Promotions */
+"promotions_page_title" = "პრომო";
+
+/* Notifications */
+"notifications_page_title" = "შეტყობინებები";
