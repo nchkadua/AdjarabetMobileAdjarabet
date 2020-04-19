@@ -16,7 +16,7 @@ public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = DesignSystem.Color.neutral800
+        view.setBackgorundColor(to: .neutral800)
         setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
         setupAuthButtonActions()
 

@@ -31,6 +31,10 @@
 		D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848F2444727E00003892 /* PantonMtav3-Regular.otf */; };
 		D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784A424447ABF00003892 /* DesignSystemTests.swift */; };
 		D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */; };
+		D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F0244C8C860037DDEB /* CircularImageView.swift */; };
+		D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */; };
+		D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */; };
+		D83ED2F7244C92990037DDEB /* DesignSystemExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */; };
 		D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */; };
 		D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098424482BE80001ADC1 /* TabBarButton.swift */; };
 		D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */; };
@@ -86,6 +90,9 @@
 		D8C73F812445A656004C96DB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C73F802445A656004C96DB /* Home.storyboard */; };
 		D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */; };
 		D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F842445C63D004C96DB /* UIImage+Extension.swift */; };
+		D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD8AE244C850D001F4BAA /* GameLauncherComponentView.swift */; };
+		D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */; };
+		D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD8B4244C85AC001F4BAA /* Xibable.swift */; };
 		D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */; };
 		D8FBA4F12449BD560015C03C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8FBA4F32449BD560015C03C /* Localization.strings */; };
 		D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4F72449BE7D0015C03C /* Language.swift */; };
@@ -138,6 +145,10 @@
 		D80784A424447ABF00003892 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
+		D83ED2F0244C8C860037DDEB /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemExtensionTests.swift; sourceTree = "<group>"; };
 		D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		D842098424482BE80001ADC1 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -198,6 +209,9 @@
 		D8C73F802445A656004C96DB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBarButtonProviding.swift; sourceTree = "<group>"; };
 		D8C73F842445C63D004C96DB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		D8CFD8AE244C850D001F4BAA /* GameLauncherComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherComponentView.swift; sourceTree = "<group>"; };
+		D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLauncherComponentView.xib; sourceTree = "<group>"; };
+		D8CFD8B4244C85AC001F4BAA /* Xibable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xibable.swift; sourceTree = "<group>"; };
 		D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarManager.swift; sourceTree = "<group>"; };
 		D8FBA4F22449BD560015C03C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		D8FBA4F72449BE7D0015C03C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
@@ -297,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
+				D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */,
 				D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */,
 				D8FBA4FF2449C7090015C03C /* LanguageTests.swift */,
 			);
@@ -371,7 +386,10 @@
 		D85C9C1524336BF500F1D4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
 				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
+				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
+				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -588,6 +606,8 @@
 				D845BFB82445F93900419A2C /* UIView+Extension.swift */,
 				D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */,
 				D8FBA4FD2449C50B0015C03C /* Rswift+Extension.swift */,
+				D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */,
+				D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -651,6 +671,15 @@
 				D8C73F802445A656004C96DB /* Home.storyboard */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				D8CFD8AE244C850D001F4BAA /* GameLauncherComponentView.swift */,
+				D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */,
+			);
+			path = GameLauncherComponentView;
 			sourceTree = "<group>";
 		};
 		D8FBA4F62449BE6E0015C03C /* Utils */ = {
@@ -774,6 +803,7 @@
 				D80784802444727600003892 /* FiraGO-Thin.ttf in Resources */,
 				D80784822444727600003892 /* FiraGO-Two.ttf in Resources */,
 				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
+				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
 				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,
@@ -917,6 +947,7 @@
 				D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */,
 				D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */,
 				D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */,
+				D83ED2F7244C92990037DDEB /* DesignSystemExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,6 +956,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
+				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
@@ -936,6 +968,7 @@
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
+				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
@@ -946,6 +979,7 @@
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
+				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
@@ -962,8 +996,10 @@
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
+				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
+				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,

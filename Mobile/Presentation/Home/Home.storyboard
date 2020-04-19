@@ -14,7 +14,18 @@
                     <view key="view" contentMode="scaleToFill" id="tOF-N7-XMq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="has-Js-vZV" customClass="GameLauncherComponentView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="has-Js-vZV" firstAttribute="top" secondItem="ms2-0T-8HB" secondAttribute="top" id="7FL-fr-IBk"/>
+                            <constraint firstItem="has-Js-vZV" firstAttribute="leading" secondItem="ms2-0T-8HB" secondAttribute="leading" id="95H-5W-fb0"/>
+                            <constraint firstItem="ms2-0T-8HB" firstAttribute="trailing" secondItem="has-Js-vZV" secondAttribute="trailing" id="LEV-bT-m2c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ms2-0T-8HB"/>
                     </view>
                 </viewController>

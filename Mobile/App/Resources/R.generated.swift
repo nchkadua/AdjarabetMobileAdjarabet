@@ -725,6 +725,26 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    /// This `R.image.components` struct is generated, and contains static references to 0 images.
+    struct components {
+      /// This `R.image.components.gameLauncher` struct is generated, and contains static references to 1 images.
+      struct gameLauncher {
+        /// Image `in`.
+        static let `in` = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/GameLauncher/in")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "in", bundle: ..., traitCollection: ...)`
+        static func `in`(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.gameLauncher.`in`, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.shared` struct is generated, and contains static references to 0 images.
     struct shared {
       /// This `R.image.shared.navBar` struct is generated, and contains static references to 1 images.
@@ -785,6 +805,26 @@ struct R: Rswift.Validatable {
       #endif
 
       fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `GameLauncherComponentView`.
+    static let gameLauncherComponentView = _R.nib._GameLauncherComponentView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameLauncherComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherComponentView) instead")
+    static func gameLauncherComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameLauncherComponentView)
+    }
+    #endif
+
+    static func gameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -931,9 +971,39 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _GameLauncherComponentView.validate()
+    }
+
+    struct _GameLauncherComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GameLauncherComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
