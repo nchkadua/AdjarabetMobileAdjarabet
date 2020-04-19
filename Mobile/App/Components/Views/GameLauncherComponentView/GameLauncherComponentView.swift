@@ -6,7 +6,12 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
+import RxSwift
+
 public class GameLauncherComponentView: UIView {
+    private var disposeBag = DisposeBag()
+    public var viewModel: GameLauncherComponentViewModel!
+
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var coverImageView: UIImageView!
@@ -24,6 +29,24 @@ public class GameLauncherComponentView: UIView {
     public required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
        nibSetup()
+    }
+
+    public func bind() {
+        disposeBag = DisposeBag()
+
+        viewModel?.action.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .set(let coverUrl, let name, let category):
+                self?.setupUI(coverUrl: coverUrl, name: name, category: category)
+            default: break
+            }
+        }).disposed(by: disposeBag)
+
+        viewModel.didBind()
+    }
+
+    private func setupUI(coverUrl: URL, name: String, category: String) {
+        print(coverUrl, name, category)
     }
 }
 
