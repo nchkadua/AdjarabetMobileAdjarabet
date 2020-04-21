@@ -812,18 +812,18 @@ struct R: Rswift.Validatable {
 
   /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
-    /// Nib `GameLauncherComponentCell`.
-    static let gameLauncherComponentCell = _R.nib._GameLauncherComponentCell()
+    /// Nib `GameLauncherCollectionViewCell`.
+    static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
     /// Nib `GameLauncherComponentView`.
     static let gameLauncherComponentView = _R.nib._GameLauncherComponentView()
     /// Nib `PlayedGameLauncherComponentView`.
     static let playedGameLauncherComponentView = _R.nib._PlayedGameLauncherComponentView()
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "GameLauncherComponentCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherComponentCell) instead")
-    static func gameLauncherComponentCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.gameLauncherComponentCell)
+    /// `UINib(name: "GameLauncherCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherCollectionViewCell) instead")
+    static func gameLauncherCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameLauncherCollectionViewCell)
     }
     #endif
 
@@ -843,8 +843,8 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    static func gameLauncherComponentCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherComponentCell? {
-      return R.nib.gameLauncherComponentCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherComponentCell
+    static func gameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherCollectionViewCell? {
+      return R.nib.gameLauncherCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherCollectionViewCell
     }
 
     static func gameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1012,12 +1012,12 @@ struct _R: Rswift.Validatable {
       try _GameLauncherComponentView.validate()
     }
 
-    struct _GameLauncherComponentCell: Rswift.NibResourceType {
+    struct _GameLauncherCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let name = "GameLauncherComponentCell"
+      let name = "GameLauncherCollectionViewCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherComponentCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherComponentCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherCollectionViewCell
       }
 
       fileprivate init() {}
