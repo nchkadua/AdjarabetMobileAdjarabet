@@ -87,6 +87,12 @@
 		D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD724335B4C0077AA8E /* Assets.xcassets */; };
 		D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD924335B4C0077AA8E /* LaunchScreen.storyboard */; };
 		D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */; };
+		D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */; };
+		D8BF4042244EC949008F0BAF /* GameLauncherComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4040244EC949008F0BAF /* GameLauncherComponentCell.swift */; };
+		D8BF4043244EC949008F0BAF /* GameLauncherComponentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8BF4041244EC949008F0BAF /* GameLauncherComponentCell.xib */; };
+		D8BF4045244ECA8F008F0BAF /* GameLauncherComponentCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4044244ECA8F008F0BAF /* GameLauncherComponentCellDataProvider.swift */; };
+		D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */; };
+		D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */; };
 		D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F7E2445A64E004C96DB /* HomeViewController.swift */; };
 		D8C73F812445A656004C96DB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C73F802445A656004C96DB /* Home.storyboard */; };
 		D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */; };
@@ -207,6 +213,12 @@
 		D8A47DDC24335B4C0077AA8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		D8A47DEF24335ECA0077AA8E /* Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCollectionViewController.swift; sourceTree = "<group>"; };
+		D8BF4040244EC949008F0BAF /* GameLauncherComponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherComponentCell.swift; sourceTree = "<group>"; };
+		D8BF4041244EC949008F0BAF /* GameLauncherComponentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLauncherComponentCell.xib; sourceTree = "<group>"; };
+		D8BF4044244ECA8F008F0BAF /* GameLauncherComponentCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherComponentCellDataProvider.swift; sourceTree = "<group>"; };
+		D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCellDataProvider+Extension.swift"; sourceTree = "<group>"; };
+		D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeighProvidering.swift; sourceTree = "<group>"; };
 		D8C73F7E2445A64E004C96DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D8C73F802445A656004C96DB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBarButtonProviding.swift; sourceTree = "<group>"; };
@@ -480,6 +492,7 @@
 		D87E3C5B244600B1004A4BDF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D8BF403F244EC91F008F0BAF /* Cells */,
 				D87E3C5C244600BF004A4BDF /* Controllers */,
 				D842098624482CA20001ADC1 /* Factories */,
 				D8FBA4F62449BE6E0015C03C /* Utils */,
@@ -492,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */,
+				D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -610,6 +624,7 @@
 				D8FBA4FD2449C50B0015C03C /* Rswift+Extension.swift */,
 				D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */,
 				D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */,
+				D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -666,6 +681,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D8BF403F244EC91F008F0BAF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8BF4040244EC949008F0BAF /* GameLauncherComponentCell.swift */,
+				D8BF4044244ECA8F008F0BAF /* GameLauncherComponentCellDataProvider.swift */,
+				D8BF4041244EC949008F0BAF /* GameLauncherComponentCell.xib */,
+			);
+			path = GameLauncherComponentCell;
+			sourceTree = "<group>";
+		};
 		D8C73F7D2445A62D004C96DB /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,6 +722,7 @@
 			isa = PBXGroup;
 			children = (
 				D8FBA4F72449BE7D0015C03C /* Language.swift */,
+				D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -815,6 +849,7 @@
 				D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,
+				D8BF4043244EC949008F0BAF /* GameLauncherComponentCell.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
 				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
@@ -972,13 +1007,16 @@
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
+				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
 				D85C9BEF2433676700F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift in Sources */,
+				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
 				D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */,
+				D8BF4042244EC949008F0BAF /* GameLauncherComponentCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
@@ -990,6 +1028,7 @@
 				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,
 				D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */,
 				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
+				D8BF4045244ECA8F008F0BAF /* GameLauncherComponentCellDataProvider.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* AdjarabetCoreCodableType.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */,
@@ -1005,6 +1044,7 @@
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
+				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,

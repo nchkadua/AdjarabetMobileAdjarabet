@@ -6,9 +6,10 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-import UIKit
+import RxSwift
 
 public class HomeViewController: UIViewController {
+    private let disposeBag = DisposeBag()
     private lazy var floatingTabBarManager = FloatingTabBarManager(viewController: self)
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
@@ -20,7 +21,25 @@ public class HomeViewController: UIViewController {
         setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
         setupAuthButtonActions()
 
-        setupScrollView()
+//        setupScrollView()
+        setupCollectionViewController()
+    }
+
+    private func setupCollectionViewController() {
+        let vc = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        vc.isTabBarManagementEnabled = true
+
+        add(child: vc)
+
+        let items: AppCellDataProviders = (1...20).map {
+            let viewModel = DefaultGameLauncherComponentViewModel(params: GameLauncherComponentViewModelParams(id: "id", coverUrl: URL(string: "https://google.com")!, name: "Game name \($0)", category: "game category \($0)"))
+            viewModel.action.subscribe(onNext: { [weak self] action in
+                self?.didReceive(action: action)
+            }).disposed(by: disposeBag)
+            return viewModel
+        }
+
+        vc.dataProvider = items.makeList()
     }
 
     private func setupScrollView() {
@@ -43,6 +62,16 @@ public class HomeViewController: UIViewController {
 
     private func setupProfilButton() {
         setProfileBarButtonItem(text: "₾ 0.00")
+    }
+
+    private func didReceive(action: GameLauncherComponentViewModelOutputAction) {
+        switch action {
+        case .didSelect(let vm, _):
+            let alert = UIAlertController(title: vm.params.name, message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        default: break
+        }
     }
 
     @objc public func joinNowButtonDidTap() {

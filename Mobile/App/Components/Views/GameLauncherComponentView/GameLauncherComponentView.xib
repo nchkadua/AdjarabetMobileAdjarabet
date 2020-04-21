@@ -53,7 +53,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jackpot Slots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cy-OM-YsD">
-                                    <rect key="frame" x="0.0" y="49.5" width="516" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="51.5" width="516" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="hzE-hG-wfA" secondAttribute="trailing" id="Eq2-SK-erJ"/>
-                                <constraint firstItem="5Cy-OM-YsD" firstAttribute="top" secondItem="hzE-hG-wfA" secondAttribute="bottom" constant="4" id="Jwz-1P-crd"/>
+                                <constraint firstItem="5Cy-OM-YsD" firstAttribute="top" secondItem="hzE-hG-wfA" secondAttribute="bottom" constant="6" id="Jwz-1P-crd"/>
                                 <constraint firstItem="0NZ-Po-oWz" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="LlV-hw-4Qs"/>
                                 <constraint firstItem="hzE-hG-wfA" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="Ysy-PP-m7y"/>
                                 <constraint firstItem="hzE-hG-wfA" firstAttribute="centerY" secondItem="FGe-dH-2oi" secondAttribute="centerY" id="feW-sm-jPS"/>
@@ -93,7 +93,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="R3q-vJ-4ai" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="EjK-SR-o28"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="R3q-vJ-4ai" secondAttribute="bottom" id="VGb-nG-GJb"/>

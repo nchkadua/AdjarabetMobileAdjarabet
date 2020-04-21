@@ -43,13 +43,7 @@ public class DefaultGameLauncherComponentViewModel {
 
 extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel {
     public func didBind() {
-        // setup UI with title
+        print(#function)
         action.onNext(.set(coverUrl: params.coverUrl, name: params.name, category: params.category))
-    }
-}
-
-extension DefaultGameLauncherComponentViewModel: AppCellDelegate {
-    public func didSelect(at indexPath: IndexPath) {
-        action.onNext(.didSelect(self, indexPath: indexPath))
     }
 }

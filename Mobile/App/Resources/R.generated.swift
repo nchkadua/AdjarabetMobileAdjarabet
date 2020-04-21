@@ -810,10 +810,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `GameLauncherComponentCell`.
+    static let gameLauncherComponentCell = _R.nib._GameLauncherComponentCell()
     /// Nib `GameLauncherComponentView`.
     static let gameLauncherComponentView = _R.nib._GameLauncherComponentView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameLauncherComponentCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherComponentCell) instead")
+    static func gameLauncherComponentCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameLauncherComponentCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "GameLauncherComponentView", in: bundle)`
@@ -822,6 +832,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.gameLauncherComponentView)
     }
     #endif
+
+    static func gameLauncherComponentCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherComponentCell? {
+      return R.nib.gameLauncherComponentCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherComponentCell
+    }
 
     static func gameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -982,6 +996,17 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _GameLauncherComponentView.validate()
+    }
+
+    struct _GameLauncherComponentCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GameLauncherComponentCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherComponentCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherComponentCell
+      }
+
+      fileprivate init() {}
     }
 
     struct _GameLauncherComponentView: Rswift.NibResourceType, Rswift.Validatable {

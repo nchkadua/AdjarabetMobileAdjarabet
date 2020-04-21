@@ -31,6 +31,11 @@ public class GameLauncherComponentView: UIView {
        nibSetup()
     }
 
+    public func setAndBind(viewModel: GameLauncherComponentViewModel) {
+        self.viewModel = viewModel
+        bind()
+    }
+
     public func bind() {
         disposeBag = DisposeBag()
 
@@ -46,7 +51,9 @@ public class GameLauncherComponentView: UIView {
     }
 
     private func setupUI(coverUrl: URL, name: String, category: String) {
-        print(coverUrl, name, category)
+        print(#function)
+        self.titleLabel.text = name
+        self.categoryLabel.text = category
     }
 }
 
@@ -67,7 +74,7 @@ extension GameLauncherComponentView: Xibable {
         jackpotButton.setBackgorundColor(to: .secondary400)
         jackpotButton.setTitleColor(to: .white, for: .normal)
         jackpotButton.setFont(to: .body2)
-        jackpotButton.contentEdgeInsets = UIEdgeInsets(top: 1, left: 4.5, bottom: 1, right: 4.5)
+        jackpotButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 4.5, bottom: 2, right: 4.5)
 
         titleLabel.setTextColor(to: .white)
         titleLabel.setFont(to: .h4)
