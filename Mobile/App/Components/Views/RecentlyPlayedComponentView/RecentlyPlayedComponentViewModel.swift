@@ -15,10 +15,13 @@ public struct RecentlyPlayedComponentViewModelParams {
     public let id: String
     public let title: String
     public let buttonTitle: String
+    public let playedGames: [PlayedGameLauncherCollectionViewCellDataProvider]
 }
 
 public protocol RecentlyPlayedComponentViewModelInput {
     func didBind()
+    func didSelectViewAll()
+    func didSelect(viewModel: PlayedGameLauncherComponentViewModel, indexPath: IndexPath)
 }
 
 public protocol RecentlyPlayedComponentViewModelOutput {
@@ -28,7 +31,8 @@ public protocol RecentlyPlayedComponentViewModelOutput {
 
 public enum RecentlyPlayedComponentViewModelOutputAction {
     case set(title: String, buttonTitle: String)
-    case didSelectSeeAll(RecentlyPlayedComponentViewModel)
+    case didSelectViewAll(RecentlyPlayedComponentViewModel)
+    case didSelectPlayedGame(PlayedGameLauncherComponentViewModel, IndexPath)
 }
 
 public enum RecentlyPlayedComponentViewModelRoute {
@@ -47,5 +51,13 @@ extension DefaultRecentlyPlayedComponentViewModel: RecentlyPlayedComponentViewMo
     public func didBind() {
         print(#function)
         action.onNext(.set(title: params.title, buttonTitle: params.buttonTitle))
+    }
+
+    public func didSelectViewAll() {
+        action.onNext(.didSelectViewAll(self))
+    }
+
+    public func didSelect(viewModel: PlayedGameLauncherComponentViewModel, indexPath: IndexPath) {
+        action.onNext(.didSelectPlayedGame(viewModel, indexPath))
     }
 }

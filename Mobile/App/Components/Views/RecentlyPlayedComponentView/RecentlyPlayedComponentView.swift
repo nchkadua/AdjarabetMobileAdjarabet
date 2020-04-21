@@ -51,6 +51,15 @@ public class RecentlyPlayedComponentView: UIView {
         print(#function)
         self.titleLabel.text = title
         self.button.setTitle(buttonTitle, for: .normal)
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        self.collectionView.contentInset.left = 20
+        self.collectionView.contentInset.right = 20
+        self.collectionView.reloadData()
+    }
+
+    @objc private func buttinDidTap() {
+        viewModel.didSelectViewAll()
     }
 }
 
@@ -73,5 +82,45 @@ extension RecentlyPlayedComponentView: Xibable {
         button.setTitleColor(to: .neutral100, for: .normal, alpha: 0.6)
         button.setFont(to: .h5)
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
+        button.addTarget(self, action: #selector(buttinDidTap), for: .touchUpInside)
+
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(types: PlayedGameLauncherCollectionViewCell.self)
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+            flowLayout.sectionInset = .zero
+            flowLayout.minimumLineSpacing = 12
+            flowLayout.minimumInteritemSpacing = 0
+        }
+    }
+}
+
+extension RecentlyPlayedComponentView: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dataProvider = viewModel.params.playedGames[indexPath.row]
+        viewModel.didSelect(viewModel: dataProvider, indexPath: indexPath)
+    }
+}
+
+extension RecentlyPlayedComponentView: UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.params.playedGames.count
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let dataProvider = viewModel.params.playedGames[indexPath.row]
+        let cell = collectionView.dequeueReusable(dataProvider: dataProvider, for: indexPath)
+        cell.dataProvider = dataProvider
+        return cell
+    }
+}
+
+extension RecentlyPlayedComponentView: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        viewModel.params.playedGames[indexPath.row].size(
+            for: collectionView.bounds,
+            safeArea: collectionView.bounds,
+            minimumLineSpacing: 0,
+            minimumInteritemSpacing: 0)
     }
 }

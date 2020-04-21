@@ -31,19 +31,32 @@ public class HomeViewController: UIViewController {
 
         add(child: vc)
 
-        let recentryPlayed: AppCellDataProvider = DefaultRecentlyPlayedComponentViewModel(params: RecentlyPlayedComponentViewModelParams(id: "id", title: "Recentry Played", buttonTitle: "View all"))
-
-        let played: AppCellDataProviders = (1...20).map {
-            let params = PlayedGameLauncherComponentViewModelParams(id: "id", coverUrl: URL(string: "https://google.com")!, name: "Game name \($0)", lastWon: "last won $ \($0)")
+        let played: [PlayedGameLauncherCollectionViewCellDataProvider] = (1...20).map {
+            let params = PlayedGameLauncherComponentViewModelParams(
+                id: UUID().uuidString,
+                coverUrl: URL(string: "https://google.com")!,
+                name: "Game name \($0)",
+                lastWon: "last won $ \($0)")
             let viewModel = DefaultPlayedGameLauncherComponentViewModel(params: params)
-            viewModel.action.subscribe(onNext: { [weak self] action in
-                self?.didReceive(action: action)
-            }).disposed(by: disposeBag)
             return viewModel
         }
 
+        let params = RecentlyPlayedComponentViewModelParams(
+            id: UUID().uuidString,
+            title: "Recentry Played",
+            buttonTitle: "View all",
+            playedGames: played)
+        let recentryPlayed = DefaultRecentlyPlayedComponentViewModel(params: params)
+        recentryPlayed.action.subscribe(onNext: { action in
+            self.didReceive(action: action)
+        }).disposed(by: disposeBag)
+
         let items: AppCellDataProviders = (1...20).map {
-            let params = GameLauncherComponentViewModelParams(id: "id", coverUrl: URL(string: "https://google.com")!, name: "Game name \($0)", category: "game category \($0)")
+            let params = GameLauncherComponentViewModelParams(
+                id: UUID().uuidString,
+                coverUrl: URL(string: "https://google.com")!,
+                name: "Game name \($0)",
+                category: "game category \($0)")
             let viewModel = DefaultGameLauncherComponentViewModel(params: params)
             viewModel.action.subscribe(onNext: { [weak self] action in
                 self?.didReceive(action: action)
@@ -51,7 +64,7 @@ public class HomeViewController: UIViewController {
             return viewModel
         }
 
-        vc.dataProvider = ([recentryPlayed] + played + items).makeList()
+        vc.dataProvider = ([recentryPlayed] + items).makeList()
     }
 
     private func setupScrollView() {
@@ -76,12 +89,14 @@ public class HomeViewController: UIViewController {
         setProfileBarButtonItem(text: "₾ 0.00")
     }
 
-    private func didReceive(action: PlayedGameLauncherComponentViewModelOutputAction) {
+    private func didReceive(action: RecentlyPlayedComponentViewModelOutputAction) {
         switch action {
-        case .didSelect(let vm, _):
+        case .didSelectPlayedGame(let vm, _):
             let alert = UIAlertController(title: vm.params.name, message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
+        case .didSelectViewAll(let vm):
+            print(action, vm.params.id)
         default: break
         }
     }
