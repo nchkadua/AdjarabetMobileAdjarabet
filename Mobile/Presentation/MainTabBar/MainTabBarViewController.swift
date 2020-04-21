@@ -94,6 +94,7 @@ public class MainTabBarViewController: UITabBarController {
 
     // MARK: Floating tab bar methods
     public func hideFloatingTabBar() {
+        guard tabBarTopConstraint.isActive != true else {return}
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
             self.tabBarTopConstraint.isActive = true
             self.view.layoutIfNeeded()
@@ -102,6 +103,7 @@ public class MainTabBarViewController: UITabBarController {
     }
 
     public func showFloatingTabBar() {
+        guard tabBarTopConstraint.isActive != false else {return}
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
             self.tabBarTopConstraint.isActive = false
             self.view.layoutIfNeeded()
