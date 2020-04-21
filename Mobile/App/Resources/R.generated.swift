@@ -810,12 +810,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `GameLauncherComponentCell`.
     static let gameLauncherComponentCell = _R.nib._GameLauncherComponentCell()
     /// Nib `GameLauncherComponentView`.
     static let gameLauncherComponentView = _R.nib._GameLauncherComponentView()
+    /// Nib `PlayedGameLauncherComponentView`.
+    static let playedGameLauncherComponentView = _R.nib._PlayedGameLauncherComponentView()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "GameLauncherComponentCell", in: bundle)`
@@ -833,12 +835,24 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PlayedGameLauncherComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.playedGameLauncherComponentView) instead")
+    static func playedGameLauncherComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.playedGameLauncherComponentView)
+    }
+    #endif
+
     static func gameLauncherComponentCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherComponentCell? {
       return R.nib.gameLauncherComponentCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherComponentCell
     }
 
     static func gameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func playedGameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.playedGameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -1021,6 +1035,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PlayedGameLauncherComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PlayedGameLauncherComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

@@ -28,7 +28,7 @@ public protocol GameLauncherComponentViewModelOutput {
 }
 
 public enum GameLauncherComponentViewModelOutputAction {
-    case set(coverUrl: URL, name: String, category: String)
+    case set(coverUrl: URL, title: String, category: String)
     case didSelect(GameLauncherComponentViewModel, indexPath: IndexPath)
 }
 
@@ -44,6 +44,6 @@ public class DefaultGameLauncherComponentViewModel {
 extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel {
     public func didBind() {
         print(#function)
-        action.onNext(.set(coverUrl: params.coverUrl, name: params.name, category: params.category))
+        action.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category))
     }
 }
