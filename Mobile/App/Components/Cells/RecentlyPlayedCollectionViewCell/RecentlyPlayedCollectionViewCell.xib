@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYl-TV-Dne" customClass="RecentlyPlayedComponentView" customModule="Mobile" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="173"/>
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="185"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="wYl-TV-Dne" secondAttribute="bottom" constant="12" id="kcI-s0-MxX"/>
+                <constraint firstAttribute="bottom" secondItem="wYl-TV-Dne" secondAttribute="bottom" id="kcI-s0-MxX"/>
                 <constraint firstAttribute="trailing" secondItem="wYl-TV-Dne" secondAttribute="trailing" id="mGh-is-wKX"/>
                 <constraint firstItem="wYl-TV-Dne" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oLe-nR-q3r"/>
                 <constraint firstItem="wYl-TV-Dne" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wp3-UV-Xz7"/>
