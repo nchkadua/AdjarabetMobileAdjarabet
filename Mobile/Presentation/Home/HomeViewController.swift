@@ -31,15 +31,25 @@ public class HomeViewController: UIViewController {
 
         add(child: vc)
 
-        let items: AppCellDataProviders = (1...20).map {
-            let viewModel = DefaultGameLauncherComponentViewModel(params: GameLauncherComponentViewModelParams(id: "id", coverUrl: URL(string: "https://google.com")!, name: "Game name \($0)", category: "game category \($0)"))
+        let played: AppCellDataProviders = (1...20).map {
+            let params = PlayedGameLauncherComponentViewModelParams(id: "id", coverUrl: URL(string: "https://google.com")!, name: "Game name \($0)", lastWon: "last won $ \($0)")
+            let viewModel = DefaultPlayedGameLauncherComponentViewModel(params: params)
             viewModel.action.subscribe(onNext: { [weak self] action in
                 self?.didReceive(action: action)
             }).disposed(by: disposeBag)
             return viewModel
         }
 
-        vc.dataProvider = items.makeList()
+        let items: AppCellDataProviders = (1...20).map {
+            let params = GameLauncherComponentViewModelParams(id: "id", coverUrl: URL(string: "https://google.com")!, name: "Game name \($0)", category: "game category \($0)")
+            let viewModel = DefaultGameLauncherComponentViewModel(params: params)
+            viewModel.action.subscribe(onNext: { [weak self] action in
+                self?.didReceive(action: action)
+            }).disposed(by: disposeBag)
+            return viewModel
+        }
+
+        vc.dataProvider = (played + items).makeList()
     }
 
     private func setupScrollView() {
@@ -62,6 +72,16 @@ public class HomeViewController: UIViewController {
 
     private func setupProfilButton() {
         setProfileBarButtonItem(text: "₾ 0.00")
+    }
+    
+    private func didReceive(action: PlayedGameLauncherComponentViewModelOutputAction) {
+        switch action {
+        case .didSelect(let vm, _):
+            let alert = UIAlertController(title: vm.params.name, message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        default: break
+        }
     }
 
     private func didReceive(action: GameLauncherComponentViewModelOutputAction) {

@@ -22,6 +22,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         super.viewDidLoad()
 
         collectionView?.register(types: [
+            PlayedGameLauncherCollectionViewCell.self,
             GameLauncherCollectionViewCell.self
         ])
 
