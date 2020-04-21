@@ -25,14 +25,15 @@ class DesignSystemExtensionTests: XCTestCase {
     
     func testButtonSetTitleColor() {
         // given
+        let alpha = CGFloat.random(in: 0...1)
         let color = DesignSystem.Color.neutral100
         let button = UIButton()
         
         // when
-        button.setTitleColor(to: color, for: .normal)
+        button.setTitleColor(to: color, for: .normal, alpha: alpha)
         
         // than
-        XCTAssertEqual(button.titleColor(for: .normal), color.value)
+        XCTAssertEqual(button.titleColor(for: .normal), color.value.withAlphaComponent(alpha))
     }
     
     // MAKR: UIView
@@ -49,15 +50,16 @@ class DesignSystemExtensionTests: XCTestCase {
     }
     
     func testViewSetTintColor() {
-            // given
+        // given
+        let alpha = CGFloat.random(in: 0...1)
         let color = DesignSystem.Color.neutral100
         let view = UIView()
         
         // when
-        view.setTintColor(to: color)
+        view.setTintColor(to: color, alpha: alpha)
         
         // than
-        XCTAssertEqual(view.tintColor, color.value)
+        XCTAssertEqual(view.tintColor, color.value.withAlphaComponent(alpha))
     }
     
     // MAKR: UILabel
@@ -75,13 +77,35 @@ class DesignSystemExtensionTests: XCTestCase {
     
     func testLabelSetTitleColor() {
         // given
+        let alpha = CGFloat.random(in: 0...1)
         let color = DesignSystem.Color.neutral100
         let label = UILabel()
         
         // when
-        label.setTextColor(to: color)
+        label.setTextColor(to: color, alpha: alpha)
         
         // than
-        XCTAssertEqual(label.textColor, color.value)
+        XCTAssertEqual(label.textColor, color.value.withAlphaComponent(alpha))
+    }
+    
+    // MAKR: String
+    func testAttributedString() {
+        let typography = DesignSystem.Typography.h1
+        let attributedString = "Text".makeAttributedString(with: typography, alignment: .left)
+        
+        /// Retrieve attributes
+        let attributes = attributedString.attributes(at: 0, effectiveRange: nil)
+
+        /// Retrieve and test font
+        if let font = attributes[.font] as? UIFont {
+            XCTAssertEqual(font.fontName, typography.description.font.fontName)
+            XCTAssertEqual(font.pointSize, typography.description.font.pointSize)
+        }
+
+        /// Retrieve and test style
+        if let style = attributes[.paragraphStyle] as? NSParagraphStyle {
+            XCTAssertEqual(style.lineSpacing, typography.description.lineSpasing)
+            XCTAssertEqual(style.alignment, .left)
+        }
     }
 }
