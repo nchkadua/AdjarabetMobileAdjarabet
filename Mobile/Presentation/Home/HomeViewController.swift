@@ -73,7 +73,7 @@ public class HomeViewController: UIViewController {
     private func setupProfilButton() {
         setProfileBarButtonItem(text: "₾ 0.00")
     }
-    
+
     private func didReceive(action: PlayedGameLauncherComponentViewModelOutputAction) {
         switch action {
         case .didSelect(let vm, _):
