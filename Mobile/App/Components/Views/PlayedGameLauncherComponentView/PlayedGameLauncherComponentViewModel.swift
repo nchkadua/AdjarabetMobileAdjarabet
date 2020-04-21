@@ -29,7 +29,7 @@ public protocol PlayedGameLauncherComponentViewModelOutput {
 
 public enum PlayedGameLauncherComponentViewModelOutputAction {
     case set(coverUrl: URL, name: String, lastWon: String)
-    case didSelect(GameLauncherComponentViewModel, indexPath: IndexPath)
+    case didSelect(PlayedGameLauncherComponentViewModel, indexPath: IndexPath)
 }
 
 public enum PlayedGameLauncherComponentViewModelRoute {

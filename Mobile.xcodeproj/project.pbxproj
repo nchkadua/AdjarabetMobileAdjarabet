@@ -78,6 +78,9 @@
 		D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */; };
 		D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */; };
 		D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */; };
+		D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B5965244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift */; };
+		D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B5966244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib */; };
+		D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B5969244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift */; };
 		D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C4F2445FDC3004A4BDF /* SportsViewController.swift */; };
 		D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */; };
 		D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */; };
@@ -204,6 +207,9 @@
 		D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherComponentView.swift; sourceTree = "<group>"; };
 		D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayedGameLauncherComponentView.xib; sourceTree = "<group>"; };
 		D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherComponentViewModel.swift; sourceTree = "<group>"; };
+		D86B5965244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherCollectionViewCell.swift; sourceTree = "<group>"; };
+		D86B5966244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayedGameLauncherCollectionViewCell.xib; sourceTree = "<group>"; };
+		D86B5969244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		D87E3C4F2445FDC3004A4BDF /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
 		D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -409,8 +415,8 @@
 				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
 				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
-				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
+				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -488,11 +494,14 @@
 			path = PlayedGameLauncherComponentView;
 			sourceTree = "<group>";
 		};
-		D86B5964244F123800AB7350 /* PlayedGameLauncherComponentCell */ = {
+		D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				D86B5965244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift */,
+				D86B5969244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift */,
+				D86B5966244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib */,
 			);
-			path = PlayedGameLauncherComponentCell;
+			path = PlayedGameLauncherCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		D87E3C4D2445FDA3004A4BDF /* Promotions */ = {
@@ -708,7 +717,7 @@
 		D8BF403F244EC91F008F0BAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D86B5964244F123800AB7350 /* PlayedGameLauncherComponentCell */,
+				D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */,
 				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,
 			);
 			path = Cells;
@@ -855,6 +864,7 @@
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
 				D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */,
 				D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */,
+				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */,
 				D807847E2444727600003892 /* FiraGO-ExtraLight.ttf in Resources */,
@@ -1028,6 +1038,7 @@
 				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
 				D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
+				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
@@ -1075,6 +1086,7 @@
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
+				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
