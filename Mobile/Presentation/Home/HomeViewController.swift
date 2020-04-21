@@ -31,6 +31,8 @@ public class HomeViewController: UIViewController {
 
         add(child: vc)
 
+        let recentryPlayed: AppCellDataProvider = DefaultRecentlyPlayedComponentViewModel(params: RecentlyPlayedComponentViewModelParams(id: "id", title: "Recentry Played", buttonTitle: "View all"))
+
         let played: AppCellDataProviders = (1...20).map {
             let params = PlayedGameLauncherComponentViewModelParams(id: "id", coverUrl: URL(string: "https://google.com")!, name: "Game name \($0)", lastWon: "last won $ \($0)")
             let viewModel = DefaultPlayedGameLauncherComponentViewModel(params: params)
@@ -49,7 +51,7 @@ public class HomeViewController: UIViewController {
             return viewModel
         }
 
-        vc.dataProvider = (played + items).makeList()
+        vc.dataProvider = ([recentryPlayed] + played + items).makeList()
     }
 
     private func setupScrollView() {

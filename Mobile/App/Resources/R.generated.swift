@@ -810,7 +810,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     /// Nib `GameLauncherCollectionViewCell`.
     static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
@@ -820,6 +820,8 @@ struct R: Rswift.Validatable {
     static let playedGameLauncherCollectionViewCell = _R.nib._PlayedGameLauncherCollectionViewCell()
     /// Nib `PlayedGameLauncherComponentView`.
     static let playedGameLauncherComponentView = _R.nib._PlayedGameLauncherComponentView()
+    /// Nib `RecentlyPlayedCollectionViewCell`.
+    static let recentlyPlayedCollectionViewCell = _R.nib._RecentlyPlayedCollectionViewCell()
     /// Nib `RecentlyPlayedComponentView`.
     static let recentlyPlayedComponentView = _R.nib._RecentlyPlayedComponentView()
 
@@ -856,6 +858,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "RecentlyPlayedCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.recentlyPlayedCollectionViewCell) instead")
+    static func recentlyPlayedCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.recentlyPlayedCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "RecentlyPlayedComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.recentlyPlayedComponentView) instead")
     static func recentlyPlayedComponentView(_: Void = ()) -> UIKit.UINib {
@@ -877,6 +887,10 @@ struct R: Rswift.Validatable {
 
     static func playedGameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.playedGameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func recentlyPlayedCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecentlyPlayedCollectionViewCell? {
+      return R.nib.recentlyPlayedCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecentlyPlayedCollectionViewCell
     }
 
     static func recentlyPlayedComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1085,6 +1099,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _RecentlyPlayedCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "RecentlyPlayedCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecentlyPlayedCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecentlyPlayedCollectionViewCell
       }
 
       fileprivate init() {}

@@ -9,7 +9,9 @@
 public class PlayedGameLauncherCollectionViewCell: AppCollectionViewCell {
     @IBOutlet private var playedGameLauncherComponentView: PlayedGameLauncherComponentView!
 
-    override public class var identifier: Identifierable { R.nib.playedGameLauncherCollectionViewCell.name }
+    override public class var identifier: Identifierable {
+        R.nib.playedGameLauncherCollectionViewCell.name
+    }
 
     public override var dataProvider: AppCellDataProvider? {
         didSet {
