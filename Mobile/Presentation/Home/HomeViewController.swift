@@ -17,7 +17,7 @@ public class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = DesignSystem.Color.neutral800
-        setLeftBarButtonItemTitle(to: "Games")
+        setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
         setupAuthButtonActions()
 
         setupScrollView()
@@ -47,14 +47,14 @@ public class HomeViewController: UIViewController {
 
     @objc public func joinNowButtonDidTap() {
         print(#function)
-        let alert = UIAlertController(title: "Join Now", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: R.string.localization.join_now.localized(), message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 
     @objc public func loginButtonDidTap() {
         print(#function)
-        let alert = UIAlertController(title: "Login", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: R.string.localization.login.localized(), message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }

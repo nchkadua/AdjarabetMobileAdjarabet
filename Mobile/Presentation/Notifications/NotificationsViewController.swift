@@ -15,7 +15,7 @@ public class NotificationsViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = DesignSystem.Color.neutral800
-        setLeftBarButtonItemTitle(to: "Notifications")
+        setLeftBarButtonItemTitle(to: R.string.localization.notifications_page_title.localized())
     }
 }
 

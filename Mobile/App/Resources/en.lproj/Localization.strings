@@ -1,0 +1,22 @@
+/* 
+  Localization.strings
+  Mobile
+
+  Created by Shota Ioramashvili on 4/17/20.
+  Copyright © 2020 Adjarabet. All rights reserved.
+*/
+
+"login" = "Login";
+"join_now" = "Join Now";
+
+/* Home */
+"home_page_title" = "Games";
+
+/* Sports */
+"sports_page_title" = "Sports";
+
+/* Promotions */
+"promotions_page_title" = "Promotions";
+
+/* Notifications */
+"notifications_page_title" = "Notifications";
