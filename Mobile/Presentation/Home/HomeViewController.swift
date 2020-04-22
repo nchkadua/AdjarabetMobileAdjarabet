@@ -9,27 +9,33 @@
 import RxSwift
 
 public class HomeViewController: UIViewController {
+    // MARK: Properties
     private let disposeBag = DisposeBag()
     private lazy var floatingTabBarManager = FloatingTabBarManager(viewController: self)
+    private lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var searchController = UISearchController(searchResultsController: nil)
 
+    // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
+    // MARK: View lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.setBackgorundColor(to: .neutral800)
+        setBaseBackgorundColor()
         setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
         setupAuthButtonActions()
+        setupSearchViewController()
 
 //        setupScrollView()
         setupCollectionViewController()
     }
 
+    // MARK: Setup methods
     private func setupCollectionViewController() {
-        let vc = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        vc.isTabBarManagementEnabled = true
+        collectionViewController.isTabBarManagementEnabled = true
 
-        add(child: vc)
+        add(child: collectionViewController)
 
         let played: [PlayedGameLauncherCollectionViewCellDataProvider] = (1...20).map {
             let params = PlayedGameLauncherComponentViewModelParams(
@@ -65,7 +71,7 @@ public class HomeViewController: UIViewController {
             return viewModel
         }
 
-        vc.dataProvider = ([recentryPlayed] + items).makeList()
+        collectionViewController.dataProvider = ([recentryPlayed] + items).makeList()
     }
 
     private func setupScrollView() {
@@ -79,6 +85,38 @@ public class HomeViewController: UIViewController {
         floatingTabBarManager.observe(scrollView: scrollView)
     }
 
+    private func setupSearchViewController() {
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+
+        self.searchController.hidesNavigationBarDuringPresentation = true
+        self.searchController.obscuresBackgroundDuringPresentation = false
+
+        self.searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
+        self.searchController.searchBar.searchTextField.layer.cornerRadius = 18
+        self.searchController.searchBar.searchTextField.layer.masksToBounds = true
+        self.searchController.searchBar.searchTextField.backgroundColor = DesignSystem.Color.neutral700.value
+
+        self.searchController.searchBar.setPositionAdjustment(UIOffset(horizontal: 6, vertical: 0), for: .search)
+
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
+            .foregroundColor: DesignSystem.Color.neutral100.value,
+            .font: DesignSystem.Typography.p.description.font
+        ]
+
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
+            .foregroundColor: DesignSystem.Color.neutral100.value,
+            .font: DesignSystem.Typography.p.description.font
+        ], for: .normal)
+
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        self.searchController.searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
+
+        definesPresentationContext = true
+    }
+
     private func setupAuthButtonActions() {
         let items = setAuthBarButtonItems()
 
@@ -90,6 +128,7 @@ public class HomeViewController: UIViewController {
         setProfileBarButtonItem(text: "₾ 0.00")
     }
 
+    // MARK: Reactive methods
     private func didReceive(action: RecentlyPlayedComponentViewModelOutputAction) {
         switch action {
         case .didSelectPlayedGame(let vm, _):
@@ -115,6 +154,7 @@ public class HomeViewController: UIViewController {
         }
     }
 
+    // MARK: Action methods
     @objc public func joinNowButtonDidTap() {
         print(#function)
         let alert = UIAlertController(title: R.string.localization.join_now.localized(), message: nil, preferredStyle: .alert)
@@ -144,3 +184,46 @@ let imageUrls = [
     URL(string: "https://i1.wp.com/batman-news.com/wp-content/uploads/2012/10/PP_360FOB_gm02_100512_tsn.jpg?fit=1526%2C2153&quality=80&strip=info&ssl=1")!,
     URL(string: "https://www.ncnetgroup.co.za/wp-content/uploads/2019/01/battlefield-3-592.jpg")!
 ]
+
+// MARK: UISearchResultsUpdating
+extension HomeViewController: UISearchResultsUpdating {
+    public func updateSearchResults(for searchController: UISearchController) {
+//    let searchBar = searchController.searchBar
+//    let category = Candy.Category(rawValue:
+//      searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+//    filterContentForSearchText(searchBar.text!, category: category)
+  }
+}
+
+// MARK: UISearchBarDelegate
+extension HomeViewController: UISearchBarDelegate {
+    public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+//    let category = Candy.Category(rawValue:
+//      searchBar.scopeButtonTitles![selectedScope])
+//    filterContentForSearchText(searchBar.text!, category: category)
+    }
+}
+
+// MARK: UISearchControllerDelegate
+extension HomeViewController: UISearchControllerDelegate {
+    public func willPresentSearchController(_ searchController: UISearchController) {
+        print(#function)
+        UIView.animate(withDuration: 0.3) {
+            self.collectionViewController.view.alpha = 0
+        }
+    }
+
+    public func didPresentSearchController(_ searchController: UISearchController) {
+        print(#function)
+    }
+
+    public func willDismissSearchController(_ searchController: UISearchController) {
+        UIView.animate(withDuration: 0.3) {
+            self.collectionViewController.view.alpha = 1
+        }
+    }
+
+    public func didDismissSearchController(_ searchController: UISearchController) {
+        print(#function)
+    }
+}

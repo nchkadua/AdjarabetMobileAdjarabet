@@ -14,7 +14,7 @@ public class PromotionsViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.setBackgorundColor(to: .neutral800)
+        setBaseBackgorundColor()
         setLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
     }
 }

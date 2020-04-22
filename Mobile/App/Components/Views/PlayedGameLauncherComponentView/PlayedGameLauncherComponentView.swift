@@ -53,7 +53,7 @@ public class PlayedGameLauncherComponentView: UIView {
         self.titleLabel.text = title
         self.subtitleLabel.text = subtitle
         self.subtitleLabel.isHidden = subtitle == nil
-        
+
         let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
         loadImage(with: coverUrl, options: options, into: coverImageView)
     }

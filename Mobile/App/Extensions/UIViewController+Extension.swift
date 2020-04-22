@@ -29,4 +29,8 @@ public extension UIViewController {
 
         scrollToTop(view: view)
     }
+
+    func setBaseBackgorundColor() {
+        view.setBackgorundColor(to: .neutral800)
+    }
 }

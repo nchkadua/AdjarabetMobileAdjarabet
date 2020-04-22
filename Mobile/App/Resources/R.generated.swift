@@ -902,7 +902,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 6 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 7 localization keys.
     struct localization {
       /// en translation: Games
       ///
@@ -924,6 +924,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let promotions_page_title = Rswift.StringResource(key: "promotions_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Search for games
+      ///
+      /// Locales: en, ka, hy
+      static let home_search_placeholder = Rswift.StringResource(key: "home_search_placeholder", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Sports
       ///
       /// Locales: en, ka, hy
@@ -1002,6 +1006,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("promotions_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Search for games
+      ///
+      /// Locales: en, ka, hy
+      static func home_search_placeholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_search_placeholder", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "home_search_placeholder"
+        }
+
+        return NSLocalizedString("home_search_placeholder", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Sports
