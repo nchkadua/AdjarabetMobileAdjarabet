@@ -392,7 +392,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 18 files.
+  /// This `R.file` struct is generated, and contains static references to 21 files.
   struct file {
     /// Resource file `FiraGO-Bold.ttf`.
     static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
@@ -424,6 +424,12 @@ struct R: Rswift.Validatable {
     static let firaGOTwoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Two", pathExtension: "ttf")
     /// Resource file `FiraGO-UltraLight.ttf`.
     static let firaGOUltraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-UltraLight", pathExtension: "ttf")
+    /// Resource file `PantonAM-Bold.otf`.
+    static let pantonAMBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-Bold", pathExtension: "otf")
+    /// Resource file `PantonAM-ExtraBold.otf`.
+    static let pantonAMExtraBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-ExtraBold", pathExtension: "otf")
+    /// Resource file `PantonAM-Regular.otf`.
+    static let pantonAMRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-Regular", pathExtension: "otf")
     /// Resource file `PantonMtav3-Bold.otf`.
     static let pantonMtav3BoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonMtav3-Bold", pathExtension: "otf")
     /// Resource file `PantonMtav3-ExtraBold.otf`.
@@ -521,6 +527,24 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "PantonAM-Bold", withExtension: "otf")`
+    static func pantonAMBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonAMBoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PantonAM-ExtraBold", withExtension: "otf")`
+    static func pantonAMExtraBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonAMExtraBoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PantonAM-Regular", withExtension: "otf")`
+    static func pantonAMRegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonAMRegularOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "PantonMtav3-Bold", withExtension: "otf")`
     static func pantonMtav3BoldOtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.pantonMtav3BoldOtf
@@ -542,7 +566,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 18 fonts.
+  /// This `R.font` struct is generated, and contains static references to 21 fonts.
   struct font: Rswift.Validatable {
     /// Font `FiraGO-Bold`.
     static let firaGOBold = Rswift.FontResource(fontName: "FiraGO-Bold")
@@ -574,6 +598,12 @@ struct R: Rswift.Validatable {
     static let firaGOTwo = Rswift.FontResource(fontName: "FiraGO-Two")
     /// Font `FiraGO-UltraLight`.
     static let firaGOUltraLight = Rswift.FontResource(fontName: "FiraGO-UltraLight")
+    /// Font `PantonAM-Bold`.
+    static let pantonAMBold = Rswift.FontResource(fontName: "PantonAM-Bold")
+    /// Font `PantonAM-ExtraBold`.
+    static let pantonAMExtraBold = Rswift.FontResource(fontName: "PantonAM-ExtraBold")
+    /// Font `PantonAM-Regular`.
+    static let pantonAMRegular = Rswift.FontResource(fontName: "PantonAM-Regular")
     /// Font `PantonMtav3-Bold`.
     static let pantonMtav3Bold = Rswift.FontResource(fontName: "PantonMtav3-Bold")
     /// Font `PantonMtav3-ExtraBold`.
@@ -656,6 +686,21 @@ struct R: Rswift.Validatable {
       return UIKit.UIFont(resource: firaGOUltraLight, size: size)
     }
 
+    /// `UIFont(name: "PantonAM-Bold", size: ...)`
+    static func pantonAMBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonAMBold, size: size)
+    }
+
+    /// `UIFont(name: "PantonAM-ExtraBold", size: ...)`
+    static func pantonAMExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonAMExtraBold, size: size)
+    }
+
+    /// `UIFont(name: "PantonAM-Regular", size: ...)`
+    static func pantonAMRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonAMRegular, size: size)
+    }
+
     /// `UIFont(name: "PantonMtav3-Bold", size: ...)`
     static func pantonMtav3Bold(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: pantonMtav3Bold, size: size)
@@ -687,6 +732,9 @@ struct R: Rswift.Validatable {
       if R.font.firaGOThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Thin' could not be loaded, is 'FiraGO-Thin.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.firaGOTwo(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Two' could not be loaded, is 'FiraGO-Two.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.firaGOUltraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-UltraLight' could not be loaded, is 'FiraGO-UltraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonAMBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-Bold' could not be loaded, is 'PantonAM-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonAMExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-ExtraBold' could not be loaded, is 'PantonAM-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonAMRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-Regular' could not be loaded, is 'PantonAM-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.pantonMtav3Bold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Bold' could not be loaded, is 'PantonMtav3-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.pantonMtav3ExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-ExtraBold' could not be loaded, is 'PantonMtav3-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.pantonMtav3Regular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Regular' could not be loaded, is 'PantonMtav3-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }

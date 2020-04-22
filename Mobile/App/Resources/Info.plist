@@ -87,6 +87,9 @@
 		<string>FiraGO-Thin.ttf</string>
 		<string>FiraGO-Two.ttf</string>
 		<string>FiraGO-UltraLight.ttf</string>
+		<string>PantonAM-Bold.oft</string>
+		<string>PantonAM-ExtraBold.otf</string>
+		<string>PantonAM-Regular.otf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
