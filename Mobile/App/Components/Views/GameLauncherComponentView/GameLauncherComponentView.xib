@@ -27,7 +27,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="R3q-vJ-4ai">
                     <rect key="frame" x="0.0" y="0.0" width="658" height="217"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fFK-nq-ozv" customClass="CircularImageView" customModule="Mobile" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fFK-nq-ozv" customClass="CircularImageView" customModule="Mobile" customModuleProvider="target">
                             <rect key="frame" x="20" y="95.5" width="70" height="70"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
