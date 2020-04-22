@@ -36,7 +36,7 @@ public class HomeViewController: UIViewController {
                 id: UUID().uuidString,
                 coverUrl: URL(string: "https://google.com")!,
                 name: "Game name \($0)",
-                lastWon: "last won $ \($0)")
+                lastWon: Bool.random() ? nil : "Last won $ \(Int.random(in: 5...100))")
             let viewModel = DefaultPlayedGameLauncherComponentViewModel(params: params)
             return viewModel
         }
@@ -56,7 +56,8 @@ public class HomeViewController: UIViewController {
                 id: UUID().uuidString,
                 coverUrl: URL(string: "https://google.com")!,
                 name: "Game name \($0)",
-                category: "game category \($0)")
+                category: "category \($0)",
+                jackpotAmount: Bool.random() ? nil : "$ 50,2319.98")
             let viewModel = DefaultGameLauncherComponentViewModel(params: params)
             viewModel.action.subscribe(onNext: { [weak self] action in
                 self?.didReceive(action: action)

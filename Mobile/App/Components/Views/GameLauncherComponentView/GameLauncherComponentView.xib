@@ -15,6 +15,7 @@
                 <outlet property="jackpotButton" destination="0NZ-Po-oWz" id="o74-UX-dWX"/>
                 <outlet property="separatorView" destination="wvY-32-wra" id="h8w-0a-x3k"/>
                 <outlet property="titleLabel" destination="hzE-hG-wfA" id="dL1-jH-SmT"/>
+                <outlet property="titleLabelCenterYConstraint" destination="MSC-uL-b4E" id="pj1-5A-Q7O"/>
                 <outlet property="view" destination="iN0-l3-epB" id="q51-Qz-6GT"/>
             </connections>
         </placeholder>
@@ -44,31 +45,33 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NZ-Po-oWz" customClass="AppCircularButton" customModule="SharedFramework">
                                     <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
+                                    <color key="backgroundColor" red="0.73725490199999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="$ 50,2319.98"/>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ave Caesar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-hG-wfA">
-                                    <rect key="frame" x="0.0" y="25" width="516" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jackpot Slots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cy-OM-YsD">
-                                    <rect key="frame" x="0.0" y="51.5" width="516" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ygZ-Xk-31c">
+                                    <rect key="frame" x="0.0" y="25" width="516" height="47"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ave Caesar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-hG-wfA">
+                                            <rect key="frame" x="0.0" y="0.0" width="516" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Jackpot Slots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cy-OM-YsD">
+                                            <rect key="frame" x="0.0" y="26.5" width="516" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="hzE-hG-wfA" secondAttribute="trailing" id="Eq2-SK-erJ"/>
-                                <constraint firstItem="5Cy-OM-YsD" firstAttribute="top" secondItem="hzE-hG-wfA" secondAttribute="bottom" constant="6" id="Jwz-1P-crd"/>
+                                <constraint firstItem="ygZ-Xk-31c" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="LRd-Ne-Wxg"/>
                                 <constraint firstItem="0NZ-Po-oWz" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="LlV-hw-4Qs"/>
-                                <constraint firstItem="hzE-hG-wfA" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="Ysy-PP-m7y"/>
-                                <constraint firstItem="hzE-hG-wfA" firstAttribute="centerY" secondItem="FGe-dH-2oi" secondAttribute="centerY" id="feW-sm-jPS"/>
+                                <constraint firstAttribute="trailing" secondItem="ygZ-Xk-31c" secondAttribute="trailing" id="ZZI-2e-Vbp"/>
                                 <constraint firstItem="0NZ-Po-oWz" firstAttribute="top" secondItem="FGe-dH-2oi" secondAttribute="top" id="gOJ-74-c8C"/>
-                                <constraint firstItem="5Cy-OM-YsD" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="ooo-S5-UbM"/>
-                                <constraint firstAttribute="trailing" secondItem="5Cy-OM-YsD" secondAttribute="trailing" id="w8r-aW-7qv"/>
                             </constraints>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/GameLauncher/in" translatesAutoresizingMaskIntoConstraints="NO" id="PNe-u6-fPH">
@@ -81,6 +84,8 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="94" id="Ine-PU-CA4"/>
+                        <constraint firstItem="hzE-hG-wfA" firstAttribute="centerY" secondItem="PNe-u6-fPH" secondAttribute="centerY" id="MSC-uL-b4E"/>
+                        <constraint firstItem="ygZ-Xk-31c" firstAttribute="centerY" secondItem="PNe-u6-fPH" secondAttribute="centerY" priority="999" id="VnS-x5-pIy"/>
                         <constraint firstItem="FGe-dH-2oi" firstAttribute="height" secondItem="fFK-nq-ozv" secondAttribute="height" id="gcn-zf-qUK"/>
                     </constraints>
                     <edgeInsets key="layoutMargins" top="12" left="20" bottom="12" right="20"/>

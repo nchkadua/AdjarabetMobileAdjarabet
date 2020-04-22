@@ -17,6 +17,7 @@ public class GameLauncherComponentView: UIView {
     @IBOutlet weak private var coverImageView: UIImageView!
     @IBOutlet weak private var jackpotButton: AppCircularButton!
     @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet private var titleLabelCenterYConstraint: NSLayoutConstraint!
     @IBOutlet weak private var categoryLabel: UILabel!
     @IBOutlet weak private var inImageView: UIImageView!
     @IBOutlet weak private var separatorView: UIView!
@@ -41,8 +42,8 @@ public class GameLauncherComponentView: UIView {
 
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let coverUrl, let title, let category):
-                self?.setupUI(coverUrl: coverUrl, title: title, category: category)
+            case .set(let coverUrl, let title, let category, let jackpotAmount):
+                self?.setupUI(coverUrl: coverUrl, title: title, category: category, jackpotAmount: jackpotAmount)
             default: break
             }
         }).disposed(by: disposeBag)
@@ -50,10 +51,13 @@ public class GameLauncherComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setupUI(coverUrl: URL, title: String, category: String) {
+    private func setupUI(coverUrl: URL, title: String, category: String, jackpotAmount: String?) {
         print(#function)
         self.titleLabel.text = title
+        self.titleLabelCenterYConstraint.isActive = jackpotAmount != nil
         self.categoryLabel.text = category
+        self.jackpotButton.setTitle(jackpotAmount, for: .normal)
+        self.jackpotButton.isHidden = jackpotAmount == nil
     }
 }
 

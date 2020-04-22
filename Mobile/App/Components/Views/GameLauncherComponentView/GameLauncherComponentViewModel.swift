@@ -16,6 +16,7 @@ public struct GameLauncherComponentViewModelParams {
     public let coverUrl: URL
     public let name: String
     public let category: String
+    public let jackpotAmount: String?
 }
 
 public protocol GameLauncherComponentViewModelInput {
@@ -28,7 +29,7 @@ public protocol GameLauncherComponentViewModelOutput {
 }
 
 public enum GameLauncherComponentViewModelOutputAction {
-    case set(coverUrl: URL, title: String, category: String)
+    case set(coverUrl: URL, title: String, category: String, jackpotAmount: String?)
     case didSelect(GameLauncherComponentViewModel, indexPath: IndexPath)
 }
 
@@ -44,6 +45,6 @@ public class DefaultGameLauncherComponentViewModel {
 extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel {
     public func didBind() {
         print(#function)
-        action.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category))
+        action.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category, jackpotAmount: params.jackpotAmount))
     }
 }

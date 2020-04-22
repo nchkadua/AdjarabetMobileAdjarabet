@@ -15,7 +15,7 @@ public struct PlayedGameLauncherComponentViewModelParams {
     public let id: String
     public let coverUrl: URL
     public let name: String
-    public let lastWon: String
+    public let lastWon: String?
 }
 
 public protocol PlayedGameLauncherComponentViewModelInput {
@@ -28,7 +28,7 @@ public protocol PlayedGameLauncherComponentViewModelOutput {
 }
 
 public enum PlayedGameLauncherComponentViewModelOutputAction {
-    case set(coverUrl: URL, name: String, lastWon: String)
+    case set(coverUrl: URL, name: String, lastWon: String?)
     case didSelect(PlayedGameLauncherComponentViewModel, indexPath: IndexPath)
 }
 
