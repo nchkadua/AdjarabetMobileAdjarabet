@@ -14,4 +14,18 @@ public extension UIButton {
     func setFont(to typography: DesignSystem.Typography) {
         self.titleLabel?.font = typography.description.font
     }
+
+    func setTitleWithoutAnimation(_ title: String?, for state: UIControl.State) {
+        UIView.performWithoutAnimation {
+            setTitle(title, for: state)
+            layoutIfNeeded()
+        }
+    }
+
+    func setAttributedTitleWithoutAnimation(_ title: NSAttributedString?, for state: UIControl.State) {
+        UIView.performWithoutAnimation {
+            setAttributedTitle(title, for: state)
+            layoutIfNeeded()
+        }
+    }
 }

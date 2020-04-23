@@ -98,6 +98,8 @@
 		D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C552445FDEF004A4BDF /* Sports.storyboard */; };
 		D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C572445FE08004A4BDF /* Promotions.storyboard */; };
 		D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C592445FE6C004A4BDF /* Notifications.storyboard */; };
+		D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */; };
+		D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */; };
 		D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */; };
 		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
 		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
@@ -242,6 +244,8 @@
 		D87E3C552445FDEF004A4BDF /* Sports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sports.storyboard; sourceTree = "<group>"; };
 		D87E3C572445FE08004A4BDF /* Promotions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Promotions.storyboard; sourceTree = "<group>"; };
 		D87E3C592445FE6C004A4BDF /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewModel.swift; sourceTree = "<group>"; };
+		D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
 		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -578,6 +582,7 @@
 			isa = PBXGroup;
 			children = (
 				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
+				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
 				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
 			);
 			path = Promotions;
@@ -587,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */,
+				D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */,
 				D87E3C592445FE6C004A4BDF /* Notifications.storyboard */,
 			);
 			path = Notifications;
@@ -1185,11 +1191,13 @@
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
+				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
+				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
 				D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,

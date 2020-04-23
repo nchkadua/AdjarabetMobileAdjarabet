@@ -56,7 +56,7 @@ public class GameLauncherComponentView: UIView {
         self.titleLabel.text = title
         self.titleLabelCenterYConstraint.isActive = jackpotAmount != nil
         self.categoryLabel.text = category
-        self.jackpotButton.setTitle(jackpotAmount, for: .normal)
+        self.jackpotButton.setTitleWithoutAnimation(jackpotAmount, for: .normal)
         self.jackpotButton.isHidden = jackpotAmount == nil
 
         let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))

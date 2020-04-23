@@ -6,16 +6,38 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-import UIKit
+import RxSwift
 
 public class PromotionsViewController: UIViewController {
+    public var viewModel: PromotionsViewModel = DefaultPromotionsViewModel(params: PromotionsViewModelParams())
+    private let disposeBag = DisposeBag()
+
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+        bind(to: viewModel)
+        viewModel.viewDidLoad()
+    }
+
+    private func setup() {
         setBaseBackgorundColor()
         setLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
+    }
+
+    private func bind(to viewModel: PromotionsViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didReceive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didReceive(action: PromotionsViewModelOutputAction) {
+        switch action {
+        case .languageDidChange:
+            setup()
+        }
     }
 }
 

@@ -42,7 +42,7 @@ public extension UIBarButtonItem {
     typealias Coupled = (barButtonItem: UIBarButtonItem, button: UIButton)
     static func make(title: String?, typography: DesignSystem.Typography = .h4) -> Coupled {
         let button = UIButton(type: .system)
-        button.setTitle(title, for: .normal)
+        button.setTitleWithoutAnimation(title, for: .normal)
         button.titleLabel?.font = typography.description.font
         button.setTitleColor(to: .neutral100, for: .normal)
 

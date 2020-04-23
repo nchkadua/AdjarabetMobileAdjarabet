@@ -12,7 +12,7 @@ public protocol BaseViewModel: class, LanguageChangeObserving, LanguageChangeNot
 }
 
 public class DefaultBaseViewModel: BaseViewModel {
-    public let disposeBag = DisposeBag()
+    public var disposeBag = DisposeBag()
     public let languageStorage: LanguageStorage = DefaultLanguageStorage.shared
 
     public func observeLanguageChange() {

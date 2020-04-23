@@ -60,6 +60,8 @@ public extension UIViewController {
             .font: DesignSystem.Typography.p.description.font
         ], for: .normal)
 
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
+
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
 

@@ -53,7 +53,10 @@ public class DefaultRecentlyPlayedComponentViewModel: DefaultBaseViewModel {
 }
 
 extension DefaultRecentlyPlayedComponentViewModel: RecentlyPlayedComponentViewModel {
+    public var action: Observable<RecentlyPlayedComponentViewModelOutputAction> { actionSubject.asObserver() }
+
     public func didBind() {
+        disposeBag = DisposeBag()
         observeLanguageChange()
         actionSubject.onNext(.set(title: params.title.localized(), buttonTitle: params.buttonTitle.localized()))
     }
@@ -65,6 +68,4 @@ extension DefaultRecentlyPlayedComponentViewModel: RecentlyPlayedComponentViewMo
     public func didSelect(viewModel: PlayedGameLauncherComponentViewModel, indexPath: IndexPath) {
         actionSubject.onNext(.didSelectPlayedGame(viewModel, indexPath))
     }
-
-    public var action: Observable<RecentlyPlayedComponentViewModelOutputAction> { actionSubject.asObserver() }
 }

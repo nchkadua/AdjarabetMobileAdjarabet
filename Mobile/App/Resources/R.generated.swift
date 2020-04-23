@@ -960,8 +960,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 9 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 10 localization keys.
     struct localization {
+      /// en translation: Cancel
+      ///
+      /// Locales: en, ka, hy
+      static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Games
       ///
       /// Locales: en, ka, hy
@@ -998,6 +1002,21 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let view_all = Rswift.StringResource(key: "view_all", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, ka, hy
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cancel", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cancel"
+        }
+
+        return NSLocalizedString("cancel", tableName: "Localization", bundle: bundle, comment: "")
+      }
 
       /// en translation: Games
       ///

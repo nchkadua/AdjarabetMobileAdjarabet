@@ -47,6 +47,7 @@ public class HomeViewController: UIViewController {
         case .languageDidChange:
             setupNavigationItem()
             searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
+            UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
         }
     }
 
