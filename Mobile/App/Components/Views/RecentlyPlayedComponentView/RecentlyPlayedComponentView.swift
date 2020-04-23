@@ -48,7 +48,6 @@ public class RecentlyPlayedComponentView: UIView {
     }
 
     private func setupUI(title: String, buttonTitle: String) {
-        print(#function)
         self.titleLabel.text = title
         self.button.setTitle(buttonTitle, for: .normal)
         self.collectionView.dataSource = self

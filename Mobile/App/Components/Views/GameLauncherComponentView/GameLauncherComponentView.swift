@@ -53,7 +53,6 @@ public class GameLauncherComponentView: UIView {
     }
 
     private func setupUI(coverUrl: URL, title: String, category: String, jackpotAmount: String?) {
-        print(#function)
         self.titleLabel.text = title
         self.titleLabelCenterYConstraint.isActive = jackpotAmount != nil
         self.categoryLabel.text = category

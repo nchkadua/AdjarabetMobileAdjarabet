@@ -49,7 +49,6 @@ public class DefaultRecentlyPlayedComponentViewModel {
 
 extension DefaultRecentlyPlayedComponentViewModel: RecentlyPlayedComponentViewModel {
     public func didBind() {
-        print(#function)
         action.onNext(.set(title: params.title, buttonTitle: params.buttonTitle))
     }
 

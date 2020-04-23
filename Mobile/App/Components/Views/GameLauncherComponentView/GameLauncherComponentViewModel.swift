@@ -44,7 +44,6 @@ public class DefaultGameLauncherComponentViewModel {
 
 extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel {
     public func didBind() {
-        print(#function)
         action.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category, jackpotAmount: params.jackpotAmount))
     }
 }

@@ -82,6 +82,19 @@ public enum DesignSystem {
             }
         }
 
+        public func font(by language: Language) -> UIFont {
+            switch self {
+            case .h1:    return language == .armenian ? R.font.pantonAMBold(size: 28)! : R.font.pantonMtav3Bold(size: 28)!
+            case .h2:    return language == .armenian ? R.font.pantonAMBold(size: 23)! : R.font.pantonMtav3Bold(size: 23)!
+            case .h3:    return language == .armenian ? R.font.pantonAMBold(size: 16)! : R.font.pantonMtav3Bold(size: 16)!
+            case .h4:    return language == .armenian ? R.font.pantonAMBold(size: 14)! : R.font.pantonMtav3Bold(size: 14)!
+            case .h5:    return language == .armenian ? R.font.pantonAMBold(size: 11)! : R.font.pantonMtav3Bold(size: 11)!
+            case .body1: return R.font.firaGOMedium(size: 13)!
+            case .body2: return R.font.firaGOMedium(size: 11)!
+            case .p:     return R.font.firaGORegular(size: 13)!
+            }
+        }
+
         /// Availbe information about concrete typography
         public struct Description {
             public let font: UIFont

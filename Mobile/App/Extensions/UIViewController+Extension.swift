@@ -33,4 +33,32 @@ public extension UIViewController {
     func setBaseBackgorundColor() {
         view.setBackgorundColor(to: .neutral800)
     }
+
+    func setupStandardSearchViewController(searchController: UISearchController) {
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = false
+
+        searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
+        searchController.searchBar.searchTextField.layer.cornerRadius = 18
+        searchController.searchBar.searchTextField.layer.masksToBounds = true
+        searchController.searchBar.searchTextField.backgroundColor = DesignSystem.Color.neutral700.value
+
+        searchController.searchBar.setPositionAdjustment(UIOffset(horizontal: 6, vertical: 0), for: .search)
+        searchController.searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
+
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
+            .foregroundColor: DesignSystem.Color.neutral100.value,
+            .font: DesignSystem.Typography.p.description.font
+        ]
+
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
+            .foregroundColor: DesignSystem.Color.neutral100.value,
+            .font: DesignSystem.Typography.p.description.font
+        ], for: .normal)
+
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+
+        definesPresentationContext = true
+    }
 }

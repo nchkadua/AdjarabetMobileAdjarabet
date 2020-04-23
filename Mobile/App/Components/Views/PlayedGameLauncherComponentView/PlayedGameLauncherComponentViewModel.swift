@@ -46,7 +46,6 @@ public class DefaultPlayedGameLauncherComponentViewModel {
 
 extension DefaultPlayedGameLauncherComponentViewModel: PlayedGameLauncherComponentViewModel {
     public func didBind() {
-        print(#function)
         action.onNext(.set(coverUrl: params.coverUrl, name: params.name, lastWon: params.lastWon))
     }
 }

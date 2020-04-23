@@ -49,7 +49,6 @@ public class PlayedGameLauncherComponentView: UIView {
     }
 
     private func setupUI(coverUrl: URL, title: String, subtitle: String?) {
-        print(#function)
         self.titleLabel.text = title
         self.subtitleLabel.text = subtitle
         self.subtitleLabel.isHidden = subtitle == nil
