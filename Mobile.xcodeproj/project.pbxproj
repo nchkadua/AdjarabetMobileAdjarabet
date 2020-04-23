@@ -43,6 +43,8 @@
 		D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202C9245191B100F0F056 /* LanguageStorage.swift */; };
 		D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202CF2451930A00F0F056 /* ABUserDefaults.swift */; };
 		D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */; };
+		D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D52451ABAB00F0F056 /* HomeViewModel.swift */; };
+		D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D72451AD8400F0F056 /* BaseViewModel.swift */; };
 		D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */; };
 		D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098424482BE80001ADC1 /* TabBarButton.swift */; };
 		D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */; };
@@ -183,6 +185,8 @@
 		D84202C9245191B100F0F056 /* LanguageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorage.swift; sourceTree = "<group>"; };
 		D84202CF2451930A00F0F056 /* ABUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABUserDefaults.swift; sourceTree = "<group>"; };
 		D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorageTests.swift; sourceTree = "<group>"; };
+		D84202D52451ABAB00F0F056 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D84202D72451AD8400F0F056 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		D842098424482BE80001ADC1 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -484,6 +488,7 @@
 				D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */,
 				D80784672443968D00003892 /* DesignSystem.swift */,
 				D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */,
+				D84202D72451AD8400F0F056 /* BaseViewModel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -815,6 +820,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C73F7E2445A64E004C96DB /* HomeViewController.swift */,
+				D84202D52451ABAB00F0F056 /* HomeViewModel.swift */,
 				D8C73F802445A656004C96DB /* Home.storyboard */,
 			);
 			path = Home;
@@ -1142,10 +1148,12 @@
 				D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
+				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
+				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,

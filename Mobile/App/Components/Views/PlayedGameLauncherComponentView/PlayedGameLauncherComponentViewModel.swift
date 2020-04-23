@@ -20,10 +20,11 @@ public struct PlayedGameLauncherComponentViewModelParams {
 
 public protocol PlayedGameLauncherComponentViewModelInput {
     func didBind()
+    func didSelect(at indexPath: IndexPath)
 }
 
 public protocol PlayedGameLauncherComponentViewModelOutput {
-    var action: PublishSubject<PlayedGameLauncherComponentViewModelOutputAction> { get }
+    var action: Observable<PlayedGameLauncherComponentViewModelOutputAction> { get }
     var params: PlayedGameLauncherComponentViewModelParams { get }
 }
 
@@ -36,7 +37,7 @@ public enum PlayedGameLauncherComponentViewModelRoute {
 }
 
 public class DefaultPlayedGameLauncherComponentViewModel {
-    public let action = PublishSubject<PlayedGameLauncherComponentViewModelOutputAction>()
+    public let actionSubject = PublishSubject<PlayedGameLauncherComponentViewModelOutputAction>()
     public var params: PlayedGameLauncherComponentViewModelParams
 
     public init(params: PlayedGameLauncherComponentViewModelParams) {
@@ -45,7 +46,13 @@ public class DefaultPlayedGameLauncherComponentViewModel {
 }
 
 extension DefaultPlayedGameLauncherComponentViewModel: PlayedGameLauncherComponentViewModel {
+    public var action: Observable<PlayedGameLauncherComponentViewModelOutputAction> { actionSubject.asObserver() }
+
     public func didBind() {
-        action.onNext(.set(coverUrl: params.coverUrl, name: params.name, lastWon: params.lastWon))
+        actionSubject.onNext(.set(coverUrl: params.coverUrl, name: params.name, lastWon: params.lastWon))
+    }
+
+    public func didSelect(at indexPath: IndexPath) {
+        actionSubject.onNext(.didSelect(self, indexPath: indexPath))
     }
 }

@@ -7,14 +7,15 @@
 //
 
 import RxSwift
+import Rswift
 
 public protocol RecentlyPlayedComponentViewModel: RecentlyPlayedComponentViewModelInput, RecentlyPlayedComponentViewModelOutput {
 }
 
 public struct RecentlyPlayedComponentViewModelParams {
     public let id: String
-    public let title: String
-    public let buttonTitle: String
+    public let title: Rswift.StringResource
+    public let buttonTitle: Rswift.StringResource
     public let playedGames: [PlayedGameLauncherCollectionViewCellDataProvider]
 }
 
@@ -25,7 +26,7 @@ public protocol RecentlyPlayedComponentViewModelInput {
 }
 
 public protocol RecentlyPlayedComponentViewModelOutput {
-    var action: PublishSubject<RecentlyPlayedComponentViewModelOutputAction> { get }
+    var action: Observable<RecentlyPlayedComponentViewModelOutputAction> { get }
     var params: RecentlyPlayedComponentViewModelParams { get }
 }
 
@@ -38,25 +39,32 @@ public enum RecentlyPlayedComponentViewModelOutputAction {
 public enum RecentlyPlayedComponentViewModelRoute {
 }
 
-public class DefaultRecentlyPlayedComponentViewModel {
-    public let action = PublishSubject<RecentlyPlayedComponentViewModelOutputAction>()
+public class DefaultRecentlyPlayedComponentViewModel: DefaultBaseViewModel {
+    public let actionSubject = PublishSubject<RecentlyPlayedComponentViewModelOutputAction>()
     public var params: RecentlyPlayedComponentViewModelParams
 
     public init(params: RecentlyPlayedComponentViewModelParams) {
         self.params = params
     }
+
+    public override func languageDidChange() {
+        actionSubject.onNext(.set(title: params.title.localized(), buttonTitle: params.buttonTitle.localized()))
+    }
 }
 
 extension DefaultRecentlyPlayedComponentViewModel: RecentlyPlayedComponentViewModel {
     public func didBind() {
-        action.onNext(.set(title: params.title, buttonTitle: params.buttonTitle))
+        observeLanguageChange()
+        actionSubject.onNext(.set(title: params.title.localized(), buttonTitle: params.buttonTitle.localized()))
     }
 
     public func didSelectViewAll() {
-        action.onNext(.didSelectViewAll(self))
+        actionSubject.onNext(.didSelectViewAll(self))
     }
 
     public func didSelect(viewModel: PlayedGameLauncherComponentViewModel, indexPath: IndexPath) {
-        action.onNext(.didSelectPlayedGame(viewModel, indexPath))
+        actionSubject.onNext(.didSelectPlayedGame(viewModel, indexPath))
     }
+
+    public var action: Observable<RecentlyPlayedComponentViewModelOutputAction> { actionSubject.asObserver() }
 }

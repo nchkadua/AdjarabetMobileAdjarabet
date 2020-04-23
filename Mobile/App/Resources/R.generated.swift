@@ -960,7 +960,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 7 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 9 localization keys.
     struct localization {
       /// en translation: Games
       ///
@@ -982,6 +982,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let promotions_page_title = Rswift.StringResource(key: "promotions_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Recently Played
+      ///
+      /// Locales: en, ka, hy
+      static let recently_played = Rswift.StringResource(key: "recently_played", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Search for games
       ///
       /// Locales: en, ka, hy
@@ -990,6 +994,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sports_page_title = Rswift.StringResource(key: "sports_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: View All
+      ///
+      /// Locales: en, ka, hy
+      static let view_all = Rswift.StringResource(key: "view_all", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
 
       /// en translation: Games
       ///
@@ -1066,6 +1074,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("promotions_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Recently Played
+      ///
+      /// Locales: en, ka, hy
+      static func recently_played(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("recently_played", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "recently_played"
+        }
+
+        return NSLocalizedString("recently_played", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Search for games
       ///
       /// Locales: en, ka, hy
@@ -1094,6 +1117,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("sports_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: View All
+      ///
+      /// Locales: en, ka, hy
+      static func view_all(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("view_all", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "view_all"
+        }
+
+        return NSLocalizedString("view_all", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

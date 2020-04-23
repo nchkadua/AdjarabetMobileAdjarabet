@@ -11,7 +11,7 @@
 
 /* Home */
 "home_page_title" = "Խաղեր";
-"home_search_placeholder" = "მოძებნე თამაშები";
+"home_search_placeholder" = "Շարժեբნე խաղեր";
 
 /* Sports */
 "sports_page_title" = "Սպորտ";
@@ -22,7 +22,9 @@
 /* Notifications */
 "notifications_page_title" = "Ծանուցումներ";
 
+/* Recently Played Games */
+"recently_played" = "Վերջերս խաղարկված";
 
-
-
+/* General */
+"view_all" = "Դիտեք բոլորը";
 

@@ -45,6 +45,8 @@ public extension UIViewController {
         searchController.searchBar.searchTextField.backgroundColor = DesignSystem.Color.neutral700.value
 
         searchController.searchBar.setImage(R.image.shared.search(), for: .search, state: .normal)
+        searchController.searchBar.searchTextField.leftView?.tintColor = DesignSystem.Color.neutral100.value
+
         searchController.searchBar.setPositionAdjustment(UIOffset(horizontal: 6, vertical: 0), for: .search)
         searchController.searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
 

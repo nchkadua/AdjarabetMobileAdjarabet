@@ -9,7 +9,7 @@
 import Rswift
 
 public extension Rswift.StringResource {
-    func localized(language: Language = Language.default) -> String {
+    func localized(language: Language = DefaultLanguageStorage.shared.currentLanguage) -> String {
         let path = Bundle(for: Language.Class.self).path(forResource: language.localizableIdentifier, ofType: "lproj")!
         let bundle = Bundle(path: path)!
 

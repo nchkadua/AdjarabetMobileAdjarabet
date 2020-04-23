@@ -32,7 +32,7 @@ public class DefaultLanguageStorage {
     }
 
     public enum Key: String {
-        case language = "com.adjarabet.storage.language"
+        case language = "com.adjarabet.mobile.storage.language"
     }
 }
 
@@ -42,7 +42,7 @@ extension DefaultLanguageStorage: LanguageStorage {
     }
 
     public var currentLanguageObservable: Observable<Language> {
-        currentLanguageSubject.asObservable()
+        currentLanguageSubject.asObservable().distinctUntilChanged()
     }
 
     public func update(language: Language) {
