@@ -793,8 +793,18 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.shared` struct is generated, and contains static references to 0 images.
+    /// This `R.image.shared` struct is generated, and contains static references to 1 images.
     struct shared {
+      /// Image `search`.
+      static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/search")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
+      static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.search, compatibleWith: traitCollection)
+      }
+      #endif
+
       /// This `R.image.shared.navBar` struct is generated, and contains static references to 1 images.
       struct navBar {
         /// Image `profile`.
