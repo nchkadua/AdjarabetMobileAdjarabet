@@ -40,6 +40,9 @@
 		D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */; };
 		D83ED2F7244C92990037DDEB /* DesignSystemExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */; };
 		D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */; };
+		D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202C9245191B100F0F056 /* LanguageStorage.swift */; };
+		D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202CF2451930A00F0F056 /* ABUserDefaults.swift */; };
+		D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */; };
 		D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */; };
 		D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098424482BE80001ADC1 /* TabBarButton.swift */; };
 		D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */; };
@@ -177,6 +180,9 @@
 		D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemExtensionTests.swift; sourceTree = "<group>"; };
 		D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherComponentViewModel.swift; sourceTree = "<group>"; };
+		D84202C9245191B100F0F056 /* LanguageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorage.swift; sourceTree = "<group>"; };
+		D84202CF2451930A00F0F056 /* ABUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABUserDefaults.swift; sourceTree = "<group>"; };
+		D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorageTests.swift; sourceTree = "<group>"; };
 		D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		D842098424482BE80001ADC1 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -359,12 +365,37 @@
 		D80784A324447AA400003892 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
-				D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */,
-				D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */,
-				D8FBA4FF2449C7090015C03C /* LanguageTests.swift */,
+				D84202D1245196C800F0F056 /* DesignSystem */,
+				D84202D2245196D800F0F056 /* Localization */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D84202C82451919400F0F056 /* PersistentStorages */ = {
+			isa = PBXGroup;
+			children = (
+				D84202C9245191B100F0F056 /* LanguageStorage.swift */,
+			);
+			path = PersistentStorages;
+			sourceTree = "<group>";
+		};
+		D84202D1245196C800F0F056 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
+				D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D84202D2245196D800F0F056 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */,
+				D8FBA4FF2449C7090015C03C /* LanguageTests.swift */,
+				D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		D842098624482CA20001ADC1 /* Factories */ = {
@@ -663,6 +694,7 @@
 			children = (
 				D83026BF24518528006FF7FB /* DummyData.swift */,
 				D8A47DF3243366F80077AA8E /* NetworkClinet */,
+				D84202C82451919400F0F056 /* PersistentStorages */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -803,6 +835,7 @@
 			children = (
 				D8FBA4F72449BE7D0015C03C /* Language.swift */,
 				D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */,
+				D84202CF2451930A00F0F056 /* ABUserDefaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1069,6 +1102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */,
+				D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */,
 				D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */,
 				D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */,
 				D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */,
@@ -1097,6 +1131,7 @@
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
+				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
@@ -1133,6 +1168,7 @@
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
+				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
