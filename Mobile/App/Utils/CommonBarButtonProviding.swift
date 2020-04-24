@@ -20,11 +20,11 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
-    func setAuthBarButtonItems() -> (joinNow: UIBarButtonItem.Coupled, login: UIBarButtonItem.Coupled) {
-        let joinNowBarButtonItem = UIBarButtonItem.make(title: R.string.localization.join_now.localized())
+    func setLoginBarButtonItem() -> UIBarButtonItem.Coupled {
+//        let joinNowBarButtonItem = UIBarButtonItem.make(title: R.string.localization.join_now.localized())
         let loginBarButtonItem = UIBarButtonItem.make(title: R.string.localization.login.localized())
-        navigationItem.rightBarButtonItems = [loginBarButtonItem.barButtonItem, joinNowBarButtonItem.barButtonItem]
-        return (joinNowBarButtonItem, loginBarButtonItem)
+        navigationItem.rightBarButtonItems = [loginBarButtonItem.barButtonItem]
+        return loginBarButtonItem
     }
 
     @discardableResult

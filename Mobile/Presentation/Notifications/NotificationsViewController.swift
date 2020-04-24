@@ -17,7 +17,7 @@ public class NotificationsViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupLanguageButtons()
+//        setupLanguageButtons()
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
