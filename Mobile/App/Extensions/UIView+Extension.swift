@@ -10,7 +10,7 @@ import Foundation
 
 public extension UIView {
     @discardableResult
-    func place(in parentView: UIView) -> EdgeConstraint {
+    func pin(in parentView: UIView) -> EdgeConstraint {
         let top = topAnchor.constraint(equalTo: parentView.topAnchor)
         let bottom = bottomAnchor.constraint(equalTo: parentView.bottomAnchor)
         let left = leadingAnchor.constraint(equalTo: parentView.leadingAnchor)
@@ -35,6 +35,14 @@ public extension UIView {
 
     func removeAllSubViews() {
         subviews.forEach { $0.removeFromSuperview() }
+    }
+
+    func setBackgorundColor(to color: DesignSystem.Color, alpha: CGFloat = 1) {
+        self.backgroundColor = color.value.withAlphaComponent(alpha)
+    }
+
+    func setTintColor(to color: DesignSystem.Color, alpha: CGFloat = 1) {
+        self.tintColor = color.value.withAlphaComponent(alpha)
     }
 }
 

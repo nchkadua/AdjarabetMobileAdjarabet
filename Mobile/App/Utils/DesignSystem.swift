@@ -10,29 +10,51 @@ public enum DesignSystem {
     /// Design system colors
     public enum Color {
         /// Neutral colors
-        public static var white: UIColor { R.color.colorGuide.neutral.white()! }
-        public static var neutral100: UIColor { R.color.colorGuide.neutral.neutral100()! }
-        public static var neutral200: UIColor { R.color.colorGuide.neutral.neutral200()! }
-        public static var neutral300: UIColor { R.color.colorGuide.neutral.neutral300()! }
-        public static var neutral400: UIColor { R.color.colorGuide.neutral.neutral400()! }
-        public static var neutral500: UIColor { R.color.colorGuide.neutral.neutral500()! }
-        public static var neutral600: UIColor { R.color.colorGuide.neutral.neutral600()! }
-        public static var neutral700: UIColor { R.color.colorGuide.neutral.neutral700()! }
-        public static var neutral800: UIColor { R.color.colorGuide.neutral.neutral800()! }
-        public static var neutral900: UIColor { R.color.colorGuide.neutral.neutral900()! }
-
+        case white
+        case neutral100
+        case neutral200
+        case neutral300
+        case neutral400
+        case neutral500
+        case neutral600
+        case neutral700
+        case neutral800
+        case neutral900
         /// Primary colors
-        public static var primary200: UIColor { R.color.colorGuide.primary.primary200()! }
-        public static var primary400: UIColor { R.color.colorGuide.primary.primary400()! }
-
+        case primary200
+        case primary400
         /// Secondary colors
-        public static var secondary200: UIColor { R.color.colorGuide.secondary.secondary200()! }
-        public static var secondary400: UIColor { R.color.colorGuide.secondary.secondary400()! }
-
+        case secondary200
+        case secondary400
         /// Semantic colors
-        public static var success: UIColor { R.color.colorGuide.semantic.success()! }
-        public static var warning: UIColor { R.color.colorGuide.semantic.warning()! }
-        public static var error: UIColor { R.color.colorGuide.semantic.error()! }
+        case success
+        case warning
+        case error
+
+        public var value: UIColor {
+            switch self {
+            case .white:         return R.color.colorGuide.neutral.white()!
+            case .neutral100:    return R.color.colorGuide.neutral.neutral100()!
+            case .neutral200:    return R.color.colorGuide.neutral.neutral200()!
+            case .neutral300:    return R.color.colorGuide.neutral.neutral300()!
+            case .neutral400:    return R.color.colorGuide.neutral.neutral400()!
+            case .neutral500:    return R.color.colorGuide.neutral.neutral500()!
+            case .neutral600:    return R.color.colorGuide.neutral.neutral600()!
+            case .neutral700:    return R.color.colorGuide.neutral.neutral700()!
+            case .neutral800:    return R.color.colorGuide.neutral.neutral800()!
+            case .neutral900:    return R.color.colorGuide.neutral.neutral900()!
+
+            case  .primary200:   return R.color.colorGuide.primary.primary200()!
+            case  .primary400:   return R.color.colorGuide.primary.primary400()!
+
+            case  .secondary200: return R.color.colorGuide.secondary.secondary200()!
+            case  .secondary400: return R.color.colorGuide.secondary.secondary400()!
+
+            case  .success:      return R.color.colorGuide.semantic.success()!
+            case  .warning:      return R.color.colorGuide.semantic.warning()!
+            case  .error:        return R.color.colorGuide.semantic.error()!
+            }
+        }
     }
 
     /// Design system typography
@@ -57,6 +79,19 @@ public enum DesignSystem {
             case .body1: return Description(font: R.font.firaGOMedium(size: 13)!, lineSpasing: 0, lineHeight: 20)
             case .body2: return Description(font: R.font.firaGOMedium(size: 11)!, lineSpasing: 0, lineHeight: 16)
             case .p:     return Description(font: R.font.firaGORegular(size: 13)!, lineSpasing: 0, lineHeight: 20)
+            }
+        }
+
+        public func font(by language: Language) -> UIFont {
+            switch self {
+            case .h1:    return language == .armenian ? R.font.pantonAMBold(size: 28)! : R.font.pantonMtav3Bold(size: 28)!
+            case .h2:    return language == .armenian ? R.font.pantonAMBold(size: 23)! : R.font.pantonMtav3Bold(size: 23)!
+            case .h3:    return language == .armenian ? R.font.pantonAMBold(size: 16)! : R.font.pantonMtav3Bold(size: 16)!
+            case .h4:    return language == .armenian ? R.font.pantonAMBold(size: 14)! : R.font.pantonMtav3Bold(size: 14)!
+            case .h5:    return language == .armenian ? R.font.pantonAMBold(size: 11)! : R.font.pantonMtav3Bold(size: 11)!
+            case .body1: return R.font.firaGOMedium(size: 13)!
+            case .body2: return R.font.firaGOMedium(size: 11)!
+            case .p:     return R.font.firaGORegular(size: 13)!
             }
         }
 

@@ -44,7 +44,7 @@ public extension UIBarButtonItem {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = typography.description.font
-        button.setTitleColor(DesignSystem.Color.neutral100, for: .normal)
+        button.setTitleColor(to: .neutral100, for: .normal)
 
         let barButtonItem = UIBarButtonItem(customView: button)
 

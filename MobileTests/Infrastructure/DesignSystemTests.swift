@@ -10,40 +10,31 @@ import XCTest
 @testable import Mobile
 
 class DesignSystemTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
-    
     func testColors() {
         /// Neutral colors
-        XCTAssertEqual(DesignSystem.Color.white, R.color.colorGuide.neutral.white()!)
-        XCTAssertEqual(DesignSystem.Color.neutral100, R.color.colorGuide.neutral.neutral100()!)
-        XCTAssertEqual(DesignSystem.Color.neutral200, R.color.colorGuide.neutral.neutral200()!)
-        XCTAssertEqual(DesignSystem.Color.neutral300, R.color.colorGuide.neutral.neutral300()!)
-        XCTAssertEqual(DesignSystem.Color.neutral400, R.color.colorGuide.neutral.neutral400()!)
-        XCTAssertEqual(DesignSystem.Color.neutral500, R.color.colorGuide.neutral.neutral500()!)
-        XCTAssertEqual(DesignSystem.Color.neutral600, R.color.colorGuide.neutral.neutral600()!)
-        XCTAssertEqual(DesignSystem.Color.neutral700, R.color.colorGuide.neutral.neutral700()!)
-        XCTAssertEqual(DesignSystem.Color.neutral800, R.color.colorGuide.neutral.neutral800()!)
-        XCTAssertEqual(DesignSystem.Color.neutral900, R.color.colorGuide.neutral.neutral900()!)
+        XCTAssertEqual(DesignSystem.Color.white.value, R.color.colorGuide.neutral.white()!)
+        XCTAssertEqual(DesignSystem.Color.neutral100.value, R.color.colorGuide.neutral.neutral100()!)
+        XCTAssertEqual(DesignSystem.Color.neutral200.value, R.color.colorGuide.neutral.neutral200()!)
+        XCTAssertEqual(DesignSystem.Color.neutral300.value, R.color.colorGuide.neutral.neutral300()!)
+        XCTAssertEqual(DesignSystem.Color.neutral400.value, R.color.colorGuide.neutral.neutral400()!)
+        XCTAssertEqual(DesignSystem.Color.neutral500.value, R.color.colorGuide.neutral.neutral500()!)
+        XCTAssertEqual(DesignSystem.Color.neutral600.value, R.color.colorGuide.neutral.neutral600()!)
+        XCTAssertEqual(DesignSystem.Color.neutral700.value, R.color.colorGuide.neutral.neutral700()!)
+        XCTAssertEqual(DesignSystem.Color.neutral800.value, R.color.colorGuide.neutral.neutral800()!)
+        XCTAssertEqual(DesignSystem.Color.neutral900.value, R.color.colorGuide.neutral.neutral900()!)
 
         /// Primary colors
-        XCTAssertEqual(DesignSystem.Color.primary200, R.color.colorGuide.primary.primary200()!)
-        XCTAssertEqual(DesignSystem.Color.primary400, R.color.colorGuide.primary.primary400()!)
+        XCTAssertEqual(DesignSystem.Color.primary200.value, R.color.colorGuide.primary.primary200()!)
+        XCTAssertEqual(DesignSystem.Color.primary400.value, R.color.colorGuide.primary.primary400()!)
 
         /// Secondary colors
-        XCTAssertEqual(DesignSystem.Color.secondary200, R.color.colorGuide.secondary.secondary200()!)
-        XCTAssertEqual(DesignSystem.Color.secondary400, R.color.colorGuide.secondary.secondary400()!)
+        XCTAssertEqual(DesignSystem.Color.secondary200.value, R.color.colorGuide.secondary.secondary200()!)
+        XCTAssertEqual(DesignSystem.Color.secondary400.value, R.color.colorGuide.secondary.secondary400()!)
 
         /// Semantic colors
-        XCTAssertEqual(DesignSystem.Color.success, R.color.colorGuide.semantic.success()!)
-        XCTAssertEqual(DesignSystem.Color.warning, R.color.colorGuide.semantic.warning()!)
-        XCTAssertEqual(DesignSystem.Color.error, R.color.colorGuide.semantic.error()!)
+        XCTAssertEqual(DesignSystem.Color.success.value, R.color.colorGuide.semantic.success()!)
+        XCTAssertEqual(DesignSystem.Color.warning.value, R.color.colorGuide.semantic.warning()!)
+        XCTAssertEqual(DesignSystem.Color.error.value, R.color.colorGuide.semantic.error()!)
     }
 
     func testTypography() {
@@ -97,25 +88,5 @@ class DesignSystemTests: XCTestCase {
         XCTAssertEqual(DesignSystem.Spacing.space24.value, 24)
         XCTAssertEqual(DesignSystem.Spacing.space28.value, 28)
         XCTAssertEqual(DesignSystem.Spacing.space32.value, 32)
-    }
-    
-    func testAttributedString() {
-        let typography = DesignSystem.Typography.h1
-        let attributedString = "Text".makeAttributedString(with: typography, alignment: .left)
-        
-        /// Retrieve attributes
-        let attributes = attributedString.attributes(at: 0, effectiveRange: nil)
-
-        /// Retrieve and test font
-        if let font = attributes[.font] as? UIFont {
-            XCTAssertEqual(font.fontName, typography.description.font.fontName)
-            XCTAssertEqual(font.pointSize, typography.description.font.pointSize)
-        }
-
-        /// Retrieve and test style
-        if let style = attributes[.paragraphStyle] as? NSParagraphStyle {
-            XCTAssertEqual(style.lineSpacing, typography.description.lineSpasing)
-            XCTAssertEqual(style.alignment, .left)
-        }
     }
 }

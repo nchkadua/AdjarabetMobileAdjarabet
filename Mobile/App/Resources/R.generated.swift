@@ -392,7 +392,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 18 files.
+  /// This `R.file` struct is generated, and contains static references to 21 files.
   struct file {
     /// Resource file `FiraGO-Bold.ttf`.
     static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
@@ -424,6 +424,12 @@ struct R: Rswift.Validatable {
     static let firaGOTwoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Two", pathExtension: "ttf")
     /// Resource file `FiraGO-UltraLight.ttf`.
     static let firaGOUltraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-UltraLight", pathExtension: "ttf")
+    /// Resource file `PantonAM-Bold.otf`.
+    static let pantonAMBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-Bold", pathExtension: "otf")
+    /// Resource file `PantonAM-ExtraBold.otf`.
+    static let pantonAMExtraBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-ExtraBold", pathExtension: "otf")
+    /// Resource file `PantonAM-Regular.otf`.
+    static let pantonAMRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-Regular", pathExtension: "otf")
     /// Resource file `PantonMtav3-Bold.otf`.
     static let pantonMtav3BoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonMtav3-Bold", pathExtension: "otf")
     /// Resource file `PantonMtav3-ExtraBold.otf`.
@@ -521,6 +527,24 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "PantonAM-Bold", withExtension: "otf")`
+    static func pantonAMBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonAMBoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PantonAM-ExtraBold", withExtension: "otf")`
+    static func pantonAMExtraBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonAMExtraBoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PantonAM-Regular", withExtension: "otf")`
+    static func pantonAMRegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pantonAMRegularOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "PantonMtav3-Bold", withExtension: "otf")`
     static func pantonMtav3BoldOtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.pantonMtav3BoldOtf
@@ -542,7 +566,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 18 fonts.
+  /// This `R.font` struct is generated, and contains static references to 21 fonts.
   struct font: Rswift.Validatable {
     /// Font `FiraGO-Bold`.
     static let firaGOBold = Rswift.FontResource(fontName: "FiraGO-Bold")
@@ -574,6 +598,12 @@ struct R: Rswift.Validatable {
     static let firaGOTwo = Rswift.FontResource(fontName: "FiraGO-Two")
     /// Font `FiraGO-UltraLight`.
     static let firaGOUltraLight = Rswift.FontResource(fontName: "FiraGO-UltraLight")
+    /// Font `PantonAM-Bold`.
+    static let pantonAMBold = Rswift.FontResource(fontName: "PantonAM-Bold")
+    /// Font `PantonAM-ExtraBold`.
+    static let pantonAMExtraBold = Rswift.FontResource(fontName: "PantonAM-ExtraBold")
+    /// Font `PantonAM-Regular`.
+    static let pantonAMRegular = Rswift.FontResource(fontName: "PantonAM-Regular")
     /// Font `PantonMtav3-Bold`.
     static let pantonMtav3Bold = Rswift.FontResource(fontName: "PantonMtav3-Bold")
     /// Font `PantonMtav3-ExtraBold`.
@@ -656,6 +686,21 @@ struct R: Rswift.Validatable {
       return UIKit.UIFont(resource: firaGOUltraLight, size: size)
     }
 
+    /// `UIFont(name: "PantonAM-Bold", size: ...)`
+    static func pantonAMBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonAMBold, size: size)
+    }
+
+    /// `UIFont(name: "PantonAM-ExtraBold", size: ...)`
+    static func pantonAMExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonAMExtraBold, size: size)
+    }
+
+    /// `UIFont(name: "PantonAM-Regular", size: ...)`
+    static func pantonAMRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pantonAMRegular, size: size)
+    }
+
     /// `UIFont(name: "PantonMtav3-Bold", size: ...)`
     static func pantonMtav3Bold(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: pantonMtav3Bold, size: size)
@@ -687,6 +732,9 @@ struct R: Rswift.Validatable {
       if R.font.firaGOThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Thin' could not be loaded, is 'FiraGO-Thin.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.firaGOTwo(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Two' could not be loaded, is 'FiraGO-Two.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.firaGOUltraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-UltraLight' could not be loaded, is 'FiraGO-UltraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonAMBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-Bold' could not be loaded, is 'PantonAM-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonAMExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-ExtraBold' could not be loaded, is 'PantonAM-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.pantonAMRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-Regular' could not be loaded, is 'PantonAM-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.pantonMtav3Bold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Bold' could not be loaded, is 'PantonMtav3-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.pantonMtav3ExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-ExtraBold' could not be loaded, is 'PantonMtav3-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.pantonMtav3Regular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Regular' could not be loaded, is 'PantonMtav3-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
@@ -725,8 +773,38 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    /// This `R.image.shared` struct is generated, and contains static references to 0 images.
+    /// This `R.image.components` struct is generated, and contains static references to 0 images.
+    struct components {
+      /// This `R.image.components.gameLauncher` struct is generated, and contains static references to 1 images.
+      struct gameLauncher {
+        /// Image `in`.
+        static let `in` = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/GameLauncher/in")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "in", bundle: ..., traitCollection: ...)`
+        static func `in`(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.gameLauncher.`in`, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.image.shared` struct is generated, and contains static references to 1 images.
     struct shared {
+      /// Image `search`.
+      static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/search")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
+      static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.search, compatibleWith: traitCollection)
+      }
+      #endif
+
       /// This `R.image.shared.navBar` struct is generated, and contains static references to 1 images.
       struct navBar {
         /// Image `profile`.
@@ -790,9 +868,99 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  struct nib {
+    /// Nib `GameLauncherCollectionViewCell`.
+    static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
+    /// Nib `GameLauncherComponentView`.
+    static let gameLauncherComponentView = _R.nib._GameLauncherComponentView()
+    /// Nib `PlayedGameLauncherCollectionViewCell`.
+    static let playedGameLauncherCollectionViewCell = _R.nib._PlayedGameLauncherCollectionViewCell()
+    /// Nib `PlayedGameLauncherComponentView`.
+    static let playedGameLauncherComponentView = _R.nib._PlayedGameLauncherComponentView()
+    /// Nib `RecentlyPlayedCollectionViewCell`.
+    static let recentlyPlayedCollectionViewCell = _R.nib._RecentlyPlayedCollectionViewCell()
+    /// Nib `RecentlyPlayedComponentView`.
+    static let recentlyPlayedComponentView = _R.nib._RecentlyPlayedComponentView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameLauncherCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherCollectionViewCell) instead")
+    static func gameLauncherCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameLauncherCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameLauncherComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherComponentView) instead")
+    static func gameLauncherComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameLauncherComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PlayedGameLauncherCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.playedGameLauncherCollectionViewCell) instead")
+    static func playedGameLauncherCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.playedGameLauncherCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PlayedGameLauncherComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.playedGameLauncherComponentView) instead")
+    static func playedGameLauncherComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.playedGameLauncherComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "RecentlyPlayedCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.recentlyPlayedCollectionViewCell) instead")
+    static func recentlyPlayedCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.recentlyPlayedCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "RecentlyPlayedComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.recentlyPlayedComponentView) instead")
+    static func recentlyPlayedComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.recentlyPlayedComponentView)
+    }
+    #endif
+
+    static func gameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherCollectionViewCell? {
+      return R.nib.gameLauncherCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherCollectionViewCell
+    }
+
+    static func gameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func playedGameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlayedGameLauncherCollectionViewCell? {
+      return R.nib.playedGameLauncherCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlayedGameLauncherCollectionViewCell
+    }
+
+    static func playedGameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.playedGameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func recentlyPlayedCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecentlyPlayedCollectionViewCell? {
+      return R.nib.recentlyPlayedCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecentlyPlayedCollectionViewCell
+    }
+
+    static func recentlyPlayedComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.recentlyPlayedComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 6 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 7 localization keys.
     struct localization {
       /// en translation: Games
       ///
@@ -814,6 +982,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let promotions_page_title = Rswift.StringResource(key: "promotions_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Search for games
+      ///
+      /// Locales: en, ka, hy
+      static let home_search_placeholder = Rswift.StringResource(key: "home_search_placeholder", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Sports
       ///
       /// Locales: en, ka, hy
@@ -894,6 +1066,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("promotions_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Search for games
+      ///
+      /// Locales: en, ka, hy
+      static func home_search_placeholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_search_placeholder", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "home_search_placeholder"
+        }
+
+        return NSLocalizedString("home_search_placeholder", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Sports
       ///
       /// Locales: en, ka, hy
@@ -931,9 +1118,94 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _GameLauncherComponentView.validate()
+    }
+
+    struct _GameLauncherCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GameLauncherCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GameLauncherComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GameLauncherComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PlayedGameLauncherCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PlayedGameLauncherCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlayedGameLauncherCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlayedGameLauncherCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PlayedGameLauncherComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PlayedGameLauncherComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _RecentlyPlayedCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "RecentlyPlayedCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecentlyPlayedCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecentlyPlayedCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _RecentlyPlayedComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "RecentlyPlayedComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

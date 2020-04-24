@@ -14,7 +14,7 @@ public class SportsViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = DesignSystem.Color.neutral800
+        setBaseBackgorundColor()
         setLeftBarButtonItemTitle(to: R.string.localization.sports_page_title.localized())
         setProfileBarButtonItem(text: "₾ 0.00")
     }

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameLauncherComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="categoryLabel" destination="5Cy-OM-YsD" id="MHK-6Y-Whu"/>
+                <outlet property="coverImageView" destination="fFK-nq-ozv" id="TN4-3d-tbM"/>
+                <outlet property="inImageView" destination="PNe-u6-fPH" id="IVk-bC-U0W"/>
+                <outlet property="jackpotButton" destination="0NZ-Po-oWz" id="o74-UX-dWX"/>
+                <outlet property="separatorView" destination="wvY-32-wra" id="h8w-0a-x3k"/>
+                <outlet property="titleLabel" destination="hzE-hG-wfA" id="dL1-jH-SmT"/>
+                <outlet property="titleLabelCenterYConstraint" destination="MSC-uL-b4E" id="pj1-5A-Q7O"/>
+                <outlet property="view" destination="iN0-l3-epB" id="q51-Qz-6GT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="658" height="251"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="R3q-vJ-4ai">
+                    <rect key="frame" x="0.0" y="0.0" width="658" height="217"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fFK-nq-ozv" customClass="CircularImageView" customModule="Mobile" customModuleProvider="target">
+                            <rect key="frame" x="20" y="95.5" width="70" height="70"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="7AC-rm-k6x"/>
+                                <constraint firstAttribute="width" constant="70" id="O0o-9y-Gho"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGe-dH-2oi">
+                            <rect key="frame" x="102" y="95.5" width="516" height="70"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NZ-Po-oWz" customClass="AppCircularButton" customModule="SharedFramework">
+                                    <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
+                                    <color key="backgroundColor" red="0.73725490199999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="$ 50,2319.98"/>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ygZ-Xk-31c">
+                                    <rect key="frame" x="0.0" y="25" width="516" height="47"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ave Caesar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-hG-wfA">
+                                            <rect key="frame" x="0.0" y="0.0" width="516" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Jackpot Slots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cy-OM-YsD">
+                                            <rect key="frame" x="0.0" y="26.5" width="516" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ygZ-Xk-31c" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="LRd-Ne-Wxg"/>
+                                <constraint firstItem="0NZ-Po-oWz" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="LlV-hw-4Qs"/>
+                                <constraint firstAttribute="trailing" secondItem="ygZ-Xk-31c" secondAttribute="trailing" id="ZZI-2e-Vbp"/>
+                                <constraint firstItem="0NZ-Po-oWz" firstAttribute="top" secondItem="FGe-dH-2oi" secondAttribute="top" id="gOJ-74-c8C"/>
+                            </constraints>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/GameLauncher/in" translatesAutoresizingMaskIntoConstraints="NO" id="PNe-u6-fPH">
+                            <rect key="frame" x="630" y="123.5" width="8" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="8" id="46N-8m-eBx"/>
+                                <constraint firstAttribute="height" constant="14" id="Poq-0f-T2P"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="94" id="Ine-PU-CA4"/>
+                        <constraint firstItem="hzE-hG-wfA" firstAttribute="centerY" secondItem="PNe-u6-fPH" secondAttribute="centerY" id="MSC-uL-b4E"/>
+                        <constraint firstItem="ygZ-Xk-31c" firstAttribute="centerY" secondItem="PNe-u6-fPH" secondAttribute="centerY" priority="999" id="VnS-x5-pIy"/>
+                        <constraint firstItem="FGe-dH-2oi" firstAttribute="height" secondItem="fFK-nq-ozv" secondAttribute="height" id="gcn-zf-qUK"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="12" left="20" bottom="12" right="20"/>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvY-32-wra">
+                    <rect key="frame" x="0.0" y="250" width="658" height="1"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="AOY-Ga-OCj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="R3q-vJ-4ai" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="EjK-SR-o28"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="R3q-vJ-4ai" secondAttribute="bottom" id="VGb-nG-GJb"/>
+                <constraint firstItem="R3q-vJ-4ai" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VYk-Iq-elo"/>
+                <constraint firstItem="wvY-32-wra" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WMo-Fr-hws"/>
+                <constraint firstAttribute="bottom" secondItem="wvY-32-wra" secondAttribute="bottom" id="aKQ-RW-QWZ"/>
+                <constraint firstItem="wvY-32-wra" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mlL-m6-Ixq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="R3q-vJ-4ai" secondAttribute="trailing" id="yP2-3F-aaY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-131.8840579710145" y="64.620535714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Components/GameLauncher/in" width="24" height="42"/>
+    </resources>
+</document>
