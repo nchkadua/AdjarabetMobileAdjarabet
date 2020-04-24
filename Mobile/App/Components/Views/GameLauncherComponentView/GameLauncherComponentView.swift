@@ -83,7 +83,7 @@ extension GameLauncherComponentView: Xibable {
         jackpotButton.setFont(to: .body2)
         jackpotButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 4.5, bottom: 2, right: 4.5)
 
-        titleLabel.setTextColor(to: .white)
+        titleLabel.setTextColor(to: .neutral100)
         titleLabel.setFont(to: .h4)
 
         categoryLabel.setTextColor(to: .neutral100, alpha: 0.6)

@@ -71,7 +71,7 @@ extension PlayedGameLauncherComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = .clear
 
-        titleLabel.setTextColor(to: .white)
+        titleLabel.setTextColor(to: .neutral100)
         titleLabel.setFont(to: .body1)
 
         subtitleLabel.setTextColor(to: .neutral100, alpha: 0.6)

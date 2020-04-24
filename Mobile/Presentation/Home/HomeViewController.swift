@@ -64,7 +64,7 @@ public class HomeViewController: UIViewController {
     // MARK: Setup methods
     private func setupNavigationItem() {
         setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
-        setupAuthButtonActions()
+        setupLoginButtonAction()
     }
 
     private func setupCollectionViewController() {
@@ -141,11 +141,8 @@ public class HomeViewController: UIViewController {
         self.searchController.searchBar.delegate = self
     }
 
-    private func setupAuthButtonActions() {
-        let items = setAuthBarButtonItems()
-
-        items.joinNow.button.addTarget(self, action: #selector(joinNowButtonDidTap), for: .touchUpInside)
-        items.login.button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    private func setupLoginButtonAction() {
+        setLoginBarButtonItem().button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
     }
 
     private func setupProfilButton() {
@@ -189,12 +186,6 @@ public class HomeViewController: UIViewController {
     }
 
     // MARK: Action methods
-    @objc public func joinNowButtonDidTap() {
-        let alert = UIAlertController(title: R.string.localization.join_now.localized(), message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-
     @objc public func loginButtonDidTap() {
         let alert = UIAlertController(title: R.string.localization.login.localized(), message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

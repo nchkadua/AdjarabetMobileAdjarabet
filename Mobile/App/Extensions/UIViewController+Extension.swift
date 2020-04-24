@@ -42,7 +42,6 @@ public extension UIViewController {
         searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
         searchController.searchBar.searchTextField.layer.cornerRadius = 18
         searchController.searchBar.searchTextField.layer.masksToBounds = true
-        searchController.searchBar.searchTextField.backgroundColor = DesignSystem.Color.neutral700.value
 
         searchController.searchBar.setImage(R.image.shared.search(), for: .search, state: .normal)
         searchController.searchBar.searchTextField.leftView?.tintColor = DesignSystem.Color.neutral100.value
@@ -61,6 +60,12 @@ public extension UIViewController {
         ], for: .normal)
 
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
+
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = DesignSystem.Color.neutral700.value
+
+        for item in searchController.searchBar.searchTextField.subviews where item.className == "_UISearchBarSearchFieldBackgroundView" {
+            item.removeAllSubViews()
+        }
 
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false

@@ -77,7 +77,7 @@ extension RecentlyPlayedComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = .clear
 
-        titleLabel.setTextColor(to: .white)
+        titleLabel.setTextColor(to: .neutral100)
         titleLabel.setFont(to: .h3)
 
         button.setTitleColor(to: .neutral100, for: .normal, alpha: 0.6)
