@@ -9,7 +9,7 @@
 import RxSwift
 
 public class PromotionsViewController: UIViewController {
-    public var viewModel: PromotionsViewModel = DefaultPromotionsViewModel(params: PromotionsViewModelParams())
+    @Inject(from: .viewModels) private var viewModel: PromotionsViewModel
     private let disposeBag = DisposeBag()
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }

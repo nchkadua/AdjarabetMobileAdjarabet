@@ -33,19 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dependencies = DependencyContainer.root.register {
             Module { AdjarabetCoreClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetCoreServices }
             Module { AdjarabetWebAPIClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetWebAPIServices }
+            Module { DefaultLanguageStorage.shared as LanguageStorage }
         }
 
         dependencies.build()
     }
 }
 
-public extension UIApplication {
-    var currentWindow: UIWindow? {
-        UIApplication.shared.connectedScenes
-            .filter { $0.activationState == .foregroundActive }
-            .map { $0 as? UIWindowScene }
-            .compactMap { $0 }
-            .first?.windows
-            .filter { $0.isKeyWindow }.first
+public extension DependencyContainer {
+    static var viewModels = DependencyContainer {
+        Module { DefaultHomeViewModel() as HomeViewModel }
+        Module { DefaultPromotionsViewModel() as PromotionsViewModel }
+        Module { DefaultNotificationsViewModel() as NotificationsViewModel }
     }
 }

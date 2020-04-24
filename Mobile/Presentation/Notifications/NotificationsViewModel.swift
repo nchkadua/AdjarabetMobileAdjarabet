@@ -11,9 +11,6 @@ import RxSwift
 public protocol NotificationsViewModel: NotificationsViewModelInput, NotificationsViewModelOutput {
 }
 
-public struct NotificationsViewModelParams {
-}
-
 public protocol NotificationsViewModelInput {
     func viewDidLoad()
 }
@@ -21,7 +18,6 @@ public protocol NotificationsViewModelInput {
 public protocol NotificationsViewModelOutput {
     var action: Observable<NotificationsViewModelOutputAction> { get }
     var route: Observable<NotificationsViewModelRoute> { get }
-    var params: NotificationsViewModelParams { get }
 }
 
 public enum NotificationsViewModelOutputAction {
@@ -34,11 +30,6 @@ public enum NotificationsViewModelRoute {
 public class DefaultNotificationsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<NotificationsViewModelOutputAction>()
     private let routeSubject = PublishSubject<NotificationsViewModelRoute>()
-    public let params: NotificationsViewModelParams
-
-    public init(params: NotificationsViewModelParams) {
-        self.params = params
-    }
 
     public override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)

@@ -11,7 +11,6 @@ import XCTest
 
 class LocalizationTests: XCTestCase {
     func testLocalized() {
-        XCTAssertEqual(R.string.localization.join_now.localized(), "Join Now")
         XCTAssertEqual(R.string.localization.join_now.localized(language: .english), "Join Now")
         XCTAssertEqual(R.string.localization.join_now.localized(language: .georgian), "რეგისტრაცია")
         XCTAssertEqual(R.string.localization.join_now.localized(language: .armenian), "գրանցվել")

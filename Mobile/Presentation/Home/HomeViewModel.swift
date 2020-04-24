@@ -11,9 +11,6 @@ import RxSwift
 public protocol HomeViewModel: HomeViewModelInput, HomeViewModelOutput {
 }
 
-public struct HomeViewModelParams {
-}
-
 public protocol HomeViewModelInput {
     func viewDidLoad()
 }
@@ -21,7 +18,6 @@ public protocol HomeViewModelInput {
 public protocol HomeViewModelOutput {
     var action: Observable<HomeViewModelOutputAction> { get }
     var route: Observable<HomeViewModelRoute> { get }
-    var params: HomeViewModelParams { get }
 }
 
 public enum HomeViewModelOutputAction {
@@ -34,11 +30,6 @@ public enum HomeViewModelRoute {
 public class DefaultHomeViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<HomeViewModelOutputAction>()
     private let routeSubject = PublishSubject<HomeViewModelRoute>()
-    public let params: HomeViewModelParams
-
-    public init(params: HomeViewModelParams) {
-        self.params = params
-    }
 
     public override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)

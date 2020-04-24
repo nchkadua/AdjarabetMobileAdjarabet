@@ -13,7 +13,7 @@ public protocol BaseViewModel: class, LanguageChangeObserving, LanguageChangeNot
 
 public class DefaultBaseViewModel: BaseViewModel {
     public var disposeBag = DisposeBag()
-    public let languageStorage: LanguageStorage = DefaultLanguageStorage.shared
+    @Inject public var languageStorage: LanguageStorage
 
     public func observeLanguageChange() {
         languageStorage.currentLanguageObservable.subscribe(onNext: { [weak self] _ in

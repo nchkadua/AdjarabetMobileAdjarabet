@@ -10,7 +10,7 @@ import RxSwift
 
 public class HomeViewController: UIViewController {
     // MARK: Properties
-    public var viewModel: HomeViewModel = DefaultHomeViewModel(params: HomeViewModelParams())
+    @Inject(from: .viewModels) private var viewModel: HomeViewModel
     private let disposeBag = DisposeBag()
     private lazy var floatingTabBarManager = FloatingTabBarManager(viewController: self)
     private lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
