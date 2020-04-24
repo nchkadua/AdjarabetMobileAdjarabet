@@ -31,6 +31,7 @@ public protocol RecentlyPlayedComponentViewModelOutput {
 }
 
 public enum RecentlyPlayedComponentViewModelOutputAction {
+    case setupUI
     case set(title: String, buttonTitle: String)
     case didSelectViewAll(RecentlyPlayedComponentViewModel)
     case didSelectPlayedGame(PlayedGameLauncherComponentViewModel, IndexPath)
@@ -48,6 +49,7 @@ public class DefaultRecentlyPlayedComponentViewModel: DefaultBaseViewModel {
     }
 
     public override func languageDidChange() {
+        actionSubject.onNext(.setupUI)
         actionSubject.onNext(.set(title: params.title.localized(), buttonTitle: params.buttonTitle.localized()))
     }
 }

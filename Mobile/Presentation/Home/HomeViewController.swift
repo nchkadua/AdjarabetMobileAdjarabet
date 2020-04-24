@@ -48,6 +48,16 @@ public class HomeViewController: UIViewController {
             setupNavigationItem()
             searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
             UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
+
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
+                .foregroundColor: DesignSystem.Color.neutral100.value,
+                .font: DesignSystem.Typography.p.description.font
+            ]
+
+            UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
+                .foregroundColor: DesignSystem.Color.neutral100.value,
+                .font: DesignSystem.Typography.p.description.font
+            ], for: .normal)
         }
     }
 

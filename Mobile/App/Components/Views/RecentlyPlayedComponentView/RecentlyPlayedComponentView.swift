@@ -40,6 +40,8 @@ public class RecentlyPlayedComponentView: UIView {
             switch action {
             case .set(let title, let buttonTitle):
                 self?.setupUI(title: title, buttonTitle: buttonTitle)
+            case .setupUI:
+                self?.setupUI()
             default: break
             }
         }).disposed(by: disposeBag)

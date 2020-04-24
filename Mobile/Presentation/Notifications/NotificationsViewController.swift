@@ -9,7 +9,7 @@
 import RxSwift
 
 public class NotificationsViewController: UIViewController {
-    @Inject(from: .viewModels) private var viewModel: NotificationsViewModel 
+    @Inject(from: .viewModels) private var viewModel: NotificationsViewModel
     private let disposeBag = DisposeBag()
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }

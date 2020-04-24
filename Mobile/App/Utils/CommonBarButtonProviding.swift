@@ -43,7 +43,7 @@ public extension UIBarButtonItem {
     static func make(title: String?, typography: DesignSystem.Typography = .h4) -> Coupled {
         let button = UIButton(type: .system)
         button.setTitleWithoutAnimation(title, for: .normal)
-        button.titleLabel?.font = typography.description.font
+        button.setFont(to: typography)
         button.setTitleColor(to: .neutral100, for: .normal)
 
         let barButtonItem = UIBarButtonItem(customView: button)

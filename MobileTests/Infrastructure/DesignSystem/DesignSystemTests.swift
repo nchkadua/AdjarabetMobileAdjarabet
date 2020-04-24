@@ -38,45 +38,51 @@ class DesignSystemTests: XCTestCase {
     }
 
     func testTypography() {
-        XCTAssertEqual(DesignSystem.Typography.h1.description.font.fontName, R.font.pantonMtav3Bold.fontName)
-        XCTAssertEqual(DesignSystem.Typography.h1.description.font.pointSize, 28)
-        XCTAssertEqual(DesignSystem.Typography.h1.description.lineSpasing, 0.7)
-        XCTAssertEqual(DesignSystem.Typography.h1.description.lineHeight, 44)
-        
-        XCTAssertEqual(DesignSystem.Typography.h2.description.font.fontName, R.font.pantonMtav3Bold.fontName)
-        XCTAssertEqual(DesignSystem.Typography.h2.description.font.pointSize, 23)
-        XCTAssertEqual(DesignSystem.Typography.h2.description.lineSpasing, 0.7)
-        XCTAssertEqual(DesignSystem.Typography.h2.description.lineHeight, 36)
-        
-        XCTAssertEqual(DesignSystem.Typography.h3.description.font.fontName, R.font.pantonMtav3Bold.fontName)
-        XCTAssertEqual(DesignSystem.Typography.h3.description.font.pointSize, 16)
-        XCTAssertEqual(DesignSystem.Typography.h3.description.lineSpasing, 0.5)
-        XCTAssertEqual(DesignSystem.Typography.h3.description.lineHeight, 24)
-        
-        XCTAssertEqual(DesignSystem.Typography.h4.description.font.fontName, R.font.pantonMtav3Bold.fontName)
-        XCTAssertEqual(DesignSystem.Typography.h4.description.font.pointSize, 14)
-        XCTAssertEqual(DesignSystem.Typography.h4.description.lineSpasing, 0.3)
-        XCTAssertEqual(DesignSystem.Typography.h4.description.lineHeight, 24)
-        
-        XCTAssertEqual(DesignSystem.Typography.h5.description.font.fontName, R.font.pantonMtav3Bold.fontName)
-        XCTAssertEqual(DesignSystem.Typography.h5.description.font.pointSize, 11)
-        XCTAssertEqual(DesignSystem.Typography.h5.description.lineSpasing, 0.5)
-        XCTAssertEqual(DesignSystem.Typography.h5.description.lineHeight, 16)
-        
-        XCTAssertEqual(DesignSystem.Typography.body1.description.font.fontName, R.font.firaGOMedium.fontName)
-        XCTAssertEqual(DesignSystem.Typography.body1.description.font.pointSize, 13)
-        XCTAssertEqual(DesignSystem.Typography.body1.description.lineSpasing, 0)
-        XCTAssertEqual(DesignSystem.Typography.body1.description.lineHeight, 20)
-        
-        XCTAssertEqual(DesignSystem.Typography.body2.description.font.fontName, R.font.firaGOMedium.fontName)
-        XCTAssertEqual(DesignSystem.Typography.body2.description.font.pointSize, 11)
-        XCTAssertEqual(DesignSystem.Typography.body2.description.lineSpasing, 0)
-        XCTAssertEqual(DesignSystem.Typography.body2.description.lineHeight, 16)
-        
-        XCTAssertEqual(DesignSystem.Typography.p.description.font.fontName, R.font.firaGORegular.fontName)
-        XCTAssertEqual(DesignSystem.Typography.p.description.font.pointSize, 13)
-        XCTAssertEqual(DesignSystem.Typography.p.description.lineSpasing, 0)
-        XCTAssertEqual(DesignSystem.Typography.p.description.lineHeight, 20)
+        Language.allCases.forEach { language in
+            DefaultLanguageStorage.shared.update(language: language)
+            
+            let headerFontName = language == .armenian ? R.font.pantonAMBold.fontName : R.font.pantonMtav3Bold.fontName
+
+            XCTAssertEqual(DesignSystem.Typography.h1.description.font.fontName, headerFontName)
+            XCTAssertEqual(DesignSystem.Typography.h1.description.font.pointSize, 28)
+            XCTAssertEqual(DesignSystem.Typography.h1.description.lineSpasing, 0.7)
+            XCTAssertEqual(DesignSystem.Typography.h1.description.lineHeight, 44)
+            
+            XCTAssertEqual(DesignSystem.Typography.h2.description.font.fontName, headerFontName)
+            XCTAssertEqual(DesignSystem.Typography.h2.description.font.pointSize, 23)
+            XCTAssertEqual(DesignSystem.Typography.h2.description.lineSpasing, 0.7)
+            XCTAssertEqual(DesignSystem.Typography.h2.description.lineHeight, 36)
+            
+            XCTAssertEqual(DesignSystem.Typography.h3.description.font.fontName, headerFontName)
+            XCTAssertEqual(DesignSystem.Typography.h3.description.font.pointSize, 16)
+            XCTAssertEqual(DesignSystem.Typography.h3.description.lineSpasing, 0.5)
+            XCTAssertEqual(DesignSystem.Typography.h3.description.lineHeight, 24)
+            
+            XCTAssertEqual(DesignSystem.Typography.h4.description.font.fontName, headerFontName)
+            XCTAssertEqual(DesignSystem.Typography.h4.description.font.pointSize, 14)
+            XCTAssertEqual(DesignSystem.Typography.h4.description.lineSpasing, 0.3)
+            XCTAssertEqual(DesignSystem.Typography.h4.description.lineHeight, 24)
+            
+            XCTAssertEqual(DesignSystem.Typography.h5.description.font.fontName, headerFontName)
+            XCTAssertEqual(DesignSystem.Typography.h5.description.font.pointSize, 11)
+            XCTAssertEqual(DesignSystem.Typography.h5.description.lineSpasing, 0.5)
+            XCTAssertEqual(DesignSystem.Typography.h5.description.lineHeight, 16)
+            
+            XCTAssertEqual(DesignSystem.Typography.body1.description.font.fontName, R.font.firaGOMedium.fontName)
+            XCTAssertEqual(DesignSystem.Typography.body1.description.font.pointSize, 13)
+            XCTAssertEqual(DesignSystem.Typography.body1.description.lineSpasing, 0)
+            XCTAssertEqual(DesignSystem.Typography.body1.description.lineHeight, 20)
+            
+            XCTAssertEqual(DesignSystem.Typography.body2.description.font.fontName, R.font.firaGOMedium.fontName)
+            XCTAssertEqual(DesignSystem.Typography.body2.description.font.pointSize, 11)
+            XCTAssertEqual(DesignSystem.Typography.body2.description.lineSpasing, 0)
+            XCTAssertEqual(DesignSystem.Typography.body2.description.lineHeight, 16)
+            
+            XCTAssertEqual(DesignSystem.Typography.p.description.font.fontName, R.font.firaGORegular.fontName)
+            XCTAssertEqual(DesignSystem.Typography.p.description.font.pointSize, 13)
+            XCTAssertEqual(DesignSystem.Typography.p.description.lineSpasing, 0)
+            XCTAssertEqual(DesignSystem.Typography.p.description.lineHeight, 20)
+        }
     }
     
     func testSpacing() {
