@@ -19,9 +19,3 @@ public extension GameLauncherCollectionViewCellDataProvider {
         CGSize(width: rect.width, height: 94)
     }
 }
-
-public extension GameLauncherCollectionViewCellDataProvider {
-    func didSelect(at indexPath: IndexPath) {
-        action.onNext(.didSelect(self, indexPath: indexPath))
-    }
-}

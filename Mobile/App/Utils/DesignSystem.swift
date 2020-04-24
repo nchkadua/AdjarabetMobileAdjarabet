@@ -59,6 +59,8 @@ public enum DesignSystem {
 
     /// Design system typography
     public enum Typography {
+        @Inject public static var languageStorage: LanguageStorage
+
         case h1
         case h2
         case h3
@@ -71,14 +73,14 @@ public enum DesignSystem {
         /// Concrete description for each case
         public var description: Description {
             switch self {
-            case .h1:    return Description(font: R.font.pantonMtav3Bold(size: 28)!, lineSpasing: 0.7, lineHeight: 44)
-            case .h2:    return Description(font: R.font.pantonMtav3Bold(size: 23)!, lineSpasing: 0.7, lineHeight: 36)
-            case .h3:    return Description(font: R.font.pantonMtav3Bold(size: 16)!, lineSpasing: 0.5, lineHeight: 24)
-            case .h4:    return Description(font: R.font.pantonMtav3Bold(size: 14)!, lineSpasing: 0.3, lineHeight: 24)
-            case .h5:    return Description(font: R.font.pantonMtav3Bold(size: 11)!, lineSpasing: 0.5, lineHeight: 16)
-            case .body1: return Description(font: R.font.firaGOMedium(size: 13)!, lineSpasing: 0, lineHeight: 20)
-            case .body2: return Description(font: R.font.firaGOMedium(size: 11)!, lineSpasing: 0, lineHeight: 16)
-            case .p:     return Description(font: R.font.firaGORegular(size: 13)!, lineSpasing: 0, lineHeight: 20)
+            case .h1:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.7, lineHeight: 44)
+            case .h2:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.7, lineHeight: 36)
+            case .h3:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.5, lineHeight: 24)
+            case .h4:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.3, lineHeight: 24)
+            case .h5:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.5, lineHeight: 16)
+            case .body1: return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 20)
+            case .body2: return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 16)
+            case .p:     return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 20)
             }
         }
 

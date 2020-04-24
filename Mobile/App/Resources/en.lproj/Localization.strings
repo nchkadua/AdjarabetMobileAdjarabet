@@ -21,3 +21,11 @@
 
 /* Notifications */
 "notifications_page_title" = "Notifications";
+
+/* Recently Played Games */
+"recently_played" = "Recently Played";
+
+/* General */
+"view_all" = "View All";
+"cancel" = "Cancel";
+

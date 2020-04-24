@@ -40,6 +40,8 @@ public class RecentlyPlayedComponentView: UIView {
             switch action {
             case .set(let title, let buttonTitle):
                 self?.setupUI(title: title, buttonTitle: buttonTitle)
+            case .setupUI:
+                self?.setupUI()
             default: break
             }
         }).disposed(by: disposeBag)
@@ -49,7 +51,7 @@ public class RecentlyPlayedComponentView: UIView {
 
     private func setupUI(title: String, buttonTitle: String) {
         self.titleLabel.text = title
-        self.button.setTitle(buttonTitle, for: .normal)
+        self.button.setTitleWithoutAnimation(buttonTitle, for: .normal)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.contentInset.left = 20

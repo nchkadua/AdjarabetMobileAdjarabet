@@ -40,6 +40,11 @@
 		D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */; };
 		D83ED2F7244C92990037DDEB /* DesignSystemExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */; };
 		D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */; };
+		D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202C9245191B100F0F056 /* LanguageStorage.swift */; };
+		D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202CF2451930A00F0F056 /* ABUserDefaults.swift */; };
+		D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */; };
+		D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D52451ABAB00F0F056 /* HomeViewModel.swift */; };
+		D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D72451AD8400F0F056 /* BaseViewModel.swift */; };
 		D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */; };
 		D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098424482BE80001ADC1 /* TabBarButton.swift */; };
 		D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */; };
@@ -93,6 +98,9 @@
 		D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C552445FDEF004A4BDF /* Sports.storyboard */; };
 		D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C572445FE08004A4BDF /* Promotions.storyboard */; };
 		D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C592445FE6C004A4BDF /* Notifications.storyboard */; };
+		D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */; };
+		D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */; };
+		D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */; };
 		D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */; };
 		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
 		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
@@ -177,6 +185,11 @@
 		D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemExtensionTests.swift; sourceTree = "<group>"; };
 		D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherComponentViewModel.swift; sourceTree = "<group>"; };
+		D84202C9245191B100F0F056 /* LanguageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorage.swift; sourceTree = "<group>"; };
+		D84202CF2451930A00F0F056 /* ABUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABUserDefaults.swift; sourceTree = "<group>"; };
+		D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorageTests.swift; sourceTree = "<group>"; };
+		D84202D52451ABAB00F0F056 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D84202D72451AD8400F0F056 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		D842098424482BE80001ADC1 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -232,6 +245,9 @@
 		D87E3C552445FDEF004A4BDF /* Sports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sports.storyboard; sourceTree = "<group>"; };
 		D87E3C572445FE08004A4BDF /* Promotions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Promotions.storyboard; sourceTree = "<group>"; };
 		D87E3C592445FE6C004A4BDF /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewModel.swift; sourceTree = "<group>"; };
+		D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
 		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -359,12 +375,37 @@
 		D80784A324447AA400003892 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
-				D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */,
-				D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */,
-				D8FBA4FF2449C7090015C03C /* LanguageTests.swift */,
+				D84202D1245196C800F0F056 /* DesignSystem */,
+				D84202D2245196D800F0F056 /* Localization */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D84202C82451919400F0F056 /* PersistentStorages */ = {
+			isa = PBXGroup;
+			children = (
+				D84202C9245191B100F0F056 /* LanguageStorage.swift */,
+			);
+			path = PersistentStorages;
+			sourceTree = "<group>";
+		};
+		D84202D1245196C800F0F056 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
+				D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D84202D2245196D800F0F056 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */,
+				D8FBA4FF2449C7090015C03C /* LanguageTests.swift */,
+				D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		D842098624482CA20001ADC1 /* Factories */ = {
@@ -453,6 +494,7 @@
 				D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */,
 				D80784672443968D00003892 /* DesignSystem.swift */,
 				D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */,
+				D84202D72451AD8400F0F056 /* BaseViewModel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -542,6 +584,7 @@
 			isa = PBXGroup;
 			children = (
 				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
+				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
 				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
 			);
 			path = Promotions;
@@ -551,6 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */,
+				D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */,
 				D87E3C592445FE6C004A4BDF /* Notifications.storyboard */,
 			);
 			path = Notifications;
@@ -663,6 +707,7 @@
 			children = (
 				D83026BF24518528006FF7FB /* DummyData.swift */,
 				D8A47DF3243366F80077AA8E /* NetworkClinet */,
+				D84202C82451919400F0F056 /* PersistentStorages */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -693,6 +738,7 @@
 				D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */,
 				D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */,
 				D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */,
+				D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -783,6 +829,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C73F7E2445A64E004C96DB /* HomeViewController.swift */,
+				D84202D52451ABAB00F0F056 /* HomeViewModel.swift */,
 				D8C73F802445A656004C96DB /* Home.storyboard */,
 			);
 			path = Home;
@@ -803,6 +850,7 @@
 			children = (
 				D8FBA4F72449BE7D0015C03C /* Language.swift */,
 				D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */,
+				D84202CF2451930A00F0F056 /* ABUserDefaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1069,6 +1117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */,
+				D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */,
 				D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */,
 				D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */,
 				D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */,
@@ -1097,6 +1146,7 @@
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
+				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
@@ -1107,10 +1157,12 @@
 				D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
+				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
+				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
@@ -1130,9 +1182,11 @@
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
 				D83026C024518528006FF7FB /* DummyData.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
+				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
+				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
@@ -1141,11 +1195,13 @@
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
+				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
+				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
 				D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,

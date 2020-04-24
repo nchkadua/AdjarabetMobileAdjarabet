@@ -21,10 +21,11 @@ public struct GameLauncherComponentViewModelParams {
 
 public protocol GameLauncherComponentViewModelInput {
     func didBind()
+    func didSelect(at indexPath: IndexPath)
 }
 
 public protocol GameLauncherComponentViewModelOutput {
-    var action: PublishSubject<GameLauncherComponentViewModelOutputAction> { get }
+    var action: Observable<GameLauncherComponentViewModelOutputAction> { get }
     var params: GameLauncherComponentViewModelParams { get }
 }
 
@@ -35,7 +36,7 @@ public enum GameLauncherComponentViewModelOutputAction {
 
 public class DefaultGameLauncherComponentViewModel {
     public var params: GameLauncherComponentViewModelParams
-    public let action = PublishSubject<GameLauncherComponentViewModelOutputAction>()
+    private let actionSubject = PublishSubject<GameLauncherComponentViewModelOutputAction>()
 
     public init(params: GameLauncherComponentViewModelParams) {
         self.params = params
@@ -44,6 +45,12 @@ public class DefaultGameLauncherComponentViewModel {
 
 extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel {
     public func didBind() {
-        action.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category, jackpotAmount: params.jackpotAmount))
+        actionSubject.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category, jackpotAmount: params.jackpotAmount))
+    }
+
+    public var action: Observable<GameLauncherComponentViewModelOutputAction> { actionSubject.asObserver() }
+
+    public func didSelect(at indexPath: IndexPath) {
+        actionSubject.onNext(.didSelect(self, indexPath: indexPath))
     }
 }

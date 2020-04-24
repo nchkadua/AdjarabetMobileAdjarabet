@@ -10,6 +10,7 @@ import RxSwift
 
 public class HomeViewController: UIViewController {
     // MARK: Properties
+    @Inject(from: .viewModels) private var viewModel: HomeViewModel
     private let disposeBag = DisposeBag()
     private lazy var floatingTabBarManager = FloatingTabBarManager(viewController: self)
     private lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
@@ -24,17 +25,48 @@ public class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setBaseBackgorundColor()
-        setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
-        setupAuthButtonActions()
+        setupNavigationItem()
         setupSearchViewController()
 
-//        setupScrollView()
         setupCollectionViewController()
         setupSearchCollectionViewController()
         setupWhen(mainCollectionViewIsVisible: true, animated: false)
+
+        bind(to: viewModel)
+        viewModel.viewDidLoad()
+    }
+
+    private func bind(to viewModel: HomeViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didReceive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didReceive(action: HomeViewModelOutputAction) {
+        switch action {
+        case .languageDidChange:
+            setupNavigationItem()
+            searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
+            UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
+
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
+                .foregroundColor: DesignSystem.Color.neutral100.value,
+                .font: DesignSystem.Typography.p.description.font
+            ]
+
+            UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
+                .foregroundColor: DesignSystem.Color.neutral100.value,
+                .font: DesignSystem.Typography.p.description.font
+            ], for: .normal)
+        }
     }
 
     // MARK: Setup methods
+    private func setupNavigationItem() {
+        setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
+        setupAuthButtonActions()
+    }
+
     private func setupCollectionViewController() {
         collectionViewController.isTabBarManagementEnabled = true
 
@@ -52,8 +84,8 @@ public class HomeViewController: UIViewController {
 
         let params = RecentlyPlayedComponentViewModelParams(
             id: UUID().uuidString,
-            title: "Recentry Played",
-            buttonTitle: "View all",
+            title: R.string.localization.recently_played,
+            buttonTitle: R.string.localization.view_all,
             playedGames: played)
         let recentryPlayed = DefaultRecentlyPlayedComponentViewModel(params: params)
         recentryPlayed.action.subscribe(onNext: { action in
@@ -99,17 +131,6 @@ public class HomeViewController: UIViewController {
         }
 
         searchCollectionViewController.dataProvider = items.makeList()
-    }
-
-    private func setupScrollView() {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .clear
-        view.addSubview(scrollView)
-        scrollView.pinSafely(in: view)
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 3)
-
-        floatingTabBarManager.observe(scrollView: scrollView)
     }
 
     private func setupSearchViewController() {

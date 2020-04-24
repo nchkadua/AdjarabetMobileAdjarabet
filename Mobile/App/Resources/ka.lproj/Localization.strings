@@ -21,3 +21,10 @@
 
 /* Notifications */
 "notifications_page_title" = "შეტყობინებები";
+
+/* Recently Played Games */
+"recently_played" = "ნათამაშები";
+
+/* General */
+"view_all" = "ყველა";
+"cancel" = "გამოსვლა";
