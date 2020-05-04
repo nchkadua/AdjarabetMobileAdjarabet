@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SharedFramework
 
 public class UserSessionCareTaker {
     private let storage: KeychainWrapper
@@ -20,7 +19,7 @@ public class UserSessionCareTaker {
         storage: KeychainWrapper = KeychainContainer.shared,
         decoder: JSONDecoder = JSONDecoder(),
         encoder: JSONEncoder = JSONEncoder(),
-        key: String = "UserSession",
+        key: String = "com.adjarabet.mobile.usersession",
         accessibility: KeychainItemAccessibility = .alwaysThisDeviceOnly) {
         self.storage = storage
         self.decoder = decoder
@@ -58,5 +57,3 @@ public class UserSessionCareTaker {
         case momentoNotFound
     }
 }
-
-//    private let userDefaults = UserDefaults(suiteName: "group.com.demo.ajdarabet.AdjarabetMobile.auth")!

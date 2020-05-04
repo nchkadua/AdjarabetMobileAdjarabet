@@ -50,7 +50,6 @@ extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel 
         actionSubject.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category, jackpotAmount: params.jackpotAmount))
     }
 
-
     public func didSelect(at indexPath: IndexPath) {
         actionSubject.onNext(.didSelect(self, indexPath: indexPath))
     }

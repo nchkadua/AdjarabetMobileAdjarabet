@@ -55,11 +55,11 @@ class WelcomeViewController: UIViewController {
             switch result {
             case .success(let value):
                 print(value)
-                self.userSession.clear()
+                self.userSession.remove()
                 self.navigateToLoginPage()
             case .failure(let error):
                 if error.isSessionNotFound {
-                    self.userSession.clear()
+                    self.userSession.remove()
                     self.navigateToLoginPage()
                 }
                 print(error.localizedDescription)

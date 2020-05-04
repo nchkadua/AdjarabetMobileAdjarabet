@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Module { AdjarabetCoreClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetCoreServices }
             Module { AdjarabetWebAPIClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetWebAPIServices }
             Module { DefaultLanguageStorage.shared as LanguageStorage }
+            Module { UserSession.current as UserSessionServices }
         }
 
         dependencies.build()
