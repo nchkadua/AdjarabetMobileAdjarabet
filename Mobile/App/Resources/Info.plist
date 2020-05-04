@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>22</string>
+	<string>24</string>
 	<key>CORE_API_URL</key>
 	<string>${CORE_API_URL}</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -29,6 +29,30 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PantonMtav3-Bold.otf</string>
+		<string>PantonMtav3-ExtraBold.otf</string>
+		<string>PantonMtav3-Regular.otf</string>
+		<string>FiraGO-Bold.ttf</string>
+		<string>FiraGO-Book.ttf</string>
+		<string>FiraGO-Eight.ttf</string>
+		<string>FiraGO-ExtraBold.ttf</string>
+		<string>FiraGO-ExtraLight.ttf</string>
+		<string>FiraGO-Four.ttf</string>
+		<string>FiraGO-Hair.ttf</string>
+		<string>FiraGO-Heavy.ttf</string>
+		<string>FiraGO-Light.ttf</string>
+		<string>FiraGO-Medium.ttf</string>
+		<string>FiraGO-Regular.ttf</string>
+		<string>FiraGO-SemiBold.ttf</string>
+		<string>FiraGO-Thin.ttf</string>
+		<string>FiraGO-Two.ttf</string>
+		<string>FiraGO-UltraLight.ttf</string>
+		<string>PantonAM-Bold.otf</string>
+		<string>PantonAM-ExtraBold.otf</string>
+		<string>PantonAM-Regular.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -66,30 +90,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>PantonMtav3-Bold.otf</string>
-		<string>PantonMtav3-ExtraBold.otf</string>
-		<string>PantonMtav3-Regular.otf</string>
-		<string>FiraGO-Bold.ttf</string>
-		<string>FiraGO-Book.ttf</string>
-		<string>FiraGO-Eight.ttf</string>
-		<string>FiraGO-ExtraBold.ttf</string>
-		<string>FiraGO-ExtraLight.ttf</string>
-		<string>FiraGO-Four.ttf</string>
-		<string>FiraGO-Hair.ttf</string>
-		<string>FiraGO-Heavy.ttf</string>
-		<string>FiraGO-Light.ttf</string>
-		<string>FiraGO-Medium.ttf</string>
-		<string>FiraGO-Regular.ttf</string>
-		<string>FiraGO-SemiBold.ttf</string>
-		<string>FiraGO-Thin.ttf</string>
-		<string>FiraGO-Two.ttf</string>
-		<string>FiraGO-UltraLight.ttf</string>
-		<string>PantonAM-Bold.otf</string>
-		<string>PantonAM-ExtraBold.otf</string>
-		<string>PantonAM-Regular.otf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
