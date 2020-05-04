@@ -28,32 +28,32 @@ public class UserSessionCareTaker {
         self.accessibility = accessibility
     }
 
-    public func save(_ momento: UserSession.Momento?) throws {
-        if momento == nil {
+    public func save(_ memento: UserSession.Memento?) throws {
+        if memento == nil {
             storage.removeObject(forKey: key, withAccessibility: accessibility)
         } else {
-            let data = try encoder.encode(momento)
+            let data = try encoder.encode(memento)
             storage.set(data, forKey: key)
         }
 
         #if DEBUG
-            print(momento ?? "")
+            print(memento ?? "")
         #endif
     }
 
-    public func load() throws -> UserSession.Momento {
+    public func load() throws -> UserSession.Memento {
         guard let data = storage.data(forKey: key),
-            let momento = try? decoder.decode(UserSession.Momento.self, from: data) else {
-                throw Error.momentoNotFound
+            let memento = try? decoder.decode(UserSession.Memento.self, from: data) else {
+                throw Error.mementoNotFound
         }
 
         #if DEBUG
-            print(momento)
+            print(memento)
         #endif
-        return momento
+        return memento
     }
 
     public enum Error: String, Swift.Error {
-        case momentoNotFound
+        case mementoNotFound
     }
 }

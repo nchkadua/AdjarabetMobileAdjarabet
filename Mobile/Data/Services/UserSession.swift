@@ -18,7 +18,7 @@ public class UserSession: UserSessionServices {
 
     private init(careTaker: UserSessionCareTaker = UserSessionCareTaker()) {
         self.careTaker = careTaker
-        let momento = try? careTaker.load()
+        let memento = try? careTaker.load()
 
         self.isLogedInSubject.subscribe(onNext: { [weak self] _ in
             guard let self = self else {return}
@@ -26,12 +26,12 @@ public class UserSession: UserSessionServices {
         })
         .disposed(by: disposeBag)
 
-        if momento == nil {
-            try? careTaker.save(UserSession.Momento())
+        if memento == nil {
+            try? careTaker.save(UserSession.Memento())
         }
     }
 
-    public struct Momento: Codable {
+    public struct Memento: Codable {
         public var isLoggedIn: Bool = false
         public var sessionId: String?
         public var username: String?
@@ -102,7 +102,7 @@ extension UserSession: UserSessionWritableServices {
         do {
             logout()
             try careTaker.save(nil)
-            try careTaker.save(UserSession.Momento())
+            try careTaker.save(UserSession.Memento())
             actionSubject.onNext(.removed)
         } catch {
             print(error.localizedDescription)
