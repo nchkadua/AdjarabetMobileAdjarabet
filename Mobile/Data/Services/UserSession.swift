@@ -43,25 +43,17 @@ public class UserSession: UserSessionServices {
 extension UserSession: UserSessionReadableServices {
     public var action: Observable<UserSessionAction> { actionSubject.asObserver() }
 
-    public var isLoggedIn: Bool {
-        (try? careTaker.load().isLoggedIn) ?? false
-    }
+    private var memento: UserSession.Memento? { try? careTaker.load() }
 
-    public var userId: Int? {
-        try? careTaker.load().userId
-    }
+    public var isLoggedIn: Bool { memento?.isLoggedIn ?? false }
 
-    public var username: String? {
-        try? careTaker.load().username
-    }
+    public var userId: Int? { memento?.userId }
 
-    public var sessionId: String? {
-        try? careTaker.load().sessionId
-    }
+    public var username: String? { memento?.username }
 
-    public var currencyId: Int? {
-        try? careTaker.load().currencyId
-    }
+    public var sessionId: String? { memento?.sessionId }
+
+    public var currencyId: Int? { memento?.currencyId }
 }
 
 extension UserSession: UserSessionWritableServices {
