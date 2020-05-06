@@ -126,6 +126,8 @@
 		D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */; };
 		D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD8B4244C85AC001F4BAA /* Xibable.swift */; };
 		D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */; };
+		D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */; };
+		D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */; };
 		D8FBA4F12449BD560015C03C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8FBA4F32449BD560015C03C /* Localization.strings */; };
 		D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4F72449BE7D0015C03C /* Language.swift */; };
 		D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */; };
@@ -277,6 +279,8 @@
 		D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLauncherComponentView.xib; sourceTree = "<group>"; };
 		D8CFD8B4244C85AC001F4BAA /* Xibable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xibable.swift; sourceTree = "<group>"; };
 		D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarManager.swift; sourceTree = "<group>"; };
+		D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Bold.otf"; sourceTree = "<group>"; };
+		D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Regular.otf"; sourceTree = "<group>"; };
 		D8FBA4F22449BD560015C03C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		D8FBA4F72449BE7D0015C03C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 		D807846C2444726000003892 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */,
+				D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */,
 				D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */,
 				D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */,
 				D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */,
@@ -989,6 +995,7 @@
 				D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
+				D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */,
 				D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */,
@@ -1008,6 +1015,7 @@
 				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,
 				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
+				D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */,
 				D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,

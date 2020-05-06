@@ -52,6 +52,8 @@
 		<string>PantonAM-Bold.otf</string>
 		<string>PantonAM-ExtraBold.otf</string>
 		<string>PantonAM-Regular.otf</string>
+		<string>PantonNusx3-Bold.otf</string>
+		<string>PantonNusx3-Regular.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

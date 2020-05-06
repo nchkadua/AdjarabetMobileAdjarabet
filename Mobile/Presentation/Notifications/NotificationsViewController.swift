@@ -50,15 +50,20 @@ public class NotificationsViewController: UIViewController {
     }
 
     @objc private func englishButtonDidTap() {
-        DefaultLanguageStorage.shared.update(language: .english)
+        changeLanguage(to: .english)
     }
 
     @objc private func georgianButtonDidTap() {
-        DefaultLanguageStorage.shared.update(language: .georgian)
+        changeLanguage(to: .georgian)
     }
 
     @objc private func armenianButtonDidTap() {
-        DefaultLanguageStorage.shared.update(language: .armenian)
+        changeLanguage(to: .armenian)
+    }
+
+    private func changeLanguage(to language: Language) {
+        DefaultLanguageStorage.shared.update(language: language)
+        UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
     }
 }
 
