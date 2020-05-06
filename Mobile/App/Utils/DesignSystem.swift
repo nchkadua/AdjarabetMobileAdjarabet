@@ -61,11 +61,15 @@ public enum DesignSystem {
     public enum Typography {
         @Inject public static var languageStorage: LanguageStorage
 
-        case h1
-        case h2
-        case h3
-        case h4
-        case h5
+        public enum FontCase: CaseIterable {
+            case lower, upper
+        }
+
+        case h1(fontCase: FontCase)
+        case h2(fontCase: FontCase)
+        case h3(fontCase: FontCase)
+        case h4(fontCase: FontCase)
+        case h5(fontCase: FontCase)
         case body1
         case body2
         case p
@@ -85,12 +89,20 @@ public enum DesignSystem {
         }
 
         public func font(by language: Language) -> UIFont {
+            func font(by language: Language, fontCase: FontCase, pointSize: CGFloat) -> UIFont {
+                switch language {
+                case .georgian: return fontCase == .lower ? R.font.pantonNusx3Bold(size: pointSize)! : R.font.pantonMtav3Bold(size: pointSize)!
+                case .armenian: return R.font.pantonAMBold(size: pointSize)!
+                case .english: return R.font.pantonMtav3Bold(size: pointSize)!
+                }
+            }
+
             switch self {
-            case .h1:    return language == .armenian ? R.font.pantonAMBold(size: 28)! : R.font.pantonMtav3Bold(size: 28)!
-            case .h2:    return language == .armenian ? R.font.pantonAMBold(size: 23)! : R.font.pantonMtav3Bold(size: 23)!
-            case .h3:    return language == .armenian ? R.font.pantonAMBold(size: 16)! : R.font.pantonMtav3Bold(size: 16)!
-            case .h4:    return language == .armenian ? R.font.pantonAMBold(size: 14)! : R.font.pantonMtav3Bold(size: 14)!
-            case .h5:    return language == .armenian ? R.font.pantonAMBold(size: 11)! : R.font.pantonMtav3Bold(size: 11)!
+            case .h1(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 28)
+            case .h2(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 23)
+            case .h3(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 16)
+            case .h4(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 14)
+            case .h5(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 11)
             case .body1: return R.font.firaGOMedium(size: 13)!
             case .body2: return R.font.firaGOMedium(size: 11)!
             case .p:     return R.font.firaGORegular(size: 13)!

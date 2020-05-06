@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
     }
 
     private func setupBiometryButton() {
-        biometryButton.isHidden = !(UserSession.current.isLogedIn && Biometry.shared.isAvailable)
+        biometryButton.isHidden = !(UserSession.current.isLoggedIn && Biometry.shared.isAvailable)
         biometryButton.setImage(Biometry.shared.image, for: .normal)
     }
 
@@ -108,7 +108,7 @@ class LoginViewController: UIViewController {
                 self.navigateToWelcomePage()
             case .failure(let error):
                 if error.isSessionNotFound {
-                    self.userSession.clear()
+                    self.userSession.remove()
                     UIApplication.shared.currentWindow?.rootViewController = R.storyboard.login().instantiate(controller: LoginViewController.self)?.wrapInNav()
                 }
                 print(error.localizedDescription)

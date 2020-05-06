@@ -30,7 +30,7 @@ public class AppNavigationController: UINavigationController, UIGestureRecognize
         let color = DesignSystem.Color.neutral100.value
         navigationBar.titleTextAttributes = [
             .foregroundColor: color,
-            .font: DesignSystem.Typography.h4.description.font]
+            .font: DesignSystem.Typography.h4(fontCase: .lower).description.font]
         navigationBar.tintColor = color
     }
 

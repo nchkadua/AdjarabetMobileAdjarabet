@@ -75,7 +75,6 @@
 		D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */; };
 		D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */; };
 		D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1924336C7100F1D4FE /* Biometry.swift */; };
-		D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1D24336CA400F1D4FE /* UserSessionServices.swift */; };
 		D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1E24336CA400F1D4FE /* UserSession.swift */; };
 		D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */; };
 		D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */; };
@@ -107,6 +106,8 @@
 		D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD724335B4C0077AA8E /* Assets.xcassets */; };
 		D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD924335B4C0077AA8E /* LaunchScreen.storyboard */; };
 		D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */; };
+		D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB80682460133E001C4E8A /* UserSessionServices.swift */; };
+		D8AB806E246014EA001C4E8A /* UserSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB806D246014EA001C4E8A /* UserSessionTests.swift */; };
 		D8AC9964244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC9963244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift */; };
 		D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC9966244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift */; };
 		D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8AC9967244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib */; };
@@ -125,6 +126,8 @@
 		D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */; };
 		D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD8B4244C85AC001F4BAA /* Xibable.swift */; };
 		D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */; };
+		D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */; };
+		D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */; };
 		D8FBA4F12449BD560015C03C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8FBA4F32449BD560015C03C /* Localization.strings */; };
 		D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4F72449BE7D0015C03C /* Language.swift */; };
 		D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */; };
@@ -221,7 +224,6 @@
 		D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainContainer.swift; sourceTree = "<group>"; };
 		D85C9C1924336C7100F1D4FE /* Biometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biometry.swift; sourceTree = "<group>"; };
-		D85C9C1D24336CA400F1D4FE /* UserSessionServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSessionServices.swift; sourceTree = "<group>"; };
 		D85C9C1E24336CA400F1D4FE /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSessionCareTaker.swift; sourceTree = "<group>"; };
 		D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,8 @@
 		D8A47DDC24335B4C0077AA8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		D8A47DEF24335ECA0077AA8E /* Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8AB80682460133E001C4E8A /* UserSessionServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionServices.swift; sourceTree = "<group>"; };
+		D8AB806D246014EA001C4E8A /* UserSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionTests.swift; sourceTree = "<group>"; };
 		D8AC9963244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedComponentViewModel.swift; sourceTree = "<group>"; };
 		D8AC9966244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8AC9967244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentlyPlayedCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 		D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLauncherComponentView.xib; sourceTree = "<group>"; };
 		D8CFD8B4244C85AC001F4BAA /* Xibable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xibable.swift; sourceTree = "<group>"; };
 		D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarManager.swift; sourceTree = "<group>"; };
+		D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Bold.otf"; sourceTree = "<group>"; };
+		D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Regular.otf"; sourceTree = "<group>"; };
 		D8FBA4F22449BD560015C03C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		D8FBA4F72449BE7D0015C03C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
@@ -337,6 +343,8 @@
 		D807846C2444726000003892 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */,
+				D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */,
 				D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */,
 				D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */,
 				D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */,
@@ -377,6 +385,7 @@
 			children = (
 				D84202D1245196C800F0F056 /* DesignSystem */,
 				D84202D2245196D800F0F056 /* Localization */,
+				D8AB806C246014DB001C4E8A /* UserSession */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -384,7 +393,7 @@
 		D84202C82451919400F0F056 /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
-				D84202C9245191B100F0F056 /* LanguageStorage.swift */,
+				D8AB806A24601371001C4E8A /* LanguageStorage */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
@@ -489,7 +498,6 @@
 		D85C9C1C24336C9500F1D4FE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				D85C9C2324336CAA00F1D4FE /* UserSession */,
 				D85C9C1924336C7100F1D4FE /* Biometry.swift */,
 				D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */,
 				D80784672443968D00003892 /* DesignSystem.swift */,
@@ -497,16 +505,6 @@
 				D84202D72451AD8400F0F056 /* BaseViewModel.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		D85C9C2324336CAA00F1D4FE /* UserSession */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
-				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
-				D85C9C1D24336CA400F1D4FE /* UserSessionServices.swift */,
-			);
-			path = UserSession;
 			sourceTree = "<group>";
 		};
 		D85C9C2424336CCC00F1D4FE /* MainTabBar */ = {
@@ -685,6 +683,7 @@
 		D8A47DE824335DD70077AA8E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D8AB80672460132B001C4E8A /* Services */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -708,6 +707,7 @@
 				D83026BF24518528006FF7FB /* DummyData.swift */,
 				D8A47DF3243366F80077AA8E /* NetworkClinet */,
 				D84202C82451919400F0F056 /* PersistentStorages */,
+				D8AB806B246013EB001C4E8A /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -793,6 +793,39 @@
 				D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D8AB80672460132B001C4E8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8AB80682460133E001C4E8A /* UserSessionServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D8AB806A24601371001C4E8A /* LanguageStorage */ = {
+			isa = PBXGroup;
+			children = (
+				D84202C9245191B100F0F056 /* LanguageStorage.swift */,
+			);
+			path = LanguageStorage;
+			sourceTree = "<group>";
+		};
+		D8AB806B246013EB001C4E8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
+				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D8AB806C246014DB001C4E8A /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				D8AB806D246014EA001C4E8A /* UserSessionTests.swift */,
+			);
+			path = UserSession;
 			sourceTree = "<group>";
 		};
 		D8AC9965244F1A2100B16600 /* RecentlyPlayedCollectionViewCell */ = {
@@ -962,6 +995,7 @@
 				D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
+				D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */,
 				D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */,
@@ -981,6 +1015,7 @@
 				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,
 				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
+				D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */,
 				D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,
@@ -1122,6 +1157,7 @@
 				D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */,
 				D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */,
 				D83ED2F7244C92990037DDEB /* DesignSystemExtensionTests.swift in Sources */,
+				D8AB806E246014EA001C4E8A /* UserSessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,13 +1223,13 @@
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
+				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
 				D8AC9964244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift in Sources */,
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
-				D85C9C2024336CA400F1D4FE /* UserSessionServices.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
@@ -1656,7 +1692,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1685,7 +1721,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1774,7 +1810,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1858,7 +1894,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

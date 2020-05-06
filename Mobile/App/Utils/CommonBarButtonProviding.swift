@@ -13,7 +13,7 @@ public protocol CommonBarButtonProviding: UIViewController { }
 public extension CommonBarButtonProviding {
     @discardableResult
     func setLeftBarButtonItemTitle(to title: String) -> UIBarButtonItem.Coupled {
-        let barButtonItem = UIBarButtonItem.make(title: title, typography: .h1)
+        let barButtonItem = UIBarButtonItem.make(title: title, typography: .h1(fontCase: .lower))
         barButtonItem.barButtonItem.isEnabled = false
         navigationItem.leftBarButtonItem = barButtonItem.barButtonItem
         return barButtonItem
@@ -40,7 +40,7 @@ public extension CommonBarButtonProviding {
 
 public extension UIBarButtonItem {
     typealias Coupled = (barButtonItem: UIBarButtonItem, button: UIButton)
-    static func make(title: String?, typography: DesignSystem.Typography = .h4) -> Coupled {
+    static func make(title: String?, typography: DesignSystem.Typography = .h4(fontCase: .lower)) -> Coupled {
         let button = UIButton(type: .system)
         button.setTitleWithoutAnimation(title, for: .normal)
         button.setFont(to: typography)

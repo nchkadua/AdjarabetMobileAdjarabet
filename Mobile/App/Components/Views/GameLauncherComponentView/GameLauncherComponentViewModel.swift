@@ -44,11 +44,11 @@ public class DefaultGameLauncherComponentViewModel {
 }
 
 extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel {
+    public var action: Observable<GameLauncherComponentViewModelOutputAction> { actionSubject.asObserver() }
+
     public func didBind() {
         actionSubject.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category, jackpotAmount: params.jackpotAmount))
     }
-
-    public var action: Observable<GameLauncherComponentViewModelOutputAction> { actionSubject.asObserver() }
 
     public func didSelect(at indexPath: IndexPath) {
         actionSubject.onNext(.didSelect(self, indexPath: indexPath))

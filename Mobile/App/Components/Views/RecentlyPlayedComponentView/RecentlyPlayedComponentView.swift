@@ -78,10 +78,10 @@ extension RecentlyPlayedComponentView: Xibable {
         view.backgroundColor = .clear
 
         titleLabel.setTextColor(to: .neutral100)
-        titleLabel.setFont(to: .h3)
+        titleLabel.setFont(to: .h3(fontCase: .lower))
 
         button.setTitleColor(to: .neutral100, for: .normal, alpha: 0.6)
-        button.setFont(to: .h5)
+        button.setFont(to: .h5(fontCase: .lower))
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         button.addTarget(self, action: #selector(buttinDidTap), for: .touchUpInside)
 
