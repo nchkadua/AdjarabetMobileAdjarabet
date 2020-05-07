@@ -29,3 +29,21 @@ public extension UIButton {
         }
     }
 }
+
+public extension ABButton {
+    func set(size: DesignSystem.Button.Size) {
+        setFont(to: size.description.typograhy)
+        contentEdgeInsets = size.description.contentEdgeInsets
+    }
+
+    func set(style: DesignSystem.Button.Style) {
+        let description = style.description
+
+        setTitleColor(to: description.textColor.color, for: .normal, alpha: description.textColor.alpha)
+
+        self.backgroundColor = description.blended
+        self.borderWidth = description.borderWidth
+        self.borderColor = description.borderColor?.caclulated ?? .clear
+        self.cornerRadius = 4
+    }
+}

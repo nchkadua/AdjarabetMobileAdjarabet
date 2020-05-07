@@ -12,6 +12,8 @@ public class PromotionsViewController: UIViewController {
     @Inject(from: .viewModels) private var viewModel: PromotionsViewModel
     private let disposeBag = DisposeBag()
 
+    @IBOutlet public weak var stackView: UIStackView!
+
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     public override func viewDidLoad() {
@@ -20,6 +22,56 @@ public class PromotionsViewController: UIViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+
+        func make(sw: UIStackView, text: String, style: DesignSystem.Button.Style) {
+            let button = ABButton(type: .system)
+            sw.addArrangedSubview(button)
+            button.set(size: .large)
+            button.set(style: style)
+            button.setTitleWithoutAnimation(text, for: .normal)
+        }
+
+        func make(c: (UIStackView) -> Void) {
+            let s = UIStackView()
+            s.alignment = .center
+            s.distribution = .fill
+            s.axis = .vertical
+            s.spacing = 5
+
+            stackView.addArrangedSubview(s)
+
+            c(s)
+        }
+
+        make { sw in
+            DesignSystem.Button.State.allCases.forEach {
+                make(sw: sw, text: "DEFAULT", style: .primary(state: $0))
+            }
+        }
+
+        make { sw in
+            DesignSystem.Button.State.allCases.forEach {
+                make(sw: sw, text: "DEFAULT", style: .secondary(state: $0))
+            }
+        }
+
+        make { sw in
+            DesignSystem.Button.State.allCases.forEach {
+                make(sw: sw, text: "DEFAULT", style: .tertiary(state: $0))
+            }
+        }
+
+        make { sw in
+            DesignSystem.Button.State.allCases.forEach {
+                make(sw: sw, text: "DEFAULT", style: .outline(state: $0))
+            }
+        }
+
+        make { sw in
+            DesignSystem.Button.State.allCases.forEach {
+                make(sw: sw, text: "DEFAULT", style: .ghost(state: $0))
+            }
+        }
     }
 
     private func setup() {
