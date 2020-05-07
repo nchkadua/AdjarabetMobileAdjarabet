@@ -84,6 +84,9 @@
 		D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C3124336D0800F1D4FE /* Login.storyboard */; };
 		D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */; };
 		D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253AC2464197500F7DE0C /* Cancelable.swift */; };
+		D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B22464214B00F7DE0C /* NetworkService.swift */; };
+		D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */; };
+		D86253B7246429D000F7DE0C /* DefaultDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B6246429D000F7DE0C /* DefaultDataTransferService.swift */; };
 		D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */; };
 		D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */; };
 		D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */; };
@@ -235,6 +238,9 @@
 		D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
 		D86253AC2464197500F7DE0C /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
+		D86253B22464214B00F7DE0C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorLogger.swift; sourceTree = "<group>"; };
+		D86253B6246429D000F7DE0C /* DefaultDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataTransferService.swift; sourceTree = "<group>"; };
 		D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherComponentView.swift; sourceTree = "<group>"; };
 		D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayedGameLauncherComponentView.xib; sourceTree = "<group>"; };
 		D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherComponentViewModel.swift; sourceTree = "<group>"; };
@@ -566,6 +572,16 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		D86253B12464213B00F7DE0C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D86253B22464214B00F7DE0C /* NetworkService.swift */,
+				D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */,
+				D86253B6246429D000F7DE0C /* DefaultDataTransferService.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 		D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -765,6 +781,7 @@
 		D8A47DF3243366F80077AA8E /* NetworkClinet */ = {
 			isa = PBXGroup;
 			children = (
+				D86253B12464213B00F7DE0C /* Infrastructure */,
 				D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */,
 				D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */,
 				D8A47DF5243367060077AA8E /* AdjarabetCoreClient */,
@@ -1197,6 +1214,7 @@
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
+				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
@@ -1210,6 +1228,7 @@
 				D85C9BEF2433676700F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift in Sources */,
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
 				D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */,
+				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
@@ -1220,6 +1239,7 @@
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
+				D86253B7246429D000F7DE0C /* DefaultDataTransferService.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
 				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,
 				D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */,
