@@ -36,6 +36,35 @@ class DesignSystemExtensionTests: XCTestCase {
         XCTAssertEqual(button.titleColor(for: .normal), color.value)
     }
     
+    func testButtonSetSize() {
+        // given
+        let size = DesignSystem.Button.Size.allCases.randomElement()!
+        let button = AppCircularButton()
+        
+        // when
+        button.set(size: size)
+        
+        // than
+        XCTAssertEqual(button.titleLabel?.font, size.description.typograhy.description.font)
+        XCTAssertEqual(button.contentEdgeInsets, size.description.contentEdgeInsets)
+    }
+    
+    func testButtonSetStyle() {
+        // given
+        let style = DesignSystem.Button.Style.primary(state: DesignSystem.Button.State.allCases.randomElement()!)
+        let button = AppCircularButton()
+        
+        // when
+        button.set(style: style)
+        
+        // than
+        XCTAssertEqual(button.titleColor(for: .normal), style.description.textColor.value)
+        XCTAssertEqual(button.backgroundColor, style.description.blended)
+        XCTAssertEqual(button.borderWidth, style.description.borderWidth)
+        XCTAssertEqual(button.borderColor, style.description.borderColor?.value ?? .clear)
+        XCTAssertEqual(button.cornerRadius, 4)
+    }
+    
     // MAKR: UIView
     func testViewSetBackgorundColor() {
         // given

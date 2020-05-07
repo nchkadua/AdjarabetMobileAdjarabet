@@ -44,6 +44,6 @@ public extension AppCircularButton {
         self.backgroundColor = description.blended
         self.borderWidth = description.borderWidth
         self.borderColor = description.borderColor?.value ?? .clear
-        self.cornerRadius = 4
+        self.cornerRadius = description.cornerRadius
     }
 }
