@@ -8,7 +8,7 @@
 
 public enum DesignSystem {
     /// Design system colors
-    public enum Color {
+    public enum Color: Equatable, Hashable {
         /// Neutral colors
         case white(alpha: CGFloat = 1)
         case neutral100(alpha: CGFloat = 1)
@@ -215,7 +215,7 @@ public enum DesignSystem {
             }
 
             /// Availbe information about concrete button state
-            public struct Description {
+            public struct Description: Equatable {
                 public var textColor: Color
                 public var backgorundColor: Color?
                 public var overlayColor: Color?

@@ -117,4 +117,208 @@ class DesignSystemTests: XCTestCase {
         XCTAssertEqual(DesignSystem.Spacing.space28.value, 28)
         XCTAssertEqual(DesignSystem.Spacing.space32.value, 32)
     }
+    
+    func testButtonStyle() {
+        /// primary
+        func testPrimary(state:  DesignSystem.Button.State) {
+            let description = DesignSystem.Button.Style.primary(state: state).description
+            switch state {
+            case .normal:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .primary400()
+                ))
+            case .hovered:
+                XCTAssertEqual(description, .init(
+                    textColor: .neutral100(alpha: 0.8),
+                    backgorundColor: .primary400(),
+                    overlayColor: .neutral900(alpha: 0.2)
+                ))
+            case .acvite:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .primary400(),
+                    overlayColor: .neutral900(alpha: 0.3)
+                ))
+            case .focused:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .primary400(),
+                    overlayColor: .neutral900(alpha: 0.4)
+                ))
+            case .disabled:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(alpha: 0.4),
+                    backgorundColor: .primary400(),
+                    overlayColor: .neutral600(alpha: 0.5)
+                ))
+            case .loading:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .primary400(),
+                    overlayColor: .neutral900(alpha: 0.4)
+                ))
+            }
+        }
+        
+        /// secondary
+        func testSecondary(state:  DesignSystem.Button.State) {
+            let description = DesignSystem.Button.Style.secondary(state: state).description
+            switch state {
+            case .normal:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .neutral500()
+                ))
+            case .hovered:
+                XCTAssertEqual(description, .init(
+                    textColor: .neutral100(alpha: 0.8),
+                    backgorundColor: .neutral500(),
+                    overlayColor: .neutral900(alpha: 0.2)
+                ))
+            case .acvite:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .neutral500(),
+                    overlayColor: .neutral900(alpha: 0.3)
+                ))
+            case .focused:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .neutral500(),
+                    overlayColor: .neutral900(alpha: 0.4)
+                ))
+            case .disabled:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(alpha: 0.4),
+                    backgorundColor: .neutral500(),
+                    overlayColor: .neutral600(alpha: 0.9)
+                ))
+            case .loading:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .neutral500(),
+                    overlayColor: .neutral900(alpha: 0.4)
+                ))
+            }
+        }
+        
+        /// tertiary
+        func testTertiary(state:  DesignSystem.Button.State) {
+            let description = DesignSystem.Button.Style.tertiary(state: state).description
+            switch state {
+            case .normal:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .secondary400()
+                ))
+            case .hovered:
+                XCTAssertEqual(description, .init(
+                    textColor: .neutral100(alpha: 0.8),
+                    backgorundColor: .secondary400(),
+                    overlayColor: .neutral900(alpha: 0.2)
+                ))
+            case .acvite:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .secondary400(),
+                    overlayColor: .neutral900(alpha: 0.3)
+                ))
+            case .focused:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .secondary400(),
+                    overlayColor: .neutral900(alpha: 0.4)
+                ))
+            case .disabled:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(alpha: 0.4),
+                    backgorundColor: .secondary400(),
+                    overlayColor: .neutral600(alpha: 0.5)
+                ))
+            case .loading:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .secondary400(),
+                    overlayColor: .neutral900(alpha: 0.4)
+                ))
+            }
+        }
+        
+        /// outline
+        func testOutline(state:  DesignSystem.Button.State) {
+            let description = DesignSystem.Button.Style.outline(state: state).description
+            switch state {
+            case .normal:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    borderColor: .white()
+                ))
+            case .hovered:
+                XCTAssertEqual(description, .init(
+                    textColor: .neutral100(alpha: 0.8),
+                    borderColor: .white(alpha: 0.8)
+                ))
+            case .acvite:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    borderColor: .white(alpha: 0.8)
+                ))
+            case .focused:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    borderColor: .white(alpha: 0.8)
+                ))
+            case .disabled:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(alpha: 0.4),
+                    borderColor: .white(alpha: 0.5)
+                ))
+            case .loading:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    borderColor: .white()
+                ))
+            }
+        }
+        
+        /// ghost
+        func testGhost(state:  DesignSystem.Button.State) {
+            let description = DesignSystem.Button.Style.ghost(state: state).description
+            switch state {
+            case .normal:
+                XCTAssertEqual(description, .init(textColor: .white()))
+            case .hovered:
+                XCTAssertEqual(description, .init(
+                    textColor: .neutral100(alpha: 0.8),
+                    backgorundColor: .neutral500(alpha: 0.8),
+                    overlayColor: .neutral900(alpha: 0.2)
+                ))
+            case .acvite:
+                XCTAssertEqual(description, .init(textColor: .white()))
+            case .focused:
+                XCTAssertEqual(description, .init(
+                    textColor: .neutral100(alpha: 0.8),
+                    backgorundColor: .neutral500(),
+                    overlayColor: .neutral900(alpha: 0.4)
+                ))
+            case .disabled:
+                XCTAssertEqual(description, .init(textColor: .white(alpha: 0.4)))
+            case .loading:
+                XCTAssertEqual(description, .init(
+                    textColor: .white(),
+                    backgorundColor: .neutral500(),
+                    overlayColor: .neutral900(alpha: 0.4)
+                ))
+            }
+        }
+        
+        DesignSystem.Button.State.allCases.forEach { state in
+            testPrimary(state: state)
+            testPrimary(state: state)
+            testTertiary(state: state)
+            testOutline(state: state)
+            testGhost(state: state)
+        }
+    }
 }
