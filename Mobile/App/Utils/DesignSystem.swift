@@ -77,14 +77,14 @@ public enum DesignSystem {
         /// Concrete description for each case
         public var description: Description {
             switch self {
-            case .h1:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.7, lineHeight: 44)
-            case .h2:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.7, lineHeight: 36)
-            case .h3:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.5, lineHeight: 24)
-            case .h4:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.3, lineHeight: 24)
-            case .h5:    return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.5, lineHeight: 16)
-            case .body1: return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 20)
-            case .body2: return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 16)
-            case .p:     return Description(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 20)
+            case .h1:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.7, lineHeight: 44)
+            case .h2:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.7, lineHeight: 36)
+            case .h3:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.5, lineHeight: 24)
+            case .h4:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.3, lineHeight: 24)
+            case .h5:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.5, lineHeight: 16)
+            case .body1: return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 20)
+            case .body2: return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 16)
+            case .p:     return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 20)
             }
         }
 
@@ -103,9 +103,9 @@ public enum DesignSystem {
             case .h3(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 16)
             case .h4(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 14)
             case .h5(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 11)
-            case .body1: return R.font.firaGOMedium(size: 13)!
-            case .body2: return R.font.firaGOMedium(size: 11)!
-            case .p:     return R.font.firaGORegular(size: 13)!
+            case .body1:            return R.font.firaGOMedium(size: 13)!
+            case .body2:            return R.font.firaGOMedium(size: 11)!
+            case .p:                return R.font.firaGORegular(size: 13)!
             }
         }
 
@@ -142,10 +142,10 @@ public enum DesignSystem {
             /// Concrete description for each case
             public var description: Description {
                 switch self {
-                case .large:  return Description(typograhy: .h3(fontCase: .upper), contentEdgeInsets: .init(top: 14, left: 20, bottom: 10, right: 20))
-                case .medium: return Description(typograhy: .h4(fontCase: .upper), contentEdgeInsets: .init(top: 11, left: 20, bottom: 9, right: 20))
-                case .small:  return Description(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 9, left: 16, bottom: 7, right: 16))
-                case .xs:     return Description(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 7, left: 12, bottom: 5, right: 12))
+                case .large:  return .init(typograhy: .h3(fontCase: .upper), contentEdgeInsets: .init(top: 14, left: 20, bottom: 10, right: 20))
+                case .medium: return .init(typograhy: .h4(fontCase: .upper), contentEdgeInsets: .init(top: 11, left: 20, bottom: 9, right: 20))
+                case .small:  return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 9, left: 16, bottom: 7, right: 16))
+                case .xs:     return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 7, left: 12, bottom: 5, right: 12))
                 }
             }
 
@@ -163,157 +163,53 @@ public enum DesignSystem {
             case outline(state: State)
             case ghost(state: State)
 
+            /// Concrete description for each case
             public var description: Description {
                 switch self {
                 case .primary(let state):
                     switch state {
-                    case .normal:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .primary400())
-                    case .hovered:
-                        return Description(
-                            textColor: .neutral100(alpha: 0.8),
-                            backgorundColor: .primary400(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.2))
-                    case .acvite:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .primary400(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.3))
-                    case .focused:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .primary400(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.4))
-                    case .disabled:
-                        return Description(
-                            textColor: .white(alpha: 0.4),
-                            backgorundColor: .primary400(),
-                            backgorundOverlayColor: .neutral600(alpha: 0.5))
-                    case .loading:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .primary400(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.4))
+                    case .normal:   return .init(textColor: .white(), backgorundColor: .primary400())
+                    case .hovered:  return .init(textColor: .neutral100(alpha: 0.8), backgorundColor: .primary400(), overlayColor: .neutral900(alpha: 0.2))
+                    case .acvite:   return .init(textColor: .white(), backgorundColor: .primary400(), overlayColor: .neutral900(alpha: 0.3))
+                    case .focused:  return .init(textColor: .white(), backgorundColor: .primary400(), overlayColor: .neutral900(alpha: 0.4))
+                    case .disabled: return .init(textColor: .white(alpha: 0.4), backgorundColor: .primary400(), overlayColor: .neutral600(alpha: 0.5))
+                    case .loading:  return .init(textColor: .white(), backgorundColor: .primary400(), overlayColor: .neutral900(alpha: 0.4))
                     }
                 case .secondary(let state):
                     switch state {
-                    case .normal:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .neutral500())
-                    case .hovered:
-                        return Description(
-                            textColor: .neutral100(alpha: 0.8),
-                            backgorundColor: .neutral500(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.2))
-                    case .acvite:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .neutral500(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.3))
-                    case .focused:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .neutral500(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.4))
-                    case .disabled:
-                        return Description(
-                            textColor: .white(alpha: 0.4),
-                            backgorundColor: .neutral500(),
-                            backgorundOverlayColor: .neutral600(alpha: 0.9))
-                    case .loading:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .neutral500(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.4))
+                    case .normal:   return .init(textColor: .white(), backgorundColor: .neutral500())
+                    case .hovered:  return .init(textColor: .neutral100(alpha: 0.8), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.2))
+                    case .acvite:   return .init(textColor: .white(), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.3))
+                    case .focused:  return .init(textColor: .white(), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.4))
+                    case .disabled: return .init(textColor: .white(alpha: 0.4), backgorundColor: .neutral500(), overlayColor: .neutral600(alpha: 0.9))
+                    case .loading:  return .init(textColor: .white(), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.4))
                     }
                 case .tertiary(let state):
                     switch state {
-                    case .normal:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .secondary400())
-                    case .hovered:
-                        return Description(
-                            textColor: .neutral100(alpha: 0.8),
-                            backgorundColor: .secondary400(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.2))
-                    case .acvite:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .secondary400(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.3))
-                    case .focused:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .secondary400(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.4))
-                    case .disabled:
-                        return Description(
-                            textColor: .white(alpha: 0.4),
-                            backgorundColor: .secondary400(),
-                            backgorundOverlayColor: .neutral600(alpha: 0.5))
-                    case .loading:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .secondary400(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.4))
+                    case .normal:   return .init(textColor: .white(), backgorundColor: .secondary400())
+                    case .hovered:  return .init(textColor: .neutral100(alpha: 0.8), backgorundColor: .secondary400(), overlayColor: .neutral900(alpha: 0.2))
+                    case .acvite:   return .init(textColor: .white(), backgorundColor: .secondary400(), overlayColor: .neutral900(alpha: 0.3))
+                    case .focused:  return .init(textColor: .white(), backgorundColor: .secondary400(), overlayColor: .neutral900(alpha: 0.4))
+                    case .disabled: return .init(textColor: .white(alpha: 0.4), backgorundColor: .secondary400(), overlayColor: .neutral600(alpha: 0.5))
+                    case .loading:  return .init(textColor: .white(), backgorundColor: .secondary400(), overlayColor: .neutral900(alpha: 0.4))
                     }
                 case .outline(let state):
                     switch state {
-                    case .normal:
-                        return Description(
-                            textColor: .white(),
-                            borderColor: .white())
-                    case .hovered:
-                        return Description(
-                            textColor: .neutral100(alpha: 0.8),
-                            borderColor: .white(alpha: 0.8))
-                    case .acvite:
-                        return Description(
-                            textColor: .white(),
-                            borderColor: .white(alpha: 0.8))
-                    case .focused:
-                        return Description(
-                            textColor: .white(),
-                            borderColor: .white(alpha: 0.8))
-                    case .disabled:
-                        return Description(
-                            textColor: .white(alpha: 0.4),
-                            borderColor: .white(alpha: 0.5))
-                    case .loading:
-                        return Description(
-                            textColor: .white(),
-                            borderColor: .white())
+                    case .normal:   return .init(textColor: .white(), borderColor: .white())
+                    case .hovered:  return .init(textColor: .neutral100(alpha: 0.8), borderColor: .white(alpha: 0.8))
+                    case .acvite:   return .init(textColor: .white(), borderColor: .white(alpha: 0.8))
+                    case .focused:  return .init(textColor: .white(), borderColor: .white(alpha: 0.8))
+                    case .disabled: return .init(textColor: .white(alpha: 0.4), borderColor: .white(alpha: 0.5))
+                    case .loading:  return .init(textColor: .white(), borderColor: .white())
                     }
                 case .ghost(let state):
                     switch state {
-                    case .normal:
-                        return Description(
-                            textColor: .white())
-                    case .hovered:
-                        return Description(
-                            textColor: .neutral100(alpha: 0.8),
-                            backgorundColor: .neutral500(alpha: 0.8),
-                            backgorundOverlayColor: .neutral900(alpha: 0.2))
-                    case .acvite:
-                        return Description(
-                            textColor: .white())
-                    case .focused:
-                        return Description(
-                            textColor: .neutral100(alpha: 0.8),
-                            backgorundColor: .neutral500(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.4))
-                    case .disabled:
-                        return Description(
-                            textColor: .white(alpha: 0.4))
-                    case .loading:
-                        return Description(
-                            textColor: .white(),
-                            backgorundColor: .neutral500(),
-                            backgorundOverlayColor: .neutral900(alpha: 0.4))
+                    case .normal:   return .init(textColor: .white())
+                    case .hovered:  return .init(textColor: .neutral100(alpha: 0.8), backgorundColor: .neutral500(alpha: 0.8), overlayColor: .neutral900(alpha: 0.2))
+                    case .acvite:   return .init(textColor: .white())
+                    case .focused:  return .init(textColor: .neutral100(alpha: 0.8), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.4))
+                    case .disabled: return .init(textColor: .white(alpha: 0.4))
+                    case .loading:  return .init(textColor: .white(), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.4))
                     }
                 }
             }
@@ -322,12 +218,12 @@ public enum DesignSystem {
             public struct Description {
                 public var textColor: Color
                 public var backgorundColor: Color?
-                public var backgorundOverlayColor: Color?
+                public var overlayColor: Color?
                 public var borderColor: Color?
                 public var borderWidth: CGFloat = 1
                 public var cornerRadius: CGFloat = 4
 
-                public var blended: UIColor? { backgorundColor?.add(color: backgorundOverlayColor) }
+                public var blended: UIColor? { backgorundColor?.add(color: overlayColor) }
             }
         }
 
