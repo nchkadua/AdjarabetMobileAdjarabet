@@ -7,8 +7,8 @@
 //
 
 public extension UIButton {
-    func setTitleColor(to color: DesignSystem.Color?, for state: UIControl.State, alpha: CGFloat = 1) {
-        self.setTitleColor(color?.value.withAlphaComponent(alpha), for: state)
+    func setTitleColor(to color: DesignSystem.Color?, for state: UIControl.State) {
+        self.setTitleColor(color?.value, for: state)
     }
 
     func setFont(to typography: DesignSystem.Typography) {
@@ -30,7 +30,7 @@ public extension UIButton {
     }
 }
 
-public extension ABButton {
+public extension AppCircularButton {
     func set(size: DesignSystem.Button.Size) {
         setFont(to: size.description.typograhy)
         contentEdgeInsets = size.description.contentEdgeInsets
@@ -39,11 +39,11 @@ public extension ABButton {
     func set(style: DesignSystem.Button.Style) {
         let description = style.description
 
-        setTitleColor(to: description.textColor.color, for: .normal, alpha: description.textColor.alpha)
+        setTitleColor(to: description.textColor, for: .normal)
 
         self.backgroundColor = description.blended
         self.borderWidth = description.borderWidth
-        self.borderColor = description.borderColor?.caclulated ?? .clear
+        self.borderColor = description.borderColor?.value ?? .clear
         self.cornerRadius = 4
     }
 }

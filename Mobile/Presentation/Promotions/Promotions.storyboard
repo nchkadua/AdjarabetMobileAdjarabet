@@ -18,7 +18,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iO-FZ-Tu0">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="852" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iN7-CF-AZL">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="852" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iN7-CF-AZL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                     </stackView>
                                 </subviews>
@@ -42,6 +42,7 @@
                         <viewLayoutGuide key="safeArea" id="8Gb-az-nJJ"/>
                     </view>
                     <connections>
+                        <outlet property="scrollView" destination="9iO-FZ-Tu0" id="FWu-Or-9RQ"/>
                         <outlet property="stackView" destination="iN7-CF-AZL" id="yDr-EA-6da"/>
                     </connections>
                 </viewController>

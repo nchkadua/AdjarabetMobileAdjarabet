@@ -10,49 +10,49 @@ public enum DesignSystem {
     /// Design system colors
     public enum Color {
         /// Neutral colors
-        case white
-        case neutral100
-        case neutral200
-        case neutral300
-        case neutral400
-        case neutral500
-        case neutral600
-        case neutral700
-        case neutral800
-        case neutral900
+        case white(alpha: CGFloat = 1)
+        case neutral100(alpha: CGFloat = 1)
+        case neutral200(alpha: CGFloat = 1)
+        case neutral300(alpha: CGFloat = 1)
+        case neutral400(alpha: CGFloat = 1)
+        case neutral500(alpha: CGFloat = 1)
+        case neutral600(alpha: CGFloat = 1)
+        case neutral700(alpha: CGFloat = 1)
+        case neutral800(alpha: CGFloat = 1)
+        case neutral900(alpha: CGFloat = 1)
         /// Primary colors
-        case primary200
-        case primary400
+        case primary200(alpha: CGFloat = 1)
+        case primary400(alpha: CGFloat = 1)
         /// Secondary colors
-        case secondary200
-        case secondary400
+        case secondary200(alpha: CGFloat = 1)
+        case secondary400(alpha: CGFloat = 1)
         /// Semantic colors
-        case success
-        case warning
-        case error
+        case success(alpha: CGFloat = 1)
+        case warning(alpha: CGFloat = 1)
+        case error(alpha: CGFloat = 1)
 
         public var value: UIColor {
             switch self {
-            case .white:         return R.color.colorGuide.neutral.white()!
-            case .neutral100:    return R.color.colorGuide.neutral.neutral100()!
-            case .neutral200:    return R.color.colorGuide.neutral.neutral200()!
-            case .neutral300:    return R.color.colorGuide.neutral.neutral300()!
-            case .neutral400:    return R.color.colorGuide.neutral.neutral400()!
-            case .neutral500:    return R.color.colorGuide.neutral.neutral500()!
-            case .neutral600:    return R.color.colorGuide.neutral.neutral600()!
-            case .neutral700:    return R.color.colorGuide.neutral.neutral700()!
-            case .neutral800:    return R.color.colorGuide.neutral.neutral800()!
-            case .neutral900:    return R.color.colorGuide.neutral.neutral900()!
+            case .white(let alpha):         return R.color.colorGuide.neutral.white()!.withAlphaComponent(alpha)
+            case .neutral100(let alpha):    return R.color.colorGuide.neutral.neutral100()!.withAlphaComponent(alpha)
+            case .neutral200(let alpha):    return R.color.colorGuide.neutral.neutral200()!.withAlphaComponent(alpha)
+            case .neutral300(let alpha):    return R.color.colorGuide.neutral.neutral300()!.withAlphaComponent(alpha)
+            case .neutral400(let alpha):    return R.color.colorGuide.neutral.neutral400()!.withAlphaComponent(alpha)
+            case .neutral500(let alpha):    return R.color.colorGuide.neutral.neutral500()!.withAlphaComponent(alpha)
+            case .neutral600(let alpha):    return R.color.colorGuide.neutral.neutral600()!.withAlphaComponent(alpha)
+            case .neutral700(let alpha):    return R.color.colorGuide.neutral.neutral700()!.withAlphaComponent(alpha)
+            case .neutral800(let alpha):    return R.color.colorGuide.neutral.neutral800()!.withAlphaComponent(alpha)
+            case .neutral900(let alpha):    return R.color.colorGuide.neutral.neutral900()!.withAlphaComponent(alpha)
 
-            case  .primary200:   return R.color.colorGuide.primary.primary200()!
-            case  .primary400:   return R.color.colorGuide.primary.primary400()!
+            case  .primary200(let alpha):   return R.color.colorGuide.primary.primary200()!.withAlphaComponent(alpha)
+            case  .primary400(let alpha):   return R.color.colorGuide.primary.primary400()!.withAlphaComponent(alpha)
 
-            case  .secondary200: return R.color.colorGuide.secondary.secondary200()!
-            case  .secondary400: return R.color.colorGuide.secondary.secondary400()!
+            case  .secondary200(let alpha): return R.color.colorGuide.secondary.secondary200()!.withAlphaComponent(alpha)
+            case  .secondary400(let alpha): return R.color.colorGuide.secondary.secondary400()!.withAlphaComponent(alpha)
 
-            case  .success:      return R.color.colorGuide.semantic.success()!
-            case  .warning:      return R.color.colorGuide.semantic.warning()!
-            case  .error:        return R.color.colorGuide.semantic.error()!
+            case  .success(let alpha):      return R.color.colorGuide.semantic.success()!.withAlphaComponent(alpha)
+            case  .warning(let alpha):      return R.color.colorGuide.semantic.warning()!.withAlphaComponent(alpha)
+            case  .error(let alpha):        return R.color.colorGuide.semantic.error()!.withAlphaComponent(alpha)
             }
         }
     }
@@ -169,172 +169,165 @@ public enum DesignSystem {
                     switch state {
                     case .normal:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .primary400))
+                            textColor: .white(),
+                            backgorundColor: .primary400())
                     case .hovered:
                         return Description(
-                            textColor: .init(color: .neutral100, alpha: 0.8),
-                            backgorundColor: .init(color: .primary400),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.2))
+                            textColor: .neutral100(alpha: 0.8),
+                            backgorundColor: .primary400(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.2))
                     case .acvite:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .primary400),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.3))
+                            textColor: .white(),
+                            backgorundColor: .primary400(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.3))
                     case .focused:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .primary400),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.4))
+                            textColor: .white(),
+                            backgorundColor: .primary400(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.4))
                     case .disabled:
                         return Description(
-                            textColor: .init(color: .white, alpha: 0.4),
-                            backgorundColor: .init(color: .primary400),
-                            backgorundOverlayColor: .init(color: .neutral600, alpha: 0.5))
+                            textColor: .white(alpha: 0.4),
+                            backgorundColor: .primary400(),
+                            backgorundOverlayColor: .neutral600(alpha: 0.5))
                     case .loading:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .primary400),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.4))
+                            textColor: .white(),
+                            backgorundColor: .primary400(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.4))
                     }
                 case .secondary(let state):
                     switch state {
                     case .normal:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .neutral500))
+                            textColor: .white(),
+                            backgorundColor: .neutral500())
                     case .hovered:
                         return Description(
-                            textColor: .init(color: .neutral100, alpha: 0.8),
-                            backgorundColor: .init(color: .neutral500),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.2))
+                            textColor: .neutral100(alpha: 0.8),
+                            backgorundColor: .neutral500(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.2))
                     case .acvite:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .neutral500),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.3))
+                            textColor: .white(),
+                            backgorundColor: .neutral500(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.3))
                     case .focused:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .neutral500),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.4))
+                            textColor: .white(),
+                            backgorundColor: .neutral500(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.4))
                     case .disabled:
                         return Description(
-                            textColor: .init(color: .white, alpha: 0.4),
-                            backgorundColor: .init(color: .neutral500),
-                            backgorundOverlayColor: .init(color: .neutral600, alpha: 0.9))
+                            textColor: .white(alpha: 0.4),
+                            backgorundColor: .neutral500(),
+                            backgorundOverlayColor: .neutral600(alpha: 0.9))
                     case .loading:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .neutral500),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.4))
+                            textColor: .white(),
+                            backgorundColor: .neutral500(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.4))
                     }
                 case .tertiary(let state):
                     switch state {
                     case .normal:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .secondary400))
+                            textColor: .white(),
+                            backgorundColor: .secondary400())
                     case .hovered:
                         return Description(
-                            textColor: .init(color: .neutral100, alpha: 0.8),
-                            backgorundColor: .init(color: .secondary400),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.2))
+                            textColor: .neutral100(alpha: 0.8),
+                            backgorundColor: .secondary400(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.2))
                     case .acvite:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .secondary400),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.3))
+                            textColor: .white(),
+                            backgorundColor: .secondary400(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.3))
                     case .focused:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .secondary400),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.4))
+                            textColor: .white(),
+                            backgorundColor: .secondary400(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.4))
                     case .disabled:
                         return Description(
-                            textColor: .init(color: .white, alpha: 0.4),
-                            backgorundColor: .init(color: .secondary400),
-                            backgorundOverlayColor: .init(color: .neutral600, alpha: 0.5))
+                            textColor: .white(alpha: 0.4),
+                            backgorundColor: .secondary400(),
+                            backgorundOverlayColor: .neutral600(alpha: 0.5))
                     case .loading:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .secondary400),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.4))
+                            textColor: .white(),
+                            backgorundColor: .secondary400(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.4))
                     }
                 case .outline(let state):
                     switch state {
                     case .normal:
                         return Description(
-                            textColor: .init(color: .white),
-                            borderColor: .init(color: .white))
+                            textColor: .white(),
+                            borderColor: .white())
                     case .hovered:
                         return Description(
-                            textColor: .init(color: .neutral100, alpha: 0.8),
-                            borderColor: .init(color: .white, alpha: 0.8))
+                            textColor: .neutral100(alpha: 0.8),
+                            borderColor: .white(alpha: 0.8))
                     case .acvite:
                         return Description(
-                            textColor: .init(color: .white),
-                            borderColor: .init(color: .white, alpha: 0.8))
+                            textColor: .white(),
+                            borderColor: .white(alpha: 0.8))
                     case .focused:
                         return Description(
-                            textColor: .init(color: .white),
-                            borderColor: .init(color: .white, alpha: 0.8))
+                            textColor: .white(),
+                            borderColor: .white(alpha: 0.8))
                     case .disabled:
                         return Description(
-                            textColor: .init(color: .white, alpha: 0.4),
-                            borderColor: .init(color: .white, alpha: 0.5))
+                            textColor: .white(alpha: 0.4),
+                            borderColor: .white(alpha: 0.5))
                     case .loading:
                         return Description(
-                            textColor: .init(color: .white),
-                            borderColor: .init(color: .white))
+                            textColor: .white(),
+                            borderColor: .white())
                     }
                 case .ghost(let state):
                     switch state {
                     case .normal:
                         return Description(
-                            textColor: .init(color: .white))
+                            textColor: .white())
                     case .hovered:
                         return Description(
-                            textColor: .init(color: .neutral100, alpha: 0.8),
-                            backgorundColor: .init(color: .neutral500),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.2))
+                            textColor: .neutral100(alpha: 0.8),
+                            backgorundColor: .neutral500(alpha: 0.8),
+                            backgorundOverlayColor: .neutral900(alpha: 0.2))
                     case .acvite:
                         return Description(
-                            textColor: .init(color: .white))
+                            textColor: .white())
                     case .focused:
                         return Description(
-                            textColor: .init(color: .neutral100, alpha: 0.8),
-                            backgorundColor: .init(color: .neutral500),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.4))
+                            textColor: .neutral100(alpha: 0.8),
+                            backgorundColor: .neutral500(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.4))
                     case .disabled:
                         return Description(
-                            textColor: .init(color: .white, alpha: 0.4))
+                            textColor: .white(alpha: 0.4))
                     case .loading:
                         return Description(
-                            textColor: .init(color: .white),
-                            backgorundColor: .init(color: .neutral500),
-                            backgorundOverlayColor: .init(color: .neutral900, alpha: 0.4))
+                            textColor: .white(),
+                            backgorundColor: .neutral500(),
+                            backgorundOverlayColor: .neutral900(alpha: 0.4))
                     }
                 }
             }
 
             /// Availbe information about concrete button state
             public struct Description {
-                public var textColor: ColorWishAlpha
-                public var backgorundColor: ColorWishAlpha?
-                public var backgorundOverlayColor: ColorWishAlpha?
-                public var borderColor: ColorWishAlpha?
+                public var textColor: Color
+                public var backgorundColor: Color?
+                public var backgorundOverlayColor: Color?
+                public var borderColor: Color?
                 public var borderWidth: CGFloat = 1
                 public var cornerRadius: CGFloat = 4
 
                 public var blended: UIColor? { backgorundColor?.add(color: backgorundOverlayColor) }
-
-                public struct ColorWishAlpha {
-                    public var color: Color
-                    public var alpha: CGFloat = 1
-
-                    public var caclulated: UIColor { color.value.withAlphaComponent(alpha) }
-                }
             }
         }
 
@@ -349,16 +342,16 @@ public enum DesignSystem {
     }
 }
 
-extension DesignSystem.Button.Style.Description.ColorWishAlpha {
-    func add(color: DesignSystem.Button.Style.Description.ColorWishAlpha?) -> UIColor {
-        guard let color = color else {return self.color.value.withAlphaComponent(alpha)}
+extension DesignSystem.Color {
+    func add(color: DesignSystem.Color?) -> UIColor {
+        guard let color = color else {return value}
+
         var (r1, g1, b1, a1) = (CGFloat(0), CGFloat(0), CGFloat(0), CGFloat(0))
         var (r2, g2, b2, a2) = (CGFloat(0), CGFloat(0), CGFloat(0), CGFloat(0))
 
-        self.caclulated.getRed(&r1, green: &g1, blue: &b1, alpha: &a1)
-        color.caclulated.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
+        value.getRed(&r1, green: &g1, blue: &b1, alpha: &a1)
+        color.value.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
 
-        // add the components, but don't let them go above 1.0
         return UIColor(red: min(r1 + r2, 1), green: min(g1 + g2, 1), blue: min(b1 + b2, 1), alpha: (a1 + a2) / 2)
     }
 }

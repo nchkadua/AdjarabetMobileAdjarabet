@@ -37,12 +37,12 @@ public extension UIView {
         subviews.forEach { $0.removeFromSuperview() }
     }
 
-    func setBackgorundColor(to color: DesignSystem.Color, alpha: CGFloat = 1) {
-        self.backgroundColor = color.value.withAlphaComponent(alpha)
+    func setBackgorundColor(to color: DesignSystem.Color) {
+        self.backgroundColor = color.value
     }
 
-    func setTintColor(to color: DesignSystem.Color, alpha: CGFloat = 1) {
-        self.tintColor = color.value.withAlphaComponent(alpha)
+    func setTintColor(to color: DesignSystem.Color) {
+        self.tintColor = color.value
     }
 }
 

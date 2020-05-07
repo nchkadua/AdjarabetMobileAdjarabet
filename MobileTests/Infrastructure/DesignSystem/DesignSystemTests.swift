@@ -11,30 +11,33 @@ import XCTest
 
 class DesignSystemTests: XCTestCase {
     func testColors() {
+        // given
+        let alpha = CGFloat.random(in: 0...1)
+
         /// Neutral colors
-        XCTAssertEqual(DesignSystem.Color.white.value, R.color.colorGuide.neutral.white()!)
-        XCTAssertEqual(DesignSystem.Color.neutral100.value, R.color.colorGuide.neutral.neutral100()!)
-        XCTAssertEqual(DesignSystem.Color.neutral200.value, R.color.colorGuide.neutral.neutral200()!)
-        XCTAssertEqual(DesignSystem.Color.neutral300.value, R.color.colorGuide.neutral.neutral300()!)
-        XCTAssertEqual(DesignSystem.Color.neutral400.value, R.color.colorGuide.neutral.neutral400()!)
-        XCTAssertEqual(DesignSystem.Color.neutral500.value, R.color.colorGuide.neutral.neutral500()!)
-        XCTAssertEqual(DesignSystem.Color.neutral600.value, R.color.colorGuide.neutral.neutral600()!)
-        XCTAssertEqual(DesignSystem.Color.neutral700.value, R.color.colorGuide.neutral.neutral700()!)
-        XCTAssertEqual(DesignSystem.Color.neutral800.value, R.color.colorGuide.neutral.neutral800()!)
-        XCTAssertEqual(DesignSystem.Color.neutral900.value, R.color.colorGuide.neutral.neutral900()!)
+        XCTAssertEqual(DesignSystem.Color.white(alpha: alpha).value, R.color.colorGuide.neutral.white()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral100(alpha: alpha).value, R.color.colorGuide.neutral.neutral100()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral200(alpha: alpha).value, R.color.colorGuide.neutral.neutral200()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral300(alpha: alpha).value, R.color.colorGuide.neutral.neutral300()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral400(alpha: alpha).value, R.color.colorGuide.neutral.neutral400()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral500(alpha: alpha).value, R.color.colorGuide.neutral.neutral500()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral600(alpha: alpha).value, R.color.colorGuide.neutral.neutral600()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral700(alpha: alpha).value, R.color.colorGuide.neutral.neutral700()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral800(alpha: alpha).value, R.color.colorGuide.neutral.neutral800()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral900(alpha: alpha).value, R.color.colorGuide.neutral.neutral900()!.withAlphaComponent(alpha))
 
         /// Primary colors
-        XCTAssertEqual(DesignSystem.Color.primary200.value, R.color.colorGuide.primary.primary200()!)
-        XCTAssertEqual(DesignSystem.Color.primary400.value, R.color.colorGuide.primary.primary400()!)
+        XCTAssertEqual(DesignSystem.Color.primary200(alpha: alpha).value, R.color.colorGuide.primary.primary200()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.primary400(alpha: alpha).value, R.color.colorGuide.primary.primary400()!.withAlphaComponent(alpha))
 
         /// Secondary colors
-        XCTAssertEqual(DesignSystem.Color.secondary200.value, R.color.colorGuide.secondary.secondary200()!)
-        XCTAssertEqual(DesignSystem.Color.secondary400.value, R.color.colorGuide.secondary.secondary400()!)
+        XCTAssertEqual(DesignSystem.Color.secondary200(alpha: alpha).value, R.color.colorGuide.secondary.secondary200()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.secondary400(alpha: alpha).value, R.color.colorGuide.secondary.secondary400()!.withAlphaComponent(alpha))
 
         /// Semantic colors
-        XCTAssertEqual(DesignSystem.Color.success.value, R.color.colorGuide.semantic.success()!)
-        XCTAssertEqual(DesignSystem.Color.warning.value, R.color.colorGuide.semantic.warning()!)
-        XCTAssertEqual(DesignSystem.Color.error.value, R.color.colorGuide.semantic.error()!)
+        XCTAssertEqual(DesignSystem.Color.success(alpha: alpha).value, R.color.colorGuide.semantic.success()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.warning(alpha: alpha).value, R.color.colorGuide.semantic.warning()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.error(alpha: alpha).value, R.color.colorGuide.semantic.error()!.withAlphaComponent(alpha))
     }
 
     func testTypography() {

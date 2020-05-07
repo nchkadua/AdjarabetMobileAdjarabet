@@ -44,7 +44,7 @@ public extension UIBarButtonItem {
         let button = UIButton(type: .system)
         button.setTitleWithoutAnimation(title, for: .normal)
         button.setFont(to: typography)
-        button.setTitleColor(to: .neutral100, for: .normal)
+        button.setTitleColor(to: .neutral100(), for: .normal)
 
         let barButtonItem = UIBarButtonItem(customView: button)
 

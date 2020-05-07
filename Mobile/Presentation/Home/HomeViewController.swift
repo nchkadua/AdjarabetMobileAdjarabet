@@ -50,12 +50,12 @@ public class HomeViewController: UIViewController {
             UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
 
             UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
-                .foregroundColor: DesignSystem.Color.neutral100.value,
+                .foregroundColor: DesignSystem.Color.neutral100().value,
                 .font: DesignSystem.Typography.p.description.font
             ]
 
             UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
-                .foregroundColor: DesignSystem.Color.neutral100.value,
+                .foregroundColor: DesignSystem.Color.neutral100().value,
                 .font: DesignSystem.Typography.p.description.font
             ], for: .normal)
         }
