@@ -12,32 +12,33 @@ import XCTest
 class DesignSystemTests: XCTestCase {
     func testColors() {
         // given
+        let colors = R.color.colorGuide.self
         let alpha = CGFloat.random(in: 0...1)
 
         /// Neutral colors
-        XCTAssertEqual(DesignSystem.Color.white(alpha: alpha).value, R.color.colorGuide.neutral.white()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral100(alpha: alpha).value, R.color.colorGuide.neutral.neutral100()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral200(alpha: alpha).value, R.color.colorGuide.neutral.neutral200()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral300(alpha: alpha).value, R.color.colorGuide.neutral.neutral300()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral400(alpha: alpha).value, R.color.colorGuide.neutral.neutral400()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral500(alpha: alpha).value, R.color.colorGuide.neutral.neutral500()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral600(alpha: alpha).value, R.color.colorGuide.neutral.neutral600()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral700(alpha: alpha).value, R.color.colorGuide.neutral.neutral700()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral800(alpha: alpha).value, R.color.colorGuide.neutral.neutral800()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral900(alpha: alpha).value, R.color.colorGuide.neutral.neutral900()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.white(alpha: alpha).value, colors.neutral.white()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral100(alpha: alpha).value, colors.neutral.neutral100()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral200(alpha: alpha).value, colors.neutral.neutral200()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral300(alpha: alpha).value, colors.neutral.neutral300()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral400(alpha: alpha).value, colors.neutral.neutral400()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral500(alpha: alpha).value, colors.neutral.neutral500()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral600(alpha: alpha).value, colors.neutral.neutral600()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral700(alpha: alpha).value, colors.neutral.neutral700()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral800(alpha: alpha).value, colors.neutral.neutral800()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.neutral900(alpha: alpha).value, colors.neutral.neutral900()!.withAlphaComponent(alpha))
 
         /// Primary colors
-        XCTAssertEqual(DesignSystem.Color.primary200(alpha: alpha).value, R.color.colorGuide.primary.primary200()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.primary400(alpha: alpha).value, R.color.colorGuide.primary.primary400()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.primary200(alpha: alpha).value, colors.primary.primary200()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.primary400(alpha: alpha).value, colors.primary.primary400()!.withAlphaComponent(alpha))
 
         /// Secondary colors
-        XCTAssertEqual(DesignSystem.Color.secondary200(alpha: alpha).value, R.color.colorGuide.secondary.secondary200()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.secondary400(alpha: alpha).value, R.color.colorGuide.secondary.secondary400()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.secondary200(alpha: alpha).value, colors.secondary.secondary200()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.secondary400(alpha: alpha).value, colors.secondary.secondary400()!.withAlphaComponent(alpha))
 
         /// Semantic colors
-        XCTAssertEqual(DesignSystem.Color.success(alpha: alpha).value, R.color.colorGuide.semantic.success()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.warning(alpha: alpha).value, R.color.colorGuide.semantic.warning()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.error(alpha: alpha).value, R.color.colorGuide.semantic.error()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.success(alpha: alpha).value, colors.semantic.success()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.warning(alpha: alpha).value, colors.semantic.warning()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.error(alpha: alpha).value, colors.semantic.error()!.withAlphaComponent(alpha))
     }
 
     func testTypography() {
@@ -90,20 +91,23 @@ class DesignSystemTests: XCTestCase {
             testDescription(typography: .h5(fontCase: .lower), pointSize: 11, lineSpasing: 0.5, lineHeight: 16)
             testDescription(typography: .h5(fontCase: .upper), pointSize: 11, lineSpasing: 0.5, lineHeight: 16)
             
-            XCTAssertEqual(DesignSystem.Typography.body1.description.font.fontName, R.font.firaGOMedium.fontName)
-            XCTAssertEqual(DesignSystem.Typography.body1.description.font.pointSize, 13)
-            XCTAssertEqual(DesignSystem.Typography.body1.description.lineSpasing, 0)
-            XCTAssertEqual(DesignSystem.Typography.body1.description.lineHeight, 20)
+            let body1Description = DesignSystem.Typography.body1.description
+            XCTAssertEqual(body1Description.font.fontName, R.font.firaGOMedium.fontName)
+            XCTAssertEqual(body1Description.font.pointSize, 13)
+            XCTAssertEqual(body1Description.lineSpasing, 0)
+            XCTAssertEqual(body1Description.lineHeight, 20)
             
-            XCTAssertEqual(DesignSystem.Typography.body2.description.font.fontName, R.font.firaGOMedium.fontName)
-            XCTAssertEqual(DesignSystem.Typography.body2.description.font.pointSize, 11)
-            XCTAssertEqual(DesignSystem.Typography.body2.description.lineSpasing, 0)
-            XCTAssertEqual(DesignSystem.Typography.body2.description.lineHeight, 16)
+            let body2Description = DesignSystem.Typography.body2.description
+            XCTAssertEqual(body2Description.font.fontName, R.font.firaGOMedium.fontName)
+            XCTAssertEqual(body2Description.font.pointSize, 11)
+            XCTAssertEqual(body2Description.lineSpasing, 0)
+            XCTAssertEqual(body2Description.lineHeight, 16)
             
-            XCTAssertEqual(DesignSystem.Typography.p.description.font.fontName, R.font.firaGORegular.fontName)
-            XCTAssertEqual(DesignSystem.Typography.p.description.font.pointSize, 13)
-            XCTAssertEqual(DesignSystem.Typography.p.description.lineSpasing, 0)
-            XCTAssertEqual(DesignSystem.Typography.p.description.lineHeight, 20)
+            let pDescription = DesignSystem.Typography.p.description
+            XCTAssertEqual(pDescription.font.fontName, R.font.firaGORegular.fontName)
+            XCTAssertEqual(pDescription.font.pointSize, 13)
+            XCTAssertEqual(pDescription.lineSpasing, 0)
+            XCTAssertEqual(pDescription.lineHeight, 20)
         }
     }
     
