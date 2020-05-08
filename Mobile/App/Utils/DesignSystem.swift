@@ -32,27 +32,29 @@ public enum DesignSystem {
         case error(alpha: CGFloat = 1)
 
         public var value: UIColor {
+            let colors = R.color.colorGuide.self
+
             switch self {
-            case .white(let alpha):         return R.color.colorGuide.neutral.white()!.withAlphaComponent(alpha)
-            case .neutral100(let alpha):    return R.color.colorGuide.neutral.neutral100()!.withAlphaComponent(alpha)
-            case .neutral200(let alpha):    return R.color.colorGuide.neutral.neutral200()!.withAlphaComponent(alpha)
-            case .neutral300(let alpha):    return R.color.colorGuide.neutral.neutral300()!.withAlphaComponent(alpha)
-            case .neutral400(let alpha):    return R.color.colorGuide.neutral.neutral400()!.withAlphaComponent(alpha)
-            case .neutral500(let alpha):    return R.color.colorGuide.neutral.neutral500()!.withAlphaComponent(alpha)
-            case .neutral600(let alpha):    return R.color.colorGuide.neutral.neutral600()!.withAlphaComponent(alpha)
-            case .neutral700(let alpha):    return R.color.colorGuide.neutral.neutral700()!.withAlphaComponent(alpha)
-            case .neutral800(let alpha):    return R.color.colorGuide.neutral.neutral800()!.withAlphaComponent(alpha)
-            case .neutral900(let alpha):    return R.color.colorGuide.neutral.neutral900()!.withAlphaComponent(alpha)
+            case .white(let alpha):         return colors.neutral.white()!.withAlphaComponent(alpha)
+            case .neutral100(let alpha):    return colors.neutral.neutral100()!.withAlphaComponent(alpha)
+            case .neutral200(let alpha):    return colors.neutral.neutral200()!.withAlphaComponent(alpha)
+            case .neutral300(let alpha):    return colors.neutral.neutral300()!.withAlphaComponent(alpha)
+            case .neutral400(let alpha):    return colors.neutral.neutral400()!.withAlphaComponent(alpha)
+            case .neutral500(let alpha):    return colors.neutral.neutral500()!.withAlphaComponent(alpha)
+            case .neutral600(let alpha):    return colors.neutral.neutral600()!.withAlphaComponent(alpha)
+            case .neutral700(let alpha):    return colors.neutral.neutral700()!.withAlphaComponent(alpha)
+            case .neutral800(let alpha):    return colors.neutral.neutral800()!.withAlphaComponent(alpha)
+            case .neutral900(let alpha):    return colors.neutral.neutral900()!.withAlphaComponent(alpha)
 
-            case  .primary200(let alpha):   return R.color.colorGuide.primary.primary200()!.withAlphaComponent(alpha)
-            case  .primary400(let alpha):   return R.color.colorGuide.primary.primary400()!.withAlphaComponent(alpha)
+            case  .primary200(let alpha):   return colors.primary.primary200()!.withAlphaComponent(alpha)
+            case  .primary400(let alpha):   return colors.primary.primary400()!.withAlphaComponent(alpha)
 
-            case  .secondary200(let alpha): return R.color.colorGuide.secondary.secondary200()!.withAlphaComponent(alpha)
-            case  .secondary400(let alpha): return R.color.colorGuide.secondary.secondary400()!.withAlphaComponent(alpha)
+            case  .secondary200(let alpha): return colors.secondary.secondary200()!.withAlphaComponent(alpha)
+            case  .secondary400(let alpha): return colors.secondary.secondary400()!.withAlphaComponent(alpha)
 
-            case  .success(let alpha):      return R.color.colorGuide.semantic.success()!.withAlphaComponent(alpha)
-            case  .warning(let alpha):      return R.color.colorGuide.semantic.warning()!.withAlphaComponent(alpha)
-            case  .error(let alpha):        return R.color.colorGuide.semantic.error()!.withAlphaComponent(alpha)
+            case  .success(let alpha):      return colors.semantic.success()!.withAlphaComponent(alpha)
+            case  .warning(let alpha):      return colors.semantic.warning()!.withAlphaComponent(alpha)
+            case  .error(let alpha):        return colors.semantic.error()!.withAlphaComponent(alpha)
             }
         }
     }
@@ -76,15 +78,17 @@ public enum DesignSystem {
 
         /// Concrete description for each case
         public var description: Description {
+            let language = Typography.languageStorage.currentLanguage
+
             switch self {
-            case .h1:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.7, lineHeight: 44)
-            case .h2:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.7, lineHeight: 36)
-            case .h3:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.5, lineHeight: 24)
-            case .h4:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.3, lineHeight: 24)
-            case .h5:    return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0.5, lineHeight: 16)
-            case .body1: return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 20)
-            case .body2: return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 16)
-            case .p:     return .init(font: font(by: Typography.languageStorage.currentLanguage), lineSpasing: 0, lineHeight: 20)
+            case .h1:    return .init(font: font(by: language), lineSpasing: 0.7, lineHeight: 44)
+            case .h2:    return .init(font: font(by: language), lineSpasing: 0.7, lineHeight: 36)
+            case .h3:    return .init(font: font(by: language), lineSpasing: 0.5, lineHeight: 24)
+            case .h4:    return .init(font: font(by: language), lineSpasing: 0.3, lineHeight: 24)
+            case .h5:    return .init(font: font(by: language), lineSpasing: 0.5, lineHeight: 16)
+            case .body1: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 20)
+            case .body2: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 16)
+            case .p:     return .init(font: font(by: language), lineSpasing: 0, lineHeight: 20)
             }
         }
 
