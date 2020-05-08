@@ -34,16 +34,3 @@ public extension UIButton {
         }
     }
 }
-
-public extension AppCircularButton {
-    func setStyle(to style: DesignSystem.Button.Style) {
-        let description = style.description
-
-        setTitleColor(to: description.textColor, for: .normal)
-
-        self.backgroundColor = description.blended
-        self.borderWidth = description.borderWidth
-        self.borderColor = description.borderColor?.value ?? .clear
-        self.cornerRadius = description.cornerRadius
-    }
-}

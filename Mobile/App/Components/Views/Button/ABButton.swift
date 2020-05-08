@@ -9,7 +9,7 @@
 @IBDesignable
 public class ABButton: AppShadowButton {
     /// Default style
-    private var primaryStyle: DesignSystem.Button.Style?
+    private var primaryStyle: DesignSystem.Button.Style? { didSet { hoveredStyle = primaryStyle?.makeHovered() }}
     /// Style when button is isHighlighted
     private var hoveredStyle: DesignSystem.Button.Style?
 
@@ -42,10 +42,12 @@ public class ABButton: AppShadowButton {
         configure()
     }
 
+    public func setStyle(to style: DesignSystem.Button.Style) {
+        self.setStyle(to: style, animated: false)
+    }
+
     public func setStyle(to style: DesignSystem.Button.Style, animated animate: Bool) {
         self.primaryStyle = style
-        self.hoveredStyle = style.makeHovered()
-
         configure(animated: animate)
     }
 
@@ -53,7 +55,7 @@ public class ABButton: AppShadowButton {
         guard let style = isHighlighted ? hoveredStyle : primaryStyle else {return}
 
         UIView.animate(withDuration: animate ? 0.15 : 0) {
-            self.setStyle(to: style)
+            super.setStyle(to: style)
         }
     }
 }

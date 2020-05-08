@@ -40,6 +40,7 @@
 		D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */; };
 		D83ED2F7244C92990037DDEB /* DesignSystemExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */; };
 		D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */; };
+		D841073D246584BF002F7973 /* ABButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841073C246584BF002F7973 /* ABButtonTests.swift */; };
 		D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202C9245191B100F0F056 /* LanguageStorage.swift */; };
 		D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202CF2451930A00F0F056 /* ABUserDefaults.swift */; };
 		D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */; };
@@ -190,6 +191,7 @@
 		D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemExtensionTests.swift; sourceTree = "<group>"; };
 		D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherComponentViewModel.swift; sourceTree = "<group>"; };
+		D841073C246584BF002F7973 /* ABButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABButtonTests.swift; sourceTree = "<group>"; };
 		D84202C9245191B100F0F056 /* LanguageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorage.swift; sourceTree = "<group>"; };
 		D84202CF2451930A00F0F056 /* ABUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABUserDefaults.swift; sourceTree = "<group>"; };
 		D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorageTests.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 			children = (
 				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
 				D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */,
+				D841073C246584BF002F7973 /* ABButtonTests.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D841073D246584BF002F7973 /* ABButtonTests.swift in Sources */,
 				D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */,
 				D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */,
 				D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */,

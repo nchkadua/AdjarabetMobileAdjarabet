@@ -265,3 +265,22 @@ extension DesignSystem.Color {
         return UIColor(red: min(r1 + r2, 1), green: min(g1 + g2, 1), blue: min(b1 + b2, 1), alpha: (a1 + a2) / 2)
     }
 }
+
+public protocol ButtonStyleImplementing {
+    func setStyle(to style: DesignSystem.Button.Style)
+}
+
+extension AppCircularButton: ButtonStyleImplementing { }
+
+public extension ButtonStyleImplementing where Self: AppCircularButton {
+    func setStyle(to style: DesignSystem.Button.Style) {
+        let description = style.description
+
+        setTitleColor(to: description.textColor, for: .normal)
+
+        self.backgroundColor = description.blended
+        self.borderWidth = description.borderWidth
+        self.borderColor = description.borderColor?.value ?? .clear
+        self.cornerRadius = description.cornerRadius
+    }
+}

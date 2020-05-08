@@ -62,7 +62,7 @@ class DesignSystemExtensionTests: XCTestCase {
         XCTAssertEqual(button.backgroundColor, style.description.blended)
         XCTAssertEqual(button.borderWidth, style.description.borderWidth)
         XCTAssertEqual(button.borderColor, style.description.borderColor?.value ?? .clear)
-        XCTAssertEqual(button.cornerRadius, 4)
+        XCTAssertEqual(button.cornerRadius, style.description.cornerRadius)
     }
     
     // MAKR: UIView
