@@ -40,6 +40,7 @@
 		D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */; };
 		D83ED2F7244C92990037DDEB /* DesignSystemExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */; };
 		D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */; };
+		D841073D246584BF002F7973 /* ABButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841073C246584BF002F7973 /* ABButtonTests.swift */; };
 		D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202C9245191B100F0F056 /* LanguageStorage.swift */; };
 		D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202CF2451930A00F0F056 /* ABUserDefaults.swift */; };
 		D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */; };
@@ -83,6 +84,8 @@
 		D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */; };
 		D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C3124336D0800F1D4FE /* Login.storyboard */; };
 		D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */; };
+		D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253AC2464197500F7DE0C /* Cancelable.swift */; };
+		D86253B9246444A300F7DE0C /* ABButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B8246444A300F7DE0C /* ABButton.swift */; };
 		D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */; };
 		D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */; };
 		D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */; };
@@ -188,6 +191,7 @@
 		D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemExtensionTests.swift; sourceTree = "<group>"; };
 		D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherComponentViewModel.swift; sourceTree = "<group>"; };
+		D841073C246584BF002F7973 /* ABButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABButtonTests.swift; sourceTree = "<group>"; };
 		D84202C9245191B100F0F056 /* LanguageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorage.swift; sourceTree = "<group>"; };
 		D84202CF2451930A00F0F056 /* ABUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABUserDefaults.swift; sourceTree = "<group>"; };
 		D84202D3245196EE00F0F056 /* LanguageStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStorageTests.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 		D85C9C3124336D0800F1D4FE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
+		D86253AC2464197500F7DE0C /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
+		D86253B8246444A300F7DE0C /* ABButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABButton.swift; sourceTree = "<group>"; };
 		D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherComponentView.swift; sourceTree = "<group>"; };
 		D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayedGameLauncherComponentView.xib; sourceTree = "<group>"; };
 		D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherComponentViewModel.swift; sourceTree = "<group>"; };
@@ -403,6 +409,7 @@
 			children = (
 				D80784A424447ABF00003892 /* DesignSystemTests.swift */,
 				D83ED2F6244C92990037DDEB /* DesignSystemExtensionTests.swift */,
+				D841073C246584BF002F7973 /* ABButtonTests.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -486,11 +493,11 @@
 			isa = PBXGroup;
 			children = (
 				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
-				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
+				D86253BA24653AA000F7DE0C /* Button */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -503,6 +510,7 @@
 				D80784672443968D00003892 /* DesignSystem.swift */,
 				D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */,
 				D84202D72451AD8400F0F056 /* BaseViewModel.swift */,
+				D86253AC2464197500F7DE0C /* Cancelable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -546,6 +554,30 @@
 				D85C9C372433755E00F1D4FE /* RSwift.sh */,
 			);
 			path = BuildPhases;
+			sourceTree = "<group>";
+		};
+		D86253AB246416C800F7DE0C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D8AB80672460132B001C4E8A /* Services */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D86253AE2464199900F7DE0C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D86253BA24653AA000F7DE0C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				D86253B8246444A300F7DE0C /* ABButton.swift */,
+				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */ = {
@@ -683,7 +715,7 @@
 		D8A47DE824335DD70077AA8E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D8AB80672460132B001C4E8A /* Services */,
+				D86253AB246416C800F7DE0C /* Protocols */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -704,10 +736,11 @@
 		D8A47DEA24335DE40077AA8E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D83026BF24518528006FF7FB /* DummyData.swift */,
+				D86253AE2464199900F7DE0C /* Repositories */,
 				D8A47DF3243366F80077AA8E /* NetworkClinet */,
 				D84202C82451919400F0F056 /* PersistentStorages */,
 				D8AB806B246013EB001C4E8A /* Services */,
+				D83026BF24518528006FF7FB /* DummyData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1151,6 +1184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D841073D246584BF002F7973 /* ABButtonTests.swift in Sources */,
 				D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */,
 				D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */,
 				D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */,
@@ -1218,6 +1252,7 @@
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
 				D83026C024518528006FF7FB /* DummyData.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
+				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
@@ -1234,6 +1269,7 @@
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
+				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,

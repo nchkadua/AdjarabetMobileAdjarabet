@@ -29,10 +29,13 @@ public class AdjarabetCoreClient: AdjarabetCoreServices {
     }
 }
 
+extension URLSessionDataTask: Cancellable { }
+
 public extension AdjarabetCoreClient {
+    @discardableResult
     func performTask<T: AdjarabetCoreCodableType>(
         request: URLRequest, type: T.Type,
-        completion: ((_ response: Result<T, Error>) -> Void)?) {
+        completion: ((_ response: Result<T, Error>) -> Void)?) -> URLSessionDataTask {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             let httpResponse = response as? HTTPURLResponse
 //            print(httpResponse?.allHeaderFields ?? [:])
@@ -97,6 +100,8 @@ public extension AdjarabetCoreClient {
         }
 
         task.resume()
+
+        return task
     }
 
 //    fileprivate func performTask<T: Codable>(url: URL, type: T.Type, completion: ((_ response: Result<T, Error>) -> Void)?) {

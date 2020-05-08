@@ -11,7 +11,7 @@ public extension UILabel {
         self.font = typography.description.font
     }
 
-    func setTextColor(to color: DesignSystem.Color, alpha: CGFloat = 1) {
-        self.textColor = color.value.withAlphaComponent(alpha)
+    func setTextColor(to color: DesignSystem.Color) {
+        self.textColor = color.value
     }
 }

@@ -24,7 +24,6 @@ public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        setBaseBackgorundColor()
         setupNavigationItem()
         setupSearchViewController()
 
@@ -50,12 +49,12 @@ public class HomeViewController: UIViewController {
             UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
 
             UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
-                .foregroundColor: DesignSystem.Color.neutral100.value,
+                .foregroundColor: DesignSystem.Color.neutral100().value,
                 .font: DesignSystem.Typography.p.description.font
             ]
 
             UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
-                .foregroundColor: DesignSystem.Color.neutral100.value,
+                .foregroundColor: DesignSystem.Color.neutral100().value,
                 .font: DesignSystem.Typography.p.description.font
             ], for: .normal)
         }
@@ -63,8 +62,9 @@ public class HomeViewController: UIViewController {
 
     // MARK: Setup methods
     private func setupNavigationItem() {
+        setBaseBackgorundColor()
         setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
-        setupLoginButtonAction()
+        setProfileBarButtonItem(text: "₾ 0.00")
     }
 
     private func setupCollectionViewController() {
@@ -141,10 +141,6 @@ public class HomeViewController: UIViewController {
         self.searchController.searchBar.delegate = self
     }
 
-    private func setupLoginButtonAction() {
-        setLoginBarButtonItem().button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
-    }
-
     private func setupProfilButton() {
         setProfileBarButtonItem(text: "₾ 0.00")
     }
@@ -183,13 +179,6 @@ public class HomeViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         default: break
         }
-    }
-
-    // MARK: Action methods
-    @objc public func loginButtonDidTap() {
-        let alert = UIAlertController(title: R.string.localization.login.localized(), message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
     }
 }
 
