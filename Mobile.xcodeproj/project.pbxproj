@@ -490,12 +490,11 @@
 			isa = PBXGroup;
 			children = (
 				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
-				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
-				D86253B8246444A300F7DE0C /* ABButton.swift */,
+				D86253BA24653AA000F7DE0C /* Button */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -567,6 +566,15 @@
 			children = (
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D86253BA24653AA000F7DE0C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				D86253B8246444A300F7DE0C /* ABButton.swift */,
+				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */ = {

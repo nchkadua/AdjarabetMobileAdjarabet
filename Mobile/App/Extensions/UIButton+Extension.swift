@@ -15,6 +15,11 @@ public extension UIButton {
         self.titleLabel?.font = typography.description.font
     }
 
+    func setSize(to size: DesignSystem.Button.Size) {
+        setFont(to: size.description.typograhy)
+        contentEdgeInsets = size.description.contentEdgeInsets
+    }
+
     func setTitleWithoutAnimation(_ title: String?, for state: UIControl.State) {
         UIView.performWithoutAnimation {
             setTitle(title, for: state)
@@ -31,12 +36,7 @@ public extension UIButton {
 }
 
 public extension AppCircularButton {
-    func set(size: DesignSystem.Button.Size) {
-        setFont(to: size.description.typograhy)
-        contentEdgeInsets = size.description.contentEdgeInsets
-    }
-
-    func set(style: DesignSystem.Button.Style) {
+    func setStyle(to style: DesignSystem.Button.Style) {
         let description = style.description
 
         setTitleColor(to: description.textColor, for: .normal)

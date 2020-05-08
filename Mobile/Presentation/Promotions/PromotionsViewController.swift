@@ -27,11 +27,10 @@ public class PromotionsViewController: UIViewController {
         scrollView.contentInset.bottom = 100
 
         func make(sw: UIStackView, text: String, style: DesignSystem.Button.Style, size: DesignSystem.Button.Size) {
-            let button = ABButton(type: .system)
-            sw.addArrangedSubview(button)
-            button.set(size: size)
-            button.set(style: style)
+            let button = ABButton(style: style)
+            button.setSize(to: size)
             button.setTitleWithoutAnimation(text, for: .normal)
+            sw.addArrangedSubview(button)
         }
 
         func make(c: (UIStackView) -> Void) {

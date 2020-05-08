@@ -163,6 +163,16 @@ public enum DesignSystem {
             case outline(state: State)
             case ghost(state: State)
 
+            public func makeHovered() -> Style {
+                switch self {
+                case .primary(let state):   return state == .disabled ? self : .primary(state: .hovered)
+                case .secondary(let state): return state == .disabled ? self : .secondary(state: .hovered)
+                case .tertiary(let state):  return state == .disabled ? self : .tertiary(state: .hovered)
+                case .outline(let state):   return state == .disabled ? self : .outline(state: .hovered)
+                case .ghost(let state):     return state == .disabled ? self : .ghost(state: .hovered)
+                }
+            }
+
             /// Concrete description for each case
             public var description: Description {
                 switch self {

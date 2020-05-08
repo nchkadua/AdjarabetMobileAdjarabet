@@ -42,7 +42,7 @@ class DesignSystemExtensionTests: XCTestCase {
         let button = AppCircularButton()
         
         // when
-        button.set(size: size)
+        button.setSize(to: size)
         
         // than
         XCTAssertEqual(button.titleLabel?.font, size.description.typograhy.description.font)
@@ -55,7 +55,7 @@ class DesignSystemExtensionTests: XCTestCase {
         let button = AppCircularButton()
         
         // when
-        button.set(style: style)
+        button.setStyle(to: style)
         
         // than
         XCTAssertEqual(button.titleColor(for: .normal), style.description.textColor.value)
