@@ -8,11 +8,11 @@
 
 import Foundation
 
-public typealias NetworkServiceResponseData = (data: Data?, headerFields: [AnyHashable: Any])
+public typealias NetworkServiceResponse = (data: Data?, headerFields: [AnyHashable: Any])
 
 public protocol NetworkService {
     @discardableResult
-    func request(request: URLRequest, completion: @escaping (Result<NetworkServiceResponseData, NetworkError>) -> Void) -> Cancellable
+    func request(request: URLRequest, completion: @escaping (Result<NetworkServiceResponse, NetworkError>) -> Void) -> Cancellable
 }
 
 public enum NetworkError: Error {
@@ -45,7 +45,7 @@ public class DefaultNetworkService {
 }
 
 extension DefaultNetworkService: NetworkService {
-    public func request(request: URLRequest, completion: @escaping (Result<NetworkServiceResponseData, NetworkError>) -> Void) -> Cancellable {
+    public func request(request: URLRequest, completion: @escaping (Result<NetworkServiceResponse, NetworkError>) -> Void) -> Cancellable {
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, requestError in
             var error: NetworkError
             if let requestError = requestError {
@@ -66,7 +66,7 @@ extension DefaultNetworkService: NetworkService {
                 self?.logger.log(responseData: data, response: response)
 
                 let headerFields = (response as? HTTPURLResponse)?.allHeaderFields ?? [:]
-                let responseData = NetworkServiceResponseData(data: nil, headerFields: headerFields)
+                let responseData = NetworkServiceResponse(data: nil, headerFields: headerFields)
                 completion(.success(responseData))
             }
         }
