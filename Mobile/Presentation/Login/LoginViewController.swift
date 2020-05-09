@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
         }
     }
 
-    @Inject public var adjarabetCoreClient: AdjarabetCoreServices
+//    @Inject public var adjarabetCoreClient: AdjarabetCoreServices
 
     @IBOutlet private var loginButton: LoadingButton!
     @IBOutlet private var smsCodeButton: LoadingButton!
@@ -93,50 +93,50 @@ class LoginViewController: UIViewController {
     }
 
     private func getActiveSession() {
-        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
-
-        loginButton.showLoading()
-
-        adjarabetCoreClient.aliveSession(userId: userId, sessionId: sessionId) { (result: Result<AdjarabetCoreResult.AliveSession, Error>) in
-            defer {
-                self.loginButton.hideLoading()
-            }
-
-            switch result {
-            case .success(let value):
-                print(value)
-                self.navigateToWelcomePage()
-            case .failure(let error):
-                if error.isSessionNotFound {
-                    self.userSession.remove()
-                    UIApplication.shared.currentWindow?.rootViewController = R.storyboard.login().instantiate(controller: LoginViewController.self)?.wrapInNav()
-                }
-                print(error.localizedDescription)
-            }
-        }
+//        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
+//
+//        loginButton.showLoading()
+//
+//        adjarabetCoreClient.aliveSession(userId: userId, sessionId: sessionId) { (result: Result<AdjarabetCoreResult.AliveSession, Error>) in
+//            defer {
+//                self.loginButton.hideLoading()
+//            }
+//
+//            switch result {
+//            case .success(let value):
+//                print(value)
+//                self.navigateToWelcomePage()
+//            case .failure(let error):
+//                if error.isSessionNotFound {
+//                    self.userSession.remove()
+//                    UIApplication.shared.currentWindow?.rootViewController = R.storyboard.login().instantiate(controller: LoginViewController.self)?.wrapInNav()
+//                }
+//                print(error.localizedDescription)
+//            }
+//        }
     }
 
     @objc private func smsCodeDidTap() {
-        guard let username = loginTextField.text else {return}
-
-        mode = .smsCode
-
-        smsCodeButton.showLoading()
-        smsCodeTextField.text = nil
-        smsCodeTextField.becomeFirstResponder()
-
-        adjarabetCoreClient.smsCode(username: username, channel: 2) { (result: Result<AdjarabetCoreResult.SmsCode, Error>) in
-            defer {
-                self.smsCodeButton.hideLoading()
-            }
-
-            switch result {
-            case .success(let value):
-                print(value)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        guard let username = loginTextField.text else {return}
+//
+//        mode = .smsCode
+//
+//        smsCodeButton.showLoading()
+//        smsCodeTextField.text = nil
+//        smsCodeTextField.becomeFirstResponder()
+//
+//        adjarabetCoreClient.smsCode(username: username, channel: 2) { (result: Result<AdjarabetCoreResult.SmsCode, Error>) in
+//            defer {
+//                self.smsCodeButton.hideLoading()
+//            }
+//
+//            switch result {
+//            case .success(let value):
+//                print(value)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
     }
 
     @objc private func loginDidTap() {
@@ -149,54 +149,54 @@ class LoginViewController: UIViewController {
     }
 
     private func login() {
-        guard let username = loginTextField.text, let password = passwordTextField.text else {return}
-
-        loginButton.showLoading()
-
-        adjarabetCoreClient.login(username: username, password: password, channel: 0) { (result: Result<AdjarabetCoreResult.Login, Error>) in
-            defer {
-                self.loginButton.hideLoading()
-            }
-
-            switch result {
-            case .success(let value):
-                print(value)
-                UserSession.current.set(
-                    userId: value.codable.userID,
-                    username: value.codable.username,
-                    sessionId: value.header!.sessionId,
-                    currencyId: value.codable.preferredCurrency)
-                UserSession.current.set(isLoggedIn: true)
-                self.navigateToWelcomePage()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        guard let username = loginTextField.text, let password = passwordTextField.text else {return}
+//
+//        loginButton.showLoading()
+//
+//        adjarabetCoreClient.login(username: username, password: password, channel: 0) { (result: Result<AdjarabetCoreResult.Login, Error>) in
+//            defer {
+//                self.loginButton.hideLoading()
+//            }
+//
+//            switch result {
+//            case .success(let value):
+//                print(value)
+//                UserSession.current.set(
+//                    userId: value.codable.userID,
+//                    username: value.codable.username,
+//                    sessionId: value.header!.sessionId,
+//                    currencyId: value.codable.preferredCurrency)
+//                UserSession.current.set(isLoggedIn: true)
+//                self.navigateToWelcomePage()
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
     }
 
     private func loginWithSMSCode() {
-        guard let username = loginTextField.text, let code = smsCodeTextField.text else {return}
-
-        loginButton.showLoading()
-        adjarabetCoreClient.login(username: username, code: code, loginType: .sms) { (result: Result<AdjarabetCoreResult.Login, Error>) in
-            defer {
-                self.loginButton.hideLoading()
-            }
-
-            switch result {
-            case .success(let value):
-                print(value)
-                UserSession.current.set(
-                    userId: value.codable.userID,
-                    username: value.codable.username,
-                    sessionId: value.header!.sessionId,
-                    currencyId: value.codable.preferredCurrency)
-                UserSession.current.set(isLoggedIn: true)
-                self.navigateToWelcomePage()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        guard let username = loginTextField.text, let code = smsCodeTextField.text else {return}
+//
+//        loginButton.showLoading()
+//        adjarabetCoreClient.login(username: username, code: code, loginType: .sms) { (result: Result<AdjarabetCoreResult.Login, Error>) in
+//            defer {
+//                self.loginButton.hideLoading()
+//            }
+//
+//            switch result {
+//            case .success(let value):
+//                print(value)
+//                UserSession.current.set(
+//                    userId: value.codable.userID,
+//                    username: value.codable.username,
+//                    sessionId: value.header!.sessionId,
+//                    currencyId: value.codable.preferredCurrency)
+//                UserSession.current.set(isLoggedIn: true)
+//                self.navigateToWelcomePage()
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
     }
 
     private func navigateToWelcomePage() {

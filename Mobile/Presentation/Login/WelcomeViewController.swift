@@ -15,7 +15,7 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet private var logoutButton: LoadingButton!
 
-    @Inject public var adjarabetCoreClient: AdjarabetCoreServices
+//    @Inject public var adjarabetCoreClient: AdjarabetCoreServices
     @Inject public var adjarabetWebAPIServices: AdjarabetWebAPIServices
 
     private let userSession: UserSessionServices = UserSession.current
@@ -44,45 +44,45 @@ class WelcomeViewController: UIViewController {
     }
 
     @objc private func logoutButtonDidTap() {
-        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
-        logoutButton.showLoading()
-
-        adjarabetCoreClient.logout(userId: userId, sessionId: sessionId) { (result: Result<AdjarabetCoreResult.Logout, Error>) in
-            defer {
-                self.logoutButton.hideLoading()
-            }
-
-            switch result {
-            case .success(let value):
-                print(value)
-                self.userSession.remove()
-                self.navigateToLoginPage()
-            case .failure(let error):
-                if error.isSessionNotFound {
-                    self.userSession.remove()
-                    self.navigateToLoginPage()
-                }
-                print(error.localizedDescription)
-            }
-        }
+//        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
+//        logoutButton.showLoading()
+//
+//        adjarabetCoreClient.logout(userId: userId, sessionId: sessionId) { (result: Result<AdjarabetCoreResult.Logout, Error>) in
+//            defer {
+//                self.logoutButton.hideLoading()
+//            }
+//
+//            switch result {
+//            case .success(let value):
+//                print(value)
+//                self.userSession.remove()
+//                self.navigateToLoginPage()
+//            case .failure(let error):
+//                if error.isSessionNotFound {
+//                    self.userSession.remove()
+//                    self.navigateToLoginPage()
+//                }
+//                print(error.localizedDescription)
+//            }
+//        }
     }
 
     private func getBalance() {
-        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
-
-        adjarabetCoreClient.balance(
-            userId: userId,
-            currencyId: userSession.currencyId ?? -1,
-            isSingle: 0,
-            sessionId: sessionId) { (result: Result<AdjarabetCoreResult.Balance, Error>) in
-                switch result {
-                case .success(let value):
-                    print(value)
-                    self.balanceLabel.text = "\(value.codable.balanceAmount / 100)"
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-        }
+//        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
+//
+//        adjarabetCoreClient.balance(
+//            userId: userId,
+//            currencyId: userSession.currencyId ?? -1,
+//            isSingle: 0,
+//            sessionId: sessionId) { (result: Result<AdjarabetCoreResult.Balance, Error>) in
+//                switch result {
+//                case .success(let value):
+//                    print(value)
+//                    self.balanceLabel.text = "\(value.codable.balanceAmount / 100)"
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                }
+//        }
     }
 
     private func getFeed() {

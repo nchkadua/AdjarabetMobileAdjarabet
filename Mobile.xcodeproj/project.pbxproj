@@ -54,16 +54,12 @@
 		D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */; };
 		D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845BFB82445F93900419A2C /* UIView+Extension.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
-		D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */; };
-		D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */; };
-		D85C9BEF2433676700F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */; };
-		D85C9BF12433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift */; };
+		D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */; };
 		D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */; };
 		D85C9BF82433678000F1D4FE /* AdjarabetCoreCodableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF32433678000F1D4FE /* AdjarabetCoreCodableType.swift */; };
 		D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */; };
 		D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */; };
 		D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */; };
-		D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BFD243367B800F1D4FE /* AdjarabetCoreServices.swift */; };
 		D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BFF243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift */; };
 		D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C00243367C900F1D4FE /* AdjarabetWebAPIClient.swift */; };
 		D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C05243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift */; };
@@ -83,6 +79,13 @@
 		D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */; };
 		D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C3124336D0800F1D4FE /* Login.storyboard */; };
 		D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */; };
+		D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */; };
+		D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA8B2466B5AB0054D058 /* Builder.swift */; };
+		D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */; };
+		D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */; };
+		D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA922466BD060054D058 /* BalanceManagementRepository.swift */; };
+		D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */; };
+		D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */; };
 		D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253AC2464197500F7DE0C /* Cancelable.swift */; };
 		D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B22464214B00F7DE0C /* NetworkService.swift */; };
 		D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */; };
@@ -205,17 +208,13 @@
 		D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewControllerFactory.swift; sourceTree = "<group>"; };
 		D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarNavigator.swift; sourceTree = "<group>"; };
 		D845BFB82445F93900419A2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+SessionManagementServices.swift"; sourceTree = "<group>"; };
-		D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+BalanceManagementServices.swift"; sourceTree = "<group>"; };
-		D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjarabetCoreClient+AuthenticationService.swift"; sourceTree = "<group>"; };
 		D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClient.swift; sourceTree = "<group>"; };
-		D85C9BF02433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreRequestBuilder.swift; sourceTree = "<group>"; };
+		D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientRequestBuilder.swift; sourceTree = "<group>"; };
 		D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientError.swift; sourceTree = "<group>"; };
 		D85C9BF32433678000F1D4FE /* AdjarabetCoreCodableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreCodableType.swift; sourceTree = "<group>"; };
 		D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreResult.swift; sourceTree = "<group>"; };
 		D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreStatusCode.swift; sourceTree = "<group>"; };
 		D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreCodable.swift; sourceTree = "<group>"; };
-		D85C9BFD243367B800F1D4FE /* AdjarabetCoreServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreServices.swift; sourceTree = "<group>"; };
 		D85C9BFF243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift"; sourceTree = "<group>"; };
 		D85C9C00243367C900F1D4FE /* AdjarabetWebAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClient.swift; sourceTree = "<group>"; };
 		D85C9C05243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClientRequestBuilder.swift; sourceTree = "<group>"; };
@@ -237,6 +236,13 @@
 		D85C9C3124336D0800F1D4FE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
+		D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthenticationRepository.swift; sourceTree = "<group>"; };
+		D861DA8B2466B5AB0054D058 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
+		D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagementRepository.swift; sourceTree = "<group>"; };
+		D861DA922466BD060054D058 /* BalanceManagementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceManagementRepository.swift; sourceTree = "<group>"; };
+		D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSessionManagementRepository.swift; sourceTree = "<group>"; };
+		D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBalanceManagementRepository.swift; sourceTree = "<group>"; };
 		D86253AC2464197500F7DE0C /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
 		D86253B22464214B00F7DE0C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorLogger.swift; sourceTree = "<group>"; };
@@ -557,9 +563,29 @@
 			path = BuildPhases;
 			sourceTree = "<group>";
 		};
+		D861DA8A2466B5A10054D058 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA8B2466B5AB0054D058 /* Builder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		D861DA8D2466BC820054D058 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
+				D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */,
+				D861DA922466BD060054D058 /* BalanceManagementRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		D86253AB246416C800F7DE0C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				D861DA8D2466BC820054D058 /* Repositories */,
+				D861DA8A2466B5A10054D058 /* Builders */,
 				D8AB80672460132B001C4E8A /* Services */,
 			);
 			path = Protocols;
@@ -568,6 +594,9 @@
 		D86253AE2464199900F7DE0C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
+				D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */,
+				D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -793,19 +822,10 @@
 			isa = PBXGroup;
 			children = (
 				D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */,
-				D8A47DF8243367230077AA8E /* Services */,
+				D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */,
 				D8A47DF7243367160077AA8E /* Models */,
-				D8A47DF62433670B0077AA8E /* Builders */,
 			);
 			path = AdjarabetCoreClient;
-			sourceTree = "<group>";
-		};
-		D8A47DF62433670B0077AA8E /* Builders */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9BF02433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift */,
-			);
-			path = Builders;
 			sourceTree = "<group>";
 		};
 		D8A47DF7243367160077AA8E /* Models */ = {
@@ -818,17 +838,6 @@
 				D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D8A47DF8243367230077AA8E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9BFD243367B800F1D4FE /* AdjarabetCoreServices.swift */,
-				D85C9BEA2433675D00F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift */,
-				D85C9BE92433675D00F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift */,
-				D85C9BE82433675D00F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		D8AB80672460132B001C4E8A /* Services */ = {
@@ -1208,8 +1217,8 @@
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
-				D85C9BED2433676700F1D4FE /* AdjarabetCoreClient+AuthenticationService.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
+				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
@@ -1225,14 +1234,13 @@
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
-				D85C9BEF2433676700F1D4FE /* AdjarabetCoreClient+SessionManagementServices.swift in Sources */,
+				D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */,
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
 				D85C9C2C24336CF300F1D4FE /* LoginViewController.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
-				D85C9BFE243367B800F1D4FE /* AdjarabetCoreServices.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
@@ -1250,7 +1258,7 @@
 				D85C9BF82433678000F1D4FE /* AdjarabetCoreCodableType.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
-				D85C9BF12433677100F1D4FE /* AdjarabetCoreRequestBuilder.swift in Sources */,
+				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
@@ -1260,7 +1268,9 @@
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
+				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
+				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
 				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
@@ -1270,18 +1280,20 @@
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
 				D8AC9964244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift in Sources */,
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
+				D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
+				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
-				D85C9BEE2433676700F1D4FE /* AdjarabetCoreClient+BalanceManagementServices.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
+				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
 			);

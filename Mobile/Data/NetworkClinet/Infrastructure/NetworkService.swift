@@ -37,11 +37,9 @@ public extension NetworkError {
 extension URLSessionTask: Cancellable { }
 
 public class DefaultNetworkService {
-    private let logger: NetworkErrorLogger
+    @Inject private var logger: NetworkErrorLogger
 
-    public init(logger: NetworkErrorLogger = DefaultNetworkErrorLogger()) {
-        self.logger = logger
-    }
+    public static let shared = DefaultNetworkService()
 }
 
 extension DefaultNetworkService: NetworkService {
@@ -66,12 +64,14 @@ extension DefaultNetworkService: NetworkService {
                 self?.logger.log(responseData: data, response: response)
 
                 let headerFields = (response as? HTTPURLResponse)?.allHeaderFields ?? [:]
-                let responseData = NetworkServiceResponse(data: nil, headerFields: headerFields)
+                let responseData = NetworkServiceResponse(data: data, headerFields: headerFields)
                 completion(.success(responseData))
             }
         }
 
         logger.log(request: request)
+
+        task.resume()
 
         return task
     }

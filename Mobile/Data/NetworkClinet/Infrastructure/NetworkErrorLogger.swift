@@ -13,9 +13,10 @@ public protocol NetworkErrorLogger {
     func log(statusCode: Int)
 }
 
-final public class DefaultNetworkErrorLogger: NetworkErrorLogger {
-    public init() { }
+public class DefaultNetworkErrorLogger {
+}
 
+extension DefaultNetworkErrorLogger: NetworkErrorLogger {
     public func log(request: URLRequest) {
         #if DEBUG
         print("-------------")
@@ -33,10 +34,13 @@ final public class DefaultNetworkErrorLogger: NetworkErrorLogger {
 
     public func log(responseData data: Data?, response: URLResponse?) {
         #if DEBUG
-        guard let data = data else { return }
-        if let dataDict =  try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-            print("responseData: \(String(describing: dataDict))")
-        }
+        let headerFields = (response as? HTTPURLResponse)?.allHeaderFields ?? [:]
+
+        print("headerFields: \(headerFields)")
+
+        guard let data = data, let responseData = String(data: data, encoding: .utf8) else {return}
+
+        print("responseData: \(responseData)")
         #endif
     }
 

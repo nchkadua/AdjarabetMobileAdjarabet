@@ -43,5 +43,8 @@ extension DefaultHomeViewModel: HomeViewModel {
 
     public func viewDidLoad() {
         observeLanguageChange()
+
+        DefaultAuthenticationRepository().login(username: "shota.io", password: "Burtiburtibu#1", channel: 0) { (_: Result<AdjarabetCoreResult.Login, Error>) in
+        }
     }
 }

@@ -22,11 +22,7 @@ public protocol DataTransfer {
 }
 
 public class DefaultDataTransferService {
-    private let networkService: NetworkService
-
-    public init(with networkService: NetworkService) {
-        self.networkService = networkService
-    }
+    @Inject private var networkService: NetworkService
 }
 
 extension DefaultDataTransferService: DataTransfer {
@@ -42,6 +38,7 @@ extension DefaultDataTransferService: DataTransfer {
                     let decoder = JSONDecoder()
 
                     let statusCode = try decoder.decode(AdjarabetCoreCodable.StatusCodeChecker.self, from: data)
+                    #warning("manage")
                     if !statusCode.isSuccess {
                         throw AdjarabetCoreClientError.invalidStatusCode(code: statusCode.code)
                     }

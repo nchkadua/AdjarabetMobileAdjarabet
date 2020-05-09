@@ -31,10 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.init()
 
         let dependencies = DependencyContainer.root.register {
-            Module { AdjarabetCoreClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetCoreServices }
+//            Module { AdjarabetCoreClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetCoreServices }
             Module { AdjarabetWebAPIClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetWebAPIServices }
             Module { DefaultLanguageStorage.shared as LanguageStorage }
             Module { UserSession.current as UserSessionServices }
+
+            Module { DefaultNetworkService.shared as NetworkService }
+            Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }
+            Module { DefaultDataTransferService() as DataTransfer }
+            Module { AdjarabetCoreClientRequestBuilder.shared as AdjarabetCoreClientRequestBuilder }
         }
 
         dependencies.build()
