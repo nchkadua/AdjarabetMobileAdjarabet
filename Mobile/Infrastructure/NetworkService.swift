@@ -26,8 +26,6 @@ extension URLSessionTask: Cancellable { }
 
 public class DefaultNetworkService {
     @Inject private var logger: NetworkErrorLogger
-
-    public static let shared = DefaultNetworkService()
 }
 
 extension DefaultNetworkService: NetworkService {

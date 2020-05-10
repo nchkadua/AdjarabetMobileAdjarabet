@@ -8,5 +8,5 @@
 
 public protocol SessionManagementRepository {
     @discardableResult
-    func aliveSession<T: AdjarabetCoreCodableType>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func aliveSession<T: HeaderProvidingCodableType>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
 }

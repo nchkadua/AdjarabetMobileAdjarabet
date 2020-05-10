@@ -8,15 +8,11 @@
 
 public protocol AuthenticationRepository {
     @discardableResult
-    func login<T: AdjarabetCoreCodableType>(username: String, password: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func login<T: HeaderProvidingCodableType>(username: String, password: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
     @discardableResult
-    func smsCode<T: AdjarabetCoreCodableType>(username: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func smsCode<T: HeaderProvidingCodableType>(username: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
     @discardableResult
-    func logout<T: AdjarabetCoreCodableType>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func logout<T: HeaderProvidingCodableType>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
     @discardableResult
-    func login<T: AdjarabetCoreCodableType>(username: String, code: String, loginType: LoginType, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
-}
-
-public enum LoginType: String {
-    case otp, sms
+    func login<T: HeaderProvidingCodableType>(username: String, code: String, loginType: LoginType, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
 }

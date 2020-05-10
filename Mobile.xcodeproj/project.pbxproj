@@ -56,7 +56,7 @@
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */; };
 		D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */; };
-		D85C9BF82433678000F1D4FE /* AdjarabetCoreCodableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF32433678000F1D4FE /* AdjarabetCoreCodableType.swift */; };
+		D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF32433678000F1D4FE /* HeaderProvidingCodableType.swift */; };
 		D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */; };
 		D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */; };
 		D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */; };
@@ -135,6 +135,7 @@
 		D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */; };
 		D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */; };
 		D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */; };
+		D8F26A05246837B700137252 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F26A04246837B700137252 /* LoginType.swift */; };
 		D8FBA4F12449BD560015C03C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8FBA4F32449BD560015C03C /* Localization.strings */; };
 		D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4F72449BE7D0015C03C /* Language.swift */; };
 		D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */; };
@@ -211,7 +212,7 @@
 		D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClient.swift; sourceTree = "<group>"; };
 		D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientRequestBuilder.swift; sourceTree = "<group>"; };
 		D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientError.swift; sourceTree = "<group>"; };
-		D85C9BF32433678000F1D4FE /* AdjarabetCoreCodableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreCodableType.swift; sourceTree = "<group>"; };
+		D85C9BF32433678000F1D4FE /* HeaderProvidingCodableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderProvidingCodableType.swift; sourceTree = "<group>"; };
 		D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreResult.swift; sourceTree = "<group>"; };
 		D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreStatusCode.swift; sourceTree = "<group>"; };
 		D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreCodable.swift; sourceTree = "<group>"; };
@@ -295,6 +296,7 @@
 		D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarManager.swift; sourceTree = "<group>"; };
 		D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Bold.otf"; sourceTree = "<group>"; };
 		D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Regular.otf"; sourceTree = "<group>"; };
+		D8F26A04246837B700137252 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		D8FBA4F22449BD560015C03C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		D8FBA4F72449BE7D0015C03C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
@@ -402,6 +404,14 @@
 				D8AB806C246014DB001C4E8A /* UserSession */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D80AE7DC24683492009A7814 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D8F26A04246837B700137252 /* LoginType.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D84202C82451919400F0F056 /* PersistentStorages */ = {
@@ -747,6 +757,7 @@
 		D8A47DE824335DD70077AA8E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D80AE7DC24683492009A7814 /* Entities */,
 				D86253AB246416C800F7DE0C /* Protocols */,
 			);
 			path = Domain;
@@ -833,7 +844,6 @@
 			children = (
 				D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */,
 				D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */,
-				D85C9BF32433678000F1D4FE /* AdjarabetCoreCodableType.swift */,
 				D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */,
 				D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */,
 			);
@@ -843,6 +853,7 @@
 		D8AB80672460132B001C4E8A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D85C9BF32433678000F1D4FE /* HeaderProvidingCodableType.swift */,
 				D8AB80682460133E001C4E8A /* UserSessionServices.swift */,
 			);
 			path = Services;
@@ -1255,7 +1266,7 @@
 				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
 				D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
-				D85C9BF82433678000F1D4FE /* AdjarabetCoreCodableType.swift in Sources */,
+				D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
@@ -1265,6 +1276,7 @@
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
 				D83026C024518528006FF7FB /* DummyData.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
+				D8F26A05246837B700137252 /* LoginType.swift in Sources */,
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,

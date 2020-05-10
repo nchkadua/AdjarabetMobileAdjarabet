@@ -14,7 +14,7 @@ public class DefaultSessionManagementRepository {
 }
 
 extension DefaultSessionManagementRepository: SessionManagementRepository {
-    public func aliveSession<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: AdjarabetCoreCodableType {
+    public func aliveSession<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .set(method: .aliveSession)
             .set(userId: userId)

@@ -16,7 +16,7 @@ public enum DataTransferError: Error {
 
 public protocol DataTransferService {
     @discardableResult
-    func performTask<T: AdjarabetCoreCodableType>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func performTask<T: HeaderProvidingCodableType>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
     @discardableResult
     func performTask<T: Decodable>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
 }
@@ -26,7 +26,7 @@ public class DefaultDataTransferService {
 }
 
 extension DefaultDataTransferService: DataTransferService {
-    public func performTask<T>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: AdjarabetCoreCodableType {
+    public func performTask<T>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let task = self.networkService.request(request: request) { result in
             switch result {
             case .success(let response):

@@ -14,7 +14,7 @@ public class DefaultBalanceManagementRepository {
 }
 
 extension DefaultBalanceManagementRepository: BalanceManagementRepository {
-    public func balance<T: AdjarabetCoreCodableType>(userId: Int, currencyId: Int, isSingle: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable {
+    public func balance<T: HeaderProvidingCodableType>(userId: Int, currencyId: Int, isSingle: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable {
         let request = requestBuilder
             .set(method: .balance)
             .set(userId: userId, currencyId: currencyId, isSingle: isSingle)

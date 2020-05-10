@@ -1,12 +1,12 @@
 //
-//  AdjarabetCoreCodableType.swift
+//  HeaderProvidingCodableType.swift
 //  Mobile
 //
 //  Created by Shota Ioramashvili on 4/12/20.
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol AdjarabetCoreCodableType {
+public protocol HeaderProvidingCodableType {
     associatedtype T where T: Codable
     associatedtype H where H: HeaderProtocol
 
@@ -18,14 +18,4 @@ public protocol AdjarabetCoreCodableType {
 
 public protocol HeaderProtocol {
     init(headers: [AnyHashable: Any]?) throws
-}
-
-public extension AdjarabetCoreCodableType {
-    static func validate(data: Data) throws {
-        let statusCode = try JSONDecoder().decode(AdjarabetCoreCodable.StatusCodeChecker.self, from: data)
-
-        if !statusCode.isSuccess {
-            throw AdjarabetCoreClientError.invalidStatusCode(code: statusCode.code)
-        }
-    }
 }

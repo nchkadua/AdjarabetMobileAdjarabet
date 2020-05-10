@@ -14,7 +14,7 @@ public class DefaultAuthenticationRepository {
 }
 
 extension DefaultAuthenticationRepository: AuthenticationRepository {
-    public func login<T>(username: String, password: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: AdjarabetCoreCodableType {
+    public func login<T>(username: String, password: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .set(method: .login)
             .set(username: username, password: password, channel: channel)
@@ -23,7 +23,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func smsCode<T>(username: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: AdjarabetCoreCodableType {
+    public func smsCode<T>(username: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .set(method: .smsCode)
             .set(username: username, channel: channel)
@@ -32,7 +32,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func logout<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: AdjarabetCoreCodableType {
+    public func logout<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .set(method: .logout)
             .set(userId: userId)
@@ -42,7 +42,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func login<T>(username: String, code: String, loginType: LoginType, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: AdjarabetCoreCodableType {
+    public func login<T>(username: String, code: String, loginType: LoginType, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .set(method: .loginOtp)
             .set(username: username, code: code, loginType: loginType)
