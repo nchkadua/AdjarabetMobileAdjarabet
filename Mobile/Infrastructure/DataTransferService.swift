@@ -1,5 +1,5 @@
 //
-//  DefaultDataTransferService.swift
+//  DataTransferService.swift
 //  Mobile
 //
 //  Created by Shota Ioramashvili on 5/7/20.
@@ -10,11 +10,11 @@ import Foundation
 
 public enum DataTransferError: Error {
     case noResponse
-    case parsingJSON
+    case parsingJSONFailure(Error)
     case networkFailure(NetworkError)
 }
 
-public protocol DataTransfer {
+public protocol DataTransferService {
     @discardableResult
     func performTask<T: AdjarabetCoreCodableType>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
     @discardableResult
@@ -25,7 +25,7 @@ public class DefaultDataTransferService {
     @Inject private var networkService: NetworkService
 }
 
-extension DefaultDataTransferService: DataTransfer {
+extension DefaultDataTransferService: DataTransferService {
     public func performTask<T>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: AdjarabetCoreCodableType {
         let task = self.networkService.request(request: request) { result in
             switch result {
@@ -35,21 +35,17 @@ extension DefaultDataTransferService: DataTransfer {
                     return
                 }
                 do {
+                    // continue parsing if the status code is success
+                    try T.validate(data: data)
+
                     let decoder = JSONDecoder()
-
-                    let statusCode = try decoder.decode(AdjarabetCoreCodable.StatusCodeChecker.self, from: data)
-                    #warning("manage")
-                    if !statusCode.isSuccess {
-                        throw AdjarabetCoreClientError.invalidStatusCode(code: statusCode.code)
-                    }
-
                     let decoded = try decoder.decode(T.T.self, from: data)
                     let decodedHeader = try T.H(headers: response.headerFields)
 
                     let result = T(codable: decoded, header: decodedHeader)
                     respondOnQueue.async { completion(.success(result)) }
                 } catch {
-                    respondOnQueue.async { completion(Result.failure(DataTransferError.parsingJSON)) }
+                    respondOnQueue.async { completion(Result.failure(DataTransferError.parsingJSONFailure(error))) }
                 }
             case .failure(let error):
                 respondOnQueue.async { completion(Result.failure(DataTransferError.networkFailure(error))) }
@@ -72,7 +68,7 @@ extension DefaultDataTransferService: DataTransfer {
                     let result = try decoder.decode(T.self, from: data)
                     respondOnQueue.async { completion(.success(result)) }
                 } catch {
-                    respondOnQueue.async { completion(Result.failure(DataTransferError.parsingJSON)) }
+                    respondOnQueue.async { completion(Result.failure(DataTransferError.parsingJSONFailure(error))) }
                 }
             case .failure(let error):
                 respondOnQueue.async { completion(Result.failure(DataTransferError.networkFailure(error))) }

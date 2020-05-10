@@ -22,18 +22,6 @@ public enum NetworkError: Error {
     case requestError(Error?)
 }
 
-public extension NetworkError {
-    var isNotFoundError: Bool { return hasStatusCode(404) }
-
-    func hasStatusCode(_ codeError: Int) -> Bool {
-        switch self {
-        case let .errorStatusCode(code):
-            return code == codeError
-        default: return false
-        }
-    }
-}
-
 extension URLSessionTask: Cancellable { }
 
 public class DefaultNetworkService {

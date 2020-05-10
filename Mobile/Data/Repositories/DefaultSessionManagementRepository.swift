@@ -9,7 +9,7 @@
 import Foundation
 
 public class DefaultSessionManagementRepository {
-    @Inject private var dataTransferService: DataTransfer
+    @Inject private var dataTransferService: DataTransferService
     @Inject private var requestBuilder: AdjarabetCoreClientRequestBuilder
 }
 

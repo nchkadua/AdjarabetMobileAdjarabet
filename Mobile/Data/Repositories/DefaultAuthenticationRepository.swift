@@ -1,5 +1,5 @@
 //
-//  AuthenticationRepository.swift
+//  DefaultAuthenticationRepository.swift
 //  Mobile
 //
 //  Created by Shota Ioramashvili on 5/9/20.
@@ -9,7 +9,7 @@
 import Foundation
 
 public class DefaultAuthenticationRepository {
-    @Inject private var dataTransferService: DataTransfer
+    @Inject private var dataTransferService: DataTransferService
     @Inject private var requestBuilder: AdjarabetCoreClientRequestBuilder
 }
 

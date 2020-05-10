@@ -89,7 +89,7 @@
 		D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253AC2464197500F7DE0C /* Cancelable.swift */; };
 		D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B22464214B00F7DE0C /* NetworkService.swift */; };
 		D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */; };
-		D86253B7246429D000F7DE0C /* DefaultDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B6246429D000F7DE0C /* DefaultDataTransferService.swift */; };
+		D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86253B6246429D000F7DE0C /* DataTransferService.swift */; };
 		D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */; };
 		D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */; };
 		D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */; };
@@ -246,7 +246,7 @@
 		D86253AC2464197500F7DE0C /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
 		D86253B22464214B00F7DE0C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorLogger.swift; sourceTree = "<group>"; };
-		D86253B6246429D000F7DE0C /* DefaultDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataTransferService.swift; sourceTree = "<group>"; };
+		D86253B6246429D000F7DE0C /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 		D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherComponentView.swift; sourceTree = "<group>"; };
 		D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayedGameLauncherComponentView.xib; sourceTree = "<group>"; };
 		D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherComponentViewModel.swift; sourceTree = "<group>"; };
@@ -604,9 +604,9 @@
 		D86253B12464213B00F7DE0C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				D86253B22464214B00F7DE0C /* NetworkService.swift */,
 				D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */,
-				D86253B6246429D000F7DE0C /* DefaultDataTransferService.swift */,
+				D86253B22464214B00F7DE0C /* NetworkService.swift */,
+				D86253B6246429D000F7DE0C /* DataTransferService.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -726,6 +726,7 @@
 				D8A47DE824335DD70077AA8E /* Domain */,
 				D8A47DE924335DDE0077AA8E /* Presentation */,
 				D8A47DEA24335DE40077AA8E /* Data */,
+				D86253B12464213B00F7DE0C /* Infrastructure */,
 			);
 			path = Mobile;
 			sourceTree = "<group>";
@@ -767,11 +768,11 @@
 		D8A47DEA24335DE40077AA8E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D83026BF24518528006FF7FB /* DummyData.swift */,
 				D86253AE2464199900F7DE0C /* Repositories */,
 				D8A47DF3243366F80077AA8E /* NetworkClinet */,
 				D84202C82451919400F0F056 /* PersistentStorages */,
 				D8AB806B246013EB001C4E8A /* Services */,
-				D83026BF24518528006FF7FB /* DummyData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -810,7 +811,6 @@
 		D8A47DF3243366F80077AA8E /* NetworkClinet */ = {
 			isa = PBXGroup;
 			children = (
-				D86253B12464213B00F7DE0C /* Infrastructure */,
 				D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */,
 				D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */,
 				D8A47DF5243367060077AA8E /* AdjarabetCoreClient */,
@@ -1247,7 +1247,7 @@
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
-				D86253B7246429D000F7DE0C /* DefaultDataTransferService.swift in Sources */,
+				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
 				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,
 				D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */,

@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             Module { DefaultNetworkService.shared as NetworkService }
             Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }
-            Module { DefaultDataTransferService() as DataTransfer }
+            Module { DefaultDataTransferService() as DataTransferService }
             Module { AdjarabetCoreClientRequestBuilder.shared as AdjarabetCoreClientRequestBuilder }
         }
 
