@@ -97,7 +97,7 @@ public enum DesignSystem {
                 switch language {
                 case .georgian: return fontCase == .lower ? R.font.pantonNusx3Bold(size: pointSize)! : R.font.pantonMtav3Bold(size: pointSize)!
                 case .armenian: return R.font.pantonAMBold(size: pointSize)!
-                case .english: return R.font.pantonMtav3Bold(size: pointSize)!
+                case .english:  return R.font.pantonMtav3Bold(size: pointSize)!
                 }
             }
 
@@ -133,6 +133,43 @@ public enum DesignSystem {
         case space32 = 32
 
         public var value: Int { rawValue }
+    }
+
+    /// Input
+    public enum Input {
+        public static let backgroundColor: Color       = .neutral600()
+        public static let tintColor: Color              = .white()
+
+        public static let placeholderFont: Typography   = .body2
+        public static let textFieldFont: Typography     = .h4(fontCase: .lower)
+
+        public static let placeholTextColor: Color      = .neutral100(alpha: 0.6)
+        public static let textFieldTextColor: Color     = .neutral100()
+
+        public static let borderWidth: CGFloat          = 1
+        public static let borderColor: Color            = .neutral400()
+        public static let cornerRadius: CGFloat         = 4
+
+        public enum Size: CaseIterable {
+            case small
+            case medium
+            case large
+
+            public var height: CGFloat {
+                switch self {
+                case .small:    return 32
+                case .medium:   return 40
+                case .large:    return 48
+                }
+            }
+
+            public var textFieldHeight: CGFloat {
+                switch self {
+                case .small:            return 16
+                case .medium, .large:   return 24
+                }
+            }
+        }
     }
 
     /// Buttons

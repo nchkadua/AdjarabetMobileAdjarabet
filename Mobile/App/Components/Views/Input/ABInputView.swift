@@ -97,27 +97,27 @@ extension ABInputView: Xibable {
     }
 
     private func setupWrapperView() {
-        wrapperView.setBackgorundColor(to: .neutral600())
-        wrapperView.borderWidth = 1
-        wrapperView.cornerRadius = 4
-        wrapperView.setBorderColor(to: .neutral600())
+        wrapperView.setBackgorundColor(to: DesignSystem.Input.backgroundColor)
+        wrapperView.borderWidth = DesignSystem.Input.borderWidth
+        wrapperView.cornerRadius = DesignSystem.Input.cornerRadius
+        wrapperView.setBorderColor(to: DesignSystem.Input.borderColor)
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(makeTextFieldFirstResponderIfNeeded))
         wrapperView.addGestureRecognizer(tap)
     }
 
     private func setupPlaceholderLabel() {
-        placeholderLabel.setFont(to: .body2)
-        placeholderLabel.setTextColor(to: .neutral100(alpha: 0.6))
+        placeholderLabel.setFont(to: DesignSystem.Input.placeholderFont)
+        placeholderLabel.setTextColor(to: DesignSystem.Input.placeholTextColor)
     }
 
     private func setupTextField() {
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.autocorrectionType = .no
-        textField.setFont(to: .h4(fontCase: .lower))
-        textField.setTextColor(to: .neutral100())
-        textField.setTintColor(to: .white())
+        textField.setFont(to: DesignSystem.Input.textFieldFont)
+        textField.setTextColor(to: DesignSystem.Input.textFieldTextColor)
+        textField.setTintColor(to: DesignSystem.Input.tintColor)
     }
 
     private func setupValidationResultLabel() {
