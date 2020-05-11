@@ -100,6 +100,6 @@ class WelcomeViewController: UIViewController {
     }
 
     private func navigateToLoginPage() {
-        UIApplication.shared.currentWindow?.rootViewController = R.storyboard.login().instantiate(controller: LoginViewController.self)?.wrapInNav()
+        UIApplication.shared.currentWindow?.rootViewController = R.storyboard.login().instantiate(controller: DemoLoginViewController.self)?.wrapInNav()
     }
 }

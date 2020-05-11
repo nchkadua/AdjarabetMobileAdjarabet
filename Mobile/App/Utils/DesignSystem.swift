@@ -84,7 +84,7 @@ public enum DesignSystem {
             case .h1:    return .init(font: font(by: language), lineSpasing: 0.7, lineHeight: 44)
             case .h2:    return .init(font: font(by: language), lineSpasing: 0.7, lineHeight: 36)
             case .h3:    return .init(font: font(by: language), lineSpasing: 0.5, lineHeight: 24)
-            case .h4:    return .init(font: font(by: language), lineSpasing: 0.3, lineHeight: 24)
+            case .h4:    return .init(font: font(by: language), lineSpasing: 0.3, lineHeight: 20)
             case .h5:    return .init(font: font(by: language), lineSpasing: 0.5, lineHeight: 16)
             case .body1: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 20)
             case .body2: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 16)
@@ -137,7 +137,7 @@ public enum DesignSystem {
 
     /// Input
     public enum Input {
-        public static let backgroundColor: Color       = .neutral600()
+        public static let backgroundColor: Color        = .neutral600()
         public static let tintColor: Color              = .white()
 
         public static let placeholderFont: Typography   = .body2
@@ -190,10 +190,10 @@ public enum DesignSystem {
             /// Concrete description for each case
             public var description: Description {
                 switch self {
-                case .large:  return .init(typograhy: .h3(fontCase: .upper), contentEdgeInsets: .init(top: 14, left: 20, bottom: 10, right: 20))
-                case .medium: return .init(typograhy: .h4(fontCase: .upper), contentEdgeInsets: .init(top: 11, left: 20, bottom: 9, right: 20))
-                case .small:  return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 9, left: 16, bottom: 7, right: 16))
-                case .xs:     return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 7, left: 12, bottom: 5, right: 12))
+                case .large:  return .init(typograhy: .h3(fontCase: .upper), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
+                case .medium: return .init(typograhy: .h4(fontCase: .upper), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))
+                case .small:  return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 9 + 2, left: 16, bottom: 7 + 2, right: 16))
+                case .xs:     return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 7 + 2, left: 12, bottom: 5 + 2, right: 12))
                 case .none:   return .init(typograhy: .body2, contentEdgeInsets: .zero)
                 }
             }

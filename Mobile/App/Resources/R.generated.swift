@@ -775,21 +775,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
-    /// Image `close`.
-    static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "close")
     /// Image `face`.
     static let face = Rswift.ImageResource(bundle: R.hostingBundle, name: "face")
     /// Image `touch`.
     static let touch = Rswift.ImageResource(bundle: R.hostingBundle, name: "touch")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "close", bundle: ..., traitCollection: ...)`
-    static func close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.close, compatibleWith: traitCollection)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "face", bundle: ..., traitCollection: ...)`
@@ -825,10 +816,19 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.shared` struct is generated, and contains static references to 1 images.
+    /// This `R.image.shared` struct is generated, and contains static references to 2 images.
     struct shared {
+      /// Image `close`.
+      static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/close")
       /// Image `search`.
       static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/search")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "close", bundle: ..., traitCollection: ...)`
+      static func close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.close, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
@@ -1387,13 +1387,12 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct login: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = LoginViewController
 
       let appNavigationController = StoryboardViewControllerResource<AppNavigationController>(identifier: "AppNavigationController")
       let bundle = R.hostingBundle
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Login"
-      let welcomeViewController = StoryboardViewControllerResource<WelcomeViewController>(identifier: "WelcomeViewController")
 
       func appNavigationController(_: Void = ()) -> AppNavigationController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: appNavigationController)
@@ -1403,17 +1402,12 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
       }
 
-      func welcomeViewController(_: Void = ()) -> WelcomeViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: welcomeViewController)
-      }
-
       static func validate() throws {
-        if UIKit.UIImage(named: "face", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'face' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in storyboard 'Login', but couldn't be loaded.") }
         }
         if _R.storyboard.login().appNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'appNavigationController' could not be loaded from storyboard 'Login' as 'AppNavigationController'.") }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
-        if _R.storyboard.login().welcomeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'welcomeViewController' could not be loaded from storyboard 'Login' as 'WelcomeViewController'.") }
       }
 
       fileprivate init() {}
