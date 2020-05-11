@@ -26,6 +26,10 @@ class LoginViewController: UIViewController {
         }
     }
 
+    @IBOutlet private var inputView1: ABInputView!
+    @IBOutlet private var inputView2: ABInputView!
+    @IBOutlet private var inputView3: ABInputView!
+
     @IBOutlet private var loginTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
     @IBOutlet private var smsCodeTextField: UITextField! {
@@ -61,6 +65,20 @@ class LoginViewController: UIViewController {
         biometryButton.addTarget(self, action: #selector(biometryDidTap), for: .touchUpInside)
 
         setupBiometryButton()
+
+        setBaseBackgorundColor()
+
+        inputView1.setPlaceholder(text: "username")
+        inputView1.setTextAndConfigure(text: "Initial text")
+        inputView1.setSize(to: .large)
+
+        inputView2.setPlaceholder(text: "password")
+        inputView2.setValidation(text: "Error message", color: .error())
+        inputView2.setSize(to: .medium)
+
+        inputView3.setPlaceholder(text: "small text title")
+        inputView3.setTextAndConfigure(text: "Small text")
+        inputView3.setSize(to: .small)
     }
 
     private func configureUI() {

@@ -141,7 +141,6 @@ public enum DesignSystem {
         public static let tintColor: Color              = .white()
 
         public static let placeholderFont: Typography   = .body2
-        public static let textFieldFont: Typography     = .h4(fontCase: .lower)
 
         public static let placeholTextColor: Color      = .neutral100(alpha: 0.6)
         public static let textFieldTextColor: Color     = .neutral100()
@@ -167,6 +166,13 @@ public enum DesignSystem {
                 switch self {
                 case .small:            return 16
                 case .medium, .large:   return 24
+                }
+            }
+
+            public var textFieldFont: Typography {
+                switch self {
+                case .small:            return .h5(fontCase: .lower)
+                case .medium, .large:   return .h4(fontCase: .lower)
                 }
             }
         }

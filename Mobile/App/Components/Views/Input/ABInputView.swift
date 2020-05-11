@@ -11,20 +11,26 @@ public class ABInputView: UIView {
     @IBOutlet weak private var view: UIView!
 
     @IBOutlet private weak var wrapperView: AppCircularView!
+    @IBOutlet private weak var wrapperViewHeightConstraint: NSLayoutConstraint!
 
-    @IBOutlet private weak var textField: UITextField!
-    @IBOutlet private var textFieldCenterY: NSLayoutConstraint!
-    @IBOutlet private var textFieldBottom: NSLayoutConstraint!
+    @IBOutlet public weak var textField: UITextField!
+    @IBOutlet private weak var textFieldHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private var textFieldCenterYConstraint: NSLayoutConstraint!
+    @IBOutlet private var textFieldBottomConstraint: NSLayoutConstraint!
 
-    @IBOutlet private weak var placeholderLabel: UILabel!
-    @IBOutlet private var placeholderLabelCenterY: NSLayoutConstraint!
+    @IBOutlet public weak var placeholderLabel: UILabel!
+    @IBOutlet private var placeholderLabelTopConstraint: NSLayoutConstraint!
+    @IBOutlet private var placeholderLabelCenterYConstraint: NSLayoutConstraint!
 
-    @IBOutlet private weak var leftButton: UIButton!
-    @IBOutlet private weak var rightButton: UIButton!
+    @IBOutlet public weak var leftButton: UIButton!
+    @IBOutlet public weak var rightButton: UIButton!
 
-    @IBOutlet private weak var validationResultLabel: UILabel!
+    @IBOutlet public weak var validationResultLabel: UILabel!
 
-    private var placeholderPosition: PlaceholderPosition = .center
+    // MARK: Fields
+    private var size: DesignSystem.Input.Size = .large
+    private var textFieldBottomInset: CGFloat { size == .large ? 4 : 0 }
+    private var placeholderLabelTopInset: CGFloat { size == .large ? 7 : 3 }
 
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -39,28 +45,56 @@ public class ABInputView: UIView {
     @objc private func makeTextFieldFirstResponderIfNeeded() {
         let canBecomeFirstResponder = textField.isUserInteractionEnabled && textField.canBecomeFirstResponder
 
-//        if !actionButton.isHidden && !canBecomeFirstResponder {
-//            delegate?.actionButtonDidTap?(actionButton)
-//            return
-//        }
-
         if canBecomeFirstResponder {
             textField.becomeFirstResponder()
         }
     }
 
-    private enum PlaceholderPosition {
-        case top, center
+    public func set(text: String?) {
+        setTextAndConfigure(text: text)
     }
 
-    private func setPlaceholderPosition(to position: PlaceholderPosition, animated animate: Bool) {
-        self.placeholderPosition = position
-        let isCenter = position == .center
+    public func setPlaceholder(text: String?) {
+        placeholderLabel.text = text
+    }
+
+    public func setTextAndConfigure(text: String?, animated animate: Bool = false) {
+        textField.text = text
+        configurePosition(animated: animate)
+    }
+
+    public func hideValidationText() {
+        setValidation(text: nil)
+    }
+
+    public func setValidation(text: String?, color: DesignSystem.Color = .error()) {
+        validationResultLabel.text = text
+        validationResultLabel.setTextColor(to: color)
+        validationResultLabel.superview?.isHidden = text == nil
+    }
+
+    public func setSize(to size: DesignSystem.Input.Size) {
+        self.size = size
+
+        wrapperViewHeightConstraint.constant = size.height
+
+        textField.setFont(to: size.textFieldFont)
+        textFieldHeightConstraint.constant = size.textFieldHeight
+        textFieldBottomConstraint.constant = textFieldBottomInset
+
+        placeholderLabelTopConstraint.constant = placeholderLabelTopInset
+    }
+
+    public func configurePosition(animated animate: Bool) {
+        let isCenter = !(textField.isFirstResponder || textField.text?.isEmpty == false)
 
         func set() {
-            placeholderLabelCenterY.isActive = isCenter
-            textFieldCenterY.isActive = isCenter
-            textFieldBottom.isActive = !textFieldCenterY.isActive
+            placeholderLabelCenterYConstraint.isActive = isCenter
+            textFieldCenterYConstraint.isActive = isCenter
+            textFieldBottomConstraint.isActive = !textFieldCenterYConstraint.isActive
+            wrapperView.setBorderColor(
+                to: isCenter ? DesignSystem.Input.backgroundColor : DesignSystem.Input.borderColor,
+                animationDuration: animate ? 0.25 : 0)
             view.layoutIfNeeded()
         }
 
@@ -93,7 +127,7 @@ extension ABInputView: Xibable {
         setupRightButton()
         setupPlaceholderLabel()
 
-        setPlaceholderPosition(to: .center, animated: false)
+        configurePosition(animated: false)
     }
 
     private func setupWrapperView() {
@@ -104,23 +138,34 @@ extension ABInputView: Xibable {
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(makeTextFieldFirstResponderIfNeeded))
         wrapperView.addGestureRecognizer(tap)
+
+        wrapperViewHeightConstraint.constant = size.height
     }
 
     private func setupPlaceholderLabel() {
-        placeholderLabel.setFont(to: DesignSystem.Input.placeholderFont)
         placeholderLabel.setTextColor(to: DesignSystem.Input.placeholTextColor)
+        placeholderLabel.setFont(to: DesignSystem.Input.placeholderFont)
+        placeholderLabelTopConstraint.constant = placeholderLabelTopInset
+
+        hideValidationText()
     }
 
     private func setupTextField() {
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.autocorrectionType = .no
-        textField.setFont(to: DesignSystem.Input.textFieldFont)
+        textField.setFont(to: size.textFieldFont)
         textField.setTextColor(to: DesignSystem.Input.textFieldTextColor)
         textField.setTintColor(to: DesignSystem.Input.tintColor)
+        textField.keyboardAppearance = .dark
+
+        textFieldHeightConstraint.constant = size.textFieldHeight
+        textFieldBottomConstraint.constant = textFieldBottomInset
     }
 
     private func setupValidationResultLabel() {
+        validationResultLabel.setFont(to: .body2)
+        validationResultLabel.setTextColor(to: .error())
         validationResultLabel.superview?.isHidden = true
     }
 
@@ -135,11 +180,11 @@ extension ABInputView: Xibable {
 
 extension ABInputView: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        setPlaceholderPosition(to: .top, animated: true)
+        configurePosition(animated: true)
     }
 
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        setPlaceholderPosition(to: .center, animated: true)
+        configurePosition(animated: true)
     }
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
