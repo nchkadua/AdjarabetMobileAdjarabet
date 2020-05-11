@@ -31,6 +31,8 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<HomeViewModelOutputAction>()
     private let routeSubject = PublishSubject<HomeViewModelRoute>()
 
+    @Inject(from: .repositories) private var authenticationRepository: AuthenticationRepository
+
     public override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)
     }
@@ -43,5 +45,8 @@ extension DefaultHomeViewModel: HomeViewModel {
 
     public func viewDidLoad() {
         observeLanguageChange()
+
+        authenticationRepository.login(username: "shota.io", password: "Burtiburtibu#1", channel: 0) { (_: Result<AdjarabetCoreResult.Login, Error>) in
+        }
     }
 }

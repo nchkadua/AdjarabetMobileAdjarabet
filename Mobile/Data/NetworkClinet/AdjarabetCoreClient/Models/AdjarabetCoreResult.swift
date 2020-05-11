@@ -37,7 +37,7 @@ public extension AdjarabetCoreResult {
 }
 
 public extension AdjarabetCoreResult {
-    struct Result<C: Codable, H: HeaderProtocol>: AdjarabetCoreCodableType {
+    struct Result<C: Codable, H: HeaderProtocol>: HeaderProvidingCodableType {
         public let codable: C
         public let header: H?
 

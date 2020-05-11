@@ -19,20 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
     override init() {
         super.init()
 
         let dependencies = DependencyContainer.root.register {
-            Module { AdjarabetCoreClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetCoreServices }
             Module { AdjarabetWebAPIClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetWebAPIServices }
             Module { DefaultLanguageStorage.shared as LanguageStorage }
             Module { UserSession.current as UserSessionServices }
+
+            Module { DefaultNetworkService() as NetworkService }
+            Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }
+            Module { DefaultDataTransferService() as DataTransferService }
+            Module { AdjarabetCoreClientRequestBuilder.shared as AdjarabetCoreClientRequestBuilder }
         }
 
         dependencies.build()
@@ -44,5 +42,9 @@ public extension DependencyContainer {
         Module { DefaultHomeViewModel() as HomeViewModel }
         Module { DefaultPromotionsViewModel() as PromotionsViewModel }
         Module { DefaultNotificationsViewModel() as NotificationsViewModel }
+    }
+
+    static var repositories = DependencyContainer {
+        Module { DefaultAuthenticationRepository() as AuthenticationRepository }
     }
 }
