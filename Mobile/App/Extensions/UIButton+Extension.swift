@@ -7,12 +7,17 @@
 //
 
 public extension UIButton {
-    func setTitleColor(to color: DesignSystem.Color?, for state: UIControl.State, alpha: CGFloat = 1) {
-        self.setTitleColor(color?.value.withAlphaComponent(alpha), for: state)
+    func setTitleColor(to color: DesignSystem.Color?, for state: UIControl.State) {
+        self.setTitleColor(color?.value, for: state)
     }
 
     func setFont(to typography: DesignSystem.Typography) {
         self.titleLabel?.font = typography.description.font
+    }
+
+    func setSize(to size: DesignSystem.Button.Size) {
+        setFont(to: size.description.typograhy)
+        contentEdgeInsets = size.description.contentEdgeInsets
     }
 
     func setTitleWithoutAnimation(_ title: String?, for state: UIControl.State) {

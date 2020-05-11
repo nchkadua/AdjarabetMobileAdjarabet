@@ -26,20 +26,49 @@ class DesignSystemExtensionTests: XCTestCase {
     func testButtonSetTitleColor() {
         // given
         let alpha = CGFloat.random(in: 0...1)
-        let color = DesignSystem.Color.neutral100
+        let color = DesignSystem.Color.neutral100(alpha: alpha)
         let button = UIButton()
         
         // when
-        button.setTitleColor(to: color, for: .normal, alpha: alpha)
+        button.setTitleColor(to: color, for: .normal)
         
         // than
-        XCTAssertEqual(button.titleColor(for: .normal), color.value.withAlphaComponent(alpha))
+        XCTAssertEqual(button.titleColor(for: .normal), color.value)
+    }
+    
+    func testButtonSetSize() {
+        // given
+        let size = DesignSystem.Button.Size.allCases.randomElement()!
+        let button = AppCircularButton()
+        
+        // when
+        button.setSize(to: size)
+        
+        // than
+        XCTAssertEqual(button.titleLabel?.font, size.description.typograhy.description.font)
+        XCTAssertEqual(button.contentEdgeInsets, size.description.contentEdgeInsets)
+    }
+    
+    func testButtonSetStyle() {
+        // given
+        let style = DesignSystem.Button.Style.primary(state: DesignSystem.Button.State.allCases.randomElement()!)
+        let button = AppCircularButton()
+        
+        // when
+        button.setStyle(to: style)
+        
+        // than
+        XCTAssertEqual(button.titleColor(for: .normal), style.description.textColor.value)
+        XCTAssertEqual(button.backgroundColor, style.description.blended)
+        XCTAssertEqual(button.borderWidth, style.description.borderWidth)
+        XCTAssertEqual(button.borderColor, style.description.borderColor?.value ?? .clear)
+        XCTAssertEqual(button.cornerRadius, style.description.cornerRadius)
     }
     
     // MAKR: UIView
     func testViewSetBackgorundColor() {
         // given
-        let color = DesignSystem.Color.neutral100
+        let color = DesignSystem.Color.neutral100()
         let view = UIView()
         
         // when
@@ -52,14 +81,14 @@ class DesignSystemExtensionTests: XCTestCase {
     func testViewSetTintColor() {
         // given
         let alpha = CGFloat.random(in: 0...1)
-        let color = DesignSystem.Color.neutral100
+        let color = DesignSystem.Color.neutral100(alpha: alpha)
         let view = UIView()
         
         // when
-        view.setTintColor(to: color, alpha: alpha)
+        view.setTintColor(to: color)
         
         // than
-        XCTAssertEqual(view.tintColor, color.value.withAlphaComponent(alpha))
+        XCTAssertEqual(view.tintColor, color.value)
     }
     
     // MAKR: UILabel
@@ -78,14 +107,14 @@ class DesignSystemExtensionTests: XCTestCase {
     func testLabelSetTitleColor() {
         // given
         let alpha = CGFloat.random(in: 0...1)
-        let color = DesignSystem.Color.neutral100
+        let color = DesignSystem.Color.neutral100(alpha: alpha)
         let label = UILabel()
         
         // when
-        label.setTextColor(to: color, alpha: alpha)
+        label.setTextColor(to: color)
         
         // than
-        XCTAssertEqual(label.textColor, color.value.withAlphaComponent(alpha))
+        XCTAssertEqual(label.textColor, color.value)
     }
     
     // MAKR: String

@@ -31,7 +31,7 @@ public extension UIViewController {
     }
 
     func setBaseBackgorundColor() {
-        view.setBackgorundColor(to: .neutral800)
+        view.setBackgorundColor(to: .neutral800())
     }
 
     func setupStandardSearchViewController(searchController: UISearchController) {
@@ -44,24 +44,24 @@ public extension UIViewController {
         searchController.searchBar.searchTextField.layer.masksToBounds = true
 
         searchController.searchBar.setImage(R.image.shared.search(), for: .search, state: .normal)
-        searchController.searchBar.searchTextField.leftView?.tintColor = DesignSystem.Color.neutral100.value
+        searchController.searchBar.searchTextField.leftView?.tintColor = DesignSystem.Color.neutral100().value
 
         searchController.searchBar.setPositionAdjustment(UIOffset(horizontal: 6, vertical: 0), for: .search)
         searchController.searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
 
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
-            .foregroundColor: DesignSystem.Color.neutral100.value,
+            .foregroundColor: DesignSystem.Color.neutral100().value,
             .font: DesignSystem.Typography.p.description.font
         ]
 
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
-            .foregroundColor: DesignSystem.Color.neutral100.value,
+            .foregroundColor: DesignSystem.Color.neutral100().value,
             .font: DesignSystem.Typography.p.description.font
         ], for: .normal)
 
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
 
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = DesignSystem.Color.neutral700.value
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = DesignSystem.Color.neutral700().value
 
         for item in searchController.searchBar.searchTextField.subviews where item.className == "_UISearchBarSearchFieldBackgroundView" {
             item.removeAllSubViews()
