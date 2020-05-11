@@ -181,6 +181,7 @@ public enum DesignSystem {
     /// Buttons
     public enum Button {
         public enum Size: CaseIterable {
+            case none
             case large
             case medium
             case small
@@ -193,6 +194,7 @@ public enum DesignSystem {
                 case .medium: return .init(typograhy: .h4(fontCase: .upper), contentEdgeInsets: .init(top: 11, left: 20, bottom: 9, right: 20))
                 case .small:  return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 9, left: 16, bottom: 7, right: 16))
                 case .xs:     return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 7, left: 12, bottom: 5, right: 12))
+                case .none:   return .init(typograhy: .body2, contentEdgeInsets: .zero)
                 }
             }
 
@@ -209,6 +211,7 @@ public enum DesignSystem {
             case tertiary(state: State)
             case outline(state: State)
             case ghost(state: State)
+            case textLink(state: State)
 
             public func makeHovered() -> Style {
                 switch self {
@@ -217,6 +220,7 @@ public enum DesignSystem {
                 case .tertiary(let state):  return state == .disabled ? self : .tertiary(state: .hovered)
                 case .outline(let state):   return state == .disabled ? self : .outline(state: .hovered)
                 case .ghost(let state):     return state == .disabled ? self : .ghost(state: .hovered)
+                case .textLink(let state):  return state == .disabled ? self : .textLink(state: .hovered)
                 }
             }
 
@@ -267,6 +271,15 @@ public enum DesignSystem {
                     case .focused:  return .init(textColor: .neutral100(alpha: 0.8), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.4))
                     case .disabled: return .init(textColor: .white(alpha: 0.4))
                     case .loading:  return .init(textColor: .white(), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.4))
+                    }
+                case .textLink(let state):
+                    switch state {
+                    case .normal:   return .init(textColor: .neutral100())
+                    case .hovered:  return .init(textColor: .neutral100(alpha: 0.8))
+                    case .acvite:   return .init(textColor: .neutral100())
+                    case .focused:  return .init(textColor: .neutral100())
+                    case .disabled: return .init(textColor: .neutral100(alpha: 0.8))
+                    case .loading:  return .init(textColor: .white())
                     }
                 }
             }

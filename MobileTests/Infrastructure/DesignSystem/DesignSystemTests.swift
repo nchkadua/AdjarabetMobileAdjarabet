@@ -317,12 +317,32 @@ class DesignSystemTests: XCTestCase {
             }
         }
         
+        /// text link
+        func testTextLink(state:  DesignSystem.Button.State) {
+            let description = DesignSystem.Button.Style.textLink(state: state).description
+            switch state {
+            case .normal:
+                XCTAssertEqual(description, .init(textColor: .neutral100()))
+            case .hovered:
+                XCTAssertEqual(description, .init(textColor: .neutral100(alpha: 0.8)))
+            case .acvite:
+                XCTAssertEqual(description, .init(textColor: .neutral100()))
+            case .focused:
+                XCTAssertEqual(description, .init(textColor: .neutral100()))
+            case .disabled:
+                XCTAssertEqual(description, .init(textColor: .neutral100(alpha: 0.8)))
+            case .loading:
+                XCTAssertEqual(description, .init(textColor: .white()))
+            }
+        }
+        
         DesignSystem.Button.State.allCases.forEach { state in
             testPrimary(state: state)
             testPrimary(state: state)
             testTertiary(state: state)
             testOutline(state: state)
             testGhost(state: state)
+            testTextLink(state: state)
         }
     }
 }
