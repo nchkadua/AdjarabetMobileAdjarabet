@@ -13,7 +13,7 @@ public extension String {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = description.lineSpasing
         paragraphStyle.alignment = alignment
-//        paragraphStyle.lineHeightMultiple = lineHeightMultiple
+//        paragraphStyle.lineHeightMultiple = description.lineHeight
 
         let attributedString = NSMutableAttributedString(string: self)
 

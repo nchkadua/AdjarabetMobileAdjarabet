@@ -46,6 +46,12 @@ public extension UIView {
     }
 }
 
+public extension AppCircularView {
+    func setBorderColor(to color: DesignSystem.Color) {
+        self.borderColor = color.value
+    }
+}
+
 public struct EdgeConstraint {
     public let top: NSLayoutConstraint
     public let bottom: NSLayoutConstraint

@@ -53,6 +53,9 @@
 		D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */; };
 		D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */; };
 		D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */; };
+		D8442AA22469716600F32676 /* ABInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8442AA12469716600F32676 /* ABInputView.swift */; };
+		D8442AA42469716C00F32676 /* ABInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8442AA32469716C00F32676 /* ABInputView.xib */; };
+		D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8442AA52469801A00F32676 /* UITextField+Extension.swift */; };
 		D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845BFB82445F93900419A2C /* UIView+Extension.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */; };
@@ -211,6 +214,9 @@
 		D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewControllerFactory.swift; sourceTree = "<group>"; };
 		D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewControllerFactory.swift; sourceTree = "<group>"; };
 		D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarNavigator.swift; sourceTree = "<group>"; };
+		D8442AA12469716600F32676 /* ABInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABInputView.swift; sourceTree = "<group>"; };
+		D8442AA32469716C00F32676 /* ABInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ABInputView.xib; sourceTree = "<group>"; };
+		D8442AA52469801A00F32676 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D845BFB82445F93900419A2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClient.swift; sourceTree = "<group>"; };
 		D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientRequestBuilder.swift; sourceTree = "<group>"; };
@@ -465,6 +471,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D8442A9F24696F2700F32676 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				D8442AA12469716600F32676 /* ABInputView.swift */,
+				D8442AA32469716C00F32676 /* ABInputView.xib */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
 		D845BFBA2445FD7400419A2C /* Sports */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +535,7 @@
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
 				D86253BA24653AA000F7DE0C /* Button */,
+				D8442A9F24696F2700F32676 /* Input */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -616,7 +632,7 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-    D86253B12464213B00F7DE0C /* Infrastructure */ = {
+		D86253B12464213B00F7DE0C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
 				D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */,
@@ -624,8 +640,8 @@
 				D86253B6246429D000F7DE0C /* DataTransferService.swift */,
 			);
 			path = Infrastructure;
-      sourceTree = "<group>";
-    };
+			sourceTree = "<group>";
+		};
 		D86253BA24653AA000F7DE0C /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +845,7 @@
 				D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */,
 				D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */,
 				D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */,
+				D8442AA52469801A00F32676 /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1080,6 +1097,7 @@
 				D80784822444727600003892 /* FiraGO-Two.ttf in Resources */,
 				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
+				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
 				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,
@@ -1281,6 +1299,7 @@
 				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
 				D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
+				D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
@@ -1293,6 +1312,7 @@
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D8F26A05246837B700137252 /* LoginType.swift in Sources */,
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
+				D8442AA22469716600F32676 /* ABInputView.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,

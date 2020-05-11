@@ -900,8 +900,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
+    /// Nib `ABInputView`.
+    static let abInputView = _R.nib._ABInputView()
     /// Nib `GameLauncherCollectionViewCell`.
     static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
     /// Nib `GameLauncherComponentView`.
@@ -914,6 +916,14 @@ struct R: Rswift.Validatable {
     static let recentlyPlayedCollectionViewCell = _R.nib._RecentlyPlayedCollectionViewCell()
     /// Nib `RecentlyPlayedComponentView`.
     static let recentlyPlayedComponentView = _R.nib._RecentlyPlayedComponentView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ABInputView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.abInputView) instead")
+    static func abInputView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.abInputView)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "GameLauncherCollectionViewCell", in: bundle)`
@@ -962,6 +972,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.recentlyPlayedComponentView)
     }
     #endif
+
+    static func abInputView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.abInputView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
 
     static func gameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherCollectionViewCell? {
       return R.nib.gameLauncherCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherCollectionViewCell
@@ -1218,6 +1232,17 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _GameLauncherComponentView.validate()
+    }
+
+    struct _ABInputView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ABInputView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
     }
 
     struct _GameLauncherCollectionViewCell: Rswift.NibResourceType {
