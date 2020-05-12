@@ -35,6 +35,6 @@ public class DefaultMainTabBarNavigator: Navigator {
         promotions.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
         notifications.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
 
-        return [home, sports, promotions, notifications].map { $0.wrap(in: AppNavigationController.self) }
+        return [home, sports, promotions, notifications].map { $0.wrap(in: ABNavigationController.self) }
     }
 }

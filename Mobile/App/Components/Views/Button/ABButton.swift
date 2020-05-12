@@ -9,9 +9,11 @@
 @IBDesignable
 public class ABButton: AppShadowButton {
     /// Default style
-    private var primaryStyle: DesignSystem.Button.Style? { didSet { hoveredStyle = primaryStyle?.makeHovered() }}
+    private var primaryStyle: DesignSystem.Button.Style?
     /// Style when button is isHighlighted
-    private var hoveredStyle: DesignSystem.Button.Style?
+    private var hoveredStyle: DesignSystem.Button.Style? {
+        buttonType == .custom ? primaryStyle?.makeHovered() : primaryStyle
+    }
 
     public override var isHighlighted: Bool {
         get { return super.isHighlighted }
@@ -24,7 +26,6 @@ public class ABButton: AppShadowButton {
     public convenience init(style: DesignSystem.Button.Style) {
         self.init(frame: .zero)
         self.primaryStyle = style
-        self.hoveredStyle = style.makeHovered()
         sharedInitialization()
     }
 

@@ -158,15 +158,8 @@ public class HomeViewController: UIViewController {
     // MARK: Reactive methods
     private func didReceive(action: RecentlyPlayedComponentViewModelOutputAction) {
         switch action {
-        case .didSelectPlayedGame(let vm, _):
-            let alert = UIAlertController(title: vm.params.name, message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        case .didSelectViewAll(let vm):
-            print(vm)
-            let alert = UIAlertController(title: "View All", message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+        case .didSelectPlayedGame(let vm, _): showAlert(title: vm.params.name)
+        case .didSelectViewAll: showAlert(title: "View All")
         default: break
         }
     }

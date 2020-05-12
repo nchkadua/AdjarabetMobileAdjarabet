@@ -35,6 +35,8 @@
 		D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */; };
 		D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */; };
 		D83026C024518528006FF7FB /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83026BF24518528006FF7FB /* DummyData.swift */; };
+		D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */; };
+		D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E75246B14F600EF8CB5 /* ABViewController.swift */; };
 		D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F0244C8C860037DDEB /* CircularImageView.swift */; };
 		D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */; };
 		D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */; };
@@ -85,7 +87,7 @@
 		D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */; };
 		D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */; };
 		D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C3124336D0800F1D4FE /* Login.storyboard */; };
-		D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */; };
+		D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */; };
 		D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */; };
 		D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA8B2466B5AB0054D058 /* Builder.swift */; };
 		D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */; };
@@ -199,6 +201,8 @@
 		D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Bold.otf"; sourceTree = "<group>"; };
 		D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Regular.otf"; sourceTree = "<group>"; };
 		D83026BF24518528006FF7FB /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardListening.swift; sourceTree = "<group>"; };
+		D8390E75246B14F600EF8CB5 /* ABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABViewController.swift; sourceTree = "<group>"; };
 		D83ED2F0244C8C860037DDEB /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -250,7 +254,7 @@
 		D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		D85C9C3124336D0800F1D4FE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABNavigationController.swift; sourceTree = "<group>"; };
 		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
 		D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthenticationRepository.swift; sourceTree = "<group>"; };
 		D861DA8B2466B5AB0054D058 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
@@ -555,6 +559,7 @@
 				D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */,
 				D84202D72451AD8400F0F056 /* BaseViewModel.swift */,
 				D86253AC2464197500F7DE0C /* Cancelable.swift */,
+				D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -725,8 +730,9 @@
 		D87E3C5C244600BF004A4BDF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D85C9C3324336D1F00F1D4FE /* AppNavigationController.swift */,
+				D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */,
 				D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */,
+				D8390E75246B14F600EF8CB5 /* ABViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -805,12 +811,12 @@
 		D8A47DE924335DDE0077AA8E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D85C9C2524336CD100F1D4FE /* Login */,
 				D85C9C2424336CCC00F1D4FE /* MainTabBar */,
 				D8C73F7D2445A62D004C96DB /* Home */,
 				D845BFBA2445FD7400419A2C /* Sports */,
 				D87E3C4D2445FDA3004A4BDF /* Promotions */,
 				D87E3C4E2445FDAD004A4BDF /* Notifications */,
-				D85C9C2524336CD100F1D4FE /* Login */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -1312,7 +1318,7 @@
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
 				D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */,
-				D85C9C3424336D1F00F1D4FE /* AppNavigationController.swift in Sources */,
+				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
@@ -1347,11 +1353,13 @@
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
 				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
+				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
+				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
