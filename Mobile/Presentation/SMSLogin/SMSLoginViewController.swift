@@ -79,7 +79,7 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupNavigationItem() {
-        setBackBarButtonItemIfNeeded(width: 26)
+        setBackBarButtonItemIfNeeded(width: 22)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
