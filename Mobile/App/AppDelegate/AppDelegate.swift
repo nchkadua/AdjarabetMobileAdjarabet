@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     override init() {
@@ -46,5 +46,9 @@ public extension DependencyContainer {
 
     static var repositories = DependencyContainer {
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
+    }
+
+    static var factories = DependencyContainer {
+        Module { DefaultSMSLoginFactory() as SMSLoginFactory }
     }
 }

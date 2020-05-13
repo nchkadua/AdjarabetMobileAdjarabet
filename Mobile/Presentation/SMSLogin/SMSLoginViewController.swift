@@ -152,13 +152,10 @@ public class SMSLoginViewController: ABViewController {
         viewModel.textDidChange(to: textField.text)
     }
 
-    // MARK: UI Congiguration
+    // MARK: Configuration
     private func updateSMSCodeInputView(texts: [String?]) {
         texts.enumerated().forEach { index, text in
-            smsCodeInputView[index].setText(text, animationDuration: 0.25)
-//            UIView.animate(withDuration: 0.25, animations: { [weak self] in
-//            }, completion: { _ in
-//            })
+            smsCodeInputView[index].setText(text, animationDuration: 0.2)
         }
     }
 }

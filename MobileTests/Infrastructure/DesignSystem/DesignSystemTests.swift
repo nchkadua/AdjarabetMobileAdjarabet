@@ -83,8 +83,8 @@ class DesignSystemTests: XCTestCase {
 
             XCTAssertEqual(DesignSystem.Typography.h4(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.h4(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h4(fontCase: .lower), pointSize: 14, lineSpasing: 0.3, lineHeight: 24)
-            testDescription(typography: .h4(fontCase: .upper), pointSize: 14, lineSpasing: 0.3, lineHeight: 24)
+            testDescription(typography: .h4(fontCase: .lower), pointSize: 14, lineSpasing: 0.3, lineHeight: 20)
+            testDescription(typography: .h4(fontCase: .upper), pointSize: 14, lineSpasing: 0.3, lineHeight: 20)
 
             XCTAssertEqual(DesignSystem.Typography.h5(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.h5(fontCase: .upper).description.font.fontName, upperHeaderFontName)

@@ -48,16 +48,19 @@ public class LoginViewController: ABViewController {
 //        viewModel.action.subscribe(onNext: { [weak self] action in
 //            self?.didRecive(action: action)
 //        }).disposed(by: disposeBag)
-//
-//        viewModel.route.subscribe(onNext: { [weak self] route in
-//            self?.didRecive(route: route)
-//        }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: LoginViewModelOutputAction) {
     }
 
     private func didRecive(route: LoginViewModelRoute) {
+        switch route {
+        case .openSMSLogin(let params): navigator.navigate(to: .smsLogin(params: params), animated: true)
+        }
     }
 
     // MAKR: Setup methods
@@ -75,7 +78,6 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupScrollView() {
-//        scrollView.keyboardDismissMode = .interactive
         scrollView.alwaysBounceVertical = true
     }
 
@@ -93,6 +95,7 @@ public class LoginViewController: ABViewController {
         joinNowButton.setSize(to: .medium)
         joinNowButton.setStyle(to: .ghost(state: .acvite))
         joinNowButton.setTitleWithoutAnimation("Join now", for: .normal)
+        joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
 
         forgotPasswordButton.setSize(to: .none)
@@ -141,9 +144,7 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func smsLoginDidTap() {
-        let vc = R.storyboard.smsLogin().instantiate(controller: SMSLoginViewController.self)!
-        vc.viewModel = DefaultSMSLoginViewModel(params: .init())
-        navigationController?.pushViewController(vc, animated: true)
+        viewModel.smsLogin()
     }
 
     @objc private func loginDidTap() {

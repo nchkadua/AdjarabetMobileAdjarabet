@@ -7,6 +7,8 @@
 //
 
 public class LoginNavigator: Navigator {
+    @Inject(from: .factories) public var smsLoginFactory: SMSLoginFactory
+
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {
@@ -14,8 +16,14 @@ public class LoginNavigator: Navigator {
     }
 
     public enum Destination {
+        case smsLogin(params: SMSLoginViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
+        switch destination {
+        case .smsLogin(let params):
+            let vc = smsLoginFactory.make(params: params)
+            viewController?.navigationController?.pushViewController(vc, animated: animate)
+        }
     }
 }

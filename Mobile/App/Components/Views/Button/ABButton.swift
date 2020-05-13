@@ -11,17 +11,16 @@ public class ABButton: AppShadowButton {
     /// Default style
     private var primaryStyle: DesignSystem.Button.Style?
     /// Style when button is isHighlighted
-    private var hoveredStyle: DesignSystem.Button.Style? {
-        buttonType == .custom ? primaryStyle?.makeHovered() : primaryStyle
-    }
-
-    public override var isHighlighted: Bool {
-        get { return super.isHighlighted }
-        set {
-            super.isHighlighted = newValue
-            configure(animated: true)
-        }
-    }
+//    private var hoveredStyle: DesignSystem.Button.Style? {
+//        buttonType == .custom ? primaryStyle?.makeHovered() : primaryStyle
+//    }
+//    public override var isHighlighted: Bool {
+//        get { return super.isHighlighted }
+//        set {
+//            super.isHighlighted = newValue
+//            configure(animated: true)
+//        }
+//    }
 
     public convenience init(style: DesignSystem.Button.Style) {
         self.init(frame: .zero)
@@ -53,7 +52,7 @@ public class ABButton: AppShadowButton {
     }
 
     private func configure(animated animate: Bool = false) {
-        guard let style = isHighlighted ? hoveredStyle : primaryStyle else {return}
+        guard let style = primaryStyle else {return}
 
         UIView.animate(withDuration: animate ? 0.15 : 0) {
             super.setStyle(to: style)

@@ -14,20 +14,6 @@ class ABButtonTests: XCTestCase {
         // given
         let style = DesignSystem.Button.Style.primary(state: DesignSystem.Button.State.allCases.randomElement()!)
         let button = ABButton()
-        button.isHighlighted = false
-        
-        // when
-        button.setStyle(to: style)
-        
-        // than
-        test(button: button, style: style)
-    }
-    
-    func testButtonSetStyleWhenHighlighted() {
-        // given
-        let style = DesignSystem.Button.Style.primary(state: DesignSystem.Button.State.allCases.randomElement()!).makeHovered()
-        let button = ABButton()
-        button.isHighlighted = true
         
         // when
         button.setStyle(to: style)

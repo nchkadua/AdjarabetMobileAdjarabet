@@ -19,3 +19,15 @@ public class SMSLoginNavigator: Navigator {
     public func navigate(to destination: Destination, animated animate: Bool) {
     }
 }
+
+public protocol SMSLoginFactory {
+    func make(params: SMSLoginViewModelParams) -> SMSLoginViewController
+}
+
+public class DefaultSMSLoginFactory: SMSLoginFactory {
+    public func make(params: SMSLoginViewModelParams) -> SMSLoginViewController {
+        let vc = R.storyboard.smsLogin().instantiateInitial(controller: SMSLoginViewController.self)!
+        vc.viewModel = DefaultSMSLoginViewModel(params: params)
+        return vc
+    }
+}
