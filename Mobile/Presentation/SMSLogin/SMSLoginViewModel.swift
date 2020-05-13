@@ -16,6 +16,8 @@ public struct SMSLoginViewModelParams {
 
 public protocol SMSLoginViewModelInput {
     func viewDidLoad()
+    func textDidChange(to text: String?)
+    func shouldChangeCharacters(for text: String) -> Bool
 }
 
 public protocol SMSLoginViewModelOutput {
@@ -25,6 +27,8 @@ public protocol SMSLoginViewModelOutput {
 }
 
 public enum SMSLoginViewModelOutputAction {
+    case configureSMSInputForNumberOfItems(Int)
+    case updateSMSCodeInputView(text: [String?])
 }
 
 public enum SMSLoginViewModelRoute {
@@ -34,6 +38,7 @@ public class DefaultSMSLoginViewModel {
     private let actionSubject = PublishSubject<SMSLoginViewModelOutputAction>()
     private let routeSubject = PublishSubject<SMSLoginViewModelRoute>()
     public let params: SMSLoginViewModelParams
+    private let smsCodeLength = 6
 
     public init(params: SMSLoginViewModelParams) {
         self.params = params
@@ -45,5 +50,20 @@ extension DefaultSMSLoginViewModel: SMSLoginViewModel {
     public var route: Observable<SMSLoginViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        actionSubject.onNext(.configureSMSInputForNumberOfItems(smsCodeLength))
+    }
+
+    public func textDidChange(to text: String?) {
+        let text = text ?? ""
+
+        let texts = (0..<smsCodeLength).map { index in
+            index < text.count ? String(text[text.index(text.startIndex, offsetBy: index)]) : nil
+        }
+
+        actionSubject.onNext(.updateSMSCodeInputView(text: texts))
+    }
+
+    public func shouldChangeCharacters(for text: String) -> Bool {
+        text.count <= smsCodeLength
     }
 }

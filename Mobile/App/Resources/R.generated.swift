@@ -864,6 +864,21 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.smsLogin` struct is generated, and contains static references to 1 images.
+    struct smsLogin {
+      /// Image `resend`.
+      static let resend = Rswift.ImageResource(bundle: R.hostingBundle, name: "SMSLogin/resend")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "resend", bundle: ..., traitCollection: ...)`
+      static func resend(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.smsLogin.resend, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.tabBar` struct is generated, and contains static references to 4 images.
     struct tabBar {
       /// Image `home`.

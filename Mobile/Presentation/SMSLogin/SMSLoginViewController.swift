@@ -17,24 +17,39 @@ public class SMSLoginViewController: ABViewController {
     @IBOutlet private weak var smsLoginTitleLabel: UILabel!
     @IBOutlet private weak var smsLoginDescriptionLabel: UILabel!
     @IBOutlet private weak var resentSMSButton: ABButton!
+    @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
     @IBOutlet private weak var loginButton: ABButton!
     @IBOutlet private weak var notMemberLabel: UILabel!
     @IBOutlet private weak var joinNowButton: ABButton!
+
+    private lazy var smsCodeTextField: UITextField = {
+        let f = UITextField()
+        f.translatesAutoresizingMaskIntoConstraints = false
+        f.keyboardType = .asciiCapableNumberPad
+        f.delegate = self
+        f.isHidden = true
+        f.alpha = 0
+        f.textContentType = .oneTimeCode
+        return f
+    }()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+        addKeyboardDismissOnTap()
+        observeKeyboardNotifications()
+
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: SMSLoginViewModel) {
-//        viewModel.action.subscribe(onNext: { [weak self] action in
-//            self?.didRecive(action: action)
-//        }).disposed(by: disposeBag)
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
 //
 //        viewModel.route.subscribe(onNext: { [weak self] route in
 //            self?.didRecive(route: route)
@@ -42,6 +57,12 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func didRecive(action: SMSLoginViewModelOutputAction) {
+        switch action {
+        case .configureSMSInputForNumberOfItems(let count):
+            smsCodeInputView.configureForNumberOfItems(count)
+        case .updateSMSCodeInputView(let text):
+            updateSMSCodeInputView(texts: text)
+        }
     }
 
     private func didRecive(route: SMSLoginViewModelRoute) {
@@ -54,6 +75,7 @@ public class SMSLoginViewController: ABViewController {
         setupScrollView()
         setupLabels()
         setupButtons()
+        setupSMSCodeInputView()
     }
 
     private func setupNavigationItem() {
@@ -83,6 +105,8 @@ public class SMSLoginViewController: ABViewController {
         resentSMSButton.setStyle(to: .textLink(state: .acvite))
         resentSMSButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
         resentSMSButton.setTitleWithoutAnimation("Resend SMS", for: .normal)
+        resentSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
+        resentSMSButton.imageEdgeInsets = .init(top: 0, left: -3, bottom: 0, right: 0)
         resentSMSButton.addTarget(self, action: #selector(resentSMSDidTap), for: .touchUpInside)
 
         loginButton.setSize(to: .large)
@@ -97,7 +121,21 @@ public class SMSLoginViewController: ABViewController {
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
     }
 
+    private func setupSMSCodeInputView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showKeyboard))
+        smsCodeInputView.addGestureRecognizer(tap)
+
+        smsCodeInputView.addSubview(smsCodeTextField)
+        smsCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+
+        smsCodeInputView.configureForNumberOfItems(6)
+    }
+
     // MARK: Actions
+    @objc private func showKeyboard() {
+        smsCodeTextField.becomeFirstResponder()
+    }
+
     @objc private func joinNowDidTap() {
         showAlert(title: "Join now")
     }
@@ -108,5 +146,28 @@ public class SMSLoginViewController: ABViewController {
 
     @objc private func loginDidTap() {
         showAlert(title: "Log in")
+    }
+
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        viewModel.textDidChange(to: textField.text)
+    }
+
+    // MARK: UI Congiguration
+    private func updateSMSCodeInputView(texts: [String?]) {
+        texts.enumerated().forEach { index, text in
+            smsCodeInputView[index].setText(text, animationDuration: 0.25)
+//            UIView.animate(withDuration: 0.25, animations: { [weak self] in
+//            }, completion: { _ in
+//            })
+        }
+    }
+}
+
+// MAKR: UITextFieldDelegate
+extension SMSLoginViewController: UITextFieldDelegate {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let result = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
+
+        return viewModel.shouldChangeCharacters(for: result)
     }
 }

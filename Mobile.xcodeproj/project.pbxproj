@@ -121,6 +121,8 @@
 		D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */; };
 		D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */; };
 		D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */; };
+		D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */; };
+		D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863697246C485500FF061D /* SMSCodeInputView.swift */; };
 		D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */; };
 		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
 		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
@@ -293,6 +295,8 @@
 		D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewModel.swift; sourceTree = "<group>"; };
 		D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeDigitView.swift; sourceTree = "<group>"; };
+		D8863697246C485500FF061D /* SMSCodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeInputView.swift; sourceTree = "<group>"; };
 		D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
 		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -449,6 +453,7 @@
 				D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */,
 				D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */,
 				D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */,
+				D8863699246C4F4400FF061D /* Views */,
 			);
 			path = SMSLogin;
 			sourceTree = "<group>";
@@ -754,6 +759,15 @@
 				D8390E75246B14F600EF8CB5 /* ABViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D8863699246C4F4400FF061D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */,
+				D8863697246C485500FF061D /* SMSCodeInputView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D8972FE424484E80001A6B13 /* Presentation */ = {
@@ -1327,6 +1341,7 @@
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
+				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
@@ -1363,6 +1378,7 @@
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
+				D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */,
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
