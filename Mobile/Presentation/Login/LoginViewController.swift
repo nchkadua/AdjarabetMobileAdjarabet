@@ -29,19 +29,13 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var loginButton: ABButton!
 
     // MARK: Overrides
-    public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     public override var keyScrollView: UIScrollView? { scrollView }
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        setBaseBackgorundColor()
-        setupNavigationItem()
-        setupScrollView()
-        setupLabels()
-        setupButtons()
-        setupInputViews()
+        setup()
         observeKeyboardNotifications()
         addKeyboardDismissOnTap()
 
@@ -67,6 +61,15 @@ public class LoginViewController: ABViewController {
     }
 
     // MAKR: Setup methods
+    private func setup() {
+        setBaseBackgorundColor()
+        setupNavigationItem()
+        setupScrollView()
+        setupLabels()
+        setupButtons()
+        setupInputViews()
+    }
+
     private func setupNavigationItem() {
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
@@ -90,7 +93,6 @@ public class LoginViewController: ABViewController {
         joinNowButton.setSize(to: .medium)
         joinNowButton.setStyle(to: .ghost(state: .acvite))
         joinNowButton.setTitleWithoutAnimation("Join now", for: .normal)
-        joinNowButton.contentEdgeInsets = .zero
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
 
         forgotPasswordButton.setSize(to: .none)
@@ -139,7 +141,9 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func smsLoginDidTap() {
-        showAlert(title: "SMS Login")
+        let vc = R.storyboard.smsLogin().instantiate(controller: SMSLoginViewController.self)!
+        vc.viewModel = DefaultSMSLoginViewModel(params: .init())
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc private func loginDidTap() {

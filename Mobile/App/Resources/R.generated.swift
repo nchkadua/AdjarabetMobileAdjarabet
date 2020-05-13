@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
@@ -104,6 +104,8 @@ struct R: Rswift.Validatable {
     static let notifications = _R.storyboard.notifications()
     /// Storyboard `Promotions`.
     static let promotions = _R.storyboard.promotions()
+    /// Storyboard `SMSLogin`.
+    static let smsLogin = _R.storyboard.smsLogin()
     /// Storyboard `Sports`.
     static let sports = _R.storyboard.sports()
 
@@ -146,6 +148,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Promotions", bundle: ...)`
     static func promotions(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.promotions)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SMSLogin", bundle: ...)`
+    static func smsLogin(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.smsLogin)
     }
     #endif
 
@@ -1343,6 +1352,9 @@ struct _R: Rswift.Validatable {
       try promotions.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try smsLogin.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try sports.validate()
       #endif
     }
@@ -1472,6 +1484,28 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.promotions().promotionsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'promotionsViewController' could not be loaded from storyboard 'Promotions' as 'PromotionsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct smsLogin: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SMSLoginViewController
+
+      let bundle = R.hostingBundle
+      let name = "SMSLogin"
+      let smsLoginViewController = StoryboardViewControllerResource<SMSLoginViewController>(identifier: "SMSLoginViewController")
+
+      func smsLoginViewController(_: Void = ()) -> SMSLoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: smsLoginViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.smsLogin().smsLoginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'smsLoginViewController' could not be loaded from storyboard 'SMSLogin' as 'SMSLoginViewController'.") }
       }
 
       fileprivate init() {}

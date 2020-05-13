@@ -7,11 +7,11 @@
 //
 
 public extension String {
-    func makeAttributedString(with typography: DesignSystem.Typography, alignment: NSTextAlignment = .left) -> NSMutableAttributedString {
+    func makeAttributedString(with typography: DesignSystem.Typography, alignment: NSTextAlignment = .left, lineSpasing: CGFloat? = nil) -> NSMutableAttributedString {
         let description = typography.description
 
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = description.lineSpasing
+        paragraphStyle.lineSpacing = lineSpasing ?? description.lineSpasing
         paragraphStyle.alignment = alignment
 //        paragraphStyle.minimumLineHeight = description.lineHeight
 
