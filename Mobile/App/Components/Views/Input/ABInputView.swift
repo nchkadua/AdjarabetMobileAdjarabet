@@ -94,7 +94,7 @@ public class ABInputView: UIView {
             textFieldBottomConstraint.isActive          = !textFieldCenterYConstraint.isActive
             wrapperView.setBorderColor(
                 to: textField.isFirstResponder ? DesignSystem.Input.borderColor : DesignSystem.Input.backgroundColor,
-                animationDuration: animate ? 0.25 : 0)
+                animationDuration: animate ? 0.2 : 0)
             view.layoutIfNeeded()
         }
 
@@ -103,7 +103,7 @@ public class ABInputView: UIView {
             return
         }
 
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.2) {
             set()
         }
     }
