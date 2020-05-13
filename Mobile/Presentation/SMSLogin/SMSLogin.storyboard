@@ -19,19 +19,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kd7-Y8-Qax">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="314.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qzc-Fn-qIQ">
-                                                <rect key="frame" x="20" y="14" width="374" height="86"/>
+                                                <rect key="frame" x="20" y="14.000000000000004" width="374" height="40.333333333333343"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oiz-uf-MjX">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS Login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oiz-uf-MjX">
                                                         <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We sent a confirmation code to your mobile phone number (+995 599 23 98 49)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2T-oc-qFf">
-                                                        <rect key="frame" x="0.0" y="25.333333333333325" width="336.66666666666669" height="40.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -40,7 +34,7 @@
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="20" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-2d-e1a">
-                                                <rect key="frame" x="20" y="100" width="374" height="138"/>
+                                                <rect key="frame" x="20" y="54.333333333333329" width="374" height="138"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R74-wT-6DH">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -52,7 +46,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-P3-eho" customClass="SMSCodeInputView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="46" width="374" height="60"/>
+                                                        <rect key="frame" x="0.0" y="46.000000000000014" width="374" height="60"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="VJh-Tl-11p"/>
@@ -62,7 +56,7 @@
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="32" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEN-gC-VkM">
-                                                <rect key="frame" x="20" y="238" width="374" height="102"/>
+                                                <rect key="frame" x="20" y="192.33333333333334" width="374" height="102.00000000000003"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rrt-Kc-5O0">
                                                         <rect key="frame" x="0.0" y="14" width="374" height="30"/>
@@ -74,7 +68,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HOG-uI-4uX">
-                                                        <rect key="frame" x="0.0" y="72" width="374" height="30"/>
+                                                        <rect key="frame" x="0.0" y="71.999999999999972" width="374" height="30"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gra-h6-upX">
                                                                 <rect key="frame" x="92.333333333333329" y="0.0" width="189.33333333333337" height="30"/>
@@ -128,7 +122,6 @@
                         <outlet property="resentSMSButton" destination="qeM-K8-8Zc" id="BQa-BH-Pgd"/>
                         <outlet property="scrollView" destination="WNY-zV-0Ip" id="9Na-nV-XQj"/>
                         <outlet property="smsCodeInputView" destination="sGc-P3-eho" id="25F-7T-hmf"/>
-                        <outlet property="smsLoginDescriptionLabel" destination="G2T-oc-qFf" id="c0A-Rm-4A6"/>
                         <outlet property="smsLoginTitleLabel" destination="Oiz-uf-MjX" id="VQh-CL-m7t"/>
                     </connections>
                 </viewController>

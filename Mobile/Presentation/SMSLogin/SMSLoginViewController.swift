@@ -15,7 +15,6 @@ public class SMSLoginViewController: ABViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var smsLoginTitleLabel: UILabel!
-    @IBOutlet private weak var smsLoginDescriptionLabel: UILabel!
     @IBOutlet private weak var resentSMSButton: ABButton!
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
     @IBOutlet private weak var loginButton: ABButton!
@@ -90,10 +89,16 @@ public class SMSLoginViewController: ABViewController {
     private func setupLabels() {
         smsLoginTitleLabel.setTextColor(to: .white())
         smsLoginTitleLabel.setFont(to: .h2(fontCase: .lower))
-        smsLoginTitleLabel.text = "SMS Login"
 
-        smsLoginDescriptionLabel.setTextColor(to: .neutral100(alpha: 0.8))
-        smsLoginDescriptionLabel.attributedText = "We sent a confirmation code to your mobile phone number (+995 599 23 98 49)".makeAttributedString(with: .p, lineSpasing: 4)
+        let smsLogin = "SMS Login\n".makeAttributedString(with: .h2(fontCase: .lower),
+                                                          lineSpasing: 4,
+                                                          foregroundColor: .white())
+        let smsLoginDescription = "We sent a confirmation code to your mobile phone number (+995 599 23 98 49)"
+            .makeAttributedString(with: .p,
+                                  lineSpasing: 4,
+                                  foregroundColor: .neutral100(alpha: 0.8))
+        smsLogin.append(smsLoginDescription)
+        smsLoginTitleLabel.attributedText = smsLogin
 
         notMemberLabel.setTextColor(to: .neutral100(alpha: 0.6))
         notMemberLabel.setFont(to: .h4(fontCase: .lower))
