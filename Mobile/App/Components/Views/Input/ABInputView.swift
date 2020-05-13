@@ -8,7 +8,7 @@
 
 public class ABInputView: UIView {
     // MARK: Outlets
-    @IBOutlet weak private var view: UIView!
+    @IBOutlet private weak var view: UIView!
 
     @IBOutlet private weak var wrapperView: AppCircularView!
     @IBOutlet private weak var wrapperViewHeightConstraint: NSLayoutConstraint!
@@ -89,11 +89,11 @@ public class ABInputView: UIView {
         let isCenter = !(textField.isFirstResponder || textField.text?.isEmpty == false)
 
         func set() {
-            placeholderLabelCenterYConstraint.isActive = isCenter
-            textFieldCenterYConstraint.isActive = isCenter
-            textFieldBottomConstraint.isActive = !textFieldCenterYConstraint.isActive
+            placeholderLabelCenterYConstraint.isActive  = isCenter
+            textFieldCenterYConstraint.isActive         = isCenter
+            textFieldBottomConstraint.isActive          = !textFieldCenterYConstraint.isActive
             wrapperView.setBorderColor(
-                to: isCenter ? DesignSystem.Input.backgroundColor : DesignSystem.Input.borderColor,
+                to: textField.isFirstResponder ? DesignSystem.Input.borderColor : DesignSystem.Input.backgroundColor,
                 animationDuration: animate ? 0.25 : 0)
             view.layoutIfNeeded()
         }
@@ -194,8 +194,6 @@ extension ABInputView: UITextFieldDelegate {
     }
 
     @objc fileprivate func textFieldDidChange(_ textField: UITextField) {
-//        delegate?.textDidChange?(to: textField.text)
-//
-//        adjustPlaceholder()
+
     }
 }
