@@ -20,15 +20,15 @@ public extension String {
 //        paragraphStyle.minimumLineHeight = description.lineHeight
 
         let attributedString = NSMutableAttributedString(string: self)
-        var attrs: [NSAttributedString.Key : Any] = [
+        var attrs: [NSAttributedString.Key: Any] = [
             .font: description.font,
             .paragraphStyle: paragraphStyle
         ]
-        
+
         if let foregroundColor = foregroundColor {
             attrs[.foregroundColor] = foregroundColor.value
         }
-        
+
         attributedString.addAttributes(attrs, range: NSRange(location: 0, length: attributedString.length))
 
         return attributedString

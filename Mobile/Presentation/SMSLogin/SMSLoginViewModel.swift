@@ -18,6 +18,7 @@ public protocol SMSLoginViewModelInput {
     func viewDidLoad()
     func textDidChange(to text: String?)
     func shouldChangeCharacters(for text: String) -> Bool
+    func shoudEnableLoginButton(fot text: String?) -> Bool
 }
 
 public protocol SMSLoginViewModelOutput {
@@ -65,5 +66,9 @@ extension DefaultSMSLoginViewModel: SMSLoginViewModel {
 
     public func shouldChangeCharacters(for text: String) -> Bool {
         text.count <= smsCodeLength
+    }
+
+    public func shoudEnableLoginButton(fot text: String?) -> Bool {
+        (text ?? "").count == smsCodeLength
     }
 }

@@ -44,12 +44,18 @@ public class SMSLoginViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        smsCodeTextField.becomeFirstResponder()
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: SMSLoginViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-//
+
 //        viewModel.route.subscribe(onNext: { [weak self] route in
 //            self?.didRecive(route: route)
 //        }).disposed(by: disposeBag)
@@ -113,6 +119,7 @@ public class SMSLoginViewController: ABViewController {
         resentSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
         resentSMSButton.imageEdgeInsets = .init(top: 0, left: -3, bottom: 0, right: 0)
         resentSMSButton.addTarget(self, action: #selector(resentSMSDidTap), for: .touchUpInside)
+        updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
         loginButton.setSize(to: .large)
         loginButton.setStyle(to: .primary(state: .disabled))
@@ -155,6 +162,7 @@ public class SMSLoginViewController: ABViewController {
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
         viewModel.textDidChange(to: textField.text)
+        updateLoginButtonWhen(smsCodeText: textField.text, animated: true)
     }
 
     // MARK: Configuration
@@ -162,6 +170,13 @@ public class SMSLoginViewController: ABViewController {
         texts.enumerated().forEach { index, text in
             smsCodeInputView[index].setText(text, animationDuration: 0.2)
         }
+    }
+
+    private func updateLoginButtonWhen(smsCodeText: String?, animated animate: Bool) {
+        let isEnabled = viewModel.shoudEnableLoginButton(fot: smsCodeText)
+        loginButton.isUserInteractionEnabled = isEnabled
+
+        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled))
     }
 }
 
