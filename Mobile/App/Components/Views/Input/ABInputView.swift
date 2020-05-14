@@ -112,6 +112,18 @@ public class ABInputView: UIView {
             set()
         }
     }
+
+    public func toggleSecureTextEntry() {
+        textField.isSecureTextEntry.toggle()
+    }
+
+    public func becomeSecureTextEntry() {
+        textField.isSecureTextEntry = true
+    }
+
+    public func dropSecureTextEntry() {
+        textField.isSecureTextEntry = false
+    }
 }
 
 extension ABInputView: Xibable {
@@ -182,10 +194,12 @@ extension ABInputView: Xibable {
     }
 
     private func setupLeftButton() {
+        rightButton.backgroundColor = nil
         leftButton.superview?.isHidden = true
     }
 
     private func setupRightButton() {
-        rightButton.superview?.isHidden = true
+        rightButton.backgroundColor = nil
+        rightButton.superview?.isHidden = false
     }
 }

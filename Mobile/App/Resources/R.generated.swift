@@ -784,27 +784,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// Image `face`.
-    static let face = Rswift.ImageResource(bundle: R.hostingBundle, name: "face")
-    /// Image `touch`.
-    static let touch = Rswift.ImageResource(bundle: R.hostingBundle, name: "touch")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "face", bundle: ..., traitCollection: ...)`
-    static func face(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.face, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "touch", bundle: ..., traitCollection: ...)`
-    static func touch(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.touch, compatibleWith: traitCollection)
-    }
-    #endif
-
     /// This `R.image.components` struct is generated, and contains static references to 0 images.
     struct components {
       /// This `R.image.components.gameLauncher` struct is generated, and contains static references to 1 images.
@@ -825,12 +806,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.shared` struct is generated, and contains static references to 2 images.
+    /// This `R.image.shared` struct is generated, and contains static references to 4 images.
     struct shared {
       /// Image `close`.
       static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/close")
+      /// Image `hideText`.
+      static let hideText = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/hideText")
       /// Image `search`.
       static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/search")
+      /// Image `viewText`.
+      static let viewText = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/viewText")
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "close", bundle: ..., traitCollection: ...)`
@@ -840,9 +825,23 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "hideText", bundle: ..., traitCollection: ...)`
+      static func hideText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.hideText, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
       static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.shared.search, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "viewText", bundle: ..., traitCollection: ...)`
+      static func viewText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.viewText, compatibleWith: traitCollection)
       }
       #endif
 

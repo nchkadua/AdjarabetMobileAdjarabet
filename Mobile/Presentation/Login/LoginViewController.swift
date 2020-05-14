@@ -120,6 +120,7 @@ public class LoginViewController: ABViewController {
         loginButton.setStyle(to: .primary(state: .disabled))
         loginButton.setTitleWithoutAnimation("LOG IN", for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
+        updateLoginButton(isEnabled: false)
     }
 
     private func setupInputViews() {
@@ -128,6 +129,22 @@ public class LoginViewController: ABViewController {
 
         passwordInputView.setPlaceholder(text: "password")
         passwordInputView.setSize(to: .large)
+        passwordInputView.becomeSecureTextEntry()
+
+        passwordInputView.rightButton.isHidden = false
+        passwordInputView.rightButton.setImage(R.image.shared.viewText(), for: .normal)
+
+        passwordInputView.rightButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.updatePasswordRightButton()
+        }).disposed(by: disposeBag)
+
+        Observable.combineLatest([usernameInputView.rx.text.orEmpty, passwordInputView.rx.text.orEmpty])
+            .map { $0.map { !$0.isEmpty } }
+            .map { $0.allSatisfy { $0 == true } }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.updateLoginButton(isEnabled: isValid)
+            })
+            .disposed(by: disposeBag)
     }
 
     // MARK: Actions
@@ -149,5 +166,19 @@ public class LoginViewController: ABViewController {
 
     @objc private func loginDidTap() {
         showAlert(title: "Log in")
+    }
+
+    // MARK: Configuration
+    private func updateLoginButton(isEnabled: Bool) {
+        loginButton.isUserInteractionEnabled = isEnabled
+        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled))
+    }
+
+    private func updatePasswordRightButton() {
+        let isSecureTextEntry = passwordInputView.textField.isSecureTextEntry
+        passwordInputView.toggleSecureTextEntry()
+
+        let icon = isSecureTextEntry ? R.image.shared.hideText() : R.image.shared.viewText()
+        passwordInputView.rightButton.setImage(icon, for: .normal)
     }
 }
