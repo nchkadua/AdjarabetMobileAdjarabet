@@ -97,7 +97,7 @@ public class SMSLoginViewController: ABViewController {
         smsLoginTitleLabel.setFont(to: .h2(fontCase: .lower))
 
         let smsLogin = "SMS Login\n".makeAttributedString(with: .h2(fontCase: .lower),
-                                                          lineSpasing: 4,
+                                                          lineSpasing: 6,
                                                           foregroundColor: .white())
         let smsLoginDescription = "We sent a confirmation code to your mobile phone number (+995 599 23 98 49)"
             .makeAttributedString(with: .p,
