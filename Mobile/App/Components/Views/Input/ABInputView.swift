@@ -6,7 +6,11 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
+import RxSwift
+
 public class ABInputView: UIView {
+    private let disposeBag = DisposeBag()
+
     // MARK: Outlets
     @IBOutlet private weak var view: UIView!
 
@@ -28,6 +32,7 @@ public class ABInputView: UIView {
     @IBOutlet public weak var validationResultLabel: UILabel!
 
     // MARK: Fields
+    public var rx: Reactive<UITextField> { textField.rx }
     private var size: DesignSystem.Input.Size = .large
     private var textFieldBottomInset: CGFloat { size == .large ? 4 : 0 }
     private var placeholderLabelTopInset: CGFloat { size == .large ? 7 : 3 }
@@ -151,8 +156,6 @@ extension ABInputView: Xibable {
     }
 
     private func setupTextField() {
-        textField.delegate = self
-        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.autocorrectionType = .no
         textField.setFont(to: size.textFieldFont)
         textField.setTextColor(to: DesignSystem.Input.textFieldTextColor)
@@ -161,6 +164,15 @@ extension ABInputView: Xibable {
 
         textFieldHeightConstraint.constant = size.textFieldHeight
         textFieldBottomConstraint.constant = textFieldBottomInset
+
+        textField.rx.controlEvent([.editingDidBegin, .editingDidEnd]).subscribe(onNext: { [weak self] in
+            self?.configurePosition(animated: true)
+        })
+        .disposed(by: disposeBag)
+
+        textField.rx.controlEvent([.editingDidEndOnExit]).subscribe { [weak self] _ in
+            self?.textField.resignFirstResponder()
+        }.disposed(by: disposeBag)
     }
 
     private func setupValidationResultLabel() {
@@ -175,24 +187,5 @@ extension ABInputView: Xibable {
 
     private func setupRightButton() {
         rightButton.superview?.isHidden = true
-    }
-}
-
-extension ABInputView: UITextFieldDelegate {
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
-        configurePosition(animated: true)
-    }
-
-    public func textFieldDidEndEditing(_ textField: UITextField) {
-        configurePosition(animated: true)
-    }
-
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        return delegate?.textFieldShouldReturn?(textField) ?? false
-        textField.resignFirstResponder()
-        return true
-    }
-
-    @objc fileprivate func textFieldDidChange(_ textField: UITextField) {
     }
 }
