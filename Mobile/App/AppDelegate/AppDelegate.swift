@@ -49,6 +49,7 @@ public extension DependencyContainer {
     }
 
     static var factories = DependencyContainer {
+        Module { DefaultMainTabBarFactory() as MainTabBarFactory }
         Module { DefaultSMSLoginFactory() as SMSLoginFactory }
     }
 }

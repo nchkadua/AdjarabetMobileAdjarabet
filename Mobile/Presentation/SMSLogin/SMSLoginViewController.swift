@@ -56,9 +56,9 @@ public class SMSLoginViewController: ABViewController {
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
 
-//        viewModel.route.subscribe(onNext: { [weak self] route in
-//            self?.didRecive(route: route)
-//        }).disposed(by: disposeBag)
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: SMSLoginViewModelOutputAction) {
@@ -71,6 +71,9 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func didRecive(route: SMSLoginViewModelRoute) {
+        switch route {
+        case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
+        }
     }
 
     // MAKR: Setup methods
@@ -127,7 +130,7 @@ public class SMSLoginViewController: ABViewController {
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
 
         joinNowButton.setSize(to: .medium)
-        joinNowButton.setStyle(to: .ghost(state: .acvite))
+        joinNowButton.setStyle(to: .ghost(state: .normal))
         joinNowButton.setTitleWithoutAnimation("Join now", for: .normal)
         joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
@@ -157,7 +160,8 @@ public class SMSLoginViewController: ABViewController {
     }
 
     @objc private func loginDidTap() {
-        showAlert(title: "Log in")
+        closeKeyboard()
+        viewModel.login()
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {

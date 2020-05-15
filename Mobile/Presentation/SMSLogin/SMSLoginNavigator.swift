@@ -7,6 +7,8 @@
 //
 
 public class SMSLoginNavigator: Navigator {
+    @Inject(from: .factories) public var mainTabBarFactory: MainTabBarFactory
+
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {
@@ -14,9 +16,14 @@ public class SMSLoginNavigator: Navigator {
     }
 
     public enum Destination {
+        case mainTabBar
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
+        switch destination {
+        case .mainTabBar:
+            UIApplication.shared.currentWindow?.rootViewController = mainTabBarFactory.make()
+        }
     }
 }
 
@@ -26,7 +33,7 @@ public protocol SMSLoginFactory {
 
 public class DefaultSMSLoginFactory: SMSLoginFactory {
     public func make(params: SMSLoginViewModelParams) -> SMSLoginViewController {
-        let vc = R.storyboard.smsLogin().instantiateInitial(controller: SMSLoginViewController.self)!
+        let vc = R.storyboard.smsLogin().instantiate(controller: SMSLoginViewController.self)!
         vc.viewModel = DefaultSMSLoginViewModel(params: params)
         return vc
     }

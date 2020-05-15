@@ -19,6 +19,7 @@ public protocol SMSLoginViewModelInput {
     func textDidChange(to text: String?)
     func shouldChangeCharacters(for text: String) -> Bool
     func shoudEnableLoginButton(fot text: String?) -> Bool
+    func login()
 }
 
 public protocol SMSLoginViewModelOutput {
@@ -33,6 +34,7 @@ public enum SMSLoginViewModelOutputAction {
 }
 
 public enum SMSLoginViewModelRoute {
+    case openMainTabBar
 }
 
 public class DefaultSMSLoginViewModel {
@@ -70,5 +72,9 @@ extension DefaultSMSLoginViewModel: SMSLoginViewModel {
 
     public func shoudEnableLoginButton(fot text: String?) -> Bool {
         (text ?? "").count == smsCodeLength
+    }
+
+    public func login() {
+        routeSubject.onNext(.openMainTabBar)
     }
 }

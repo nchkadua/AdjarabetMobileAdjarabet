@@ -20,25 +20,25 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="owt-7I-83A">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-yu-5lM">
-                                                <rect key="frame" x="20" y="14" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="14" width="374" height="56"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tOU-1m-XLP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="252" height="24"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="252" height="30"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8.5" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-JY-1wD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="180" height="24"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8.5" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-JY-1wD">
+                                                                <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOM-CT-6bX">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="24"/>
+                                                                        <rect key="frame" x="0.0" y="5" width="46.5" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfg-Ao-09z">
-                                                                        <rect key="frame" x="55" y="0.0" width="1" height="24"/>
+                                                                        <rect key="frame" x="55" y="3" width="1" height="24"/>
                                                                         <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="24" id="I40-3T-gJo"/>
@@ -46,7 +46,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not a member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="951-y7-CD5">
-                                                                        <rect key="frame" x="64.5" y="0.0" width="115.5" height="24"/>
+                                                                        <rect key="frame" x="64.5" y="5" width="115.5" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er8-f3-IEb" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="188" y="0.0" width="64" height="24"/>
+                                                                <rect key="frame" x="188" y="0.0" width="64" height="30"/>
                                                                 <state key="normal" title="Join Now"/>
                                                             </button>
                                                         </subviews>
@@ -63,7 +63,7 @@
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="26" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xfw-Rj-uOF">
-                                                <rect key="frame" x="20" y="64" width="374" height="112"/>
+                                                <rect key="frame" x="20" y="70" width="374" height="112"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-pe-Vui" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
@@ -76,7 +76,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="gXw-ip-yDy">
-                                                <rect key="frame" x="20" y="176" width="374" height="102"/>
+                                                <rect key="frame" x="20" y="182" width="374" height="102"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-81-uan">
                                                         <rect key="frame" x="0.0" y="14" width="374" height="30"/>

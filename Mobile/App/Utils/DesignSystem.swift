@@ -194,7 +194,7 @@ public enum DesignSystem {
                 case .medium: return .init(typograhy: .h4(fontCase: .upper), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))
                 case .small:  return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 9 + 2, left: 16, bottom: 7 + 2, right: 16))
                 case .xs:     return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 7 + 2, left: 12, bottom: 5 + 2, right: 12))
-                case .none:   return .init(typograhy: .body2, contentEdgeInsets: .init(top: -0.5, left: 1, bottom: -0.5, right: 1))
+                case .none:   return .init(typograhy: .body2, contentEdgeInsets: .init(top: 0, left: 1, bottom: 0, right: 1))
                 }
             }
 

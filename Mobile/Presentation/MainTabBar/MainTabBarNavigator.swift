@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public class DefaultMainTabBarNavigator: Navigator {
+public class MainTabBarNavigator: Navigator {
     public let homeVCFacotry = DefaultHomeViewControllerFactory()
     public let sportsVCFactory = DefaultSportsViewControllerFactory()
     public let promotionsVCFactory = DefaultPromotionsViewControllerFactory()
@@ -36,5 +36,15 @@ public class DefaultMainTabBarNavigator: Navigator {
         notifications.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
 
         return [home, sports, promotions, notifications].map { $0.wrap(in: ABNavigationController.self) }
+    }
+}
+
+public protocol MainTabBarFactory {
+    func make() -> MainTabBarViewController
+}
+
+public class DefaultMainTabBarFactory: MainTabBarFactory {
+    public func make() -> MainTabBarViewController {
+        R.storyboard.mainTabBar().instantiate(controller: MainTabBarViewController.self)!
     }
 }

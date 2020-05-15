@@ -93,7 +93,7 @@ public class LoginViewController: ABViewController {
 
     private func setupButtons() {
         joinNowButton.setSize(to: .medium)
-        joinNowButton.setStyle(to: .ghost(state: .acvite))
+        joinNowButton.setStyle(to: .ghost(state: .normal))
         joinNowButton.setTitleWithoutAnimation("Join now", for: .normal)
         joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
@@ -161,6 +161,7 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func smsLoginDidTap() {
+        closeKeyboard()
         viewModel.smsLogin()
     }
 
