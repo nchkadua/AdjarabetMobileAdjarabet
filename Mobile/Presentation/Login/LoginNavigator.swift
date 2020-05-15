@@ -7,6 +7,7 @@
 //
 
 public class LoginNavigator: Navigator {
+    @Inject(from: .factories) public var mainTabBarFactory: MainTabBarFactory
     @Inject(from: .factories) public var smsLoginFactory: SMSLoginFactory
 
     private weak var viewController: UIViewController?
@@ -17,6 +18,7 @@ public class LoginNavigator: Navigator {
 
     public enum Destination {
         case smsLogin(params: SMSLoginViewModelParams)
+        case mainTabBar
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -24,6 +26,8 @@ public class LoginNavigator: Navigator {
         case .smsLogin(let params):
             let vc = smsLoginFactory.make(params: params)
             viewController?.navigationController?.pushViewController(vc, animated: animate)
+        case .mainTabBar:
+            UIApplication.shared.currentWindow?.rootViewController = mainTabBarFactory.make()
         }
     }
 }
