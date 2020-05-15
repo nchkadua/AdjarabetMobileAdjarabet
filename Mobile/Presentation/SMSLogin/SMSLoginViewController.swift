@@ -99,10 +99,11 @@ public class SMSLoginViewController: ABViewController {
         smsLoginTitleLabel.setTextColor(to: .white())
         smsLoginTitleLabel.setFont(to: .h2(fontCase: .lower))
 
-        let smsLogin = "SMS Login\n".makeAttributedString(with: .h2(fontCase: .lower),
-                                                          lineSpasing: 6,
-                                                          foregroundColor: .white())
-        let smsLoginDescription = "We sent a confirmation code to your mobile phone number (+995 599 23 98 49)"
+        let smsLogin = "\(R.string.localization.sms_login_page_title())\n"
+            .makeAttributedString(with: .h2(fontCase: .lower),
+                                  lineSpasing: 6,
+                                  foregroundColor: .white())
+        let smsLoginDescription = R.string.localization.sms_confirmation_description().replacingOccurrences(of: "{0}", with: "(+995 20 40 80)")
             .makeAttributedString(with: .p,
                                   lineSpasing: 4,
                                   foregroundColor: .neutral100(alpha: 0.8))
@@ -111,14 +112,14 @@ public class SMSLoginViewController: ABViewController {
 
         notMemberLabel.setTextColor(to: .neutral100(alpha: 0.6))
         notMemberLabel.setFont(to: .h4(fontCase: .lower))
-        notMemberLabel.text = "Not a member?"
+        notMemberLabel.text = R.string.localization.not_member()
     }
 
     private func setupButtons() {
         resentSMSButton.setSize(to: .none)
         resentSMSButton.setStyle(to: .textLink(state: .acvite))
         resentSMSButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
-        resentSMSButton.setTitleWithoutAnimation("Resend SMS", for: .normal)
+        resentSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend(), for: .normal)
         resentSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
         resentSMSButton.imageEdgeInsets = .init(top: 0, left: -3, bottom: 0, right: 0)
         resentSMSButton.addTarget(self, action: #selector(resentSMSDidTap), for: .touchUpInside)
@@ -126,12 +127,12 @@ public class SMSLoginViewController: ABViewController {
 
         loginButton.setSize(to: .large)
         loginButton.setStyle(to: .primary(state: .disabled))
-        loginButton.setTitleWithoutAnimation("LOG IN", for: .normal)
+        loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
 
         joinNowButton.setSize(to: .medium)
         joinNowButton.setStyle(to: .ghost(state: .normal))
-        joinNowButton.setTitleWithoutAnimation("Join now", for: .normal)
+        joinNowButton.setTitleWithoutAnimation(R.string.localization.join_now(), for: .normal)
         joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
     }
