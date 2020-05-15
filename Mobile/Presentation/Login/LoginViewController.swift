@@ -84,50 +84,50 @@ public class LoginViewController: ABViewController {
     private func setupLabels() {
         loginTitleLabel.setTextColor(to: .white())
         loginTitleLabel.setFont(to: .h2(fontCase: .lower))
-        loginTitleLabel.text = R.string.localization.login_page_title()
+        loginTitleLabel.text = R.string.localization.login_page_title.localized()
 
         notMemberLabel.setTextColor(to: .neutral100(alpha: 0.6))
         notMemberLabel.setFont(to: .h4(fontCase: .lower))
-        notMemberLabel.text = R.string.localization.not_member()
+        notMemberLabel.text = R.string.localization.not_member.localized()
     }
 
     private func setupButtons() {
         joinNowButton.setSize(to: .medium)
         joinNowButton.setStyle(to: .ghost(state: .normal))
-        joinNowButton.setTitleWithoutAnimation(R.string.localization.join_now(), for: .normal)
+        joinNowButton.setTitleWithoutAnimation(R.string.localization.join_now.localized(), for: .normal)
         joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
 
         forgotPasswordButton.setSize(to: .none)
         forgotPasswordButton.setStyle(to: .textLink(state: .acvite))
         forgotPasswordButton.setTitleColor(to: .white(), for: .normal)
-        forgotPasswordButton.setTitleWithoutAnimation(R.string.localization.login_forgot_password(), for: .normal)
+        forgotPasswordButton.setTitleWithoutAnimation(R.string.localization.login_forgot_password.localized(), for: .normal)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordDidTap), for: .touchUpInside)
 
         forgotUsernameButton.setSize(to: .none)
         forgotUsernameButton.setStyle(to: .textLink(state: .acvite))
         forgotUsernameButton.setTitleColor(to: .white(), for: .normal)
-        forgotUsernameButton.setTitleWithoutAnimation(R.string.localization.login_forgot_username(), for: .normal)
+        forgotUsernameButton.setTitleWithoutAnimation(R.string.localization.login_forgot_username.localized(), for: .normal)
         forgotUsernameButton.addTarget(self, action: #selector(forgotUsernameDidTap), for: .touchUpInside)
 
         smsLoginButton.setSize(to: .none)
         smsLoginButton.setStyle(to: .textLink(state: .acvite))
         smsLoginButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
-        smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login(), for: .normal)
+        smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
 
         loginButton.setSize(to: .large)
         loginButton.setStyle(to: .primary(state: .disabled))
-        loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title(), for: .normal)
+        loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
         updateLoginButton(isEnabled: false)
     }
 
     private func setupInputViews() {
-        usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title())
+        usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title.localized())
         usernameInputView.setSize(to: .large)
 
-        passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title())
+        passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
         passwordInputView.setSize(to: .large)
         passwordInputView.becomeSecureTextEntry()
 
