@@ -59,6 +59,7 @@ public class LoginViewController: ABViewController {
 
     private func didRecive(route: LoginViewModelRoute) {
         switch route {
+        case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
         case .openSMSLogin(let params): navigator.navigate(to: .smsLogin(params: params), animated: true)
         }
     }
@@ -92,32 +93,28 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupButtons() {
-        joinNowButton.setSize(to: .medium)
-        joinNowButton.setStyle(to: .ghost(state: .normal))
+        joinNowButton.setStyle(to: .ghost(state: .normal, size: .medium))
         joinNowButton.setTitleWithoutAnimation(R.string.localization.join_now.localized(), for: .normal)
         joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
 
-        forgotPasswordButton.setSize(to: .none)
-        forgotPasswordButton.setStyle(to: .textLink(state: .acvite))
+        forgotPasswordButton.setStyle(to: .textLink(state: .acvite, size: .small))
         forgotPasswordButton.setTitleColor(to: .white(), for: .normal)
         forgotPasswordButton.setTitleWithoutAnimation(R.string.localization.login_forgot_password.localized(), for: .normal)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordDidTap), for: .touchUpInside)
 
-        forgotUsernameButton.setSize(to: .none)
-        forgotUsernameButton.setStyle(to: .textLink(state: .acvite))
+        forgotUsernameButton.setStyle(to: .textLink(state: .acvite, size: .small))
         forgotUsernameButton.setTitleColor(to: .white(), for: .normal)
         forgotUsernameButton.setTitleWithoutAnimation(R.string.localization.login_forgot_username.localized(), for: .normal)
         forgotUsernameButton.addTarget(self, action: #selector(forgotUsernameDidTap), for: .touchUpInside)
 
-        smsLoginButton.setSize(to: .none)
-        smsLoginButton.setStyle(to: .textLink(state: .acvite))
+        smsLoginButton.setStyle(to: .textLink(state: .acvite, size: .small))
         smsLoginButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
         smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
+        updateSMSLoginButton(isEnabled: false)
 
-        loginButton.setSize(to: .large)
-        loginButton.setStyle(to: .primary(state: .disabled))
+        loginButton.setStyle(to: .primary(state: .disabled, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
         updateLoginButton(isEnabled: false)
@@ -145,6 +142,13 @@ public class LoginViewController: ABViewController {
                 self?.updateLoginButton(isEnabled: isValid)
             })
             .disposed(by: disposeBag)
+
+        usernameInputView.rx.text.orEmpty
+            .map { !$0.isEmpty }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.updateSMSLoginButton(isEnabled: isValid)
+            })
+            .disposed(by: disposeBag)
     }
 
     // MARK: Actions
@@ -166,13 +170,19 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func loginDidTap() {
-        showAlert(title: "Log in")
+        closeKeyboard()
+        viewModel.login()
     }
 
     // MARK: Configuration
     private func updateLoginButton(isEnabled: Bool) {
         loginButton.isUserInteractionEnabled = isEnabled
-        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled))
+        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled, size: .large))
+    }
+
+    private func updateSMSLoginButton(isEnabled: Bool) {
+        smsLoginButton.isUserInteractionEnabled = isEnabled
+        smsLoginButton.setStyle(to: .textLink(state: isEnabled ? .acvite : .disabled, size: .small))
     }
 
     private func updatePasswordRightButton() {

@@ -117,8 +117,7 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupButtons() {
-        resentSMSButton.setSize(to: .none)
-        resentSMSButton.setStyle(to: .textLink(state: .acvite))
+        resentSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
         resentSMSButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
         resentSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
         resentSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
@@ -126,13 +125,11 @@ public class SMSLoginViewController: ABViewController {
         resentSMSButton.addTarget(self, action: #selector(resentSMSDidTap), for: .touchUpInside)
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
-        loginButton.setSize(to: .large)
-        loginButton.setStyle(to: .primary(state: .disabled))
+        loginButton.setStyle(to: .primary(state: .disabled, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
 
-        joinNowButton.setSize(to: .medium)
-        joinNowButton.setStyle(to: .ghost(state: .normal))
+        joinNowButton.setStyle(to: .ghost(state: .normal, size: .medium))
         joinNowButton.setTitleWithoutAnimation(R.string.localization.join_now.localized(), for: .normal)
         joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
@@ -182,7 +179,7 @@ public class SMSLoginViewController: ABViewController {
         let isEnabled = viewModel.shoudEnableLoginButton(fot: smsCodeText)
         loginButton.isUserInteractionEnabled = isEnabled
 
-        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled))
+        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled, size: .large))
     }
 }
 

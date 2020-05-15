@@ -15,11 +15,6 @@ public extension UIButton {
         self.titleLabel?.font = typography.description.font
     }
 
-    func setSize(to size: DesignSystem.Button.Size) {
-        setFont(to: size.description.typograhy)
-        contentEdgeInsets = size.description.contentEdgeInsets
-    }
-
     func setTitleWithoutAnimation(_ title: String?, for state: UIControl.State) {
         UIView.performWithoutAnimation {
             setTitle(title, for: state)

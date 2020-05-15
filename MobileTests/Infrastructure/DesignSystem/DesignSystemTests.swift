@@ -124,40 +124,54 @@ class DesignSystemTests: XCTestCase {
     
     func testButtonStyle() {
         /// primary
-        func testPrimary(state:  DesignSystem.Button.State) {
-            let description = DesignSystem.Button.Style.primary(state: state).description
+        func testPrimary(state: DesignSystem.Button.State, size: DesignSystem.Button.Size) {
+            let style = DesignSystem.Button.Style.primary(state: state, size: size)
+            let description = style.description
+            let tc = style.sizeDescription(for: size)
             switch state {
             case .normal:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .primary400()
                 ))
             case .hovered:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .neutral100(alpha: 0.8),
                     backgorundColor: .primary400(),
                     overlayColor: .neutral900(alpha: 0.2)
                 ))
             case .acvite:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .primary400(),
                     overlayColor: .neutral900(alpha: 0.3)
                 ))
             case .focused:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .primary400(),
                     overlayColor: .neutral900(alpha: 0.4)
                 ))
             case .disabled:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(alpha: 0.4),
                     backgorundColor: .primary400(),
                     overlayColor: .neutral600(alpha: 0.5)
                 ))
             case .loading:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .primary400(),
                     overlayColor: .neutral900(alpha: 0.4)
@@ -166,82 +180,110 @@ class DesignSystemTests: XCTestCase {
         }
         
         /// secondary
-        func testSecondary(state:  DesignSystem.Button.State) {
-            let description = DesignSystem.Button.Style.secondary(state: state).description
+        func testSecondary(state: DesignSystem.Button.State, size: DesignSystem.Button.Size) {
+            let style = DesignSystem.Button.Style.secondary(state: state, size: size)
+            let description = style.description
+            let tc = style.sizeDescription(for: size)
             switch state {
             case .normal:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .neutral500()
                 ))
             case .hovered:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .neutral100(alpha: 0.8),
                     backgorundColor: .neutral500(),
                     overlayColor: .neutral900(alpha: 0.2)
                 ))
             case .acvite:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .neutral500(),
                     overlayColor: .neutral900(alpha: 0.3)
                 ))
             case .focused:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .neutral500(),
                     overlayColor: .neutral900(alpha: 0.4)
                 ))
             case .disabled:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(alpha: 0.4),
                     backgorundColor: .neutral500(),
                     overlayColor: .neutral600(alpha: 0.9)
                 ))
             case .loading:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .neutral500(),
                     overlayColor: .neutral900(alpha: 0.4)
                 ))
             }
         }
-        
+
         /// tertiary
-        func testTertiary(state:  DesignSystem.Button.State) {
-            let description = DesignSystem.Button.Style.tertiary(state: state).description
+        func testTertiary(state: DesignSystem.Button.State, size: DesignSystem.Button.Size) {
+            let style = DesignSystem.Button.Style.tertiary(state: state, size: size)
+            let description = style.description
+            let tc = style.sizeDescription(for: size)
             switch state {
             case .normal:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .secondary400()
                 ))
             case .hovered:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .neutral100(alpha: 0.8),
                     backgorundColor: .secondary400(),
                     overlayColor: .neutral900(alpha: 0.2)
                 ))
             case .acvite:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .secondary400(),
                     overlayColor: .neutral900(alpha: 0.3)
                 ))
             case .focused:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .secondary400(),
                     overlayColor: .neutral900(alpha: 0.4)
                 ))
             case .disabled:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(alpha: 0.4),
                     backgorundColor: .secondary400(),
                     overlayColor: .neutral600(alpha: 0.5)
                 ))
             case .loading:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .secondary400(),
                     overlayColor: .neutral900(alpha: 0.4)
@@ -250,36 +292,50 @@ class DesignSystemTests: XCTestCase {
         }
         
         /// outline
-        func testOutline(state:  DesignSystem.Button.State) {
-            let description = DesignSystem.Button.Style.outline(state: state).description
+        func testOutline(state:  DesignSystem.Button.State, size: DesignSystem.Button.Size) {
+            let style = DesignSystem.Button.Style.outline(state: state, size: size)
+            let description = style.description
+            let tc = style.sizeDescription(for: size)
             switch state {
             case .normal:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     borderColor: .white()
                 ))
             case .hovered:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .neutral100(alpha: 0.8),
                     borderColor: .white(alpha: 0.8)
                 ))
             case .acvite:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     borderColor: .white(alpha: 0.8)
                 ))
             case .focused:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     borderColor: .white(alpha: 0.8)
                 ))
             case .disabled:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(alpha: 0.4),
                     borderColor: .white(alpha: 0.5)
                 ))
             case .loading:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     borderColor: .white()
                 ))
@@ -287,29 +343,37 @@ class DesignSystemTests: XCTestCase {
         }
         
         /// ghost
-        func testGhost(state:  DesignSystem.Button.State) {
-            let description = DesignSystem.Button.Style.ghost(state: state).description
+        func testGhost(state:  DesignSystem.Button.State, size: DesignSystem.Button.Size) {
+            let style = DesignSystem.Button.Style.ghost(state: state, size: size)
+            let description = style.description
+            let tc = style.sizeDescription(for: size)
             switch state {
             case .normal:
-                XCTAssertEqual(description, .init(textColor: .white()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .white()))
             case .hovered:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .neutral100(alpha: 0.8),
                     backgorundColor: .neutral500(alpha: 0.8),
                     overlayColor: .neutral900(alpha: 0.2)
                 ))
             case .acvite:
-                XCTAssertEqual(description, .init(textColor: .white()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .white()))
             case .focused:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .neutral100(alpha: 0.8),
                     backgorundColor: .neutral500(),
                     overlayColor: .neutral900(alpha: 0.4)
                 ))
             case .disabled:
-                XCTAssertEqual(description, .init(textColor: .white(alpha: 0.4)))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .white(alpha: 0.4)))
             case .loading:
                 XCTAssertEqual(description, .init(
+                    typograhy: tc.typograhy,
+                    contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .white(),
                     backgorundColor: .neutral500(),
                     overlayColor: .neutral900(alpha: 0.4)
@@ -318,31 +382,35 @@ class DesignSystemTests: XCTestCase {
         }
         
         /// text link
-        func testTextLink(state:  DesignSystem.Button.State) {
-            let description = DesignSystem.Button.Style.textLink(state: state).description
+        func testTextLink(state: DesignSystem.Button.State, size: DesignSystem.Button.Size) {
+            let style = DesignSystem.Button.Style.textLink(state: state, size: size)
+            let description = style.description
+            let tc = style.sizeDescription(for: size)
             switch state {
             case .normal:
-                XCTAssertEqual(description, .init(textColor: .neutral100()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100()))
             case .hovered:
-                XCTAssertEqual(description, .init(textColor: .neutral100(alpha: 0.8)))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100(alpha: 0.8)))
             case .acvite:
-                XCTAssertEqual(description, .init(textColor: .neutral100()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100()))
             case .focused:
-                XCTAssertEqual(description, .init(textColor: .neutral100()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100()))
             case .disabled:
-                XCTAssertEqual(description, .init(textColor: .neutral100(alpha: 0.8)))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100(alpha: 0.8)))
             case .loading:
-                XCTAssertEqual(description, .init(textColor: .white()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .white()))
             }
         }
         
         DesignSystem.Button.State.allCases.forEach { state in
-            testPrimary(state: state)
-            testPrimary(state: state)
-            testTertiary(state: state)
-            testOutline(state: state)
-            testGhost(state: state)
-            testTextLink(state: state)
+            DesignSystem.Button.Size.allCases.forEach { size in
+                testPrimary(state: state, size: size)
+                testPrimary(state: state, size: size)
+                testTertiary(state: state, size: size)
+                testOutline(state: state, size: size)
+                testGhost(state: state, size: size)
+                testTextLink(state: state, size: size)
+            }
         }
     }
 }

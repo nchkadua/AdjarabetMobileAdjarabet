@@ -17,6 +17,7 @@ public struct LoginViewModelParams {
 public protocol LoginViewModelInput {
     func viewDidLoad()
     func smsLogin()
+    func login()
 }
 
 public protocol LoginViewModelOutput {
@@ -30,6 +31,7 @@ public enum LoginViewModelOutputAction {
 
 public enum LoginViewModelRoute {
     case openSMSLogin(params: SMSLoginViewModelParams)
+    case openMainTabBar
 }
 
 public class DefaultLoginViewModel {
@@ -51,5 +53,9 @@ extension DefaultLoginViewModel: LoginViewModel {
 
     public func smsLogin() {
         routeSubject.onNext(.openSMSLogin(params: .init()))
+    }
+
+    public func login() {
+        routeSubject.onNext(.openMainTabBar)
     }
 }
