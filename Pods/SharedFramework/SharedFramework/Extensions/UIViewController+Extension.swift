@@ -17,18 +17,14 @@ extension UIViewController {
         removeFromParent()
         view.removeFromSuperview()
     }
-}
-
-extension UIViewController {
+    
+    public func showAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     public func wrap<T: UINavigationController>(in navigationController: T.Type) -> T {
         return T(rootViewController: self)
     }
 }
-
-extension UIViewController {
-    public var isPortrait: Bool {
-        return UIScreen.main.bounds.height > UIScreen.main.bounds.width
-    }
-}
-
-

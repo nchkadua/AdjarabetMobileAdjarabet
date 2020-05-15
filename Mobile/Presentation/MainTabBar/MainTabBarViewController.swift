@@ -10,7 +10,7 @@ import RxSwift
 
 public class MainTabBarViewController: UITabBarController {
     public var viewModel: MainTabBarViewModel = DefaultMainTabBarViewModel()
-    public lazy var navigator = DefaultMainTabBarNavigator(viewController: self)
+    public lazy var navigator = MainTabBarNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 
     private var tabBarTopConstraint: NSLayoutConstraint!

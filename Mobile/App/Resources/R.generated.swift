@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
@@ -104,6 +104,8 @@ struct R: Rswift.Validatable {
     static let notifications = _R.storyboard.notifications()
     /// Storyboard `Promotions`.
     static let promotions = _R.storyboard.promotions()
+    /// Storyboard `SMSLogin`.
+    static let smsLogin = _R.storyboard.smsLogin()
     /// Storyboard `Sports`.
     static let sports = _R.storyboard.sports()
 
@@ -146,6 +148,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Promotions", bundle: ...)`
     static func promotions(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.promotions)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SMSLogin", bundle: ...)`
+    static func smsLogin(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.smsLogin)
     }
     #endif
 
@@ -775,36 +784,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// Image `close`.
-    static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "close")
-    /// Image `face`.
-    static let face = Rswift.ImageResource(bundle: R.hostingBundle, name: "face")
-    /// Image `touch`.
-    static let touch = Rswift.ImageResource(bundle: R.hostingBundle, name: "touch")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "close", bundle: ..., traitCollection: ...)`
-    static func close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.close, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "face", bundle: ..., traitCollection: ...)`
-    static func face(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.face, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "touch", bundle: ..., traitCollection: ...)`
-    static func touch(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.touch, compatibleWith: traitCollection)
-    }
-    #endif
-
     /// This `R.image.components` struct is generated, and contains static references to 0 images.
     struct components {
       /// This `R.image.components.gameLauncher` struct is generated, and contains static references to 1 images.
@@ -825,15 +806,42 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.shared` struct is generated, and contains static references to 1 images.
+    /// This `R.image.shared` struct is generated, and contains static references to 4 images.
     struct shared {
+      /// Image `close`.
+      static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/close")
+      /// Image `hideText`.
+      static let hideText = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/hideText")
       /// Image `search`.
       static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/search")
+      /// Image `viewText`.
+      static let viewText = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/viewText")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "close", bundle: ..., traitCollection: ...)`
+      static func close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.close, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "hideText", bundle: ..., traitCollection: ...)`
+      static func hideText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.hideText, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
       static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.shared.search, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "viewText", bundle: ..., traitCollection: ...)`
+      static func viewText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.viewText, compatibleWith: traitCollection)
       }
       #endif
 
@@ -851,6 +859,21 @@ struct R: Rswift.Validatable {
 
         fileprivate init() {}
       }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.image.smsLogin` struct is generated, and contains static references to 1 images.
+    struct smsLogin {
+      /// Image `resend`.
+      static let resend = Rswift.ImageResource(bundle: R.hostingBundle, name: "SMSLogin/resend")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "resend", bundle: ..., traitCollection: ...)`
+      static func resend(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.smsLogin.resend, compatibleWith: traitCollection)
+      }
+      #endif
 
       fileprivate init() {}
     }
@@ -900,8 +923,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
+    /// Nib `ABInputView`.
+    static let abInputView = _R.nib._ABInputView()
     /// Nib `GameLauncherCollectionViewCell`.
     static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
     /// Nib `GameLauncherComponentView`.
@@ -914,6 +939,14 @@ struct R: Rswift.Validatable {
     static let recentlyPlayedCollectionViewCell = _R.nib._RecentlyPlayedCollectionViewCell()
     /// Nib `RecentlyPlayedComponentView`.
     static let recentlyPlayedComponentView = _R.nib._RecentlyPlayedComponentView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ABInputView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.abInputView) instead")
+    static func abInputView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.abInputView)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "GameLauncherCollectionViewCell", in: bundle)`
@@ -963,6 +996,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func abInputView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.abInputView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func gameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherCollectionViewCell? {
       return R.nib.gameLauncherCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameLauncherCollectionViewCell
     }
@@ -992,24 +1029,44 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 10 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 21 localization keys.
     struct localization {
       /// en translation: Cancel
       ///
       /// Locales: en, ka, hy
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Forgot Password?
+      ///
+      /// Locales: en, ka, hy
+      static let login_forgot_password = Rswift.StringResource(key: "login_forgot_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Forgot Username?
+      ///
+      /// Locales: en, ka, hy
+      static let login_forgot_username = Rswift.StringResource(key: "login_forgot_username", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Games
       ///
       /// Locales: en, ka, hy
       static let home_page_title = Rswift.StringResource(key: "home_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Join Now
+      /// en translation: Join now
       ///
       /// Locales: en, ka, hy
       static let join_now = Rswift.StringResource(key: "join_now", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: LOG IN
+      ///
+      /// Locales: en, ka, hy
+      static let login_button_title = Rswift.StringResource(key: "login_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Log in
+      ///
+      /// Locales: en, ka, hy
+      static let login_page_title = Rswift.StringResource(key: "login_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Login
       ///
       /// Locales: en, ka, hy
       static let login = Rswift.StringResource(key: "login", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Not a member?
+      ///
+      /// Locales: en, ka, hy
+      static let not_member = Rswift.StringResource(key: "not_member", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Notifications
       ///
       /// Locales: en, ka, hy
@@ -1022,6 +1079,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let recently_played = Rswift.StringResource(key: "recently_played", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Resend SMS
+      ///
+      /// Locales: en, ka, hy
+      static let sms_resend = Rswift.StringResource(key: "sms_resend", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: SMS Log in
+      ///
+      /// Locales: en, ka, hy
+      static let sms_login_page_title = Rswift.StringResource(key: "sms_login_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: SMS Login
+      ///
+      /// Locales: en, ka, hy
+      static let login_sms_login = Rswift.StringResource(key: "login_sms_login", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Search for games
       ///
       /// Locales: en, ka, hy
@@ -1034,6 +1103,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let view_all = Rswift.StringResource(key: "view_all", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: We sent a confirmation code to your mobile phone number {0}
+      ///
+      /// Locales: en, ka, hy
+      static let sms_confirmation_description = Rswift.StringResource(key: "sms_confirmation_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: password
+      ///
+      /// Locales: en, ka, hy
+      static let login_password_input_title = Rswift.StringResource(key: "login_password_input_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: username
+      ///
+      /// Locales: en, ka, hy
+      static let login_username_input_title = Rswift.StringResource(key: "login_username_input_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
 
       /// en translation: Cancel
       ///
@@ -1048,6 +1129,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("cancel", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Forgot Password?
+      ///
+      /// Locales: en, ka, hy
+      static func login_forgot_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_forgot_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_forgot_password"
+        }
+
+        return NSLocalizedString("login_forgot_password", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Forgot Username?
+      ///
+      /// Locales: en, ka, hy
+      static func login_forgot_username(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_forgot_username", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_forgot_username"
+        }
+
+        return NSLocalizedString("login_forgot_username", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Games
@@ -1065,7 +1176,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("home_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: Join Now
+      /// en translation: Join now
       ///
       /// Locales: en, ka, hy
       static func join_now(preferredLanguages: [String]? = nil) -> String {
@@ -1078,6 +1189,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("join_now", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: LOG IN
+      ///
+      /// Locales: en, ka, hy
+      static func login_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_button_title"
+        }
+
+        return NSLocalizedString("login_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Log in
+      ///
+      /// Locales: en, ka, hy
+      static func login_page_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_page_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_page_title"
+        }
+
+        return NSLocalizedString("login_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Login
@@ -1093,6 +1234,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Not a member?
+      ///
+      /// Locales: en, ka, hy
+      static func not_member(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("not_member", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "not_member"
+        }
+
+        return NSLocalizedString("not_member", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Notifications
@@ -1140,6 +1296,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("recently_played", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Resend SMS
+      ///
+      /// Locales: en, ka, hy
+      static func sms_resend(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sms_resend", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sms_resend"
+        }
+
+        return NSLocalizedString("sms_resend", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: SMS Log in
+      ///
+      /// Locales: en, ka, hy
+      static func sms_login_page_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sms_login_page_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sms_login_page_title"
+        }
+
+        return NSLocalizedString("sms_login_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: SMS Login
+      ///
+      /// Locales: en, ka, hy
+      static func login_sms_login(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_sms_login", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_sms_login"
+        }
+
+        return NSLocalizedString("login_sms_login", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Search for games
       ///
       /// Locales: en, ka, hy
@@ -1185,6 +1386,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("view_all", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: We sent a confirmation code to your mobile phone number {0}
+      ///
+      /// Locales: en, ka, hy
+      static func sms_confirmation_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sms_confirmation_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sms_confirmation_description"
+        }
+
+        return NSLocalizedString("sms_confirmation_description", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: password
+      ///
+      /// Locales: en, ka, hy
+      static func login_password_input_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_password_input_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_password_input_title"
+        }
+
+        return NSLocalizedString("login_password_input_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: username
+      ///
+      /// Locales: en, ka, hy
+      static func login_username_input_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_username_input_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_username_input_title"
+        }
+
+        return NSLocalizedString("login_username_input_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 
@@ -1218,6 +1464,17 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _GameLauncherComponentView.validate()
+    }
+
+    struct _ABInputView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ABInputView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
     }
 
     struct _GameLauncherCollectionViewCell: Rswift.NibResourceType {
@@ -1318,6 +1575,9 @@ struct _R: Rswift.Validatable {
       try promotions.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try smsLogin.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try sports.validate()
       #endif
     }
@@ -1362,15 +1622,14 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct login: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = LoginViewController
 
-      let appNavigationController = StoryboardViewControllerResource<AppNavigationController>(identifier: "AppNavigationController")
+      let appNavigationController = StoryboardViewControllerResource<ABNavigationController>(identifier: "AppNavigationController")
       let bundle = R.hostingBundle
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Login"
-      let welcomeViewController = StoryboardViewControllerResource<WelcomeViewController>(identifier: "WelcomeViewController")
 
-      func appNavigationController(_: Void = ()) -> AppNavigationController? {
+      func appNavigationController(_: Void = ()) -> ABNavigationController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: appNavigationController)
       }
 
@@ -1378,17 +1637,12 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
       }
 
-      func welcomeViewController(_: Void = ()) -> WelcomeViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: welcomeViewController)
-      }
-
       static func validate() throws {
-        if UIKit.UIImage(named: "face", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'face' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in storyboard 'Login', but couldn't be loaded.") }
         }
-        if _R.storyboard.login().appNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'appNavigationController' could not be loaded from storyboard 'Login' as 'AppNavigationController'.") }
+        if _R.storyboard.login().appNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'appNavigationController' could not be loaded from storyboard 'Login' as 'ABNavigationController'.") }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
-        if _R.storyboard.login().welcomeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'welcomeViewController' could not be loaded from storyboard 'Login' as 'WelcomeViewController'.") }
       }
 
       fileprivate init() {}
@@ -1397,7 +1651,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct mainTabBar: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = MainTabBarViewController
 
       let bundle = R.hostingBundle
       let mainTabBarViewController = StoryboardViewControllerResource<MainTabBarViewController>(identifier: "MainTabBarViewController")
@@ -1453,6 +1707,28 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.promotions().promotionsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'promotionsViewController' could not be loaded from storyboard 'Promotions' as 'PromotionsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct smsLogin: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SMSLoginViewController
+
+      let bundle = R.hostingBundle
+      let name = "SMSLogin"
+      let smsLoginViewController = StoryboardViewControllerResource<SMSLoginViewController>(identifier: "SMSLoginViewController")
+
+      func smsLoginViewController(_: Void = ()) -> SMSLoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: smsLoginViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.smsLogin().smsLoginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'smsLoginViewController' could not be loaded from storyboard 'SMSLogin' as 'SMSLoginViewController'.") }
       }
 
       fileprivate init() {}

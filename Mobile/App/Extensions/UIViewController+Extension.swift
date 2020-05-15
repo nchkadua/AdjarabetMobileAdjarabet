@@ -72,4 +72,26 @@ public extension UIViewController {
 
         definesPresentationContext = true
     }
+
+    func setBackBarButtonItemIfNeeded(width: CGFloat = 26) {
+        let button = UIButton()
+        button.setImage(R.image.shared.close(), for: .normal)
+        button.widthAnchor.constraint(equalToConstant: width).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        button.addTarget(self, action: #selector(backBarButtonItemDidTap), for: .touchUpInside)
+        let backBarButtonItem = UIBarButtonItem(customView: button)
+        navigationItem.leftBarButtonItem = backBarButtonItem
+    }
+
+    @objc func backBarButtonItemDidTap() {
+        if let nav = navigationController {
+            if nav.isBeingPresented || (nav.parent != nil && nav.parent!.isBeingPresented) {
+                dismiss(animated: true, completion: nil)
+            } else {
+                navigationController?.popViewController(animated: true)
+            }
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
 }

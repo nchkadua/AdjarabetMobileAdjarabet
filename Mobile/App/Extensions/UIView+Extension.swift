@@ -46,6 +46,21 @@ public extension UIView {
     }
 }
 
+public extension AppCircularView {
+    func setBorderColor(to color: DesignSystem.Color) {
+        self.borderColor = color.value
+    }
+
+    func setBorderColor(to color: DesignSystem.Color, animationDuration duration: TimeInterval) {
+        let animation: CABasicAnimation = CABasicAnimation(keyPath: "borderColor")
+        animation.fromValue = layer.borderColor
+        animation.toValue = color.value.cgColor
+        animation.duration = duration
+        layer.add(animation, forKey: nil)
+        setBorderColor(to: color)
+    }
+}
+
 public struct EdgeConstraint {
     public let top: NSLayoutConstraint
     public let bottom: NSLayoutConstraint

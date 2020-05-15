@@ -7,20 +7,29 @@
 //
 
 public extension String {
-    func makeAttributedString(with typography: DesignSystem.Typography, alignment: NSTextAlignment = .left) -> NSMutableAttributedString {
+    func makeAttributedString(with typography: DesignSystem.Typography,
+                              alignment: NSTextAlignment = .left,
+                              lineSpasing: CGFloat? = nil,
+                              foregroundColor: DesignSystem.Color? = nil
+    ) -> NSMutableAttributedString {
         let description = typography.description
 
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = description.lineSpasing
+        paragraphStyle.lineSpacing = lineSpasing ?? description.lineSpasing
         paragraphStyle.alignment = alignment
-//        paragraphStyle.lineHeightMultiple = lineHeightMultiple
+//        paragraphStyle.minimumLineHeight = description.lineHeight
 
         let attributedString = NSMutableAttributedString(string: self)
-
-        attributedString.addAttributes([
+        var attrs: [NSAttributedString.Key: Any] = [
             .font: description.font,
             .paragraphStyle: paragraphStyle
-        ], range: NSRange(location: 0, length: attributedString.length))
+        ]
+
+        if let foregroundColor = foregroundColor {
+            attrs[.foregroundColor] = foregroundColor.value
+        }
+
+        attributedString.addAttributes(attrs, range: NSRange(location: 0, length: attributedString.length))
 
         return attributedString
     }

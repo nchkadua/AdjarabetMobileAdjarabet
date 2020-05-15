@@ -28,4 +28,21 @@
 /* General */
 "view_all" = "Դիտեք բոլորը";
 "cancel" = "չեղարկել";
+"not_member" = "Not a member?";
+"join_now" = "Join now";
+"login_button_title" = "LOG IN";
+
+/* Login */
+"login_page_title" = "Log in";
+"login_forgot_password" = "Forgot Password?";
+"login_forgot_username" = "Forgot Username?";
+"login_sms_login" = "SMS Login";
+"login_username_input_title" = "username";
+"login_password_input_title" = "password";
+
+/* SMS Login */
+"sms_login_page_title" = "SMS Log in";
+"sms_confirmation_description" = "We sent a confirmation code to your mobile phone number {0}";
+"sms_resend" = "Resend SMS";
+
 

@@ -84,7 +84,7 @@ public enum DesignSystem {
             case .h1:    return .init(font: font(by: language), lineSpasing: 0.7, lineHeight: 44)
             case .h2:    return .init(font: font(by: language), lineSpasing: 0.7, lineHeight: 36)
             case .h3:    return .init(font: font(by: language), lineSpasing: 0.5, lineHeight: 24)
-            case .h4:    return .init(font: font(by: language), lineSpasing: 0.3, lineHeight: 24)
+            case .h4:    return .init(font: font(by: language), lineSpasing: 0.3, lineHeight: 20)
             case .h5:    return .init(font: font(by: language), lineSpasing: 0.5, lineHeight: 16)
             case .body1: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 20)
             case .body2: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 16)
@@ -97,7 +97,7 @@ public enum DesignSystem {
                 switch language {
                 case .georgian: return fontCase == .lower ? R.font.pantonNusx3Bold(size: pointSize)! : R.font.pantonMtav3Bold(size: pointSize)!
                 case .armenian: return R.font.pantonAMBold(size: pointSize)!
-                case .english: return R.font.pantonMtav3Bold(size: pointSize)!
+                case .english:  return R.font.pantonMtav3Bold(size: pointSize)!
                 }
             }
 
@@ -135,9 +135,53 @@ public enum DesignSystem {
         public var value: Int { rawValue }
     }
 
+    /// Input
+    public enum Input {
+        public static let backgroundColor: Color        = .neutral600()
+        public static let tintColor: Color              = .white()
+
+        public static let placeholderFont: Typography   = .body2
+
+        public static let placeholTextColor: Color      = .neutral100(alpha: 0.6)
+        public static let textFieldTextColor: Color     = .neutral100()
+
+        public static let borderWidth: CGFloat          = 1
+        public static let borderColor: Color            = .neutral400()
+        public static let cornerRadius: CGFloat         = 4
+
+        public enum Size: CaseIterable {
+            case small
+            case medium
+            case large
+
+            public var height: CGFloat {
+                switch self {
+                case .small:    return 32
+                case .medium:   return 40
+                case .large:    return 48
+                }
+            }
+
+            public var textFieldHeight: CGFloat {
+                switch self {
+                case .small:            return 16
+                case .medium, .large:   return 24
+                }
+            }
+
+            public var textFieldFont: Typography {
+                switch self {
+                case .small:            return .h5(fontCase: .lower)
+                case .medium, .large:   return .h4(fontCase: .lower)
+                }
+            }
+        }
+    }
+
     /// Buttons
     public enum Button {
         public enum Size: CaseIterable {
+            case none
             case large
             case medium
             case small
@@ -146,10 +190,11 @@ public enum DesignSystem {
             /// Concrete description for each case
             public var description: Description {
                 switch self {
-                case .large:  return .init(typograhy: .h3(fontCase: .upper), contentEdgeInsets: .init(top: 14, left: 20, bottom: 10, right: 20))
-                case .medium: return .init(typograhy: .h4(fontCase: .upper), contentEdgeInsets: .init(top: 11, left: 20, bottom: 9, right: 20))
-                case .small:  return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 9, left: 16, bottom: 7, right: 16))
-                case .xs:     return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 7, left: 12, bottom: 5, right: 12))
+                case .large:  return .init(typograhy: .h3(fontCase: .upper), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
+                case .medium: return .init(typograhy: .h4(fontCase: .upper), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))
+                case .small:  return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 9 + 2, left: 16, bottom: 7 + 2, right: 16))
+                case .xs:     return .init(typograhy: .h5(fontCase: .upper), contentEdgeInsets: .init(top: 7 + 2, left: 12, bottom: 5 + 2, right: 12))
+                case .none:   return .init(typograhy: .body2, contentEdgeInsets: .init(top: 0, left: 1, bottom: 0, right: 1))
                 }
             }
 
@@ -166,6 +211,7 @@ public enum DesignSystem {
             case tertiary(state: State)
             case outline(state: State)
             case ghost(state: State)
+            case textLink(state: State)
 
             public func makeHovered() -> Style {
                 switch self {
@@ -174,6 +220,7 @@ public enum DesignSystem {
                 case .tertiary(let state):  return state == .disabled ? self : .tertiary(state: .hovered)
                 case .outline(let state):   return state == .disabled ? self : .outline(state: .hovered)
                 case .ghost(let state):     return state == .disabled ? self : .ghost(state: .hovered)
+                case .textLink(let state):  return state == .disabled ? self : .textLink(state: .hovered)
                 }
             }
 
@@ -224,6 +271,15 @@ public enum DesignSystem {
                     case .focused:  return .init(textColor: .neutral100(alpha: 0.8), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.4))
                     case .disabled: return .init(textColor: .white(alpha: 0.4))
                     case .loading:  return .init(textColor: .white(), backgorundColor: .neutral500(), overlayColor: .neutral900(alpha: 0.4))
+                    }
+                case .textLink(let state):
+                    switch state {
+                    case .normal:   return .init(textColor: .neutral100())
+                    case .hovered:  return .init(textColor: .neutral100(alpha: 0.8))
+                    case .acvite:   return .init(textColor: .neutral100())
+                    case .focused:  return .init(textColor: .neutral100())
+                    case .disabled: return .init(textColor: .neutral100(alpha: 0.8))
+                    case .loading:  return .init(textColor: .white())
                     }
                 }
             }

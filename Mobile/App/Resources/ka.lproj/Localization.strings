@@ -28,3 +28,19 @@
 /* General */
 "view_all" = "ყველა";
 "cancel" = "გამოსვლა";
+"not_member" = "წევრი არ ხარ?";
+"join_now" = "შემოგვიერთდი";
+"login_button_title" = "შესვლა";
+
+/* Login */
+"login_page_title" = "შესვლა";
+"login_forgot_password" = "დაგავიწყდათ პაროლი?";
+"login_forgot_username" = "დაგავიწყდათ სახელი?";
+"login_sms_login" = "SMS შესვლა";
+"login_username_input_title" = "სახელი";
+"login_password_input_title" = "პაროლი";
+
+/* SMS Login */
+"sms_login_page_title" = "SMS შესვლა";
+"sms_confirmation_description" = "ჩვენ გამოგიგზავნეთ დადასტურების კოდი მობილურ ტელეფონის ნომერზე {0}";
+"sms_resend" = "SMS გაგზავნა";

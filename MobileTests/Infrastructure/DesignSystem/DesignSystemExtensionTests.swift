@@ -120,8 +120,13 @@ class DesignSystemExtensionTests: XCTestCase {
     // MAKR: String
     func testAttributedString() {
         DesignSystem.Typography.FontCase.allCases.forEach { fontCase in
-            let typography = DesignSystem.Typography.h1(fontCase: fontCase)
-            let attributedString = "Text".makeAttributedString(with: typography, alignment: .left)
+            // given
+            let typography          = DesignSystem.Typography.h1(fontCase: fontCase)
+            let alignment           = NSTextAlignment.left
+            let foregroundColor     = DesignSystem.Color.neutral100()
+            
+            // when
+            let attributedString    = "Text".makeAttributedString(with: typography, alignment: alignment, foregroundColor: foregroundColor)
             
             /// Retrieve attributes
             let attributes = attributedString.attributes(at: 0, effectiveRange: nil)
@@ -131,11 +136,16 @@ class DesignSystemExtensionTests: XCTestCase {
                 XCTAssertEqual(font.fontName, typography.description.font.fontName)
                 XCTAssertEqual(font.pointSize, typography.description.font.pointSize)
             }
+            
+            /// Retrieve and test foregroundColor
+            if let color = attributes[.foregroundColor] as? UIColor {
+                XCTAssertEqual(color, foregroundColor.value)
+            }
 
             /// Retrieve and test style
             if let style = attributes[.paragraphStyle] as? NSParagraphStyle {
                 XCTAssertEqual(style.lineSpacing, typography.description.lineSpasing)
-                XCTAssertEqual(style.alignment, .left)
+                XCTAssertEqual(style.alignment, alignment)
             }
         }
     }

@@ -2,204 +2,184 @@
 //  LoginViewController.swift
 //  Mobile
 //
-//  Created by Shota Ioramashvili on 4/12/20.
+//  Created by Shota Ioramashvili on 5/11/20.
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-class LoginViewController: UIViewController {
-    #if DEVELOPMENT
-    let username = "p2p16" //"testpng"
-    let password = "Paroli2" //"Paroli1"
-    #else
-    let username = "shota.io" // "adj_user"
-    let password = "Burtiburtibu#1" // "Paroli1"
-    #endif
+import RxSwift
 
-    enum Mode {
-        case normal
-        case smsCode
-    }
+public class LoginViewController: ABViewController {
+    public var viewModel: LoginViewModel = DefaultLoginViewModel(params: .init())
+    public lazy var navigator = LoginNavigator(viewController: self)
 
-    public var mode: Mode = .normal {
-        didSet {
-            configureUI()
-        }
-    }
+    // MARK: IBOutlets
+    @IBOutlet private weak var scrollView: UIScrollView!
 
-    @IBOutlet private var loginTextField: UITextField!
-    @IBOutlet private var passwordTextField: UITextField!
-    @IBOutlet private var smsCodeTextField: UITextField! {
-        didSet {
-            if #available(iOS 12.0, *) {
-                smsCodeTextField.textContentType = .oneTimeCode
-            }
-        }
-    }
+    @IBOutlet private weak var loginTitleLabel: UILabel!
+    @IBOutlet private weak var notMemberLabel: UILabel!
+    @IBOutlet private weak var joinNowButton: ABButton!
 
-//    @Inject public var adjarabetCoreClient: AdjarabetCoreServices
+    @IBOutlet private weak var usernameInputView: ABInputView!
+    @IBOutlet private weak var passwordInputView: ABInputView!
 
-    @IBOutlet private var loginButton: LoadingButton!
-    @IBOutlet private var smsCodeButton: LoadingButton!
-    @IBOutlet private var biometryButton: UIButton!
+    @IBOutlet private weak var forgotPasswordButton: ABButton!
+    @IBOutlet private weak var forgotUsernameButton: ABButton!
+    @IBOutlet private weak var smsLoginButton: ABButton!
 
-    private let userSession: UserSessionServices = UserSession.current
+    @IBOutlet private weak var loginButton: ABButton!
 
-    override func viewDidLoad() {
+    // MARK: Overrides
+    public override var keyScrollView: UIScrollView? { scrollView }
+
+    // MARK: - Lifecycle methods
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = Bundle.main.coreAPIUrl.absoluteString
-        configureUI()
+        setup()
+        observeKeyboardNotifications()
+        addKeyboardDismissOnTap()
 
-        loginTextField.text = username
-        passwordTextField.text = password
-
-        loginTextField.textContentType = .username
-        passwordTextField.textContentType = .password
-
-        loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
-        smsCodeButton.addTarget(self, action: #selector(smsCodeDidTap), for: .touchUpInside)
-        biometryButton.addTarget(self, action: #selector(biometryDidTap), for: .touchUpInside)
-
-        setupBiometryButton()
+        bind(to: viewModel)
+        viewModel.viewDidLoad()
     }
 
-    private func configureUI() {
+    // MARK: Bind to viewModel's observable properties
+    private func bind(to viewModel: LoginViewModel) {
+//        viewModel.action.subscribe(onNext: { [weak self] action in
+//            self?.didRecive(action: action)
+//        }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: LoginViewModelOutputAction) {
+    }
+
+    private func didRecive(route: LoginViewModelRoute) {
+        switch route {
+        case .openSMSLogin(let params): navigator.navigate(to: .smsLogin(params: params), animated: true)
+        }
+    }
+
+    // MAKR: Setup methods
+    private func setup() {
+        setBaseBackgorundColor()
         setupNavigationItem()
-        passwordTextField.isHidden = mode == .smsCode
-        smsCodeTextField.isHidden = !passwordTextField.isHidden
-    }
-
-    @objc private func closeButtonDidTap() {
-        mode = .normal
-        passwordTextField.becomeFirstResponder()
+        setupScrollView()
+        setupLabels()
+        setupButtons()
+        setupInputViews()
     }
 
     private func setupNavigationItem() {
-        let button = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action: #selector(closeButtonDidTap))
-        navigationItem.rightBarButtonItem = mode == .smsCode ? button : nil
+        navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
-    private func setupBiometryButton() {
-        biometryButton.isHidden = !(UserSession.current.isLoggedIn && Biometry.shared.isAvailable)
-        biometryButton.setImage(Biometry.shared.image, for: .normal)
+    private func setupScrollView() {
+        scrollView.alwaysBounceVertical = true
     }
 
-    @objc private func biometryDidTap() {
-        Biometry.shared.authenticate(successComplition: {
-            self.getActiveSession()
-        }, errorComplition: { error in
-            print(error?.localizedDescription ?? "")
-        })
+    private func setupLabels() {
+        loginTitleLabel.setTextColor(to: .white())
+        loginTitleLabel.setFont(to: .h2(fontCase: .lower))
+        loginTitleLabel.text = R.string.localization.login_page_title.localized()
+
+        notMemberLabel.setTextColor(to: .neutral100(alpha: 0.6))
+        notMemberLabel.setFont(to: .h4(fontCase: .lower))
+        notMemberLabel.text = R.string.localization.not_member.localized()
     }
 
-    private func getActiveSession() {
-//        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
-//
-//        loginButton.showLoading()
-//
-//        adjarabetCoreClient.aliveSession(userId: userId, sessionId: sessionId) { (result: Result<AdjarabetCoreResult.AliveSession, Error>) in
-//            defer {
-//                self.loginButton.hideLoading()
-//            }
-//
-//            switch result {
-//            case .success(let value):
-//                print(value)
-//                self.navigateToWelcomePage()
-//            case .failure(let error):
-//                if error.isSessionNotFound {
-//                    self.userSession.remove()
-//                    UIApplication.shared.currentWindow?.rootViewController = R.storyboard.login().instantiate(controller: LoginViewController.self)?.wrapInNav()
-//                }
-//                print(error.localizedDescription)
-//            }
-//        }
+    private func setupButtons() {
+        joinNowButton.setSize(to: .medium)
+        joinNowButton.setStyle(to: .ghost(state: .normal))
+        joinNowButton.setTitleWithoutAnimation(R.string.localization.join_now.localized(), for: .normal)
+        joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+        joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
+
+        forgotPasswordButton.setSize(to: .none)
+        forgotPasswordButton.setStyle(to: .textLink(state: .acvite))
+        forgotPasswordButton.setTitleColor(to: .white(), for: .normal)
+        forgotPasswordButton.setTitleWithoutAnimation(R.string.localization.login_forgot_password.localized(), for: .normal)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordDidTap), for: .touchUpInside)
+
+        forgotUsernameButton.setSize(to: .none)
+        forgotUsernameButton.setStyle(to: .textLink(state: .acvite))
+        forgotUsernameButton.setTitleColor(to: .white(), for: .normal)
+        forgotUsernameButton.setTitleWithoutAnimation(R.string.localization.login_forgot_username.localized(), for: .normal)
+        forgotUsernameButton.addTarget(self, action: #selector(forgotUsernameDidTap), for: .touchUpInside)
+
+        smsLoginButton.setSize(to: .none)
+        smsLoginButton.setStyle(to: .textLink(state: .acvite))
+        smsLoginButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
+        smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
+        smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
+
+        loginButton.setSize(to: .large)
+        loginButton.setStyle(to: .primary(state: .disabled))
+        loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
+        loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
+        updateLoginButton(isEnabled: false)
     }
 
-    @objc private func smsCodeDidTap() {
-//        guard let username = loginTextField.text else {return}
-//
-//        mode = .smsCode
-//
-//        smsCodeButton.showLoading()
-//        smsCodeTextField.text = nil
-//        smsCodeTextField.becomeFirstResponder()
-//
-//        adjarabetCoreClient.smsCode(username: username, channel: 2) { (result: Result<AdjarabetCoreResult.SmsCode, Error>) in
-//            defer {
-//                self.smsCodeButton.hideLoading()
-//            }
-//
-//            switch result {
-//            case .success(let value):
-//                print(value)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+    private func setupInputViews() {
+        usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title.localized())
+        usernameInputView.setSize(to: .large)
+
+        passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
+        passwordInputView.setSize(to: .large)
+        passwordInputView.becomeSecureTextEntry()
+
+        passwordInputView.rightButton.isHidden = false
+        passwordInputView.rightButton.setImage(R.image.shared.viewText(), for: .normal)
+
+        passwordInputView.rightButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.updatePasswordRightButton()
+        }).disposed(by: disposeBag)
+
+        Observable.combineLatest([usernameInputView.rx.text.orEmpty, passwordInputView.rx.text.orEmpty])
+            .map { $0.map { !$0.isEmpty } }
+            .map { $0.allSatisfy { $0 == true } }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.updateLoginButton(isEnabled: isValid)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    // MARK: Actions
+    @objc private func joinNowDidTap() {
+        showAlert(title: "Join now")
+    }
+
+    @objc private func forgotPasswordDidTap() {
+        showAlert(title: "Forgot Password")
+    }
+
+    @objc private func forgotUsernameDidTap() {
+        showAlert(title: "Forgot Username")
+    }
+
+    @objc private func smsLoginDidTap() {
+        closeKeyboard()
+        viewModel.smsLogin()
     }
 
     @objc private func loginDidTap() {
-        switch mode {
-        case .normal:
-            login()
-        case .smsCode:
-            loginWithSMSCode()
-        }
+        showAlert(title: "Log in")
     }
 
-    private func login() {
-//        guard let username = loginTextField.text, let password = passwordTextField.text else {return}
-//
-//        loginButton.showLoading()
-//
-//        adjarabetCoreClient.login(username: username, password: password, channel: 0) { (result: Result<AdjarabetCoreResult.Login, Error>) in
-//            defer {
-//                self.loginButton.hideLoading()
-//            }
-//
-//            switch result {
-//            case .success(let value):
-//                print(value)
-//                UserSession.current.set(
-//                    userId: value.codable.userID,
-//                    username: value.codable.username,
-//                    sessionId: value.header!.sessionId,
-//                    currencyId: value.codable.preferredCurrency)
-//                UserSession.current.set(isLoggedIn: true)
-//                self.navigateToWelcomePage()
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+    // MARK: Configuration
+    private func updateLoginButton(isEnabled: Bool) {
+        loginButton.isUserInteractionEnabled = isEnabled
+        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled))
     }
 
-    private func loginWithSMSCode() {
-//        guard let username = loginTextField.text, let code = smsCodeTextField.text else {return}
-//
-//        loginButton.showLoading()
-//        adjarabetCoreClient.login(username: username, code: code, loginType: .sms) { (result: Result<AdjarabetCoreResult.Login, Error>) in
-//            defer {
-//                self.loginButton.hideLoading()
-//            }
-//
-//            switch result {
-//            case .success(let value):
-//                print(value)
-//                UserSession.current.set(
-//                    userId: value.codable.userID,
-//                    username: value.codable.username,
-//                    sessionId: value.header!.sessionId,
-//                    currencyId: value.codable.preferredCurrency)
-//                UserSession.current.set(isLoggedIn: true)
-//                self.navigateToWelcomePage()
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-    }
+    private func updatePasswordRightButton() {
+        let isSecureTextEntry = passwordInputView.textField.isSecureTextEntry
+        passwordInputView.toggleSecureTextEntry()
 
-    private func navigateToWelcomePage() {
-        UIApplication.shared.currentWindow?.rootViewController = R.storyboard.login().instantiate(controller: WelcomeViewController.self)?.wrapInNav()
+        let icon = isSecureTextEntry ? R.image.shared.hideText() : R.image.shared.viewText()
+        passwordInputView.rightButton.setImage(icon, for: .normal)
     }
 }
