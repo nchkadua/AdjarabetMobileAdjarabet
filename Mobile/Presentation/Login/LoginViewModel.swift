@@ -27,11 +27,14 @@ public protocol LoginViewModelOutput {
 }
 
 public enum LoginViewModelOutputAction {
+    case loginButton(isLoading: Bool)
+    case smsLoginButton(isLoading: Bool)
 }
 
 public enum LoginViewModelRoute {
     case openSMSLogin(params: SMSLoginViewModelParams)
     case openMainTabBar
+    case openAlert(title: String, message: String? = nil)
 }
 
 public class DefaultLoginViewModel {
@@ -55,19 +58,23 @@ extension DefaultLoginViewModel: LoginViewModel {
     }
 
     public func smsLogin(username: String) {
+        actionSubject.onNext(.smsLoginButton(isLoading: true))
         smsCodeUseCase.execute(username: username) { [weak self] result in
+            defer { self?.actionSubject.onNext(.smsLoginButton(isLoading: false)) }
             switch result {
-            case .success: self?.routeSubject.onNext(.openSMSLogin(params: .init()))
-            case .failure(let error): print(error.localizedDescription)
+            case .success: self?.routeSubject.onNext(.openSMSLogin(params: .init(username: username)))
+            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
             }
         }
     }
 
     public func login(username: String, password: String) {
+        actionSubject.onNext(.loginButton(isLoading: true))
         loginUseCase.execute(username: username, password: password) { [weak self] result in
+            defer { self?.actionSubject.onNext(.loginButton(isLoading: false)) }
             switch result {
             case .success: self?.routeSubject.onNext(.openMainTabBar)
-            case .failure(let error): print(error.localizedDescription)
+            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
             }
         }
     }

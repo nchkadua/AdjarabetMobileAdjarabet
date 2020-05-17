@@ -123,6 +123,7 @@
 		D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */; };
 		D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E75624714E0D007D85D3 /* LoginUseCase.swift */; };
 		D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */; };
+		D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */; };
 		D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */; };
 		D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863697246C485500FF061D /* SMSCodeInputView.swift */; };
 		D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */; };
@@ -300,6 +301,7 @@
 		D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		D885E75624714E0D007D85D3 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeUseCase.swift; sourceTree = "<group>"; };
+		D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginUseCase.swift; sourceTree = "<group>"; };
 		D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeDigitView.swift; sourceTree = "<group>"; };
 		D8863697246C485500FF061D /* SMSCodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeInputView.swift; sourceTree = "<group>"; };
 		D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
@@ -772,6 +774,7 @@
 			children = (
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
+				D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1374,6 +1377,7 @@
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
 				D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */,
+				D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */,
 				D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,

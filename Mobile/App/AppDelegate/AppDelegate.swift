@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Module { DefaultNetworkService() as NetworkService }
             Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }
             Module { DefaultDataTransferService() as DataTransferService }
-            Module { AdjarabetCoreClientRequestBuilder.shared as AdjarabetCoreClientRequestBuilder }
+            Module { AdjarabetCoreClientRequestBuilder() as AdjarabetCoreClientRequestBuilder }
         }
 
         dependencies.build()
@@ -56,5 +56,6 @@ public extension DependencyContainer {
     static var useCases = DependencyContainer {
         Module { DefaultLoginUseCase() as LoginUseCase }
         Module { DefaultSMSCodeUseCase() as SMSCodeUseCase }
+        Module { DefaultSMSLoginUseCase() as SMSLoginUseCase }
     }
 }

@@ -45,9 +45,9 @@ public class LoginViewController: ABViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: LoginViewModel) {
-//        viewModel.action.subscribe(onNext: { [weak self] action in
-//            self?.didRecive(action: action)
-//        }).disposed(by: disposeBag)
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
 
         viewModel.route.subscribe(onNext: { [weak self] route in
             self?.didRecive(route: route)
@@ -55,12 +55,19 @@ public class LoginViewController: ABViewController {
     }
 
     private func didRecive(action: LoginViewModelOutputAction) {
+        switch action {
+        case .loginButton(let isLoading):
+            isLoading ? loginButton.showLoading() : loginButton.hideLoading()
+        case .smsLoginButton(let isLoading):
+            isLoading ? smsLoginButton.showLoading() : smsLoginButton.hideLoading()
+        }
     }
 
     private func didRecive(route: LoginViewModelRoute) {
         switch route {
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
         case .openSMSLogin(let params): navigator.navigate(to: .smsLogin(params: params), animated: true)
+        case .openAlert(let title, _): showAlert(title: title)
         }
     }
 

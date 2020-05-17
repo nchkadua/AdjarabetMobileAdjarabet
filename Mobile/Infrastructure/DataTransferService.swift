@@ -36,7 +36,7 @@ extension DefaultDataTransferService: DataTransferService {
                 }
                 do {
                     // continue parsing if the status code is success
-                    try T.validate(data: data)
+//                    try T.validate(data: data)
 
                     let decoder = JSONDecoder()
                     let decoded = try decoder.decode(T.T.self, from: data)

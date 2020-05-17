@@ -67,12 +67,15 @@ public class SMSLoginViewController: ABViewController {
             smsCodeInputView.configureForNumberOfItems(count)
         case .updateSMSCodeInputView(let text):
             updateSMSCodeInputView(texts: text)
+        case .loginButton(let isLoading):
+            isLoading ? loginButton.showLoading() : loginButton.hideLoading()
         }
     }
 
     private func didRecive(route: SMSLoginViewModelRoute) {
         switch route {
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
+        case .openAlert(let title, _): showAlert(title: title)
         }
     }
 
@@ -121,7 +124,8 @@ public class SMSLoginViewController: ABViewController {
         resentSMSButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
         resentSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
         resentSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
-        resentSMSButton.imageEdgeInsets = .init(top: 0, left: -3, bottom: 0, right: 0)
+        resentSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 0)
+        resentSMSButton.contentEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 0)
         resentSMSButton.addTarget(self, action: #selector(resentSMSDidTap), for: .touchUpInside)
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
@@ -159,8 +163,10 @@ public class SMSLoginViewController: ABViewController {
     }
 
     @objc private func loginDidTap() {
+        guard let code = smsCodeTextField.text else {return}
+
         closeKeyboard()
-        viewModel.login()
+        viewModel.login(code: code)
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {

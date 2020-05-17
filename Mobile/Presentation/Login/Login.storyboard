@@ -99,7 +99,7 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-aK-Pmt" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-aK-Pmt" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
                                                                 <rect key="frame" x="305" y="0.0" width="69" height="30"/>
                                                                 <state key="normal" title="SMS login"/>
                                                             </button>

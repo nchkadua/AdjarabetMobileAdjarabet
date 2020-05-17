@@ -7,8 +7,6 @@
 //
 
 public class AdjarabetCoreClientRequestBuilder: Builder {
-    public static let shared = AdjarabetCoreClientRequestBuilder(url: AdjarabetEndpoints.coreAPIUrl)
-
     public typealias Buildable = URLRequest
 
     private var url: URL
@@ -20,7 +18,7 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
         "X-Requested-With": "XMLHttpRequest"
     ]
 
-    public init(url: URL) {
+    public init(url: URL = AdjarabetEndpoints.coreAPIUrl) {
         self.url = url
     }
 
