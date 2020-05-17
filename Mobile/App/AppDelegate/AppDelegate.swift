@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }
             Module { DefaultDataTransferService() as DataTransferService }
             Module { AdjarabetCoreClientRequestBuilder() as AdjarabetCoreClientRequestBuilder }
+            Module { DefaultUserBalanceService.shared as UserBalanceService }
         }
 
         dependencies.build()
@@ -46,6 +47,7 @@ public extension DependencyContainer {
 
     static var repositories = DependencyContainer {
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
+        Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
     }
 
     static var factories = DependencyContainer {

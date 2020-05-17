@@ -12,7 +12,7 @@ public protocol CommonBarButtonProviding: UIViewController { }
 
 public extension CommonBarButtonProviding {
     @discardableResult
-    func setLeftBarButtonItemTitle(to title: String) -> UIBarButtonItem.Coupled {
+    func makeLeftBarButtonItemTitle(to title: String) -> UIBarButtonItem.Coupled {
         let barButtonItem = UIBarButtonItem.make(title: title, typography: .h2(fontCase: .lower))
         barButtonItem.barButtonItem.isEnabled = false
         navigationItem.leftBarButtonItem = barButtonItem.barButtonItem
@@ -20,7 +20,7 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
-    func setLoginBarButtonItem() -> UIBarButtonItem.Coupled {
+    func makeLoginBarButtonItem() -> UIBarButtonItem.Coupled {
 //        let joinNowBarButtonItem = UIBarButtonItem.make(title: R.string.localization.join_now.localized())
         let loginBarButtonItem = UIBarButtonItem.make(title: R.string.localization.login.localized())
         navigationItem.rightBarButtonItems = [loginBarButtonItem.barButtonItem]
@@ -28,13 +28,16 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
-    func setProfileBarButtonItem(text: String? = nil) -> UIBarButtonItem.Coupled {
-        let priceBarButtonItem = UIBarButtonItem.make(title: text)
-        priceBarButtonItem.button.setImage(R.image.shared.navBar.profile()?.resizeImage(newHeight: 20), for: .normal)
-        priceBarButtonItem.button.semanticContentAttribute = .forceRightToLeft
-        priceBarButtonItem.button.titleEdgeInsets = UIEdgeInsets(top: 4, left: -8, bottom: 0, right: 0)
-        navigationItem.rightBarButtonItems = [priceBarButtonItem.barButtonItem]
-        return priceBarButtonItem
+    func makeBalanceBarButtonItem() -> UIBarButtonItem.Coupled {
+        let button = BalanceProfileButton(type: .system)
+        button.setFont(to: .h4(fontCase: .lower))
+        button.setTitleColor(to: .neutral100(), for: .normal)
+        button.setImage(R.image.shared.navBar.profile()?.resizeImage(newHeight: 20), for: .normal)
+        button.semanticContentAttribute = .forceRightToLeft
+        button.titleEdgeInsets = UIEdgeInsets(top: 4, left: -8, bottom: 0, right: 0)
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
+
+        return (UIBarButtonItem(customView: button), button)
     }
 }
 

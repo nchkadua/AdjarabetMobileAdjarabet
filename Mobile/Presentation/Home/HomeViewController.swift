@@ -35,6 +35,11 @@ public class HomeViewController: UIViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
+    }
+
     private func bind(to viewModel: HomeViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didReceive(action: action)
@@ -63,8 +68,8 @@ public class HomeViewController: UIViewController {
     // MARK: Setup methods
     private func setupNavigationItem() {
         setBaseBackgorundColor()
-        setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
-        setProfileBarButtonItem(text: "₾ 0.00")
+        makeLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
+        navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
     }
 
     private func setupCollectionViewController() {
@@ -139,10 +144,6 @@ public class HomeViewController: UIViewController {
         self.searchController.searchResultsUpdater = self
         self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
-    }
-
-    private func setupProfilButton() {
-        setProfileBarButtonItem(text: "₾ 0.00")
     }
 
     private func setupWhen(mainCollectionViewIsVisible: Bool, animated animate: Bool) {

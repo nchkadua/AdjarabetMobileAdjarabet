@@ -24,7 +24,7 @@ public class PromotionsViewController: UIViewController {
 
     private func setup() {
         setBaseBackgorundColor()
-        setLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
+        makeLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
     }
 
     private func bind(to viewModel: PromotionsViewModel) {

@@ -145,6 +145,9 @@
 		D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4044244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift */; };
 		D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */; };
 		D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */; };
+		D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */; };
+		D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */; };
+		D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C637A12471BB7C00B9A50E /* BalanceProfileButton.swift */; };
 		D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F7E2445A64E004C96DB /* HomeViewController.swift */; };
 		D8C73F812445A656004C96DB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C73F802445A656004C96DB /* Home.storyboard */; };
 		D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */; };
@@ -326,6 +329,9 @@
 		D8BF4044244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCellDataProvider+Extension.swift"; sourceTree = "<group>"; };
 		D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeighProvidering.swift; sourceTree = "<group>"; };
+		D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBalanceService.swift; sourceTree = "<group>"; };
+		D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABFormatter.swift; sourceTree = "<group>"; };
+		D8C637A12471BB7C00B9A50E /* BalanceProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceProfileButton.swift; sourceTree = "<group>"; };
 		D8C73F7E2445A64E004C96DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D8C73F802445A656004C96DB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBarButtonProviding.swift; sourceTree = "<group>"; };
@@ -592,6 +598,7 @@
 				D84202D72451AD8400F0F056 /* BaseViewModel.swift */,
 				D86253AC2464197500F7DE0C /* Cancelable.swift */,
 				D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */,
+				D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -693,6 +700,7 @@
 			children = (
 				D86253B8246444A300F7DE0C /* ABButton.swift */,
 				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
+				D8C637A12471BB7C00B9A50E /* BalanceProfileButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -971,6 +979,7 @@
 			children = (
 				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
 				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
+				D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1343,6 +1352,7 @@
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
+				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
@@ -1399,6 +1409,7 @@
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
 				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
+				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
@@ -1426,6 +1437,7 @@
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
+				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
 			);

@@ -33,7 +33,7 @@ public class NotificationsViewController: UIViewController {
 
     private func setup() {
         setBaseBackgorundColor()
-        setLeftBarButtonItemTitle(to: R.string.localization.notifications_page_title.localized())
+        makeLeftBarButtonItemTitle(to: R.string.localization.notifications_page_title.localized())
     }
 
     private func bind(to viewModel: NotificationsViewModel) {
