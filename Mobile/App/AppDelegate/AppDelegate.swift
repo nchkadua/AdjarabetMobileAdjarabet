@@ -52,4 +52,9 @@ public extension DependencyContainer {
         Module { DefaultMainTabBarFactory() as MainTabBarFactory }
         Module { DefaultSMSLoginFactory() as SMSLoginFactory }
     }
+
+    static var useCases = DependencyContainer {
+        Module { DefaultLoginUseCase() as LoginUseCase }
+        Module { DefaultSMSCodeUseCase() as SMSCodeUseCase }
+    }
 }

@@ -165,13 +165,17 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func smsLoginDidTap() {
+        guard let username = usernameInputView.textField.text else {return}
+
         closeKeyboard()
-        viewModel.smsLogin()
+        viewModel.smsLogin(username: username)
     }
 
     @objc private func loginDidTap() {
+        guard let username = usernameInputView.textField.text, let password = passwordInputView.textField.text else {return}
+
         closeKeyboard()
-        viewModel.login()
+        viewModel.login(username: username, password: password)
     }
 
     // MARK: Configuration

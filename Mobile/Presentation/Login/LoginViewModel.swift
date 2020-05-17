@@ -16,8 +16,8 @@ public struct LoginViewModelParams {
 
 public protocol LoginViewModelInput {
     func viewDidLoad()
-    func smsLogin()
-    func login()
+    func smsLogin(username: String)
+    func login(username: String, password: String)
 }
 
 public protocol LoginViewModelOutput {
@@ -39,6 +39,9 @@ public class DefaultLoginViewModel {
     private let routeSubject = PublishSubject<LoginViewModelRoute>()
     public let params: LoginViewModelParams
 
+    @Inject(from: .useCases) private var loginUseCase: LoginUseCase
+    @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
+
     public init(params: LoginViewModelParams) {
         self.params = params
     }
@@ -51,11 +54,21 @@ extension DefaultLoginViewModel: LoginViewModel {
     public func viewDidLoad() {
     }
 
-    public func smsLogin() {
-        routeSubject.onNext(.openSMSLogin(params: .init()))
+    public func smsLogin(username: String) {
+        smsCodeUseCase.execute(username: username) { [weak self] result in
+            switch result {
+            case .success: self?.routeSubject.onNext(.openSMSLogin(params: .init()))
+            case .failure(let error): print(error.localizedDescription)
+            }
+        }
     }
 
-    public func login() {
-        routeSubject.onNext(.openMainTabBar)
+    public func login(username: String, password: String) {
+        loginUseCase.execute(username: username, password: password) { [weak self] result in
+            switch result {
+            case .success: self?.routeSubject.onNext(.openMainTabBar)
+            case .failure(let error): print(error.localizedDescription)
+            }
+        }
     }
 }
