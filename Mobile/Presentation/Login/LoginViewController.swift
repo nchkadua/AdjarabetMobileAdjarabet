@@ -79,6 +79,7 @@ public class LoginViewController: ABViewController {
         setupLabels()
         setupButtons()
         setupInputViews()
+        setupInputViewsObservation()
     }
 
     private func setupNavigationItem() {
@@ -158,6 +159,13 @@ public class LoginViewController: ABViewController {
             .disposed(by: disposeBag)
     }
 
+    private func setupInputViewsObservation() {
+        startObservingInputViewsReturn { [weak self] in
+            guard self?.loginButton.isUserInteractionEnabled == true else {return}
+            self?.loginDidTap()
+        }
+    }
+
     // MARK: Actions
     @objc private func joinNowDidTap() {
         showAlert(title: "Join now")
@@ -203,4 +211,8 @@ public class LoginViewController: ABViewController {
         let icon = isSecureTextEntry ? R.image.shared.hideText() : R.image.shared.viewText()
         passwordInputView.rightButton.setImage(icon, for: .normal)
     }
+}
+
+extension LoginViewController: InputViewsProviding {
+    public var inputViews: [ABInputView] { [usernameInputView, passwordInputView] }
 }

@@ -126,6 +126,7 @@
 		D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */; };
 		D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */; };
 		D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863697246C485500FF061D /* SMSCodeInputView.swift */; };
+		D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */; };
 		D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */; };
 		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
 		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
@@ -307,6 +308,7 @@
 		D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginUseCase.swift; sourceTree = "<group>"; };
 		D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeDigitView.swift; sourceTree = "<group>"; };
 		D8863697246C485500FF061D /* SMSCodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeInputView.swift; sourceTree = "<group>"; };
+		D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewsProviding.swift; sourceTree = "<group>"; };
 		D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
 		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -599,6 +601,7 @@
 				D86253AC2464197500F7DE0C /* Cancelable.swift */,
 				D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */,
 				D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */,
+				D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1357,6 +1360,7 @@
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
+				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,

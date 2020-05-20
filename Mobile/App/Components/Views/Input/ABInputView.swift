@@ -182,9 +182,9 @@ extension ABInputView: Xibable {
         })
         .disposed(by: disposeBag)
 
-        textField.rx.controlEvent([.editingDidEndOnExit]).subscribe { [weak self] _ in
-            self?.textField.resignFirstResponder()
-        }.disposed(by: disposeBag)
+//        textField.rx.controlEvent([.editingDidEndOnExit]).subscribe { [weak self] _ in
+//            self?.textField.resignFirstResponder()
+//        }.disposed(by: disposeBag)
     }
 
     private func setupValidationResultLabel() {
