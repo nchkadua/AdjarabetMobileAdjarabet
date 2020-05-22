@@ -22,11 +22,6 @@ public class PromotionsViewController: UIViewController {
         viewModel.viewDidLoad()
     }
 
-    private func setup() {
-        setBaseBackgorundColor()
-        makeLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
-    }
-
     private func bind(to viewModel: PromotionsViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didReceive(action: action)
@@ -38,6 +33,13 @@ public class PromotionsViewController: UIViewController {
         case .languageDidChange:
             setup()
         }
+    }
+
+    // MARK: Setup methods
+    private func setup() {
+        setBaseBackgorundColor()
+        makeLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
+        navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
     }
 }
 

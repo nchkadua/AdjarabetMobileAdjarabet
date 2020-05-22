@@ -1624,14 +1624,9 @@ struct _R: Rswift.Validatable {
     struct login: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = LoginViewController
 
-      let appNavigationController = StoryboardViewControllerResource<ABNavigationController>(identifier: "AppNavigationController")
       let bundle = R.hostingBundle
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Login"
-
-      func appNavigationController(_: Void = ()) -> ABNavigationController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: appNavigationController)
-      }
 
       func loginViewController(_: Void = ()) -> LoginViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
@@ -1641,7 +1636,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in storyboard 'Login', but couldn't be loaded.") }
         }
-        if _R.storyboard.login().appNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'appNavigationController' could not be loaded from storyboard 'Login' as 'ABNavigationController'.") }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
       }
 

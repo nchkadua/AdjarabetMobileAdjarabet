@@ -24,13 +24,7 @@ public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationItem()
-        setupSearchViewController()
-
-        setupCollectionViewController()
-        setupSearchCollectionViewController()
-        setupWhen(mainCollectionViewIsVisible: true, animated: false)
-
+        setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
@@ -66,8 +60,17 @@ public class HomeViewController: UIViewController {
     }
 
     // MARK: Setup methods
-    private func setupNavigationItem() {
+    private func setup() {
         setBaseBackgorundColor()
+        setupNavigationItem()
+        setupSearchViewController()
+
+        setupCollectionViewController()
+        setupSearchCollectionViewController()
+        setupWhen(mainCollectionViewIsVisible: true, animated: false)
+    }
+
+    private func setupNavigationItem() {
         makeLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
         navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
     }
