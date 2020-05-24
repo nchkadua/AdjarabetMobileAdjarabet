@@ -28,6 +28,9 @@ public class LoginViewController: ABViewController {
 
     @IBOutlet private weak var loginButton: ABButton!
 
+    @IBOutlet private weak var biometryIconButton: UIButton!
+    @IBOutlet private weak var biometryButton: ABButton!
+
     // MARK: Overrides
     public override var keyScrollView: UIScrollView? { scrollView }
 
@@ -56,10 +59,13 @@ public class LoginViewController: ABViewController {
 
     private func didRecive(action: LoginViewModelOutputAction) {
         switch action {
-        case .loginButton(let isLoading):
-            isLoading ? loginButton.showLoading() : loginButton.hideLoading()
-        case .smsLoginButton(let isLoading):
-            isLoading ? smsLoginButton.showLoading() : smsLoginButton.hideLoading()
+        case .loginButton(let isLoading):    loginButton.set(isLoading: isLoading)
+        case .smsLoginButton(let isLoading): smsLoginButton.set(isLoading: isLoading)
+        case .biometryButton(let isLoading): biometryButton.set(isLoading: isLoading)
+        case .configureBiometryButton(let available, let icon, let title):
+            biometryButton.superview?.isHidden = !available
+            biometryIconButton.setImage(icon, for: .normal)
+            biometryButton.setTitleWithoutAnimation(title, for: .normal)
         }
     }
 
@@ -126,6 +132,13 @@ public class LoginViewController: ABViewController {
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
         updateLoginButton(isEnabled: false)
+
+        biometryButton.setStyle(to: .textLink(state: .acvite, size: .small))
+        biometryButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
+        biometryButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
+        biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
+        biometryIconButton.setTintColor(to: .neutral100())
+        biometryIconButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
     }
 
     private func setupInputViews() {
@@ -191,6 +204,10 @@ public class LoginViewController: ABViewController {
 
         closeKeyboard()
         viewModel.login(username: username, password: password)
+    }
+
+    @objc private func biometryButtonDidTap() {
+        viewModel.biometryLogin()
     }
 
     // MARK: Configuration

@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Module { DefaultDataTransferService() as DataTransferService }
             Module { AdjarabetCoreClientRequestBuilder() as AdjarabetCoreClientRequestBuilder }
             Module { DefaultUserBalanceService.shared as UserBalanceService }
+            Module { BiometryAuthentication() as BiometryAuthentication }
         }
 
         dependencies.build()
@@ -48,6 +49,7 @@ public extension DependencyContainer {
     static var repositories = DependencyContainer {
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
         Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
+        Module { DefaultSessionManagementRepository() as SessionManagementRepository }
     }
 
     static var factories = DependencyContainer {
@@ -59,5 +61,6 @@ public extension DependencyContainer {
         Module { DefaultLoginUseCase() as LoginUseCase }
         Module { DefaultSMSCodeUseCase() as SMSCodeUseCase }
         Module { DefaultSMSLoginUseCase() as SMSLoginUseCase }
+        Module { DefaultUserSessionUseCase() as UserSessionUseCase }
     }
 }

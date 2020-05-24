@@ -806,10 +806,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.shared` struct is generated, and contains static references to 4 images.
+    /// This `R.image.shared` struct is generated, and contains static references to 5 images.
     struct shared {
       /// Image `close`.
       static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/close")
+      /// Image `faceID`.
+      static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/faceID")
       /// Image `hideText`.
       static let hideText = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/hideText")
       /// Image `search`.
@@ -821,6 +823,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "close", bundle: ..., traitCollection: ...)`
       static func close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.shared.close, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "faceID", bundle: ..., traitCollection: ...)`
+      static func faceID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.faceID, compatibleWith: traitCollection)
       }
       #endif
 
@@ -1633,6 +1642,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in storyboard 'Login', but couldn't be loaded.") }
         }

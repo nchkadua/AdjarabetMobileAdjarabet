@@ -9,6 +9,7 @@
 public protocol Loading {
     func showLoading()
     func hideLoading()
+    func set(isLoading: Bool)
 }
 
 public class LoadingButton: AppShadowButton, Loading {
@@ -47,5 +48,9 @@ public class LoadingButton: AppShadowButton, Loading {
 
     public func hideLoading() {
         loading(false)
+    }
+
+    public func set(isLoading: Bool) {
+        isLoading ? showLoading() : hideLoading()
     }
 }
