@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dependencies = DependencyContainer.root.register {
             Module { AdjarabetWebAPIClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetWebAPIServices }
             Module { DefaultLanguageStorage.shared as LanguageStorage }
+
             Module { UserSession.current as UserSessionServices }
+            Module { UserSession.current as UserSessionReadableServices }
 
             Module { DefaultNetworkService() as NetworkService }
             Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }

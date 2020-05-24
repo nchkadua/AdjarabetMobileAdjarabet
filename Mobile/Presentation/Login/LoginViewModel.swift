@@ -49,7 +49,7 @@ public class DefaultLoginViewModel {
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
     @Inject(from: .useCases) private var userSessionUseCase: UserSessionUseCase
 
-    @Inject private var userSession: UserSessionServices
+    @Inject private var userSession: UserSessionReadableServices
     @Inject private var biometry: BiometryAuthentication
 
     public init(params: LoginViewModelParams) {
