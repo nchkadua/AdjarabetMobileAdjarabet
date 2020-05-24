@@ -8,7 +8,15 @@
 
 import LocalAuthentication
 
-final public class BiometryAuthentication {
+public protocol BiometryAuthentication {
+    var isAvailable: Bool { get }
+    var biometryType: LABiometryType { get }
+    var icon: UIImage? { get }
+    var title: String? { get }
+    func authenticate(completion: @escaping (Result<Void, Error>) -> Void)
+}
+
+public class DefaultBiometryAuthentication: BiometryAuthentication {
     private var context = LAContext()
 
     public var isAvailable: Bool {

@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Module { DefaultDataTransferService() as DataTransferService }
             Module { AdjarabetCoreClientRequestBuilder() as AdjarabetCoreClientRequestBuilder }
             Module { DefaultUserBalanceService.shared as UserBalanceService }
-            Module { BiometryAuthentication() as BiometryAuthentication }
+            Module { DefaultBiometryAuthentication() as BiometryAuthentication }
         }
 
         dependencies.build()

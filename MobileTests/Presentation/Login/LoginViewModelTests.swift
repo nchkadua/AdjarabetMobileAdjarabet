@@ -23,8 +23,8 @@ class LoginViewModelTests: XCTestCase {
     func testLoginSuccess() {
         // given
         let expectation = self.expectation(description: "Login Success")
-        let testLoginUseCase: LoginUseCase = LoginUseCaseSuccessMock()
-        Mirror(reflecting: viewModel!).inject(testable: testLoginUseCase)
+        let loginUseCase: LoginUseCase = LoginUseCaseSuccessMock()
+        Mirror(reflecting: viewModel!).inject(testable: loginUseCase)
         
         _ = viewModel.route.subscribe(onNext: { action in
             if case .openMainTabBar = action { expectation.fulfill() }
@@ -40,8 +40,8 @@ class LoginViewModelTests: XCTestCase {
     func testLoginError() {
         // given
         let expectation = self.expectation(description: "Login Error")
-        let testLoginUseCase: LoginUseCase = LoginUseCaseErrorMock()
-        Mirror(reflecting: viewModel!).inject(testable: testLoginUseCase)
+        let loginUseCase: LoginUseCase = LoginUseCaseErrorMock()
+        Mirror(reflecting: viewModel!).inject(testable: loginUseCase)
 
         _ = viewModel.route.subscribe(onNext: { action in
             if case .openAlert = action { expectation.fulfill() }
