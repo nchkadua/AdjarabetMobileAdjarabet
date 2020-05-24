@@ -42,6 +42,7 @@
 		D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */; };
 		D8390E7F246C1B6400EF8CB5 /* SMSLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */; };
 		D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E4225247A92D800E9615F /* UserSessionUseCase.swift */; };
+		D83E4229247AA7BE00E9615F /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */; };
 		D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F0244C8C860037DDEB /* CircularImageView.swift */; };
 		D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */; };
 		D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */; };
@@ -223,6 +224,7 @@
 		D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginViewModel.swift; sourceTree = "<group>"; };
 		D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SMSLogin.storyboard; sourceTree = "<group>"; };
 		D83E4225247A92D800E9615F /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
+		D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		D83ED2F0244C8C860037DDEB /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -474,6 +476,14 @@
 				D8863699246C4F4400FF061D /* Views */,
 			);
 			path = SMSLogin;
+			sourceTree = "<group>";
+		};
+		D83E4227247AA7AC00E9615F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D84202C82451919400F0F056 /* PersistentStorages */ = {
@@ -805,6 +815,7 @@
 		D8972FE424484E80001A6B13 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D83E4227247AA7AC00E9615F /* Login */,
 				D8972FE524484E92001A6B13 /* MainTabBar */,
 			);
 			path = Presentation;
@@ -1327,6 +1338,7 @@
 				D841073D246584BF002F7973 /* ABButtonTests.swift in Sources */,
 				D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */,
 				D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */,
+				D83E4229247AA7BE00E9615F /* LoginViewModelTests.swift in Sources */,
 				D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */,
 				D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */,
 				D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */,

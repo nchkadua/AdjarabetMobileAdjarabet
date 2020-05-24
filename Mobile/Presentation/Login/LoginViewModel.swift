@@ -45,12 +45,12 @@ public class DefaultLoginViewModel {
     private let routeSubject = PublishSubject<LoginViewModelRoute>()
     public let params: LoginViewModelParams
 
-    @Inject(from: .useCases) private var loginUseCase: LoginUseCase
-    @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
-    @Inject(from: .useCases) private var userSessionUseCase: UserSessionUseCase
+    @Inject(from: .useCases) public var loginUseCase: LoginUseCase
+    @Inject(from: .useCases) public var smsCodeUseCase: SMSCodeUseCase
+    @Inject(from: .useCases) public var userSessionUseCase: UserSessionUseCase
 
-    @Inject private var userSession: UserSessionServices
-    @Inject private var biometry: BiometryAuthentication
+    @Inject public var userSession: UserSessionServices
+    @Inject public var biometry: BiometryAuthentication
 
     public init(params: LoginViewModelParams) {
         self.params = params
