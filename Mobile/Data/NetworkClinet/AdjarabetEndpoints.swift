@@ -11,6 +11,10 @@ public class AdjarabetEndpoints {
         Bundle.main.coreAPIUrl
     }
 
+    public static var mobileAPIUrl: URL {
+        Bundle.main.mobileAPIUrl
+    }
+
     public static var webAPIUrl: URL {
         URL(string: "https://webapi.adjarabet.com")!
     }
