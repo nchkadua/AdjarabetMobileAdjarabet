@@ -19,7 +19,7 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
         self.url = url
     }
 
-    public func set(method: AdjarabetCoreClient.Method) -> Self {
+    public func set(method: AdjarabetMobileClient.Method) -> Self {
         url.appendPathComponent(method.rawValue)
         return self
     }
@@ -56,7 +56,7 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
 
     private func makeRequstMessage(sessionId: String?, params: [Key: Any]) -> [String: Any] {
         var message: [Key: Any] = [
-            .params: params,
+            .params: params.toStringKeys(),
             .platform: 0, // 0 indicates iOS
             .languageCode: languageStorage.currentLanguage.localizableIdentifier
         ]
@@ -64,6 +64,14 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
         message.addIfNotNil(key: .appVersion, value: Bundle.main.fullVersion)
         message.addIfNotNil(key: .sessionId, value: sessionId)
 
-        return Dictionary(uniqueKeysWithValues: message.map { ($0.key.rawValue, $0.value) })
+        return message.toStringKeys()
+    }
+}
+
+extension Dictionary where Key: RawRepresentable, Key.RawValue == String, Value == Any {
+    func toStringKeys() -> [String: Value] {
+        [String: Value](uniqueKeysWithValues: self.map {
+            ($0.key.rawValue, $0.value)
+        })
     }
 }

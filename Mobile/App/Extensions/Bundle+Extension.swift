@@ -14,7 +14,7 @@ public extension Bundle {
     var mobileAPIUrl: URL {
         URL(string: infoDictionary?["MOBILE_API_URL"] as? String ?? "")!
     }
-    
+
     var versionNumber: String? {
         infoDictionary?["CFBundleShortVersionString"] as? String
     }
@@ -29,4 +29,3 @@ public extension Bundle {
         return "\(versionNumber) (\(buildNumber))"
     }
 }
-
