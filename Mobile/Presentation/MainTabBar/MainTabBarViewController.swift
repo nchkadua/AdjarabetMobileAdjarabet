@@ -165,7 +165,7 @@ public class MainTabBarViewController: UITabBarController {
         bottomSafeAreaConstraint.isActive = true
 
         wrapperView.addSubview(tabBarStackView)
-        tabBarStackView.pin(in: wrapperView)
+        tabBarStackView.pin(to: wrapperView)
 
         tabBar.items?.enumerated().forEach { index, barButton in
             let button = TabBarButton(index: index)

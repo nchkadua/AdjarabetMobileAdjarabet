@@ -98,16 +98,16 @@ class DemoLoginViewController: UIViewController {
     }
 
     private func setupBiometryButton() {
-        biometryButton.isHidden = !(UserSession.current.isLoggedIn && Biometry.shared.isAvailable)
-        biometryButton.setImage(Biometry.shared.image, for: .normal)
+//        biometryButton.isHidden = !(UserSession.current.isLoggedIn && Biometry.shared.isAvailable)
+//        biometryButton.setImage(Biometry.shared.image, for: .normal)
     }
 
     @objc private func biometryDidTap() {
-        Biometry.shared.authenticate(successComplition: {
-            self.getActiveSession()
-        }, errorComplition: { error in
-            print(error?.localizedDescription ?? "")
-        })
+//        Biometry.shared.authenticate(onSuccess: {
+//            self.getActiveSession()
+//        }, onError: { error in
+//            print(error?.localizedDescription ?? "")
+//        })
     }
 
     private func getActiveSession() {

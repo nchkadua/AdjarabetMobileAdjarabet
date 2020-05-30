@@ -7,20 +7,9 @@
 //
 
 @IBDesignable
-public class ABButton: AppShadowButton {
+public class ABButton: LoadingButton {
     /// Default style
     private var primaryStyle: DesignSystem.Button.Style?
-    /// Style when button is isHighlighted
-//    private var hoveredStyle: DesignSystem.Button.Style? {
-//        buttonType == .custom ? primaryStyle?.makeHovered() : primaryStyle
-//    }
-//    public override var isHighlighted: Bool {
-//        get { return super.isHighlighted }
-//        set {
-//            super.isHighlighted = newValue
-//            configure(animated: true)
-//        }
-//    }
 
     public convenience init(style: DesignSystem.Button.Style) {
         self.init(frame: .zero)
@@ -31,5 +20,10 @@ public class ABButton: AppShadowButton {
     public func setStyle(to style: DesignSystem.Button.Style) {
         self.primaryStyle = style
         super.setStyle(to: style)
+    }
+
+    public override func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
+        super.setTitleColor(color, for: state)
+        activityIndicator.color = color
     }
 }

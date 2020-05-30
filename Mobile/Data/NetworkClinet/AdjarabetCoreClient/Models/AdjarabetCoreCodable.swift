@@ -66,6 +66,11 @@ public extension AdjarabetCoreCodable {
     }
 
     struct AliveSession: Codable {
+        public let statusCode: AdjarabetCoreStatusCode
+
+        enum CodingKeys: String, CodingKey {
+            case statusCode = "StatusCode"
+        }
     }
 
 //    struct ActiveSession: Codable {

@@ -25,12 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dependencies = DependencyContainer.root.register {
             Module { AdjarabetWebAPIClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetWebAPIServices }
             Module { DefaultLanguageStorage.shared as LanguageStorage }
+
             Module { UserSession.current as UserSessionServices }
+            Module { UserSession.current as UserSessionReadableServices }
 
             Module { DefaultNetworkService() as NetworkService }
             Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }
             Module { DefaultDataTransferService() as DataTransferService }
-            Module { AdjarabetCoreClientRequestBuilder.shared as AdjarabetCoreClientRequestBuilder }
+            Module { AdjarabetCoreClientRequestBuilder() as AdjarabetCoreClientRequestBuilder }
+            Module { DefaultUserBalanceService.shared as UserBalanceService }
+            Module { DefaultBiometryAuthentication() as BiometryAuthentication }
         }
 
         dependencies.build()
@@ -46,10 +50,19 @@ public extension DependencyContainer {
 
     static var repositories = DependencyContainer {
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
+        Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
+        Module { DefaultSessionManagementRepository() as SessionManagementRepository }
     }
 
     static var factories = DependencyContainer {
         Module { DefaultMainTabBarFactory() as MainTabBarFactory }
         Module { DefaultSMSLoginFactory() as SMSLoginFactory }
+    }
+
+    static var useCases = DependencyContainer {
+        Module { DefaultLoginUseCase() as LoginUseCase }
+        Module { DefaultSMSCodeUseCase() as SMSCodeUseCase }
+        Module { DefaultSMSLoginUseCase() as SMSLoginUseCase }
+        Module { DefaultUserSessionUseCase() as UserSessionUseCase }
     }
 }

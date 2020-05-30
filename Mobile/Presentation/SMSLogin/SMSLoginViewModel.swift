@@ -12,6 +12,7 @@ public protocol SMSLoginViewModel: SMSLoginViewModelInput, SMSLoginViewModelOutp
 }
 
 public struct SMSLoginViewModelParams {
+    public let username: String
 }
 
 public protocol SMSLoginViewModelInput {
@@ -19,7 +20,7 @@ public protocol SMSLoginViewModelInput {
     func textDidChange(to text: String?)
     func shouldChangeCharacters(for text: String) -> Bool
     func shoudEnableLoginButton(fot text: String?) -> Bool
-    func login()
+    func  login(code: String)
 }
 
 public protocol SMSLoginViewModelOutput {
@@ -31,10 +32,12 @@ public protocol SMSLoginViewModelOutput {
 public enum SMSLoginViewModelOutputAction {
     case configureSMSInputForNumberOfItems(Int)
     case updateSMSCodeInputView(text: [String?])
+    case loginButton(isLoading: Bool)
 }
 
 public enum SMSLoginViewModelRoute {
     case openMainTabBar
+    case openAlert(title: String, message: String? = nil)
 }
 
 public class DefaultSMSLoginViewModel {
@@ -42,6 +45,8 @@ public class DefaultSMSLoginViewModel {
     private let routeSubject = PublishSubject<SMSLoginViewModelRoute>()
     public let params: SMSLoginViewModelParams
     private let smsCodeLength = 6
+
+    @Inject(from: .useCases) private var smsLoginUseCase: SMSLoginUseCase
 
     public init(params: SMSLoginViewModelParams) {
         self.params = params
@@ -74,7 +79,14 @@ extension DefaultSMSLoginViewModel: SMSLoginViewModel {
         (text ?? "").count == smsCodeLength
     }
 
-    public func login() {
-        routeSubject.onNext(.openMainTabBar)
+    public func login(code: String) {
+        actionSubject.onNext(.loginButton(isLoading: true))
+        smsLoginUseCase.execute(username: params.username, code: code) { [weak self] result in
+            defer { self?.actionSubject.onNext(.loginButton(isLoading: false)) }
+            switch result {
+            case .success: self?.routeSubject.onNext(.openMainTabBar)
+            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            }
+        }
     }
 }

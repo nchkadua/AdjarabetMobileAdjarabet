@@ -41,6 +41,8 @@
 		D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */; };
 		D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */; };
 		D8390E7F246C1B6400EF8CB5 /* SMSLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */; };
+		D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E4225247A92D800E9615F /* UserSessionUseCase.swift */; };
+		D83E4229247AA7BE00E9615F /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */; };
 		D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F0244C8C860037DDEB /* CircularImageView.swift */; };
 		D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */; };
 		D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */; };
@@ -66,6 +68,7 @@
 		D8442AAB2469A7A400F32676 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8442AA82469A7A400F32676 /* LoginViewController.swift */; };
 		D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8442AA92469A7A400F32676 /* LoginViewModel.swift */; };
 		D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845BFB82445F93900419A2C /* UIView+Extension.swift */; };
+		D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85094012482570200722040 /* UICollectionView+Extension.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */; };
 		D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */; };
@@ -83,7 +86,7 @@
 		D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1124336B4C00F1D4FE /* R.generated.swift */; };
 		D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */; };
 		D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */; };
-		D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1924336C7100F1D4FE /* Biometry.swift */; };
+		D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1924336C7100F1D4FE /* BiometryAuthentication.swift */; };
 		D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1E24336CA400F1D4FE /* UserSession.swift */; };
 		D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */; };
 		D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */; };
@@ -121,8 +124,12 @@
 		D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */; };
 		D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */; };
 		D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */; };
+		D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E75624714E0D007D85D3 /* LoginUseCase.swift */; };
+		D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */; };
+		D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */; };
 		D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */; };
 		D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863697246C485500FF061D /* SMSCodeInputView.swift */; };
+		D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */; };
 		D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */; };
 		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
 		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
@@ -142,6 +149,9 @@
 		D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4044244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift */; };
 		D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */; };
 		D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */; };
+		D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */; };
+		D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */; };
+		D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C637A12471BB7C00B9A50E /* BalanceProfileButton.swift */; };
 		D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F7E2445A64E004C96DB /* HomeViewController.swift */; };
 		D8C73F812445A656004C96DB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C73F802445A656004C96DB /* Home.storyboard */; };
 		D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */; };
@@ -214,6 +224,8 @@
 		D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginViewController.swift; sourceTree = "<group>"; };
 		D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginViewModel.swift; sourceTree = "<group>"; };
 		D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SMSLogin.storyboard; sourceTree = "<group>"; };
+		D83E4225247A92D800E9615F /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
+		D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		D83ED2F0244C8C860037DDEB /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		D83ED2F2244C8DDE0037DDEB /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		D83ED2F4244C91BD0037DDEB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -239,6 +251,7 @@
 		D8442AA82469A7A400F32676 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D8442AA92469A7A400F32676 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D845BFB82445F93900419A2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		D85094012482570200722040 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClient.swift; sourceTree = "<group>"; };
 		D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientRequestBuilder.swift; sourceTree = "<group>"; };
 		D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientError.swift; sourceTree = "<group>"; };
@@ -257,7 +270,7 @@
 		D85C9C1424336BA600F1D4FE /* Mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mobile.entitlements; sourceTree = "<group>"; };
 		D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainContainer.swift; sourceTree = "<group>"; };
-		D85C9C1924336C7100F1D4FE /* Biometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biometry.swift; sourceTree = "<group>"; };
+		D85C9C1924336C7100F1D4FE /* BiometryAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometryAuthentication.swift; sourceTree = "<group>"; };
 		D85C9C1E24336CA400F1D4FE /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSessionCareTaker.swift; sourceTree = "<group>"; };
 		D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -296,8 +309,12 @@
 		D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewModel.swift; sourceTree = "<group>"; };
 		D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		D885E75624714E0D007D85D3 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeUseCase.swift; sourceTree = "<group>"; };
+		D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginUseCase.swift; sourceTree = "<group>"; };
 		D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeDigitView.swift; sourceTree = "<group>"; };
 		D8863697246C485500FF061D /* SMSCodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeInputView.swift; sourceTree = "<group>"; };
+		D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewsProviding.swift; sourceTree = "<group>"; };
 		D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
 		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -320,6 +337,9 @@
 		D8BF4044244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCellDataProvider+Extension.swift"; sourceTree = "<group>"; };
 		D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeighProvidering.swift; sourceTree = "<group>"; };
+		D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBalanceService.swift; sourceTree = "<group>"; };
+		D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABFormatter.swift; sourceTree = "<group>"; };
+		D8C637A12471BB7C00B9A50E /* BalanceProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceProfileButton.swift; sourceTree = "<group>"; };
 		D8C73F7E2445A64E004C96DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D8C73F802445A656004C96DB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBarButtonProviding.swift; sourceTree = "<group>"; };
@@ -460,6 +480,14 @@
 			path = SMSLogin;
 			sourceTree = "<group>";
 		};
+		D83E4227247AA7AC00E9615F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		D84202C82451919400F0F056 /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,13 +607,15 @@
 		D85C9C1C24336C9500F1D4FE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				D85C9C1924336C7100F1D4FE /* Biometry.swift */,
+				D85C9C1924336C7100F1D4FE /* BiometryAuthentication.swift */,
 				D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */,
 				D80784672443968D00003892 /* DesignSystem.swift */,
 				D8C73F822445BB00004C96DB /* CommonBarButtonProviding.swift */,
 				D84202D72451AD8400F0F056 /* BaseViewModel.swift */,
 				D86253AC2464197500F7DE0C /* Cancelable.swift */,
 				D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */,
+				D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */,
+				D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -687,6 +717,7 @@
 			children = (
 				D86253B8246444A300F7DE0C /* ABButton.swift */,
 				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
+				D8C637A12471BB7C00B9A50E /* BalanceProfileButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -763,6 +794,17 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D885E75524714DA1007D85D3 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
+				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
+				D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */,
+				D83E4225247A92D800E9615F /* UserSessionUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		D8863699246C4F4400FF061D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +817,7 @@
 		D8972FE424484E80001A6B13 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D83E4227247AA7AC00E9615F /* Login */,
 				D8972FE524484E92001A6B13 /* MainTabBar */,
 			);
 			path = Presentation;
@@ -839,6 +882,7 @@
 			children = (
 				D80AE7DC24683492009A7814 /* Entities */,
 				D86253AB246416C800F7DE0C /* Protocols */,
+				D885E75524714DA1007D85D3 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -897,6 +941,7 @@
 				D8BF4046244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift */,
 				D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */,
 				D8442AA52469801A00F32676 /* UITextField+Extension.swift */,
+				D85094012482570200722040 /* UICollectionView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -954,6 +999,7 @@
 			children = (
 				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
 				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
+				D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1295,6 +1341,7 @@
 				D841073D246584BF002F7973 /* ABButtonTests.swift in Sources */,
 				D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */,
 				D84202D4245196EF00F0F056 /* LanguageStorageTests.swift in Sources */,
+				D83E4229247AA7BE00E9615F /* LoginViewModelTests.swift in Sources */,
 				D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */,
 				D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */,
 				D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */,
@@ -1310,7 +1357,7 @@
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
-				D85C9C1B24336C7100F1D4FE /* Biometry.swift in Sources */,
+				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
 				D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
@@ -1325,10 +1372,13 @@
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
+				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
+				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
+				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
@@ -1359,7 +1409,10 @@
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
 				D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */,
+				D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */,
+				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
 				D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */,
+				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */,
@@ -1374,11 +1427,13 @@
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				D8442AA22469716600F32676 /* ABInputView.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
+				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
 				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
+				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
@@ -1406,6 +1461,7 @@
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
+				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
 			);

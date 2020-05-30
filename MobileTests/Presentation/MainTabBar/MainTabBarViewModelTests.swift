@@ -22,46 +22,37 @@ class MainTabBarViewModelTests: XCTestCase {
 
     func testMainTabBarViewModelViewDidLoad() {
         // given
-        var isSetupTabBarCalled = false
-        var isInitialCalled = false
-        
-        _ = viewModel.action.subscribe(onNext: { action in
-            switch action {
-            case .setupTabBar: isSetupTabBarCalled = true
-            default: break
-            }
-        })
+        let initialExpectation = self.expectation(description: "Setup Tab Bar")
+        let setupTabBarExpectation = self.expectation(description: "Initial")
         
         _ = viewModel.route.subscribe(onNext: { route in
-            switch route {
-            case .initial: isInitialCalled = true
-            }
+            if case .initial = route { initialExpectation.fulfill() }
+        })
+        
+        _ = viewModel.action.subscribe(onNext: { action in
+            if case .setupTabBar = action { setupTabBarExpectation.fulfill() }
         })
         
         // when
         viewModel.viewDidLoad()
         
         // then
-        XCTAssertEqual(isSetupTabBarCalled, true)
-        XCTAssertEqual(isInitialCalled, true)
+        waitForExpectations(timeout: 0.3, handler: nil)
     }
     
     func testMainTabBarViewModelViewDidLoadSelectSamePage() {
         // given
-        var isScrollSelectedViewControllerToTop = false
+        let expectation = self.expectation(description: "Scroll to top")
         
         _ = viewModel.action.subscribe(onNext: { action in
-            switch action {
-            case .scrollSelectedViewControllerToTop: isScrollSelectedViewControllerToTop = true
-            default: break
-            }
+            if case .scrollSelectedViewControllerToTop = action { expectation.fulfill() }
         })
         
         // when
         viewModel.shouldSelectPage(at: 0, currentPageIndex: 0)
         
         // then
-        XCTAssertEqual(isScrollSelectedViewControllerToTop, true)
+        waitForExpectations(timeout: 0.3, handler: nil)
     }
     
     func testMainTabBarViewModelViewDidLoadSelectNewPage() {
@@ -69,10 +60,7 @@ class MainTabBarViewModelTests: XCTestCase {
         var selectedPage = 0
         
         _ = viewModel.action.subscribe(onNext: { action in
-            switch action {
-            case .selectPage(let index): selectedPage = index
-            default: break
-            }
+            if case .selectPage(let index) = action { selectedPage = index }
         })
         
         // when

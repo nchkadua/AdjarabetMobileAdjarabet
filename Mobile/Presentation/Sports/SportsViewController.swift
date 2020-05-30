@@ -14,9 +14,14 @@ public class SportsViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+    }
+
+    // MARK: Setup methods
+    private func setup() {
         setBaseBackgorundColor()
-        setLeftBarButtonItemTitle(to: R.string.localization.sports_page_title.localized())
-        setProfileBarButtonItem(text: "₾ 0.00")
+        makeLeftBarButtonItemTitle(to: R.string.localization.sports_page_title.localized())
+        navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
     }
 }
 

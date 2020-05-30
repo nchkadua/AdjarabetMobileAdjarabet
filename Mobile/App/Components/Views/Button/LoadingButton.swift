@@ -9,73 +9,48 @@
 public protocol Loading {
     func showLoading()
     func hideLoading()
+    func set(isLoading: Bool)
 }
 
 public class LoadingButton: AppShadowButton, Loading {
-    struct ButtonState {
-        var state: UIControl.State
-        var title: String?
-        var image: UIImage?
-    }
+    private var originalButtonText: String?
 
-    fileprivate var buttonStates: [ButtonState] = []
     public lazy var activityIndicator: UIActivityIndicatorView = {
-        let a = UIActivityIndicatorView()
-        a.translatesAutoresizingMaskIntoConstraints = false
-        a.hidesWhenStopped = true
-        a.stopAnimating()
-        a.color = UIColor.systemBlue
-        self.addSubview(a)
-        return a
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.color = tintColor
+        addSubview(activityIndicator)
+
+        NSLayoutConstraint.activate([
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+
+        return activityIndicator
     }()
 
-    public var isLoading: Bool = false {
-        didSet {
-            if isLoading == oldValue {return}
+    private func loading(_ isLoading: Bool) {
+        isEnabled = !isLoading
 
-            if isLoading {
-                activityIndicator.startAnimating()
-                var buttonStates: [ButtonState] = []
-                for state in [UIControl.State.normal] {
-                    let buttonState = ButtonState(state: state, title: title(for: state), image: image(for: state))
-                    buttonStates.append(buttonState)
-                    setTitle("", for: state)
-                    setImage(UIImage(), for: state)
-                }
-                self.buttonStates = buttonStates
-            } else {
-                activityIndicator.stopAnimating()
-                for buttonState in buttonStates {
-                    setTitle(buttonState.title, for: buttonState.state)
-                    setImage(buttonState.image, for: buttonState.state)
-                }
-                buttonStates.removeAll(keepingCapacity: true)
-            }
+        if isLoading {
+            originalButtonText = titleLabel?.text
+            setTitle("", for: .normal)
+            activityIndicator.startAnimating()
+        } else {
+            setTitle(originalButtonText, for: .normal)
+            activityIndicator.stopAnimating()
         }
     }
 
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        sharedInitialization()
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        sharedInitialization()
-    }
-
     public func showLoading() {
-        isLoading = true
+        loading(true)
     }
 
     public func hideLoading() {
-        isLoading = false
+        loading(false)
     }
 
-    fileprivate func sharedInitialization() {
-        activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
-
-        isLoading = false
+    public func set(isLoading: Bool) {
+        isLoading ? showLoading() : hideLoading()
     }
 }

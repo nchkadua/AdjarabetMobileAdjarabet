@@ -16,8 +16,9 @@ public struct LoginViewModelParams {
 
 public protocol LoginViewModelInput {
     func viewDidLoad()
-    func smsLogin()
-    func login()
+    func smsLogin(username: String)
+    func login(username: String, password: String)
+    func biometryLogin()
 }
 
 public protocol LoginViewModelOutput {
@@ -27,11 +28,16 @@ public protocol LoginViewModelOutput {
 }
 
 public enum LoginViewModelOutputAction {
+    case loginButton(isLoading: Bool)
+    case smsLoginButton(isLoading: Bool)
+    case biometryButton(isLoading: Bool)
+    case configureBiometryButton(available: Bool, icon: UIImage?, title: String?)
 }
 
 public enum LoginViewModelRoute {
     case openSMSLogin(params: SMSLoginViewModelParams)
     case openMainTabBar
+    case openAlert(title: String, message: String? = nil)
 }
 
 public class DefaultLoginViewModel {
@@ -39,8 +45,28 @@ public class DefaultLoginViewModel {
     private let routeSubject = PublishSubject<LoginViewModelRoute>()
     public let params: LoginViewModelParams
 
+    @Inject(from: .useCases) private var loginUseCase: LoginUseCase
+    @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
+    @Inject(from: .useCases) private var userSessionUseCase: UserSessionUseCase
+
+    @Inject private var userSession: UserSessionReadableServices
+    @Inject private var biometry: BiometryAuthentication
+
     public init(params: LoginViewModelParams) {
         self.params = params
+    }
+
+    private func loginIfSessionIsAlive() {
+        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
+
+        actionSubject.onNext(.biometryButton(isLoading: true))
+        userSessionUseCase.execute(userId: userId, sessionId: sessionId) { [weak self] result in
+            defer { self?.actionSubject.onNext(.biometryButton(isLoading: false)) }
+            switch result {
+            case .success: self?.routeSubject.onNext(.openMainTabBar)
+            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            }
+        }
     }
 }
 
@@ -49,13 +75,40 @@ extension DefaultLoginViewModel: LoginViewModel {
     public var route: Observable<LoginViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        let isBiometryAvailable = userSession.isLoggedIn && biometry.isAvailable
+        actionSubject.onNext(.configureBiometryButton(available: isBiometryAvailable,
+                                                      icon: biometry.icon,
+                                                      title: biometry.title))
     }
 
-    public func smsLogin() {
-        routeSubject.onNext(.openSMSLogin(params: .init()))
+    public func smsLogin(username: String) {
+        actionSubject.onNext(.smsLoginButton(isLoading: true))
+        smsCodeUseCase.execute(username: username) { [weak self] result in
+            defer { self?.actionSubject.onNext(.smsLoginButton(isLoading: false)) }
+            switch result {
+            case .success: self?.routeSubject.onNext(.openSMSLogin(params: .init(username: username)))
+            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            }
+        }
     }
 
-    public func login() {
-        routeSubject.onNext(.openMainTabBar)
+    public func login(username: String, password: String) {
+        actionSubject.onNext(.loginButton(isLoading: true))
+        loginUseCase.execute(username: username, password: password) { [weak self] result in
+            defer { self?.actionSubject.onNext(.loginButton(isLoading: false)) }
+            switch result {
+            case .success: self?.routeSubject.onNext(.openMainTabBar)
+            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            }
+        }
+    }
+
+    public func biometryLogin() {
+        biometry.authenticate { [weak self] result in
+            switch result {
+            case .success: self?.loginIfSessionIsAlive()
+            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            }
+        }
     }
 }

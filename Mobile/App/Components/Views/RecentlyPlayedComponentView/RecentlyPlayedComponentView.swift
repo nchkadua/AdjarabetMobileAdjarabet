@@ -85,14 +85,12 @@ extension RecentlyPlayedComponentView: Xibable {
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         button.addTarget(self, action: #selector(buttinDidTap), for: .touchUpInside)
 
-        collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(types: PlayedGameLauncherCollectionViewCell.self)
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.scrollDirection = .horizontal
-            flowLayout.sectionInset = .zero
-            flowLayout.minimumLineSpacing = 12
-            flowLayout.minimumInteritemSpacing = 0
-        }
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.flowLayout?.scrollDirection = .horizontal
+        collectionView.flowLayout?.sectionInset = .zero
+        collectionView.flowLayout?.minimumLineSpacing = 10
+        collectionView.flowLayout?.minimumInteritemSpacing = 0
     }
 }
 
@@ -118,10 +116,9 @@ extension RecentlyPlayedComponentView: UICollectionViewDataSource {
 
 extension RecentlyPlayedComponentView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        viewModel.params.playedGames[indexPath.row].size(
-            for: collectionView.bounds,
-            safeArea: collectionView.bounds,
-            minimumLineSpacing: 0,
-            minimumInteritemSpacing: 0)
+        viewModel.params.playedGames[indexPath.row].size(for: collectionView.bounds,
+                                                         safeArea: collectionView.bounds,
+                                                         minimumLineSpacing: 0,
+                                                         minimumInteritemSpacing: 0)
     }
 }

@@ -28,6 +28,9 @@ public class LoginViewController: ABViewController {
 
     @IBOutlet private weak var loginButton: ABButton!
 
+    @IBOutlet private weak var biometryIconButton: UIButton!
+    @IBOutlet private weak var biometryButton: ABButton!
+
     // MARK: Overrides
     public override var keyScrollView: UIScrollView? { scrollView }
 
@@ -45,9 +48,9 @@ public class LoginViewController: ABViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: LoginViewModel) {
-//        viewModel.action.subscribe(onNext: { [weak self] action in
-//            self?.didRecive(action: action)
-//        }).disposed(by: disposeBag)
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
 
         viewModel.route.subscribe(onNext: { [weak self] route in
             self?.didRecive(route: route)
@@ -55,12 +58,22 @@ public class LoginViewController: ABViewController {
     }
 
     private func didRecive(action: LoginViewModelOutputAction) {
+        switch action {
+        case .loginButton(let isLoading):    loginButton.set(isLoading: isLoading)
+        case .smsLoginButton(let isLoading): smsLoginButton.set(isLoading: isLoading)
+        case .biometryButton(let isLoading): biometryButton.set(isLoading: isLoading)
+        case .configureBiometryButton(let available, let icon, let title):
+            biometryButton.superview?.isHidden = !available
+            biometryIconButton.setImage(icon, for: .normal)
+            biometryButton.setTitleWithoutAnimation(title, for: .normal)
+        }
     }
 
     private func didRecive(route: LoginViewModelRoute) {
         switch route {
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
         case .openSMSLogin(let params): navigator.navigate(to: .smsLogin(params: params), animated: true)
+        case .openAlert(let title, _): showAlert(title: title)
         }
     }
 
@@ -72,6 +85,7 @@ public class LoginViewController: ABViewController {
         setupLabels()
         setupButtons()
         setupInputViews()
+        setupInputViewsObservation()
     }
 
     private func setupNavigationItem() {
@@ -118,6 +132,13 @@ public class LoginViewController: ABViewController {
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
         updateLoginButton(isEnabled: false)
+
+        biometryButton.setStyle(to: .textLink(state: .acvite, size: .small))
+        biometryButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
+        biometryButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
+        biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
+        biometryIconButton.setTintColor(to: .neutral100())
+        biometryIconButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
     }
 
     private func setupInputViews() {
@@ -151,6 +172,13 @@ public class LoginViewController: ABViewController {
             .disposed(by: disposeBag)
     }
 
+    private func setupInputViewsObservation() {
+        startObservingInputViewsReturn { [weak self] in
+            guard self?.loginButton.isUserInteractionEnabled == true else {return}
+            self?.loginDidTap()
+        }
+    }
+
     // MARK: Actions
     @objc private func joinNowDidTap() {
         showAlert(title: "Join now")
@@ -165,13 +193,21 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func smsLoginDidTap() {
+        guard let username = usernameInputView.textField.text else {return}
+
         closeKeyboard()
-        viewModel.smsLogin()
+        viewModel.smsLogin(username: username)
     }
 
     @objc private func loginDidTap() {
+        guard let username = usernameInputView.textField.text, let password = passwordInputView.textField.text else {return}
+
         closeKeyboard()
-        viewModel.login()
+        viewModel.login(username: username, password: password)
+    }
+
+    @objc private func biometryButtonDidTap() {
+        viewModel.biometryLogin()
     }
 
     // MARK: Configuration
@@ -192,4 +228,8 @@ public class LoginViewController: ABViewController {
         let icon = isSecureTextEntry ? R.image.shared.hideText() : R.image.shared.viewText()
         passwordInputView.rightButton.setImage(icon, for: .normal)
     }
+}
+
+extension LoginViewController: InputViewsProviding {
+    public var inputViews: [ABInputView] { [usernameInputView, passwordInputView] }
 }

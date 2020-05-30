@@ -24,15 +24,14 @@ public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationItem()
-        setupSearchViewController()
-
-        setupCollectionViewController()
-        setupSearchCollectionViewController()
-        setupWhen(mainCollectionViewIsVisible: true, animated: false)
-
+        setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
     }
 
     private func bind(to viewModel: HomeViewModel) {
@@ -61,10 +60,19 @@ public class HomeViewController: UIViewController {
     }
 
     // MARK: Setup methods
-    private func setupNavigationItem() {
+    private func setup() {
         setBaseBackgorundColor()
-        setLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
-        setProfileBarButtonItem(text: "₾ 0.00")
+        setupNavigationItem()
+        setupSearchViewController()
+
+        setupCollectionViewController()
+        setupSearchCollectionViewController()
+        setupWhen(mainCollectionViewIsVisible: true, animated: false)
+    }
+
+    private func setupNavigationItem() {
+        makeLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
+        navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
     }
 
     private func setupCollectionViewController() {
@@ -139,10 +147,6 @@ public class HomeViewController: UIViewController {
         self.searchController.searchResultsUpdater = self
         self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
-    }
-
-    private func setupProfilButton() {
-        setProfileBarButtonItem(text: "₾ 0.00")
     }
 
     private func setupWhen(mainCollectionViewIsVisible: Bool, animated animate: Bool) {

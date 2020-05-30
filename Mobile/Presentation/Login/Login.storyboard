@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87o-ZS-4Oo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87o-ZS-4Oo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="owt-7I-83A">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="433"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-yu-5lM">
                                                 <rect key="frame" x="20" y="14" width="374" height="56"/>
@@ -99,7 +99,7 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-aK-Pmt" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-aK-Pmt" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
                                                                 <rect key="frame" x="305" y="0.0" width="69" height="30"/>
                                                                 <state key="normal" title="SMS login"/>
                                                             </button>
@@ -116,6 +116,25 @@
                                                     </stackView>
                                                 </subviews>
                                                 <edgeInsets key="layoutMargins" top="14" left="0.0" bottom="0.0" right="0.0"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4pT-U2-vYo">
+                                                <rect key="frame" x="20" y="284" width="374" height="129"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-iH-s4W">
+                                                        <rect key="frame" x="0.0" y="47" width="374" height="82"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIt-Qn-H4f">
+                                                                <rect key="frame" x="165" y="0.0" width="44" height="44"/>
+                                                                <state key="normal" image="Shared/faceID"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-Gy-Mg6" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="122.5" y="52" width="129" height="30"/>
+                                                                <state key="normal" title="Log in with Face ID"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="47" left="0.0" bottom="0.0" right="0.0"/>
                                             </stackView>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="14" left="20" bottom="20" right="20"/>
@@ -143,6 +162,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="oqv-Lk-1qR"/>
                     <connections>
+                        <outlet property="biometryButton" destination="ZCq-Gy-Mg6" id="XEq-vO-Ebf"/>
+                        <outlet property="biometryIconButton" destination="YIt-Qn-H4f" id="NfC-Wd-fe4"/>
                         <outlet property="forgotPasswordButton" destination="0jx-pK-YrH" id="MOa-7w-yhG"/>
                         <outlet property="forgotUsernameButton" destination="Mn6-S1-PZ2" id="Aib-SP-pd1"/>
                         <outlet property="joinNowButton" destination="Er8-f3-IEb" id="gQG-8f-0qq"/>
@@ -157,23 +178,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGg-zD-JLz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="R5s-pu-2IR">
-            <objects>
-                <navigationController storyboardIdentifier="AppNavigationController" id="5Uf-CX-0Ib" customClass="ABNavigationController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LyQ-oV-nhi">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aiF-Bd-kmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1696" y="138"/>
+            <point key="canvasLocation" x="-414" y="138"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Shared/faceID" width="44" height="44"/>
         <namedColor name="ColorGuide/Neutral/neutral600">
             <color red="0.12941176470588237" green="0.14901960784313725" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

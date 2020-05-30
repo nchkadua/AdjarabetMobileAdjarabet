@@ -9,7 +9,7 @@
 import Foundation
 
 public enum DataTransferError: Error {
-    case noResponse
+    case responseNotFound
     case parsingJSONFailure(Error)
     case networkFailure(NetworkError)
 }
@@ -31,12 +31,12 @@ extension DefaultDataTransferService: DataTransferService {
             switch result {
             case .success(let response):
                 guard let data = response.data else {
-                    respondOnQueue.async { completion(Result.failure(DataTransferError.noResponse)) }
+                    respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) }
                     return
                 }
                 do {
                     // continue parsing if the status code is success
-                    try T.validate(data: data)
+//                    try T.validate(data: data)
 
                     let decoder = JSONDecoder()
                     let decoded = try decoder.decode(T.T.self, from: data)
@@ -45,10 +45,10 @@ extension DefaultDataTransferService: DataTransferService {
                     let result = T(codable: decoded, header: decodedHeader)
                     respondOnQueue.async { completion(.success(result)) }
                 } catch {
-                    respondOnQueue.async { completion(Result.failure(DataTransferError.parsingJSONFailure(error))) }
+                    respondOnQueue.async { completion(.failure(DataTransferError.parsingJSONFailure(error))) }
                 }
             case .failure(let error):
-                respondOnQueue.async { completion(Result.failure(DataTransferError.networkFailure(error))) }
+                respondOnQueue.async { completion(.failure(DataTransferError.networkFailure(error))) }
             }
         }
 
@@ -60,7 +60,7 @@ extension DefaultDataTransferService: DataTransferService {
             switch result {
             case .success(let response):
                 guard let data = response.data else {
-                    respondOnQueue.async { completion(Result.failure(DataTransferError.noResponse)) }
+                    respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) }
                     return
                 }
                 do {
@@ -68,10 +68,10 @@ extension DefaultDataTransferService: DataTransferService {
                     let result = try decoder.decode(T.self, from: data)
                     respondOnQueue.async { completion(.success(result)) }
                 } catch {
-                    respondOnQueue.async { completion(Result.failure(DataTransferError.parsingJSONFailure(error))) }
+                    respondOnQueue.async { completion(.failure(DataTransferError.parsingJSONFailure(error))) }
                 }
             case .failure(let error):
-                respondOnQueue.async { completion(Result.failure(DataTransferError.networkFailure(error))) }
+                respondOnQueue.async { completion(.failure(DataTransferError.networkFailure(error))) }
             }
         }
 
