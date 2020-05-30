@@ -23,39 +23,39 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
     }
 
     public func set(method: AdjarabetCoreClient.Method) -> Self {
-        queryItems.append(URLQueryItem(name: Key.req.rawValue, value: method.rawValue))
+        queryItems.append(.init(key: .req, value: method.rawValue))
         return self
     }
 
     public func set(username: String, password: String, channel: Int) -> Self {
-        queryItems.append(URLQueryItem(name: Key.userIdentifier.rawValue, value: username))
-        queryItems.append(URLQueryItem(name: Key.password.rawValue, value: password))
-        queryItems.append(URLQueryItem(name: Key.otpDeliveryChannel.rawValue, value: "\(channel)"))
+        queryItems.append(.init(key: .userIdentifier, value: username))
+        queryItems.append(.init(key: .password, value: password))
+        queryItems.append(.init(key: .otpDeliveryChannel, value: "\(channel)"))
         return self
     }
 
     public func set(userId: Int, currencyId: Int, isSingle: Int) -> Self {
-        queryItems.append(URLQueryItem(name: Key.userId.rawValue, value: "\(userId)"))
-        queryItems.append(URLQueryItem(name: Key.currencyId.rawValue, value: "\(currencyId)"))
-        queryItems.append(URLQueryItem(name: Key.isSingle.rawValue, value: "\(isSingle)"))
+        queryItems.append(.init(key: .userId, value: "\(userId)"))
+        queryItems.append(.init(key: .currencyId, value: "\(currencyId)"))
+        queryItems.append(.init(key: .isSingle, value: "\(isSingle)"))
         return self
     }
 
     public func set(username: String, channel: Int) -> Self {
-        queryItems.append(URLQueryItem(name: Key.userIdentifier.rawValue, value: username))
-        queryItems.append(URLQueryItem(name: Key.channelType.rawValue, value: "\(channel)"))
+        queryItems.append(.init(key: .userIdentifier, value: username))
+        queryItems.append(.init(key: .channelType, value: "\(channel)"))
         return self
     }
 
     public func set(userId: Int) -> Self {
-        queryItems.append(URLQueryItem(name: Key.userId.rawValue, value: "\(userId)"))
+        queryItems.append(.init(key: .userId, value: "\(userId)"))
         return self
     }
 
     public func set(username: String, code: String, loginType: LoginType) -> Self {
-        queryItems.append(URLQueryItem(name: Key.userIdentifier.rawValue, value: username))
-        queryItems.append(URLQueryItem(name: Key.otp.rawValue, value: code))
-        queryItems.append(URLQueryItem(name: Key.loginType.rawValue, value: loginType.rawValue))
+        queryItems.append(.init(key: .userIdentifier, value: username))
+        queryItems.append(.init(key: .otp, value: code))
+        queryItems.append(.init(key: .loginType, value: loginType.rawValue))
         return self
     }
 
@@ -72,8 +72,6 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
         request.httpBody = component?.query?.data(using: String.Encoding.utf8)
-
-        print(component ?? "")
 
         return request
     }
@@ -93,5 +91,11 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
 
     public enum HeaderKey: String {
         case cookie = "Cookie"
+    }
+}
+
+public extension URLQueryItem {
+    init(key: AdjarabetCoreClientRequestBuilder.Key, value: String?) {
+        self.init(name: key.rawValue, value: value)
     }
 }
