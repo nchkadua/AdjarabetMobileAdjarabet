@@ -24,11 +24,11 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
         return self
     }
 
-    public func set(sessionId: String?, page: Int, numberOfItems: Int, term: String? = nil) -> Self {
+    public func set(sessionId: String?, page: Int, itemsPerPage: Int, searchTerm: String? = nil) -> Self {
         self.sessionId = sessionId
         params.addIfNotNil(key: .page, value: page)
-        params.addIfNotNil(key: .propousedNumberOfItems, value: numberOfItems)
-        params.addIfNotNil(key: .term, value: term)
+        params.addIfNotNil(key: .propousedNumberOfItems, value: itemsPerPage)
+        params.addIfNotNil(key: .term, value: searchTerm)
         return self
     }
 

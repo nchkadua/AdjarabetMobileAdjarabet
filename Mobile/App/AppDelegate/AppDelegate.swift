@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }
             Module { DefaultDataTransferService() as DataTransferService }
             Module { AdjarabetCoreClientRequestBuilder() as AdjarabetCoreClientRequestBuilder }
+            Module { AdjarabetMobileClientRequestBuilder() as AdjarabetMobileClientRequestBuilder }
+
             Module { DefaultUserBalanceService.shared as UserBalanceService }
             Module { DefaultBiometryAuthentication() as BiometryAuthentication }
         }
@@ -49,9 +51,12 @@ public extension DependencyContainer {
     }
 
     static var repositories = DependencyContainer {
+        // Core
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
         Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }
+        // Mobile
+        Module { DefaultGameRepository() as GameRepository }
     }
 
     static var factories = DependencyContainer {
