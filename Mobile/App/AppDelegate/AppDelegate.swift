@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.init()
 
         let dependencies = DependencyContainer.root.register {
-            Module { AdjarabetWebAPIClient(baseUrl: AdjarabetEndpoints.coreAPIUrl) as AdjarabetWebAPIServices }
             Module { DefaultLanguageStorage.shared as LanguageStorage }
 
             Module { UserSession.current as UserSessionServices }
