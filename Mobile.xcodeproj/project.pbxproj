@@ -32,6 +32,12 @@
 		D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784A424447ABF00003892 /* DesignSystemTests.swift */; };
 		D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */; };
 		D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810FC3424856EAD00F81499 /* LoadingType.swift */; };
+		D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212EF8248582AD00B74AB9 /* LoadingComponentView.swift */; };
+		D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8212EFA248582B200B74AB9 /* LoadingComponentView.xib */; };
+		D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212EFE2485831000B74AB9 /* LoadingComponentViewModel.swift */; };
+		D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212F022485846C00B74AB9 /* LoadingCollectionViewCell.swift */; };
+		D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8212F032485846C00B74AB9 /* LoadingCollectionViewCell.xib */; };
+		D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212F072485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift */; };
 		D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */; };
 		D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */; };
 		D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */; };
@@ -220,6 +226,12 @@
 		D80784A424447ABF00003892 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D810FC3424856EAD00F81499 /* LoadingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingType.swift; sourceTree = "<group>"; };
+		D8212EF8248582AD00B74AB9 /* LoadingComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingComponentView.swift; sourceTree = "<group>"; };
+		D8212EFA248582B200B74AB9 /* LoadingComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingComponentView.xib; sourceTree = "<group>"; };
+		D8212EFE2485831000B74AB9 /* LoadingComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingComponentViewModel.swift; sourceTree = "<group>"; };
+		D8212F022485846C00B74AB9 /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8212F032485846C00B74AB9 /* LoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionViewCell.xib; sourceTree = "<group>"; };
+		D8212F072485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
 		D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-ExtraBold.otf"; sourceTree = "<group>"; };
 		D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Bold.otf"; sourceTree = "<group>"; };
@@ -482,6 +494,26 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		D8212EF72485828A00B74AB9 /* LoadingComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				D8212EF8248582AD00B74AB9 /* LoadingComponentView.swift */,
+				D8212EFE2485831000B74AB9 /* LoadingComponentViewModel.swift */,
+				D8212EFA248582B200B74AB9 /* LoadingComponentView.xib */,
+			);
+			path = LoadingComponentView;
+			sourceTree = "<group>";
+		};
+		D8212F062485847300B74AB9 /* LoadingCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8212F022485846C00B74AB9 /* LoadingCollectionViewCell.swift */,
+				D8212F072485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift */,
+				D8212F032485846C00B74AB9 /* LoadingCollectionViewCell.xib */,
+			);
+			path = LoadingCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		D8390E77246C1B4D00EF8CB5 /* SMSLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +653,7 @@
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
+				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
 				D86253BA24653AA000F7DE0C /* Button */,
 				D8442A9F24696F2700F32676 /* Input */,
 			);
@@ -1054,6 +1087,7 @@
 				D8AC9965244F1A2100B16600 /* RecentlyPlayedCollectionViewCell */,
 				D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */,
 				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,
+				D8212F062485847300B74AB9 /* LoadingCollectionViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1209,7 +1243,9 @@
 				D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */,
 				D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
+				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
 				D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */,
+				D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */,
 				D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */,
 				D807847E2444727600003892 /* FiraGO-ExtraLight.ttf in Resources */,
 				D80784842444727600003892 /* FiraGO-Hair.ttf in Resources */,
@@ -1414,6 +1450,7 @@
 				D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */,
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
 				D85C9C2C24336CF300F1D4FE /* DemoLoginViewController.swift in Sources */,
+				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
@@ -1441,6 +1478,7 @@
 				D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */,
 				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
 				D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */,
+				D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
@@ -1460,6 +1498,7 @@
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
+				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
@@ -1486,6 +1525,7 @@
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
+				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,

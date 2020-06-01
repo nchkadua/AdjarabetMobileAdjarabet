@@ -38,8 +38,6 @@ public class HomeViewController: UIViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didReceive(action: action)
         }).disposed(by: disposeBag)
-
-        collectionViewController.viewModel = viewModel
     }
 
     private func didReceive(action: HomeViewModelOutputAction) {
@@ -49,7 +47,12 @@ public class HomeViewController: UIViewController {
         case .initialize(let appListDataProvider):
             collectionViewController.dataProvider = appListDataProvider
         case .appendGames(let dataProviders, let indexPathes):
-            collectionViewController.dataProvider?.first?.append(contentsOf: dataProviders)
+//            collectionViewController.dataProvider?.first?.append(contentsOf: dataProviders)
+//            collectionViewController.dataProvider?.first?.dataProviders.insert(contentsOf: dataProviders, at: indexPathes.first!.item)
+//            let indexs = indexPathes.map { $0.item }
+            dataProviders.reversed().forEach {
+                collectionViewController.dataProvider?.first?.insert($0, at: indexPathes.first!.item)
+            }
             collectionViewController.collectionView.insertItems(at: indexPathes)
         case .reloadIndexPathes(let indexPathes):
             collectionViewController.collectionView.reloadItems(at: indexPathes)
@@ -73,6 +76,8 @@ public class HomeViewController: UIViewController {
     }
 
     private func setupCollectionViewController() {
+        collectionViewController.viewModel = viewModel
+
         collectionViewController.isTabBarManagementEnabled = true
         add(child: collectionViewController)
 

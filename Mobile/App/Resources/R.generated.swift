@@ -932,7 +932,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -940,6 +940,10 @@ struct R: Rswift.Validatable {
     static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
     /// Nib `GameLauncherComponentView`.
     static let gameLauncherComponentView = _R.nib._GameLauncherComponentView()
+    /// Nib `LoadingCollectionViewCell`.
+    static let loadingCollectionViewCell = _R.nib._LoadingCollectionViewCell()
+    /// Nib `LoadingComponentView`.
+    static let loadingComponentView = _R.nib._LoadingComponentView()
     /// Nib `PlayedGameLauncherCollectionViewCell`.
     static let playedGameLauncherCollectionViewCell = _R.nib._PlayedGameLauncherCollectionViewCell()
     /// Nib `PlayedGameLauncherComponentView`.
@@ -970,6 +974,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherComponentView) instead")
     static func gameLauncherComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gameLauncherComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LoadingCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.loadingCollectionViewCell) instead")
+    static func loadingCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loadingCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LoadingComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.loadingComponentView) instead")
+    static func loadingComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loadingComponentView)
     }
     #endif
 
@@ -1015,6 +1035,14 @@ struct R: Rswift.Validatable {
 
     static func gameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func loadingCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoadingCollectionViewCell? {
+      return R.nib.loadingCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadingCollectionViewCell
+    }
+
+    static func loadingComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.loadingComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func playedGameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlayedGameLauncherCollectionViewCell? {
@@ -1509,6 +1537,28 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LoadingCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LoadingCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoadingCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadingCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LoadingComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LoadingComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

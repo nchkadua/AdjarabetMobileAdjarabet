@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 public protocol HomeViewModel: HomeViewModelInput, HomeViewModelOutput, ABCollectionViewModel {
 }
@@ -40,7 +41,13 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
     private var page: PageDescription = .init()
     private var games: AppCellDataProviders = []
-    private var loadingType: LoadingType = .none
+    private var loadingType: LoadingType = .none {
+        didSet {
+//            isLoading.accept(loadingType == .nextPage)
+        }
+    }
+
+    public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .neutral100(), height: 55))
 
     public override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)
@@ -92,7 +99,8 @@ extension DefaultHomeViewModel: HomeViewModel {
 
     public func viewDidLoad() {
         observeLanguageChange()
-        actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProvider: AppSectionDataProvider())))
+        let section = AppSectionDataProvider(dataProviders: [loading])
+        actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [section])))
         load(loadingType: .fullScreen)
     }
 
