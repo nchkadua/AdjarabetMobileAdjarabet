@@ -32,12 +32,6 @@ public enum HomeViewModelOutputAction {
 public enum HomeViewModelRoute {
 }
 
-public enum HomeViewModelLoading {
-    case none
-    case fullScreen
-    case nextPage
-}
-
 public class DefaultHomeViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<HomeViewModelOutputAction>()
     private let routeSubject = PublishSubject<HomeViewModelRoute>()
@@ -46,13 +40,13 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
     private var page: PageDescription = .init()
     private var games: AppCellDataProviders = []
-    private var loadingType: HomeViewModelLoading = .none
+    private var loadingType: LoadingType = .none
 
     public override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)
     }
 
-    private func load(loadingType: HomeViewModelLoading) {
+    private func load(loadingType: LoadingType) {
         self.loadingType = loadingType
 
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
