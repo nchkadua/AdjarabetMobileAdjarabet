@@ -26,7 +26,7 @@ public protocol HomeViewModelOutput {
 public enum HomeViewModelOutputAction {
     case languageDidChange
     case reloadIndexPathes([IndexPath])
-    case appendGames(AppCellDataProviders, [IndexPath])
+    case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
     case initialize(AppListDataProvider)
 }
 
@@ -43,7 +43,12 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     private var games: AppCellDataProviders = []
     private var loadingType: LoadingType = .none {
         didSet {
-//            isLoading.accept(loadingType == .nextPage)
+            guard loadingType != oldValue else {return}
+
+            let isNextPage = loadingType == .nextPage
+            loading.set(isLoading: isNextPage)
+            let indexPath = IndexPath(item: games.count, section: 0)
+            actionSubject.onNext(.reloadIndexPathes([indexPath]))
         }
     }
 
@@ -55,16 +60,17 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
     private func load(loadingType: LoadingType) {
         self.loadingType = loadingType
+        let offset = self.games.count
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int.random(in: 100...2000))) {
             defer { self.loadingType = .none }
 
             let items: AppCellDataProviders = (1...20).map {
                 let params = GameLauncherComponentViewModelParams(
                     id: UUID().uuidString,
                     coverUrl: DummyData.imageUrls.randomElement()!,
-                    name: "Game name \($0)",
-                    category: "category \($0)",
+                    name: "Game name \(offset +  $0)",
+                    category: "category \(offset + $0)",
                     jackpotAmount: Bool.random() ? nil : "$ 50,2319.98")
                 let viewModel = DefaultGameLauncherComponentViewModel(params: params)
                 viewModel.action.subscribe(onNext: { action in
@@ -81,10 +87,11 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         let offset = self.games.count
 
         self.page.current += 1
+        self.page.hasMore = self.games.count < 50
         self.games.append(contentsOf: games)
 
         let indexPathes = games.enumerated().map { IndexPath(item: offset + $0.offset, section: 0) }
-        actionSubject.onNext(.appendGames(games, indexPathes))
+        actionSubject.onNext(.reloadItems(items: games, insertionIndexPathes: indexPathes, deletionIndexPathes: []))
     }
 }
 

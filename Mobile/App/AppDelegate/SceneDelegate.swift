@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        guard let _ = (scene as? UIWindowScene) else { return }
 
 //        let window = UIWindow(windowScene: windowScene)
-         window?.rootViewController = R.storyboard.mainTabBar().instantiate(controller: MainTabBarViewController.self)?.wrapInNav()
-//        window?.rootViewController = R.storyboard.login().instantiate(controller: LoginViewController.self)?.wrap(in: ABNavigationController.self)
+//         window?.rootViewController = R.storyboard.mainTabBar().instantiate(controller: MainTabBarViewController.self)?.wrapInNav()
+        window?.rootViewController = R.storyboard.login().instantiate(controller: LoginViewController.self)?.wrap(in: ABNavigationController.self)
 //        self.window = window
 //        window.makeKeyAndVisible()
     }

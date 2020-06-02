@@ -16,6 +16,6 @@ extension DefaultLoadingComponentViewModel: LoadingCollectionViewCellDataProvide
 
 public extension LoadingCollectionViewCellDataProvider {
     func size(for rect: CGRect, safeArea: CGRect, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat) -> CGSize {
-        CGSize(width: rect.width, height: params.height)
+        CGSize(width: rect.width, height: params.normalizedHeight)
     }
 }

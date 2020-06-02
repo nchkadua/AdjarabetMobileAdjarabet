@@ -46,16 +46,22 @@ public class HomeViewController: UIViewController {
             languageDidChange()
         case .initialize(let appListDataProvider):
             collectionViewController.dataProvider = appListDataProvider
-        case .appendGames(let dataProviders, let indexPathes):
-//            collectionViewController.dataProvider?.first?.append(contentsOf: dataProviders)
-//            collectionViewController.dataProvider?.first?.dataProviders.insert(contentsOf: dataProviders, at: indexPathes.first!.item)
-//            let indexs = indexPathes.map { $0.item }
-            dataProviders.reversed().forEach {
-                collectionViewController.dataProvider?.first?.insert($0, at: indexPathes.first!.item)
-            }
-            collectionViewController.collectionView.insertItems(at: indexPathes)
+        case .reloadItems(let items, let insertionIndexPathes, let deletionIndexPathes):
+            collectionViewController.collectionView.performBatchUpdates({
+                deletionIndexPathes.reversed().forEach {
+                    collectionViewController.dataProvider?.first?.remove(at: $0.item)
+                }
+                collectionViewController.collectionView.deleteItems(at: deletionIndexPathes)
+
+                items.reversed().forEach {
+                    collectionViewController.dataProvider?.first?.insert($0, at: insertionIndexPathes.first!.item)
+                }
+                collectionViewController.collectionView.insertItems(at: insertionIndexPathes)
+            }, completion: nil)
         case .reloadIndexPathes(let indexPathes):
-            collectionViewController.collectionView.reloadItems(at: indexPathes)
+            UIView.performWithoutAnimation {
+                collectionViewController.collectionView.reloadItems(at: indexPathes)
+            }
         }
     }
 
