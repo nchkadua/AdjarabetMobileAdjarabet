@@ -59,9 +59,9 @@ public class LoginViewController: ABViewController {
 
     private func didRecive(action: LoginViewModelOutputAction) {
         switch action {
-        case .loginButton(let isLoading):    loginButton.set(isLoading: isLoading)
-        case .smsLoginButton(let isLoading): smsLoginButton.set(isLoading: isLoading)
-        case .biometryButton(let isLoading): biometryButton.set(isLoading: isLoading)
+        case .setLoginButton(let isLoading):    loginButton.set(isLoading: isLoading)
+        case .setSMSLoginButton(let isLoading): smsLoginButton.set(isLoading: isLoading)
+        case .setBiometryButton(let isLoading): biometryButton.set(isLoading: isLoading)
         case .configureBiometryButton(let available, let icon, let title):
             biometryButton.superview?.isHidden = !available
             biometryIconButton.setImage(icon, for: .normal)

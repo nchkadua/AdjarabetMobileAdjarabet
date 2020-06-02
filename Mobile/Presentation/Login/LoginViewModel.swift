@@ -28,9 +28,9 @@ public protocol LoginViewModelOutput {
 }
 
 public enum LoginViewModelOutputAction {
-    case loginButton(isLoading: Bool)
-    case smsLoginButton(isLoading: Bool)
-    case biometryButton(isLoading: Bool)
+    case setLoginButton(isLoading: Bool)
+    case setSMSLoginButton(isLoading: Bool)
+    case setBiometryButton(isLoading: Bool)
     case configureBiometryButton(available: Bool, icon: UIImage?, title: String?)
 }
 
@@ -59,9 +59,9 @@ public class DefaultLoginViewModel {
     private func loginIfSessionIsAlive() {
         guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
 
-        actionSubject.onNext(.biometryButton(isLoading: true))
+        actionSubject.onNext(.setBiometryButton(isLoading: true))
         userSessionUseCase.execute(userId: userId, sessionId: sessionId) { [weak self] result in
-            defer { self?.actionSubject.onNext(.biometryButton(isLoading: false)) }
+            defer { self?.actionSubject.onNext(.setBiometryButton(isLoading: false)) }
             switch result {
             case .success: self?.routeSubject.onNext(.openMainTabBar)
             case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
@@ -82,9 +82,9 @@ extension DefaultLoginViewModel: LoginViewModel {
     }
 
     public func smsLogin(username: String) {
-        actionSubject.onNext(.smsLoginButton(isLoading: true))
+        actionSubject.onNext(.setSMSLoginButton(isLoading: true))
         smsCodeUseCase.execute(username: username) { [weak self] result in
-            defer { self?.actionSubject.onNext(.smsLoginButton(isLoading: false)) }
+            defer { self?.actionSubject.onNext(.setSMSLoginButton(isLoading: false)) }
             switch result {
             case .success: self?.routeSubject.onNext(.openSMSLogin(params: .init(username: username)))
             case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
@@ -93,9 +93,9 @@ extension DefaultLoginViewModel: LoginViewModel {
     }
 
     public func login(username: String, password: String) {
-        actionSubject.onNext(.loginButton(isLoading: true))
+        actionSubject.onNext(.setLoginButton(isLoading: true))
         loginUseCase.execute(username: username, password: password) { [weak self] result in
-            defer { self?.actionSubject.onNext(.loginButton(isLoading: false)) }
+            defer { self?.actionSubject.onNext(.setLoginButton(isLoading: false)) }
             switch result {
             case .success: self?.routeSubject.onNext(.openMainTabBar)
             case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))

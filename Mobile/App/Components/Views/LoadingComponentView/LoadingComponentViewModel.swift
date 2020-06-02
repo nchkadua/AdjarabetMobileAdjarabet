@@ -15,7 +15,7 @@ public struct LoadingComponentViewModelParams {
     public let tintColor: DesignSystem.Color
     public let height: CGFloat
     public var isLoading: Bool = false
-    
+
     public var normalizedHeight: CGFloat { isLoading ? height : 0 }
 }
 
