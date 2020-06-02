@@ -15,7 +15,7 @@ public class SMSLoginViewController: ABViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var smsLoginTitleLabel: UILabel!
-    @IBOutlet private weak var resentSMSButton: ABButton!
+    @IBOutlet private weak var resendSMSButton: ABButton!
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
     @IBOutlet private weak var loginButton: ABButton!
     @IBOutlet private weak var notMemberLabel: UILabel!
@@ -63,12 +63,10 @@ public class SMSLoginViewController: ABViewController {
 
     private func didRecive(action: SMSLoginViewModelOutputAction) {
         switch action {
-        case .configureSMSInputForNumberOfItems(let count):
-            smsCodeInputView.configureForNumberOfItems(count)
-        case .updateSMSCodeInputView(let text):
-            updateSMSCodeInputView(texts: text)
-        case .loginButton(let isLoading):
-            isLoading ? loginButton.showLoading() : loginButton.hideLoading()
+        case .setSMSInputViewNumberOfItems(let count): smsCodeInputView.configureForNumberOfItems(count)
+        case .setSMSCodeInputView(let text):             updateSMSCodeInputView(texts: text)
+        case .setResendSMSButton(let isLoading):               resendSMSButton.set(isLoading: isLoading)
+        case .setLoginButton(let isLoading):                   loginButton.set(isLoading: isLoading)
         }
     }
 
@@ -120,13 +118,13 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupButtons() {
-        resentSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        resentSMSButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
-        resentSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
-        resentSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
-        resentSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 0)
-        resentSMSButton.contentEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 0)
-        resentSMSButton.addTarget(self, action: #selector(resentSMSDidTap), for: .touchUpInside)
+        resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
+        resendSMSButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
+        resendSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
+        resendSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
+        resendSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 0)
+        resendSMSButton.contentEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 0)
+        resendSMSButton.addTarget(self, action: #selector(resendSMSDidTap), for: .touchUpInside)
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
         loginButton.setStyle(to: .primary(state: .disabled, size: .large))
@@ -158,8 +156,8 @@ public class SMSLoginViewController: ABViewController {
         showAlert(title: "Join now")
     }
 
-    @objc private func resentSMSDidTap() {
-        showAlert(title: "Resend SMS")
+    @objc private func resendSMSDidTap() {
+        viewModel.resendSMS()
     }
 
     @objc private func loginDidTap() {

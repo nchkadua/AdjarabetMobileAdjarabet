@@ -17,7 +17,12 @@ public final class DefaultSMSCodeUseCase: SMSCodeUseCase {
     public func execute(username: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
         authenticationRepository.smsCode(username: username, channel: 2) { (result: Result<AdjarabetCoreResult.SmsCode, Error>) in
             switch result {
-            case .success: completion(.success(()))
+            case .success(let params):
+                if params.codable.statusCode == .OTP_IS_SENT {
+                    completion(.success(()))
+                } else {
+                    completion(.failure(AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode)))
+                }
             case .failure(let error): completion(.failure(error))
             }
         }

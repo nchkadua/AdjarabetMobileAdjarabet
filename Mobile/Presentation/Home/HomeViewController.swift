@@ -43,19 +43,25 @@ public class HomeViewController: UIViewController {
     private func didReceive(action: HomeViewModelOutputAction) {
         switch action {
         case .languageDidChange:
-            setupNavigationItem()
-            searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
-            UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
+            languageDidChange()
+        case .initialize(let appListDataProvider):
+            collectionViewController.dataProvider = appListDataProvider
+        case .reloadItems(let items, let insertionIndexPathes, let deletionIndexPathes):
+            collectionViewController.collectionView.performBatchUpdates({
+                deletionIndexPathes.reversed().forEach {
+                    collectionViewController.dataProvider?.first?.remove(at: $0.item)
+                }
+                collectionViewController.collectionView.deleteItems(at: deletionIndexPathes)
 
-            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
-                .foregroundColor: DesignSystem.Color.neutral100().value,
-                .font: DesignSystem.Typography.p.description.font
-            ]
-
-            UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
-                .foregroundColor: DesignSystem.Color.neutral100().value,
-                .font: DesignSystem.Typography.p.description.font
-            ], for: .normal)
+                items.reversed().forEach {
+                    collectionViewController.dataProvider?.first?.insert($0, at: insertionIndexPathes.first!.item)
+                }
+                collectionViewController.collectionView.insertItems(at: insertionIndexPathes)
+            }, completion: nil)
+        case .reloadIndexPathes(let indexPathes):
+            UIView.performWithoutAnimation {
+                collectionViewController.collectionView.reloadItems(at: indexPathes)
+            }
         }
     }
 
@@ -76,8 +82,9 @@ public class HomeViewController: UIViewController {
     }
 
     private func setupCollectionViewController() {
-        collectionViewController.isTabBarManagementEnabled = true
+        collectionViewController.viewModel = viewModel
 
+        collectionViewController.isTabBarManagementEnabled = true
         add(child: collectionViewController)
 
         let played: [PlayedGameLauncherCollectionViewCellDataProvider] = (1...20).map {
@@ -100,21 +107,7 @@ public class HomeViewController: UIViewController {
             self.didReceive(action: action)
         }).disposed(by: disposeBag)
 
-        let items: AppCellDataProviders = (1...20).map {
-            let params = GameLauncherComponentViewModelParams(
-                id: UUID().uuidString,
-                coverUrl: DummyData.imageUrls.randomElement()!,
-                name: "Game name \($0)",
-                category: "category \($0)",
-                jackpotAmount: Bool.random() ? nil : "$ 50,2319.98")
-            let viewModel = DefaultGameLauncherComponentViewModel(params: params)
-            viewModel.action.subscribe(onNext: { [weak self] action in
-                self?.didReceive(action: action)
-            }).disposed(by: disposeBag)
-            return viewModel
-        }
-
-        collectionViewController.dataProvider = ([recentryPlayed] + items).makeList()
+        collectionViewController.dataProvider = ([recentryPlayed]).makeList()
     }
 
     private func setupSearchCollectionViewController() {
@@ -157,6 +150,22 @@ public class HomeViewController: UIViewController {
         }
 
         mainCollectionViewIsVisible ? mainTabBarViewController?.showFloatingTabBar() : mainTabBarViewController?.hideFloatingTabBar()
+    }
+
+    private func languageDidChange() {
+        setupNavigationItem()
+        searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
+
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
+            .foregroundColor: DesignSystem.Color.neutral100().value,
+            .font: DesignSystem.Typography.p.description.font
+        ]
+
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
+            .foregroundColor: DesignSystem.Color.neutral100().value,
+            .font: DesignSystem.Typography.p.description.font
+        ], for: .normal)
     }
 
     // MARK: Reactive methods

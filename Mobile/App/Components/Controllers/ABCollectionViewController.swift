@@ -7,8 +7,15 @@
 //
 
 import RxSwift
+import RxCocoa
+
+public protocol ABCollectionViewModel {
+    func didLoadNextPage()
+}
 
 public class ABCollectionViewController: AppCollectionViewController, UICollectionViewDelegateFlowLayout {
+    public var viewModel: ABCollectionViewModel?
+
     private let disposeBag = DisposeBag()
     public var isTabBarManagementEnabled: Bool = false
 
@@ -24,7 +31,8 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         collectionView?.register(types: [
             RecentlyPlayedCollectionViewCell.self,
             PlayedGameLauncherCollectionViewCell.self,
-            GameLauncherCollectionViewCell.self
+            GameLauncherCollectionViewCell.self,
+            LoadingCollectionViewCell.self
         ])
 
         setupCollectionView()
@@ -41,6 +49,14 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         flowLayout?.minimumInteritemSpacing = 0
         flowLayout?.minimumLineSpacing = 0
         flowLayout?.sectionInset = .zero
+    }
+
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView.numberOfSections - 1 == indexPath.section && collectionView.numberOfItems(inSection: indexPath.section) - 10 == indexPath.item {
+            viewModel?.didLoadNextPage()
+        }
+
+        return super.collectionView(collectionView, cellForItemAt: indexPath)
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

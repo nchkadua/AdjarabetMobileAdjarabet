@@ -2,9 +2,9 @@
 public typealias AppCellDataProviders = [AppCellDataProvider]
 
 open class AppSectionDataProvider {
-    public fileprivate(set) var header: AppCellDataProvider?
-    public fileprivate(set) var dataProviders: AppCellDataProviders
-    public fileprivate(set) var footer: AppCellDataProvider?
+    public var header: AppCellDataProvider?
+    public var dataProviders: AppCellDataProviders
+    public var footer: AppCellDataProvider?
 
     public required init(header: AppCellDataProvider? = nil, dataProviders: AppCellDataProviders = [], footer: AppCellDataProvider? = nil) {
         self.header = header
