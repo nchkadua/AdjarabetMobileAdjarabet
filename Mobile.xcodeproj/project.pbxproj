@@ -102,8 +102,6 @@
 		D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1E24336CA400F1D4FE /* UserSession.swift */; };
 		D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */; };
 		D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */; };
-		D85C9C2C24336CF300F1D4FE /* DemoLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2A24336CF200F1D4FE /* DemoLoginViewController.swift */; };
-		D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */; };
 		D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */; };
 		D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C3124336D0800F1D4FE /* Login.storyboard */; };
 		D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */; };
@@ -298,8 +296,6 @@
 		D85C9C1E24336CA400F1D4FE /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSessionCareTaker.swift; sourceTree = "<group>"; };
 		D85C9C2624336CDD00F1D4FE /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		D85C9C2A24336CF200F1D4FE /* DemoLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoLoginViewController.swift; sourceTree = "<group>"; };
-		D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D85C9C2F24336D0000F1D4FE /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		D85C9C3124336D0800F1D4FE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABNavigationController.swift; sourceTree = "<group>"; };
@@ -696,8 +692,6 @@
 				D8442AA82469A7A400F32676 /* LoginViewController.swift */,
 				D8442AA92469A7A400F32676 /* LoginViewModel.swift */,
 				D85C9C3124336D0800F1D4FE /* Login.storyboard */,
-				D85C9C2A24336CF200F1D4FE /* DemoLoginViewController.swift */,
-				D85C9C2B24336CF200F1D4FE /* WelcomeViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1449,7 +1443,6 @@
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
 				D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */,
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
-				D85C9C2C24336CF300F1D4FE /* DemoLoginViewController.swift in Sources */,
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
@@ -1502,7 +1495,6 @@
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
-				D85C9C2D24336CF300F1D4FE /* WelcomeViewController.swift in Sources */,
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
