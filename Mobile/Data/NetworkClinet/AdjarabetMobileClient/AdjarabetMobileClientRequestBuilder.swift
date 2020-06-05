@@ -29,6 +29,10 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
         params.addIfNotNil(key: .page, value: page)
         params.addIfNotNil(key: .propousedNumberOfItems, value: itemsPerPage)
         params.addIfNotNil(key: .term, value: searchTerm)
+        params.addIfNotNil(key: .sessionId, value: sessionId)
+        #warning("needs update")
+        params.addIfNotNil(key: .userId, value: 0)
+        params.addIfNotNil(key: .providerId, value: 0)
         return self
     }
 
@@ -51,18 +55,25 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
         case platform
         case appVersion
         case languageCode
+
         case sessionId
+        case userId
+        case providerId
+
+        case osVersion
+        case deviceName
     }
 
     private func makeRequstMessage(sessionId: String?, params: [Key: Any]) -> [String: Any] {
         var message: [Key: Any] = [
             .params: params.toStringKeys(),
             .platform: 0, // 0 indicates iOS
-            .languageCode: languageStorage.currentLanguage.localizableIdentifier
+            .languageCode: languageStorage.currentLanguage.localizableIdentifier,
+            .osVersion: UIDevice.current.systemVersion,
+            .deviceName: Device.shared.current.name.rawValue
         ]
 
         message.addIfNotNil(key: .appVersion, value: Bundle.main.fullVersion)
-        message.addIfNotNil(key: .sessionId, value: sessionId)
 
         return message.toStringKeys()
     }
