@@ -12,19 +12,19 @@ public class DefaultGameRepository {
 }
 
 extension DefaultGameRepository: GameRepository {
-    public func games<T>(sessionId: String, page: Int, itemsPerPage: Int, searchTerm: String?, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
+    public func games<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, searchTerm: String?, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
         let request = requestBuilder
             .set(method: .games)
-            .set(sessionId: sessionId, page: page, itemsPerPage: itemsPerPage, searchTerm: searchTerm)
+            .set(sessionId: sessionId, userId: userId, page: page, itemsPerPage: itemsPerPage, searchTerm: searchTerm)
             .build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func recentlyPlayedGames<T>(sessionId: String, page: Int, itemsPerPage: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
+    public func recentlyPlayedGames<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
         let request = requestBuilder
             .set(method: .recentlyPlayed)
-            .set(sessionId: sessionId, page: page, itemsPerPage: itemsPerPage)
+            .set(sessionId: sessionId, userId: userId, page: page, itemsPerPage: itemsPerPage)
             .build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)

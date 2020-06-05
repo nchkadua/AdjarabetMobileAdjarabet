@@ -24,15 +24,13 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
         return self
     }
 
-    public func set(sessionId: String?, page: Int, itemsPerPage: Int, searchTerm: String? = nil) -> Self {
+    public func set(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, searchTerm: String? = nil) -> Self {
         self.sessionId = sessionId
         params.addIfNotNil(key: .page, value: page)
         params.addIfNotNil(key: .propousedNumberOfItems, value: itemsPerPage)
         params.addIfNotNil(key: .term, value: searchTerm)
         params.addIfNotNil(key: .sessionId, value: sessionId)
-        #warning("needs update")
-        params.addIfNotNil(key: .userId, value: 0)
-        params.addIfNotNil(key: .providerId, value: 0)
+        params.addIfNotNil(key: .userId, value: userId)
         return self
     }
 
@@ -58,7 +56,6 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
 
         case sessionId
         case userId
-        case providerId
 
         case osVersion
         case deviceName
