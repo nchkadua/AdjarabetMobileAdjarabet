@@ -104,11 +104,11 @@ extension DefaultLoginViewModel: LoginViewModel {
     }
 
     public func biometryLogin() {
-        biometry.authenticate { [weak self] result in
-            switch result {
-            case .success: self?.loginIfSessionIsAlive()
-            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
-            }
-        }
+//        biometry.authenticate { [weak self] result in
+//            switch result {
+//            case .success: self?.loginIfSessionIsAlive()
+//            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+//            }
+//        }
     }
 }

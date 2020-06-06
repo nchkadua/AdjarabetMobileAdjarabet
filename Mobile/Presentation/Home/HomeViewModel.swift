@@ -62,10 +62,10 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         self.loadingType = loadingType
         let offset = self.games.count
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int.random(in: 100...2000))) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(0)) {
             defer { self.loadingType = .none }
 
-            let items: AppCellDataProviders = (1...20).map {
+            let items: AppCellDataProviders = (1...40).map {
                 let params = GameLauncherComponentViewModelParams(
                     id: UUID().uuidString,
                     coverUrl: DummyData.imageUrls.randomElement()!,
@@ -112,7 +112,7 @@ extension DefaultHomeViewModel: HomeViewModel {
     }
 
     public func didLoadNextPage() {
-        guard page.hasMore, loadingType == .none else {return}
-        load(loadingType: .nextPage)
+//        guard page.hasMore, loadingType == .none else {return}
+//        load(loadingType: .nextPage)
     }
 }
