@@ -17,20 +17,22 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>24</string>
+	<string>31</string>
 	<key>CORE_API_URL</key>
 	<string>${CORE_API_URL}</string>
-	<key>MOBILE_API_URL</key>
-	<string>${MOBILE_API_URL}</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MOBILE_API_URL</key>
+	<string>${MOBILE_API_URL}</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>$(PRODUCT_NAME) requests access to Face ID to simplify the login process</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>PantonMtav3-Bold.otf</string>
@@ -97,7 +99,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>NSFaceIDUsageDescription</key>
-	<string>$(PRODUCT_NAME) requests access to Face ID to simplify the login process</string>
 </dict>
 </plist>

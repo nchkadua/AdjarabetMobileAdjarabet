@@ -94,4 +94,11 @@ public extension UIViewController {
             dismiss(animated: true, completion: nil)
         }
     }
+
+    func showAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }

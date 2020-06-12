@@ -9,7 +9,7 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - SharedFramework (0.0.5)
+  - SharedFramework (0.0.6)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
@@ -38,9 +38,9 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  SharedFramework: ecc283fe3cbdb574cd3b5676e5d1fcb36df7dd67
+  SharedFramework: 22dc84584a14646e5a4b13c899ba0a663aca3722
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
 PODFILE CHECKSUM: 7c9d710aef61046ba9f614284e4d618e716fef19
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
