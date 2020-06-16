@@ -52,18 +52,18 @@ public final class DefaultLoginUseCase: LoginUseCase {
                     return
                 }
 
-                if params.codable.errorCode == .invalidPassword {
+                if params.codable.errorCode == .USER_WITH_GIVEN_AUTH_CREDENTIALS_NOT_FOUND {
                     completion(.failure(.invalidUsernameOrPassword))
                     return
                 }
 
-                if params.codable.isLoggedOn && params.codable.isOTPRequired {
+                if params.codable.isOTPRequired && params.codable.errorCode == .OTP_IS_REQUIRED {
                     completion(.success(.otpRequried))
                 } else if params.codable.isLoggedOn && params.codable.userID != nil {
                     self?.save(params: params)
                     completion(.success(.success))
                 } else {
-                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode))))
+                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode))))
                 }
             case .failure(let error):
                 completion(.failure(.unknown(error: error)))

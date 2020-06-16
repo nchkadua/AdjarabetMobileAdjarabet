@@ -47,7 +47,7 @@ public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
                     return
                 }
 
-                if params.codable.errorCode == .invalidOTP {
+                if params.codable.errorCode == .OTP_NOT_FOUND {
                     completion(.failure(.invalidSMSCode))
                     return
                 }
@@ -56,7 +56,7 @@ public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
                     self?.save(params: params)
                     completion(.success(()))
                 } else {
-                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode))))
+                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode))))
                 }
             case .failure(let error):
                 completion(.failure(.unknown(error: error)))
