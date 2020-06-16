@@ -16,9 +16,9 @@ public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
     @Inject private var userSession: UserSessionServices
 
     private func save(params: AdjarabetCoreResult.Login) {
-        userSession.set(userId: params.codable.userID,
-                        username: params.codable.username,
-                        sessionId: params.header!.sessionId,
+        userSession.set(userId: params.codable.userID ?? -1,
+                        username: params.codable.username ?? "",
+                        sessionId: params.header?.sessionId ?? "",
                         currencyId: params.codable.preferredCurrency)
 
         userSession.login()

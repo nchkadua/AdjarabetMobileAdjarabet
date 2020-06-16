@@ -127,4 +127,5 @@ public enum AdjarabetCoreStatusCode: Int, Codable {
     case REALITY_CHECK_IS_NOT_DUE_YET = 227
     case STATUS_ITEM_DOES_NOT_EXISTS = 400
     case STATUS_UNABLE_TO_CHECK_ITEM = 500
+    case UNKNOWN = -1000
 }

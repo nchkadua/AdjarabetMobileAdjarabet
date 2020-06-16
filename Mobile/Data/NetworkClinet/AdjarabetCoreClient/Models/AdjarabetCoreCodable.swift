@@ -35,34 +35,43 @@ public extension AdjarabetCoreCodable {
         }
 
         public struct Login: Codable {
-               public let isLoggedOn: Bool
-               public let isOTPRequired: Bool
-               public let userID: Int
-               public let username: String
-               public let errorCode: Int?
-               public let userStatusID: Int
-               public let language: String
-               public let isUserSuspended: Bool
-               public let isUserExcluded: Bool
-               public let preferredCurrency: Int?
-               public let sessionExpirationDate: String?
-               public let realityCheckDueDate: String?
+            public let statusCode: AdjarabetCoreStatusCode
+            public let isLoggedOn: Bool
+            public let isOTPRequired: Bool
+            public let userID: Int?
+            public let username: String?
+            public let errorCode: ErrorCode?
+            public let userStatusId: Int?
+            public let language: String?
+            public let isUserSuspended: Bool?
+            public let isUserExcluded: Bool?
+            public let preferredCurrency: Int?
+            public let sessionExpirationDate: String?
+            public let realityCheckDueDate: String?
 
-               enum CodingKeys: String, CodingKey {
-                   case isLoggedOn = "IsLoggedOn"
-                   case isOTPRequired = "IsOTPRequired"
-                   case userID = "UserID"
-                   case username = "UserName"
-                   case errorCode = "ErrorCode"
-                   case userStatusID = "UserStatusID"
-                   case language = "Language"
-                   case isUserSuspended = "IsUserSuspended"
-                   case isUserExcluded = "IsUserExcluded"
-                   case preferredCurrency = "PreferredCurrency"
-                   case sessionExpirationDate = "SessionExpirationDate"
-                   case realityCheckDueDate = "RealityCheckDueDate"
-               }
-           }
+            enum CodingKeys: String, CodingKey {
+                case statusCode              = "StatusCode"
+                case isLoggedOn              = "IsLoggedOn"
+                case isOTPRequired           = "IsOTPRequired"
+                case userID                  = "UserID"
+                case username                = "UserName"
+                case errorCode               = "ErrorCode"
+                case userStatusId            = "UserStatusID"
+                case language                = "Language"
+                case isUserSuspended         = "IsUserSuspended"
+                case isUserExcluded          = "IsUserExcluded"
+                case preferredCurrency       = "PreferredCurrency"
+                case sessionExpirationDate   = "SessionExpirationDate"
+                case realityCheckDueDate     = "RealityCheckDueDate"
+            }
+
+            public enum ErrorCode: Int, Codable {
+                case none = 0
+                case invalidPassword = 113
+                case highSecurity = 122
+                case differentIP = 123
+            }
+        }
     }
 
     struct AliveSession: Codable {

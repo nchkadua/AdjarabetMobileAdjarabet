@@ -17,20 +17,26 @@ public extension AdjarabetCoreResult {
 
         public struct Login: HeaderProtocol {
             public let sessionId: String
+            public let headers: [AnyHashable: Any]
 
-            public init(headers: [AnyHashable: Any]?) throws {
-                guard let cookie = headers?["Set-Cookie"] as? String else {
-                    throw AdjarabetCoreClientError.invalidHeader(context: headers)
-                }
+            public init(headers: [AnyHashable: Any]?) {
+                self.headers = headers ?? [:]
 
+//                guard let cookie = headers?["Set-Cookie"] as? String else {
+//                    throw AdjarabetCoreClientError.invalidHeader(context: headers)
+//                }
+
+                let cookie = headers?["Set-Cookie"] as? String ?? ""
                 let split = cookie.split(separator: ";")
 
                 if let sessionId = split.first(where: { $0.contains("JSESSIONID=") }) {
                     self.sessionId = String(sessionId)
-                    print(self.sessionId)
                 } else {
-                    throw AdjarabetCoreClientError.invalidHeader(context: headers)
+                    self.sessionId = ""
                 }
+//                else {
+//                    throw AdjarabetCoreClientError.invalidHeader(context: headers)
+//                }
             }
         }
     }
