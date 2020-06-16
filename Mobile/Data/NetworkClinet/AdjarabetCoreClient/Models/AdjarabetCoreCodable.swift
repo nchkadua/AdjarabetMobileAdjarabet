@@ -68,8 +68,15 @@ public extension AdjarabetCoreCodable {
             public enum ErrorCode: Int, Codable {
                 case none = 0
                 case invalidPassword = 113
+                case invalidOTP = 119
                 case highSecurity = 122
                 case differentIP = 123
+
+                case unknown = -1000
+
+                public init(from decoder: Decoder) throws {
+                    self = try ErrorCode(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+                }
             }
         }
     }

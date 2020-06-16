@@ -52,14 +52,14 @@ public final class DefaultLoginUseCase: LoginUseCase {
                     return
                 }
 
-                guard params.codable.isLoggedOn else {
+                if params.codable.errorCode == .invalidPassword {
                     completion(.failure(.invalidUsernameOrPassword))
                     return
                 }
 
-                if params.codable.isOTPRequired {
+                if params.codable.isLoggedOn && params.codable.isOTPRequired {
                     completion(.success(.otpRequried))
-                } else if params.codable.userID != nil {
+                } else if params.codable.isLoggedOn && params.codable.userID != nil {
                     self?.save(params: params)
                     completion(.success(.success))
                 } else {

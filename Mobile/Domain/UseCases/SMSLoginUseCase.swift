@@ -8,7 +8,21 @@
 
 public protocol SMSLoginUseCase {
     @discardableResult
-    func execute(username: String, code: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable?
+    func execute(username: String, code: String, completion: @escaping (Result<Void, SMSLoginUseCaseError>) -> Void) -> Cancellable?
+}
+
+public enum SMSLoginUseCaseError: Error, LocalizedError {
+    case invalidSMSCode
+    case unknown(error: Error)
+
+    public var errorDescription: String? {
+        switch self {
+        case .invalidSMSCode:
+            return "Failed because invalid code was specified"
+        case .unknown(let error):
+            return error.localizedDescription
+        }
+    }
 }
 
 public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
@@ -24,14 +38,28 @@ public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
         userSession.login()
     }
 
-    public func execute(username: String, code: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
+    public func execute(username: String, code: String, completion: @escaping (Result<Void, SMSLoginUseCaseError>) -> Void) -> Cancellable? {
         authenticationRepository.login(username: username, code: code, loginType: .sms) { [weak self] (result: Result<AdjarabetCoreResult.Login, Error>) in
             switch result {
             case .success(let params):
-                self?.save(params: params)
-                completion(.success(()))
+                guard params.codable.statusCode == .STATUS_SUCCESS else {
+                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode))))
+                    return
+                }
+
+                if params.codable.errorCode == .invalidOTP {
+                    completion(.failure(.invalidSMSCode))
+                    return
+                }
+
+                if params.codable.isLoggedOn && params.codable.userID != nil {
+                    self?.save(params: params)
+                    completion(.success(()))
+                } else {
+                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode))))
+                }
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(.unknown(error: error)))
             }
         }
     }
