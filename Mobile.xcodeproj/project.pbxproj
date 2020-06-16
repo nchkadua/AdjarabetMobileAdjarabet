@@ -169,6 +169,7 @@
 		D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD8AE244C850D001F4BAA /* GameLauncherComponentView.swift */; };
 		D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */; };
 		D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD8B4244C85AC001F4BAA /* Xibable.swift */; };
+		D8D11B442498E63D0010F4C8 /* UserAgentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D11B432498E63D0010F4C8 /* UserAgentProvider.swift */; };
 		D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */; };
 		D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */; };
 		D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */; };
@@ -367,6 +368,7 @@
 		D8CFD8AE244C850D001F4BAA /* GameLauncherComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherComponentView.swift; sourceTree = "<group>"; };
 		D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLauncherComponentView.xib; sourceTree = "<group>"; };
 		D8CFD8B4244C85AC001F4BAA /* Xibable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xibable.swift; sourceTree = "<group>"; };
+		D8D11B432498E63D0010F4C8 /* UserAgentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgentProvider.swift; sourceTree = "<group>"; };
 		D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarManager.swift; sourceTree = "<group>"; };
 		D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Bold.otf"; sourceTree = "<group>"; };
 		D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Regular.otf"; sourceTree = "<group>"; };
@@ -668,6 +670,7 @@
 				D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */,
 				D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */,
 				D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */,
+				D8D11B432498E63D0010F4C8 /* UserAgentProvider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1505,6 +1508,7 @@
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
 				D8442AAB2469A7A400F32676 /* LoginViewController.swift in Sources */,
 				D8AC9964244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift in Sources */,
+				D8D11B442498E63D0010F4C8 /* UserAgentProvider.swift in Sources */,
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */,
 				D850940A24828D5800722040 /* GameRepository.swift in Sources */,
