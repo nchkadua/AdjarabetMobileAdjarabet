@@ -152,6 +152,8 @@
 		D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC9966244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift */; };
 		D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8AC9967244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib */; };
 		D8AC996B244F1A8600B16600 /* RecentlyPlayedCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC996A244F1A8600B16600 /* RecentlyPlayedCollectionViewCellDataProvider.swift */; };
+		D8BA5A1A2499391C00F88433 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BA5A192499391C00F88433 /* AppConstant.swift */; };
+		D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */; };
 		D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB242D246E7F5A00244FF4 /* HomeNavigator.swift */; };
 		D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */; };
 		D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4040244EC949008F0BAF /* GameLauncherCollectionViewCell.swift */; };
@@ -351,6 +353,8 @@
 		D8AC9966244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8AC9967244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentlyPlayedCollectionViewCell.xib; sourceTree = "<group>"; };
 		D8AC996A244F1A8600B16600 /* RecentlyPlayedCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		D8BA5A192499391C00F88433 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieStorageRepository.swift; sourceTree = "<group>"; };
 		D8BB242D246E7F5A00244FF4 /* HomeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigator.swift; sourceTree = "<group>"; };
 		D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCollectionViewController.swift; sourceTree = "<group>"; };
 		D8BF4040244EC949008F0BAF /* GameLauncherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -671,6 +675,7 @@
 				D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */,
 				D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */,
 				D8D11B432498E63D0010F4C8 /* UserAgentProvider.swift */,
+				D8BA5A192499391C00F88433 /* AppConstant.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -732,6 +737,7 @@
 				D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */,
 				D861DA922466BD060054D058 /* BalanceManagementRepository.swift */,
 				D850940924828D5800722040 /* GameRepository.swift */,
+				D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1524,6 +1530,8 @@
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
+				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,
+				D8BA5A1A2499391C00F88433 /* AppConstant.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,

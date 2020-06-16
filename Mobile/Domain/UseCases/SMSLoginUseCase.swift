@@ -56,7 +56,7 @@ public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
                     self?.save(params: params)
                     completion(.success(()))
                 } else {
-                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode))))
+                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode ?? .UNKNOWN))))
                 }
             case .failure(let error):
                 completion(.failure(.unknown(error: error)))

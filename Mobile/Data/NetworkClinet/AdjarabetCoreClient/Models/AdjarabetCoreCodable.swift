@@ -40,7 +40,7 @@ public extension AdjarabetCoreCodable {
             public let isOTPRequired: Bool
             public let userID: Int?
             public let username: String?
-            public let errorCode: AdjarabetCoreStatusCode
+            public let errorCode: AdjarabetCoreStatusCode?
             public let userStatusId: Int?
             public let language: String?
             public let isUserSuspended: Bool?

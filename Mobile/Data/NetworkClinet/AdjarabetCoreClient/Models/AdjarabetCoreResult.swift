@@ -17,10 +17,10 @@ public extension AdjarabetCoreResult {
 
         public struct Login: HeaderProtocol {
             public var sessionId = ""
-            public let headers: [AnyHashable: Any]
+            public let fields: [AnyHashable: Any]
 
             public init(headers: [AnyHashable: Any]?) {
-                self.headers = headers ?? [:]
+                self.fields = headers ?? [:]
 
                 let cookie = headers?["Set-Cookie"] as? String ?? ""
                 let split = cookie.split(separator: ";")
@@ -30,6 +30,15 @@ public extension AdjarabetCoreResult {
                 }
             }
         }
+    }
+}
+
+extension Dictionary where Key == AnyHashable, Value == Any {
+    func toStringValues() -> [String: String] {
+        [String: String](uniqueKeysWithValues: self.compactMap { key, value -> (String, String)? in
+            guard let stringKey = key as? String, let stringValue = value as? String else {return nil}
+            return (stringKey, stringValue)
+        })
     }
 }
 

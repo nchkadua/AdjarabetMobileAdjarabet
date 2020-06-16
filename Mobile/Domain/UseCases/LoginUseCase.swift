@@ -32,9 +32,12 @@ public enum LoginUseCaseError: Error, LocalizedError {
 
 public final class DefaultLoginUseCase: LoginUseCase {
     @Inject(from: .repositories) private var authenticationRepository: AuthenticationRepository
+    @Inject(from: .repositories) private var cookieStorageRepository: CookieStorageRepository
     @Inject private var userSession: UserSessionServices
 
     private func save(params: AdjarabetCoreResult.Login) {
+        cookieStorageRepository.update(headerFields: params.header?.fields.toStringValues() ?? [:])
+
         userSession.set(userId: params.codable.userID ?? -1,
                         username: params.codable.username ?? "",
                         sessionId: params.header?.sessionId ?? "",
@@ -63,7 +66,7 @@ public final class DefaultLoginUseCase: LoginUseCase {
                     self?.save(params: params)
                     completion(.success(.success))
                 } else {
-                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode))))
+                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode ?? .UNKNOWN))))
                 }
             case .failure(let error):
                 completion(.failure(.unknown(error: error)))
