@@ -8,18 +8,18 @@
 
 // swiftlint:disable identifier_name
 public enum AdjarabetCoreStatusCode: Int, Codable {
-    case STATUS_SUCCESS = 10  // Operation was successful
-    case WRONG_REQUEST = 99 //Received request had invalid structure
-    case FIELD_LIMIT_REACHED = 100 // Value specified in the field has reached its limit
-    case FIELD_MIN_MAX_NOT_MATCHED = 101 // Value specified in the field does not meet Min / Max requirements
-    case FIELD_FORMAT_NOT_MATCHED = 102 //Value specified in the field does not meet its format requirements
-    case FIELD_IS_EMPTY = 103 // Field can`t be empty
-    case PATTERN_IS_NOT_MATCHED = 104 // Value specified in the field does not meet its pattern requirements
-    case COUNTRY_NOT_SUPPORTED = 105 // Specified country is not supported by the system
-    case AGE_LIMIT_NOT_MATCHED = 106 // Specified age of the user does not meet system defined requirements
-    case ID_DOCUMENT_IS_MISSING = 107 // ID Document of the user must be specified
-    case MAX_POSSIBLE_REG_PER_IP_REACHED = 108 //IP has reached its limit for number of registrations allowed
-    case UNABLE_TO_SAVE_ID_DOC = 109 // ID Document of the user could not be saved
+    case STATUS_SUCCESS = 10
+    case WRONG_REQUEST = 99
+    case FIELD_LIMIT_REACHED = 100
+    case FIELD_MIN_MAX_NOT_MATCHED = 101
+    case FIELD_FORMAT_NOT_MATCHED = 102
+    case FIELD_IS_EMPTY = 103
+    case PATTERN_IS_NOT_MATCHED = 104
+    case COUNTRY_NOT_SUPPORTED = 105
+    case AGE_LIMIT_NOT_MATCHED = 106
+    case ID_DOCUMENT_IS_MISSING = 107
+    case MAX_POSSIBLE_REG_PER_IP_REACHED = 108
+    case UNABLE_TO_SAVE_ID_DOC = 109
     case UNABLE_TO_ASSIGN_ACCOUNT_TO_USER = 110
     case GENERIC_FAILED_ERROR = 111
     case MISSING_PARAMETERS = 112
@@ -127,4 +127,10 @@ public enum AdjarabetCoreStatusCode: Int, Codable {
     case REALITY_CHECK_IS_NOT_DUE_YET = 227
     case STATUS_ITEM_DOES_NOT_EXISTS = 400
     case STATUS_UNABLE_TO_CHECK_ITEM = 500
+
+    case UNKNOWN = -1000
+
+    public init(from decoder: Decoder) throws {
+        self = try AdjarabetCoreStatusCode(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .UNKNOWN
+    }
 }

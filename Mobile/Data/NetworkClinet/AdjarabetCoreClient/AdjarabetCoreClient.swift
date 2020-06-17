@@ -28,14 +28,3 @@ public class AdjarabetCoreClient {
         case aliveSession = "isSessionActive"
     }
 }
-
-public extension HeaderProvidingCodableType {
-    static func validate(data: Data) throws {
-        let statusCode = try JSONDecoder().decode(AdjarabetCoreCodable.StatusCodeChecker.self, from: data)
-
-        #warning("should be investigated")
-        if !statusCode.isSuccess {
-            throw AdjarabetCoreClientError.invalidStatusCode(code: statusCode.code)
-        }
-    }
-}

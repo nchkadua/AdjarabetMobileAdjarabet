@@ -36,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             Module { DefaultUserBalanceService.shared as UserBalanceService }
             Module { DefaultBiometryAuthentication() as BiometryAuthentication }
+
+            Module { DefaultUserAgentProvider() as UserAgentProvider }
         }
 
         dependencies.build()
@@ -56,6 +58,8 @@ public extension DependencyContainer {
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }
         // Mobile
         Module { DefaultGameRepository() as GameRepository }
+
+        Module { DefaultCookieStorageRepository() as CookieStorageRepository }
     }
 
     static var factories = DependencyContainer {

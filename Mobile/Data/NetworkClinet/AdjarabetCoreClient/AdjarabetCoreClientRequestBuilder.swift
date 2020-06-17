@@ -9,12 +9,14 @@
 public class AdjarabetCoreClientRequestBuilder: Builder {
     public typealias Buildable = URLRequest
 
+    @Inject private var userAgentProvider: UserAgentProvider
+
     private var url: URL
     private var queryItems: [URLQueryItem] = []
     private var headers = [
         "Content-Type": "application/x-www-form-urlencoded",
-        "Origin": "https://www.adjarabet.com",
-        "Referer": "https://www.adjarabet.com/ka",
+        "Origin": AppConstant.coreOriginDomain,
+        "Referer": AppConstant.coreOriginDomain,
         "X-Requested-With": "XMLHttpRequest"
     ]
 
@@ -65,6 +67,8 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
     }
 
     public func build() -> URLRequest {
+        headers["User-Agent"] = userAgentProvider.userAgent
+
         var component = URLComponents(url: url, resolvingAgainstBaseURL: false)
         component?.queryItems = queryItems
 

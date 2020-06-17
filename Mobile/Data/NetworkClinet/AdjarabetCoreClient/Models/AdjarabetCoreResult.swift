@@ -16,23 +16,29 @@ public extension AdjarabetCoreResult {
         }
 
         public struct Login: HeaderProtocol {
-            public let sessionId: String
+            public var sessionId = ""
+            public let fields: [AnyHashable: Any]
 
-            public init(headers: [AnyHashable: Any]?) throws {
-                guard let cookie = headers?["Set-Cookie"] as? String else {
-                    throw AdjarabetCoreClientError.invalidHeader(context: headers)
-                }
+            public init(headers: [AnyHashable: Any]?) {
+                self.fields = headers ?? [:]
 
+                let cookie = headers?["Set-Cookie"] as? String ?? ""
                 let split = cookie.split(separator: ";")
 
                 if let sessionId = split.first(where: { $0.contains("JSESSIONID=") }) {
                     self.sessionId = String(sessionId)
-                    print(self.sessionId)
-                } else {
-                    throw AdjarabetCoreClientError.invalidHeader(context: headers)
                 }
             }
         }
+    }
+}
+
+extension Dictionary where Key == AnyHashable, Value == Any {
+    func toStringValues() -> [String: String] {
+        [String: String](uniqueKeysWithValues: self.compactMap { key, value -> (String, String)? in
+            guard let stringKey = key as? String, let stringValue = value as? String else {return nil}
+            return (stringKey, stringValue)
+        })
     }
 }
 
@@ -47,9 +53,9 @@ public extension AdjarabetCoreResult {
         }
     }
 
-    typealias Login = Result<AdjarabetCoreCodable.Authentication.Login, AdjarabetCoreResult.Header.Login>
-    typealias Logout = Result<AdjarabetCoreCodable.Empty, AdjarabetCoreResult.Header.Empty>
-    typealias AliveSession = Result<AdjarabetCoreCodable.AliveSession, AdjarabetCoreResult.Header.Empty>
-    typealias Balance = Result<AdjarabetCoreCodable.Balance, AdjarabetCoreResult.Header.Empty>
-    typealias SmsCode = Result<AdjarabetCoreCodable.Authentication.SmsCode, AdjarabetCoreResult.Header.Empty>
+    typealias Login         = Result<AdjarabetCoreCodable.Authentication.Login, AdjarabetCoreResult.Header.Login>
+    typealias Logout        = Result<AdjarabetCoreCodable.Empty, AdjarabetCoreResult.Header.Empty>
+    typealias AliveSession  = Result<AdjarabetCoreCodable.AliveSession, AdjarabetCoreResult.Header.Empty>
+    typealias Balance       = Result<AdjarabetCoreCodable.Balance, AdjarabetCoreResult.Header.Empty>
+    typealias SmsCode       = Result<AdjarabetCoreCodable.Authentication.SmsCode, AdjarabetCoreResult.Header.Empty>
 }

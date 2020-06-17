@@ -97,8 +97,13 @@ extension DefaultLoginViewModel: LoginViewModel {
         loginUseCase.execute(username: username, password: password) { [weak self] result in
             defer { self?.actionSubject.onNext(.setLoginButton(isLoading: false)) }
             switch result {
-            case .success: self?.routeSubject.onNext(.openMainTabBar)
-            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            case .success(let type):
+                switch type {
+                case .success:      self?.routeSubject.onNext(.openMainTabBar)
+                case .otpRequried:  self?.routeSubject.onNext(.openSMSLogin(params: .init(username: username)))
+                }
+            case .failure(let error):
+                self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
             }
         }
     }

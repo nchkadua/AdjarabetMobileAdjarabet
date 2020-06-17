@@ -390,8 +390,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 2 properties.
   struct entitlements {
+    struct comAppleSecurityApplicationGroups {
+      static let groupAdjarabetMobileCoockie = infoPlistString(path: ["com.apple.security.application-groups"], key: "group.adjarabet.mobile.coockie") ?? "group.adjarabet.mobile.coockie"
+
+      fileprivate init() {}
+    }
+
     struct keychainAccessGroups {
       static let appIdentifierPrefixComAdjarabetMobileCredentials = infoPlistString(path: ["keychain-access-groups"], key: "$(AppIdentifierPrefix)com.adjarabet.Mobile.credentials") ?? "$(AppIdentifierPrefix)com.adjarabet.Mobile.credentials"
 

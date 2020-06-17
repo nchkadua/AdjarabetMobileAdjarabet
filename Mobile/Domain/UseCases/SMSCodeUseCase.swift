@@ -15,7 +15,7 @@ public final class DefaultSMSCodeUseCase: SMSCodeUseCase {
     @Inject(from: .repositories) private var authenticationRepository: AuthenticationRepository
 
     public func execute(username: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
-        authenticationRepository.smsCode(username: username, channel: 2) { (result: Result<AdjarabetCoreResult.SmsCode, Error>) in
+        authenticationRepository.smsCode(username: username, channel: .sms) { (result: Result<AdjarabetCoreResult.SmsCode, Error>) in
             switch result {
             case .success(let params):
                 if params.codable.statusCode == .OTP_IS_SENT {

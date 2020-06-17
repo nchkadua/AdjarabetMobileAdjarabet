@@ -13,7 +13,6 @@ public protocol HeaderProvidingCodableType {
     var codable: T { get }
     var header: H? { get }
     init(codable: T, header: H?)
-    static func validate(data: Data) throws
 }
 
 public protocol HeaderProtocol {
