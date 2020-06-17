@@ -14,19 +14,19 @@ public class DefaultAuthenticationRepository {
 }
 
 extension DefaultAuthenticationRepository: AuthenticationRepository {
-    public func login<T>(username: String, password: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
+    public func login<T>(username: String, password: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .set(method: .login)
-            .set(username: username, password: password, channel: channel)
+            .set(username: username, password: password, channel: channel.rawValue)
             .build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func smsCode<T>(username: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
+    public func smsCode<T>(username: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .set(method: .smsCode)
-            .set(username: username, channel: channel)
+            .set(username: username, channel: channel.rawValue)
             .build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)

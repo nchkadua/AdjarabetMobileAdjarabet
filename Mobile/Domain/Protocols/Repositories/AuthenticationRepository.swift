@@ -8,11 +8,11 @@
 
 public protocol AuthenticationRepository {
     @discardableResult
-    func login<T: HeaderProvidingCodableType>(username: String, password: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func login<T: HeaderProvidingCodableType>(username: String, password: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
     @discardableResult
     func login<T: HeaderProvidingCodableType>(username: String, code: String, loginType: LoginType, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
     @discardableResult
-    func smsCode<T: HeaderProvidingCodableType>(username: String, channel: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func smsCode<T: HeaderProvidingCodableType>(username: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
     @discardableResult
     func logout<T: HeaderProvidingCodableType>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
 }
