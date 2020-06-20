@@ -60,7 +60,7 @@ platform :ios do
 
   desc "Distribute production to testflight"
   lane :distribute_production_to_testflight do
-    build_stage_for_appstore
+    build_procution_for_appstore
     pilot(
       changelog: "The new production version from the fastlane"
     )
