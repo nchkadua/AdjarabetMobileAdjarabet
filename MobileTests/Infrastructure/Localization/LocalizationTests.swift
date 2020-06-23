@@ -11,8 +11,8 @@ import XCTest
 
 class LocalizationTests: XCTestCase {
     func testLocalized() {
-        XCTAssertNotEqual(R.string.localization.login.localized(language: .english), "Login")
-//        XCTAssertEqual(R.string.localization.login.localized(language: .georgian), "შესვლა")
-//        XCTAssertEqual(R.string.localization.login.localized(language: .armenian), "մուտք")
+        XCTAssertEqual(R.string.localization.login.localized(language: .english), "Login")
+        XCTAssertEqual(R.string.localization.login.localized(language: .georgian), "შესვლა")
+        XCTAssertEqual(R.string.localization.login.localized(language: .armenian), "մուտք")
     }
 }

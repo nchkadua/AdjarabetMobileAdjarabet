@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6612F916FC18BFB2C451E2DC /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */; };
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
 		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
@@ -198,11 +197,11 @@
 		0F2D25A01C077303D804AE49 /* Pods-MobileTests.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-stage.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-stage.xcconfig"; sourceTree = "<group>"; };
 		1DC8A4457FEC86A0D27D9864 /* Pods-Mobile.debug-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug-stage.xcconfig"; sourceTree = "<group>"; };
 		420D5BD2923BF3733D93B967 /* Pods-MobileTests.debug-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.debug-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.debug-production.xcconfig"; sourceTree = "<group>"; };
-		48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78526968594DC2FF052D9FB5 /* Pods-MobileTests.debug-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.debug-stage.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.debug-stage.xcconfig"; sourceTree = "<group>"; };
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		D803F42724A251C700A16CB2 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		D807846A24439E4500003892 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		D807846D2444727500003892 /* FiraGO-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Light.ttf"; sourceTree = "<group>"; };
@@ -405,7 +404,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6612F916FC18BFB2C451E2DC /* Pods_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +413,7 @@
 		31170CB969BE9F4E039A5237 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				48EC3D621A35A18E001F0406 /* Pods_Mobile.framework */,
+				D803F42724A251C700A16CB2 /* Pods_Mobile.framework */,
 				F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */,
 			);
 			name = Frameworks;
@@ -1725,7 +1723,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile Stage.app/Mobile Stage";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
 			};
 			name = "Debug-Production";
 		};
