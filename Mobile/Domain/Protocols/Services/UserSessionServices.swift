@@ -16,14 +16,19 @@ public protocol UserSessionReadableServices {
     var sessionId: String? { get }
     var userId: Int? { get }
     var username: String? { get }
+    var password: String? { get }
     var currencyId: Int? { get }
     var action: Observable<UserSessionAction> { get }
+}
+
+public extension UserSessionReadableServices {
+    var hasUsernameAndPassword: Bool { username != nil && password != nil }
 }
 
 public protocol UserSessionWritableServices {
     func login()
     func logout()
-    func set(userId: Int, username: String, sessionId: String, currencyId: Int?)
+    func set(userId: Int, username: String, sessionId: String, currencyId: Int?, password: String?)
     func remove()
 }
 

@@ -35,13 +35,14 @@ public final class DefaultLoginUseCase: LoginUseCase {
     @Inject(from: .repositories) private var cookieStorageRepository: CookieStorageRepository
     @Inject private var userSession: UserSessionServices
 
-    private func save(params: AdjarabetCoreResult.Login) {
+    private func save(params: AdjarabetCoreResult.Login, password: String) {
         cookieStorageRepository.update(headerFields: params.header?.fields.toStringValues() ?? [:])
 
         userSession.set(userId: params.codable.userID ?? -1,
                         username: params.codable.username ?? "",
                         sessionId: params.header?.sessionId ?? "",
-                        currencyId: params.codable.preferredCurrency)
+                        currencyId: params.codable.preferredCurrency,
+                        password: password)
 
         userSession.login()
     }
@@ -63,7 +64,7 @@ public final class DefaultLoginUseCase: LoginUseCase {
                 if params.codable.isOTPRequired && params.codable.errorCode == .OTP_IS_REQUIRED {
                     completion(.success(.otpRequried))
                 } else if params.codable.isLoggedOn && params.codable.userID != nil {
-                    self?.save(params: params)
+                    self?.save(params: params, password: password)
                     completion(.success(.success))
                 } else {
                     completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode ?? .UNKNOWN))))

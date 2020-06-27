@@ -35,6 +35,7 @@ public class UserSession: UserSessionServices {
         public var isLoggedIn: Bool = false
         public var sessionId: String?
         public var username: String?
+        public var password: String?
         public var userId: Int?
         public var currencyId: Int?
     }
@@ -50,6 +51,8 @@ extension UserSession: UserSessionReadableServices {
     public var userId: Int? { memento?.userId }
 
     public var username: String? { memento?.username }
+
+    public var password: String? { memento?.password }
 
     public var sessionId: String? { memento?.sessionId }
 
@@ -76,13 +79,22 @@ extension UserSession: UserSessionWritableServices {
         }
     }
 
-    public func set(userId: Int, username: String, sessionId: String, currencyId: Int?) {
+    public func set(userId: Int, username: String, sessionId: String, currencyId: Int?, password: String?) {
         do {
             var memento = try careTaker.load()
+            let oldUserId = memento.userId
+
             memento.userId = userId
             memento.username = username
             memento.sessionId = sessionId
             memento.currencyId = currencyId
+
+            // If password is nil and user is different reset the password
+            // if password is provided just save
+            if (password == nil && oldUserId != userId) || password != nil {
+                memento.password = password
+            }
+
             try careTaker.save(memento)
             actionSubject.onNext(.fields)
         } catch {
