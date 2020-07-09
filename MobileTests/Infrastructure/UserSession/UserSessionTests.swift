@@ -54,19 +54,34 @@ class UserSessionTests: XCTestCase {
     
     public func testSetEdditionalFields() {
         // given
-        let userId = Int.random(in: 0...1000)
-        let username = "\(Int.random(in: 0...1000))"
-        let sessionId = "\(Int.random(in: 0...1000))"
-        let currencyId = Int.random(in: 0...1000)
+        let userId      = Int.random(in: 0...1000)
+        let username    = "\(Int.random(in: 0...1000))"
+        let sessionId   = "\(Int.random(in: 0...1000))"
+        let currencyId  = Int.random(in: 0...1000)
+        let password    = "\(Int.random(in: 0...1000))"
         
         // when
-        userSession.set(userId: userId, username: username, sessionId: sessionId, currencyId: currencyId)
+        userSession.set(userId: userId, username: username, sessionId: sessionId, currencyId: currencyId, password: password)
         
         // than
         XCTAssertEqual(userSession.sessionId, sessionId)
         XCTAssertEqual(userSession.userId, userId)
         XCTAssertEqual(userSession.username, username)
         XCTAssertEqual(userSession.currencyId, currencyId)
+        XCTAssertEqual(userSession.password, password)
+    }
+    
+    public func testPasswordSetForSameUser() {
+        // given
+        let userId   = 0
+        let password = "\(Int.random(in: 0...1000))"
+        userSession.set(userId: userId, username: "", sessionId: "", currencyId: nil, password: password)
+        
+        // when
+        userSession.set(userId: 0, username: "", sessionId: "", currencyId: nil, password: nil)
+        
+        // than
+        XCTAssertEqual(userSession.password, password)
     }
     
     public func testActions() {
@@ -87,7 +102,7 @@ class UserSessionTests: XCTestCase {
         // when
         userSession.login()
         userSession.logout()
-        userSession.set(userId: 0, username: "", sessionId: "", currencyId: nil)
+        userSession.set(userId: 0, username: "", sessionId: "", currencyId: nil, password: nil)
         userSession.remove()
         
         // than

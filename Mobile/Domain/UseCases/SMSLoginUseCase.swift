@@ -33,7 +33,8 @@ public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
         userSession.set(userId: params.codable.userID ?? -1,
                         username: params.codable.username ?? "",
                         sessionId: params.header?.sessionId ?? "",
-                        currencyId: params.codable.preferredCurrency)
+                        currencyId: params.codable.preferredCurrency,
+                        password: nil)
 
         userSession.login()
     }

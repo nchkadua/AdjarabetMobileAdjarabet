@@ -142,9 +142,11 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupInputViews() {
+        usernameInputView.textField.textContentType = .username
         usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title.localized())
         usernameInputView.setSize(to: .large)
 
+        passwordInputView.textField.textContentType = .password
         passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
         passwordInputView.setSize(to: .large)
         passwordInputView.becomeSecureTextEntry()

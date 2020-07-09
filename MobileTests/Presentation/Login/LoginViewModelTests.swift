@@ -87,13 +87,13 @@ class LoginViewModelTests: XCTestCase {
     func testBiometrySuccess() {
         // given
         let expectation = self.expectation(description: "Biometry Success")
-        let biometry: BiometryAuthentication = BiometryAuthenticationSuccessMock(hasToSucceed: true)
+        let biometry: BiometryAuthentication         = BiometryAuthenticationSuccessMock(hasToSucceed: true)
         let userSession: UserSessionReadableServices = UserSessionMock(isLoggedIn: true)
-        let useCase: UserSessionUseCase = UserSessionUseCaseSuccessMock()
+        let loginUseCase: LoginUseCase               = LoginUseCaseSuccessMock()
 
         Mirror(reflecting: viewModel).inject(testable: biometry)
         Mirror(reflecting: viewModel).inject(testable: userSession)
-        Mirror(reflecting: viewModel).inject(testable: useCase)
+        Mirror(reflecting: viewModel).inject(testable: loginUseCase)
         
         _ = viewModel.route.subscribe(onNext: { action in
             if case .openMainTabBar = action { expectation.fulfill() }
@@ -168,32 +168,18 @@ class SMSCodeUseCaseErrorMock: SMSCodeUseCase {
     }
 }
 
-// MARK: UserSessionUseCase
-class UserSessionUseCaseSuccessMock: UserSessionUseCase {
-    func execute(userId: Int, sessionId: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
-        completion(.success(()))
-        return nil
-    }
-}
-
-class UserSessionUseCaseErrorMock: UserSessionUseCase {
-    func execute(userId: Int, sessionId: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
-        completion(.failure(LoginViewModelError.unknown))
-        return nil
-    }
-}
-
 // MARK: UserSession
 import RxSwift
 
 class UserSessionMock: UserSessionReadableServices {
     var isLoggedIn: Bool
     
-    var sessionId: String? { "id" }
-    var userId: Int? { 0 }
-    var username: String? { "username" }
-    var currencyId: Int? { nil }
-    var action: Observable<UserSessionAction> { PublishSubject<UserSessionAction>() }
+    var sessionId: String?                    = UUID().uuidString
+    var userId: Int?                          = 0
+    var username: String?                     = UUID().uuidString
+    var password: String?                     = UUID().uuidString
+    var currencyId: Int?                      = nil
+    var action: Observable<UserSessionAction> = PublishSubject<UserSessionAction>()
     
     init(isLoggedIn: Bool) {
         self.isLoggedIn = isLoggedIn
@@ -204,12 +190,11 @@ class UserSessionMock: UserSessionReadableServices {
 import LocalAuthentication
 
 class BiometryAuthenticationSuccessMock: BiometryAuthentication {
-    var hasToSucceed: Bool
-
-    var isAvailable: Bool { true }
-    var biometryType: LABiometryType { .faceID }
-    var icon: UIImage? { nil }
-    var title: String? { nil }
+    var hasToSucceed: Bool           = true
+    var isAvailable: Bool            = true
+    var biometryType: LABiometryType = .faceID
+    var icon: UIImage?               = nil
+    var title: String?               = nil
  
     init(hasToSucceed: Bool) {
         self.hasToSucceed = hasToSucceed

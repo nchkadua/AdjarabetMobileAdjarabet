@@ -47,7 +47,6 @@ public class DefaultLoginViewModel {
 
     @Inject(from: .useCases) private var loginUseCase: LoginUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
-    @Inject(from: .useCases) private var userSessionUseCase: UserSessionUseCase
 
     @Inject private var userSession: UserSessionReadableServices
     @Inject private var biometry: BiometryAuthentication
@@ -57,16 +56,9 @@ public class DefaultLoginViewModel {
     }
 
     private func loginIfSessionIsAlive() {
-        guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
+        guard let username = userSession.username, let password = userSession.password else {return}
 
-        actionSubject.onNext(.setBiometryButton(isLoading: true))
-        userSessionUseCase.execute(userId: userId, sessionId: sessionId) { [weak self] result in
-            defer { self?.actionSubject.onNext(.setBiometryButton(isLoading: false)) }
-            switch result {
-            case .success: self?.routeSubject.onNext(.openMainTabBar)
-            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
-            }
-        }
+        login(username: username, password: password)
     }
 }
 
@@ -75,7 +67,7 @@ extension DefaultLoginViewModel: LoginViewModel {
     public var route: Observable<LoginViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        let isBiometryAvailable = userSession.isLoggedIn && biometry.isAvailable
+        let isBiometryAvailable = biometry.isAvailable && userSession.hasUsernameAndPassword
         actionSubject.onNext(.configureBiometryButton(available: isBiometryAvailable,
                                                       icon: biometry.icon,
                                                       title: biometry.title))
