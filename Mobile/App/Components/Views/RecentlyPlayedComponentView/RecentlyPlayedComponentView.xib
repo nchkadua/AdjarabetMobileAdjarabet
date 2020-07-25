@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="button" destination="w34-AL-fKd" id="Pzn-I0-eyG"/>
                 <outlet property="collectionView" destination="Oxs-UG-0Xe" id="zWY-dJ-LGc"/>
+                <outlet property="loaderView" destination="ENd-sZ-wlM" id="6TO-XU-63R"/>
                 <outlet property="titleLabel" destination="hjX-OV-8fF" id="jrx-k2-HKs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Ey-94-DCj"/>
             </connections>
@@ -49,15 +50,23 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-sZ-wlM" customClass="RecentlyPlayedComponentLoaderView" customModule="Mobile" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="92" width="657" height="221"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Oxs-UG-0Xe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2r3-ne-VM5"/>
                 <constraint firstItem="4Ki-iI-8mV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="4z2-pO-6dI"/>
                 <constraint firstItem="Oxs-UG-0Xe" firstAttribute="top" secondItem="4Ki-iI-8mV" secondAttribute="bottom" id="C9O-Ww-JeO"/>
+                <constraint firstItem="ENd-sZ-wlM" firstAttribute="centerX" secondItem="Oxs-UG-0Xe" secondAttribute="centerX" id="KFg-R9-807"/>
+                <constraint firstItem="ENd-sZ-wlM" firstAttribute="width" secondItem="Oxs-UG-0Xe" secondAttribute="width" id="KsD-nt-atQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Oxs-UG-0Xe" secondAttribute="bottom" id="LB4-QI-qFj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Oxs-UG-0Xe" secondAttribute="trailing" id="W5H-YA-bp1"/>
+                <constraint firstItem="ENd-sZ-wlM" firstAttribute="height" secondItem="Oxs-UG-0Xe" secondAttribute="height" id="e8m-dp-tEF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4Ki-iI-8mV" secondAttribute="trailing" id="fA6-Hq-l9i"/>
+                <constraint firstItem="ENd-sZ-wlM" firstAttribute="centerY" secondItem="Oxs-UG-0Xe" secondAttribute="centerY" id="ksh-Mo-nLM"/>
                 <constraint firstItem="4Ki-iI-8mV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rHt-WN-NbB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

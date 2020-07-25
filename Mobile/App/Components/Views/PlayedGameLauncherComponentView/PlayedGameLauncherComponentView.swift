@@ -15,9 +15,12 @@ public class PlayedGameLauncherComponentView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var contentStackView: UIStackView!
     @IBOutlet weak private var coverImageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var subtitleLabel: UILabel!
+
+    @IBOutlet weak private var loaderView: PlayedGameLauncherComponentLoaderView!
 
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -48,6 +51,11 @@ public class PlayedGameLauncherComponentView: UIView {
         viewModel.didBind()
     }
 
+    public func set(isLoading: Bool) {
+        contentStackView.isHidden = isLoading
+        loaderView.isHidden = !isLoading
+    }
+
     private func setupUI(coverUrl: URL, title: String, subtitle: String?) {
         self.titleLabel.text = title
         self.subtitleLabel.text = subtitle
@@ -76,5 +84,15 @@ extension PlayedGameLauncherComponentView: Xibable {
 
         subtitleLabel.setTextColor(to: .neutral100(alpha: 0.6))
         subtitleLabel.setFont(to: .body2)
+
+        set(isLoading: false)
     }
+}
+
+public class PlayedGameLauncherComponentLoaderView: UIView {
+    @IBOutlet weak public var coverImageView: ShimmerView!
+    @IBOutlet weak public var titleLabel: ShimmerView!
+    @IBOutlet weak public var subtitleLabel: ShimmerView!
+
+    public var shimmerViews: [ShimmerView] { [coverImageView, titleLabel, subtitleLabel] }
 }

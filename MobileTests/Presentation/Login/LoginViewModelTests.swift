@@ -83,45 +83,6 @@ class LoginViewModelTests: XCTestCase {
         // than
         waitForExpectations(timeout: 0.3, handler: nil)
     }
-    
-    func testBiometrySuccess() {
-        // given
-        let expectation = self.expectation(description: "Biometry Success")
-        let biometry: BiometryAuthentication         = BiometryAuthenticationSuccessMock(hasToSucceed: true)
-        let userSession: UserSessionReadableServices = UserSessionMock(isLoggedIn: true)
-        let loginUseCase: LoginUseCase               = LoginUseCaseSuccessMock()
-
-        Mirror(reflecting: viewModel).inject(testable: biometry)
-        Mirror(reflecting: viewModel).inject(testable: userSession)
-        Mirror(reflecting: viewModel).inject(testable: loginUseCase)
-        
-        _ = viewModel.route.subscribe(onNext: { action in
-            if case .openMainTabBar = action { expectation.fulfill() }
-        })
-        
-        // when
-        viewModel.biometryLogin()
-        
-        // than
-        waitForExpectations(timeout: 0.3, handler: nil)
-    }
-    
-    func testBiometryError() {
-        // given
-        let expectation = self.expectation(description: "Biometry Error")
-        let biometry: BiometryAuthentication = BiometryAuthenticationSuccessMock(hasToSucceed: false)
-        Mirror(reflecting: viewModel).inject(testable: biometry)
-        
-        _ = viewModel.route.subscribe(onNext: { action in
-            if case .openAlert = action { expectation.fulfill() }
-        })
-        
-        // when
-        viewModel.biometryLogin()
-        
-        // than
-        waitForExpectations(timeout: 0.3, handler: nil)
-    }
 }
 
 public extension Mirror {
@@ -186,10 +147,10 @@ class UserSessionMock: UserSessionReadableServices {
     }
 }
 
-// MARK: Biometry Authentication
+// MARK: Biometric Authentication
 import LocalAuthentication
 
-class BiometryAuthenticationSuccessMock: BiometryAuthentication {
+class BiometricAuthenticationSuccessMock: BiometricAuthentication {
     var hasToSucceed: Bool           = true
     var isAvailable: Bool            = true
     var biometryType: LABiometryType = .faceID

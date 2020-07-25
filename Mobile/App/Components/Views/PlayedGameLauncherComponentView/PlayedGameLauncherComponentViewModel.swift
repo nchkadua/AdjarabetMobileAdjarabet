@@ -12,10 +12,8 @@ public protocol PlayedGameLauncherComponentViewModel: PlayedGameLauncherComponen
 }
 
 public struct PlayedGameLauncherComponentViewModelParams {
-    public let id: String
-    public let coverUrl: URL
-    public let name: String
-    public let lastWon: String?
+    public var game: Game
+    public var lastWon: String?
 }
 
 public protocol PlayedGameLauncherComponentViewModelInput {
@@ -49,7 +47,7 @@ extension DefaultPlayedGameLauncherComponentViewModel: PlayedGameLauncherCompone
     public var action: Observable<PlayedGameLauncherComponentViewModelOutputAction> { actionSubject.asObserver() }
 
     public func didBind() {
-        actionSubject.onNext(.set(coverUrl: params.coverUrl, name: params.name, lastWon: params.lastWon))
+        actionSubject.onNext(.set(coverUrl: params.game.coverUrl, name: params.game.name, lastWon: params.lastWon))
     }
 
     public func didSelect(at indexPath: IndexPath) {

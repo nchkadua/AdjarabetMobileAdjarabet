@@ -13,10 +13,11 @@ public protocol RecentlyPlayedComponentViewModel: RecentlyPlayedComponentViewMod
 }
 
 public struct RecentlyPlayedComponentViewModelParams {
-    public let id: String
-    public let title: Rswift.StringResource
-    public let buttonTitle: Rswift.StringResource
-    public let playedGames: [PlayedGameLauncherCollectionViewCellDataProvider]
+    public var id: String
+    public var title: Rswift.StringResource
+    public var buttonTitle: Rswift.StringResource
+    public var playedGames: [PlayedGameLauncherCollectionViewCellDataProvider]
+    public var isVisible: Bool
 }
 
 public protocol RecentlyPlayedComponentViewModelInput {

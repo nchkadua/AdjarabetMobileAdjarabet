@@ -41,6 +41,7 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = httpBody
+        request.allHTTPHeaderFields = ["Content-Type": "application/json"]
 
         return request
     }

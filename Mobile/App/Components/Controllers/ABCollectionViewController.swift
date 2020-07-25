@@ -107,3 +107,21 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         mainTabBarViewController?.showFloatingTabBar()
     }
 }
+
+public extension AppCollectionViewController {
+    func reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath]) {
+        collectionView.performBatchUpdates({
+            deletionIndexPathes.reversed().forEach {
+                dataProvider?.sectionDataProviders[$0.section].remove(at: $0.item)
+            }
+            collectionView?.deleteItems(at: deletionIndexPathes)
+
+            if let first = insertionIndexPathes.first {
+                items.reversed().forEach {
+                    dataProvider?.sectionDataProviders[first.section].insert($0, at: first.item)
+                }
+                collectionView?.insertItems(at: insertionIndexPathes)
+            }
+        }, completion: nil)
+    }
+}

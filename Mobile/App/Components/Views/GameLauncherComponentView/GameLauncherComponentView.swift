@@ -15,6 +15,7 @@ public class GameLauncherComponentView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var contentStackView: UIStackView!
     @IBOutlet weak private var coverImageView: UIImageView!
     @IBOutlet weak private var jackpotButton: AppCircularButton!
     @IBOutlet weak private var titleLabel: UILabel!
@@ -22,6 +23,8 @@ public class GameLauncherComponentView: UIView {
     @IBOutlet weak private var categoryLabel: UILabel!
     @IBOutlet weak private var inImageView: UIImageView!
     @IBOutlet weak private var separatorView: UIView!
+
+    @IBOutlet weak private var loaderView: GameLauncherComponentLoaderView!
 
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -50,6 +53,11 @@ public class GameLauncherComponentView: UIView {
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
+    }
+
+    public func set(isLoading: Bool) {
+        contentStackView.isHidden = isLoading
+        loaderView.isHidden = !isLoading
     }
 
     private func setupUI(coverUrl: URL, title: String, category: String, jackpotAmount: String?) {
@@ -92,5 +100,17 @@ extension GameLauncherComponentView: Xibable {
         inImageView.setTintColor(to: .neutral100())
 
         separatorView.setBackgorundColor(to: .neutral700())
+
+        loaderView.inImageView.setTintColor(to: .neutral100())
+        set(isLoading: false)
     }
+}
+
+public class GameLauncherComponentLoaderView: UIView {
+    @IBOutlet weak public var coverImageView: ShimmerView!
+    @IBOutlet weak public var titleLabel: ShimmerView!
+    @IBOutlet weak public var categoryLabel: ShimmerView!
+    @IBOutlet weak public var inImageView: UIImageView!
+
+    public var shimmerViews: [ShimmerView] { [coverImageView, titleLabel, categoryLabel] }
 }

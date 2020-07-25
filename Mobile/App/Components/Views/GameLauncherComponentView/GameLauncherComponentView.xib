@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,9 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameLauncherComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
                 <outlet property="categoryLabel" destination="5Cy-OM-YsD" id="MHK-6Y-Whu"/>
+                <outlet property="contentStackView" destination="R3q-vJ-4ai" id="F3K-jk-jiE"/>
                 <outlet property="coverImageView" destination="fFK-nq-ozv" id="TN4-3d-tbM"/>
                 <outlet property="inImageView" destination="PNe-u6-fPH" id="IVk-bC-U0W"/>
                 <outlet property="jackpotButton" destination="0NZ-Po-oWz" id="o74-UX-dWX"/>
+                <outlet property="loaderView" destination="J11-AH-edd" id="hnj-QQ-3wg"/>
                 <outlet property="separatorView" destination="wvY-32-wra" id="h8w-0a-x3k"/>
                 <outlet property="titleLabel" destination="hzE-hG-wfA" id="dL1-jH-SmT"/>
                 <outlet property="titleLabelCenterYConstraint" destination="MSC-uL-b4E" id="pj1-5A-Q7O"/>
@@ -90,9 +93,106 @@
                     </constraints>
                     <edgeInsets key="layoutMargins" top="12" left="20" bottom="12" right="20"/>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J11-AH-edd" customClass="GameLauncherComponentLoaderView" customModule="Mobile" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="658" height="251"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wFV-qr-Fg3">
+                            <rect key="frame" x="0.0" y="78.5" width="658" height="94"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1D0-be-NfV" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="12" width="70" height="70"/>
+                                    <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="70" id="7Qj-a4-hJc"/>
+                                        <constraint firstAttribute="width" constant="70" id="O0j-3F-wq9"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v89-Sq-Gk7">
+                                    <rect key="frame" x="102" y="31" width="516" height="32"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhQ-uh-wQ2" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="486" height="12"/>
+                                            <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="12" id="gGW-R4-5V5"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7re-7Z-Wn0">
+                                            <rect key="frame" x="0.0" y="20" width="486" height="12"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQC-EU-Sxy" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="218.5" height="12"/>
+                                                    <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="ozO-yb-gmr"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="hQC-EU-Sxy" firstAttribute="width" secondItem="7re-7Z-Wn0" secondAttribute="width" multiplier="0.45" id="Cy1-dB-w5v"/>
+                                                <constraint firstAttribute="bottom" secondItem="hQC-EU-Sxy" secondAttribute="bottom" id="LLO-ON-6fW"/>
+                                                <constraint firstItem="hQC-EU-Sxy" firstAttribute="leading" secondItem="7re-7Z-Wn0" secondAttribute="leading" id="TLR-sL-zKi"/>
+                                                <constraint firstAttribute="height" constant="12" id="U6y-Y0-oVu"/>
+                                                <constraint firstItem="hQC-EU-Sxy" firstAttribute="top" secondItem="7re-7Z-Wn0" secondAttribute="top" id="gdq-Uf-7hm"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="30"/>
+                                </stackView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/GameLauncher/in" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-9O-hHn">
+                                    <rect key="frame" x="630" y="40" width="8" height="14"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="14" id="Z7h-5j-h4y"/>
+                                        <constraint firstAttribute="width" constant="8" id="cNt-Vb-Nby"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="v89-Sq-Gk7" firstAttribute="centerY" secondItem="wFV-qr-Fg3" secondAttribute="centerY" id="4Yb-hc-muI"/>
+                            </constraints>
+                            <edgeInsets key="layoutMargins" top="12" left="20" bottom="12" right="20"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="wFV-qr-Fg3" firstAttribute="centerY" secondItem="J11-AH-edd" secondAttribute="centerY" id="1xS-hY-8m5"/>
+                        <constraint firstAttribute="trailing" secondItem="wFV-qr-Fg3" secondAttribute="trailing" id="Lqb-Cr-KN8"/>
+                        <constraint firstItem="wFV-qr-Fg3" firstAttribute="leading" secondItem="J11-AH-edd" secondAttribute="leading" id="cXT-Yu-gYz"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="categoryLabel" destination="hQC-EU-Sxy" id="F1K-aW-K5E"/>
+                        <outlet property="coverImageView" destination="1D0-be-NfV" id="B6F-0O-tLe"/>
+                        <outlet property="inImageView" destination="lqn-9O-hHn" id="Oim-Uz-nK6"/>
+                        <outlet property="titleLabel" destination="zhQ-uh-wQ2" id="nBq-Pz-IJI"/>
+                    </connections>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvY-32-wra">
                     <rect key="frame" x="0.0" y="250" width="658" height="1"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" name="ColorGuide/Neutral/neutral700"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="AOY-Ga-OCj"/>
                     </constraints>
@@ -100,12 +200,16 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="J11-AH-edd" secondAttribute="bottom" id="5Da-qF-KJa"/>
+                <constraint firstAttribute="trailing" secondItem="J11-AH-edd" secondAttribute="trailing" id="7kl-0w-Pg2"/>
+                <constraint firstItem="J11-AH-edd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9xm-yd-9by"/>
                 <constraint firstItem="R3q-vJ-4ai" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="EjK-SR-o28"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="R3q-vJ-4ai" secondAttribute="bottom" id="VGb-nG-GJb"/>
                 <constraint firstItem="R3q-vJ-4ai" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VYk-Iq-elo"/>
                 <constraint firstItem="wvY-32-wra" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WMo-Fr-hws"/>
                 <constraint firstAttribute="bottom" secondItem="wvY-32-wra" secondAttribute="bottom" id="aKQ-RW-QWZ"/>
                 <constraint firstItem="wvY-32-wra" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mlL-m6-Ixq"/>
+                <constraint firstItem="J11-AH-edd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x4z-V7-cLe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="R3q-vJ-4ai" secondAttribute="trailing" id="yP2-3F-aaY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -115,5 +219,11 @@
     </objects>
     <resources>
         <image name="Components/GameLauncher/in" width="24" height="42"/>
+        <namedColor name="ColorGuide/Neutral/neutral600">
+            <color red="0.12941176470588237" green="0.14901960784313725" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ColorGuide/Neutral/neutral700">
+            <color red="0.098039215686274508" green="0.11372549019607843" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

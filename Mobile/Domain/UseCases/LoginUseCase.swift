@@ -13,7 +13,7 @@ public protocol LoginUseCase {
 
 public enum LoginUseCaseSuccess {
     case success
-    case otpRequried
+    case otpRequried(username: String)
 }
 
 public enum LoginUseCaseError: Error, LocalizedError {
@@ -62,7 +62,7 @@ public final class DefaultLoginUseCase: LoginUseCase {
                 }
 
                 if params.codable.isOTPRequired && params.codable.errorCode == .OTP_IS_REQUIRED {
-                    completion(.success(.otpRequried))
+                    completion(.success(.otpRequried(username: username)))
                 } else if params.codable.isLoggedOn && params.codable.userID != nil {
                     self?.save(params: params, password: password)
                     completion(.success(.success))

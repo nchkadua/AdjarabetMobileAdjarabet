@@ -31,11 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Module { DefaultNetworkService() as NetworkService }
             Module { DefaultNetworkErrorLogger() as NetworkErrorLogger }
             Module { DefaultDataTransferService() as DataTransferService }
-            Module { AdjarabetCoreClientRequestBuilder() as AdjarabetCoreClientRequestBuilder }
-            Module { AdjarabetMobileClientRequestBuilder() as AdjarabetMobileClientRequestBuilder }
 
             Module { DefaultUserBalanceService.shared as UserBalanceService }
-            Module { DefaultBiometryAuthentication() as BiometryAuthentication }
+            Module { DefaultBiometricAuthentication() as BiometricAuthentication }
 
             Module { DefaultUserAgentProvider() as UserAgentProvider }
         }
@@ -57,7 +55,7 @@ public extension DependencyContainer {
         Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }
         // Mobile
-        Module { DefaultGameRepository() as GameRepository }
+        Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
     }
@@ -69,8 +67,11 @@ public extension DependencyContainer {
 
     static var useCases = DependencyContainer {
         Module { DefaultLoginUseCase() as LoginUseCase }
+        Module { DefaultBiometricLoginUseCase(loginUseCase: DefaultLoginUseCase()) as BiometricLoginUseCase }
         Module { DefaultSMSCodeUseCase() as SMSCodeUseCase }
         Module { DefaultSMSLoginUseCase() as SMSLoginUseCase }
         Module { DefaultUserSessionUseCase() as UserSessionUseCase }
+        Module { DefaultLobbyGamesUseCase() as LobbyGamesUseCase }
+        Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
     }
 }

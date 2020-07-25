@@ -18,6 +18,8 @@ public class RecentlyPlayedComponentView: UIView {
     @IBOutlet weak private var button: UIButton!
     @IBOutlet weak private var collectionView: UICollectionView!
 
+    @IBOutlet weak private var loaderView: RecentlyPlayedComponentLoaderView!
+
     public override init(frame: CGRect) {
        super.init(frame: frame)
        nibSetup()
@@ -47,6 +49,11 @@ public class RecentlyPlayedComponentView: UIView {
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
+    }
+
+    public func set(isLoading: Bool) {
+        collectionView.isHidden = isLoading
+        loaderView.isHidden = !isLoading
     }
 
     private func setupUI(title: String, buttonTitle: String) {
@@ -91,6 +98,8 @@ extension RecentlyPlayedComponentView: Xibable {
         collectionView.flowLayout?.sectionInset = .zero
         collectionView.flowLayout?.minimumLineSpacing = 10
         collectionView.flowLayout?.minimumInteritemSpacing = 0
+
+        set(isLoading: false)
     }
 }
 
@@ -120,5 +129,43 @@ extension RecentlyPlayedComponentView: UICollectionViewDelegateFlowLayout {
                                                          safeArea: collectionView.bounds,
                                                          minimumLineSpacing: 0,
                                                          minimumInteritemSpacing: 0)
+    }
+}
+
+public class RecentlyPlayedComponentLoaderView: UIView {
+    private lazy var stackView: UIStackView = {
+        let sw = UIStackView()
+        sw.translatesAutoresizingMaskIntoConstraints = false
+        sw.distribution = .fill
+        sw.alignment = .top
+        sw.axis = .horizontal
+        sw.spacing = 10
+        sw.isLayoutMarginsRelativeArrangement = true
+        sw.layoutMargins.left = 20
+        return sw
+    }()
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        sharedInitialize()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        sharedInitialize()
+    }
+
+    private func sharedInitialize() {
+        addSubview(stackView)
+        stackView.pin(to: self).traling.isActive = false
+
+        (1...10).forEach { _ in
+            let v = PlayedGameLauncherComponentView()
+            v.translatesAutoresizingMaskIntoConstraints = false
+            v.set(isLoading: true)
+            stackView.addArrangedSubview(v)
+            v.heightAnchor.constraint(equalToConstant: 160).isActive = true
+            v.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        }
     }
 }

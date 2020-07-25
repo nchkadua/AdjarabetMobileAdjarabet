@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayedGameLauncherComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
+                <outlet property="contentStackView" destination="ed8-Wg-eav" id="KoE-cN-HZP"/>
                 <outlet property="coverImageView" destination="sgl-qp-TAe" id="lfB-Zk-PS7"/>
+                <outlet property="loaderView" destination="NrK-wL-1yi" id="hSa-VE-SdN"/>
                 <outlet property="subtitleLabel" destination="PBd-Wi-fw9" id="Wgp-aW-CyN"/>
                 <outlet property="titleLabel" destination="ko1-4W-2Pg" id="A3b-Uv-03r"/>
                 <outlet property="view" destination="iN0-l3-epB" id="eop-pb-5em"/>
@@ -50,10 +53,87 @@
                         </label>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrK-wL-1yi" customClass="PlayedGameLauncherComponentLoaderView" customModule="Mobile" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="306" height="142"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DFD-e2-gQj">
+                            <rect key="frame" x="0.0" y="0.0" width="306" height="142"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-6i-xBB" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
+                                    <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="110" id="UAk-6e-xDd"/>
+                                        <constraint firstAttribute="width" constant="90" id="fwI-Ej-blO"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpX-UG-wid" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="118" width="90" height="8"/>
+                                    <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="8" id="03G-a6-NLe"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-Ut-lOR">
+                                    <rect key="frame" x="0.0" y="134" width="90" height="8"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jup-lb-rCz" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="8"/>
+                                            <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Jup-lb-rCz" firstAttribute="width" secondItem="cGT-Ut-lOR" secondAttribute="width" multiplier="0.77" id="Y4u-P7-2eg"/>
+                                        <constraint firstItem="Jup-lb-rCz" firstAttribute="leading" secondItem="cGT-Ut-lOR" secondAttribute="leading" id="YXQ-h1-3rh"/>
+                                        <constraint firstItem="Jup-lb-rCz" firstAttribute="top" secondItem="cGT-Ut-lOR" secondAttribute="top" id="azb-c6-n9e"/>
+                                        <constraint firstAttribute="bottom" secondItem="Jup-lb-rCz" secondAttribute="bottom" id="e62-xr-6Ff"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="vpX-UG-wid" firstAttribute="width" secondItem="WqB-6i-xBB" secondAttribute="width" id="38F-Hf-oY9"/>
+                                <constraint firstItem="cGT-Ut-lOR" firstAttribute="height" secondItem="vpX-UG-wid" secondAttribute="height" id="4T6-iB-Fuq"/>
+                                <constraint firstItem="cGT-Ut-lOR" firstAttribute="width" secondItem="WqB-6i-xBB" secondAttribute="width" id="zsq-CH-63J"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="DFD-e2-gQj" firstAttribute="top" secondItem="NrK-wL-1yi" secondAttribute="top" id="2Ll-0x-aE2"/>
+                        <constraint firstAttribute="bottom" secondItem="DFD-e2-gQj" secondAttribute="bottom" id="RZV-Wd-188"/>
+                        <constraint firstItem="DFD-e2-gQj" firstAttribute="leading" secondItem="NrK-wL-1yi" secondAttribute="leading" id="VSX-ET-e3z"/>
+                        <constraint firstAttribute="trailing" secondItem="DFD-e2-gQj" secondAttribute="trailing" id="dLv-6X-GIk"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="coverImageView" destination="WqB-6i-xBB" id="2zs-Eq-FcR"/>
+                        <outlet property="subtitleLabel" destination="Jup-lb-rCz" id="tLF-2s-Zo8"/>
+                        <outlet property="titleLabel" destination="vpX-UG-wid" id="6QU-PL-P7s"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ed8-Wg-eav" secondAttribute="trailing" id="2JG-zU-NQW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NrK-wL-1yi" secondAttribute="bottom" id="DmV-QP-pG8"/>
+                <constraint firstItem="NrK-wL-1yi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="L1G-lY-Uqk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NrK-wL-1yi" secondAttribute="trailing" id="L6Z-Un-hsI"/>
+                <constraint firstItem="NrK-wL-1yi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="X8H-Xk-aSL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ed8-Wg-eav" secondAttribute="bottom" id="f2x-ie-hbC"/>
                 <constraint firstItem="ed8-Wg-eav" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="prg-Ua-x7B"/>
                 <constraint firstItem="ed8-Wg-eav" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uHx-dm-5fU"/>
@@ -63,4 +143,9 @@
             <point key="canvasLocation" x="59.420289855072468" y="-13.392857142857142"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="ColorGuide/Neutral/neutral600">
+            <color red="0.12941176470588237" green="0.14901960784313725" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

@@ -1,5 +1,5 @@
 //
-//  Biometry.swift
+//  BiometricAuthentication.swift
 //  Mobile
 //
 //  Created by Shota Ioramashvili on 4/12/20.
@@ -8,7 +8,7 @@
 
 import LocalAuthentication
 
-public protocol BiometryAuthentication {
+public protocol BiometricAuthentication {
     var isAvailable: Bool { get }
     var biometryType: LABiometryType { get }
     var icon: UIImage? { get }
@@ -16,7 +16,7 @@ public protocol BiometryAuthentication {
     func authenticate(completion: @escaping (Result<Void, Error>) -> Void)
 }
 
-public class DefaultBiometryAuthentication: BiometryAuthentication {
+public class DefaultBiometricAuthentication: BiometricAuthentication {
     private var context = LAContext()
 
     public var isAvailable: Bool {

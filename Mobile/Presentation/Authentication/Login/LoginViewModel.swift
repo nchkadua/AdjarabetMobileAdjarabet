@@ -18,7 +18,7 @@ public protocol LoginViewModelInput {
     func viewDidLoad()
     func smsLogin(username: String)
     func login(username: String, password: String)
-    func biometryLogin()
+    func biometricLogin()
 }
 
 public protocol LoginViewModelOutput {
@@ -47,18 +47,23 @@ public class DefaultLoginViewModel {
 
     @Inject(from: .useCases) private var loginUseCase: LoginUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
-
-    @Inject private var userSession: UserSessionReadableServices
-    @Inject private var biometry: BiometryAuthentication
+    @Inject(from: .useCases) private var biometricLoginUseCase: BiometricLoginUseCase
 
     public init(params: LoginViewModelParams) {
         self.params = params
     }
 
-    private func loginIfSessionIsAlive() {
-        guard let username = userSession.username, let password = userSession.password else {return}
-
-        login(username: username, password: password)
+    private func handleLogin(result: Result<LoginUseCaseSuccess, LoginUseCaseError>) {
+        defer { actionSubject.onNext(.setLoginButton(isLoading: false)) }
+        switch result {
+        case .success(let type):
+            switch type {
+            case .success:                    routeSubject.onNext(.openMainTabBar)
+            case .otpRequried(let username):  routeSubject.onNext(.openSMSLogin(params: .init(username: username)))
+            }
+        case .failure(let error):
+            routeSubject.onNext(.openAlert(title: error.localizedDescription))
+        }
     }
 }
 
@@ -67,10 +72,9 @@ extension DefaultLoginViewModel: LoginViewModel {
     public var route: Observable<LoginViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        let isBiometryAvailable = biometry.isAvailable && userSession.hasUsernameAndPassword
-        actionSubject.onNext(.configureBiometryButton(available: isBiometryAvailable,
-                                                      icon: biometry.icon,
-                                                      title: biometry.title))
+        actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable,
+                                                      icon: biometricLoginUseCase.icon,
+                                                      title: biometricLoginUseCase.title))
     }
 
     public func smsLogin(username: String) {
@@ -86,26 +90,12 @@ extension DefaultLoginViewModel: LoginViewModel {
 
     public func login(username: String, password: String) {
         actionSubject.onNext(.setLoginButton(isLoading: true))
-        loginUseCase.execute(username: username, password: password) { [weak self] result in
-            defer { self?.actionSubject.onNext(.setLoginButton(isLoading: false)) }
-            switch result {
-            case .success(let type):
-                switch type {
-                case .success:      self?.routeSubject.onNext(.openMainTabBar)
-                case .otpRequried:  self?.routeSubject.onNext(.openSMSLogin(params: .init(username: username)))
-                }
-            case .failure(let error):
-                self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
-            }
-        }
+        loginUseCase.execute(username: username, password: password, completion: handleLogin(result:))
     }
 
-    public func biometryLogin() {
-        biometry.authenticate { [weak self] result in
-            switch result {
-            case .success: self?.loginIfSessionIsAlive()
-            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
-            }
-        }
+    public func biometricLogin() {
+        biometricLoginUseCase.execute(biometricSuccess: { [weak self] in
+            self?.actionSubject.onNext(.setLoginButton(isLoading: true))
+        }, completion: handleLogin(result:))
     }
 }

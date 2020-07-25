@@ -152,7 +152,7 @@ public class LoginViewController: ABViewController {
         passwordInputView.becomeSecureTextEntry()
 
         passwordInputView.rightButton.isHidden = false
-        passwordInputView.rightButton.setImage(R.image.shared.viewText(), for: .normal)
+        passwordInputView.rightButton.setImage(R.image.shared.hideText(), for: .normal)
 
         passwordInputView.rightButton.rx.tap.subscribe(onNext: { [weak self] in
             self?.updatePasswordRightButton()
@@ -209,7 +209,7 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func biometryButtonDidTap() {
-        viewModel.biometryLogin()
+        viewModel.biometricLogin()
     }
 
     // MARK: Configuration
@@ -227,7 +227,7 @@ public class LoginViewController: ABViewController {
         let isSecureTextEntry = passwordInputView.textField.isSecureTextEntry
         passwordInputView.toggleSecureTextEntry()
 
-        let icon = isSecureTextEntry ? R.image.shared.hideText() : R.image.shared.viewText()
+        let icon = isSecureTextEntry ? R.image.shared.viewText() : R.image.shared.hideText()
         passwordInputView.rightButton.setImage(icon, for: .normal)
     }
 }

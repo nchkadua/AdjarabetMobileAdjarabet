@@ -6,12 +6,12 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public class DefaultGameRepository {
+public class DefaultLobbyGamesRepository {
     @Inject private var dataTransferService: DataTransferService
-    @Inject private var requestBuilder: AdjarabetMobileClientRequestBuilder
+    private var requestBuilder: AdjarabetMobileClientRequestBuilder { AdjarabetMobileClientRequestBuilder() }
 }
 
-extension DefaultGameRepository: GameRepository {
+extension DefaultLobbyGamesRepository: LobbyGamesRepository {
     public func games<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, searchTerm: String?, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
         let request = requestBuilder
             .set(method: .games)

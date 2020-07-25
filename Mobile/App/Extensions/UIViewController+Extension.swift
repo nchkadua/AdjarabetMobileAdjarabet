@@ -34,38 +34,9 @@ public extension UIViewController {
         view.setBackgorundColor(to: .neutral800())
     }
 
-    func setupStandardSearchViewController(searchController: UISearchController) {
+    func setupStandardSearchViewController(_ searchController: UISearchController) {
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.obscuresBackgroundDuringPresentation = false
-
-        searchController.searchBar.searchTextPositionAdjustment = UIOffset(horizontal: 4, vertical: 0)
-        searchController.searchBar.placeholder = R.string.localization.home_search_placeholder.localized()
-        searchController.searchBar.searchTextField.layer.cornerRadius = 18
-        searchController.searchBar.searchTextField.layer.masksToBounds = true
-
-        searchController.searchBar.setImage(R.image.shared.search(), for: .search, state: .normal)
-        searchController.searchBar.searchTextField.leftView?.tintColor = DesignSystem.Color.neutral100().value
-
-        searchController.searchBar.setPositionAdjustment(UIOffset(horizontal: 6, vertical: 0), for: .search)
-        searchController.searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
-
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [
-            .foregroundColor: DesignSystem.Color.neutral100().value,
-            .font: DesignSystem.Typography.p.description.font
-        ]
-
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
-            .foregroundColor: DesignSystem.Color.neutral100().value,
-            .font: DesignSystem.Typography.p.description.font
-        ], for: .normal)
-
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
-
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = DesignSystem.Color.neutral700().value
-
-        for item in searchController.searchBar.searchTextField.subviews where item.className == "_UISearchBarSearchFieldBackgroundView" {
-            item.removeAllSubViews()
-        }
 
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -100,5 +71,24 @@ public extension UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
         }))
         present(alert, animated: true, completion: nil)
+    }
+
+    @discardableResult
+    func addDefaultLoader() -> LoaderViewController {
+        let vc = LoaderViewController()
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        add(child: vc)
+        vc.view.pin(to: view)
+        return vc
+    }
+
+    @discardableResult
+    func addDefaultGamesListLoader(isRecentlyPlayedEnabled: Bool) -> GamesListLoader {
+        let v = GamesListLoader(isRecentlyPlayedEnabled: isRecentlyPlayedEnabled)
+        v.backgroundColor = view.backgroundColor
+        v.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(v)
+        v.pin(to: view)
+        return v
     }
 }

@@ -31,12 +31,16 @@
 		D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784A424447ABF00003892 /* DesignSystemTests.swift */; };
 		D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */; };
 		D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810FC3424856EAD00F81499 /* LoadingType.swift */; };
+		D815850824B09BC300FFCA95 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815850724B09BC300FFCA95 /* Game.swift */; };
+		D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815850924B09E0100FFCA95 /* LobbyGamesUseCase.swift */; };
+		D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815850D24B0C81800FFCA95 /* LoaderViewController.swift */; };
 		D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212EF8248582AD00B74AB9 /* LoadingComponentView.swift */; };
 		D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8212EFA248582B200B74AB9 /* LoadingComponentView.xib */; };
 		D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212EFE2485831000B74AB9 /* LoadingComponentViewModel.swift */; };
 		D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212F022485846C00B74AB9 /* LoadingCollectionViewCell.swift */; };
 		D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8212F032485846C00B74AB9 /* LoadingCollectionViewCell.xib */; };
 		D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212F072485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift */; };
+		D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */; };
 		D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */; };
 		D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */; };
 		D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */; };
@@ -77,8 +81,8 @@
 		D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85094012482570200722040 /* UICollectionView+Extension.swift */; };
 		D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8509404248260DD00722040 /* AdjarabetMobileClient.swift */; };
 		D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8509406248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift */; };
-		D850940A24828D5800722040 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940924828D5800722040 /* GameRepository.swift */; };
-		D850940C24828D8900722040 /* DefaultGameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940B24828D8900722040 /* DefaultGameRepository.swift */; };
+		D850940A24828D5800722040 /* LobbyGamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940924828D5800722040 /* LobbyGamesRepository.swift */; };
+		D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */; };
 		D850940E24839A4A00722040 /* PageDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940D24839A4A00722040 /* PageDescription.swift */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */; };
@@ -138,7 +142,11 @@
 		D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */; };
 		D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */; };
 		D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8863697246C485500FF061D /* SMSCodeInputView.swift */; };
+		D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8880FD524C42C6500356CD3 /* GamesSearchViewController.swift */; };
+		D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8880FE024C4301400356CD3 /* GamesSearchViewModel.swift */; };
 		D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */; };
+		D894CEB924BE2AD700FE143D /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894CEB824BE2AD700FE143D /* ShimmerView.swift */; };
+		D894CEBB24BE32FA00FE143D /* GamesListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */; };
 		D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */; };
 		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
 		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
@@ -155,6 +163,8 @@
 		D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */; };
 		D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BA5A1D249A5A0B00F88433 /* OTPDeliveryChannel.swift */; };
 		D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB242D246E7F5A00244FF4 /* HomeNavigator.swift */; };
+		D8BE830C24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE830B24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift */; };
+		D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE830D24B1B5D900D7E94D /* JSONMessage.swift */; };
 		D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */; };
 		D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF4040244EC949008F0BAF /* GameLauncherCollectionViewCell.swift */; };
 		D8BF4043244EC949008F0BAF /* GameLauncherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8BF4041244EC949008F0BAF /* GameLauncherCollectionViewCell.xib */; };
@@ -227,12 +237,16 @@
 		D80784A424447ABF00003892 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D810FC3424856EAD00F81499 /* LoadingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingType.swift; sourceTree = "<group>"; };
+		D815850724B09BC300FFCA95 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		D815850924B09E0100FFCA95 /* LobbyGamesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyGamesUseCase.swift; sourceTree = "<group>"; };
+		D815850D24B0C81800FFCA95 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		D8212EF8248582AD00B74AB9 /* LoadingComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingComponentView.swift; sourceTree = "<group>"; };
 		D8212EFA248582B200B74AB9 /* LoadingComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingComponentView.xib; sourceTree = "<group>"; };
 		D8212EFE2485831000B74AB9 /* LoadingComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingComponentViewModel.swift; sourceTree = "<group>"; };
 		D8212F022485846C00B74AB9 /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8212F032485846C00B74AB9 /* LoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionViewCell.xib; sourceTree = "<group>"; };
 		D8212F072485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginUseCase.swift; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
 		D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-ExtraBold.otf"; sourceTree = "<group>"; };
 		D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Bold.otf"; sourceTree = "<group>"; };
@@ -274,8 +288,8 @@
 		D85094012482570200722040 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		D8509404248260DD00722040 /* AdjarabetMobileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetMobileClient.swift; sourceTree = "<group>"; };
 		D8509406248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetMobileClientRequestBuilder.swift; sourceTree = "<group>"; };
-		D850940924828D5800722040 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
-		D850940B24828D8900722040 /* DefaultGameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGameRepository.swift; sourceTree = "<group>"; };
+		D850940924828D5800722040 /* LobbyGamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyGamesRepository.swift; sourceTree = "<group>"; };
+		D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLobbyGamesRepository.swift; sourceTree = "<group>"; };
 		D850940D24839A4A00722040 /* PageDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDescription.swift; sourceTree = "<group>"; };
 		D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClient.swift; sourceTree = "<group>"; };
 		D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientRequestBuilder.swift; sourceTree = "<group>"; };
@@ -337,7 +351,11 @@
 		D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginUseCase.swift; sourceTree = "<group>"; };
 		D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeDigitView.swift; sourceTree = "<group>"; };
 		D8863697246C485500FF061D /* SMSCodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeInputView.swift; sourceTree = "<group>"; };
+		D8880FD524C42C6500356CD3 /* GamesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesSearchViewController.swift; sourceTree = "<group>"; };
+		D8880FE024C4301400356CD3 /* GamesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesSearchViewModel.swift; sourceTree = "<group>"; };
 		D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewsProviding.swift; sourceTree = "<group>"; };
+		D894CEB824BE2AD700FE143D /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
+		D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListLoader.swift; sourceTree = "<group>"; };
 		D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
 		D8A47DCB24335B4B0077AA8E /* Mobile Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -357,6 +375,8 @@
 		D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieStorageRepository.swift; sourceTree = "<group>"; };
 		D8BA5A1D249A5A0B00F88433 /* OTPDeliveryChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPDeliveryChannel.swift; sourceTree = "<group>"; };
 		D8BB242D246E7F5A00244FF4 /* HomeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigator.swift; sourceTree = "<group>"; };
+		D8BE830B24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedGamesUseCase.swift; sourceTree = "<group>"; };
+		D8BE830D24B1B5D900D7E94D /* JSONMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMessage.swift; sourceTree = "<group>"; };
 		D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCollectionViewController.swift; sourceTree = "<group>"; };
 		D8BF4040244EC949008F0BAF /* GameLauncherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8BF4041244EC949008F0BAF /* GameLauncherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLauncherCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -493,8 +513,31 @@
 				D850940D24839A4A00722040 /* PageDescription.swift */,
 				D810FC3424856EAD00F81499 /* LoadingType.swift */,
 				D8BA5A1D249A5A0B00F88433 /* OTPDeliveryChannel.swift */,
+				D815850724B09BC300FFCA95 /* Game.swift */,
+				D8BE830D24B1B5D900D7E94D /* JSONMessage.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		D815850B24B0C66000FFCA95 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C2524336CD100F1D4FE /* Login */,
+				D8390E77246C1B4D00EF8CB5 /* SMSLogin */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D815850C24B0C66D00FFCA95 /* MainPages */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9C2424336CCC00F1D4FE /* MainTabBar */,
+				D8C73F7D2445A62D004C96DB /* Home */,
+				D845BFBA2445FD7400419A2C /* Sports */,
+				D87E3C4D2445FDA3004A4BDF /* Promotions */,
+				D87E3C4E2445FDAD004A4BDF /* Notifications */,
+			);
+			path = MainPages;
 			sourceTree = "<group>";
 		};
 		D8212EF72485828A00B74AB9 /* LoadingComponentView */ = {
@@ -653,6 +696,8 @@
 			children = (
 				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
+				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
+				D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
@@ -737,7 +782,7 @@
 				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
 				D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */,
 				D861DA922466BD060054D058 /* BalanceManagementRepository.swift */,
-				D850940924828D5800722040 /* GameRepository.swift */,
+				D850940924828D5800722040 /* LobbyGamesRepository.swift */,
 				D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */,
 			);
 			path = Repositories;
@@ -759,7 +804,7 @@
 				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
 				D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */,
 				D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */,
-				D850940B24828D8900722040 /* DefaultGameRepository.swift */,
+				D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -852,6 +897,7 @@
 				D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */,
 				D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */,
 				D8390E75246B14F600EF8CB5 /* ABViewController.swift */,
+				D815850D24B0C81800FFCA95 /* LoaderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -860,9 +906,12 @@
 			isa = PBXGroup;
 			children = (
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
+				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
 				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
 				D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */,
 				D83E4225247A92D800E9615F /* UserSessionUseCase.swift */,
+				D815850924B09E0100FFCA95 /* LobbyGamesUseCase.swift */,
+				D8BE830B24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -874,6 +923,15 @@
 				D8863697246C485500FF061D /* SMSCodeInputView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D8880FD424C42C2F00356CD3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D8880FD524C42C6500356CD3 /* GamesSearchViewController.swift */,
+				D8880FE024C4301400356CD3 /* GamesSearchViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		D8972FE424484E80001A6B13 /* Presentation */ = {
@@ -952,13 +1010,8 @@
 		D8A47DE924335DDE0077AA8E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D85C9C2524336CD100F1D4FE /* Login */,
-				D8390E77246C1B4D00EF8CB5 /* SMSLogin */,
-				D85C9C2424336CCC00F1D4FE /* MainTabBar */,
-				D8C73F7D2445A62D004C96DB /* Home */,
-				D845BFBA2445FD7400419A2C /* Sports */,
-				D87E3C4D2445FDA3004A4BDF /* Promotions */,
-				D87E3C4E2445FDAD004A4BDF /* Notifications */,
+				D815850B24B0C66000FFCA95 /* Authentication */,
+				D815850C24B0C66D00FFCA95 /* MainPages */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -1113,6 +1166,7 @@
 				D8C73F7E2445A64E004C96DB /* HomeViewController.swift */,
 				D84202D52451ABAB00F0F056 /* HomeViewModel.swift */,
 				D8C73F802445A656004C96DB /* Home.storyboard */,
+				D8880FD424C42C2F00356CD3 /* Search */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1436,6 +1490,7 @@
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
+				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
@@ -1444,18 +1499,20 @@
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
+				D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
-				D850940C24828D8900722040 /* DefaultGameRepository.swift in Sources */,
+				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
 				D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */,
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
+				D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
@@ -1495,19 +1552,24 @@
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
 				D83026C024518528006FF7FB /* DummyData.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
+				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
 				D8F26A05246837B700137252 /* LoginType.swift in Sources */,
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				D8442AA22469716600F32676 /* ABInputView.swift in Sources */,
 				D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */,
+				D8BE830C24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
+				D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */,
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
+				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
+				D894CEB924BE2AD700FE143D /* ShimmerView.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */,
@@ -1519,7 +1581,7 @@
 				D8D11B442498E63D0010F4C8 /* UserAgentProvider.swift in Sources */,
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */,
-				D850940A24828D5800722040 /* GameRepository.swift in Sources */,
+				D850940A24828D5800722040 /* LobbyGamesRepository.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
@@ -1539,6 +1601,8 @@
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
+				D894CEBB24BE32FA00FE143D /* GamesListLoader.swift in Sources */,
+				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
@@ -1998,7 +2062,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MOBILE_API_URL = "http://46.49.82.228:8000";
+				MOBILE_API_URL = "https://mobileapi.adjarabet.com";
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
 				PRODUCT_MODULE_NAME = Mobile;
@@ -2028,7 +2092,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MOBILE_API_URL = "http://46.49.82.228:8000";
+				MOBILE_API_URL = "https://mobileapi.adjarabet.com";
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
 				PRODUCT_MODULE_NAME = Mobile;
@@ -2118,7 +2182,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MOBILE_API_URL = "http://46.49.82.228:8000";
+				MOBILE_API_URL = "https://mobileapi.adjarabet.com";
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
 				PRODUCT_MODULE_NAME = Mobile;
@@ -2203,7 +2267,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MOBILE_API_URL = "http://46.49.82.228:8000";
+				MOBILE_API_URL = "https://mobileapi.adjarabet.com";
 				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
 				PRODUCT_MODULE_NAME = Mobile;

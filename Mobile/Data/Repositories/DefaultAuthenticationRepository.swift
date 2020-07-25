@@ -10,7 +10,7 @@ import Foundation
 
 public class DefaultAuthenticationRepository {
     @Inject private var dataTransferService: DataTransferService
-    @Inject private var requestBuilder: AdjarabetCoreClientRequestBuilder
+    private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }
 }
 
 extension DefaultAuthenticationRepository: AuthenticationRepository {

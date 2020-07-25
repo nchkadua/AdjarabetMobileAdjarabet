@@ -12,11 +12,17 @@ public protocol GameLauncherComponentViewModel: GameLauncherComponentViewModelIn
 }
 
 public struct GameLauncherComponentViewModelParams {
-    public let id: String
-    public let coverUrl: URL
-    public let name: String
-    public let category: String
-    public let jackpotAmount: String?
+    public var game: Game
+
+    public var jackpotAmount: String? {
+        guard let jackpot = game.jackpot, !jackpot.isEmpty else {return nil}
+
+        return jackpot
+    }
+
+    public var category: String {
+        "category \(game.category)"
+    }
 }
 
 public protocol GameLauncherComponentViewModelInput {
@@ -41,13 +47,18 @@ public class DefaultGameLauncherComponentViewModel {
     public init(params: GameLauncherComponentViewModelParams) {
         self.params = params
     }
+
+    public init(game: Game) {
+        self.params = .init(game: game)
+    }
 }
 
 extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel {
     public var action: Observable<GameLauncherComponentViewModelOutputAction> { actionSubject.asObserver() }
 
     public func didBind() {
-        actionSubject.onNext(.set(coverUrl: params.coverUrl, title: params.name, category: params.category, jackpotAmount: params.jackpotAmount))
+        let game = params.game
+        actionSubject.onNext(.set(coverUrl: game.coverUrl, title: game.name, category: params.category, jackpotAmount: params.jackpotAmount))
     }
 
     public func didSelect(at indexPath: IndexPath) {
