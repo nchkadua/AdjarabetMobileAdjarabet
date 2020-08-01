@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
+		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
 		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
 		D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807846D2444727500003892 /* FiraGO-Light.ttf */; };
@@ -84,6 +85,7 @@
 		D850940A24828D5800722040 /* LobbyGamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940924828D5800722040 /* LobbyGamesRepository.swift */; };
 		D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */; };
 		D850940E24839A4A00722040 /* PageDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940D24839A4A00722040 /* PageDescription.swift */; };
+		D853499724D1E1C100958B0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D853499624D1E1C100958B0E /* GoogleService-Info.plist */; };
 		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
 		D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */; };
 		D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */; };
@@ -155,6 +157,9 @@
 		D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */; };
 		D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB80682460133E001C4E8A /* UserSessionServices.swift */; };
 		D8AB806E246014EA001C4E8A /* UserSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB806D246014EA001C4E8A /* UserSessionTests.swift */; };
+		D8AC492724CFE3E0000B2D80 /* AppDelegateServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC492624CFE3E0000B2D80 /* AppDelegateServiceProvider.swift */; };
+		D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC492824CFE58B000B2D80 /* FirebaseAppService.swift */; };
+		D8AC492C24CFE835000B2D80 /* AppDelegateServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC492B24CFE835000B2D80 /* AppDelegateServices.swift */; };
 		D8AC9964244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC9963244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift */; };
 		D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC9966244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift */; };
 		D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8AC9967244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib */; };
@@ -291,6 +296,7 @@
 		D850940924828D5800722040 /* LobbyGamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyGamesRepository.swift; sourceTree = "<group>"; };
 		D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLobbyGamesRepository.swift; sourceTree = "<group>"; };
 		D850940D24839A4A00722040 /* PageDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDescription.swift; sourceTree = "<group>"; };
+		D853499624D1E1C100958B0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClient.swift; sourceTree = "<group>"; };
 		D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientRequestBuilder.swift; sourceTree = "<group>"; };
 		D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientError.swift; sourceTree = "<group>"; };
@@ -367,6 +373,10 @@
 		D8A47DEF24335ECA0077AA8E /* Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8AB80682460133E001C4E8A /* UserSessionServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionServices.swift; sourceTree = "<group>"; };
 		D8AB806D246014EA001C4E8A /* UserSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionTests.swift; sourceTree = "<group>"; };
+		D8AC492624CFE3E0000B2D80 /* AppDelegateServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateServiceProvider.swift; sourceTree = "<group>"; };
+		D8AC492824CFE58B000B2D80 /* FirebaseAppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAppService.swift; sourceTree = "<group>"; };
+		D8AC492B24CFE835000B2D80 /* AppDelegateServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateServices.swift; sourceTree = "<group>"; };
+		D8AC492D24CFE914000B2D80 /* FirebaseCrashlytics.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = FirebaseCrashlytics.sh; sourceTree = "<group>"; };
 		D8AC9963244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedComponentViewModel.swift; sourceTree = "<group>"; };
 		D8AC9966244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8AC9967244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentlyPlayedCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -424,6 +434,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,6 +766,9 @@
 			children = (
 				D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */,
 				D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */,
+				D8AC492624CFE3E0000B2D80 /* AppDelegateServiceProvider.swift */,
+				D8AC492B24CFE835000B2D80 /* AppDelegateServices.swift */,
+				D8AC492A24CFE596000B2D80 /* Services */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -763,6 +777,7 @@
 			isa = PBXGroup;
 			children = (
 				D827961C2434CA81006745E8 /* Swiftlint.sh */,
+				D8AC492D24CFE914000B2D80 /* FirebaseCrashlytics.sh */,
 				D85C9C372433755E00F1D4FE /* RSwift.sh */,
 			);
 			path = BuildPhases;
@@ -1036,6 +1051,7 @@
 				D85C9C1124336B4C00F1D4FE /* R.generated.swift */,
 				D8A47DD724335B4C0077AA8E /* Assets.xcassets */,
 				D8A47DDC24335B4C0077AA8E /* Info.plist */,
+				D853499624D1E1C100958B0E /* GoogleService-Info.plist */,
 				D8A47DEF24335ECA0077AA8E /* Mobile-Bridging-Header.h */,
 				D8A47DD924335B4C0077AA8E /* LaunchScreen.storyboard */,
 			);
@@ -1126,6 +1142,14 @@
 				D8AB806D246014EA001C4E8A /* UserSessionTests.swift */,
 			);
 			path = UserSession;
+			sourceTree = "<group>";
+		};
+		D8AC492A24CFE596000B2D80 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8AC492824CFE58B000B2D80 /* FirebaseAppService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D8AC9965244F1A2100B16600 /* RecentlyPlayedCollectionViewCell */ = {
@@ -1225,6 +1249,7 @@
 				D8A47DC924335B4B0077AA8E /* Resources */,
 				36070DD475217445AF722DC3 /* [CP] Embed Pods Frameworks */,
 				D827961B2434CA56006745E8 /* SwiftLint */,
+				D853499824D1E26D00958B0E /* FirebaseCrashlytics */,
 			);
 			buildRules = (
 			);
@@ -1311,6 +1336,7 @@
 				D807848A2444727600003892 /* FiraGO-UltraLight.ttf in Resources */,
 				D80784852444727600003892 /* FiraGO-SemiBold.ttf in Resources */,
 				D80784902444727E00003892 /* PantonMtav3-Bold.otf in Resources */,
+				D853499724D1E1C100958B0E /* GoogleService-Info.plist in Resources */,
 				D80784802444727600003892 /* FiraGO-Thin.ttf in Resources */,
 				D80784822444727600003892 /* FiraGO-Two.ttf in Resources */,
 				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
@@ -1392,6 +1418,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "$SRCROOT/Mobile/App/BuildPhases/SwiftLint.sh\n";
+		};
+		D853499824D1E26D00958B0E /* FirebaseCrashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = FirebaseCrashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/Mobile/App/BuildPhases/FirebaseCrashlytics.sh\n";
 		};
 		D85C9C1324336B6F00F1D4FE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1484,6 +1530,7 @@
 				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */,
+				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
@@ -1506,7 +1553,8 @@
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
-				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
+				D8AC492724CFE3E0000B2D80 /* AppDelegateServiceProvider.swift in Sources */,
+				D850940C24828D8900722040 /* DefaultGameRepository.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
 				D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */,
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
@@ -1604,6 +1652,7 @@
 				D894CEBB24BE32FA00FE143D /* GamesListLoader.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
+				D8AC492C24CFE835000B2D80 /* AppDelegateServices.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
 			);
@@ -2055,6 +2104,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
 				CURRENT_PROJECT_VERSION = 35;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2175,6 +2225,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
 				CURRENT_PROJECT_VERSION = 35;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

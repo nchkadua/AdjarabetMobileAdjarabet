@@ -10,8 +10,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    private let services: AppDelegateServices
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        true
+        services.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     // MARK: UISceneSession Lifecycle
@@ -20,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     override init() {
+        // Register all available services here
+        services = AppDelegateServices(services: [
+            FirebaseAppService()
+        ])
+
         super.init()
 
         let dependencies = DependencyContainer.root.register {

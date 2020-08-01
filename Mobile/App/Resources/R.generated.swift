@@ -413,7 +413,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 23 files.
+  /// This `R.file` struct is generated, and contains static references to 24 files.
   struct file {
     /// Resource file `FiraGO-Bold.ttf`.
     static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
@@ -445,6 +445,8 @@ struct R: Rswift.Validatable {
     static let firaGOTwoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Two", pathExtension: "ttf")
     /// Resource file `FiraGO-UltraLight.ttf`.
     static let firaGOUltraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-UltraLight", pathExtension: "ttf")
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `PantonAM-Bold.otf`.
     static let pantonAMBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-Bold", pathExtension: "otf")
     /// Resource file `PantonAM-ExtraBold.otf`.
@@ -549,6 +551,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "FiraGO-UltraLight", withExtension: "ttf")`
     static func firaGOUltraLightTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.firaGOUltraLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
       return fileResource.bundle.url(forResource: fileResource)
     }
 
