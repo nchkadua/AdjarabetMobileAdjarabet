@@ -19,10 +19,6 @@ public struct GameLauncherComponentViewModelParams {
 
         return jackpot
     }
-
-    public var category: String {
-        "category \(game.category)"
-    }
 }
 
 public protocol GameLauncherComponentViewModelInput {
@@ -58,7 +54,7 @@ extension DefaultGameLauncherComponentViewModel: GameLauncherComponentViewModel 
 
     public func didBind() {
         let game = params.game
-        actionSubject.onNext(.set(coverUrl: game.coverUrl, title: game.name, category: params.category, jackpotAmount: params.jackpotAmount))
+        actionSubject.onNext(.set(coverUrl: game.coverUrl, title: game.name, category: game.category, jackpotAmount: params.jackpotAmount))
     }
 
     public func didSelect(at indexPath: IndexPath) {
