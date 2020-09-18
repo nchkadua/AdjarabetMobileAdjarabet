@@ -97,11 +97,11 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupLabels() {
-        loginTitleLabel.setTextColor(to: .white())
+        loginTitleLabel.setTextColor(to: .systemWhite())
         loginTitleLabel.setFont(to: .h2(fontCase: .lower))
         loginTitleLabel.text = R.string.localization.login_page_title.localized()
 
-        notMemberLabel.setTextColor(to: .neutral100(alpha: 0.6))
+        notMemberLabel.setTextColor(to: .separator(alpha: 0.6))
         notMemberLabel.setFont(to: .h4(fontCase: .lower))
         notMemberLabel.text = R.string.localization.not_member.localized()
     }
@@ -113,17 +113,17 @@ public class LoginViewController: ABViewController {
         joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
 
         forgotPasswordButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        forgotPasswordButton.setTitleColor(to: .white(), for: .normal)
+        forgotPasswordButton.setTitleColor(to: .systemWhite(), for: .normal)
         forgotPasswordButton.setTitleWithoutAnimation(R.string.localization.login_forgot_password.localized(), for: .normal)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordDidTap), for: .touchUpInside)
 
         forgotUsernameButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        forgotUsernameButton.setTitleColor(to: .white(), for: .normal)
+        forgotUsernameButton.setTitleColor(to: .systemWhite(), for: .normal)
         forgotUsernameButton.setTitleWithoutAnimation(R.string.localization.login_forgot_username.localized(), for: .normal)
         forgotUsernameButton.addTarget(self, action: #selector(forgotUsernameDidTap), for: .touchUpInside)
 
         smsLoginButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        smsLoginButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
+        smsLoginButton.setTitleColor(to: .separator(alpha: 0.6), for: .normal)
         smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
         updateSMSLoginButton(isEnabled: false)
@@ -134,10 +134,10 @@ public class LoginViewController: ABViewController {
         updateLoginButton(isEnabled: false)
 
         biometryButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        biometryButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
+        biometryButton.setTitleColor(to: .separator(alpha: 0.6), for: .normal)
         biometryButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
-        biometryIconButton.setTintColor(to: .neutral100())
+        biometryIconButton.setTintColor(to: .separator())
         biometryIconButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
     }
 

@@ -31,7 +31,7 @@ public extension CommonBarButtonProviding {
     func makeBalanceBarButtonItem() -> UIBarButtonItem.Coupled {
         let button = BalanceProfileButton(type: .system)
         button.setFont(to: .h4(fontCase: .lower))
-        button.setTitleColor(to: .neutral100(), for: .normal)
+        button.setTitleColor(to: .separator(), for: .normal)
         button.setImage(R.image.shared.navBar.profile()?.resizeImage(newHeight: 20), for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleEdgeInsets = UIEdgeInsets(top: 4, left: -8, bottom: 0, right: 0)
@@ -47,7 +47,7 @@ public extension UIBarButtonItem {
         let button = UIButton(type: .system)
         button.setTitleWithoutAnimation(title, for: .normal)
         button.setFont(to: typography)
-        button.setTitleColor(to: .neutral100(), for: .normal)
+        button.setTitleColor(to: .separator(), for: .normal)
 
         let barButtonItem = UIBarButtonItem(customView: button)
 

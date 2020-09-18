@@ -72,7 +72,7 @@ public class ABInputView: UIView {
         setValidation(text: nil)
     }
 
-    public func setValidation(text: String?, color: DesignSystem.Color = .error()) {
+    public func setValidation(text: String?, color: DesignSystem.Color = .systemRed300()) {
         validationResultLabel.text = text
         validationResultLabel.setTextColor(to: color)
         validationResultLabel.superview?.isHidden = text == nil
@@ -189,7 +189,7 @@ extension ABInputView: Xibable {
 
     private func setupValidationResultLabel() {
         validationResultLabel.setFont(to: .body2)
-        validationResultLabel.setTextColor(to: .error())
+        validationResultLabel.setTextColor(to: .systemRed300())
         validationResultLabel.superview?.isHidden = true
     }
 

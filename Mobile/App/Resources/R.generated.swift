@@ -173,211 +173,199 @@ struct R: Rswift.Validatable {
   struct color {
     /// This `R.color.colorGuide` struct is generated, and contains static references to 0 colors.
     struct colorGuide {
-      /// This `R.color.colorGuide.neutral` struct is generated, and contains static references to 10 colors.
-      struct neutral {
-        /// Color `neutral100`.
-        static let neutral100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral100")
-        /// Color `neutral200`.
-        static let neutral200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral200")
-        /// Color `neutral300`.
-        static let neutral300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral300")
-        /// Color `neutral400`.
-        static let neutral400 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral400")
-        /// Color `neutral500`.
-        static let neutral500 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral500")
-        /// Color `neutral600`.
-        static let neutral600 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral600")
-        /// Color `neutral700`.
-        static let neutral700 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral700")
-        /// Color `neutral800`.
-        static let neutral800 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral800")
-        /// Color `neutral900`.
-        static let neutral900 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/neutral900")
-        /// Color `white`.
-        static let white = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Neutral/white")
+      /// This `R.color.colorGuide.global` struct is generated, and contains static references to 10 colors.
+      struct global {
+        /// Color `baseBg100`.
+        static let baseBg100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/baseBg100")
+        /// Color `baseBg150`.
+        static let baseBg150 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/baseBg150")
+        /// Color `baseBg300`.
+        static let baseBg300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/baseBg300")
+        /// Color `fill110`.
+        static let fill110 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/fill110")
+        /// Color `fill140`.
+        static let fill140 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/fill140")
+        /// Color `fill50`.
+        static let fill50 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/fill50")
+        /// Color `separator`.
+        static let separator = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/separator")
+        /// Color `systemGray100`.
+        static let systemGray100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemGray100")
+        /// Color `systemGray200`.
+        static let systemGray200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemGray200")
+        /// Color `systemWhite`.
+        static let systemWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemWhite")
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral100", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "baseBg100", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral100, compatibleWith: traitCollection)
+        static func baseBg100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.baseBg100, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral200", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "baseBg150", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral200, compatibleWith: traitCollection)
+        static func baseBg150(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.baseBg150, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral300", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "baseBg300", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral300, compatibleWith: traitCollection)
+        static func baseBg300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.baseBg300, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral400", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "fill110", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral400(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral400, compatibleWith: traitCollection)
+        static func fill110(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.fill110, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral500", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "fill140", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral500(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral500, compatibleWith: traitCollection)
+        static func fill140(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.fill140, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral600", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "fill50", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral600(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral600, compatibleWith: traitCollection)
+        static func fill50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.fill50, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral700", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "separator", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral700(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral700, compatibleWith: traitCollection)
+        static func separator(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.separator, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral800", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "systemGray100", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral800(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral800, compatibleWith: traitCollection)
+        static func systemGray100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.systemGray100, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "neutral900", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "systemGray200", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func neutral900(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.neutral900, compatibleWith: traitCollection)
+        static func systemGray200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.systemGray200, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "white", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "systemWhite", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.neutral.white, compatibleWith: traitCollection)
-        }
-        #endif
-
-        fileprivate init() {}
-      }
-
-      /// This `R.color.colorGuide.primary` struct is generated, and contains static references to 2 colors.
-      struct primary {
-        /// Color `primary200`.
-        static let primary200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Primary/primary200")
-        /// Color `primary400`.
-        static let primary400 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Primary/primary400")
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "primary200", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func primary200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.primary.primary200, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "primary400", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func primary400(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.primary.primary400, compatibleWith: traitCollection)
+        static func systemWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.global.systemWhite, compatibleWith: traitCollection)
         }
         #endif
 
         fileprivate init() {}
       }
 
-      /// This `R.color.colorGuide.secondary` struct is generated, and contains static references to 2 colors.
-      struct secondary {
-        /// Color `secondary200`.
-        static let secondary200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Secondary/secondary200")
-        /// Color `secondary400`.
-        static let secondary400 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Secondary/secondary400")
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "secondary200", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func secondary200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.secondary.secondary200, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "secondary400", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func secondary400(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.secondary.secondary400, compatibleWith: traitCollection)
-        }
-        #endif
-
-        fileprivate init() {}
-      }
-
-      /// This `R.color.colorGuide.semantic` struct is generated, and contains static references to 3 colors.
+      /// This `R.color.colorGuide.semantic` struct is generated, and contains static references to 7 colors.
       struct semantic {
-        /// Color `error`.
-        static let error = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/error")
-        /// Color `success`.
-        static let success = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/success")
-        /// Color `warning`.
-        static let warning = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/warning")
+        /// Color `systemGreen100`.
+        static let systemGreen100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemGreen100")
+        /// Color `systemGreen150`.
+        static let systemGreen150 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemGreen150")
+        /// Color `systemGreen300`.
+        static let systemGreen300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemGreen300")
+        /// Color `systemRed100`.
+        static let systemRed100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemRed100")
+        /// Color `systemRed150`.
+        static let systemRed150 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemRed150")
+        /// Color `systemRed300`.
+        static let systemRed300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemRed300")
+        /// Color `systemYellow`.
+        static let systemYellow = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemYellow")
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "error", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "systemGreen100", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func error(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.error, compatibleWith: traitCollection)
+        static func systemGreen100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemGreen100, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "success", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "systemGreen150", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func success(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.success, compatibleWith: traitCollection)
+        static func systemGreen150(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemGreen150, compatibleWith: traitCollection)
         }
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "warning", bundle: ..., traitCollection: ...)`
+        /// `UIColor(named: "systemGreen300", bundle: ..., traitCollection: ...)`
         @available(tvOS 11.0, *)
         @available(iOS 11.0, *)
-        static func warning(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.warning, compatibleWith: traitCollection)
+        static func systemGreen300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemGreen300, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIColor(named: "systemRed100", bundle: ..., traitCollection: ...)`
+        @available(tvOS 11.0, *)
+        @available(iOS 11.0, *)
+        static func systemRed100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemRed100, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIColor(named: "systemRed150", bundle: ..., traitCollection: ...)`
+        @available(tvOS 11.0, *)
+        @available(iOS 11.0, *)
+        static func systemRed150(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemRed150, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIColor(named: "systemRed300", bundle: ..., traitCollection: ...)`
+        @available(tvOS 11.0, *)
+        @available(iOS 11.0, *)
+        static func systemRed300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemRed300, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIColor(named: "systemYellow", bundle: ..., traitCollection: ...)`
+        @available(tvOS 11.0, *)
+        @available(iOS 11.0, *)
+        static func systemYellow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemYellow, compatibleWith: traitCollection)
         }
         #endif
 

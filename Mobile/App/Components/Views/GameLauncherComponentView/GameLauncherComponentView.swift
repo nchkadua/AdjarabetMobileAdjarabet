@@ -86,22 +86,22 @@ extension GameLauncherComponentView: Xibable {
         view.backgroundColor = .clear
 
         jackpotButton.cornerRadius = 3
-        jackpotButton.setBackgorundColor(to: .secondary400())
-        jackpotButton.setTitleColor(to: .white(), for: .normal)
+        jackpotButton.setBackgorundColor(to: .systemRed150())
+        jackpotButton.setTitleColor(to: .systemWhite(), for: .normal)
         jackpotButton.setFont(to: .body2)
         jackpotButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 4.5, bottom: 2, right: 4.5)
 
-        titleLabel.setTextColor(to: .neutral100())
+        titleLabel.setTextColor(to: .separator())
         titleLabel.setFont(to: .h4(fontCase: .lower))
 
-        categoryLabel.setTextColor(to: .neutral100(alpha: 0.6))
+        categoryLabel.setTextColor(to: .separator(alpha: 0.6))
         categoryLabel.setFont(to: .body2)
 
-        inImageView.setTintColor(to: .neutral100())
+        inImageView.setTintColor(to: .separator())
 
-        separatorView.setBackgorundColor(to: .neutral700())
+        separatorView.setBackgorundColor(to: .baseBg100())
 
-        loaderView.inImageView.setTintColor(to: .neutral100())
+        loaderView.inImageView.setTintColor(to: .separator())
         set(isLoading: false)
     }
 }

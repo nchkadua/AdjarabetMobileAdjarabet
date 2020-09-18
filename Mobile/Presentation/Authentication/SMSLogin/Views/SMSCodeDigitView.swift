@@ -29,7 +29,7 @@ public class SMSCodeDigitView: AppCircularView {
         l.translatesAutoresizingMaskIntoConstraints = false
         l.textAlignment = .center
         l.setFont(to: .h1(fontCase: .upper))
-        l.setTextColor(to: .neutral100())
+        l.setTextColor(to: .separator())
         return l
     }()
 
@@ -74,8 +74,8 @@ public class SMSCodeDigitView: AppCircularView {
                 label.text = text
             }
 
-            setBackgorundColor(to: text == nil ? .neutral700() : .neutral600())
-            setBorderColor(to: text == nil ? .neutral500() : .neutral400(), animationDuration: duration ?? 0)
+            setBackgorundColor(to: text == nil ? .baseBg100() : .fill140())
+            setBorderColor(to: text == nil ? .fill110() : .fill50(), animationDuration: duration ?? 0)
             layoutIfNeeded()
         }
 

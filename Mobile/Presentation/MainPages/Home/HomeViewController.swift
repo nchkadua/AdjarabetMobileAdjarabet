@@ -132,23 +132,23 @@ public class HomeViewController: UIViewController {
         searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
 
         searchBar.setImage(R.image.shared.search(), for: .search, state: .normal)
-        searchBar.searchTextField.leftView?.setTintColor(to: .neutral100(alpha: 0.6))
+        searchBar.searchTextField.leftView?.setTintColor(to: .separator(alpha: 0.6))
         searchBar.searchTextPositionAdjustment = UIOffset(horizontal: 4, vertical: 0)
 
-        searchBar.searchTextField.setTextColor(to: .neutral100())
+        searchBar.searchTextField.setTextColor(to: .separator())
         searchBar.searchTextField.setFont(to: .p)
-        searchBar.searchTextField.setBackgorundColor(to: .neutral700())
+        searchBar.searchTextField.setBackgorundColor(to: .baseBg100())
         searchBar.searchTextField.layer.cornerRadius = 18
         searchBar.searchTextField.layer.masksToBounds = true
 
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: R.string.localization.home_search_placeholder.localized(), attributes: [
-            .foregroundColor: DesignSystem.Color.neutral100(alpha: 0.6).value,
+            .foregroundColor: DesignSystem.Color.separator(alpha: 0.6).value,
             .font: DesignSystem.Typography.p.description.font
         ])
 
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
-            .foregroundColor: DesignSystem.Color.neutral100().value,
+            .foregroundColor: DesignSystem.Color.separator().value,
             .font: DesignSystem.Typography.p.description.font
         ], for: .normal)
     }

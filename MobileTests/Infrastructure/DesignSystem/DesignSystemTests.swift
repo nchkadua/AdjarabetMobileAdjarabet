@@ -14,31 +14,33 @@ class DesignSystemTests: XCTestCase {
         // given
         let colors = R.color.colorGuide.self
         let alpha = CGFloat.random(in: 0...1)
-
-        /// Neutral colors
-        XCTAssertEqual(DesignSystem.Color.white(alpha: alpha).value, colors.neutral.white()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral100(alpha: alpha).value, colors.neutral.neutral100()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral200(alpha: alpha).value, colors.neutral.neutral200()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral300(alpha: alpha).value, colors.neutral.neutral300()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral400(alpha: alpha).value, colors.neutral.neutral400()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral500(alpha: alpha).value, colors.neutral.neutral500()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral600(alpha: alpha).value, colors.neutral.neutral600()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral700(alpha: alpha).value, colors.neutral.neutral700()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral800(alpha: alpha).value, colors.neutral.neutral800()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.neutral900(alpha: alpha).value, colors.neutral.neutral900()!.withAlphaComponent(alpha))
-
-        /// Primary colors
-        XCTAssertEqual(DesignSystem.Color.primary200(alpha: alpha).value, colors.primary.primary200()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.primary400(alpha: alpha).value, colors.primary.primary400()!.withAlphaComponent(alpha))
-
-        /// Secondary colors
-        XCTAssertEqual(DesignSystem.Color.secondary200(alpha: alpha).value, colors.secondary.secondary200()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.secondary400(alpha: alpha).value, colors.secondary.secondary400()!.withAlphaComponent(alpha))
-
+        
+        /// Global colors
+        XCTAssertEqual(DesignSystem.Color.systemWhite(alpha: alpha).value, colors.global.systemWhite()!.withAlphaComponent(alpha))
+        
+        XCTAssertEqual(DesignSystem.Color.baseBg100(alpha: alpha).value, colors.global.baseBg100()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.baseBg150(alpha: alpha).value, colors.global.baseBg150()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.baseBg300(alpha: alpha).value, colors.global.baseBg300()!.withAlphaComponent(alpha))
+        
+        XCTAssertEqual(DesignSystem.Color.fill50(alpha: alpha).value, colors.global.fill50()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.fill110(alpha: alpha).value, colors.global.fill110()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.fill140(alpha: alpha).value, colors.global.fill140()!.withAlphaComponent(alpha))
+        
+        XCTAssertEqual(DesignSystem.Color.separator(alpha: alpha).value, colors.global.separator()!.withAlphaComponent(alpha))
+        
+        XCTAssertEqual(DesignSystem.Color.systemGray100(alpha: alpha).value, colors.global.systemGray100()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGray200(alpha: alpha).value, colors.global.systemGray200()!.withAlphaComponent(alpha))
+        
         /// Semantic colors
-        XCTAssertEqual(DesignSystem.Color.success(alpha: alpha).value, colors.semantic.success()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.warning(alpha: alpha).value, colors.semantic.warning()!.withAlphaComponent(alpha))
-        XCTAssertEqual(DesignSystem.Color.error(alpha: alpha).value, colors.semantic.error()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGreen100(alpha: alpha).value, colors.semantic.systemGreen100()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGreen150(alpha: alpha).value, colors.semantic.systemGreen150()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGreen300(alpha: alpha).value, colors.semantic.systemGreen300()!.withAlphaComponent(alpha))
+        
+        XCTAssertEqual(DesignSystem.Color.systemRed100(alpha: alpha).value, colors.semantic.systemRed100()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemRed150(alpha: alpha).value, colors.semantic.systemRed150()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemRed300(alpha: alpha).value, colors.semantic.systemRed300()!.withAlphaComponent(alpha))
+        
+        XCTAssertEqual(DesignSystem.Color.systemYellow(alpha: alpha).value, colors.semantic.systemYellow()!.withAlphaComponent(alpha))
     }
 
     func testTypography() {
@@ -68,28 +70,28 @@ class DesignSystemTests: XCTestCase {
 
             XCTAssertEqual(DesignSystem.Typography.h1(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.h1(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h1(fontCase: .lower), pointSize: 28, lineSpasing: 0.7, lineHeight: 44)
-            testDescription(typography: .h1(fontCase: .upper), pointSize: 28, lineSpasing: 0.7, lineHeight: 44)
+            testDescription(typography: .h1(fontCase: .lower), pointSize: 23, lineSpasing: 0.0, lineHeight: 24)
+            testDescription(typography: .h1(fontCase: .upper), pointSize: 23, lineSpasing: 0.0, lineHeight: 24)
 
             XCTAssertEqual(DesignSystem.Typography.h2(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.h2(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h2(fontCase: .lower), pointSize: 23, lineSpasing: 0.7, lineHeight: 36)
-            testDescription(typography: .h2(fontCase: .upper), pointSize: 23, lineSpasing: 0.7, lineHeight: 36)
+            testDescription(typography: .h2(fontCase: .lower), pointSize: 18, lineSpasing: 0.2, lineHeight: 22)
+            testDescription(typography: .h2(fontCase: .upper), pointSize: 18, lineSpasing: 0.2, lineHeight: 22)
 
             XCTAssertEqual(DesignSystem.Typography.h3(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.h3(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h3(fontCase: .lower), pointSize: 16, lineSpasing: 0.5, lineHeight: 24)
-            testDescription(typography: .h3(fontCase: .upper), pointSize: 16, lineSpasing: 0.5, lineHeight: 24)
+            testDescription(typography: .h3(fontCase: .lower), pointSize: 16, lineSpasing: 0.3, lineHeight: 19)
+            testDescription(typography: .h3(fontCase: .upper), pointSize: 16, lineSpasing: 0.3, lineHeight: 19)
 
             XCTAssertEqual(DesignSystem.Typography.h4(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.h4(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h4(fontCase: .lower), pointSize: 14, lineSpasing: 0.3, lineHeight: 20)
-            testDescription(typography: .h4(fontCase: .upper), pointSize: 14, lineSpasing: 0.3, lineHeight: 20)
+            testDescription(typography: .h4(fontCase: .lower), pointSize: 13, lineSpasing: 0.5, lineHeight: 26)
+            testDescription(typography: .h4(fontCase: .upper), pointSize: 13, lineSpasing: 0.5, lineHeight: 26)
 
             XCTAssertEqual(DesignSystem.Typography.h5(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.h5(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h5(fontCase: .lower), pointSize: 11, lineSpasing: 0.5, lineHeight: 16)
-            testDescription(typography: .h5(fontCase: .upper), pointSize: 11, lineSpasing: 0.5, lineHeight: 16)
+            testDescription(typography: .h5(fontCase: .lower), pointSize: 11, lineSpasing: 0.3, lineHeight: 14)
+            testDescription(typography: .h5(fontCase: .upper), pointSize: 11, lineSpasing: 0.3, lineHeight: 14)
             
             let body1Description = DesignSystem.Typography.body1.description
             XCTAssertEqual(body1Description.font.fontName, R.font.firaGOMedium.fontName)
@@ -133,48 +135,48 @@ class DesignSystemTests: XCTestCase {
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .primary400()
+                    textColor: .systemWhite(),
+                    backgorundColor: .systemGreen150()
                 ))
             case .hovered:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .neutral100(alpha: 0.8),
-                    backgorundColor: .primary400(),
-                    overlayColor: .neutral900(alpha: 0.2)
+                    textColor: .separator(alpha: 0.8),
+                    backgorundColor: .systemGreen150(),
+                    overlayColor: .baseBg300(alpha: 0.2)
                 ))
             case .acvite:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .primary400(),
-                    overlayColor: .neutral900(alpha: 0.3)
+                    textColor: .systemWhite(),
+                    backgorundColor: .systemGreen150(),
+                    overlayColor: .baseBg300(alpha: 0.3)
                 ))
             case .focused:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .primary400(),
-                    overlayColor: .neutral900(alpha: 0.4)
+                    textColor: .systemWhite(),
+                    backgorundColor: .systemGreen150(),
+                    overlayColor: .baseBg300(alpha: 0.4)
                 ))
             case .disabled:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(alpha: 0.4),
-                    backgorundColor: .primary400(),
-                    overlayColor: .neutral600(alpha: 0.5)
+                    textColor: .systemWhite(alpha: 0.4),
+                    backgorundColor: .systemGreen150(),
+                    overlayColor: .fill140(alpha: 0.5)
                 ))
             case .loading:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .primary400(),
-                    overlayColor: .neutral900(alpha: 0.4)
+                    textColor: .systemWhite(),
+                    backgorundColor: .systemGreen150(),
+                    overlayColor: .baseBg300(alpha: 0.4)
                 ))
             }
         }
@@ -189,48 +191,48 @@ class DesignSystemTests: XCTestCase {
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .neutral500()
+                    textColor: .systemWhite(),
+                    backgorundColor: .fill110()
                 ))
             case .hovered:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .neutral100(alpha: 0.8),
-                    backgorundColor: .neutral500(),
-                    overlayColor: .neutral900(alpha: 0.2)
+                    textColor: .separator(alpha: 0.8),
+                    backgorundColor: .fill110(),
+                    overlayColor: .baseBg300(alpha: 0.2)
                 ))
             case .acvite:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .neutral500(),
-                    overlayColor: .neutral900(alpha: 0.3)
+                    textColor: .systemWhite(),
+                    backgorundColor: .fill110(),
+                    overlayColor: .baseBg300(alpha: 0.3)
                 ))
             case .focused:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .neutral500(),
-                    overlayColor: .neutral900(alpha: 0.4)
+                    textColor: .systemWhite(),
+                    backgorundColor: .fill110(),
+                    overlayColor: .baseBg300(alpha: 0.4)
                 ))
             case .disabled:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(alpha: 0.4),
-                    backgorundColor: .neutral500(),
-                    overlayColor: .neutral600(alpha: 0.9)
+                    textColor: .systemWhite(alpha: 0.4),
+                    backgorundColor: .fill110(),
+                    overlayColor: .fill140(alpha: 0.9)
                 ))
             case .loading:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .neutral500(),
-                    overlayColor: .neutral900(alpha: 0.4)
+                    textColor: .systemWhite(),
+                    backgorundColor: .fill110(),
+                    overlayColor: .baseBg300(alpha: 0.4)
                 ))
             }
         }
@@ -245,48 +247,48 @@ class DesignSystemTests: XCTestCase {
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .secondary400()
+                    textColor: .systemWhite(),
+                    backgorundColor: .systemRed150()
                 ))
             case .hovered:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .neutral100(alpha: 0.8),
-                    backgorundColor: .secondary400(),
-                    overlayColor: .neutral900(alpha: 0.2)
+                    textColor: .separator(alpha: 0.8),
+                    backgorundColor: .systemRed150(),
+                    overlayColor: .baseBg300(alpha: 0.2)
                 ))
             case .acvite:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .secondary400(),
-                    overlayColor: .neutral900(alpha: 0.3)
+                    textColor: .systemWhite(),
+                    backgorundColor: .systemRed150(),
+                    overlayColor: .baseBg300(alpha: 0.3)
                 ))
             case .focused:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .secondary400(),
-                    overlayColor: .neutral900(alpha: 0.4)
+                    textColor: .systemWhite(),
+                    backgorundColor: .systemRed150(),
+                    overlayColor: .baseBg300(alpha: 0.4)
                 ))
             case .disabled:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(alpha: 0.4),
-                    backgorundColor: .secondary400(),
-                    overlayColor: .neutral600(alpha: 0.5)
+                    textColor: .systemWhite(alpha: 0.4),
+                    backgorundColor: .systemRed150(),
+                    overlayColor: .fill140(alpha: 0.5)
                 ))
             case .loading:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .secondary400(),
-                    overlayColor: .neutral900(alpha: 0.4)
+                    textColor: .systemWhite(),
+                    backgorundColor: .systemRed150(),
+                    overlayColor: .baseBg300(alpha: 0.4)
                 ))
             }
         }
@@ -301,43 +303,43 @@ class DesignSystemTests: XCTestCase {
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    borderColor: .white()
+                    textColor: .systemWhite(),
+                    borderColor: .systemWhite()
                 ))
             case .hovered:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .neutral100(alpha: 0.8),
-                    borderColor: .white(alpha: 0.8)
+                    textColor: .separator(alpha: 0.8),
+                    borderColor: .systemWhite(alpha: 0.8)
                 ))
             case .acvite:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    borderColor: .white(alpha: 0.8)
+                    textColor: .systemWhite(),
+                    borderColor: .systemWhite(alpha: 0.8)
                 ))
             case .focused:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    borderColor: .white(alpha: 0.8)
+                    textColor: .systemWhite(),
+                    borderColor: .systemWhite(alpha: 0.8)
                 ))
             case .disabled:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(alpha: 0.4),
-                    borderColor: .white(alpha: 0.5)
+                    textColor: .systemWhite(alpha: 0.4),
+                    borderColor: .systemWhite(alpha: 0.5)
                 ))
             case .loading:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    borderColor: .white()
+                    textColor: .systemWhite(),
+                    borderColor: .systemWhite()
                 ))
             }
         }
@@ -349,34 +351,34 @@ class DesignSystemTests: XCTestCase {
             let tc = style.sizeDescription(for: size)
             switch state {
             case .normal:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .white()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .systemWhite()))
             case .hovered:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .neutral100(alpha: 0.8),
-                    backgorundColor: .neutral500(alpha: 0.8),
-                    overlayColor: .neutral900(alpha: 0.2)
+                    textColor: .separator(alpha: 0.8),
+                    backgorundColor: .fill110(alpha: 0.8),
+                    overlayColor: .baseBg300(alpha: 0.2)
                 ))
             case .acvite:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .white()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .systemWhite()))
             case .focused:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .neutral100(alpha: 0.8),
-                    backgorundColor: .neutral500(),
-                    overlayColor: .neutral900(alpha: 0.4)
+                    textColor: .separator(alpha: 0.8),
+                    backgorundColor: .fill110(),
+                    overlayColor: .baseBg300(alpha: 0.4)
                 ))
             case .disabled:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .white(alpha: 0.4)))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .systemWhite(alpha: 0.4)))
             case .loading:
                 XCTAssertEqual(description, .init(
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
-                    textColor: .white(),
-                    backgorundColor: .neutral500(),
-                    overlayColor: .neutral900(alpha: 0.4)
+                    textColor: .systemWhite(),
+                    backgorundColor: .fill110(),
+                    overlayColor: .baseBg300(alpha: 0.4)
                 ))
             }
         }
@@ -388,17 +390,17 @@ class DesignSystemTests: XCTestCase {
             let tc = style.sizeDescription(for: size)
             switch state {
             case .normal:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .separator()))
             case .hovered:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100(alpha: 0.8)))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .separator(alpha: 0.8)))
             case .acvite:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .separator()))
             case .focused:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .separator()))
             case .disabled:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .neutral100(alpha: 0.8)))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .separator(alpha: 0.8)))
             case .loading:
-                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .white()))
+                XCTAssertEqual(description, .init(typograhy: tc.typograhy, contentEdgeInsets: tc.contentEdgeInsets, textColor: .systemWhite()))
             }
         }
         

@@ -31,7 +31,7 @@ public extension UIViewController {
     }
 
     func setBaseBackgorundColor() {
-        view.setBackgorundColor(to: .neutral800())
+        view.setBackgorundColor(to: .baseBg150())
     }
 
     func setupStandardSearchViewController(_ searchController: UISearchController) {

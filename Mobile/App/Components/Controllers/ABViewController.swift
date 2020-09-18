@@ -19,10 +19,6 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
     public func addKeyboardDismissOnTap() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         tap.cancelsTouchesInView = false

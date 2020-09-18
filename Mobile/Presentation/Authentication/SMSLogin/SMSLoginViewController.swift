@@ -97,29 +97,29 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupLabels() {
-        smsLoginTitleLabel.setTextColor(to: .white())
+        smsLoginTitleLabel.setTextColor(to: .systemWhite())
         smsLoginTitleLabel.setFont(to: .h2(fontCase: .lower))
 
         let smsLogin = "\(R.string.localization.sms_login_page_title.localized())\n"
             .makeAttributedString(with: .h2(fontCase: .lower),
                                   lineSpasing: 6,
-                                  foregroundColor: .white())
+                                  foregroundColor: .systemWhite())
         let smsLoginDescription = R.string.localization.sms_confirmation_description.localized()
             .replacingOccurrences(of: "{0}", with: "(+995 20 40 80)")
             .makeAttributedString(with: .p,
                                   lineSpasing: 4,
-                                  foregroundColor: .neutral100(alpha: 0.8))
+                                  foregroundColor: .separator(alpha: 0.8))
         smsLogin.append(smsLoginDescription)
         smsLoginTitleLabel.attributedText = smsLogin
 
-        notMemberLabel.setTextColor(to: .neutral100(alpha: 0.6))
+        notMemberLabel.setTextColor(to: .separator(alpha: 0.6))
         notMemberLabel.setFont(to: .h4(fontCase: .lower))
         notMemberLabel.text = R.string.localization.not_member.localized()
     }
 
     private func setupButtons() {
         resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        resendSMSButton.setTitleColor(to: .neutral100(alpha: 0.6), for: .normal)
+        resendSMSButton.setTitleColor(to: .separator(alpha: 0.6), for: .normal)
         resendSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
         resendSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
         resendSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 0)

@@ -24,10 +24,10 @@ public class ABNavigationController: UINavigationController, UIGestureRecognizer
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = DesignSystem.Color.neutral900().value
+        navigationBar.barTintColor = DesignSystem.Color.baseBg300().value
         view.backgroundColor = .clear
 
-        let color = DesignSystem.Color.neutral100().value
+        let color = DesignSystem.Color.separator().value
         navigationBar.titleTextAttributes = [
             .foregroundColor: color,
             .font: DesignSystem.Typography.h4(fontCase: .lower).description.font]
