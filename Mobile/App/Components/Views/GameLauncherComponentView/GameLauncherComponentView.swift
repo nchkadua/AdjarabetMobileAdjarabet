@@ -101,16 +101,18 @@ extension GameLauncherComponentView: Xibable {
 
         separatorView.setBackgorundColor(to: .baseBg100())
 
-        loaderView.inImageView.setTintColor(to: .separator())
+        loaderView.getInImageView().setTintColor(to: .separator())
         set(isLoading: false)
     }
 }
 
 public class GameLauncherComponentLoaderView: UIView {
-    @IBOutlet weak public var coverImageView: ShimmerView!
-    @IBOutlet weak public var titleLabel: ShimmerView!
-    @IBOutlet weak public var categoryLabel: ShimmerView!
-    @IBOutlet weak public var inImageView: UIImageView!
+    @IBOutlet weak private var coverImageView: ShimmerView!
+    @IBOutlet weak private var titleLabel: ShimmerView!
+    @IBOutlet weak private var categoryLabel: ShimmerView!
+    @IBOutlet weak private var inImageView: UIImageView!
 
     public var shimmerViews: [ShimmerView] { [coverImageView, titleLabel, categoryLabel] }
+
+    public func getInImageView() -> UIImageView { inImageView }
 }

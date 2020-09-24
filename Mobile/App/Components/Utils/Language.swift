@@ -13,7 +13,7 @@ public enum Language: Int, CaseIterable {
 
     public var localizableIdentifier: String {
         switch self {
-        case .english: return "en"
+        case .english:  return "en"
         case .georgian: return "ka"
         case .armenian: return "hy"
         }

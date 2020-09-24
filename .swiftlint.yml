@@ -30,6 +30,7 @@ opt_in_rules:
   - extension_access_modifier
   - fallthrough
   - fatal_error_message
+  - private_outlet
 
 force_cast: error
 force_try: error

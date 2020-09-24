@@ -9,6 +9,7 @@
 import RxSwift
 
 public class ABInputView: UIView {
+    // MARK: Fields
     private let disposeBag = DisposeBag()
 
     // MARK: Outlets
@@ -17,26 +18,31 @@ public class ABInputView: UIView {
     @IBOutlet private weak var wrapperView: AppCircularView!
     @IBOutlet private weak var wrapperViewHeightConstraint: NSLayoutConstraint!
 
-    @IBOutlet public weak var textField: UITextField!
+    @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var textFieldHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var textFieldCenterYConstraint: NSLayoutConstraint!
     @IBOutlet private var textFieldBottomConstraint: NSLayoutConstraint!
 
-    @IBOutlet public weak var placeholderLabel: UILabel!
+    @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private var placeholderLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet private var placeholderLabelCenterYConstraint: NSLayoutConstraint!
 
-    @IBOutlet public weak var leftButton: UIButton!
-    @IBOutlet public weak var rightButton: UIButton!
+    @IBOutlet private weak var leftButton: UIButton!
+    @IBOutlet private weak var rightButton: UIButton!
 
-    @IBOutlet public weak var validationResultLabel: UILabel!
+    @IBOutlet private weak var validationResultLabel: UILabel!
 
-    // MARK: Fields
+    // MARK: Properties
     public var rx: Reactive<UITextField> { textField.rx }
     private var size: DesignSystem.Input.Size = .large
     private var textFieldBottomInset: CGFloat { size == .large ? 4 : 0 }
     private var placeholderLabelTopInset: CGFloat { size == .large ? 7 : 3 }
 
+    public var mainTextField: UITextField { textField }
+    public var leftComponent: UIButton { leftButton }
+    public var rightComponent: UIButton { rightButton }
+
+    // MARK: Init
     public override init(frame: CGRect) {
        super.init(frame: frame)
        nibSetup()
@@ -47,14 +53,7 @@ public class ABInputView: UIView {
        nibSetup()
     }
 
-    @objc private func makeTextFieldFirstResponderIfNeeded() {
-        let canBecomeFirstResponder = textField.isUserInteractionEnabled && textField.canBecomeFirstResponder
-
-        if canBecomeFirstResponder {
-            textField.becomeFirstResponder()
-        }
-    }
-
+    // MARK: Public Methods
     public func set(text: String?) {
         setTextAndConfigure(text: text)
     }
@@ -124,27 +123,14 @@ public class ABInputView: UIView {
     public func dropSecureTextEntry() {
         textField.isSecureTextEntry = false
     }
-}
 
-extension ABInputView: Xibable {
-    var mainView: UIView {
-        get {
-            view
+    // MARK: Private Methods
+    @objc private func makeTextFieldFirstResponderIfNeeded() {
+        let canBecomeFirstResponder = textField.isUserInteractionEnabled && textField.canBecomeFirstResponder
+
+        if canBecomeFirstResponder {
+            textField.becomeFirstResponder()
         }
-        set {
-            view = newValue
-        }
-    }
-
-    func setupUI() {
-        setupWrapperView()
-        setupTextField()
-        setupValidationResultLabel()
-        setupLeftButton()
-        setupRightButton()
-        setupPlaceholderLabel()
-
-        configurePosition(animated: false)
     }
 
     private func setupWrapperView() {
@@ -181,10 +167,6 @@ extension ABInputView: Xibable {
             self?.configurePosition(animated: true)
         })
         .disposed(by: disposeBag)
-
-//        textField.rx.controlEvent([.editingDidEndOnExit]).subscribe { [weak self] _ in
-//            self?.textField.resignFirstResponder()
-//        }.disposed(by: disposeBag)
     }
 
     private func setupValidationResultLabel() {
@@ -201,5 +183,27 @@ extension ABInputView: Xibable {
     private func setupRightButton() {
         rightButton.backgroundColor = nil
         rightButton.superview?.isHidden = false
+    }
+}
+
+extension ABInputView: Xibable {
+    var mainView: UIView {
+        get {
+            view
+        }
+        set {
+            view = newValue
+        }
+    }
+
+    func setupUI() {
+        setupWrapperView()
+        setupTextField()
+        setupValidationResultLabel()
+        setupLeftButton()
+        setupRightButton()
+        setupPlaceholderLabel()
+
+        configurePosition(animated: false)
     }
 }

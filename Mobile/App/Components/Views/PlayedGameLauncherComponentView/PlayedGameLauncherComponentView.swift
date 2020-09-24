@@ -90,9 +90,9 @@ extension PlayedGameLauncherComponentView: Xibable {
 }
 
 public class PlayedGameLauncherComponentLoaderView: UIView {
-    @IBOutlet weak public var coverImageView: ShimmerView!
-    @IBOutlet weak public var titleLabel: ShimmerView!
-    @IBOutlet weak public var subtitleLabel: ShimmerView!
+    @IBOutlet weak private var coverImageView: ShimmerView!
+    @IBOutlet weak private var titleLabel: ShimmerView!
+    @IBOutlet weak private var subtitleLabel: ShimmerView!
 
     public var shimmerViews: [ShimmerView] { [coverImageView, titleLabel, subtitleLabel] }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
 		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
 		D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807846D2444727500003892 /* FiraGO-Light.ttf */; };
@@ -45,7 +46,6 @@
 		D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */; };
 		D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */; };
 		D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */; };
-		D83026C024518528006FF7FB /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83026BF24518528006FF7FB /* DummyData.swift */; };
 		D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */; };
 		D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E75246B14F600EF8CB5 /* ABViewController.swift */; };
 		D8390E7B246C1B5D00EF8CB5 /* SMSLoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E78246C1B5D00EF8CB5 /* SMSLoginNavigator.swift */; };
@@ -216,6 +216,7 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFactory.swift; sourceTree = "<group>"; };
 		D803F42724A251C700A16CB2 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		D807846A24439E4500003892 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -256,7 +257,6 @@
 		D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-ExtraBold.otf"; sourceTree = "<group>"; };
 		D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Bold.otf"; sourceTree = "<group>"; };
 		D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Regular.otf"; sourceTree = "<group>"; };
-		D83026BF24518528006FF7FB /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardListening.swift; sourceTree = "<group>"; };
 		D8390E75246B14F600EF8CB5 /* ABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABViewController.swift; sourceTree = "<group>"; };
 		D8390E78246C1B5D00EF8CB5 /* SMSLoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginNavigator.swift; sourceTree = "<group>"; };
@@ -630,6 +630,7 @@
 		D842098724482CAD0001ADC1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */,
 				D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */,
 				D842098A24482D950001ADC1 /* SportsViewControllerFactory.swift */,
 				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
@@ -1034,7 +1035,6 @@
 		D8A47DEA24335DE40077AA8E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D83026BF24518528006FF7FB /* DummyData.swift */,
 				D86253AE2464199900F7DE0C /* Repositories */,
 				D8A47DF3243366F80077AA8E /* NetworkClinet */,
 				D84202C82451919400F0F056 /* PersistentStorages */,
@@ -1541,6 +1541,7 @@
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
+				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
@@ -1598,7 +1599,6 @@
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
-				D83026C024518528006FF7FB /* DummyData.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
 				D8F26A05246837B700137252 /* LoginType.swift in Sources */,

@@ -7,5 +7,6 @@
 //
 
 public enum LoginType: String {
-    case otp, sms
+    case otp
+    case sms
 }

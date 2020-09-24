@@ -15,7 +15,7 @@ public protocol InputViewsProviding: class {
 }
 
 public extension InputViewsProviding where Self: UIViewController {
-    var inputViewTextFilds: [UITextField] { inputViews.map { $0.textField } }
+    var inputViewTextFilds: [UITextField] { inputViews.map { $0.mainTextField } }
 
     func nextTextField(for textField: UITextField) -> UITextField? {
         let textFields = inputViewTextFilds

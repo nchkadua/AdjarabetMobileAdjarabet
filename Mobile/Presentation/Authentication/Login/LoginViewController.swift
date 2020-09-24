@@ -142,19 +142,19 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupInputViews() {
-        usernameInputView.textField.textContentType = .username
+        usernameInputView.mainTextField.textContentType = .username
         usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title.localized())
         usernameInputView.setSize(to: .large)
 
-        passwordInputView.textField.textContentType = .password
+        passwordInputView.mainTextField.textContentType = .password
         passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
         passwordInputView.setSize(to: .large)
         passwordInputView.becomeSecureTextEntry()
 
-        passwordInputView.rightButton.isHidden = false
-        passwordInputView.rightButton.setImage(R.image.shared.hideText(), for: .normal)
+        passwordInputView.rightComponent.isHidden = false
+        passwordInputView.rightComponent.setImage(R.image.shared.hideText(), for: .normal)
 
-        passwordInputView.rightButton.rx.tap.subscribe(onNext: { [weak self] in
+        passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updatePasswordRightButton()
         }).disposed(by: disposeBag)
 
@@ -195,14 +195,14 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func smsLoginDidTap() {
-        guard let username = usernameInputView.textField.text else {return}
+        guard let username = usernameInputView.mainTextField.text else {return}
 
         closeKeyboard()
         viewModel.smsLogin(username: username)
     }
 
     @objc private func loginDidTap() {
-        guard let username = usernameInputView.textField.text, let password = passwordInputView.textField.text else {return}
+        guard let username = usernameInputView.mainTextField.text, let password = passwordInputView.mainTextField.text else {return}
 
         closeKeyboard()
         viewModel.login(username: username, password: password)
@@ -224,11 +224,11 @@ public class LoginViewController: ABViewController {
     }
 
     private func updatePasswordRightButton() {
-        let isSecureTextEntry = passwordInputView.textField.isSecureTextEntry
+        let isSecureTextEntry = passwordInputView.mainTextField.isSecureTextEntry
         passwordInputView.toggleSecureTextEntry()
 
         let icon = isSecureTextEntry ? R.image.shared.viewText() : R.image.shared.hideText()
-        passwordInputView.rightButton.setImage(icon, for: .normal)
+        passwordInputView.rightComponent.setImage(icon, for: .normal)
     }
 }
 
