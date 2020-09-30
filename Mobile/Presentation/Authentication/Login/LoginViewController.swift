@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public class LoginViewController: ABViewController {
+public class LoginViewController: ABViewController, LanguagesButtonDelegate {
     public var viewModel: LoginViewModel = DefaultLoginViewModel(params: .init())
     public lazy var navigator = LoginNavigator(viewController: self)
 
@@ -16,20 +16,24 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
 
     @IBOutlet private weak var loginTitleLabel: UILabel!
-    @IBOutlet private weak var notMemberLabel: UILabel!
-    @IBOutlet private weak var joinNowButton: ABButton!
+    @IBOutlet private weak var logoImageView: UIImageView!
 
     @IBOutlet private weak var usernameInputView: ABInputView!
     @IBOutlet private weak var passwordInputView: ABInputView!
 
-    @IBOutlet private weak var forgotPasswordButton: ABButton!
-    @IBOutlet private weak var forgotUsernameButton: ABButton!
     @IBOutlet private weak var smsLoginButton: ABButton!
 
     @IBOutlet private weak var loginButton: ABButton!
 
     @IBOutlet private weak var biometryIconButton: UIButton!
     @IBOutlet private weak var biometryButton: ABButton!
+
+    @IBOutlet private weak var separatorView: UIView!
+    @IBOutlet private weak var legalTextView: LegalTextView!
+    @IBOutlet private weak var legalImageView: UIImageView!
+
+    @IBOutlet private weak var contactUsButton: ContactUsButton!
+    @IBOutlet private weak var languagesButton: LanguagesButton!
 
     // MARK: Overrides
     public override var keyScrollView: UIScrollView? { scrollView }
@@ -39,6 +43,7 @@ public class LoginViewController: ABViewController {
         super.viewDidLoad()
 
         setup()
+        setDelegates()
         observeKeyboardNotifications()
         addKeyboardDismissOnTap()
 
@@ -83,9 +88,15 @@ public class LoginViewController: ABViewController {
         setupNavigationItem()
         setupScrollView()
         setupLabels()
+        setupLogoImageView()
         setupButtons()
         setupInputViews()
         setupInputViewsObservation()
+        setupLegalView()
+    }
+
+    private func setDelegates() {
+        languagesButton.delegate = self
     }
 
     private func setupNavigationItem() {
@@ -97,31 +108,16 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupLabels() {
-        loginTitleLabel.setTextColor(to: .systemWhite())
-        loginTitleLabel.setFont(to: .h2(fontCase: .lower))
+        loginTitleLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+        loginTitleLabel.setFont(to: .h4(fontCase: .lower))
         loginTitleLabel.text = R.string.localization.login_page_title.localized()
+    }
 
-        notMemberLabel.setTextColor(to: .separator(alpha: 0.6))
-        notMemberLabel.setFont(to: .h4(fontCase: .lower))
-        notMemberLabel.text = R.string.localization.not_member.localized()
+    private func setupLogoImageView() {
+        logoImageView.image = R.image.login.logo()
     }
 
     private func setupButtons() {
-        joinNowButton.setStyle(to: .ghost(state: .normal, size: .medium))
-        joinNowButton.setTitleWithoutAnimation(R.string.localization.join_now.localized(), for: .normal)
-        joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
-        joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
-
-        forgotPasswordButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        forgotPasswordButton.setTitleColor(to: .systemWhite(), for: .normal)
-        forgotPasswordButton.setTitleWithoutAnimation(R.string.localization.login_forgot_password.localized(), for: .normal)
-        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordDidTap), for: .touchUpInside)
-
-        forgotUsernameButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        forgotUsernameButton.setTitleColor(to: .systemWhite(), for: .normal)
-        forgotUsernameButton.setTitleWithoutAnimation(R.string.localization.login_forgot_username.localized(), for: .normal)
-        forgotUsernameButton.addTarget(self, action: #selector(forgotUsernameDidTap), for: .touchUpInside)
-
         smsLoginButton.setStyle(to: .textLink(state: .acvite, size: .small))
         smsLoginButton.setTitleColor(to: .separator(alpha: 0.6), for: .normal)
         smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
@@ -179,6 +175,22 @@ public class LoginViewController: ABViewController {
             guard self?.loginButton.isUserInteractionEnabled == true else {return}
             self?.loginDidTap()
         }
+    }
+
+    private func setupLegalView() {
+        separatorView.backgroundColor = R.color.colorGuide.global.separator()
+
+        legalImageView.image = R.image.login.legal()
+
+        legalTextView.text = R.string.localization.login_legal()
+        legalTextView.setTextColor(to: .systemWhite(alpha: 0.7))
+        legalTextView.setFont(to: .h6(fontCase: .lower))
+        legalTextView.applyImageView(legalImageView)
+    }
+
+    // MARK: Languages delegate
+    func languageDidChange(language: Language) {
+        setup()
     }
 
     // MARK: Actions

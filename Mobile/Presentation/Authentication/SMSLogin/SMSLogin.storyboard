@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d6Y-5F-gZB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d6Y-5F-gZB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,20 +13,26 @@
             <objects>
                 <viewController storyboardIdentifier="SMSLoginViewController" id="d6Y-5F-gZB" customClass="SMSLoginViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4CI-6e-bLC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNY-zV-0Ip">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kd7-Y8-Qax">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="314.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="282"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qzc-Fn-qIQ">
-                                                <rect key="frame" x="20" y="14" width="560" height="40.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qzc-Fn-qIQ">
+                                                <rect key="frame" x="20" y="14" width="374" height="66"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS Login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oiz-uf-MjX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oiz-uf-MjX">
+                                                        <rect key="frame" x="146.5" y="0.0" width="81.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS Login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7i-eU-SGk">
+                                                        <rect key="frame" x="146.5" y="25.5" width="81.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -33,57 +41,37 @@
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="20" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-2d-e1a">
-                                                <rect key="frame" x="20" y="54.5" width="560" height="138"/>
+                                                <rect key="frame" x="20" y="80" width="374" height="138"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R74-wT-6DH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeM-K8-8Zc" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="473" y="0.0" width="87" height="30"/>
-                                                                <state key="normal" title="Resend SMS"/>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-P3-eho" customClass="SMSCodeInputView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="46" width="560" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="VJh-Tl-11p"/>
                                                         </constraints>
                                                     </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R74-wT-6DH">
+                                                        <rect key="frame" x="0.0" y="76" width="374" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeM-K8-8Zc" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="287" y="0.0" width="87" height="30"/>
+                                                                <state key="normal" title="Resend SMS"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="32" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEN-gC-VkM">
-                                                <rect key="frame" x="20" y="192.5" width="560" height="102"/>
+                                                <rect key="frame" x="20" y="218" width="374" height="44"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rrt-Kc-5O0">
-                                                        <rect key="frame" x="0.0" y="14" width="560" height="30"/>
+                                                        <rect key="frame" x="0.0" y="14" width="374" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEO-0R-vVl" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEO-0R-vVl" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                                                 <state key="normal" title="LOG IN"/>
                                                             </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HOG-uI-4uX">
-                                                        <rect key="frame" x="0.0" y="72" width="560" height="30"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gra-h6-upX">
-                                                                <rect key="frame" x="185.5" y="0.0" width="189.5" height="30"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not a member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqN-OT-zpq">
-                                                                        <rect key="frame" x="0.0" y="5" width="115.5" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqy-OI-nQE" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                        <rect key="frame" x="125.5" y="0.0" width="64" height="30"/>
-                                                                        <state key="normal" title="Join Now"/>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -104,6 +92,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="o4r-qx-zOi"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="p83-hr-RrW"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="WNY-zV-0Ip" secondAttribute="bottom" id="6SP-so-tYs"/>
@@ -111,16 +100,14 @@
                             <constraint firstItem="WNY-zV-0Ip" firstAttribute="top" secondItem="p83-hr-RrW" secondAttribute="top" id="mMu-ah-WaF"/>
                             <constraint firstAttribute="trailing" secondItem="WNY-zV-0Ip" secondAttribute="trailing" id="tnI-og-tZw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="p83-hr-RrW"/>
                     </view>
                     <navigationItem key="navigationItem" id="Dgp-HM-TZI"/>
                     <connections>
-                        <outlet property="joinNowButton" destination="Fqy-OI-nQE" id="wGy-88-dAJ"/>
                         <outlet property="loginButton" destination="wEO-0R-vVl" id="U8x-kU-NTK"/>
-                        <outlet property="notMemberLabel" destination="wqN-OT-zpq" id="0Fa-5l-AaI"/>
                         <outlet property="resendSMSButton" destination="qeM-K8-8Zc" id="BQa-BH-Pgd"/>
                         <outlet property="scrollView" destination="WNY-zV-0Ip" id="9Na-nV-XQj"/>
                         <outlet property="smsCodeInputView" destination="sGc-P3-eho" id="25F-7T-hmf"/>
+                        <outlet property="smsLoginDescriptionLabel" destination="e7i-eU-SGk" id="fQU-Fa-hsb"/>
                         <outlet property="smsLoginTitleLabel" destination="Oiz-uf-MjX" id="VQh-CL-m7t"/>
                     </connections>
                 </viewController>
@@ -129,4 +116,12 @@
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="qeM-K8-8Zc">
+            <size key="intrinsicContentSize" width="87" height="30"/>
+        </designable>
+        <designable name="wEO-0R-vVl">
+            <size key="intrinsicContentSize" width="49" height="30"/>
+        </designable>
+    </designables>
 </document>

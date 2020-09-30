@@ -67,6 +67,7 @@ public enum DesignSystem {
         case h3(fontCase: FontCase)
         case h4(fontCase: FontCase)
         case h5(fontCase: FontCase)
+        case h6(fontCase: FontCase)
         case body1
         case body2
         case p
@@ -81,6 +82,7 @@ public enum DesignSystem {
             case .h3:    return .init(font: font(by: language), lineSpasing: 0.3, lineHeight: 19)
             case .h4:    return .init(font: font(by: language), lineSpasing: 0.5, lineHeight: 26)
             case .h5:    return .init(font: font(by: language), lineSpasing: 0.3, lineHeight: 14)
+            case .h6:    return .init(font: font(by: language), lineSpasing: 0.1, lineHeight: 14)
             case .body1: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 20)
             case .body2: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 16)
             case .p:     return .init(font: font(by: language), lineSpasing: 0, lineHeight: 20)
@@ -102,6 +104,7 @@ public enum DesignSystem {
             case .h3(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 16)
             case .h4(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 13)
             case .h5(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 11)
+            case .h6(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 11)
             case .body1:            return R.font.firaGOMedium(size: 13)!
             case .body2:            return R.font.firaGOMedium(size: 11)!
             case .p:                return R.font.firaGORegular(size: 13)!
@@ -132,7 +135,7 @@ public enum DesignSystem {
 
     /// Input
     public enum Input {
-        public static let backgroundColor: Color        = .fill140()
+        public static let backgroundColor: Color        = .fill110()
         public static let tintColor: Color              = .systemWhite()
 
         public static let placeholderFont: Typography   = .body2
@@ -153,7 +156,7 @@ public enum DesignSystem {
                 switch self {
                 case .small:    return 32
                 case .medium:   return 40
-                case .large:    return 48
+                case .large:    return 54
                 }
             }
 
@@ -229,7 +232,7 @@ public enum DesignSystem {
                     case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .separator(alpha: 0.8), backgorundColor: .systemGreen150(), overlayColor: .baseBg300(alpha: 0.2))
                     case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .systemGreen150(), overlayColor: .baseBg300(alpha: 0.3))
                     case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .systemGreen150(), overlayColor: .baseBg300(alpha: 0.4))
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(alpha: 0.4), backgorundColor: .systemGreen150(), overlayColor: .fill140(alpha: 0.5))
+                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(alpha: 0.4), backgorundColor: .fill50(), overlayColor: .fill140(alpha: 0.5))
                     case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .systemGreen150(), overlayColor: .baseBg300(alpha: 0.4))
                     }
                 case .secondary(let state, let size):

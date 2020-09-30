@@ -30,6 +30,8 @@
 "not_member" = "წევრი არ ხარ?";
 "join_now" = "შემოგვიერთდი";
 "login_button_title" = "შესვლა";
+"contact_us_button_title1" = "Have question?";
+"contact_us_button_title2" = "Contact us";
 
 /* Login */
 "login_page_title" = "შესვლა";
@@ -38,8 +40,9 @@
 "login_sms_login" = "SMS შესვლა";
 "login_username_input_title" = "სახელი";
 "login_password_input_title" = "პაროლი";
+"login_legal" = "Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia";
 
 /* SMS Login */
 "sms_login_page_title" = "SMS შესვლა";
-"sms_confirmation_description" = "ჩვენ გამოგიგზავნეთ დადასტურების კოდი მობილურ ტელეფონის ნომერზე {0}";
+"sms_confirmation_description" = "ჩვენ გამოგიგზავნეთ 6 ნიშნა დადასტურების კოდი მობილურ ტელეფონის ნომერზე";
 "sms_resend" = "SMS გაგზავნა";

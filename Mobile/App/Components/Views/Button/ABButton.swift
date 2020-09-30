@@ -6,7 +6,6 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-@IBDesignable
 public class ABButton: LoadingButton {
     /// Default style
     private var primaryStyle: DesignSystem.Button.Style?

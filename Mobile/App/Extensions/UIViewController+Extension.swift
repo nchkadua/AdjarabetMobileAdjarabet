@@ -31,7 +31,7 @@ public extension UIViewController {
     }
 
     func setBaseBackgorundColor() {
-        view.setBackgorundColor(to: .baseBg150())
+        view.setBackgorundColor(to: .systemGray200())
     }
 
     func setupStandardSearchViewController(_ searchController: UISearchController) {
@@ -46,7 +46,7 @@ public extension UIViewController {
 
     func setBackBarButtonItemIfNeeded(width: CGFloat = 26) {
         let button = UIButton()
-        button.setImage(R.image.shared.close(), for: .normal)
+        button.setImage(R.image.shared.back(), for: .normal)
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.addTarget(self, action: #selector(backBarButtonItemDidTap), for: .touchUpInside)

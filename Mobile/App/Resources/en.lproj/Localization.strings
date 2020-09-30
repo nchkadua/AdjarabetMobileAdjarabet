@@ -30,18 +30,21 @@
 "not_member" = "Not a member?";
 "join_now" = "Join now";
 "login_button_title" = "LOG IN";
+"contact_us_button_title1" = "Have question?";
+"contact_us_button_title2" = "Contact us";
 
 /* Login */
-"login_page_title" = "Log in";
+"login_page_title" = "Log in to";
 "login_forgot_password" = "Forgot Password?";
 "login_forgot_username" = "Forgot Username?";
 "login_sms_login" = "SMS Login";
-"login_username_input_title" = "username";
-"login_password_input_title" = "password";
+"login_username_input_title" = "Username";
+"login_password_input_title" = "Password";
+"login_legal" = "Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia";
 
 /* SMS Login */
-"sms_login_page_title" = "SMS Log in";
-"sms_confirmation_description" = "We sent a confirmation code to your mobile phone number {0}";
+"sms_login_page_title" = "SMS LOGIN";
+"sms_confirmation_description" = "We sent a 6-digit confirmation code to your mobile phone number";
 "sms_resend" = "Resend SMS";
 
 

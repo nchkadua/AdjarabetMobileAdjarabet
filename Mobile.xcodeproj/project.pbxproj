@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		CEB937DA251E281B004195A1 /* LanguagesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB937D9251E281B004195A1 /* LanguagesButton.swift */; };
+		CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D4F3251C9D7D008E3DE0 /* UITextView+Extension.swift */; };
+		CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D4F8251CABA1008E3DE0 /* LegalTextView.swift */; };
+		CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D4FC251CAED5008E3DE0 /* ContactUsButton.swift */; };
 		D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
 		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
@@ -217,6 +221,10 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		CEB937D9251E281B004195A1 /* LanguagesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesButton.swift; sourceTree = "<group>"; };
+		CEF1D4F3251C9D7D008E3DE0 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		CEF1D4F8251CABA1008E3DE0 /* LegalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalTextView.swift; sourceTree = "<group>"; };
+		CEF1D4FC251CAED5008E3DE0 /* ContactUsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsButton.swift; sourceTree = "<group>"; };
 		D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFactory.swift; sourceTree = "<group>"; };
 		D803F42724A251C700A16CB2 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
@@ -469,6 +477,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CEF1D4F7251CAB78008E3DE0 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1D4F8251CABA1008E3DE0 /* LegalTextView.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		D807846C2444726000003892 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +735,7 @@
 				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
 				D86253BA24653AA000F7DE0C /* Button */,
 				D8442A9F24696F2700F32676 /* Input */,
+				CEF1D4F7251CAB78008E3DE0 /* Text */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -844,6 +861,8 @@
 				D86253B8246444A300F7DE0C /* ABButton.swift */,
 				D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */,
 				D8C637A12471BB7C00B9A50E /* BalanceProfileButton.swift */,
+				CEF1D4FC251CAED5008E3DE0 /* ContactUsButton.swift */,
+				CEB937D9251E281B004195A1 /* LanguagesButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1084,6 +1103,7 @@
 				D87F49FC2452BF10004D67A2 /* UIApplication+Extension.swift */,
 				D8442AA52469801A00F32676 /* UITextField+Extension.swift */,
 				D85094012482570200722040 /* UICollectionView+Extension.swift */,
+				CEF1D4F3251C9D7D008E3DE0 /* UITextView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1556,6 +1576,7 @@
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
+				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
@@ -1564,12 +1585,14 @@
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
+				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				D8AC492724CFE3E0000B2D80 /* AppDelegateServiceProvider.swift in Sources */,
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
 				D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */,
+				CEB937DA251E281B004195A1 /* LanguagesButton.swift in Sources */,
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
@@ -1601,6 +1624,7 @@
 				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
 				D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */,
 				D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */,
+				CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,

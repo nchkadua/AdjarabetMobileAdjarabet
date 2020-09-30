@@ -93,6 +93,11 @@ class DesignSystemTests: XCTestCase {
             testDescription(typography: .h5(fontCase: .lower), pointSize: 11, lineSpasing: 0.3, lineHeight: 14)
             testDescription(typography: .h5(fontCase: .upper), pointSize: 11, lineSpasing: 0.3, lineHeight: 14)
             
+            XCTAssertEqual(DesignSystem.Typography.h6(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.h6(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .h6(fontCase: .lower), pointSize: 11, lineSpasing: 0.1, lineHeight: 14)
+            testDescription(typography: .h6(fontCase: .upper), pointSize: 11, lineSpasing: 0.1, lineHeight: 14)
+            
             let body1Description = DesignSystem.Typography.body1.description
             XCTAssertEqual(body1Description.font.fontName, R.font.firaGOMedium.fontName)
             XCTAssertEqual(body1Description.font.pointSize, 13)
@@ -167,7 +172,7 @@ class DesignSystemTests: XCTestCase {
                     typograhy: tc.typograhy,
                     contentEdgeInsets: tc.contentEdgeInsets,
                     textColor: .systemWhite(alpha: 0.4),
-                    backgorundColor: .systemGreen150(),
+                    backgorundColor: .fill50(),
                     overlayColor: .fill140(alpha: 0.5)
                 ))
             case .loading:

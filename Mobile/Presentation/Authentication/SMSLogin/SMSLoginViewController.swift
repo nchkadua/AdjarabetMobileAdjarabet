@@ -15,11 +15,10 @@ public class SMSLoginViewController: ABViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var smsLoginTitleLabel: UILabel!
+    @IBOutlet private weak var smsLoginDescriptionLabel: UILabel!
     @IBOutlet private weak var resendSMSButton: ABButton!
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
     @IBOutlet private weak var loginButton: ABButton!
-    @IBOutlet private weak var notMemberLabel: UILabel!
-    @IBOutlet private weak var joinNowButton: ABButton!
 
     private lazy var smsCodeTextField: UITextField = {
         let f = UITextField()
@@ -88,7 +87,7 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupNavigationItem() {
-        setBackBarButtonItemIfNeeded(width: 22)
+        setBackBarButtonItemIfNeeded(width: 44)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
@@ -100,26 +99,26 @@ public class SMSLoginViewController: ABViewController {
         smsLoginTitleLabel.setTextColor(to: .systemWhite())
         smsLoginTitleLabel.setFont(to: .h2(fontCase: .lower))
 
-        let smsLogin = "\(R.string.localization.sms_login_page_title.localized())\n"
+        let smsLogin = "\(R.string.localization.sms_login_page_title.localized())"
             .makeAttributedString(with: .h2(fontCase: .lower),
                                   lineSpasing: 6,
                                   foregroundColor: .systemWhite())
+
+        smsLoginTitleLabel.attributedText = smsLogin
+
+        smsLoginDescriptionLabel.setTextColor(to: .systemWhite())
+        smsLoginDescriptionLabel.setFont(to: .p)
+
         let smsLoginDescription = R.string.localization.sms_confirmation_description.localized()
-            .replacingOccurrences(of: "{0}", with: "(+995 20 40 80)")
             .makeAttributedString(with: .p,
                                   lineSpasing: 4,
                                   foregroundColor: .separator(alpha: 0.8))
-        smsLogin.append(smsLoginDescription)
-        smsLoginTitleLabel.attributedText = smsLogin
-
-        notMemberLabel.setTextColor(to: .separator(alpha: 0.6))
-        notMemberLabel.setFont(to: .h4(fontCase: .lower))
-        notMemberLabel.text = R.string.localization.not_member.localized()
+        smsLoginDescriptionLabel.attributedText = smsLoginDescription
     }
 
     private func setupButtons() {
         resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        resendSMSButton.setTitleColor(to: .separator(alpha: 0.6), for: .normal)
+        resendSMSButton.setTitleColor(to: .systemWhite(), for: .normal)
         resendSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
         resendSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
         resendSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 0)
@@ -130,11 +129,6 @@ public class SMSLoginViewController: ABViewController {
         loginButton.setStyle(to: .primary(state: .disabled, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
-
-        joinNowButton.setStyle(to: .ghost(state: .normal, size: .medium))
-        joinNowButton.setTitleWithoutAnimation(R.string.localization.join_now.localized(), for: .normal)
-        joinNowButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
-        joinNowButton.addTarget(self, action: #selector(joinNowDidTap), for: .touchUpInside)
     }
 
     private func setupSMSCodeInputView() {
