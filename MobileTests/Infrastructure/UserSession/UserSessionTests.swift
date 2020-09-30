@@ -10,17 +10,18 @@ import XCTest
 @testable import Mobile
 
 class UserSessionTests: XCTestCase {
-    private var userSession: UserSessionServices = UserSession.current
+    private var userSession: UserSessionServices!
     
-    override func setUpWithError() throws {
-        clearStorage()
+    override func setUp() {
+        super.setUp()
+        
+        userSession = UserSession.current
+        userSession.remove()
     }
+    
+    override func tearDown() {
+        super.tearDown()
 
-    override func tearDownWithError() throws {
-        clearStorage()
-    }
-    
-    private func clearStorage() {
         userSession.remove()
     }
     

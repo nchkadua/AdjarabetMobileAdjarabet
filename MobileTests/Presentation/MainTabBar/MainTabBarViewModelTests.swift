@@ -12,12 +12,10 @@ import XCTest
 class MainTabBarViewModelTests: XCTestCase {
     var viewModel: MainTabBarViewModel!
     
-    override func setUpWithError() throws {
+    override func setUp() {
+        super.setUp()
+        
         viewModel = DefaultMainTabBarViewModel()
-    }
-
-    override func tearDownWithError() throws {
-        viewModel = nil
     }
 
     func testMainTabBarViewModelViewDidLoad() {

@@ -7,12 +7,17 @@
 //
 
 import XCTest
+import LocalAuthentication
 @testable import Mobile
 
-class LoginViewModelTests: XCTestCase {
-    private var viewModel = DefaultLoginViewModel(params: .init())
+extension DefaultLoginViewModel: Injectable { }
 
-    override func setUpWithError() throws {
+class LoginViewModelTests: XCTestCase {
+    private var viewModel: DefaultLoginViewModel!
+
+    override func setUp() {
+        super.setUp()
+
         viewModel = DefaultLoginViewModel(params: .init())
     }
 
@@ -20,7 +25,7 @@ class LoginViewModelTests: XCTestCase {
         // given
         let expectation = self.expectation(description: "Login Success")
         let useCase: LoginUseCase = LoginUseCaseSuccessMock()
-        Mirror(reflecting: viewModel).inject(testable: useCase)
+        viewModel.inject(testable: useCase)
         
         _ = viewModel.route.subscribe(onNext: { action in
             if case .openMainTabBar = action { expectation.fulfill() }
@@ -37,7 +42,7 @@ class LoginViewModelTests: XCTestCase {
         // given
         let expectation = self.expectation(description: "Login Error")
         let useCase: LoginUseCase = LoginUseCaseErrorMock()
-        Mirror(reflecting: viewModel).inject(testable: useCase)
+        viewModel.inject(testable: useCase)
 
         _ = viewModel.route.subscribe(onNext: { action in
             if case .openAlert = action { expectation.fulfill() }
@@ -54,7 +59,7 @@ class LoginViewModelTests: XCTestCase {
         // given
         let expectation = self.expectation(description: "SMS Code Success")
         let useCase: SMSCodeUseCase = SMSCodeUseCaseSuccessMock()
-        Mirror(reflecting: viewModel).inject(testable: useCase)
+        viewModel.inject(testable: useCase)
         
         _ = viewModel.route.subscribe(onNext: { action in
             if case .openSMSLogin = action { expectation.fulfill() }
@@ -71,7 +76,7 @@ class LoginViewModelTests: XCTestCase {
         // given
         let expectation = self.expectation(description: "SMS Code Error")
         let useCase: SMSCodeUseCase = SMSCodeUseCaseErrorMock()
-        Mirror(reflecting: viewModel).inject(testable: useCase)
+        viewModel.inject(testable: useCase)
 
         _ = viewModel.route.subscribe(onNext: { action in
             if case .openAlert = action { expectation.fulfill() }
@@ -85,71 +90,41 @@ class LoginViewModelTests: XCTestCase {
     }
 }
 
-public extension Mirror {
-    func inject<T>(testable: T) {
-        for child in self.children {
-            if let injectable = child.value as? Inject<T> {
-                injectable.storage = testable
-            }
-        }
-    }
-}
-
-enum LoginViewModelError: Error {
+private enum LoginViewModelError: Error {
     case unknown
 }
 
-// MARK: LoginUseCase
-class LoginUseCaseSuccessMock: LoginUseCase {
+// MARK: LoginUseCase Mocks
+private class LoginUseCaseSuccessMock: LoginUseCase {
     func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, LoginUseCaseError>) -> Void) -> Cancellable? {
         completion(.success(.success))
         return nil
     }
 }
 
-class LoginUseCaseErrorMock: LoginUseCase {
+private class LoginUseCaseErrorMock: LoginUseCase {
     func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, LoginUseCaseError>) -> Void) -> Cancellable? {
         completion(.failure(.unknown(error: LoginViewModelError.unknown)))
         return nil
     }
 }
 
-// MARK: SMSLoginUseCase
-class SMSCodeUseCaseSuccessMock: SMSCodeUseCase {
+// MARK: SMSLoginUseCase Mocks
+private class SMSCodeUseCaseSuccessMock: SMSCodeUseCase {
     func execute(username: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
         completion(.success(()))
         return nil
     }
 }
 
-class SMSCodeUseCaseErrorMock: SMSCodeUseCase {
+private class SMSCodeUseCaseErrorMock: SMSCodeUseCase {
     func execute(username: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
         completion(.failure(LoginViewModelError.unknown))
         return nil
     }
 }
 
-// MARK: UserSession
-import RxSwift
-
-class UserSessionMock: UserSessionReadableServices {
-    var isLoggedIn: Bool
-    
-    var sessionId: String?                    = UUID().uuidString
-    var userId: Int?                          = 0
-    var username: String?                     = UUID().uuidString
-    var password: String?                     = UUID().uuidString
-    var currencyId: Int?                      = nil
-    var action: Observable<UserSessionAction> = PublishSubject<UserSessionAction>()
-    
-    init(isLoggedIn: Bool) {
-        self.isLoggedIn = isLoggedIn
-    }
-}
-
 // MARK: Biometric Authentication
-import LocalAuthentication
-
 class BiometricAuthenticationSuccessMock: BiometricAuthentication {
     var hasToSucceed: Bool           = true
     var isAvailable: Bool            = true
