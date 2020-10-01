@@ -24,7 +24,7 @@ public class ABNavigationController: UINavigationController, UIGestureRecognizer
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = DesignSystem.Color.baseBg300().value
+        navigationBar.barTintColor = DesignSystem.Color.baseBg150().value
         view.backgroundColor = .clear
 
         let color = DesignSystem.Color.separator().value

@@ -85,7 +85,7 @@ public class HomeViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor()
+        setBaseBackgorundColor(to: .baseBg300())
         setupNavigationItem()
         setupSearchViewController()
 

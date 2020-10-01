@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,15 +28,15 @@
             <rect key="frame" x="0.0" y="0.0" width="658" height="251"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="R3q-vJ-4ai">
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="R3q-vJ-4ai">
                     <rect key="frame" x="0.0" y="0.0" width="658" height="217"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fFK-nq-ozv" customClass="CircularImageView" customModule="Mobile" customModuleProvider="target">
-                            <rect key="frame" x="20" y="95.5" width="70" height="70"/>
+                            <rect key="frame" x="20" y="93.5" width="74" height="74"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="70" id="7AC-rm-k6x"/>
-                                <constraint firstAttribute="width" constant="70" id="O0o-9y-Gho"/>
+                                <constraint firstAttribute="height" constant="74" id="7AC-rm-k6x"/>
+                                <constraint firstAttribute="width" constant="74" id="O0o-9y-Gho"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -44,24 +45,24 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGe-dH-2oi">
-                            <rect key="frame" x="102" y="95.5" width="516" height="70"/>
+                            <rect key="frame" x="111" y="93.5" width="502" height="74"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NZ-Po-oWz" customClass="AppCircularButton" customModule="SharedFramework">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NZ-Po-oWz" customClass="AppCircularButton" customModule="SharedFramework">
                                     <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
                                     <color key="backgroundColor" red="0.73725490199999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="$ 50,2319.98"/>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ygZ-Xk-31c">
-                                    <rect key="frame" x="0.0" y="25" width="516" height="47"/>
+                                    <rect key="frame" x="0.0" y="27" width="502" height="47"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ave Caesar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-hG-wfA">
-                                            <rect key="frame" x="0.0" y="0.0" width="516" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="502" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Jackpot Slots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cy-OM-YsD">
-                                            <rect key="frame" x="0.0" y="26.5" width="516" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="26.5" width="502" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -96,15 +97,15 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J11-AH-edd" customClass="GameLauncherComponentLoaderView" customModule="Mobile" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="658" height="251"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wFV-qr-Fg3">
-                            <rect key="frame" x="0.0" y="78.5" width="658" height="94"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFV-qr-Fg3">
+                            <rect key="frame" x="0.0" y="76.5" width="658" height="98"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1D0-be-NfV" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="12" width="70" height="70"/>
+                                    <rect key="frame" x="20" y="12" width="74" height="74"/>
                                     <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="70" id="7Qj-a4-hJc"/>
-                                        <constraint firstAttribute="width" constant="70" id="O0j-3F-wq9"/>
+                                        <constraint firstAttribute="height" constant="74" id="7Qj-a4-hJc"/>
+                                        <constraint firstAttribute="width" constant="74" id="O0j-3F-wq9"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -116,10 +117,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v89-Sq-Gk7">
-                                    <rect key="frame" x="102" y="31" width="516" height="32"/>
+                                    <rect key="frame" x="111" y="33" width="502" height="32"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhQ-uh-wQ2" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="486" height="12"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="472" height="12"/>
                                             <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="gGW-R4-5V5"/>
@@ -131,10 +132,10 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7re-7Z-Wn0">
-                                            <rect key="frame" x="0.0" y="20" width="486" height="12"/>
+                                            <rect key="frame" x="0.0" y="20" width="472" height="12"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQC-EU-Sxy" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="218.5" height="12"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="212.5" height="12"/>
                                                     <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="ozO-yb-gmr"/>
@@ -164,7 +165,7 @@
                                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="30"/>
                                 </stackView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/GameLauncher/in" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-9O-hHn">
-                                    <rect key="frame" x="630" y="40" width="8" height="14"/>
+                                    <rect key="frame" x="630" y="42" width="8" height="14"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="Z7h-5j-h4y"/>
                                         <constraint firstAttribute="width" constant="8" id="cNt-Vb-Nby"/>
@@ -191,13 +192,14 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvY-32-wra">
-                    <rect key="frame" x="0.0" y="250" width="658" height="1"/>
+                    <rect key="frame" x="20" y="250" width="638" height="1"/>
                     <color key="backgroundColor" name="ColorGuide/Neutral/neutral700"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="AOY-Ga-OCj"/>
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="J11-AH-edd" secondAttribute="bottom" id="5Da-qF-KJa"/>
@@ -206,17 +208,21 @@
                 <constraint firstItem="R3q-vJ-4ai" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="EjK-SR-o28"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="R3q-vJ-4ai" secondAttribute="bottom" id="VGb-nG-GJb"/>
                 <constraint firstItem="R3q-vJ-4ai" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VYk-Iq-elo"/>
-                <constraint firstItem="wvY-32-wra" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WMo-Fr-hws"/>
+                <constraint firstItem="wvY-32-wra" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="WMo-Fr-hws"/>
                 <constraint firstAttribute="bottom" secondItem="wvY-32-wra" secondAttribute="bottom" id="aKQ-RW-QWZ"/>
                 <constraint firstItem="wvY-32-wra" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mlL-m6-Ixq"/>
                 <constraint firstItem="J11-AH-edd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x4z-V7-cLe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="R3q-vJ-4ai" secondAttribute="trailing" id="yP2-3F-aaY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-131.8840579710145" y="64.620535714285708"/>
         </view>
     </objects>
+    <designables>
+        <designable name="0NZ-Po-oWz">
+            <size key="intrinsicContentSize" width="91" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Components/GameLauncher/in" width="24" height="42"/>
         <namedColor name="ColorGuide/Neutral/neutral600">

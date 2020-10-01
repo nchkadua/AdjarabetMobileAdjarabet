@@ -84,11 +84,11 @@ extension RecentlyPlayedComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = .clear
 
-        titleLabel.setTextColor(to: .separator())
+        titleLabel.setTextColor(to: .systemWhite())
         titleLabel.setFont(to: .h3(fontCase: .lower))
 
-        button.setTitleColor(to: .separator(alpha: 0.6), for: .normal)
-        button.setFont(to: .h5(fontCase: .lower))
+        button.setTitleColor(to: .systemWhite(alpha: 0.7), for: .normal)
+        button.setFont(to: .h4(fontCase: .lower))
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         button.addTarget(self, action: #selector(buttinDidTap), for: .touchUpInside)
 
@@ -96,7 +96,7 @@ extension RecentlyPlayedComponentView: Xibable {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.flowLayout?.scrollDirection = .horizontal
         collectionView.flowLayout?.sectionInset = .zero
-        collectionView.flowLayout?.minimumLineSpacing = 10
+        collectionView.flowLayout?.minimumLineSpacing = 11
         collectionView.flowLayout?.minimumInteritemSpacing = 0
 
         set(isLoading: false)
@@ -164,8 +164,8 @@ public class RecentlyPlayedComponentLoaderView: UIView {
             v.translatesAutoresizingMaskIntoConstraints = false
             v.set(isLoading: true)
             stackView.addArrangedSubview(v)
-            v.heightAnchor.constraint(equalToConstant: 160).isActive = true
-            v.widthAnchor.constraint(equalToConstant: 90).isActive = true
+            v.heightAnchor.constraint(equalToConstant: 150).isActive = true
+            v.widthAnchor.constraint(equalToConstant: 120).isActive = true
         }
     }
 }

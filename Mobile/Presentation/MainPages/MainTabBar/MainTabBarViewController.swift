@@ -123,7 +123,7 @@ public class MainTabBarViewController: UITabBarController {
     }
 
     private func setupTabBar() {
-        tabBar.tintColor = DesignSystem.Color.systemRed150().value
+        tabBar.tintColor = DesignSystem.Color.systemWhite().value
         tabBar.unselectedItemTintColor = DesignSystem.Color.separator().value
         tabBar.barTintColor = .clear
         tabBar.isTranslucent = true
@@ -133,7 +133,7 @@ public class MainTabBarViewController: UITabBarController {
         tabBar.backgroundImage = UIImage()
         tabBar.shadowImage = UIImage()
         tabBar.clipsToBounds = false
-        tabBar.backgroundColor = DesignSystem.Color.fill140().value
+        tabBar.backgroundColor = DesignSystem.Color.baseBg300().value
         tabBar.isHidden = true
     }
 
@@ -146,7 +146,7 @@ public class MainTabBarViewController: UITabBarController {
         wrapperView.shadowBlur = 5
 
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
-        wrapperView.backgroundColor = DesignSystem.Color.fill140().value
+        wrapperView.backgroundColor = DesignSystem.Color.baseBg100().value
         wrapperView.hasSquareBorderRadius = true
 
         view.addSubview(wrapperView)

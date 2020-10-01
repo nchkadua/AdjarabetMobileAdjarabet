@@ -91,17 +91,17 @@ extension GameLauncherComponentView: Xibable {
         jackpotButton.setFont(to: .body2)
         jackpotButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 4.5, bottom: 2, right: 4.5)
 
-        titleLabel.setTextColor(to: .separator())
+        titleLabel.setTextColor(to: .systemWhite())
         titleLabel.setFont(to: .h4(fontCase: .lower))
 
-        categoryLabel.setTextColor(to: .separator(alpha: 0.6))
+        categoryLabel.setTextColor(to: .systemWhite(alpha: 0.7))
         categoryLabel.setFont(to: .body2)
 
-        inImageView.setTintColor(to: .separator())
+        inImageView.setTintColor(to: .systemWhite())
 
         separatorView.setBackgorundColor(to: .baseBg100())
 
-        loaderView.getInImageView().setTintColor(to: .separator())
+        loaderView.getInImageView().setTintColor(to: .systemWhite())
         set(isLoading: false)
     }
 }
