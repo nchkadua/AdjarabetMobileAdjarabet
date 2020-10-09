@@ -14,7 +14,7 @@ public class PromotionsViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     public lazy var navigator = PromotionsNavigator(viewController: self)
-    private lazy var appTableViewController: AppTableViewController = AppTableViewController()
+    private lazy var appTableViewController = ABTableViewController()
 
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
@@ -46,6 +46,7 @@ public class PromotionsViewController: UIViewController {
     private func setup() {
         setBaseBackgorundColor()
         setupNavigationItems()
+        setupTableView()
     }
 
     private func setupNavigationItems() {
@@ -56,6 +57,14 @@ public class PromotionsViewController: UIViewController {
         profileButtonGroup.button.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
     }
 
+    private func setupTableView() {
+        add(child: appTableViewController)
+        appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        appTableViewController.view.pin(to: view)
+        appTableViewController.isTabBarManagementEnabled = true
+    }
+
+    // MARK: Action methods
     @objc private func openProfile() {
         navigator.navigate(to: .profile, animated: true)
 
@@ -64,16 +73,6 @@ public class PromotionsViewController: UIViewController {
         navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
 
         setupTableView()
-    }
-
-    private func setupTableView() {
-        add(child: appTableViewController)
-        appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        appTableViewController.view.pin(to: view)
-
-        appTableViewController.tableView?.register(types: [
-            PromotionTableViewCell.self
-        ])
     }
 }
 
