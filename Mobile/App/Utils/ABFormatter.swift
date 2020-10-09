@@ -22,8 +22,13 @@ public class ABFormatter {
 }
 
 public extension Double {
-    var formattedBalance: String? {
+    var formattedBalanceWithCurrencySign: String? {
         guard let formatted = ABFormatter.priceFormatter.string(from: NSNumber(value: self)) else {return nil}
         return "₾ \(formatted)"
+    }
+
+    var formattedBalance: String? {
+        guard let formatted = ABFormatter.priceFormatter.string(from: NSNumber(value: self)) else {return nil}
+        return formatted
     }
 }

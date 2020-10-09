@@ -11,6 +11,7 @@ import RxSwift
 public class PromotionsViewController: UIViewController {
     @Inject(from: .viewModels) private var viewModel: PromotionsViewModel
     private let disposeBag = DisposeBag()
+    public lazy var navigator = PromotionsNavigator(viewController: self)
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
@@ -38,8 +39,19 @@ public class PromotionsViewController: UIViewController {
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor()
+        setupNavigationItems()
+    }
+
+    private func setupNavigationItems() {
         makeLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
-        navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
+
+        let profileButtonGroup = makeBalanceBarButtonItem()
+        navigationItem.rightBarButtonItem = profileButtonGroup.barButtonItem
+        profileButtonGroup.button.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
+    }
+
+    @objc private func openProfile() {
+        navigator.navigate(to: .profile, animated: true)
     }
 }
 

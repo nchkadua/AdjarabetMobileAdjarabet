@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileInfoComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="copyButton" destination="ky3-yE-iao" id="w0w-kj-M38"/>
+                <outlet property="logoImageView" destination="341-jW-qNF" id="qvD-Kj-Jtp"/>
+                <outlet property="userIdLabel" destination="ckD-pO-CcS" id="rxl-wW-nLu"/>
+                <outlet property="usernameLabel" destination="zcL-AG-QZK" id="Ogl-N9-t5j"/>
+                <outlet property="verificationStatusImageView" destination="tiX-44-pS0" id="QRT-se-udy"/>
+                <outlet property="verificationStatusLabel" destination="pq7-Et-Afx" id="QP2-mL-4XR"/>
+                <outlet property="view" destination="iN0-l3-epB" id="eAU-U6-rUQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKY-V1-s6z">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uld-fd-14e">
+                            <rect key="frame" x="27" y="25" width="279" height="71"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="waK-V6-1A8">
+                                    <rect key="frame" x="0.0" y="0.0" width="56.5" height="39"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcL-AG-QZK">
+                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="FqI-G4-YYC">
+                                            <rect key="frame" x="0.0" y="24.5" width="56.5" height="14.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq7-Et-Afx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/ProfileCell/verified" translatesAutoresizingMaskIntoConstraints="NO" id="tiX-44-pS0">
+                                                    <rect key="frame" x="47.5" y="0.0" width="9" height="14.5"/>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5fx-qf-T7l">
+                                    <rect key="frame" x="0.0" y="49" width="68.5" height="22"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckD-pO-CcS">
+                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky3-yE-iao">
+                                            <rect key="frame" x="51.5" y="0.0" width="17" height="22"/>
+                                            <state key="normal" image="Components/ProfileCell/copy"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="5fx-qf-T7l" firstAttribute="top" secondItem="uld-fd-14e" secondAttribute="top" constant="49" id="HH5-AT-Tzg"/>
+                            </constraints>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="341-jW-qNF">
+                            <rect key="frame" x="306" y="25" width="78" height="71"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="78" id="P7z-3n-Bws"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <edgeInsets key="layoutMargins" top="25" left="27" bottom="34" right="30"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BKY-V1-s6z" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="O5v-Ds-oan"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BKY-V1-s6z" secondAttribute="trailing" id="XeA-UM-lX7"/>
+                <constraint firstItem="BKY-V1-s6z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="n7B-21-FHt"/>
+                <constraint firstItem="BKY-V1-s6z" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="yqr-aI-vXr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Components/ProfileCell/copy" width="17" height="18"/>
+        <image name="Components/ProfileCell/verified" width="9" height="8"/>
+    </resources>
+</document>

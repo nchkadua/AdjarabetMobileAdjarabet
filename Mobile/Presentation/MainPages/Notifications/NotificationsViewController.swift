@@ -11,29 +11,33 @@ import RxSwift
 public class NotificationsViewController: UIViewController {
     @Inject(from: .viewModels) private var viewModel: NotificationsViewModel
     private let disposeBag = DisposeBag()
+    public lazy var navigator = NotificationsNavigator(viewController: self)
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupLanguageButtons()
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
 
-    private func setupLanguageButtons() {
-        navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(title: "🇬🇧", style: .plain, target: self, action: #selector(englishButtonDidTap)),
-            UIBarButtonItem(title: "🇬🇪", style: .plain, target: self, action: #selector(georgianButtonDidTap)),
-            UIBarButtonItem(title: "🇦🇲", style: .plain, target: self, action: #selector(armenianButtonDidTap))
-        ]
-    }
-
     private func setup() {
         setBaseBackgorundColor()
+        setupNavigationItems()
+    }
+
+    private func setupNavigationItems() {
         makeLeftBarButtonItemTitle(to: R.string.localization.notifications_page_title.localized())
+
+        let profileButtonGroup = makeBalanceBarButtonItem()
+        navigationItem.rightBarButtonItem = profileButtonGroup.barButtonItem
+        profileButtonGroup.button.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
+    }
+
+    @objc private func openProfile() {
+        navigator.navigate(to: .profile, animated: true)
     }
 
     private func bind(to viewModel: NotificationsViewModel) {

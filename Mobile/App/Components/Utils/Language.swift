@@ -35,6 +35,14 @@ public enum Language: Int, CaseIterable {
         }
     }
 
+    public var currency: String {
+        switch self {
+        case .english: return "$"
+        case .georgian: return "₾"
+        case .armenian: return "֏"
+        }
+    }
+
     public func next() -> Language {
         return Language.allCases[(Language.allCases.firstIndex(of: self)! + 1) % Language.allCases.count]
     }

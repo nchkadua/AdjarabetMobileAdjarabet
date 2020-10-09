@@ -46,7 +46,7 @@ public extension UIViewController {
 
     func setBackBarButtonItemIfNeeded(width: CGFloat = 26) {
         let button = UIButton()
-        button.setImage(R.image.shared.close(), for: .normal)
+        button.setImage(R.image.shared.back(), for: .normal)
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.addTarget(self, action: #selector(backBarButtonItemDidTap), for: .touchUpInside)
@@ -62,6 +62,24 @@ public extension UIViewController {
                 navigationController?.popViewController(animated: true)
             }
         } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+
+    func setDismissBarButtonItemIfNeeded(width: CGFloat = 26) {
+        let button = UIButton()
+        button.setImage(R.image.shared.close(), for: .normal)
+        button.widthAnchor.constraint(equalToConstant: width).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        button.addTarget(self, action: #selector(dismissBarButtonItemDidTap), for: .touchUpInside)
+        let backBarButtonItem = UIBarButtonItem(customView: button)
+        navigationItem.leftBarButtonItem = backBarButtonItem
+    }
+
+    @objc func dismissBarButtonItemDidTap() {
+        if let nav = navigationController {
+            guard nav.topViewController?.parent != nil else { return }
+
             dismiss(animated: true, completion: nil)
         }
     }
@@ -90,5 +108,24 @@ public extension UIViewController {
         view.addSubview(v)
         v.pin(to: view)
         return v
+    }
+
+    func wrapInNavWith(presentationStyle: UIModalPresentationStyle = .automatic) -> UINavigationController {
+        let navC = UINavigationController(rootViewController: self)
+        navC.modalPresentationStyle = .fullScreen
+
+        return navC
+    }
+
+    func hideNavBar() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions(), animations: { [weak self] in
+            self?.navigationController?.setNavigationBarHidden(true, animated: true)
+        }, completion: nil)
+    }
+
+    func showNavBar() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions(), animations: { [weak self] in
+            self?.navigationController?.setNavigationBarHidden(false, animated: true)
+        }, completion: nil)
     }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BalanceTableViewCell" customModule="Mobile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-cz-E8h" customClass="BalanceComponentView" customModule="Mobile" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="a0C-cz-E8h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Acw-PQ-OFX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="a0C-cz-E8h" secondAttribute="trailing" id="Hyk-08-Sb8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="a0C-cz-E8h" secondAttribute="bottom" id="rZX-rS-siX"/>
+                <constraint firstItem="a0C-cz-E8h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wPB-Tl-9Cf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="balanceComponentView" destination="a0C-cz-E8h" id="4mE-9E-lGV"/>
+            </connections>
+            <point key="canvasLocation" x="71" y="121"/>
+        </view>
+    </objects>
+</document>

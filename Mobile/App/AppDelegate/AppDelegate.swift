@@ -54,6 +54,7 @@ public extension DependencyContainer {
         Module { DefaultHomeViewModel() as HomeViewModel }
         Module { DefaultPromotionsViewModel() as PromotionsViewModel }
         Module { DefaultNotificationsViewModel() as NotificationsViewModel }
+        Module { DefaultProfileViewModel() as ProfileViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -70,6 +71,7 @@ public extension DependencyContainer {
     static var factories = DependencyContainer {
         Module { DefaultMainTabBarFactory() as MainTabBarFactory }
         Module { DefaultSMSLoginFactory() as SMSLoginFactory }
+        Module { DefaultProfileFactory() as ProfileFactory }
     }
 
     static var useCases = DependencyContainer {

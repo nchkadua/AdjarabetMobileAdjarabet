@@ -7,6 +7,8 @@
 //
 
 public class HomeNavigator: Navigator {
+    @Inject(from: .factories) public var profileFactory: ProfileFactory
+
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {
@@ -14,8 +16,17 @@ public class HomeNavigator: Navigator {
     }
 
     public enum Destination {
+        case profile
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
+        switch destination {
+        case .profile:
+            let vc = profileFactory.make()
+            let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+            navC.navigationBar.styleForSecondaryPage()
+
+            viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+        }
     }
 }

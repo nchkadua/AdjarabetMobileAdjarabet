@@ -21,10 +21,7 @@ public class ABNavigationController: UINavigationController, UIGestureRecognizer
     }
 
     private func setupDefaultSettings() {
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = false
-        navigationBar.barTintColor = DesignSystem.Color.baseBg150().value
+        navigationBar.styleForPrimaryPage()
         view.backgroundColor = .clear
 
         let color = DesignSystem.Color.separator().value
@@ -37,10 +34,4 @@ public class ABNavigationController: UINavigationController, UIGestureRecognizer
     public override var childForStatusBarStyle: UIViewController? { topViewController }
 
     public override var childForStatusBarHidden: UIViewController? { topViewController }
-}
-
-public extension UIViewController {
-    func wrapInNav() -> UINavigationController {
-        UINavigationController(rootViewController: self)
-    }
 }

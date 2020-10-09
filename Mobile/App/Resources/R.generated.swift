@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 9 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
@@ -102,6 +102,8 @@ struct R: Rswift.Validatable {
     static let mainTabBar = _R.storyboard.mainTabBar()
     /// Storyboard `Notifications`.
     static let notifications = _R.storyboard.notifications()
+    /// Storyboard `Profile`.
+    static let profile = _R.storyboard.profile()
     /// Storyboard `Promotions`.
     static let promotions = _R.storyboard.promotions()
     /// Storyboard `SMSLogin`.
@@ -141,6 +143,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Notifications", bundle: ...)`
     static func notifications(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.notifications)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Profile", bundle: ...)`
+    static func profile(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.profile)
     }
     #endif
 
@@ -811,6 +820,144 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
       }
 
+      /// This `R.image.components.profileCell` struct is generated, and contains static references to 3 images.
+      struct profileCell {
+        /// Image `adjarabet_logo`.
+        static let adjarabet_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/adjarabet_logo")
+        /// Image `copy`.
+        static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/copy")
+        /// Image `verified`.
+        static let verified = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/verified")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "adjarabet_logo", bundle: ..., traitCollection: ...)`
+        static func adjarabet_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.profileCell.adjarabet_logo, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "copy", bundle: ..., traitCollection: ...)`
+        static func copy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.profileCell.copy, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "verified", bundle: ..., traitCollection: ...)`
+        static func verified(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.profileCell.verified, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      /// This `R.image.components.quickAction` struct is generated, and contains static references to 11 images.
+      struct quickAction {
+        /// Image `account`.
+        static let account = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/account")
+        /// Image `balance_management`.
+        static let balance_management = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/balance_management")
+        /// Image `deposit`.
+        static let deposit = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/deposit")
+        /// Image `incognito`.
+        static let incognito = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/incognito")
+        /// Image `logout`.
+        static let logout = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/logout")
+        /// Image `my_bonuses`.
+        static let my_bonuses = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/my_bonuses")
+        /// Image `my_cards`.
+        static let my_cards = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/my_cards")
+        /// Image `parameters`.
+        static let parameters = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/parameters")
+        /// Image `transaction_history`.
+        static let transaction_history = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/transaction_history")
+        /// Image `transfer`.
+        static let transfer = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/transfer")
+        /// Image `withdraw`.
+        static let withdraw = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/withdraw")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "account", bundle: ..., traitCollection: ...)`
+        static func account(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.account, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "balance_management", bundle: ..., traitCollection: ...)`
+        static func balance_management(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.balance_management, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "deposit", bundle: ..., traitCollection: ...)`
+        static func deposit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.deposit, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "incognito", bundle: ..., traitCollection: ...)`
+        static func incognito(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.incognito, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "logout", bundle: ..., traitCollection: ...)`
+        static func logout(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.logout, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "my_bonuses", bundle: ..., traitCollection: ...)`
+        static func my_bonuses(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.my_bonuses, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "my_cards", bundle: ..., traitCollection: ...)`
+        static func my_cards(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.my_cards, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "parameters", bundle: ..., traitCollection: ...)`
+        static func parameters(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.parameters, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "transaction_history", bundle: ..., traitCollection: ...)`
+        static func transaction_history(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.transaction_history, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "transfer", bundle: ..., traitCollection: ...)`
+        static func transfer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.transfer, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "withdraw", bundle: ..., traitCollection: ...)`
+        static func withdraw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.withdraw, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
       fileprivate init() {}
     }
 
@@ -991,10 +1138,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 19 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
+    /// Nib `BalanceComponentView`.
+    static let balanceComponentView = _R.nib._BalanceComponentView()
+    /// Nib `BalanceTableViewCell`.
+    static let balanceTableViewCell = _R.nib._BalanceTableViewCell()
+    /// Nib `FooterComponentView`.
+    static let footerComponentView = _R.nib._FooterComponentView()
+    /// Nib `FooterTableViewCell`.
+    static let footerTableViewCell = _R.nib._FooterTableViewCell()
     /// Nib `GameLauncherCollectionViewCell`.
     static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
     /// Nib `GameLauncherComponentView`.
@@ -1007,6 +1162,18 @@ struct R: Rswift.Validatable {
     static let playedGameLauncherCollectionViewCell = _R.nib._PlayedGameLauncherCollectionViewCell()
     /// Nib `PlayedGameLauncherComponentView`.
     static let playedGameLauncherComponentView = _R.nib._PlayedGameLauncherComponentView()
+    /// Nib `ProfileInfoComponentView`.
+    static let profileInfoComponentView = _R.nib._ProfileInfoComponentView()
+    /// Nib `ProfileInfoTableViewCell`.
+    static let profileInfoTableViewCell = _R.nib._ProfileInfoTableViewCell()
+    /// Nib `QuickActionComponentView`.
+    static let quickActionComponentView = _R.nib._QuickActionComponentView()
+    /// Nib `QuickActionTableViewCell`.
+    static let quickActionTableViewCell = _R.nib._QuickActionTableViewCell()
+    /// Nib `QuickActionsHeaderCell`.
+    static let quickActionsHeaderCell = _R.nib._QuickActionsHeaderCell()
+    /// Nib `QuickActionsHeaderView`.
+    static let quickActionsHeaderView = _R.nib._QuickActionsHeaderView()
     /// Nib `RecentlyPlayedCollectionViewCell`.
     static let recentlyPlayedCollectionViewCell = _R.nib._RecentlyPlayedCollectionViewCell()
     /// Nib `RecentlyPlayedComponentView`.
@@ -1017,6 +1184,38 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.abInputView) instead")
     static func abInputView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.abInputView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "BalanceComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.balanceComponentView) instead")
+    static func balanceComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.balanceComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "BalanceTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.balanceTableViewCell) instead")
+    static func balanceTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.balanceTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FooterComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.footerComponentView) instead")
+    static func footerComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.footerComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FooterTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.footerTableViewCell) instead")
+    static func footerTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.footerTableViewCell)
     }
     #endif
 
@@ -1069,6 +1268,54 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ProfileInfoComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.profileInfoComponentView) instead")
+    static func profileInfoComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.profileInfoComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ProfileInfoTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.profileInfoTableViewCell) instead")
+    static func profileInfoTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.profileInfoTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "QuickActionComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.quickActionComponentView) instead")
+    static func quickActionComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.quickActionComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "QuickActionTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.quickActionTableViewCell) instead")
+    static func quickActionTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.quickActionTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "QuickActionsHeaderCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.quickActionsHeaderCell) instead")
+    static func quickActionsHeaderCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.quickActionsHeaderCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "QuickActionsHeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.quickActionsHeaderView) instead")
+    static func quickActionsHeaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.quickActionsHeaderView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "RecentlyPlayedCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.recentlyPlayedCollectionViewCell) instead")
     static func recentlyPlayedCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -1086,6 +1333,22 @@ struct R: Rswift.Validatable {
 
     static func abInputView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.abInputView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func balanceComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.balanceComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func balanceTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BalanceTableViewCell? {
+      return R.nib.balanceTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BalanceTableViewCell
+    }
+
+    static func footerComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.footerComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func footerTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FooterTableViewCell? {
+      return R.nib.footerTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FooterTableViewCell
     }
 
     static func gameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameLauncherCollectionViewCell? {
@@ -1112,6 +1375,30 @@ struct R: Rswift.Validatable {
       return R.nib.playedGameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func profileInfoComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.profileInfoComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func profileInfoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileInfoTableViewCell? {
+      return R.nib.profileInfoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileInfoTableViewCell
+    }
+
+    static func quickActionComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.quickActionComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func quickActionTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> QuickActionTableViewCell? {
+      return R.nib.quickActionTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? QuickActionTableViewCell
+    }
+
+    static func quickActionsHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> QuickActionsHeaderCell? {
+      return R.nib.quickActionsHeaderCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? QuickActionsHeaderCell
+    }
+
+    static func quickActionsHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.quickActionsHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func recentlyPlayedCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecentlyPlayedCollectionViewCell? {
       return R.nib.recentlyPlayedCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecentlyPlayedCollectionViewCell
     }
@@ -1125,8 +1412,24 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 24 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 41 localization keys.
     struct localization {
+      /// en translation: Account Information
+      ///
+      /// Locales: en, ka, hy
+      static let account_information = Rswift.StringResource(key: "account_information", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Account Parameters
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters = Rswift.StringResource(key: "account_parameters", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Account Parameters
+      ///
+      /// Locales: en, ka, hy
+      static let profile_page_title = Rswift.StringResource(key: "profile_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Balance Management
+      ///
+      /// Locales: en, ka, hy
+      static let balance_management = Rswift.StringResource(key: "balance_management", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, ka, hy
@@ -1135,6 +1438,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let contact_us_button_title2 = Rswift.StringResource(key: "contact_us_button_title2", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Deposit
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_button_title = Rswift.StringResource(key: "deposit_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Forgot Password?
       ///
       /// Locales: en, ka, hy
@@ -1151,6 +1458,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let contact_us_button_title1 = Rswift.StringResource(key: "contact_us_button_title1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Incognito Card
+      ///
+      /// Locales: en, ka, hy
+      static let incognito_card = Rswift.StringResource(key: "incognito_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Join now
       ///
       /// Locales: en, ka, hy
@@ -1159,6 +1470,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login_button_title = Rswift.StringResource(key: "login_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Log Out
+      ///
+      /// Locales: en, ka, hy
+      static let log_out = Rswift.StringResource(key: "log_out", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Log in to
       ///
       /// Locales: en, ka, hy
@@ -1167,6 +1482,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login = Rswift.StringResource(key: "login", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: My Balance
+      ///
+      /// Locales: en, ka, hy
+      static let balance_title = Rswift.StringResource(key: "balance_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: My Bonuses
+      ///
+      /// Locales: en, ka, hy
+      static let my_bonuses = Rswift.StringResource(key: "my_bonuses", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: My Cards
+      ///
+      /// Locales: en, ka, hy
+      static let my_cards = Rswift.StringResource(key: "my_cards", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Not a member?
       ///
       /// Locales: en, ka, hy
@@ -1183,10 +1510,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login_password_input_title = Rswift.StringResource(key: "login_password_input_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Poker Balance
+      ///
+      /// Locales: en, ka, hy
+      static let poker_balance = Rswift.StringResource(key: "poker_balance", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Promotions
       ///
       /// Locales: en, ka, hy
       static let promotions_page_title = Rswift.StringResource(key: "promotions_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Quick Actions
+      ///
+      /// Locales: en, ka, hy
+      static let quick_actions_header_title = Rswift.StringResource(key: "quick_actions_header_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Recently Played
       ///
       /// Locales: en, ka, hy
@@ -1211,6 +1546,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sports_page_title = Rswift.StringResource(key: "sports_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Total Balance
+      ///
+      /// Locales: en, ka, hy
+      static let total_balance = Rswift.StringResource(key: "total_balance", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Transaction History
+      ///
+      /// Locales: en, ka, hy
+      static let transaction_history = Rswift.StringResource(key: "transaction_history", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Transfer to a Friend
+      ///
+      /// Locales: en, ka, hy
+      static let transfer_to_a_friend = Rswift.StringResource(key: "transfer_to_a_friend", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Username
       ///
       /// Locales: en, ka, hy
@@ -1223,6 +1570,74 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sms_confirmation_description = Rswift.StringResource(key: "sms_confirmation_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Withdraw
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_button_title = Rswift.StringResource(key: "withdraw_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Your Account is Verified
+      ///
+      /// Locales: en
+      static let verified = Rswift.StringResource(key: "verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+
+      /// en translation: Account Information
+      ///
+      /// Locales: en, ka, hy
+      static func account_information(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_information", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_information"
+        }
+
+        return NSLocalizedString("account_information", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Account Parameters
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters"
+        }
+
+        return NSLocalizedString("account_parameters", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Account Parameters
+      ///
+      /// Locales: en, ka, hy
+      static func profile_page_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile_page_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "profile_page_title"
+        }
+
+        return NSLocalizedString("profile_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Balance Management
+      ///
+      /// Locales: en, ka, hy
+      static func balance_management(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("balance_management", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "balance_management"
+        }
+
+        return NSLocalizedString("balance_management", tableName: "Localization", bundle: bundle, comment: "")
+      }
 
       /// en translation: Cancel
       ///
@@ -1252,6 +1667,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("contact_us_button_title2", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Deposit
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_button_title"
+        }
+
+        return NSLocalizedString("deposit_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Forgot Password?
@@ -1314,6 +1744,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("contact_us_button_title1", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Incognito Card
+      ///
+      /// Locales: en, ka, hy
+      static func incognito_card(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("incognito_card", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "incognito_card"
+        }
+
+        return NSLocalizedString("incognito_card", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Join now
       ///
       /// Locales: en, ka, hy
@@ -1344,6 +1789,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Log Out
+      ///
+      /// Locales: en, ka, hy
+      static func log_out(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("log_out", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "log_out"
+        }
+
+        return NSLocalizedString("log_out", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Log in to
       ///
       /// Locales: en, ka, hy
@@ -1372,6 +1832,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: My Balance
+      ///
+      /// Locales: en, ka, hy
+      static func balance_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("balance_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "balance_title"
+        }
+
+        return NSLocalizedString("balance_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: My Bonuses
+      ///
+      /// Locales: en, ka, hy
+      static func my_bonuses(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_bonuses", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "my_bonuses"
+        }
+
+        return NSLocalizedString("my_bonuses", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: My Cards
+      ///
+      /// Locales: en, ka, hy
+      static func my_cards(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_cards", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "my_cards"
+        }
+
+        return NSLocalizedString("my_cards", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Not a member?
@@ -1434,6 +1939,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login_password_input_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Poker Balance
+      ///
+      /// Locales: en, ka, hy
+      static func poker_balance(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("poker_balance", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "poker_balance"
+        }
+
+        return NSLocalizedString("poker_balance", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Promotions
       ///
       /// Locales: en, ka, hy
@@ -1447,6 +1967,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("promotions_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Quick Actions
+      ///
+      /// Locales: en, ka, hy
+      static func quick_actions_header_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("quick_actions_header_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "quick_actions_header_title"
+        }
+
+        return NSLocalizedString("quick_actions_header_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Recently Played
@@ -1539,6 +2074,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sports_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Total Balance
+      ///
+      /// Locales: en, ka, hy
+      static func total_balance(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("total_balance", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "total_balance"
+        }
+
+        return NSLocalizedString("total_balance", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Transaction History
+      ///
+      /// Locales: en, ka, hy
+      static func transaction_history(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transaction_history", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transaction_history"
+        }
+
+        return NSLocalizedString("transaction_history", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Transfer to a Friend
+      ///
+      /// Locales: en, ka, hy
+      static func transfer_to_a_friend(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transfer_to_a_friend", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transfer_to_a_friend"
+        }
+
+        return NSLocalizedString("transfer_to_a_friend", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Username
       ///
       /// Locales: en, ka, hy
@@ -1584,6 +2164,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sms_confirmation_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Withdraw
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_button_title"
+        }
+
+        return NSLocalizedString("withdraw_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Your Account is Verified
+      ///
+      /// Locales: en
+      static func verified(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("verified", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "verified"
+        }
+
+        return NSLocalizedString("verified", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 
@@ -1616,7 +2226,11 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _BalanceComponentView.validate()
+      try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
+      try _ProfileInfoComponentView.validate()
+      try _QuickActionComponentView.validate()
     }
 
     struct _ABInputView: Rswift.NibResourceType {
@@ -1625,6 +2239,63 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _BalanceComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "BalanceComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _BalanceTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "BalanceTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BalanceTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BalanceTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FooterComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "FooterComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FooterTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "FooterTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FooterTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FooterTableViewCell
       }
 
       fileprivate init() {}
@@ -1704,6 +2375,85 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _ProfileInfoComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ProfileInfoComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ProfileInfoTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ProfileInfoTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileInfoTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileInfoTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _QuickActionComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "QuickActionComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'QuickActionComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _QuickActionTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "QuickActionTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> QuickActionTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? QuickActionTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _QuickActionsHeaderCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "QuickActionsHeaderCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> QuickActionsHeaderCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? QuickActionsHeaderCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _QuickActionsHeaderView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "QuickActionsHeaderView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _RecentlyPlayedCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "RecentlyPlayedCollectionViewCell"
@@ -1747,6 +2497,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try notifications.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try profile.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try promotions.validate()
@@ -1810,10 +2563,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
@@ -1861,6 +2612,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.notifications().notificationsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'notificationsViewController' could not be loaded from storyboard 'Notifications' as 'NotificationsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct profile: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Profile"
+      let profileViewController = StoryboardViewControllerResource<ProfileViewController>(identifier: "ProfileViewController")
+
+      func profileViewController(_: Void = ()) -> ProfileViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: profileViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.profile().profileViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'profileViewController' could not be loaded from storyboard 'Profile' as 'ProfileViewController'.") }
       }
 
       fileprivate init() {}

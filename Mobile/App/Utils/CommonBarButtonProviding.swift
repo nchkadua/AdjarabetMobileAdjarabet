@@ -21,6 +21,15 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
+    func makeRightBarButtonItemTitle(to title: String) -> UIBarButtonItem.Coupled {
+        let barButtonItem = UIBarButtonItem.make(title: title, typography: .h3(fontCase: .lower))
+        barButtonItem.button.setTitleColor(DesignSystem.Color.systemWhite().value, for: .normal)
+        barButtonItem.barButtonItem.isEnabled = false
+        navigationItem.rightBarButtonItem = barButtonItem.barButtonItem
+        return barButtonItem
+    }
+
+    @discardableResult
     func makeLoginBarButtonItem() -> UIBarButtonItem.Coupled {
 //        let joinNowBarButtonItem = UIBarButtonItem.make(title: R.string.localization.join_now.localized())
         let loginBarButtonItem = UIBarButtonItem.make(title: R.string.localization.login.localized())

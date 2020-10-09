@@ -13,7 +13,7 @@ public class HomeViewController: UIViewController {
     private let disposeBag = DisposeBag()
     @Inject(from: .viewModels) private var viewModel: HomeViewModel
     public var searchViewModel: GamesSearchViewModel { searchController.viewModel }
-
+    public lazy var navigator = HomeNavigator(viewController: self)
     private lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
     private lazy var searchController = GamesSearchViewController(viewModel: DefaultGamesSearchViewModel(params: .init()))
 
@@ -86,16 +86,23 @@ public class HomeViewController: UIViewController {
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .baseBg300())
-        setupNavigationItem()
+        setupNavigationItems()
         setupSearchViewController()
 
         setupCollectionViewController()
         setupWhen(mainCollectionViewIsVisible: true, animated: false)
     }
 
-    private func setupNavigationItem() {
+    private func setupNavigationItems() {
         makeLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
-        navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
+
+        let profileButtonGroup = makeBalanceBarButtonItem()
+        navigationItem.rightBarButtonItem = profileButtonGroup.barButtonItem
+        profileButtonGroup.button.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
+    }
+
+    @objc private func openProfile() {
+        navigator.navigate(to: .profile, animated: true)
     }
 
     private func setupCollectionViewController() {
@@ -164,7 +171,7 @@ public class HomeViewController: UIViewController {
     }
 
     private func languageDidChange() {
-        setupNavigationItem()
+        setupNavigationItems()
         setupSearchBar()
     }
 }

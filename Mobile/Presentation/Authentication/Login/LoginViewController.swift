@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public class LoginViewController: ABViewController, LanguagesButtonDelegate {
+public class LoginViewController: ABViewController {
     public var viewModel: LoginViewModel = DefaultLoginViewModel(params: .init())
     public lazy var navigator = LoginNavigator(viewController: self)
 
@@ -28,12 +28,7 @@ public class LoginViewController: ABViewController, LanguagesButtonDelegate {
     @IBOutlet private weak var biometryIconButton: UIButton!
     @IBOutlet private weak var biometryButton: ABButton!
 
-    @IBOutlet private weak var separatorView: UIView!
-    @IBOutlet private weak var legalTextView: LegalTextView!
-    @IBOutlet private weak var legalImageView: UIImageView!
-
-    @IBOutlet private weak var contactUsButton: ContactUsButton!
-    @IBOutlet private weak var languagesButton: LanguagesButton!
+    @IBOutlet private weak var footerComponentView: FooterComponentView!
 
     // MARK: Overrides
     public override var keyScrollView: UIScrollView? { scrollView }
@@ -43,7 +38,6 @@ public class LoginViewController: ABViewController, LanguagesButtonDelegate {
         super.viewDidLoad()
 
         setup()
-        setDelegates()
         observeKeyboardNotifications()
         addKeyboardDismissOnTap()
 
@@ -92,11 +86,7 @@ public class LoginViewController: ABViewController, LanguagesButtonDelegate {
         setupButtons()
         setupInputViews()
         setupInputViewsObservation()
-        setupLegalView()
-    }
-
-    private func setDelegates() {
-        languagesButton.delegate = self
+        setDelegates()
     }
 
     private func setupNavigationItem() {
@@ -130,10 +120,10 @@ public class LoginViewController: ABViewController, LanguagesButtonDelegate {
         updateLoginButton(isEnabled: false)
 
         biometryButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        biometryButton.setTitleColor(to: .separator(alpha: 0.6), for: .normal)
+        biometryButton.setTitleColor(to: .systemWhite(), for: .normal)
         biometryButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
-        biometryIconButton.setTintColor(to: .separator())
+        biometryIconButton.setTintColor(to: .systemWhite())
         biometryIconButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
     }
 
@@ -177,20 +167,8 @@ public class LoginViewController: ABViewController, LanguagesButtonDelegate {
         }
     }
 
-    private func setupLegalView() {
-        separatorView.backgroundColor = R.color.colorGuide.global.separator()
-
-        legalImageView.image = R.image.login.legal()
-
-        legalTextView.text = R.string.localization.login_legal()
-        legalTextView.setTextColor(to: .systemWhite(alpha: 0.7))
-        legalTextView.setFont(to: .h6(fontCase: .lower))
-        legalTextView.applyImageView(legalImageView)
-    }
-
-    // MARK: Languages delegate
-    func languageDidChange(language: Language) {
-        setup()
+    private func setDelegates() {
+        footerComponentView.delegate = self
     }
 
     // MARK: Actions
@@ -246,4 +224,10 @@ public class LoginViewController: ABViewController, LanguagesButtonDelegate {
 
 extension LoginViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [usernameInputView, passwordInputView] }
+}
+
+extension LoginViewController: FooterComponentViewDelegate {
+    public func languageDidChange(language: Language) {
+        setup()
+    }
 }

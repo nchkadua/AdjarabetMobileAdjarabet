@@ -14,7 +14,7 @@ public class BalanceProfileButton: UIButton {
 
     private var balance: Double? {
         didSet {
-            configure(text: balance?.formattedBalance)
+            configure(text: balance?.formattedBalanceWithCurrencySign)
         }
     }
 

@@ -47,4 +47,26 @@
 "sms_confirmation_description" = "We sent a 6-digit confirmation code to your mobile phone number";
 "sms_resend" = "Resend SMS";
 
+/* Profile */
+"profile_page_title" = "Account Parameters";
+
+"verified" = "Your Account is Verified";
+
+"balance_title" = "My Balance";
+"total_balance" = "Total Balance";
+"poker_balance" = "Poker Balance";
+"withdraw_button_title" = "Withdraw";
+"deposit_button_title" = "Deposit";
+
+"quick_actions_header_title" = "Quick Actions";
+"transaction_history" = "Transaction History";
+"my_cards" = "My Cards";
+"my_bonuses" = "My Bonuses";
+"balance_management" = "Balance Management";
+"transfer_to_a_friend" = "Transfer to a Friend";
+"incognito_card" = "Incognito Card";
+"account_information" = "Account Information";
+"account_parameters" = "Account Parameters";
+"log_out" = "Log Out";
+
 
