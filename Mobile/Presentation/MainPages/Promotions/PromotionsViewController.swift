@@ -9,10 +9,14 @@
 import RxSwift
 
 public class PromotionsViewController: UIViewController {
+    // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: PromotionsViewModel
     private let disposeBag = DisposeBag()
-    public lazy var navigator = PromotionsNavigator(viewController: self)
 
+    public lazy var navigator = PromotionsNavigator(viewController: self)
+    private lazy var appTableViewController: AppTableViewController = AppTableViewController()
+
+    // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     public override func viewDidLoad() {
@@ -33,6 +37,8 @@ public class PromotionsViewController: UIViewController {
         switch action {
         case .languageDidChange:
             setup()
+        case .initialize(let appListDataProvider):
+            appTableViewController.dataProvider = appListDataProvider
         }
     }
 
@@ -52,6 +58,22 @@ public class PromotionsViewController: UIViewController {
 
     @objc private func openProfile() {
         navigator.navigate(to: .profile, animated: true)
+
+        setBaseBackgorundColor(to: .baseBg300())
+        makeLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
+        navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
+
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        add(child: appTableViewController)
+        appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        appTableViewController.view.pin(to: view)
+
+        appTableViewController.tableView?.register(types: [
+            PromotionTableViewCell.self
+        ])
     }
 }
 

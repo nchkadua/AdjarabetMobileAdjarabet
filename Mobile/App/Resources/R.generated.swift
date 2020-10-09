@@ -985,6 +985,81 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.promotions` struct is generated, and contains static references to 2 images.
+    struct promotions {
+      /// Image `casino_icon`.
+      static let casino_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Promotions/casino_icon")
+      /// Image `sport_icon`.
+      static let sport_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Promotions/sport_icon")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "casino_icon", bundle: ..., traitCollection: ...)`
+      static func casino_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.promotions.casino_icon, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "sport_icon", bundle: ..., traitCollection: ...)`
+      static func sport_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.promotions.sport_icon, compatibleWith: traitCollection)
+      }
+      #endif
+
+      /// This `R.image.promotions.temporary` struct is generated, and contains static references to 5 images.
+      struct temporary {
+        /// Image `Cover1`.
+        static let cover1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Promotions/Temporary/Cover1")
+        /// Image `Cover2`.
+        static let cover2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Promotions/Temporary/Cover2")
+        /// Image `Cover3`.
+        static let cover3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Promotions/Temporary/Cover3")
+        /// Image `Cover4`.
+        static let cover4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Promotions/Temporary/Cover4")
+        /// Image `Cover5`.
+        static let cover5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Promotions/Temporary/Cover5")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Cover1", bundle: ..., traitCollection: ...)`
+        static func cover1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.promotions.temporary.cover1, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Cover2", bundle: ..., traitCollection: ...)`
+        static func cover2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.promotions.temporary.cover2, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Cover3", bundle: ..., traitCollection: ...)`
+        static func cover3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.promotions.temporary.cover3, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Cover4", bundle: ..., traitCollection: ...)`
+        static func cover4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.promotions.temporary.cover4, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Cover5", bundle: ..., traitCollection: ...)`
+        static func cover5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.promotions.temporary.cover5, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.shared` struct is generated, and contains static references to 8 images.
     struct shared {
       /// Image `back`.
@@ -1138,7 +1213,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 19 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 21 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -1166,6 +1241,10 @@ struct R: Rswift.Validatable {
     static let profileInfoComponentView = _R.nib._ProfileInfoComponentView()
     /// Nib `ProfileInfoTableViewCell`.
     static let profileInfoTableViewCell = _R.nib._ProfileInfoTableViewCell()
+    /// Nib `PromotionComponentView`.
+    static let promotionComponentView = _R.nib._PromotionComponentView()
+    /// Nib `PromotionTableViewCell`.
+    static let promotionTableViewCell = _R.nib._PromotionTableViewCell()
     /// Nib `QuickActionComponentView`.
     static let quickActionComponentView = _R.nib._QuickActionComponentView()
     /// Nib `QuickActionTableViewCell`.
@@ -1284,6 +1363,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PromotionComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.promotionComponentView) instead")
+    static func promotionComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.promotionComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PromotionTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.promotionTableViewCell) instead")
+    static func promotionTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.promotionTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "QuickActionComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.quickActionComponentView) instead")
     static func quickActionComponentView(_: Void = ()) -> UIKit.UINib {
@@ -1381,6 +1476,14 @@ struct R: Rswift.Validatable {
 
     static func profileInfoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileInfoTableViewCell? {
       return R.nib.profileInfoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileInfoTableViewCell
+    }
+
+    static func promotionComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.promotionComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func promotionTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PromotionTableViewCell? {
+      return R.nib.promotionTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PromotionTableViewCell
     }
 
     static func quickActionComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1576,8 +1679,8 @@ struct R: Rswift.Validatable {
       static let withdraw_button_title = Rswift.StringResource(key: "withdraw_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Your Account is Verified
       ///
-      /// Locales: en
-      static let verified = Rswift.StringResource(key: "verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, ka, hy
+      static let verified = Rswift.StringResource(key: "verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
 
       /// en translation: Account Information
       ///
@@ -2181,7 +2284,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Your Account is Verified
       ///
-      /// Locales: en
+      /// Locales: en, ka, hy
       static func verified(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("verified", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -2399,6 +2502,28 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileInfoTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileInfoTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PromotionComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PromotionComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PromotionTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PromotionTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PromotionTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PromotionTableViewCell
       }
 
       fileprivate init() {}

@@ -40,6 +40,13 @@
 		CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */; };
 		CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */; };
 		CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */; };
+		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
+		CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */; };
+		CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */; };
+		CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6ED3252F38CF0091F6D9 /* PromotionsProvider.swift */; };
+		CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */; };
+		CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */; };
+		CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */; };
 		CEB937DA251E281B004195A1 /* LanguagesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB937D9251E281B004195A1 /* LanguagesButton.swift */; };
 		CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE300392530787600577CDF /* QuickActionsHeaderCell.xib */; };
 		CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE3566D252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib */; };
@@ -291,6 +298,13 @@
 		CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
+		CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionTableViewCell.xib; sourceTree = "<group>"; };
+		CE1D6ED3252F38CF0091F6D9 /* PromotionsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsProvider.swift; sourceTree = "<group>"; };
+		CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentView.swift; sourceTree = "<group>"; };
+		CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentViewModel.swift; sourceTree = "<group>"; };
+		CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionComponentView.xib; sourceTree = "<group>"; };
 		CEB937D9251E281B004195A1 /* LanguagesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesButton.swift; sourceTree = "<group>"; };
 		CEE300392530787600577CDF /* QuickActionsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionsHeaderCell.xib; sourceTree = "<group>"; };
 		CEE3566D252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -677,6 +691,34 @@
 			path = BalanceComponentView;
 			sourceTree = "<group>";
 		};
+		CE1D6ED2252F38C10091F6D9 /* TemporaryHelper */ = {
+			isa = PBXGroup;
+			children = (
+				CE1D6ED3252F38CF0091F6D9 /* PromotionsProvider.swift */,
+			);
+			path = TemporaryHelper;
+			sourceTree = "<group>";
+		};
+		CE95FC8A252F2AFE003E539B /* PromotionComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */,
+				CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */,
+				CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */,
+			);
+			path = PromotionComponentView;
+			sourceTree = "<group>";
+		};
+		CE95FC9F252F3691003E539B /* PromotionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */,
+				CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */,
+				CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */,
+			);
+			path = PromotionTableViewCell;
+			sourceTree = "<group>";
+		};
 		CEF1D4F7251CAB78008E3DE0 /* Text */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,6 +973,7 @@
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
 				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
 				D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */,
+				CE95FC8A252F2AFE003E539B /* PromotionComponentView */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
@@ -1107,6 +1150,7 @@
 			isa = PBXGroup;
 			children = (
 				CE55ED012526732A003E168F /* PromotionsNavigator.swift */,
+				CE1D6ED2252F38C10091F6D9 /* TemporaryHelper */,
 				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
 				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
 				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
@@ -1409,6 +1453,7 @@
 				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
 				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
 				CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */,
+				CE95FC9F252F3691003E539B /* PromotionTableViewCell */,
 				D8AC9965244F1A2100B16600 /* RecentlyPlayedCollectionViewCell */,
 				D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */,
 				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,
@@ -1587,6 +1632,8 @@
 				CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */,
 				D80784902444727E00003892 /* PantonMtav3-Bold.otf in Resources */,
 				D853499724D1E1C100958B0E /* GoogleService-Info.plist in Resources */,
+				CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */,
+				CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */,
 				D80784802444727600003892 /* FiraGO-Thin.ttf in Resources */,
 				D80784822444727600003892 /* FiraGO-Two.ttf in Resources */,
 				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
@@ -1785,6 +1832,7 @@
 				CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
+				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
@@ -1813,6 +1861,7 @@
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				CE2D1DF22530753A00112A1D /* QuickActionsHeaderCell.swift in Sources */,
 				CE2F03C9252CC8E8006D8001 /* QuickActionComponentViewModel.swift in Sources */,
+				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
@@ -1918,11 +1967,13 @@
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				CE55ED55252B3881003E168F /* ProfileInfoComponentView.swift in Sources */,
+				CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
 				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
+				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
@@ -1937,6 +1988,7 @@
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
+				CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */,
 				D894CEBB24BE32FA00FE143D /* GamesListLoader.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,

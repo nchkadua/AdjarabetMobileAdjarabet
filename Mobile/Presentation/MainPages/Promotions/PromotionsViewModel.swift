@@ -22,6 +22,7 @@ public protocol PromotionsViewModelOutput {
 
 public enum PromotionsViewModelOutputAction {
     case languageDidChange
+    case initialize(AppListDataProvider)
 }
 
 public enum PromotionsViewModelRoute {
@@ -42,5 +43,15 @@ extension DefaultPromotionsViewModel: PromotionsViewModel {
 
     public func viewDidLoad() {
         observeLanguageChange()
+
+        var dataProvider: AppCellDataProviders = []
+
+        for promotion in PromotionsProvider.temporaryData() {
+            let model = DefaultPromotionComponentViewModel(params: PromotionComponentViewModelParams(title: promotion.title, cover: promotion.cover, icon: promotion.icon))
+            print("promotion.title ", promotion.title)
+            dataProvider.append(model)
+        }
+
+        actionSubject.onNext(.initialize(dataProvider.makeList()))
     }
 }

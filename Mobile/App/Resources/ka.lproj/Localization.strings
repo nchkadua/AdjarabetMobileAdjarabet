@@ -50,6 +50,8 @@
 /* Profile */
 "profile_page_title" = "Account Parameters";
 
+"verified" = "Your Account is Verified";
+
 "balance_title" = "My Balance";
 "total_balance" = "Total Balance";
 "poker_balance" = "Poker Balance";
