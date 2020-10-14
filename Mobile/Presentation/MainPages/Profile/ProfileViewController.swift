@@ -28,11 +28,6 @@ public class ProfileViewController: UIViewController {
         viewModel.viewDidLoad()
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.hidesBarsOnSwipe = true
-    }
-
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: ProfileViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in

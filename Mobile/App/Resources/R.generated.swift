@@ -1515,7 +1515,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 41 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 43 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -1581,6 +1581,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login_page_title = Rswift.StringResource(key: "login_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Log in with face ID
+      ///
+      /// Locales: en, ka, hy
+      static let login_with_face_id_title = Rswift.StringResource(key: "login_with_face_id_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Log in with touch ID
+      ///
+      /// Locales: en, ka, hy
+      static let login_with_touch_id_title = Rswift.StringResource(key: "login_with_touch_id_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Login
       ///
       /// Locales: en, ka, hy
@@ -1920,6 +1928,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Log in with face ID
+      ///
+      /// Locales: en, ka, hy
+      static func login_with_face_id_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_with_face_id_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_with_face_id_title"
+        }
+
+        return NSLocalizedString("login_with_face_id_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Log in with touch ID
+      ///
+      /// Locales: en, ka, hy
+      static func login_with_touch_id_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_with_touch_id_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_with_touch_id_title"
+        }
+
+        return NSLocalizedString("login_with_touch_id_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Login

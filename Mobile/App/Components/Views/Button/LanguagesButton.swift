@@ -23,6 +23,7 @@ class LanguagesButton: ABButton {
 
     private func setup() {
         setStyle(to: .textLink(state: .acvite, size: .small))
+        setFont(to: .body1)
         setTitleColor(R.color.colorGuide.global.systemWhite(), for: .normal)
         backgroundColor = R.color.colorGuide.global.baseBg100()
         layer.cornerRadius = 5

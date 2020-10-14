@@ -93,8 +93,8 @@ class DesignSystemTests: XCTestCase {
             testDescription(typography: .h5(fontCase: .lower), pointSize: 11, lineSpasing: 0.3, lineHeight: 14)
             testDescription(typography: .h5(fontCase: .upper), pointSize: 11, lineSpasing: 0.3, lineHeight: 14)
             
-            XCTAssertEqual(DesignSystem.Typography.h6(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.h6(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.h6(fontCase: .lower).description.font.fontName, R.font.pantonNusx3Regular.fontName)
+            XCTAssertEqual(DesignSystem.Typography.h6(fontCase: .upper).description.font.fontName, R.font.pantonNusx3Regular.fontName)
             testDescription(typography: .h6(fontCase: .lower), pointSize: 11, lineSpasing: 0.1, lineHeight: 14)
             testDescription(typography: .h6(fontCase: .upper), pointSize: 11, lineSpasing: 0.1, lineHeight: 14)
             

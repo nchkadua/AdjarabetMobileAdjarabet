@@ -47,7 +47,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = [
             DefaultQuickActionsHeaderViewModel(params: QuickActionsHeaderViewModelParams()),
-            DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(isSeparatorViewHidden: true))
+            DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(isSeparatorViewHidden: true, backgroundColor: DesignSystem.Color.baseBg300()))
         ]
 
         let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
@@ -70,9 +70,9 @@ extension DefaultProfileViewModel: ProfileViewModel {
         }).disposed(by: self.disposeBag)
         dataProviders.insert(balanceViewModel, at: 1)
 
-        for quickAction in QuickActionItemProvider.items().reversed() {
-            let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: quickAction.icon, title: quickAction.title))
-
+        QuickActionItemProvider.items().reversed().forEach {
+            let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, hidesSeparator: $0.hidesSeparator))
+            
             quickActionViewModel.action.subscribe(onNext: { action in
                 switch action {
                 case .didSelect(let quickActionViewModel, _): self.routeSubject.onNext(.openPage(title: quickActionViewModel.params.title))

@@ -23,7 +23,10 @@ public class PromotionsNavigator: Navigator {
         switch destination {
         case .profile:
             let vc = profileFactory.make()
-            viewController?.navigationController?.present(vc.wrapInNavWith(presentationStyle: .fullScreen), animated: animate, completion: nil)
+            let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+            navC.navigationBar.styleForSecondaryPage()
+            
+            viewController?.navigationController?.present(navC, animated: animate, completion: nil)
         }
     }
 }

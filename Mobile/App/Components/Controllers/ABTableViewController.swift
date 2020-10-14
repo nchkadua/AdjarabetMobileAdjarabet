@@ -19,6 +19,12 @@ public class ABTableViewController: AppTableViewController {
         tableView?.register(types: [
             PromotionTableViewCell.self
         ])
+        
+        setupTableView()
+    }
+    
+    private func setupTableView () {
+        tableView.backgroundColor = .clear
     }
 
     // MARK: TabBar management

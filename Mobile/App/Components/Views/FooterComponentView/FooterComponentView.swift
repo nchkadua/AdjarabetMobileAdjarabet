@@ -49,23 +49,33 @@ public class FooterComponentView: UIView {
             case .didChangeLanguage:
                 self?.setupUI()
             case .setSeparatorViewHidden(let hidden):
-                self?.setSeparatorViewHidden(hidden)
+                self?.set(separatorIsHidden: hidden)
+            case .setBackgroundColor(let color):
+                self?.set(backgroundColor: color)
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }
 
-    private func setSeparatorViewHidden(_ hidden: Bool) {
-        separatorView.isHidden = hidden
+    func set(separatorIsHidden isHidden: Bool) {
+        separatorView.isHidden = isHidden
+    }
+    
+    func set(backgroundColor color: DesignSystem.Color) {
+        view.backgroundColor = color.value
     }
 
     private func setupLegalView() {
         separatorView.backgroundColor = R.color.colorGuide.global.separator()
 
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 3
+        let attributes = [NSAttributedString.Key.paragraphStyle: style]
+        legalTextView.attributedText = NSAttributedString(string: R.string.localization.login_legal(), attributes: attributes)
+
         legalImageView.image = R.image.login.legal()
 
-        legalTextView.text = R.string.localization.login_legal()
         legalTextView.setTextColor(to: .systemWhite(alpha: 0.7))
         legalTextView.setFont(to: .h6(fontCase: .lower))
         legalTextView.applyImageView(legalImageView)
@@ -93,6 +103,8 @@ extension FooterComponentView: Xibable {
     }
 
     func setupUI() {
+        view.backgroundColor = DesignSystem.Color.baseBg150().value
+        
         setupLegalView()
         setDelegates()
     }

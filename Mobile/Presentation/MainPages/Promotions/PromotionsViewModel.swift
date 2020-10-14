@@ -46,9 +46,8 @@ extension DefaultPromotionsViewModel: PromotionsViewModel {
 
         var dataProvider: AppCellDataProviders = []
 
-        for promotion in PromotionsProvider.temporaryData() {
-            let model = DefaultPromotionComponentViewModel(params: PromotionComponentViewModelParams(title: promotion.title, cover: promotion.cover, icon: promotion.icon))
-            print("promotion.title ", promotion.title)
+        PromotionsProvider.temporaryData().forEach {
+            let model = DefaultPromotionComponentViewModel(params: PromotionComponentViewModelParams(title: $0.title, cover: $0.cover, icon: $0.icon))
             dataProvider.append(model)
         }
 

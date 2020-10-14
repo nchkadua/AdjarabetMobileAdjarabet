@@ -85,7 +85,7 @@ extension BalanceComponentView: Xibable {
 
     //Fonts should be changed in design system
     func setupUI() {
-        view.backgroundColor = .clear
+        view.backgroundColor = DesignSystem.Color.baseBg300().value
 
         bgView.setBackgorundColor(to: .baseBg100())
         bgView.layer.cornerRadius = 5

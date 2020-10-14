@@ -39,8 +39,8 @@ class QuickActionComponentView: UIView {
 
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let icon, let title):
-                self?.setupUI(icon: icon, title: title)
+            case .set(let icon, let title, let hide):
+                self?.setupUI(icon: icon, title: title, hideSeparator: hide)
             default: break
             }
         }).disposed(by: disposeBag)
@@ -48,9 +48,10 @@ class QuickActionComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setupUI(icon: UIImage, title: String) {
+    private func setupUI(icon: UIImage, title: String, hideSeparator: Bool) {
         iconImageView.image = icon
         titleLabel.text = title
+        separatorView.isHidden = hideSeparator
     }
 }
 
@@ -65,12 +66,12 @@ extension QuickActionComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = .clear
+        view.backgroundColor = DesignSystem.Color.baseBg300().value
         separatorView.setBackgorundColor(to: DesignSystem.Color.separator())
 
         arrowImageView.setTintColor(to: .systemWhite())
 
-        titleLabel.setTintColor(to: .systemWhite())
+        titleLabel.setTextColor(to: .systemWhite())
         titleLabel.setFont(to: .h3(fontCase: .lower))
     }
 }

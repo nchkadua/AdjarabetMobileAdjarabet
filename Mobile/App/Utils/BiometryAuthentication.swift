@@ -58,7 +58,7 @@ public class DefaultBiometricAuthentication: BiometricAuthentication {
     public var icon: UIImage? {
         switch biometryType {
         case .faceID:       return R.image.shared.faceID()
-        case .touchID:      return R.image.shared.faceID()
+        case .touchID:      return R.image.shared.touchID()
         case .none:         return nil
         @unknown default:   return nil
         }
@@ -66,8 +66,8 @@ public class DefaultBiometricAuthentication: BiometricAuthentication {
 
     public var title: String? {
         switch biometryType {
-        case .faceID:       return "Log in with face ID"
-        case .touchID:      return "Log in with touch ID"
+        case .faceID:       return R.string.localization.login_with_face_id_title()
+        case .touchID:      return R.string.localization.login_with_touch_id_title()
         case .none:         return nil
         @unknown default:   return nil
         }

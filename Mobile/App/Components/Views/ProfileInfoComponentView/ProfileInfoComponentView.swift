@@ -75,7 +75,7 @@ extension ProfileInfoComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = .clear
+        view.backgroundColor = DesignSystem.Color.baseBg300().value
 
         logoImageView.image = R.image.components.profileCell.adjarabet_logo()
 

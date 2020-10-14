@@ -23,9 +23,9 @@ public class ContactUsButton: UIButton {
     private func setSettings() {
         layer.cornerRadius = 5
         backgroundColor = R.color.colorGuide.global.baseBg100()
-        titleLabel?.textAlignment = .left
-        imageEdgeInsets.left = 15
-        titleEdgeInsets.left = 30
+        titleLabel?.textAlignment = .center
+        imageEdgeInsets.right = 13
+        titleEdgeInsets.left = 4
 
         setTitleColor(to: .systemWhite(alpha: 0.7), for: .normal)
     }

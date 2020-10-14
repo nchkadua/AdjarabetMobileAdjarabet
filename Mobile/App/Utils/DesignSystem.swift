@@ -104,7 +104,7 @@ public enum DesignSystem {
             case .h3(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 16)
             case .h4(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 13)
             case .h5(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 11)
-            case .h6(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 11)
+            case .h6:               return R.font.pantonNusx3Regular(size: 11)!
             case .body1:            return R.font.firaGOMedium(size: 13)!
             case .body2:            return R.font.firaGOMedium(size: 11)!
             case .p:                return R.font.firaGORegular(size: 13)!
@@ -144,7 +144,7 @@ public enum DesignSystem {
         public static let textFieldTextColor: Color     = .separator(alpha: 1)
 
         public static let borderWidth: CGFloat          = 1
-        public static let borderColor: Color            = .fill50()
+        public static let borderColor: Color            = .separator()
         public static let cornerRadius: CGFloat         = 4
 
         public enum Size: CaseIterable {

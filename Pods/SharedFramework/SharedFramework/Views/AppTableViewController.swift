@@ -16,6 +16,8 @@ open class AppTableViewController: UITableViewController {
         tableView.showsVerticalScrollIndicator = false
         tableView.estimatedSectionHeaderHeight = 20
         tableView.estimatedSectionFooterHeight = 20
+        
+        tableView.backgroundColor = .clear
     }
     
     override open func numberOfSections(in tableView: UITableView) -> Int {
