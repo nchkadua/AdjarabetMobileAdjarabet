@@ -63,6 +63,7 @@ public class ProfileViewController: UIViewController {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
+        appTableViewController.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
 
         appTableViewController.tableView?.register(types: [
             ProfileInfoTableViewCell.self,

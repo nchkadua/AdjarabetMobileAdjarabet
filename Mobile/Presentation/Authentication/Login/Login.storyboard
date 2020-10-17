@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="649"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="owt-7I-83A">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="447.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="495.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-yu-5lM">
                                                 <rect key="frame" x="20" y="14" width="374" height="72.5"/>
@@ -52,21 +52,24 @@
                                                 </subviews>
                                                 <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="26" right="0.0"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="xfw-Rj-uOF">
-                                                <rect key="frame" x="20" y="86.5" width="374" height="110"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="xfw-Rj-uOF">
+                                                <rect key="frame" x="20" y="86.5" width="374" height="122"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-pe-Vui" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-pe-Vui" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="dSr-pI-Ry4" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="62" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="68" width="374" height="54"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="122" id="XZf-zk-qon"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="gXw-ip-yDy">
-                                                <rect key="frame" x="20" y="196.5" width="374" height="102"/>
+                                                <rect key="frame" x="20" y="208.5" width="374" height="126"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-81-uan">
                                                         <rect key="frame" x="0.0" y="14" width="374" height="30"/>
@@ -79,29 +82,36 @@
                                                         <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="0.0"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z18-v4-Trr">
-                                                        <rect key="frame" x="0.0" y="72" width="374" height="30"/>
+                                                        <rect key="frame" x="0.0" y="72" width="374" height="54"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKT-UG-DAh" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                                                                 <state key="normal" title="LOG IN"/>
                                                             </button>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="54" id="owA-Sm-YRa"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <edgeInsets key="layoutMargins" top="14" left="0.0" bottom="0.0" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4pT-U2-vYo">
-                                                <rect key="frame" x="20" y="298.5" width="374" height="129"/>
+                                                <rect key="frame" x="20" y="334.5" width="374" height="141"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-iH-s4W">
-                                                        <rect key="frame" x="0.0" y="47" width="374" height="82"/>
+                                                        <rect key="frame" x="0.0" y="47" width="374" height="94"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIt-Qn-H4f">
-                                                                <rect key="frame" x="165" y="0.0" width="44" height="44"/>
+                                                                <rect key="frame" x="159" y="0.0" width="56" height="56"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="56" id="gf5-RS-1qv"/>
+                                                                    <constraint firstAttribute="height" constant="56" id="n1a-st-CRE"/>
+                                                                </constraints>
                                                                 <state key="normal" image="Shared/faceID"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-Gy-Mg6" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="122.5" y="52" width="129" height="30"/>
+                                                                <rect key="frame" x="122.5" y="64" width="129" height="30"/>
                                                                 <state key="normal" title="Log in with Face ID"/>
                                                             </button>
                                                         </subviews>
@@ -156,9 +166,20 @@
             <point key="canvasLocation" x="-415.19999999999999" y="137.4384236453202"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="GbW-aK-Pmt">
+            <size key="intrinsicContentSize" width="69" height="30"/>
+        </designable>
+        <designable name="JKT-UG-DAh">
+            <size key="intrinsicContentSize" width="49" height="30"/>
+        </designable>
+        <designable name="ZCq-Gy-Mg6">
+            <size key="intrinsicContentSize" width="129" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Login/logo" width="160" height="20"/>
-        <image name="Shared/faceID" width="44" height="44"/>
+        <image name="Shared/faceID" width="108" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
