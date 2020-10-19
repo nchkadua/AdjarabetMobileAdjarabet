@@ -61,7 +61,7 @@ public class FooterComponentView: UIView {
     func set(separatorIsHidden isHidden: Bool) {
         separatorView.isHidden = isHidden
     }
-    
+
     func set(backgroundColor color: DesignSystem.Color) {
         view.backgroundColor = color.value
     }
@@ -104,7 +104,7 @@ extension FooterComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.baseBg150().value
-        
+
         setupLegalView()
         setDelegates()
     }

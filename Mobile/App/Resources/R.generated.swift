@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 9 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 10 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
@@ -100,6 +100,8 @@ struct R: Rswift.Validatable {
     static let login = _R.storyboard.login()
     /// Storyboard `MainTabBar`.
     static let mainTabBar = _R.storyboard.mainTabBar()
+    /// Storyboard `NotificationContent`.
+    static let notificationContent = _R.storyboard.notificationContent()
     /// Storyboard `Notifications`.
     static let notifications = _R.storyboard.notifications()
     /// Storyboard `Profile`.
@@ -136,6 +138,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "MainTabBar", bundle: ...)`
     static func mainTabBar(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.mainTabBar)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "NotificationContent", bundle: ...)`
+    static func notificationContent(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.notificationContent)
     }
     #endif
 
@@ -985,6 +994,81 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.notifications` struct is generated, and contains static references to 3 images.
+    struct notifications {
+      /// Image `oval`.
+      static let oval = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/oval")
+      /// Image `settings`.
+      static let settings = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/settings")
+      /// Image `trash`.
+      static let trash = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/trash")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "oval", bundle: ..., traitCollection: ...)`
+      static func oval(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.notifications.oval, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "settings", bundle: ..., traitCollection: ...)`
+      static func settings(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.notifications.settings, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "trash", bundle: ..., traitCollection: ...)`
+      static func trash(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.notifications.trash, compatibleWith: traitCollection)
+      }
+      #endif
+
+      /// This `R.image.notifications.temporary` struct is generated, and contains static references to 4 images.
+      struct temporary {
+        /// Image `Cover1`.
+        static let cover1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/Temporary/Cover1")
+        /// Image `icon1`.
+        static let icon1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/Temporary/icon1")
+        /// Image `icon2`.
+        static let icon2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/Temporary/icon2")
+        /// Image `icon_seen`.
+        static let icon_seen = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/Temporary/icon_seen")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Cover1", bundle: ..., traitCollection: ...)`
+        static func cover1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.notifications.temporary.cover1, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "icon1", bundle: ..., traitCollection: ...)`
+        static func icon1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.notifications.temporary.icon1, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "icon2", bundle: ..., traitCollection: ...)`
+        static func icon2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.notifications.temporary.icon2, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "icon_seen", bundle: ..., traitCollection: ...)`
+        static func icon_seen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.notifications.temporary.icon_seen, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.promotions` struct is generated, and contains static references to 2 images.
     struct promotions {
       /// Image `casino_icon`.
@@ -1213,7 +1297,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 21 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 25 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -1233,6 +1317,14 @@ struct R: Rswift.Validatable {
     static let loadingCollectionViewCell = _R.nib._LoadingCollectionViewCell()
     /// Nib `LoadingComponentView`.
     static let loadingComponentView = _R.nib._LoadingComponentView()
+    /// Nib `NotificationComponentView`.
+    static let notificationComponentView = _R.nib._NotificationComponentView()
+    /// Nib `NotificationTableViewCell`.
+    static let notificationTableViewCell = _R.nib._NotificationTableViewCell()
+    /// Nib `NotificationsHeaderCell`.
+    static let notificationsHeaderCell = _R.nib._NotificationsHeaderCell()
+    /// Nib `NotificationsHeaderComponentView`.
+    static let notificationsHeaderComponentView = _R.nib._NotificationsHeaderComponentView()
     /// Nib `PlayedGameLauncherCollectionViewCell`.
     static let playedGameLauncherCollectionViewCell = _R.nib._PlayedGameLauncherCollectionViewCell()
     /// Nib `PlayedGameLauncherComponentView`.
@@ -1327,6 +1419,38 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loadingComponentView) instead")
     static func loadingComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loadingComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "NotificationComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.notificationComponentView) instead")
+    static func notificationComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.notificationComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "NotificationTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.notificationTableViewCell) instead")
+    static func notificationTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.notificationTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "NotificationsHeaderCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.notificationsHeaderCell) instead")
+    static func notificationsHeaderCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.notificationsHeaderCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "NotificationsHeaderComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.notificationsHeaderComponentView) instead")
+    static func notificationsHeaderComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.notificationsHeaderComponentView)
     }
     #endif
 
@@ -1462,6 +1586,22 @@ struct R: Rswift.Validatable {
       return R.nib.loadingComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func notificationComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.notificationComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func notificationTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NotificationTableViewCell? {
+      return R.nib.notificationTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NotificationTableViewCell
+    }
+
+    static func notificationsHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NotificationsHeaderCell? {
+      return R.nib.notificationsHeaderCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NotificationsHeaderCell
+    }
+
+    static func notificationsHeaderComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.notificationsHeaderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func playedGameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlayedGameLauncherCollectionViewCell? {
       return R.nib.playedGameLauncherCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlayedGameLauncherCollectionViewCell
     }
@@ -1515,7 +1655,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 43 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 44 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -1541,6 +1681,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let contact_us_button_title2 = Rswift.StringResource(key: "contact_us_button_title2", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Delete
+      ///
+      /// Locales: en, ka, hy
+      static let delete_button_title = Rswift.StringResource(key: "delete_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Deposit
       ///
       /// Locales: en, ka, hy
@@ -1778,6 +1922,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("contact_us_button_title2", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete
+      ///
+      /// Locales: en, ka, hy
+      static func delete_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("delete_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "delete_button_title"
+        }
+
+        return NSLocalizedString("delete_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Deposit
@@ -2494,6 +2653,50 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _NotificationComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NotificationComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _NotificationTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NotificationTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NotificationTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NotificationTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _NotificationsHeaderCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NotificationsHeaderCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NotificationsHeaderCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NotificationsHeaderCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _NotificationsHeaderComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NotificationsHeaderComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _PlayedGameLauncherCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "PlayedGameLauncherCollectionViewCell"
@@ -2659,6 +2862,9 @@ struct _R: Rswift.Validatable {
       try mainTabBar.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try notificationContent.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try notifications.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -2753,6 +2959,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.mainTabBar().mainTabBarViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarViewController' could not be loaded from storyboard 'MainTabBar' as 'MainTabBarViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct notificationContent: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "NotificationContent"
+      let notificationContentViewController = StoryboardViewControllerResource<NotificationContentViewController>(identifier: "NotificationContentViewController")
+
+      func notificationContentViewController(_: Void = ()) -> NotificationContentViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: notificationContentViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.notificationContent().notificationContentViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'notificationContentViewController' could not be loaded from storyboard 'NotificationContent' as 'NotificationContentViewController'.") }
       }
 
       fileprivate init() {}

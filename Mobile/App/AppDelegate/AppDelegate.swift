@@ -72,6 +72,7 @@ public extension DependencyContainer {
         Module { DefaultMainTabBarFactory() as MainTabBarFactory }
         Module { DefaultSMSLoginFactory() as SMSLoginFactory }
         Module { DefaultProfileFactory() as ProfileFactory }
+        Module { DefaultNotificationContentFactory() as NotificationContentFactory }
     }
 
     static var useCases = DependencyContainer {

@@ -8,6 +8,7 @@
 
 public class NotificationsNavigator: Navigator {
     @Inject(from: .factories) public var profileFactory: ProfileFactory
+    @Inject(from: .factories) public var notificationContentFactory: NotificationContentFactory
 
     private weak var viewController: UIViewController?
 
@@ -17,6 +18,7 @@ public class NotificationsNavigator: Navigator {
 
     public enum Destination {
         case profile
+        case notificationContentPage(params: NotificationContentViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -25,8 +27,10 @@ public class NotificationsNavigator: Navigator {
             let vc = profileFactory.make()
             let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
             navC.navigationBar.styleForSecondaryPage()
-            
             viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+        case .notificationContentPage(let params):
+            let vc = notificationContentFactory.make(params: params)
+            viewController?.navigationController?.pushViewController(vc, animated: animate)
         }
     }
 }

@@ -31,10 +31,27 @@ public extension CommonBarButtonProviding {
 
     @discardableResult
     func makeLoginBarButtonItem() -> UIBarButtonItem.Coupled {
-//        let joinNowBarButtonItem = UIBarButtonItem.make(title: R.string.localization.join_now.localized())
         let loginBarButtonItem = UIBarButtonItem.make(title: R.string.localization.login.localized())
         navigationItem.rightBarButtonItems = [loginBarButtonItem.barButtonItem]
         return loginBarButtonItem
+    }
+
+    @discardableResult
+    func notificationsBarButtonItemGroupWith(numberOfNotifications number: Int) -> [UIBarButtonItem] {
+        let button = NotificationsButton(type: .system)
+        button.setFont(to: .h2(fontCase: .lower))
+        button.setTitleColor(to: .systemWhite(), for: .normal)
+        button.setTintColor(to: .systemWhite())
+        button.semanticContentAttribute = .forceRightToLeft
+        button.numberOfNotifications = number
+
+        let titleButton = UIBarButtonItem.make(title: title, typography: .h2(fontCase: .lower))
+        titleButton.button.setTitleColor(DesignSystem.Color.systemWhite().value, for: .normal)
+        titleButton.barButtonItem.isEnabled = false
+        titleButton.button.setTitle(R.string.localization.notifications_page_title(), for: .normal)
+        titleButton.button.titleEdgeInsets = .init(top: 5, left: 0, bottom: 0, right: 0)
+
+        return [UIBarButtonItem(customView: button), titleButton.barButtonItem]
     }
 
     @discardableResult
@@ -49,6 +66,17 @@ public extension CommonBarButtonProviding {
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
 
         return (UIBarButtonItem(customView: button), button)
+    }
+
+    @discardableResult
+    func makeSettingsBarButtonItem(width: CGFloat = 26) -> UIBarButtonItem {
+        let button = UIButton()
+        button.setImage(R.image.notifications.settings(), for: .normal)
+        button.widthAnchor.constraint(equalToConstant: width).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        let settingsBarButtonItem = UIBarButtonItem(customView: button)
+
+        return settingsBarButtonItem
     }
 }
 

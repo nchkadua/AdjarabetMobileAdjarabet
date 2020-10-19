@@ -44,6 +44,13 @@ public extension UIViewController {
         definesPresentationContext = true
     }
 
+    func setTitle(title: String) {
+        let label = UILabel()
+        label.text = title
+        label.font = R.font.firaGOMedium(size: 15)
+        navigationItem.titleView = label
+    }
+
     func setBackBarButtonItemIfNeeded(width: CGFloat = 26) {
         let button = UIButton()
         button.setImage(R.image.shared.back(), for: .normal)

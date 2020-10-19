@@ -44,7 +44,7 @@ public class PromotionsViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor()
+        setBaseBackgorundColor(to: .baseBg300())
         setupNavigationItems()
         setupTableView()
     }
@@ -67,12 +67,6 @@ public class PromotionsViewController: UIViewController {
     // MARK: Action methods
     @objc private func openProfile() {
         navigator.navigate(to: .profile, animated: true)
-
-        setBaseBackgorundColor(to: .baseBg300())
-        makeLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
-        navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
-
-        setupTableView()
     }
 }
 

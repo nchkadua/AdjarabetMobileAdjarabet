@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
+		CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */; };
+		CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */; };
+		CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0818C925389B8D00AD3B3B /* NotificationsHeaderComponentView.xib */; };
+		CE0818CF25389EEE00AD3B3B /* NotificationsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818CE25389EEE00AD3B3B /* NotificationsHeaderCell.swift */; };
+		CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */; };
+		CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */; };
+		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
 		CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */; };
 		CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */; };
@@ -47,7 +55,18 @@
 		CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */; };
 		CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */; };
 		CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */; };
+		CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */; };
+		CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */; };
+		CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */; };
+		CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */; };
 		CEB937DA251E281B004195A1 /* LanguagesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB937D9251E281B004195A1 /* LanguagesButton.swift */; };
+		CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3925349C330033BF93 /* NotificationComponentView.swift */; };
+		CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */; };
+		CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE15C4125349C450033BF93 /* NotificationComponentView.xib */; };
+		CEE15C4725349EDF0033BF93 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4625349EDF0033BF93 /* NotificationTableViewCell.swift */; };
+		CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */; };
+		CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */; };
+		CEE15C582534A1720033BF93 /* NotificationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C572534A1720033BF93 /* NotificationsProvider.swift */; };
 		CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE300392530787600577CDF /* QuickActionsHeaderCell.xib */; };
 		CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE3566D252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib */; };
 		CEE356C4252B643600A0A25C /* ProfileInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE356C3252B643600A0A25C /* ProfileInfoTableViewCell.swift */; };
@@ -268,6 +287,14 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentView.swift; sourceTree = "<group>"; };
+		CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentViewModel.swift; sourceTree = "<group>"; };
+		CE0818C925389B8D00AD3B3B /* NotificationsHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsHeaderComponentView.xib; sourceTree = "<group>"; };
+		CE0818CE25389EEE00AD3B3B /* NotificationsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderCell.swift; sourceTree = "<group>"; };
+		CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderCellDataProvider.swift; sourceTree = "<group>"; };
+		CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsHeaderCell.xib; sourceTree = "<group>"; };
+		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
 		CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionTableViewCell.xib; sourceTree = "<group>"; };
@@ -306,7 +333,18 @@
 		CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentNavigator.swift; sourceTree = "<group>"; };
+		CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewController.swift; sourceTree = "<group>"; };
+		CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewModel.swift; sourceTree = "<group>"; };
+		CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationContent.storyboard; sourceTree = "<group>"; };
 		CEB937D9251E281B004195A1 /* LanguagesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesButton.swift; sourceTree = "<group>"; };
+		CEE15C3925349C330033BF93 /* NotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentView.swift; sourceTree = "<group>"; };
+		CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentViewModel.swift; sourceTree = "<group>"; };
+		CEE15C4125349C450033BF93 /* NotificationComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationComponentView.xib; sourceTree = "<group>"; };
+		CEE15C4625349EDF0033BF93 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		CEE15C572534A1720033BF93 /* NotificationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsProvider.swift; sourceTree = "<group>"; };
 		CEE300392530787600577CDF /* QuickActionsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionsHeaderCell.xib; sourceTree = "<group>"; };
 		CEE3566D252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoTableViewCell.xib; sourceTree = "<group>"; };
 		CEE356C3252B643600A0A25C /* ProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -571,6 +609,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE0818BE25389B5C00AD3B3B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */,
+				CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */,
+				CE0818C925389B8D00AD3B3B /* NotificationsHeaderComponentView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		CE0818CD25389EDC00AD3B3B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CE0818CE25389EEE00AD3B3B /* NotificationsHeaderCell.swift */,
+				CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */,
+				CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		CE1D6ED2252F38C10091F6D9 /* TemporaryHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +757,47 @@
 				CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */,
 			);
 			path = BalanceTableViewCell;
+			sourceTree = "<group>";
+		};
+		CEB81DFE25386886006BEDEC /* ContentPage */ = {
+			isa = PBXGroup;
+			children = (
+				CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */,
+				CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */,
+				CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */,
+				CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */,
+			);
+			path = ContentPage;
+			sourceTree = "<group>";
+		};
+		CEE15C3825349C130033BF93 /* NotificationComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				CE0818BE25389B5C00AD3B3B /* Header */,
+				CEE15C3925349C330033BF93 /* NotificationComponentView.swift */,
+				CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */,
+				CEE15C4125349C450033BF93 /* NotificationComponentView.xib */,
+			);
+			path = NotificationComponentView;
+			sourceTree = "<group>";
+		};
+		CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE0818CD25389EDC00AD3B3B /* Header */,
+				CEE15C4625349EDF0033BF93 /* NotificationTableViewCell.swift */,
+				CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */,
+				CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */,
+			);
+			path = NotificationTableViewCell;
+			sourceTree = "<group>";
+		};
+		CEE15C542534A0B50033BF93 /* TemporaryHelper */ = {
+			isa = PBXGroup;
+			children = (
+				CEE15C572534A1720033BF93 /* NotificationsProvider.swift */,
+			);
+			path = TemporaryHelper;
 			sourceTree = "<group>";
 		};
 		CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */ = {
@@ -900,6 +999,7 @@
 				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
 				D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */,
 				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
+				CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -975,6 +1075,7 @@
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
 				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
 				D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */,
+				CEE15C3825349C130033BF93 /* NotificationComponentView */,
 				CE95FC8A252F2AFE003E539B /* PromotionComponentView */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
@@ -1114,6 +1215,7 @@
 				D8C637A12471BB7C00B9A50E /* BalanceProfileButton.swift */,
 				CEF1D4FC251CAED5008E3DE0 /* ContactUsButton.swift */,
 				CEB937D9251E281B004195A1 /* LanguagesButton.swift */,
+				CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1163,6 +1265,8 @@
 		D87E3C4E2445FDAD004A4BDF /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				CEE15C542534A0B50033BF93 /* TemporaryHelper */,
+				CEB81DFE25386886006BEDEC /* ContentPage */,
 				CE55ED2425267373003E168F /* NotificationsNavigator.swift */,
 				D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */,
 				D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */,
@@ -1452,6 +1556,7 @@
 		D8BF403F244EC91F008F0BAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */,
 				CE95FC1B252DF32A003E539B /* FooterTableViewCell */,
 				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
 				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
@@ -1608,11 +1713,13 @@
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
 				D807848C2444727600003892 /* FiraGO-Bold.ttf in Resources */,
 				D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */,
+				CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
 				D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */,
 				D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */,
+				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
 				CE2F03CD252CC8EE006D8001 /* QuickActionComponentView.xib in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
@@ -1630,6 +1737,7 @@
 				D80784842444727600003892 /* FiraGO-Hair.ttf in Resources */,
 				D80784862444727600003892 /* FiraGO-Book.ttf in Resources */,
 				D807848A2444727600003892 /* FiraGO-UltraLight.ttf in Resources */,
+				CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */,
 				D80784852444727600003892 /* FiraGO-SemiBold.ttf in Resources */,
 				CE95FC12252DE60F003E539B /* FooterComponentView.xib in Resources */,
 				CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */,
@@ -1640,6 +1748,7 @@
 				D80784802444727600003892 /* FiraGO-Thin.ttf in Resources */,
 				D80784822444727600003892 /* FiraGO-Two.ttf in Resources */,
 				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
+				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
@@ -1655,6 +1764,7 @@
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				CEE356F2252C9C8100A0A25C /* BalanceComponentView.xib in Resources */,
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,
+				CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */,
 				D8BF4043244EC949008F0BAF /* GameLauncherCollectionViewCell.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
@@ -1835,19 +1945,23 @@
 				CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
+				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
 				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
+				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
 				D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
 				CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
+				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
+				CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */,
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
@@ -1860,7 +1974,9 @@
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */,
+				CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
+				CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				CE2D1DF22530753A00112A1D /* QuickActionsHeaderCell.swift in Sources */,
 				CE2F03C9252CC8E8006D8001 /* QuickActionComponentViewModel.swift in Sources */,
@@ -1882,8 +1998,10 @@
 				CE55ED2B252721A2003E168F /* ProfileViewControllerFactory.swift in Sources */,
 				D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */,
 				CE2D1DEB2530738600112A1D /* QuickActionsHeaderViewModel.swift in Sources */,
+				CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */,
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
+				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
 				D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
@@ -1933,6 +2051,7 @@
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
+				CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
@@ -1948,6 +2067,7 @@
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
+				CEE15C582534A1720033BF93 /* NotificationsProvider.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
@@ -1961,6 +2081,7 @@
 				D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */,
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
+				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
 				D8442AAB2469A7A400F32676 /* LoginViewController.swift in Sources */,
 				D8AC9964244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift in Sources */,
@@ -1979,6 +2100,7 @@
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
 				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
+				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
@@ -1987,7 +2109,9 @@
 				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,
 				D8BA5A1A2499391C00F88433 /* AppConstant.swift in Sources */,
 				CEE356FA252C9C9100A0A25C /* BalanceComponentViewModel.swift in Sources */,
+				CE0818CF25389EEE00AD3B3B /* NotificationsHeaderCell.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
+				CEE15C4725349EDF0033BF93 /* NotificationTableViewCell.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,

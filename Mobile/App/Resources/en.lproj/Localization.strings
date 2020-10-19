@@ -71,4 +71,7 @@
 "account_parameters" = "Account Parameters";
 "log_out" = "Log Out";
 
+/* Notifications */
+"delete_button_title" = "Delete";
+
 

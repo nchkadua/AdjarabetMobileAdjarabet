@@ -25,7 +25,7 @@ public class PromotionsNavigator: Navigator {
             let vc = profileFactory.make()
             let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
             navC.navigationBar.styleForSecondaryPage()
-            
+
             viewController?.navigationController?.present(navC, animated: animate, completion: nil)
         }
     }

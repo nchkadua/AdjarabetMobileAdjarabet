@@ -21,19 +21,16 @@ public protocol NotificationsViewModelOutput {
 }
 
 public enum NotificationsViewModelOutputAction {
-    case languageDidChange
+    case initialize(AppListDataProvider)
 }
 
 public enum NotificationsViewModelRoute {
+    case openNotificationContentPage(notification: Notification)
 }
 
 public class DefaultNotificationsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<NotificationsViewModelOutputAction>()
     private let routeSubject = PublishSubject<NotificationsViewModelRoute>()
-
-    public override func languageDidChange() {
-        actionSubject.onNext(.languageDidChange)
-    }
 }
 
 extension DefaultNotificationsViewModel: NotificationsViewModel {
@@ -41,6 +38,24 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     public var route: Observable<NotificationsViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        observeLanguageChange()
+        var dataProvider: AppCellDataProviders = []
+        
+        NotificationsProvider.dates().forEach {
+            let headerModel = DefaultNotificationsHeaderComponentViewModel(params: NotificationsHeaderComponentViewModelParams(title: $0.stringValue))
+            dataProvider.append(headerModel)
+            
+            NotificationsProvider.notifications(ofDate: $0).forEach {
+                let model = DefaultNotificationComponentViewModel(params: NotificationComponentViewModelParams(notification: $0))
+                model.action.subscribe(onNext: { action in
+                    switch action {
+                    case .didSelect(let notification): self.routeSubject.onNext(.openNotificationContentPage(notification: notification))
+                    default:
+                        break
+                    }
+                }).disposed(by: disposeBag)
+                dataProvider.append(model)
+            }
+        }
+        actionSubject.onNext(.initialize(dataProvider.makeList()))
     }
 }
