@@ -23,12 +23,12 @@ class NotificationsProvider {
     public static func notifications() -> [Notification] {
         notificationArray
     }
-    
+
     public static func unreadNotifications() -> [Notification] {
         notificationArray.filter({ $0.seen == false })
     }
-    
-    public static func delete(atIndex index: Int) {
+
+    public static func delete(at index: Int) {
         notificationArray.remove(at: index)
     }
 

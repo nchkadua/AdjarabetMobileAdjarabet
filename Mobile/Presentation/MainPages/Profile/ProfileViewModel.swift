@@ -26,10 +26,14 @@ public protocol ProfileViewModelOutput {
 
 public enum ProfileViewModelOutputAction {
     case initialize(AppListDataProvider)
+    case didCopyUserId(userId: String)
 }
 
 public enum ProfileViewModelRoute {
-    case openPage(title: String)
+    case openPage(destionation: ProfileNavigator.Destination)
+    case openBalance
+    case openDeposit
+    case openWithdraw
 }
 
 public class DefaultProfileViewModel: DefaultBaseViewModel {
@@ -51,31 +55,31 @@ extension DefaultProfileViewModel: ProfileViewModel {
         ]
 
         let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
-        profileViewModel.action.subscribe(onNext: { action in
+        profileViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .didCopyUserId: self.routeSubject.onNext(.openPage(title: "User ID Copied"))
+            case .didCopyUserId: self?.actionSubject.onNext(.didCopyUserId(userId: "userID"))
             default: break
             }
         }).disposed(by: self.disposeBag)
         dataProviders.insert(profileViewModel, at: 0)
 
         let balanceViewModel = DefaultBalanceComponentViewModel(params: BalanceComponentViewModelParams(totalBalance: userBalanceService.balance ?? 0, pokerBalance: 0))
-        balanceViewModel.action.subscribe(onNext: { action in
+        balanceViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .didClickBalance: self.routeSubject.onNext(.openPage(title: "Open Balance"))
-            case .didClickDeposit: self.routeSubject.onNext(.openPage(title: "Open Deposit"))
-            case .didClickWithdraw: self.routeSubject.onNext(.openPage(title: "Open Withdraw"))
+            case .didClickBalance: self?.routeSubject.onNext(.openBalance)
+            case .didClickDeposit: self?.routeSubject.onNext(.openDeposit)
+            case .didClickWithdraw: self?.routeSubject.onNext(.openWithdraw)
             default: break
             }
         }).disposed(by: self.disposeBag)
         dataProviders.insert(balanceViewModel, at: 1)
 
         QuickActionItemProvider.items().reversed().forEach {
-            let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, hidesSeparator: $0.hidesSeparator))
+            let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, hidesSeparator: $0.hidesSeparator, destination: $0.destionation))
 
-            quickActionViewModel.action.subscribe(onNext: { action in
+            quickActionViewModel.action.subscribe(onNext: { [weak self] action in
                 switch action {
-                case .didSelect(let quickActionViewModel, _): self.routeSubject.onNext(.openPage(title: quickActionViewModel.params.title))
+                case .didSelect: self?.routeSubject.onNext(.openPage(destionation: quickActionViewModel.params.destination))
                 default: break
                 }
             }).disposed(by: self.disposeBag)

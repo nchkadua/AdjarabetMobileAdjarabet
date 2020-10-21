@@ -64,7 +64,7 @@ public class NotificationContentViewController: UIViewController {
     private func setupLabels() {
         timeLabel.setFont(to: .body1)
         timeLabel.setTextColor(to: .systemWhite())
-        
+
         titleLabel.font = R.font.firaGOBold(size: 20)
         titleLabel.setTextColor(to: .systemWhite())
 

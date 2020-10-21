@@ -15,6 +15,7 @@ public struct QuickActionComponentViewModelParams {
     public var icon: UIImage
     public var title: String
     public var hidesSeparator: Bool
+    public var destination: ProfileNavigator.Destination
 }
 
 public protocol QuickActionComponentViewModelInput {
@@ -29,7 +30,7 @@ public protocol QuickActionComponentViewModelOutput {
 
 public enum QuickActionComponentViewModelOutputAction {
     case set(icon: UIImage, title: String, hideSeparator: Bool)
-    case didSelect(QuickActionComponentViewModel, indexPath: IndexPath)
+    case didSelect(indexPath: IndexPath)
 }
 
 public class DefaultQuickActionComponentViewModel {
@@ -49,6 +50,6 @@ extension DefaultQuickActionComponentViewModel: QuickActionComponentViewModel {
     }
 
     public func didSelect(at indexPath: IndexPath) {
-        actionSubject.onNext(.didSelect(self, indexPath: indexPath))
+        actionSubject.onNext(.didSelect(indexPath: indexPath))
     }
 }

@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 public protocol ABTableViewControllerDelegate: class {
-    func didDeleteCell(atIndexPath indexPath: IndexPath)
+    func didDeleteCell(at indexPath: IndexPath)
 }
 
 public class ABTableViewController: AppTableViewController {
@@ -83,7 +83,7 @@ public class ABTableViewController: AppTableViewController {
 
     public override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteItem = UIContextualAction(style: .destructive, title: "") { _, _, _ in
-            self.delegate?.didDeleteCell(atIndexPath: indexPath)
+            self.delegate?.didDeleteCell(at: indexPath)
         }
         deleteItem.image = R.image.notifications.trash()
         let actions = UISwipeActionsConfiguration(actions: [deleteItem])

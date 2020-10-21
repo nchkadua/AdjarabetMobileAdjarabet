@@ -8,13 +8,13 @@
 
 public class NotificationTableViewCell: AppTableViewCell {
     @IBOutlet weak private var notificationComponentView: NotificationComponentView!
-    
+
     override public class var identifier: Identifierable { R.nib.notificationTableViewCell.name }
 
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? NotificationTableViewCellDataProvider else { fatalError("error") }
-            
+
             notificationComponentView.setAndBind(viewModel: dataProvider)
         }
     }

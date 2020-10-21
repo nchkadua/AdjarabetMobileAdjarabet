@@ -39,11 +39,11 @@ public class NotificationsViewController: UIViewController {
 
     private func setupNavigationItems() {
         setNotificationsBarButton()
-        
+
         let settingsButton = makeSettingsBarButtonItem()
         navigationItem.rightBarButtonItem = settingsButton
     }
-    
+
     private func setNotificationsBarButton() {
         navigationItem.leftBarButtonItems = notificationsBarButtonItemGroupWith(numberOfNotifications: NotificationsProvider.unreadNotifications().count)
     }
@@ -91,8 +91,8 @@ public class NotificationsViewController: UIViewController {
 extension NotificationsViewController: CommonBarButtonProviding { }
 
 extension NotificationsViewController: ABTableViewControllerDelegate {
-    public func didDeleteCell(atIndexPath indexPath: IndexPath) {
-        NotificationsProvider.delete(atIndex: indexPath.section)
+    public func didDeleteCell(at indexPath: IndexPath) {
+        NotificationsProvider.delete(at: indexPath.section)
         appTableViewController.reloadItems(deletionIndexPathes: [indexPath])
         setNotificationsBarButton()
     }

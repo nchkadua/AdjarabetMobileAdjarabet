@@ -41,15 +41,35 @@ public class ProfileViewController: UIViewController {
 
     private func didRecive(action: ProfileViewModelOutputAction) {
         switch action {
-        case .initialize(let appListDataProvider):
-            appTableViewController.dataProvider = appListDataProvider
+        case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
+        case .didCopyUserId(let userId): didCopyUserId(userId: userId)
         }
     }
 
     private func didRecive(route: ProfileViewModelRoute) {
         switch route {
-        case .openPage(let title): showAlert(title: title)
+        case .openBalance: openBalance()
+        case .openDeposit: openDeposit()
+        case .openWithdraw: openWithdraw()
+        case .openPage(let destination): openPage(destination: destination)
         }
+    }
+
+    // MARK: Navigation methods
+    private func didCopyUserId(userId: String) {
+    }
+
+    private func openBalance() {
+    }
+
+    private func openDeposit() {
+    }
+
+    private func openWithdraw() {
+    }
+
+    private func openPage(destination: ProfileNavigator.Destination) {
+        navigator.navigate(to: destination, animated: true)
     }
 
     // MARK: Setup methods
