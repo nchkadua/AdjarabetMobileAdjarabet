@@ -39,7 +39,8 @@ public enum SMSLoginViewModelOutputAction {
 
 public enum SMSLoginViewModelRoute {
     case openMainTabBar
-    case openAlert(title: String, message: String? = nil)
+    case showErrorMessage(title: String, message: String? = nil)
+    case showSuccessMessage
 }
 
 public class DefaultSMSLoginViewModel {
@@ -88,7 +89,7 @@ extension DefaultSMSLoginViewModel: SMSLoginViewModel {
             defer { self?.actionSubject.onNext(.setResendSMSButton(isLoading: false)) }
             switch result {
             case .success: print(result)
-            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            case .failure(let error): self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
             }
         }
     }
@@ -98,8 +99,10 @@ extension DefaultSMSLoginViewModel: SMSLoginViewModel {
         smsLoginUseCase.execute(username: params.username, code: code) { [weak self] result in
             defer { self?.actionSubject.onNext(.setLoginButton(isLoading: false)) }
             switch result {
-            case .success: self?.routeSubject.onNext(.openMainTabBar)
-            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            case .success:
+                self?.routeSubject.onNext(.showSuccessMessage)
+                self?.routeSubject.onNext(.openMainTabBar)
+            case .failure(let error): self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
             }
         }
     }

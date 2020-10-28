@@ -16,6 +16,7 @@ public struct LoginViewModelParams {
 
 public protocol LoginViewModelInput {
     func viewDidLoad()
+    func viewDidAppear()
     func smsLogin(username: String)
     func login(username: String, password: String)
     func biometricLogin()
@@ -75,6 +76,13 @@ extension DefaultLoginViewModel: LoginViewModel {
         actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable,
                                                       icon: biometricLoginUseCase.icon,
                                                       title: biometricLoginUseCase.title))
+    }
+    
+    public func viewDidAppear() {
+        guard !AppSessionProvider.automaticBiometriLoginShown else { return }
+            
+        biometricLogin()
+        AppSessionProvider.automaticBiometriLoginShown = true
     }
 
     public func smsLogin(username: String) {

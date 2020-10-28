@@ -45,6 +45,11 @@ public class LoginViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: LoginViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in

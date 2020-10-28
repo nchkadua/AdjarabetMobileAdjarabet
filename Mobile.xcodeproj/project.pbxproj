@@ -60,6 +60,7 @@
 		CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */; };
 		CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */; };
 		CEB937DA251E281B004195A1 /* LanguagesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB937D9251E281B004195A1 /* LanguagesButton.swift */; };
+		CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E09F254869F200949417 /* AppSessionProvider.swift */; };
 		CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3925349C330033BF93 /* NotificationComponentView.swift */; };
 		CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */; };
 		CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE15C4125349C450033BF93 /* NotificationComponentView.xib */; };
@@ -338,6 +339,7 @@
 		CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewModel.swift; sourceTree = "<group>"; };
 		CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationContent.storyboard; sourceTree = "<group>"; };
 		CEB937D9251E281B004195A1 /* LanguagesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesButton.swift; sourceTree = "<group>"; };
+		CEE0E09F254869F200949417 /* AppSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionProvider.swift; sourceTree = "<group>"; };
 		CEE15C3925349C330033BF93 /* NotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentView.swift; sourceTree = "<group>"; };
 		CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentViewModel.swift; sourceTree = "<group>"; };
 		CEE15C4125349C450033BF93 /* NotificationComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationComponentView.xib; sourceTree = "<group>"; };
@@ -1106,6 +1108,7 @@
 				D88EB3D02475972A00E1CC0C /* InputViewsProviding.swift */,
 				D8D11B432498E63D0010F4C8 /* UserAgentProvider.swift */,
 				D8BA5A192499391C00F88433 /* AppConstant.swift */,
+				CEE0E09F254869F200949417 /* AppSessionProvider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2111,6 +2114,7 @@
 				CEE356FA252C9C9100A0A25C /* BalanceComponentViewModel.swift in Sources */,
 				CE0818CF25389EEE00AD3B3B /* NotificationsHeaderCell.swift in Sources */,
 				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
+				CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */,
 				CEE15C4725349EDF0033BF93 /* NotificationTableViewCell.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,

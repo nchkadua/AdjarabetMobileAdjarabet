@@ -16,6 +16,7 @@ public class SMSLoginViewController: ABViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var smsLoginTitleLabel: UILabel!
     @IBOutlet private weak var smsLoginDescriptionLabel: UILabel!
+    @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var resendSMSButton: ABButton!
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
     @IBOutlet private weak var loginButton: ABButton!
@@ -63,16 +64,17 @@ public class SMSLoginViewController: ABViewController {
     private func didRecive(action: SMSLoginViewModelOutputAction) {
         switch action {
         case .setSMSInputViewNumberOfItems(let count): smsCodeInputView.configureForNumberOfItems(count)
-        case .setSMSCodeInputView(let text):             updateSMSCodeInputView(texts: text)
-        case .setResendSMSButton(let isLoading):               resendSMSButton.set(isLoading: isLoading)
-        case .setLoginButton(let isLoading):                   loginButton.set(isLoading: isLoading)
+        case .setSMSCodeInputView(let text): updateSMSCodeInputView(texts: text)
+        case .setResendSMSButton(let isLoading): resendSMSButton.set(isLoading: isLoading)
+        case .setLoginButton(let isLoading): loginButton.set(isLoading: isLoading)
         }
     }
 
     private func didRecive(route: SMSLoginViewModelRoute) {
         switch route {
+        case .showSuccessMessage: showSuccessMessage()
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
-        case .openAlert(let title, _): showAlert(title: title)
+        case .showErrorMessage(let title, _): showErrorMessage(title)
         }
     }
 
@@ -93,6 +95,7 @@ public class SMSLoginViewController: ABViewController {
 
     private func setupScrollView() {
         scrollView.alwaysBounceVertical = true
+        scrollView.isScrollEnabled = false
     }
 
     private func setupLabels() {
@@ -114,6 +117,10 @@ public class SMSLoginViewController: ABViewController {
                                   lineSpasing: 4,
                                   foregroundColor: .separator(alpha: 0.8))
         smsLoginDescriptionLabel.attributedText = smsLoginDescription
+
+        messageLabel.setTextColor(to: .systemWhite())
+        messageLabel.setFont(to: .p)
+        messageLabel.text = R.string.localization.sms_did_not_receive_message()
     }
 
     private func setupButtons() {
@@ -121,7 +128,7 @@ public class SMSLoginViewController: ABViewController {
         resendSMSButton.setTitleColor(to: .systemWhite(), for: .normal)
         resendSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
         resendSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
-        resendSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 0)
+        resendSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 5)
         resendSMSButton.contentEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 0)
         resendSMSButton.addTarget(self, action: #selector(resendSMSDidTap), for: .touchUpInside)
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
@@ -164,6 +171,16 @@ public class SMSLoginViewController: ABViewController {
     @objc private func textFieldDidChange(_ textField: UITextField) {
         viewModel.textDidChange(to: textField.text)
         updateLoginButtonWhen(smsCodeText: textField.text, animated: true)
+    }
+
+    private func showErrorMessage(_ message: String) {
+        messageLabel.setTextColor(to: .systemRed300())
+        messageLabel.text = message
+    }
+
+    private func showSuccessMessage() {
+        messageLabel.setTextColor(to: .systemGreen150())
+        messageLabel.setTextAndImage(R.string.localization.sms_well_done(), R.image.login.well_done()!, alignment: .right)
     }
 
     // MARK: Configuration

@@ -48,6 +48,8 @@
 "sms_login_page_title" = "SMS შესვლა";
 "sms_confirmation_description" = "ჩვენ გამოგიგზავნეთ 6 ნიშნა დადასტურების კოდი მობილურ ტელეფონის ნომერზე";
 "sms_resend" = "SMS გაგზავნა";
+"sms_did_not_receive_message" = "Did not receive message?";
+"sms_well_done" = "Well done!";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
