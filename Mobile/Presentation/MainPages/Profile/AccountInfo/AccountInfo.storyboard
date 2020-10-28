@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Account Info View Controller-->
+        <scene sceneID="PmE-Xu-VRL">
+            <objects>
+                <viewController storyboardIdentifier="AccountInfoViewController" id="2Ch-gY-vK1" customClass="AccountInfoViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E1V-l0-0Ud">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW1-Cz-jS0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rsg-21-RKy">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="899.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-qp-fNV">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="62.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ6-Q2-vc6">
+                                                        <rect key="frame" x="28" y="21" width="359" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="21" left="28" bottom="21" right="27"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-sO-BeJ">
+                                                <rect key="frame" x="0.0" y="62.5" width="414" height="274"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-C1-TMY" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpF-md-Xxg" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="55" width="414" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1v-eG-QKo" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="110" width="414" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-9C-63r" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="165" width="414" height="54"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZq-oB-d4E" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="284" y="11" width="110" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="M1X-qD-Umk"/>
+                                                                    <constraint firstAttribute="width" constant="110" id="qet-Ww-RNR"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="EZq-oB-d4E" firstAttribute="top" secondItem="HLg-9C-63r" secondAttribute="top" constant="11" id="3kN-gP-xwD"/>
+                                                            <constraint firstAttribute="trailing" secondItem="EZq-oB-d4E" secondAttribute="trailing" constant="20" id="QFV-nN-vNh"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-tc-TLe" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="220" width="414" height="54"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-Fc-D5T">
+                                                                <rect key="frame" x="378" y="19" width="16" height="16"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="16" id="VG7-di-9NN"/>
+                                                                    <constraint firstAttribute="height" constant="16" id="tpQ-nb-NtT"/>
+                                                                </constraints>
+                                                                <state key="normal" image="Components/AccountInfo/edit"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="x2j-Fc-D5T" secondAttribute="trailing" constant="20" id="bXo-Vv-CxK"/>
+                                                            <constraint firstItem="x2j-Fc-D5T" firstAttribute="top" secondItem="mJJ-tc-TLe" secondAttribute="top" constant="19" id="kdb-QW-MqC"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="274" id="GlM-Wi-kVr"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-QB-bTv">
+                                                <rect key="frame" x="0.0" y="336.5" width="414" height="62.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-gv-y3w">
+                                                        <rect key="frame" x="28" y="21" width="359" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="21" left="28" bottom="21" right="27"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qln-XN-vZs">
+                                                <rect key="frame" x="0.0" y="399" width="414" height="109"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-px-7pl" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oou-ez-NnD">
+                                                                <rect key="frame" x="378" y="19" width="16" height="16"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="16" id="OS8-WA-O1p"/>
+                                                                    <constraint firstAttribute="height" constant="16" id="ROE-kT-wbi"/>
+                                                                </constraints>
+                                                                <state key="normal" image="Components/AccountInfo/edit"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="oou-ez-NnD" firstAttribute="top" secondItem="M4a-px-7pl" secondAttribute="top" constant="19" id="Ymd-ML-SRL"/>
+                                                            <constraint firstAttribute="trailing" secondItem="oou-ez-NnD" secondAttribute="trailing" constant="20" id="i4y-rF-lif"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYZ-fn-Kkf" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="55" width="414" height="54"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alv-KZ-KAL">
+                                                                <rect key="frame" x="378" y="19" width="16" height="16"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="16" id="9Zm-g1-ulW"/>
+                                                                    <constraint firstAttribute="height" constant="16" id="Ffq-BR-mcW"/>
+                                                                </constraints>
+                                                                <state key="normal" image="Components/AccountInfo/edit"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="alv-KZ-KAL" firstAttribute="top" secondItem="pYZ-fn-Kkf" secondAttribute="top" constant="19" id="sC4-PJ-5xS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="alv-KZ-KAL" secondAttribute="trailing" constant="20" id="w09-Hi-vkq"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="109" id="a9H-Ug-gLg"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-RJ-xqJ">
+                                                <rect key="frame" x="0.0" y="508" width="414" height="62.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQL-Rx-YBQ">
+                                                        <rect key="frame" x="28" y="21" width="359" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="21" left="28" bottom="21" right="27"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="YK1-hY-BOI">
+                                                <rect key="frame" x="0.0" y="570.5" width="414" height="329"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-sm-Rlt" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpN-7J-RdJ" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="55" width="414" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="em2-yE-wQO" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="110" width="414" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-mi-N0P" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="165" width="414" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oy-oI-gm1" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="220" width="414" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDx-hd-JcY" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="275" width="414" height="54"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ja1-v3-GEK">
+                                                                <rect key="frame" x="378" y="19" width="16" height="16"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="16" id="Olk-GB-umO"/>
+                                                                    <constraint firstAttribute="width" constant="16" id="jqT-WV-rQy"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="Components/AccountInfo/edit"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Ja1-v3-GEK" firstAttribute="top" secondItem="qDx-hd-JcY" secondAttribute="top" constant="19" id="JKL-dG-Vfm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Ja1-v3-GEK" secondAttribute="trailing" constant="20" id="sAv-rG-DcG"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="329" id="HhK-hF-3Zj"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="iD5-sO-BeJ" firstAttribute="leading" secondItem="qln-XN-vZs" secondAttribute="leading" id="ROc-ww-v37"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rsg-21-RKy" firstAttribute="leading" secondItem="eW1-Cz-jS0" secondAttribute="leading" id="ETn-2R-Lox"/>
+                                    <constraint firstAttribute="bottom" secondItem="rsg-21-RKy" secondAttribute="bottom" id="Fl2-B4-hx4"/>
+                                    <constraint firstItem="rsg-21-RKy" firstAttribute="centerX" secondItem="eW1-Cz-jS0" secondAttribute="centerX" id="NGH-jd-p0a"/>
+                                    <constraint firstItem="rsg-21-RKy" firstAttribute="top" secondItem="eW1-Cz-jS0" secondAttribute="top" id="Rfc-cz-7eT"/>
+                                    <constraint firstAttribute="trailing" secondItem="rsg-21-RKy" secondAttribute="trailing" id="hP1-7N-bZw"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="g4R-YD-IPh"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="S1N-BO-ZRC"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VzK-Js-4mL"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eW1-Cz-jS0" secondAttribute="bottom" id="GQb-JS-lDR"/>
+                            <constraint firstItem="eW1-Cz-jS0" firstAttribute="top" secondItem="E1V-l0-0Ud" secondAttribute="top" id="d81-KG-6Qu"/>
+                            <constraint firstItem="eW1-Cz-jS0" firstAttribute="trailing" secondItem="VzK-Js-4mL" secondAttribute="trailing" id="h7f-u1-yqI"/>
+                            <constraint firstItem="eW1-Cz-jS0" firstAttribute="leading" secondItem="VzK-Js-4mL" secondAttribute="leading" id="wUa-71-m7p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressView" destination="qDx-hd-JcY" id="SNA-Uk-pR3"/>
+                        <outlet property="birthDateView" destination="em2-yE-wQO" id="1IV-fm-BAQ"/>
+                        <outlet property="contactInfoHeaderLabel" destination="bfG-gv-y3w" id="5oJ-cl-NOm"/>
+                        <outlet property="countryView" destination="6Oy-oI-gm1" id="FNd-iQ-EIH"/>
+                        <outlet property="editAddressButton" destination="Ja1-v3-GEK" id="cVr-ml-Tu8"/>
+                        <outlet property="editMailButton" destination="oou-ez-NnD" id="xnd-Yl-07K"/>
+                        <outlet property="editPasswordButton" destination="x2j-Fc-D5T" id="guv-7n-YtZ"/>
+                        <outlet property="editPhoneNumberButton" destination="alv-KZ-KAL" id="e0K-6F-P7a"/>
+                        <outlet property="genderView" destination="kM8-mi-N0P" id="7RG-yi-Gm2"/>
+                        <outlet property="mailView" destination="M4a-px-7pl" id="DtV-NV-hQQ"/>
+                        <outlet property="nameView" destination="kl1-sm-Rlt" id="AU9-KB-FUo"/>
+                        <outlet property="passwordView" destination="mJJ-tc-TLe" id="E14-Fq-fsU"/>
+                        <outlet property="personalIdView" destination="N1v-eG-QKo" id="yYe-yj-vbQ"/>
+                        <outlet property="personalInfoHeaderLabel" destination="MQL-Rx-YBQ" id="Cev-GZ-M6P"/>
+                        <outlet property="phoneNumberView" destination="pYZ-fn-Kkf" id="CSH-Bo-7BZ"/>
+                        <outlet property="privateInfoHeaderLabel" destination="bZ6-Q2-vc6" id="sJL-jo-vy6"/>
+                        <outlet property="scrollView" destination="eW1-Cz-jS0" id="iBL-XI-HFh"/>
+                        <outlet property="statusButton" destination="EZq-oB-d4E" id="SeP-D6-R2f"/>
+                        <outlet property="statusView" destination="HLg-9C-63r" id="3B4-4n-P2p"/>
+                        <outlet property="surnameView" destination="UpN-7J-RdJ" id="SYy-xT-TW8"/>
+                        <outlet property="userIdView" destination="NpF-md-Xxg" id="EkB-go-hzI"/>
+                        <outlet property="usernameView" destination="bdJ-C1-TMY" id="Nm8-Cf-YEN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lqi-4I-pOw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="166.66666666666669" y="90.401785714285708"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="EZq-oB-d4E">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Components/AccountInfo/edit" width="16" height="16"/>
+    </resources>
+</document>

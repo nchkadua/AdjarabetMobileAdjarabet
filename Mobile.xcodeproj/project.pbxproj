@@ -17,6 +17,9 @@
 		CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */; };
 		CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */; };
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
+		CE169359254181100043B1A4 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE169358254181100043B1A4 /* UserInfo.swift */; };
+		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
+		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
 		CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */; };
 		CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */; };
@@ -52,6 +55,11 @@
 		CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */; };
 		CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */; };
 		CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */; };
+		CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA287762540C16700E6590C /* AccountInfo.storyboard */; };
+		CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */; };
+		CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */; };
+		CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287812540C28F00E6590C /* AccountInfoViewController.swift */; };
+		CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */; };
 		CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */; };
 		CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */; };
 		CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */; };
@@ -296,6 +304,9 @@
 		CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderCellDataProvider.swift; sourceTree = "<group>"; };
 		CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsHeaderCell.xib; sourceTree = "<group>"; };
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
+		CE169358254181100043B1A4 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
+		CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoComponentView.xib; sourceTree = "<group>"; };
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
 		CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionTableViewCell.xib; sourceTree = "<group>"; };
@@ -331,6 +342,11 @@
 		CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentView.swift; sourceTree = "<group>"; };
 		CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentViewModel.swift; sourceTree = "<group>"; };
 		CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionComponentView.xib; sourceTree = "<group>"; };
+		CEA287762540C16700E6590C /* AccountInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountInfo.storyboard; sourceTree = "<group>"; };
+		CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewControllerFactory.swift; sourceTree = "<group>"; };
+		CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoNavigator.swift; sourceTree = "<group>"; };
+		CEA287812540C28F00E6590C /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
+		CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewModel.swift; sourceTree = "<group>"; };
 		CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
@@ -631,6 +647,23 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		CE169357254181000043B1A4 /* Temporary */ = {
+			isa = PBXGroup;
+			children = (
+				CE169358254181100043B1A4 /* UserInfo.swift */,
+			);
+			path = Temporary;
+			sourceTree = "<group>";
+		};
+		CE1693692541AB100043B1A4 /* AccountInfoComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */,
+				CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */,
+			);
+			path = AccountInfoComponentView;
+			sourceTree = "<group>";
+		};
 		CE1D6ED2252F38C10091F6D9 /* TemporaryHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +707,7 @@
 		CE55ECF425265B7D003E168F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2876D2540C06800E6590C /* AccountInfo */,
 				CE95FBC7252DC394003E539B /* QuickActionItems */,
 				CE55ECF525265CDA003E168F /* ProfileNavigator.swift */,
 				CE55ECF625265CDA003E168F /* ProfileViewController.swift */,
@@ -749,6 +783,19 @@
 				CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */,
 			);
 			path = PromotionTableViewCell;
+			sourceTree = "<group>";
+		};
+		CEA2876D2540C06800E6590C /* AccountInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE169357254181000043B1A4 /* Temporary */,
+				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
+				CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */,
+				CEA287812540C28F00E6590C /* AccountInfoViewController.swift */,
+				CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */,
+				CEA287762540C16700E6590C /* AccountInfo.storyboard */,
+			);
+			path = AccountInfo;
 			sourceTree = "<group>";
 		};
 		CEA97673252CA669003CB1AB /* BalanceTableViewCell */ = {
@@ -1077,6 +1124,7 @@
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
 				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
 				D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */,
+				CE1693692541AB100043B1A4 /* AccountInfoComponentView */,
 				CEE15C3825349C130033BF93 /* NotificationComponentView */,
 				CE95FC8A252F2AFE003E539B /* PromotionComponentView */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
@@ -1763,8 +1811,10 @@
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
 				CE55ECFE25265CF1003E168F /* Profile.storyboard in Resources */,
 				D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */,
+				CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */,
 				D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
+				CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */,
 				CEE356F2252C9C8100A0A25C /* BalanceComponentView.xib in Resources */,
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,
 				CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */,
@@ -1957,6 +2007,7 @@
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
 				CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */,
+				CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
@@ -1967,6 +2018,7 @@
 				CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */,
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
+				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
@@ -2055,6 +2107,7 @@
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
 				CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */,
+				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
@@ -2068,6 +2121,8 @@
 				D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */,
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
+				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
+				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				CEE15C582534A1720033BF93 /* NotificationsProvider.swift in Sources */,
@@ -2083,6 +2138,7 @@
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */,
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
+				CE169359254181100043B1A4 /* UserInfo.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,

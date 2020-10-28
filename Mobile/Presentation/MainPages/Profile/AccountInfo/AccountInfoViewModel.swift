@@ -1,0 +1,48 @@
+//
+//  AccountInfoViewModel.swift
+//  Mobile
+//
+//  Created by Nika Chkadua on 10/21/20.
+//  Copyright © 2020 Adjarabet. All rights reserved.
+//
+
+import RxSwift
+
+public protocol AccountInfoViewModel: AccountInfoViewModelInput, AccountInfoViewModelOutput {
+}
+
+public protocol AccountInfoViewModelInput {
+    func viewDidLoad()
+}
+
+public protocol AccountInfoViewModelOutput {
+    var action: Observable<AccountInfoViewModelOutputAction> { get }
+    var route: Observable<AccountInfoViewModelRoute> { get }
+}
+
+public enum AccountInfoViewModelOutputAction {
+    case setupWithUserInfo(_ userInfo: UserInfoServices)
+    case setupWithUserSession(_ userSession: UserSessionServices)
+}
+
+public enum AccountInfoViewModelRoute {
+}
+
+public class DefaultAccountInfoViewModel {
+    private let actionSubject = PublishSubject<AccountInfoViewModelOutputAction>()
+    private let routeSubject = PublishSubject<AccountInfoViewModelRoute>()
+
+    @Inject private var userSession: UserSessionServices
+    //Temporary
+    public let userInfo = UserInfoServices()
+}
+
+extension DefaultAccountInfoViewModel: AccountInfoViewModel {
+    public var action: Observable<AccountInfoViewModelOutputAction> { actionSubject.asObserver() }
+    public var route: Observable<AccountInfoViewModelRoute> { routeSubject.asObserver() }
+
+    public func viewDidLoad() {
+        actionSubject.onNext(.setupWithUserInfo(userInfo))
+        actionSubject.onNext(.setupWithUserSession(userSession))
+    }
+}

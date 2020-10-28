@@ -33,4 +33,12 @@ public extension String {
 
         return attributedString
     }
+
+    static let passwordRepresentation = "---------"
+
+    var asPhoneNumber: String {
+        var phoneNumber = self.dropLast(4)
+        phoneNumber.append(contentsOf: "----")
+        return String(phoneNumber)
+    }
 }

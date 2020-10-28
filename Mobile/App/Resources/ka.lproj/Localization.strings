@@ -73,5 +73,26 @@
 "account_parameters" = "Account Parameters";
 "log_out" = "Log Out";
 
+/* Account Info */
+"account_information_title" = "ანგარიშის ინფორმაცია";
+"account_info_private_info_title" = "პირადი ინფორმაცია";
+"account_info_username" = "მომხმარებელი";
+"account_info_user_id" = "მომხმარებლის ID";
+"account_info_personal_id" = "პერსონალური ID";
+"account_info_status" = "სტატუსი";
+"account_info_password" = "პაროლი";
+"account_info_contact_info_title" = "საკონტაქტო ინფორმაცია";
+"account_info_mail" = "ელ.ფოსტა";
+"account_info_phone_number" = "მობილური ნომერი";
+"account_info_personal_info_title" = "პერსონალური ინფორმაცია";
+"account_info_name" = "სახელი";
+"account_info_surname" = "გვარი";
+"account_info_birth_date" = "დაბადების თარიღი";
+"account_info_gender" = "სქესი";
+"account_info_country" = "ქვეყანა";
+"account_info_address" = "მისამართი";
+"account_info_save_button_title" = "შენახვა";
+"account_info_status_button_title" = "დაბლოკვა";
+
 /* Notifications */
 "delete_button_title" = "წაშლა";

@@ -73,5 +73,26 @@
 "account_parameters" = "Account Parameters";
 "log_out" = "Log Out";
 
+/* Account Info */
+"account_information_title" = "Account Information";
+"account_info_private_info_title" = "Private Information";
+"account_info_username" = "Username";
+"account_info_user_id" = "User ID";
+"account_info_personal_id" = "Personal ID";
+"account_info_status" = "Status";
+"account_info_password" = "Password";
+"account_info_contact_info_title" = "Contact Information";
+"account_info_mail" = "Mail";
+"account_info_phone_number" = "Phone Number";
+"account_info_personal_info_title" = "Personal Information";
+"account_info_name" = "Name";
+"account_info_surname" = "Surname";
+"account_info_birth_date" = "Birth Date";
+"account_info_gender" = "Gender";
+"account_info_country" = "Country";
+"account_info_address" = "Address";
+"account_info_save_button_title" = "Save";
+"account_info_status_button_title" = "SELF SUSPEND";
+
 /* Notifications */
 "delete_button_title" = "Delete";
