@@ -65,7 +65,7 @@ public class AccountInfoViewController: ABViewController {
     private func didRecive(action: AccountInfoViewModelOutputAction) {
         switch action {
         case .setupWithUserInfo(let userInfo): setupViewsWith(userInfo: userInfo)
-        case .setupWithUserSession(let userSession): setupViewsWith(userSession: userSession)
+        case .setupWithUserSession(let userSessionModel): setupViewsWith(userSessionModel: userSessionModel)
         }
     }
 
@@ -142,10 +142,10 @@ public class AccountInfoViewController: ABViewController {
         countryView.set(placeholderText: R.string.localization.account_info_country(), titleText: userInfo.country)
     }
 
-    private func setupViewsWith(userSession: UserSessionServices) {
-        usernameView.set(placeholderText: R.string.localization.account_info_username(), titleText: userSession.username ?? "Guest")
-        userIdView.set(placeholderText: R.string.localization.account_info_user_id(), titleText: String(userSession.userId ?? 0))
-        passwordView.set(placeholderText: R.string.localization.account_info_password(), titleText: String.passwordRepresentation)
+    private func setupViewsWith(userSessionModel: UserSessionModel) {
+        usernameView.set(placeholderText: R.string.localization.account_info_username(), titleText: userSessionModel.username)
+        userIdView.set(placeholderText: R.string.localization.account_info_user_id(), titleText: userSessionModel.userId)
+        passwordView.set(placeholderText: R.string.localization.account_info_password(), titleText: userSessionModel.password)
         passwordView.bringSubviewToFront(editPasswordButton)
     }
 

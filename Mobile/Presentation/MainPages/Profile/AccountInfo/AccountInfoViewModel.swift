@@ -22,7 +22,7 @@ public protocol AccountInfoViewModelOutput {
 
 public enum AccountInfoViewModelOutputAction {
     case setupWithUserInfo(_ userInfo: UserInfoServices)
-    case setupWithUserSession(_ userSession: UserSessionServices)
+    case setupWithUserSession(_ userSessionModel: UserSessionModel)
 }
 
 public enum AccountInfoViewModelRoute {
@@ -43,6 +43,8 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
 
     public func viewDidLoad() {
         actionSubject.onNext(.setupWithUserInfo(userInfo))
-        actionSubject.onNext(.setupWithUserSession(userSession))
+
+        let userSessionModel = UserSessionModel(username: userSession.username ?? "Guest", userId: String(userSession.userId ?? 0), password: String.passwordRepresentation)
+        actionSubject.onNext(.setupWithUserSession(userSessionModel))
     }
 }

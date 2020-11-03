@@ -83,7 +83,7 @@ public class ABTableViewController: AppTableViewController {
 
     public override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteItem = UIContextualAction(style: .destructive, title: "") { _, _, _ in
-            self.delegate?.didDeleteCell(at: indexPath)
+            (self.dataProvider?[indexPath] as? AppDeletableCellDelegate)?.didDelete(at: indexPath)
         }
         deleteItem.image = R.image.notifications.trash()
         let actions = UISwipeActionsConfiguration(actions: [deleteItem])

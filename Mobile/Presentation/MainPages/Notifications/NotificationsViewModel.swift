@@ -22,6 +22,7 @@ public protocol NotificationsViewModelOutput {
 
 public enum NotificationsViewModelOutputAction {
     case initialize(AppListDataProvider)
+    case didDeleteCell(atIndexPath: IndexPath)
 }
 
 public enum NotificationsViewModelRoute {
@@ -49,6 +50,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
                 model.action.subscribe(onNext: { action in
                     switch action {
                     case .didSelect(let notification): self.routeSubject.onNext(.openNotificationContentPage(notification: notification))
+                    case .didDelete(let indexPath): self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
                     default:
                         break
                     }

@@ -77,10 +77,10 @@ extension DefaultLoginViewModel: LoginViewModel {
                                                       icon: biometricLoginUseCase.icon,
                                                       title: biometricLoginUseCase.title))
     }
-    
+
     public func viewDidAppear() {
         guard !AppSessionProvider.automaticBiometriLoginShown else { return }
-            
+
         biometricLogin()
         AppSessionProvider.automaticBiometriLoginShown = true
     }

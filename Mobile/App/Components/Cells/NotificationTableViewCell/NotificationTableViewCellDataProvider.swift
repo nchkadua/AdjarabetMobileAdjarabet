@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol NotificationTableViewCellDataProvider: AppCellDelegate, NotificationComponentViewModel, StaticHeightDataProvider { }
+public protocol NotificationTableViewCellDataProvider: AppCellDelegate, NotificationComponentViewModel, StaticHeightDataProvider, AppDeletableCellDelegate { }
 
 public extension NotificationTableViewCellDataProvider {
     var identifier: String { NotificationTableViewCell.identifierValue }

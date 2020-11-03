@@ -55,6 +55,8 @@
 		CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */; };
 		CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */; };
 		CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */; };
+		CE9A1753255185D6006655AF /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A1752255185D6006655AF /* UserServices.swift */; };
+		CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */; };
 		CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA287762540C16700E6590C /* AccountInfo.storyboard */; };
 		CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */; };
 		CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */; };
@@ -342,6 +344,8 @@
 		CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentView.swift; sourceTree = "<group>"; };
 		CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentViewModel.swift; sourceTree = "<group>"; };
 		CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionComponentView.xib; sourceTree = "<group>"; };
+		CE9A1752255185D6006655AF /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDeletableCellDelegate.swift; sourceTree = "<group>"; };
 		CEA287762540C16700E6590C /* AccountInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountInfo.storyboard; sourceTree = "<group>"; };
 		CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewControllerFactory.swift; sourceTree = "<group>"; };
 		CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoNavigator.swift; sourceTree = "<group>"; };
@@ -785,9 +789,26 @@
 			path = PromotionTableViewCell;
 			sourceTree = "<group>";
 		};
+		CE9A17512551854A006655AF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CE9A1752255185D6006655AF /* UserServices.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		CE9A175625518FA5006655AF /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		CEA2876D2540C06800E6590C /* AccountInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CE9A17512551854A006655AF /* Helper */,
 				CE169357254181000043B1A4 /* Temporary */,
 				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
 				CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */,
@@ -1443,6 +1464,7 @@
 		D8A47DE624335DC60077AA8E /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CE9A175625518FA5006655AF /* Delegates */,
 				D85C9C352433749D00F1D4FE /* AppDelegate */,
 				D85C9C362433754A00F1D4FE /* BuildPhases */,
 				D87E3C5B244600B1004A4BDF /* Components */,
@@ -2040,6 +2062,7 @@
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
+				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
 				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
@@ -2101,6 +2124,7 @@
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */,
+				CE9A1753255185D6006655AF /* UserServices.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,

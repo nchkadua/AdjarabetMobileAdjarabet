@@ -18,6 +18,7 @@ public struct NotificationComponentViewModelParams {
 public protocol NotificationComponentViewModelInput {
     func didBind()
     func didSelect(at indexPath: IndexPath)
+    func didDelete(at indexPath: IndexPath)
 }
 
 public protocol NotificationComponentViewModelOutput {
@@ -28,6 +29,7 @@ public protocol NotificationComponentViewModelOutput {
 public enum NotificationComponentViewModelOutputAction {
     case set(notifiation: Notification)
     case didSelect(notification: Notification)
+    case didDelete(atIndex: IndexPath)
 }
 
 public class DefaultNotificationComponentViewModel {
@@ -48,5 +50,9 @@ extension DefaultNotificationComponentViewModel: NotificationComponentViewModel 
 
     public func didSelect(at indexPath: IndexPath) {
         actionSubject.onNext(.didSelect(notification: params.notification))
+    }
+
+    public func didDelete(at indexPath: IndexPath) {
+        actionSubject.onNext(.didDelete(atIndex: indexPath))
     }
 }

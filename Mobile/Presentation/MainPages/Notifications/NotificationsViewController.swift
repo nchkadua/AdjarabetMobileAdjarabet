@@ -55,7 +55,6 @@ public class NotificationsViewController: UIViewController {
 
         appTableViewController.isTabBarManagementEnabled = true
         appTableViewController.canEditRow = true
-        appTableViewController.delegate = self
     }
 
     private func bind(to viewModel: NotificationsViewModel) {
@@ -70,8 +69,8 @@ public class NotificationsViewController: UIViewController {
 
     private func didReceive(action: NotificationsViewModelOutputAction) {
         switch action {
-        case .initialize(let appListDataProvider):
-            appTableViewController.dataProvider = appListDataProvider
+        case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
+        case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
         }
     }
 
@@ -82,6 +81,12 @@ public class NotificationsViewController: UIViewController {
     }
 
     // MARK: Action methods
+    private func deleteCell(at indexPath: IndexPath) {
+        NotificationsProvider.delete(at: indexPath.section)
+        appTableViewController.reloadItems(deletionIndexPathes: [indexPath])
+        setNotificationsBarButton()
+    }
+
     private func openNotificationContentPage(with notification: Notification) {
         mainTabBarViewController?.hideFloatingTabBar()
         navigator.navigate(to: .notificationContentPage(params: .init(notification: notification)), animated: true)
@@ -89,11 +94,3 @@ public class NotificationsViewController: UIViewController {
 }
 
 extension NotificationsViewController: CommonBarButtonProviding { }
-
-extension NotificationsViewController: ABTableViewControllerDelegate {
-    public func didDeleteCell(at indexPath: IndexPath) {
-        NotificationsProvider.delete(at: indexPath.section)
-        appTableViewController.reloadItems(deletionIndexPathes: [indexPath])
-        setNotificationsBarButton()
-    }
-}
