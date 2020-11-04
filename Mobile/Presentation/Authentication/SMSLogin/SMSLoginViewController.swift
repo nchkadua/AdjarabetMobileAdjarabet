@@ -37,9 +37,6 @@ public class SMSLoginViewController: ABViewController {
         super.viewDidLoad()
 
         setup()
-        addKeyboardDismissOnTap()
-        observeKeyboardNotifications()
-
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
@@ -81,6 +78,7 @@ public class SMSLoginViewController: ABViewController {
     // MAKR: Setup methods
     private func setup() {
         setBaseBackgorundColor()
+        setupKeyboard()
         setupNavigationItem()
         setupScrollView()
         setupLabels()

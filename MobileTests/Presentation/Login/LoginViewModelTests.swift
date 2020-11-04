@@ -18,7 +18,7 @@ class LoginViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        viewModel = DefaultLoginViewModel(params: .init())
+        viewModel = DefaultLoginViewModel(params: LoginViewModelParams(showBiometryLoginAutomatically: true))
     }
 
     func testLoginSuccess() {

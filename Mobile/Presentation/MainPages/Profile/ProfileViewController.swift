@@ -63,9 +63,11 @@ public class ProfileViewController: UIViewController {
     }
 
     private func openDeposit() {
+        navigator.navigate(to: .deposit, animated: true)
     }
 
     private func openWithdraw() {
+        navigator.navigate(to: .withdraw, animated: true)
     }
 
     private func openPage(destination: ProfileNavigator.Destination) {

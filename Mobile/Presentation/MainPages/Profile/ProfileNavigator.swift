@@ -10,6 +10,7 @@ public class ProfileNavigator: Navigator {
     private weak var viewController: UIViewController?
     @Inject(from: .factories) public var loginViewControllerFactory: LoginViewControllerFactory
     @Inject(from: .factories) public var accountInfoViewControllerFactory: AccountInfoViewControllerFactory
+    @Inject(from: .factories) public var cashFlowViewControllerFactory: CashFlowViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -31,18 +32,32 @@ public class ProfileNavigator: Navigator {
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
-        case .loginPage:
-            let vc = loginViewControllerFactory.make()
-            vc.modalTransitionStyle = .flipHorizontal
-            let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
-            navC.navigationBar.styleForPrimaryPage()
-
-            viewController?.navigationController?.present(navC, animated: animate, completion: nil)
-        case .accountInformation:
-            let vc = accountInfoViewControllerFactory.make()
-            viewController?.navigationController?.pushViewController(vc, animated: animate)
+        case .deposit: navigateToCashFlow(animate: animate, initialPageIndex: 0)
+        case .withdraw: navigateToCashFlow(animate: animate, initialPageIndex: 1)
+        case .accountInformation: navigateToAccountInformation(animate: animate)
+        case .loginPage: navigateToLogin(animate: animate)
         default:
             break
         }
+    }
+
+    // MARK: Navigations
+    private func navigateToCashFlow(animate: Bool, initialPageIndex: Int) {
+        let vc = cashFlowViewControllerFactory.make(params: CashFlowViewModelParams(initialPageIndex: initialPageIndex))
+        viewController?.navigationController?.present(vc, animated: animate, completion: nil)
+    }
+
+    private func navigateToAccountInformation(animate: Bool) {
+        let vc = accountInfoViewControllerFactory.make()
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
+    }
+
+    private func navigateToLogin(animate: Bool) {
+        let vc = loginViewControllerFactory.make(params: LoginViewModelParams(showBiometryLoginAutomatically: false))
+        vc.modalTransitionStyle = .flipHorizontal
+        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+        navC.navigationBar.styleForPrimaryPage()
+
+        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 }

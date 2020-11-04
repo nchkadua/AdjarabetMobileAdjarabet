@@ -12,6 +12,11 @@ public protocol LoginViewModel: LoginViewModelInput, LoginViewModelOutput {
 }
 
 public struct LoginViewModelParams {
+    var showBiometryLoginAutomatically: Bool
+    
+    public init (showBiometryLoginAutomatically: Bool) {
+        self.showBiometryLoginAutomatically = showBiometryLoginAutomatically
+    }
 }
 
 public protocol LoginViewModelInput {
@@ -20,6 +25,7 @@ public protocol LoginViewModelInput {
     func smsLogin(username: String)
     func login(username: String, password: String)
     func biometricLogin()
+    func languageDidChange()
 }
 
 public protocol LoginViewModelOutput {
@@ -50,7 +56,7 @@ public class DefaultLoginViewModel {
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
     @Inject(from: .useCases) private var biometricLoginUseCase: BiometricLoginUseCase
 
-    public init(params: LoginViewModelParams) {
+    public init(params: LoginViewModelParams = LoginViewModelParams(showBiometryLoginAutomatically: true)) {
         self.params = params
     }
 
@@ -79,10 +85,15 @@ extension DefaultLoginViewModel: LoginViewModel {
     }
 
     public func viewDidAppear() {
-        guard !AppSessionProvider.automaticBiometriLoginShown else { return }
+        if params.showBiometryLoginAutomatically {
+            biometricLogin()
+        }
+    }
 
-        biometricLogin()
-        AppSessionProvider.automaticBiometriLoginShown = true
+    public func languageDidChange() {
+        actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable,
+                                                      icon: biometricLoginUseCase.icon,
+                                                      title: biometricLoginUseCase.title))
     }
 
     public func smsLogin(username: String) {

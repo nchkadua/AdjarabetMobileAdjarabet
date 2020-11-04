@@ -90,10 +90,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 11 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
+    /// Storyboard `CashFlow`.
+    static let cashFlow = _R.storyboard.cashFlow()
+    /// Storyboard `Deposit`.
+    static let deposit = _R.storyboard.deposit()
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
     /// Storyboard `LaunchScreen`.
@@ -114,11 +118,27 @@ struct R: Rswift.Validatable {
     static let smsLogin = _R.storyboard.smsLogin()
     /// Storyboard `Sports`.
     static let sports = _R.storyboard.sports()
+    /// Storyboard `Withdraw`.
+    static let withdraw = _R.storyboard.withdraw()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "AccountInfo", bundle: ...)`
     static func accountInfo(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.accountInfo)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CashFlow", bundle: ...)`
+    static func cashFlow(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.cashFlow)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Deposit", bundle: ...)`
+    static func deposit(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.deposit)
     }
     #endif
 
@@ -189,6 +209,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Sports", bundle: ...)`
     static func sports(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.sports)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Withdraw", bundle: ...)`
+    static func withdraw(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.withdraw)
     }
     #endif
 
@@ -994,6 +1021,21 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.deposit` struct is generated, and contains static references to 1 images.
+    struct deposit {
+      /// Image `addCard`.
+      static let addCard = Rswift.ImageResource(bundle: R.hostingBundle, name: "Deposit/addCard")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "addCard", bundle: ..., traitCollection: ...)`
+      static func addCard(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.deposit.addCard, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.login` struct is generated, and contains static references to 3 images.
     struct login {
       /// Image `legal`.
@@ -1177,12 +1219,14 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.shared` struct is generated, and contains static references to 8 images.
+    /// This `R.image.shared` struct is generated, and contains static references to 9 images.
     struct shared {
       /// Image `back`.
       static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/back")
       /// Image `close`.
       static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/close")
+      /// Image `dropDown`.
+      static let dropDown = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/dropDown")
       /// Image `faceID`.
       static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/faceID")
       /// Image `hideText`.
@@ -1207,6 +1251,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "close", bundle: ..., traitCollection: ...)`
       static func close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.shared.close, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "dropDown", bundle: ..., traitCollection: ...)`
+      static func dropDown(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.dropDown, compatibleWith: traitCollection)
       }
       #endif
 
@@ -1327,10 +1378,25 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.withdraw` struct is generated, and contains static references to 1 images.
+    struct withdraw {
+      /// Image `info`.
+      static let info = Rswift.ImageResource(bundle: R.hostingBundle, name: "Withdraw/info")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "info", bundle: ..., traitCollection: ...)`
+      static func info(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.withdraw.info, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 26 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 31 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -1340,6 +1406,10 @@ struct R: Rswift.Validatable {
     static let balanceComponentView = _R.nib._BalanceComponentView()
     /// Nib `BalanceTableViewCell`.
     static let balanceTableViewCell = _R.nib._BalanceTableViewCell()
+    /// Nib `CashFlowTabComponentView`.
+    static let cashFlowTabComponentView = _R.nib._CashFlowTabComponentView()
+    /// Nib `DepositInstructionView`.
+    static let depositInstructionView = _R.nib._DepositInstructionView()
     /// Nib `FooterComponentView`.
     static let footerComponentView = _R.nib._FooterComponentView()
     /// Nib `FooterTableViewCell`.
@@ -1348,6 +1418,8 @@ struct R: Rswift.Validatable {
     static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
     /// Nib `GameLauncherComponentView`.
     static let gameLauncherComponentView = _R.nib._GameLauncherComponentView()
+    /// Nib `LabelComponentView`.
+    static let labelComponentView = _R.nib._LabelComponentView()
     /// Nib `LoadingCollectionViewCell`.
     static let loadingCollectionViewCell = _R.nib._LoadingCollectionViewCell()
     /// Nib `LoadingComponentView`.
@@ -1384,6 +1456,10 @@ struct R: Rswift.Validatable {
     static let recentlyPlayedCollectionViewCell = _R.nib._RecentlyPlayedCollectionViewCell()
     /// Nib `RecentlyPlayedComponentView`.
     static let recentlyPlayedComponentView = _R.nib._RecentlyPlayedComponentView()
+    /// Nib `WithdrawInstructionView`.
+    static let withdrawInstructionView = _R.nib._WithdrawInstructionView()
+    /// Nib `WithdrawTermsView`.
+    static let withdrawTermsView = _R.nib._WithdrawTermsView()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "ABInputView", in: bundle)`
@@ -1418,6 +1494,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CashFlowTabComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.cashFlowTabComponentView) instead")
+    static func cashFlowTabComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.cashFlowTabComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DepositInstructionView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.depositInstructionView) instead")
+    static func depositInstructionView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.depositInstructionView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "FooterComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.footerComponentView) instead")
     static func footerComponentView(_: Void = ()) -> UIKit.UINib {
@@ -1446,6 +1538,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherComponentView) instead")
     static func gameLauncherComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gameLauncherComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LabelComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.labelComponentView) instead")
+    static func labelComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.labelComponentView)
     }
     #endif
 
@@ -1593,6 +1693,22 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "WithdrawInstructionView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.withdrawInstructionView) instead")
+    static func withdrawInstructionView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.withdrawInstructionView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "WithdrawTermsView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.withdrawTermsView) instead")
+    static func withdrawTermsView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.withdrawTermsView)
+    }
+    #endif
+
     static func abInputView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.abInputView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1609,6 +1725,14 @@ struct R: Rswift.Validatable {
       return R.nib.balanceTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BalanceTableViewCell
     }
 
+    static func cashFlowTabComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.cashFlowTabComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func depositInstructionView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.depositInstructionView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func footerComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.footerComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1623,6 +1747,10 @@ struct R: Rswift.Validatable {
 
     static func gameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func labelComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.labelComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func loadingCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoadingCollectionViewCell? {
@@ -1697,12 +1825,20 @@ struct R: Rswift.Validatable {
       return R.nib.recentlyPlayedComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func withdrawInstructionView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.withdrawInstructionView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func withdrawTermsView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.withdrawTermsView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     fileprivate init() {}
   }
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 65 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 85 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -1760,6 +1896,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sms_did_not_receive_message = Rswift.StringResource(key: "sms_did_not_receive_message", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, ka, hy
+      static let cashflow_done_button_title = Rswift.StringResource(key: "cashflow_done_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Forgot Password?
       ///
       /// Locales: en, ka, hy
@@ -1872,6 +2012,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_private_info_title = Rswift.StringResource(key: "account_info_private_info_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Proceed
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_proceed_button_title = Rswift.StringResource(key: "deposit_proceed_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Proceed
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_proceed_button_title = Rswift.StringResource(key: "withdraw_proceed_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Promotions
       ///
       /// Locales: en, ka, hy
@@ -1964,6 +2112,74 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let verified = Rswift.StringResource(key: "verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: აირჩიეთ სასურველი ბარათი
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_description_card = Rswift.StringResource(key: "withdraw_description_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_rule1 = Rswift.StringResource(key: "withdraw_rule1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ბარათი
+      ///
+      /// Locales: en
+      static let withdraw_card_title = Rswift.StringResource(key: "withdraw_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: ბარათი
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_card_title = Rswift.StringResource(key: "deposit_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გადახდის მეთოდი
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_payment_method_title = Rswift.StringResource(key: "deposit_payment_method_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_rule2 = Rswift.StringResource(key: "withdraw_rule2", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გატანის ინსტრუქცია
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_description_title = Rswift.StringResource(key: "withdraw_description_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გრაფაში 'თანხა' ჩაწერეთ თვენთვის სასურველი თანხა
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_description_amount = Rswift.StringResource(key: "withdraw_description_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_description_proceed = Rswift.StringResource(key: "withdraw_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დააჭირეთ ღილაკს გადახდა
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_description_proceed = Rswift.StringResource(key: "deposit_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: თანხა
+      ///
+      /// Locales: en
+      static let withdraw_amount_title = Rswift.StringResource(key: "withdraw_amount_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: თანხა
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_amount_title = Rswift.StringResource(key: "deposit_amount_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ლიმიტი ერთ ბარათზე
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_description_title = Rswift.StringResource(key: "deposit_description_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: მონიშნე სასურველი დამახსოვრებული ბარათი
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_description_card = Rswift.StringResource(key: "deposit_description_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ტრანზაქციის საკომისიო
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_commission_title = Rswift.StringResource(key: "withdraw_commission_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: შეიყვანე სასურველი თანხა
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_description_amount = Rswift.StringResource(key: "deposit_description_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ჯამური თანხა
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_total_amount_title = Rswift.StringResource(key: "withdraw_total_amount_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
 
       /// en translation: Account Information
       ///
@@ -2173,6 +2389,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("sms_did_not_receive_message", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, ka, hy
+      static func cashflow_done_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cashflow_done_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cashflow_done_button_title"
+        }
+
+        return NSLocalizedString("cashflow_done_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Forgot Password?
@@ -2595,6 +2826,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_private_info_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Proceed
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_proceed_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_proceed_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_proceed_button_title"
+        }
+
+        return NSLocalizedString("deposit_proceed_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Proceed
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_proceed_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_proceed_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_proceed_button_title"
+        }
+
+        return NSLocalizedString("withdraw_proceed_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Promotions
       ///
       /// Locales: en, ka, hy
@@ -2940,6 +3201,261 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("verified", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: აირჩიეთ სასურველი ბარათი
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_description_card(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_description_card", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_description_card"
+        }
+
+        return NSLocalizedString("withdraw_description_card", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_rule1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_rule1", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_rule1"
+        }
+
+        return NSLocalizedString("withdraw_rule1", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ბარათი
+      ///
+      /// Locales: en
+      static func withdraw_card_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_card_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_card_title"
+        }
+
+        return NSLocalizedString("withdraw_card_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ბარათი
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_card_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_card_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_card_title"
+        }
+
+        return NSLocalizedString("deposit_card_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: გადახდის მეთოდი
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_payment_method_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_payment_method_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_payment_method_title"
+        }
+
+        return NSLocalizedString("deposit_payment_method_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_rule2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_rule2", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_rule2"
+        }
+
+        return NSLocalizedString("withdraw_rule2", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: გატანის ინსტრუქცია
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_description_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_description_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_description_title"
+        }
+
+        return NSLocalizedString("withdraw_description_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: გრაფაში 'თანხა' ჩაწერეთ თვენთვის სასურველი თანხა
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_description_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_description_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_description_amount"
+        }
+
+        return NSLocalizedString("withdraw_description_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_description_proceed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_description_proceed", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_description_proceed"
+        }
+
+        return NSLocalizedString("withdraw_description_proceed", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: დააჭირეთ ღილაკს გადახდა
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_description_proceed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_description_proceed", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_description_proceed"
+        }
+
+        return NSLocalizedString("deposit_description_proceed", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: თანხა
+      ///
+      /// Locales: en
+      static func withdraw_amount_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_amount_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_amount_title"
+        }
+
+        return NSLocalizedString("withdraw_amount_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: თანხა
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_amount_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_amount_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_amount_title"
+        }
+
+        return NSLocalizedString("deposit_amount_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ლიმიტი ერთ ბარათზე
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_description_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_description_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_description_title"
+        }
+
+        return NSLocalizedString("deposit_description_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: მონიშნე სასურველი დამახსოვრებული ბარათი
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_description_card(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_description_card", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_description_card"
+        }
+
+        return NSLocalizedString("deposit_description_card", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ტრანზაქციის საკომისიო
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_commission_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_commission_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_commission_title"
+        }
+
+        return NSLocalizedString("withdraw_commission_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: შეიყვანე სასურველი თანხა
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_description_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_description_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_description_amount"
+        }
+
+        return NSLocalizedString("deposit_description_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ჯამური თანხა
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_total_amount_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_total_amount_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_total_amount_title"
+        }
+
+        return NSLocalizedString("withdraw_total_amount_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 
@@ -2973,10 +3489,12 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _BalanceComponentView.validate()
+      try _CashFlowTabComponentView.validate()
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
       try _ProfileInfoComponentView.validate()
       try _QuickActionComponentView.validate()
+      try _WithdrawTermsView.validate()
     }
 
     struct _ABInputView: Rswift.NibResourceType {
@@ -3024,6 +3542,35 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BalanceTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BalanceTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CashFlowTabComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CashFlowTabComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/QuickAction/withdraw", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/withdraw' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DepositInstructionView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DepositInstructionView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -3083,6 +3630,17 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in storyboard 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in storyboard 'GameLauncherComponentView', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LabelComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LabelComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -3299,6 +3857,34 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _WithdrawInstructionView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "WithdrawInstructionView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _WithdrawTermsView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "WithdrawTermsView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Withdraw/info", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Withdraw/info' is used in nib 'WithdrawTermsView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
@@ -3308,6 +3894,12 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
       try accountInfo.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try cashFlow.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try deposit.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try home.validate()
@@ -3339,6 +3931,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try sports.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try withdraw.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -3356,6 +3951,46 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.accountInfo().accountInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accountInfoViewController' could not be loaded from storyboard 'AccountInfo' as 'AccountInfoViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct cashFlow: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let cashFlowViewController = StoryboardViewControllerResource<CashFlowViewController>(identifier: "CashFlowViewController")
+      let name = "CashFlow"
+
+      func cashFlowViewController(_: Void = ()) -> CashFlowViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: cashFlowViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.cashFlow().cashFlowViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'cashFlowViewController' could not be loaded from storyboard 'CashFlow' as 'CashFlowViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct deposit: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let depositViewController = StoryboardViewControllerResource<DepositViewController>(identifier: "DepositViewController")
+      let name = "Deposit"
+
+      func depositViewController(_: Void = ()) -> DepositViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: depositViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.deposit().depositViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'depositViewController' could not be loaded from storyboard 'Deposit' as 'DepositViewController'.") }
       }
 
       fileprivate init() {}
@@ -3567,6 +4202,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.sports().sportsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sportsViewController' could not be loaded from storyboard 'Sports' as 'SportsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct withdraw: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Withdraw"
+      let withdrawViewController = StoryboardViewControllerResource<WithdrawViewController>(identifier: "WithdrawViewController")
+
+      func withdrawViewController(_: Void = ()) -> WithdrawViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: withdrawViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.withdraw().withdrawViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'withdrawViewController' could not be loaded from storyboard 'Withdraw' as 'WithdrawViewController'.") }
       }
 
       fileprivate init() {}

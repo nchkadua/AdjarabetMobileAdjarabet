@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Deposit View Controller-->
+        <scene sceneID="NiD-TU-cmy">
+            <objects>
+                <viewController storyboardIdentifier="DepositViewController" id="T6Y-27-BcM" customClass="DepositViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fBb-4q-hdN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCT-uC-FVO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Ga-w8-HdC">
+                                        <rect key="frame" x="0.0" y="10" width="414" height="544"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QeI-Xk-dqq">
+                                                <rect key="frame" x="20" y="0.0" width="374" height="314"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-2c-tZA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="240"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfI-Va-WjC" customClass="LabelComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="54" id="hAL-wR-rGG"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-hq-aNR" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="62" width="374" height="54"/>
+                                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="54" id="Ssv-L9-aZ9"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9p-5d-bYw" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="124" width="374" height="54"/>
+                                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="54" id="l7E-4s-RqK"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rcm-ix-spY">
+                                                                <rect key="frame" x="0.0" y="186" width="374" height="54"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iso-jd-X47" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="54"/>
+                                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="54" id="LrG-sQ-k60"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lA-lY-EMb">
+                                                                        <rect key="frame" x="314" y="0.0" width="60" height="54"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="54" id="QEJ-7H-b1N"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="tDC-kX-CmT"/>
+                                                                        </constraints>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ShY-AA-Mp9">
+                                                        <rect key="frame" x="0.0" y="260" width="374" height="54"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrm-0P-AuI" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="54" id="H8A-F1-vxo"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aK8-0X-L67">
+                                                <rect key="frame" x="20" y="344" width="374" height="200"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaC-QQ-4rT" customClass="DepositInstructionView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
+                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="T6I-qI-FBv"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7Ga-w8-HdC" firstAttribute="top" secondItem="QCT-uC-FVO" secondAttribute="top" constant="10" id="6TZ-lN-0qj"/>
+                                    <constraint firstItem="7Ga-w8-HdC" firstAttribute="leading" secondItem="QCT-uC-FVO" secondAttribute="leading" id="aeJ-WB-FcO"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Ga-w8-HdC" secondAttribute="trailing" id="yRL-M2-USP"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Ga-w8-HdC" secondAttribute="bottom" id="z1d-gD-AIt"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="jN9-y9-Q5C"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="5xO-W3-lSU"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9WP-WV-Rxl"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QCT-uC-FVO" firstAttribute="leading" secondItem="9WP-WV-Rxl" secondAttribute="leading" id="2xH-aM-ZIS"/>
+                            <constraint firstAttribute="bottom" secondItem="QCT-uC-FVO" secondAttribute="bottom" id="HbK-5z-fIs"/>
+                            <constraint firstItem="QCT-uC-FVO" firstAttribute="centerX" secondItem="fBb-4q-hdN" secondAttribute="centerX" id="bQN-Kl-Qnl"/>
+                            <constraint firstItem="QCT-uC-FVO" firstAttribute="trailing" secondItem="9WP-WV-Rxl" secondAttribute="trailing" id="efu-yy-a0X"/>
+                            <constraint firstItem="QCT-uC-FVO" firstAttribute="top" secondItem="fBb-4q-hdN" secondAttribute="top" id="pwb-7n-6NK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addCardButton" destination="2lA-lY-EMb" id="y3y-gM-OMS"/>
+                        <outlet property="amountInputView" destination="I9p-5d-bYw" id="hht-Z1-ewh"/>
+                        <outlet property="cardNumberInputView" destination="iso-jd-X47" id="jN4-C3-ey3"/>
+                        <outlet property="labelComponentView" destination="pfI-Va-WjC" id="zgM-3d-WTQ"/>
+                        <outlet property="paymentMethodInputView" destination="LWD-hq-aNR" id="hQy-tz-Uhd"/>
+                        <outlet property="proceedButton" destination="mrm-0P-AuI" id="z3r-UH-9jf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OyT-4B-MZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-371.01449275362324" y="-236.38392857142856"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="mrm-0P-AuI">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

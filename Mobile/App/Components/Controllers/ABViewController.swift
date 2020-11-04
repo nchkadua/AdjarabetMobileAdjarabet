@@ -26,6 +26,11 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         view.addGestureRecognizer(tap)
     }
 
+    public func setupKeyboard() {
+        observeKeyboardNotifications()
+        addKeyboardDismissOnTap()
+    }
+
     // MARK: KeyboardListening
     public func keyboardWillShow(notification: NSNotification) {
         isKeyboardOpen = true

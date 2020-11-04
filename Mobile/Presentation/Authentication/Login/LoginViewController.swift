@@ -9,7 +9,7 @@
 import RxSwift
 
 public class LoginViewController: ABViewController {
-    public var viewModel: LoginViewModel = DefaultLoginViewModel(params: .init())
+    public var viewModel: LoginViewModel!
     public lazy var navigator = LoginNavigator(viewController: self)
 
     // MARK: IBOutlets
@@ -38,9 +38,6 @@ public class LoginViewController: ABViewController {
         super.viewDidLoad()
 
         setup()
-        observeKeyboardNotifications()
-        addKeyboardDismissOnTap()
-
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
@@ -84,6 +81,7 @@ public class LoginViewController: ABViewController {
     // MAKR: Setup methods
     private func setup() {
         setBaseBackgorundColor()
+        setupKeyboard()
         setupNavigationItem()
         setupScrollView()
         setupLabels()
@@ -126,7 +124,6 @@ public class LoginViewController: ABViewController {
 
         biometryButton.setStyle(to: .textLink(state: .acvite, size: .small))
         biometryButton.setTitleColor(to: .systemWhite(), for: .normal)
-        biometryButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
         biometryIconButton.setTintColor(to: .systemWhite())
         biometryIconButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
@@ -234,5 +231,6 @@ extension LoginViewController: InputViewsProviding {
 extension LoginViewController: FooterComponentViewDelegate {
     public func languageDidChange(language: Language) {
         setup()
+        viewModel.languageDidChange()
     }
 }

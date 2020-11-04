@@ -7,11 +7,13 @@
 //
 
 public protocol LoginViewControllerFactory {
-    func make() -> LoginViewController
+    func make(params: LoginViewModelParams) -> LoginViewController
 }
 
 public class DefaultLoginViewControllerFactory: LoginViewControllerFactory {
-    public func make() -> LoginViewController {
-        R.storyboard.login().instantiate(controller: LoginViewController.self)!
+    public func make(params: LoginViewModelParams) -> LoginViewController {
+        let vc = R.storyboard.login().instantiate(controller: LoginViewController.self)!
+        vc.viewModel = DefaultLoginViewModel(params: params)
+        return vc
     }
 }

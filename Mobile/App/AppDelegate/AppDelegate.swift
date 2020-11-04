@@ -51,11 +51,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 public extension DependencyContainer {
     static var viewModels = DependencyContainer {
+        Module { DefaultLoginViewModel() as LoginViewModel }
         Module { DefaultHomeViewModel() as HomeViewModel }
         Module { DefaultPromotionsViewModel() as PromotionsViewModel }
         Module { DefaultNotificationsViewModel() as NotificationsViewModel }
         Module { DefaultProfileViewModel() as ProfileViewModel }
         Module { DefaultAccountInfoViewModel() as AccountInfoViewModel }
+        Module { DefaultCashFlowViewModel() as CashFlowViewModel }
+        Module { DefaultDepositViewModel() as DepositViewModel }
+        Module { DefaultWithdrawViewModel() as WithdrawViewModel }
+        Module { DefaultCashFlowTabComponentViewModel() as CashFlowTabComponentViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -76,6 +81,9 @@ public extension DependencyContainer {
         Module { DefaultProfileFactory() as ProfileFactory }
         Module { DefaultNotificationContentFactory() as NotificationContentFactory }
         Module { DefaultAccountInfoViewControllerFactory() as AccountInfoViewControllerFactory }
+        Module { DefaultCashFlowViewControllerFactory() as CashFlowViewControllerFactory }
+        Module { DefaultDepositViewControllerFactory() as DepositViewControllerFactory }
+        Module { DefaultWithdrawViewControllerFactory() as WithdrawViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

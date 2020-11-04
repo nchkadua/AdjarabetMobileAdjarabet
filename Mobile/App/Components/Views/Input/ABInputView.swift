@@ -42,6 +42,10 @@ public class ABInputView: UIView {
     public var leftComponent: UIButton { leftButton }
     public var rightComponent: UIButton { rightButton }
 
+    /// PickerView
+    private var pickerView = UIPickerView()
+    private var dataSourceItems = [String]()
+
     // MARK: Init
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -124,6 +128,10 @@ public class ABInputView: UIView {
         textField.isSecureTextEntry = false
     }
 
+    public func setupWith(backgroundColor color: DesignSystem.Color = DesignSystem.Input.backgroundColor, borderWidth width: CGFloat = DesignSystem.Input.borderWidth) {
+        setupWrapperView(backgroundColor: color, borderWidth: width)
+    }
+
     // MARK: Private Methods
     @objc private func makeTextFieldFirstResponderIfNeeded() {
         let canBecomeFirstResponder = textField.isUserInteractionEnabled && textField.canBecomeFirstResponder
@@ -133,9 +141,9 @@ public class ABInputView: UIView {
         }
     }
 
-    private func setupWrapperView() {
-        wrapperView.setBackgorundColor(to: DesignSystem.Input.backgroundColor)
-        wrapperView.borderWidth = DesignSystem.Input.borderWidth
+    private func setupWrapperView(backgroundColor: DesignSystem.Color = DesignSystem.Input.backgroundColor, borderWidth: CGFloat = DesignSystem.Input.borderWidth) {
+        wrapperView.setBackgorundColor(to: backgroundColor)
+        wrapperView.borderWidth = borderWidth
         wrapperView.cornerRadius = DesignSystem.Input.cornerRadius
         wrapperView.setBorderColor(to: DesignSystem.Input.borderColor)
 
@@ -205,5 +213,61 @@ extension ABInputView: Xibable {
         setupPlaceholderLabel()
 
         configurePosition(animated: false)
+    }
+}
+
+// MARK: Picker
+extension ABInputView {
+    public func setupPickerView(withItems items: [String]) {
+        dataSourceItems = items
+        setup()
+        addToolBar()
+    }
+
+    private func setup() {
+        mainTextField.inputView = pickerView
+        pickerView.backgroundColor = DesignSystem.Color.systemGray200().value
+        pickerView.delegate = self
+        pickerView.dataSource = self
+
+        setTextAndConfigure(text: dataSourceItems.first)
+    }
+
+    private func addToolBar() {
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = false
+        toolBar.sizeToFit()
+
+        toolBar.tintColor = DesignSystem.Color.systemWhite().value
+        toolBar.barTintColor = DesignSystem.Color.systemGray200().value
+        let doneButton = UIBarButtonItem(title: R.string.localization.cashflow_done_button_title(), style: UIBarButtonItem.Style.done, target: self, action: #selector(doneDidTap))
+        toolBar.setItems([doneButton], animated: false)
+
+        mainTextField.inputAccessoryView = toolBar
+    }
+
+    @objc private func doneDidTap() {
+        mainTextField.resignFirstResponder()
+    }
+}
+
+extension ABInputView: UIPickerViewDelegate {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        setTextAndConfigure(text: dataSourceItems[row])
+    }
+}
+
+extension ABInputView: UIPickerViewDataSource {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        dataSourceItems.count
+    }
+
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        dataSourceItems[row]
     }
 }

@@ -48,6 +48,7 @@ public extension UIViewController {
         let label = UILabel()
         label.text = title
         label.font = R.font.firaGOMedium(size: 15)
+        label.textColor = DesignSystem.Color.systemWhite().value
         navigationItem.titleView = label
     }
 

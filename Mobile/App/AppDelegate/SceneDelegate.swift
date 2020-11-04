@@ -12,6 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        window?.rootViewController = DefaultLoginViewControllerFactory().make().wrap(in: ABNavigationController.self)
+        window?.rootViewController = DefaultLoginViewControllerFactory().make(params: LoginViewModelParams(showBiometryLoginAutomatically: true)).wrap(in: ABNavigationController.self)
     }
 }
