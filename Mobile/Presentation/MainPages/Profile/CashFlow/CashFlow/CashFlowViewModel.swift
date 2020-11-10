@@ -13,7 +13,7 @@ public protocol CashFlowViewModel: CashFlowViewModelInput, CashFlowViewModelOutp
 
 public struct CashFlowViewModelParams {
     var initialPageIndex: Int
-    
+
     public init (initialPageIndex: Int) {
         self.initialPageIndex = initialPageIndex
     }
@@ -46,7 +46,7 @@ public class DefaultCashFlowViewModel {
 
     @Inject(from: .viewModels) private var tabViewModel: CashFlowTabComponentViewModel
     private var viewHasDissappeared = true
-    
+
     public init (params: CashFlowViewModelParams = CashFlowViewModelParams(initialPageIndex: 0)) {
         self.params = params
     }
@@ -66,11 +66,11 @@ extension DefaultCashFlowViewModel: CashFlowViewModel {
         }
         viewHasDissappeared = false
     }
-    
+
     public func viewDidDissappear() {
         viewHasDissappeared = true
     }
-    
+
     public func shouldSelectTabButton(at index: Int, animate: Bool) {
         tabViewModel.selectButton(at: index, animate: animate)
     }

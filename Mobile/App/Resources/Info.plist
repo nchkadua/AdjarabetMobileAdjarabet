@@ -58,6 +58,10 @@
 		<string>PantonAM-Regular.otf</string>
 		<string>PantonNusx3-Bold.otf</string>
 		<string>PantonNusx3-Regular.otf</string>
+		<string>NotoSansArmenian-Bold</string>
+		<string>NotoSansArmenian-Regular</string>
+		<string>NotoSansArmenian-SemiBold</string>
+		<string>NotoSansArmenian-Medium</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

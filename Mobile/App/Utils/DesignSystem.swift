@@ -27,6 +27,52 @@ public enum DesignSystem {
         case systemRed150(alpha: CGFloat = 1)
         case systemRed300(alpha: CGFloat = 1)
         case systemYellow(alpha: CGFloat = 1)
+        // Delete colors above
+        /// System Tints
+        case systemRed(alpha: CGFloat = 1)
+        case systemOrange(alpha: CGFloat = 1)
+        //case systemYellow(alpha: CGFloat = 1) use after deleting old colors
+        case systemGreen(alpha: CGFloat = 1)
+        case systemTeal(alpha: CGFloat = 1)
+        case systemBlue(alpha: CGFloat = 1)
+        case systemIndigo(alpha: CGFloat = 1)
+        /// AdjarabetSolids
+        case primaryRedDark(alpha: CGFloat = 1)
+        case primaryRedNeutral(alpha: CGFloat = 1)
+        case primaryRed(alpha: CGFloat = 1)
+        case primaryGreenNeutral(alpha: CGFloat = 1)
+        /// SystemBackground
+        case primaryBg(alpha: CGFloat = 1)
+        case secondaryBg(alpha: CGFloat = 1)
+        case tertiaryBg(alpha: CGFloat = 1)
+        case querternaryBg(alpha: CGFloat = 1)
+        /// SystemGrays
+        case systemGrey(alpha: CGFloat = 1)
+        case systemGrey2(alpha: CGFloat = 1)
+        case systemGrey3(alpha: CGFloat = 1)
+        case systemGrey4(alpha: CGFloat = 1)
+        case systemGrey5(alpha: CGFloat = 1)
+        case systemGrey6(alpha: CGFloat = 1)
+        /// TextColors
+        case primaryText(alpha: CGFloat = 1)
+        case secondaryText(alpha: CGFloat = 1)
+        case tertiaryText(alpha: CGFloat = 1)
+        case querternaryText(alpha: CGFloat = 1)
+        /// FillColors
+        case primaryFill(alpha: CGFloat = 1)
+        case secondaryFill(alpha: CGFloat = 1)
+        case tertiaryFill(alpha: CGFloat = 1)
+        case querternaryFill(alpha: CGFloat = 1)
+        /// Separator
+        case opaque(alpha: CGFloat = 1)
+        case nonOpaque(alpha: CGFloat = 1)
+        /// Materials
+        case thick(alpha: CGFloat = 1)
+        case regular(alpha: CGFloat = 1)
+        case thin(alpha: CGFloat = 1)
+        case ultrathin(alpha: CGFloat = 1)
+        case navBar(alpha: CGFloat = 1)
+        case tabBar(alpha: CGFloat = 1)
 
         public var value: UIColor {
             let colors = R.color.colorGuide.self
@@ -50,6 +96,51 @@ public enum DesignSystem {
             case .systemRed150(alpha: let alpha):      return colors.semantic.systemRed150()!.withAlphaComponent(alpha)
             case .systemRed300(alpha: let alpha):      return colors.semantic.systemRed300()!.withAlphaComponent(alpha)
             case .systemYellow(alpha: let alpha):      return colors.semantic.systemYellow()!.withAlphaComponent(alpha)
+
+            case .primaryRedDark(let alpha):        return colors.adjaraSolids.primaryRedDark()!.withAlphaComponent(alpha)
+            case .primaryRedNeutral(let alpha):     return colors.adjaraSolids.primaryRedNeutral()!.withAlphaComponent(alpha)
+            case .primaryRed(let alpha):            return colors.adjaraSolids.primaryRed()!.withAlphaComponent(alpha)
+            case .primaryGreenNeutral(let alpha):   return colors.adjaraSolids.primaryGreenNeutral()!.withAlphaComponent(alpha)
+
+            case .systemRed(let alpha):         return colors.systemTints.systemRed()!.withAlphaComponent(alpha)
+            case .systemOrange(let alpha):      return colors.systemTints.systemOrange()!.withAlphaComponent(alpha)
+            //case .systemYellow(let alpha):  return colors.systemTints.systemYellow()!.withAlphaComponent(alpha)  use after deleting old colors
+            case .systemGreen(let alpha):       return colors.systemTints.systemGreen()!.withAlphaComponent(alpha)
+            case .systemTeal(let alpha):        return colors.systemTints.systemTeal()!.withAlphaComponent(alpha)
+            case .systemBlue(let alpha):        return colors.systemTints.systemBlue()!.withAlphaComponent(alpha)
+            case .systemIndigo(let alpha):      return colors.systemTints.systemIndigo()!.withAlphaComponent(alpha)
+
+            case .primaryBg(let alpha):         return colors.systemBackground.primary()!.withAlphaComponent(alpha)
+            case .secondaryBg(let alpha):       return colors.systemBackground.secondary()!.withAlphaComponent(alpha)
+            case .tertiaryBg(let alpha):        return colors.systemBackground.tertiary()!.withAlphaComponent(alpha)
+            case .querternaryBg(let alpha):     return colors.systemBackground.querternary()!.withAlphaComponent(alpha)
+
+            case .systemGrey(let alpha):        return colors.systemGrays.systemGrey()!.withAlphaComponent(alpha)
+            case .systemGrey2(let alpha):       return colors.systemGrays.systemGrey2()!.withAlphaComponent(alpha)
+            case .systemGrey3(let alpha):       return colors.systemGrays.systemGrey3()!.withAlphaComponent(alpha)
+            case .systemGrey4(let alpha):       return colors.systemGrays.systemGrey4()!.withAlphaComponent(alpha)
+            case .systemGrey5(let alpha):       return colors.systemGrays.systemGrey5()!.withAlphaComponent(alpha)
+            case .systemGrey6(let alpha):       return colors.systemGrays.systemGrey6()!.withAlphaComponent(alpha)
+
+            case .primaryText(let alpha):       return colors.textColors.primary()!.withAlphaComponent(alpha)
+            case .secondaryText(let alpha):     return colors.textColors.secondary()!.withAlphaComponent(alpha)
+            case .tertiaryText(let alpha):      return colors.textColors.tertiary()!.withAlphaComponent(alpha)
+            case .querternaryText(let alpha):   return colors.textColors.querternary()!.withAlphaComponent(alpha)
+
+            case .primaryFill(let alpha):       return colors.fillColors.primary()!.withAlphaComponent(alpha)
+            case .secondaryFill(let alpha):     return colors.fillColors.secondary()!.withAlphaComponent(alpha)
+            case .tertiaryFill(let alpha):      return colors.fillColors.tertiary()!.withAlphaComponent(alpha)
+            case .querternaryFill(let alpha):   return colors.fillColors.querternary()!.withAlphaComponent(alpha)
+
+            case .opaque(let alpha):        return colors.separator.opaque()!.withAlphaComponent(alpha)
+            case .nonOpaque(let alpha):     return colors.separator.non_opaque()!.withAlphaComponent(alpha)
+
+            case .thick(let alpha):         return colors.materials.thick()!.withAlphaComponent(alpha)
+            case .regular(let alpha):       return colors.materials.regular()!.withAlphaComponent(alpha)
+            case .thin(let alpha):          return colors.materials.thin()!.withAlphaComponent(alpha)
+            case .ultrathin(let alpha):     return colors.materials.ultrathin()!.withAlphaComponent(alpha)
+            case .navBar(let alpha):        return colors.materials.navBar()!.withAlphaComponent(alpha)
+            case .tabBar(let alpha):        return colors.materials.tabBar()!.withAlphaComponent(alpha)
             }
         }
     }
@@ -61,6 +152,10 @@ public enum DesignSystem {
         public enum FontCase: CaseIterable {
             case lower, upper
         }
+        
+        public enum FontStyle: CaseIterable {
+            case regular, medium, bold, semiBold
+        }
 
         case h1(fontCase: FontCase)
         case h2(fontCase: FontCase)
@@ -71,6 +166,18 @@ public enum DesignSystem {
         case body1
         case body2
         case p
+        // Delete fonts above
+        case largeTitle(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case title1(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case title2(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case title3(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case headline(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case body(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case callout(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case subHeadline(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case footnote(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case caption1(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case caption2(fontCase: FontCase, fontStyle: FontStyle = .regular)
 
         /// Concrete description for each case
         public var description: Description {
@@ -86,28 +193,126 @@ public enum DesignSystem {
             case .body1: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 20)
             case .body2: return .init(font: font(by: language), lineSpasing: 0, lineHeight: 16)
             case .p:     return .init(font: font(by: language), lineSpasing: 0, lineHeight: 20)
+            // Delete fonts above
+            case .largeTitle:   return .init(font: font(by: language), lineSpasing: 0.37, lineHeight: 41)
+            case .title1:       return .init(font: font(by: language), lineSpasing: 0.36, lineHeight: 34)
+            case .title2:       return .init(font: font(by: language), lineSpasing: 0.35, lineHeight: 28)
+            case .title3:       return .init(font: font(by: language), lineSpasing: 0.38, lineHeight: 24)
+            case .headline:     return .init(font: font(by: language), lineSpasing: -0.41, lineHeight: 22)
+            case .body:         return .init(font: font(by: language), lineSpasing: -0.41, lineHeight: 22)
+            case .callout:      return .init(font: font(by: language), lineSpasing: -0.32, lineHeight: 21)
+            case .subHeadline:  return .init(font: font(by: language), lineSpasing: -0.24, lineHeight: 20)
+            case .footnote:     return .init(font: font(by: language), lineSpasing: -0.08, lineHeight: 18)
+            case .caption1:     return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 16)
+            case .caption2:     return .init(font: font(by: language), lineSpasing: 0.07, lineHeight: 13)
             }
         }
 
+//        public func font1(by language: Language) -> UIFont {
+//            func font1(by language: Language, fontCase: FontCase, pointSize: CGFloat) -> UIFont {
+//                switch language {
+//                case .georgian: return fontCase == .lower ? R.font.pantonNusx3Bold(size: pointSize)! : R.font.pantonMtav3Bold(size: pointSize)!
+//                case .armenian: return R.font.pantonAMBold(size: pointSize)!
+//                case .english:  return R.font.pantonMtav3Bold(size: pointSize)!
+//                }
+//            }
+//
+//            switch self {
+//            case .h1:               return R.font.pantonNusx3Regular(size: 11)!
+//            case .h2:               return R.font.pantonNusx3Regular(size: 11)!
+//            case .h3:               return R.font.pantonNusx3Regular(size: 11)!
+//            case .h4:               return R.font.pantonNusx3Regular(size: 11)!
+//            case .h5:               return R.font.pantonNusx3Regular(size: 11)!
+//            case .h6:               return R.font.pantonNusx3Regular(size: 11)!
+//            case .body1:            return R.font.firaGOMedium(size: 13)!
+//            case .body2:            return R.font.firaGOMedium(size: 11)!
+//            case .p:                return R.font.firaGORegular(size: 13)!
+//            // Delete fonts above
+//            /// Temporary return values
+//            case .largeTitle:       return R.font.pantonNusx3Regular(size: 11)!
+//            case .title1:           return R.font.pantonNusx3Regular(size: 11)!
+//            case .title2:           return R.font.pantonNusx3Regular(size: 11)!
+//            case .title3:           return R.font.pantonNusx3Regular(size: 11)!
+//            case .headline:         return R.font.pantonNusx3Regular(size: 11)!
+//            case .body:             return R.font.pantonNusx3Regular(size: 11)!
+//            case .callout:          return R.font.pantonNusx3Regular(size: 11)!
+//            case .subHeadline:      return R.font.pantonNusx3Regular(size: 11)!
+//            case .footnote:         return R.font.pantonNusx3Regular(size: 11)!
+//            case .caption1:         return R.font.pantonNusx3Regular(size: 11)!
+//            case .caption2:         return R.font.pantonNusx3Regular(size: 11)!
+//            }
+//        }
+        
+        // New with temporary name
         public func font(by language: Language) -> UIFont {
-            func font(by language: Language, fontCase: FontCase, pointSize: CGFloat) -> UIFont {
+            /// Fonts
+            func firaGo(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
+                switch fontStyle {
+                case .regular:      return R.font.firaGORegular(size: pointSize)!
+                case .medium:       return R.font.firaGOMedium(size: pointSize)!
+                case .bold:         return R.font.firaGOBold(size: pointSize)!
+                case .semiBold:     return R.font.firaGOSemiBold(size: pointSize)!
+                }
+            }
+            
+            func notoSansArmenian(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
+                switch fontStyle {
+                case .regular:      return R.font.notoSansArmenianRegular(size: pointSize)!
+                case .medium:       return R.font.notoSansArmenianMedium(size: pointSize)!
+                case .bold:         return R.font.notoSansArmenianBold(size: pointSize)!
+                case .semiBold:     return R.font.notoSansArmenianSemiBold(size: pointSize)!
+                }
+            }
+            
+            func pantonMtav3(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
+                switch fontStyle {
+                case .regular:      return R.font.pantonMtav3Regular(size: pointSize)!
+                case .medium:       return R.font.pantonMtav3Regular(size: pointSize)! // Same as regular
+                case .bold:         return R.font.pantonMtav3Bold(size: pointSize)!
+                case .semiBold:     return R.font.pantonMtav3Bold(size: pointSize)! // Same as bold
+                }
+            }
+            
+            func pantonAM(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
+                switch fontStyle {
+                case .regular:      return R.font.pantonAMRegular(size: pointSize)!
+                case .medium:       return R.font.pantonAMRegular(size: pointSize)! // Same as regular
+                case .bold:         return R.font.pantonAMBold(size: pointSize)!
+                case .semiBold:     return R.font.pantonAMBold(size: pointSize)! // Same as bold
+                }
+            }
+            
+            //
+            func font(by language: Language, fontCase: FontCase, fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
                 switch language {
-                case .georgian: return fontCase == .lower ? R.font.pantonNusx3Bold(size: pointSize)! : R.font.pantonMtav3Bold(size: pointSize)!
-                case .armenian: return R.font.pantonAMBold(size: pointSize)!
-                case .english:  return R.font.pantonMtav3Bold(size: pointSize)!
+                case .georgian: return fontCase == .lower ? firaGo(with: fontStyle, pointSize: pointSize) : pantonMtav3(with: fontStyle, pointSize: pointSize)
+                case .armenian: return fontCase == .lower ? notoSansArmenian(with: fontStyle, pointSize: pointSize) : pantonAM(with: fontStyle, pointSize: pointSize)
+                case .english:  return fontCase == .lower ? firaGo(with: fontStyle, pointSize: pointSize) : pantonMtav3(with: fontStyle, pointSize: pointSize)
                 }
             }
 
             switch self {
-            case .h1(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 23)
-            case .h2(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 18)
-            case .h3(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 16)
-            case .h4(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 13)
-            case .h5(let fontCase): return font(by: language, fontCase: fontCase, pointSize: 11)
+            case .h1:               return R.font.pantonNusx3Regular(size: 11)!
+            case .h2:               return R.font.pantonNusx3Regular(size: 11)!
+            case .h3:               return R.font.pantonNusx3Regular(size: 11)!
+            case .h4:               return R.font.pantonNusx3Regular(size: 11)!
+            case .h5:               return R.font.pantonNusx3Regular(size: 11)!
             case .h6:               return R.font.pantonNusx3Regular(size: 11)!
             case .body1:            return R.font.firaGOMedium(size: 13)!
             case .body2:            return R.font.firaGOMedium(size: 11)!
             case .p:                return R.font.firaGORegular(size: 13)!
+            // Delete fonts above
+            case .largeTitle(let fontCase, let fontStyle):      return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 34)
+            case .title1(let fontCase, let fontStyle):          return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 28)
+            case .title2(let fontCase, let fontStyle):          return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 22)
+            case .title3(let fontCase, let fontStyle):          return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 20)
+            case .headline(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 17)
+            case .body(let fontCase, let fontStyle):            return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 17)
+            case .callout(let fontCase, let fontStyle):         return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 16)
+            case .subHeadline(let fontCase, let fontStyle):     return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 15)
+            case .footnote(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 13)
+            case .caption1(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 12)
+            case .caption2(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 11)
             }
         }
 

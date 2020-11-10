@@ -51,6 +51,10 @@
 		CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C42254C057F002667D0 /* LabelComponentView.swift */; };
 		CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE660C46254C0587002667D0 /* LabelComponentView.xib */; };
 		CE660C52254C3162002667D0 /* DepositInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C51254C3162002667D0 /* DepositInstructionView.swift */; };
+		CE95D00725542035007D2084 /* NotoSansArmenian-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00325542035007D2084 /* NotoSansArmenian-SemiBold.ttf */; };
+		CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00425542035007D2084 /* NotoSansArmenian-Regular.ttf */; };
+		CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00525542035007D2084 /* NotoSansArmenian-Medium.ttf */; };
+		CE95D00A25542035007D2084 /* NotoSansArmenian-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00625542035007D2084 /* NotoSansArmenian-Bold.ttf */; };
 		CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FB9C252CDE86003E539B /* QuickActionsHeaderView.xib */; };
 		CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FBBF252CDEF7003E539B /* QuickActionsHeaderView.swift */; };
 		CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FBC8252DC3A7003E539B /* QuickActionItemProvider.swift */; };
@@ -369,6 +373,10 @@
 		CE660C42254C057F002667D0 /* LabelComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponentView.swift; sourceTree = "<group>"; };
 		CE660C46254C0587002667D0 /* LabelComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelComponentView.xib; sourceTree = "<group>"; };
 		CE660C51254C3162002667D0 /* DepositInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositInstructionView.swift; sourceTree = "<group>"; };
+		CE95D00325542035007D2084 /* NotoSansArmenian-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-SemiBold.ttf"; sourceTree = "<group>"; };
+		CE95D00425542035007D2084 /* NotoSansArmenian-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-Regular.ttf"; sourceTree = "<group>"; };
+		CE95D00525542035007D2084 /* NotoSansArmenian-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-Medium.ttf"; sourceTree = "<group>"; };
+		CE95D00625542035007D2084 /* NotoSansArmenian-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-Bold.ttf"; sourceTree = "<group>"; };
 		CE95FB9C252CDE86003E539B /* QuickActionsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionsHeaderView.xib; sourceTree = "<group>"; };
 		CE95FBBF252CDEF7003E539B /* QuickActionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsHeaderView.swift; sourceTree = "<group>"; };
 		CE95FBC8252DC3A7003E539B /* QuickActionItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionItemProvider.swift; sourceTree = "<group>"; };
@@ -1065,6 +1073,10 @@
 		D807846C2444726000003892 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				CE95D00625542035007D2084 /* NotoSansArmenian-Bold.ttf */,
+				CE95D00525542035007D2084 /* NotoSansArmenian-Medium.ttf */,
+				CE95D00425542035007D2084 /* NotoSansArmenian-Regular.ttf */,
+				CE95D00325542035007D2084 /* NotoSansArmenian-SemiBold.ttf */,
 				D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */,
 				D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */,
 				D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */,
@@ -1965,8 +1977,10 @@
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
 				D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */,
 				D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */,
+				CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
+				CE95D00A25542035007D2084 /* NotoSansArmenian-Bold.ttf in Resources */,
 				CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */,
 				D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */,
 				D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */,
@@ -1995,10 +2009,12 @@
 				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
 				CECCE37E254EE7D4005CC660 /* WithdrawTermsView.xib in Resources */,
 				CECCE3AE254EFA7B005CC660 /* DepositInstructionView.xib in Resources */,
+				CE95D00725542035007D2084 /* NotoSansArmenian-SemiBold.ttf in Resources */,
 				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
+				CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
 				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,

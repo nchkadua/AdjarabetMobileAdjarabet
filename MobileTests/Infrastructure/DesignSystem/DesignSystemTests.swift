@@ -41,6 +41,52 @@ class DesignSystemTests: XCTestCase {
         XCTAssertEqual(DesignSystem.Color.systemRed300(alpha: alpha).value, colors.semantic.systemRed300()!.withAlphaComponent(alpha))
         
         XCTAssertEqual(DesignSystem.Color.systemYellow(alpha: alpha).value, colors.semantic.systemYellow()!.withAlphaComponent(alpha))
+        // Delete tests above
+        /// System Tints
+        XCTAssertEqual(DesignSystem.Color.systemRed(alpha: alpha).value, colors.systemTints.systemRed()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemOrange(alpha: alpha).value, colors.systemTints.systemOrange()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemOrange(alpha: alpha).value, colors.systemTints.systemOrange()!.withAlphaComponent(alpha))
+        //XCTAssertEqual(DesignSystem.Color.systemYellow(alpha: alpha).value, colors.systemTints.systemYellow()!.withAlphaComponent(alpha)) use after deleting old colors
+        XCTAssertEqual(DesignSystem.Color.systemGreen(alpha: alpha).value, colors.systemTints.systemGreen()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemTeal(alpha: alpha).value, colors.systemTints.systemTeal()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemIndigo(alpha: alpha).value, colors.systemTints.systemIndigo()!.withAlphaComponent(alpha))
+        /// AdjarabetSolids
+        XCTAssertEqual(DesignSystem.Color.primaryRedDark(alpha: alpha).value, colors.adjaraSolids.primaryRedDark()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.primaryRedNeutral(alpha: alpha).value, colors.adjaraSolids.primaryRedNeutral()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.primaryRed(alpha: alpha).value, colors.adjaraSolids.primaryRed()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.primaryGreenNeutral(alpha: alpha).value, colors.adjaraSolids.primaryGreenNeutral()!.withAlphaComponent(alpha))
+        /// SystemBackground
+        XCTAssertEqual(DesignSystem.Color.primaryBg(alpha: alpha).value, colors.systemBackground.primary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.secondaryBg(alpha: alpha).value, colors.systemBackground.secondary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.tertiaryBg(alpha: alpha).value, colors.systemBackground.tertiary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.querternaryBg(alpha: alpha).value, colors.systemBackground.querternary()!.withAlphaComponent(alpha))
+        /// SystemGrays
+        XCTAssertEqual(DesignSystem.Color.systemGrey(alpha: alpha).value, colors.systemGrays.systemGrey()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGrey2(alpha: alpha).value, colors.systemGrays.systemGrey2()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGrey3(alpha: alpha).value, colors.systemGrays.systemGrey3()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGrey4(alpha: alpha).value, colors.systemGrays.systemGrey4()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGrey5(alpha: alpha).value, colors.systemGrays.systemGrey5()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.systemGrey6(alpha: alpha).value, colors.systemGrays.systemGrey6()!.withAlphaComponent(alpha))
+        /// TextColors
+        XCTAssertEqual(DesignSystem.Color.primaryText(alpha: alpha).value, colors.textColors.primary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.secondaryText(alpha: alpha).value, colors.textColors.secondary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.tertiaryText(alpha: alpha).value, colors.textColors.tertiary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.querternaryText(alpha: alpha).value, colors.textColors.querternary()!.withAlphaComponent(alpha))
+        /// FillColors
+        XCTAssertEqual(DesignSystem.Color.primaryFill(alpha: alpha).value, colors.fillColors.primary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.secondaryFill(alpha: alpha).value, colors.fillColors.secondary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.tertiaryFill(alpha: alpha).value, colors.fillColors.tertiary()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.querternaryFill(alpha: alpha).value, colors.fillColors.querternary()!.withAlphaComponent(alpha))
+        /// Separator
+        XCTAssertEqual(DesignSystem.Color.opaque(alpha: alpha).value, colors.separator.opaque()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.nonOpaque(alpha: alpha).value, colors.separator.non_opaque()!.withAlphaComponent(alpha))
+        /// Materials
+        XCTAssertEqual(DesignSystem.Color.thick(alpha: alpha).value, colors.materials.thick()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.regular(alpha: alpha).value, colors.materials.regular()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.thin(alpha: alpha).value, colors.materials.thin()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.ultrathin(alpha: alpha).value, colors.materials.ultrathin()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.navBar(alpha: alpha).value, colors.materials.navBar()!.withAlphaComponent(alpha))
+        XCTAssertEqual(DesignSystem.Color.tabBar(alpha: alpha).value, colors.materials.tabBar()!.withAlphaComponent(alpha))
     }
 
     func testTypography() {
@@ -52,14 +98,14 @@ class DesignSystemTests: XCTestCase {
             
             switch language {
             case .georgian:
-                upperHeaderFontName = R.font.pantonMtav3Bold.fontName
-                lowerHeaderFontName = R.font.pantonNusx3Bold.fontName
+                upperHeaderFontName = R.font.pantonMtav3Regular.fontName
+                lowerHeaderFontName = R.font.firaGORegular.fontName
             case .armenian:
-                upperHeaderFontName = R.font.pantonAMBold.fontName
-                lowerHeaderFontName = R.font.pantonAMBold.fontName
+                upperHeaderFontName = R.font.pantonAMRegular.fontName
+                lowerHeaderFontName = R.font.notoSansArmenianRegular.fontName
             case .english:
-                upperHeaderFontName = R.font.pantonMtav3Bold.fontName
-                lowerHeaderFontName = R.font.pantonMtav3Bold.fontName
+                upperHeaderFontName = R.font.pantonMtav3Regular.fontName
+                lowerHeaderFontName = R.font.firaGORegular.fontName
             }
             
             func testDescription(typography: DesignSystem.Typography, pointSize: CGFloat, lineSpasing: CGFloat, lineHeight: CGFloat) {
@@ -68,53 +114,70 @@ class DesignSystemTests: XCTestCase {
                 XCTAssertEqual(typography.description.lineHeight, lineHeight)
             }
 
-            XCTAssertEqual(DesignSystem.Typography.h1(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.h1(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h1(fontCase: .lower), pointSize: 23, lineSpasing: 0.0, lineHeight: 24)
-            testDescription(typography: .h1(fontCase: .upper), pointSize: 23, lineSpasing: 0.0, lineHeight: 24)
-
-            XCTAssertEqual(DesignSystem.Typography.h2(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.h2(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h2(fontCase: .lower), pointSize: 18, lineSpasing: 0.2, lineHeight: 22)
-            testDescription(typography: .h2(fontCase: .upper), pointSize: 18, lineSpasing: 0.2, lineHeight: 22)
-
-            XCTAssertEqual(DesignSystem.Typography.h3(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.h3(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h3(fontCase: .lower), pointSize: 16, lineSpasing: 0.3, lineHeight: 19)
-            testDescription(typography: .h3(fontCase: .upper), pointSize: 16, lineSpasing: 0.3, lineHeight: 19)
-
-            XCTAssertEqual(DesignSystem.Typography.h4(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.h4(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h4(fontCase: .lower), pointSize: 13, lineSpasing: 0.5, lineHeight: 26)
-            testDescription(typography: .h4(fontCase: .upper), pointSize: 13, lineSpasing: 0.5, lineHeight: 26)
-
-            XCTAssertEqual(DesignSystem.Typography.h5(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.h5(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .h5(fontCase: .lower), pointSize: 11, lineSpasing: 0.3, lineHeight: 14)
-            testDescription(typography: .h5(fontCase: .upper), pointSize: 11, lineSpasing: 0.3, lineHeight: 14)
+            XCTAssertEqual(DesignSystem.Typography.largeTitle(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.largeTitle(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .largeTitle(fontCase: .lower), pointSize: 34, lineSpasing: 0.37, lineHeight: 41)
+            testDescription(typography: .largeTitle(fontCase: .upper), pointSize: 34, lineSpasing: 0.37, lineHeight: 41)
             
-            XCTAssertEqual(DesignSystem.Typography.h6(fontCase: .lower).description.font.fontName, R.font.pantonNusx3Regular.fontName)
-            XCTAssertEqual(DesignSystem.Typography.h6(fontCase: .upper).description.font.fontName, R.font.pantonNusx3Regular.fontName)
-            testDescription(typography: .h6(fontCase: .lower), pointSize: 11, lineSpasing: 0.1, lineHeight: 14)
-            testDescription(typography: .h6(fontCase: .upper), pointSize: 11, lineSpasing: 0.1, lineHeight: 14)
+            XCTAssertEqual(DesignSystem.Typography.title1(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.title1(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .title1(fontCase: .lower), pointSize: 28, lineSpasing: 0.36, lineHeight: 34)
+            testDescription(typography: .title1(fontCase: .upper), pointSize: 28, lineSpasing: 0.36, lineHeight: 34)
             
-            let body1Description = DesignSystem.Typography.body1.description
-            XCTAssertEqual(body1Description.font.fontName, R.font.firaGOMedium.fontName)
-            XCTAssertEqual(body1Description.font.pointSize, 13)
-            XCTAssertEqual(body1Description.lineSpasing, 0)
-            XCTAssertEqual(body1Description.lineHeight, 20)
+            XCTAssertEqual(DesignSystem.Typography.title2(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.title2(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .title2(fontCase: .lower), pointSize: 22, lineSpasing: 0.35, lineHeight: 28)
+            testDescription(typography: .title2(fontCase: .upper), pointSize: 22, lineSpasing: 0.35, lineHeight: 28)
             
-            let body2Description = DesignSystem.Typography.body2.description
-            XCTAssertEqual(body2Description.font.fontName, R.font.firaGOMedium.fontName)
-            XCTAssertEqual(body2Description.font.pointSize, 11)
-            XCTAssertEqual(body2Description.lineSpasing, 0)
-            XCTAssertEqual(body2Description.lineHeight, 16)
+            XCTAssertEqual(DesignSystem.Typography.title3(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.title3(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .title3(fontCase: .lower), pointSize: 20, lineSpasing: 0.38, lineHeight: 24)
+            testDescription(typography: .title3(fontCase: .upper), pointSize: 20, lineSpasing: 0.38, lineHeight: 24)
             
-            let pDescription = DesignSystem.Typography.p.description
-            XCTAssertEqual(pDescription.font.fontName, R.font.firaGORegular.fontName)
-            XCTAssertEqual(pDescription.font.pointSize, 13)
-            XCTAssertEqual(pDescription.lineSpasing, 0)
-            XCTAssertEqual(pDescription.lineHeight, 20)
+            XCTAssertEqual(DesignSystem.Typography.headline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.headline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .headline(fontCase: .lower), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            testDescription(typography: .headline(fontCase: .upper), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            
+            XCTAssertEqual(DesignSystem.Typography.headline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.headline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .headline(fontCase: .lower), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            testDescription(typography: .headline(fontCase: .upper), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            
+            XCTAssertEqual(DesignSystem.Typography.body(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.body(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .body(fontCase: .lower), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            testDescription(typography: .body(fontCase: .upper), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            
+            XCTAssertEqual(DesignSystem.Typography.callout(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.callout(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .callout(fontCase: .lower), pointSize: 16, lineSpasing: -0.32, lineHeight: 21)
+            testDescription(typography: .callout(fontCase: .upper), pointSize: 16, lineSpasing: -0.32, lineHeight: 21)
+            
+            XCTAssertEqual(DesignSystem.Typography.subHeadline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.subHeadline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .subHeadline(fontCase: .lower), pointSize: 15, lineSpasing: -0.24, lineHeight: 20)
+            testDescription(typography: .subHeadline(fontCase: .upper), pointSize: 15, lineSpasing: -0.24, lineHeight: 20)
+            
+            XCTAssertEqual(DesignSystem.Typography.subHeadline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.subHeadline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .subHeadline(fontCase: .lower), pointSize: 15, lineSpasing: -0.24, lineHeight: 20)
+            testDescription(typography: .subHeadline(fontCase: .upper), pointSize: 15, lineSpasing: -0.24, lineHeight: 20)
+            
+            XCTAssertEqual(DesignSystem.Typography.footnote(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.footnote(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .footnote(fontCase: .lower), pointSize: 13, lineSpasing: -0.08, lineHeight: 18)
+            testDescription(typography: .footnote(fontCase: .upper), pointSize: 13, lineSpasing: -0.08, lineHeight: 18)
+            
+            XCTAssertEqual(DesignSystem.Typography.caption1(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.caption1(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .caption1(fontCase: .lower), pointSize: 12, lineSpasing: 0.0, lineHeight: 16)
+            testDescription(typography: .caption1(fontCase: .upper), pointSize: 12, lineSpasing: 0.0, lineHeight: 16)
+            
+            XCTAssertEqual(DesignSystem.Typography.caption2(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.caption2(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .caption2(fontCase: .lower), pointSize: 11, lineSpasing: 0.07, lineHeight: 13)
+            testDescription(typography: .caption2(fontCase: .upper), pointSize: 11, lineSpasing: 0.07, lineHeight: 13)
         }
     }
     

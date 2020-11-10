@@ -13,7 +13,7 @@ public protocol LoginViewModel: LoginViewModelInput, LoginViewModelOutput {
 
 public struct LoginViewModelParams {
     var showBiometryLoginAutomatically: Bool
-    
+
     public init (showBiometryLoginAutomatically: Bool) {
         self.showBiometryLoginAutomatically = showBiometryLoginAutomatically
     }
