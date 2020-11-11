@@ -13,7 +13,7 @@ public protocol CommonBarButtonProviding: UIViewController { }
 public extension CommonBarButtonProviding {
     @discardableResult
     func makeLeftBarButtonItemTitle(to title: String) -> UIBarButtonItem.Coupled {
-        let barButtonItem = UIBarButtonItem.make(title: title, typography: .h2(fontCase: .lower))
+        let barButtonItem = UIBarButtonItem.make(title: title, typography: .title3(fontCase: .lower))
         barButtonItem.button.setTitleColor(DesignSystem.Color.systemWhite().value, for: .normal)
         barButtonItem.barButtonItem.isEnabled = false
         navigationItem.leftBarButtonItem = barButtonItem.barButtonItem

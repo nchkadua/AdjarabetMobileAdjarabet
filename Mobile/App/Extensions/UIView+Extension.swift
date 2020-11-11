@@ -46,17 +46,17 @@ public extension UIView {
     }
 
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
-//        let path = UIBezierPath(roundedRect: frame, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-//        let mask = CAShapeLayer()
-//        mask.path = path.cgPath
-//        layer.mask = mask
-
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
-
         layer.mask = shape
+    }
+
+    func blurred(with style: UIBlurEffect.Style = .systemUltraThinMaterialDark) {
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        addSubview(blurEffectView)
     }
 }
 

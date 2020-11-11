@@ -146,7 +146,7 @@ public class MainTabBarViewController: UITabBarController {
         wrapperView.shadowBlur = 5
 
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
-        wrapperView.backgroundColor = DesignSystem.Color.baseBg100().value
+        wrapperView.backgroundColor = DesignSystem.Color.thick(alpha: 1).value
         wrapperView.hasSquareBorderRadius = true
 
         view.addSubview(wrapperView)

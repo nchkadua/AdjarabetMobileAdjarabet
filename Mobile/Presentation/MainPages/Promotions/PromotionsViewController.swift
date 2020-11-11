@@ -44,7 +44,7 @@ public class PromotionsViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .baseBg300())
+        setBaseBackgorundColor(to: .primaryBg())
         setupNavigationItems()
         setupTableView()
     }

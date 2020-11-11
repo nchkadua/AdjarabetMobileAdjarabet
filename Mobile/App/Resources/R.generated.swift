@@ -456,6 +456,8 @@ struct R: Rswift.Validatable {
 
       /// This `R.color.colorGuide.materials` struct is generated, and contains static references to 6 colors.
       struct materials {
+        /// Color `Ultrathin`.
+        static let ultrathin = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Materials/Ultrathin")
         /// Color `navBar`.
         static let navBar = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Materials/navBar")
         /// Color `regular`.
@@ -466,8 +468,15 @@ struct R: Rswift.Validatable {
         static let thick = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Materials/thick")
         /// Color `thin`.
         static let thin = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Materials/thin")
-        /// Color `ultrathin`.
-        static let ultrathin = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Materials/ultrathin")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIColor(named: "Ultrathin", bundle: ..., traitCollection: ...)`
+        @available(tvOS 11.0, *)
+        @available(iOS 11.0, *)
+        static func ultrathin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+          return UIKit.UIColor(resource: R.color.colorGuide.materials.ultrathin, compatibleWith: traitCollection)
+        }
+        #endif
 
         #if os(iOS) || os(tvOS)
         /// `UIColor(named: "navBar", bundle: ..., traitCollection: ...)`
@@ -511,15 +520,6 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func thin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.materials.thin, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "ultrathin", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func ultrathin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.materials.ultrathin, compatibleWith: traitCollection)
         }
         #endif
 

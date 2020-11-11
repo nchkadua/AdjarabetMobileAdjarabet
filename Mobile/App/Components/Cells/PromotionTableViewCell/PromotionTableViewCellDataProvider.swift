@@ -7,6 +7,7 @@
 //
 
 public protocol PromotionTableViewCellDataProvider: PromotionComponentViewModel, StaticHeightDataProvider { }
+private let aspectMagicNumber: CGFloat = 0.87 // Banner height aspect ratio
 
 public extension PromotionTableViewCellDataProvider {
     var identifier: String { PromotionTableViewCell.identifierValue }
@@ -17,7 +18,7 @@ extension DefaultPromotionComponentViewModel: PromotionTableViewCellDataProvider
 public extension PromotionTableViewCellDataProvider {
     var height: CGFloat {
         get {
-            400
+            UIScreen.main.bounds.width / aspectMagicNumber
         }
         set {
             print(newValue)

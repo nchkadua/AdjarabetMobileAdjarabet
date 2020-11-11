@@ -55,24 +55,24 @@ public enum DesignSystem {
         case systemGrey6(alpha: CGFloat = 1)
         /// TextColors
         case primaryText(alpha: CGFloat = 1)
-        case secondaryText(alpha: CGFloat = 1)
-        case tertiaryText(alpha: CGFloat = 1)
-        case querternaryText(alpha: CGFloat = 1)
+        case secondaryText(alpha: CGFloat = 0.6)
+        case tertiaryText(alpha: CGFloat = 0.3)
+        case querternaryText(alpha: CGFloat = 0.18)
         /// FillColors
-        case primaryFill(alpha: CGFloat = 1)
-        case secondaryFill(alpha: CGFloat = 1)
-        case tertiaryFill(alpha: CGFloat = 1)
-        case querternaryFill(alpha: CGFloat = 1)
+        case primaryFill(alpha: CGFloat = 0.36)
+        case secondaryFill(alpha: CGFloat = 0.32)
+        case tertiaryFill(alpha: CGFloat = 0.24)
+        case querternaryFill(alpha: CGFloat = 0.18)
         /// Separator
         case opaque(alpha: CGFloat = 1)
-        case nonOpaque(alpha: CGFloat = 1)
+        case nonOpaque(alpha: CGFloat = 0.65)
         /// Materials
-        case thick(alpha: CGFloat = 1)
-        case regular(alpha: CGFloat = 1)
-        case thin(alpha: CGFloat = 1)
-        case ultrathin(alpha: CGFloat = 1)
-        case navBar(alpha: CGFloat = 1)
-        case tabBar(alpha: CGFloat = 1)
+        case thick(alpha: CGFloat = 0.85)
+        case regular(alpha: CGFloat = 0.7)
+        case thin(alpha: CGFloat = 0.65)
+        case ultrathin(alpha: CGFloat = 0.45)
+        case navBar(alpha: CGFloat = 0.8)
+        case tabBar(alpha: CGFloat = 0.8)
 
         public var value: UIColor {
             let colors = R.color.colorGuide.self
@@ -152,7 +152,7 @@ public enum DesignSystem {
         public enum FontCase: CaseIterable {
             case lower, upper
         }
-        
+
         public enum FontStyle: CaseIterable {
             case regular, medium, bold, semiBold
         }
@@ -207,43 +207,7 @@ public enum DesignSystem {
             case .caption2:     return .init(font: font(by: language), lineSpasing: 0.07, lineHeight: 13)
             }
         }
-
-//        public func font1(by language: Language) -> UIFont {
-//            func font1(by language: Language, fontCase: FontCase, pointSize: CGFloat) -> UIFont {
-//                switch language {
-//                case .georgian: return fontCase == .lower ? R.font.pantonNusx3Bold(size: pointSize)! : R.font.pantonMtav3Bold(size: pointSize)!
-//                case .armenian: return R.font.pantonAMBold(size: pointSize)!
-//                case .english:  return R.font.pantonMtav3Bold(size: pointSize)!
-//                }
-//            }
-//
-//            switch self {
-//            case .h1:               return R.font.pantonNusx3Regular(size: 11)!
-//            case .h2:               return R.font.pantonNusx3Regular(size: 11)!
-//            case .h3:               return R.font.pantonNusx3Regular(size: 11)!
-//            case .h4:               return R.font.pantonNusx3Regular(size: 11)!
-//            case .h5:               return R.font.pantonNusx3Regular(size: 11)!
-//            case .h6:               return R.font.pantonNusx3Regular(size: 11)!
-//            case .body1:            return R.font.firaGOMedium(size: 13)!
-//            case .body2:            return R.font.firaGOMedium(size: 11)!
-//            case .p:                return R.font.firaGORegular(size: 13)!
-//            // Delete fonts above
-//            /// Temporary return values
-//            case .largeTitle:       return R.font.pantonNusx3Regular(size: 11)!
-//            case .title1:           return R.font.pantonNusx3Regular(size: 11)!
-//            case .title2:           return R.font.pantonNusx3Regular(size: 11)!
-//            case .title3:           return R.font.pantonNusx3Regular(size: 11)!
-//            case .headline:         return R.font.pantonNusx3Regular(size: 11)!
-//            case .body:             return R.font.pantonNusx3Regular(size: 11)!
-//            case .callout:          return R.font.pantonNusx3Regular(size: 11)!
-//            case .subHeadline:      return R.font.pantonNusx3Regular(size: 11)!
-//            case .footnote:         return R.font.pantonNusx3Regular(size: 11)!
-//            case .caption1:         return R.font.pantonNusx3Regular(size: 11)!
-//            case .caption2:         return R.font.pantonNusx3Regular(size: 11)!
-//            }
-//        }
         
-        // New with temporary name
         public func font(by language: Language) -> UIFont {
             /// Fonts
             func firaGo(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
@@ -254,7 +218,7 @@ public enum DesignSystem {
                 case .semiBold:     return R.font.firaGOSemiBold(size: pointSize)!
                 }
             }
-            
+
             func notoSansArmenian(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
                 switch fontStyle {
                 case .regular:      return R.font.notoSansArmenianRegular(size: pointSize)!
@@ -263,7 +227,7 @@ public enum DesignSystem {
                 case .semiBold:     return R.font.notoSansArmenianSemiBold(size: pointSize)!
                 }
             }
-            
+
             func pantonMtav3(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
                 switch fontStyle {
                 case .regular:      return R.font.pantonMtav3Regular(size: pointSize)!
@@ -272,7 +236,7 @@ public enum DesignSystem {
                 case .semiBold:     return R.font.pantonMtav3Bold(size: pointSize)! // Same as bold
                 }
             }
-            
+
             func pantonAM(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
                 switch fontStyle {
                 case .regular:      return R.font.pantonAMRegular(size: pointSize)!
@@ -281,7 +245,7 @@ public enum DesignSystem {
                 case .semiBold:     return R.font.pantonAMBold(size: pointSize)! // Same as bold
                 }
             }
-            
+
             //
             func font(by language: Language, fontCase: FontCase, fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
                 switch language {

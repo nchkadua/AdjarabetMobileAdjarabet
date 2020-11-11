@@ -18,6 +18,11 @@ public class PromotionComponentView: UIView {
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleBgView: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        setupViews()
+    }
 
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -52,6 +57,13 @@ public class PromotionComponentView: UIView {
         coverImageView.image = cover
         iconImageView.image = icon
     }
+
+    private func setupViews() {
+        coverImageView.roundCorners([.allCorners], radius: 5)
+        titleBgView.roundCorners([.bottomLeft, .bottomRight], radius: 5)
+        titleBgView.blurred()
+        titleBgView.bringSubviewToFront(titleLabel)
+    }
 }
 
 extension PromotionComponentView: Xibable {
@@ -65,12 +77,12 @@ extension PromotionComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.baseBg300().value
+        view.backgroundColor = DesignSystem.Color.primaryBg().value
 
-        coverImageView.layer.cornerRadius = 5
+        titleBgView.setBackgorundColor(to: .ultrathin())
+        titleBgView.roundCorners([.bottomLeft, .bottomRight], radius: 5)
 
-        titleBgView.setBackgorundColor(to: .baseBg300(alpha: 0.75))
-        titleLabel.setTextColor(to: .systemWhite())
-        titleLabel.setFont(to: .h3(fontCase: .upper))
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .headline(fontCase: .upper, fontStyle: .bold))
     }
 }
