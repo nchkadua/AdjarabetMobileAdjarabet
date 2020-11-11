@@ -38,6 +38,7 @@ public class NotificationsButton: UIButton {
 
     private func setup() {
         setBackgroundImage(R.image.notifications.oval(), for: .normal)
-        titleEdgeInsets = .init(top: 5, left: 0, bottom: 0, right: 0)
+        imageView?.contentMode = .scaleAspectFit
+        titleEdgeInsets = .init(top: 3, left: 0, bottom: 0, right: 0)
     }
 }

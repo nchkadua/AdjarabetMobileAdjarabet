@@ -18,7 +18,7 @@ extension DefaultNotificationsHeaderComponentViewModel: NotificationsHeaderCellD
 public extension NotificationsHeaderCellDataProvider {
     var height: CGFloat {
         get {
-            46
+            44
         }
         set {
             print(newValue)

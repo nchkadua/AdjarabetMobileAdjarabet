@@ -52,13 +52,13 @@ class NotificationComponentView: UIView {
     private func setupUI(with notification: Notification) {
         iconImageView.image = notification.icon
         titleLabel.text = notification.title
-        timeLabel.text = notification.time ?? ""
+        timeLabel.text = notification.time ?? "" // Move To ViewModel?
         greenDot.isHidden = notification.seen
 
         if notification.seen {
-            titleLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+            titleLabel.setTextColor(to: .secondaryText())
         } else {
-            titleLabel.setTextColor(to: .systemWhite())
+            titleLabel.setTextColor(to: .primaryText())
         }
     }
 }
@@ -74,15 +74,15 @@ extension NotificationComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.baseBg300().value
+        view.backgroundColor = DesignSystem.Color.primaryBg().value
 
-        titleLabel.font = R.font.firaGORegular(size: 15)
-        titleLabel.setTextColor(to: .systemWhite())
+        titleLabel.setFont(to: .subHeadline(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
 
-        timeLabel.setFont(to: .p)
-        timeLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+        timeLabel.setFont(to: .footnote(fontCase: .lower))
+        timeLabel.setTextColor(to: .secondaryText())
 
-        greenDot.backgroundColor = R.color.colorGuide.semantic.systemGreen100()
+        greenDot.setBackgorundColor(to: .primaryGreenNeutral())
         greenDot.layer.cornerRadius = greenDot.frame.width / 2
     }
 }

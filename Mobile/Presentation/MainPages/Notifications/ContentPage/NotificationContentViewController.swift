@@ -50,7 +50,7 @@ public class NotificationContentViewController: UIViewController {
 
     // MAKR: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .baseBg300())
+        setBaseBackgorundColor(to: .primaryBg())
         setupNavigationItem()
         setupLabels()
     }
@@ -62,19 +62,19 @@ public class NotificationContentViewController: UIViewController {
     }
 
     private func setupLabels() {
-        timeLabel.setFont(to: .body1)
-        timeLabel.setTextColor(to: .systemWhite())
+        timeLabel.setFont(to: .footnote(fontCase: .lower))
+        timeLabel.setTextColor(to: .primaryText())
 
-        titleLabel.font = R.font.firaGOBold(size: 20)
-        titleLabel.setTextColor(to: .systemWhite())
+        titleLabel.setFont(to: .title3(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
 
-        textLabel.setFont(to: .body1)
-        textLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+        textLabel.setFont(to: .footnote(fontCase: .lower))
+        textLabel.setTextColor(to: .secondaryText())
     }
 
     private func setup(with notification: Notification) {
         coverImageView.image = notification.image
-        timeLabel.text = notification.time ?? notification.date.stringValue
+        timeLabel.text = notification.time ?? notification.date.stringValue // Move To ViewModel
         titleLabel.text = notification.title
         textLabel.text = notification.text
     }

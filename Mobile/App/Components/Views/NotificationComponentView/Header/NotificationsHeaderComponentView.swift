@@ -60,9 +60,9 @@ extension NotificationsHeaderComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.baseBg300().value
+        view.backgroundColor = DesignSystem.Color.primaryBg().value
 
-        titleLabel.setFont(to: .body1)
-        titleLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+        titleLabel.setFont(to: .footnote(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
     }
 }

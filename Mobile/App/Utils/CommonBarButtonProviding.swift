@@ -39,17 +39,16 @@ public extension CommonBarButtonProviding {
     @discardableResult
     func notificationsBarButtonItemGroupWith(numberOfNotifications number: Int) -> [UIBarButtonItem] {
         let button = NotificationsButton(type: .system)
-        button.setFont(to: .h2(fontCase: .lower))
+        button.setFont(to: .subHeadline(fontCase: .upper, fontStyle: .bold))
         button.setTitleColor(to: .systemWhite(), for: .normal)
         button.setTintColor(to: .systemWhite())
         button.semanticContentAttribute = .forceRightToLeft
         button.numberOfNotifications = number
 
-        let titleButton = UIBarButtonItem.make(title: title, typography: .h2(fontCase: .lower))
+        let titleButton = UIBarButtonItem.make(title: title, typography: .subHeadline(fontCase: .lower, fontStyle: .bold))
         titleButton.button.setTitleColor(DesignSystem.Color.systemWhite().value, for: .normal)
         titleButton.barButtonItem.isEnabled = false
         titleButton.button.setTitle(R.string.localization.notifications_page_title(), for: .normal)
-        titleButton.button.titleEdgeInsets = .init(top: 5, left: 0, bottom: 0, right: 0)
 
         return [UIBarButtonItem(customView: button), titleButton.barButtonItem]
     }

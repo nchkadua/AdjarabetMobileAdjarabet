@@ -86,6 +86,7 @@ public class ABTableViewController: AppTableViewController {
             (self.dataProvider?[indexPath] as? AppDeletableCellDelegate)?.didDelete(at: indexPath)
         }
         deleteItem.image = R.image.notifications.trash()
+        deleteItem.backgroundColor = R.color.colorGuide.systemTints.systemRed()
         let actions = UISwipeActionsConfiguration(actions: [deleteItem])
 
         return actions

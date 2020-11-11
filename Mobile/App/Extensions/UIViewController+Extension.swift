@@ -47,8 +47,8 @@ public extension UIViewController {
     func setTitle(title: String) {
         let label = UILabel()
         label.text = title
-        label.font = R.font.firaGOMedium(size: 15)
-        label.textColor = DesignSystem.Color.systemWhite().value
+        label.setFont(to: .subHeadline(fontCase: .lower))
+        label.setTextColor(to: .primaryText())
         navigationItem.titleView = label
     }
 
