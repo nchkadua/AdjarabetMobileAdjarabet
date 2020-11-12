@@ -50,7 +50,7 @@ public class PromotionsViewController: UIViewController {
     }
 
     private func setupNavigationItems() {
-        makeLeftBarButtonItemTitle(to: R.string.localization.promotions_page_title.localized())
+        makeAdjarabetLogo()
 
         let profileButtonGroup = makeBalanceBarButtonItem()
         navigationItem.rightBarButtonItem = profileButtonGroup.barButtonItem

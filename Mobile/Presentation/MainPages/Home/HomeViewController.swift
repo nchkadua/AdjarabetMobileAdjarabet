@@ -85,7 +85,7 @@ public class HomeViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .baseBg300())
+        setBaseBackgorundColor(to: .primaryBg())
         setupNavigationItems()
         setupSearchViewController()
 
@@ -94,7 +94,7 @@ public class HomeViewController: UIViewController {
     }
 
     private func setupNavigationItems() {
-        makeLeftBarButtonItemTitle(to: R.string.localization.home_page_title.localized())
+        makeAdjarabetLogo()
 
         let profileButtonGroup = makeBalanceBarButtonItem()
         navigationItem.rightBarButtonItem = profileButtonGroup.barButtonItem
@@ -136,27 +136,30 @@ public class HomeViewController: UIViewController {
         }
 
         searchBar.setPositionAdjustment(UIOffset(horizontal: 6, vertical: 0), for: .search)
-        searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
+        searchBar.backgroundColor = .clear
+        searchBar.barTintColor = .clear
+        searchBar.isTranslucent = true
+        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
 
         searchBar.setImage(R.image.shared.search(), for: .search, state: .normal)
-        searchBar.searchTextField.leftView?.setTintColor(to: .separator(alpha: 0.6))
+        searchBar.searchTextField.leftView?.setTintColor(to: .secondaryText())
         searchBar.searchTextPositionAdjustment = UIOffset(horizontal: 4, vertical: 0)
 
-        searchBar.searchTextField.setTextColor(to: .separator())
-        searchBar.searchTextField.setFont(to: .p)
-        searchBar.searchTextField.setBackgorundColor(to: .baseBg100())
+        searchBar.searchTextField.setTextColor(to: .primaryText())
+        searchBar.searchTextField.setFont(to: .footnote(fontCase: .lower))
+        searchBar.searchTextField.setBackgorundColor(to: .querternaryFill())
         searchBar.searchTextField.layer.cornerRadius = 18
         searchBar.searchTextField.layer.masksToBounds = true
 
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: R.string.localization.home_search_placeholder.localized(), attributes: [
-            .foregroundColor: DesignSystem.Color.separator(alpha: 0.6).value,
-            .font: DesignSystem.Typography.p.description.font
+            .foregroundColor: DesignSystem.Color.secondaryText().value,
+            .font: DesignSystem.Typography.footnote(fontCase: .lower).description.font
         ])
 
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
-            .foregroundColor: DesignSystem.Color.separator().value,
-            .font: DesignSystem.Typography.p.description.font
+            .foregroundColor: DesignSystem.Color.secondaryText().value,
+            .font: DesignSystem.Typography.footnote(fontCase: .lower).description.font
         ], for: .normal)
     }
 

@@ -84,11 +84,11 @@ extension RecentlyPlayedComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = .clear
 
-        titleLabel.setTextColor(to: .systemWhite())
-        titleLabel.setFont(to: .h3(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
 
-        button.setTitleColor(to: .systemWhite(alpha: 0.7), for: .normal)
-        button.setFont(to: .h4(fontCase: .lower))
+        button.setTitleColor(to: .primaryText(), for: .normal)
+        button.setFont(to: .footnote(fontCase: .lower))
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         button.addTarget(self, action: #selector(buttinDidTap), for: .touchUpInside)
 

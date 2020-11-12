@@ -20,9 +20,10 @@
 
 /* Notifications */
 "notifications_page_title" = "შეტყობინებები";
+"notifications_page_delete_title" = "წაშლა";
 
 /* Recently Played Games */
-"recently_played" = "ნათამაშები";
+"recently_played" = "ბოლოს ნათამაშები";
 
 /* General */
 "view_all" = "ყველა";

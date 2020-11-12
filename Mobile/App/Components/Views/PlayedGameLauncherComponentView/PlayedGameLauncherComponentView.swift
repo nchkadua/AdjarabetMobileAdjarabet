@@ -79,11 +79,11 @@ extension PlayedGameLauncherComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = .clear
 
-        titleLabel.setTextColor(to: .systemWhite())
-        titleLabel.setFont(to: .body1)
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
 
-        subtitleLabel.setTextColor(to: .separator(alpha: 0.6))
-        subtitleLabel.setFont(to: .body2)
+        subtitleLabel.setTextColor(to: .secondaryText())
+        subtitleLabel.setFont(to: .footnote(fontCase: .lower))
 
         set(isLoading: false)
     }

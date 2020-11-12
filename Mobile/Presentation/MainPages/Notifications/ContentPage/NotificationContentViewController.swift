@@ -69,7 +69,7 @@ public class NotificationContentViewController: UIViewController {
         titleLabel.setTextColor(to: .primaryText())
 
         textLabel.setFont(to: .footnote(fontCase: .lower))
-        textLabel.setTextColor(to: .secondaryText())
+        textLabel.setTextColor(to: .primaryText())
     }
 
     private func setup(with notification: Notification) {

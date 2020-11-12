@@ -207,8 +207,8 @@ public enum DesignSystem {
             case .caption2:     return .init(font: font(by: language), lineSpasing: 0.07, lineHeight: 13)
             }
         }
-        
-        public func font(by language: Language) -> UIFont {
+
+        func font(by language: Language) -> UIFont {
             /// Fonts
             func firaGo(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
                 switch fontStyle {
@@ -224,7 +224,7 @@ public enum DesignSystem {
                 case .regular:      return R.font.notoSansArmenianRegular(size: pointSize)!
                 case .medium:       return R.font.notoSansArmenianMedium(size: pointSize)!
                 case .bold:         return R.font.notoSansArmenianBold(size: pointSize)!
-                case .semiBold:     return R.font.notoSansArmenianSemiBold(size: pointSize)!
+                case .semiBold:     return R.font.notoSansArmenianBold(size: pointSize)!
                 }
             }
 

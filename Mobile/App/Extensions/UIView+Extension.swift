@@ -52,7 +52,7 @@ public extension UIView {
         layer.mask = shape
     }
 
-    func blurred(with style: UIBlurEffect.Style = .systemUltraThinMaterialDark) {
+    func blurred(with style: UIBlurEffect.Style = .regular) {
         let blurEffect = UIBlurEffect(style: style)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = bounds

@@ -20,7 +20,7 @@ public class SportsViewController: UIViewController {
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor()
-        makeLeftBarButtonItemTitle(to: R.string.localization.sports_page_title.localized())
+        makeAdjarabetLogo()
         navigationItem.rightBarButtonItem = makeBalanceBarButtonItem().barButtonItem
     }
 }

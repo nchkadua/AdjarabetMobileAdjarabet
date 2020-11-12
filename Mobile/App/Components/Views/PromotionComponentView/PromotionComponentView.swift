@@ -18,7 +18,7 @@ public class PromotionComponentView: UIView {
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleBgView: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
-    
+
     public override func layoutSubviews() {
         super.layoutSubviews()
         setupViews()

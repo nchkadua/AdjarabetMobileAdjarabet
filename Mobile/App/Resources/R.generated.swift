@@ -2368,7 +2368,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 85 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 86 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2418,6 +2418,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let delete_button_title = Rswift.StringResource(key: "delete_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Delete
+      ///
+      /// Locales: en, ka, hy
+      static let notifications_page_delete_title = Rswift.StringResource(key: "notifications_page_delete_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Deposit
       ///
       /// Locales: en, ka, hy
@@ -2889,6 +2893,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("delete_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete
+      ///
+      /// Locales: en, ka, hy
+      static func notifications_page_delete_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications_page_delete_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "notifications_page_delete_title"
+        }
+
+        return NSLocalizedString("notifications_page_delete_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Deposit

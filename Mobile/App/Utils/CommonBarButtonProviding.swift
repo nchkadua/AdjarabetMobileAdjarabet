@@ -56,9 +56,9 @@ public extension CommonBarButtonProviding {
     @discardableResult
     func makeBalanceBarButtonItem() -> UIBarButtonItem.Coupled {
         let button = BalanceProfileButton(type: .system)
-        button.setFont(to: .h4(fontCase: .lower))
-        button.setTitleColor(to: .systemWhite(), for: .normal)
-        button.setTintColor(to: .systemWhite())
+        button.setFont(to: .footnote(fontCase: .upper, fontStyle: .semiBold))
+        button.setTitleColor(to: .primaryText(), for: .normal)
+        button.setTintColor(to: .primaryText())
         button.setImage(R.image.shared.navBar.profile()?.resizeImage(newHeight: 20), for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleEdgeInsets = UIEdgeInsets(top: 4, left: -8, bottom: 0, right: 0)
@@ -76,6 +76,17 @@ public extension CommonBarButtonProviding {
         let settingsBarButtonItem = UIBarButtonItem(customView: button)
 
         return settingsBarButtonItem
+    }
+
+    @discardableResult
+    func makeAdjarabetLogo() -> UIBarButtonItem {
+        let logoImageView = UIImageView(image: R.image.login.logo())
+        logoImageView.frame = CGRect(x: 0, y: 0, width: 155, height: 19)
+        logoImageView.contentMode = .scaleAspectFit
+        let logoImageItem = UIBarButtonItem(customView: logoImageView)
+        navigationItem.leftBarButtonItem = logoImageItem
+
+        return logoImageItem
     }
 }
 

@@ -20,6 +20,7 @@
 
 /* Notifications */
 "notifications_page_title" = "Ծանուցումներ";
+"notifications_page_delete_title" = "Delete";
 
 /* Recently Played Games */
 "recently_played" = "Վերջերս խաղարկված";

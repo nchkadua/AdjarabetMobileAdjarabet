@@ -86,22 +86,22 @@ extension GameLauncherComponentView: Xibable {
         view.backgroundColor = .clear
 
         jackpotButton.cornerRadius = 3
-        jackpotButton.setBackgorundColor(to: .systemRed150())
-        jackpotButton.setTitleColor(to: .systemWhite(), for: .normal)
-        jackpotButton.setFont(to: .body2)
+        jackpotButton.setBackgorundColor(to: .primaryRed())
+        jackpotButton.setTitleColor(to: .primaryText(), for: .normal)
+        jackpotButton.setFont(to: .footnote(fontCase: .lower))
         jackpotButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 4.5, bottom: 2, right: 4.5)
 
-        titleLabel.setTextColor(to: .systemWhite())
-        titleLabel.setFont(to: .h4(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
 
-        categoryLabel.setTextColor(to: .systemWhite(alpha: 0.7))
-        categoryLabel.setFont(to: .body2)
+        categoryLabel.setTextColor(to: .secondaryText())
+        categoryLabel.setFont(to: .footnote(fontCase: .lower))
 
-        inImageView.setTintColor(to: .systemWhite())
+        inImageView.setTintColor(to: .tertiaryText())
 
-        separatorView.setBackgorundColor(to: .baseBg100())
+        separatorView.setBackgorundColor(to: .nonOpaque())
 
-        loaderView.getInImageView().setTintColor(to: .systemWhite())
+        loaderView.getInImageView().setTintColor(to: .primaryText())
         set(isLoading: false)
     }
 }
