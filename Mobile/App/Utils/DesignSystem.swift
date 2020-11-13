@@ -304,16 +304,16 @@ public enum DesignSystem {
 
     /// Input
     public enum Input {
-        public static let backgroundColor: Color        = .fill110()
-        public static let tintColor: Color              = .systemWhite()
+        public static let backgroundColor: Color        = .secondaryBg()
+        public static let tintColor: Color              = .primaryText()
 
-        public static let placeholderFont: Typography   = .body2
+        public static let placeholderFont: Typography   = .footnote(fontCase: .lower, fontStyle: .regular)
 
-        public static let placeholTextColor: Color      = .separator(alpha: 0.6)
-        public static let textFieldTextColor: Color     = .separator(alpha: 1)
+        public static let placeholTextColor: Color      = .secondaryText()
+        public static let textFieldTextColor: Color     = .primaryText()
 
         public static let borderWidth: CGFloat          = 1
-        public static let borderColor: Color            = .separator()
+        public static let borderColor: Color            = .nonOpaque()
         public static let cornerRadius: CGFloat         = 4
 
         public enum Size: CaseIterable {
@@ -338,8 +338,8 @@ public enum DesignSystem {
 
             public var textFieldFont: Typography {
                 switch self {
-                case .small:            return .h5(fontCase: .lower)
-                case .medium, .large:   return .h4(fontCase: .lower)
+                case .small:            return .subHeadline(fontCase: .lower, fontStyle: .regular)
+                case .medium, .large:   return .subHeadline(fontCase: .lower, fontStyle: .regular)
                 }
             }
         }
@@ -376,17 +376,17 @@ public enum DesignSystem {
                     if case .ghost = self { fontCase = .lower }
 
                     switch size {
-                    case .large:  return .init(typograhy: .h3(fontCase: fontCase), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
+                    case .large:  return .init(typograhy: .subHeadline(fontCase: fontCase, fontStyle: .semiBold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
                     case .medium: return .init(typograhy: .h4(fontCase: fontCase), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))
                     case .small:  return .init(typograhy: .h5(fontCase: fontCase), contentEdgeInsets: .init(top: 9 + 2, left: 16, bottom: 7 + 2, right: 16))
                     case .xs:     return .init(typograhy: .h5(fontCase: fontCase), contentEdgeInsets: .init(top: 7 + 2, left: 12, bottom: 5 + 2, right: 12))
                     }
                 case .textLink:
                     switch size {
-                    case .large:  return .init(typograhy: .body2)
-                    case .medium: return .init(typograhy: .body2)
-                    case .small:  return .init(typograhy: .body2)
-                    case .xs:     return .init(typograhy: .body2)
+                    case .large:  return .init(typograhy: .footnote(fontCase: .upper, fontStyle: .semiBold))
+                    case .medium: return .init(typograhy: .footnote(fontCase: .upper, fontStyle: .semiBold))
+                    case .small:  return .init(typograhy: .footnote(fontCase: .upper, fontStyle: .semiBold))
+                    case .xs:     return .init(typograhy: .footnote(fontCase: .upper, fontStyle: .semiBold))
                     }
                 }
             }
@@ -407,9 +407,9 @@ public enum DesignSystem {
                 case .secondary(let state, let size):
                     let sd = sizeDescription(for: size)
                     switch state {
-                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .fill110())
+                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .fill110())
                     case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .separator(alpha: 0.8), backgorundColor: .fill110(), overlayColor: .baseBg300(alpha: 0.2))
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .fill110(), overlayColor: .baseBg300(alpha: 0.3))
+                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .fill110(), overlayColor: .fill140(alpha: 0.9))
                     case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .fill110(), overlayColor: .baseBg300(alpha: 0.4))
                     case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(alpha: 0.4), backgorundColor: .fill110(), overlayColor: .fill140(alpha: 0.9))
                     case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .fill110(), overlayColor: .baseBg300(alpha: 0.4))
@@ -419,9 +419,9 @@ public enum DesignSystem {
                     switch state {
                     case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .systemRed150())
                     case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .separator(alpha: 0.8), backgorundColor: .systemRed150(), overlayColor: .baseBg300(alpha: 0.2))
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .systemRed150(), overlayColor: .baseBg300(alpha: 0.3))
+                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRed(), overlayColor: .baseBg300(alpha: 0.3))
                     case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .systemRed150(), overlayColor: .baseBg300(alpha: 0.4))
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(alpha: 0.4), backgorundColor: .systemRed150(), overlayColor: .fill140(alpha: 0.5))
+                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .systemRed150(), overlayColor: .fill140(alpha: 0.5))
                     case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite(), backgorundColor: .systemRed150(), overlayColor: .baseBg300(alpha: 0.4))
                     }
                 case .outline(let state, let size):
@@ -447,12 +447,12 @@ public enum DesignSystem {
                 case .textLink(let state, let size):
                     let sd = sizeDescription(for: size)
                     switch state {
-                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .separator())
-                    case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .separator(alpha: 0.8))
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .separator(alpha: 0.8))
-                    case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .separator())
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .separator())
-                    case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemWhite())
+                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
+                    case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .tertiaryText())
+                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemRed())
+                    case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
+                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
+                    case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
                     }
                 }
             }
@@ -466,7 +466,7 @@ public enum DesignSystem {
                 public var overlayColor: Color?
                 public var borderColor: Color?
                 public var borderWidth: CGFloat = 1
-                public var cornerRadius: CGFloat = 4
+                public var cornerRadius: CGFloat = 8
 
                 public var blended: UIColor? { backgorundColor?.add(color: overlayColor) }
             }
@@ -511,8 +511,8 @@ public extension ButtonStyleImplementing where Self: AppCircularButton {
         contentEdgeInsets = description.contentEdgeInsets
 
         setTitleColor(to: description.textColor, for: .normal)
-
-        self.backgroundColor = description.blended
+        
+        self.backgroundColor = description.backgorundColor?.value
         self.borderWidth = description.borderWidth
         self.borderColor = description.borderColor?.value ?? .clear
         self.cornerRadius = description.cornerRadius

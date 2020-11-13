@@ -21,22 +21,18 @@ public class ContactUsButton: UIButton {
     }
 
     private func setSettings() {
-        layer.cornerRadius = 5
-        backgroundColor = R.color.colorGuide.global.baseBg100()
+        layer.cornerRadius = 25
+        backgroundColor = R.color.colorGuide.systemBackground.tertiary()
         titleLabel?.textAlignment = .center
-        imageEdgeInsets.right = 13
-        titleEdgeInsets.left = 4
+        imageEdgeInsets.right = 35
+        titleEdgeInsets.left = 10
 
         setTitleColor(to: .systemWhite(alpha: 0.7), for: .normal)
     }
 
     private func setTitles() {
-        let title1 = R.string.localization.contact_us_button_title1().makeAttributedString(with: .h6(fontCase: .lower), lineSpasing: 0.12, foregroundColor: .systemWhite(alpha: 0.7))
-        let title2 = "   \(R.string.localization.contact_us_button_title2())".makeAttributedString(with: .h4(fontCase: .lower), lineSpasing: 0.12, foregroundColor: .systemWhite())
-
-        title1.append(title2)
-
-        setAttributedTitle(title1, for: .normal)
+        let title = R.string.localization.contact_us_button_title().makeAttributedString(with: .footnote(fontCase: .lower, fontStyle: .semiBold), lineSpasing: 0.12, foregroundColor: .primaryText())
+        setAttributedTitle(title, for: .normal)
         setImage(R.image.shared.phone(), for: .normal)
     }
 

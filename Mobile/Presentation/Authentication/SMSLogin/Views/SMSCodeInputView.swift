@@ -17,7 +17,7 @@ public class SMSCodeInputView: AppCircularView {
         s.distribution = .fillEqually
         s.axis = .horizontal
         s.alignment = .fill
-        s.spacing = 12
+        s.spacing = 4
         return s
     }()
 

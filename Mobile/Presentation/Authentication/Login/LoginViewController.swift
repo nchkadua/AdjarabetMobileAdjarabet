@@ -15,12 +15,13 @@ public class LoginViewController: ABViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
 
-    @IBOutlet private weak var loginTitleLabel: UILabel!
     @IBOutlet private weak var logoImageView: UIImageView!
 
     @IBOutlet private weak var usernameInputView: ABInputView!
     @IBOutlet private weak var passwordInputView: ABInputView!
-
+    @IBOutlet private weak var separatorView: UIView!
+    
+    @IBOutlet private weak var smsLoginTitleLabel: UILabel!
     @IBOutlet private weak var smsLoginButton: ABButton!
 
     @IBOutlet private weak var loginButton: ABButton!
@@ -80,14 +81,14 @@ public class LoginViewController: ABViewController {
 
     // MAKR: Setup methods
     private func setup() {
-        setBaseBackgorundColor()
+        setBaseBackgorundColor(to: .secondaryBg())
         setupKeyboard()
         setupNavigationItem()
         setupScrollView()
-        setupLabels()
         setupLogoImageView()
         setupButtons()
         setupInputViews()
+        setupLabels()
         setupInputViewsObservation()
         setDelegates()
     }
@@ -98,12 +99,6 @@ public class LoginViewController: ABViewController {
 
     private func setupScrollView() {
         scrollView.alwaysBounceVertical = true
-    }
-
-    private func setupLabels() {
-        loginTitleLabel.setTextColor(to: .systemWhite(alpha: 0.7))
-        loginTitleLabel.setFont(to: .h4(fontCase: .lower))
-        loginTitleLabel.text = R.string.localization.login_page_title.localized()
     }
 
     private func setupLogoImageView() {
@@ -117,15 +112,17 @@ public class LoginViewController: ABViewController {
         smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
         updateSMSLoginButton(isEnabled: false)
 
-        loginButton.setStyle(to: .primary(state: .disabled, size: .large))
+        loginButton.setStyle(to: .tertiary(state: .acvite, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
-        updateLoginButton(isEnabled: false)
+//        updateLoginButton(isEnabled: false)
 
         biometryButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        biometryButton.setTitleColor(to: .systemWhite(), for: .normal)
+        biometryButton.setTitleColor(to: .primaryText(), for: .normal)
         biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
-        biometryIconButton.setTintColor(to: .systemWhite())
+        biometryIconButton.setTintColor(to: .primaryText())
+        biometryIconButton.layer.cornerRadius = biometryIconButton.bounds.width / 2
+        biometryIconButton.setBackgorundColor(to: .secondaryFill())
         biometryIconButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
     }
 
@@ -133,15 +130,21 @@ public class LoginViewController: ABViewController {
         usernameInputView.mainTextField.textContentType = .username
         usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title.localized())
         usernameInputView.setSize(to: .large)
-
+        usernameInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
+        usernameInputView.setLeftButtonImage(R.image.login.username() ?? UIImage(), for: .normal)
+        
         passwordInputView.mainTextField.textContentType = .password
         passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
         passwordInputView.setSize(to: .large)
+        passwordInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
+        passwordInputView.setLeftButtonImage(R.image.login.password() ?? UIImage(), for: .normal)
         passwordInputView.becomeSecureTextEntry()
 
         passwordInputView.rightComponent.isHidden = false
         passwordInputView.rightComponent.setImage(R.image.shared.hideText(), for: .normal)
 
+        separatorView.setBackgorundColor(to: .primaryText(alpha: 0.15))
+        
         passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updatePasswordRightButton()
         }).disposed(by: disposeBag)
@@ -167,6 +170,12 @@ public class LoginViewController: ABViewController {
             guard self?.loginButton.isUserInteractionEnabled == true else {return}
             self?.loginDidTap()
         }
+    }
+    
+    private func setupLabels() {
+        smsLoginTitleLabel.setTextColor(to: .secondaryText())
+        smsLoginTitleLabel.setFont(to: .footnote(fontCase: .lower))
+        smsLoginTitleLabel.text = R.string.localization.login_sms_login_title.localized()
     }
 
     private func setDelegates() {
@@ -207,7 +216,7 @@ public class LoginViewController: ABViewController {
     // MARK: Configuration
     private func updateLoginButton(isEnabled: Bool) {
         loginButton.isUserInteractionEnabled = isEnabled
-        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled, size: .large))
+        loginButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
     }
 
     private func updateSMSLoginButton(isEnabled: Bool) {

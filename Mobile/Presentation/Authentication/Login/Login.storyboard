@@ -31,58 +31,56 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-Tz-yeo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-Tz-yeo">
                                 <rect key="frame" x="0.0" y="44" width="414" height="649"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="owt-7I-83A">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="495.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="514"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-yu-5lM">
-                                                <rect key="frame" x="20" y="14" width="374" height="72.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-yu-5lM">
+                                                <rect key="frame" x="20" y="14" width="374" height="106"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOM-CT-6bX">
-                                                        <rect key="frame" x="10" y="0.0" width="46" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login/logo" translatesAutoresizingMaskIntoConstraints="NO" id="hmn-Aa-Zq7">
-                                                        <rect key="frame" x="10" y="26.5" width="160" height="20"/>
+                                                        <rect key="frame" x="104.5" y="39" width="175" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="175" id="VqE-AK-H7m"/>
+                                                            <constraint firstAttribute="height" constant="22" id="m0c-XU-srf"/>
+                                                        </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="26" right="0.0"/>
+                                                <edgeInsets key="layoutMargins" top="39" left="10" bottom="45" right="0.0"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="xfw-Rj-uOF">
-                                                <rect key="frame" x="20" y="86.5" width="374" height="122"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xfw-Rj-uOF">
+                                                <rect key="frame" x="20" y="120" width="374" height="111"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-pe-Vui" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="55" id="eQN-bM-SIf"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="dSr-pI-Ry4" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="68" width="374" height="54"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEe-RB-czB">
+                                                        <rect key="frame" x="0.0" y="55" width="374" height="1"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="bbe-O0-rWG"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="dSr-pI-Ry4" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="56" width="374" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="55" id="aHT-iV-Tyv"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="122" id="XZf-zk-qon"/>
-                                                </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="gXw-ip-yDy">
-                                                <rect key="frame" x="20" y="208.5" width="374" height="126"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="gXw-ip-yDy">
+                                                <rect key="frame" x="20" y="231" width="374" height="122"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-81-uan">
-                                                        <rect key="frame" x="0.0" y="14" width="374" height="30"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-aK-Pmt" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="0.0" width="364" height="30"/>
-                                                                <state key="normal" title="SMS login"/>
-                                                            </button>
-                                                        </subviews>
-                                                        <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="0.0"/>
-                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z18-v4-Trr">
-                                                        <rect key="frame" x="0.0" y="72" width="374" height="54"/>
+                                                        <rect key="frame" x="0.0" y="14" width="374" height="54"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKT-UG-DAh" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
@@ -93,11 +91,30 @@
                                                             <constraint firstAttribute="height" constant="54" id="owA-Sm-YRa"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-81-uan">
+                                                        <rect key="frame" x="0.0" y="92" width="374" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqX-Ku-sXV">
+                                                                <rect key="frame" x="10" y="0.0" width="200" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="200" id="x0C-Bd-rMb"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-aK-Pmt" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="215" y="0.0" width="159" height="30"/>
+                                                                <state key="normal" title="SMS login"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="0.0"/>
+                                                    </stackView>
                                                 </subviews>
                                                 <edgeInsets key="layoutMargins" top="14" left="0.0" bottom="0.0" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4pT-U2-vYo">
-                                                <rect key="frame" x="20" y="334.5" width="374" height="141"/>
+                                                <rect key="frame" x="20" y="353" width="374" height="141"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-iH-s4W">
                                                         <rect key="frame" x="0.0" y="47" width="374" height="94"/>
@@ -124,7 +141,6 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="owt-7I-83A" firstAttribute="bottom" secondItem="THg-0o-nW1" secondAttribute="bottom" id="B35-A2-fii"/>
                                     <constraint firstAttribute="bottom" secondItem="owt-7I-83A" secondAttribute="bottom" id="Fvm-Ah-9Jm"/>
                                     <constraint firstAttribute="trailing" secondItem="owt-7I-83A" secondAttribute="trailing" id="L2H-wr-uOo"/>
                                     <constraint firstItem="owt-7I-83A" firstAttribute="leading" secondItem="Wj6-Tz-yeo" secondAttribute="leading" id="RxF-Yp-8w8"/>
@@ -153,22 +169,23 @@
                         <outlet property="biometryIconButton" destination="YIt-Qn-H4f" id="NfC-Wd-fe4"/>
                         <outlet property="footerComponentView" destination="mLI-tY-Hga" id="XUo-dx-FwT"/>
                         <outlet property="loginButton" destination="JKT-UG-DAh" id="O8E-GL-HOo"/>
-                        <outlet property="loginTitleLabel" destination="NOM-CT-6bX" id="aCz-Wp-W9h"/>
                         <outlet property="logoImageView" destination="hmn-Aa-Zq7" id="YMv-nh-EeK"/>
                         <outlet property="passwordInputView" destination="dSr-pI-Ry4" id="VPB-G5-fmq"/>
                         <outlet property="scrollView" destination="Wj6-Tz-yeo" id="XOV-Bc-vnD"/>
+                        <outlet property="separatorView" destination="YEe-RB-czB" id="YBg-UC-230"/>
                         <outlet property="smsLoginButton" destination="GbW-aK-Pmt" id="o4q-V1-pJB"/>
+                        <outlet property="smsLoginTitleLabel" destination="WqX-Ku-sXV" id="90Q-H1-9nj"/>
                         <outlet property="usernameInputView" destination="GkT-pe-Vui" id="dYq-0j-utp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGg-zD-JLz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415.19999999999999" y="137.4384236453202"/>
+            <point key="canvasLocation" x="-415.94202898550731" y="137.27678571428569"/>
         </scene>
     </scenes>
     <resources>
         <image name="Login/logo" width="160" height="20"/>
-        <image name="Shared/faceID" width="108" height="108"/>
+        <image name="Shared/faceID" width="23" height="23"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

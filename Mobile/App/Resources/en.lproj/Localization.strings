@@ -31,14 +31,14 @@
 "not_member" = "Not a member?";
 "join_now" = "Join now";
 "login_button_title" = "LOG IN";
-"contact_us_button_title1" = "Have question?";
-"contact_us_button_title2" = "Contact us";
+"contact_us_button_title" = "Contact us";
 
 /* Login */
 "login_page_title" = "Log in to";
 "login_forgot_password" = "Forgot Password?";
 "login_forgot_username" = "Forgot Username?";
 "login_sms_login" = "SMS Login";
+"login_sms_login_title" = "გაიარეთ ავტორიზაცია";
 "login_username_input_title" = "Username";
 "login_password_input_title" = "Password";
 "login_with_face_id_title" = "Log in with face ID";

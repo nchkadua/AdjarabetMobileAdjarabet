@@ -28,8 +28,8 @@ public class SMSCodeDigitView: AppCircularView {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
         l.textAlignment = .center
-        l.setFont(to: .h1(fontCase: .upper))
-        l.setTextColor(to: .separator())
+        l.setFont(to: .title3(fontCase: .upper, fontStyle: .semiBold))
+        l.setTextColor(to: .primaryText())
         return l
     }()
 
@@ -41,6 +41,11 @@ public class SMSCodeDigitView: AppCircularView {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        underline()
     }
 
     fileprivate func initialize() {
@@ -57,10 +62,7 @@ public class SMSCodeDigitView: AppCircularView {
         label.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
 
         clipsToBounds = true
-
-        cornerRadius = 4
-        borderWidth = 1
-
+        
         setText(nil)
     }
 
@@ -73,9 +75,8 @@ public class SMSCodeDigitView: AppCircularView {
             if hasText {
                 label.text = text
             }
-
-            setBackgorundColor(to: text == nil ? .baseBg100() : .fill140())
-            setBorderColor(to: text == nil ? .fill110() : .fill50(), animationDuration: duration ?? 0)
+            
+            setBackgorundColor(to: .secondaryBg())
             layoutIfNeeded()
         }
 

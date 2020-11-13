@@ -51,7 +51,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = [
             DefaultQuickActionsHeaderViewModel(params: QuickActionsHeaderViewModelParams()),
-            DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(isSeparatorViewHidden: true, backgroundColor: DesignSystem.Color.baseBg300()))
+            DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(backgroundColor: DesignSystem.Color.primaryBg()))
         ]
 
         let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))

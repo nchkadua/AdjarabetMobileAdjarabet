@@ -12,7 +12,6 @@ public protocol FooterComponentViewModel: FooterComponentViewModelInput, FooterC
 }
 
 public struct FooterComponentViewModelParams {
-    var isSeparatorViewHidden: Bool
     var backgroundColor: DesignSystem.Color
 }
 
@@ -27,7 +26,6 @@ public protocol FooterComponentViewModelOutput {
 
 public enum FooterComponentViewModelOutputAction {
     case didChangeLanguage(FooterComponentViewModel)
-    case setSeparatorViewHidden(_ hidden: Bool)
     case setBackgroundColor(_ color: DesignSystem.Color)
 }
 
@@ -47,7 +45,6 @@ extension DefaultFooterComponentViewModel: FooterComponentViewModel {
     public var action: Observable<FooterComponentViewModelOutputAction> { actionSubject.asObserver() }
 
     public func didBind() {
-        actionSubject.onNext(.setSeparatorViewHidden(params.isSeparatorViewHidden))
         actionSubject.onNext(.setBackgroundColor(params.backgroundColor))
     }
 

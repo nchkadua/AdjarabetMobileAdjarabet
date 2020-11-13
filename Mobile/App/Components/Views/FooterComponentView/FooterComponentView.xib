@@ -3,9 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +14,6 @@
                 <outlet property="languageButton" destination="Ky8-d4-mu9" id="a5D-nJ-HMq"/>
                 <outlet property="legalImageView" destination="ASk-gd-TOM" id="Qqc-FP-Zin"/>
                 <outlet property="legalTextView" destination="gpZ-Jo-bvi" id="oCy-4T-f68"/>
-                <outlet property="separatorView" destination="Fk5-x4-cpR" id="885-Y6-DnY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="t40-9k-D3k"/>
             </connections>
         </placeholder>
@@ -27,28 +25,9 @@
                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Azf-XP-iKd">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="169"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="as5-pJ-D61">
+                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="as5-pJ-D61">
                             <rect key="frame" x="20" y="0.0" width="374" height="118"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vz-5V-LEn">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fk5-x4-cpR">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="1"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="L2a-fD-tXn"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="Fk5-x4-cpR" firstAttribute="top" secondItem="0vz-5V-LEn" secondAttribute="top" id="NwQ-eZ-VIV"/>
-                                        <constraint firstAttribute="trailing" secondItem="Fk5-x4-cpR" secondAttribute="trailing" id="dEP-3z-Vp0"/>
-                                        <constraint firstAttribute="height" constant="25" id="hT3-rn-n7o"/>
-                                        <constraint firstItem="Fk5-x4-cpR" firstAttribute="leading" secondItem="0vz-5V-LEn" secondAttribute="leading" id="s8j-LV-nQA"/>
-                                    </constraints>
-                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODt-zO-Z2v">
                                     <rect key="frame" x="0.0" y="25" width="374" height="93"/>
                                     <subviews>
@@ -82,6 +61,7 @@
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <edgeInsets key="layoutMargins" top="25" left="0.0" bottom="0.0" right="0.0"/>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="obc-Nv-1VU">
                             <rect key="frame" x="20" y="118" width="374" height="51"/>
@@ -130,16 +110,8 @@
             <point key="canvasLocation" x="71" y="86"/>
         </view>
     </objects>
-    <designables>
-        <designable name="Ky8-d4-mu9">
-            <size key="intrinsicContentSize" width="46" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Login/legal" width="20" height="20"/>
         <image name="Shared/phone" width="20" height="20"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

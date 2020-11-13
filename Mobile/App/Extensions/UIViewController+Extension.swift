@@ -30,7 +30,7 @@ public extension UIViewController {
         scrollToTop(view: view)
     }
 
-    func setBaseBackgorundColor(to color: DesignSystem.Color = .baseBg150()) {
+    func setBaseBackgorundColor(to color: DesignSystem.Color = .secondaryBg()) {
         view.setBackgorundColor(to: color)
     }
 
@@ -47,14 +47,20 @@ public extension UIViewController {
     func setTitle(title: String) {
         let label = UILabel()
         label.text = title
-        label.setFont(to: .subHeadline(fontCase: .lower))
+        label.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         label.setTextColor(to: .primaryText())
         navigationItem.titleView = label
     }
 
-    func setBackBarButtonItemIfNeeded(width: CGFloat = 26) {
+    func setBackBarButtonItemIfNeeded(width: CGFloat = 26, rounded: Bool = false) {
         let button = UIButton()
         button.setImage(R.image.shared.back(), for: .normal)
+        
+        if rounded {
+            button.imageEdgeInsets.right = 2
+            button.setBackgroundImage(R.image.login.oval(), for: .normal)
+        }
+        
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.addTarget(self, action: #selector(backBarButtonItemDidTap), for: .touchUpInside)

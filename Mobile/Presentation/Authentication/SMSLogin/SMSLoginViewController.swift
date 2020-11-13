@@ -14,7 +14,6 @@ public class SMSLoginViewController: ABViewController {
 
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var smsLoginTitleLabel: UILabel!
     @IBOutlet private weak var smsLoginDescriptionLabel: UILabel!
     @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var resendSMSButton: ABButton!
@@ -87,7 +86,8 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupNavigationItem() {
-        setBackBarButtonItemIfNeeded(width: 44)
+        setTitle(title: R.string.localization.sms_login_page_title.localized())
+        setBackBarButtonItemIfNeeded(width: 44, rounded: true)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
@@ -97,33 +97,23 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupLabels() {
-        smsLoginTitleLabel.setTextColor(to: .systemWhite())
-        smsLoginTitleLabel.setFont(to: .h2(fontCase: .lower))
-
-        let smsLogin = "\(R.string.localization.sms_login_page_title.localized())"
-            .makeAttributedString(with: .h2(fontCase: .lower),
-                                  lineSpasing: 6,
-                                  foregroundColor: .systemWhite())
-
-        smsLoginTitleLabel.attributedText = smsLogin
-
-        smsLoginDescriptionLabel.setTextColor(to: .systemWhite())
+        smsLoginDescriptionLabel.setTextColor(to: .primaryRed())
         smsLoginDescriptionLabel.setFont(to: .p)
 
         let smsLoginDescription = R.string.localization.sms_confirmation_description.localized()
-            .makeAttributedString(with: .p,
+            .makeAttributedString(with: .caption2(fontCase: .lower),
                                   lineSpasing: 4,
-                                  foregroundColor: .separator(alpha: 0.8))
+                                  foregroundColor: .secondaryText())
         smsLoginDescriptionLabel.attributedText = smsLoginDescription
 
-        messageLabel.setTextColor(to: .systemWhite())
-        messageLabel.setFont(to: .p)
+        messageLabel.setTextColor(to: .secondaryText())
+        messageLabel.setFont(to: .caption2(fontCase: .lower))
         messageLabel.text = R.string.localization.sms_did_not_receive_message()
     }
 
     private func setupButtons() {
         resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        resendSMSButton.setTitleColor(to: .systemWhite(), for: .normal)
+        resendSMSButton.setTitleColor(to: .primaryText(), for: .normal)
         resendSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
         resendSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
         resendSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 5)
@@ -131,7 +121,7 @@ public class SMSLoginViewController: ABViewController {
         resendSMSButton.addTarget(self, action: #selector(resendSMSDidTap), for: .touchUpInside)
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
-        loginButton.setStyle(to: .primary(state: .disabled, size: .large))
+        loginButton.setStyle(to: .tertiary(state: .disabled, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
     }
@@ -191,8 +181,8 @@ public class SMSLoginViewController: ABViewController {
     private func updateLoginButtonWhen(smsCodeText: String?, animated animate: Bool) {
         let isEnabled = viewModel.shoudEnableLoginButton(fot: smsCodeText)
         loginButton.isUserInteractionEnabled = isEnabled
-
-        loginButton.setStyle(to: .primary(state: isEnabled ? .acvite : .disabled, size: .large))
+        
+        loginButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
     }
 }
 

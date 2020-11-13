@@ -1566,12 +1566,18 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.login` struct is generated, and contains static references to 3 images.
+    /// This `R.image.login` struct is generated, and contains static references to 6 images.
     struct login {
       /// Image `legal`.
       static let legal = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/legal")
       /// Image `logo`.
       static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/logo")
+      /// Image `oval`.
+      static let oval = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/oval")
+      /// Image `password`.
+      static let password = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/password")
+      /// Image `username`.
+      static let username = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/username")
       /// Image `well_done`.
       static let well_done = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/well_done")
 
@@ -1586,6 +1592,27 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "logo", bundle: ..., traitCollection: ...)`
       static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.login.logo, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "oval", bundle: ..., traitCollection: ...)`
+      static func oval(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.login.oval, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "password", bundle: ..., traitCollection: ...)`
+      static func password(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.login.password, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "username", bundle: ..., traitCollection: ...)`
+      static func username(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.login.username, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2409,7 +2436,7 @@ struct R: Rswift.Validatable {
       /// en translation: Contact us
       ///
       /// Locales: en, ka, hy
-      static let contact_us_button_title2 = Rswift.StringResource(key: "contact_us_button_title2", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let contact_us_button_title = Rswift.StringResource(key: "contact_us_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Country
       ///
       /// Locales: en, ka, hy
@@ -2450,10 +2477,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_gender = Rswift.StringResource(key: "account_info_gender", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Have question?
-      ///
-      /// Locales: en, ka, hy
-      static let contact_us_button_title1 = Rswift.StringResource(key: "contact_us_button_title1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Incognito Card
       ///
       /// Locales: en, ka, hy
@@ -2666,6 +2689,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let deposit_payment_method_title = Rswift.StringResource(key: "deposit_payment_method_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გაიარეთ ავტორიზაცია
+      ///
+      /// Locales: en, ka, hy
+      static let login_sms_login_title = Rswift.StringResource(key: "login_sms_login_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს
       ///
       /// Locales: en, ka, hy
@@ -2853,16 +2880,16 @@ struct R: Rswift.Validatable {
       /// en translation: Contact us
       ///
       /// Locales: en, ka, hy
-      static func contact_us_button_title2(preferredLanguages: [String]? = nil) -> String {
+      static func contact_us_button_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("contact_us_button_title2", tableName: "Localization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("contact_us_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "contact_us_button_title2"
+          return "contact_us_button_title"
         }
 
-        return NSLocalizedString("contact_us_button_title2", tableName: "Localization", bundle: bundle, comment: "")
+        return NSLocalizedString("contact_us_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Country
@@ -3013,21 +3040,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_info_gender", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Have question?
-      ///
-      /// Locales: en, ka, hy
-      static func contact_us_button_title1(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("contact_us_button_title1", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "contact_us_button_title1"
-        }
-
-        return NSLocalizedString("contact_us_button_title1", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Incognito Card
@@ -3823,6 +3835,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deposit_payment_method_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: გაიარეთ ავტორიზაცია
+      ///
+      /// Locales: en, ka, hy
+      static func login_sms_login_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_sms_login_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_sms_login_title"
+        }
+
+        return NSLocalizedString("login_sms_login_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს

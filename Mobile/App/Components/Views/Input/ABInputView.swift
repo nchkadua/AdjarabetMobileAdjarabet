@@ -100,6 +100,7 @@ public class ABInputView: UIView {
             placeholderLabelCenterYConstraint.isActive  = isCenter
             textFieldCenterYConstraint.isActive         = isCenter
             textFieldBottomConstraint.isActive          = !textFieldCenterYConstraint.isActive
+            
             wrapperView.setBorderColor(
                 to: textField.isFirstResponder ? DesignSystem.Input.borderColor : DesignSystem.Color.baseBg150(),
                 animationDuration: animate ? 0.2 : 0)
@@ -130,6 +131,12 @@ public class ABInputView: UIView {
 
     public func setupWith(backgroundColor color: DesignSystem.Color = DesignSystem.Input.backgroundColor, borderWidth width: CGFloat = DesignSystem.Input.borderWidth) {
         setupWrapperView(backgroundColor: color, borderWidth: width)
+    }
+    
+    public func setLeftButtonImage(_ image: UIImage, for controlState: UIControl.State, tintColor: DesignSystem.Color = .primaryText()) {
+        leftComponent.setImage(image, for: controlState)
+        leftComponent.setTintColor(to: tintColor)
+        leftComponent.superview?.isHidden = false
     }
 
     // MARK: Private Methods
@@ -184,7 +191,7 @@ public class ABInputView: UIView {
     }
 
     private func setupLeftButton() {
-        rightButton.backgroundColor = nil
+        leftButton.backgroundColor = nil
         leftButton.superview?.isHidden = true
     }
 

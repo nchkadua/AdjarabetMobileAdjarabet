@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension UIView {
     @discardableResult
@@ -57,6 +57,14 @@ public extension UIView {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = bounds
         addSubview(blurEffectView)
+    }
+    
+    func underline(with color: DesignSystem.Color = .primaryText(alpha: 0.3), thickness: CGFloat = 1.0) {
+        let border = CALayer()
+        border.backgroundColor = color.value.cgColor
+        border.frame = CGRect(x: 0, y: frame.maxY - thickness, width: frame.width, height: thickness)
+        
+        layer.addSublayer(border)
     }
 }
 

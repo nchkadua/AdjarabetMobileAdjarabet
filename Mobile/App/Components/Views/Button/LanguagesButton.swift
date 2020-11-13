@@ -12,7 +12,7 @@ protocol LanguagesButtonDelegate: class {
     func languageDidChange(language: Language)
 }
 
-class LanguagesButton: ABButton {
+class LanguagesButton: UIButton {
     public weak var delegate: LanguagesButtonDelegate?
     @Inject private var languageStorage: LanguageStorage
 
@@ -20,14 +20,15 @@ class LanguagesButton: ABButton {
         super.init(coder: aDecoder)
         setup()
     }
-
+    
     private func setup() {
-        setStyle(to: .textLink(state: .acvite, size: .small))
-        setFont(to: .body1)
-        setTitleColor(R.color.colorGuide.global.systemWhite(), for: .normal)
-        backgroundColor = R.color.colorGuide.global.baseBg100()
-        layer.cornerRadius = 5
+        layer.cornerRadius = 25
+        clipsToBounds = true
         titleLabel?.textAlignment = .left
+        
+        setFont(to: .caption2(fontCase: .upper, fontStyle: .semiBold))
+        setTitleColor(R.color.colorGuide.textColors.primary(), for: .normal)
+        backgroundColor = R.color.colorGuide.systemBackground.tertiary()
 
         let chosenLanguageIdentifier = languageStorage.currentLanguage.localizableIdentifier
 

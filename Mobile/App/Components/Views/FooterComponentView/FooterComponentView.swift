@@ -20,7 +20,6 @@ public class FooterComponentView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
-    @IBOutlet weak private var separatorView: UIView!
     @IBOutlet weak private var legalImageView: UIImageView!
     @IBOutlet weak private var legalTextView: LegalTextView!
     @IBOutlet weak private var contactButton: ContactUsButton!
@@ -48,8 +47,6 @@ public class FooterComponentView: UIView {
             switch action {
             case .didChangeLanguage:
                 self?.setupUI()
-            case .setSeparatorViewHidden(let hidden):
-                self?.set(separatorIsHidden: hidden)
             case .setBackgroundColor(let color):
                 self?.set(backgroundColor: color)
             }
@@ -58,17 +55,11 @@ public class FooterComponentView: UIView {
         viewModel.didBind()
     }
 
-    func set(separatorIsHidden isHidden: Bool) {
-        separatorView.isHidden = isHidden
-    }
-
     func set(backgroundColor color: DesignSystem.Color) {
         view.backgroundColor = color.value
     }
 
     private func setupLegalView() {
-        separatorView.backgroundColor = R.color.colorGuide.global.separator()
-
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 3
         let attributes = [NSAttributedString.Key.paragraphStyle: style]
