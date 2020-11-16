@@ -15,7 +15,7 @@ public class ProfileViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
-
+    
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
@@ -76,7 +76,7 @@ public class ProfileViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .baseBg300())
+        setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTableView()
     }

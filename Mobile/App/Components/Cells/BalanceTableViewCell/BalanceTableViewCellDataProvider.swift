@@ -17,7 +17,7 @@ extension DefaultBalanceComponentViewModel: BalanceTableViewCellDataProvider { }
 public extension DefaultBalanceComponentViewModel {
     var height: CGFloat {
         get {
-            190
+            210
         }
         set {
             print(newValue)

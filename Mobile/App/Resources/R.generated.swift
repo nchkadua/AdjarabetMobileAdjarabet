@@ -1410,10 +1410,12 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
       }
 
-      /// This `R.image.components.profileCell` struct is generated, and contains static references to 3 images.
+      /// This `R.image.components.profileCell` struct is generated, and contains static references to 4 images.
       struct profileCell {
         /// Image `adjarabet_logo`.
         static let adjarabet_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/adjarabet_logo")
+        /// Image `arrow`.
+        static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/arrow")
         /// Image `copy`.
         static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/copy")
         /// Image `verified`.
@@ -1423,6 +1425,13 @@ struct R: Rswift.Validatable {
         /// `UIImage(named: "adjarabet_logo", bundle: ..., traitCollection: ...)`
         static func adjarabet_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
           return UIKit.UIImage(resource: R.image.components.profileCell.adjarabet_logo, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "arrow", bundle: ..., traitCollection: ...)`
+        static func arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.profileCell.arrow, compatibleWith: traitCollection)
         }
         #endif
 
@@ -1447,8 +1456,8 @@ struct R: Rswift.Validatable {
       struct quickAction {
         /// Image `account`.
         static let account = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/account")
-        /// Image `balance_management`.
-        static let balance_management = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/balance_management")
+        /// Image `biometry`.
+        static let biometry = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/biometry")
         /// Image `deposit`.
         static let deposit = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/deposit")
         /// Image `incognito`.
@@ -1476,9 +1485,9 @@ struct R: Rswift.Validatable {
         #endif
 
         #if os(iOS) || os(tvOS)
-        /// `UIImage(named: "balance_management", bundle: ..., traitCollection: ...)`
-        static func balance_management(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-          return UIKit.UIImage(resource: R.image.components.quickAction.balance_management, compatibleWith: traitCollection)
+        /// `UIImage(named: "biometry", bundle: ..., traitCollection: ...)`
+        static func biometry(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.biometry, compatibleWith: traitCollection)
         }
         #endif
 
@@ -1566,7 +1575,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.login` struct is generated, and contains static references to 6 images.
+    /// This `R.image.login` struct is generated, and contains static references to 7 images.
     struct login {
       /// Image `legal`.
       static let legal = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/legal")
@@ -1576,6 +1585,8 @@ struct R: Rswift.Validatable {
       static let oval = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/oval")
       /// Image `password`.
       static let password = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/password")
+      /// Image `sms_back`.
+      static let sms_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/sms_back")
       /// Image `username`.
       static let username = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/username")
       /// Image `well_done`.
@@ -1606,6 +1617,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "password", bundle: ..., traitCollection: ...)`
       static func password(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.login.password, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "sms_back", bundle: ..., traitCollection: ...)`
+      static func sms_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.login.sms_back, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2417,10 +2435,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_address = Rswift.StringResource(key: "account_info_address", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Balance Management
+      /// en translation: Biometry Authentication Parameters
       ///
       /// Locales: en, ka, hy
-      static let balance_management = Rswift.StringResource(key: "balance_management", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let biomatry_authentication_parameters = Rswift.StringResource(key: "biomatry_authentication_parameters", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Birth Date
       ///
       /// Locales: en, ka, hy
@@ -2817,19 +2835,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_address", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: Balance Management
+      /// en translation: Biometry Authentication Parameters
       ///
       /// Locales: en, ka, hy
-      static func balance_management(preferredLanguages: [String]? = nil) -> String {
+      static func biomatry_authentication_parameters(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("balance_management", tableName: "Localization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("biomatry_authentication_parameters", tableName: "Localization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "balance_management"
+          return "biomatry_authentication_parameters"
         }
 
-        return NSLocalizedString("balance_management", tableName: "Localization", bundle: bundle, comment: "")
+        return NSLocalizedString("biomatry_authentication_parameters", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Birth Date
@@ -4069,7 +4087,6 @@ struct _R: Rswift.Validatable {
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
       try _ProfileInfoComponentView.validate()
-      try _QuickActionComponentView.validate()
       try _WithdrawTermsView.validate()
     }
 
@@ -4361,18 +4378,12 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _QuickActionComponentView: Rswift.NibResourceType, Rswift.Validatable {
+    struct _QuickActionComponentView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "QuickActionComponentView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'QuickActionComponentView', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
       }
 
       fileprivate init() {}

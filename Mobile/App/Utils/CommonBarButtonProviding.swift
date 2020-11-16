@@ -14,7 +14,7 @@ public extension CommonBarButtonProviding {
     @discardableResult
     func makeLeftBarButtonItemTitle(to title: String) -> UIBarButtonItem.Coupled {
         let barButtonItem = UIBarButtonItem.make(title: title, typography: .title3(fontCase: .lower))
-        barButtonItem.button.setTitleColor(DesignSystem.Color.systemWhite().value, for: .normal)
+        barButtonItem.button.setTitleColor(DesignSystem.Color.primaryText().value, for: .normal)
         barButtonItem.barButtonItem.isEnabled = false
         navigationItem.leftBarButtonItem = barButtonItem.barButtonItem
         return barButtonItem
@@ -22,8 +22,8 @@ public extension CommonBarButtonProviding {
 
     @discardableResult
     func makeRightBarButtonItemTitle(to title: String) -> UIBarButtonItem.Coupled {
-        let barButtonItem = UIBarButtonItem.make(title: title, typography: .h3(fontCase: .lower))
-        barButtonItem.button.setTitleColor(DesignSystem.Color.systemWhite().value, for: .normal)
+        let barButtonItem = UIBarButtonItem.make(title: title, typography: .footnote(fontCase: .lower))
+        barButtonItem.button.setTitleColor(DesignSystem.Color.primaryText().value, for: .normal)
         barButtonItem.barButtonItem.isEnabled = false
         navigationItem.rightBarButtonItem = barButtonItem.barButtonItem
         return barButtonItem
@@ -40,13 +40,13 @@ public extension CommonBarButtonProviding {
     func notificationsBarButtonItemGroupWith(numberOfNotifications number: Int) -> [UIBarButtonItem] {
         let button = NotificationsButton(type: .system)
         button.setFont(to: .subHeadline(fontCase: .upper, fontStyle: .bold))
-        button.setTitleColor(to: .systemWhite(), for: .normal)
-        button.setTintColor(to: .systemWhite())
+        button.setTitleColor(to: .primaryText(), for: .normal)
+        button.setTintColor(to: .primaryText())
         button.semanticContentAttribute = .forceRightToLeft
         button.numberOfNotifications = number
 
         let titleButton = UIBarButtonItem.make(title: title, typography: .subHeadline(fontCase: .lower, fontStyle: .bold))
-        titleButton.button.setTitleColor(DesignSystem.Color.systemWhite().value, for: .normal)
+        titleButton.button.setTitleColor(DesignSystem.Color.primaryText().value, for: .normal)
         titleButton.barButtonItem.isEnabled = false
         titleButton.button.setTitle(R.string.localization.notifications_page_title(), for: .normal)
 
@@ -92,11 +92,11 @@ public extension CommonBarButtonProviding {
 
 public extension UIBarButtonItem {
     typealias Coupled = (barButtonItem: UIBarButtonItem, button: UIButton)
-    static func make(title: String?, typography: DesignSystem.Typography = .h4(fontCase: .lower)) -> Coupled {
+    static func make(title: String?, typography: DesignSystem.Typography = .footnote(fontCase: .lower)) -> Coupled {
         let button = UIButton(type: .system)
         button.setTitleWithoutAnimation(title, for: .normal)
         button.setFont(to: typography)
-        button.setTitleColor(to: .separator(), for: .normal)
+        button.setTitleColor(to: .primaryText(), for: .normal)
 
         let barButtonItem = UIBarButtonItem(customView: button)
 

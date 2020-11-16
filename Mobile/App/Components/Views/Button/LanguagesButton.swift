@@ -20,12 +20,12 @@ class LanguagesButton: UIButton {
         super.init(coder: aDecoder)
         setup()
     }
-    
+
     private func setup() {
         layer.cornerRadius = 25
         clipsToBounds = true
         titleLabel?.textAlignment = .left
-        
+
         setFont(to: .caption2(fontCase: .upper, fontStyle: .semiBold))
         setTitleColor(R.color.colorGuide.textColors.primary(), for: .normal)
         backgroundColor = R.color.colorGuide.systemBackground.tertiary()

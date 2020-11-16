@@ -181,7 +181,7 @@ public class SMSLoginViewController: ABViewController {
     private func updateLoginButtonWhen(smsCodeText: String?, animated animate: Bool) {
         let isEnabled = viewModel.shoudEnableLoginButton(fot: smsCodeText)
         loginButton.isUserInteractionEnabled = isEnabled
-        
+
         loginButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
     }
 }

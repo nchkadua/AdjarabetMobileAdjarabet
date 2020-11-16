@@ -16,8 +16,12 @@ public extension UINavigationBar {
     }
 
     func styleForSecondaryPage() {
-        isTranslucent = false
-        barTintColor = DesignSystem.Color.baseBg300().value
+        setBackgroundImage(UIImage(), for: .default)
+        shadowImage = UIImage()
+        isTranslucent = true
+        setBackgorundColor(to: .primaryBg())
+        barTintColor = DesignSystem.Color.regular().value
+        blurred()
     }
 
     func blurred() {

@@ -20,7 +20,7 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var usernameInputView: ABInputView!
     @IBOutlet private weak var passwordInputView: ABInputView!
     @IBOutlet private weak var separatorView: UIView!
-    
+
     @IBOutlet private weak var smsLoginTitleLabel: UILabel!
     @IBOutlet private weak var smsLoginButton: ABButton!
 
@@ -131,7 +131,7 @@ public class LoginViewController: ABViewController {
         usernameInputView.setSize(to: .large)
         usernameInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
         usernameInputView.setLeftButtonImage(R.image.login.username() ?? UIImage(), for: .normal)
-        
+
         passwordInputView.mainTextField.textContentType = .password
         passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
         passwordInputView.setSize(to: .large)
@@ -143,7 +143,7 @@ public class LoginViewController: ABViewController {
         passwordInputView.rightComponent.setImage(R.image.shared.hideText(), for: .normal)
 
         separatorView.setBackgorundColor(to: .primaryText(alpha: 0.15))
-        
+
         passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updatePasswordRightButton()
         }).disposed(by: disposeBag)
@@ -163,7 +163,7 @@ public class LoginViewController: ABViewController {
             self?.loginDidTap()
         }
     }
-    
+
     private func setupLabels() {
         smsLoginTitleLabel.setTextColor(to: .primaryText())
         smsLoginTitleLabel.setFont(to: .footnote(fontCase: .lower))

@@ -75,19 +75,19 @@ extension ProfileInfoComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.baseBg300().value
+        view.backgroundColor = DesignSystem.Color.secondaryBg().value
 
         logoImageView.image = R.image.components.profileCell.adjarabet_logo()
 
-        usernameLabel.setTextColor(to: .systemWhite())
-        usernameLabel.setFont(to: .h1(fontCase: .lower))
+        usernameLabel.setTextColor(to: .primaryText())
+        usernameLabel.setFont(to: .title3(fontCase: .lower, fontStyle: .bold))
 
-        verificationStatusLabel.setTextColor(to: DesignSystem.Color.systemWhite(alpha: 0.8))
-        verificationStatusLabel.setFont(to: .p)
+        verificationStatusLabel.setTextColor(to: .secondaryText())
+        verificationStatusLabel.setFont(to: .footnote(fontCase: .lower))
         verificationStatusImageView.image = R.image.components.profileCell.verified()
 
-        userIdLabel.setTextColor(to: .systemWhite())
-        userIdLabel.setFont(to: .h3(fontCase: .lower))
+        userIdLabel.setTextColor(to: .primaryText())
+        userIdLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
 
         copyButton.setImage(R.image.components.profileCell.copy(), for: .normal)
         copyButton.addTarget(self, action: #selector(copyUserId), for: .touchUpInside)

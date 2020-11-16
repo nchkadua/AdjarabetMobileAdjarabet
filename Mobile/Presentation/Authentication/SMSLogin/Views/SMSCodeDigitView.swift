@@ -43,7 +43,7 @@ public class SMSCodeDigitView: AppCircularView {
         super.init(coder: aDecoder)
         initialize()
     }
-    
+
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
         underline = underline()
@@ -63,7 +63,7 @@ public class SMSCodeDigitView: AppCircularView {
         label.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
 
         clipsToBounds = true
-        
+
         setText(nil)
     }
 
@@ -82,7 +82,7 @@ public class SMSCodeDigitView: AppCircularView {
 
         UIView.animate(withDuration: duration ?? 0) { set() }
     }
-    
+
     private func setUnderlineColor(to color: DesignSystem.Color) {
         underline?.backgroundColor = color.value.cgColor
     }

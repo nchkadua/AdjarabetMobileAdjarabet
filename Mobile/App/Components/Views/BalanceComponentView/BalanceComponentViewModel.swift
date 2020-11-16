@@ -29,7 +29,7 @@ public protocol BalanceComponentViewModelOutput {
 }
 
 public enum BalanceComponentViewModelOutputAction {
-    case set(totalBalance: Double, pokerBalance: Double)
+    case set(totalBalance: Double)
     case didClickBalance(BalanceComponentViewModel)
     case didClickWithdraw(BalanceComponentViewModel)
     case didClickDeposit(BalanceComponentViewModel)
@@ -48,7 +48,7 @@ extension DefaultBalanceComponentViewModel: BalanceComponentViewModel {
     public var action: Observable<BalanceComponentViewModelOutputAction> { actionSubject.asObserver() }
 
     public func didBind() {
-        actionSubject.onNext(.set(totalBalance: params.totalBalance, pokerBalance: params.pokerBalance))
+        actionSubject.onNext(.set(totalBalance: params.totalBalance))
     }
 
     public func didClickBalance() {

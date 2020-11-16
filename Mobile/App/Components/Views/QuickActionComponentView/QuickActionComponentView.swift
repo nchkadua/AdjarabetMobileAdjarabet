@@ -17,8 +17,8 @@ class QuickActionComponentView: UIView {
     @IBOutlet weak private var separatorView: UIView!
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
-    @IBOutlet weak private var arrowImageView: UIImageView!
-
+    @IBOutlet weak private var bgView: UIView!
+    
     public override init(frame: CGRect) {
        super.init(frame: frame)
        nibSetup()
@@ -39,8 +39,8 @@ class QuickActionComponentView: UIView {
 
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let icon, let title, let hide):
-                self?.setupUI(icon: icon, title: title, hideSeparator: hide)
+            case .set(let icon, let title, let hide, let roundedCorners):
+                self?.setupUI(icon: icon, title: title, hideSeparator: hide, roundedCorners: roundedCorners)
             default: break
             }
         }).disposed(by: disposeBag)
@@ -48,10 +48,12 @@ class QuickActionComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setupUI(icon: UIImage, title: String, hideSeparator: Bool) {
+    private func setupUI(icon: UIImage, title: String, hideSeparator: Bool, roundedCorners: UIRectCorner) {
         iconImageView.image = icon
         titleLabel.text = title
         separatorView.isHidden = hideSeparator
+        
+        bgView.roundCorners(roundedCorners, radius: 10)
     }
 }
 
@@ -66,12 +68,13 @@ extension QuickActionComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.baseBg300().value
-        separatorView.setBackgorundColor(to: DesignSystem.Color.separator())
+        view.backgroundColor = DesignSystem.Color.secondaryBg().value
+        separatorView.setBackgorundColor(to: .nonOpaque())
+        
+        bgView.setBackgorundColor(to: .tertiaryBg())
+        iconImageView.setTintColor(to: .primaryText())
 
-        arrowImageView.setTintColor(to: .systemWhite())
-
-        titleLabel.setTextColor(to: .systemWhite())
-        titleLabel.setFont(to: .h3(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
     }
 }

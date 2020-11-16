@@ -58,15 +58,19 @@ public extension UIView {
         blurEffectView.frame = bounds
         addSubview(blurEffectView)
     }
-    
+
     @discardableResult
     func underline(with color: DesignSystem.Color = .primaryText(alpha: 0.3), thickness: CGFloat = 1.0) -> CALayer {
         let border = CALayer()
         border.backgroundColor = color.value.cgColor
         border.frame = CGRect(x: 0, y: frame.maxY - thickness, width: frame.width, height: thickness)
-        
+
         layer.addSublayer(border)
         return border
+    }
+
+    func rounded() {
+        layer.cornerRadius = bounds.width / 2
     }
 }
 

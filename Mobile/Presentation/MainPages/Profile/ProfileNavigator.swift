@@ -22,7 +22,7 @@ public class ProfileNavigator: Navigator {
         case transactionHistory
         case myCards
         case myBonuses
-        case balanceManagement
+        case biometryParameters
         case transferToFriend
         case incognitoCard
         case accountInformation

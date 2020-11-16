@@ -511,7 +511,7 @@ public extension ButtonStyleImplementing where Self: AppCircularButton {
         contentEdgeInsets = description.contentEdgeInsets
 
         setTitleColor(to: description.textColor, for: .normal)
-        
+
         self.backgroundColor = description.backgorundColor?.value
         self.borderWidth = description.borderWidth
         self.borderColor = description.borderColor?.value ?? .clear

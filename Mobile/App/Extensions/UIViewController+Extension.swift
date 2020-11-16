@@ -55,13 +55,13 @@ public extension UIViewController {
     func setBackBarButtonItemIfNeeded(width: CGFloat = 26, rounded: Bool = false) {
         navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
-        button.setImage(R.image.shared.back(), for: .normal)
-        
+
         if rounded {
-            button.imageEdgeInsets.right = 2
-            button.setBackgroundImage(R.image.login.oval(), for: .normal)
+            button.setImage(R.image.login.sms_back(), for: .normal)
+        } else {
+            button.setImage(R.image.shared.back(), for: .normal)
         }
-        
+
         button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true

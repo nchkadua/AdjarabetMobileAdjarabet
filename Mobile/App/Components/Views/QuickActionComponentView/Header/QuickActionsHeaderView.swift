@@ -60,10 +60,10 @@ extension QuickActionsHeaderView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.baseBg300().value
+        view.backgroundColor = DesignSystem.Color.secondaryBg().value
 
-        titleLabel.setTextColor(to: .systemWhite())
-        titleLabel.setFont(to: .h2(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         setTitle()
     }
 }
