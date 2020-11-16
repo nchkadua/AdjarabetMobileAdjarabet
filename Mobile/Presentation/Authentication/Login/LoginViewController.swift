@@ -106,11 +106,10 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupButtons() {
-        smsLoginButton.setStyle(to: .textLink(state: .acvite, size: .small))
-        smsLoginButton.setTitleColor(to: .separator(alpha: 0.6), for: .normal)
+        smsLoginButton.setStyle(to: .textLink(state: .disabled, size: .small))
+        smsLoginButton.setTitleColor(to: .primaryRed(), for: .normal)
         smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
-        updateSMSLoginButton(isEnabled: false)
 
         loginButton.setStyle(to: .tertiary(state: .acvite, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
@@ -156,13 +155,6 @@ public class LoginViewController: ABViewController {
                 self?.updateLoginButton(isEnabled: isValid)
             })
             .disposed(by: disposeBag)
-
-        usernameInputView.rx.text.orEmpty
-            .map { !$0.isEmpty }
-            .subscribe(onNext: { [weak self] isValid in
-                self?.updateSMSLoginButton(isEnabled: isValid)
-            })
-            .disposed(by: disposeBag)
     }
 
     private func setupInputViewsObservation() {
@@ -173,7 +165,7 @@ public class LoginViewController: ABViewController {
     }
     
     private func setupLabels() {
-        smsLoginTitleLabel.setTextColor(to: .secondaryText())
+        smsLoginTitleLabel.setTextColor(to: .primaryText())
         smsLoginTitleLabel.setFont(to: .footnote(fontCase: .lower))
         smsLoginTitleLabel.text = R.string.localization.login_sms_login_title.localized()
     }
@@ -217,11 +209,6 @@ public class LoginViewController: ABViewController {
     private func updateLoginButton(isEnabled: Bool) {
         loginButton.isUserInteractionEnabled = isEnabled
         loginButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
-    }
-
-    private func updateSMSLoginButton(isEnabled: Bool) {
-        smsLoginButton.isUserInteractionEnabled = isEnabled
-        smsLoginButton.setStyle(to: .textLink(state: isEnabled ? .acvite : .disabled, size: .small))
     }
 
     private func updatePasswordRightButton() {

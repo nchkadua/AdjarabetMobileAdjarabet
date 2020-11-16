@@ -59,12 +59,14 @@ public extension UIView {
         addSubview(blurEffectView)
     }
     
-    func underline(with color: DesignSystem.Color = .primaryText(alpha: 0.3), thickness: CGFloat = 1.0) {
+    @discardableResult
+    func underline(with color: DesignSystem.Color = .primaryText(alpha: 0.3), thickness: CGFloat = 1.0) -> CALayer {
         let border = CALayer()
         border.backgroundColor = color.value.cgColor
         border.frame = CGRect(x: 0, y: frame.maxY - thickness, width: frame.width, height: thickness)
         
         layer.addSublayer(border)
+        return border
     }
 }
 

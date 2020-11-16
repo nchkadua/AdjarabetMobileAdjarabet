@@ -9,6 +9,7 @@
 @IBDesignable
 public class SMSCodeDigitView: AppCircularView {
     private var labelTopConstraint: NSLayoutConstraint?
+    private var underline: CALayer?
 
     @IBInspectable
     public var text: String? {
@@ -43,9 +44,9 @@ public class SMSCodeDigitView: AppCircularView {
         initialize()
     }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        underline()
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        underline = underline()
     }
 
     fileprivate func initialize() {
@@ -75,11 +76,14 @@ public class SMSCodeDigitView: AppCircularView {
             if hasText {
                 label.text = text
             }
-            
-            setBackgorundColor(to: .secondaryBg())
+            setUnderlineColor(to: text == nil ? .primaryText(alpha: 0.3) : .primaryText())
             layoutIfNeeded()
         }
 
         UIView.animate(withDuration: duration ?? 0) { set() }
+    }
+    
+    private func setUnderlineColor(to color: DesignSystem.Color) {
+        underline?.backgroundColor = color.value.cgColor
     }
 }

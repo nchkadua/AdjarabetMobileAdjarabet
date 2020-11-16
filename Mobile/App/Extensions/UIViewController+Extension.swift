@@ -53,6 +53,7 @@ public extension UIViewController {
     }
 
     func setBackBarButtonItemIfNeeded(width: CGFloat = 26, rounded: Bool = false) {
+        navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
         button.setImage(R.image.shared.back(), for: .normal)
         
@@ -61,6 +62,7 @@ public extension UIViewController {
             button.setBackgroundImage(R.image.login.oval(), for: .normal)
         }
         
+        button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.addTarget(self, action: #selector(backBarButtonItemDidTap), for: .touchUpInside)
