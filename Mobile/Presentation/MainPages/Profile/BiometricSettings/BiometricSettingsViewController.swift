@@ -58,11 +58,11 @@ public class BiometricSettingsViewController: ABPopupViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: BiometricSettingsViewModel) {
-/*
+
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-
+/*
         viewModel.route.subscribe(onNext: { [weak self] route in
             self?.didRecive(route: route)
         }).disposed(by: disposeBag)
@@ -70,9 +70,16 @@ public class BiometricSettingsViewController: ABPopupViewController {
     }
 
     private func didRecive(action: BiometricSettingsViewModelOutputAction) {
+        switch action {
+        case .updateBiometryStateToggle(let on):
+            toggle.isOn = on
+        }
     }
 
-    private func didRecive(route: BiometricSettingsViewModelRoute) {
+    // private func didRecive(route: BiometricSettingsViewModelRoute) { }
+
+    @IBAction private func biometryToggleChanged(sender: UISwitch) {
+        viewModel.biometryToggleChanged(to: sender.isOn)
     }
 }
 

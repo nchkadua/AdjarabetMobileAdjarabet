@@ -37,6 +37,9 @@
                             </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHq-Hx-jzi" userLabel="Toggle">
                                 <rect key="frame" x="293" y="102.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="biometryToggleChangedWithSender:" destination="l5e-Hz-h4c" eventType="valueChanged" id="gk0-f8-T6Q"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4nd-jh-Gxv"/>

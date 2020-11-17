@@ -15,6 +15,7 @@
 		C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */; };
 		C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */; };
 		C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD724335B4C0077AA8E /* Assets.xcassets */; };
+		C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */; };
 		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
@@ -343,6 +344,7 @@
 		C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewModel.swift; sourceTree = "<group>"; };
 		C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewController.swift; sourceTree = "<group>"; };
 		C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BiometricSettingsView.storyboard; sourceTree = "<group>"; };
+		C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometryStorage.swift; sourceTree = "<group>"; };
 		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -721,6 +723,14 @@
 				C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */,
 			);
 			path = BiometricSettings;
+			sourceTree = "<group>";
+		};
+		C71F18A92564562D0026CEA2 /* BiometryStorage */ = {
+			isa = PBXGroup;
+			children = (
+				C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */,
+			);
+			path = BiometryStorage;
 			sourceTree = "<group>";
 		};
 		C7CA6A0A2563B28000A9C6AB /* Popup */ = {
@@ -1241,6 +1251,7 @@
 		D84202C82451919400F0F056 /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
+				C71F18A92564562D0026CEA2 /* BiometryStorage */,
 				D8AB806A24601371001C4E8A /* LanguageStorage */,
 			);
 			path = PersistentStorages;
@@ -2400,6 +2411,7 @@
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */,
 				CE169359254181100043B1A4 /* UserInfo.swift in Sources */,
+				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
