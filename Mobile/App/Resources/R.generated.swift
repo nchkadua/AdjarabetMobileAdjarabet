@@ -327,7 +327,7 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
       }
 
-      /// This `R.color.colorGuide.global` struct is generated, and contains static references to 11 colors.
+      /// This `R.color.colorGuide.global` struct is generated, and contains static references to 10 colors.
       struct global {
         /// Color `baseBg100`.
         static let baseBg100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/baseBg100")
@@ -347,8 +347,6 @@ struct R: Rswift.Validatable {
         static let systemGray100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemGray100")
         /// Color `systemGray200`.
         static let systemGray200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemGray200")
-        /// Color `systemWhite-1`.
-        static let systemWhite1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemWhite-1")
         /// Color `systemWhite`.
         static let systemWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemWhite")
 
@@ -439,15 +437,6 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func systemWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.global.systemWhite, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemWhite-1", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemWhite1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.systemWhite1, compatibleWith: traitCollection)
         }
         #endif
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
+		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
 		CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */; };
 		CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */; };
@@ -331,6 +333,8 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
+		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentView.swift; sourceTree = "<group>"; };
 		CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentViewModel.swift; sourceTree = "<group>"; };
@@ -695,6 +699,15 @@
 				8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C7CA6A0A2563B28000A9C6AB /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */,
+				C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		CE0818BE25389B5C00AD3B3B /* Header */ = {
@@ -1523,6 +1536,7 @@
 		D87E3C5C244600BF004A4BDF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C7CA6A0A2563B28000A9C6AB /* Popup */,
 				D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */,
 				D8BF403D244EC8F5008F0BAF /* ABCollectionViewController.swift */,
 				D8390E75246B14F600EF8CB5 /* ABViewController.swift */,
@@ -2252,6 +2266,7 @@
 				D8AC492724CFE3E0000B2D80 /* AppDelegateServiceProvider.swift in Sources */,
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
 				CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */,
+				C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */,
 				CEE537EA254AC9FD00EDE6C0 /* CashFlowViewController.swift in Sources */,
 				CEF3685A2549C33E009FD456 /* DepositViewControllerFactory.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
@@ -2371,6 +2386,7 @@
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				CE55ED55252B3881003E168F /* ProfileInfoComponentView.swift in Sources */,
 				CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */,
+				C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
