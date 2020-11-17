@@ -12,8 +12,6 @@ public class BiometricSettingsViewController: ABPopupViewController {
     @Inject(from: .viewModels) public var viewModel: BiometricSettingsViewModel
     public lazy var navigator = BiometricSettingsNavigator(viewController: self)
 
-    @Inject private var biometricAuthentication: BiometricAuthentication
-
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var descriptionLabel: UILabel!
@@ -26,30 +24,14 @@ public class BiometricSettingsViewController: ABPopupViewController {
         viewModel.viewDidLoad()
         view.setBackgorundColor(to: .tertiaryBg())
 
-        let descriptionText: String
-        let iconImage: UIImage
-
-        switch biometricAuthentication.biometryType {
-        case .touchID:
-            descriptionText = R.string.localization.biometric_settings_activate_touch_id.localized()
-            iconImage = R.image.biometric.touchID()!
-        case .faceID:
-            descriptionText = R.string.localization.biometric_settings_activate_face_id.localized()
-            iconImage = R.image.biometric.faceID()!
-        default:
-            // never happens
-            descriptionText = .init()
-            iconImage = .init()
-        }
-
-        titleLabel.text = R.string.localization.biomatry_authentication_parameters.localized()
+        viewModel.refreshTitleText() // to update titleLabel.text
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
 
-        iconImageView.image = iconImage
+        viewModel.refreshIconImage() // to update iconImageView.image
         iconImageView.setTintColor(to: .primaryText())
 
-        descriptionLabel.text = descriptionText
+        viewModel.refreshDescriptionText() // to update descriptionLabel.text
         descriptionLabel.setTextColor(to: .primaryText())
         descriptionLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
 
@@ -58,25 +40,29 @@ public class BiometricSettingsViewController: ABPopupViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: BiometricSettingsViewModel) {
-
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-/*
+
         viewModel.route.subscribe(onNext: { [weak self] route in
             self?.didRecive(route: route)
         }).disposed(by: disposeBag)
-*/
     }
 
     private func didRecive(action: BiometricSettingsViewModelOutputAction) {
         switch action {
-        case .updateBiometryStateToggle(let on):
-            toggle.isOn = on
+        case .updateTitleText(let title):              titleLabel.text = title
+        case .updateDescriptionText(let description):  descriptionLabel.text = description
+        case .updateIconImage(let icon):               iconImageView.image = icon
+        case .updateBiometryStateToggle(let on):       toggle.isOn = on
         }
     }
 
-    // private func didRecive(route: BiometricSettingsViewModelRoute) { }
+    private func didRecive(route: BiometricSettingsViewModelRoute) {
+        switch route {
+        case .openAlert(let title, _): showAlert(title: title)
+        }
+    }
 
     @IBAction private func biometryToggleChanged(sender: UISwitch) {
         viewModel.biometryToggleChanged(to: sender.isOn)

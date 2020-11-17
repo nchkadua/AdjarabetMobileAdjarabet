@@ -14,6 +14,9 @@ public protocol BiometricSettingsViewModel: BiometricSettingsViewModelInput, Bio
 public protocol BiometricSettingsViewModelInput {
     func viewDidLoad()
     func biometryToggleChanged(to isOn: Bool)
+    func refreshTitleText()
+    func refreshDescriptionText()
+    func refreshIconImage()
 }
 
 public protocol BiometricSettingsViewModelOutput {
@@ -22,10 +25,14 @@ public protocol BiometricSettingsViewModelOutput {
 }
 
 public enum BiometricSettingsViewModelOutputAction {
+    case updateTitleText(String)
+    case updateDescriptionText(String)
+    case updateIconImage(UIImage)
     case updateBiometryStateToggle(Bool)
 }
 
 public enum BiometricSettingsViewModelRoute {
+    case openAlert(title: String, message: String? = nil)
 }
 
 public class DefaultBiometricSettingsViewModel {
@@ -68,9 +75,42 @@ extension DefaultBiometricSettingsViewModel: BiometricSettingsViewModel {
     public func biometryToggleChanged(to isOn: Bool) {
         switch isOn {
         case true:
-            biometryStateStorage.updateCurrentState(with: .on)
+            if biometryInfoService.isAvailable {
+                biometryStateStorage.updateCurrentState(with: .on)
+            } else {
+                actionSubject.onNext(.updateBiometryStateToggle(false)) // re-set to false
+                routeSubject.onNext(.openAlert(title: "No identities are enrolled.")) // error handling
+            }
         case false:
             biometryStateStorage.updateCurrentState(with: .off)
+        }
+    }
+
+    public func refreshTitleText() {
+        actionSubject.onNext(.updateTitleText(R.string.localization.biomatry_authentication_parameters.localized()))
+    }
+
+    public func refreshDescriptionText() {
+        switch biometryInfoService.biometryType {
+        case .touchID:
+            let text = R.string.localization.biometric_settings_activate_touch_id.localized()
+            actionSubject.onNext(.updateDescriptionText(text))
+        case .faceID:
+            let text = R.string.localization.biometric_settings_activate_face_id.localized()
+            actionSubject.onNext(.updateDescriptionText(text))
+        default: break // error handling
+        }
+    }
+
+    public func refreshIconImage() {
+        switch biometryInfoService.biometryType {
+        case .touchID:
+            let icon = R.image.biometric.touchID()!
+            actionSubject.onNext(.updateIconImage(icon))
+        case .faceID:
+            let icon = R.image.biometric.faceID()!
+            actionSubject.onNext(.updateIconImage(icon))
+        default: break // error handling
         }
     }
 }
