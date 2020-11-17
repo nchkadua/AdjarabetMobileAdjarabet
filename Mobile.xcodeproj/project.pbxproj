@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */; };
+		C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */; };
+		C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */; };
+		C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */; };
 		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
@@ -333,6 +337,10 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsNavigator.swift; sourceTree = "<group>"; };
+		C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
+		C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewModel.swift; sourceTree = "<group>"; };
+		C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewController.swift; sourceTree = "<group>"; };
 		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -701,6 +709,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C71F188D256411720026CEA2 /* BiometricSettings */ = {
+			isa = PBXGroup;
+			children = (
+				C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */,
+				C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */,
+				C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */,
+				C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */,
+			);
+			path = BiometricSettings;
+			sourceTree = "<group>";
+		};
 		C7CA6A0A2563B28000A9C6AB /* Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,6 +842,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE537E5254AC9D600EDE6C0 /* CashFlow */,
+				C71F188D256411720026CEA2 /* BiometricSettings */,
 				CEA2876D2540C06800E6590C /* AccountInfo */,
 				CE95FBC7252DC394003E539B /* QuickActionItems */,
 				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
@@ -2226,6 +2246,7 @@
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
+				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
@@ -2327,6 +2348,7 @@
 				D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */,
 				CE9A1753255185D6006655AF /* UserServices.swift in Sources */,
+				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
 				CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */,
@@ -2336,6 +2358,7 @@
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
 				CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */,
+				C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */,
 				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
@@ -2401,6 +2424,7 @@
 				CE2F03C3252CC8E0006D8001 /* QuickActionComponentView.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
 				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,
+				C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */,
 				D8BA5A1A2499391C00F88433 /* AppConstant.swift in Sources */,
 				CEE356FA252C9C9100A0A25C /* BalanceComponentViewModel.swift in Sources */,
 				CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */,

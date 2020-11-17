@@ -61,6 +61,7 @@ public extension DependencyContainer {
         Module { DefaultDepositViewModel() as DepositViewModel }
         Module { DefaultWithdrawViewModel() as WithdrawViewModel }
         Module { DefaultCashFlowTabComponentViewModel() as CashFlowTabComponentViewModel }
+        Module { DefaultBiometricSettingsViewModel() as BiometricSettingsViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -84,6 +85,7 @@ public extension DependencyContainer {
         Module { DefaultCashFlowViewControllerFactory() as CashFlowViewControllerFactory }
         Module { DefaultDepositViewControllerFactory() as DepositViewControllerFactory }
         Module { DefaultWithdrawViewControllerFactory() as WithdrawViewControllerFactory }
+        Module { DefaultBiometricSettingsViewControllerFactory() as BiometricSettingsViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {
