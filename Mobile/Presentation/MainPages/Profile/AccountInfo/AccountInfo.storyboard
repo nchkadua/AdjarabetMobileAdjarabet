@@ -52,7 +52,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-9C-63r" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="165" width="414" height="54"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZq-oB-d4E" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZq-oB-d4E" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
                                                                 <rect key="frame" x="284" y="11" width="110" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="32" id="M1X-qD-Umk"/>
@@ -71,12 +71,13 @@
                                                         <rect key="frame" x="0.0" y="220" width="414" height="54"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-Fc-D5T">
-                                                                <rect key="frame" x="378" y="19" width="16" height="16"/>
+                                                                <rect key="frame" x="387" y="19" width="7" height="12"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="16" id="VG7-di-9NN"/>
-                                                                    <constraint firstAttribute="height" constant="16" id="tpQ-nb-NtT"/>
+                                                                    <constraint firstAttribute="width" constant="7" id="VG7-di-9NN"/>
+                                                                    <constraint firstAttribute="height" constant="12" id="tpQ-nb-NtT"/>
                                                                 </constraints>
-                                                                <state key="normal" image="Components/AccountInfo/edit"/>
+                                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" image="Components/GameLauncher/in"/>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,12 +110,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oou-ez-NnD">
-                                                                <rect key="frame" x="378" y="19" width="16" height="16"/>
+                                                                <rect key="frame" x="387" y="19" width="7" height="12"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="16" id="OS8-WA-O1p"/>
-                                                                    <constraint firstAttribute="height" constant="16" id="ROE-kT-wbi"/>
+                                                                    <constraint firstAttribute="width" constant="7" id="OS8-WA-O1p"/>
+                                                                    <constraint firstAttribute="height" constant="12" id="ROE-kT-wbi"/>
                                                                 </constraints>
-                                                                <state key="normal" image="Components/AccountInfo/edit"/>
+                                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" image="Components/GameLauncher/in"/>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,12 +129,13 @@
                                                         <rect key="frame" x="0.0" y="55" width="414" height="54"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alv-KZ-KAL">
-                                                                <rect key="frame" x="378" y="19" width="16" height="16"/>
+                                                                <rect key="frame" x="387" y="19" width="7" height="12"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="16" id="9Zm-g1-ulW"/>
-                                                                    <constraint firstAttribute="height" constant="16" id="Ffq-BR-mcW"/>
+                                                                    <constraint firstAttribute="width" constant="7" id="9Zm-g1-ulW"/>
+                                                                    <constraint firstAttribute="height" constant="12" id="Ffq-BR-mcW"/>
                                                                 </constraints>
-                                                                <state key="normal" image="Components/AccountInfo/edit"/>
+                                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" image="Components/GameLauncher/in"/>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,12 +188,13 @@
                                                         <rect key="frame" x="0.0" y="275" width="414" height="54"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ja1-v3-GEK">
-                                                                <rect key="frame" x="378" y="19" width="16" height="16"/>
+                                                                <rect key="frame" x="387" y="19" width="7" height="12"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="16" id="Olk-GB-umO"/>
-                                                                    <constraint firstAttribute="width" constant="16" id="jqT-WV-rQy"/>
+                                                                    <constraint firstAttribute="height" constant="12" id="Olk-GB-umO"/>
+                                                                    <constraint firstAttribute="width" constant="7" id="jqT-WV-rQy"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Button" image="Components/AccountInfo/edit"/>
+                                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Button" image="Components/GameLauncher/in"/>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -266,6 +270,6 @@
         </designable>
     </designables>
     <resources>
-        <image name="Components/AccountInfo/edit" width="16" height="16"/>
+        <image name="Components/GameLauncher/in" width="21" height="36"/>
     </resources>
 </document>

@@ -4534,7 +4534,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/AccountInfo/edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/AccountInfo/edit' is used in storyboard 'AccountInfo', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in storyboard 'AccountInfo', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.accountInfo().accountInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accountInfoViewController' could not be loaded from storyboard 'AccountInfo' as 'AccountInfoViewController'.") }

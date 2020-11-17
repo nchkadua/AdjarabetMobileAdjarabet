@@ -50,12 +50,12 @@ extension AccountInfoComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.fill110().value
+        view.backgroundColor = DesignSystem.Color.primaryBg().value
 
-        placeholderLabel.setFont(to: .body2)
-        placeholderLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+        placeholderLabel.setFont(to: .subHeadline(fontCase: .lower))
+        placeholderLabel.setTextColor(to: .secondaryText())
 
-        titleLabel.setFont(to: .h3(fontCase: .lower))
-        titleLabel.setTextColor(to: .systemWhite())
+        titleLabel.setFont(to: .body(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
     }
 }

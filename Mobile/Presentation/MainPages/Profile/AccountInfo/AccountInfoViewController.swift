@@ -74,7 +74,7 @@ public class AccountInfoViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .baseBg300())
+        setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupScrollView()
         setupLabels()
@@ -92,23 +92,22 @@ public class AccountInfoViewController: ABViewController {
     }
 
     private func setupLabels() {
-        privateInfoHeaderLabel.setFont(to: .h3(fontCase: .lower))
-        privateInfoHeaderLabel.setTextColor(to: .systemWhite())
+        privateInfoHeaderLabel.setFont(to: .subHeadline(fontCase: .lower))
+        privateInfoHeaderLabel.setTextColor(to: .primaryText())
         privateInfoHeaderLabel.text = R.string.localization.account_info_private_info_title()
 
-        contactInfoHeaderLabel.setFont(to: .h3(fontCase: .lower))
-        contactInfoHeaderLabel.setTextColor(to: .systemWhite())
+        contactInfoHeaderLabel.setFont(to: .subHeadline(fontCase: .lower))
+        contactInfoHeaderLabel.setTextColor(to: .primaryText())
         contactInfoHeaderLabel.text = R.string.localization.account_info_contact_info_title()
 
-        personalInfoHeaderLabel.setFont(to: .h3(fontCase: .lower))
-        personalInfoHeaderLabel.setTextColor(to: .systemWhite())
+        personalInfoHeaderLabel.setFont(to: .subHeadline(fontCase: .lower))
+        personalInfoHeaderLabel.setTextColor(to: .primaryText())
         personalInfoHeaderLabel.text = R.string.localization.account_info_personal_info_title()
     }
 
     private func setupButtons() {
-        statusButton.setStyle(to: .secondary(state: .acvite, size: .small))
+        statusButton.setStyle(to: .textLink(state: .acvite, size: .small))
         statusButton.setTitleColor(to: .systemRed100(), for: .normal)
-        statusButton.cornerRadius = 15
         statusButton.setTitleWithoutAnimation(R.string.localization.account_info_status_button_title(), for: .normal)
         statusButton.addTarget(self, action: #selector(statusButtonAction), for: .touchUpInside)
 
