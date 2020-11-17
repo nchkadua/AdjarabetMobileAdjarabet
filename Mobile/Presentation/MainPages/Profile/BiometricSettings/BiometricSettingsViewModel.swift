@@ -43,16 +43,6 @@ public class DefaultBiometricSettingsViewModel {
     @Inject private var biometryInfoService: BiometricAuthentication
     @Inject private var biometryStateStorage: BiometryStorage
 
-    private func observeBiometryChange() {
-        biometryStateStorage.currentStateObservable.subscribe(onNext: { [weak self] _ in
-            self?.biometryDidChange()
-        }).disposed(by: disposeBag)
-    }
-
-    private func biometryDidChange() {
-        refreshBiometryStateToggle()
-    }
-
     private func refreshBiometryStateToggle() {
         let on: Bool
         switch biometryStateStorage.currentState {
@@ -68,7 +58,6 @@ extension DefaultBiometricSettingsViewModel: BiometricSettingsViewModel {
     public var route: Observable<BiometricSettingsViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        observeBiometryChange()
         refreshBiometryStateToggle()
     }
 

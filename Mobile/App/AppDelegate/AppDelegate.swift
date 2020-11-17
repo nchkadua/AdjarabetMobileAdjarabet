@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let dependencies = DependencyContainer.root.register {
             Module { DefaultLanguageStorage.shared as LanguageStorage }
+
+            Module { DefaultBiometryStorage.shared as BiometryReadableStorage }
             Module { DefaultBiometryStorage.shared as BiometryStorage }
 
             Module { UserSession.current as UserSessionServices }
