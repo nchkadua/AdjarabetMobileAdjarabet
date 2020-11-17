@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ABPopupViewController: ABViewController {
+public class ABPopupViewController: ABViewController {
+    private var origin: CGPoint?
 
-    var origin: CGPoint?
-
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         view.addGestureRecognizer(
             UIPanGestureRecognizer(
@@ -22,7 +21,7 @@ class ABPopupViewController: ABViewController {
         )
     }
 
-    override func viewDidLayoutSubviews() {
+    override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if origin == nil { origin = view.frame.origin }
     }

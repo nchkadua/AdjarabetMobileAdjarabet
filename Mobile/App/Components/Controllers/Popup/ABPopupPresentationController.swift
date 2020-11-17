@@ -13,6 +13,7 @@ import UIKit
 struct ABPopupPresentationControllerParams {
     var heightMultiplier: CGFloat = 0
     var heightConstant: CGFloat = 0
+    var cornerRadius: CGFloat = 20
     var blurAlpha: CGFloat = 0.011 // for UITapGestureRecognizer
 }
 
@@ -76,7 +77,7 @@ class ABPopupPresentationController: UIPresentationController {
 
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
-        presentedView?.roundCorners([.topLeft, .topRight], radius: 20)
+        presentedView?.roundCorners([.topLeft, .topRight], radius: params.cornerRadius)
     }
 
     override func containerViewDidLayoutSubviews() {
