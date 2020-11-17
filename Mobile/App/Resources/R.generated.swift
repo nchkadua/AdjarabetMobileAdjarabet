@@ -90,10 +90,12 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
+    /// Storyboard `BiometricSettingsView`.
+    static let biometricSettingsView = _R.storyboard.biometricSettingsView()
     /// Storyboard `CashFlow`.
     static let cashFlow = _R.storyboard.cashFlow()
     /// Storyboard `Deposit`.
@@ -125,6 +127,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AccountInfo", bundle: ...)`
     static func accountInfo(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.accountInfo)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "BiometricSettingsView", bundle: ...)`
+    static func biometricSettingsView(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.biometricSettingsView)
     }
     #endif
 
@@ -1367,6 +1376,30 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
+    /// This `R.image.biometric` struct is generated, and contains static references to 2 images.
+    struct biometric {
+      /// Image `faceID`.
+      static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/faceID")
+      /// Image `touchID`.
+      static let touchID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/touchID")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "faceID", bundle: ..., traitCollection: ...)`
+      static func faceID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.biometric.faceID, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "touchID", bundle: ..., traitCollection: ...)`
+      static func touchID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.biometric.touchID, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.components` struct is generated, and contains static references to 0 images.
     struct components {
       /// This `R.image.components.accountInfo` struct is generated, and contains static references to 1 images.
@@ -2402,7 +2435,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 86 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 88 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2420,6 +2453,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let profile_page_title = Rswift.StringResource(key: "profile_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Activate Face ID
+      ///
+      /// Locales: en, ka, hy
+      static let biometric_settings_activate_face_id = Rswift.StringResource(key: "biometric_settings_activate_face_id", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Activate Touch ID
+      ///
+      /// Locales: en, ka, hy
+      static let biometric_settings_activate_touch_id = Rswift.StringResource(key: "biometric_settings_activate_touch_id", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Address
       ///
       /// Locales: en, ka, hy
@@ -2807,6 +2848,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("profile_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Activate Face ID
+      ///
+      /// Locales: en, ka, hy
+      static func biometric_settings_activate_face_id(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("biometric_settings_activate_face_id", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "biometric_settings_activate_face_id"
+        }
+
+        return NSLocalizedString("biometric_settings_activate_face_id", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Activate Touch ID
+      ///
+      /// Locales: en, ka, hy
+      static func biometric_settings_activate_touch_id(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("biometric_settings_activate_touch_id", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "biometric_settings_activate_touch_id"
+        }
+
+        return NSLocalizedString("biometric_settings_activate_touch_id", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Address
@@ -4472,6 +4543,9 @@ struct _R: Rswift.Validatable {
       try accountInfo.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try biometricSettingsView.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try cashFlow.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -4527,6 +4601,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.accountInfo().accountInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accountInfoViewController' could not be loaded from storyboard 'AccountInfo' as 'AccountInfoViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct biometricSettingsView: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let biometricSettingsViewController = StoryboardViewControllerResource<BiometricSettingsViewController>(identifier: "BiometricSettingsViewController")
+      let bundle = R.hostingBundle
+      let name = "BiometricSettingsView"
+
+      func biometricSettingsViewController(_: Void = ()) -> BiometricSettingsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: biometricSettingsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.biometricSettingsView().biometricSettingsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'biometricSettingsViewController' could not be loaded from storyboard 'BiometricSettingsView' as 'BiometricSettingsViewController'.") }
       }
 
       fileprivate init() {}

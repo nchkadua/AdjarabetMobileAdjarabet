@@ -14,7 +14,7 @@ public protocol BiometricSettingsViewControllerFactory {
 
 public class DefaultBiometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory {
     public func make() -> BiometricSettingsViewController {
-        let vc = BiometricSettingsViewController()
+        let vc = R.storyboard.biometricSettingsView().instantiate(controller: BiometricSettingsViewController.self)!
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = vc
         return vc

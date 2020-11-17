@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Biometric Settings View Controller-->
+        <scene sceneID="lvc-PA-usz">
+            <objects>
+                <viewController storyboardIdentifier="BiometricSettingsViewController" id="l5e-Hz-h4c" customClass="BiometricSettingsViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oYU-hz-RPe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TJ-GN-xwG" userLabel="Title Label">
+                                <rect key="frame" x="166.5" y="44" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2o-vS-WWO" userLabel="Description Label">
+                                <rect key="frame" x="74" y="107.5" width="204" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-xa-w7z" userLabel="Icon Image View">
+                                <rect key="frame" x="35" y="106" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="0mI-bW-4js"/>
+                                    <constraint firstAttribute="height" constant="24" id="fqr-sA-rdB"/>
+                                </constraints>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHq-Hx-jzi" userLabel="Toggle">
+                                <rect key="frame" x="293" y="102.5" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4nd-jh-Gxv"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F2o-vS-WWO" firstAttribute="centerY" secondItem="ygY-xa-w7z" secondAttribute="centerY" id="20l-O2-PNf"/>
+                            <constraint firstItem="wHq-Hx-jzi" firstAttribute="leading" secondItem="F2o-vS-WWO" secondAttribute="trailing" constant="15" id="4rz-yK-grD"/>
+                            <constraint firstItem="1TJ-GN-xwG" firstAttribute="top" secondItem="4nd-jh-Gxv" secondAttribute="top" constant="44" id="Mgo-Q6-0Hq"/>
+                            <constraint firstItem="ygY-xa-w7z" firstAttribute="top" secondItem="1TJ-GN-xwG" secondAttribute="bottom" constant="41" id="fef-1t-Oov"/>
+                            <constraint firstItem="F2o-vS-WWO" firstAttribute="leading" secondItem="ygY-xa-w7z" secondAttribute="trailing" constant="15" id="hWh-aC-ViE"/>
+                            <constraint firstItem="1TJ-GN-xwG" firstAttribute="centerX" secondItem="oYU-hz-RPe" secondAttribute="centerX" id="qUd-4r-iRF"/>
+                            <constraint firstItem="4nd-jh-Gxv" firstAttribute="trailing" secondItem="wHq-Hx-jzi" secondAttribute="trailing" constant="33" id="tdD-eg-nLi"/>
+                            <constraint firstItem="wHq-Hx-jzi" firstAttribute="centerY" secondItem="F2o-vS-WWO" secondAttribute="centerY" id="v1U-hM-exo"/>
+                            <constraint firstItem="ygY-xa-w7z" firstAttribute="leading" secondItem="4nd-jh-Gxv" secondAttribute="leading" constant="35" id="xpC-4X-F7r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="F2o-vS-WWO" id="Wu1-5Q-3j5"/>
+                        <outlet property="iconImageView" destination="ygY-xa-w7z" id="pjl-ai-HdR"/>
+                        <outlet property="titleLabel" destination="1TJ-GN-xwG" id="31D-ZL-Vdd"/>
+                        <outlet property="toggle" destination="wHq-Hx-jzi" id="CDo-jZ-D6Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5s-Do-Nrm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1709.5999999999999" y="-979.16041979010504"/>
+        </scene>
+    </scenes>
+</document>
