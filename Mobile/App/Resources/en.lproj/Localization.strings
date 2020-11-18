@@ -123,4 +123,6 @@
 /* Notifications */
 "delete_button_title" = "Delete";
 
-
+/* Biometric Settings */
+"biometric_settings_activate_touch_id" = "Activate Touch ID";
+"biometric_settings_activate_face_id" = "Activate Face ID";

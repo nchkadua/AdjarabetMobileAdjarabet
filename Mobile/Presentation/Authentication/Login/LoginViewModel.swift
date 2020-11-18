@@ -55,6 +55,7 @@ public class DefaultLoginViewModel {
     @Inject(from: .useCases) private var loginUseCase: LoginUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
     @Inject(from: .useCases) private var biometricLoginUseCase: BiometricLoginUseCase
+    @Inject private var biometryStateStorage: BiometryReadableStorage
 
     public init(params: LoginViewModelParams = LoginViewModelParams(showBiometryLoginAutomatically: true)) {
         self.params = params
@@ -78,20 +79,24 @@ extension DefaultLoginViewModel: LoginViewModel {
     public var action: Observable<LoginViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<LoginViewModelRoute> { routeSubject.asObserver() }
 
+    private var biometryIsOn: Bool {
+        biometryStateStorage.currentState == .on
+    }
+
     public func viewDidLoad() {
-        actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable,
+        actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable && biometryIsOn,
                                                       icon: biometricLoginUseCase.icon,
                                                       title: biometricLoginUseCase.title))
     }
 
     public func viewDidAppear() {
-        if params.showBiometryLoginAutomatically {
+        if params.showBiometryLoginAutomatically && biometryIsOn {
             biometricLogin()
         }
     }
 
     public func languageDidChange() {
-        actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable,
+        actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable && biometryIsOn,
                                                       icon: biometricLoginUseCase.icon,
                                                       title: biometricLoginUseCase.title))
     }

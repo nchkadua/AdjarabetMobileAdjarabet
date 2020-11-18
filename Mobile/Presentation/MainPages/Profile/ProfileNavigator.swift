@@ -11,6 +11,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var loginViewControllerFactory: LoginViewControllerFactory
     @Inject(from: .factories) public var accountInfoViewControllerFactory: AccountInfoViewControllerFactory
     @Inject(from: .factories) public var cashFlowViewControllerFactory: CashFlowViewControllerFactory
+    @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -34,6 +35,7 @@ public class ProfileNavigator: Navigator {
         switch destination {
         case .deposit: navigateToCashFlow(animate: animate, initialPageIndex: 0)
         case .withdraw: navigateToCashFlow(animate: animate, initialPageIndex: 1)
+        case .biometryParameters: navigateToBiometricSettings(animate: animate)
         case .accountInformation: navigateToAccountInformation(animate: animate)
         case .loginPage: navigateToLogin(animate: animate)
         default:
@@ -44,6 +46,11 @@ public class ProfileNavigator: Navigator {
     // MARK: Navigations
     private func navigateToCashFlow(animate: Bool, initialPageIndex: Int) {
         let vc = cashFlowViewControllerFactory.make(params: CashFlowViewModelParams(initialPageIndex: initialPageIndex))
+        viewController?.navigationController?.present(vc, animated: animate, completion: nil)
+    }
+
+    private func navigateToBiometricSettings(animate: Bool) {
+        let vc = biometricSettingsViewControllerFactory.make()
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 

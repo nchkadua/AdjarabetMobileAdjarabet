@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */; };
+		C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */; };
+		C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */; };
+		C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */; };
+		C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */; };
+		C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD724335B4C0077AA8E /* Assets.xcassets */; };
+		C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */; };
 		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
@@ -268,7 +275,6 @@
 		D8972FE724484EDE001A6B13 /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8972FE624484EDE001A6B13 /* MainTabBarViewModelTests.swift */; };
 		D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DCE24335B4B0077AA8E /* AppDelegate.swift */; };
 		D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DD024335B4B0077AA8E /* SceneDelegate.swift */; };
-		D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD724335B4C0077AA8E /* Assets.xcassets */; };
 		D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD924335B4C0077AA8E /* LaunchScreen.storyboard */; };
 		D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A47DED24335EBA0077AA8E /* Bundle+Extension.swift */; };
 		D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB80682460133E001C4E8A /* UserSessionServices.swift */; };
@@ -333,6 +339,12 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsNavigator.swift; sourceTree = "<group>"; };
+		C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
+		C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewModel.swift; sourceTree = "<group>"; };
+		C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewController.swift; sourceTree = "<group>"; };
+		C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BiometricSettingsView.storyboard; sourceTree = "<group>"; };
+		C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometryStorage.swift; sourceTree = "<group>"; };
 		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -701,6 +713,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C71F188D256411720026CEA2 /* BiometricSettings */ = {
+			isa = PBXGroup;
+			children = (
+				C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */,
+				C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */,
+				C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */,
+				C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */,
+				C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */,
+			);
+			path = BiometricSettings;
+			sourceTree = "<group>";
+		};
+		C71F18A92564562D0026CEA2 /* BiometryStorage */ = {
+			isa = PBXGroup;
+			children = (
+				C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */,
+			);
+			path = BiometryStorage;
+			sourceTree = "<group>";
+		};
 		C7CA6A0A2563B28000A9C6AB /* Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,6 +855,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE537E5254AC9D600EDE6C0 /* CashFlow */,
+				C71F188D256411720026CEA2 /* BiometricSettings */,
 				CEA2876D2540C06800E6590C /* AccountInfo */,
 				CE95FBC7252DC394003E539B /* QuickActionItems */,
 				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
@@ -1218,6 +1251,7 @@
 		D84202C82451919400F0F056 /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
+				C71F18A92564562D0026CEA2 /* BiometryStorage */,
 				D8AB806A24601371001C4E8A /* LanguageStorage */,
 			);
 			path = PersistentStorages;
@@ -1966,6 +2000,7 @@
 				CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */,
+				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
 				D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */,
 				D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */,
@@ -1981,6 +2016,7 @@
 				CE95D00A25542035007D2084 /* NotoSansArmenian-Bold.ttf in Resources */,
 				CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */,
 				D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */,
+				C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */,
 				D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */,
 				CE38F09E254B085200605524 /* CashFlowTabComponentView.xib in Resources */,
 				D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */,
@@ -2015,7 +2051,6 @@
 				CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
-				D8A47DD824335B4C0077AA8E /* Assets.xcassets in Resources */,
 				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
 				CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
@@ -2226,6 +2261,7 @@
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
+				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
@@ -2327,6 +2363,7 @@
 				D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */,
 				CE9A1753255185D6006655AF /* UserServices.swift in Sources */,
+				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
 				CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */,
@@ -2336,6 +2373,7 @@
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
 				CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */,
+				C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */,
 				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
@@ -2373,6 +2411,7 @@
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */,
 				CE169359254181100043B1A4 /* UserInfo.swift in Sources */,
+				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
@@ -2401,6 +2440,7 @@
 				CE2F03C3252CC8E0006D8001 /* QuickActionComponentView.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
 				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,
+				C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */,
 				D8BA5A1A2499391C00F88433 /* AppConstant.swift in Sources */,
 				CEE356FA252C9C9100A0A25C /* BalanceComponentViewModel.swift in Sources */,
 				CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */,

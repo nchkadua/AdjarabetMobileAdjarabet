@@ -67,7 +67,7 @@
 "transaction_history" = "Transaction History";
 "my_cards" = "My Cards";
 "my_bonuses" = "My Bonuses";
-"biomatry_authentication_parameters" = "Biometry Authentication Parameters";
+"biomatry_authentication_parameters" = "Touch ID და Face ID-ის პარამეტრები";
 "transfer_to_a_friend" = "Transfer to a Friend";
 "incognito_card" = "Incognito Card";
 "account_information" = "Account Information";
@@ -120,3 +120,7 @@
 
 /* Notifications */
 "delete_button_title" = "წაშლა";
+
+/* Biometric Settings */
+"biometric_settings_activate_touch_id" = "Touch ID-ის გააქტიურება";
+"biometric_settings_activate_face_id" = "Face ID-ის გააქტიურება";
