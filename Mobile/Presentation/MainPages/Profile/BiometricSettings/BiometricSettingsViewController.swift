@@ -21,7 +21,11 @@ public class BiometricSettingsViewController: ABPopupViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+        setup()
         viewModel.viewDidLoad()
+    }
+
+    private func setup() {
         view.setBackgorundColor(to: .tertiaryBg())
 
         viewModel.refreshTitleText() // to update titleLabel.text
@@ -70,7 +74,6 @@ public class BiometricSettingsViewController: ABPopupViewController {
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
-
 extension BiometricSettingsViewController: UIViewControllerTransitioningDelegate {
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         ABPopupPresentationController(
