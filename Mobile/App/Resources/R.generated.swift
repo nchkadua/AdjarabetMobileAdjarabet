@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 16 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
@@ -112,6 +112,8 @@ struct R: Rswift.Validatable {
     static let notificationContent = _R.storyboard.notificationContent()
     /// Storyboard `Notifications`.
     static let notifications = _R.storyboard.notifications()
+    /// Storyboard `P2PTransferView`.
+    static let p2PTransferView = _R.storyboard.p2PTransferView()
     /// Storyboard `Profile`.
     static let profile = _R.storyboard.profile()
     /// Storyboard `Promotions`.
@@ -190,6 +192,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Notifications", bundle: ...)`
     static func notifications(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.notifications)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "P2PTransferView", bundle: ...)`
+    static func p2PTransferView(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.p2PTransferView)
     }
     #endif
 
@@ -4570,6 +4579,9 @@ struct _R: Rswift.Validatable {
       try notifications.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try p2PTransferView.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try profile.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -4787,6 +4799,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.notifications().notificationsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'notificationsViewController' could not be loaded from storyboard 'Notifications' as 'NotificationsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct p2PTransferView: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "P2PTransferView"
+      let p2PTransferViewController = StoryboardViewControllerResource<P2PTransferViewController>(identifier: "P2PTransferViewController")
+
+      func p2PTransferViewController(_: Void = ()) -> P2PTransferViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: p2PTransferViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.p2PTransferView().p2PTransferViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'p2PTransferViewController' could not be loaded from storyboard 'P2PTransferView' as 'P2PTransferViewController'.") }
       }
 
       fileprivate init() {}
