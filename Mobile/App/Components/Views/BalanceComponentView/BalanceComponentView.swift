@@ -106,14 +106,14 @@ extension BalanceComponentView: Xibable {
         withdrawButton.setTitleColor(to: .primaryText(), for: .normal)
         withdrawButton.setFont(to: .footnote(fontCase: .upper, fontStyle: .semiBold))
         withdrawButton.layer.cornerRadius = 10
-        withdrawButton.setTitleWithoutAnimation(R.string.localization.withdraw_button_title(), for: .normal)
+        withdrawButton.setTitleWithoutAnimation(R.string.localization.withdraw_button_title.localized().uppercased(), for: .normal)
         withdrawButton.addTarget(self, action: #selector(withdrawButtonAction), for: .touchUpInside)
 
         depositButton.setBackgorundColor(to: .primaryRed())
         depositButton.setTitleColor(to: .primaryText(), for: .normal)
         depositButton.setFont(to: .footnote(fontCase: .upper, fontStyle: .semiBold))
         depositButton.layer.cornerRadius = 10
-        depositButton.setTitleWithoutAnimation(R.string.localization.deposit_button_title(), for: .normal)
+        depositButton.setTitleWithoutAnimation(R.string.localization.deposit_button_title.localized().uppercased(), for: .normal)
         depositButton.addTarget(self, action: #selector(depositButtonAction), for: .touchUpInside)
     }
 }

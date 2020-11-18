@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rsg-21-RKy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="899.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1043.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-qp-fNV">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="62.5"/>
@@ -35,25 +35,25 @@
                                                 <edgeInsets key="layoutMargins" top="21" left="28" bottom="21" right="27"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-sO-BeJ">
-                                                <rect key="frame" x="0.0" y="62.5" width="414" height="274"/>
+                                                <rect key="frame" x="0.0" y="62.5" width="414" height="330"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-C1-TMY" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpF-md-Xxg" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="55" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="66" width="414" height="65.5"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1v-eG-QKo" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="110" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="132.5" width="414" height="65"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-9C-63r" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="165" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="198.5" width="414" height="65.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZq-oB-d4E" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="284" y="11" width="110" height="32"/>
+                                                                <rect key="frame" x="284" y="16.5" width="110" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="32" id="M1X-qD-Umk"/>
                                                                     <constraint firstAttribute="width" constant="110" id="qet-Ww-RNR"/>
@@ -63,12 +63,12 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="EZq-oB-d4E" firstAttribute="top" secondItem="HLg-9C-63r" secondAttribute="top" constant="11" id="3kN-gP-xwD"/>
+                                                            <constraint firstItem="EZq-oB-d4E" firstAttribute="centerY" secondItem="HLg-9C-63r" secondAttribute="centerY" id="PNc-qE-Oh9"/>
                                                             <constraint firstAttribute="trailing" secondItem="EZq-oB-d4E" secondAttribute="trailing" constant="20" id="QFV-nN-vNh"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-tc-TLe" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="220" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="265" width="414" height="65"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-Fc-D5T">
                                                                 <rect key="frame" x="387" y="19" width="7" height="12"/>
@@ -88,11 +88,11 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="274" id="GlM-Wi-kVr"/>
+                                                    <constraint firstAttribute="height" constant="330" id="GlM-Wi-kVr"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-QB-bTv">
-                                                <rect key="frame" x="0.0" y="336.5" width="414" height="62.5"/>
+                                                <rect key="frame" x="0.0" y="392.5" width="414" height="62.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-gv-y3w">
                                                         <rect key="frame" x="28" y="21" width="359" height="20.5"/>
@@ -104,10 +104,10 @@
                                                 <edgeInsets key="layoutMargins" top="21" left="28" bottom="21" right="27"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qln-XN-vZs">
-                                                <rect key="frame" x="0.0" y="399" width="414" height="109"/>
+                                                <rect key="frame" x="0.0" y="455" width="414" height="131"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-px-7pl" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oou-ez-NnD">
                                                                 <rect key="frame" x="387" y="19" width="7" height="12"/>
@@ -126,7 +126,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYZ-fn-Kkf" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="55" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="66" width="414" height="65"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alv-KZ-KAL">
                                                                 <rect key="frame" x="387" y="19" width="7" height="12"/>
@@ -146,11 +146,11 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="109" id="a9H-Ug-gLg"/>
+                                                    <constraint firstAttribute="height" constant="131" id="a9H-Ug-gLg"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-RJ-xqJ">
-                                                <rect key="frame" x="0.0" y="508" width="414" height="62.5"/>
+                                                <rect key="frame" x="0.0" y="586" width="414" height="62.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQL-Rx-YBQ">
                                                         <rect key="frame" x="28" y="21" width="359" height="20.5"/>
@@ -162,30 +162,30 @@
                                                 <edgeInsets key="layoutMargins" top="21" left="28" bottom="21" right="27"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="YK1-hY-BOI">
-                                                <rect key="frame" x="0.0" y="570.5" width="414" height="329"/>
+                                                <rect key="frame" x="0.0" y="648.5" width="414" height="395"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-sm-Rlt" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpN-7J-RdJ" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="55" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="66" width="414" height="65"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="em2-yE-wQO" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="110" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="132" width="414" height="65"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-mi-N0P" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="165" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="198" width="414" height="65"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oy-oI-gm1" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="220" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="264" width="414" height="65"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDx-hd-JcY" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="275" width="414" height="54"/>
+                                                        <rect key="frame" x="0.0" y="330" width="414" height="65"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ja1-v3-GEK">
                                                                 <rect key="frame" x="387" y="19" width="7" height="12"/>
@@ -205,7 +205,7 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="329" id="HhK-hF-3Zj"/>
+                                                    <constraint firstAttribute="height" constant="395" id="HhK-hF-3Zj"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
