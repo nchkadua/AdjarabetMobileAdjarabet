@@ -336,7 +336,7 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
       }
 
-      /// This `R.color.colorGuide.global` struct is generated, and contains static references to 11 colors.
+      /// This `R.color.colorGuide.global` struct is generated, and contains static references to 10 colors.
       struct global {
         /// Color `baseBg100`.
         static let baseBg100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/baseBg100")
@@ -356,8 +356,6 @@ struct R: Rswift.Validatable {
         static let systemGray100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemGray100")
         /// Color `systemGray200`.
         static let systemGray200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemGray200")
-        /// Color `systemWhite-1`.
-        static let systemWhite1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemWhite-1")
         /// Color `systemWhite`.
         static let systemWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemWhite")
 
@@ -448,15 +446,6 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func systemWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.global.systemWhite, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemWhite-1", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemWhite1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.systemWhite1, compatibleWith: traitCollection)
         }
         #endif
 
@@ -1387,12 +1376,21 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// This `R.image.biometric` struct is generated, and contains static references to 2 images.
+    /// This `R.image.biometric` struct is generated, and contains static references to 3 images.
     struct biometric {
+      /// Image `biometry`.
+      static let biometry = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/biometry")
       /// Image `faceID`.
       static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/faceID")
       /// Image `touchID`.
       static let touchID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/touchID")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "biometry", bundle: ..., traitCollection: ...)`
+      static func biometry(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.biometric.biometry, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "faceID", bundle: ..., traitCollection: ...)`
@@ -2446,7 +2444,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 88 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 91 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2464,6 +2462,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let profile_page_title = Rswift.StringResource(key: "profile_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Activate Biometry
+      ///
+      /// Locales: en, ka, hy
+      static let biometric_settings_activate_biometry = Rswift.StringResource(key: "biometric_settings_activate_biometry", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Activate Face ID
       ///
       /// Locales: en, ka, hy
@@ -2480,6 +2482,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let biomatry_authentication_parameters = Rswift.StringResource(key: "biomatry_authentication_parameters", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Biometry is not available
+      ///
+      /// Locales: en, ka, hy
+      static let biometric_settings_not_available = Rswift.StringResource(key: "biometric_settings_not_available", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Birth Date
       ///
       /// Locales: en, ka, hy
@@ -2672,6 +2678,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let home_search_placeholder = Rswift.StringResource(key: "home_search_placeholder", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Settings
+      ///
+      /// Locales: en, ka, hy
+      static let settings = Rswift.StringResource(key: "settings", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Sports
       ///
       /// Locales: en, ka, hy
@@ -2861,6 +2871,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("profile_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Activate Biometry
+      ///
+      /// Locales: en, ka, hy
+      static func biometric_settings_activate_biometry(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("biometric_settings_activate_biometry", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "biometric_settings_activate_biometry"
+        }
+
+        return NSLocalizedString("biometric_settings_activate_biometry", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Activate Face ID
       ///
       /// Locales: en, ka, hy
@@ -2919,6 +2944,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("biomatry_authentication_parameters", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Biometry is not available
+      ///
+      /// Locales: en, ka, hy
+      static func biometric_settings_not_available(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("biometric_settings_not_available", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "biometric_settings_not_available"
+        }
+
+        return NSLocalizedString("biometric_settings_not_available", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Birth Date
@@ -3639,6 +3679,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("home_search_placeholder", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Settings
+      ///
+      /// Locales: en, ka, hy
+      static func settings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "settings"
+        }
+
+        return NSLocalizedString("settings", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Sports
