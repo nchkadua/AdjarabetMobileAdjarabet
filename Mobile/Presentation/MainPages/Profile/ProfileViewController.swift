@@ -15,7 +15,7 @@ public class ProfileViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
-    
+
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 

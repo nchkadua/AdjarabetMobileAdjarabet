@@ -12,6 +12,9 @@ class LabelComponentView: UIView {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var valueLabel: UILabel!
 
+    public var titleLabelComponent: UILabel { titleLabel }
+    public var valueLabelComponent: UILabel { valueLabel }
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -49,11 +52,11 @@ extension LabelComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = .clear
 
-        titleLabel.setFont(to: .body1)
-        titleLabel.setTextColor(to: .systemWhite())
+        titleLabel.setFont(to: .footnote(fontCase: .lower))
+        titleLabel.setTextColor(to: .primaryText())
 
-        valueLabel.setFont(to: .h3(fontCase: .lower))
-        valueLabel.setTextColor(to: .systemWhite())
+        valueLabel.setFont(to: .title3(fontCase: .upper, fontStyle: .bold))
+        valueLabel.setTextColor(to: .primaryText())
     }
 }
 
