@@ -13,15 +13,17 @@ import UIKit
 struct ABPopupPresentationControllerParams {
     var heightMultiplier: CGFloat = 0
     var heightConstant: CGFloat = 0
+    // Optional Configuration:
     var cornerRadius: CGFloat = 20
-    var blurAlpha: CGFloat = 0.011 // for UITapGestureRecognizer
 }
 
 // MARK: - Popup Presentation Controller
 
 class ABPopupPresentationController: UIPresentationController {
     var params: ABPopupPresentationControllerParams
-    let blurEffectView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+
+    private let backgroundView: UIView
+    private let backgroungColor: UIColor = UIColor.black.withAlphaComponent(0.5)
 
     init(
         presentedViewController: UIViewController,
@@ -29,15 +31,17 @@ class ABPopupPresentationController: UIPresentationController {
         params: ABPopupPresentationControllerParams = .init()
     ) {
         self.params = params
+        self.backgroundView = UIView()
 
         super.init(
             presentedViewController: presentedViewController,
             presenting: presentingViewController
         )
 
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.isUserInteractionEnabled = true
-        blurEffectView.addGestureRecognizer(
+        backgroundView.backgroundColor = backgroungColor
+        backgroundView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundView.isUserInteractionEnabled = true
+        backgroundView.addGestureRecognizer(
             UITapGestureRecognizer(
                 target: self,
                 action: #selector(dismissController)
@@ -57,20 +61,20 @@ class ABPopupPresentationController: UIPresentationController {
     }
 
     override func presentationTransitionWillBegin() {
-        blurEffectView.alpha = 0
-        containerView?.addSubview(blurEffectView)
+        backgroundView.backgroundColor = .clear
+        containerView?.addSubview(backgroundView)
         presentedViewController.transitionCoordinator?.animate { [weak self] _ in
-            self?.blurEffectView.alpha = self?.params.blurAlpha ?? 0
+            self?.backgroundView.backgroundColor = self?.backgroungColor
         }
     }
 
     override func dismissalTransitionWillBegin() {
         presentedViewController.transitionCoordinator?.animate(
             alongsideTransition: { [weak self] _ in
-                self?.blurEffectView.alpha = 0
+                self?.backgroundView.backgroundColor = .clear
             },
             completion: { [weak self] _ in
-                self?.blurEffectView.removeFromSuperview()
+                self?.backgroundView.removeFromSuperview()
             }
         )
     }
@@ -83,7 +87,7 @@ class ABPopupPresentationController: UIPresentationController {
     override func containerViewDidLayoutSubviews() {
         super.containerViewDidLayoutSubviews()
         presentedView?.frame = frameOfPresentedViewInContainerView
-        blurEffectView.frame = containerView!.bounds
+        backgroundView.frame = containerView!.bounds
     }
 
     @objc func dismissController() {
