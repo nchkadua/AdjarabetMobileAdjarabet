@@ -71,7 +71,7 @@
                                                         <rect key="frame" x="0.0" y="265" width="414" height="65"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-Fc-D5T">
-                                                                <rect key="frame" x="387" y="19" width="7" height="12"/>
+                                                                <rect key="frame" x="387" y="26.5" width="7" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="7" id="VG7-di-9NN"/>
                                                                     <constraint firstAttribute="height" constant="12" id="tpQ-nb-NtT"/>
@@ -83,7 +83,7 @@
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="x2j-Fc-D5T" secondAttribute="trailing" constant="20" id="bXo-Vv-CxK"/>
-                                                            <constraint firstItem="x2j-Fc-D5T" firstAttribute="top" secondItem="mJJ-tc-TLe" secondAttribute="top" constant="19" id="kdb-QW-MqC"/>
+                                                            <constraint firstItem="x2j-Fc-D5T" firstAttribute="centerY" secondItem="mJJ-tc-TLe" secondAttribute="centerY" id="lcz-ir-HOM"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -110,7 +110,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oou-ez-NnD">
-                                                                <rect key="frame" x="387" y="19" width="7" height="12"/>
+                                                                <rect key="frame" x="387" y="26.5" width="7" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="7" id="OS8-WA-O1p"/>
                                                                     <constraint firstAttribute="height" constant="12" id="ROE-kT-wbi"/>
@@ -121,7 +121,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="oou-ez-NnD" firstAttribute="top" secondItem="M4a-px-7pl" secondAttribute="top" constant="19" id="Ymd-ML-SRL"/>
+                                                            <constraint firstItem="oou-ez-NnD" firstAttribute="centerY" secondItem="M4a-px-7pl" secondAttribute="centerY" id="B96-1P-XWe"/>
                                                             <constraint firstAttribute="trailing" secondItem="oou-ez-NnD" secondAttribute="trailing" constant="20" id="i4y-rF-lif"/>
                                                         </constraints>
                                                     </view>
@@ -129,7 +129,7 @@
                                                         <rect key="frame" x="0.0" y="66" width="414" height="65"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alv-KZ-KAL">
-                                                                <rect key="frame" x="387" y="19" width="7" height="12"/>
+                                                                <rect key="frame" x="387" y="26.5" width="7" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="7" id="9Zm-g1-ulW"/>
                                                                     <constraint firstAttribute="height" constant="12" id="Ffq-BR-mcW"/>
@@ -140,7 +140,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="alv-KZ-KAL" firstAttribute="top" secondItem="pYZ-fn-Kkf" secondAttribute="top" constant="19" id="sC4-PJ-5xS"/>
+                                                            <constraint firstItem="alv-KZ-KAL" firstAttribute="centerY" secondItem="pYZ-fn-Kkf" secondAttribute="centerY" id="584-TE-651"/>
                                                             <constraint firstAttribute="trailing" secondItem="alv-KZ-KAL" secondAttribute="trailing" constant="20" id="w09-Hi-vkq"/>
                                                         </constraints>
                                                     </view>
@@ -188,7 +188,7 @@
                                                         <rect key="frame" x="0.0" y="330" width="414" height="65"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ja1-v3-GEK">
-                                                                <rect key="frame" x="387" y="19" width="7" height="12"/>
+                                                                <rect key="frame" x="387" y="26.5" width="7" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="12" id="Olk-GB-umO"/>
                                                                     <constraint firstAttribute="width" constant="7" id="jqT-WV-rQy"/>
@@ -199,7 +199,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="Ja1-v3-GEK" firstAttribute="top" secondItem="qDx-hd-JcY" secondAttribute="top" constant="19" id="JKL-dG-Vfm"/>
+                                                            <constraint firstItem="Ja1-v3-GEK" firstAttribute="centerY" secondItem="qDx-hd-JcY" secondAttribute="centerY" id="XEg-XM-WNQ"/>
                                                             <constraint firstAttribute="trailing" secondItem="Ja1-v3-GEK" secondAttribute="trailing" constant="20" id="sAv-rG-DcG"/>
                                                         </constraints>
                                                     </view>
