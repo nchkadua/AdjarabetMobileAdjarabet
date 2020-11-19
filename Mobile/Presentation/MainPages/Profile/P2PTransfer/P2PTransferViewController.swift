@@ -16,6 +16,7 @@ public class P2PTransferViewController: ABViewController {
     @IBOutlet private weak var personIdInputView: ABInputView!
     @IBOutlet private weak var transferAmountInputView: ABInputView!
     @IBOutlet private weak var commissionAmountLabelView: LabelComponentView!
+    @IBOutlet private weak var labelViewSeparator: UIView!
     @IBOutlet private weak var totalAmountLabelView: LabelComponentView!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var statusIconImageView: UIImageView!
@@ -28,23 +29,6 @@ public class P2PTransferViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-    }
-
-    private func setup() {
-        layoutConfirmButton()
-
-        setBaseBackgorundColor(to: .secondaryBg())
-    }
-
-    private func layoutConfirmButton() {
-        view.addSubview(confirmButton)
-        confirmButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            confirmButton.leadingAnchor.constraint(equalTo: totalAmountLabelView.leadingAnchor),
-            confirmButton.trailingAnchor.constraint(equalTo: totalAmountLabelView.trailingAnchor),
-            confirmButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 22),
-            confirmButton.heightAnchor.constraint(equalToConstant: 54)
-        ])
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -62,5 +46,56 @@ public class P2PTransferViewController: ABViewController {
     }
 
     private func didRecive(route: P2PTransferViewModelRoute) {
+    }
+
+    private func setup() {
+        layoutConfirmButton()
+        setBaseBackgorundColor()
+        setupTitleLabel()
+        setupInputViews()
+        setupLabelViews()
+        setupConfirmButton()
+    }
+
+    private func setupTitleLabel() {
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.text = R.string.localization.p2p_transfer_p2p_transfer.localized()
+    }
+
+    private func setupInputViews() {
+        personIdInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
+        personIdInputView.setPlaceholder(text: R.string.localization.p2p_transfer_friend_id.localized())
+
+        transferAmountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
+        transferAmountInputView.setPlaceholder(text: R.string.localization.p2p_transfer_tranfer_amount.localized())
+    }
+
+    private func setupLabelViews() {
+        commissionAmountLabelView.set(backgroundColor: .systemGrey5())
+        commissionAmountLabelView.mainView.roundCorners([.topLeft, .topRight], radius: 8)
+        commissionAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_transaction_commission.localized(), value: ""))
+
+        labelViewSeparator.setBackgorundColor(to: .nonOpaque())
+
+        totalAmountLabelView.set(backgroundColor: .systemGrey5())
+        totalAmountLabelView.mainView.roundCorners([.bottomLeft, .bottomRight], radius: 8)
+        totalAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_total_amount.localized(), value: ""))
+    }
+
+    private func setupConfirmButton() {
+        confirmButton.setStyle(to: .tertiary(state: .acvite, size: .large))
+        confirmButton.setTitleWithoutAnimation(R.string.localization.p2p_transfer_confirm.localized(), for: .normal)
+    }
+
+    private func layoutConfirmButton() {
+        view.addSubview(confirmButton)
+        confirmButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            confirmButton.leadingAnchor.constraint(equalTo: totalAmountLabelView.leadingAnchor),
+            confirmButton.trailingAnchor.constraint(equalTo: totalAmountLabelView.trailingAnchor),
+            confirmButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 22),
+            confirmButton.heightAnchor.constraint(equalToConstant: 54)
+        ])
     }
 }

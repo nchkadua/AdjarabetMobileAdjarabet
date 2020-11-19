@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1t-gS-Ayu" userLabel="Info Button">
-                                <rect key="frame" x="326" y="40" width="19" height="19"/>
+                                <rect key="frame" x="326" y="41" width="19" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="19" id="gC1-af-aby"/>
                                     <constraint firstAttribute="height" constant="19" id="wI2-dk-wCe"/>
@@ -46,15 +45,14 @@
                                     <constraint firstAttribute="height" constant="54" id="m1f-uo-VoB"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQV-y3-OLM" userLabel="Total Amount Label View" customClass="LabelComponentView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="261" width="335" height="54"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMv-XE-tvj" userLabel="Label View Separator">
                                 <rect key="frame" x="20" y="261" width="335" height="1"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="QUZ-k8-uwC"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQV-y3-OLM" userLabel="Total Amount Label View" customClass="LabelComponentView" customModule="Mobile" customModuleProvider="target">
-                                <rect key="frame" x="20" y="261" width="335" height="54"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zt-bi-6YZ" userLabel="Description Label">
                                 <rect key="frame" x="25" y="337" width="287.5" height="21"/>
@@ -95,7 +93,7 @@
                             <constraint firstItem="4zt-bi-6YZ" firstAttribute="trailing" secondItem="ClJ-q8-o8R" secondAttribute="leading" constant="-5" id="TOu-a6-TO0"/>
                             <constraint firstItem="LFs-hM-UlJ" firstAttribute="centerY" secondItem="ClJ-q8-o8R" secondAttribute="centerY" id="X5A-ea-My3"/>
                             <constraint firstItem="7jB-dg-yzx" firstAttribute="trailing" secondItem="5gW-B3-hKC" secondAttribute="trailing" id="bsV-TQ-GRa"/>
-                            <constraint firstItem="s1t-gS-Ayu" firstAttribute="top" secondItem="Q5L-FH-2jc" secondAttribute="top" id="dTT-Gy-ua5"/>
+                            <constraint firstItem="s1t-gS-Ayu" firstAttribute="centerY" secondItem="Q5L-FH-2jc" secondAttribute="centerY" id="dTT-Gy-ua5"/>
                             <constraint firstItem="Q5L-FH-2jc" firstAttribute="top" secondItem="9ZT-zC-5TK" secondAttribute="top" constant="40" id="eHI-Q2-eiH"/>
                             <constraint firstItem="LFs-hM-UlJ" firstAttribute="trailing" secondItem="AQV-y3-OLM" secondAttribute="trailing" constant="-5" id="ePd-Y8-yxn"/>
                             <constraint firstItem="7jB-dg-yzx" firstAttribute="top" secondItem="5gW-B3-hKC" secondAttribute="bottom" constant="10" id="ek1-dx-dgd"/>
@@ -111,6 +109,7 @@
                     <connections>
                         <outlet property="commissionAmountLabelView" destination="geE-hS-VVs" id="fT1-he-nMZ"/>
                         <outlet property="descriptionLabel" destination="4zt-bi-6YZ" id="6HN-xA-9QK"/>
+                        <outlet property="labelViewSeparator" destination="yMv-XE-tvj" id="EDD-fM-KOE"/>
                         <outlet property="personIdInputView" destination="5gW-B3-hKC" id="CTN-Zb-qnm"/>
                         <outlet property="personNameLabel" destination="LFs-hM-UlJ" id="1vV-tR-iYJ"/>
                         <outlet property="statusIconImageView" destination="ClJ-q8-o8R" id="VvN-c1-Ypc"/>
@@ -126,8 +125,5 @@
     </scenes>
     <resources>
         <image name="Withdraw/info" width="21" height="21"/>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
