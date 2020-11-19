@@ -12,6 +12,17 @@ public class BiometricSettingsViewController: ABPopupViewController {
     @Inject(from: .viewModels) public var viewModel: BiometricSettingsViewModel
     public lazy var navigator = BiometricSettingsNavigator(viewController: self)
 
+    private lazy var settingsAllert: UIAlertController = {
+        let alert = UIAlertController()
+        alert.addAction(UIAlertAction(title: R.string.localization.settings.localized(), style: .default) { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+        })
+        alert.addAction(UIAlertAction(title: R.string.localization.cancel.localized(), style: .cancel) { _ in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        return alert
+    }()
+
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var descriptionLabel: UILabel!
@@ -64,7 +75,10 @@ public class BiometricSettingsViewController: ABPopupViewController {
 
     private func didRecive(route: BiometricSettingsViewModelRoute) {
         switch route {
-        case .openAlert(let title, _): showAlert(title: title)
+        case .openSettingsAlert(let title, let message):
+            settingsAllert.title   = title
+            settingsAllert.message = message
+            present(settingsAllert, animated: true, completion: nil)
         }
     }
 

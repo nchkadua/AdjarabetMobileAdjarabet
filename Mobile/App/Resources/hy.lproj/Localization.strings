@@ -32,6 +32,7 @@
 "join_now" = "Join now";
 "login_button_title" = "LOG IN";
 "contact_us_button_title" = "Contact us";
+"settings" = "settings";
 
 /* Login */
 "login_page_title" = "Log in to";
@@ -122,5 +123,7 @@
 "delete_button_title" = "Delete";
 
 /* Biometric Settings */
-"biometric_settings_activate_touch_id" = "Activate Touch ID";
-"biometric_settings_activate_face_id" = "Activate Face ID";
+"biometric_settings_activate_touch_id" = "activate touch ID";
+"biometric_settings_activate_face_id" = "activate face ID";
+"biometric_settings_activate_biometry" = "activate biometry";
+"biometric_settings_not_available" = "biometry is not available";
