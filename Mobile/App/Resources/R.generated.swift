@@ -2444,7 +2444,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 88 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 95 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2486,6 +2486,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Confirm
+      ///
+      /// Locales: en, ka, hy
+      static let p2p_transfer_confirm = Rswift.StringResource(key: "p2p_transfer_confirm", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Contact Information
       ///
       /// Locales: en, ka, hy
@@ -2526,6 +2530,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login_forgot_username = Rswift.StringResource(key: "login_forgot_username", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Friend ID
+      ///
+      /// Locales: en, ka, hy
+      static let p2p_transfer_friend_id = Rswift.StringResource(key: "p2p_transfer_friend_id", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Games
       ///
       /// Locales: en, ka, hy
@@ -2598,6 +2606,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login_legal = Rswift.StringResource(key: "login_legal", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: P2P Transfer
+      ///
+      /// Locales: en, ka, hy
+      static let p2p_transfer_p2p_transfer = Rswift.StringResource(key: "p2p_transfer_p2p_transfer", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Password
       ///
       /// Locales: en, ka, hy
@@ -2686,10 +2698,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let total_balance = Rswift.StringResource(key: "total_balance", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Total amount
+      ///
+      /// Locales: en, ka, hy
+      static let p2p_transfer_total_amount = Rswift.StringResource(key: "p2p_transfer_total_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Transaction History
       ///
       /// Locales: en, ka, hy
       static let transaction_history = Rswift.StringResource(key: "transaction_history", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Transaction commission
+      ///
+      /// Locales: en, ka, hy
+      static let p2p_transfer_transaction_commission = Rswift.StringResource(key: "p2p_transfer_transaction_commission", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Transfer amount
+      ///
+      /// Locales: en, ka, hy
+      static let p2p_transfer_tranfer_amount = Rswift.StringResource(key: "p2p_transfer_tranfer_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Transfer to a Friend
       ///
       /// Locales: en, ka, hy
@@ -2722,6 +2746,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let withdraw_button_title = Rswift.StringResource(key: "withdraw_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: You are transfering to
+      ///
+      /// Locales: en, ka, hy
+      static let p2p_transfer_you_are_transfering_to = Rswift.StringResource(key: "p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Your Account is Verified
       ///
       /// Locales: en, ka, hy
@@ -2949,6 +2977,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("cancel", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Confirm
+      ///
+      /// Locales: en, ka, hy
+      static func p2p_transfer_confirm(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("p2p_transfer_confirm", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "p2p_transfer_confirm"
+        }
+
+        return NSLocalizedString("p2p_transfer_confirm", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Contact Information
       ///
       /// Locales: en, ka, hy
@@ -3097,6 +3140,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login_forgot_username", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Friend ID
+      ///
+      /// Locales: en, ka, hy
+      static func p2p_transfer_friend_id(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("p2p_transfer_friend_id", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "p2p_transfer_friend_id"
+        }
+
+        return NSLocalizedString("p2p_transfer_friend_id", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Games
@@ -3367,6 +3425,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login_legal", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: P2P Transfer
+      ///
+      /// Locales: en, ka, hy
+      static func p2p_transfer_p2p_transfer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("p2p_transfer_p2p_transfer", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "p2p_transfer_p2p_transfer"
+        }
+
+        return NSLocalizedString("p2p_transfer_p2p_transfer", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Password
@@ -3699,6 +3772,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("total_balance", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Total amount
+      ///
+      /// Locales: en, ka, hy
+      static func p2p_transfer_total_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("p2p_transfer_total_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "p2p_transfer_total_amount"
+        }
+
+        return NSLocalizedString("p2p_transfer_total_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Transaction History
       ///
       /// Locales: en, ka, hy
@@ -3712,6 +3800,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("transaction_history", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Transaction commission
+      ///
+      /// Locales: en, ka, hy
+      static func p2p_transfer_transaction_commission(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("p2p_transfer_transaction_commission", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "p2p_transfer_transaction_commission"
+        }
+
+        return NSLocalizedString("p2p_transfer_transaction_commission", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Transfer amount
+      ///
+      /// Locales: en, ka, hy
+      static func p2p_transfer_tranfer_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("p2p_transfer_tranfer_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "p2p_transfer_tranfer_amount"
+        }
+
+        return NSLocalizedString("p2p_transfer_tranfer_amount", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Transfer to a Friend
@@ -3832,6 +3950,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("withdraw_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You are transfering to
+      ///
+      /// Locales: en, ka, hy
+      static func p2p_transfer_you_are_transfering_to(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "p2p_transfer_you_are_transfering_to"
+        }
+
+        return NSLocalizedString("p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Your Account is Verified
@@ -4816,6 +4949,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Withdraw/info", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Withdraw/info' is used in storyboard 'P2PTransferView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.p2PTransferView().p2PTransferViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'p2PTransferViewController' could not be loaded from storyboard 'P2PTransferView' as 'P2PTransferViewController'.") }

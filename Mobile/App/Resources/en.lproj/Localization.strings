@@ -126,3 +126,12 @@
 /* Biometric Settings */
 "biometric_settings_activate_touch_id" = "Activate Touch ID";
 "biometric_settings_activate_face_id" = "Activate Face ID";
+
+/* P2P Transfer */
+"p2p_transfer_p2p_transfer" = "P2P Transfer";
+"p2p_transfer_friend_id" = "Friend ID";
+"p2p_transfer_tranfer_amount" = "Transfer amount";
+"p2p_transfer_transaction_commission" = "Transaction commission";
+"p2p_transfer_total_amount" = "Total amount";
+"p2p_transfer_you_are_transfering_to" = "You are transfering to";
+"p2p_transfer_confirm" = "Confirm";
