@@ -40,20 +40,20 @@ extension WithdrawTermsView: Xibable {
     func setupUI() {
         view.backgroundColor = .clear
 
-        bgView1.setBackgorundColor(to: .fill50())
-        bgView1.layer.cornerRadius = 4
-        bgView2.setBackgorundColor(to: .fill50())
-        bgView2.layer.cornerRadius = 4
+        bgView1.setBackgorundColor(to: .tertiaryBg())
+        bgView1.layer.cornerRadius = 8
+        bgView2.setBackgorundColor(to: .tertiaryBg())
+        bgView2.layer.cornerRadius = 8
 
         infoImageView1.image = R.image.withdraw.info()
         infoImageView2.image = R.image.withdraw.info()
 
-        ruleLabel1.setFont(to: .body1)
-        ruleLabel1.setTextColor(to: .systemWhite())
+        ruleLabel1.setFont(to: .footnote(fontCase: .lower))
+        ruleLabel1.setTextColor(to: .primaryText())
         ruleLabel1.text = R.string.localization.withdraw_rule1()
 
-        ruleLabel2.setFont(to: .body1)
-        ruleLabel2.setTextColor(to: .systemWhite())
+        ruleLabel2.setFont(to: .footnote(fontCase: .lower))
+        ruleLabel2.setTextColor(to: .primaryText())
         ruleLabel2.text = R.string.localization.withdraw_rule2()
     }
 }

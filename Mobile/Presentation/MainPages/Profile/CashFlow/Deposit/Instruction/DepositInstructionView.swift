@@ -36,23 +36,23 @@ extension DepositInstructionView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.systemGray200().value
-        view.layer.cornerRadius = 4
+        view.setBackgorundColor(to: .tertiaryBg())
+        view.layer.cornerRadius = 8
 
-        titleLabel.setFont(to: .h3(fontCase: .lower))
-        titleLabel.setTextColor(to: .systemWhite())
+        titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setTextColor(to: .primaryText())
         titleLabel.text = R.string.localization.deposit_description_title()
 
-        amountLabel.setFont(to: .body1)
-        amountLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+        amountLabel.setFont(to: .footnote(fontCase: .lower))
+        amountLabel.setTextColor(to: .primaryText())
         amountLabel.text = "\("•")   \(R.string.localization.deposit_description_amount())"
 
-        cardLabel.setFont(to: .body1)
-        cardLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+        cardLabel.setFont(to: .footnote(fontCase: .lower))
+        cardLabel.setTextColor(to: .primaryText())
         cardLabel.text = "\("•")   \(R.string.localization.deposit_description_card())"
 
-        proceedLabel.setFont(to: .body1)
-        proceedLabel.setTextColor(to: .systemWhite(alpha: 0.7))
+        proceedLabel.setFont(to: .footnote(fontCase: .lower))
+        proceedLabel.setTextColor(to: .primaryText())
         proceedLabel.text = "\("•")   \(R.string.localization.deposit_description_proceed())"
     }
 }

@@ -61,34 +61,49 @@ public class DepositViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .systemGray100())
+        setBaseBackgorundColor(to: .secondaryBg())
         setupKeyboard()
         setupButtons()
         setupInputViews()
     }
 
     private func setupButtons() {
-        addCardButton.setBackgorundColor(to: .fill50())
-        addCardButton.layer.cornerRadius = 4
+        addCardButton.setBackgorundColor(to: .querternaryFill())
+        addCardButton.layer.cornerRadius = 8
         addCardButton.setImage(R.image.deposit.addCard(), for: .normal)
 
-        proceedButton.setStyle(to: .primary(state: .acvite, size: .large))
+        proceedButton.setStyle(to: .tertiary(state: .disabled, size: .large))
         proceedButton.setTitleWithoutAnimation(R.string.localization.deposit_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
+        updateProceedButton(isEnabled: false)
+        
+        Observable.combineLatest([paymentMethodInputView.rx.text.orEmpty, cardNumberInputView.rx.text.orEmpty, amountInputView.rx.text.orEmpty])
+            .map { $0.map { !$0.isEmpty } }
+            .map { $0.allSatisfy { $0 == true } }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.updateProceedButton(isEnabled: isValid)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupInputViews() {
-        paymentMethodInputView.setupWith(backgroundColor: .fill50(), borderWidth: 0)
+        paymentMethodInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         paymentMethodInputView.setPlaceholder(text: R.string.localization.deposit_payment_method_title())
 
-        amountInputView.setupWith(backgroundColor: .fill50(), borderWidth: 0)
+        amountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.deposit_amount_title())
 
-        cardNumberInputView.setupWith(backgroundColor: .fill50(), borderWidth: 0)
+        cardNumberInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         cardNumberInputView.setPlaceholder(text: R.string.localization.deposit_card_title())
     }
 
+    // MARK: Configuration
+    private func updateProceedButton(isEnabled: Bool) {
+        proceedButton.isUserInteractionEnabled = isEnabled
+        proceedButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
+    }
+    
     // MARK: Action methods
     @objc private func proceedDidTap() {
     }

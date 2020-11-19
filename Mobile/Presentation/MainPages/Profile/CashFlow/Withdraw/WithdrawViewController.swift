@@ -19,6 +19,7 @@ public class WithdrawViewController: ABViewController {
     @IBOutlet private weak var commissionLabelComponentView: LabelComponentView!
     @IBOutlet private weak var totalAmountLabelComponentView: LabelComponentView!
     @IBOutlet private weak var proceedButton: ABButton!
+    @IBOutlet private weak var dropDownButton: UIButton!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -62,7 +63,7 @@ public class WithdrawViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .systemGray100())
+        setBaseBackgorundColor(to: .secondaryBg())
         setupKeyboard()
         setupLabels()
         setupButtons()
@@ -70,28 +71,42 @@ public class WithdrawViewController: ABViewController {
     }
 
     private func setupLabels() {
-        commissionLabelComponentView.setBackgorundColor(to: .systemGray200())
-        totalAmountLabelComponentView.setBackgorundColor(to: .systemGray200())
+        commissionLabelComponentView.setBackgorundColor(to: .tertiaryBg())
+        totalAmountLabelComponentView.setBackgorundColor(to: .tertiaryBg())
+
+        commissionLabelComponentView.valueLabelComponent.setFont(to: .subHeadline(fontCase: .upper))
+        totalAmountLabelComponentView.valueLabelComponent.setFont(to: .subHeadline(fontCase: .upper))
 
         commissionLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_commission_title(), value: "0.0 ₾"))
         totalAmountLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_total_amount_title(), value: "0.0 ₾"))
 
-        commissionLabelComponentView.roundCorners([.topLeft, .topRight], radius: 4)
-        totalAmountLabelComponentView.roundCorners([.bottomLeft, .bottomRight], radius: 4)
+        commissionLabelComponentView.roundCorners([.topLeft, .topRight], radius: 8)
+        totalAmountLabelComponentView.roundCorners([.bottomLeft, .bottomRight], radius: 8)
     }
 
     private func setupButtons() {
-        proceedButton.setStyle(to: .primary(state: .acvite, size: .large))
+        proceedButton.setStyle(to: .tertiary(state: .disabled, size: .large))
         proceedButton.setTitleWithoutAnimation(R.string.localization.withdraw_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
+        updateProceedButton(isEnabled: false)
+
+        dropDownButton.setTintColor(to: .secondaryText())
+
+        Observable.combineLatest([cardNumberInputView.rx.text.orEmpty, amountInputView.rx.text.orEmpty])
+            .map { $0.map { !$0.isEmpty } }
+            .map { $0.allSatisfy { $0 == true } }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.updateProceedButton(isEnabled: isValid)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupInputViews() {
-        amountInputView.setupWith(backgroundColor: .fill50(), borderWidth: 0)
+        amountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.withdraw_amount_title())
 
-        cardNumberInputView.setupWith(backgroundColor: .fill50(), borderWidth: 0)
+        cardNumberInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())
 
         amountInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -99,6 +114,12 @@ public class WithdrawViewController: ABViewController {
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
         viewModel.textDidChange(to: textField.text)
+    }
+
+    // MARK: Configuration
+    private func updateProceedButton(isEnabled: Bool) {
+        proceedButton.isUserInteractionEnabled = isEnabled
+        proceedButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
     }
 
     // MARK: Action methods

@@ -20,8 +20,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCT-uC-FVO">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Ga-w8-HdC">
-                                        <rect key="frame" x="0.0" y="10" width="414" height="544"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="7Ga-w8-HdC">
+                                        <rect key="frame" x="0.0" y="10" width="414" height="560"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QeI-Xk-dqq">
                                                 <rect key="frame" x="20" y="0.0" width="374" height="314"/>
@@ -87,7 +87,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aK8-0X-L67">
-                                                <rect key="frame" x="20" y="344" width="374" height="200"/>
+                                                <rect key="frame" x="20" y="360" width="374" height="200"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaC-QQ-4rT" customClass="DepositInstructionView" customModule="Mobile" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
@@ -104,8 +104,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7Ga-w8-HdC" firstAttribute="top" secondItem="QCT-uC-FVO" secondAttribute="top" constant="10" id="6TZ-lN-0qj"/>
-                                    <constraint firstItem="7Ga-w8-HdC" firstAttribute="leading" secondItem="QCT-uC-FVO" secondAttribute="leading" id="aeJ-WB-FcO"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Ga-w8-HdC" secondAttribute="trailing" id="yRL-M2-USP"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Ga-w8-HdC" secondAttribute="trailing" id="Han-Oy-0iY"/>
+                                    <constraint firstItem="7Ga-w8-HdC" firstAttribute="centerX" secondItem="QCT-uC-FVO" secondAttribute="centerX" id="Iid-ju-7zF"/>
+                                    <constraint firstItem="7Ga-w8-HdC" firstAttribute="leading" secondItem="QCT-uC-FVO" secondAttribute="leading" id="cqB-5q-sBo"/>
                                     <constraint firstAttribute="bottom" secondItem="7Ga-w8-HdC" secondAttribute="bottom" id="z1d-gD-AIt"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="jN9-y9-Q5C"/>

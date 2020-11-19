@@ -55,6 +55,7 @@ public class P2PTransferViewController: ABViewController {
         setupInputViews()
         setupLabelViews()
         setupConfirmButton()
+        personIdInputView.mainTextField.setFont(to: DesignSystem.Typography)
     }
 
     private func setupTitleLabel() {

@@ -110,17 +110,18 @@ extension CashFlowTabComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.systemGray100().value
-        cursor.backgroundColor = DesignSystem.Color.systemRed150().value
+        view.setBackgorundColor(to: .secondaryBg())
+        cursor.setBackgorundColor(to: .primaryRedNeutral())
+        cursorParentView.setBackgorundColor(to: .nonOpaque())
 
         depositButton.setImage(R.image.components.quickAction.deposit(), for: .normal)
-        depositButton.setFont(to: .h3(fontCase: .lower))
+        depositButton.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         depositButton.setTitle(R.string.localization.deposit_button_title(), for: .normal)
         depositButton.addTarget(self, action: #selector(depositButtonAction), for: .touchUpInside)
         depositButton.adjustsImageWhenHighlighted = false
 
         withdrawButton.setImage(R.image.components.quickAction.withdraw(), for: .normal)
-        withdrawButton.setFont(to: .h3(fontCase: .lower))
+        withdrawButton.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         withdrawButton.setTitle(R.string.localization.withdraw_button_title(), for: .normal)
         withdrawButton.addTarget(self, action: #selector(withdrawButtonAction), for: .touchUpInside)
         withdrawButton.adjustsImageWhenHighlighted = false
