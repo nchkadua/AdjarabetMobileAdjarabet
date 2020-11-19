@@ -54,8 +54,8 @@ public class P2PTransferViewController: ABViewController {
         setupTitleLabel()
         setupInputViews()
         setupLabelViews()
+        setupDescriptionView() // description, status, name
         setupConfirmButton()
-        personIdInputView.mainTextField.setFont(to: DesignSystem.Typography)
     }
 
     private func setupTitleLabel() {
@@ -75,13 +75,26 @@ public class P2PTransferViewController: ABViewController {
     private func setupLabelViews() {
         commissionAmountLabelView.set(backgroundColor: .systemGrey5())
         commissionAmountLabelView.mainView.roundCorners([.topLeft, .topRight], radius: 8)
-        commissionAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_transaction_commission.localized(), value: ""))
+        commissionAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_transaction_commission.localized(), value: "1.25 ₾"))
 
         labelViewSeparator.setBackgorundColor(to: .nonOpaque())
 
         totalAmountLabelView.set(backgroundColor: .systemGrey5())
         totalAmountLabelView.mainView.roundCorners([.bottomLeft, .bottomRight], radius: 8)
-        totalAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_total_amount.localized(), value: ""))
+        totalAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_total_amount.localized(), value: "36.05 ₾"))
+    }
+
+    private func setupDescriptionView() {
+        descriptionLabel.setFont(to: .p)
+        descriptionLabel.setTextColor(to: .primaryText())
+        descriptionLabel.text = R.string.localization.p2p_transfer_you_are_transfering_to.localized()
+
+        statusIconImageView.backgroundColor = .green
+
+        personNameLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .bold))
+        personNameLabel.setTextColor(to: .primaryText())
+
+        personNameLabel.text = "Assassino"
     }
 
     private func setupConfirmButton() {
