@@ -11,7 +11,7 @@ public class MainTabBarNavigator: Navigator {
     public let sportsVCFactory = DefaultSportsViewControllerFactory()
     public let promotionsVCFactory = DefaultPromotionsViewControllerFactory()
     public let notificationsVCFacotry = DefaultNotificationsViewControllerFactory()
-    
+
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {

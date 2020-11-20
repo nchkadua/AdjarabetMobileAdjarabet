@@ -65,7 +65,7 @@ public enum DesignSystem {
             case .systemTeal(let alpha):        return colors.systemTints.systemTeal()!.withAlphaComponent(alpha)
             case .systemBlue(let alpha):        return colors.systemTints.systemBlue()!.withAlphaComponent(alpha)
             case .systemIndigo(let alpha):      return colors.systemTints.systemIndigo()!.withAlphaComponent(alpha)
-                
+
             case .primaryRedDark(let alpha):        return colors.adjaraSolids.primaryRedDark()!.withAlphaComponent(alpha)
             case .primaryRedNeutral(let alpha):     return colors.adjaraSolids.primaryRedNeutral()!.withAlphaComponent(alpha)
             case .primaryRed(let alpha):            return colors.adjaraSolids.primaryRed()!.withAlphaComponent(alpha)
@@ -117,7 +117,7 @@ public enum DesignSystem {
         public enum FontStyle: CaseIterable {
             case regular, medium, bold, semiBold
         }
-        
+
         case largeTitle(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case title1(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case title2(fontCase: FontCase, fontStyle: FontStyle = .regular)

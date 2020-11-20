@@ -52,7 +52,7 @@ public class ProfileNavigator: Navigator {
         let vc = cashFlowViewControllerFactory.make(params: CashFlowViewModelParams(initialPageIndex: initialPageIndex))
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
-    
+
     private func navigateToTransactionHistory(animate: Bool) {
         let vc = transactionHistoryViewControllerFactory.make()
         viewController?.navigationController?.pushViewController(vc, animated: animate)

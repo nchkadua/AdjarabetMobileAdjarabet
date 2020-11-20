@@ -41,7 +41,7 @@ extension DefaultTransactionDetailsComponentViewModel: TransactionDetailsCompone
     public var action: Observable<TransactionDetailsComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
-    
+
     public func didBind() {
         actionSubject.onNext(.set(title: params.title, description: params.description))
     }

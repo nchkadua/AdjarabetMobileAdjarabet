@@ -6,9 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol TransactionDetailsTableViewCellDataProvider: 
-    TransactionDetailsComponentViewModel,
-    StaticHeightDataProvider {}
+public protocol TransactionDetailsTableViewCellDataProvider: TransactionDetailsComponentViewModel, StaticHeightDataProvider { }
 
 public extension TransactionDetailsTableViewCellDataProvider {
     var identifier: String { TransactionDetailsTableViewCell.identifierValue }
@@ -19,6 +17,4 @@ public extension TransactionDetailsTableViewCellDataProvider {
     var isHeightSet: Bool { true }
 }
 
-extension DefaultTransactionDetailsComponentViewModel: TransactionDetailsTableViewCellDataProvider {
-    
-}
+extension DefaultTransactionDetailsComponentViewModel: TransactionDetailsTableViewCellDataProvider { }

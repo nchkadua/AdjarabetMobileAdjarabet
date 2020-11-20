@@ -45,9 +45,8 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
         TransactionHistoryProvider.MockTransactionHeaders.forEach {
             let headerModel = DefaultTransactionHistostoryHeaderComponentViewModel(params: .init(title: $0.title))
             dataProvider.append(headerModel)
-            
+
             TransactionHistoryProvider.MockTransactions.forEach {
-                
                 let model = DefaultTransactionHistoryComponentViewModel(params: .init(transactionHistory: $0))
                 model.action.subscribe(onNext: { action in
                     switch action {
@@ -60,7 +59,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
                 dataProvider.append(model)
             }
         }
-        
+
         actionSubject.onNext(.initialize(dataProvider.makeList()))
     }
 }

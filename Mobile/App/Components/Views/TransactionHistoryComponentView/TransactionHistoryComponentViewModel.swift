@@ -43,7 +43,7 @@ extension DefaultTransactionHistoryComponentViewModel: TransactionHistoryCompone
     public func didSelect(at indexPath: IndexPath) {
         actionSubject.onNext(.didSelect(transactionHistory: params.transactionHistory))
     }
-    
+
     public var action: Observable<TransactionHistoryComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }

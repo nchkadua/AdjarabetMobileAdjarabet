@@ -37,11 +37,11 @@ public class DefaultTransactionDetailsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<TransactionDetailsViewModelOutputAction>()
     private let routeSubject = PublishSubject<TransactionDetailsViewModelRoute>()
     public let params: TransactionDetailsViewModelParams
-    
+
     public init(params: TransactionDetailsViewModelParams) {
         self.params = params
     }
-    
+
     public override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)
     }
@@ -50,9 +50,8 @@ public class DefaultTransactionDetailsViewModel: DefaultBaseViewModel {
 extension DefaultTransactionDetailsViewModel: TransactionDetailsViewModel {
     public var action: Observable<TransactionDetailsViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<TransactionDetailsViewModelRoute> { routeSubject.asObserver() }
-    
+
     public func viewDidLoad() {
-        
         var dataProvider: AppCellDataProviders = []
         params.transactionHistory.details.forEach {
             let model = DefaultTransactionDetailsComponentViewModel(params: .init(title: $0.title, description: $0.description))

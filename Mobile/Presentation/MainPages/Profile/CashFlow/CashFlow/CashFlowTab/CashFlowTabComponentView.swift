@@ -73,7 +73,7 @@ class CashFlowTabComponentView: UIView {
             depositButton.alpha = 1
             withdrawButton.alpha = 0.5
         }, completion: { [self] _ in
-            moveCursorLeft(animate: animate)
+            self.moveCursorLeft(animate: animate)
         })
     }
 
@@ -82,19 +82,19 @@ class CashFlowTabComponentView: UIView {
             withdrawButton.alpha = 1
             depositButton.alpha = 0.5
         }, completion: { [self] _ in
-            moveCursorRight(animate: animate)
+            self.moveCursorRight(animate: animate)
         })
     }
 
     private func moveCursorLeft(animate: Bool) {
         UIView.animate(withDuration: animate ? animationTime : 0) { [self] in
-            cursor.frame = CGRect(x: 0, y: cursor.frame.origin.y, width: cursor.frame.size.width, height: cursor.frame.size.height)
+            self.cursor.frame = CGRect(x: 0, y: cursor.frame.origin.y, width: cursor.frame.size.width, height: cursor.frame.size.height)
         }
     }
 
     private func moveCursorRight(animate: Bool) {
         UIView.animate(withDuration: animate ? animationTime : 0) { [self] in
-            cursor.frame = CGRect(x: cursorParentView.bounds.width / 2, y: cursor.frame.origin.y, width: cursor.frame.size.width, height: cursor.frame.size.height)
+            self.cursor.frame = CGRect(x: cursorParentView.bounds.width / 2, y: cursor.frame.origin.y, width: cursor.frame.size.width, height: cursor.frame.size.height)
         }
     }
 }

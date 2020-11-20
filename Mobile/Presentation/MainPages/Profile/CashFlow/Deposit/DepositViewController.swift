@@ -76,7 +76,7 @@ public class DepositViewController: ABViewController {
         proceedButton.setTitleWithoutAnimation(R.string.localization.deposit_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
         updateProceedButton(isEnabled: false)
-        
+
         Observable.combineLatest([paymentMethodInputView.rx.text.orEmpty, cardNumberInputView.rx.text.orEmpty, amountInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }
             .map { $0.allSatisfy { $0 == true } }
@@ -103,7 +103,7 @@ public class DepositViewController: ABViewController {
         proceedButton.isUserInteractionEnabled = isEnabled
         proceedButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
     }
-    
+
     // MARK: Action methods
     @objc private func proceedDidTap() {
     }
