@@ -109,6 +109,8 @@
 "deposit_description_proceed" = "დააჭირეთ ღილაკს გადახდა";
 
 /* Withdraw */
+"withdraw_amount_title" = "თანხა";
+"withdraw_card_title" = "ბარათი";
 "withdraw_commission_title" = "ტრანზაქციის საკომისიო";
 "withdraw_total_amount_title" = "ჯამური თანხა";
 "withdraw_proceed_button_title" = "Proceed";

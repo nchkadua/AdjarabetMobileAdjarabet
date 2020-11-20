@@ -11,7 +11,7 @@ import RxSwift
 class TransactionHistoryComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: TransactionHistoryComponentViewModel!
-    
+
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
@@ -20,7 +20,7 @@ class TransactionHistoryComponentView: UIView {
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var iconContainerView: UIView!
     @IBOutlet weak private var separator: UIView!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -29,12 +29,12 @@ class TransactionHistoryComponentView: UIView {
         super.init(coder: coder)
         nibSetup()
     }
-    
+
     public override func layoutSubviews() {
         super.layoutSubviews()
         setupViewLayers()
     }
-    
+
     public func setAndBind(viewModel: TransactionHistoryComponentViewModel) {
         self.viewModel = viewModel
         bind()

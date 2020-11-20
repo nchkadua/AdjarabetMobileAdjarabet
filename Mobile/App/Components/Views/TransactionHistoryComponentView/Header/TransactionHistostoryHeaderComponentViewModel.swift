@@ -40,7 +40,7 @@ extension DefaultTransactionHistostoryHeaderComponentViewModel: TransactionHisto
     public var action: Observable<TransactionHistostoryHeaderComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
-    
+
     public func didBind() {
         actionSubject.onNext(.set(title: params.title))
     }

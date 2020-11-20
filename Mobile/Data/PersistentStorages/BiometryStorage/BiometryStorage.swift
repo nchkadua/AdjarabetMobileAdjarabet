@@ -56,4 +56,3 @@ extension DefaultBiometryStorage: BiometryStorage {
         self.state = state.rawValue
     }
 }
-

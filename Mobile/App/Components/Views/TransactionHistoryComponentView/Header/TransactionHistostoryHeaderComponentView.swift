@@ -11,16 +11,16 @@ import RxSwift
 class TransactionHistoryHeaderComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: TransactionHistoryHeaderComponentViewModel!
-    
+
     // MARK: Outlets
-    @IBOutlet weak var view: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet private weak var view: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
     }
-    
+
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         nibSetup()
@@ -29,19 +29,18 @@ class TransactionHistoryHeaderComponentView: UIView {
         self.viewModel = viewModel
         bind()
     }
-    
+
     private func bind() {
-        disposeBag = DisposeBag() //MARK: TODO Delete
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let title):
                 self?.set(title: title)
             }
         }).disposed(by: disposeBag)
-        
+
         viewModel.didBind()
     }
-    
+
     private func set(title: String) {
         titleLabel.text = title
     }
@@ -56,10 +55,10 @@ extension TransactionHistoryHeaderComponentView: Xibable {
             view = newValue
         }
     }
-    
+
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.primaryBg().value
-        
+
         titleLabel.setFont(to: .footnote(fontCase: .lower))
         titleLabel.setTextColor(to: .primaryText())
     }

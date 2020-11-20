@@ -9,7 +9,7 @@
 public class TransactionHistoryTableViewCell: AppTableViewCell {
     @IBOutlet weak private var transactionHistoryComponentView: TransactionHistoryComponentView!
     override public class var identifier: Identifierable { R.nib.transactionHistoryTableViewCell.name }
-    
+
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? TransactionHistoryTableViewCellDataProvider else {

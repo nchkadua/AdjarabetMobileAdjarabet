@@ -9,7 +9,7 @@
 public class TransactionDetailsTableViewCell: AppTableViewCell {
     @IBOutlet weak private var transactionDetailsComponentView: TransactionDetailsComponentView!
     override public class var identifier: Identifierable { R.nib.transactionDetailsTableViewCell.name }
-    
+
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? TransactionDetailsTableViewCellDataProvider else {

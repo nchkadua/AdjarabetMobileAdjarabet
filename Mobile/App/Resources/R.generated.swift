@@ -1206,19 +1206,12 @@ struct R: Rswift.Validatable {
   struct image {
     /// This `R.image.biometric` struct is generated, and contains static references to 3 images.
     struct biometric {
-      /// Image `TouchID`.
-      static let touchID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/TouchID")
       /// Image `biometry`.
       static let biometry = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/biometry")
       /// Image `faceID`.
       static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/faceID")
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "TouchID", bundle: ..., traitCollection: ...)`
-      static func touchID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.biometric.touchID, compatibleWith: traitCollection)
-      }
-      #endif
+      /// Image `touchID`.
+      static let touchID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/touchID")
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "biometry", bundle: ..., traitCollection: ...)`
@@ -1231,6 +1224,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "faceID", bundle: ..., traitCollection: ...)`
       static func faceID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.biometric.faceID, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "touchID", bundle: ..., traitCollection: ...)`
+      static func touchID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.biometric.touchID, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2727,12 +2727,12 @@ struct R: Rswift.Validatable {
       static let withdraw_rule1 = Rswift.StringResource(key: "withdraw_rule1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ბარათი
       ///
-      /// Locales: en
-      static let withdraw_card_title = Rswift.StringResource(key: "withdraw_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, ka, hy
+      static let deposit_card_title = Rswift.StringResource(key: "deposit_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ბარათი
       ///
       /// Locales: en, ka, hy
-      static let deposit_card_title = Rswift.StringResource(key: "deposit_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let withdraw_card_title = Rswift.StringResource(key: "withdraw_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: გადახდის მეთოდი
       ///
       /// Locales: en, ka, hy
@@ -2763,12 +2763,12 @@ struct R: Rswift.Validatable {
       static let deposit_description_proceed = Rswift.StringResource(key: "deposit_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: თანხა
       ///
-      /// Locales: en
-      static let withdraw_amount_title = Rswift.StringResource(key: "withdraw_amount_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, ka, hy
+      static let deposit_amount_title = Rswift.StringResource(key: "deposit_amount_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: თანხა
       ///
       /// Locales: en, ka, hy
-      static let deposit_amount_title = Rswift.StringResource(key: "deposit_amount_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let withdraw_amount_title = Rswift.StringResource(key: "withdraw_amount_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ლიმიტი ერთ ბარათზე
       ///
       /// Locales: en, ka, hy
@@ -4022,21 +4022,6 @@ struct R: Rswift.Validatable {
 
       /// en translation: ბარათი
       ///
-      /// Locales: en
-      static func withdraw_card_title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("withdraw_card_title", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "withdraw_card_title"
-        }
-
-        return NSLocalizedString("withdraw_card_title", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: ბარათი
-      ///
       /// Locales: en, ka, hy
       static func deposit_card_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -4048,6 +4033,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deposit_card_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ბარათი
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_card_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_card_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_card_title"
+        }
+
+        return NSLocalizedString("withdraw_card_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: გადახდის მეთოდი
@@ -4157,21 +4157,6 @@ struct R: Rswift.Validatable {
 
       /// en translation: თანხა
       ///
-      /// Locales: en
-      static func withdraw_amount_title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("withdraw_amount_title", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "withdraw_amount_title"
-        }
-
-        return NSLocalizedString("withdraw_amount_title", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: თანხა
-      ///
       /// Locales: en, ka, hy
       static func deposit_amount_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -4183,6 +4168,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deposit_amount_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: თანხა
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_amount_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_amount_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_amount_title"
+        }
+
+        return NSLocalizedString("withdraw_amount_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: ლიმიტი ერთ ბარათზე

@@ -26,13 +26,14 @@ public class P2PTransferViewController: ABViewController {
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
 
     public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        setup()
+        layout()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -68,6 +69,11 @@ public class P2PTransferViewController: ABViewController {
         setupKeyboardBehavior()
     }
 
+    private func layout() {
+        commissionAmountLabelView.mainView.roundCorners([.topLeft, .topRight], radius: 8)
+        totalAmountLabelView.mainView.roundCorners([.bottomLeft, .bottomRight], radius: 8)
+    }
+
     private func setupTitleLabel() {
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
@@ -92,13 +98,11 @@ public class P2PTransferViewController: ABViewController {
 
     private func setupLabelViews() {
         commissionAmountLabelView.set(backgroundColor: .systemGrey5())
-        commissionAmountLabelView.mainView.roundCorners([.topLeft, .topRight], radius: 8)
         commissionAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_transaction_commission.localized(), value: "0.0 ₾"))
 
         labelViewSeparator.setBackgorundColor(to: .nonOpaque())
 
         totalAmountLabelView.set(backgroundColor: .systemGrey5())
-        totalAmountLabelView.mainView.roundCorners([.bottomLeft, .bottomRight], radius: 8)
         totalAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_total_amount.localized(), value: "0.0 ₾"))
     }
 
