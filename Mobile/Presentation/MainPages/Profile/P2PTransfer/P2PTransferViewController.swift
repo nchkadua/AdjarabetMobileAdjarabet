@@ -33,11 +33,10 @@ public class P2PTransferViewController: ABViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: P2PTransferViewModel) {
-/*
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-
+/*
         viewModel.route.subscribe(onNext: { [weak self] route in
             self?.didRecive(route: route)
         }).disposed(by: disposeBag)
@@ -45,6 +44,10 @@ public class P2PTransferViewController: ABViewController {
     }
 
     private func didRecive(action: P2PTransferViewModelOutputAction) {
+        switch action {
+        case .updateCommission(let commission): commissionAmountLabelView.change(value: "\(commission) ₾")
+        case .updateTotalAmount(let totalAmount): totalAmountLabelView.change(value: "\(totalAmount) ₾")
+        }
     }
 
     private func didRecive(route: P2PTransferViewModelRoute) {
@@ -72,22 +75,23 @@ public class P2PTransferViewController: ABViewController {
 
         transferAmountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         transferAmountInputView.setPlaceholder(text: R.string.localization.p2p_transfer_tranfer_amount.localized())
+        transferAmountInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        viewModel.textDidChange(to: textField.text)
     }
 
     private func setupLabelViews() {
         commissionAmountLabelView.set(backgroundColor: .systemGrey5())
         commissionAmountLabelView.mainView.roundCorners([.topLeft, .topRight], radius: 8)
-        commissionAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_transaction_commission.localized(), value: ""))
+        commissionAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_transaction_commission.localized(), value: "0.0 ₾"))
 
         labelViewSeparator.setBackgorundColor(to: .nonOpaque())
 
         totalAmountLabelView.set(backgroundColor: .systemGrey5())
         totalAmountLabelView.mainView.roundCorners([.bottomLeft, .bottomRight], radius: 8)
-        totalAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_total_amount.localized(), value: ""))
-
-        // delete me later
-        commissionAmountLabelView.change(value: "1.25 ₾")
-        totalAmountLabelView.change(value: "36.05 ₾")
+        totalAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_total_amount.localized(), value: "0.0 ₾"))
     }
 
     private func setupDescriptionView() {

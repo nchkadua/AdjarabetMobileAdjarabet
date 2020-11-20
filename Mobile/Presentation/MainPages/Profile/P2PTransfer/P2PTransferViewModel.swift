@@ -13,6 +13,7 @@ public protocol P2PTransferViewModel: P2PTransferViewModelInput, P2PTransferView
 
 public protocol P2PTransferViewModelInput {
     func viewDidLoad()
+    func textDidChange(to text: String?)
 }
 
 public protocol P2PTransferViewModelOutput {
@@ -21,6 +22,8 @@ public protocol P2PTransferViewModelOutput {
 }
 
 public enum P2PTransferViewModelOutputAction {
+    case updateCommission(_ value: String)
+    case updateTotalAmount(_ value: String)
 }
 
 public enum P2PTransferViewModelRoute {
@@ -36,5 +39,14 @@ extension DefaultP2PTransferViewModel: P2PTransferViewModel {
     public var route: Observable<P2PTransferViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+    }
+
+    public func textDidChange(to text: String?) {
+        let amount = Double(text ?? "0.0") ?? 0.0
+        let commission = ABConstant.countCommission(of: amount)
+        let totalAmount = amount + commission
+
+        actionSubject.onNext(.updateCommission(String(commission)))
+        actionSubject.onNext(.updateTotalAmount(String(totalAmount)))
     }
 }
