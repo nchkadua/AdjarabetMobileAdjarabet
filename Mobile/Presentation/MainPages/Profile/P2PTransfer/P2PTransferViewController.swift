@@ -26,9 +26,13 @@ public class P2PTransferViewController: ABViewController {
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+    }
+
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setup()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -61,6 +65,7 @@ public class P2PTransferViewController: ABViewController {
         setupLabelViews()
         setupDescriptionView() // description, status, name
         setupConfirmButton()
+        setupKeyboardBehavior()
     }
 
     private func setupTitleLabel() {
@@ -70,11 +75,14 @@ public class P2PTransferViewController: ABViewController {
     }
 
     private func setupInputViews() {
+        personIdInputView.mainTextField.keyboardType = .decimalPad
         personIdInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         personIdInputView.setPlaceholder(text: R.string.localization.p2p_transfer_friend_id.localized())
 
+        transferAmountInputView.mainTextField.keyboardType = .decimalPad
         transferAmountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         transferAmountInputView.setPlaceholder(text: R.string.localization.p2p_transfer_tranfer_amount.localized())
+
         transferAmountInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
 
@@ -110,6 +118,15 @@ public class P2PTransferViewController: ABViewController {
     private func setupConfirmButton() {
         confirmButton.setStyle(to: .tertiary(state: .acvite, size: .large))
         confirmButton.setTitleWithoutAnimation(R.string.localization.p2p_transfer_confirm.localized(), for: .normal)
+    }
+
+    private func setupKeyboardBehavior() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 
     private func layoutConfirmButton() {
