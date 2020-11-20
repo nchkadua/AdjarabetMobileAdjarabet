@@ -99,7 +99,7 @@ public class P2PTransferViewController: ABViewController {
         personNameLabel.setTextColor(to: .primaryText())
 
         // delete me later
-        statusIconImageView.backgroundColor = .green
+        statusIconImageView.image = R.image.p2P.check()!
         personNameLabel.text = "Assassino"
     }
 
