@@ -35,7 +35,7 @@ public class TransactionDetailsViewController: ABPopupViewController {
     private func setupColors() {
         setBaseBackgorundColor(to: .secondaryBg())
         separator.setBackgorundColor(to: .secondaryFill())
-        headerTitleLabel.setTextColor(to: .systemWhite())
+        headerTitleLabel.setTextColor(to: .primaryText())
     }
     
     private func setupFonts() {

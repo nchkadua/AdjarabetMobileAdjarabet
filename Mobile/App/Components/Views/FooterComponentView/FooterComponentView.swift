@@ -66,9 +66,10 @@ public class FooterComponentView: UIView {
         legalTextView.attributedText = NSAttributedString(string: R.string.localization.login_legal(), attributes: attributes)
 
         legalImageView.image = R.image.login.legal()
+        legalImageView.setTintColor(to: .primaryText())
 
-        legalTextView.setTextColor(to: .systemWhite(alpha: 0.7))
-        legalTextView.setFont(to: .h6(fontCase: .lower))
+        legalTextView.setTextColor(to: .secondaryText())
+        legalTextView.setFont(to: .caption2(fontCase: .lower))
         legalTextView.applyImageView(legalImageView)
     }
 
@@ -94,7 +95,7 @@ extension FooterComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.baseBg150().value
+        view.backgroundColor = DesignSystem.Color.secondaryBg().value
 
         setupLegalView()
         setDelegates()

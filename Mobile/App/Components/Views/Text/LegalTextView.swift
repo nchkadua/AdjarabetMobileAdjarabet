@@ -8,7 +8,7 @@
 
 class LegalTextView: UITextView {
     public func applyImageView(_ imageView: UIImageView) {
-        let imgText = UIBezierPath(rect: CGRect(x: 0, y: 0, width: imageView.frame.width + 10, height: imageView.frame.height + 2.5))
+        let imgText = UIBezierPath(rect: CGRect(x: 0, y: 0, width: imageView.frame.width + 10, height: imageView.frame.height))
         self.textContainer.exclusionPaths = [imgText]
     }
 }

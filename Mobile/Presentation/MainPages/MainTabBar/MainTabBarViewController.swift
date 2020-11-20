@@ -123,8 +123,8 @@ public class MainTabBarViewController: UITabBarController {
     }
 
     private func setupTabBar() {
-        tabBar.tintColor = DesignSystem.Color.systemWhite().value
-        tabBar.unselectedItemTintColor = DesignSystem.Color.separator().value
+        tabBar.tintColor = DesignSystem.Color.primaryText().value
+        tabBar.unselectedItemTintColor = DesignSystem.Color.secondaryText().value
         tabBar.barTintColor = .clear
         tabBar.isTranslucent = true
         tabBar.layer.masksToBounds = true
@@ -133,14 +133,14 @@ public class MainTabBarViewController: UITabBarController {
         tabBar.backgroundImage = UIImage()
         tabBar.shadowImage = UIImage()
         tabBar.clipsToBounds = false
-        tabBar.backgroundColor = DesignSystem.Color.baseBg300().value
+        tabBar.backgroundColor = DesignSystem.Color.primaryBg().value
         tabBar.isHidden = true
     }
 
     private func setupFloatingTabBar() {
         let wrapperView = AppShadowView()
 
-        wrapperView.shadowColor = DesignSystem.Color.baseBg300().value
+        wrapperView.shadowColor = DesignSystem.Color.primaryBg().value
         wrapperView.shadowOffset = .init(width: 0, height: 5)
         wrapperView.shadowOpacity = 0.1
         wrapperView.shadowBlur = 5

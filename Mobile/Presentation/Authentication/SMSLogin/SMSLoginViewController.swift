@@ -97,8 +97,9 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupLabels() {
+        smsLoginDescriptionLabel.textAlignment = .center
         smsLoginDescriptionLabel.setTextColor(to: .primaryRed())
-        smsLoginDescriptionLabel.setFont(to: .p)
+        smsLoginDescriptionLabel.setFont(to: .caption2(fontCase: .lower))
 
         let smsLoginDescription = R.string.localization.sms_confirmation_description.localized()
             .makeAttributedString(with: .caption2(fontCase: .lower),
@@ -162,12 +163,12 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func showErrorMessage(_ message: String) {
-        messageLabel.setTextColor(to: .systemRed300())
+        messageLabel.setTextColor(to: .primaryRedNeutral())
         messageLabel.text = message
     }
 
     private func showSuccessMessage() {
-        messageLabel.setTextColor(to: .systemGreen150())
+        messageLabel.setTextColor(to: .primaryGreenNeutral())
         messageLabel.setTextAndImage(R.string.localization.sms_well_done(), R.image.login.well_done()!, alignment: .right)
     }
 

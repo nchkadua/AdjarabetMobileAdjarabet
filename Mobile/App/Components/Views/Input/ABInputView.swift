@@ -75,7 +75,7 @@ public class ABInputView: UIView {
         setValidation(text: nil)
     }
 
-    public func setValidation(text: String?, color: DesignSystem.Color = .systemRed300()) {
+    public func setValidation(text: String?, color: DesignSystem.Color = .primaryRedNeutral()) {
         validationResultLabel.text = text
         validationResultLabel.setTextColor(to: color)
         validationResultLabel.superview?.isHidden = text == nil
@@ -102,7 +102,7 @@ public class ABInputView: UIView {
             textFieldBottomConstraint.isActive          = !textFieldCenterYConstraint.isActive
 
             wrapperView.setBorderColor(
-                to: textField.isFirstResponder ? DesignSystem.Input.borderColor : DesignSystem.Color.baseBg150(),
+                to: textField.isFirstResponder ? DesignSystem.Input.borderColor : DesignSystem.Color.secondaryBg(),
                 animationDuration: animate ? 0.2 : 0)
             view.layoutIfNeeded()
         }
@@ -185,8 +185,8 @@ public class ABInputView: UIView {
     }
 
     private func setupValidationResultLabel() {
-        validationResultLabel.setFont(to: .body2)
-        validationResultLabel.setTextColor(to: .systemRed300())
+        validationResultLabel.setFont(to: .caption1(fontCase: .lower))
+        validationResultLabel.setTextColor(to: .primaryRedNeutral())
         validationResultLabel.superview?.isHidden = true
     }
 
@@ -233,7 +233,7 @@ extension ABInputView {
 
     private func setup() {
         mainTextField.inputView = pickerView
-        pickerView.backgroundColor = DesignSystem.Color.systemGray200().value
+        pickerView.backgroundColor = DesignSystem.Color.secondaryBg().value
         pickerView.delegate = self
         pickerView.dataSource = self
 
@@ -246,8 +246,8 @@ extension ABInputView {
         toolBar.isTranslucent = false
         toolBar.sizeToFit()
 
-        toolBar.tintColor = DesignSystem.Color.systemWhite().value
-        toolBar.barTintColor = DesignSystem.Color.systemGray200().value
+        toolBar.tintColor = DesignSystem.Color.primaryText().value
+        toolBar.barTintColor = DesignSystem.Color.secondaryBg().value
         let doneButton = UIBarButtonItem(title: R.string.localization.cashflow_done_button_title(), style: UIBarButtonItem.Style.done, target: self, action: #selector(doneDidTap))
         toolBar.setItems([doneButton], animated: false)
 

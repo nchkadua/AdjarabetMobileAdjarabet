@@ -13,7 +13,7 @@ class DesignSystemExtensionTests: XCTestCase {
     // MAKR: UIButton
     func testButtonSetFont() {
         // given
-        let typography = DesignSystem.Typography.body1
+        let typography = DesignSystem.Typography.caption1(fontCase: .lower)
         let button = UIButton()
         
         // when
@@ -26,7 +26,7 @@ class DesignSystemExtensionTests: XCTestCase {
     func testButtonSetTitleColor() {
         // given
         let alpha = CGFloat.random(in: 0...1)
-        let color = DesignSystem.Color.separator(alpha: alpha)
+        let color = DesignSystem.Color.nonOpaque(alpha: alpha)
         let button = UIButton()
         
         // when
@@ -59,7 +59,7 @@ class DesignSystemExtensionTests: XCTestCase {
     // MAKR: UIView
     func testViewSetBackgorundColor() {
         // given
-        let color = DesignSystem.Color.separator()
+        let color = DesignSystem.Color.secondaryText()
         let view = UIView()
         
         // when
@@ -72,7 +72,7 @@ class DesignSystemExtensionTests: XCTestCase {
     func testViewSetTintColor() {
         // given
         let alpha = CGFloat.random(in: 0...1)
-        let color = DesignSystem.Color.separator(alpha: alpha)
+        let color = DesignSystem.Color.nonOpaque(alpha: alpha)
         let view = UIView()
         
         // when
@@ -85,7 +85,7 @@ class DesignSystemExtensionTests: XCTestCase {
     // MAKR: UILabel
     func testLabelSetFont() {
         // given
-        let typography = DesignSystem.Typography.body1
+        let typography = DesignSystem.Typography.caption1(fontCase: .lower)
         let label = UILabel()
         
         // when
@@ -98,7 +98,7 @@ class DesignSystemExtensionTests: XCTestCase {
     func testLabelSetTitleColor() {
         // given
         let alpha = CGFloat.random(in: 0...1)
-        let color = DesignSystem.Color.separator(alpha: alpha)
+        let color = DesignSystem.Color.nonOpaque(alpha: alpha)
         let label = UILabel()
         
         // when
@@ -112,9 +112,9 @@ class DesignSystemExtensionTests: XCTestCase {
     func testAttributedString() {
         DesignSystem.Typography.FontCase.allCases.forEach { fontCase in
             // given
-            let typography          = DesignSystem.Typography.h1(fontCase: fontCase)
+            let typography          = DesignSystem.Typography.title1(fontCase: fontCase)
             let alignment           = NSTextAlignment.left
-            let foregroundColor     = DesignSystem.Color.separator()
+            let foregroundColor     = DesignSystem.Color.nonOpaque()
             
             // when
             let attributedString    = "Text".makeAttributedString(with: typography, alignment: alignment, foregroundColor: foregroundColor)

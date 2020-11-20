@@ -103,7 +103,7 @@ public class P2PTransferViewController: ABViewController {
     }
 
     private func setupDescriptionView() {
-        descriptionLabel.setFont(to: .p)
+        descriptionLabel.setFont(to: .footnote(fontCase: .lower))
         descriptionLabel.setTextColor(to: .primaryText())
         descriptionLabel.text = R.string.localization.p2p_transfer_you_are_transfering_to.localized()
 

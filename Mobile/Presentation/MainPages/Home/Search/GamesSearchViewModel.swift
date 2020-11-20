@@ -52,7 +52,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
     private var query: String?
     private var page: PageDescription = .init()
     private var games: AppCellDataProviders = []
-    public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .separator(), height: 55))
+    public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .secondaryText(), height: 55))
 
     private var loadingType: LoadingType = .none {
         didSet {

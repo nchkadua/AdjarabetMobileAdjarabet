@@ -48,7 +48,7 @@
 
 /* SMS Login */
 "sms_login_page_title" = "SMS ავტორიზაცია";
-"sms_confirmation_description" = "ჩვენ გამოგიგზავნეთ 6 ნიშნა დადასტურების კოდი მობილურ ტელეფონის ნომერზე";
+"sms_confirmation_description" = "თქვენი კოდი გამოგზავნილია თქვენს ნომერზე";
 "sms_resend" = "SMS გაგზავნა";
 "sms_did_not_receive_message" = "Did not receive message?";
 "sms_well_done" = "Well done!";

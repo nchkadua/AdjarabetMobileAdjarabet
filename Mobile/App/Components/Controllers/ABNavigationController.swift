@@ -24,10 +24,10 @@ public class ABNavigationController: UINavigationController, UIGestureRecognizer
         navigationBar.styleForPrimaryPage()
         view.backgroundColor = .clear
 
-        let color = DesignSystem.Color.separator().value
+        let color = DesignSystem.Color.secondaryText().value
         navigationBar.titleTextAttributes = [
             .foregroundColor: color,
-            .font: DesignSystem.Typography.h4(fontCase: .lower).description.font]
+            .font: DesignSystem.Typography.subHeadline(fontCase: .lower).description.font]
         navigationBar.tintColor = color
     }
 

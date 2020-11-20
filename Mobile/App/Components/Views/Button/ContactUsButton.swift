@@ -27,7 +27,7 @@ public class ContactUsButton: UIButton {
         imageEdgeInsets.right = 35
         titleEdgeInsets.left = 10
 
-        setTitleColor(to: .systemWhite(alpha: 0.7), for: .normal)
+        setTitleColor(to: .primaryText(), for: .normal)
     }
 
     private func setTitles() {

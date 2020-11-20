@@ -48,7 +48,7 @@
 
 /* SMS Login */
 "sms_login_page_title" = "SMS LOGIN";
-"sms_confirmation_description" = "We sent a 6-digit confirmation code to your mobile phone number";
+"sms_confirmation_description" = "Code is sent to yout number";
 "sms_resend" = "Resend SMS";
 "sms_did_not_receive_message" = "Did not receive message?";
 "sms_well_done" = "Well done!";

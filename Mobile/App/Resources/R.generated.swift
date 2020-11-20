@@ -363,122 +363,6 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
       }
 
-      /// This `R.color.colorGuide.global` struct is generated, and contains static references to 10 colors.
-      struct global {
-        /// Color `baseBg100`.
-        static let baseBg100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/baseBg100")
-        /// Color `baseBg150`.
-        static let baseBg150 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/baseBg150")
-        /// Color `baseBg300`.
-        static let baseBg300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/baseBg300")
-        /// Color `fill110`.
-        static let fill110 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/fill110")
-        /// Color `fill140`.
-        static let fill140 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/fill140")
-        /// Color `fill50`.
-        static let fill50 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/fill50")
-        /// Color `separator`.
-        static let separator = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/separator")
-        /// Color `systemGray100`.
-        static let systemGray100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemGray100")
-        /// Color `systemGray200`.
-        static let systemGray200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemGray200")
-        /// Color `systemWhite`.
-        static let systemWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Global/systemWhite")
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "baseBg100", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func baseBg100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.baseBg100, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "baseBg150", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func baseBg150(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.baseBg150, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "baseBg300", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func baseBg300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.baseBg300, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "fill110", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func fill110(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.fill110, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "fill140", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func fill140(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.fill140, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "fill50", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func fill50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.fill50, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "separator", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func separator(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.separator, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemGray100", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemGray100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.systemGray100, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemGray200", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemGray200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.systemGray200, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemWhite", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.global.systemWhite, compatibleWith: traitCollection)
-        }
-        #endif
-
-        fileprivate init() {}
-      }
-
       /// This `R.color.colorGuide.materials` struct is generated, and contains static references to 6 colors.
       struct materials {
         /// Color `Ultrathin`.
@@ -545,89 +429,6 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func thin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.materials.thin, compatibleWith: traitCollection)
-        }
-        #endif
-
-        fileprivate init() {}
-      }
-
-      /// This `R.color.colorGuide.semantic` struct is generated, and contains static references to 7 colors.
-      struct semantic {
-        /// Color `systemGreen100`.
-        static let systemGreen100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemGreen100")
-        /// Color `systemGreen150`.
-        static let systemGreen150 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemGreen150")
-        /// Color `systemGreen300`.
-        static let systemGreen300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemGreen300")
-        /// Color `systemRed100`.
-        static let systemRed100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemRed100")
-        /// Color `systemRed150`.
-        static let systemRed150 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemRed150")
-        /// Color `systemRed300`.
-        static let systemRed300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemRed300")
-        /// Color `systemYellow`.
-        static let systemYellow = Rswift.ColorResource(bundle: R.hostingBundle, name: "ColorGuide/Semantic/systemYellow")
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemGreen100", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemGreen100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemGreen100, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemGreen150", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemGreen150(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemGreen150, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemGreen300", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemGreen300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemGreen300, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemRed100", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemRed100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemRed100, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemRed150", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemRed150(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemRed150, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemRed300", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemRed300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemRed300, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIColor(named: "systemYellow", bundle: ..., traitCollection: ...)`
-        @available(tvOS 11.0, *)
-        @available(iOS 11.0, *)
-        static func systemYellow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-          return UIKit.UIColor(resource: R.color.colorGuide.semantic.systemYellow, compatibleWith: traitCollection)
         }
         #endif
 
@@ -2644,6 +2445,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Code is sent to yout number
+      ///
+      /// Locales: en, ka, hy
+      static let sms_confirmation_description = Rswift.StringResource(key: "sms_confirmation_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Confirm
       ///
       /// Locales: en, ka, hy
@@ -2896,10 +2701,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let view_all = Rswift.StringResource(key: "view_all", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: We sent a 6-digit confirmation code to your mobile phone number
-      ///
-      /// Locales: en, ka, hy
-      static let sms_confirmation_description = Rswift.StringResource(key: "sms_confirmation_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Well done!
       ///
       /// Locales: en, ka, hy
@@ -3167,6 +2968,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("cancel", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Code is sent to yout number
+      ///
+      /// Locales: en, ka, hy
+      static func sms_confirmation_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sms_confirmation_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sms_confirmation_description"
+        }
+
+        return NSLocalizedString("sms_confirmation_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Confirm
@@ -4112,21 +3928,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("view_all", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: We sent a 6-digit confirmation code to your mobile phone number
-      ///
-      /// Locales: en, ka, hy
-      static func sms_confirmation_description(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("sms_confirmation_description", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "sms_confirmation_description"
-        }
-
-        return NSLocalizedString("sms_confirmation_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Well done!
