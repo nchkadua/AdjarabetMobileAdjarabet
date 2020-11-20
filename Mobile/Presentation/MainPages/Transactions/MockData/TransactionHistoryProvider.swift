@@ -75,6 +75,7 @@ public struct TransactionDetail {
         [
             TransactionDetail(title: "დრო", description: "14:33:32"),
             TransactionDetail(title: "ჯამური თანხა", description: "25.00 $"),
+            TransactionDetail(title: "ტრანზაქციის საკომისიო", description: "₾0 GEL"),
             TransactionDetail(title: "გადახდის ტიპი", description: "DEPOSIT"),
             TransactionDetail(title: "გადახდის პროვაიდერი", description: "TBC")
         ]
