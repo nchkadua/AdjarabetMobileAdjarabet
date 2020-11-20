@@ -64,6 +64,7 @@ public extension DependencyContainer {
         Module { DefaultDepositViewModel() as DepositViewModel }
         Module { DefaultWithdrawViewModel() as WithdrawViewModel }
         Module { DefaultCashFlowTabComponentViewModel() as CashFlowTabComponentViewModel }
+        Module { DefaultTransactionsViewModel() as TransactionsViewModel }
         Module { DefaultBiometricSettingsViewModel() as BiometricSettingsViewModel }
         Module { DefaultP2PTransferViewModel() as P2PTransferViewModel }
     }
@@ -89,7 +90,9 @@ public extension DependencyContainer {
         Module { DefaultCashFlowViewControllerFactory() as CashFlowViewControllerFactory }
         Module { DefaultDepositViewControllerFactory() as DepositViewControllerFactory }
         Module { DefaultWithdrawViewControllerFactory() as WithdrawViewControllerFactory }
+        Module { DefaultTransactionsViewControllerFactory() as TransactionsViewControllerFactory }
         Module { DefaultBiometricSettingsViewControllerFactory() as BiometricSettingsViewControllerFactory }
+        Module { DefaultTransactionDetailsViewControllerFactory() as TransactionDetailsViewControllerFactory }
         Module { DefaultP2PTransferViewControllerFactory() as P2PTransferViewControllerFactory }
     }
 

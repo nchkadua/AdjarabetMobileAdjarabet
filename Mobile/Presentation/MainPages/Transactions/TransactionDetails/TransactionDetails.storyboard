@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FiraGO-Regular.ttf">
+            <string>FiraGO-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Transaction Details View Controller-->
+        <scene sceneID="wVh-FF-oTs">
+            <objects>
+                <viewController storyboardIdentifier="TransactionDetailsViewController" id="MJq-9a-baT" customClass="TransactionDetailsViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mcu-CT-hEf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ტრანზაქციის დეტალები" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scm-vn-Bse">
+                                <rect key="frame" x="115.5" y="69" width="183" height="18"/>
+                                <fontDescription key="fontDescription" name="FiraGO-Regular" family="FiraGO" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fr-f5-cw0">
+                                <rect key="frame" x="20" y="117" width="374" height="2"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="kZw-r7-RFm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f3T-LQ-jkW"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstItem="scm-vn-Bse" firstAttribute="centerX" secondItem="mcu-CT-hEf" secondAttribute="centerX" id="9iE-Za-NMQ"/>
+                            <constraint firstItem="f3T-LQ-jkW" firstAttribute="trailing" secondItem="6fr-f5-cw0" secondAttribute="trailing" constant="20" id="mES-Vd-XRw"/>
+                            <constraint firstItem="6fr-f5-cw0" firstAttribute="top" secondItem="scm-vn-Bse" secondAttribute="bottom" constant="30" id="nsF-lw-mic"/>
+                            <constraint firstItem="scm-vn-Bse" firstAttribute="top" secondItem="f3T-LQ-jkW" secondAttribute="top" constant="25" id="oKW-7x-il1"/>
+                            <constraint firstItem="6fr-f5-cw0" firstAttribute="leading" secondItem="f3T-LQ-jkW" secondAttribute="leading" constant="20" id="sVP-Ib-zfq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerTitleLabel" destination="scm-vn-Bse" id="GaE-bw-ibZ"/>
+                        <outlet property="separator" destination="6fr-f5-cw0" id="ZfP-42-JxS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C2f-jL-NWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-83" y="-49"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

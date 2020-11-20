@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FiraGO-Regular.ttf">
+            <string>FiraGO-Regular</string>
+        </array>
+        <array key="PantonNusx3-Regular.otf">
+            <string>PantonNusx3-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionDetailsComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="iFB-N8-uop" id="Wp0-9a-27b"/>
+                <outlet property="titleLabel" destination="0RL-bb-5Io" id="5ay-on-UkR"/>
+                <outlet property="view" destination="iN0-l3-epB" id="TO6-27-2yN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 GEL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFB-N8-uop">
+                    <rect key="frame" x="305.5" y="10.5" width="39.5" height="15"/>
+                    <fontDescription key="fontDescription" name="PantonNusx3-Regular" family="PantonNusx3" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ტრანზაქციის საკომისიო" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RL-bb-5Io" userLabel="TitleLabel">
+                    <rect key="frame" x="30" y="8" width="208" height="20"/>
+                    <fontDescription key="fontDescription" name="FiraGO-Regular" family="FiraGO" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="iFB-N8-uop" secondAttribute="trailing" constant="30" id="3Dz-ye-4gi"/>
+                <constraint firstItem="iFB-N8-uop" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LdF-zY-VM3"/>
+                <constraint firstItem="0RL-bb-5Io" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="WC1-2T-iuA"/>
+                <constraint firstItem="0RL-bb-5Io" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="j7i-Vn-wSB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="62" y="108"/>
+        </view>
+    </objects>
+</document>

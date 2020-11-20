@@ -7,6 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763171A42566398F00F6FD90 /* TransactionDetailsNavigator.swift */; };
+		763171A82566398F00F6FD90 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763171A52566398F00F6FD90 /* TransactionDetailsViewController.swift */; };
+		763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763171A62566398F00F6FD90 /* TransactionDetailsViewModel.swift */; };
+		763171AD25663E1500F6FD90 /* TransactionDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763171AC25663E1500F6FD90 /* TransactionDetails.storyboard */; };
+		763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763171B025663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift */; };
+		7644B5EC25639786006778B2 /* TransactionHistoryComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B5EB25639786006778B2 /* TransactionHistoryComponentViewModel.swift */; };
+		7644B5F12563A72B006778B2 /* TransactionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */; };
+		7644B5F72563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B5F62563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift */; };
+		7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B5FA2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib */; };
+		7644B6002563E201006778B2 /* TransactionHistoryHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B5FF2563E201006778B2 /* TransactionHistoryHeaderCell.swift */; };
+		7644B6072563E516006778B2 /* TransactionHistoryHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B6062563E516006778B2 /* TransactionHistoryHeaderComponentView.swift */; };
+		7644B60D2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B60C2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift */; };
+		7644B6152563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B6142563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib */; };
+		7644B6192563EFA4006778B2 /* TransactionHistoryHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B6182563EFA4006778B2 /* TransactionHistoryHeaderCell.xib */; };
+		7644B61D2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B61C2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift */; };
+		7644B6222564F8E4006778B2 /* TransactionDetailComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B6212564F8E4006778B2 /* TransactionDetailComponentView.swift */; };
+		7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B6252564F910006778B2 /* TransactionDetailsComponentView.xib */; };
+		7644B62A256506B6006778B2 /* TransactionDetailComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B629256506B6006778B2 /* TransactionDetailComponentViewModel.swift */; };
+		7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B62E25650A3D006778B2 /* TransactionDetailsTableViewCell.swift */; };
+		7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B63425650C0D006778B2 /* TransactionDetailsTableViewCell.xib */; };
+		7644B63925650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */; };
+		7676E54E2562856600234026 /* TransactionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E54B2562856600234026 /* TransactionsNavigator.swift */; };
+		7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E54C2562856600234026 /* TransactionsViewController.swift */; };
+		7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E54D2562856600234026 /* TransactionsViewModel.swift */; };
+		7676E55425628F3900234026 /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7676E55325628F3900234026 /* Transactions.storyboard */; };
+		7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E55725628F5B00234026 /* TransactionsViewControllerFactory.swift */; };
+		7676E55D2562D73100234026 /* TransactionHistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E55C2562D73100234026 /* TransactionHistoryProvider.swift */; };
+		7676E5662562E26300234026 /* TransactionHistoryComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */; };
+		7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */; };
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
 		C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */; };
@@ -340,6 +369,35 @@
 		0F2D25A01C077303D804AE49 /* Pods-MobileTests.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-stage.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-stage.xcconfig"; sourceTree = "<group>"; };
 		1DC8A4457FEC86A0D27D9864 /* Pods-Mobile.debug-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug-stage.xcconfig"; sourceTree = "<group>"; };
 		420D5BD2923BF3733D93B967 /* Pods-MobileTests.debug-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.debug-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.debug-production.xcconfig"; sourceTree = "<group>"; };
+		763171A42566398F00F6FD90 /* TransactionDetailsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsNavigator.swift; sourceTree = "<group>"; };
+		763171A52566398F00F6FD90 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
+		763171A62566398F00F6FD90 /* TransactionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewModel.swift; sourceTree = "<group>"; };
+		763171AC25663E1500F6FD90 /* TransactionDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionDetails.storyboard; sourceTree = "<group>"; };
+		763171B025663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewControllerFactory.swift; sourceTree = "<group>"; };
+		7644B5EB25639786006778B2 /* TransactionHistoryComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryComponentViewModel.swift; sourceTree = "<group>"; };
+		7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		7644B5F62563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		7644B5FA2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		7644B5FF2563E201006778B2 /* TransactionHistoryHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryHeaderCell.swift; sourceTree = "<group>"; };
+		7644B6062563E516006778B2 /* TransactionHistoryHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryHeaderComponentView.swift; sourceTree = "<group>"; };
+		7644B60C2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryHeaderComponentViewModel.swift; sourceTree = "<group>"; };
+		7644B6142563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryHeaderComponentView.xib; sourceTree = "<group>"; };
+		7644B6182563EFA4006778B2 /* TransactionHistoryHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryHeaderCell.xib; sourceTree = "<group>"; };
+		7644B61C2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryHeaderCellDataProvider.swift; sourceTree = "<group>"; };
+		7644B6212564F8E4006778B2 /* TransactionDetailComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailComponentView.swift; sourceTree = "<group>"; };
+		7644B6252564F910006778B2 /* TransactionDetailsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsComponentView.xib; sourceTree = "<group>"; };
+		7644B629256506B6006778B2 /* TransactionDetailComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailComponentViewModel.swift; sourceTree = "<group>"; };
+		7644B62E25650A3D006778B2 /* TransactionDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		7644B63425650C0D006778B2 /* TransactionDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		7676E54B2562856600234026 /* TransactionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsNavigator.swift; sourceTree = "<group>"; };
+		7676E54C2562856600234026 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		7676E54D2562856600234026 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		7676E55325628F3900234026 /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
+		7676E55725628F5B00234026 /* TransactionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewControllerFactory.swift; sourceTree = "<group>"; };
+		7676E55C2562D73100234026 /* TransactionHistoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryProvider.swift; sourceTree = "<group>"; };
+		7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryComponentView.xib; sourceTree = "<group>"; };
+		7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryComponentView.swift; sourceTree = "<group>"; };
 		78526968594DC2FF052D9FB5 /* Pods-MobileTests.debug-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.debug-stage.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.debug-stage.xcconfig"; sourceTree = "<group>"; };
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
@@ -704,6 +762,104 @@
 				F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		763171A32566388400F6FD90 /* TransactionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				763171A42566398F00F6FD90 /* TransactionDetailsNavigator.swift */,
+				763171A52566398F00F6FD90 /* TransactionDetailsViewController.swift */,
+				763171A62566398F00F6FD90 /* TransactionDetailsViewModel.swift */,
+				763171AC25663E1500F6FD90 /* TransactionDetails.storyboard */,
+				763171B025663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift */,
+			);
+			path = TransactionDetails;
+			sourceTree = "<group>";
+		};
+		7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7644B62D256509AE006778B2 /* Details */,
+				7644B5FE2563E1E9006778B2 /* Header */,
+				7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */,
+				7644B5F62563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift */,
+				7644B5FA2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib */,
+			);
+			path = TransactionHistoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		7644B5FE2563E1E9006778B2 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				7644B5FF2563E201006778B2 /* TransactionHistoryHeaderCell.swift */,
+				7644B6182563EFA4006778B2 /* TransactionHistoryHeaderCell.xib */,
+				7644B61C2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		7644B6052563E4C6006778B2 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				7644B6062563E516006778B2 /* TransactionHistoryHeaderComponentView.swift */,
+				7644B60C2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift */,
+				7644B6142563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		7644B6202564F8D0006778B2 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7644B6212564F8E4006778B2 /* TransactionDetailComponentView.swift */,
+				7644B6252564F910006778B2 /* TransactionDetailsComponentView.xib */,
+				7644B629256506B6006778B2 /* TransactionDetailComponentViewModel.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		7644B62D256509AE006778B2 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7644B62E25650A3D006778B2 /* TransactionDetailsTableViewCell.swift */,
+				7644B63425650C0D006778B2 /* TransactionDetailsTableViewCell.xib */,
+				7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		7676E54A2562852800234026 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				763171A32566388400F6FD90 /* TransactionDetails */,
+				7676E55B2562D69D00234026 /* MockData */,
+				7676E54B2562856600234026 /* TransactionsNavigator.swift */,
+				7676E54C2562856600234026 /* TransactionsViewController.swift */,
+				7676E54D2562856600234026 /* TransactionsViewModel.swift */,
+				7676E55325628F3900234026 /* Transactions.storyboard */,
+				7676E55725628F5B00234026 /* TransactionsViewControllerFactory.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		7676E55B2562D69D00234026 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				7676E55C2562D73100234026 /* TransactionHistoryProvider.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		7676E5622562E19200234026 /* TransactionHistoryComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				7644B6202564F8D0006778B2 /* Details */,
+				7644B6052563E4C6006778B2 /* Header */,
+				7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */,
+				7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */,
+				7644B5EB25639786006778B2 /* TransactionHistoryComponentViewModel.swift */,
+			);
+			path = TransactionHistoryComponentView;
 			sourceTree = "<group>";
 		};
 		9D1383A490506B12A0598302 /* Pods */ = {
@@ -1221,6 +1377,7 @@
 		D815850C24B0C66D00FFCA95 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
+				7676E54A2562852800234026 /* Transactions */,
 				D85C9C2424336CCC00F1D4FE /* MainTabBar */,
 				D8C73F7D2445A62D004C96DB /* Home */,
 				D845BFBA2445FD7400419A2C /* Sports */,
@@ -1368,25 +1525,26 @@
 		D85C9C1524336BF500F1D4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
-				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
 				D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */,
-				CE660C41254C0515002667D0 /* LabelComponentView */,
+				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
+				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
 				CE1693692541AB100043B1A4 /* AccountInfoComponentView */,
-				CEE15C3825349C130033BF93 /* NotificationComponentView */,
-				CE95FC8A252F2AFE003E539B /* PromotionComponentView */,
-				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
-				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
-				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
-				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
-				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
 				CEE356CF252C9BBE00A0A25C /* BalanceComponentView */,
-				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
-				CE95FBED252DE5C7003E539B /* FooterComponentView */,
 				D86253BA24653AA000F7DE0C /* Button */,
+				CE95FBED252DE5C7003E539B /* FooterComponentView */,
+				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
 				D8442A9F24696F2700F32676 /* Input */,
+				CE660C41254C0515002667D0 /* LabelComponentView */,
+				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
+				CEE15C3825349C130033BF93 /* NotificationComponentView */,
+				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
+				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
+				CE95FC8A252F2AFE003E539B /* PromotionComponentView */,
+				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
+				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				CEF1D4F7251CAB78008E3DE0 /* Text */,
+				7676E5622562E19200234026 /* TransactionHistoryComponentView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1862,6 +2020,7 @@
 		D8BF403F244EC91F008F0BAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */,
 				CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */,
 				CE95FC1B252DF32A003E539B /* FooterTableViewCell */,
 				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
@@ -2022,6 +2181,7 @@
 				D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */,
 				C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */,
 				CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */,
+				7644B6192563EFA4006778B2 /* TransactionHistoryHeaderCell.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */,
 				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
@@ -2034,6 +2194,7 @@
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
 				D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */,
 				D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */,
+				7676E5662562E26300234026 /* TransactionHistoryComponentView.xib in Resources */,
 				CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
@@ -2043,6 +2204,7 @@
 				C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */,
 				D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */,
 				CE38F09E254B085200605524 /* CashFlowTabComponentView.xib in Resources */,
+				7676E55425628F3900234026 /* Transactions.storyboard in Resources */,
 				D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */,
 				D807847E2444727600003892 /* FiraGO-ExtraLight.ttf in Resources */,
 				CE95FC44252DF3B6003E539B /* FooterTableViewCell.xib in Resources */,
@@ -2067,12 +2229,14 @@
 				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
 				CECCE37E254EE7D4005CC660 /* WithdrawTermsView.xib in Resources */,
 				CECCE3AE254EFA7B005CC660 /* DepositInstructionView.xib in Resources */,
+				763171AD25663E1500F6FD90 /* TransactionDetails.storyboard in Resources */,
 				CE95D00725542035007D2084 /* NotoSansArmenian-SemiBold.ttf in Resources */,
 				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
 				CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */,
+				7644B6152563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
 				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
@@ -2082,6 +2246,7 @@
 				D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */,
 				CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */,
 				D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */,
+				7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */,
 				CEE356F2252C9C8100A0A25C /* BalanceComponentView.xib in Resources */,
@@ -2092,7 +2257,9 @@
 				CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */,
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
 				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
+				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
 				D8390E7F246C1B6400EF8CB5 /* SMSLogin.storyboard in Resources */,
+				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2277,6 +2444,7 @@
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
+				7644B63925650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift in Sources */,
 				CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */,
 				CEF3684E2549C325009FD456 /* DepositNavigator.swift in Sources */,
 				CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */,
@@ -2286,6 +2454,7 @@
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
+				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
@@ -2298,9 +2467,12 @@
 				CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */,
 				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
+				7644B5F12563A72B006778B2 /* TransactionHistoryTableViewCell.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
+				7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
+				7644B6002563E201006778B2 /* TransactionHistoryHeaderCell.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
@@ -2309,10 +2481,12 @@
 				D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */,
 				CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
+				7644B61D2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift in Sources */,
 				CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				CE2D1DF22530753A00112A1D /* QuickActionsHeaderCell.swift in Sources */,
 				CE2F03C9252CC8E8006D8001 /* QuickActionComponentViewModel.swift in Sources */,
+				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
 				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
@@ -2341,6 +2515,7 @@
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
+				763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */,
 				D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
@@ -2369,8 +2544,11 @@
 				D8AC996B244F1A8600B16600 /* RecentlyPlayedCollectionViewCellDataProvider.swift in Sources */,
 				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
 				D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */,
+				7644B60D2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
+				7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */,
 				D850940E24839A4A00722040 /* PageDescription.swift in Sources */,
+				7644B6222564F8E4006778B2 /* TransactionDetailComponentView.swift in Sources */,
 				D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */,
 				D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */,
@@ -2394,6 +2572,7 @@
 				CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */,
 				CEE537EB254AC9FD00EDE6C0 /* CashFlowViewModel.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
+				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */,
@@ -2403,6 +2582,7 @@
 				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
+				7644B6072563E516006778B2 /* TransactionHistoryHeaderComponentView.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
 				D8F26A05246837B700137252 /* LoginType.swift in Sources */,
@@ -2437,11 +2617,13 @@
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */,
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
+				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */,
 				CE169359254181100043B1A4 /* UserInfo.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
+				7644B5F72563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
 				D8442AAB2469A7A400F32676 /* LoginViewController.swift in Sources */,
 				D8AC9964244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift in Sources */,
@@ -2457,8 +2639,10 @@
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
+				7676E55D2562D73100234026 /* TransactionHistoryProvider.swift in Sources */,
 				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
+				7676E54E2562856600234026 /* TransactionsNavigator.swift in Sources */,
 				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
 				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
@@ -2478,12 +2662,16 @@
 				CEE15C4725349EDF0033BF93 /* NotificationTableViewCell.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
+				7644B62A256506B6006778B2 /* TransactionDetailComponentViewModel.swift in Sources */,
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
 				CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */,
 				D894CEBB24BE32FA00FE143D /* GamesListLoader.swift in Sources */,
+				763171A82566398F00F6FD90 /* TransactionDetailsViewController.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
+				7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
+				7644B5EC25639786006778B2 /* TransactionHistoryComponentViewModel.swift in Sources */,
 				D8AC492C24CFE835000B2D80 /* AppDelegateServices.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,

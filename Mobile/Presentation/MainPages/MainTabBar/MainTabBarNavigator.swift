@@ -11,7 +11,7 @@ public class MainTabBarNavigator: Navigator {
     public let sportsVCFactory = DefaultSportsViewControllerFactory()
     public let promotionsVCFactory = DefaultPromotionsViewControllerFactory()
     public let notificationsVCFacotry = DefaultNotificationsViewControllerFactory()
-
+    
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {
@@ -29,12 +29,10 @@ public class MainTabBarNavigator: Navigator {
         let sports = sportsVCFactory.make()
         let promotions = promotionsVCFactory.make()
         let notifications = notificationsVCFacotry.make()
-
         home.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: nil)
         sports.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.sports(), selectedImage: nil)
         promotions.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
         notifications.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
-
         return [home, sports, promotions, notifications].map { $0.wrap(in: ABNavigationController.self) }
     }
 }

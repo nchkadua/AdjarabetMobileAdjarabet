@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 16 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
@@ -122,6 +122,10 @@ struct R: Rswift.Validatable {
     static let smsLogin = _R.storyboard.smsLogin()
     /// Storyboard `Sports`.
     static let sports = _R.storyboard.sports()
+    /// Storyboard `TransactionDetails`.
+    static let transactionDetails = _R.storyboard.transactionDetails()
+    /// Storyboard `Transactions`.
+    static let transactions = _R.storyboard.transactions()
     /// Storyboard `Withdraw`.
     static let withdraw = _R.storyboard.withdraw()
 
@@ -227,6 +231,20 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Sports", bundle: ...)`
     static func sports(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.sports)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "TransactionDetails", bundle: ...)`
+    static func transactionDetails(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.transactionDetails)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Transactions", bundle: ...)`
+    static func transactions(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.transactions)
     }
     #endif
 
@@ -1387,12 +1405,19 @@ struct R: Rswift.Validatable {
   struct image {
     /// This `R.image.biometric` struct is generated, and contains static references to 3 images.
     struct biometric {
+      /// Image `TouchID`.
+      static let touchID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/TouchID")
       /// Image `biometry`.
       static let biometry = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/biometry")
       /// Image `faceID`.
       static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/faceID")
-      /// Image `touchID`.
-      static let touchID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/touchID")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "TouchID", bundle: ..., traitCollection: ...)`
+      static func touchID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.biometric.touchID, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "biometry", bundle: ..., traitCollection: ...)`
@@ -1405,13 +1430,6 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "faceID", bundle: ..., traitCollection: ...)`
       static func faceID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.biometric.faceID, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "touchID", bundle: ..., traitCollection: ...)`
-      static func touchID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.biometric.touchID, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2008,6 +2026,30 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.transactionsHistory` struct is generated, and contains static references to 2 images.
+    struct transactionsHistory {
+      /// Image `deposit`.
+      static let deposit = Rswift.ImageResource(bundle: R.hostingBundle, name: "TransactionsHistory/deposit")
+      /// Image `withdraw`.
+      static let withdraw = Rswift.ImageResource(bundle: R.hostingBundle, name: "TransactionsHistory/withdraw")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "deposit", bundle: ..., traitCollection: ...)`
+      static func deposit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.transactionsHistory.deposit, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "withdraw", bundle: ..., traitCollection: ...)`
+      static func withdraw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.transactionsHistory.withdraw, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.withdraw` struct is generated, and contains static references to 1 images.
     struct withdraw {
       /// Image `info`.
@@ -2026,7 +2068,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 31 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 37 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -2086,6 +2128,18 @@ struct R: Rswift.Validatable {
     static let recentlyPlayedCollectionViewCell = _R.nib._RecentlyPlayedCollectionViewCell()
     /// Nib `RecentlyPlayedComponentView`.
     static let recentlyPlayedComponentView = _R.nib._RecentlyPlayedComponentView()
+    /// Nib `TransactionDetailsComponentView`.
+    static let transactionDetailsComponentView = _R.nib._TransactionDetailsComponentView()
+    /// Nib `TransactionDetailsTableViewCell`.
+    static let transactionDetailsTableViewCell = _R.nib._TransactionDetailsTableViewCell()
+    /// Nib `TransactionHistoryComponentView`.
+    static let transactionHistoryComponentView = _R.nib._TransactionHistoryComponentView()
+    /// Nib `TransactionHistoryHeaderCell`.
+    static let transactionHistoryHeaderCell = _R.nib._TransactionHistoryHeaderCell()
+    /// Nib `TransactionHistoryHeaderComponentView`.
+    static let transactionHistoryHeaderComponentView = _R.nib._TransactionHistoryHeaderComponentView()
+    /// Nib `TransactionHistoryTableViewCell`.
+    static let transactionHistoryTableViewCell = _R.nib._TransactionHistoryTableViewCell()
     /// Nib `WithdrawInstructionView`.
     static let withdrawInstructionView = _R.nib._WithdrawInstructionView()
     /// Nib `WithdrawTermsView`.
@@ -2324,6 +2378,54 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransactionDetailsComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionDetailsComponentView) instead")
+    static func transactionDetailsComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transactionDetailsComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransactionDetailsTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionDetailsTableViewCell) instead")
+    static func transactionDetailsTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transactionDetailsTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransactionHistoryComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionHistoryComponentView) instead")
+    static func transactionHistoryComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transactionHistoryComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransactionHistoryHeaderCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionHistoryHeaderCell) instead")
+    static func transactionHistoryHeaderCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transactionHistoryHeaderCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransactionHistoryHeaderComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionHistoryHeaderComponentView) instead")
+    static func transactionHistoryHeaderComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transactionHistoryHeaderComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransactionHistoryTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionHistoryTableViewCell) instead")
+    static func transactionHistoryTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transactionHistoryTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "WithdrawInstructionView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.withdrawInstructionView) instead")
     static func withdrawInstructionView(_: Void = ()) -> UIKit.UINib {
@@ -2453,6 +2555,30 @@ struct R: Rswift.Validatable {
 
     static func recentlyPlayedComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.recentlyPlayedComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func transactionDetailsComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.transactionDetailsComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func transactionDetailsTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionDetailsTableViewCell? {
+      return R.nib.transactionDetailsTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionDetailsTableViewCell
+    }
+
+    static func transactionHistoryComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.transactionHistoryComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func transactionHistoryHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionHistoryHeaderCell? {
+      return R.nib.transactionHistoryHeaderCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionHistoryHeaderCell
+    }
+
+    static func transactionHistoryHeaderComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.transactionHistoryHeaderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func transactionHistoryTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionHistoryTableViewCell? {
+      return R.nib.transactionHistoryTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionHistoryTableViewCell
     }
 
     static func withdrawInstructionView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -4370,6 +4496,7 @@ struct _R: Rswift.Validatable {
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
       try _ProfileInfoComponentView.validate()
+      try _TransactionHistoryComponentView.validate()
       try _WithdrawTermsView.validate()
     }
 
@@ -4727,6 +4854,79 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _TransactionDetailsComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TransactionDetailsComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TransactionDetailsTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TransactionDetailsTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionDetailsTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionDetailsTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TransactionHistoryComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "TransactionHistoryComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "TransactionsHistory/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/deposit' is used in nib 'TransactionHistoryComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/SystemGrays/systemGrey2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemGrays/systemGrey2' is used in storyboard 'TransactionHistoryComponentView', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TransactionHistoryHeaderCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TransactionHistoryHeaderCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionHistoryHeaderCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionHistoryHeaderCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TransactionHistoryHeaderComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TransactionHistoryHeaderComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TransactionHistoryTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TransactionHistoryTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionHistoryTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionHistoryTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _WithdrawInstructionView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "WithdrawInstructionView"
@@ -4806,6 +5006,12 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try sports.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try transactionDetails.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try transactions.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try withdraw.validate()
@@ -5119,6 +5325,46 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.sports().sportsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sportsViewController' could not be loaded from storyboard 'Sports' as 'SportsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct transactionDetails: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "TransactionDetails"
+      let transactionDetailsViewController = StoryboardViewControllerResource<TransactionDetailsViewController>(identifier: "TransactionDetailsViewController")
+
+      func transactionDetailsViewController(_: Void = ()) -> TransactionDetailsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: transactionDetailsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.transactionDetails().transactionDetailsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'transactionDetailsViewController' could not be loaded from storyboard 'TransactionDetails' as 'TransactionDetailsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct transactions: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Transactions"
+      let transactionsViewController = StoryboardViewControllerResource<TransactionsViewController>(identifier: "TransactionsViewController")
+
+      func transactionsViewController(_: Void = ()) -> TransactionsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: transactionsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.transactions().transactionsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'transactionsViewController' could not be loaded from storyboard 'Transactions' as 'TransactionsViewController'.") }
       }
 
       fileprivate init() {}

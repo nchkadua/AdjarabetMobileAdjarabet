@@ -25,7 +25,10 @@ public class ABTableViewController: AppTableViewController {
         tableView?.register(types: [
             PromotionTableViewCell.self,
             NotificationTableViewCell.self,
-            NotificationsHeaderCell.self
+            NotificationsHeaderCell.self,
+            TransactionHistoryTableViewCell.self,
+            TransactionHistoryHeaderCell.self,
+            TransactionDetailsTableViewCell.self
         ])
 
         setupTableView()

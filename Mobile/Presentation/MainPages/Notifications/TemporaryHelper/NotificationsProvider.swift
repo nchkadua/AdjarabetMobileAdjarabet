@@ -60,6 +60,7 @@ public struct Notification {
     public var seen: Bool
 }
 
+// MARK: TODO move to helpers/utils/extensions
 extension Date {
     static var today: Date { return Date().today }
     static var yesterday: Date { return Date().dayBefore }
