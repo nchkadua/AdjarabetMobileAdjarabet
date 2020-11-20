@@ -16,6 +16,11 @@
 		C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */; };
 		C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A47DD724335B4C0077AA8E /* Assets.xcassets */; };
 		C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */; };
+		C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */; };
+		C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */; };
+		C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */; };
+		C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */; };
+		C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */; };
 		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
@@ -345,6 +350,11 @@
 		C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewController.swift; sourceTree = "<group>"; };
 		C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BiometricSettingsView.storyboard; sourceTree = "<group>"; };
 		C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometryStorage.swift; sourceTree = "<group>"; };
+		C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferNavigator.swift; sourceTree = "<group>"; };
+		C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewController.swift; sourceTree = "<group>"; };
+		C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewModel.swift; sourceTree = "<group>"; };
+		C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = P2PTransferView.storyboard; sourceTree = "<group>"; };
+		C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewControllerFactory.swift; sourceTree = "<group>"; };
 		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -733,6 +743,18 @@
 			path = BiometryStorage;
 			sourceTree = "<group>";
 		};
+		C7BABFC725657966004E733E /* P2PTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */,
+				C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */,
+				C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */,
+				C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */,
+				C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */,
+			);
+			path = P2PTransfer;
+			sourceTree = "<group>";
+		};
 		C7CA6A0A2563B28000A9C6AB /* Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -856,6 +878,7 @@
 			children = (
 				CEE537E5254AC9D600EDE6C0 /* CashFlow */,
 				C71F188D256411720026CEA2 /* BiometricSettings */,
+				C7BABFC725657966004E733E /* P2PTransfer */,
 				CEA2876D2540C06800E6590C /* AccountInfo */,
 				CE95FBC7252DC394003E539B /* QuickActionItems */,
 				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
@@ -1997,6 +2020,7 @@
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
 				D807848C2444727600003892 /* FiraGO-Bold.ttf in Resources */,
 				D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */,
+				C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */,
 				CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */,
@@ -2365,12 +2389,14 @@
 				CE9A1753255185D6006655AF /* UserServices.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
+				C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
 				CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */,
 				CEE537EB254AC9FD00EDE6C0 /* CashFlowViewModel.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
+				C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */,
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
 				CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */,
 				C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */,
@@ -2384,9 +2410,11 @@
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				CECCE3CE254F0A43005CC660 /* Payments.swift in Sources */,
 				D8442AA22469716600F32676 /* ABInputView.swift in Sources */,
+				C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */,
 				CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */,
 				D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */,
 				D8BE830C24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift in Sources */,
+				C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */,
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,

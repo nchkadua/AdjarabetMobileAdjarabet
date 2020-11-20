@@ -127,3 +127,12 @@
 "biometric_settings_activate_face_id" = "Face ID-ის გააქტიურება";
 "biometric_settings_activate_biometry" = "ბიომეტრიულის გააქტიურება";
 "biometric_settings_not_available" = "ბიომეტრია არ არის ხელმისაწვდომი";
+
+/* P2P Transfer */
+"p2p_transfer_p2p_transfer" = "P2P ტრანსფერი";
+"p2p_transfer_friend_id" = "მეგობრის ID";
+"p2p_transfer_tranfer_amount" = "გადასარიცხი თანხა";
+"p2p_transfer_transaction_commission" = "ტრანზაქციის საკომისიო";
+"p2p_transfer_total_amount" = "ჯამური თანხა";
+"p2p_transfer_you_are_transfering_to" = "You are transfering to";
+"p2p_transfer_confirm" = "დადასტურება";

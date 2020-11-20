@@ -12,6 +12,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var accountInfoViewControllerFactory: AccountInfoViewControllerFactory
     @Inject(from: .factories) public var cashFlowViewControllerFactory: CashFlowViewControllerFactory
     @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
+    @Inject(from: .factories) public var p2pTrasferViewControllerFactory: P2PTransferViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -36,6 +37,7 @@ public class ProfileNavigator: Navigator {
         case .deposit: navigateToCashFlow(animate: animate, initialPageIndex: 0)
         case .withdraw: navigateToCashFlow(animate: animate, initialPageIndex: 1)
         case .biometryParameters: navigateToBiometricSettings(animate: animate)
+        case .transferToFriend: navigateToP2PTransfer(animate: animate)
         case .accountInformation: navigateToAccountInformation(animate: animate)
         case .loginPage: navigateToLogin(animate: animate)
         default:
@@ -51,6 +53,11 @@ public class ProfileNavigator: Navigator {
 
     private func navigateToBiometricSettings(animate: Bool) {
         let vc = biometricSettingsViewControllerFactory.make()
+        viewController?.navigationController?.present(vc, animated: animate, completion: nil)
+    }
+
+    private func navigateToP2PTransfer(animate: Bool) {
+        let vc = p2pTrasferViewControllerFactory.make()
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 
