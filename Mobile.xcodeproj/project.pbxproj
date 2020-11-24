@@ -117,6 +117,11 @@
 		CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */; };
 		CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287812540C28F00E6590C /* AccountInfoViewController.swift */; };
 		CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */; };
+		CEA77791256D4237008A4F6C /* MailChangeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7778E256D4237008A4F6C /* MailChangeNavigator.swift */; };
+		CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */; };
+		CEA77793256D4237008A4F6C /* MailChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */; };
+		CEA77799256D4244008A4F6C /* MailChangeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA77798256D4244008A4F6C /* MailChangeViewControllerFactory.swift */; };
+		CEA7779D256D4250008A4F6C /* MailChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA7779C256D4250008A4F6C /* MailChange.storyboard */; };
 		CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */; };
 		CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */; };
 		CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */; };
@@ -486,6 +491,11 @@
 		CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoNavigator.swift; sourceTree = "<group>"; };
 		CEA287812540C28F00E6590C /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewModel.swift; sourceTree = "<group>"; };
+		CEA7778E256D4237008A4F6C /* MailChangeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailChangeNavigator.swift; sourceTree = "<group>"; };
+		CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailChangeViewController.swift; sourceTree = "<group>"; };
+		CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailChangeViewModel.swift; sourceTree = "<group>"; };
+		CEA77798256D4244008A4F6C /* MailChangeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailChangeViewControllerFactory.swift; sourceTree = "<group>"; };
+		CEA7779C256D4250008A4F6C /* MailChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MailChange.storyboard; sourceTree = "<group>"; };
 		CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
@@ -1163,6 +1173,7 @@
 		CEA2876D2540C06800E6590C /* AccountInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7778D256D41F7008A4F6C /* MailChange */,
 				CEB285B8256D20A400584A65 /* SelfSuspend */,
 				CE9A17512551854A006655AF /* Helper */,
 				CE169357254181000043B1A4 /* Temporary */,
@@ -1173,6 +1184,18 @@
 				CEA287762540C16700E6590C /* AccountInfo.storyboard */,
 			);
 			path = AccountInfo;
+			sourceTree = "<group>";
+		};
+		CEA7778D256D41F7008A4F6C /* MailChange */ = {
+			isa = PBXGroup;
+			children = (
+				CEA77798256D4244008A4F6C /* MailChangeViewControllerFactory.swift */,
+				CEA7778E256D4237008A4F6C /* MailChangeNavigator.swift */,
+				CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */,
+				CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */,
+				CEA7779C256D4250008A4F6C /* MailChange.storyboard */,
+			);
+			path = MailChange;
 			sourceTree = "<group>";
 		};
 		CEA97673252CA669003CB1AB /* BalanceTableViewCell */ = {
@@ -2290,6 +2313,7 @@
 				D8BF4043244EC949008F0BAF /* GameLauncherCollectionViewCell.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
 				CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */,
+				CEA7779D256D4250008A4F6C /* MailChange.storyboard in Resources */,
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
 				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
 				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
@@ -2462,6 +2486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
+				CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */,
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
@@ -2484,6 +2509,7 @@
 				7644B63925650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift in Sources */,
 				CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */,
 				CEF3684E2549C325009FD456 /* DepositNavigator.swift in Sources */,
+				CEA77793256D4237008A4F6C /* MailChangeViewModel.swift in Sources */,
 				CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */,
 				CEE537E9254AC9FD00EDE6C0 /* CashFlowNavigator.swift in Sources */,
 				CEF368502549C325009FD456 /* DepositViewModel.swift in Sources */,
@@ -2555,6 +2581,7 @@
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
 				763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */,
 				D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */,
+				CEA77799256D4244008A4F6C /* MailChangeViewControllerFactory.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
@@ -2670,6 +2697,7 @@
 				D8D11B442498E63D0010F4C8 /* UserAgentProvider.swift in Sources */,
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */,
+				CEA77791256D4237008A4F6C /* MailChangeNavigator.swift in Sources */,
 				D850940A24828D5800722040 /* LobbyGamesRepository.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,

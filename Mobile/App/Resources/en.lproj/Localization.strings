@@ -102,6 +102,12 @@
 "block_accound" = "Block Account";
 "suspend_subtitle" = "თუ გსურთ ანგარიშის ბლოკირებული ვადის გახანგრძლივება დაგვიკავშირდით ცხელ ხაზზე";
 
+/* Mail Change */
+"mail_change_title" = "Change E-Mail";
+"new_mail_title" = "ახალი ელ.ფოსტის მისამართი";
+"approve_password" = "დაადასტურეთ პაროლი უსაფრთხოებისთვის";
+"change_mail_button_title" = "ელ.ფოსტის შეცვლა";
+
 /* Deposit */
 "cashflow_done_button_title" = "Done";
 

@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 19 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 20 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
@@ -106,6 +106,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Login`.
     static let login = _R.storyboard.login()
+    /// Storyboard `MailChange`.
+    static let mailChange = _R.storyboard.mailChange()
     /// Storyboard `MainTabBar`.
     static let mainTabBar = _R.storyboard.mainTabBar()
     /// Storyboard `NotificationContent`.
@@ -177,6 +179,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Login", bundle: ...)`
     static func login(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.login)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "MailChange", bundle: ...)`
+    static func mailChange(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.mailChange)
     }
     #endif
 
@@ -2404,7 +2413,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 102 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 106 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2458,6 +2467,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Change E-Mail
+      ///
+      /// Locales: en, ka, hy
+      static let mail_change_title = Rswift.StringResource(key: "mail_change_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Code is sent to yout number
       ///
       /// Locales: en, ka, hy
@@ -2742,6 +2755,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let withdraw_description_card = Rswift.StringResource(key: "withdraw_description_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ახალი ელ.ფოსტის მისამართი
+      ///
+      /// Locales: en, ka, hy
+      static let new_mail_title = Rswift.StringResource(key: "new_mail_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო
       ///
       /// Locales: en, ka, hy
@@ -2774,6 +2791,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let withdraw_description_amount = Rswift.StringResource(key: "withdraw_description_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დაადასტურეთ პაროლი უსაფრთხოებისთვის
+      ///
+      /// Locales: en, ka, hy
+      static let approve_password = Rswift.StringResource(key: "approve_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე
       ///
       /// Locales: en, ka, hy
@@ -2782,6 +2803,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let deposit_description_proceed = Rswift.StringResource(key: "deposit_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ელ.ფოსტის შეცვლა
+      ///
+      /// Locales: en, ka, hy
+      static let change_mail_button_title = Rswift.StringResource(key: "change_mail_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: თანხა
       ///
       /// Locales: en, ka, hy
@@ -3008,6 +3033,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("cancel", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change E-Mail
+      ///
+      /// Locales: en, ka, hy
+      static func mail_change_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mail_change_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mail_change_title"
+        }
+
+        return NSLocalizedString("mail_change_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Code is sent to yout number
@@ -4075,6 +4115,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("withdraw_description_card", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: ახალი ელ.ფოსტის მისამართი
+      ///
+      /// Locales: en, ka, hy
+      static func new_mail_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("new_mail_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "new_mail_title"
+        }
+
+        return NSLocalizedString("new_mail_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო
       ///
       /// Locales: en, ka, hy
@@ -4195,6 +4250,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("withdraw_description_amount", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: დაადასტურეთ პაროლი უსაფრთხოებისთვის
+      ///
+      /// Locales: en, ka, hy
+      static func approve_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("approve_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "approve_password"
+        }
+
+        return NSLocalizedString("approve_password", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე
       ///
       /// Locales: en, ka, hy
@@ -4223,6 +4293,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deposit_description_proceed", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ელ.ფოსტის შეცვლა
+      ///
+      /// Locales: en, ka, hy
+      static func change_mail_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("change_mail_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "change_mail_button_title"
+        }
+
+        return NSLocalizedString("change_mail_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: თანხა
@@ -4870,6 +4955,9 @@ struct _R: Rswift.Validatable {
       try login.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try mailChange.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try mainTabBar.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -5044,6 +5132,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct mailChange: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let mailChangeViewController = StoryboardViewControllerResource<MailChangeViewController>(identifier: "MailChangeViewController")
+      let name = "MailChange"
+
+      func mailChangeViewController(_: Void = ()) -> MailChangeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mailChangeViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.mailChange().mailChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mailChangeViewController' could not be loaded from storyboard 'MailChange' as 'MailChangeViewController'.") }
       }
 
       fileprivate init() {}

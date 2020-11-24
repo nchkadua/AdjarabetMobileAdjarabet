@@ -79,6 +79,7 @@ public class AccountInfoViewController: ABViewController {
         setupScrollView()
         setupLabels()
         setupButtons()
+        setTargets()
     }
 
     private func setupNavigationItems() {
@@ -110,11 +111,20 @@ public class AccountInfoViewController: ABViewController {
         statusButton.setTitleColor(to: .primaryRed(), for: .normal)
         statusButton.setTitleWithoutAnimation(R.string.localization.account_info_status_button_title(), for: .normal)
         statusButton.addTarget(self, action: #selector(selfSuspendButtonAction), for: .touchUpInside)
+    }
 
-        editPasswordButton.addTarget(self, action: #selector(editPasswordAction), for: .touchUpInside)
-        editMailButton.addTarget(self, action: #selector(editMailAction), for: .touchUpInside)
-        editPhoneNumberButton.addTarget(self, action: #selector(editPhoneNumberAction), for: .touchUpInside)
-        editAddressButton.addTarget(self, action: #selector(editAddressAction), for: .touchUpInside)
+    private func setTargets() {
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(editPasswordAction))
+        passwordView.addGestureRecognizer(tap1)
+
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(editMailAction))
+        mailView.addGestureRecognizer(tap2)
+
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(editPhoneNumberAction))
+        phoneNumberView.addGestureRecognizer(tap3)
+
+        let tap4 = UITapGestureRecognizer(target: self, action: #selector(editAddressAction))
+        addressView.addGestureRecognizer(tap4)
     }
 
     private func setupViewsWith(userInfo: UserInfoServices) {
@@ -158,7 +168,7 @@ public class AccountInfoViewController: ABViewController {
     }
 
     @objc private func editMailAction() {
-        showAlert(title: "Edit Mail")
+        navigator.navigate(to: .mailChange, animated: true)
     }
 
     @objc private func editPhoneNumberAction() {
