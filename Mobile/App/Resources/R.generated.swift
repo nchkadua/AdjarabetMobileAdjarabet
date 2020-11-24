@@ -90,10 +90,12 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 20 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 21 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
+    /// Storyboard `AddressChange`.
+    static let addressChange = _R.storyboard.addressChange()
     /// Storyboard `BiometricSettingsView`.
     static let biometricSettingsView = _R.storyboard.biometricSettingsView()
     /// Storyboard `CashFlow`.
@@ -137,6 +139,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AccountInfo", bundle: ...)`
     static func accountInfo(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.accountInfo)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AddressChange", bundle: ...)`
+    static func addressChange(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addressChange)
     }
     #endif
 
@@ -2413,7 +2422,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 106 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 110 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2447,6 +2456,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_address = Rswift.StringResource(key: "account_info_address", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Approve
+      ///
+      /// Locales: en, ka, hy
+      static let approve_address_button_title = Rswift.StringResource(key: "approve_address_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Biometry Authentication Parameters
       ///
       /// Locales: en, ka, hy
@@ -2467,6 +2480,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Change Address
+      ///
+      /// Locales: en, ka, hy
+      static let address_change_title = Rswift.StringResource(key: "address_change_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Change E-Mail
       ///
       /// Locales: en, ka, hy
@@ -2511,6 +2528,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let cashflow_done_button_title = Rswift.StringResource(key: "cashflow_done_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Enter New Address
+      ///
+      /// Locales: en, ka, hy
+      static let new_address_placeholder = Rswift.StringResource(key: "new_address_placeholder", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Enter New Address
+      ///
+      /// Locales: en, ka, hy
+      static let new_address_subtitle = Rswift.StringResource(key: "new_address_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Forgot Password?
       ///
       /// Locales: en, ka, hy
@@ -2960,6 +2985,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_address", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Approve
+      ///
+      /// Locales: en, ka, hy
+      static func approve_address_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("approve_address_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "approve_address_button_title"
+        }
+
+        return NSLocalizedString("approve_address_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Biometry Authentication Parameters
       ///
       /// Locales: en, ka, hy
@@ -3033,6 +3073,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("cancel", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change Address
+      ///
+      /// Locales: en, ka, hy
+      static func address_change_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("address_change_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "address_change_title"
+        }
+
+        return NSLocalizedString("address_change_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Change E-Mail
@@ -3198,6 +3253,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("cashflow_done_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Enter New Address
+      ///
+      /// Locales: en, ka, hy
+      static func new_address_placeholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("new_address_placeholder", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "new_address_placeholder"
+        }
+
+        return NSLocalizedString("new_address_placeholder", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Enter New Address
+      ///
+      /// Locales: en, ka, hy
+      static func new_address_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("new_address_subtitle", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "new_address_subtitle"
+        }
+
+        return NSLocalizedString("new_address_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Forgot Password?
@@ -4937,6 +5022,9 @@ struct _R: Rswift.Validatable {
       try accountInfo.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try addressChange.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try biometricSettingsView.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -5010,6 +5098,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.accountInfo().accountInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accountInfoViewController' could not be loaded from storyboard 'AccountInfo' as 'AccountInfoViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct addressChange: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let addressChangeViewController = StoryboardViewControllerResource<AddressChangeViewController>(identifier: "AddressChangeViewController")
+      let bundle = R.hostingBundle
+      let name = "AddressChange"
+
+      func addressChangeViewController(_: Void = ()) -> AddressChangeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addressChangeViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.addressChange().addressChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addressChangeViewController' could not be loaded from storyboard 'AddressChange' as 'AddressChangeViewController'.") }
       }
 
       fileprivate init() {}

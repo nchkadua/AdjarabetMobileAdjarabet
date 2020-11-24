@@ -30,7 +30,7 @@ public class ContactUsButton: UIButton {
 
     private func setSettings() {
         layer.cornerRadius = 25
-        setBackgorundColor(to: .querternaryBg())
+        setBackgorundColor(to: .tertiaryBg())
         titleLabel?.textAlignment = .left
         setTintColor(to: .primaryText())
 

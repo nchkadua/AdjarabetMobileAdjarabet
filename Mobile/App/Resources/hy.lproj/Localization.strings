@@ -108,6 +108,12 @@
 "approve_password" = "დაადასტურეთ პაროლი უსაფრთხოებისთვის";
 "change_mail_button_title" = "ელ.ფოსტის შეცვლა";
 
+/* Address Change */
+"address_change_title" = "Change Address";
+"new_address_subtitle" = "Enter New Address";
+"new_address_placeholder" = "Enter New Address";
+"approve_address_button_title" = "Approve";
+
 /* Deposit */
 "cashflow_done_button_title" = "Done";
 

@@ -26,6 +26,11 @@ public class MailChangeViewController: ABViewController {
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        mailInputView.mainTextField.becomeFirstResponder()
+    }
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: MailChangeViewModel) {
@@ -83,6 +88,7 @@ public class MailChangeViewController: ABViewController {
     }
 
     @objc private func changeMailDidTap() {
+        closeKeyboard()
     }
 
     private func setupLabel() {

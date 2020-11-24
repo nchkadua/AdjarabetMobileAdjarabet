@@ -141,6 +141,11 @@
 		CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE381254EE7E0005CC660 /* WithdrawTermsView.swift */; };
 		CECCE3AE254EFA7B005CC660 /* DepositInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECCE3AD254EFA7B005CC660 /* DepositInstructionView.xib */; };
 		CECCE3CE254F0A43005CC660 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE3CD254F0A43005CC660 /* Payments.swift */; };
+		CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */; };
+		CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */; };
+		CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */; };
+		CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F48256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift */; };
+		CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */; };
 		CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E09F254869F200949417 /* AppSessionProvider.swift */; };
 		CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3925349C330033BF93 /* NotificationComponentView.swift */; };
 		CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */; };
@@ -515,6 +520,11 @@
 		CECCE381254EE7E0005CC660 /* WithdrawTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawTermsView.swift; sourceTree = "<group>"; };
 		CECCE3AD254EFA7B005CC660 /* DepositInstructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DepositInstructionView.xib; sourceTree = "<group>"; };
 		CECCE3CD254F0A43005CC660 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
+		CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeNavigator.swift; sourceTree = "<group>"; };
+		CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewController.swift; sourceTree = "<group>"; };
+		CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewModel.swift; sourceTree = "<group>"; };
+		CECF7F48256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewControllerFactory.swift; sourceTree = "<group>"; };
+		CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressChange.storyboard; sourceTree = "<group>"; };
 		CEE0E09F254869F200949417 /* AppSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionProvider.swift; sourceTree = "<group>"; };
 		CEE15C3925349C330033BF93 /* NotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentView.swift; sourceTree = "<group>"; };
 		CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentViewModel.swift; sourceTree = "<group>"; };
@@ -1173,6 +1183,7 @@
 		CEA2876D2540C06800E6590C /* AccountInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CECF7F3F256D5A68001C0E50 /* AddressChange */,
 				CEA7778D256D41F7008A4F6C /* MailChange */,
 				CEB285B8256D20A400584A65 /* SelfSuspend */,
 				CE9A17512551854A006655AF /* Helper */,
@@ -1256,6 +1267,18 @@
 				CECCE3CD254F0A43005CC660 /* Payments.swift */,
 			);
 			path = Temporary;
+			sourceTree = "<group>";
+		};
+		CECF7F3F256D5A68001C0E50 /* AddressChange */ = {
+			isa = PBXGroup;
+			children = (
+				CECF7F48256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift */,
+				CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */,
+				CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */,
+				CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */,
+				CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */,
+			);
+			path = AddressChange;
 			sourceTree = "<group>";
 		};
 		CEE15C3825349C130033BF93 /* NotificationComponentView */ = {
@@ -2292,6 +2315,7 @@
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
+				CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */,
 				CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */,
 				7644B6152563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
@@ -2537,9 +2561,11 @@
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				7644B6002563E201006778B2 /* TransactionHistoryHeaderCell.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
+				CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
+				CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */,
 				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */,
 				CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */,
@@ -2573,6 +2599,7 @@
 				CEE356C4252B643600A0A25C /* ProfileInfoTableViewCell.swift in Sources */,
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
 				CE55ED2B252721A2003E168F /* ProfileViewControllerFactory.swift in Sources */,
+				CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */,
 				D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */,
 				CE2D1DEB2530738600112A1D /* QuickActionsHeaderViewModel.swift in Sources */,
 				CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */,
@@ -2689,6 +2716,7 @@
 				CE169359254181100043B1A4 /* UserInfo.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
+				CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
 				7644B5F72563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,

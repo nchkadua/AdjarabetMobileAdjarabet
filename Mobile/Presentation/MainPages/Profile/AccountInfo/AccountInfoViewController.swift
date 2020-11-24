@@ -176,7 +176,7 @@ public class AccountInfoViewController: ABViewController {
     }
 
     @objc private func editAddressAction() {
-        showAlert(title: "Edit Address")
+        navigator.navigate(to: .addressChange, animated: true)
     }
 }
 

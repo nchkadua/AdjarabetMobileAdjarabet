@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Address Change View Controller-->
+        <scene sceneID="HCO-5r-ZTf">
+            <objects>
+                <viewController storyboardIdentifier="AddressChangeViewController" id="m2m-QE-83m" customClass="AddressChangeViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hg8-ay-8e2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltq-Aq-zb5">
+                                <rect key="frame" x="20" y="44" width="374" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="67j-DY-38e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwW-KB-T5L" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="86" width="374" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Ybb-x2-Vzo"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcf-AL-I4W" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="160" width="374" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="xo1-vv-3m6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bTk-Gj-cDH"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ltq-Aq-zb5" firstAttribute="top" secondItem="bTk-Gj-cDH" secondAttribute="top" id="0PL-8P-7PL"/>
+                            <constraint firstItem="bTk-Gj-cDH" firstAttribute="trailing" secondItem="BwW-KB-T5L" secondAttribute="trailing" constant="20" id="0uD-Ll-TW0"/>
+                            <constraint firstItem="bTk-Gj-cDH" firstAttribute="trailing" secondItem="zcf-AL-I4W" secondAttribute="trailing" constant="20" id="2ow-PR-fl4"/>
+                            <constraint firstItem="zcf-AL-I4W" firstAttribute="top" secondItem="BwW-KB-T5L" secondAttribute="bottom" constant="20" id="D1Z-4n-xjl"/>
+                            <constraint firstItem="Ltq-Aq-zb5" firstAttribute="leading" secondItem="bTk-Gj-cDH" secondAttribute="leading" constant="20" id="MU4-iy-aHz"/>
+                            <constraint firstItem="BwW-KB-T5L" firstAttribute="top" secondItem="Ltq-Aq-zb5" secondAttribute="bottom" constant="24" id="Otj-Uy-3LG"/>
+                            <constraint firstItem="bTk-Gj-cDH" firstAttribute="trailing" secondItem="Ltq-Aq-zb5" secondAttribute="trailing" constant="20" id="T6m-Fj-XSO"/>
+                            <constraint firstItem="BwW-KB-T5L" firstAttribute="leading" secondItem="bTk-Gj-cDH" secondAttribute="leading" constant="20" id="iiN-Wk-A3g"/>
+                            <constraint firstItem="zcf-AL-I4W" firstAttribute="leading" secondItem="bTk-Gj-cDH" secondAttribute="leading" constant="20" id="u6E-bt-5Ol"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressInputView" destination="BwW-KB-T5L" id="X5q-xR-eUs"/>
+                        <outlet property="approveButton" destination="zcf-AL-I4W" id="qwM-6n-Jdd"/>
+                        <outlet property="subtitleLabel" destination="Ltq-Aq-zb5" id="ouO-ar-itG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNB-c5-VhB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="82"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="zcf-AL-I4W">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

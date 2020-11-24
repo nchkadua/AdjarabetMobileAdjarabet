@@ -69,6 +69,7 @@ public extension DependencyContainer {
         Module { DefaultP2PTransferViewModel() as P2PTransferViewModel }
         Module { DefaultSelfSuspendViewModel() as SelfSuspendViewModel }
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
+        Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -98,6 +99,7 @@ public extension DependencyContainer {
         Module { DefaultP2PTransferViewControllerFactory() as P2PTransferViewControllerFactory }
         Module { DefaultSelfSuspendViewControllerFactory() as SelfSuspendViewControllerFactory }
         Module { DefaultMailChangeViewControllerFactory() as MailChangeViewControllerFactory }
+        Module { DefaultAddressChangeViewControllerFactory() as AddressChangeViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {
