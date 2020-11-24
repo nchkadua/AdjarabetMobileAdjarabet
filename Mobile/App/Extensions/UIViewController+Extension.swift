@@ -128,7 +128,7 @@ public extension UIViewController {
 
     func wrapInNavWith(presentationStyle: UIModalPresentationStyle = .automatic) -> UINavigationController {
         let navC = UINavigationController(rootViewController: self)
-        navC.modalPresentationStyle = .fullScreen
+        navC.modalPresentationStyle = presentationStyle
 
         return navC
     }

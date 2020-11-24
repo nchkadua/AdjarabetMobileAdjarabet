@@ -120,6 +120,12 @@
 		CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */; };
 		CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */; };
 		CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */; };
+		CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB285B9256D20B600584A65 /* SelfSuspendNavigator.swift */; };
+		CEB285BD256D20B600584A65 /* SelfSuspendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB285BA256D20B600584A65 /* SelfSuspendViewController.swift */; };
+		CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB285BB256D20B600584A65 /* SelfSuspendViewModel.swift */; };
+		CEB285E1256D20C300584A65 /* SelfSuspend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB285E0256D20C300584A65 /* SelfSuspend.storyboard */; };
+		CEB285E5256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB285E4256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift */; };
+		CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2860C256D2D6D00584A65 /* DurationProvider.swift */; };
 		CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6643E255027E1003D7D6D /* ABConstant.swift */; };
 		CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */; };
 		CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */; };
@@ -483,6 +489,12 @@
 		CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		CEB285B9256D20B600584A65 /* SelfSuspendNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSuspendNavigator.swift; sourceTree = "<group>"; };
+		CEB285BA256D20B600584A65 /* SelfSuspendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSuspendViewController.swift; sourceTree = "<group>"; };
+		CEB285BB256D20B600584A65 /* SelfSuspendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSuspendViewModel.swift; sourceTree = "<group>"; };
+		CEB285E0256D20C300584A65 /* SelfSuspend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelfSuspend.storyboard; sourceTree = "<group>"; };
+		CEB285E4256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSuspendViewControllerFactory.swift; sourceTree = "<group>"; };
+		CEB2860C256D2D6D00584A65 /* DurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationProvider.swift; sourceTree = "<group>"; };
 		CEB6643E255027E1003D7D6D /* ABConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABConstant.swift; sourceTree = "<group>"; };
 		CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentNavigator.swift; sourceTree = "<group>"; };
 		CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewController.swift; sourceTree = "<group>"; };
@@ -1151,6 +1163,7 @@
 		CEA2876D2540C06800E6590C /* AccountInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CEB285B8256D20A400584A65 /* SelfSuspend */,
 				CE9A17512551854A006655AF /* Helper */,
 				CE169357254181000043B1A4 /* Temporary */,
 				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
@@ -1170,6 +1183,27 @@
 				CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */,
 			);
 			path = BalanceTableViewCell;
+			sourceTree = "<group>";
+		};
+		CEB285B8256D20A400584A65 /* SelfSuspend */ = {
+			isa = PBXGroup;
+			children = (
+				CEB2860B256D2D5300584A65 /* Provider */,
+				CEB285E4256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift */,
+				CEB285B9256D20B600584A65 /* SelfSuspendNavigator.swift */,
+				CEB285BA256D20B600584A65 /* SelfSuspendViewController.swift */,
+				CEB285BB256D20B600584A65 /* SelfSuspendViewModel.swift */,
+				CEB285E0256D20C300584A65 /* SelfSuspend.storyboard */,
+			);
+			path = SelfSuspend;
+			sourceTree = "<group>";
+		};
+		CEB2860B256D2D5300584A65 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				CEB2860C256D2D6D00584A65 /* DurationProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		CEB81DFE25386886006BEDEC /* ContentPage */ = {
@@ -2239,6 +2273,7 @@
 				7644B6152563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
+				CEB285E1256D20C300584A65 /* SelfSuspend.storyboard in Resources */,
 				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
 				CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
@@ -2434,6 +2469,7 @@
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
 				CE660C52254C3162002667D0 /* DepositInstructionView.swift in Sources */,
 				CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */,
+				CEB285E5256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
 				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
@@ -2442,6 +2478,7 @@
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
 				D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
+				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
 				7644B63925650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift in Sources */,
@@ -2490,6 +2527,7 @@
 				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
+				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
@@ -2526,6 +2564,7 @@
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
+				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
@@ -2579,6 +2618,7 @@
 				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
 				CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */,
 				C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */,
+				CEB285BD256D20B600584A65 /* SelfSuspendViewController.swift in Sources */,
 				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,

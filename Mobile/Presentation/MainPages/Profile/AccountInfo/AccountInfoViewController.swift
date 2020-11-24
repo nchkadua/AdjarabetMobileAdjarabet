@@ -109,7 +109,7 @@ public class AccountInfoViewController: ABViewController {
         statusButton.setStyle(to: .textLink(state: .acvite, size: .small))
         statusButton.setTitleColor(to: .primaryRed(), for: .normal)
         statusButton.setTitleWithoutAnimation(R.string.localization.account_info_status_button_title(), for: .normal)
-        statusButton.addTarget(self, action: #selector(statusButtonAction), for: .touchUpInside)
+        statusButton.addTarget(self, action: #selector(selfSuspendButtonAction), for: .touchUpInside)
 
         editPasswordButton.addTarget(self, action: #selector(editPasswordAction), for: .touchUpInside)
         editMailButton.addTarget(self, action: #selector(editMailAction), for: .touchUpInside)
@@ -149,8 +149,8 @@ public class AccountInfoViewController: ABViewController {
     }
 
     // MARK: Action methods
-    @objc private func statusButtonAction () {
-        showAlert(title: "Self Suspend")
+    @objc private func selfSuspendButtonAction () {
+        navigator.navigate(to: .selfSuspend, animated: true)
     }
 
     @objc private func editPasswordAction() {

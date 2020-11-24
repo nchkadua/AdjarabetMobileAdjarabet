@@ -13,6 +13,14 @@ public class ContactUsButton: UIButton {
         super.init(coder: aDecoder)
         setup()
     }
+    
+    public override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
+        let titleRect = super.titleRect(forContentRect: contentRect)
+        let imageSize = currentImage?.size ?? .zero
+        let availableWidth = contentRect.width - imageEdgeInsets.right - imageSize.width - titleRect.width
+        
+        return titleRect.offsetBy(dx: round(availableWidth / 2), dy: 0)
+    }
 
     private func setup () {
         setSettings()
@@ -22,10 +30,9 @@ public class ContactUsButton: UIButton {
 
     private func setSettings() {
         layer.cornerRadius = 25
-        backgroundColor = R.color.colorGuide.systemBackground.tertiary()
-        titleLabel?.textAlignment = .center
-        imageEdgeInsets.right = 35
-        titleEdgeInsets.left = 10
+        setBackgorundColor(to: .querternaryBg())
+        titleLabel?.textAlignment = .left
+        setTintColor(to: .primaryText())
 
         setTitleColor(to: .primaryText(), for: .normal)
     }
@@ -40,5 +47,10 @@ public class ContactUsButton: UIButton {
         guard let number = URL(string: "tel://" + phoneNumber) else { return }
 
         UIApplication.shared.open(number)
+    }
+
+    // MARK: Public Methods
+    public func setCornerRadius(_ radius: CGFloat = 25) {
+        layer.cornerRadius = radius
     }
 }

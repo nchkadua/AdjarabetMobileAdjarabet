@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 19 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
@@ -120,6 +120,8 @@ struct R: Rswift.Validatable {
     static let promotions = _R.storyboard.promotions()
     /// Storyboard `SMSLogin`.
     static let smsLogin = _R.storyboard.smsLogin()
+    /// Storyboard `SelfSuspend`.
+    static let selfSuspend = _R.storyboard.selfSuspend()
     /// Storyboard `Sports`.
     static let sports = _R.storyboard.sports()
     /// Storyboard `TransactionDetails`.
@@ -224,6 +226,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SMSLogin", bundle: ...)`
     static func smsLogin(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.smsLogin)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SelfSuspend", bundle: ...)`
+    static func selfSuspend(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.selfSuspend)
     }
     #endif
 
@@ -1206,12 +1215,19 @@ struct R: Rswift.Validatable {
   struct image {
     /// This `R.image.biometric` struct is generated, and contains static references to 3 images.
     struct biometric {
+      /// Image `TouchID`.
+      static let touchID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/TouchID")
       /// Image `biometry`.
       static let biometry = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/biometry")
       /// Image `faceID`.
       static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/faceID")
-      /// Image `touchID`.
-      static let touchID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Biometric/touchID")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "TouchID", bundle: ..., traitCollection: ...)`
+      static func touchID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.biometric.touchID, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "biometry", bundle: ..., traitCollection: ...)`
@@ -1224,13 +1240,6 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "faceID", bundle: ..., traitCollection: ...)`
       static func faceID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.biometric.faceID, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "touchID", bundle: ..., traitCollection: ...)`
-      static func touchID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.biometric.touchID, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2395,7 +2404,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 98 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 102 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2441,6 +2450,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_birth_date = Rswift.StringResource(key: "account_info_birth_date", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Block Account
+      ///
+      /// Locales: en, ka, hy
+      static let block_accound = Rswift.StringResource(key: "block_accound", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, ka, hy
@@ -2645,6 +2658,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let home_search_placeholder = Rswift.StringResource(key: "home_search_placeholder", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Self Suspend
+      ///
+      /// Locales: en, ka, hy
+      static let self_suspend_title = Rswift.StringResource(key: "self_suspend_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Settings
       ///
       /// Locales: en, ka, hy
@@ -2661,6 +2678,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_surname = Rswift.StringResource(key: "account_info_surname", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Suspend Duration
+      ///
+      /// Locales: en, ka, hy
+      static let suspend_duration = Rswift.StringResource(key: "suspend_duration", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Total Balance
       ///
       /// Locales: en, ka, hy
@@ -2769,6 +2790,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let withdraw_amount_title = Rswift.StringResource(key: "withdraw_amount_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: თუ გსურთ ანგარიშის ბლოკირებული ვადის გახანგრძლივება დაგვიკავშირდით ცხელ ხაზზე
+      ///
+      /// Locales: en, ka, hy
+      static let suspend_subtitle = Rswift.StringResource(key: "suspend_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ლიმიტი ერთ ბარათზე
       ///
       /// Locales: en, ka, hy
@@ -2953,6 +2978,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_info_birth_date", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Block Account
+      ///
+      /// Locales: en, ka, hy
+      static func block_accound(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("block_accound", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "block_accound"
+        }
+
+        return NSLocalizedString("block_accound", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Cancel
@@ -3720,6 +3760,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("home_search_placeholder", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Self Suspend
+      ///
+      /// Locales: en, ka, hy
+      static func self_suspend_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("self_suspend_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "self_suspend_title"
+        }
+
+        return NSLocalizedString("self_suspend_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Settings
       ///
       /// Locales: en, ka, hy
@@ -3778,6 +3833,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_info_surname", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Suspend Duration
+      ///
+      /// Locales: en, ka, hy
+      static func suspend_duration(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("suspend_duration", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "suspend_duration"
+        }
+
+        return NSLocalizedString("suspend_duration", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Total Balance
@@ -4183,6 +4253,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("withdraw_amount_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: თუ გსურთ ანგარიშის ბლოკირებული ვადის გახანგრძლივება დაგვიკავშირდით ცხელ ხაზზე
+      ///
+      /// Locales: en, ka, hy
+      static func suspend_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("suspend_subtitle", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "suspend_subtitle"
+        }
+
+        return NSLocalizedString("suspend_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: ლიმიტი ერთ ბარათზე
@@ -4806,6 +4891,9 @@ struct _R: Rswift.Validatable {
       try smsLogin.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try selfSuspend.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try sports.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -5081,6 +5169,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.promotions().promotionsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'promotionsViewController' could not be loaded from storyboard 'Promotions' as 'PromotionsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct selfSuspend: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SelfSuspend"
+      let selfSuspendViewController = StoryboardViewControllerResource<SelfSuspendViewController>(identifier: "SelfSuspendViewController")
+
+      func selfSuspendViewController(_: Void = ()) -> SelfSuspendViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: selfSuspendViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.selfSuspend().selfSuspendViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selfSuspendViewController' could not be loaded from storyboard 'SelfSuspend' as 'SelfSuspendViewController'.") }
       }
 
       fileprivate init() {}

@@ -96,6 +96,12 @@
 "account_info_save_button_title" = "შენახვა";
 "account_info_status_button_title" = "დაბლოკვა";
 
+/* Self Suspend */
+"self_suspend_title" = "თავის დაბლოკვა";
+"suspend_duration" = "Suspend Duration";
+"block_accound" = "Block Account";
+"suspend_subtitle" = "თუ გსურთ ანგარიშის ბლოკირებული ვადის გახანგრძლივება დაგვიკავშირდით ცხელ ხაზზე";
+
 /* Deposit */
 "cashflow_done_button_title" = "Done";
 

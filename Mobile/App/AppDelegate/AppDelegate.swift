@@ -67,6 +67,7 @@ public extension DependencyContainer {
         Module { DefaultTransactionsViewModel() as TransactionsViewModel }
         Module { DefaultBiometricSettingsViewModel() as BiometricSettingsViewModel }
         Module { DefaultP2PTransferViewModel() as P2PTransferViewModel }
+        Module { DefaultSelfSuspendViewModel() as SelfSuspendViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -94,6 +95,7 @@ public extension DependencyContainer {
         Module { DefaultBiometricSettingsViewControllerFactory() as BiometricSettingsViewControllerFactory }
         Module { DefaultTransactionDetailsViewControllerFactory() as TransactionDetailsViewControllerFactory }
         Module { DefaultP2PTransferViewControllerFactory() as P2PTransferViewControllerFactory }
+        Module { DefaultSelfSuspendViewControllerFactory() as SelfSuspendViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {
