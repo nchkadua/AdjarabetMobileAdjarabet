@@ -58,7 +58,7 @@ public class PasswordChangeViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.mail_change_title.localized())
+        setTitle(title: R.string.localization.password_change_title.localized())
     }
 
     private func setupInputViews() {

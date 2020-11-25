@@ -52,7 +52,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
         let commission = ABConstant.countCommission(of: amount)
         let totalAmount = amount + commission
 
-        actionSubject.onNext(.updateCommission(String(commission)))
-        actionSubject.onNext(.updateTotalAmount(String(totalAmount)))
+        actionSubject.onNext(.updateCommission(String(commission.rounded(to: 2))))
+        actionSubject.onNext(.updateTotalAmount(String(totalAmount.rounded(to: 2))))
     }
 }

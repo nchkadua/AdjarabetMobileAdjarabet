@@ -35,20 +35,8 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udm-H0-KXK" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="62" width="374" height="54"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvc-w1-d3C">
-                                                                <rect key="frame" x="320" y="5" width="44" height="44"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="44" id="M8L-6p-9HR"/>
-                                                                    <constraint firstAttribute="width" constant="44" id="lhV-7C-yEc"/>
-                                                                </constraints>
-                                                                <state key="normal" image="Shared/dropDown"/>
-                                                            </button>
-                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="jvc-w1-d3C" secondAttribute="trailing" constant="10" id="4et-7b-2UD"/>
-                                                            <constraint firstItem="jvc-w1-d3C" firstAttribute="centerY" secondItem="udm-H0-KXK" secondAttribute="centerY" id="DHL-wU-vv4"/>
                                                             <constraint firstAttribute="height" constant="54" id="LtY-mK-gqL"/>
                                                         </constraints>
                                                     </view>
@@ -159,7 +147,6 @@
                         <outlet property="amountInputView" destination="9AA-Tt-N5N" id="dCA-Kt-bNd"/>
                         <outlet property="cardNumberInputView" destination="udm-H0-KXK" id="hKz-tM-Tx2"/>
                         <outlet property="commissionLabelComponentView" destination="mSw-WX-mag" id="qgz-fE-Q01"/>
-                        <outlet property="dropDownButton" destination="jvc-w1-d3C" id="zE5-x6-bbe"/>
                         <outlet property="proceedButton" destination="ASE-8U-U1l" id="xw3-OC-TDb"/>
                         <outlet property="titleLabelComponentView" destination="Awp-L8-QwH" id="Z5S-U5-cng"/>
                         <outlet property="totalAmountLabelComponentView" destination="zvF-lf-Tg9" id="qQt-cD-Bz8"/>
@@ -176,7 +163,6 @@
         </designable>
     </designables>
     <resources>
-        <image name="Shared/dropDown" width="12" height="8"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

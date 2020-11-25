@@ -5735,7 +5735,6 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/dropDown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/dropDown' is used in storyboard 'Withdraw', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.withdraw().withdrawViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'withdrawViewController' could not be loaded from storyboard 'Withdraw' as 'WithdrawViewController'.") }

@@ -94,6 +94,7 @@
 		CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C42254C057F002667D0 /* LabelComponentView.swift */; };
 		CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE660C46254C0587002667D0 /* LabelComponentView.xib */; };
 		CE660C52254C3162002667D0 /* DepositInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C51254C3162002667D0 /* DepositInstructionView.swift */; };
+		CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E294C256E8F1F001FE225 /* Double+Extension.swift */; };
 		CE95D00725542035007D2084 /* NotoSansArmenian-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00325542035007D2084 /* NotoSansArmenian-SemiBold.ttf */; };
 		CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00425542035007D2084 /* NotoSansArmenian-Regular.ttf */; };
 		CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00525542035007D2084 /* NotoSansArmenian-Medium.ttf */; };
@@ -480,6 +481,7 @@
 		CE660C42254C057F002667D0 /* LabelComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponentView.swift; sourceTree = "<group>"; };
 		CE660C46254C0587002667D0 /* LabelComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelComponentView.xib; sourceTree = "<group>"; };
 		CE660C51254C3162002667D0 /* DepositInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositInstructionView.swift; sourceTree = "<group>"; };
+		CE6E294C256E8F1F001FE225 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		CE95D00325542035007D2084 /* NotoSansArmenian-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-SemiBold.ttf"; sourceTree = "<group>"; };
 		CE95D00425542035007D2084 /* NotoSansArmenian-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-Regular.ttf"; sourceTree = "<group>"; };
 		CE95D00525542035007D2084 /* NotoSansArmenian-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-Medium.ttf"; sourceTree = "<group>"; };
@@ -2045,6 +2047,7 @@
 				D85094012482570200722040 /* UICollectionView+Extension.swift */,
 				CEF1D4F3251C9D7D008E3DE0 /* UITextView+Extension.swift */,
 				CEEBDFE4253095C1000C62D0 /* UINavigationBar+Extension.swift */,
+				CE6E294C256E8F1F001FE225 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2660,6 +2663,7 @@
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */,
+				CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
 				CEE537F3254ACA2200EDE6C0 /* CashFlowViewControllerFactory.swift in Sources */,

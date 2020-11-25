@@ -139,8 +139,7 @@ public class LoginViewController: ABViewController {
         passwordInputView.setLeftButtonImage(R.image.login.password() ?? UIImage(), for: .normal)
         passwordInputView.becomeSecureTextEntry()
 
-        passwordInputView.rightComponent.isHidden = false
-        passwordInputView.rightComponent.setImage(R.image.shared.hideText(), for: .normal)
+        passwordInputView.setRightButtonImage(R.image.shared.hideText() ?? UIImage(), for: .normal)
 
         separatorView.setBackgorundColor(to: .primaryText(alpha: 0.15))
 

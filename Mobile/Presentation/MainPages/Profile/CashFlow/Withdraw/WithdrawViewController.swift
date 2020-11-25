@@ -19,7 +19,6 @@ public class WithdrawViewController: ABViewController {
     @IBOutlet private weak var commissionLabelComponentView: LabelComponentView!
     @IBOutlet private weak var totalAmountLabelComponentView: LabelComponentView!
     @IBOutlet private weak var proceedButton: ABButton!
-    @IBOutlet private weak var dropDownButton: UIButton!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -89,8 +88,6 @@ public class WithdrawViewController: ABViewController {
         proceedButton.setTitleWithoutAnimation(R.string.localization.withdraw_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
         updateProceedButton(isEnabled: false)
-
-        dropDownButton.setTintColor(to: .secondaryText())
 
         Observable.combineLatest([cardNumberInputView.rx.text.orEmpty, amountInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }

@@ -55,6 +55,27 @@ class QuickActionComponentView: UIView {
 
         bgView.roundCorners(roundedCorners, radius: 10)
     }
+    
+    // MARK: Touch events
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        bgView.backgroundColor = DesignSystem.Color.querternaryBg().value
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        bgView.backgroundColor = DesignSystem.Color.tertiaryBg().value
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        bgView.backgroundColor = DesignSystem.Color.tertiaryBg().value
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        bgView.backgroundColor = DesignSystem.Color.tertiaryBg().value
+    }
 }
 
 extension QuickActionComponentView: Xibable {

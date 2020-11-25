@@ -14,7 +14,7 @@ public class QuickActionTableViewCell: AppTableViewCell {
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? QuickActionTableViewCellDataProvider else { fatalError("error") }
-
+            
             quickActionComponentView.setAndBind(viewModel: dataProvider)
         }
     }

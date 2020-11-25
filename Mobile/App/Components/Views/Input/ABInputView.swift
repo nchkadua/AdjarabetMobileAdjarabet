@@ -42,6 +42,9 @@ public class ABInputView: UIView {
     public var leftComponent: UIButton { leftButton }
     public var rightComponent: UIButton { rightButton }
 
+    private var defaultBackgroundColor: DesignSystem.Color = DesignSystem.Input.backgroundColor
+    private var hasDropdownImage = false
+
     /// PickerView
     private var pickerView = UIPickerView()
     private var dataSourceItems = [String]()
@@ -100,11 +103,11 @@ public class ABInputView: UIView {
             placeholderLabelCenterYConstraint.isActive  = isCenter
             textFieldCenterYConstraint.isActive         = isCenter
             textFieldBottomConstraint.isActive          = !textFieldCenterYConstraint.isActive
-
-            wrapperView.setBorderColor(
-                to: textField.isFirstResponder ? DesignSystem.Input.borderColor : DesignSystem.Color.secondaryBg(),
-                animationDuration: animate ? 0.2 : 0)
             view.layoutIfNeeded()
+
+            if hasDropdownImage {
+                textField.isFirstResponder ? rotateUp() : rotateDown()
+            }
         }
 
         if !animate {
@@ -130,6 +133,7 @@ public class ABInputView: UIView {
     }
 
     public func setupWith(backgroundColor color: DesignSystem.Color = DesignSystem.Input.backgroundColor, borderWidth width: CGFloat = DesignSystem.Input.borderWidth) {
+        defaultBackgroundColor = color
         setupWrapperView(backgroundColor: color, borderWidth: width)
     }
 
@@ -137,6 +141,22 @@ public class ABInputView: UIView {
         leftComponent.setImage(image, for: controlState)
         leftComponent.setTintColor(to: tintColor)
         leftComponent.superview?.isHidden = false
+    }
+
+    public func setRightButtonImage(_ image: UIImage, for controlState: UIControl.State, tintColor: DesignSystem.Color = .primaryText()) {
+        rightComponent.setImage(image, for: controlState)
+        rightComponent.setTintColor(to: tintColor)
+        rightComponent.superview?.isHidden = false
+
+        hasDropdownImage = false
+    }
+
+    private func setDropdownImage(tintColor: DesignSystem.Color = .primaryText()) {
+        rightComponent.setImage(R.image.shared.dropDown(), for: .normal)
+        rightComponent.setTintColor(to: tintColor)
+        rightComponent.superview?.isHidden = false
+
+        hasDropdownImage = true
     }
 
     // MARK: Private Methods
@@ -149,6 +169,7 @@ public class ABInputView: UIView {
     }
 
     private func setupWrapperView(backgroundColor: DesignSystem.Color = DesignSystem.Input.backgroundColor, borderWidth: CGFloat = DesignSystem.Input.borderWidth) {
+        defaultBackgroundColor = backgroundColor
         wrapperView.setBackgorundColor(to: backgroundColor)
         wrapperView.borderWidth = borderWidth
         wrapperView.cornerRadius = DesignSystem.Input.cornerRadius
@@ -174,14 +195,24 @@ public class ABInputView: UIView {
         textField.setTextColor(to: DesignSystem.Input.textFieldTextColor)
         textField.setTintColor(to: DesignSystem.Input.tintColor)
         textField.keyboardAppearance = .dark
+        textField.delegate = self
 
         textFieldHeightConstraint.constant = size.textFieldHeight
         textFieldBottomConstraint.constant = textFieldBottomInset
+
+        addToolBar()
 
         textField.rx.controlEvent([.editingDidBegin, .editingDidEnd]).subscribe(onNext: { [weak self] in
             self?.configurePosition(animated: true)
         })
         .disposed(by: disposeBag)
+    }
+
+    private func formatText() {
+        guard mainTextField.keyboardType == .decimalPad else { return }
+
+        let finalString = Double(mainTextField.text ?? "0.0")?.formattedBalance
+        mainTextField.text = finalString
     }
 
     private func setupValidationResultLabel() {
@@ -197,7 +228,7 @@ public class ABInputView: UIView {
 
     private func setupRightButton() {
         rightButton.backgroundColor = nil
-        rightButton.superview?.isHidden = false
+        rightButton.superview?.isHidden = true
     }
 }
 
@@ -237,6 +268,7 @@ extension ABInputView {
         pickerView.delegate = self
         pickerView.dataSource = self
 
+        setDropdownImage()
         setTextAndConfigure(text: dataSourceItems.first)
     }
 
@@ -249,13 +281,23 @@ extension ABInputView {
         toolBar.tintColor = DesignSystem.Color.primaryText().value
         toolBar.barTintColor = DesignSystem.Color.secondaryBg().value
         let doneButton = UIBarButtonItem(title: R.string.localization.cashflow_done_button_title(), style: UIBarButtonItem.Style.done, target: self, action: #selector(doneDidTap))
-        toolBar.setItems([doneButton], animated: false)
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
 
         mainTextField.inputAccessoryView = toolBar
     }
 
     @objc private func doneDidTap() {
         mainTextField.resignFirstResponder()
+    }
+
+    func rotateUp() {
+        rightButton.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+    }
+
+    func rotateDown() {
+        rightButton.imageView?.transform = CGAffineTransform(rotationAngle: 0)
     }
 }
 
@@ -276,5 +318,24 @@ extension ABInputView: UIPickerViewDataSource {
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         dataSourceItems[row]
+    }
+}
+
+extension ABInputView: UITextFieldDelegate {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard defaultBackgroundColor != DesignSystem.Input.backgroundColor else { return }
+        wrapperView.setBackgorundColor(to: .primaryFill())
+    }
+
+    public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        guard defaultBackgroundColor != DesignSystem.Input.backgroundColor else { return true }
+        wrapperView.setBackgorundColor(to: defaultBackgroundColor)
+
+        return true
+    }
+
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        guard defaultBackgroundColor != DesignSystem.Input.backgroundColor else { return }
+        formatText()
     }
 }
