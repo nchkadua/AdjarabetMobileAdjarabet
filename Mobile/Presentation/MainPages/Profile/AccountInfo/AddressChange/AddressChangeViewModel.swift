@@ -34,7 +34,7 @@ public class DefaultAddressChangeViewModel {
 extension DefaultAddressChangeViewModel: AddressChangeViewModel {
     public var action: Observable<AddressChangeViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<AddressChangeViewModelRoute> { routeSubject.asObserver() }
-    
+
     public func viewDidLoad() {
     }
 }

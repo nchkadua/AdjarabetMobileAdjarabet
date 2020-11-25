@@ -70,6 +70,7 @@ public extension DependencyContainer {
         Module { DefaultSelfSuspendViewModel() as SelfSuspendViewModel }
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
+        Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -100,6 +101,7 @@ public extension DependencyContainer {
         Module { DefaultSelfSuspendViewControllerFactory() as SelfSuspendViewControllerFactory }
         Module { DefaultMailChangeViewControllerFactory() as MailChangeViewControllerFactory }
         Module { DefaultAddressChangeViewControllerFactory() as AddressChangeViewControllerFactory }
+        Module { DefaultPasswordChangeViewControllerFactory() as PasswordChangeViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

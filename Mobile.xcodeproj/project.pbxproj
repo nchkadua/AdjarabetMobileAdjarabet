@@ -146,6 +146,13 @@
 		CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */; };
 		CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F48256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift */; };
 		CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */; };
+		CECF7F6F256D9F99001C0E50 /* PasswordChangeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F6C256D9F99001C0E50 /* PasswordChangeNavigator.swift */; };
+		CECF7F70256D9F99001C0E50 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F6D256D9F99001C0E50 /* PasswordChangeViewController.swift */; };
+		CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F6E256D9F99001C0E50 /* PasswordChangeViewModel.swift */; };
+		CECF7F77256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F76256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift */; };
+		CECF7F7B256D9FAB001C0E50 /* PasswordChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */; };
+		CECF7F80256DAD9E001C0E50 /* PasswordChangeRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F7F256DAD9E001C0E50 /* PasswordChangeRulesView.swift */; };
+		CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */; };
 		CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E09F254869F200949417 /* AppSessionProvider.swift */; };
 		CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3925349C330033BF93 /* NotificationComponentView.swift */; };
 		CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */; };
@@ -525,6 +532,13 @@
 		CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewModel.swift; sourceTree = "<group>"; };
 		CECF7F48256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewControllerFactory.swift; sourceTree = "<group>"; };
 		CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressChange.storyboard; sourceTree = "<group>"; };
+		CECF7F6C256D9F99001C0E50 /* PasswordChangeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeNavigator.swift; sourceTree = "<group>"; };
+		CECF7F6D256D9F99001C0E50 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
+		CECF7F6E256D9F99001C0E50 /* PasswordChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewModel.swift; sourceTree = "<group>"; };
+		CECF7F76256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewControllerFactory.swift; sourceTree = "<group>"; };
+		CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordChange.storyboard; sourceTree = "<group>"; };
+		CECF7F7F256DAD9E001C0E50 /* PasswordChangeRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeRulesView.swift; sourceTree = "<group>"; };
+		CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordChangeRulesView.xib; sourceTree = "<group>"; };
 		CEE0E09F254869F200949417 /* AppSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionProvider.swift; sourceTree = "<group>"; };
 		CEE15C3925349C330033BF93 /* NotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentView.swift; sourceTree = "<group>"; };
 		CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentViewModel.swift; sourceTree = "<group>"; };
@@ -1183,6 +1197,7 @@
 		CEA2876D2540C06800E6590C /* AccountInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CECF7F6B256D9F86001C0E50 /* PasswordChange */,
 				CECF7F3F256D5A68001C0E50 /* AddressChange */,
 				CEA7778D256D41F7008A4F6C /* MailChange */,
 				CEB285B8256D20A400584A65 /* SelfSuspend */,
@@ -1279,6 +1294,28 @@
 				CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */,
 			);
 			path = AddressChange;
+			sourceTree = "<group>";
+		};
+		CECF7F6B256D9F86001C0E50 /* PasswordChange */ = {
+			isa = PBXGroup;
+			children = (
+				CECF7F7E256DAD17001C0E50 /* Rules */,
+				CECF7F76256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift */,
+				CECF7F6C256D9F99001C0E50 /* PasswordChangeNavigator.swift */,
+				CECF7F6D256D9F99001C0E50 /* PasswordChangeViewController.swift */,
+				CECF7F6E256D9F99001C0E50 /* PasswordChangeViewModel.swift */,
+				CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */,
+			);
+			path = PasswordChange;
+			sourceTree = "<group>";
+		};
+		CECF7F7E256DAD17001C0E50 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				CECF7F7F256DAD9E001C0E50 /* PasswordChangeRulesView.swift */,
+				CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */,
+			);
+			path = Rules;
 			sourceTree = "<group>";
 		};
 		CEE15C3825349C130033BF93 /* NotificationComponentView */ = {
@@ -2257,6 +2294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
+				CECF7F7B256D9FAB001C0E50 /* PasswordChange.storyboard in Resources */,
 				D807848C2444727600003892 /* FiraGO-Bold.ttf in Resources */,
 				D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */,
 				C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */,
@@ -2278,6 +2316,7 @@
 				CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
+				CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */,
 				CE95D00A25542035007D2084 /* NotoSansArmenian-Bold.ttf in Resources */,
 				CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */,
 				D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */,
@@ -2638,6 +2677,8 @@
 				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
 				D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				7644B60D2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift in Sources */,
+				CECF7F70256D9F99001C0E50 /* PasswordChangeViewController.swift in Sources */,
+				CECF7F77256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
 				7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */,
 				D850940E24839A4A00722040 /* PageDescription.swift in Sources */,
@@ -2684,6 +2725,7 @@
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				CECCE3CE254F0A43005CC660 /* Payments.swift in Sources */,
 				D8442AA22469716600F32676 /* ABInputView.swift in Sources */,
+				CECF7F80256DAD9E001C0E50 /* PasswordChangeRulesView.swift in Sources */,
 				C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */,
 				CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */,
 				D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */,
@@ -2714,6 +2756,7 @@
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */,
 				CE169359254181100043B1A4 /* UserInfo.swift in Sources */,
+				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */,
@@ -2731,6 +2774,7 @@
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				CE55ED55252B3881003E168F /* ProfileInfoComponentView.swift in Sources */,
 				CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */,
+				CECF7F6F256D9F99001C0E50 /* PasswordChangeNavigator.swift in Sources */,
 				C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,

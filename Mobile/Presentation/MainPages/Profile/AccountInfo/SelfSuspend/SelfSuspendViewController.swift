@@ -26,12 +26,12 @@ public class SelfSuspendViewController: ABViewController {
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
-    
+
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         durationsInputView.mainTextField.becomeFirstResponder()
     }
-    
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: SelfSuspendViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in

@@ -164,7 +164,7 @@ public class AccountInfoViewController: ABViewController {
     }
 
     @objc private func editPasswordAction() {
-        showAlert(title: "Edit Password")
+        navigator.navigate(to: .passwordChange, animated: true)
     }
 
     @objc private func editMailAction() {

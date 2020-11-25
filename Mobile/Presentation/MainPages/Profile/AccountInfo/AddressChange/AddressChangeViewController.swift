@@ -16,7 +16,7 @@ public class AddressChangeViewController: ABViewController {
     @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var addressInputView: ABInputView!
     @IBOutlet private weak var approveButton: ABButton!
-    
+
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ public class AddressChangeViewController: ABViewController {
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
-    
+
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addressInputView.mainTextField.becomeFirstResponder()
@@ -40,36 +40,36 @@ public class AddressChangeViewController: ABViewController {
 
     private func didRecive(action: AddressChangeViewModelOutputAction) {
     }
-    
+
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupKeyboard()
         setupInputView()
-        setupButtons()
+        setupApproveButton()
         setupLabel()
     }
-    
+
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.address_change_title.localized())
     }
-    
+
     private func setupInputView() {
         addressInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         addressInputView.setPlaceholder(text: R.string.localization.new_address_placeholder.localized())
     }
-    
-    private func setupButtons() {
+
+    private func setupApproveButton() {
         approveButton.setStyle(to: .tertiary(state: .acvite, size: .large))
         approveButton.setTitleWithoutAnimation(R.string.localization.approve_address_button_title.localized(), for: .normal)
         approveButton.addTarget(self, action: #selector(approveDidTap), for: .touchUpInside)
     }
-    
+
     @objc private func approveDidTap() {
         closeKeyboard()
     }
-    
+
     private func setupLabel() {
         subtitleLabel.setFont(to: .caption2(fontCase: .lower))
         subtitleLabel.setTextColor(to: .primaryText())

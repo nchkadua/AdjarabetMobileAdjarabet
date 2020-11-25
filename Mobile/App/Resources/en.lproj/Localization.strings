@@ -114,6 +114,16 @@
 "new_address_placeholder" = "Enter New Address";
 "approve_address_button_title" = "Approve";
 
+/* Password Change */
+"password_change_title" = "Change Password";
+"old_password" = "Old Password";
+"new_password" = "New Password";
+"repeat_password" = "Repeat New Password";
+"update_password_button_title" = "Update Password";
+"rule1" = "გამოიყენეთ მთავრული სიმბოლოები";
+"rule2" = "გამოიყენეთ ერთი ან მეტი (e.g @$&!)";
+"rule3" = "მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო";
+
 /* Deposit */
 "cashflow_done_button_title" = "Done";
 

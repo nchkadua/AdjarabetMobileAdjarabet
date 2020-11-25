@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 21 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 22 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
@@ -118,6 +118,8 @@ struct R: Rswift.Validatable {
     static let notifications = _R.storyboard.notifications()
     /// Storyboard `P2PTransferView`.
     static let p2PTransferView = _R.storyboard.p2PTransferView()
+    /// Storyboard `PasswordChange`.
+    static let passwordChange = _R.storyboard.passwordChange()
     /// Storyboard `Profile`.
     static let profile = _R.storyboard.profile()
     /// Storyboard `Promotions`.
@@ -223,6 +225,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "P2PTransferView", bundle: ...)`
     static func p2PTransferView(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.p2PTransferView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PasswordChange", bundle: ...)`
+    static func passwordChange(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.passwordChange)
     }
     #endif
 
@@ -1229,8 +1238,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
+    /// Image `edit`.
+    static let edit = Rswift.ImageResource(bundle: R.hostingBundle, name: "edit")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "edit", bundle: ..., traitCollection: ...)`
+    static func edit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.edit, compatibleWith: traitCollection)
+    }
+    #endif
+
     /// This `R.image.biometric` struct is generated, and contains static references to 3 images.
     struct biometric {
       /// Image `TouchID`.
@@ -1266,15 +1285,24 @@ struct R: Rswift.Validatable {
 
     /// This `R.image.components` struct is generated, and contains static references to 0 images.
     struct components {
-      /// This `R.image.components.accountInfo` struct is generated, and contains static references to 1 images.
+      /// This `R.image.components.accountInfo` struct is generated, and contains static references to 2 images.
       struct accountInfo {
         /// Image `edit`.
         static let edit = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/AccountInfo/edit")
+        /// Image `oval`.
+        static let oval = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/AccountInfo/oval")
 
         #if os(iOS) || os(tvOS)
         /// `UIImage(named: "edit", bundle: ..., traitCollection: ...)`
         static func edit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
           return UIKit.UIImage(resource: R.image.components.accountInfo.edit, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "oval", bundle: ..., traitCollection: ...)`
+        static func oval(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.accountInfo.oval, compatibleWith: traitCollection)
         }
         #endif
 
@@ -1896,7 +1924,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 37 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 38 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -1932,6 +1960,8 @@ struct R: Rswift.Validatable {
     static let notificationsHeaderCell = _R.nib._NotificationsHeaderCell()
     /// Nib `NotificationsHeaderComponentView`.
     static let notificationsHeaderComponentView = _R.nib._NotificationsHeaderComponentView()
+    /// Nib `PasswordChangeRulesView`.
+    static let passwordChangeRulesView = _R.nib._PasswordChangeRulesView()
     /// Nib `PlayedGameLauncherCollectionViewCell`.
     static let playedGameLauncherCollectionViewCell = _R.nib._PlayedGameLauncherCollectionViewCell()
     /// Nib `PlayedGameLauncherComponentView`.
@@ -2106,6 +2136,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.notificationsHeaderComponentView) instead")
     static func notificationsHeaderComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.notificationsHeaderComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PasswordChangeRulesView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.passwordChangeRulesView) instead")
+    static func passwordChangeRulesView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.passwordChangeRulesView)
     }
     #endif
 
@@ -2337,6 +2375,10 @@ struct R: Rswift.Validatable {
       return R.nib.notificationsHeaderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func passwordChangeRulesView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.passwordChangeRulesView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func playedGameLauncherCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlayedGameLauncherCollectionViewCell? {
       return R.nib.playedGameLauncherCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlayedGameLauncherCollectionViewCell
     }
@@ -2422,7 +2464,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 110 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 118 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2488,6 +2530,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let mail_change_title = Rswift.StringResource(key: "mail_change_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Change Password
+      ///
+      /// Locales: en, ka, hy
+      static let password_change_title = Rswift.StringResource(key: "password_change_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Code is sent to yout number
       ///
       /// Locales: en, ka, hy
@@ -2608,6 +2654,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_name = Rswift.StringResource(key: "account_info_name", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: New Password
+      ///
+      /// Locales: en, ka, hy
+      static let new_password = Rswift.StringResource(key: "new_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Not a member?
       ///
       /// Locales: en, ka, hy
@@ -2616,6 +2666,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let notifications_page_title = Rswift.StringResource(key: "notifications_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Old Password
+      ///
+      /// Locales: en, ka, hy
+      static let old_password = Rswift.StringResource(key: "old_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia
       ///
       /// Locales: en, ka, hy
@@ -2672,6 +2726,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let recently_played = Rswift.StringResource(key: "recently_played", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Repeat New Password
+      ///
+      /// Locales: en, ka, hy
+      static let repeat_password = Rswift.StringResource(key: "repeat_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Resend SMS
       ///
       /// Locales: en, ka, hy
@@ -2744,6 +2802,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let transfer_to_a_friend = Rswift.StringResource(key: "transfer_to_a_friend", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Update Password
+      ///
+      /// Locales: en, ka, hy
+      static let update_password_button_title = Rswift.StringResource(key: "update_password_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: User ID
       ///
       /// Locales: en, ka, hy
@@ -2808,6 +2870,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let withdraw_rule2 = Rswift.StringResource(key: "withdraw_rule2", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გამოიყენეთ ერთი ან მეტი (e.g @$&!)
+      ///
+      /// Locales: en, ka, hy
+      static let rule2 = Rswift.StringResource(key: "rule2", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გამოიყენეთ მთავრული სიმბოლოები
+      ///
+      /// Locales: en, ka, hy
+      static let rule1 = Rswift.StringResource(key: "rule1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: გატანის ინსტრუქცია
       ///
       /// Locales: en, ka, hy
@@ -2848,6 +2918,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let deposit_description_title = Rswift.StringResource(key: "deposit_description_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო
+      ///
+      /// Locales: en, ka, hy
+      static let rule3 = Rswift.StringResource(key: "rule3", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: მონიშნე სასურველი დამახსოვრებული ბარათი
       ///
       /// Locales: en, ka, hy
@@ -3103,6 +3177,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("mail_change_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change Password
+      ///
+      /// Locales: en, ka, hy
+      static func password_change_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("password_change_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "password_change_title"
+        }
+
+        return NSLocalizedString("password_change_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Code is sent to yout number
@@ -3555,6 +3644,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_name", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: New Password
+      ///
+      /// Locales: en, ka, hy
+      static func new_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("new_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "new_password"
+        }
+
+        return NSLocalizedString("new_password", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Not a member?
       ///
       /// Locales: en, ka, hy
@@ -3583,6 +3687,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("notifications_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Old Password
+      ///
+      /// Locales: en, ka, hy
+      static func old_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("old_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "old_password"
+        }
+
+        return NSLocalizedString("old_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia
@@ -3793,6 +3912,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("recently_played", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Repeat New Password
+      ///
+      /// Locales: en, ka, hy
+      static func repeat_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("repeat_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "repeat_password"
+        }
+
+        return NSLocalizedString("repeat_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Resend SMS
@@ -4065,6 +4199,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("transfer_to_a_friend", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Update Password
+      ///
+      /// Locales: en, ka, hy
+      static func update_password_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("update_password_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "update_password_button_title"
+        }
+
+        return NSLocalizedString("update_password_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: User ID
       ///
       /// Locales: en, ka, hy
@@ -4305,6 +4454,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("withdraw_rule2", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: გამოიყენეთ ერთი ან მეტი (e.g @$&!)
+      ///
+      /// Locales: en, ka, hy
+      static func rule2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("rule2", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "rule2"
+        }
+
+        return NSLocalizedString("rule2", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: გამოიყენეთ მთავრული სიმბოლოები
+      ///
+      /// Locales: en, ka, hy
+      static func rule1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("rule1", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "rule1"
+        }
+
+        return NSLocalizedString("rule1", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: გატანის ინსტრუქცია
       ///
       /// Locales: en, ka, hy
@@ -4453,6 +4632,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deposit_description_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო
+      ///
+      /// Locales: en, ka, hy
+      static func rule3(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("rule3", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "rule3"
+        }
+
+        return NSLocalizedString("rule3", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: მონიშნე სასურველი დამახსოვრებული ბარათი
@@ -4771,6 +4965,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _PasswordChangeRulesView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PasswordChangeRulesView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _PlayedGameLauncherCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "PlayedGameLauncherCollectionViewCell"
@@ -5056,6 +5261,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try p2PTransferView.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try passwordChange.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try profile.validate()
@@ -5345,6 +5553,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.p2PTransferView().p2PTransferViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'p2PTransferViewController' could not be loaded from storyboard 'P2PTransferView' as 'P2PTransferViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct passwordChange: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PasswordChange"
+      let passwordChangeViewController = StoryboardViewControllerResource<PasswordChangeViewController>(identifier: "PasswordChangeViewController")
+
+      func passwordChangeViewController(_: Void = ()) -> PasswordChangeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: passwordChangeViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.passwordChange().passwordChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'passwordChangeViewController' could not be loaded from storyboard 'PasswordChange' as 'PasswordChangeViewController'.") }
       }
 
       fileprivate init() {}

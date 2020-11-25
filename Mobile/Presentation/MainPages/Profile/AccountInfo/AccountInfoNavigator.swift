@@ -11,6 +11,7 @@ public class AccountInfoNavigator: Navigator {
     @Inject(from: .factories) public var selfSuspendViewControllerFactory: SelfSuspendViewControllerFactory
     @Inject(from: .factories) public var mailChangeViewControllerFactory: MailChangeViewControllerFactory
     @Inject(from: .factories) public var addressChangeViewControllerFactory: AddressChangeViewControllerFactory
+    @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -29,6 +30,7 @@ public class AccountInfoNavigator: Navigator {
         case .selfSuspend: navigateToSelfSuspend(animate: animate)
         case .mailChange: navigateToMailChange(animate: animate)
         case .addressChange: navigateToAddressChange(animate: animate)
+        case .passwordChange: navigateToPasswordChange(animate: animate)
         default:
             break
         }
@@ -47,9 +49,16 @@ public class AccountInfoNavigator: Navigator {
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
-    
+
     private func navigateToAddressChange(animate: Bool) {
         let vc = addressChangeViewControllerFactory.make()
+        let navC = vc.wrapInNavWith(presentationStyle: .automatic)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+    }
+
+    private func navigateToPasswordChange(animate: Bool) {
+        let vc = passwordChangeViewControllerFactory.make()
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)

@@ -26,7 +26,7 @@ public class MailChangeViewController: ABViewController {
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
-    
+
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         mailInputView.mainTextField.becomeFirstResponder()
@@ -47,7 +47,8 @@ public class MailChangeViewController: ABViewController {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupKeyboard()
-        setupInputView()
+        setupInputViews()
+        setupInputViewsObservation()
         setupButtons()
         setupLabel()
     }
@@ -56,7 +57,8 @@ public class MailChangeViewController: ABViewController {
         setTitle(title: R.string.localization.mail_change_title.localized())
     }
 
-    private func setupInputView() {
+    private func setupInputViews() {
+        mailInputView.mainTextField.keyboardType = .emailAddress
         mailInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         mailInputView.setPlaceholder(text: R.string.localization.new_mail_title.localized())
 
@@ -71,6 +73,13 @@ public class MailChangeViewController: ABViewController {
         passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updatePasswordRightButton()
         }).disposed(by: disposeBag)
+    }
+
+    private func setupInputViewsObservation() {
+        startObservingInputViewsReturn { [weak self] in
+            guard self?.changeButton.isUserInteractionEnabled == true else {return}
+            self?.changeMailDidTap()
+        }
     }
 
     private func updatePasswordRightButton() {
@@ -96,4 +105,8 @@ public class MailChangeViewController: ABViewController {
         titleLabel.setTextColor(to: .secondaryText())
         titleLabel.text = "\("•")   \(R.string.localization.approve_password.localized())"
     }
+}
+
+extension MailChangeViewController: InputViewsProviding {
+    public var inputViews: [ABInputView] { [mailInputView, passwordInputView] }
 }
