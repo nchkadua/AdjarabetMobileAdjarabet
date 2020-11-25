@@ -18,10 +18,10 @@ class PasswordChangeRulesView: UIView {
 
     // MARK: Variables
     private static let animationTime = 0.15
-    private static let SPECIAL_REGEX = ".*[!&^%$#@()/]+.*"
-    private static let CAPITAL_LETTER_REGEX = ".*[A-Z]+.*"
-    private static let password_minimum_count = 6
-    private static let password_maximum_count = 30
+    private static let specialRegex = ".*[!&^%$#@()/]+.*"
+    private static let capitalLetterRegex = ".*[A-Z]+.*"
+    private static let passwordMinimumCount = 6
+    private static let passwordMaximumCount = 30
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,7 +86,7 @@ class PasswordChangeRulesView: UIView {
 
     // MARK: Validation methods
     private func containsUppercase(password: String) -> Bool {
-        let capitalLetterRegEx = PasswordChangeRulesView.CAPITAL_LETTER_REGEX
+        let capitalLetterRegEx = PasswordChangeRulesView.capitalLetterRegex
         let text = NSPredicate(format: "SELF MATCHES %@", capitalLetterRegEx)
         let capitalresult = text.evaluate(with: password)
 
@@ -94,7 +94,7 @@ class PasswordChangeRulesView: UIView {
     }
 
     private func containsSpecialSymbol(password: String) -> Bool {
-        let specialCharacterRegEx = PasswordChangeRulesView.SPECIAL_REGEX
+        let specialCharacterRegEx = PasswordChangeRulesView.specialRegex
         let text = NSPredicate(format: "SELF MATCHES %@", specialCharacterRegEx)
         let specialresult = text.evaluate(with: password)
 
@@ -102,7 +102,7 @@ class PasswordChangeRulesView: UIView {
     }
 
     private func hasValidRange(password: String) -> Bool {
-        password.count >= PasswordChangeRulesView.password_minimum_count && password.count <= PasswordChangeRulesView.password_maximum_count ? true : false
+        password.count >= PasswordChangeRulesView.passwordMinimumCount && password.count <= PasswordChangeRulesView.passwordMaximumCount ? true : false
     }
 }
 
