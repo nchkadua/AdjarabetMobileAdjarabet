@@ -21,7 +21,7 @@ public class P2PTransferViewController: ABViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var statusIconImageView: UIImageView!
     @IBOutlet private weak var personNameLabel: UILabel!
-    private var confirmButton = ABButton()
+    private let confirmButton = ABButton()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -98,11 +98,17 @@ public class P2PTransferViewController: ABViewController {
 
     private func setupLabelViews() {
         commissionAmountLabelView.set(backgroundColor: .systemGrey5())
-        commissionAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_transaction_commission.localized(), value: "0.0 ₾"))
+        commissionAmountLabelView.titleLabelComponent.setFont(to: .footnote(fontCase: .lower))
+        commissionAmountLabelView.valueLabelComponent.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
 
         labelViewSeparator.setBackgorundColor(to: .nonOpaque())
 
         totalAmountLabelView.set(backgroundColor: .systemGrey5())
+        totalAmountLabelView.titleLabelComponent.setFont(to: .footnote(fontCase: .lower))
+        totalAmountLabelView.valueLabelComponent.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
+
+        // setup initial values
+        commissionAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_transaction_commission.localized(), value: "0.0 ₾"))
         totalAmountLabelView.set(label: .init(title: R.string.localization.p2p_transfer_total_amount.localized(), value: "0.0 ₾"))
     }
 
@@ -111,7 +117,7 @@ public class P2PTransferViewController: ABViewController {
         descriptionLabel.setTextColor(to: .primaryText())
         descriptionLabel.text = R.string.localization.p2p_transfer_you_are_transfering_to.localized()
 
-        personNameLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .bold))
+        personNameLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .medium))
         personNameLabel.setTextColor(to: .primaryText())
 
         // delete me later
