@@ -15,15 +15,12 @@ public class CoreApiUserProfileRepository {
 }
 
 extension CoreApiUserProfileRepository: UserProfileRepository {
-    public func currentUserInfo<T>(
-        params: CurrentUserInfoParams,
-        completion: @escaping (Result<T, Error>) -> Void
-    ) -> Cancellable? where T: HeaderProvidingCodableType {
+    public func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler) {
         guard let sessionId = userSession.sessionId,
               let userId = userSession.userId
         else {
             // TODO: completion(.failure("no session id or user id found"))
-            return nil
+            return
         }
 
         let request = requestBuilder
@@ -32,6 +29,7 @@ extension CoreApiUserProfileRepository: UserProfileRepository {
             .set(userId: userId)
             .build()
 
-        return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
+        dataTransferService.performTask(expecting: UserInfoDataTransferResponse.self,
+                                        request: request, respondOnQueue: .main, completion: completion)
     }
 }

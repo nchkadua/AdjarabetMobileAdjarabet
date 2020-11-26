@@ -1,0 +1,26 @@
+//
+//  UserInfoDataTransferResponse.swift
+//  Mobile
+//
+//  Created by Giorgi Kratsashvili on 11/27/20.
+//  Copyright © 2020 Adjarabet. All rights reserved.
+//
+
+import Foundation
+
+class UserInfoDataTransferResponse: DataTransferResponse {
+    /*
+    struct Header: HeaderProtocol {
+        public init(headers: [AnyHashable: Any]?) throws {
+            ...
+        }
+    }
+    */
+    struct Body: Codable { }
+
+    typealias Entity = UserInfoEntity
+
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
+        UserInfoEntity()
+    }
+}

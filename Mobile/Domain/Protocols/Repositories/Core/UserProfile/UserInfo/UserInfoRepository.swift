@@ -17,11 +17,8 @@ public protocol UserInfoReadableRepository {
     /**
      Returns information about current loged user
      */
-    @discardableResult
-    func currentUserInfo<T: HeaderProvidingCodableType>(
-        params: CurrentUserInfoParams,
-        completion: @escaping (Result<T, Error>) -> Void
-    ) -> Cancellable?
+    typealias CurrentUserInfoHandler = (Result<UserInfoEntity, Error>) -> Void
+    func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler)
 }
 
 // for currentUserInfo
