@@ -87,15 +87,15 @@ public class DepositViewController: ABViewController {
     }
 
     private func setupInputViews() {
-        paymentMethodInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
+        paymentMethodInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         paymentMethodInputView.setPlaceholder(text: R.string.localization.deposit_payment_method_title())
 
-        amountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
+        amountInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.deposit_amount_title())
         amountInputView.formatter = AmountFormatter()
 
-        cardNumberInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
+        cardNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         cardNumberInputView.setPlaceholder(text: R.string.localization.deposit_card_title())
     }
 

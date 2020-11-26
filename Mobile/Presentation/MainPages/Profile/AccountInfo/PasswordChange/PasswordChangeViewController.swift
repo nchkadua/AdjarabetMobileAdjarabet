@@ -76,8 +76,7 @@ public class PasswordChangeViewController: ABViewController {
         inputView.setPlaceholder(text: placeholder)
         inputView.setSize(to: .large)
         inputView.becomeSecureTextEntry()
-        inputView.rightComponent.isHidden = false
-        inputView.rightComponent.setImage(R.image.shared.hideText(), for: .normal)
+        inputView.setRightButtonImage(R.image.shared.hideText() ?? UIImage(), for: .normal)
 
         inputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updateRightButton(of: inputView)
