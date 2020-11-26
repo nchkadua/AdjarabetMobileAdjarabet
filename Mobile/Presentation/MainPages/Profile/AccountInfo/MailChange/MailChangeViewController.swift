@@ -67,8 +67,7 @@ public class MailChangeViewController: ABViewController {
         passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
         passwordInputView.setSize(to: .large)
         passwordInputView.becomeSecureTextEntry()
-        passwordInputView.rightComponent.isHidden = false
-        passwordInputView.rightComponent.setImage(R.image.shared.hideText(), for: .normal)
+        passwordInputView.setRightButtonImage(R.image.shared.hideText() ?? UIImage(), for: .normal)
 
         passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updatePasswordRightButton()

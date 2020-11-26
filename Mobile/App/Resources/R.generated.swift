@@ -1924,7 +1924,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 38 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 39 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -1986,6 +1986,8 @@ struct R: Rswift.Validatable {
     static let recentlyPlayedCollectionViewCell = _R.nib._RecentlyPlayedCollectionViewCell()
     /// Nib `RecentlyPlayedComponentView`.
     static let recentlyPlayedComponentView = _R.nib._RecentlyPlayedComponentView()
+    /// Nib `TimerComponentView`.
+    static let timerComponentView = _R.nib._TimerComponentView()
     /// Nib `TransactionDetailsComponentView`.
     static let transactionDetailsComponentView = _R.nib._TransactionDetailsComponentView()
     /// Nib `TransactionDetailsTableViewCell`.
@@ -2244,6 +2246,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TimerComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.timerComponentView) instead")
+    static func timerComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.timerComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TransactionDetailsComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionDetailsComponentView) instead")
     static func transactionDetailsComponentView(_: Void = ()) -> UIKit.UINib {
@@ -2427,6 +2437,10 @@ struct R: Rswift.Validatable {
       return R.nib.recentlyPlayedComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func timerComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.timerComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func transactionDetailsComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.transactionDetailsComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2464,7 +2478,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 118 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 120 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2734,6 +2748,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sms_resend = Rswift.StringResource(key: "sms_resend", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Resend in
+      ///
+      /// Locales: en, ka, hy
+      static let sms_resend_title = Rswift.StringResource(key: "sms_resend_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: SELF SUSPEND
       ///
       /// Locales: en, ka, hy
@@ -2754,6 +2772,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let home_search_placeholder = Rswift.StringResource(key: "home_search_placeholder", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Seconds
+      ///
+      /// Locales: en, ka, hy
+      static let sms_resend_time = Rswift.StringResource(key: "sms_resend_time", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Self Suspend
       ///
       /// Locales: en, ka, hy
@@ -3944,6 +3966,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sms_resend", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Resend in
+      ///
+      /// Locales: en, ka, hy
+      static func sms_resend_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sms_resend_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sms_resend_title"
+        }
+
+        return NSLocalizedString("sms_resend_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: SELF SUSPEND
       ///
       /// Locales: en, ka, hy
@@ -4017,6 +4054,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("home_search_placeholder", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Seconds
+      ///
+      /// Locales: en, ka, hy
+      static func sms_resend_time(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sms_resend_time", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sms_resend_time"
+        }
+
+        return NSLocalizedString("sms_resend_time", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Self Suspend
@@ -5107,6 +5159,17 @@ struct _R: Rswift.Validatable {
     struct _RecentlyPlayedComponentView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "RecentlyPlayedComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TimerComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TimerComponentView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

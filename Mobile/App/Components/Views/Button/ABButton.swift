@@ -25,4 +25,11 @@ public class ABButton: LoadingButton {
         super.setTitleColor(color, for: state)
         activityIndicator.color = color
     }
+    
+    public func setImage(_ image: UIImage, tintColor: DesignSystem.Color) {
+        setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
+        setTintColor(to: tintColor)
+        imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 5)
+        contentEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 0)
+    }
 }

@@ -22,6 +22,8 @@ public protocol SMSLoginViewModelInput {
     func shoudEnableLoginButton(fot text: String?) -> Bool
     func resendSMS()
     func login(code: String)
+    func restartTimer()
+    func didBindToTimer()
 }
 
 public protocol SMSLoginViewModelOutput {
@@ -35,6 +37,7 @@ public enum SMSLoginViewModelOutputAction {
     case setSMSCodeInputView(text: [String?])
     case setResendSMSButton(isLoading: Bool)
     case setLoginButton(isLoading: Bool)
+    case bindToTimer(timerViewModel: TimerComponentViewModel)
 }
 
 public enum SMSLoginViewModelRoute {
@@ -51,6 +54,7 @@ public class DefaultSMSLoginViewModel {
 
     @Inject(from: .useCases) private var smsLoginUseCase: SMSLoginUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
+    @Inject(from: .viewModels) private var timerViewModel: TimerComponentViewModel
 
     public init(params: SMSLoginViewModelParams) {
         self.params = params
@@ -60,9 +64,18 @@ public class DefaultSMSLoginViewModel {
 extension DefaultSMSLoginViewModel: SMSLoginViewModel {
     public var action: Observable<SMSLoginViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<SMSLoginViewModelRoute> { routeSubject.asObserver() }
-
+    
     public func viewDidLoad() {
         actionSubject.onNext(.setSMSInputViewNumberOfItems(smsCodeLength))
+        actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
+    }
+    
+    public func didBindToTimer() {
+        timerViewModel.start(from: 30)
+    }
+    
+    public func restartTimer() {
+        timerViewModel.start(from: 30)
     }
 
     public func textDidChange(to text: String?) {
