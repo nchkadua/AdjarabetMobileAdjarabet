@@ -88,6 +88,7 @@ public class P2PTransferViewController: ABViewController {
         transferAmountInputView.mainTextField.keyboardType = .decimalPad
         transferAmountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         transferAmountInputView.setPlaceholder(text: R.string.localization.p2p_transfer_tranfer_amount.localized())
+        transferAmountInputView.formatter = AmountFormatter()
 
         transferAmountInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

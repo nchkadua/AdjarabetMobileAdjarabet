@@ -102,6 +102,7 @@ public class WithdrawViewController: ABViewController {
         amountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.withdraw_amount_title())
+        amountInputView.formatter = AmountFormatter()
 
         cardNumberInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())

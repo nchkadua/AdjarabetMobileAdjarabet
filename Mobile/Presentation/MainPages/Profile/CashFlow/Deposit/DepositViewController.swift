@@ -93,6 +93,7 @@ public class DepositViewController: ABViewController {
         amountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.deposit_amount_title())
+        amountInputView.formatter = AmountFormatter()
 
         cardNumberInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
         cardNumberInputView.setPlaceholder(text: R.string.localization.deposit_card_title())

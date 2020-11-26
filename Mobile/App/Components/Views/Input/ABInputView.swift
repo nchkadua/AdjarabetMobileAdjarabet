@@ -45,6 +45,9 @@ public class ABInputView: UIView {
     private var defaultBackgroundColor: DesignSystem.Color = DesignSystem.Input.backgroundColor
     private var hasDropdownImage = false
 
+    // MARK: Formatter
+    public var formatter: Formatter = DefaultFormatter()
+
     /// PickerView
     private var pickerView = UIPickerView()
     private var dataSourceItems = [String]()
@@ -209,9 +212,7 @@ public class ABInputView: UIView {
     }
 
     private func formatText() {
-        guard mainTextField.keyboardType == .decimalPad else { return }
-
-        let finalString = Double(mainTextField.text ?? "0.0")?.formattedBalance
+        let finalString = formatter.formatted(string: mainTextField.text ?? "")
         mainTextField.text = finalString
     }
 
