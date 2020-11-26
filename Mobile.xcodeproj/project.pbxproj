@@ -54,6 +54,9 @@
 		C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */; };
 		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
+		C7EF9E61256FF2BC00D2908C /* CoreApiUserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */; };
+		C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */; };
+		C7EF9E7225702B8C00D2908C /* CurrentUserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E7125702B8C00D2908C /* CurrentUserInfoRepository.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
 		CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */; };
 		CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */; };
@@ -443,6 +446,9 @@
 		C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewControllerFactory.swift; sourceTree = "<group>"; };
 		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
+		C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiUserInfoRepository.swift; sourceTree = "<group>"; };
+		C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepository.swift; sourceTree = "<group>"; };
+		C7EF9E7125702B8C00D2908C /* CurrentUserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserInfoRepository.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentView.swift; sourceTree = "<group>"; };
 		CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentViewModel.swift; sourceTree = "<group>"; };
@@ -987,6 +993,71 @@
 				C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */,
 			);
 			path = Popup;
+			sourceTree = "<group>";
+		};
+		C7EF9E46256FECDD00D2908C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E47256FED2600D2908C /* UserProfileManagement */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7EF9E47256FED2600D2908C /* UserProfileManagement */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E48256FED5600D2908C /* UserProfileOperations */,
+			);
+			path = UserProfileManagement;
+			sourceTree = "<group>";
+		};
+		C7EF9E48256FED5600D2908C /* UserProfileOperations */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */,
+			);
+			path = UserProfileOperations;
+			sourceTree = "<group>";
+		};
+		C7EF9E4A256FEF1400D2908C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E46256FECDD00D2908C /* Core */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C7EF9E55256FF14A00D2908C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E56256FF15400D2908C /* UserProfileManagement */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7EF9E56256FF15400D2908C /* UserProfileManagement */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E57256FF16600D2908C /* UserProfileOperations */,
+			);
+			path = UserProfileManagement;
+			sourceTree = "<group>";
+		};
+		C7EF9E57256FF16600D2908C /* UserProfileOperations */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */,
+				C7EF9E7025702AFA00D2908C /* CurrentUserInfo */,
+			);
+			path = UserProfileOperations;
+			sourceTree = "<group>";
+		};
+		C7EF9E7025702AFA00D2908C /* CurrentUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E7125702B8C00D2908C /* CurrentUserInfoRepository.swift */,
+			);
+			path = CurrentUserInfo;
 			sourceTree = "<group>";
 		};
 		CE0818BE25389B5C00AD3B3B /* Header */ = {
@@ -1768,6 +1839,7 @@
 		D861DA8D2466BC820054D058 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF9E55256FF14A00D2908C /* Core */,
 				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
 				D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */,
 				D861DA922466BD060054D058 /* BalanceManagementRepository.swift */,
@@ -1790,6 +1862,7 @@
 		D86253AE2464199900F7DE0C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF9E4A256FEF1400D2908C /* API */,
 				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
 				D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */,
 				D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */,
@@ -2614,6 +2687,7 @@
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */,
 				CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */,
+				C7EF9E7225702B8C00D2908C /* CurrentUserInfoRepository.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */,
 				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
@@ -2645,6 +2719,7 @@
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
+				C7EF9E61256FF2BC00D2908C /* CoreApiUserInfoRepository.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
@@ -2784,6 +2859,7 @@
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */,
 				CE169359254181100043B1A4 /* UserInfo.swift in Sources */,
+				C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,

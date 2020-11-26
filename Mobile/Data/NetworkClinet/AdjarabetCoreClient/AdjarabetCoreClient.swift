@@ -26,5 +26,6 @@ public class AdjarabetCoreClient {
         case smsCode = "getSmsCode"
         case logout
         case aliveSession = "isSessionActive"
+        case currentUserInfo = "getUserInfo"
     }
 }
