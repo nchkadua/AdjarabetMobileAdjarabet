@@ -13,7 +13,7 @@ public protocol UserProfileRepository: UserProfileReadableRepository,
                                        UserProfileWritableRepository { }
 
 // MARK: - Readable Repository
-public protocol UserProfileReadableRepository: CurrentUserInfoReadableRepository { }
+public protocol UserProfileReadableRepository: UserInfoReadableRepository { }
 
 // MARK: - Writable Repository
-public protocol UserProfileWritableRepository: CurrentUserInfoWritableRepository { }
+public protocol UserProfileWritableRepository: UserInfoWritableRepository { }

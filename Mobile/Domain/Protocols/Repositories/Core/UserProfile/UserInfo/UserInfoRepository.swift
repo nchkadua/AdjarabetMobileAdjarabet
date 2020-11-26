@@ -1,5 +1,5 @@
 //
-//  CurrentUserInfoRepository.swift
+//  UserInfoRepository.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 11/26/20.
@@ -9,11 +9,11 @@
 import Foundation
 
 // MARK: Repository
-public protocol CurrentUserInfoRepository: CurrentUserInfoReadableRepository,
-                                           CurrentUserInfoWritableRepository { }
+public protocol UserInfoRepository: UserInfoReadableRepository,
+                                    UserInfoWritableRepository { }
 
 // MARK: - Readable Repository
-public protocol CurrentUserInfoReadableRepository {
+public protocol UserInfoReadableRepository {
     /**
      Returns information about current loged user
      */
@@ -28,4 +28,4 @@ public protocol CurrentUserInfoReadableRepository {
 public struct CurrentUserInfoParams { }
 
 // MARK: - Writable Repository
-public protocol CurrentUserInfoWritableRepository { }
+public protocol UserInfoWritableRepository { }

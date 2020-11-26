@@ -1,5 +1,5 @@
 //
-//  CoreApiUserInfoRepository.swift
+//  CoreApiUserProfileRepository.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 11/26/20.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class CoreApiUserInfoRepository {
+public class CoreApiUserProfileRepository {
     @Inject private var userSession: UserSessionServices
     @Inject private var dataTransferService: DataTransferService
     private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }
 }
 
-extension CoreApiUserInfoRepository: UserProfileRepository {
+extension CoreApiUserProfileRepository: UserProfileRepository {
     public func currentUserInfo<T>(
         params: CurrentUserInfoParams,
         completion: @escaping (Result<T, Error>) -> Void
@@ -22,7 +22,7 @@ extension CoreApiUserInfoRepository: UserProfileRepository {
         guard let sessionId = userSession.sessionId,
               let userId = userSession.userId
         else {
-            // TODO: completion(.failure("no used id or session id found"))
+            // TODO: completion(.failure("no session id or user id found"))
             return nil
         }
 
