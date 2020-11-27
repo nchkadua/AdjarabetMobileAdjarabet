@@ -34,6 +34,12 @@
 "contact_us_button_title" = "Contact us";
 "settings" = "settings";
 
+/* Gender */
+"gender_female" = "female";
+"gender_male" = "male";
+"gender_other" = "other";
+"gender_prefer_not_to_say" = "prefer not to say";
+
 /* Login */
 "login_page_title" = "Log in to";
 "login_forgot_password" = "Forgot Password?";

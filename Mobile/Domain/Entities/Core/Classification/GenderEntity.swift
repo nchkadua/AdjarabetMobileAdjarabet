@@ -16,10 +16,10 @@ public enum GenderEntity: Int {
 
     public var description: Description {
         switch self {
-        case .female:         return Description(stringValue: "Female")
-        case .male:           return Description(stringValue: "Male")
-        case .other:          return Description(stringValue: "Other")
-        case .preferNotToSay: return Description(stringValue: "Prefer Not To Say")
+        case .female:         return Description(stringValue: R.string.localization.gender_female.localized())
+        case .male:           return Description(stringValue: R.string.localization.gender_male.localized())
+        case .other:          return Description(stringValue: R.string.localization.gender_other.localized())
+        case .preferNotToSay: return Description(stringValue: R.string.localization.gender_prefer_not_to_say.localized())
         }
     }
 
