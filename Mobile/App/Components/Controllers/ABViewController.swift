@@ -23,7 +23,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
-    
+
     public func addKeyboardDismissOnTap() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         tap.cancelsTouchesInView = false
