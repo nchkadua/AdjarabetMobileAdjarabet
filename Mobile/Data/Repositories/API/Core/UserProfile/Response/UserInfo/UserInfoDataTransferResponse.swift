@@ -30,6 +30,7 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
         public let email: String?
         public let tel: String?
         public let statusId: Int?
+        /*
         public let isOtpOn: Bool?
         public let hasClubCard: Bool?
         public let language: String?
@@ -38,6 +39,7 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
         public let activeNotifications: Int64?
         public let preferredCurrencyID: Int?
         public let verifiedContactChannel: Int?
+        */
 
         enum CodingKeys: String, CodingKey {
             case statusCode = "StatusCode"
@@ -53,6 +55,7 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
             case email = "Email"
             case tel = "Tel"
             case statusId = "StatusID"
+            /*
             case isOtpOn = "IsOTPOn"
             case hasClubCard = "HasClubCard"
             case language = "Language"
@@ -61,12 +64,26 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
             case activeNotifications = "ActiveNotifications"
             case preferredCurrencyID = "PreferredCurrencyID"
             case verifiedContactChannel = "VerifiedContactChannel"
+            */
         }
     }
 
     public typealias Entity = UserInfoEntity
 
     public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
-        UserInfoEntity()
+        UserInfoEntity(
+            userId: body.userId,
+            name: body.name,
+            surname: body.surname,
+            middleName: body.middleName,
+            gender: body.gender,
+            userName: body.userName,
+            countryId: body.countryId,
+            address: body.address,
+            birthDate: body.birthDate,
+            email: body.email,
+            phone: body.tel,
+            statusId: body.statusId
+        )
     }
 }

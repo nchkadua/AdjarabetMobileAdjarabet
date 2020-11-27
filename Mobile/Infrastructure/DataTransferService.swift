@@ -20,7 +20,9 @@ public protocol DataTransferResponse {
     associatedtype Entity
     /**
      Every Response Model **MUST** have functionallity of
-     converting to Domain Model
+     converting to Domain Model.
+     P. S.
+     Also you can pre-process header and body before returning Entity.
      */
     static func entity(header: Header, body: Body) -> Entity
 }
