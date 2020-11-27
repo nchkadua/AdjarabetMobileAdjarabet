@@ -76,7 +76,7 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
             name: body.name,
             surname: body.surname,
             middleName: body.middleName,
-            gender: body.gender,
+            gender: GenderEntity(rawValue: body.gender ?? -1),
             userName: body.userName,
             countryId: body.countryId,
             address: body.address,

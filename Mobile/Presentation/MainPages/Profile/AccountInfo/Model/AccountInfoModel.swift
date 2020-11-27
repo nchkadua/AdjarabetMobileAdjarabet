@@ -24,22 +24,21 @@ public struct AccountInfoModel {
     public let address: String
 }
 
-// TODO: format
 public extension AccountInfoModel {
     static func create(from e: UserInfoEntity) -> AccountInfoModel {
         AccountInfoModel(
             userName: e.userName ?? "",
-            userId: String(e.userId ?? -1),
-            personalId: "123***789",
-            status: String(e.statusId ?? -1),
-            password: "---------",
+            userId: e.userId == nil ? "" : String(e.userId!),
+            personalId: "123***789", // TODO: add in entity
+            status: e.statusId == nil ? "" : String(e.statusId!), // TODO: e.statusId -> String
+            password: String.passwordRepresentation,
             email: e.email ?? "",
             phoneNumber: e.phone ?? "",
             name: e.name ?? "",
             surname: e.surname ?? "",
             birthDate: e.birthDate ?? "",
-            gender: String(e.gender ?? -1),
-            country: String(e.countryId ?? -1),
+            gender: e.gender?.description.stringValue ?? "",
+            country: e.countryId == nil ? "" : String(e.countryId!), // TODO: e.countryId -> String
             address: e.address ?? ""
         )
     }
