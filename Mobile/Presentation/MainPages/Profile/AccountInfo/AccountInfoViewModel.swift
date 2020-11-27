@@ -32,9 +32,6 @@ public class DefaultAccountInfoViewModel {
     private let routeSubject = PublishSubject<AccountInfoViewModelRoute>()
 
     @Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository
-    @Inject private var userSession: UserSessionServices
-    //Temporary
-    public let userInfo = UserInfoServices()
 }
 
 extension DefaultAccountInfoViewModel: AccountInfoViewModel {
@@ -52,7 +49,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
                 let accountInfoModel = AccountInfoModel.create(from: userInfo)
                 self?.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
             case .failure(let error):
-                print(error)
+                print(error) // TODO: error handling
             }
         }
     }

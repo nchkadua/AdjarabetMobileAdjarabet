@@ -9,18 +9,18 @@
 import Foundation
 
 public struct UserInfoEntity {
-    public let userId: Int64? // User ID
-    public let name: String? // Name
-    public let surname: String? // Surname
+    public let userId: Int64?
+    public let name: String?
+    public let surname: String?
     public let middleName: String?
-    public let gender: Int? // Gender -> TO ENUM
-    public let userName: String? // Username
-    public let countryId: Int? // Country -> TO GET
-    public let address: String? // Address
-    public let birthDate: String? // Birth Date -> TO FORMAT
-    public let email: String? // Mail
-    public let phone: String? // Phone Number
-    public let statusId: Int? // Status -> TO STRING
+    public let gender: Int? // TODO: enum
+    public let userName: String?
+    public let countryId: Int? // TODO: get with another service
+    public let address: String?
+    public let birthDate: String? // TODO: format to Date
+    public let email: String?
+    public let phone: String?
+    public let statusId: Int? // TODO: toString
     /*
     public let isOtpOn: Bool?
     public let hasClubCard: Bool?
@@ -31,6 +31,4 @@ public struct UserInfoEntity {
     public let preferredCurrencyID: Int?
     public let verifiedContactChannel: Int?
     */
-    // Personal ID
-    // Password
 }

@@ -13,7 +13,7 @@ public struct AccountInfoModel {
     public let userId: String
     public let personalId: String
     public let status: String
-    public let password: String // "---------"
+    public let password: String
     public let email: String
     public let phoneNumber: String
     public let name: String
