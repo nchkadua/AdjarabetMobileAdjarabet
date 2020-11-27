@@ -32,6 +32,7 @@ public class DefaultAccountInfoViewModel {
     private let actionSubject = PublishSubject<AccountInfoViewModelOutputAction>()
     private let routeSubject = PublishSubject<AccountInfoViewModelRoute>()
 
+    @Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository
     @Inject private var userSession: UserSessionServices
     //Temporary
     public let userInfo = UserInfoServices()
@@ -42,9 +43,16 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
     public var route: Observable<AccountInfoViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        refreshUserInfo()
         actionSubject.onNext(.setupWithUserInfo(userInfo))
 
         let userSessionModel = UserSessionModel(username: userSession.username ?? "Guest", userId: String(userSession.userId ?? 0), password: String.passwordRepresentation)
         actionSubject.onNext(.setupWithUserSession(userSessionModel))
+    }
+
+    private func refreshUserInfo() {
+        userInfoRepo.currentUserInfo(params: .init()) { result in
+            print(result)
+        }
     }
 }

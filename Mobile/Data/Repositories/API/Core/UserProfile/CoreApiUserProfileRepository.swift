@@ -9,6 +9,7 @@
 import Foundation
 
 public class CoreApiUserProfileRepository {
+    public static let shared = CoreApiUserProfileRepository()
     @Inject private var userSession: UserSessionServices
     @Inject private var dataTransferService: DataTransferService
     private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }

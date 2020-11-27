@@ -8,19 +8,19 @@
 
 import Foundation
 
-class UserInfoDataTransferResponse: DataTransferResponse {
+public class UserInfoDataTransferResponse: DataTransferResponse {
     /*
-    struct Header: HeaderProtocol {
+    public struct Header: HeaderProtocol {
         public init(headers: [AnyHashable: Any]?) throws {
             ...
         }
     }
     */
-    struct Body: Codable { }
+    public struct Body: Codable { }
 
-    typealias Entity = UserInfoEntity
+    public typealias Entity = UserInfoEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
+    public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
         UserInfoEntity()
     }
 }
