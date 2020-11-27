@@ -52,8 +52,15 @@ public extension UIView {
         layer.mask = shape
     }
 
-    func blurred(with style: UIBlurEffect.Style = .regular) {
-        let blurEffect = UIBlurEffect(style: style)
+    func blurred() {
+        var blurEffect: UIBlurEffect?
+
+        if traitCollection.userInterfaceStyle == .light {
+            blurEffect = UIBlurEffect(style: .dark)
+        } else {
+            blurEffect = UIBlurEffect(style: .regular)
+        }
+
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = bounds
         addSubview(blurEffectView)

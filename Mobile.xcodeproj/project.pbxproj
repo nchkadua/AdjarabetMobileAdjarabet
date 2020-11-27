@@ -169,6 +169,9 @@
 		CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */; };
 		CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */; };
 		CEE15C582534A1720033BF93 /* NotificationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C572534A1720033BF93 /* NotificationsProvider.swift */; };
+		CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE2505F256FE3B40089F805 /* TimerComponentView.swift */; };
+		CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE25084256FE3BB0089F805 /* TimerComponentViewModel.swift */; };
+		CEE25089256FE3C10089F805 /* TimerComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE25088256FE3C10089F805 /* TimerComponentView.xib */; };
 		CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE300392530787600577CDF /* QuickActionsHeaderCell.xib */; };
 		CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE3566D252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib */; };
 		CEE356C4252B643600A0A25C /* ProfileInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE356C3252B643600A0A25C /* ProfileInfoTableViewCell.swift */; };
@@ -563,6 +566,9 @@
 		CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		CEE15C572534A1720033BF93 /* NotificationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsProvider.swift; sourceTree = "<group>"; };
+		CEE2505F256FE3B40089F805 /* TimerComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponentView.swift; sourceTree = "<group>"; };
+		CEE25084256FE3BB0089F805 /* TimerComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponentViewModel.swift; sourceTree = "<group>"; };
+		CEE25088256FE3C10089F805 /* TimerComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerComponentView.xib; sourceTree = "<group>"; };
 		CEE300392530787600577CDF /* QuickActionsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionsHeaderCell.xib; sourceTree = "<group>"; };
 		CEE3566D252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoTableViewCell.xib; sourceTree = "<group>"; };
 		CEE356C3252B643600A0A25C /* ProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -1471,6 +1477,16 @@
 			path = TemporaryHelper;
 			sourceTree = "<group>";
 		};
+		CEE2505E256FE2E40089F805 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				CEE2505F256FE3B40089F805 /* TimerComponentView.swift */,
+				CEE25084256FE3BB0089F805 /* TimerComponentViewModel.swift */,
+				CEE25088256FE3C10089F805 /* TimerComponentView.xib */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1771,6 +1787,7 @@
 				D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */,
 				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
 				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
+				CEE2505E256FE2E40089F805 /* Timer */,
 				CE1693692541AB100043B1A4 /* AccountInfoComponentView */,
 				CEE356CF252C9BBE00A0A25C /* BalanceComponentView */,
 				D86253BA24653AA000F7DE0C /* Button */,
@@ -2430,6 +2447,7 @@
 				7644B6192563EFA4006778B2 /* TransactionHistoryHeaderCell.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */,
+				CEE25089256FE3C10089F805 /* TimerComponentView.xib in Resources */,
 				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
 				D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */,
@@ -2706,6 +2724,7 @@
 				CEF368502549C325009FD456 /* DepositViewModel.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
+				CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
@@ -2782,6 +2801,7 @@
 				CEA77799256D4244008A4F6C /* MailChangeViewControllerFactory.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
+				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,

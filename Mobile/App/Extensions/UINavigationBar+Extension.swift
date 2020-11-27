@@ -12,7 +12,7 @@ public extension UINavigationBar {
         shadowImage = UIImage()
         isTranslucent = true
         barTintColor = DesignSystem.Color.thick().value
-        blurred()
+        blurreNavBar()
     }
 
     func styleForSecondaryPage() {
@@ -21,10 +21,10 @@ public extension UINavigationBar {
         isTranslucent = true
         setBackgorundColor(to: .primaryBg())
         barTintColor = DesignSystem.Color.regular().value
-        blurred()
+        blurreNavBar()
     }
 
-    func blurred() {
+    func blurreNavBar() {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
 

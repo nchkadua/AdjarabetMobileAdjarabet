@@ -71,6 +71,7 @@ public extension DependencyContainer {
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
+        Module { DefaultTimerComponentViewModel() as TimerComponentViewModel }
     }
 
     static var repositories = DependencyContainer {

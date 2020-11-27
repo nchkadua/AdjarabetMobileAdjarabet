@@ -37,7 +37,7 @@ class ABPageViewController: UIPageViewController {
 
     // MARK: Setup methods
     private func setup() {
-        view.backgroundColor = .clear
+        view.setBackgorundColor(to: .secondaryBg())
     }
 
     // MARK: Public methods

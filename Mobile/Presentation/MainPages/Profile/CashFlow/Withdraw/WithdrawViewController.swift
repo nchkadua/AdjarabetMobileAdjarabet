@@ -99,12 +99,12 @@ public class WithdrawViewController: ABViewController {
     }
 
     private func setupInputViews() {
-        amountInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
+        amountInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.withdraw_amount_title())
         amountInputView.formatter = AmountFormatter()
 
-        cardNumberInputView.setupWith(backgroundColor: .secondaryFill(), borderWidth: 0)
+        cardNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())
 
         amountInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)

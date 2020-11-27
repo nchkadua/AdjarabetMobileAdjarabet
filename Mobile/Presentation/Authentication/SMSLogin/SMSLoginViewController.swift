@@ -15,11 +15,11 @@ public class SMSLoginViewController: ABViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var smsLoginDescriptionLabel: UILabel!
-    @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var resendSMSButton: ABButton!
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
     @IBOutlet private weak var loginButton: ABButton!
-
+    @IBOutlet private weak var timerView: TimerComponentView!
+    
     private lazy var smsCodeTextField: UITextField = {
         let f = UITextField()
         f.translatesAutoresizingMaskIntoConstraints = false
@@ -63,14 +63,15 @@ public class SMSLoginViewController: ABViewController {
         case .setSMSCodeInputView(let text): updateSMSCodeInputView(texts: text)
         case .setResendSMSButton(let isLoading): resendSMSButton.set(isLoading: isLoading)
         case .setLoginButton(let isLoading): loginButton.set(isLoading: isLoading)
+        case .bindToTimer(let timerViewModel): bindToTimer(timerViewModel)
         }
     }
 
     private func didRecive(route: SMSLoginViewModelRoute) {
         switch route {
-        case .showSuccessMessage: showSuccessMessage()
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
-        case .showErrorMessage(let title, _): showErrorMessage(title)
+        default:
+            break
         }
     }
 
@@ -106,20 +107,15 @@ public class SMSLoginViewController: ABViewController {
                                   lineSpasing: 4,
                                   foregroundColor: .secondaryText())
         smsLoginDescriptionLabel.attributedText = smsLoginDescription
-
-        messageLabel.setTextColor(to: .secondaryText())
-        messageLabel.setFont(to: .caption2(fontCase: .lower))
-        messageLabel.text = R.string.localization.sms_did_not_receive_message()
     }
 
     private func setupButtons() {
-        resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
+        resendSMSButton.setImage(R.image.smsLogin.resend() ?? UIImage(), tintColor: .primaryText())
+        resendSMSButton.setStyle(to: .textLink(state: .disabled, size: .small))
         resendSMSButton.setTitleColor(to: .primaryText(), for: .normal)
         resendSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
-        resendSMSButton.setImage(R.image.smsLogin.resend(), for: .normal)
-        resendSMSButton.imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 5)
-        resendSMSButton.contentEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 0)
         resendSMSButton.addTarget(self, action: #selector(resendSMSDidTap), for: .touchUpInside)
+        resendSMSButton.isUserInteractionEnabled = false
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
         loginButton.setStyle(to: .tertiary(state: .disabled, size: .large))
@@ -136,6 +132,27 @@ public class SMSLoginViewController: ABViewController {
 
         smsCodeInputView.configureForNumberOfItems(6)
     }
+    
+    /// Timer
+    private func bindToTimer(_ timerViewModel: TimerComponentViewModel) {
+        timerView.setAndBind(viewModel: timerViewModel)
+        bind(to: timerViewModel)
+        viewModel.didBindToTimer()
+    }
+
+    private func bind(to viewModel: TimerComponentViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: TimerComponentViewModelOutputAction) {
+        switch action {
+        case .timerDidEnd: updateResendButton(activate: true)
+        default:
+            break
+        }
+    }
 
     // MARK: Actions
     @objc private func showKeyboard() {
@@ -147,7 +164,9 @@ public class SMSLoginViewController: ABViewController {
     }
 
     @objc private func resendSMSDidTap() {
+        viewModel.restartTimer()
         viewModel.resendSMS()
+        updateResendButton(activate: false)
     }
 
     @objc private func loginDidTap() {
@@ -162,16 +181,6 @@ public class SMSLoginViewController: ABViewController {
         updateLoginButtonWhen(smsCodeText: textField.text, animated: true)
     }
 
-    private func showErrorMessage(_ message: String) {
-        messageLabel.setTextColor(to: .primaryRedNeutral())
-        messageLabel.text = message
-    }
-
-    private func showSuccessMessage() {
-        messageLabel.setTextColor(to: .primaryGreenNeutral())
-        messageLabel.setTextAndImage(R.string.localization.sms_well_done(), R.image.login.well_done()!, alignment: .right)
-    }
-
     // MARK: Configuration
     private func updateSMSCodeInputView(texts: [String?]) {
         texts.enumerated().forEach { index, text in
@@ -184,6 +193,18 @@ public class SMSLoginViewController: ABViewController {
         loginButton.isUserInteractionEnabled = isEnabled
 
         loginButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
+    }
+    
+    private func updateResendButton(activate: Bool) {
+        if activate {
+            resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
+            resendSMSButton.setImage(R.image.smsLogin.resend() ?? UIImage(), tintColor: .systemRed())
+            resendSMSButton.isUserInteractionEnabled = true
+        } else {
+            resendSMSButton.setStyle(to: .textLink(state: .disabled, size: .small))
+            resendSMSButton.setImage(R.image.smsLogin.resend() ?? UIImage(), tintColor: .primaryText())
+            resendSMSButton.isUserInteractionEnabled = false
+        }
     }
 }
 

@@ -52,6 +52,8 @@
 "sms_resend" = "SMS გაგზავნა";
 "sms_did_not_receive_message" = "Did not receive message?";
 "sms_well_done" = "Well done!";
+"sms_resend_title" = "ხელახლა გაგზავნა";
+"sms_resend_time" = "წამში";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
