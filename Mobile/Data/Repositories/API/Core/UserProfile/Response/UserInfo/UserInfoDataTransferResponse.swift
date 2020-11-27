@@ -16,7 +16,53 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
         }
     }
     */
-    public struct Body: Codable { }
+    public struct Body: Codable {
+        public let statusCode: Int?
+        public let userId: Int64?
+        public let name: String?
+        public let surname: String?
+        public let middleName: String?
+        public let gender: Int?
+        public let userName: String?
+        public let countryId: Int?
+        public let address: String?
+        public let birthDate: String?
+        public let email: String?
+        public let tel: String?
+        public let statusId: Int?
+        public let isOtpOn: Bool?
+        public let hasClubCard: Bool?
+        public let language: String?
+        public let telephoneCode: String?
+        public let dateRegistered: String?
+        public let activeNotifications: Int64?
+        public let preferredCurrencyID: Int?
+        public let verifiedContactChannel: Int?
+
+        enum CodingKeys: String, CodingKey {
+            case statusCode = "StatusCode"
+            case userId = "UserID"
+            case name = "Name"
+            case surname = "Surname"
+            case middleName = "MiddleName"
+            case gender = "Gender"
+            case userName = "UserName"
+            case countryId = "CountryID"
+            case address = "Address"
+            case birthDate = "BirthDate"
+            case email = "Email"
+            case tel = "Tel"
+            case statusId = "StatusID"
+            case isOtpOn = "IsOTPOn"
+            case hasClubCard = "HasClubCard"
+            case language = "Language"
+            case telephoneCode = "TelephoneCode"
+            case dateRegistered = "DateRegistered"
+            case activeNotifications = "ActiveNotifications"
+            case preferredCurrencyID = "PreferredCurrencyID"
+            case verifiedContactChannel = "VerifiedContactChannel"
+        }
+    }
 
     public typealias Entity = UserInfoEntity
 
