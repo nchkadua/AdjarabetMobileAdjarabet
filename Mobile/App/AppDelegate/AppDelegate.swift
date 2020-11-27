@@ -76,6 +76,7 @@ public extension DependencyContainer {
 
     static var repositories = DependencyContainer {
         // Core
+        Module { CoreApiUserProfileRepository.shared as UserInfoReadableRepository }
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
         Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }

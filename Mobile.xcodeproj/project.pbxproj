@@ -38,6 +38,8 @@
 		7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */; };
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487162571122E00E4A71D /* AccountInfoModel.swift */; };
+		C71487222571209600E4A71D /* GenderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487212571209600E4A71D /* GenderEntity.swift */; };
 		C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */; };
 		C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */; };
 		C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */; };
@@ -54,6 +56,11 @@
 		C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */; };
 		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
+		C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */; };
+		C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */; };
+		C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */; };
+		C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */; };
+		C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
 		CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */; };
 		CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */; };
@@ -64,7 +71,6 @@
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
 		CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */; };
 		CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */; };
-		CE169359254181100043B1A4 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE169358254181100043B1A4 /* UserInfo.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
 		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
@@ -113,7 +119,6 @@
 		CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */; };
 		CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */; };
 		CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */; };
-		CE9A1753255185D6006655AF /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A1752255185D6006655AF /* UserServices.swift */; };
 		CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */; };
 		CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA287762540C16700E6590C /* AccountInfo.storyboard */; };
 		CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */; };
@@ -431,6 +436,8 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		C71487162571122E00E4A71D /* AccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
+		C71487212571209600E4A71D /* GenderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderEntity.swift; sourceTree = "<group>"; };
 		C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsNavigator.swift; sourceTree = "<group>"; };
 		C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -446,6 +453,11 @@
 		C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewControllerFactory.swift; sourceTree = "<group>"; };
 		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
+		C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiUserProfileRepository.swift; sourceTree = "<group>"; };
+		C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepository.swift; sourceTree = "<group>"; };
+		C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
+		C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEntity.swift; sourceTree = "<group>"; };
+		C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDataTransferResponse.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentView.swift; sourceTree = "<group>"; };
 		CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentViewModel.swift; sourceTree = "<group>"; };
@@ -456,7 +468,6 @@
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
 		CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInstructionView.xib; sourceTree = "<group>"; };
 		CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInstructionView.swift; sourceTree = "<group>"; };
-		CE169358254181100043B1A4 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
 		CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoComponentView.xib; sourceTree = "<group>"; };
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
@@ -505,7 +516,6 @@
 		CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentView.swift; sourceTree = "<group>"; };
 		CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentViewModel.swift; sourceTree = "<group>"; };
 		CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionComponentView.xib; sourceTree = "<group>"; };
-		CE9A1752255185D6006655AF /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDeletableCellDelegate.swift; sourceTree = "<group>"; };
 		CEA287762540C16700E6590C /* AccountInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountInfo.storyboard; sourceTree = "<group>"; };
 		CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -937,6 +947,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C7148715257111F300E4A71D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C71487162571122E00E4A71D /* AccountInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C71487202571203400E4A71D /* Classification */ = {
+			isa = PBXGroup;
+			children = (
+				C71487212571209600E4A71D /* GenderEntity.swift */,
+			);
+			path = Classification;
+			sourceTree = "<group>";
+		};
 		C71F188D256411720026CEA2 /* BiometricSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -995,6 +1021,97 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
+		C7EF9E46256FECDD00D2908C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E47256FED2600D2908C /* UserProfile */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7EF9E47256FED2600D2908C /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */,
+				C7EF9F3E257078F600D2908C /* Response */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		C7EF9E4A256FEF1400D2908C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E46256FECDD00D2908C /* Core */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C7EF9E55256FF14A00D2908C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E56256FF15400D2908C /* UserProfile */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7EF9E56256FF15400D2908C /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */,
+				C7EF9E7025702AFA00D2908C /* UserInfo */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		C7EF9E7025702AFA00D2908C /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		C7EF9E75257039D100D2908C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9EBC257043CD00D2908C /* UserProfile */,
+				C71487202571203400E4A71D /* Classification */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7EF9EBC257043CD00D2908C /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9EBD257043E700D2908C /* UserInfo */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		C7EF9EBD257043E700D2908C /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		C7EF9F192570764200D2908C /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		C7EF9F3E257078F600D2908C /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9F192570764200D2908C /* UserInfo */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		CE0818BE25389B5C00AD3B3B /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -1022,14 +1139,6 @@
 				CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */,
 			);
 			path = Instruction;
-			sourceTree = "<group>";
-		};
-		CE169357254181000043B1A4 /* Temporary */ = {
-			isa = PBXGroup;
-			children = (
-				CE169358254181100043B1A4 /* UserInfo.swift */,
-			);
-			path = Temporary;
 			sourceTree = "<group>";
 		};
 		CE1693692541AB100043B1A4 /* AccountInfoComponentView */ = {
@@ -1207,14 +1316,6 @@
 			path = PromotionTableViewCell;
 			sourceTree = "<group>";
 		};
-		CE9A17512551854A006655AF /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				CE9A1752255185D6006655AF /* UserServices.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		CE9A175625518FA5006655AF /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -1230,13 +1331,12 @@
 				CECF7F3F256D5A68001C0E50 /* AddressChange */,
 				CEA7778D256D41F7008A4F6C /* MailChange */,
 				CEB285B8256D20A400584A65 /* SelfSuspend */,
-				CE9A17512551854A006655AF /* Helper */,
-				CE169357254181000043B1A4 /* Temporary */,
 				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
 				CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */,
 				CEA287812540C28F00E6590C /* AccountInfoViewController.swift */,
 				CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */,
 				CEA287762540C16700E6590C /* AccountInfo.storyboard */,
+				C7148715257111F300E4A71D /* Model */,
 			);
 			path = AccountInfo;
 			sourceTree = "<group>";
@@ -1511,6 +1611,7 @@
 		D80AE7DC24683492009A7814 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF9E75257039D100D2908C /* Core */,
 				D8F26A04246837B700137252 /* LoginType.swift */,
 				D850940D24839A4A00722040 /* PageDescription.swift */,
 				D810FC3424856EAD00F81499 /* LoadingType.swift */,
@@ -1785,6 +1886,7 @@
 		D861DA8D2466BC820054D058 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF9E55256FF14A00D2908C /* Core */,
 				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
 				D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */,
 				D861DA922466BD060054D058 /* BalanceManagementRepository.swift */,
@@ -1807,6 +1909,7 @@
 		D86253AE2464199900F7DE0C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF9E4A256FEF1400D2908C /* API */,
 				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
 				D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */,
 				D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */,
@@ -2633,6 +2736,7 @@
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */,
 				CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */,
+				C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */,
 				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
@@ -2664,6 +2768,7 @@
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
+				C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
@@ -2685,6 +2790,7 @@
 				CE55ED2B252721A2003E168F /* ProfileViewControllerFactory.swift in Sources */,
 				CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */,
 				D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */,
+				C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */,
 				CE2D1DEB2530738600112A1D /* QuickActionsHeaderViewModel.swift in Sources */,
 				CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */,
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
@@ -2701,6 +2807,7 @@
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
+				C71487222571209600E4A71D /* GenderEntity.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
@@ -2745,11 +2852,11 @@
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */,
-				CE9A1753255185D6006655AF /* UserServices.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
 				C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
+				C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */,
 				CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */,
 				CEE537EB254AC9FD00EDE6C0 /* CashFlowViewModel.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
@@ -2788,6 +2895,7 @@
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				CEF3684F2549C325009FD456 /* DepositViewController.swift in Sources */,
+				C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */,
 				CEE15C582534A1720033BF93 /* NotificationsProvider.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
@@ -2803,7 +2911,7 @@
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */,
-				CE169359254181100043B1A4 /* UserInfo.swift in Sources */,
+				C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,

@@ -34,6 +34,12 @@
 "contact_us_button_title" = "Contact us";
 "settings" = "პარამეტრები";
 
+/* Gender */
+"gender_female" = "ქალი";
+"gender_male" = "მამაკაცი";
+"gender_other" = "სხვა";
+"gender_prefer_not_to_say" = "ამჯობინა არ დაეზუსტებინა";
+
 /* Login */
 "login_page_title" = "შესვლა";
 "login_forgot_password" = "დაგავიწყდათ პაროლი?";

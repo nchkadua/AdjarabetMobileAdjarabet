@@ -21,8 +21,7 @@ public protocol AccountInfoViewModelOutput {
 }
 
 public enum AccountInfoViewModelOutputAction {
-    case setupWithUserInfo(_ userInfo: UserInfoServices)
-    case setupWithUserSession(_ userSessionModel: UserSessionModel)
+    case setupWithAccountInfoModel(_ accountInfoModel: AccountInfoModel)
 }
 
 public enum AccountInfoViewModelRoute {
@@ -32,9 +31,7 @@ public class DefaultAccountInfoViewModel {
     private let actionSubject = PublishSubject<AccountInfoViewModelOutputAction>()
     private let routeSubject = PublishSubject<AccountInfoViewModelRoute>()
 
-    @Inject private var userSession: UserSessionServices
-    //Temporary
-    public let userInfo = UserInfoServices()
+    @Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository
 }
 
 extension DefaultAccountInfoViewModel: AccountInfoViewModel {
@@ -42,9 +39,18 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
     public var route: Observable<AccountInfoViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        actionSubject.onNext(.setupWithUserInfo(userInfo))
+        refreshUserInfo()
+    }
 
-        let userSessionModel = UserSessionModel(username: userSession.username ?? "Guest", userId: String(userSession.userId ?? 0), password: String.passwordRepresentation)
-        actionSubject.onNext(.setupWithUserSession(userSessionModel))
+    private func refreshUserInfo() {
+        userInfoRepo.currentUserInfo(params: .init()) { [weak self] result in
+            switch result {
+            case .success(let userInfo):
+                let accountInfoModel = AccountInfoModel.create(from: userInfo)
+                self?.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
+            case .failure(let error):
+                print(error) // TODO: error handling
+            }
+        }
     }
 }
