@@ -38,6 +38,7 @@
 		7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */; };
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487162571122E00E4A71D /* AccountInfoModel.swift */; };
 		C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */; };
 		C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */; };
 		C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */; };
@@ -433,6 +434,7 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		C71487162571122E00E4A71D /* AccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
 		C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsNavigator.swift; sourceTree = "<group>"; };
 		C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -941,6 +943,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C7148715257111F300E4A71D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C71487162571122E00E4A71D /* AccountInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C71F188D256411720026CEA2 /* BiometricSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1326,6 +1336,7 @@
 				CEB285B8256D20A400584A65 /* SelfSuspend */,
 				CE9A17512551854A006655AF /* Helper */,
 				CE169357254181000043B1A4 /* Temporary */,
+				C7148715257111F300E4A71D /* Model */,
 				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
 				CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */,
 				CEA287812540C28F00E6590C /* AccountInfoViewController.swift */,
@@ -2771,6 +2782,7 @@
 				CE55ED2B252721A2003E168F /* ProfileViewControllerFactory.swift in Sources */,
 				CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */,
 				D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */,
+				C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */,
 				CE2D1DEB2530738600112A1D /* QuickActionsHeaderViewModel.swift in Sources */,
 				CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */,
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,

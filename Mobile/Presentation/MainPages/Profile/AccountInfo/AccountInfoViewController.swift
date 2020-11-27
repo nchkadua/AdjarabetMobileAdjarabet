@@ -65,8 +65,8 @@ public class AccountInfoViewController: ABViewController {
 
     private func didRecive(action: AccountInfoViewModelOutputAction) {
         switch action {
-        case .setupWithUserInfo(let userInfo): setupViewsWith(userInfo: userInfo)
-        case .setupWithUserSession(let userSessionModel): setupViewsWith(userSessionModel: userSessionModel)
+        case .setupWithAccountInfoModel(let accountInfoModel):
+            setupViewsWith(accountInfoModel: accountInfoModel)
         }
     }
 
@@ -128,35 +128,39 @@ public class AccountInfoViewController: ABViewController {
         addressView.addGestureRecognizer(tap4)
     }
 
-    private func setupViewsWith(userInfo: UserInfoServices) {
-        personalIdView.set(placeholderText: R.string.localization.account_info_personal_id(), titleText: userInfo.personalID)
-        personalIdView.set(placeholderText: R.string.localization.account_info_personal_id(), titleText: userInfo.personalID)
-
-        statusView.set(placeholderText: R.string.localization.account_info_status(), titleText: "Verified")
+    private func setupViewsWith(accountInfoModel: AccountInfoModel) {
+        // Username
+        usernameView.set(placeholderText: R.string.localization.account_info_username(), titleText: accountInfoModel.userName)
+        // User ID
+        userIdView.set(placeholderText: R.string.localization.account_info_user_id(), titleText: accountInfoModel.userId)
+        // Personal ID
+        personalIdView.set(placeholderText: R.string.localization.account_info_personal_id(), titleText: accountInfoModel.personalId)
+        // Status
+        statusView.set(placeholderText: R.string.localization.account_info_status(), titleText: accountInfoModel.status)
         statusView.rightImage = R.image.components.profileCell.verified()
         statusView.bringSubviewToFront(statusButton)
-
-        mailView.set(placeholderText: R.string.localization.account_info_mail(), titleText: userInfo.mail)
-        mailView.bringSubviewToFront(editMailButton)
-
-        phoneNumberView.set(placeholderText: R.string.localization.account_info_phone_number(), titleText: userInfo.phoneNumber.asPhoneNumber)
-        phoneNumberView.bringSubviewToFront(editPhoneNumberButton)
-
-        addressView.set(placeholderText: R.string.localization.account_info_address(), titleText: userInfo.address)
-        addressView.bringSubviewToFront(editAddressButton)
-
-        nameView.set(placeholderText: R.string.localization.account_info_name(), titleText: userInfo.name)
-        surnameView.set(placeholderText: R.string.localization.account_info_surname(), titleText: userInfo.surname)
-        birthDateView.set(placeholderText: R.string.localization.account_info_birth_date(), titleText: userInfo.birthDate)
-        genderView.set(placeholderText: R.string.localization.account_info_gender(), titleText: userInfo.gender)
-        countryView.set(placeholderText: R.string.localization.account_info_country(), titleText: userInfo.country)
-    }
-
-    private func setupViewsWith(userSessionModel: UserSessionModel) {
-        usernameView.set(placeholderText: R.string.localization.account_info_username(), titleText: userSessionModel.username)
-        userIdView.set(placeholderText: R.string.localization.account_info_user_id(), titleText: userSessionModel.userId)
-        passwordView.set(placeholderText: R.string.localization.account_info_password(), titleText: userSessionModel.password)
+        // Password
+        passwordView.set(placeholderText: R.string.localization.account_info_password(), titleText: accountInfoModel.password)
         passwordView.bringSubviewToFront(editPasswordButton)
+        // Mail
+        mailView.set(placeholderText: R.string.localization.account_info_mail(), titleText: accountInfoModel.email)
+        mailView.bringSubviewToFront(editMailButton)
+        // Phone
+        phoneNumberView.set(placeholderText: R.string.localization.account_info_phone_number(), titleText: accountInfoModel.phoneNumber.asPhoneNumber)
+        phoneNumberView.bringSubviewToFront(editPhoneNumberButton)
+        // Name
+        nameView.set(placeholderText: R.string.localization.account_info_name(), titleText: accountInfoModel.name)
+        // Surname
+        surnameView.set(placeholderText: R.string.localization.account_info_surname(), titleText: accountInfoModel.surname)
+        // Birth Date
+        birthDateView.set(placeholderText: R.string.localization.account_info_birth_date(), titleText: accountInfoModel.birthDate)
+        // Gender
+        genderView.set(placeholderText: R.string.localization.account_info_gender(), titleText: accountInfoModel.gender)
+        // Country
+        countryView.set(placeholderText: R.string.localization.account_info_country(), titleText: accountInfoModel.country)
+        // Address
+        addressView.set(placeholderText: R.string.localization.account_info_address(), titleText: accountInfoModel.address)
+        addressView.bringSubviewToFront(editAddressButton)
     }
 
     // MARK: Action methods

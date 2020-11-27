@@ -21,8 +21,7 @@ public protocol AccountInfoViewModelOutput {
 }
 
 public enum AccountInfoViewModelOutputAction {
-    case setupWithUserInfo(_ userInfo: UserInfoServices)
-    case setupWithUserSession(_ userSessionModel: UserSessionModel)
+    case setupWithAccountInfoModel(_ accountInfoModel: AccountInfoModel)
 }
 
 public enum AccountInfoViewModelRoute {
@@ -44,15 +43,17 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
 
     public func viewDidLoad() {
         refreshUserInfo()
-        actionSubject.onNext(.setupWithUserInfo(userInfo))
-
-        let userSessionModel = UserSessionModel(username: userSession.username ?? "Guest", userId: String(userSession.userId ?? 0), password: String.passwordRepresentation)
-        actionSubject.onNext(.setupWithUserSession(userSessionModel))
     }
 
     private func refreshUserInfo() {
-        userInfoRepo.currentUserInfo(params: .init()) { result in
-            print(result)
+        userInfoRepo.currentUserInfo(params: .init()) { [weak self] result in
+            switch result {
+            case .success(let userInfo):
+                let accountInfoModel = AccountInfoModel.create(from: userInfo)
+                self?.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }
