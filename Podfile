@@ -18,6 +18,7 @@ def pods
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
+  pod 'FSCalendar'
   
   pod 'Reveal-SDK', :configurations => ['Debug-Stage', 'Debug-Production']
 end

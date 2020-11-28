@@ -72,6 +72,7 @@ public extension DependencyContainer {
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
         Module { DefaultTimerComponentViewModel() as TimerComponentViewModel }
+        Module { DefaultTransactionsFilterViewModel() as TransactionsFilterViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -104,6 +105,7 @@ public extension DependencyContainer {
         Module { DefaultMailChangeViewControllerFactory() as MailChangeViewControllerFactory }
         Module { DefaultAddressChangeViewControllerFactory() as AddressChangeViewControllerFactory }
         Module { DefaultPasswordChangeViewControllerFactory() as PasswordChangeViewControllerFactory }
+        Module { DefaultTransactionsFilterViewControllerFactory() as TransactionsFilterViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

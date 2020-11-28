@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 22 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 23 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
@@ -132,6 +132,8 @@ struct R: Rswift.Validatable {
     static let sports = _R.storyboard.sports()
     /// Storyboard `TransactionDetails`.
     static let transactionDetails = _R.storyboard.transactionDetails()
+    /// Storyboard `TransactionsFilter`.
+    static let transactionsFilter = _R.storyboard.transactionsFilter()
     /// Storyboard `Transactions`.
     static let transactions = _R.storyboard.transactions()
     /// Storyboard `Withdraw`.
@@ -281,6 +283,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Transactions", bundle: ...)`
     static func transactions(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.transactions)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "TransactionsFilter", bundle: ...)`
+    static func transactionsFilter(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.transactionsFilter)
     }
     #endif
 
@@ -1285,6 +1294,30 @@ struct R: Rswift.Validatable {
 
     /// This `R.image.components` struct is generated, and contains static references to 0 images.
     struct components {
+      /// This `R.image.components.abCheckbox` struct is generated, and contains static references to 2 images.
+      struct abCheckbox {
+        /// Image `checked`.
+        static let checked = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ABCheckbox/checked")
+        /// Image `unchecked`.
+        static let unchecked = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ABCheckbox/unchecked")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "checked", bundle: ..., traitCollection: ...)`
+        static func checked(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.abCheckbox.checked, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "unchecked", bundle: ..., traitCollection: ...)`
+        static func unchecked(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.abCheckbox.unchecked, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
       /// This `R.image.components.accountInfo` struct is generated, and contains static references to 2 images.
       struct accountInfo {
         /// Image `edit`.
@@ -1882,12 +1915,39 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.transactionsHistory` struct is generated, and contains static references to 2 images.
+    /// This `R.image.transactionsHistory` struct is generated, and contains static references to 5 images.
     struct transactionsHistory {
+      /// Image `arrow-left`.
+      static let arrowLeft = Rswift.ImageResource(bundle: R.hostingBundle, name: "TransactionsHistory/arrow-left")
+      /// Image `arrow-right`.
+      static let arrowRight = Rswift.ImageResource(bundle: R.hostingBundle, name: "TransactionsHistory/arrow-right")
+      /// Image `calendar`.
+      static let calendar = Rswift.ImageResource(bundle: R.hostingBundle, name: "TransactionsHistory/calendar")
       /// Image `deposit`.
       static let deposit = Rswift.ImageResource(bundle: R.hostingBundle, name: "TransactionsHistory/deposit")
       /// Image `withdraw`.
       static let withdraw = Rswift.ImageResource(bundle: R.hostingBundle, name: "TransactionsHistory/withdraw")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "arrow-left", bundle: ..., traitCollection: ...)`
+      static func arrowLeft(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.transactionsHistory.arrowLeft, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "arrow-right", bundle: ..., traitCollection: ...)`
+      static func arrowRight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.transactionsHistory.arrowRight, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "calendar", bundle: ..., traitCollection: ...)`
+      static func calendar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.transactionsHistory.calendar, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "deposit", bundle: ..., traitCollection: ...)`
@@ -1924,7 +1984,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 39 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 42 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -1934,6 +1994,8 @@ struct R: Rswift.Validatable {
     static let balanceComponentView = _R.nib._BalanceComponentView()
     /// Nib `BalanceTableViewCell`.
     static let balanceTableViewCell = _R.nib._BalanceTableViewCell()
+    /// Nib `CalendarComponentView`.
+    static let calendarComponentView = _R.nib._CalendarComponentView()
     /// Nib `CashFlowTabComponentView`.
     static let cashFlowTabComponentView = _R.nib._CashFlowTabComponentView()
     /// Nib `DepositInstructionView`.
@@ -1992,6 +2054,10 @@ struct R: Rswift.Validatable {
     static let transactionDetailsComponentView = _R.nib._TransactionDetailsComponentView()
     /// Nib `TransactionDetailsTableViewCell`.
     static let transactionDetailsTableViewCell = _R.nib._TransactionDetailsTableViewCell()
+    /// Nib `TransactionFilterComponentView`.
+    static let transactionFilterComponentView = _R.nib._TransactionFilterComponentView()
+    /// Nib `TransactionFilterTableViewCell`.
+    static let transactionFilterTableViewCell = _R.nib._TransactionFilterTableViewCell()
     /// Nib `TransactionHistoryComponentView`.
     static let transactionHistoryComponentView = _R.nib._TransactionHistoryComponentView()
     /// Nib `TransactionHistoryHeaderCell`.
@@ -2034,6 +2100,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.balanceTableViewCell) instead")
     static func balanceTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.balanceTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CalendarComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.calendarComponentView) instead")
+    static func calendarComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.calendarComponentView)
     }
     #endif
 
@@ -2270,6 +2344,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransactionFilterComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionFilterComponentView) instead")
+    static func transactionFilterComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transactionFilterComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransactionFilterTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionFilterTableViewCell) instead")
+    static func transactionFilterTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transactionFilterTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TransactionHistoryComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.transactionHistoryComponentView) instead")
     static func transactionHistoryComponentView(_: Void = ()) -> UIKit.UINib {
@@ -2331,6 +2421,10 @@ struct R: Rswift.Validatable {
 
     static func balanceTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BalanceTableViewCell? {
       return R.nib.balanceTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BalanceTableViewCell
+    }
+
+    static func calendarComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.calendarComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func cashFlowTabComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -2447,6 +2541,14 @@ struct R: Rswift.Validatable {
 
     static func transactionDetailsTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionDetailsTableViewCell? {
       return R.nib.transactionDetailsTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionDetailsTableViewCell
+    }
+
+    static func transactionFilterComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.transactionFilterComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func transactionFilterTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionFilterTableViewCell? {
+      return R.nib.transactionFilterTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionFilterTableViewCell
     }
 
     static func transactionHistoryComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -2596,6 +2698,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let new_address_subtitle = Rswift.StringResource(key: "new_address_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Filter
+      ///
+      /// Locales: en, ka, hy
+      static let transactions_filter_title = Rswift.StringResource(key: "transactions_filter_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Female
       ///
       /// Locales: en, ka, hy
@@ -3412,6 +3518,20 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("new_address_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Filter
+      ///
+      /// Locales: en, ka, hy
+      static func transactions_filter_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_filter_title"
+        }
+
+        return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: bundle, comment: "")
+
       /// en translation: Female
       ///
       /// Locales: en, ka, hy
@@ -3425,6 +3545,7 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("gender_female", tableName: "Localization", bundle: bundle, comment: "")
+
       }
 
       /// en translation: Forgot Password?
@@ -4870,6 +4991,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _BalanceComponentView.validate()
+      try _CalendarComponentView.validate()
       try _CashFlowTabComponentView.validate()
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
@@ -4923,6 +5045,24 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BalanceTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BalanceTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CalendarComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CalendarComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -5276,6 +5416,28 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _TransactionFilterComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TransactionFilterComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TransactionFilterTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TransactionFilterTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TransactionFilterTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionFilterTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _TransactionHistoryComponentView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "TransactionHistoryComponentView"
@@ -5424,6 +5586,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try transactions.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try transactionsFilter.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try withdraw.validate()
@@ -5857,6 +6022,27 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.transactions().transactionsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'transactionsViewController' could not be loaded from storyboard 'Transactions' as 'TransactionsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct transactionsFilter: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "TransactionsFilter"
+      let transactionsFilterViewController = StoryboardViewControllerResource<TransactionsFilterViewController>(identifier: "TransactionsFilterViewController")
+
+      func transactionsFilterViewController(_: Void = ()) -> TransactionsFilterViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: transactionsFilterViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/SystemGrays/systemGrey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemGrays/systemGrey' is used in storyboard 'TransactionsFilter', but couldn't be loaded.") }
+        }
+        if _R.storyboard.transactionsFilter().transactionsFilterViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'transactionsFilterViewController' could not be loaded from storyboard 'TransactionsFilter' as 'TransactionsFilterViewController'.") }
       }
 
       fileprivate init() {}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FiraGO-Regular.ttf">
+            <string>FiraGO-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Transactions Filter View Controller-->
+        <scene sceneID="qJB-CS-RSL">
+            <objects>
+                <viewController storyboardIdentifier="TransactionsFilterViewController" id="m0o-nz-zXa" customClass="TransactionsFilterViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="waX-VB-yBE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAd-tY-25z" userLabel="Filter Type Container">
+                                <rect key="frame" x="15" y="69" width="384" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHv-3h-yRG">
+                                        <rect key="frame" x="2" y="2" width="190" height="40"/>
+                                        <color key="backgroundColor" name="ColorGuide/SystemGrays/systemGrey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Q99-gC-oqg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FiraGO-Regular" family="FiraGO" pointSize="13"/>
+                                        <state key="normal" title="ტრანზაქციები">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTransactionsButtonClickWithSender:" destination="m0o-nz-zXa" eventType="touchUpInside" id="hOX-R4-aZM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuK-Rg-BxC">
+                                        <rect key="frame" x="192" y="2" width="190" height="40"/>
+                                        <color key="backgroundColor" name="ColorGuide/SystemGrays/systemGrey"/>
+                                        <fontDescription key="fontDescription" name="FiraGO-Regular" family="FiraGO" pointSize="13"/>
+                                        <state key="normal" title="თამაშები">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onGamesButtonClickWithSender:" destination="m0o-nz-zXa" eventType="touchUpInside" id="s50-6B-qN7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstItem="zuK-Rg-BxC" firstAttribute="width" secondItem="CHv-3h-yRG" secondAttribute="width" id="AbT-dN-BHy"/>
+                                    <constraint firstItem="zuK-Rg-BxC" firstAttribute="centerY" secondItem="PAd-tY-25z" secondAttribute="centerY" id="QFA-mz-4jl"/>
+                                    <constraint firstItem="CHv-3h-yRG" firstAttribute="leading" secondItem="PAd-tY-25z" secondAttribute="leading" constant="2" id="Qd0-39-6s6"/>
+                                    <constraint firstItem="zuK-Rg-BxC" firstAttribute="height" secondItem="CHv-3h-yRG" secondAttribute="height" id="VyN-U8-qC5"/>
+                                    <constraint firstAttribute="height" constant="44" id="gh4-j2-Pgi"/>
+                                    <constraint firstItem="CHv-3h-yRG" firstAttribute="centerY" secondItem="PAd-tY-25z" secondAttribute="centerY" id="hn6-5P-2d2"/>
+                                    <constraint firstItem="zuK-Rg-BxC" firstAttribute="leading" secondItem="CHv-3h-yRG" secondAttribute="trailing" id="iaS-eB-51e"/>
+                                    <constraint firstAttribute="trailing" secondItem="zuK-Rg-BxC" secondAttribute="trailing" constant="2" id="mdv-iI-Mma"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4l5-nd-WNi" customClass="CalendarComponentView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="16" y="129" width="382" height="334.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4l5-nd-WNi" secondAttribute="height" multiplier="8:7" id="m7S-8e-7rI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fq5-K1-BwM"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PAd-tY-25z" firstAttribute="leading" secondItem="Fq5-K1-BwM" secondAttribute="leading" constant="15" id="2pA-XQ-OVP"/>
+                            <constraint firstItem="4l5-nd-WNi" firstAttribute="leading" secondItem="Fq5-K1-BwM" secondAttribute="leading" constant="16" id="Eg4-Za-kgR"/>
+                            <constraint firstItem="Fq5-K1-BwM" firstAttribute="trailing" secondItem="PAd-tY-25z" secondAttribute="trailing" constant="15" id="UIK-Qc-3Xy"/>
+                            <constraint firstItem="PAd-tY-25z" firstAttribute="top" secondItem="Fq5-K1-BwM" secondAttribute="top" constant="25" id="ieH-Lj-qPT"/>
+                            <constraint firstItem="4l5-nd-WNi" firstAttribute="top" secondItem="PAd-tY-25z" secondAttribute="bottom" constant="16" id="lNu-yT-ZYv"/>
+                            <constraint firstItem="Fq5-K1-BwM" firstAttribute="trailing" secondItem="4l5-nd-WNi" secondAttribute="trailing" constant="16" id="oc3-RL-JdM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendarComponentView" destination="4l5-nd-WNi" id="L6H-bz-02j"/>
+                        <outlet property="filterTypeContainerView" destination="PAd-tY-25z" id="9ee-Gu-Oc2"/>
+                        <outlet property="gamesFilterButton" destination="zuK-Rg-BxC" id="1Z7-8X-OOV"/>
+                        <outlet property="transactionsFilterButton" destination="CHv-3h-yRG" id="5dN-Fl-tRM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMi-A4-gYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="84"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ColorGuide/SystemGrays/systemGrey">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

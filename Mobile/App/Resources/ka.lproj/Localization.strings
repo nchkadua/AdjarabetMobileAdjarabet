@@ -174,3 +174,6 @@
 "p2p_transfer_total_amount" = "ჯამური თანხა";
 "p2p_transfer_you_are_transfering_to" = "You are transfering to";
 "p2p_transfer_confirm" = "დადასტურება";
+
+/* Transactions History */
+"transactions_filter_title" = "ფილტრი";

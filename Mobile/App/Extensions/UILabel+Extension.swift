@@ -18,7 +18,7 @@ public extension UILabel {
     func setTextAndImage(_ text: String, _ image: UIImage, alignment: ImageAlignment) {
         let attachment: NSTextAttachment = NSTextAttachment()
         attachment.image = image
-        attachment.bounds = CGRect(x: 0, y: -5, width: attachment.image?.size.width ?? 20, height: attachment.image?.size.height ?? 20)
+        attachment.bounds = CGRect(x: 0, y: -2, width: attachment.image?.size.width ?? 20, height: attachment.image?.size.height ?? 20)
         let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
 
         switch alignment {

@@ -41,6 +41,12 @@ public class LoginViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        loginWithTestUser()
+    }
+    
+    private func loginWithTestUser() {
+        usernameInputView.setTextAndConfigure(text: "testpng")
+        passwordInputView.setTextAndConfigure(text: "Paroli1")
     }
 
     public override func viewDidAppear(_ animated: Bool) {

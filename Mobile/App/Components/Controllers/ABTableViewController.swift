@@ -28,7 +28,8 @@ public class ABTableViewController: AppTableViewController {
             NotificationsHeaderCell.self,
             TransactionHistoryTableViewCell.self,
             TransactionHistoryHeaderCell.self,
-            TransactionDetailsTableViewCell.self
+            TransactionDetailsTableViewCell.self,
+            TransactionFilterTableViewCell.self
         ])
 
         setupTableView()

@@ -77,6 +77,23 @@ public extension CommonBarButtonProviding {
 
         return settingsBarButtonItem
     }
+    
+    @discardableResult
+    func makeCalendarBarButtonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
+        let button = UIButton()
+        button.setImage(R.image.transactionsHistory.calendar(), for: .normal)
+
+        return (UIBarButtonItem(customView: button), button)
+    }
+    
+    @discardableResult
+    func makeBarrButtonWith(title: String) -> UIBarButtonItem.Coupled {
+        let button = UIButton()
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(DesignSystem.Color.primaryRed().value, for: .normal)
+        button.setFont(to: .subHeadline(fontCase: .lower))
+        return (UIBarButtonItem(customView: button), button)
+    }
 
     @discardableResult
     func makeAdjarabetLogo() -> UIBarButtonItem {
