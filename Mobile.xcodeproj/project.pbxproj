@@ -2455,9 +2455,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8A47DDF24335B4C0077AA8E /* Build configuration list for PBXNativeTarget "Mobile" */;
 			buildPhases = (
-				E851500A85D349E8F223FF6F /* [CP] Check Pods Manifest.lock */,
 				D85C9C1324336B6F00F1D4FE /* RSwift */,
 				D827961B2434CA56006745E8 /* SwiftLint */,
+				E851500A85D349E8F223FF6F /* [CP] Check Pods Manifest.lock */,
 				D8A47DC724335B4B0077AA8E /* Sources */,
 				D8A47DC824335B4B0077AA8E /* Frameworks */,
 				D8A47DC924335B4B0077AA8E /* Resources */,
@@ -2718,7 +2718,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/Mobile/App/Resources/R.generated.swift",
+				$SRCROOT/Mobile/App/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
