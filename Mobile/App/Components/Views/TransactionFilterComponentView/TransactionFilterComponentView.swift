@@ -42,7 +42,7 @@ class TransactionFilterComponentView: UIView {
 
         viewModel.didBind()
     }
-    
+
     private func set(title: String, checked: Bool) {
         titleLabel.text = title
         checkbox.isSelected = checked

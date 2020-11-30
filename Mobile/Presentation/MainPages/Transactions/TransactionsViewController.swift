@@ -64,12 +64,12 @@ public class TransactionsViewController: ABViewController {
     private func setupNavigationItems() {
         setBackBarButtonItemIfNeeded()
         setTitle(title: "ტრანზაქციები")
-        
+
         let calendarButton = makeCalendarBarButtonItem()
         navigationItem.rightBarButtonItem = calendarButton.barButtonItem
         calendarButton.button.addTarget(self, action: #selector(openFilter), for: .touchUpInside)
     }
-    
+
     @objc private func openFilter() {
         navigator.navigate(to: .filter, animated: true)
     }

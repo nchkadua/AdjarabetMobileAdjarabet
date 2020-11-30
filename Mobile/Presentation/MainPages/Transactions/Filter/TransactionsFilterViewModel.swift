@@ -39,13 +39,12 @@ public class DefaultTransactionsFilterViewModel {
     private let actionSubject = PublishSubject<TransactionsFilterViewModelOutputAction>()
     private let routeSubject = PublishSubject<TransactionsFilterViewModelRoute>()
     private var selectedFilterType: FilterType = .transactions
-    
 }
 
 extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
     public func onClick(type: FilterType) {
         guard type != selectedFilterType else { return }
-        
+
         if selectedFilterType == .transactions {
                 actionSubject.onNext(.selectFilter(filter: .games))
         } else if selectedFilterType == .games {
@@ -56,7 +55,7 @@ extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
 
     public var action: Observable<TransactionsFilterViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<TransactionsFilterViewModelRoute> { routeSubject.asObserver() }
-        
+
     public func viewDidLoad() {
         var dataProvider: AppCellDataProviders = []
         TransactionFilters.filters.forEach {

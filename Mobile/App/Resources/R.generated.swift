@@ -2580,7 +2580,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 124 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 125 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2698,14 +2698,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let new_address_subtitle = Rswift.StringResource(key: "new_address_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Filter
-      ///
-      /// Locales: en, ka, hy
-      static let transactions_filter_title = Rswift.StringResource(key: "transactions_filter_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Female
       ///
       /// Locales: en, ka, hy
       static let gender_female = Rswift.StringResource(key: "gender_female", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Filter
+      ///
+      /// Locales: en, ka, hy
+      static let transactions_filter_title = Rswift.StringResource(key: "transactions_filter_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Forgot Password?
       ///
       /// Locales: en, ka, hy
@@ -3518,20 +3518,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("new_address_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: Filter
-      ///
-      /// Locales: en, ka, hy
-      static func transactions_filter_title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "transactions_filter_title"
-        }
-
-        return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: bundle, comment: "")
-
       /// en translation: Female
       ///
       /// Locales: en, ka, hy
@@ -3545,7 +3531,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("gender_female", tableName: "Localization", bundle: bundle, comment: "")
+      }
 
+      /// en translation: Filter
+      ///
+      /// Locales: en, ka, hy
+      static func transactions_filter_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_filter_title"
+        }
+
+        return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Forgot Password?

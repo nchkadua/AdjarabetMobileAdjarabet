@@ -13,7 +13,7 @@ class CalendarComponentView: UIView {
     private var disposeBag = DisposeBag()
 //    private var viewModel: CalendarComponentViewModel!
     @Inject private var languageStorage: LanguageStorage
-    
+
     private var firstDate: Date?
     private var lastDate: Date?
     private var datesRange: [Date]?
@@ -24,12 +24,12 @@ class CalendarComponentView: UIView {
     @IBOutlet weak private var dateLabel: UILabel!
     @IBOutlet weak private var arrowLeft: UIButton!
     @IBOutlet weak private var arrowRight: UIButton!
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         roundCorners(.allCorners, radius: 13)
     }
-    
+
     public override init(frame: CGRect) {
        super.init(frame: frame)
        nibSetup()
@@ -52,7 +52,7 @@ class CalendarComponentView: UIView {
 //
 //        viewModel.didBind()
 //    }
-    
+
     @objc private func nextMonth() {
         var dateComponents = DateComponents()
         dateComponents.month = 1
@@ -60,7 +60,7 @@ class CalendarComponentView: UIView {
         calendar.setCurrentPage(nextMonth!, animated: true)
         setDate(calendar.currentPage)
     }
-    
+
     @objc private func previousMonth() {
         var dateComponents = DateComponents()
         dateComponents.month = -1
@@ -68,12 +68,12 @@ class CalendarComponentView: UIView {
         calendar.setCurrentPage(nextMonth!, animated: true)
         setDate(calendar.currentPage)
     }
-    
+
     private func setDate(_ date: Date) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM yyyy"
         formatter.locale = Locale(identifier: languageStorage.currentLanguage.localizableIdentifier)
-        
+
         dateLabel.setTextAndImage(formatter.string(from: date), R.image.transactionsHistory.arrowRight() ?? UIImage(), alignment: .right)
     }
 }
@@ -91,18 +91,18 @@ extension CalendarComponentView: Xibable {
     func setupUI() {
         view.setBackgorundColor(to: .tertiaryBg())
         setupCalendar()
-        
+
         dateLabel.setFont(to: .title3(fontCase: .lower))
         dateLabel.setTextColor(to: .primaryText())
-        
+
         arrowLeft.addTarget(self, action: #selector(previousMonth), for: .touchUpInside)
         arrowRight.addTarget(self, action: #selector(nextMonth), for: .touchUpInside)
     }
-    
+
     func setupCalendar() {
         calendar.dataSource = self
         calendar.delegate = self
-        
+
         calendar.swipeToChooseGesture.isEnabled = true
         calendar.allowsMultipleSelection = true
         calendar.locale = Locale(identifier: languageStorage.currentLanguage.localizableIdentifier)
@@ -122,11 +122,11 @@ extension CalendarComponentView: Xibable {
         calendar.appearance.headerTitleFont = DesignSystem.Typography.title3(fontCase: .lower).description.font
         calendar.appearance.weekdayFont = DesignSystem.Typography.footnote(fontCase: .lower).description.font
         calendar.appearance.titleFont = DesignSystem.Typography.headline(fontCase: .lower).description.font
-        
+
         //Move to setup after binding
         setDate(calendar.currentPage)
     }
-    
+
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         setDate(calendar.currentPage)
     }
@@ -135,7 +135,6 @@ extension CalendarComponentView: Xibable {
 // TODO: write better logic
 extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
         if firstDate == nil {
             firstDate = date
             datesRange = [firstDate!]
