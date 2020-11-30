@@ -19,7 +19,7 @@ public class SMSLoginViewController: ABViewController {
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
     @IBOutlet private weak var loginButton: ABButton!
     @IBOutlet private weak var timerView: TimerComponentView!
-    
+
     private lazy var smsCodeTextField: UITextField = {
         let f = UITextField()
         f.translatesAutoresizingMaskIntoConstraints = false
@@ -132,7 +132,7 @@ public class SMSLoginViewController: ABViewController {
 
         smsCodeInputView.configureForNumberOfItems(6)
     }
-    
+
     /// Timer
     private func bindToTimer(_ timerViewModel: TimerComponentViewModel) {
         timerView.setAndBind(viewModel: timerViewModel)
@@ -194,7 +194,7 @@ public class SMSLoginViewController: ABViewController {
 
         loginButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
     }
-    
+
     private func updateResendButton(activate: Bool) {
         if activate {
             resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))

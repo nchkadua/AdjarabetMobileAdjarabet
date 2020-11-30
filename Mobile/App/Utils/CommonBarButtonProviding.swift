@@ -77,7 +77,7 @@ public extension CommonBarButtonProviding {
 
         return settingsBarButtonItem
     }
-    
+
     @discardableResult
     func makeCalendarBarButtonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
         let button = UIButton()
@@ -85,7 +85,7 @@ public extension CommonBarButtonProviding {
 
         return (UIBarButtonItem(customView: button), button)
     }
-    
+
     @discardableResult
     func makeBarrButtonWith(title: String) -> UIBarButtonItem.Coupled {
         let button = UIButton()

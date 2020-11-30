@@ -64,16 +64,16 @@ public class DefaultSMSLoginViewModel {
 extension DefaultSMSLoginViewModel: SMSLoginViewModel {
     public var action: Observable<SMSLoginViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<SMSLoginViewModelRoute> { routeSubject.asObserver() }
-    
+
     public func viewDidLoad() {
         actionSubject.onNext(.setSMSInputViewNumberOfItems(smsCodeLength))
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
     }
-    
+
     public func didBindToTimer() {
         timerViewModel.start(from: 30)
     }
-    
+
     public func restartTimer() {
         timerViewModel.start(from: 30)
     }

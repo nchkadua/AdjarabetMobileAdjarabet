@@ -25,7 +25,7 @@ public class ABButton: LoadingButton {
         super.setTitleColor(color, for: state)
         activityIndicator.color = color
     }
-    
+
     public func setImage(_ image: UIImage, tintColor: DesignSystem.Color) {
         setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
         setTintColor(to: tintColor)

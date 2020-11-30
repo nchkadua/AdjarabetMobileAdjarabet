@@ -43,7 +43,7 @@ public class LoginViewController: ABViewController {
         viewModel.viewDidLoad()
         loginWithTestUser()
     }
-    
+
     private func loginWithTestUser() {
         usernameInputView.setTextAndConfigure(text: "testpng")
         passwordInputView.setTextAndConfigure(text: "Paroli1")

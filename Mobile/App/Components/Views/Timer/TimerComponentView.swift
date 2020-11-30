@@ -17,10 +17,10 @@ class TimerComponentView: UIView {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var secondsLabel: UILabel!
-    
+
     private var initialSeconds = 0
     private var timer: Timer?
-    
+
     public override init(frame: CGRect) {
        super.init(frame: frame)
        nibSetup()
@@ -50,24 +50,24 @@ class TimerComponentView: UIView {
 
         viewModel.didBind()
     }
-    
+
     private func startTimer(from seconds: Int) {
         initialSeconds = seconds
         timeLabel.text = String(initialSeconds)
-        
+
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
-    
+
     @objc private func updateTimer() {
         initialSeconds -= 1
         timeLabel.text = String(initialSeconds)
-        
+
         guard initialSeconds <= 0 else { return }
-        
+
         timer?.invalidate()
         viewModel.timerDidEnd()
     }
-    
+
     private func stopTimer() {
         timer?.invalidate()
     }
@@ -85,15 +85,15 @@ extension TimerComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
-        
+
         titleLabel.setTextColor(to: .secondaryText())
         titleLabel.setFont(to: .caption2(fontCase: .lower))
         titleLabel.text = R.string.localization.sms_resend_title.localized()
-        
+
         secondsLabel.setTextColor(to: .primaryText())
         secondsLabel.setFont(to: .caption2(fontCase: .lower))
         secondsLabel.text = R.string.localization.sms_resend_time.localized()
-        
+
         timeLabel.setTextColor(to: .primaryText())
         timeLabel.setFont(to: .caption2(fontCase: .lower))
     }

@@ -19,7 +19,7 @@ class ABCheckbox: UIButton {
         self.init()
         isSelected = checked
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
@@ -35,11 +35,11 @@ class ABCheckbox: UIButton {
         setImage(viewModel.uncheckedImage, for: .normal)
         tintColor = UIColor.clear
     }
-    
+
     private func setupActions() {
         addTarget(self, action: #selector(toggleButton), for: .touchUpInside)
     }
-    
+
     @objc func toggleButton() {
       isSelected.toggle()
     }

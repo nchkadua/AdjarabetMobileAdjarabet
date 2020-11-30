@@ -8,8 +8,8 @@
 
 public class TransactionFilterTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: TransactionFilterComponentView!
-    override public class var identifier: Identifierable { R.nib.transactionFilterTableViewCell.name }  
-    
+    override public class var identifier: Identifierable { R.nib.transactionFilterTableViewCell.name }
+
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? TransactionFilterTableViewCellDataProvider else {

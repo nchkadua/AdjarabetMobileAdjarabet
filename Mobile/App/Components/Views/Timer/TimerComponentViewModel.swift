@@ -34,20 +34,19 @@ public class DefaultTimerComponentViewModel {
 
 extension DefaultTimerComponentViewModel: TimerComponentViewModel {
     public var action: Observable<TimerComponentViewModelOutputAction> { actionSubject.asObserver() }
-    
+
     public func didBind() {
     }
-    
+
     public func start(from seconds: Int) {
         actionSubject.onNext(.startFrom(seconds: seconds))
     }
-    
+
     public func timerDidEnd() {
         actionSubject.onNext(.timerDidEnd)
     }
-    
+
     public func stopTimer() {
         actionSubject.onNext(.stopTimer)
     }
 }
-
