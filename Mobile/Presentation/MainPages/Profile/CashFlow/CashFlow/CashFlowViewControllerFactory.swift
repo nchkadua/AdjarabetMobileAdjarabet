@@ -13,7 +13,7 @@ public protocol CashFlowViewControllerFactory {
 public class DefaultCashFlowViewControllerFactory: CashFlowViewControllerFactory {
     public func make(params: CashFlowViewModelParams) -> CashFlowViewController {
         let vc = R.storyboard.cashFlow().instantiate(controller: CashFlowViewController.self)!
-        vc.viewModel = DefaultCashFlowViewModel(params: params)
+        vc.viewModel.params = params
         return vc
     }
 }

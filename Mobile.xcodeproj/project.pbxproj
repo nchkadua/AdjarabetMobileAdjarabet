@@ -136,6 +136,7 @@
 		CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */; };
 		CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */; };
 		CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */; };
+		CE9B7F8625753784006FF756 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B7F8525753784006FF756 /* DateFormatter.swift */; };
 		CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA287762540C16700E6590C /* AccountInfo.storyboard */; };
 		CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */; };
 		CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */; };
@@ -549,6 +550,7 @@
 		CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionComponentViewModel.swift; sourceTree = "<group>"; };
 		CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionComponentView.xib; sourceTree = "<group>"; };
 		CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDeletableCellDelegate.swift; sourceTree = "<group>"; };
+		CE9B7F8525753784006FF756 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		CEA287762540C16700E6590C /* AccountInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountInfo.storyboard; sourceTree = "<group>"; };
 		CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewControllerFactory.swift; sourceTree = "<group>"; };
 		CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoNavigator.swift; sourceTree = "<group>"; };
@@ -2424,6 +2426,7 @@
 				D8FBA4F72449BE7D0015C03C /* Language.swift */,
 				D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */,
 				D84202CF2451930A00F0F056 /* ABUserDefaults.swift */,
+				CE9B7F8525753784006FF756 /* DateFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2881,6 +2884,7 @@
 				CEF3685A2549C33E009FD456 /* DepositViewControllerFactory.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
 				D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */,
+				CE9B7F8625753784006FF756 /* DateFormatter.swift in Sources */,
 				CEB937DA251E281B004195A1 /* LanguagesButton.swift in Sources */,
 				CE91C0DA257028C400A18255 /* TransactionsFilterViewController.swift in Sources */,
 				CE91C0D9257028C400A18255 /* TransactionsFilterNavigator.swift in Sources */,

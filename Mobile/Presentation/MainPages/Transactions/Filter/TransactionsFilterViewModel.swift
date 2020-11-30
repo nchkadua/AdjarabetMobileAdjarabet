@@ -30,6 +30,7 @@ public enum TransactionsFilterViewModelOutputAction {
     case languageDidChange
     case initialize(AppListDataProvider)
     case selectFilter(filter: FilterType)
+    case bindToCalendarComponentViewModel(viewmodel: CalendarComponentViewModel)
 }
 
 public enum TransactionsFilterViewModelRoute {
@@ -39,6 +40,8 @@ public class DefaultTransactionsFilterViewModel {
     private let actionSubject = PublishSubject<TransactionsFilterViewModelOutputAction>()
     private let routeSubject = PublishSubject<TransactionsFilterViewModelRoute>()
     private var selectedFilterType: FilterType = .transactions
+
+    @Inject(from: .componentViewModels) private var calendarComponentViewModel: CalendarComponentViewModel
 }
 
 extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
@@ -64,5 +67,6 @@ extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
         }
         actionSubject.onNext(.initialize(dataProvider.makeList()))
         actionSubject.onNext(.selectFilter(filter: .transactions))
+        actionSubject.onNext(.bindToCalendarComponentViewModel(viewmodel: calendarComponentViewModel))
     }
 }

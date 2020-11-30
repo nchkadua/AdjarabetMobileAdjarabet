@@ -39,18 +39,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ct5-1L-4et">
-                    <rect key="frame" x="314" y="12.5" width="15" height="24"/>
+                    <rect key="frame" x="304" y="0.0" width="25" height="49"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="15" id="KdR-G6-Oxu"/>
-                        <constraint firstAttribute="height" constant="24" id="YSW-7y-WmO"/>
+                        <constraint firstAttribute="width" constant="25" id="KdR-G6-Oxu"/>
                     </constraints>
                     <state key="normal" image="TransactionsHistory/arrow-right"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zij-vh-e0d">
-                    <rect key="frame" x="271" y="12.5" width="15" height="24"/>
+                    <rect key="frame" x="271" y="0.0" width="25" height="49"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="RuZ-Zf-hHG"/>
-                        <constraint firstAttribute="width" constant="15" id="oRk-Mg-Ozb"/>
+                        <constraint firstAttribute="width" constant="25" id="oRk-Mg-Ozb"/>
                     </constraints>
                     <state key="normal" image="TransactionsHistory/arrow-left"/>
                 </button>
@@ -58,14 +56,17 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="zij-vh-e0d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7XM-6n-YLh"/>
+                <constraint firstItem="Syg-fi-qi8" firstAttribute="top" secondItem="zij-vh-e0d" secondAttribute="bottom" id="DaE-5w-kR1"/>
                 <constraint firstItem="6kG-VP-ON1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="Hb4-RH-sse"/>
-                <constraint firstItem="Ct5-1L-4et" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12.5" id="IZ9-O4-cjd"/>
+                <constraint firstItem="Ct5-1L-4et" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IZ9-O4-cjd"/>
                 <constraint firstAttribute="trailing" secondItem="Ct5-1L-4et" secondAttribute="trailing" constant="14" id="Nax-Ok-ANg"/>
                 <constraint firstItem="Syg-fi-qi8" firstAttribute="top" secondItem="6kG-VP-ON1" secondAttribute="bottom" constant="15" id="Pzx-wv-yQN"/>
                 <constraint firstItem="zij-vh-e0d" firstAttribute="centerY" secondItem="Ct5-1L-4et" secondAttribute="centerY" id="e5u-sQ-m7k"/>
                 <constraint firstItem="Syg-fi-qi8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fCN-8W-IHO"/>
+                <constraint firstItem="Syg-fi-qi8" firstAttribute="top" secondItem="Ct5-1L-4et" secondAttribute="bottom" id="g4j-yc-B0x"/>
                 <constraint firstItem="6kG-VP-ON1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="lyT-LQ-fPt"/>
-                <constraint firstItem="Ct5-1L-4et" firstAttribute="leading" secondItem="zij-vh-e0d" secondAttribute="trailing" constant="28" id="q6b-I3-GCa"/>
+                <constraint firstItem="Ct5-1L-4et" firstAttribute="leading" secondItem="zij-vh-e0d" secondAttribute="trailing" constant="8" id="q6b-I3-GCa"/>
                 <constraint firstItem="Syg-fi-qi8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rDC-jk-MG6"/>
                 <constraint firstItem="Syg-fi-qi8" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="vL8-LG-tY4"/>
             </constraints>

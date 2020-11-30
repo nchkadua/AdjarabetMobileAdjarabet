@@ -9,7 +9,7 @@
 import RxSwift
 
 public class CashFlowViewController: UIViewController {
-    public var viewModel: CashFlowViewModel!
+    @Inject(from: .viewModels) public var viewModel: CashFlowViewModel
     public lazy var navigator = CashFlowNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 

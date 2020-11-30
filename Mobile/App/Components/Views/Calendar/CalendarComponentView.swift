@@ -11,7 +11,7 @@ import FSCalendar
 
 class CalendarComponentView: UIView {
     private var disposeBag = DisposeBag()
-//    private var viewModel: CalendarComponentViewModel!
+    private var viewModel: CalendarComponentViewModel!
     @Inject private var languageStorage: LanguageStorage
 
     private var firstDate: Date?
@@ -40,41 +40,43 @@ class CalendarComponentView: UIView {
        nibSetup()
     }
 
-//    public func setAndBind(viewModel: CalendarComponentViewModel) {
-//        self.viewModel = viewModel
-//        bind()
-//    }
+    public func setAndBind(viewModel: CalendarComponentViewModel) {
+        self.viewModel = viewModel
+        bind()
+    }
 
-//    public func bind() {
-//        viewModel?.action.subscribe(onNext: { [weak self] action in
-//
-//        }).disposed(by: disposeBag)
-//
-//        viewModel.didBind()
-//    }
+    public func bind() {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .setupCalendar: self?.setDate(self?.calendar.currentPage ?? Date())
+            default:
+                break
+            }
+        }).disposed(by: disposeBag)
+
+        viewModel.didBind()
+    }
 
     @objc private func nextMonth() {
-        var dateComponents = DateComponents()
-        dateComponents.month = 1
-        let nextMonth: Date? = Calendar.current.date(byAdding: dateComponents, to: calendar.currentPage) ?? Date()
-        calendar.setCurrentPage(nextMonth!, animated: true)
+        calendar.setCurrentPage(monthByAdding(1) ?? Date(), animated: true)
         setDate(calendar.currentPage)
     }
 
     @objc private func previousMonth() {
-        var dateComponents = DateComponents()
-        dateComponents.month = -1
-        let nextMonth: Date? = Calendar.current.date(byAdding: dateComponents, to: calendar.currentPage) ?? Date()
-        calendar.setCurrentPage(nextMonth!, animated: true)
+        calendar.setCurrentPage(monthByAdding(-1) ?? Date(), animated: true)
         setDate(calendar.currentPage)
     }
 
-    private func setDate(_ date: Date) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM yyyy"
-        formatter.locale = Locale(identifier: languageStorage.currentLanguage.localizableIdentifier)
+    private func monthByAdding(_ month: Int) -> Date? {
+        var dateComponents = DateComponents()
+        dateComponents.month = month
+        let month: Date? = Calendar.current.date(byAdding: dateComponents, to: calendar.currentPage) ?? Date()
 
-        dateLabel.setTextAndImage(formatter.string(from: date), R.image.transactionsHistory.arrowRight() ?? UIImage(), alignment: .right)
+        return month
+    }
+
+    private func setDate(_ date: Date) {
+        dateLabel.setTextAndImage(ABDateFormatter.calendarDateFormatter(with: languageStorage.currentLanguage.localizableIdentifier).string(from: date), R.image.transactionsHistory.arrowRight() ?? UIImage(), alignment: .right, with: true)
     }
 }
 
@@ -122,54 +124,43 @@ extension CalendarComponentView: Xibable {
         calendar.appearance.headerTitleFont = DesignSystem.Typography.title3(fontCase: .lower).description.font
         calendar.appearance.weekdayFont = DesignSystem.Typography.footnote(fontCase: .lower).description.font
         calendar.appearance.titleFont = DesignSystem.Typography.headline(fontCase: .lower).description.font
-
-        //Move to setup after binding
-        setDate(calendar.currentPage)
-    }
-
-    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        setDate(calendar.currentPage)
     }
 }
 
-// TODO: write better logic
 extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        setDate(calendar.currentPage)
+    }
+
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         if firstDate == nil {
             firstDate = date
             datesRange = [firstDate!]
+            viewModel.didSelectRange(fromDate: datesRange?.first, toDate: nil)
             return
         }
 
-        // only first date is selected:
         if firstDate != nil && lastDate == nil {
-            // handle the case of if the last date is less than the first date:
             if date <= firstDate! {
                 calendar.deselect(firstDate!)
                 firstDate = date
                 datesRange = [firstDate!]
 
-                print("datesRange contains 1: \(datesRange!)")
-
                 return
             }
 
             let range = datesRange(from: firstDate!, to: date)
-
             lastDate = range.last
 
             for d in range {
                 calendar.select(d)
             }
-
             datesRange = range
-
-            print("datesRange contains 2: \(datesRange!)")
+            viewModel.didSelectRange(fromDate: datesRange?.first, toDate: datesRange?.last)
 
             return
         }
 
-        // both are selected:
         if firstDate != nil && lastDate != nil {
             for d in calendar.selectedDates {
                 calendar.deselect(d)
@@ -179,25 +170,6 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
             firstDate = nil
 
             datesRange = []
-
-            print("datesRange contains 3: \(datesRange!)")
-        }
-    }
-
-    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        // both are selected:
-        setDate(date)
-        // NOTE: the is a REDUANDENT CODE:
-        if firstDate != nil && lastDate != nil {
-            for d in calendar.selectedDates {
-                calendar.deselect(d)
-            }
-
-            lastDate = nil
-            firstDate = nil
-
-            datesRange = []
-            print("datesRange contains 4: \(datesRange!)")
         }
     }
 

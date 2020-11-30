@@ -19,7 +19,8 @@ public struct CashFlowViewModelParams {
     }
 }
 
-public protocol CashFlowViewModelInput {
+public protocol CashFlowViewModelInput: AnyObject {
+    var params: CashFlowViewModelParams { get set }
     func viewDidLoad()
     func viewWillAppear()
     func viewDidDissappear()
@@ -44,7 +45,7 @@ public class DefaultCashFlowViewModel {
     private let actionSubject = PublishSubject<CashFlowViewModelOutputAction>()
     private let routeSubject = PublishSubject<CashFlowViewModelRoute>()
 
-    @Inject(from: .viewModels) private var tabViewModel: CashFlowTabComponentViewModel
+    @Inject(from: .componentViewModels) private var tabViewModel: CashFlowTabComponentViewModel
     private var viewHasDissappeared = true
 
     public init (params: CashFlowViewModelParams = CashFlowViewModelParams(initialPageIndex: 0)) {

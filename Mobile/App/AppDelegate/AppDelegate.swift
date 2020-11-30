@@ -63,7 +63,6 @@ public extension DependencyContainer {
         Module { DefaultCashFlowViewModel() as CashFlowViewModel }
         Module { DefaultDepositViewModel() as DepositViewModel }
         Module { DefaultWithdrawViewModel() as WithdrawViewModel }
-        Module { DefaultCashFlowTabComponentViewModel() as CashFlowTabComponentViewModel }
         Module { DefaultTransactionsViewModel() as TransactionsViewModel }
         Module { DefaultBiometricSettingsViewModel() as BiometricSettingsViewModel }
         Module { DefaultP2PTransferViewModel() as P2PTransferViewModel }
@@ -73,6 +72,11 @@ public extension DependencyContainer {
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
         Module { DefaultTimerComponentViewModel() as TimerComponentViewModel }
         Module { DefaultTransactionsFilterViewModel() as TransactionsFilterViewModel }
+    }
+
+    static var componentViewModels = DependencyContainer {
+        Module { DefaultCalendarComponentViewModel() as CalendarComponentViewModel }
+        Module { DefaultCashFlowTabComponentViewModel() as CashFlowTabComponentViewModel }
     }
 
     static var repositories = DependencyContainer {

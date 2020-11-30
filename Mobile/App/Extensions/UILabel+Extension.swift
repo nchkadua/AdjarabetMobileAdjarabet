@@ -15,7 +15,15 @@ public extension UILabel {
         self.textColor = color.value
     }
 
-    func setTextAndImage(_ text: String, _ image: UIImage, alignment: ImageAlignment) {
+    func setTextWithAnimation(_ text: String) {
+        UIView.transition(with: self, duration: 0.2, options: .transitionCrossDissolve, animations: { [weak self] in
+            self?.text = text
+        }, completion: nil)
+    }
+
+    func setTextAndImage(_ text: String, _ image: UIImage, alignment: ImageAlignment, with animation: Bool = false) {
+        let animationTime = animation ? 0.15 : 0.0
+
         let attachment: NSTextAttachment = NSTextAttachment()
         attachment.image = image
         attachment.bounds = CGRect(x: 0, y: -2, width: attachment.image?.size.width ?? 20, height: attachment.image?.size.height ?? 20)
@@ -26,14 +34,22 @@ public extension UILabel {
             let strLabelText = NSMutableAttributedString(string: text)
             strLabelText.append(NSAttributedString(string: "  "))
             strLabelText.append(attachmentString)
-            attributedText = strLabelText
+
+            setAttributedTextWithAnimation(strLabelText, animationTime: animationTime)
         case .left:
             let strLabelText = NSAttributedString(string: text)
             let mutableAttachmentString = NSMutableAttributedString(attributedString: attachmentString)
             mutableAttachmentString.append(NSAttributedString(string: "  "))
             mutableAttachmentString.append(strLabelText)
-            attributedText = mutableAttachmentString
+
+            setAttributedTextWithAnimation(strLabelText, animationTime: animationTime)
         }
+    }
+
+    func setAttributedTextWithAnimation(_ text: NSAttributedString, animationTime: TimeInterval = 0.2 ) {
+        UIView.transition(with: self, duration: animationTime, options: .transitionFlipFromTop, animations: { [weak self] in
+            self?.attributedText = text
+        }, completion: nil)
     }
 }
 

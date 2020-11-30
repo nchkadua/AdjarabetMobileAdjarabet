@@ -45,12 +45,37 @@ public class TransactionsFilterViewController: ABViewController {
         switch action {
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
+        case .bindToCalendarComponentViewModel(let calendarComponentViewModel): bindToCalendar(calendarComponentViewModel)
         case .languageDidChange:
             // TODO
             print("Handle language Change")
         case .selectFilter(let filter):
             selectFilter(filter: filter)
         }
+    }
+
+    // MARK: CalendarComponentView
+    private func bindToCalendar(_ calendarViewModel: CalendarComponentViewModel) {
+        calendarComponentView.setAndBind(viewModel: calendarViewModel)
+        bind(to: calendarViewModel)
+    }
+
+    private func bind(to viewModel: CalendarComponentViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: CalendarComponentViewModelOutputAction) {
+        switch action {
+        case .didSelectRange(let startDate, let endDate): filterWith(startDate, endDate)
+        default:
+            break
+        }
+    }
+
+    // MARK: Action methods
+    private func filterWith(_ startDate: Date?, _ endDate: Date?) {
     }
 
     // MARK: Setup methods
@@ -123,7 +148,6 @@ public class TransactionsFilterViewController: ABViewController {
     }
 
     // MARK: Actions
-
     @IBAction func onGamesButtonClick(sender: Any) {
         viewModel.onClick(type: .games)
     }
