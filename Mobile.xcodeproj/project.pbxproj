@@ -57,6 +57,7 @@
 		C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */; };
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
+		C7B0DCEE2575591100714B22 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0DCED2575591100714B22 /* Country.swift */; };
 		C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */; };
 		C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */; };
 		C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */; };
@@ -111,6 +112,8 @@
 		CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE660C46254C0587002667D0 /* LabelComponentView.xib */; };
 		CE660C52254C3162002667D0 /* DepositInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C51254C3162002667D0 /* DepositInstructionView.swift */; };
 		CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E294C256E8F1F001FE225 /* Double+Extension.swift */; };
+		CE76FD7F25764FB500D8AB04 /* ABLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76FD7E25764FB500D8AB04 /* ABLocationManager.swift */; };
+		CE76FD8B257666E200D8AB04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE76FD8A257666E200D8AB04 /* CoreLocation.framework */; };
 		CE91C0D9257028C400A18255 /* TransactionsFilterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */; };
 		CE91C0DA257028C400A18255 /* TransactionsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */; };
 		CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */; };
@@ -137,6 +140,11 @@
 		CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */; };
 		CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */; };
 		CE9B7F8625753784006FF756 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B7F8525753784006FF756 /* DateFormatter.swift */; };
+		CE9B7FE9257544F5006FF756 /* PhoneNumberChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9B7FE4257544F5006FF756 /* PhoneNumberChange.storyboard */; };
+		CE9B7FEA257544F5006FF756 /* PhoneNumberChangeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B7FE5257544F5006FF756 /* PhoneNumberChangeNavigator.swift */; };
+		CE9B7FEB257544F5006FF756 /* PhoneNumberChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B7FE6257544F5006FF756 /* PhoneNumberChangeViewController.swift */; };
+		CE9B7FEC257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B7FE7257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift */; };
+		CE9B7FED257544F5006FF756 /* PhoneNumberChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B7FE8257544F5006FF756 /* PhoneNumberChangeViewModel.swift */; };
 		CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA287762540C16700E6590C /* AccountInfo.storyboard */; };
 		CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */; };
 		CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */; };
@@ -471,6 +479,7 @@
 		C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometryStorage.swift; sourceTree = "<group>"; };
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C7405188256FAA8200EAC904 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
+		C7B0DCED2575591100714B22 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferNavigator.swift; sourceTree = "<group>"; };
 		C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewController.swift; sourceTree = "<group>"; };
 		C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewModel.swift; sourceTree = "<group>"; };
@@ -525,6 +534,8 @@
 		CE660C46254C0587002667D0 /* LabelComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelComponentView.xib; sourceTree = "<group>"; };
 		CE660C51254C3162002667D0 /* DepositInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositInstructionView.swift; sourceTree = "<group>"; };
 		CE6E294C256E8F1F001FE225 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		CE76FD7E25764FB500D8AB04 /* ABLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABLocationManager.swift; sourceTree = "<group>"; };
+		CE76FD8A257666E200D8AB04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterNavigator.swift; sourceTree = "<group>"; };
 		CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewController.swift; sourceTree = "<group>"; };
 		CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewModel.swift; sourceTree = "<group>"; };
@@ -551,6 +562,11 @@
 		CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionComponentView.xib; sourceTree = "<group>"; };
 		CE9A175725519001006655AF /* AppDeletableCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDeletableCellDelegate.swift; sourceTree = "<group>"; };
 		CE9B7F8525753784006FF756 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		CE9B7FE4257544F5006FF756 /* PhoneNumberChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhoneNumberChange.storyboard; sourceTree = "<group>"; };
+		CE9B7FE5257544F5006FF756 /* PhoneNumberChangeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberChangeNavigator.swift; sourceTree = "<group>"; };
+		CE9B7FE6257544F5006FF756 /* PhoneNumberChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberChangeViewController.swift; sourceTree = "<group>"; };
+		CE9B7FE7257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberChangeViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE9B7FE8257544F5006FF756 /* PhoneNumberChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberChangeViewModel.swift; sourceTree = "<group>"; };
 		CEA287762540C16700E6590C /* AccountInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountInfo.storyboard; sourceTree = "<group>"; };
 		CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewControllerFactory.swift; sourceTree = "<group>"; };
 		CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoNavigator.swift; sourceTree = "<group>"; };
@@ -850,6 +866,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE76FD8B257666E200D8AB04 /* CoreLocation.framework in Frameworks */,
 				A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -860,6 +877,7 @@
 		31170CB969BE9F4E039A5237 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE76FD8A257666E200D8AB04 /* CoreLocation.framework */,
 				D803F42724A251C700A16CB2 /* Pods_Mobile.framework */,
 				F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */,
 			);
@@ -1410,9 +1428,22 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
+		CE9B7FB32575431C006FF756 /* PhoneNumberChange */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B7FE4257544F5006FF756 /* PhoneNumberChange.storyboard */,
+				CE9B7FE5257544F5006FF756 /* PhoneNumberChangeNavigator.swift */,
+				CE9B7FE6257544F5006FF756 /* PhoneNumberChangeViewController.swift */,
+				CE9B7FE7257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift */,
+				CE9B7FE8257544F5006FF756 /* PhoneNumberChangeViewModel.swift */,
+			);
+			path = PhoneNumberChange;
+			sourceTree = "<group>";
+		};
 		CEA2876D2540C06800E6590C /* AccountInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CE9B7FB32575431C006FF756 /* PhoneNumberChange */,
 				CECF7F6B256D9F86001C0E50 /* PasswordChange */,
 				CECF7F3F256D5A68001C0E50 /* AddressChange */,
 				CEA7778D256D41F7008A4F6C /* MailChange */,
@@ -1912,6 +1943,7 @@
 				D8BA5A192499391C00F88433 /* AppConstant.swift */,
 				CEE0E09F254869F200949417 /* AppSessionProvider.swift */,
 				CEB6643E255027E1003D7D6D /* ABConstant.swift */,
+				CE76FD7E25764FB500D8AB04 /* ABLocationManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2424,6 +2456,7 @@
 			isa = PBXGroup;
 			children = (
 				D8FBA4F72449BE7D0015C03C /* Language.swift */,
+				C7B0DCED2575591100714B22 /* Country.swift */,
 				D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */,
 				D84202CF2451930A00F0F056 /* ABUserDefaults.swift */,
 				CE9B7F8525753784006FF756 /* DateFormatter.swift */,
@@ -2589,6 +2622,7 @@
 				CECCE3AE254EFA7B005CC660 /* DepositInstructionView.xib in Resources */,
 				763171AD25663E1500F6FD90 /* TransactionDetails.storyboard in Resources */,
 				CE95D00725542035007D2084 /* NotoSansArmenian-SemiBold.ttf in Resources */,
+				CE9B7FE9257544F5006FF756 /* PhoneNumberChange.storyboard in Resources */,
 				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
@@ -2845,9 +2879,11 @@
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				7644B6002563E201006778B2 /* TransactionHistoryHeaderCell.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
+				C7B0DCEE2575591100714B22 /* Country.swift in Sources */,
 				CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
+				CE9B7FEC257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */,
 				769886B92571091D00FA339E /* ABCheckbox.swift in Sources */,
@@ -2861,6 +2897,7 @@
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				CE2D1DF22530753A00112A1D /* QuickActionsHeaderCell.swift in Sources */,
 				CE2F03C9252CC8E8006D8001 /* QuickActionComponentViewModel.swift in Sources */,
+				CE76FD7F25764FB500D8AB04 /* ABLocationManager.swift in Sources */,
 				CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */,
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
 				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
@@ -2998,13 +3035,16 @@
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
+				CE9B7FEA257544F5006FF756 /* PhoneNumberChangeNavigator.swift in Sources */,
 				CEF3684F2549C325009FD456 /* DepositViewController.swift in Sources */,
 				C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */,
 				CEE15C582534A1720033BF93 /* NotificationsProvider.swift in Sources */,
+				CE9B7FEB257544F5006FF756 /* PhoneNumberChangeViewController.swift in Sources */,
 				7698869E2571042A00FA339E /* TransactionFilterTableViewCell.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				CE91C0E1257028D400A18255 /* TransactionsFilterViewControllerFactory.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
+				CE9B7FED257544F5006FF756 /* PhoneNumberChangeViewModel.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,

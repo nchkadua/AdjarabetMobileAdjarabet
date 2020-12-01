@@ -58,6 +58,7 @@ public class WithdrawViewController: ABViewController {
 
     private func setupPaymentMethods(with payment: Payment) {
         cardNumberInputView.setupPickerView(withItems: payment.cards)
+        cardNumberInputView.setDefaultValue(payment.cards.first ?? "")
     }
 
     // MARK: Setup methods

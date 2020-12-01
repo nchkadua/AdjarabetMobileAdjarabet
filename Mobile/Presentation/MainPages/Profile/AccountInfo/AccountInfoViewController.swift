@@ -177,7 +177,7 @@ public class AccountInfoViewController: ABViewController {
     }
 
     @objc private func editPhoneNumberAction() {
-        showAlert(title: "Edit Phone Number")
+        navigator.navigate(to: .phoneNumberChange, animated: true)
     }
 
     @objc private func editAddressAction() {

@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import CoreLocation
 
 public class HomeViewController: UIViewController {
     // MARK: Properties
@@ -39,6 +40,11 @@ public class HomeViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
+    }
+
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
     }
 
     // MARK: Binding

@@ -49,7 +49,7 @@ public class ABInputView: UIView {
     public var formatter: Formatter = DefaultFormatter()
 
     /// PickerView
-    private var pickerView = UIPickerView()
+    public var pickerView = UIPickerView()
     private var dataSourceItems = [String]()
 
     // MARK: Init
@@ -263,14 +263,19 @@ extension ABInputView {
         addToolBar()
     }
 
+    public func setDefaultValue(_ value: String) {
+        setTextAndConfigure(text: value)
+        pickerView.selectRow(dataSourceItems.firstIndex(of: value) ?? 0, inComponent: 0, animated: false)
+    }
+
     private func setup() {
         mainTextField.inputView = pickerView
+        mainTextField.tintColor = .clear
         pickerView.backgroundColor = DesignSystem.Color.secondaryBg().value
         pickerView.delegate = self
         pickerView.dataSource = self
 
         setDropdownImage()
-        setTextAndConfigure(text: dataSourceItems.first)
     }
 
     private func addToolBar() {

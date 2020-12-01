@@ -56,7 +56,10 @@ public class DepositViewController: ABViewController {
 
     private func setupPaymentMethods(with payment: Payment) {
         paymentMethodInputView.setupPickerView(withItems: payment.paymentMethods)
+        paymentMethodInputView.setDefaultValue(payment.paymentMethods.first ?? "")
+
         cardNumberInputView.setupPickerView(withItems: payment.cards)
+        cardNumberInputView.setDefaultValue(payment.cards.first ?? "")
     }
 
     // MARK: Setup methods

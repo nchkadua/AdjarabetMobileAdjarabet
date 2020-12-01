@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Phone Number Change View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="PhoneNumberChangeViewController" id="gAa-dD-eZu" customClass="PhoneNumberChangeViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93R-t5-0Sz">
+                                <rect key="frame" x="20" y="44" width="374" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="CKQ-mP-WDo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ja7-rD-qYA" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="86" width="145" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="e90-T1-zxu"/>
+                                    <constraint firstAttribute="height" constant="54" id="uBN-h8-XWI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRr-V4-RGH" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="174" y="86" width="220" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="3kK-BP-XQb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOi-gZ-kQt" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="160" width="374" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="jaf-wP-dOh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="93R-t5-0Sz" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" id="3N3-It-5gP"/>
+                            <constraint firstItem="93R-t5-0Sz" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="20" id="3yx-WD-pHl"/>
+                            <constraint firstItem="ja7-rD-qYA" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="20" id="4Ls-fY-CKS"/>
+                            <constraint firstItem="ja7-rD-qYA" firstAttribute="top" secondItem="93R-t5-0Sz" secondAttribute="bottom" constant="24" id="7uc-vy-SHL"/>
+                            <constraint firstItem="GRr-V4-RGH" firstAttribute="top" secondItem="93R-t5-0Sz" secondAttribute="bottom" constant="24" id="Cee-io-WcF"/>
+                            <constraint firstItem="dOi-gZ-kQt" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="20" id="S21-nx-2jc"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="GRr-V4-RGH" secondAttribute="trailing" constant="20" id="SvJ-Ec-dfi"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="dOi-gZ-kQt" secondAttribute="trailing" constant="20" id="ZHM-1L-REW"/>
+                            <constraint firstItem="GRr-V4-RGH" firstAttribute="leading" secondItem="ja7-rD-qYA" secondAttribute="trailing" constant="9" id="gSY-GM-bCu"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="93R-t5-0Sz" secondAttribute="trailing" constant="20" id="hcp-ok-b4y"/>
+                            <constraint firstItem="dOi-gZ-kQt" firstAttribute="top" secondItem="ja7-rD-qYA" secondAttribute="bottom" constant="20" id="rpH-d6-R22"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="approveButton" destination="dOi-gZ-kQt" id="Ul9-ac-j1b"/>
+                        <outlet property="phoneNumberInputView" destination="GRr-V4-RGH" id="p7M-R1-Zjr"/>
+                        <outlet property="phonePrefixInputView" destination="ja7-rD-qYA" id="MNj-7Y-o3v"/>
+                        <outlet property="subtitleLabel" destination="93R-t5-0Sz" id="g9h-41-buB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="30"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="dOi-gZ-kQt">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

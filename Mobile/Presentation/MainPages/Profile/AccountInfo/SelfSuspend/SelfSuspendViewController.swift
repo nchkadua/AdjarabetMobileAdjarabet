@@ -47,6 +47,7 @@ public class SelfSuspendViewController: ABViewController {
 
     private func setup(_ durations: [String]) {
         durationsInputView.setupPickerView(withItems: durations)
+        durationsInputView.setDefaultValue(durations.first ?? "")
     }
 
     // MARK: Setup methods

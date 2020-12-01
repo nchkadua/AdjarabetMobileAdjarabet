@@ -15,6 +15,7 @@ public protocol HomeViewModel: HomeViewModelInput, HomeViewModelOutput, ABCollec
 public protocol HomeViewModelInput {
     func viewDidLoad()
     func viewWillAppear()
+    func viewDidAppear()
     func didLoadNextPage()
 }
 
@@ -173,6 +174,11 @@ extension DefaultHomeViewModel: HomeViewModel {
 
         loadRecentryPlayedGames()
         load(loadingType: .fullScreen)
+    }
+
+    public func viewDidAppear() {
+        // TODO
+//        ABLocationManager.sharedInstance.load()
     }
 
     public func didLoadNextPage() {

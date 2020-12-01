@@ -12,6 +12,7 @@ public class AccountInfoNavigator: Navigator {
     @Inject(from: .factories) public var mailChangeViewControllerFactory: MailChangeViewControllerFactory
     @Inject(from: .factories) public var addressChangeViewControllerFactory: AddressChangeViewControllerFactory
     @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
+    @Inject(from: .factories) public var phoneNumberChangeViewControllerFactory: PhoneNumberChangeViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -31,8 +32,7 @@ public class AccountInfoNavigator: Navigator {
         case .mailChange: navigateToMailChange(animate: animate)
         case .addressChange: navigateToAddressChange(animate: animate)
         case .passwordChange: navigateToPasswordChange(animate: animate)
-        default:
-            break
+        case .phoneNumberChange: navigateToPhoneNumberChange(animate: animate)
         }
     }
 
@@ -59,6 +59,13 @@ public class AccountInfoNavigator: Navigator {
 
     private func navigateToPasswordChange(animate: Bool) {
         let vc = passwordChangeViewControllerFactory.make()
+        let navC = vc.wrapInNavWith(presentationStyle: .automatic)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+    }
+
+    private func navigateToPhoneNumberChange(animate: Bool) {
+        let vc = phoneNumberChangeViewControllerFactory.make(params: .init())
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)

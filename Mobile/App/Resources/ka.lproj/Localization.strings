@@ -132,6 +132,13 @@
 "rule2" = "გამოიყენეთ ერთი ან მეტი (e.g @$&!)";
 "rule3" = "მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო";
 
+/* Phone Number Change */
+"phone_number_change_title" = "ტელეფონის ნომრის ცვლილება";
+"phone_number_subtitle" = "შეიყვანეთ ახალი მობილურის ნომერი";
+"approve_number_button_title" = "დადასტურება";
+"phone_prefix" = "კოდი";
+"new_phone_number" = "ტელეფონის ნომერი";
+
 /* Deposit */
 "cashflow_done_button_title" = "Done";
 

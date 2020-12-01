@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 23 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 24 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
@@ -120,6 +120,8 @@ struct R: Rswift.Validatable {
     static let p2PTransferView = _R.storyboard.p2PTransferView()
     /// Storyboard `PasswordChange`.
     static let passwordChange = _R.storyboard.passwordChange()
+    /// Storyboard `PhoneNumberChange`.
+    static let phoneNumberChange = _R.storyboard.phoneNumberChange()
     /// Storyboard `Profile`.
     static let profile = _R.storyboard.profile()
     /// Storyboard `Promotions`.
@@ -234,6 +236,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "PasswordChange", bundle: ...)`
     static func passwordChange(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.passwordChange)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PhoneNumberChange", bundle: ...)`
+    static func phoneNumberChange(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.phoneNumberChange)
     }
     #endif
 
@@ -2580,7 +2589,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 125 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 130 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2618,6 +2627,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let approve_address_button_title = Rswift.StringResource(key: "approve_address_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Approve
+      ///
+      /// Locales: en, ka, hy
+      static let approve_number_button_title = Rswift.StringResource(key: "approve_number_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Biometry Authentication Parameters
       ///
       /// Locales: en, ka, hy
@@ -2650,6 +2663,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let password_change_title = Rswift.StringResource(key: "password_change_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Change Phone Number
+      ///
+      /// Locales: en, ka, hy
+      static let phone_number_change_title = Rswift.StringResource(key: "phone_number_change_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Code is sent to yout number
       ///
       /// Locales: en, ka, hy
@@ -2698,6 +2715,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let new_address_subtitle = Rswift.StringResource(key: "new_address_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Enter New Phone Number
+      ///
+      /// Locales: en, ka, hy
+      static let phone_number_subtitle = Rswift.StringResource(key: "phone_number_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Female
       ///
       /// Locales: en, ka, hy
@@ -2830,6 +2851,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_phone_number = Rswift.StringResource(key: "account_info_phone_number", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Phone Number
+      ///
+      /// Locales: en, ka, hy
+      static let new_phone_number = Rswift.StringResource(key: "new_phone_number", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Poker Balance
       ///
       /// Locales: en, ka, hy
@@ -2838,6 +2863,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let gender_prefer_not_to_say = Rswift.StringResource(key: "gender_prefer_not_to_say", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Prexix
+      ///
+      /// Locales: en, ka, hy
+      static let phone_prefix = Rswift.StringResource(key: "phone_prefix", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Private Information
       ///
       /// Locales: en, ka, hy
@@ -3218,6 +3247,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("approve_address_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Approve
+      ///
+      /// Locales: en, ka, hy
+      static func approve_number_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("approve_number_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "approve_number_button_title"
+        }
+
+        return NSLocalizedString("approve_number_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Biometry Authentication Parameters
       ///
       /// Locales: en, ka, hy
@@ -3336,6 +3380,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("password_change_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change Phone Number
+      ///
+      /// Locales: en, ka, hy
+      static func phone_number_change_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("phone_number_change_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "phone_number_change_title"
+        }
+
+        return NSLocalizedString("phone_number_change_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Code is sent to yout number
@@ -3516,6 +3575,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("new_address_subtitle", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Enter New Phone Number
+      ///
+      /// Locales: en, ka, hy
+      static func phone_number_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("phone_number_subtitle", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "phone_number_subtitle"
+        }
+
+        return NSLocalizedString("phone_number_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Female
@@ -4013,6 +4087,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_phone_number", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Phone Number
+      ///
+      /// Locales: en, ka, hy
+      static func new_phone_number(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("new_phone_number", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "new_phone_number"
+        }
+
+        return NSLocalizedString("new_phone_number", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Poker Balance
       ///
       /// Locales: en, ka, hy
@@ -4041,6 +4130,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("gender_prefer_not_to_say", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Prexix
+      ///
+      /// Locales: en, ka, hy
+      static func phone_prefix(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("phone_prefix", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "phone_prefix"
+        }
+
+        return NSLocalizedString("phone_prefix", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Private Information
@@ -5567,6 +5671,9 @@ struct _R: Rswift.Validatable {
       try passwordChange.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try phoneNumberChange.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try profile.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -5877,6 +5984,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.passwordChange().passwordChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'passwordChangeViewController' could not be loaded from storyboard 'PasswordChange' as 'PasswordChangeViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct phoneNumberChange: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PhoneNumberChange"
+      let phoneNumberChangeViewController = StoryboardViewControllerResource<PhoneNumberChangeViewController>(identifier: "PhoneNumberChangeViewController")
+
+      func phoneNumberChangeViewController(_: Void = ()) -> PhoneNumberChangeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: phoneNumberChangeViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.phoneNumberChange().phoneNumberChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'phoneNumberChangeViewController' could not be loaded from storyboard 'PhoneNumberChange' as 'PhoneNumberChangeViewController'.") }
       }
 
       fileprivate init() {}

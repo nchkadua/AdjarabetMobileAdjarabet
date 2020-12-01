@@ -33,6 +33,10 @@
 	</dict>
 	<key>NSFaceIDUsageDescription</key>
 	<string>$(PRODUCT_NAME) requests access to Face ID to simplify the login process</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Adjarabet App Wants To Access Your Location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Adjarabet App Wants To Access Your Location</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>PantonMtav3-Bold.otf</string>
@@ -101,9 +105,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
 	<key>UIUserInterfaceStyle</key>
 	<string>Dark</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>
