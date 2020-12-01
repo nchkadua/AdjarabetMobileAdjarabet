@@ -90,10 +90,12 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 24 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 25 storyboards.
   struct storyboard {
     /// Storyboard `AccountInfo`.
     static let accountInfo = _R.storyboard.accountInfo()
+    /// Storyboard `AccountParameters`.
+    static let accountParameters = _R.storyboard.accountParameters()
     /// Storyboard `AddressChange`.
     static let addressChange = _R.storyboard.addressChange()
     /// Storyboard `BiometricSettingsView`.
@@ -145,6 +147,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AccountInfo", bundle: ...)`
     static func accountInfo(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.accountInfo)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AccountParameters", bundle: ...)`
+    static func accountParameters(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.accountParameters)
     }
     #endif
 
@@ -1268,6 +1277,48 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    /// This `R.image.accountParameters` struct is generated, and contains static references to 4 images.
+    struct accountParameters {
+      /// Image `BlockSelf`.
+      static let blockSelf = Rswift.ImageResource(bundle: R.hostingBundle, name: "AccountParameters/BlockSelf")
+      /// Image `ChangePassword`.
+      static let changePassword = Rswift.ImageResource(bundle: R.hostingBundle, name: "AccountParameters/ChangePassword")
+      /// Image `HighSecurity`.
+      static let highSecurity = Rswift.ImageResource(bundle: R.hostingBundle, name: "AccountParameters/HighSecurity")
+      /// Image `LoginHistory`.
+      static let loginHistory = Rswift.ImageResource(bundle: R.hostingBundle, name: "AccountParameters/LoginHistory")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "BlockSelf", bundle: ..., traitCollection: ...)`
+      static func blockSelf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.accountParameters.blockSelf, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "ChangePassword", bundle: ..., traitCollection: ...)`
+      static func changePassword(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.accountParameters.changePassword, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "HighSecurity", bundle: ..., traitCollection: ...)`
+      static func highSecurity(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.accountParameters.highSecurity, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "LoginHistory", bundle: ..., traitCollection: ...)`
+      static func loginHistory(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.accountParameters.loginHistory, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.biometric` struct is generated, and contains static references to 3 images.
     struct biometric {
       /// Image `TouchID`.
@@ -1993,12 +2044,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 42 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 48 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
     /// Nib `AccountInfoComponentView`.
     static let accountInfoComponentView = _R.nib._AccountInfoComponentView()
+    /// Nib `AccountParametersComponentView`.
+    static let accountParametersComponentView = _R.nib._AccountParametersComponentView()
+    /// Nib `AccountParametersHeaderComponentView`.
+    static let accountParametersHeaderComponentView = _R.nib._AccountParametersHeaderComponentView()
+    /// Nib `AccountParametersHeaderTableViewCell`.
+    static let accountParametersHeaderTableViewCell = _R.nib._AccountParametersHeaderTableViewCell()
+    /// Nib `AccountParametersTableViewCell`.
+    static let accountParametersTableViewCell = _R.nib._AccountParametersTableViewCell()
+    /// Nib `AccountSecurityMessagesComponentView`.
+    static let accountSecurityMessagesComponentView = _R.nib._AccountSecurityMessagesComponentView()
+    /// Nib `AccountSecurityMessagesTableViewCell`.
+    static let accountSecurityMessagesTableViewCell = _R.nib._AccountSecurityMessagesTableViewCell()
     /// Nib `BalanceComponentView`.
     static let balanceComponentView = _R.nib._BalanceComponentView()
     /// Nib `BalanceTableViewCell`.
@@ -2093,6 +2156,54 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.accountInfoComponentView) instead")
     static func accountInfoComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.accountInfoComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AccountParametersComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.accountParametersComponentView) instead")
+    static func accountParametersComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.accountParametersComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AccountParametersHeaderComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.accountParametersHeaderComponentView) instead")
+    static func accountParametersHeaderComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.accountParametersHeaderComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AccountParametersHeaderTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.accountParametersHeaderTableViewCell) instead")
+    static func accountParametersHeaderTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.accountParametersHeaderTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AccountParametersTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.accountParametersTableViewCell) instead")
+    static func accountParametersTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.accountParametersTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AccountSecurityMessagesComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.accountSecurityMessagesComponentView) instead")
+    static func accountSecurityMessagesComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.accountSecurityMessagesComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AccountSecurityMessagesTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.accountSecurityMessagesTableViewCell) instead")
+    static func accountSecurityMessagesTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.accountSecurityMessagesTableViewCell)
     }
     #endif
 
@@ -2424,6 +2535,30 @@ struct R: Rswift.Validatable {
       return R.nib.accountInfoComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func accountParametersComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.accountParametersComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func accountParametersHeaderComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.accountParametersHeaderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func accountParametersHeaderTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AccountParametersHeaderTableViewCell? {
+      return R.nib.accountParametersHeaderTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountParametersHeaderTableViewCell
+    }
+
+    static func accountParametersTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AccountParametersTableViewCell? {
+      return R.nib.accountParametersTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountParametersTableViewCell
+    }
+
+    static func accountSecurityMessagesComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.accountSecurityMessagesComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func accountSecurityMessagesTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AccountSecurityMessagesTableViewCell? {
+      return R.nib.accountSecurityMessagesTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountSecurityMessagesTableViewCell
+    }
+
     static func balanceComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.balanceComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2589,7 +2724,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 130 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 141 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2647,6 +2782,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let block_accound = Rswift.StringResource(key: "block_accound", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Block account
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_self_block = Rswift.StringResource(key: "account_parameters_self_block", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, ka, hy
@@ -2667,6 +2806,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let phone_number_change_title = Rswift.StringResource(key: "phone_number_change_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Change password
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_change_password = Rswift.StringResource(key: "account_parameters_change_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Code is sent to yout number
       ///
       /// Locales: en, ka, hy
@@ -2707,6 +2850,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let cashflow_done_button_title = Rswift.StringResource(key: "cashflow_done_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Emails
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_messages_email_title = Rswift.StringResource(key: "account_parameters_messages_email_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Enter New Address
       ///
       /// Locales: en, ka, hy
@@ -2747,6 +2894,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_gender = Rswift.StringResource(key: "account_info_gender", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: High security mode
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_high_security = Rswift.StringResource(key: "account_parameters_high_security", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Incognito Card
       ///
       /// Locales: en, ka, hy
@@ -2779,6 +2930,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login = Rswift.StringResource(key: "login", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Login history
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_login_history = Rswift.StringResource(key: "account_parameters_login_history", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Mail
       ///
       /// Locales: en, ka, hy
@@ -2915,6 +3070,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login_sms_login = Rswift.StringResource(key: "login_sms_login", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: SMS Messages
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_messages_sms_title = Rswift.StringResource(key: "account_parameters_messages_sms_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Save
       ///
       /// Locales: en, ka, hy
@@ -2927,6 +3086,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sms_resend_time = Rswift.StringResource(key: "sms_resend_time", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Security messsages
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_messages_header = Rswift.StringResource(key: "account_parameters_messages_header", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Self Suspend
       ///
       /// Locales: en, ka, hy
@@ -3007,10 +3170,26 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let p2p_transfer_you_are_transfering_to = Rswift.StringResource(key: "p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: You'll recieve emails
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_messages_email_description = Rswift.StringResource(key: "account_parameters_messages_email_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: You'll recieve sms on your phone
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_messages_sms_description = Rswift.StringResource(key: "account_parameters_messages_sms_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Your Account is Verified
       ///
       /// Locales: en, ka, hy
       static let verified = Rswift.StringResource(key: "verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: configure parameters
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_messages_email_button = Rswift.StringResource(key: "account_parameters_messages_email_button", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: configure parameters
+      ///
+      /// Locales: en, ka, hy
+      static let account_parameters_messages_sms_button = Rswift.StringResource(key: "account_parameters_messages_sms_button", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: აირჩიეთ სასურველი ბარათი
       ///
       /// Locales: en, ka, hy
@@ -3322,6 +3501,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("block_accound", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Block account
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_self_block(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_self_block", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_self_block"
+        }
+
+        return NSLocalizedString("account_parameters_self_block", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Cancel
       ///
       /// Locales: en, ka, hy
@@ -3395,6 +3589,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("phone_number_change_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change password
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_change_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_change_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_change_password"
+        }
+
+        return NSLocalizedString("account_parameters_change_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Code is sent to yout number
@@ -3547,6 +3756,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("cashflow_done_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Emails
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_messages_email_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_messages_email_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_messages_email_title"
+        }
+
+        return NSLocalizedString("account_parameters_messages_email_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Enter New Address
       ///
       /// Locales: en, ka, hy
@@ -3697,6 +3921,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_gender", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: High security mode
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_high_security(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_high_security", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_high_security"
+        }
+
+        return NSLocalizedString("account_parameters_high_security", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Incognito Card
       ///
       /// Locales: en, ka, hy
@@ -3815,6 +4054,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Login history
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_login_history(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_login_history", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_login_history"
+        }
+
+        return NSLocalizedString("account_parameters_login_history", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Mail
@@ -4327,6 +4581,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login_sms_login", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: SMS Messages
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_messages_sms_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_messages_sms_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_messages_sms_title"
+        }
+
+        return NSLocalizedString("account_parameters_messages_sms_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Save
       ///
       /// Locales: en, ka, hy
@@ -4370,6 +4639,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("sms_resend_time", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Security messsages
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_messages_header(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_messages_header", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_messages_header"
+        }
+
+        return NSLocalizedString("account_parameters_messages_header", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Self Suspend
@@ -4672,6 +4956,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: You'll recieve emails
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_messages_email_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_messages_email_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_messages_email_description"
+        }
+
+        return NSLocalizedString("account_parameters_messages_email_description", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You'll recieve sms on your phone
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_messages_sms_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_messages_sms_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_messages_sms_description"
+        }
+
+        return NSLocalizedString("account_parameters_messages_sms_description", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Your Account is Verified
       ///
       /// Locales: en, ka, hy
@@ -4685,6 +4999,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("verified", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: configure parameters
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_messages_email_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_messages_email_button", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_messages_email_button"
+        }
+
+        return NSLocalizedString("account_parameters_messages_email_button", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: configure parameters
+      ///
+      /// Locales: en, ka, hy
+      static func account_parameters_messages_sms_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_messages_sms_button", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_messages_sms_button"
+        }
+
+        return NSLocalizedString("account_parameters_messages_sms_button", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: აირჩიეთ სასურველი ბარათი
@@ -5094,6 +5438,7 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _AccountParametersComponentView.validate()
       try _BalanceComponentView.validate()
       try _CalendarComponentView.validate()
       try _CashFlowTabComponentView.validate()
@@ -5121,6 +5466,78 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AccountParametersComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AccountParametersComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AccountParametersHeaderComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AccountParametersHeaderComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AccountParametersHeaderTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AccountParametersHeaderTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AccountParametersHeaderTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountParametersHeaderTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AccountParametersTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AccountParametersTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AccountParametersTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountParametersTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AccountSecurityMessagesComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AccountSecurityMessagesComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AccountSecurityMessagesTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AccountSecurityMessagesTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AccountSecurityMessagesTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountSecurityMessagesTableViewCell
       }
 
       fileprivate init() {}
@@ -5632,6 +6049,9 @@ struct _R: Rswift.Validatable {
       try accountInfo.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try accountParameters.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try addressChange.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -5717,6 +6137,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.accountInfo().accountInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accountInfoViewController' could not be loaded from storyboard 'AccountInfo' as 'AccountInfoViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct accountParameters: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let accountParametersViewController = StoryboardViewControllerResource<AccountParametersViewController>(identifier: "AccountParametersViewController")
+      let bundle = R.hostingBundle
+      let name = "AccountParameters"
+
+      func accountParametersViewController(_: Void = ()) -> AccountParametersViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: accountParametersViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.accountParameters().accountParametersViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accountParametersViewController' could not be loaded from storyboard 'AccountParameters' as 'AccountParametersViewController'.") }
       }
 
       fileprivate init() {}

@@ -29,7 +29,10 @@ public class ABTableViewController: AppTableViewController {
             TransactionHistoryTableViewCell.self,
             TransactionHistoryHeaderCell.self,
             TransactionDetailsTableViewCell.self,
-            TransactionFilterTableViewCell.self
+            TransactionFilterTableViewCell.self,
+            AccountParametersTableViewCell.self,
+            AccountSecurityMessagesTableViewCell.self,
+            AccountParametersHeaderTableViewCell.self
         ])
 
         setupTableView()

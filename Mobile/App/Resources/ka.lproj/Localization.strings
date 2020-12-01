@@ -184,3 +184,16 @@
 
 /* Transactions History */
 "transactions_filter_title" = "ფილტრი";
+
+/* Transactions History */
+"account_parameters_change_password" = "პაროლის შეცვლა";
+"account_parameters_high_security" = "მაღალი დაცვის რეჟიმი";
+"account_parameters_self_block" = "საკუთარი თავის დაბლოკვა";
+"account_parameters_login_history" = "შესვლის ისტორია";
+"account_parameters_messages_header" = "უსაფრთხოების შეტყობინებები";
+"account_parameters_messages_sms_title" = "SMS შეტყობინებები";
+"account_parameters_messages_sms_description" = "თქვენ მიიღებთ SMS შეტყობინებებს თქვენს ტელეფონის ნომერზე";
+"account_parameters_messages_sms_button" = "პარამეტრების დაყენება";
+"account_parameters_messages_email_title" = "ელ-ფოსტის შეტყობინებები";
+"account_parameters_messages_email_description" = "თქვენ მიიღებთ შეტყობინებებს თქვენს ელ-ფოსტაზე";
+"account_parameters_messages_email_button" = "პარამეტრების დაყენება";

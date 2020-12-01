@@ -14,6 +14,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var transactionHistoryViewControllerFactory: TransactionsViewControllerFactory
     @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
     @Inject(from: .factories) public var p2pTrasferViewControllerFactory: P2PTransferViewControllerFactory
+    @Inject(from: .factories) public var accountParametersViewControllerFactory: AccountParametersViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -42,6 +43,7 @@ public class ProfileNavigator: Navigator {
         case .accountInformation: navigateToAccountInformation(animate: animate)
         case .loginPage: navigateToLogin(animate: animate)
         case .transactionHistory: navigateToTransactionHistory(animate: animate)
+        case .accountParameters: navigateToAccountParameters(animate: animate)
         default:
             break
         }
@@ -70,6 +72,11 @@ public class ProfileNavigator: Navigator {
 
     private func navigateToAccountInformation(animate: Bool) {
         let vc = accountInfoViewControllerFactory.make()
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
+    }
+
+    private func navigateToAccountParameters(animate: Bool) {
+        let vc = accountParametersViewControllerFactory.make()
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 

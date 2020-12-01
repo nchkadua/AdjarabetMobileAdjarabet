@@ -56,6 +56,8 @@ struct TransactionHistoryProvider {
         ]
 }
 
+// TODO  rename & move somewhere logical
+// Component ViewModel Entity
 public struct TransactionHistory {
     public let title: String
     public let subtitle: String
