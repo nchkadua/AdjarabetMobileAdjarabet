@@ -197,3 +197,6 @@
 "account_parameters_messages_email_title" = "ელ-ფოსტის შეტყობინებები";
 "account_parameters_messages_email_description" = "თქვენ მიიღებთ შეტყობინებებს თქვენს ელ-ფოსტაზე";
 "account_parameters_messages_email_button" = "პარამეტრების დაყენება";
+
+/* High Secutiry */
+"high_security_page_title" = "მაღალი დაცვის რეჟიმის ჩართვა";

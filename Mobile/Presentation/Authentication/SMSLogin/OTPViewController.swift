@@ -1,5 +1,5 @@
 //
-//  SMSLoginViewController.swift
+//  OTPViewController.swift
 //  Mobile
 //
 //  Created by Shota Ioramashvili on 5/13/20.
@@ -8,13 +8,13 @@
 
 import RxSwift
 
-public class SMSLoginViewController: ABViewController {
-    public var viewModel: SMSLoginViewModel!
-    public lazy var navigator = SMSLoginNavigator(viewController: self)
+public class OTPViewController: ABViewController {
+    @Inject(from: .viewModels) public var viewModel: OTPViewModel
+    public lazy var navigator = OTPNavigator(viewController: self)
 
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var smsLoginDescriptionLabel: UILabel!
+    @IBOutlet private weak var otpDescriptionLabel: UILabel!
     @IBOutlet private weak var resendSMSButton: ABButton!
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
     @IBOutlet private weak var loginButton: ABButton!
@@ -47,7 +47,7 @@ public class SMSLoginViewController: ABViewController {
     }
 
     // MARK: Bind to viewModel's observable properties
-    private func bind(to viewModel: SMSLoginViewModel) {
+    private func bind(to viewModel: OTPViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
@@ -57,17 +57,20 @@ public class SMSLoginViewController: ABViewController {
         }).disposed(by: disposeBag)
     }
 
-    private func didRecive(action: SMSLoginViewModelOutputAction) {
+    private func didRecive(action: OTPViewModelOutputAction) {
         switch action {
+        case .setNavigationItems(let title, let showDismissButton): setupNavigationItems(title, showDismissButton: showDismissButton)
         case .setSMSInputViewNumberOfItems(let count): smsCodeInputView.configureForNumberOfItems(count)
         case .setSMSCodeInputView(let text): updateSMSCodeInputView(texts: text)
         case .setResendSMSButton(let isLoading): resendSMSButton.set(isLoading: isLoading)
         case .setLoginButton(let isLoading): loginButton.set(isLoading: isLoading)
         case .bindToTimer(let timerViewModel): bindToTimer(timerViewModel)
+        default:
+            break
         }
     }
 
-    private func didRecive(route: SMSLoginViewModelRoute) {
+    private func didRecive(route: OTPViewModelRoute) {
         switch route {
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
         default:
@@ -79,16 +82,18 @@ public class SMSLoginViewController: ABViewController {
     private func setup() {
         setBaseBackgorundColor()
         setupKeyboard()
-        setupNavigationItem()
         setupScrollView()
         setupLabels()
         setupButtons()
         setupSMSCodeInputView()
     }
 
-    private func setupNavigationItem() {
-        setTitle(title: R.string.localization.sms_login_page_title.localized())
-        setBackBarButtonItemIfNeeded(width: 44, rounded: true)
+    private func setupNavigationItems(_ title: String, showDismissButton: Bool) {
+        setTitle(title: title)
+
+        guard showDismissButton else { return }
+
+        setDismissBarButtonItemIfNeeded(width: 44, rounded: true)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
@@ -98,19 +103,19 @@ public class SMSLoginViewController: ABViewController {
     }
 
     private func setupLabels() {
-        smsLoginDescriptionLabel.textAlignment = .center
-        smsLoginDescriptionLabel.setTextColor(to: .primaryRed())
-        smsLoginDescriptionLabel.setFont(to: .caption2(fontCase: .lower))
+        otpDescriptionLabel.textAlignment = .center
+        otpDescriptionLabel.setTextColor(to: .primaryRed())
+        otpDescriptionLabel.setFont(to: .caption2(fontCase: .lower))
 
-        let smsLoginDescription = R.string.localization.sms_confirmation_description.localized()
+        let OTPDescription = R.string.localization.sms_confirmation_description.localized()
             .makeAttributedString(with: .caption2(fontCase: .lower),
                                   lineSpasing: 4,
                                   foregroundColor: .secondaryText())
-        smsLoginDescriptionLabel.attributedText = smsLoginDescription
+        otpDescriptionLabel.attributedText = OTPDescription
     }
 
     private func setupButtons() {
-        resendSMSButton.setImage(R.image.smsLogin.resend() ?? UIImage(), tintColor: .primaryText())
+        resendSMSButton.setImage(R.image.otP.resend() ?? UIImage(), tintColor: .primaryText())
         resendSMSButton.setStyle(to: .textLink(state: .disabled, size: .small))
         resendSMSButton.setTitleColor(to: .primaryText(), for: .normal)
         resendSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
@@ -198,18 +203,18 @@ public class SMSLoginViewController: ABViewController {
     private func updateResendButton(activate: Bool) {
         if activate {
             resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
-            resendSMSButton.setImage(R.image.smsLogin.resend() ?? UIImage(), tintColor: .systemRed())
+            resendSMSButton.setImage(R.image.otP.resend() ?? UIImage(), tintColor: .systemRed())
             resendSMSButton.isUserInteractionEnabled = true
         } else {
             resendSMSButton.setStyle(to: .textLink(state: .disabled, size: .small))
-            resendSMSButton.setImage(R.image.smsLogin.resend() ?? UIImage(), tintColor: .primaryText())
+            resendSMSButton.setImage(R.image.otP.resend() ?? UIImage(), tintColor: .primaryText())
             resendSMSButton.isUserInteractionEnabled = false
         }
     }
 }
 
 // MAKR: UITextFieldDelegate
-extension SMSLoginViewController: UITextFieldDelegate {
+extension OTPViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let result = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
 

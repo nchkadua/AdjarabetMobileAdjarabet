@@ -198,3 +198,6 @@
 "account_parameters_messages_email_title" = "Emails";
 "account_parameters_messages_email_description" = "You'll recieve emails";
 "account_parameters_messages_email_button" = "configure parameters";
+
+/* High Secutiry */
+"high_security_page_title" = "High Secutiry On";

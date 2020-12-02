@@ -287,10 +287,10 @@
 		D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */; };
 		D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */; };
 		D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E75246B14F600EF8CB5 /* ABViewController.swift */; };
-		D8390E7B246C1B5D00EF8CB5 /* SMSLoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E78246C1B5D00EF8CB5 /* SMSLoginNavigator.swift */; };
-		D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */; };
-		D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */; };
-		D8390E7F246C1B6400EF8CB5 /* SMSLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */; };
+		D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */; };
+		D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E79246C1B5D00EF8CB5 /* OTPViewController.swift */; };
+		D8390E7D246C1B5D00EF8CB5 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E7A246C1B5D00EF8CB5 /* OTPViewModel.swift */; };
+		D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8390E7E246C1B6400EF8CB5 /* OTPLogin.storyboard */; };
 		D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E4225247A92D800E9615F /* UserSessionUseCase.swift */; };
 		D83E4229247AA7BE00E9615F /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */; };
 		D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F0244C8C860037DDEB /* CircularImageView.swift */; };
@@ -737,10 +737,10 @@
 		D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Regular.otf"; sourceTree = "<group>"; };
 		D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardListening.swift; sourceTree = "<group>"; };
 		D8390E75246B14F600EF8CB5 /* ABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABViewController.swift; sourceTree = "<group>"; };
-		D8390E78246C1B5D00EF8CB5 /* SMSLoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginNavigator.swift; sourceTree = "<group>"; };
-		D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginViewController.swift; sourceTree = "<group>"; };
-		D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginViewModel.swift; sourceTree = "<group>"; };
-		D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SMSLogin.storyboard; sourceTree = "<group>"; };
+		D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPNavigator.swift; sourceTree = "<group>"; };
+		D8390E79246C1B5D00EF8CB5 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		D8390E7A246C1B5D00EF8CB5 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
+		D8390E7E246C1B6400EF8CB5 /* OTPLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OTPLogin.storyboard; sourceTree = "<group>"; };
 		D83E4225247A92D800E9615F /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
 		D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		D83ED2F0244C8C860037DDEB /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
@@ -1919,10 +1919,10 @@
 		D8390E77246C1B4D00EF8CB5 /* SMSLogin */ = {
 			isa = PBXGroup;
 			children = (
-				D8390E78246C1B5D00EF8CB5 /* SMSLoginNavigator.swift */,
-				D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */,
-				D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */,
-				D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */,
+				D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */,
+				D8390E79246C1B5D00EF8CB5 /* OTPViewController.swift */,
+				D8390E7A246C1B5D00EF8CB5 /* OTPViewModel.swift */,
+				D8390E7E246C1B6400EF8CB5 /* OTPLogin.storyboard */,
 				D8863699246C4F4400FF061D /* Views */,
 			);
 			path = SMSLogin;
@@ -2798,7 +2798,7 @@
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
 				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
 				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
-				D8390E7F246C1B6400EF8CB5 /* SMSLogin.storyboard in Resources */,
+				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
 				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
 			);
@@ -3115,7 +3115,7 @@
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
-				D8390E7B246C1B5D00EF8CB5 /* SMSLoginNavigator.swift in Sources */,
+				D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */,
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
 				CE95FC16252DED0A003E539B /* FooterComponentViewModel.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
@@ -3139,14 +3139,14 @@
 				CEE356CA252B644300A0A25C /* ProfileInfoTableViewCellDataProvider.swift in Sources */,
 				CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */,
 				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
-				D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */,
+				D8390E7D246C1B5D00EF8CB5 /* OTPViewModel.swift in Sources */,
 				D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */,
 				CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */,
-				D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */,
+				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
 				C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */,

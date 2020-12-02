@@ -118,6 +118,8 @@ struct R: Rswift.Validatable {
     static let notificationContent = _R.storyboard.notificationContent()
     /// Storyboard `Notifications`.
     static let notifications = _R.storyboard.notifications()
+    /// Storyboard `OTPLogin`.
+    static let otpLogin = _R.storyboard.otpLogin()
     /// Storyboard `P2PTransferView`.
     static let p2PTransferView = _R.storyboard.p2PTransferView()
     /// Storyboard `PasswordChange`.
@@ -128,8 +130,6 @@ struct R: Rswift.Validatable {
     static let profile = _R.storyboard.profile()
     /// Storyboard `Promotions`.
     static let promotions = _R.storyboard.promotions()
-    /// Storyboard `SMSLogin`.
-    static let smsLogin = _R.storyboard.smsLogin()
     /// Storyboard `SelfSuspend`.
     static let selfSuspend = _R.storyboard.selfSuspend()
     /// Storyboard `Sports`.
@@ -235,6 +235,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "OTPLogin", bundle: ...)`
+    static func otpLogin(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.otpLogin)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "P2PTransferView", bundle: ...)`
     static func p2PTransferView(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.p2PTransferView)
@@ -266,13 +273,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Promotions", bundle: ...)`
     static func promotions(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.promotions)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "SMSLogin", bundle: ...)`
-    static func smsLogin(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.smsLogin)
     }
     #endif
 
@@ -1582,7 +1582,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.login` struct is generated, and contains static references to 7 images.
+    /// This `R.image.login` struct is generated, and contains static references to 8 images.
     struct login {
       /// Image `legal`.
       static let legal = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/legal")
@@ -1594,6 +1594,8 @@ struct R: Rswift.Validatable {
       static let password = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/password")
       /// Image `sms_back`.
       static let sms_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/sms_back")
+      /// Image `sms_dismiss`.
+      static let sms_dismiss = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/sms_dismiss")
       /// Image `username`.
       static let username = Rswift.ImageResource(bundle: R.hostingBundle, name: "Login/username")
       /// Image `well_done`.
@@ -1631,6 +1633,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "sms_back", bundle: ..., traitCollection: ...)`
       static func sms_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.login.sms_back, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "sms_dismiss", bundle: ..., traitCollection: ...)`
+      static func sms_dismiss(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.login.sms_dismiss, compatibleWith: traitCollection)
       }
       #endif
 
@@ -1722,6 +1731,21 @@ struct R: Rswift.Validatable {
 
         fileprivate init() {}
       }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.image.otP` struct is generated, and contains static references to 1 images.
+    struct otP {
+      /// Image `resend`.
+      static let resend = Rswift.ImageResource(bundle: R.hostingBundle, name: "OTP/resend")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "resend", bundle: ..., traitCollection: ...)`
+      static func resend(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.otP.resend, compatibleWith: traitCollection)
+      }
+      #endif
 
       fileprivate init() {}
     }
@@ -1914,21 +1938,6 @@ struct R: Rswift.Validatable {
 
         fileprivate init() {}
       }
-
-      fileprivate init() {}
-    }
-
-    /// This `R.image.smsLogin` struct is generated, and contains static references to 1 images.
-    struct smsLogin {
-      /// Image `resend`.
-      static let resend = Rswift.ImageResource(bundle: R.hostingBundle, name: "SMSLogin/resend")
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "resend", bundle: ..., traitCollection: ...)`
-      static func resend(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.smsLogin.resend, compatibleWith: traitCollection)
-      }
-      #endif
 
       fileprivate init() {}
     }
@@ -2724,7 +2733,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 141 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 142 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2894,6 +2903,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_gender = Rswift.StringResource(key: "account_info_gender", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: High Secutiry On
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_page_title = Rswift.StringResource(key: "high_security_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: High security mode
       ///
       /// Locales: en, ka, hy
@@ -3919,6 +3932,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_info_gender", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: High Secutiry On
+      ///
+      /// Locales: en, ka, hy
+      static func high_security_page_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_page_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_page_title"
+        }
+
+        return NSLocalizedString("high_security_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: High security mode
@@ -6085,6 +6113,9 @@ struct _R: Rswift.Validatable {
       try notifications.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try otpLogin.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try p2PTransferView.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -6098,9 +6129,6 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try promotions.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
-      try smsLogin.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try selfSuspend.validate()
@@ -6390,6 +6418,29 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct otpLogin: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = OTPViewController
+
+      let bundle = R.hostingBundle
+      let name = "OTPLogin"
+      let otpViewController = StoryboardViewControllerResource<OTPViewController>(identifier: "OTPViewController")
+
+      func otpViewController(_: Void = ()) -> OTPViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: otpViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "OTP/resend", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'OTP/resend' is used in storyboard 'OTPLogin', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.otpLogin().otpViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'otpViewController' could not be loaded from storyboard 'OTPLogin' as 'OTPViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct p2PTransferView: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "P2PTransferView"
@@ -6504,29 +6555,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.selfSuspend().selfSuspendViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selfSuspendViewController' could not be loaded from storyboard 'SelfSuspend' as 'SelfSuspendViewController'.") }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct smsLogin: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = SMSLoginViewController
-
-      let bundle = R.hostingBundle
-      let name = "SMSLogin"
-      let smsLoginViewController = StoryboardViewControllerResource<SMSLoginViewController>(identifier: "SMSLoginViewController")
-
-      func smsLoginViewController(_: Void = ()) -> SMSLoginViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: smsLoginViewController)
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "SMSLogin/resend", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'SMSLogin/resend' is used in storyboard 'SMSLogin', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-        if _R.storyboard.smsLogin().smsLoginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'smsLoginViewController' could not be loaded from storyboard 'SMSLogin' as 'SMSLoginViewController'.") }
       }
 
       fileprivate init() {}

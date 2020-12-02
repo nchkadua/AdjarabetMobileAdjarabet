@@ -1,5 +1,5 @@
 //
-//  SMSLoginViewModel.swift
+//  OTPViewModel.swift
 //  Mobile
 //
 //  Created by Shota Ioramashvili on 5/13/20.
@@ -8,14 +8,28 @@
 
 import RxSwift
 
-public protocol SMSLoginViewModel: SMSLoginViewModelInput, SMSLoginViewModelOutput {
+public protocol OTPViewModel: OTPViewModelInput, OTPViewModelOutput {
 }
 
-public struct SMSLoginViewModelParams {
+public struct OTPViewModelParams {
+    public enum Action {
+        case success
+        case error
+    }
+    public let paramsOutputAction = PublishSubject<Action>()
+    public let vcTitle: String
+    public let showDismissButton: Bool
     public let username: String
+
+    public init(vcTitle: String = "", showDismissButton: Bool = true, username: String = "") {
+        self.vcTitle = vcTitle
+        self.showDismissButton = showDismissButton
+        self.username = username
+    }
 }
 
-public protocol SMSLoginViewModelInput {
+public protocol OTPViewModelInput: AnyObject {
+    var params: OTPViewModelParams { get set }
     func viewDidLoad()
     func textDidChange(to text: String?)
     func shouldChangeCharacters(for text: String) -> Bool
@@ -26,13 +40,13 @@ public protocol SMSLoginViewModelInput {
     func didBindToTimer()
 }
 
-public protocol SMSLoginViewModelOutput {
-    var action: Observable<SMSLoginViewModelOutputAction> { get }
-    var route: Observable<SMSLoginViewModelRoute> { get }
-    var params: SMSLoginViewModelParams { get }
+public protocol OTPViewModelOutput {
+    var action: Observable<OTPViewModelOutputAction> { get }
+    var route: Observable<OTPViewModelRoute> { get }
 }
 
-public enum SMSLoginViewModelOutputAction {
+public enum OTPViewModelOutputAction {
+    case setNavigationItems(_ title: String, showDismissButton: Bool)
     case setSMSInputViewNumberOfItems(Int)
     case setSMSCodeInputView(text: [String?])
     case setResendSMSButton(isLoading: Bool)
@@ -40,34 +54,37 @@ public enum SMSLoginViewModelOutputAction {
     case bindToTimer(timerViewModel: TimerComponentViewModel)
 }
 
-public enum SMSLoginViewModelRoute {
+public enum OTPViewModelRoute {
     case openMainTabBar
     case showErrorMessage(title: String, message: String? = nil)
     case showSuccessMessage
 }
 
-public class DefaultSMSLoginViewModel {
-    private let actionSubject = PublishSubject<SMSLoginViewModelOutputAction>()
-    private let routeSubject = PublishSubject<SMSLoginViewModelRoute>()
-    public let params: SMSLoginViewModelParams
+public class DefaultOTPViewModel {
+    public var params: OTPViewModelParams
+    private let actionSubject = PublishSubject<OTPViewModelOutputAction>()
+    private let routeSubject = PublishSubject<OTPViewModelRoute>()
     private let smsCodeLength = 6
 
-    @Inject(from: .useCases) private var smsLoginUseCase: SMSLoginUseCase
+    @Inject(from: .useCases) private var OTPUseCase: OTPUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
     @Inject(from: .viewModels) private var timerViewModel: TimerComponentViewModel
+    @Inject private var userSession: UserSessionServices
 
-    public init(params: SMSLoginViewModelParams) {
+    public init(params: OTPViewModelParams) {
         self.params = params
     }
 }
 
-extension DefaultSMSLoginViewModel: SMSLoginViewModel {
-    public var action: Observable<SMSLoginViewModelOutputAction> { actionSubject.asObserver() }
-    public var route: Observable<SMSLoginViewModelRoute> { routeSubject.asObserver() }
+extension DefaultOTPViewModel: OTPViewModel {
+    public var action: Observable<OTPViewModelOutputAction> { actionSubject.asObserver() }
+    public var route: Observable<OTPViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        actionSubject.onNext(.setNavigationItems(params.vcTitle, showDismissButton: params.showDismissButton))
         actionSubject.onNext(.setSMSInputViewNumberOfItems(smsCodeLength))
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
+        getOTP()
     }
 
     public func didBindToTimer() {
@@ -98,7 +115,12 @@ extension DefaultSMSLoginViewModel: SMSLoginViewModel {
 
     public func resendSMS() {
         actionSubject.onNext(.setResendSMSButton(isLoading: true))
-        smsCodeUseCase.execute(username: params.username) { [weak self] result in
+        getOTP()
+    }
+
+    private func getOTP() {
+        let username = params.username.isEmpty ? userSession.username : params.username
+        smsCodeUseCase.execute(username: username ?? "") { [weak self] result in
             defer { self?.actionSubject.onNext(.setResendSMSButton(isLoading: false)) }
             switch result {
             case .success: print(result)
@@ -109,13 +131,18 @@ extension DefaultSMSLoginViewModel: SMSLoginViewModel {
 
     public func login(code: String) {
         actionSubject.onNext(.setLoginButton(isLoading: true))
-        smsLoginUseCase.execute(username: params.username, code: code) { [weak self] result in
+
+        let username = params.username.isEmpty ? userSession.username : params.username
+        OTPUseCase.execute(username: username ?? "", code: code) { [weak self] result in
             defer { self?.actionSubject.onNext(.setLoginButton(isLoading: false)) }
             switch result {
             case .success:
                 self?.routeSubject.onNext(.showSuccessMessage)
                 self?.routeSubject.onNext(.openMainTabBar)
-            case .failure(let error): self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
+                self?.params.paramsOutputAction.onNext(.success)
+            case .failure(let error):
+                self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
+                self?.params.paramsOutputAction.onNext(.error)
             }
         }
     }

@@ -36,13 +36,13 @@ public protocol LoginViewModelOutput {
 
 public enum LoginViewModelOutputAction {
     case setLoginButton(isLoading: Bool)
-    case setSMSLoginButton(isLoading: Bool)
+    case setSmsLoginButton(isLoading: Bool)
     case setBiometryButton(isLoading: Bool)
     case configureBiometryButton(available: Bool, icon: UIImage?, title: String?)
 }
 
 public enum LoginViewModelRoute {
-    case openSMSLogin(params: SMSLoginViewModelParams)
+    case openOTP(params: OTPViewModelParams)
     case openMainTabBar
     case openAlert(title: String, message: String? = nil)
 }
@@ -51,6 +51,7 @@ public class DefaultLoginViewModel {
     private let actionSubject = PublishSubject<LoginViewModelOutputAction>()
     private let routeSubject = PublishSubject<LoginViewModelRoute>()
     public let params: LoginViewModelParams
+    private let disposeBag = DisposeBag()
 
     @Inject(from: .useCases) private var loginUseCase: LoginUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
@@ -66,12 +67,37 @@ public class DefaultLoginViewModel {
         switch result {
         case .success(let type):
             switch type {
-            case .success:                    routeSubject.onNext(.openMainTabBar)
-            case .otpRequried(let username):  routeSubject.onNext(.openSMSLogin(params: .init(username: username)))
+            case .success: routeSubject.onNext(.openMainTabBar)
+            case .otpRequried(let username): openOTP(username)
             }
         case .failure(let error):
             routeSubject.onNext(.openAlert(title: error.localizedDescription))
         }
+    }
+
+    private func openOTP(_ username: String) {
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), username: username)
+        routeSubject.onNext(.openOTP(params: otpParams))
+        subscribeTo(otpParams)
+    }
+
+    private func subscribeTo(_ params: OTPViewModelParams) {
+        params.paramsOutputAction.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: OTPViewModelParams.Action) {
+        switch action {
+        case .success: handleSuccessfulOTP()
+        case .error: handleInvalidOTP()
+        }
+    }
+
+    private func handleSuccessfulOTP() {
+    }
+
+    private func handleInvalidOTP() {
     }
 }
 
@@ -102,11 +128,11 @@ extension DefaultLoginViewModel: LoginViewModel {
     }
 
     public func smsLogin(username: String) {
-        actionSubject.onNext(.setSMSLoginButton(isLoading: true))
+        actionSubject.onNext(.setSmsLoginButton(isLoading: true))
         smsCodeUseCase.execute(username: username) { [weak self] result in
-            defer { self?.actionSubject.onNext(.setSMSLoginButton(isLoading: false)) }
+            defer { self?.actionSubject.onNext(.setSmsLoginButton(isLoading: false)) }
             switch result {
-            case .success: self?.routeSubject.onNext(.openSMSLogin(params: .init(username: username)))
+            case .success: self?.openOTP(username)
             case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
             }
         }

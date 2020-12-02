@@ -32,6 +32,7 @@ public enum AccountParametersViewModelOutputAction {
 
 public enum AccountParametersViewModelRoute {
     case openPage(_ destination: AccountParametersNavigator.Destination)
+    case openOTP(params: OTPViewModelParams)
 }
 
 public class DefaultAccountParametersViewModel: DefaultBaseViewModel {
@@ -67,8 +68,7 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                 if let defaultViewModel = componentViewModel as? DefaultAccountParametersComponentViewModel {
                     defaultViewModel.action.subscribe(onNext: { [weak self] action in
                         switch action {
-                        case .didSelect:
-                            self?.routeSubject.onNext(.openPage(accountParameterModel.destination))
+                        case .didSelect: self?.goToDestination(accountParameterModel.destination)
                         default:
                             break
                         }
@@ -91,5 +91,37 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
     private func createAccountParameterComponentViewModel(params: AccountParameter) -> AccountParametersComponentViewModel {
         DefaultAccountParametersComponentViewModel(params: .init(title: params.title,
                                                                  icon: params.icon))
+    }
+
+    private func goToDestination(_ destination: AccountParametersNavigator.Destination) {
+        switch destination {
+        case .highSecurity: goToHighSecurity()
+        default: routeSubject.onNext(.openPage(destination))
+        }
+    }
+
+    private func goToHighSecurity() {
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.high_security_page_title.localized(), showDismissButton: false, username: "")
+        routeSubject.onNext(.openOTP(params: otpParams))
+        subscribeTo(otpParams)
+    }
+
+    private func subscribeTo(_ params: OTPViewModelParams) {
+        params.paramsOutputAction.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: OTPViewModelParams.Action) {
+        switch action {
+        case .success: handleSuccessfulOTP()
+        case .error: handleInvalidOTP()
+        }
+    }
+
+    private func handleSuccessfulOTP() {
+    }
+
+    private func handleInvalidOTP() {
     }
 }

@@ -74,6 +74,7 @@ public extension DependencyContainer {
         Module { DefaultTransactionsFilterViewModel() as TransactionsFilterViewModel }
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
         Module { DefaultPhoneNumberChangeViewModel(params: .init()) as PhoneNumberChangeViewModel }
+        Module { DefaultOTPViewModel(params: .init()) as OTPViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -96,7 +97,7 @@ public extension DependencyContainer {
     static var factories = DependencyContainer {
         Module { DefaultMainTabBarFactory() as MainTabBarFactory }
         Module { DefaultLoginViewControllerFactory() as LoginViewControllerFactory }
-        Module { DefaultSMSLoginFactory() as SMSLoginFactory }
+        Module { DefaultOTPFactory() as OTPFactory }
         Module { DefaultProfileFactory() as ProfileFactory }
         Module { DefaultNotificationContentFactory() as NotificationContentFactory }
         Module { DefaultAccountInfoViewControllerFactory() as AccountInfoViewControllerFactory }
@@ -120,7 +121,7 @@ public extension DependencyContainer {
         Module { DefaultLoginUseCase() as LoginUseCase }
         Module { DefaultBiometricLoginUseCase(loginUseCase: DefaultLoginUseCase()) as BiometricLoginUseCase }
         Module { DefaultSMSCodeUseCase() as SMSCodeUseCase }
-        Module { DefaultSMSLoginUseCase() as SMSLoginUseCase }
+        Module { DefaultOTPUseCase() as OTPUseCase }
         Module { DefaultUserSessionUseCase() as UserSessionUseCase }
         Module { DefaultLobbyGamesUseCase() as LobbyGamesUseCase }
         Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
