@@ -85,7 +85,6 @@ public class ProfileViewController: UIViewController {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
-        appTableViewController.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
 
         appTableViewController.tableView?.register(types: [
             ProfileInfoTableViewCell.self,
@@ -97,8 +96,15 @@ public class ProfileViewController: UIViewController {
     }
 
     private func setupNavigationItems() {
-        makeRightBarButtonItemTitle(to: R.string.localization.profile_page_title.localized())
         setDismissBarButtonItemIfNeeded(width: 44)
+
+        let accountParametersButtonGroup = makeAccountParametersBarButtonItem(width: 120)
+        navigationItem.rightBarButtonItem = accountParametersButtonGroup.barButtonItem
+        accountParametersButtonGroup.button.addTarget(self, action: #selector(openAccountParameters), for: .touchUpInside)
+    }
+
+    @objc private func openAccountParameters() {
+        navigator.navigate(to: .accountParameters, animated: true)
     }
 }
 
