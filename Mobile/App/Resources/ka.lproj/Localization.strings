@@ -197,3 +197,9 @@
 "account_parameters_messages_email_title" = "ელ-ფოსტის შეტყობინებები";
 "account_parameters_messages_email_description" = "თქვენ მიიღებთ შეტყობინებებს თქვენს ელ-ფოსტაზე";
 "account_parameters_messages_email_button" = "პარამეტრების დაყენება";
+
+/* Countries */
+"georgia" = "Georgia";
+"armenia" = "Armenia";
+"azerbaijan" = "Azerbaijan";
+"kazakhstan" = "Kazakhstan";
