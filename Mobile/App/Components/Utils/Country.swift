@@ -136,6 +136,30 @@ public enum Country {
     case liechtenstein
     case lithuania
     case luxembourg
+    case macao // M
+ // case macedonia
+    case madagascar
+    case malawi
+    case malaysia
+    case maldives
+    case mali
+    case malta
+    case marshallIslands
+    case mantinique
+    case mauritania
+    case mauritius
+ // case mayotte
+    case mexico
+    case micronesia
+    case moldava
+    case monaco
+    case mongolia
+    case montenegro
+    case montserrat
+    case morocco
+    case mozambique
+    case myanmar
+    case namibia // N
 
     case unitedKingdom
 
@@ -269,6 +293,30 @@ public enum Country {
         case .liechtenstein:  return Description("", "LIE", "+423", "")
         case .lithuania:      return Description("", "LTU", "+370", "")
         case .luxembourg:     return Description("", "LUX", "+352", "")
+        /* M */
+        case .macao:            return Description("", "MAC", "+853", "")
+        case .madagascar:       return Description("", "MDG", "+261", "")
+        case .malawi:           return Description("", "MWI", "+265", "")
+        case .malaysia:         return Description("", "MYS", "+60", "")
+        case .maldives:         return Description("", "MDV", "+960", "")
+        case .mali:             return Description("", "MLI", "+223", "")
+        case .malta:            return Description("", "MLT", "+356", "")
+        case .marshallIslands:  return Description("", "MHL", "+692", "")
+        case .mantinique:       return Description("", "MTQ", "+596", "")
+        case .mauritania:       return Description("", "MRT", "+222", "")
+        case .mauritius:        return Description("", "MUS", "+230", "")
+        case .mexico:           return Description("", "MEX", "+52", "")
+        case .micronesia:       return Description("", "FSM", "+691", "")
+        case .moldava:          return Description("", "MDA", "+373", "")
+        case .monaco:           return Description("", "MCO", "+377", "")
+        case .mongolia:         return Description("", "MNG", "+976", "")
+        case .montenegro:       return Description("", "MNE", "+382", "")
+        case .montserrat:       return Description("", "MSR", "+1", "")
+        case .morocco:          return Description("", "MAR", "+212", "")
+        case .mozambique:       return Description("", "MOZ", "+258", "")
+        case .myanmar:          return Description("", "MMR", "+95", "")
+        /* N */
+        case .namibia:                 return Description("", "NAM", "+264", "")
 
         case .unitedKingdom:  return Description("United Kingdom", "GBR", "+44", "🇬🇧", "en")
         }
