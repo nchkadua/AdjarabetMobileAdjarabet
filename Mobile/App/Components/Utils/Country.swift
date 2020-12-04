@@ -137,7 +137,7 @@ public enum Country {
     case lithuania
     case luxembourg
     case macao // M
- // case macedonia
+    case macedonia
     case madagascar
     case malawi
     case malaysia
@@ -160,6 +160,39 @@ public enum Country {
     case mozambique
     case myanmar
     case namibia // N
+    case nauru
+    case nepal
+    case netherlands
+    case newCaledonia
+    case newZealand
+    case nicaragua
+    case niger
+    case nigeria
+    case niue
+ // case norfolkIsland
+ // case northKorea
+    case northernMarianaIslands
+    case norway
+    case oman // O
+    case pakistan // in the bag // P
+    case palau
+ // case palestine
+    case panama
+    case papuaNewGuinea
+    case paraguay
+    case peru
+    case phillipines
+ // case pitcairn
+    case poland
+    case puertoRico
+    case qatar // Q
+ // case reunion // R
+    case romania
+    case russia
+    case rwanda
+ // case saintBarthelemy // S
+ // case saintHelena
+    case saintKittsAndNevis
 
     case unitedKingdom
 
@@ -295,6 +328,7 @@ public enum Country {
         case .luxembourg:     return Description("", "LUX", "+352", "")
         /* M */
         case .macao:            return Description("", "MAC", "+853", "")
+        case .macedonia:        return Description("", "MKD", "+389", "")
         case .madagascar:       return Description("", "MDG", "+261", "")
         case .malawi:           return Description("", "MWI", "+265", "")
         case .malaysia:         return Description("", "MYS", "+60", "")
@@ -317,6 +351,37 @@ public enum Country {
         case .myanmar:          return Description("", "MMR", "+95", "")
         /* N */
         case .namibia:                 return Description("", "NAM", "+264", "")
+        case .nauru:                   return Description("", "NRU", "+674", "")
+        case .nepal:                   return Description("", "NPL", "+977", "")
+        case .netherlands:             return Description("", "NLD", "+31", "")
+        case .newCaledonia:            return Description("", "NCL", "+687", "")
+        case .newZealand:              return Description("", "NZL", "+64", "")
+        case .nicaragua:               return Description("", "NIC", "+505", "")
+        case .niger:                   return Description("", "NER", "+227", "")
+        case .nigeria:                 return Description("", "NGA", "+234", "")
+        case .niue:                    return Description("", "NIU", "+683", "")
+        case .northernMarianaIslands:  return Description("", "MNP", "+1", "")
+        case .norway:                  return Description("", "NOR", "+47", "")
+        /* O */
+        case .oman:  return Description("", "OMN", "+968", "")
+        /* P */
+        case .pakistan:        return Description("", "PAK", "+92", "")
+        case .palau:           return Description("", "PLW", "+680", "")
+        case .panama:          return Description("", "PAN", "+507", "")
+        case .papuaNewGuinea:  return Description("", "PNG", "+675", "")
+        case .paraguay:        return Description("", "PRY", "+595", "")
+        case .peru:            return Description("", "PER", "+51", "")
+        case .phillipines:     return Description("", "PHL", "+63", "")
+        case .poland:          return Description("", "POL", "+48", "")
+        case .puertoRico:      return Description("", "PRI", "+1", "")
+        /* Q */
+        case .qatar:  return Description("", "QAT", "+974", "")
+        /* R */
+        case .romania:  return Description("", "ROU", "+40", "")
+        case .russia:   return Description("", "RUS", "+7", "")
+        case .rwanda:   return Description("", "RWA", "+250", "")
+        /* S */
+        case .saintKittsAndNevis:            return Description("", "KNA", "+1", "")
 
         case .unitedKingdom:  return Description("United Kingdom", "GBR", "+44", "🇬🇧", "en")
         }
