@@ -193,6 +193,38 @@ public enum Country {
  // case saintBarthelemy // S
  // case saintHelena
     case saintKittsAndNevis
+    case saintLucia
+ // case saintMartin
+    case saintPierreAndMiquelon
+    case saintVincentAndTheGrenadines
+    case samoa
+    case sanMarino
+    case saoTomeAndPrincipe
+    case saudiArabia
+    case senegal
+    case serbia
+    case seychelles
+    case sierraLeone
+    case singapore
+    case sintMaarten
+    case slovakia
+    case slovenia
+    case solomonIslands
+    case somalia
+    case southAfrica
+ // case southGeorgiaAndTheSouthSandwichIslands
+ // case southKorea
+    case southSudan
+    case spain
+    case sriLanka
+    case sudan
+    case suriname
+ // case svalbardAndJanMayen
+ // case swaziland
+    case sweden
+    case switzerland
+    case syria
+    case taiwan // T
 
     case unitedKingdom
 
@@ -382,6 +414,34 @@ public enum Country {
         case .rwanda:   return Description("", "RWA", "+250", "")
         /* S */
         case .saintKittsAndNevis:            return Description("", "KNA", "+1", "")
+        case .saintLucia:                    return Description("", "LCA", "+1", "")
+        case .saintPierreAndMiquelon:        return Description("", "SPM", "+508", "")
+        case .saintVincentAndTheGrenadines:  return Description("", "VCT", "+1", "")
+        case .samoa:                         return Description("", "WSM", "+685", "")
+        case .sanMarino:                     return Description("", "SMR", "+378", "")
+        case .saoTomeAndPrincipe:            return Description("", "STP", "+239", "")
+        case .saudiArabia:                   return Description("", "SAU", "+966", "")
+        case .senegal:                       return Description("", "SEN", "+221", "")
+        case .serbia:                        return Description("", "SRB", "+381", "")
+        case .seychelles:                    return Description("", "SYC", "+248", "")
+        case .sierraLeone:                   return Description("", "SLE", "+232", "")
+        case .singapore:                     return Description("", "SGP", "+65", "")
+        case .sintMaarten:                   return Description("", "SXM", "+1", "")
+        case .slovakia:                      return Description("", "SVK", "+421", "")
+        case .slovenia:                      return Description("", "SVN", "+386", "")
+        case .solomonIslands:                return Description("", "SLB", "+677", "")
+        case .somalia:                       return Description("", "SOM", "+252", "")
+        case .southAfrica:                   return Description("", "ZAF", "+27", "")
+        case .southSudan:                    return Description("", "SSD", "+211", "")
+        case .spain:                         return Description("", "ESP", "+34", "")
+        case .sriLanka:                      return Description("", "LKA", "+94", "")
+        case .sudan:                         return Description("", "SDN", "+249", "")
+        case .suriname:                      return Description("", "SUR", "+597", "")
+        case .sweden:                        return Description("", "SWE", "+46", "")
+        case .switzerland:                   return Description("", "CHE", "+41", "")
+        case .syria:                         return Description("", "SYR", "+963", "")
+        /* T */
+        case .taiwan:                 return Description("", "TWN", "+886", "")
 
         case .unitedKingdom:  return Description("United Kingdom", "GBR", "+44", "🇬🇧", "en")
         }
