@@ -225,8 +225,38 @@ public enum Country {
     case switzerland
     case syria
     case taiwan // T
-
+    case tajikistan
+    case tanzania
+    case thailand
+    case timorLeste
+    case togo
+    case tokelau
+    case tonga
+    case trinidadAndTobago
+    case tunisia
+    case turkey
+    case turkmenistan
+    case turksAndCaicosIslands
+    case tulavu
+    case uganda // U
+    case ukraine
+    case unitedArabEmirates
     case unitedKingdom
+    case unitedStates
+ // case unitedStatesMinorOutlyingIslands
+    case uruguay
+    case uzbekistan
+    case vanuatu // V
+ // case vaticanCity
+    case venezuela
+    case vietnam
+    case virginIslandsBritish
+    case virginIslandsUS
+    case wallisAndFutuna // W
+ // case westernSahara
+    case yemen // Y
+    case zambia // Z
+    case zimbabwe
 
     public var description: Description {
         let r = R.string.localization.self
@@ -442,8 +472,41 @@ public enum Country {
         case .syria:                         return Description("", "SYR", "+963", "")
         /* T */
         case .taiwan:                 return Description("", "TWN", "+886", "")
-
-        case .unitedKingdom:  return Description("United Kingdom", "GBR", "+44", "🇬🇧", "en")
+        case .tajikistan:             return Description("", "TJK", "+992", "")
+        case .tanzania:               return Description("", "TZA", "+255", "")
+        case .thailand:               return Description("", "THA", "+66", "")
+        case .timorLeste:             return Description("", "TLS", "+670", "")
+        case .togo:                   return Description("", "TGO", "+228", "")
+        case .tokelau:                return Description("", "TKL", "+690", "")
+        case .tonga:                  return Description("", "TON", "+676", "")
+        case .trinidadAndTobago:      return Description("", "TTO", "+1", "")
+        case .tunisia:                return Description("", "TUN", "+216", "")
+        case .turkey:                 return Description("", "TUR", "+90", "")
+        case .turkmenistan:           return Description("", "TKM", "+993", "")
+        case .turksAndCaicosIslands:  return Description("", "TCA", "+1", "")
+        case .tulavu:                 return Description("", "TUV", "+688", "")
+        /* U */
+        case .uganda:              return Description("", "UGA", "+256", "")
+        case .ukraine:             return Description("", "UKR", "+380", "")
+        case .unitedArabEmirates:  return Description("", "ARE", "+971", "")
+        case .unitedKingdom:       return Description("", "GBR", "+44", "🇬🇧", "en")
+        case .unitedStates:        return Description("", "USA", "+1", "")
+        case .uruguay:             return Description("", "URY", "+598", "")
+        case .uzbekistan:          return Description("", "UZB", "+998", "")
+        /* V */
+        case .vanuatu:               return Description("", "VUT", "+678", "")
+        case .venezuela:             return Description("", "VEN", "+58", "")
+        case .vietnam:               return Description("", "VNM", "+84", "")
+        case .virginIslandsBritish:  return Description("", "VGB", "+1", "")
+        case .virginIslandsUS:       return Description("", "VIR", "+1", "")
+        /* W */
+        case .wallisAndFutuna:  return Description("", "WLF", "+681", "")
+        /* X */
+        /* Y */
+        case .yemen: return Description("", "YEM", "+967", "")
+        /* Z */
+        case .zambia:    return Description("", "ZMB", "+260", "")
+        case .zimbabwe:  return Description("", "ZWE", "+263", "")
         }
     }
 
