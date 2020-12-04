@@ -9,13 +9,11 @@
 import Foundation
 
 public enum Country {
-    /* Popular */
-    case georgia
+    case georgia // Popular
     case armenia
     case azerbaijan
     case kazakhstan
-    /* A */
-    case afghanistan
+    case afghanistan // A
  // case alandIslands
     case albania
     case algeria
@@ -25,12 +23,11 @@ public enum Country {
     case anguilla
  // case antarctica
     case antiguaAndBarbuda
-    case argentia
+    case argentina // next should be armenia
     case aruba
     case australia
-    case austria
-    /* B */
-    case bahamas
+    case austria // next should be azerbaijan
+    case bahamas // B
     case bahrain
     case bangladesh
     case barbados
@@ -51,8 +48,7 @@ public enum Country {
     case bulgaria
     case burtkinaFaso
     case burundi
-    /* C */
-    case cambodia
+    case cambodia // C
     case cameroom
     case canada
  // case capeVerde
@@ -73,22 +69,19 @@ public enum Country {
     case curacao
     case cyprus
     case czechRepublic
-    /* D */
-    case democraticRepublicOfTheCongo
+    case democraticRepublicOfTheCongo // D
     case denmark
     case djibouti
     case dominica
     case dominicanRepublic
-    /* E */
-    case ecuador
+    case ecuador // E
     case egypt
     case elSalvador
     case equatorialGuinea
     case eritrea
     case estonia
     case ethiopia
-    /* F */
-    case falklandIslands
+    case falklandIslands // F
     case faroeIslands
     case fiji
     case finland
@@ -96,6 +89,53 @@ public enum Country {
     case frenchGuiana
     case frenchPolynesia
  // case frenchSouthernTerritories
+    case gabon // G
+    case gambia // next should be georgia
+    case germany
+    case ghana
+    case gibraltar
+    case greece
+    case greenland
+    case grenada
+    case guadaloupe
+    case guam
+    case guatemala
+ // case guernsey
+    case guinea
+    case guineaBissau
+    case guyana
+    case haiti // H
+ // case heardIslandAndMcDonaldIslands
+    case honduras
+    case hongKong
+    case hungary
+    case iceland // I
+    case india
+    case indonesia
+    case iran
+    case iraq
+    case ireland
+ // case isleOfMand
+    case israel
+    case italy
+    case jamaica // J
+    case japan
+ // case jersey
+    case jordan // next should be kazakhstan
+    case kenya // K
+    case kiribati
+ // case kosovo
+    case kuwait
+    case kyrgyzstan
+    case laos // L
+    case latvia
+    case lebanon
+    case lesotho
+    case liberia
+    case libya
+    case liechtenstein
+    case lithuania
+    case luxembourg
 
     case unitedKingdom
 
@@ -116,7 +156,7 @@ public enum Country {
         case .angola:             return Description("", "AGO", "+244", "")
         case .anguilla:           return Description("", "AIA", "+1", "")
         case .antiguaAndBarbuda:  return Description("", "ATG", "+1", "")
-        case .argentia:           return Description("", "ARG", "+54", "")
+        case .argentina:          return Description("", "ARG", "+54", "")
         case .aruba:              return Description("", "ABW", "+297", "")
         case .australia:          return Description("", "AUS", "+61", "")
         case .austria:            return Description("", "AUT", "+43", "")
@@ -181,6 +221,54 @@ public enum Country {
         case .france:           return Description("", "FRA", "+33", "")
         case .frenchGuiana:     return Description("", "GUF", "+594", "")
         case .frenchPolynesia:  return Description("", "PYF", "+689", "")
+        /* G */
+        case .gabon:         return Description("", "GAB", "+241", "")
+        case .gambia:        return Description("", "GMB", "+220", "")
+        case .germany:       return Description("", "DEU", "+49", "")
+        case .ghana:         return Description("", "GHA", "+233", "")
+        case .gibraltar:     return Description("", "GIB", "+350", "")
+        case .greece:        return Description("", "GRC", "+30", "")
+        case .greenland:     return Description("", "GRL", "+299", "")
+        case .grenada:       return Description("", "GRD", "+1", "")
+        case .guadaloupe:    return Description("", "GLP", "+590", "")
+        case .guam:          return Description("", "GUM", "+1", "")
+        case .guatemala:     return Description("", "GTM", "+502", "")
+        case .guinea:        return Description("", "GIN", "+224", "")
+        case .guineaBissau:  return Description("", "GNB", "+245", "")
+        case .guyana:        return Description("", "GUY", "+592", "")
+        /* H */
+        case .haiti:     return Description("", "HTI", "+509", "")
+        case .honduras:  return Description("", "HND", "+504", "")
+        case .hongKong:  return Description("", "HKG", "+852", "")
+        case .hungary:   return Description("", "HUN", "+36", "")
+        /* I */
+        case .iceland:    return Description("", "ISL", "+354", "")
+        case .india:      return Description("", "IND", "+91", "")
+        case .indonesia:  return Description("", "IDN", "+62", "")
+        case .iran:       return Description("", "IRN", "+98", "")
+        case .iraq:       return Description("", "IRQ", "+964", "")
+        case .ireland:    return Description("", "IRL", "+353", "")
+        case .israel:     return Description("", "ISR", "+972", "")
+        case .italy:      return Description("", "ITA", "+39", "")
+        /* J */
+        case .jamaica:  return Description("", "JAM", "+1", "")
+        case .japan:    return Description("", "JPN", "+81", "")
+        case .jordan:   return Description("", "JOR", "+962", "")
+        /* K */
+        case .kenya:       return Description("", "KEN", "+254", "")
+        case .kiribati:    return Description("", "KIR", "+686", "")
+        case .kuwait:      return Description("", "KWT", "+965", "")
+        case .kyrgyzstan:  return Description("", "KGZ", "+996", "")
+        /* L */
+        case .laos:           return Description("", "LAO", "+856", "")
+        case .latvia:         return Description("", "LVA", "+371", "")
+        case .lebanon:        return Description("", "LBN", "+961", "")
+        case .lesotho:        return Description("", "LSO", "+266", "")
+        case .liberia:        return Description("", "LBR", "+231", "")
+        case .libya:          return Description("", "LBY", "+218", "")
+        case .liechtenstein:  return Description("", "LIE", "+423", "")
+        case .lithuania:      return Description("", "LTU", "+370", "")
+        case .luxembourg:     return Description("", "LUX", "+352", "")
 
         case .unitedKingdom:  return Description("United Kingdom", "GBR", "+44", "🇬🇧", "en")
         }
