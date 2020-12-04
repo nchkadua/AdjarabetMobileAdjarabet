@@ -80,6 +80,36 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
         return request
     }
 
+    // MARK: Transaction History
+
+    public func set(fromDate: String, toDate: String) -> Self {
+        queryItems.append(.init(key: .fromDate, value: fromDate))
+        queryItems.append(.init(key: .toDate, value: toDate))
+        return self
+    }
+
+    public func set(transactionType: Int) -> Self {
+        queryItems.append(.init(key: .transactionType, value: "\(transactionType)"))
+        return self
+    }
+
+    public func set(maxResult: Int) -> Self {
+        queryItems.append(.init(key: .maxResult, value: "\(maxResult)"))
+        return self
+    }
+
+    public func set(pageIndex: Int) -> Self {
+        queryItems.append(.init(key: .pageIndex, value: "\(pageIndex)"))
+        return self
+    }
+
+    public func set(providerType: Int) -> Self {
+        queryItems.append(.init(key: .pageIndex, value: "\(providerType)"))
+        return self
+    }
+
+    // MARK: Keys
+
     public enum Key: String {
         case userIdentifier
         case password
@@ -91,6 +121,12 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
         case channelType
         case otp
         case loginType
+        case fromDate
+        case toDate
+        case transactionType = "trType"
+        case providerType
+        case maxResult
+        case pageIndex
     }
 
     public enum HeaderKey: String {

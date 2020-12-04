@@ -18,14 +18,15 @@ public class TransactionsNavigator: Navigator {
 
     public enum Destination {
         case transactionDetails(params: TransactionDetailsViewModelParams)
-        case filter
+        case filter(params: TransactionsFilterViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .transactionDetails(let params):
             navigateToTransactionDetails(params: params, animate: animate)
-        case .filter: navigateToFilter(animate: animate)
+        case .filter(let params):
+            navigateToFilter(params: params, animate: animate)
         }
     }
 
@@ -34,8 +35,8 @@ public class TransactionsNavigator: Navigator {
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 
-    private func navigateToFilter(animate: Bool) {
-        let vc = transactionsFilterViewControllerFactory.make()
+    private func navigateToFilter(params: TransactionsFilterViewModelParams, animate: Bool) {
+        let vc = transactionsFilterViewControllerFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)

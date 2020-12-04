@@ -37,6 +37,9 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMO-hR-KjY" userLabel="checkbox" customClass="ABCheckbox" customModule="Mobile" customModuleProvider="target">
                     <rect key="frame" x="325" y="22.5" width="30" height="30"/>
+                    <connections>
+                        <action selector="toggleCheckboxWithSender:" destination="-1" eventType="touchUpInside" id="zXV-0x-JSv"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

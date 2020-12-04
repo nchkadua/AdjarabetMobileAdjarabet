@@ -67,7 +67,8 @@ public class HomeViewController: UIViewController {
         case .setLoading(let loadingType):
             UIView.animate(withDuration: 0.3) { self.loader.alpha = loadingType == .fullScreen ? 1 : 0 }
         case .languageDidChange: languageDidChange()
-        case .initialize(let appListDataProvider): collectionViewController.dataProvider = appListDataProvider
+        case .initialize(let appListDataProvider):
+            collectionViewController.dataProvider = appListDataProvider
         case .reloadItems(let items, let insertions, let deletions):
             collectionViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
         case .reloadIndexPathes(let indexPathes):

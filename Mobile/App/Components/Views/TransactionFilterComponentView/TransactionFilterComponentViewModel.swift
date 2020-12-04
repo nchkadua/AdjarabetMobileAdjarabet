@@ -9,15 +9,17 @@
 import RxSwift
 
 public protocol TransactionFilterComponentViewModel: TransactionFilterComponentViewModelInput,
-                                                TransactionFilterComponentViewModelOutput {}
+                                                     TransactionFilterComponentViewModelOutput {}
 
 public struct TransactionFilterComponentViewModelParams {
     public let title: String
-    public let checked: Bool
+    public var checked: Bool
+    public let transactionType: TransactionType
 }
 
 public protocol TransactionFilterComponentViewModelInput {
     func didBind()
+    func checkBoxToggled(to state: Bool)
 }
 
 public protocol TransactionFilterComponentViewModelOutput {
@@ -26,7 +28,8 @@ public protocol TransactionFilterComponentViewModelOutput {
 }
 
 public enum TransactionFilterComponentViewModelOutputAction {
-    case set(title: String, checked: Bool)
+    case set(title: String, checked: Bool, transactionType: TransactionType)
+    case checkBoxToggled(state: Bool)
 }
 
 public class DefaultTransactionFilterComponentViewModel {
@@ -38,11 +41,16 @@ public class DefaultTransactionFilterComponentViewModel {
 }
 
 extension DefaultTransactionFilterComponentViewModel: TransactionFilterComponentViewModel {
+    public func checkBoxToggled(to state: Bool) {
+        params.checked = state
+        actionSubject.onNext(.checkBoxToggled(state: state))
+    }
+
     public var action: Observable<TransactionFilterComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
 
     public func didBind() {
-        actionSubject.onNext(.set(title: params.title, checked: params.checked))
+        actionSubject.onNext(.set(title: params.title, checked: params.checked, transactionType: params.transactionType))
     }
 }

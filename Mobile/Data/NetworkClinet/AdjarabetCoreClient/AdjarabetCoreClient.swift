@@ -27,5 +27,6 @@ public class AdjarabetCoreClient {
         case logout
         case aliveSession = "isSessionActive"
         case currentUserInfo = "getUserInfo"
+        case transactionHistory = "getUsersTransactions"
     }
 }

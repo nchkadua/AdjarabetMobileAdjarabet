@@ -35,8 +35,10 @@ class TransactionFilterComponentView: UIView {
     private func bind() {
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title, let checked):
+            case .set(let title, let checked, _):
                 self?.set(title: title, checked: checked)
+            case .checkBoxToggled:
+                break
             }
         }).disposed(by: diposeBag)
 
@@ -46,6 +48,11 @@ class TransactionFilterComponentView: UIView {
     private func set(title: String, checked: Bool) {
         titleLabel.text = title
         checkbox.isSelected = checked
+    }
+
+    @IBAction func toggleCheckbox(sender: UIButton) {
+        print(sender.isSelected)
+        viewModel.checkBoxToggled(to: sender.isSelected)
     }
 }
 
