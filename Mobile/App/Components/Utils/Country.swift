@@ -542,14 +542,14 @@ public enum Country {
         public let name: String
         public let alpha3Code: String
         public let phonePrefix: String
-        public let stringFlag: String?
+        public let stringFlag: String
         public let localizableIdentifier: String?
 
         public init(
             _ name: String,
             _ alpha3Code: String,
             _ phonePrefix: String,
-            _ stringFlag: String? = nil,
+            _ stringFlag: String,
             _ localizableIdentifier: String? = nil) {
             self.name = name
             self.alpha3Code = alpha3Code
@@ -589,6 +589,6 @@ public extension Country {
 // MARK: Representable title
 public extension Country.Description {
     var title: String {
-        ("\(stringFlag ?? "") \(alpha3Code) \(phonePrefix)")
+        ("\(stringFlag) \(alpha3Code) \(phonePrefix)")
     }
 }
