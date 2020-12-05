@@ -14,14 +14,14 @@ public enum Country {
     case azerbaijan
     case kazakhstan
     case afghanistan // A
- // case alandIslands
+    case alandIslands
     case albania
     case algeria
     case americanSamoa
     case andorra
     case angola
     case anguilla
- // case antarctica
+    case antarctica
     case antiguaAndBarbuda
     case argentina // next should be armenia
     case aruba
@@ -38,12 +38,12 @@ public enum Country {
     case bermuda
     case bhutan
     case bolivia
-    case bonaireSintEustatiusAndSaba // flag
+    case bonaireSintEustatiusAndSaba
     case bosniaAndHerzegovina
     case botswana
- // case bouvetIsland
+    case bouvetIsland
     case brazil
- // case britishIndianOceanTerritory
+    case britishIndianOceanTerritory
     case brunei
     case bulgaria
     case burtkinaFaso
@@ -51,14 +51,14 @@ public enum Country {
     case cambodia // C
     case cameroom
     case canada
- // case capeVerde
+    case capeVerde
     case caymanIslands
     case centralAfricanRepublic
     case chad
     case chile
     case china
- // case christmasIsland
- // case cocos
+    case christmasIsland
+    case cocosIslands
     case colombia
     case coromos
     case congo
@@ -88,7 +88,7 @@ public enum Country {
     case france
     case frenchGuiana
     case frenchPolynesia
- // case frenchSouthernTerritories
+ // case frenchSouthernTerritories: ATF, nil, 🇹🇫
     case gabon // G
     case gambia // next should be georgia
     case germany
@@ -100,12 +100,12 @@ public enum Country {
     case guadaloupe
     case guam
     case guatemala
- // case guernsey
+    case guernsey
     case guinea
     case guineaBissau
     case guyana
     case haiti // H
- // case heardIslandAndMcDonaldIslands
+    case heardIslandAndMcDonaldIslands
     case honduras
     case hongKong
     case hungary
@@ -115,16 +115,16 @@ public enum Country {
     case iran
     case iraq
     case ireland
- // case isleOfMand
+    case isleOfMand
     case israel
     case italy
     case jamaica // J
     case japan
- // case jersey
+    case jersey
     case jordan // next should be kazakhstan
     case kenya // K
     case kiribati
- // case kosovo
+    case kosovo
     case kuwait
     case kyrgyzstan
     case laos // L
@@ -148,7 +148,7 @@ public enum Country {
     case mantinique
     case mauritania
     case mauritius
- // case mayotte
+    case mayotte
     case mexico
     case micronesia
     case moldava
@@ -169,32 +169,32 @@ public enum Country {
     case niger
     case nigeria
     case niue
- // case norfolkIsland
- // case northKorea
+    case norfolkIsland
+    case northKorea
     case northernMarianaIslands
     case norway
     case oman // O
     case pakistan // in the bag // P
     case palau
- // case palestine
+    case palestine
     case panama
     case papuaNewGuinea
     case paraguay
     case peru
     case phillipines
- // case pitcairn
+    case pitcairn
     case poland
     case puertoRico
     case qatar // Q
- // case reunion // R
+    case reunion // R
     case romania
     case russia
     case rwanda
- // case saintBarthelemy // S
- // case saintHelena
+    case saintBarthelemy // S
+    case saintHelena
     case saintKittsAndNevis
     case saintLucia
- // case saintMartin
+    case saintMartin
     case saintPierreAndMiquelon
     case saintVincentAndTheGrenadines
     case samoa
@@ -212,15 +212,15 @@ public enum Country {
     case solomonIslands
     case somalia
     case southAfrica
- // case southGeorgiaAndTheSouthSandwichIslands
- // case southKorea
+    case southGeorgiaAndTheSouthSandwichIslands
+    case southKorea
     case southSudan
     case spain
     case sriLanka
     case sudan
     case suriname
- // case svalbardAndJanMayen
- // case swaziland
+    case svalbardAndJanMayen
+    case swaziland
     case sweden
     case switzerland
     case syria
@@ -243,17 +243,17 @@ public enum Country {
     case unitedArabEmirates
     case unitedKingdom
     case unitedStates
- // case unitedStatesMinorOutlyingIslands
+    case unitedStatesMinorOutlyingIslands
     case uruguay
     case uzbekistan
     case vanuatu // V
- // case vaticanCity
+    case vaticanCity
     case venezuela
     case vietnam
     case virginIslandsBritish
     case virginIslandsUS
     case wallisAndFutuna // W
- // case westernSahara
+    case westernSahara
     case yemen // Y
     case zambia // Z
     case zimbabwe
@@ -268,12 +268,14 @@ public enum Country {
         case .kazakhstan:  return Description(r.kazakhstan.localized(), "KAZ", "+7", "🇰🇿")
         /* A */
         case .afghanistan:        return Description(r.afghanistan.localized(), "AFG", "+93", "🇦🇫")
+        case .alandIslands:       return Description(r.alandIslands.localized(), "ALA", "+358", "🇦🇽")
         case .albania:            return Description(r.albania.localized(), "ALB", "+335", "🇦🇱")
         case .algeria:            return Description(r.algeria.localized(), "DZA", "+213", "🇩🇿")
         case .americanSamoa:      return Description(r.americanSamoa.localized(), "ASM", "+1", "🇦🇸")
         case .andorra:            return Description(r.andorra.localized(), "AND", "+376", "🇦🇩")
         case .angola:             return Description(r.angola.localized(), "AGO", "+244", "🇦🇴")
         case .anguilla:           return Description(r.anguilla.localized(), "AIA", "+1", "🇦🇮")
+        case .antarctica:         return Description(r.antarctica.localized(), "ATA", "+672", "🇦🇶")
         case .antiguaAndBarbuda:  return Description(r.antiguaAndBarbuda.localized(), "ATG", "+1", "🇦🇬")
         case .argentina:          return Description(r.argentina.localized(), "ARG", "+54", "🇦🇷")
         case .aruba:              return Description(r.aruba.localized(), "ABW", "+297", "🇦🇼")
@@ -291,10 +293,12 @@ public enum Country {
         case .bermuda:                      return Description(r.bermuda.localized(), "BMU", "+1", "🇧🇲")
         case .bhutan:                       return Description(r.bhutan.localized(), "BTN", "+975", "🇧🇹")
         case .bolivia:                      return Description(r.bolivia.localized(), "BOL", "+591", "🇧🇴")
-        case .bonaireSintEustatiusAndSaba:  return Description(r.bonaireSintEustatiusAndSaba.localized(), "BES", "+599")
+        case .bonaireSintEustatiusAndSaba:  return Description(r.bonaireSintEustatiusAndSaba.localized(), "BES", "+599", "🇧🇶")
         case .bosniaAndHerzegovina:         return Description(r.bosniaAndHerzegovina.localized(), "BIH", "+387", "🇧🇦")
         case .botswana:                     return Description(r.botswana.localized(), "BWA", "+267", "🇧🇼")
+        case .bouvetIsland:                 return Description(r.bouvetIsland.localized(), "BVT", "+47", "🇧🇻")
         case .brazil:                       return Description(r.brazil.localized(), "BRA", "+55", "🇧🇷")
+        case .britishIndianOceanTerritory:  return Description(r.britishIndianOceanTerritory.localized(), "IOR", "+246", "🇮🇴")
         case .brunei:                       return Description(r.brunei.localized(), "BRN", "+673", "🇧🇳")
         case .bulgaria:                     return Description(r.bulgaria.localized(), "BGR", "+359", "🇧🇬")
         case .burtkinaFaso:                 return Description(r.burtkinaFaso.localized(), "BFA", "+226", "🇧🇫")
@@ -303,11 +307,14 @@ public enum Country {
         case .cambodia:                return Description(r.cambodia.localized(), "KHM", "+855", "🇰🇭")
         case .cameroom:                return Description(r.cameroom.localized(), "CMR", "+237", "🇨🇲")
         case .canada:                  return Description(r.canada.localized(), "CAN", "+1", "🇨🇦")
+        case .capeVerde:               return Description(r.capeVerde.localized(), "CPV", "+238", "🇨🇻")
         case .caymanIslands:           return Description(r.caymanIslands.localized(), "CYM", "+1", "🇰🇾")
         case .centralAfricanRepublic:  return Description(r.centralAfricanRepublic.localized(), "CAF", "+236", "🇨🇫")
         case .chad:                    return Description(r.chad.localized(), "TCD", "+235", "🇹🇩")
         case .chile:                   return Description(r.chile.localized(), "CHL", "+56", "🇨🇱")
         case .china:                   return Description(r.china.localized(), "CHN", "+86", "🇨🇳")
+        case .christmasIsland:         return Description(r.christmasIsland.localized(), "CXR", "+61", "🇨🇽")
+        case .cocosIslands:            return Description(r.cocosIslands.localized(), "CCK", "+61", "🇨🇨")
         case .colombia:                return Description(r.colombia.localized(), "COL", "+57", "🇨🇴")
         case .coromos:                 return Description(r.coromos.localized(), "COM", "+269", "🇰🇲")
         case .congo:                   return Description(r.congo.localized(), "COG", "+242", "🇨🇬")
@@ -352,30 +359,35 @@ public enum Country {
         case .guadaloupe:    return Description(r.guadaloupe.localized(), "GLP", "+590", "🇬🇵")
         case .guam:          return Description(r.guam.localized(), "GUM", "+1", "🇬🇺")
         case .guatemala:     return Description(r.guatemala.localized(), "GTM", "+502", "🇬🇹")
+        case .guernsey:      return Description(r.guernsey.localized(), "GGY", "+44", "🇬🇬")
         case .guinea:        return Description(r.guinea.localized(), "GIN", "+224", "🇬🇳")
         case .guineaBissau:  return Description(r.guineaBissau.localized(), "GNB", "+245", "🇬🇼")
         case .guyana:        return Description(r.guyana.localized(), "GUY", "+592", "🇬🇾")
         /* H */
-        case .haiti:     return Description(r.haiti.localized(), "HTI", "+509", "🇭🇹")
-        case .honduras:  return Description(r.honduras.localized(), "HND", "+504", "🇭🇳")
-        case .hongKong:  return Description(r.hongKong.localized(), "HKG", "+852", "🇭🇰")
-        case .hungary:   return Description(r.hungary.localized(), "HUN", "+36", "🇭🇺")
+        case .haiti:                          return Description(r.haiti.localized(), "HTI", "+509", "🇭🇹")
+        case .heardIslandAndMcDonaldIslands:  return Description(r.heardIslandAndMcDonaldIslands.localized(), "HMD", "+672", "🇭🇲")
+        case .honduras:                       return Description(r.honduras.localized(), "HND", "+504", "🇭🇳")
+        case .hongKong:                       return Description(r.hongKong.localized(), "HKG", "+852", "🇭🇰")
+        case .hungary:                        return Description(r.hungary.localized(), "HUN", "+36", "🇭🇺")
         /* I */
-        case .iceland:    return Description(r.iceland.localized(), "ISL", "+354", "🇮🇸")
-        case .india:      return Description(r.india.localized(), "IND", "+91", "🇮🇳")
-        case .indonesia:  return Description(r.indonesia.localized(), "IDN", "+62", "🇮🇩")
-        case .iran:       return Description(r.iran.localized(), "IRN", "+98", "🇮🇷")
-        case .iraq:       return Description(r.iraq.localized(), "IRQ", "+964", "🇮🇶")
-        case .ireland:    return Description(r.ireland.localized(), "IRL", "+353", "🇮🇪")
-        case .israel:     return Description(r.israel.localized(), "ISR", "+972", "🇮🇱")
-        case .italy:      return Description(r.italy.localized(), "ITA", "+39", "🇮🇹")
+        case .iceland:     return Description(r.iceland.localized(), "ISL", "+354", "🇮🇸")
+        case .india:       return Description(r.india.localized(), "IND", "+91", "🇮🇳")
+        case .indonesia:   return Description(r.indonesia.localized(), "IDN", "+62", "🇮🇩")
+        case .iran:        return Description(r.iran.localized(), "IRN", "+98", "🇮🇷")
+        case .iraq:        return Description(r.iraq.localized(), "IRQ", "+964", "🇮🇶")
+        case .ireland:     return Description(r.ireland.localized(), "IRL", "+353", "🇮🇪")
+        case .isleOfMand:  return Description(r.isleOfMand.localized(), "IMN", "+44", "🇮🇲")
+        case .israel:      return Description(r.israel.localized(), "ISR", "+972", "🇮🇱")
+        case .italy:       return Description(r.italy.localized(), "ITA", "+39", "🇮🇹")
         /* J */
         case .jamaica:  return Description(r.jamaica.localized(), "JAM", "+1", "🇯🇲")
         case .japan:    return Description(r.japan.localized(), "JPN", "+81", "🇯🇵")
+        case .jersey:   return Description(r.jersey.localized(), "JEY", "+44", "🇯🇪")
         case .jordan:   return Description(r.jordan.localized(), "JOR", "+962", "🇯🇴")
         /* K */
         case .kenya:       return Description(r.kenya.localized(), "KEN", "+254", "🇰🇪")
         case .kiribati:    return Description(r.kiribati.localized(), "KIR", "+686", "🇰🇮")
+        case .kosovo:      return Description(r.kosovo.localized(), "UNK", "+383", "🇽🇰")
         case .kuwait:      return Description(r.kuwait.localized(), "KWT", "+965", "🇰🇼")
         case .kyrgyzstan:  return Description(r.kyrgyzstan.localized(), "KGZ", "+996", "🇰🇬")
         /* L */
@@ -401,6 +413,7 @@ public enum Country {
         case .mantinique:       return Description(r.mantinique.localized(), "MTQ", "+596", "🇲🇶")
         case .mauritania:       return Description(r.mauritania.localized(), "MRT", "+222", "🇲🇷")
         case .mauritius:        return Description(r.mauritius.localized(), "MUS", "+230", "🇲🇺")
+        case .mayotte:          return Description(r.mayotte.localized(), "MYT", "+262", "🇾🇹")
         case .mexico:           return Description(r.mexico.localized(), "MEX", "+52", "🇲🇽")
         case .micronesia:       return Description(r.micronesia.localized(), "FSM", "+691", "🇫🇲")
         case .moldava:          return Description(r.moldava.localized(), "MDA", "+373", "🇲🇩")
@@ -422,6 +435,8 @@ public enum Country {
         case .niger:                   return Description(r.niger.localized(), "NER", "+227", "🇳🇪")
         case .nigeria:                 return Description(r.nigeria.localized(), "NGA", "+234", "🇳🇬")
         case .niue:                    return Description(r.niue.localized(), "NIU", "+683", "🇳🇺")
+        case .norfolkIsland:           return Description(r.norfolkIsland.localized(), "NFK", "+672", "🇳🇫")
+        case .northKorea:              return Description(r.northKorea.localized(), "PRK", "+850", "🇰🇵")
         case .northernMarianaIslands:  return Description(r.northernMarianaIslands.localized(), "MNP", "+1", "🇲🇵")
         case .norway:                  return Description(r.norway.localized(), "NOR", "+47", "🇳🇴")
         /* O */
@@ -429,47 +444,57 @@ public enum Country {
         /* P */
         case .pakistan:        return Description(r.pakistan.localized(), "PAK", "+92", "🇵🇰")
         case .palau:           return Description(r.palau.localized(), "PLW", "+680", "🇵🇼")
+        case .palestine:       return Description(r.palestine.localized(), "PSE", "+970", "🇵🇸")
         case .panama:          return Description(r.panama.localized(), "PAN", "+507", "🇵🇦")
         case .papuaNewGuinea:  return Description(r.papuaNewGuinea.localized(), "PNG", "+675", "🇵🇬")
         case .paraguay:        return Description(r.paraguay.localized(), "PRY", "+595", "🇵🇾")
         case .peru:            return Description(r.peru.localized(), "PER", "+51", "🇵🇪")
         case .phillipines:     return Description(r.phillipines.localized(), "PHL", "+63", "🇵🇭")
+        case .pitcairn:        return Description(r.pitcairn.localized(), "PCN", "+64", "🇵🇳")
         case .poland:          return Description(r.poland.localized(), "POL", "+48", "🇵🇱")
         case .puertoRico:      return Description(r.puertoRico.localized(), "PRI", "+1", "🇵🇷")
         /* Q */
         case .qatar:  return Description(r.qatar.localized(), "QAT", "+974", "🇶🇦")
         /* R */
+        case .reunion:  return Description(r.reunion.localized(), "REU", "+262", "🇷🇪")
         case .romania:  return Description(r.romania.localized(), "ROU", "+40", "🇷🇴")
         case .russia:   return Description(r.russia.localized(), "RUS", "+7", "🇷🇺")
         case .rwanda:   return Description(r.rwanda.localized(), "RWA", "+250", "🇷🇼")
         /* S */
-        case .saintKittsAndNevis:            return Description(r.saintKittsAndNevis.localized(), "KNA", "+1", "🇰🇳")
-        case .saintLucia:                    return Description(r.saintLucia.localized(), "LCA", "+1", "🇱🇨")
-        case .saintPierreAndMiquelon:        return Description(r.saintPierreAndMiquelon.localized(), "SPM", "+508", "🇵🇲")
-        case .saintVincentAndTheGrenadines:  return Description(r.saintVincentAndTheGrenadines.localized(), "VCT", "+1", "🇻🇨")
-        case .samoa:                         return Description(r.samoa.localized(), "WSM", "+685", "🇼🇸")
-        case .sanMarino:                     return Description(r.sanMarino.localized(), "SMR", "+378", "🇸🇲")
-        case .saoTomeAndPrincipe:            return Description(r.saoTomeAndPrincipe.localized(), "STP", "+239", "🇸🇹")
-        case .saudiArabia:                   return Description(r.saudiArabia.localized(), "SAU", "+966", "🇸🇦")
-        case .senegal:                       return Description(r.senegal.localized(), "SEN", "+221", "🇸🇳")
-        case .serbia:                        return Description(r.serbia.localized(), "SRB", "+381", "🇷🇸")
-        case .seychelles:                    return Description(r.seychelles.localized(), "SYC", "+248", "🇸🇨")
-        case .sierraLeone:                   return Description(r.sierraLeone.localized(), "SLE", "+232", "🇸🇱")
-        case .singapore:                     return Description(r.singapore.localized(), "SGP", "+65", "🇸🇬")
-        case .sintMaarten:                   return Description(r.sintMaarten.localized(), "SXM", "+1", "🇸🇽")
-        case .slovakia:                      return Description(r.slovakia.localized(), "SVK", "+421", "🇸🇰")
-        case .slovenia:                      return Description(r.slovenia.localized(), "SVN", "+386", "🇸🇮")
-        case .solomonIslands:                return Description(r.solomonIslands.localized(), "SLB", "+677", "🇸🇧")
-        case .somalia:                       return Description(r.somalia.localized(), "SOM", "+252", "🇸🇴")
-        case .southAfrica:                   return Description(r.southAfrica.localized(), "ZAF", "+27", "🇿🇦")
-        case .southSudan:                    return Description(r.southSudan.localized(), "SSD", "+211", "🇸🇸")
-        case .spain:                         return Description(r.spain.localized(), "ESP", "+34", "🇪🇸")
-        case .sriLanka:                      return Description(r.sriLanka.localized(), "LKA", "+94", "🇱🇰")
-        case .sudan:                         return Description(r.sudan.localized(), "SDN", "+249", "🇸🇩")
-        case .suriname:                      return Description(r.suriname.localized(), "SUR", "+597", "🇸🇷")
-        case .sweden:                        return Description(r.sweden.localized(), "SWE", "+46", "🇸🇪")
-        case .switzerland:                   return Description(r.switzerland.localized(), "CHE", "+41", "🇨🇭")
-        case .syria:                         return Description(r.syria.localized(), "SYR", "+963", "🇸🇾")
+        case .saintBarthelemy:                         return Description(r.saintBarthelemy.localized(), "BLM", "+590", "🇧🇱")
+        case .saintHelena:                             return Description(r.saintHelena.localized(), "SHN", "+290", "🇸🇭")
+        case .saintKittsAndNevis:                      return Description(r.saintKittsAndNevis.localized(), "KNA", "+1", "🇰🇳")
+        case .saintLucia:                              return Description(r.saintLucia.localized(), "LCA", "+1", "🇱🇨")
+        case .saintMartin:                             return Description(r.saintMartin.localized(), "MAF", "+599", "🇲🇫")
+        case .saintPierreAndMiquelon:                  return Description(r.saintPierreAndMiquelon.localized(), "SPM", "+508", "🇵🇲")
+        case .saintVincentAndTheGrenadines:            return Description(r.saintVincentAndTheGrenadines.localized(), "VCT", "+1", "🇻🇨")
+        case .samoa:                                   return Description(r.samoa.localized(), "WSM", "+685", "🇼🇸")
+        case .sanMarino:                               return Description(r.sanMarino.localized(), "SMR", "+378", "🇸🇲")
+        case .saoTomeAndPrincipe:                      return Description(r.saoTomeAndPrincipe.localized(), "STP", "+239", "🇸🇹")
+        case .saudiArabia:                             return Description(r.saudiArabia.localized(), "SAU", "+966", "🇸🇦")
+        case .senegal:                                 return Description(r.senegal.localized(), "SEN", "+221", "🇸🇳")
+        case .serbia:                                  return Description(r.serbia.localized(), "SRB", "+381", "🇷🇸")
+        case .seychelles:                              return Description(r.seychelles.localized(), "SYC", "+248", "🇸🇨")
+        case .sierraLeone:                             return Description(r.sierraLeone.localized(), "SLE", "+232", "🇸🇱")
+        case .singapore:                               return Description(r.singapore.localized(), "SGP", "+65", "🇸🇬")
+        case .sintMaarten:                             return Description(r.sintMaarten.localized(), "SXM", "+1", "🇸🇽")
+        case .slovakia:                                return Description(r.slovakia.localized(), "SVK", "+421", "🇸🇰")
+        case .slovenia:                                return Description(r.slovenia.localized(), "SVN", "+386", "🇸🇮")
+        case .solomonIslands:                          return Description(r.solomonIslands.localized(), "SLB", "+677", "🇸🇧")
+        case .somalia:                                 return Description(r.somalia.localized(), "SOM", "+252", "🇸🇴")
+        case .southAfrica:                             return Description(r.southAfrica.localized(), "ZAF", "+27", "🇿🇦")
+        case .southGeorgiaAndTheSouthSandwichIslands:  return Description(r.southGeorgiaAndTheSouthSandwichIslands.localized(), "SGS", "+500", "🇬🇸")
+        case .southKorea:                              return Description(r.southKorea.localized(), "KOR", "+82", "🇰🇷")
+        case .southSudan:                              return Description(r.southSudan.localized(), "SSD", "+211", "🇸🇸")
+        case .spain:                                   return Description(r.spain.localized(), "ESP", "+34", "🇪🇸")
+        case .sriLanka:                                return Description(r.sriLanka.localized(), "LKA", "+94", "🇱🇰")
+        case .sudan:                                   return Description(r.sudan.localized(), "SDN", "+249", "🇸🇩")
+        case .suriname:                                return Description(r.suriname.localized(), "SUR", "+597", "🇸🇷")
+        case .svalbardAndJanMayen:                     return Description(r.svalbardAndJanMayen.localized(), "SJM", "+47", "🇸🇯")
+        case .swaziland:                               return Description(r.swaziland.localized(), "SWZ", "+268", "🇸🇿")
+        case .sweden:                                  return Description(r.sweden.localized(), "SWE", "+46", "🇸🇪")
+        case .switzerland:                             return Description(r.switzerland.localized(), "CHE", "+41", "🇨🇭")
+        case .syria:                                   return Description(r.syria.localized(), "SYR", "+963", "🇸🇾")
         /* T */
         case .taiwan:                 return Description(r.taiwan.localized(), "TWN", "+886", "🇹🇼")
         case .tajikistan:             return Description(r.tajikistan.localized(), "TJK", "+992", "🇹🇯")
@@ -486,21 +511,24 @@ public enum Country {
         case .turksAndCaicosIslands:  return Description(r.turksAndCaicosIslands.localized(), "TCA", "+1", "🇹🇨")
         case .tulavu:                 return Description(r.tulavu.localized(), "TUV", "+688", "🇹🇻")
         /* U */
-        case .uganda:              return Description(r.uganda.localized(), "UGA", "+256", "🇺🇬")
-        case .ukraine:             return Description(r.ukraine.localized(), "UKR", "+380", "🇺🇦")
-        case .unitedArabEmirates:  return Description(r.unitedArabEmirates.localized(), "ARE", "+971", "🇦🇪")
-        case .unitedKingdom:       return Description(r.unitedKingdom.localized(), "GBR", "+44", "🇬🇧", "en")
-        case .unitedStates:        return Description(r.unitedStates.localized(), "USA", "+1", "🇺🇸")
-        case .uruguay:             return Description(r.uruguay.localized(), "URY", "+598", "🇺🇾")
-        case .uzbekistan:          return Description(r.uzbekistan.localized(), "UZB", "+998", "🇺🇿")
+        case .uganda:                            return Description(r.uganda.localized(), "UGA", "+256", "🇺🇬")
+        case .ukraine:                           return Description(r.ukraine.localized(), "UKR", "+380", "🇺🇦")
+        case .unitedArabEmirates:                return Description(r.unitedArabEmirates.localized(), "ARE", "+971", "🇦🇪")
+        case .unitedKingdom:                     return Description(r.unitedKingdom.localized(), "GBR", "+44", "🇬🇧", "en")
+        case .unitedStates:                      return Description(r.unitedStates.localized(), "USA", "+1", "🇺🇸")
+        case .unitedStatesMinorOutlyingIslands:  return Description(r.unitedStatesMinorOutlyingIslands.localized(), "UMI", "+246", "🇺🇸")
+        case .uruguay:                           return Description(r.uruguay.localized(), "URY", "+598", "🇺🇾")
+        case .uzbekistan:                        return Description(r.uzbekistan.localized(), "UZB", "+998", "🇺🇿")
         /* V */
         case .vanuatu:               return Description(r.vanuatu.localized(), "VUT", "+678", "🇻🇺")
+        case .vaticanCity:           return Description(r.vaticanCity.localized(), "VAT", "+379", "🇻🇦")
         case .venezuela:             return Description(r.venezuela.localized(), "VEN", "+58", "🇻🇪")
         case .vietnam:               return Description(r.vietnam.localized(), "VNM", "+84", "🇻🇳")
         case .virginIslandsBritish:  return Description(r.virginIslandsBritish.localized(), "VGB", "+1", "🇻🇬")
         case .virginIslandsUS:       return Description(r.virginIslandsUS.localized(), "VIR", "+1", "🇻🇮")
         /* W */
         case .wallisAndFutuna:  return Description(r.wallisAndFutuna.localized(), "WLF", "+681", "🇼🇫")
+        case .westernSahara:    return Description(r.westernSahara.localized(), "ESH", "+212", "🇪🇭")
         /* X */
         /* Y */
         case .yemen: return Description(r.yemen.localized(), "YEM", "+967", "🇾🇪")
