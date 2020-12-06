@@ -34,12 +34,6 @@
 "contact_us_button_title" = "Contact us";
 "settings" = "Settings";
 
-/* Gender */
-"gender_female" = "Female";
-"gender_male" = "Male";
-"gender_other" = "Other";
-"gender_prefer_not_to_say" = "Prefer Not To Say";
-
 /* Login */
 "login_page_title" = "Log in to";
 "login_forgot_password" = "Forgot Password?";
@@ -197,6 +191,12 @@
 "account_parameters_messages_email_title" = "Emails";
 "account_parameters_messages_email_description" = "You'll recieve emails";
 "account_parameters_messages_email_button" = "configure parameters";
+
+/* Genders */
+"gender_female" = "Female";
+"gender_male" = "Male";
+"gender_other" = "Other";
+"gender_prefer_not_to_say" = "Prefer Not To Say";
 
 /* Countries */
 "georgia" = "Georgia";

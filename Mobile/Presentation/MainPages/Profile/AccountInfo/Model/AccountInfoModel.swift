@@ -38,7 +38,7 @@ public extension AccountInfoModel {
             surname: e.surname ?? "",
             birthDate: e.birthDate ?? "",
             gender: e.gender?.description.stringValue ?? "",
-            country: e.countryId == nil ? "" : String(e.countryId!), // TODO: e.countryId -> String
+            country: e.country?.description.name ?? "",
             address: e.address ?? ""
         )
     }
