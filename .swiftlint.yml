@@ -79,4 +79,5 @@ cyclomatic_complexity:
   - 15
   - 25
 
-
+cyclomatic_complexity:
+  ignores_case_statements: true
