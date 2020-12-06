@@ -62,7 +62,7 @@ class LoginViewModelTests: XCTestCase {
         viewModel.inject(testable: useCase)
         
         _ = viewModel.route.subscribe(onNext: { action in
-            if case .openSMSLogin = action { expectation.fulfill() }
+            if case .openOTP = action { expectation.fulfill() }
         })
         
         // when
@@ -109,7 +109,7 @@ private class LoginUseCaseErrorMock: LoginUseCase {
     }
 }
 
-// MARK: SMSLoginUseCase Mocks
+// MARK: OTPUseCase Mocks
 private class SMSCodeUseCaseSuccessMock: SMSCodeUseCase {
     func execute(username: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
         completion(.success(()))

@@ -11,6 +11,7 @@ import RxCocoa
 
 public protocol ABTableViewControllerDelegate: class {
     func didDeleteCell(at indexPath: IndexPath)
+    func didLoadNextPage()
 }
 
 public class ABTableViewController: AppTableViewController {
@@ -57,6 +58,14 @@ public class ABTableViewController: AppTableViewController {
         } else {
             showFloatingTabBar()
         }
+    }
+
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 10 is max items per page
+        if tableView.numberOfRows(inSection: indexPath.section) - 10 == indexPath.item {
+            delegate?.didLoadNextPage()
+        }
+        return super.tableView(tableView, cellForRowAt: indexPath)
     }
 
     public override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

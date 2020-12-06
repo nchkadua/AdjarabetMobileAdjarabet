@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87o-ZS-4Oo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87o-ZS-4Oo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -165,6 +165,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oqv-Lk-1qR"/>
                     <connections>
+                        <outlet property="OTPTitleLabel" destination="WqX-Ku-sXV" id="90Q-H1-9nj"/>
                         <outlet property="biometryButton" destination="ZCq-Gy-Mg6" id="XEq-vO-Ebf"/>
                         <outlet property="biometryIconButton" destination="YIt-Qn-H4f" id="NfC-Wd-fe4"/>
                         <outlet property="footerComponentView" destination="mLI-tY-Hga" id="XUo-dx-FwT"/>
@@ -173,8 +174,7 @@
                         <outlet property="passwordInputView" destination="dSr-pI-Ry4" id="VPB-G5-fmq"/>
                         <outlet property="scrollView" destination="Wj6-Tz-yeo" id="XOV-Bc-vnD"/>
                         <outlet property="separatorView" destination="YEe-RB-czB" id="YBg-UC-230"/>
-                        <outlet property="smsLoginButton" destination="GbW-aK-Pmt" id="o4q-V1-pJB"/>
-                        <outlet property="smsLoginTitleLabel" destination="WqX-Ku-sXV" id="90Q-H1-9nj"/>
+                        <outlet property="smsLoginButton" destination="GbW-aK-Pmt" id="AJf-Dc-711"/>
                         <outlet property="usernameInputView" destination="GkT-pe-Vui" id="dYq-0j-utp"/>
                     </connections>
                 </viewController>
@@ -183,6 +183,17 @@
             <point key="canvasLocation" x="-415.94202898550731" y="137.27678571428569"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="GbW-aK-Pmt">
+            <size key="intrinsicContentSize" width="69" height="30"/>
+        </designable>
+        <designable name="JKT-UG-DAh">
+            <size key="intrinsicContentSize" width="49" height="30"/>
+        </designable>
+        <designable name="ZCq-Gy-Mg6">
+            <size key="intrinsicContentSize" width="129" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Login/logo" width="160" height="20"/>
         <image name="Shared/faceID" width="23" height="23"/>

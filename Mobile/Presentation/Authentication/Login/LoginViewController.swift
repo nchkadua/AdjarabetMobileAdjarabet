@@ -21,7 +21,7 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var passwordInputView: ABInputView!
     @IBOutlet private weak var separatorView: UIView!
 
-    @IBOutlet private weak var smsLoginTitleLabel: UILabel!
+    @IBOutlet private weak var OTPTitleLabel: UILabel!
     @IBOutlet private weak var smsLoginButton: ABButton!
 
     @IBOutlet private weak var loginButton: ABButton!
@@ -41,6 +41,7 @@ public class LoginViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        viewModel.login(username: "testpng", password: "Paroli1")
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +63,7 @@ public class LoginViewController: ABViewController {
     private func didRecive(action: LoginViewModelOutputAction) {
         switch action {
         case .setLoginButton(let isLoading):    loginButton.set(isLoading: isLoading)
-        case .setSMSLoginButton(let isLoading): smsLoginButton.set(isLoading: isLoading)
+        case .setSmsLoginButton(let isLoading): smsLoginButton.set(isLoading: isLoading)
         case .setBiometryButton(let isLoading): biometryButton.set(isLoading: isLoading)
         case .configureBiometryButton(let available, let icon, let title):
             biometryButton.superview?.isHidden = !available
@@ -74,7 +75,7 @@ public class LoginViewController: ABViewController {
     private func didRecive(route: LoginViewModelRoute) {
         switch route {
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
-        case .openSMSLogin(let params): navigator.navigate(to: .smsLogin(params: params), animated: true)
+        case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         case .openAlert(let title, _): showAlert(title: title)
         }
     }
@@ -109,7 +110,7 @@ public class LoginViewController: ABViewController {
         smsLoginButton.setStyle(to: .textLink(state: .disabled, size: .small))
         smsLoginButton.setTitleColor(to: .primaryRed(), for: .normal)
         smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
-        smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
+        smsLoginButton.addTarget(self, action: #selector(otpDidTap), for: .touchUpInside)
 
         loginButton.setStyle(to: .tertiary(state: .acvite, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
@@ -164,9 +165,9 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupLabels() {
-        smsLoginTitleLabel.setTextColor(to: .primaryText())
-        smsLoginTitleLabel.setFont(to: .footnote(fontCase: .lower))
-        smsLoginTitleLabel.text = R.string.localization.login_sms_login_title.localized()
+        OTPTitleLabel.setTextColor(to: .primaryText())
+        OTPTitleLabel.setFont(to: .footnote(fontCase: .lower))
+        OTPTitleLabel.text = R.string.localization.login_sms_login_title.localized()
     }
 
     private func setDelegates() {
@@ -186,7 +187,7 @@ public class LoginViewController: ABViewController {
         showAlert(title: "Forgot Username")
     }
 
-    @objc private func smsLoginDidTap() {
+    @objc private func otpDidTap() {
         guard let username = usernameInputView.mainTextField.text else {return}
 
         closeKeyboard()

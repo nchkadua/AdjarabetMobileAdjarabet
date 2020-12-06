@@ -56,7 +56,12 @@
 		769886B12571055000FA339E /* TransactionFilterComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886AB2571055000FA339E /* TransactionFilterComponentViewModel.swift */; };
 		769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886AC2571055000FA339E /* TransactionFilterComponentView.swift */; };
 		769886B92571091D00FA339E /* ABCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886B82571091D00FA339E /* ABCheckbox.swift */; };
-		769886C225711C2B00FA339E /* TransactionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886C125711C2B00FA339E /* TransactionFilter.swift */; };
+		769886C225711C2B00FA339E /* TransactionTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886C125711C2B00FA339E /* TransactionTypeModel.swift */; };
+		76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */; };
+		76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */; };
+		76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */; };
+		76BDF441257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF440257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift */; };
+		76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */; };
 		76BDF45C2576043A007B27A7 /* AccountParameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BDF4572576043A007B27A7 /* AccountParameters.storyboard */; };
 		76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF4582576043A007B27A7 /* AccountParametersNavigator.swift */; };
 		76BDF45E2576043A007B27A7 /* AccountParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF4592576043A007B27A7 /* AccountParametersViewController.swift */; };
@@ -287,10 +292,10 @@
 		D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */; };
 		D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */; };
 		D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E75246B14F600EF8CB5 /* ABViewController.swift */; };
-		D8390E7B246C1B5D00EF8CB5 /* SMSLoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E78246C1B5D00EF8CB5 /* SMSLoginNavigator.swift */; };
-		D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */; };
-		D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */; };
-		D8390E7F246C1B6400EF8CB5 /* SMSLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */; };
+		D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */; };
+		D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E79246C1B5D00EF8CB5 /* OTPViewController.swift */; };
+		D8390E7D246C1B5D00EF8CB5 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E7A246C1B5D00EF8CB5 /* OTPViewModel.swift */; };
+		D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8390E7E246C1B6400EF8CB5 /* OTPLogin.storyboard */; };
 		D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E4225247A92D800E9615F /* UserSessionUseCase.swift */; };
 		D83E4229247AA7BE00E9615F /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */; };
 		D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83ED2F0244C8C860037DDEB /* CircularImageView.swift */; };
@@ -501,7 +506,12 @@
 		769886AB2571055000FA339E /* TransactionFilterComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilterComponentViewModel.swift; sourceTree = "<group>"; };
 		769886AC2571055000FA339E /* TransactionFilterComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilterComponentView.swift; sourceTree = "<group>"; };
 		769886B82571091D00FA339E /* ABCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCheckbox.swift; sourceTree = "<group>"; };
-		769886C125711C2B00FA339E /* TransactionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilter.swift; sourceTree = "<group>"; };
+		769886C125711C2B00FA339E /* TransactionTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypeModel.swift; sourceTree = "<group>"; };
+		76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTransactionHistoriesUseCase.swift; sourceTree = "<group>"; };
+		76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserTransactionsResponse.swift; sourceTree = "<group>"; };
+		76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryRepository.swift; sourceTree = "<group>"; };
+		76BDF440257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiTransactionHistoryRepository.swift; sourceTree = "<group>"; };
+		76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryEntity.swift; sourceTree = "<group>"; };
 		76BDF4572576043A007B27A7 /* AccountParameters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountParameters.storyboard; sourceTree = "<group>"; };
 		76BDF4582576043A007B27A7 /* AccountParametersNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountParametersNavigator.swift; sourceTree = "<group>"; };
 		76BDF4592576043A007B27A7 /* AccountParametersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountParametersViewController.swift; sourceTree = "<group>"; };
@@ -737,10 +747,10 @@
 		D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Regular.otf"; sourceTree = "<group>"; };
 		D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardListening.swift; sourceTree = "<group>"; };
 		D8390E75246B14F600EF8CB5 /* ABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABViewController.swift; sourceTree = "<group>"; };
-		D8390E78246C1B5D00EF8CB5 /* SMSLoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginNavigator.swift; sourceTree = "<group>"; };
-		D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginViewController.swift; sourceTree = "<group>"; };
-		D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSLoginViewModel.swift; sourceTree = "<group>"; };
-		D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SMSLogin.storyboard; sourceTree = "<group>"; };
+		D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPNavigator.swift; sourceTree = "<group>"; };
+		D8390E79246C1B5D00EF8CB5 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		D8390E7A246C1B5D00EF8CB5 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
+		D8390E7E246C1B6400EF8CB5 /* OTPLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OTPLogin.storyboard; sourceTree = "<group>"; };
 		D83E4225247A92D800E9615F /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
 		D83E4228247AA7BE00E9615F /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		D83ED2F0244C8C860037DDEB /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
@@ -1102,9 +1112,50 @@
 		769886C025711C1100FA339E /* TransactionFilter */ = {
 			isa = PBXGroup;
 			children = (
-				769886C125711C2B00FA339E /* TransactionFilter.swift */,
+				769886C125711C2B00FA339E /* TransactionTypeModel.swift */,
 			);
 			path = TransactionFilter;
+			sourceTree = "<group>";
+		};
+		76BADBA1257756560080AB76 /* TransactionHistory */ = {
+			isa = PBXGroup;
+			children = (
+				76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */,
+			);
+			path = TransactionHistory;
+			sourceTree = "<group>";
+		};
+		76BDF42325752CA3007B27A7 /* TransactionHistory */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF42425752CB0007B27A7 /* Response */,
+				76BDF440257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift */,
+			);
+			path = TransactionHistory;
+			sourceTree = "<group>";
+		};
+		76BDF42425752CB0007B27A7 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		76BDF42B25754057007B27A7 /* TransactionHistory */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */,
+			);
+			path = TransactionHistory;
+			sourceTree = "<group>";
+		};
+		76BDF44625755CF5007B27A7 /* TransactionHistory */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */,
+			);
+			path = TransactionHistory;
 			sourceTree = "<group>";
 		};
 		76BDF45625760425007B27A7 /* AccountParameters */ = {
@@ -1230,6 +1281,7 @@
 		C7EF9E46256FECDD00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				76BDF42325752CA3007B27A7 /* TransactionHistory */,
 				C7EF9E47256FED2600D2908C /* UserProfile */,
 			);
 			path = Core;
@@ -1255,6 +1307,7 @@
 		C7EF9E55256FF14A00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				76BDF42B25754057007B27A7 /* TransactionHistory */,
 				C7EF9E56256FF15400D2908C /* UserProfile */,
 			);
 			path = Core;
@@ -1280,6 +1333,7 @@
 		C7EF9E75257039D100D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				76BDF44625755CF5007B27A7 /* TransactionHistory */,
 				C7EF9EBC257043CD00D2908C /* UserProfile */,
 			);
 			path = Core;
@@ -1910,10 +1964,10 @@
 		D8390E77246C1B4D00EF8CB5 /* SMSLogin */ = {
 			isa = PBXGroup;
 			children = (
-				D8390E78246C1B5D00EF8CB5 /* SMSLoginNavigator.swift */,
-				D8390E79246C1B5D00EF8CB5 /* SMSLoginViewController.swift */,
-				D8390E7A246C1B5D00EF8CB5 /* SMSLoginViewModel.swift */,
-				D8390E7E246C1B6400EF8CB5 /* SMSLogin.storyboard */,
+				D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */,
+				D8390E79246C1B5D00EF8CB5 /* OTPViewController.swift */,
+				D8390E7A246C1B5D00EF8CB5 /* OTPViewModel.swift */,
+				D8390E7E246C1B6400EF8CB5 /* OTPLogin.storyboard */,
 				D8863699246C4F4400FF061D /* Views */,
 			);
 			path = SMSLogin;
@@ -2273,6 +2327,7 @@
 		D885E75524714DA1007D85D3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				76BADBA1257756560080AB76 /* TransactionHistory */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
 				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
@@ -2790,7 +2845,7 @@
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
 				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
 				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
-				D8390E7F246C1B6400EF8CB5 /* SMSLogin.storyboard in Resources */,
+				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
 				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
 			);
@@ -2991,11 +3046,13 @@
 				CEF368502549C325009FD456 /* DepositViewModel.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
+				76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */,
 				CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
 				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
+				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
@@ -3032,7 +3089,7 @@
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
 				7644B61D2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift in Sources */,
 				CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */,
-				769886C225711C2B00FA339E /* TransactionFilter.swift in Sources */,
+				769886C225711C2B00FA339E /* TransactionTypeModel.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
 				CE2D1DF22530753A00112A1D /* QuickActionsHeaderCell.swift in Sources */,
 				CE2F03C9252CC8E8006D8001 /* QuickActionComponentViewModel.swift in Sources */,
@@ -3106,7 +3163,7 @@
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
-				D8390E7B246C1B5D00EF8CB5 /* SMSLoginNavigator.swift in Sources */,
+				D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */,
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
 				CE95FC16252DED0A003E539B /* FooterComponentViewModel.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
@@ -3130,19 +3187,20 @@
 				CEE356CA252B644300A0A25C /* ProfileInfoTableViewCellDataProvider.swift in Sources */,
 				CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */,
 				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
-				D8390E7D246C1B5D00EF8CB5 /* SMSLoginViewModel.swift in Sources */,
+				D8390E7D246C1B5D00EF8CB5 /* OTPViewModel.swift in Sources */,
 				D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */,
 				CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */,
-				D8390E7C246C1B5D00EF8CB5 /* SMSLoginViewController.swift in Sources */,
+				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
 				C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
 				C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */,
+				76BDF441257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift in Sources */,
 				CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */,
 				CEE537EB254AC9FD00EDE6C0 /* CashFlowViewModel.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
@@ -3182,6 +3240,7 @@
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
+				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
@@ -3266,6 +3325,7 @@
 				763171A82566398F00F6FD90 /* TransactionDetailsViewController.swift in Sources */,
 				CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
+				76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */,
 				7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
 				7644B5EC25639786006778B2 /* TransactionHistoryComponentViewModel.swift in Sources */,

@@ -13,7 +13,7 @@ public protocol CalendarComponentViewModel: CalendarComponentViewModelInput, Cal
 
 public protocol CalendarComponentViewModelInput {
     func didBind()
-    func didSelectRange(fromDate: Date?, toDate: Date?)
+    func didSelectRange(fromDate: Date, toDate: Date)
 }
 
 public protocol CalendarComponentViewModelOutput {
@@ -22,7 +22,7 @@ public protocol CalendarComponentViewModelOutput {
 
 public enum CalendarComponentViewModelOutputAction {
     case setupCalendar
-    case didSelectRange(fromDate: Date?, toDate: Date?)
+    case didSelectRange(fromDate: Date, toDate: Date)
 }
 
 public class DefaultCalendarComponentViewModel {
@@ -36,7 +36,7 @@ extension DefaultCalendarComponentViewModel: CalendarComponentViewModel {
         actionSubject.onNext(.setupCalendar)
     }
 
-    public func didSelectRange(fromDate: Date?, toDate: Date?) {
+    public func didSelectRange(fromDate: Date, toDate: Date) {
         actionSubject.onNext(.didSelectRange(fromDate: fromDate, toDate: toDate))
     }
 }

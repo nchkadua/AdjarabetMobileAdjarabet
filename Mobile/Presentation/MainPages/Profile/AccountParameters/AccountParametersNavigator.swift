@@ -7,9 +7,12 @@
 //
 
 public class AccountParametersNavigator: Navigator {
-    private weak var viewController: UIViewController?
     @Inject(from: .factories) public var selfSuspendViewControllerFactory: SelfSuspendViewControllerFactory
     @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
+    @Inject(from: .factories) public var otpViewControllerFactory: OTPFactory
+
+    private weak var viewController: UIViewController?
+
     public init(viewController: UIViewController) {
         self.viewController = viewController
     }
@@ -37,6 +40,13 @@ public class AccountParametersNavigator: Navigator {
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+    }
+
+    public func navigateToHighSecurity(with params: OTPViewModelParams, animate: Bool) {
+        let vc = otpViewControllerFactory.make(params: params)
+        let navC = vc.wrapInNavWith(presentationStyle: .automatic)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate)
     }
 
     private func navigateToSelfSuspend(animate: Bool) {

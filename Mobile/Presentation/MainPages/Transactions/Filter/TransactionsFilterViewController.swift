@@ -16,7 +16,7 @@ public class TransactionsFilterViewController: ABViewController {
     @IBOutlet private weak var gamesFilterButton: UIButton!
 
     // MARK: - Properties
-    @Inject(from: .viewModels) private var viewModel: TransactionsFilterViewModel
+    @Inject(from: .viewModels) public var viewModel: TransactionsFilterViewModel
     public lazy var navigator = TransactionsFilterNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
 
@@ -27,6 +27,7 @@ public class TransactionsFilterViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        viewModel.setupTransactionTypeList()
     }
 
     public override func viewWillLayoutSubviews() {
@@ -49,8 +50,10 @@ public class TransactionsFilterViewController: ABViewController {
         case .languageDidChange:
             // TODO
             print("Handle language Change")
-        case .selectFilter(let filter):
-            selectFilter(filter: filter)
+        case .providerTypeSelected(let providerType):
+            setupProviderButtons(forSelected: providerType)
+        case .transactionTypeToggled:
+            viewModel.setupTransactionTypeList()
         }
     }
 
@@ -75,7 +78,9 @@ public class TransactionsFilterViewController: ABViewController {
     }
 
     // MARK: Action methods
-    private func filterWith(_ startDate: Date?, _ endDate: Date?) {
+    private func filterWith(_ startDate: Date, _ endDate: Date) {
+        print("fromDate :\(startDate) --- toDate: \(endDate)")
+        viewModel.filterSelected(fromDate: startDate, toDate: endDate)
     }
 
     // MARK: Setup methods
@@ -87,11 +92,11 @@ public class TransactionsFilterViewController: ABViewController {
         setupFilterButtonColors()
     }
 
-    private func selectFilter(filter: FilterType) {
-        if filter == .transactions {
+    private func setupProviderButtons(forSelected providerType: ProviderType) {
+        if providerType == .transactions {
             setActiveColorsFor(on: transactionsFilterButton)
             setDisabledColors(on: gamesFilterButton)
-        } else if filter == .games {
+        } else if providerType == .games {
             setActiveColorsFor(on: gamesFilterButton)
             setDisabledColors(on: transactionsFilterButton)
         }
@@ -140,10 +145,11 @@ public class TransactionsFilterViewController: ABViewController {
         setTitle(title: R.string.localization.transactions_filter_title.localized())
         let saveButton = makeBarrButtonWith(title: "შენახვა")
         navigationItem.rightBarButtonItem = saveButton.barButtonItem
-        saveButton.button.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
+        saveButton.button.addTarget(self, action: #selector(saveClicked), for: .touchUpInside)
     }
 
-    @objc func dismissSelf() {
+    @objc func saveClicked() {
+        viewModel.saveFilterClicked()
         navigationController?.dismiss(animated: true, completion: nil)
     }
 

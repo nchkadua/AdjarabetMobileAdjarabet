@@ -45,6 +45,8 @@ public class AccountParametersViewController: ABViewController {
         switch route {
         case .openPage(let destination):
             navigator.navigate(to: destination, animated: true)
+        case .openOTP(let params):
+            navigator.navigateToHighSecurity(with: params, animate: true)
         }
     }
 

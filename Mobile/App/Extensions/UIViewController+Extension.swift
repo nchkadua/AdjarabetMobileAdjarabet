@@ -82,14 +82,16 @@ public extension UIViewController {
         }
     }
 
-    func setDismissBarButtonItemIfNeeded(width: CGFloat = 26) {
+    func setDismissBarButtonItemIfNeeded(width: CGFloat = 26, rounded: Bool = false) {
+        navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
-        button.setImage(R.image.shared.close(), for: .normal)
+        button.setImage(R.image.login.sms_dismiss(), for: .normal)
+        button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.addTarget(self, action: #selector(dismissBarButtonItemDidTap), for: .touchUpInside)
-        let backBarButtonItem = UIBarButtonItem(customView: button)
-        navigationItem.leftBarButtonItem = backBarButtonItem
+        let dismissBarButtonItem = UIBarButtonItem(customView: button)
+        navigationItem.leftBarButtonItem = dismissBarButtonItem
     }
 
     @objc func dismissBarButtonItemDidTap() {

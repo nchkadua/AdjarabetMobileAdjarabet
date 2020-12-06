@@ -1,17 +1,17 @@
 //
-//  SMSLoginUseCase.swift
+//  OTPUseCase.swift
 //  Mobile
 //
 //  Created by Shota Ioramashvili on 5/17/20.
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol SMSLoginUseCase {
+public protocol OTPUseCase {
     @discardableResult
-    func execute(username: String, code: String, completion: @escaping (Result<Void, SMSLoginUseCaseError>) -> Void) -> Cancellable?
+    func execute(username: String, code: String, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable?
 }
 
-public enum SMSLoginUseCaseError: Error, LocalizedError {
+public enum OTPUseCaseError: Error, LocalizedError {
     case invalidSMSCode
     case unknown(error: Error)
 
@@ -25,7 +25,7 @@ public enum SMSLoginUseCaseError: Error, LocalizedError {
     }
 }
 
-public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
+public final class DefaultOTPUseCase: OTPUseCase {
     @Inject(from: .repositories) private var authenticationRepository: AuthenticationRepository
     @Inject private var userSession: UserSessionServices
 
@@ -39,7 +39,7 @@ public final class DefaultSMSLoginUseCase: SMSLoginUseCase {
         userSession.login()
     }
 
-    public func execute(username: String, code: String, completion: @escaping (Result<Void, SMSLoginUseCaseError>) -> Void) -> Cancellable? {
+    public func execute(username: String, code: String, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable? {
         authenticationRepository.login(username: username, code: code, loginType: .sms) { [weak self] (result: Result<AdjarabetCoreResult.Login, Error>) in
             switch result {
             case .success(let params):

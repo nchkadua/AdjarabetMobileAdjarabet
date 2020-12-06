@@ -40,6 +40,10 @@ public class TransactionsViewController: ABViewController {
         case .languageDidChange:
             // TODO
             print("Handle language Change")
+        case .reloadItems(let items, let insertionIndexPathes, let deletionIndexPathes):
+            UIView.performWithoutAnimation {
+                appTableViewController.reloadItems(items: items, insertionIndexPathes: insertionIndexPathes, deletionIndexPathes: deletionIndexPathes)
+            }
         }
     }
 
@@ -47,6 +51,8 @@ public class TransactionsViewController: ABViewController {
         switch route {
         case .openTransactionDetails(let transactionHistory):
             openTransactionDetails(with: transactionHistory)
+        case .openTransactionFilter(let params):
+            openTransactionsFilter(params: params)
         }
     }
 
@@ -67,11 +73,15 @@ public class TransactionsViewController: ABViewController {
 
         let calendarButton = makeCalendarBarButtonItem()
         navigationItem.rightBarButtonItem = calendarButton.barButtonItem
-        calendarButton.button.addTarget(self, action: #selector(openFilter), for: .touchUpInside)
+        calendarButton.button.addTarget(self, action: #selector(calendarTabItemClicked), for: .touchUpInside)
     }
 
-    @objc private func openFilter() {
-        navigator.navigate(to: .filter, animated: true)
+    @objc private func calendarTabItemClicked() {
+        viewModel.calendarTabItemClicked()
+    }
+
+    private func openTransactionsFilter(params: TransactionsFilterViewModelParams) {
+        navigator.navigate(to: .filter(params: params), animated: true)
     }
 
     private func setupTableView() {
@@ -79,6 +89,7 @@ public class TransactionsViewController: ABViewController {
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
         appTableViewController.isTabBarManagementEnabled = true
+        appTableViewController.delegate = viewModel
     }
 }
 

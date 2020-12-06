@@ -87,6 +87,18 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
+    func makeAccountParametersBarButtonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
+        let button = UIButton()
+        button.setTitle(R.string.localization.account_parameters.localized(), for: .normal)
+        button.titleLabel?.textAlignment = .right
+        button.setFont(to: .footnote(fontCase: .lower))
+        button.widthAnchor.constraint(equalToConstant: width).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+
+        return (UIBarButtonItem(customView: button), button)
+    }
+
+    @discardableResult
     func makeBarrButtonWith(title: String) -> UIBarButtonItem.Coupled {
         let button = UIButton()
         button.setTitle(title, for: .normal)

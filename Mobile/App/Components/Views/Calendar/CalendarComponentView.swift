@@ -136,7 +136,7 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
         if firstDate == nil {
             firstDate = date
             datesRange = [firstDate!]
-            viewModel.didSelectRange(fromDate: datesRange?.first, toDate: nil)
+            viewModel.didSelectRange(fromDate: datesRange!.first!, toDate: Date.distantFuture)
             return
         }
 
@@ -156,7 +156,7 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
                 calendar.select(d)
             }
             datesRange = range
-            viewModel.didSelectRange(fromDate: datesRange?.first, toDate: datesRange?.last)
+            viewModel.didSelectRange(fromDate: datesRange!.first!, toDate: datesRange!.last!)
 
             return
         }

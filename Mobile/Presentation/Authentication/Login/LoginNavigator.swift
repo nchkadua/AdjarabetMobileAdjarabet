@@ -8,7 +8,7 @@
 
 public class LoginNavigator: Navigator {
     @Inject(from: .factories) public var mainTabBarFactory: MainTabBarFactory
-    @Inject(from: .factories) public var smsLoginFactory: SMSLoginFactory
+    @Inject(from: .factories) public var otpFactory: OTPFactory
 
     private weak var viewController: UIViewController?
 
@@ -17,15 +17,17 @@ public class LoginNavigator: Navigator {
     }
 
     public enum Destination {
-        case smsLogin(params: SMSLoginViewModelParams)
+        case OTP(params: OTPViewModelParams)
         case mainTabBar
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
-        case .smsLogin(let params):
-            let vc = smsLoginFactory.make(params: params)
-            viewController?.navigationController?.pushViewController(vc, animated: animate)
+        case .OTP(let params):
+            let vc = otpFactory.make(params: params)
+            let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+            navC.navigationBar.styleForPrimaryPage()
+            viewController?.navigationController?.present(navC, animated: animate)
         case .mainTabBar:
             UIApplication.shared.currentWindow?.rootViewController = mainTabBarFactory.make()
         }

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d6Y-5F-gZB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d6Y-5F-gZB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--View Controller-->
         <scene sceneID="pYx-Sw-k4u">
             <objects>
-                <viewController storyboardIdentifier="SMSLoginViewController" id="d6Y-5F-gZB" customClass="SMSLoginViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OTPViewController" id="d6Y-5F-gZB" customClass="OTPViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4CI-6e-bLC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeM-K8-8Zc" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
                                                                 <rect key="frame" x="191" y="0.0" width="183" height="35"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                                <state key="normal" title="Resend SMS" image="SMSLogin/resend"/>
+                                                                <state key="normal" title="Resend SMS" image="OTP/resend"/>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -107,10 +107,10 @@
                     <navigationItem key="navigationItem" id="Dgp-HM-TZI"/>
                     <connections>
                         <outlet property="loginButton" destination="wEO-0R-vVl" id="U8x-kU-NTK"/>
+                        <outlet property="otpDescriptionLabel" destination="e7i-eU-SGk" id="7Ls-XR-TLI"/>
                         <outlet property="resendSMSButton" destination="qeM-K8-8Zc" id="BQa-BH-Pgd"/>
                         <outlet property="scrollView" destination="WNY-zV-0Ip" id="9Na-nV-XQj"/>
                         <outlet property="smsCodeInputView" destination="sGc-P3-eho" id="25F-7T-hmf"/>
-                        <outlet property="smsLoginDescriptionLabel" destination="e7i-eU-SGk" id="fQU-Fa-hsb"/>
                         <outlet property="timerView" destination="psm-i8-xbn" id="ZIJ-4g-hGT"/>
                     </connections>
                 </viewController>
@@ -119,16 +119,8 @@
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="qeM-K8-8Zc">
-            <size key="intrinsicContentSize" width="124" height="22"/>
-        </designable>
-        <designable name="wEO-0R-vVl">
-            <size key="intrinsicContentSize" width="49" height="30"/>
-        </designable>
-    </designables>
     <resources>
-        <image name="SMSLogin/resend" width="12" height="12"/>
+        <image name="OTP/resend" width="12" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
