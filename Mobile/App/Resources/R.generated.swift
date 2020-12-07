@@ -3542,6 +3542,12 @@ struct R: Rswift.Validatable {
       /// en translation: Morocco
       ///
       /// Locales: en, ka, hy
+      static let deposit_payment_method_title = Rswift.StringResource(key: "deposit_payment_method_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გადახდის ტიპი
+      ///
+      /// Locales: en
+      static let transactions_details_type = Rswift.StringResource(key: "transactions_details_type", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: გაიარეთ ავტორიზაცია
       static let morocco = Rswift.StringResource(key: "morocco", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Mozambique
       ///
@@ -3558,6 +3564,12 @@ struct R: Rswift.Validatable {
       /// en translation: My Cards
       ///
       /// Locales: en, ka, hy
+      static let rule1 = Rswift.StringResource(key: "rule1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გატანა
+      ///
+      /// Locales: en
+      static let transactions_details_type_withdraw = Rswift.StringResource(key: "transactions_details_type_withdraw", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: გატანის ინსტრუქცია
       static let my_cards = Rswift.StringResource(key: "my_cards", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Myanmar
       ///
@@ -3578,6 +3590,12 @@ struct R: Rswift.Validatable {
       /// en translation: Nepal
       ///
       /// Locales: en, ka, hy
+      static let deposit_description_proceed = Rswift.StringResource(key: "deposit_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დრო
+      ///
+      /// Locales: en, ka, hy
+      static let transactions_details_date = Rswift.StringResource(key: "transactions_details_date", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ელ.ფოსტის შეცვლა
       static let nepal = Rswift.StringResource(key: "nepal", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Netherlands
       ///
@@ -3610,6 +3628,28 @@ struct R: Rswift.Validatable {
       /// en translation: Niue
       ///
       /// Locales: en, ka, hy
+      static let transactions_details_fee_amount = Rswift.StringResource(key: "transactions_details_fee_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ტრანზაქციის საკომისიო
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_commission_title = Rswift.StringResource(key: "withdraw_commission_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ფილტრი
+      ///
+      /// Locales: en, ka, hy
+      static let transactions_filter_title = Rswift.StringResource(key: "transactions_filter_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: შეიყვანე სასურველი თანხა
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_description_amount = Rswift.StringResource(key: "deposit_description_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: შემოტანა
+      ///
+      /// Locales: en
+      static let transactions_details_type_deposit = Rswift.StringResource(key: "transactions_details_type_deposit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: ჯამური თანხა
+      ///
+      /// Locales: en, ka, hy
+      static let transactions_details_total_amount = Rswift.StringResource(key: "transactions_details_total_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ჯამური თანხა
       static let niue = Rswift.StringResource(key: "niue", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Norfolk Island
       ///
@@ -8496,6 +8536,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("saudi_arabia", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Forgot Password?
       /// en translation: Save
       ///
       /// Locales: en, ka, hy
@@ -9861,6 +9902,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("deposit_payment_method_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: გადახდის ტიპი
+      ///
+      /// Locales: en
+      static func transactions_details_type(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_details_type", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_details_type"
+        }
+
+        return NSLocalizedString("transactions_details_type", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: გაიარეთ ავტორიზაცია
       ///
       /// Locales: en, ka, hy
@@ -9919,6 +9975,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("rule1", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: გატანა
+      ///
+      /// Locales: en
+      static func transactions_details_type_withdraw(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_details_type_withdraw", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_details_type_withdraw"
+        }
+
+        return NSLocalizedString("transactions_details_type_withdraw", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: გატანის ინსტრუქცია
@@ -9994,6 +10065,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deposit_description_proceed", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: დრო
+      ///
+      /// Locales: en, ka, hy
+      static func transactions_details_date(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_details_date", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_details_date"
+        }
+
+        return NSLocalizedString("transactions_details_date", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: ელ.ფოსტის შეცვლა
@@ -10104,6 +10190,21 @@ struct R: Rswift.Validatable {
       /// en translation: ტრანზაქციის საკომისიო
       ///
       /// Locales: en, ka, hy
+      static func transactions_details_fee_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_details_fee_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_details_fee_amount"
+        }
+
+        return NSLocalizedString("transactions_details_fee_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ტრანზაქციის საკომისიო
+      ///
+      /// Locales: en, ka, hy
       static func withdraw_commission_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("withdraw_commission_title", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -10114,6 +10215,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("withdraw_commission_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ფილტრი
+      ///
+      /// Locales: en, ka, hy
+      static func transactions_filter_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_filter_title"
+        }
+
+        return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: შეიყვანე სასურველი თანხა
@@ -10129,6 +10245,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deposit_description_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: შემოტანა
+      ///
+      /// Locales: en
+      static func transactions_details_type_deposit(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_details_type_deposit", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_details_type_deposit"
+        }
+
+        return NSLocalizedString("transactions_details_type_deposit", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ჯამური თანხა
+      ///
+      /// Locales: en, ka, hy
+      static func transactions_details_total_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_details_total_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_details_total_amount"
+        }
+
+        return NSLocalizedString("transactions_details_total_amount", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: ჯამური თანხა

@@ -198,27 +198,49 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
 
     private func constructTransactionDetails(from entity: TransactionHistoryEntity) -> [TransactionDetail] {
         var transactionDetails: [TransactionDetail] = []
+        let transactionType: TransactionType = entity.totalAmount ?? 0 < 0 ? .withdraw : .deposit
         if let totalAmount = entity.totalAmount {
-            transactionDetails.append(TransactionDetail(title: "ჯამური თანხა", description: String(totalAmount)))
+            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_total_amount(),
+                                                        description: String(totalAmount)))
         }
         if let date = entity.date {
-            transactionDetails.append(TransactionDetail(title: "დრო", description: TransactionHistoryEntity.dateFormatter.string(from: date)))
+            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_date(),
+                                                        description: TransactionHistoryFormatter.detailsDateFormatter.string(from: date)))
         }
         if let feeAmount = entity.feeAmount {
-            transactionDetails.append(TransactionDetail(title: "ტრანზაქციის საკომისიო", description: String(feeAmount)))
+            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_fee_amount(),
+                                                        description: String(feeAmount)))
         }
-        //        transactionDetails.append(TransactionDetail(title: "გადახდის ტიპი", description: entity.feeAmount )) TODO
+
+        if transactionType == .deposit {
+            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_fee_amount(),
+                                                        description: R.string.localization.transactions_details_type_deposit() ))
+        } else if transactionType == .withdraw {
+            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_type(),
+                                                        description: R.string.localization.transactions_details_type_withdraw() ))
+        }
 
         return transactionDetails
     }
 
     private func consturctTransactionHistoryComponentViewModel(from entity: TransactionHistoryEntity, with details: [TransactionDetail]) -> DefaultTransactionHistoryComponentViewModel {
-        let transactionHistory = TransactionHistory(title: entity.providerName ?? "",
-                                                    subtitle: "შემოტანა",
+        let transactionType: TransactionType = entity.totalAmount ?? 0 < 0 ? .withdraw : .deposit
+        var transactionHistory: TransactionHistory?
+
+        if transactionType == .deposit {
+            transactionHistory = TransactionHistory(title: entity.providerName ?? "",
+                                                    subtitle: R.string.localization.transactions_details_type_deposit(),
                                                     amount: String(entity.totalAmount ?? 0),
                                                     icon: R.image.transactionsHistory.deposit()!,
                                                     details: details)
-        let componentViewModel = DefaultTransactionHistoryComponentViewModel(params: .init(transactionHistory: transactionHistory))
+        } else if transactionType == .withdraw {
+            transactionHistory = TransactionHistory(title: entity.providerName ?? "",
+                                                    subtitle: R.string.localization.transactions_details_type_withdraw(),
+                                                    amount: String(entity.totalAmount ?? 0),
+                                                    icon: R.image.transactionsHistory.withdraw()!,
+                                                    details: details)
+        }
+        let componentViewModel = DefaultTransactionHistoryComponentViewModel(params: .init(transactionHistory: transactionHistory!))
         return componentViewModel
     }
 }

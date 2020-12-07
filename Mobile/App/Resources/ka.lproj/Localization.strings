@@ -178,8 +178,14 @@
 
 /* Transactions History */
 "transactions_filter_title" = "ფილტრი";
+"transactions_details_total_amount" = "ჯამური თანხა";
+"transactions_details_fee_amount" = "ტრანზაქციის საკომისიო";
+"transactions_details_date" = "დრო";
+"trasnactions_details_type" = "გადახდის ტიპი";
+"trasnactions_details_type_deposit" = "შემოტანა";
+"trasnactions_details_type_withdraw" = "გატანა";
 
-/* Transactions History */
+/* Account Parameters */
 "account_parameters_change_password" = "პაროლის შეცვლა";
 "account_parameters_high_security" = "მაღალი დაცვის რეჟიმი";
 "account_parameters_self_block" = "საკუთარი თავის დაბლოკვა";

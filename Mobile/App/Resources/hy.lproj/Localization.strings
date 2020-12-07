@@ -177,9 +177,15 @@
 "p2p_transfer_confirm" = "confirm";
 
 /* Transactions History */
-"transactions_filter_title" = "Filter";
+"transactions_filter_title" = "ფილტრი";
+"transactions_details_total_amount" = "ჯამური თანხა";
+"transactions_details_fee_amount" = "ტრანზაქციის საკომისიო";
+"transactions_details_date" = "დრო";
+"trasnactions_details_type" = "გადახდის ტიპი";
+"trasnactions_details_type_deposit" = "შემოტანა";
+"trasnactions_details_type_withdraw" = "გატანა";
 
-/* Transactions History */
+/* Account Parameters */
 "account_parameters_change_password" = "Change password";
 "account_parameters_high_security" = "High security mode";
 "account_parameters_self_block" = "Block account";
