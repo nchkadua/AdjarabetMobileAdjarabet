@@ -109,7 +109,7 @@ public class LoginViewController: ABViewController {
         smsLoginButton.setStyle(to: .textLink(state: .disabled, size: .small))
         smsLoginButton.setTitleColor(to: .primaryRed(), for: .normal)
         smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
-        smsLoginButton.addTarget(self, action: #selector(otpDidTap), for: .touchUpInside)
+        smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
 
         loginButton.setStyle(to: .tertiary(state: .acvite, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
@@ -186,7 +186,7 @@ public class LoginViewController: ABViewController {
         showAlert(title: "Forgot Username")
     }
 
-    @objc private func otpDidTap() {
+    @objc private func smsLoginDidTap() {
         guard let username = usernameInputView.mainTextField.text else {return}
 
         closeKeyboard()

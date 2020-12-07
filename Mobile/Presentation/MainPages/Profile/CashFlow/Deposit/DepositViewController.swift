@@ -29,6 +29,11 @@ public class DepositViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: DepositViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
@@ -74,6 +79,7 @@ public class DepositViewController: ABViewController {
         addCardButton.setBackgorundColor(to: .querternaryFill())
         addCardButton.layer.cornerRadius = 8
         addCardButton.setImage(R.image.deposit.addCard(), for: .normal)
+        addCardButton.addTarget(self, action: #selector(addCardDidTap), for: .touchUpInside)
 
         proceedButton.setStyle(to: .tertiary(state: .disabled, size: .large))
         proceedButton.setTitleWithoutAnimation(R.string.localization.deposit_proceed_button_title(), for: .normal)
@@ -109,6 +115,10 @@ public class DepositViewController: ABViewController {
     }
 
     // MARK: Action methods
+    @objc private func addCardDidTap() {
+        navigator.navigate(to: .addCard, animated: true)
+    }
+
     @objc private func proceedDidTap() {
     }
 }

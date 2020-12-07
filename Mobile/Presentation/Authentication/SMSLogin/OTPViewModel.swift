@@ -18,11 +18,13 @@ public struct OTPViewModelParams {
     }
     public let paramsOutputAction = PublishSubject<Action>()
     public let vcTitle: String
+    public let buttonTitle: String
     public let showDismissButton: Bool
     public let username: String
 
-    public init(vcTitle: String = "", showDismissButton: Bool = true, username: String = "") {
+    public init(vcTitle: String = "", buttonTitle: String = "", showDismissButton: Bool = true, username: String = "") {
         self.vcTitle = vcTitle
+        self.buttonTitle = buttonTitle
         self.showDismissButton = showDismissButton
         self.username = username
     }
@@ -47,6 +49,7 @@ public protocol OTPViewModelOutput {
 
 public enum OTPViewModelOutputAction {
     case setNavigationItems(_ title: String, showDismissButton: Bool)
+    case setButtonTitle(_ title: String)
     case setSMSInputViewNumberOfItems(Int)
     case setSMSCodeInputView(text: [String?])
     case setResendSMSButton(isLoading: Bool)
@@ -82,6 +85,7 @@ extension DefaultOTPViewModel: OTPViewModel {
 
     public func viewDidLoad() {
         actionSubject.onNext(.setNavigationItems(params.vcTitle, showDismissButton: params.showDismissButton))
+        actionSubject.onNext(.setButtonTitle(params.buttonTitle))
         actionSubject.onNext(.setSMSInputViewNumberOfItems(smsCodeLength))
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
         getOTP()

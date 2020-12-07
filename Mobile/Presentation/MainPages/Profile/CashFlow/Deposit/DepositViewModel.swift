@@ -13,6 +13,7 @@ public protocol DepositViewModel: DepositViewModelInput, DepositViewModelOutput 
 
 public protocol DepositViewModelInput {
     func viewDidLoad()
+    func addCard()
 }
 
 public protocol DepositViewModelOutput {
@@ -42,5 +43,8 @@ extension DefaultDepositViewModel: DepositViewModel {
     public func viewDidLoad() {
         actionSubject.onNext(.setupWithLabel(LabelComponentViewModel(title: R.string.localization.balance_title(), value: "\(userBalanceService.balance?.formattedBalance ?? "0.0") ₾")))
         actionSubject.onNext(.setupPaymentMethods(Payment()))
+    }
+
+    public func addCard() {
     }
 }

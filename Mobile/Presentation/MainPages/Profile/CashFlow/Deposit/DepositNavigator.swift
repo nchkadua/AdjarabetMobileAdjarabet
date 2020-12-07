@@ -7,6 +7,8 @@
 //
 
 public class DepositNavigator: Navigator {
+    @Inject(from: .factories) public var addCardViewControllerFactory: AddCardViewControllerFactory
+
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {
@@ -14,8 +16,19 @@ public class DepositNavigator: Navigator {
     }
 
     public enum Destination {
+        case addCard
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
+        switch destination {
+        case .addCard: navigateToAddCard(animate: animate)
+        }
+    }
+
+    private func navigateToAddCard(animate: Bool) {
+        let vc = addCardViewControllerFactory.make(params: .init())
+        let navC = vc.wrapInNavWith(presentationStyle: .automatic)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 }

@@ -29,6 +29,11 @@ public class WithdrawViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: WithdrawViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in

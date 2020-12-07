@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Card View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="AddCardViewController" id="gAa-dD-eZu" customClass="AddCardViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiZ-BB-HLu" customClass="MinAmountComponentView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="374" height="160"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="8Of-kK-LAz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDX-52-4kS" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="244" width="374" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="PoP-LQ-97w"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMo-L7-1Ok" customClass="AgreementComponentView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="314" width="374" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="tE3-e8-Cqg"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mir-y4-aEW" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="412" width="374" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="hkZ-rj-3bZ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="zDX-52-4kS" secondAttribute="trailing" constant="20" id="0Ag-hS-USB"/>
+                            <constraint firstItem="IMo-L7-1Ok" firstAttribute="top" secondItem="zDX-52-4kS" secondAttribute="bottom" constant="16" id="0Kd-rR-FLS"/>
+                            <constraint firstItem="zDX-52-4kS" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="20" id="FBl-OC-IQs"/>
+                            <constraint firstItem="IMo-L7-1Ok" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="20" id="FFq-BW-p9O"/>
+                            <constraint firstItem="zDX-52-4kS" firstAttribute="top" secondItem="wiZ-BB-HLu" secondAttribute="bottom" constant="20" id="HeP-aq-xeN"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="mir-y4-aEW" secondAttribute="trailing" constant="20" id="JbE-DD-3hA"/>
+                            <constraint firstItem="wiZ-BB-HLu" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="20" id="K7q-pD-ci4"/>
+                            <constraint firstItem="mir-y4-aEW" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="20" id="KQX-g9-mdc"/>
+                            <constraint firstItem="mir-y4-aEW" firstAttribute="top" secondItem="IMo-L7-1Ok" secondAttribute="bottom" constant="18" id="NaX-s0-6OV"/>
+                            <constraint firstItem="wiZ-BB-HLu" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="20" id="OYv-qy-clr"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="IMo-L7-1Ok" secondAttribute="trailing" constant="20" id="X5j-sU-Qkv"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="wiZ-BB-HLu" secondAttribute="trailing" constant="20" id="eo2-Re-PHj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="agreementComponentView" destination="IMo-L7-1Ok" id="otI-Sr-LAH"/>
+                        <outlet property="amountInputView" destination="zDX-52-4kS" id="az3-fx-vpW"/>
+                        <outlet property="continueButton" destination="mir-y4-aEW" id="ZrN-p8-qKr"/>
+                        <outlet property="minAmountComponentView" destination="wiZ-BB-HLu" id="r9D-AE-pDk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="30"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="mir-y4-aEW">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

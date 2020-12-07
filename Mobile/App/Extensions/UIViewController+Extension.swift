@@ -82,10 +82,10 @@ public extension UIViewController {
         }
     }
 
-    func setDismissBarButtonItemIfNeeded(width: CGFloat = 26, rounded: Bool = false) {
+    func setDismissBarButtonItemIfNeeded(width: CGFloat = 26) {
         navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
-        button.setImage(R.image.login.sms_dismiss(), for: .normal)
+        button.setImage(R.image.shared.close(), for: .normal)
         button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true

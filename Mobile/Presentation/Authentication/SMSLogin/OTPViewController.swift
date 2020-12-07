@@ -60,13 +60,12 @@ public class OTPViewController: ABViewController {
     private func didRecive(action: OTPViewModelOutputAction) {
         switch action {
         case .setNavigationItems(let title, let showDismissButton): setupNavigationItems(title, showDismissButton: showDismissButton)
+        case .setButtonTitle(let title): setButtonTitle(title)
         case .setSMSInputViewNumberOfItems(let count): smsCodeInputView.configureForNumberOfItems(count)
         case .setSMSCodeInputView(let text): updateSMSCodeInputView(texts: text)
         case .setResendSMSButton(let isLoading): resendSMSButton.set(isLoading: isLoading)
         case .setLoginButton(let isLoading): loginButton.set(isLoading: isLoading)
         case .bindToTimer(let timerViewModel): bindToTimer(timerViewModel)
-        default:
-            break
         }
     }
 
@@ -93,7 +92,7 @@ public class OTPViewController: ABViewController {
 
         guard showDismissButton else { return }
 
-        setDismissBarButtonItemIfNeeded(width: 44, rounded: true)
+        setDismissBarButtonItemIfNeeded(width: 44)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
@@ -124,8 +123,11 @@ public class OTPViewController: ABViewController {
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
         loginButton.setStyle(to: .tertiary(state: .disabled, size: .large))
-        loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
+    }
+
+    private func setButtonTitle(_ title: String) {
+        loginButton.setTitleWithoutAnimation(title, for: .normal)
     }
 
     private func setupSMSCodeInputView() {

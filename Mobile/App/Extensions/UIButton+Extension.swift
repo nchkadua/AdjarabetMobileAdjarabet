@@ -7,6 +7,11 @@
 //
 
 public extension UIButton {
+    enum ButtonImageAlignment {
+        case left
+        case right
+    }
+
     func setTitleColor(to color: DesignSystem.Color?, for state: UIControl.State) {
         self.setTitleColor(color?.value, for: state)
     }
@@ -27,5 +32,15 @@ public extension UIButton {
             setAttributedTitle(title, for: state)
             layoutIfNeeded()
         }
+    }
+
+    func setButtonImage(_ image: UIImage, alignment: ButtonImageAlignment) {
+        switch alignment {
+        case .left: semanticContentAttribute = .forceLeftToRight
+        case .right: semanticContentAttribute = .forceRightToLeft
+        }
+
+        setImage(image, for: .normal)
+        imageEdgeInsets = .init(top: 0, left: 15, bottom: 0, right: 0)
     }
 }

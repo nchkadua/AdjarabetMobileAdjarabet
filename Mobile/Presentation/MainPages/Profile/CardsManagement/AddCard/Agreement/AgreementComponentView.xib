@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AgreementComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="agreeButton" destination="NEW-3W-bhN" id="Fhx-7g-g2Y"/>
+                <outlet property="agreementLabel" destination="ib1-ft-44r" id="a2h-ps-lid"/>
+                <outlet property="view" destination="iN0-l3-epB" id="5ag-ad-YMZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-ft-44r">
+                    <rect key="frame" x="13" y="14" width="331" height="51"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEW-3W-bhN">
+                    <rect key="frame" x="364" y="25.5" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="BMq-yc-Age"/>
+                        <constraint firstAttribute="width" constant="28" id="Qnk-fm-S9N"/>
+                    </constraints>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="NEW-3W-bhN" firstAttribute="leading" secondItem="ib1-ft-44r" secondAttribute="trailing" constant="20" id="ClE-Aa-BfB"/>
+                <constraint firstItem="ib1-ft-44r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="13" id="bLM-t5-a4C"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ib1-ft-44r" secondAttribute="bottom" constant="15" id="hR4-no-m0k"/>
+                <constraint firstItem="ib1-ft-44r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="toy-ff-ygL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NEW-3W-bhN" secondAttribute="trailing" constant="22" id="xUy-b5-zJi"/>
+                <constraint firstItem="NEW-3W-bhN" firstAttribute="centerY" secondItem="ib1-ft-44r" secondAttribute="centerY" id="ybO-FQ-cr0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="75" y="78"/>
+        </view>
+    </objects>
+</document>

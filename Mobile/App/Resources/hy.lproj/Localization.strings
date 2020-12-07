@@ -200,6 +200,39 @@
 
 /* High Secutiry */
 "high_security_page_title" = "High Secutiry On";
+"high_security_button_on" = "Activate";
+"high_security_button_off" = "Deactivate";
+
+/* Card Management */
+"add_card_title" = "Add Card";
+"add_card_minimum_amount_title" = "ბარათის დასამატებლად გთხოვთ მიუთითო მინიმალური თანხის ოდენობა";
+"add_card_minimum_amount" = "Minimum Amount";
+"add_card_terms" = "თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება";
+"add_card_continue_button_title" = "Continue";
+"scan_card_title" = "Scan Card";
+
+"card_usage_date_title" = "Usage Date";
+"card_number_title" = "Card Number";
+"enter_card_number" = "Enter Number";
+"active_till" = "Active Till";
+"card_month" = "Month";
+"card_year" = "Year";
+"card_cvv" = "CVV";
+"card_add_button_title" = "ADD CARD";
+
+/* Dates */
+"january" = "January";
+"february" = "February";
+"march" = "March";
+"april" = "April";
+"may" = "May";
+"june" = "June";
+"july" = "July";
+"august" = "August";
+"september" = "September";
+"october" = "Octuber";
+"november" = "November";
+"december" = "December";
 
 /* Gender */
 "gender_female" = "female";

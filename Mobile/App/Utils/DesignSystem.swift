@@ -60,7 +60,7 @@ public enum DesignSystem {
             switch self {
             case .systemRed(let alpha):         return colors.systemTints.systemRed()!.withAlphaComponent(alpha)
             case .systemOrange(let alpha):      return colors.systemTints.systemOrange()!.withAlphaComponent(alpha)
-            case .systemYellow(let alpha):  return colors.systemTints.systemYellow()!.withAlphaComponent(alpha)
+            case .systemYellow(let alpha):      return colors.systemTints.systemYellow()!.withAlphaComponent(alpha)
             case .systemGreen(let alpha):       return colors.systemTints.systemGreen()!.withAlphaComponent(alpha)
             case .systemTeal(let alpha):        return colors.systemTints.systemTeal()!.withAlphaComponent(alpha)
             case .systemBlue(let alpha):        return colors.systemTints.systemBlue()!.withAlphaComponent(alpha)
@@ -340,7 +340,7 @@ public enum DesignSystem {
                     switch state {
                     case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .tertiaryBg())
                     case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.8), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
+                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRedNeutral(), overlayColor: .tertiaryBg())
                     case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .tertiaryBg(), overlayColor: .primaryBg(alpha: 0.4))
                     case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.4), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
                     case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())

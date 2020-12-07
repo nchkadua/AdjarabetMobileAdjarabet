@@ -200,6 +200,39 @@
 
 /* High Secutiry */
 "high_security_page_title" = "მაღალი დაცვის რეჟიმის ჩართვა";
+"high_security_button_on" = "აქტივაცია";
+"high_security_button_off" = "დეაქტივაცია";
+
+/* Card Management */
+"add_card_title" = "Add Card";
+"add_card_minimum_amount_title" = "ბარათის დასამატებლად გთხოვთ მიუთითო მინიმალური თანხის ოდენობა";
+"add_card_minimum_amount" = "მინიმალური თანხა";
+"add_card_terms" = "თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება";
+"add_card_continue_button_title" = "გაგრძელება";
+"scan_card_title" = "დაასკანირე ბარათი";
+
+"card_usage_date_title" = "გამოყენების ვადა";
+"card_number_title" = "ბარათის ნომერი";
+"enter_card_number" = "შეიყვანე ნომერი";
+"active_till" = "აქტიურია";
+"card_month" = "თვე";
+"card_year" = "წერლი";
+"card_cvv" = "CVV";
+"card_add_button_title" = "ბარათის დამატება";
+
+/* Dates */
+"january" = "იანვარი";
+"february" = "თებერვალი";
+"march" = "მარტი";
+"april" = "აპრილი";
+"may" = "მაისი";
+"june" = "ივნისი";
+"july" = "ივლისი";
+"august" = "აგვისტო";
+"september" = "სექტემბერი";
+"october" = "ოქტომბერი";
+"november" = "ნოემბერი";
+"december" = "დეკემბერი";
 
 /* Gender */
 "gender_female" = "ქალი";

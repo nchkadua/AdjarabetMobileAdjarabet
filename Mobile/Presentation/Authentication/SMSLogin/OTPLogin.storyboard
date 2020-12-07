@@ -21,22 +21,22 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="kd7-Y8-Qax">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="325.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="305.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qzc-Fn-qIQ">
-                                                <rect key="frame" x="20" y="14" width="374" height="58.5"/>
+                                                <rect key="frame" x="20" y="14" width="374" height="38.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS Login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7i-eU-SGk">
-                                                        <rect key="frame" x="146.5" y="30" width="81.5" height="20.5"/>
+                                                        <rect key="frame" x="146.5" y="10" width="81.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <edgeInsets key="layoutMargins" top="30" left="0.0" bottom="8" right="0.0"/>
+                                                <edgeInsets key="layoutMargins" top="10" left="0.0" bottom="8" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-2d-e1a">
-                                                <rect key="frame" x="20" y="85.5" width="374" height="163"/>
+                                                <rect key="frame" x="20" y="65.5" width="374" height="163"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-P3-eho" customClass="SMSCodeInputView" customModule="Mobile" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
@@ -66,7 +66,7 @@
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="32" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEN-gC-VkM">
-                                                <rect key="frame" x="20" y="261.5" width="374" height="44"/>
+                                                <rect key="frame" x="20" y="241.5" width="374" height="44"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rrt-Kc-5O0">
                                                         <rect key="frame" x="0.0" y="14" width="374" height="30"/>
@@ -119,6 +119,17 @@
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="qeM-K8-8Zc">
+            <size key="intrinsicContentSize" width="124" height="22"/>
+        </designable>
+        <designable name="sGc-P3-eho">
+            <size key="intrinsicContentSize" width="394" height="48"/>
+        </designable>
+        <designable name="wEO-0R-vVl">
+            <size key="intrinsicContentSize" width="49" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="OTP/resend" width="12" height="12"/>
         <systemColor name="systemBackgroundColor">

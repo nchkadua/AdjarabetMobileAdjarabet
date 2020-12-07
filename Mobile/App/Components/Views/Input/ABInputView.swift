@@ -47,6 +47,7 @@ public class ABInputView: UIView {
 
     // MARK: Formatter
     public var formatter: Formatter = DefaultFormatter()
+    public var maxLength = -1
 
     /// PickerView
     public var pickerView = UIPickerView()
@@ -343,5 +344,14 @@ extension ABInputView: UITextFieldDelegate {
     public func textFieldDidEndEditing(_ textField: UITextField) {
         guard defaultBackgroundColor != DesignSystem.Input.backgroundColor else { return }
         formatText()
+    }
+
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard maxLength > -1 else { return true }
+
+        let currentString: NSString = (textField.text ?? "") as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
     }
 }

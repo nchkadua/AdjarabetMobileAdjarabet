@@ -75,11 +75,16 @@ public extension DependencyContainer {
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
         Module { DefaultPhoneNumberChangeViewModel(params: .init()) as PhoneNumberChangeViewModel }
         Module { DefaultOTPViewModel(params: .init()) as OTPViewModel }
+        Module { DefaultAddCardViewModel(params: .init()) as AddCardViewModel }
+        Module { DefaultCardInfoViewModel(params: .init()) as CardInfoViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
         Module { DefaultCalendarComponentViewModel() as CalendarComponentViewModel }
         Module { DefaultCashFlowTabComponentViewModel() as CashFlowTabComponentViewModel }
+        Module { DefaultMinAmountComponentViewModel() as MinAmountComponentViewModel }
+        Module { DefaultAgreementComponentViewModel() as AgreementComponentViewModel }
+        Module { DefaultCreditCardComponentViewModel() as CreditCardComponentViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -116,6 +121,8 @@ public extension DependencyContainer {
         Module { DefaultTransactionsFilterViewControllerFactory() as TransactionsFilterViewControllerFactory }
         Module { DefaultAccountParametersViewControllerFactory() as AccountParametersViewControllerFactory }
         Module { DefaultPhoneNumberChangeViewControllerFactory() as PhoneNumberChangeViewControllerFactory }
+        Module { DefaultAddCardViewControllerFactory() as AddCardViewControllerFactory }
+        Module { DefaultCardInfoViewControllerFactory() as CardInfoViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

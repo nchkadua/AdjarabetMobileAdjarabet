@@ -81,7 +81,7 @@ public class CashFlowViewController: UIViewController {
         appPageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appPageViewController.view.pin(to: childrenVCFrameView)
 
-        appPageViewController.orderedViewControllers = [navigator.depositViewControllerFactory.make(), navigator.withdrawViewControllerFactory.make()]
+        appPageViewController.orderedViewControllers = [navigator.depositViewControllerFactory.make().wrap(in: ABNavigationController.self), navigator.withdrawViewControllerFactory.make().wrap(in: ABNavigationController.self)]
     }
 
     // MARK: Action methods
