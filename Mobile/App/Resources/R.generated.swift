@@ -2733,7 +2733,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 142 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 390 localization keys.
     struct localization {
       /// en translation: Account Information
       ///
@@ -2767,6 +2767,46 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_address = Rswift.StringResource(key: "account_info_address", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Afghanistan
+      ///
+      /// Locales: en, ka, hy
+      static let afghanistan = Rswift.StringResource(key: "afghanistan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Aland Islands
+      ///
+      /// Locales: en, ka, hy
+      static let aland_islands = Rswift.StringResource(key: "aland_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Albania
+      ///
+      /// Locales: en, ka, hy
+      static let albania = Rswift.StringResource(key: "albania", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Algeria
+      ///
+      /// Locales: en, ka, hy
+      static let algeria = Rswift.StringResource(key: "algeria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: American Samoa
+      ///
+      /// Locales: en, ka, hy
+      static let american_samoa = Rswift.StringResource(key: "american_samoa", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Andorra
+      ///
+      /// Locales: en, ka, hy
+      static let andorra = Rswift.StringResource(key: "andorra", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Angola
+      ///
+      /// Locales: en, ka, hy
+      static let angola = Rswift.StringResource(key: "angola", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Anguilla
+      ///
+      /// Locales: en, ka, hy
+      static let anguilla = Rswift.StringResource(key: "anguilla", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Antarctica
+      ///
+      /// Locales: en, ka, hy
+      static let antarctica = Rswift.StringResource(key: "antarctica", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Antigua And Barbuda
+      ///
+      /// Locales: en, ka, hy
+      static let antigua_and_barbuda = Rswift.StringResource(key: "antigua_and_barbuda", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Approve
       ///
       /// Locales: en, ka, hy
@@ -2775,6 +2815,70 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let approve_number_button_title = Rswift.StringResource(key: "approve_number_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Argentina
+      ///
+      /// Locales: en, ka, hy
+      static let argentina = Rswift.StringResource(key: "argentina", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Armenia
+      ///
+      /// Locales: en, ka, hy
+      static let armenia = Rswift.StringResource(key: "armenia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Aruba
+      ///
+      /// Locales: en, ka, hy
+      static let aruba = Rswift.StringResource(key: "aruba", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Australia
+      ///
+      /// Locales: en, ka, hy
+      static let australia = Rswift.StringResource(key: "australia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Austria
+      ///
+      /// Locales: en, ka, hy
+      static let austria = Rswift.StringResource(key: "austria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Azerbaijan
+      ///
+      /// Locales: en, ka, hy
+      static let azerbaijan = Rswift.StringResource(key: "azerbaijan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bahamas
+      ///
+      /// Locales: en, ka, hy
+      static let bahamas = Rswift.StringResource(key: "bahamas", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bahrain
+      ///
+      /// Locales: en, ka, hy
+      static let bahrain = Rswift.StringResource(key: "bahrain", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bangladesh
+      ///
+      /// Locales: en, ka, hy
+      static let bangladesh = Rswift.StringResource(key: "bangladesh", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Barbados
+      ///
+      /// Locales: en, ka, hy
+      static let barbados = Rswift.StringResource(key: "barbados", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Belarus
+      ///
+      /// Locales: en, ka, hy
+      static let belarus = Rswift.StringResource(key: "belarus", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Belgium
+      ///
+      /// Locales: en, ka, hy
+      static let belgium = Rswift.StringResource(key: "belgium", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Belize
+      ///
+      /// Locales: en, ka, hy
+      static let belize = Rswift.StringResource(key: "belize", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Benin
+      ///
+      /// Locales: en, ka, hy
+      static let benin = Rswift.StringResource(key: "benin", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bermuda
+      ///
+      /// Locales: en, ka, hy
+      static let bermuda = Rswift.StringResource(key: "bermuda", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bhutan
+      ///
+      /// Locales: en, ka, hy
+      static let bhutan = Rswift.StringResource(key: "bhutan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Biometry Authentication Parameters
       ///
       /// Locales: en, ka, hy
@@ -2795,10 +2899,82 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_parameters_self_block = Rswift.StringResource(key: "account_parameters_self_block", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bolivia
+      ///
+      /// Locales: en, ka, hy
+      static let bolivia = Rswift.StringResource(key: "bolivia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bonaire Sint Eustatius And Saba
+      ///
+      /// Locales: en, ka, hy
+      static let bonaire_sint_eustatius_and_saba = Rswift.StringResource(key: "bonaire_sint_eustatius_and_saba", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bosnia And Herzegovina
+      ///
+      /// Locales: en, ka, hy
+      static let bosnia_and_herzegovina = Rswift.StringResource(key: "bosnia_and_herzegovina", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Botswana
+      ///
+      /// Locales: en, ka, hy
+      static let botswana = Rswift.StringResource(key: "botswana", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bouvet Island
+      ///
+      /// Locales: en, ka, hy
+      static let bouvet_island = Rswift.StringResource(key: "bouvet_island", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Brazil
+      ///
+      /// Locales: en, ka, hy
+      static let brazil = Rswift.StringResource(key: "brazil", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: British Indian Ocean Territory
+      ///
+      /// Locales: en, ka, hy
+      static let british_indian_ocean_territory = Rswift.StringResource(key: "british_indian_ocean_territory", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Brunei
+      ///
+      /// Locales: en, ka, hy
+      static let brunei = Rswift.StringResource(key: "brunei", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bulgaria
+      ///
+      /// Locales: en, ka, hy
+      static let bulgaria = Rswift.StringResource(key: "bulgaria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Burkina Faso
+      ///
+      /// Locales: en, ka, hy
+      static let burkina_faso = Rswift.StringResource(key: "burkina_faso", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Burundi
+      ///
+      /// Locales: en, ka, hy
+      static let burundi = Rswift.StringResource(key: "burundi", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Cambodia
+      ///
+      /// Locales: en, ka, hy
+      static let cambodia = Rswift.StringResource(key: "cambodia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Cameroon
+      ///
+      /// Locales: en, ka, hy
+      static let cameroon = Rswift.StringResource(key: "cameroon", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Canada
+      ///
+      /// Locales: en, ka, hy
+      static let canada = Rswift.StringResource(key: "canada", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, ka, hy
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Cape Verde
+      ///
+      /// Locales: en, ka, hy
+      static let cape_verde = Rswift.StringResource(key: "cape_verde", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Cayman Islands
+      ///
+      /// Locales: en, ka, hy
+      static let cayman_islands = Rswift.StringResource(key: "cayman_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Central African Republic
+      ///
+      /// Locales: en, ka, hy
+      static let central_african_republic = Rswift.StringResource(key: "central_african_republic", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Chad
+      ///
+      /// Locales: en, ka, hy
+      static let chad = Rswift.StringResource(key: "chad", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Change Address
       ///
       /// Locales: en, ka, hy
@@ -2819,14 +2995,42 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_parameters_change_password = Rswift.StringResource(key: "account_parameters_change_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Chile
+      ///
+      /// Locales: en, ka, hy
+      static let chile = Rswift.StringResource(key: "chile", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: China
+      ///
+      /// Locales: en, ka, hy
+      static let china = Rswift.StringResource(key: "china", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Christmas Island
+      ///
+      /// Locales: en, ka, hy
+      static let christmas_island = Rswift.StringResource(key: "christmas_island", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Cocos Islands
+      ///
+      /// Locales: en, ka, hy
+      static let cocos_islands = Rswift.StringResource(key: "cocos_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Code is sent to yout number
       ///
       /// Locales: en, ka, hy
       static let sms_confirmation_description = Rswift.StringResource(key: "sms_confirmation_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Colombia
+      ///
+      /// Locales: en, ka, hy
+      static let colombia = Rswift.StringResource(key: "colombia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Comoros
+      ///
+      /// Locales: en, ka, hy
+      static let comoros = Rswift.StringResource(key: "comoros", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Confirm
       ///
       /// Locales: en, ka, hy
       static let p2p_transfer_confirm = Rswift.StringResource(key: "p2p_transfer_confirm", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Congo
+      ///
+      /// Locales: en, ka, hy
+      static let congo = Rswift.StringResource(key: "congo", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Contact Information
       ///
       /// Locales: en, ka, hy
@@ -2835,10 +3039,38 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let contact_us_button_title = Rswift.StringResource(key: "contact_us_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Cook Islands
+      ///
+      /// Locales: en, ka, hy
+      static let cook_islands = Rswift.StringResource(key: "cook_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Costa Rica
+      ///
+      /// Locales: en, ka, hy
+      static let costa_rica = Rswift.StringResource(key: "costa_rica", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Country
       ///
       /// Locales: en, ka, hy
       static let account_info_country = Rswift.StringResource(key: "account_info_country", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Croatia
+      ///
+      /// Locales: en, ka, hy
+      static let croatia = Rswift.StringResource(key: "croatia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Cuba
+      ///
+      /// Locales: en, ka, hy
+      static let cuba = Rswift.StringResource(key: "cuba", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Curacao
+      ///
+      /// Locales: en, ka, hy
+      static let curacao = Rswift.StringResource(key: "curacao", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Cyprus
+      ///
+      /// Locales: en, ka, hy
+      static let cyprus = Rswift.StringResource(key: "cyprus", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Czech Republic
+      ///
+      /// Locales: en, ka, hy
+      static let czech_republic = Rswift.StringResource(key: "czech_republic", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Delete
       ///
       /// Locales: en, ka, hy
@@ -2847,6 +3079,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let notifications_page_delete_title = Rswift.StringResource(key: "notifications_page_delete_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Democratic Republic Of The Congo
+      ///
+      /// Locales: en, ka, hy
+      static let democratic_republic_of_the_congo = Rswift.StringResource(key: "democratic_republic_of_the_congo", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Denmark
+      ///
+      /// Locales: en, ka, hy
+      static let denmark = Rswift.StringResource(key: "denmark", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Deposit
       ///
       /// Locales: en, ka, hy
@@ -2855,10 +3095,34 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sms_did_not_receive_message = Rswift.StringResource(key: "sms_did_not_receive_message", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Djibouti
+      ///
+      /// Locales: en, ka, hy
+      static let djibouti = Rswift.StringResource(key: "djibouti", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Dominica
+      ///
+      /// Locales: en, ka, hy
+      static let dominica = Rswift.StringResource(key: "dominica", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Dominican Republic
+      ///
+      /// Locales: en, ka, hy
+      static let dominican_republic = Rswift.StringResource(key: "dominican_republic", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Done
       ///
       /// Locales: en, ka, hy
       static let cashflow_done_button_title = Rswift.StringResource(key: "cashflow_done_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Ecuador
+      ///
+      /// Locales: en, ka, hy
+      static let ecuador = Rswift.StringResource(key: "ecuador", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Egypt
+      ///
+      /// Locales: en, ka, hy
+      static let egypt = Rswift.StringResource(key: "egypt", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: El Salvador
+      ///
+      /// Locales: en, ka, hy
+      static let el_salvador = Rswift.StringResource(key: "el_salvador", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Emails
       ///
       /// Locales: en, ka, hy
@@ -2875,14 +3139,46 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let phone_number_subtitle = Rswift.StringResource(key: "phone_number_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Equatorial Guinea
+      ///
+      /// Locales: en, ka, hy
+      static let equatorial_guinea = Rswift.StringResource(key: "equatorial_guinea", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Eritrea
+      ///
+      /// Locales: en, ka, hy
+      static let eritrea = Rswift.StringResource(key: "eritrea", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Estonia
+      ///
+      /// Locales: en, ka, hy
+      static let estonia = Rswift.StringResource(key: "estonia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Ethiopia
+      ///
+      /// Locales: en, ka, hy
+      static let ethiopia = Rswift.StringResource(key: "ethiopia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Falkland Islands
+      ///
+      /// Locales: en, ka, hy
+      static let falkland_islands = Rswift.StringResource(key: "falkland_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Faroe Islands
+      ///
+      /// Locales: en, ka, hy
+      static let faroe_islands = Rswift.StringResource(key: "faroe_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Female
       ///
       /// Locales: en, ka, hy
       static let gender_female = Rswift.StringResource(key: "gender_female", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Fiji
+      ///
+      /// Locales: en, ka, hy
+      static let fiji = Rswift.StringResource(key: "fiji", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Filter
       ///
       /// Locales: en, ka, hy
       static let transactions_filter_title = Rswift.StringResource(key: "transactions_filter_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Finland
+      ///
+      /// Locales: en, ka, hy
+      static let finland = Rswift.StringResource(key: "finland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Forgot Password?
       ///
       /// Locales: en, ka, hy
@@ -2891,10 +3187,30 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login_forgot_username = Rswift.StringResource(key: "login_forgot_username", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: France
+      ///
+      /// Locales: en, ka, hy
+      static let france = Rswift.StringResource(key: "france", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: French Guiana
+      ///
+      /// Locales: en, ka, hy
+      static let french_guiana = Rswift.StringResource(key: "french_guiana", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: French Polynesia
+      ///
+      /// Locales: en, ka, hy
+      static let french_polynesia = Rswift.StringResource(key: "french_polynesia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Friend ID
       ///
       /// Locales: en, ka, hy
       static let p2p_transfer_friend_id = Rswift.StringResource(key: "p2p_transfer_friend_id", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Gabon
+      ///
+      /// Locales: en, ka, hy
+      static let gabon = Rswift.StringResource(key: "gabon", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Gambia
+      ///
+      /// Locales: en, ka, hy
+      static let gambia = Rswift.StringResource(key: "gambia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Games
       ///
       /// Locales: en, ka, hy
@@ -2903,6 +3219,70 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_gender = Rswift.StringResource(key: "account_info_gender", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Georgia
+      ///
+      /// Locales: en, ka, hy
+      static let georgia = Rswift.StringResource(key: "georgia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Germany
+      ///
+      /// Locales: en, ka, hy
+      static let germany = Rswift.StringResource(key: "germany", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Ghana
+      ///
+      /// Locales: en, ka, hy
+      static let ghana = Rswift.StringResource(key: "ghana", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Gibraltar
+      ///
+      /// Locales: en, ka, hy
+      static let gibraltar = Rswift.StringResource(key: "gibraltar", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Greece
+      ///
+      /// Locales: en, ka, hy
+      static let greece = Rswift.StringResource(key: "greece", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Greenland
+      ///
+      /// Locales: en, ka, hy
+      static let greenland = Rswift.StringResource(key: "greenland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Grenada
+      ///
+      /// Locales: en, ka, hy
+      static let grenada = Rswift.StringResource(key: "grenada", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Guadaloupe
+      ///
+      /// Locales: en, ka, hy
+      static let guadaloupe = Rswift.StringResource(key: "guadaloupe", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Guam
+      ///
+      /// Locales: en, ka, hy
+      static let guam = Rswift.StringResource(key: "guam", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Guatemala
+      ///
+      /// Locales: en, ka, hy
+      static let guatemala = Rswift.StringResource(key: "guatemala", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Guernsey
+      ///
+      /// Locales: en, ka, hy
+      static let guernsey = Rswift.StringResource(key: "guernsey", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Guinea
+      ///
+      /// Locales: en, ka, hy
+      static let guinea = Rswift.StringResource(key: "guinea", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Guinea Bissau
+      ///
+      /// Locales: en, ka, hy
+      static let guinea_bissau = Rswift.StringResource(key: "guinea_bissau", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Guyana
+      ///
+      /// Locales: en, ka, hy
+      static let guyana = Rswift.StringResource(key: "guyana", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Haiti
+      ///
+      /// Locales: en, ka, hy
+      static let haiti = Rswift.StringResource(key: "haiti", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Heard & McDonald Islands
+      ///
+      /// Locales: en, ka, hy
+      static let heard_island_and_mc_donald_islands = Rswift.StringResource(key: "heard_island_and_mc_donald_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: High Secutiry On
       ///
       /// Locales: en, ka, hy
@@ -2911,18 +3291,138 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_parameters_high_security = Rswift.StringResource(key: "account_parameters_high_security", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Honduras
+      ///
+      /// Locales: en, ka, hy
+      static let honduras = Rswift.StringResource(key: "honduras", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Hong Kong
+      ///
+      /// Locales: en, ka, hy
+      static let hong_kong = Rswift.StringResource(key: "hong_kong", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Hungary
+      ///
+      /// Locales: en, ka, hy
+      static let hungary = Rswift.StringResource(key: "hungary", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Iceland
+      ///
+      /// Locales: en, ka, hy
+      static let iceland = Rswift.StringResource(key: "iceland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Incognito Card
       ///
       /// Locales: en, ka, hy
       static let incognito_card = Rswift.StringResource(key: "incognito_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: India
+      ///
+      /// Locales: en, ka, hy
+      static let india = Rswift.StringResource(key: "india", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Indonesia
+      ///
+      /// Locales: en, ka, hy
+      static let indonesia = Rswift.StringResource(key: "indonesia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Iran
+      ///
+      /// Locales: en, ka, hy
+      static let iran = Rswift.StringResource(key: "iran", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Iraq
+      ///
+      /// Locales: en, ka, hy
+      static let iraq = Rswift.StringResource(key: "iraq", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Ireland
+      ///
+      /// Locales: en, ka, hy
+      static let ireland = Rswift.StringResource(key: "ireland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Isle Of Man
+      ///
+      /// Locales: en, ka, hy
+      static let isle_of_man = Rswift.StringResource(key: "isle_of_man", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Israel
+      ///
+      /// Locales: en, ka, hy
+      static let israel = Rswift.StringResource(key: "israel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Italy
+      ///
+      /// Locales: en, ka, hy
+      static let italy = Rswift.StringResource(key: "italy", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Jamaica
+      ///
+      /// Locales: en, ka, hy
+      static let jamaica = Rswift.StringResource(key: "jamaica", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Japan
+      ///
+      /// Locales: en, ka, hy
+      static let japan = Rswift.StringResource(key: "japan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Jersey
+      ///
+      /// Locales: en, ka, hy
+      static let jersey = Rswift.StringResource(key: "jersey", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Join now
       ///
       /// Locales: en, ka, hy
       static let join_now = Rswift.StringResource(key: "join_now", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Jordan
+      ///
+      /// Locales: en, ka, hy
+      static let jordan = Rswift.StringResource(key: "jordan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Kazakhstan
+      ///
+      /// Locales: en, ka, hy
+      static let kazakhstan = Rswift.StringResource(key: "kazakhstan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Kenya
+      ///
+      /// Locales: en, ka, hy
+      static let kenya = Rswift.StringResource(key: "kenya", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Kiribati
+      ///
+      /// Locales: en, ka, hy
+      static let kiribati = Rswift.StringResource(key: "kiribati", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Kosovo
+      ///
+      /// Locales: en, ka, hy
+      static let kosovo = Rswift.StringResource(key: "kosovo", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Kuwait
+      ///
+      /// Locales: en, ka, hy
+      static let kuwait = Rswift.StringResource(key: "kuwait", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Kyrgyzstan
+      ///
+      /// Locales: en, ka, hy
+      static let kyrgyzstan = Rswift.StringResource(key: "kyrgyzstan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: LOG IN
       ///
       /// Locales: en, ka, hy
       static let login_button_title = Rswift.StringResource(key: "login_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Laos
+      ///
+      /// Locales: en, ka, hy
+      static let laos = Rswift.StringResource(key: "laos", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Latvia
+      ///
+      /// Locales: en, ka, hy
+      static let latvia = Rswift.StringResource(key: "latvia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Lebanon
+      ///
+      /// Locales: en, ka, hy
+      static let lebanon = Rswift.StringResource(key: "lebanon", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Lesotho
+      ///
+      /// Locales: en, ka, hy
+      static let lesotho = Rswift.StringResource(key: "lesotho", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Liberia
+      ///
+      /// Locales: en, ka, hy
+      static let liberia = Rswift.StringResource(key: "liberia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Libya
+      ///
+      /// Locales: en, ka, hy
+      static let libya = Rswift.StringResource(key: "libya", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Liechtenstein
+      ///
+      /// Locales: en, ka, hy
+      static let liechtenstein = Rswift.StringResource(key: "liechtenstein", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Lithuania
+      ///
+      /// Locales: en, ka, hy
+      static let lithuania = Rswift.StringResource(key: "lithuania", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Log Out
       ///
       /// Locales: en, ka, hy
@@ -2947,14 +3447,106 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_parameters_login_history = Rswift.StringResource(key: "account_parameters_login_history", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Luxembourg
+      ///
+      /// Locales: en, ka, hy
+      static let luxembourg = Rswift.StringResource(key: "luxembourg", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Macao
+      ///
+      /// Locales: en, ka, hy
+      static let macao = Rswift.StringResource(key: "macao", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Macedonia
+      ///
+      /// Locales: en, ka, hy
+      static let macedonia = Rswift.StringResource(key: "macedonia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Madagascar
+      ///
+      /// Locales: en, ka, hy
+      static let madagascar = Rswift.StringResource(key: "madagascar", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Mail
       ///
       /// Locales: en, ka, hy
       static let account_info_mail = Rswift.StringResource(key: "account_info_mail", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Malawi
+      ///
+      /// Locales: en, ka, hy
+      static let malawi = Rswift.StringResource(key: "malawi", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Malaysia
+      ///
+      /// Locales: en, ka, hy
+      static let malaysia = Rswift.StringResource(key: "malaysia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Maldives
+      ///
+      /// Locales: en, ka, hy
+      static let maldives = Rswift.StringResource(key: "maldives", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Male
       ///
       /// Locales: en, ka, hy
       static let gender_male = Rswift.StringResource(key: "gender_male", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Mali
+      ///
+      /// Locales: en, ka, hy
+      static let mali = Rswift.StringResource(key: "mali", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Malta
+      ///
+      /// Locales: en, ka, hy
+      static let malta = Rswift.StringResource(key: "malta", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Marshall Islands
+      ///
+      /// Locales: en, ka, hy
+      static let marshall_islands = Rswift.StringResource(key: "marshall_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Martinique
+      ///
+      /// Locales: en, ka, hy
+      static let martinique = Rswift.StringResource(key: "martinique", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Mauritania
+      ///
+      /// Locales: en, ka, hy
+      static let mauritania = Rswift.StringResource(key: "mauritania", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Mauritius
+      ///
+      /// Locales: en, ka, hy
+      static let mauritius = Rswift.StringResource(key: "mauritius", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Mayotte
+      ///
+      /// Locales: en, ka, hy
+      static let mayotte = Rswift.StringResource(key: "mayotte", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Mexico
+      ///
+      /// Locales: en, ka, hy
+      static let mexico = Rswift.StringResource(key: "mexico", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Micronesia
+      ///
+      /// Locales: en, ka, hy
+      static let micronesia = Rswift.StringResource(key: "micronesia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Moldava
+      ///
+      /// Locales: en, ka, hy
+      static let moldava = Rswift.StringResource(key: "moldava", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Monaco
+      ///
+      /// Locales: en, ka, hy
+      static let monaco = Rswift.StringResource(key: "monaco", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Mongolia
+      ///
+      /// Locales: en, ka, hy
+      static let mongolia = Rswift.StringResource(key: "mongolia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Montenegro
+      ///
+      /// Locales: en, ka, hy
+      static let montenegro = Rswift.StringResource(key: "montenegro", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Montserrat
+      ///
+      /// Locales: en, ka, hy
+      static let montserrat = Rswift.StringResource(key: "montserrat", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Morocco
+      ///
+      /// Locales: en, ka, hy
+      static let morocco = Rswift.StringResource(key: "morocco", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Mozambique
+      ///
+      /// Locales: en, ka, hy
+      static let mozambique = Rswift.StringResource(key: "mozambique", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: My Balance
       ///
       /// Locales: en, ka, hy
@@ -2967,14 +3559,74 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let my_cards = Rswift.StringResource(key: "my_cards", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Myanmar
+      ///
+      /// Locales: en, ka, hy
+      static let myanmar = Rswift.StringResource(key: "myanmar", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Name
       ///
       /// Locales: en, ka, hy
       static let account_info_name = Rswift.StringResource(key: "account_info_name", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Namibia
+      ///
+      /// Locales: en, ka, hy
+      static let namibia = Rswift.StringResource(key: "namibia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Nauru
+      ///
+      /// Locales: en, ka, hy
+      static let nauru = Rswift.StringResource(key: "nauru", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Nepal
+      ///
+      /// Locales: en, ka, hy
+      static let nepal = Rswift.StringResource(key: "nepal", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Netherlands
+      ///
+      /// Locales: en, ka, hy
+      static let netherlands = Rswift.StringResource(key: "netherlands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: New Caledonia
+      ///
+      /// Locales: en, ka, hy
+      static let new_caledonia = Rswift.StringResource(key: "new_caledonia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: New Password
       ///
       /// Locales: en, ka, hy
       static let new_password = Rswift.StringResource(key: "new_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: New Zealand
+      ///
+      /// Locales: en, ka, hy
+      static let new_zealand = Rswift.StringResource(key: "new_zealand", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Nicaragua
+      ///
+      /// Locales: en, ka, hy
+      static let nicaragua = Rswift.StringResource(key: "nicaragua", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Niger
+      ///
+      /// Locales: en, ka, hy
+      static let niger = Rswift.StringResource(key: "niger", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Nigeria
+      ///
+      /// Locales: en, ka, hy
+      static let nigeria = Rswift.StringResource(key: "nigeria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Niue
+      ///
+      /// Locales: en, ka, hy
+      static let niue = Rswift.StringResource(key: "niue", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Norfolk Island
+      ///
+      /// Locales: en, ka, hy
+      static let norfolk_island = Rswift.StringResource(key: "norfolk_island", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: North Korea
+      ///
+      /// Locales: en, ka, hy
+      static let north_korea = Rswift.StringResource(key: "north_korea", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Northern Mariana Islands
+      ///
+      /// Locales: en, ka, hy
+      static let northern_mariana_islands = Rswift.StringResource(key: "northern_mariana_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Norway
+      ///
+      /// Locales: en, ka, hy
+      static let norway = Rswift.StringResource(key: "norway", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Not a member?
       ///
       /// Locales: en, ka, hy
@@ -2987,6 +3639,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let old_password = Rswift.StringResource(key: "old_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Oman
+      ///
+      /// Locales: en, ka, hy
+      static let oman = Rswift.StringResource(key: "oman", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia
       ///
       /// Locales: en, ka, hy
@@ -2999,6 +3655,30 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let p2p_transfer_p2p_transfer = Rswift.StringResource(key: "p2p_transfer_p2p_transfer", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Pakistan
+      ///
+      /// Locales: en, ka, hy
+      static let pakistan = Rswift.StringResource(key: "pakistan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Palau
+      ///
+      /// Locales: en, ka, hy
+      static let palau = Rswift.StringResource(key: "palau", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Palestine
+      ///
+      /// Locales: en, ka, hy
+      static let palestine = Rswift.StringResource(key: "palestine", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Panama
+      ///
+      /// Locales: en, ka, hy
+      static let panama = Rswift.StringResource(key: "panama", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Papua New Guinea
+      ///
+      /// Locales: en, ka, hy
+      static let papua_new_guinea = Rswift.StringResource(key: "papua_new_guinea", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Paraguay
+      ///
+      /// Locales: en, ka, hy
+      static let paraguay = Rswift.StringResource(key: "paraguay", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Password
       ///
       /// Locales: en, ka, hy
@@ -3015,6 +3695,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_personal_info_title = Rswift.StringResource(key: "account_info_personal_info_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Peru
+      ///
+      /// Locales: en, ka, hy
+      static let peru = Rswift.StringResource(key: "peru", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Phillipines
+      ///
+      /// Locales: en, ka, hy
+      static let phillipines = Rswift.StringResource(key: "phillipines", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Phone Number
       ///
       /// Locales: en, ka, hy
@@ -3023,10 +3711,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let new_phone_number = Rswift.StringResource(key: "new_phone_number", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Pitcairn
+      ///
+      /// Locales: en, ka, hy
+      static let pitcairn = Rswift.StringResource(key: "pitcairn", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Poker Balance
       ///
       /// Locales: en, ka, hy
       static let poker_balance = Rswift.StringResource(key: "poker_balance", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Poland
+      ///
+      /// Locales: en, ka, hy
+      static let poland = Rswift.StringResource(key: "poland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Portugal
+      ///
+      /// Locales: en, ka, hy
+      static let portugal = Rswift.StringResource(key: "portugal", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Prefer Not To Say
       ///
       /// Locales: en, ka, hy
@@ -3051,6 +3751,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let promotions_page_title = Rswift.StringResource(key: "promotions_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Puerto Rico
+      ///
+      /// Locales: en, ka, hy
+      static let puerto_rico = Rswift.StringResource(key: "puerto_rico", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Qatar
+      ///
+      /// Locales: en, ka, hy
+      static let qatar = Rswift.StringResource(key: "qatar", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Quick Actions
       ///
       /// Locales: en, ka, hy
@@ -3071,6 +3779,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sms_resend_title = Rswift.StringResource(key: "sms_resend_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Reunion
+      ///
+      /// Locales: en, ka, hy
+      static let reunion = Rswift.StringResource(key: "reunion", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Romania
+      ///
+      /// Locales: en, ka, hy
+      static let romania = Rswift.StringResource(key: "romania", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Russia
+      ///
+      /// Locales: en, ka, hy
+      static let russia = Rswift.StringResource(key: "russia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Rwanda
+      ///
+      /// Locales: en, ka, hy
+      static let rwanda = Rswift.StringResource(key: "rwanda", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: SELF SUSPEND
       ///
       /// Locales: en, ka, hy
@@ -3087,6 +3811,50 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_parameters_messages_sms_title = Rswift.StringResource(key: "account_parameters_messages_sms_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Saint Barthelemy
+      ///
+      /// Locales: en, ka, hy
+      static let saint_barthelemy = Rswift.StringResource(key: "saint_barthelemy", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Saint Helena
+      ///
+      /// Locales: en, ka, hy
+      static let saint_helena = Rswift.StringResource(key: "saint_helena", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Saint Kitts And Nevis
+      ///
+      /// Locales: en, ka, hy
+      static let saint_kitts_and_nevis = Rswift.StringResource(key: "saint_kitts_and_nevis", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Saint Lucia
+      ///
+      /// Locales: en, ka, hy
+      static let saint_lucia = Rswift.StringResource(key: "saint_lucia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Saint Martin
+      ///
+      /// Locales: en, ka, hy
+      static let saint_martin = Rswift.StringResource(key: "saint_martin", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Saint Pierre And Miquelon
+      ///
+      /// Locales: en, ka, hy
+      static let saint_pierre_and_miquelon = Rswift.StringResource(key: "saint_pierre_and_miquelon", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Saint Vincent And The Grenadines
+      ///
+      /// Locales: en, ka, hy
+      static let saint_vincent_and_the_grenadines = Rswift.StringResource(key: "saint_vincent_and_the_grenadines", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Samoa
+      ///
+      /// Locales: en, ka, hy
+      static let samoa = Rswift.StringResource(key: "samoa", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: San Marino
+      ///
+      /// Locales: en, ka, hy
+      static let san_marino = Rswift.StringResource(key: "san_marino", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Sao Tome And Principe
+      ///
+      /// Locales: en, ka, hy
+      static let sao_tome_and_principe = Rswift.StringResource(key: "sao_tome_and_principe", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Saudi Arabia
+      ///
+      /// Locales: en, ka, hy
+      static let saudi_arabia = Rswift.StringResource(key: "saudi_arabia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Save
       ///
       /// Locales: en, ka, hy
@@ -3107,18 +3875,90 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let self_suspend_title = Rswift.StringResource(key: "self_suspend_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Senegal
+      ///
+      /// Locales: en, ka, hy
+      static let senegal = Rswift.StringResource(key: "senegal", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Serbia
+      ///
+      /// Locales: en, ka, hy
+      static let serbia = Rswift.StringResource(key: "serbia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Settings
       ///
       /// Locales: en, ka, hy
       static let settings = Rswift.StringResource(key: "settings", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Seychelles
+      ///
+      /// Locales: en, ka, hy
+      static let seychelles = Rswift.StringResource(key: "seychelles", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Sierraleone
+      ///
+      /// Locales: en, ka, hy
+      static let sierra_leone = Rswift.StringResource(key: "sierra_leone", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Singapore
+      ///
+      /// Locales: en, ka, hy
+      static let singapore = Rswift.StringResource(key: "singapore", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Sint Maarten
+      ///
+      /// Locales: en, ka, hy
+      static let sint_maarten = Rswift.StringResource(key: "sint_maarten", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Slovakia
+      ///
+      /// Locales: en, ka, hy
+      static let slovakia = Rswift.StringResource(key: "slovakia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Slovenia
+      ///
+      /// Locales: en, ka, hy
+      static let slovenia = Rswift.StringResource(key: "slovenia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Solomon Islands
+      ///
+      /// Locales: en, ka, hy
+      static let solomon_islands = Rswift.StringResource(key: "solomon_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Somalia
+      ///
+      /// Locales: en, ka, hy
+      static let somalia = Rswift.StringResource(key: "somalia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: South Africa
+      ///
+      /// Locales: en, ka, hy
+      static let south_africa = Rswift.StringResource(key: "south_africa", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: South Georgia & The South Sandwich Islands
+      ///
+      /// Locales: en, ka, hy
+      static let south_georgia_and_the_south_sandwich_islands = Rswift.StringResource(key: "south_georgia_and_the_south_sandwich_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: South Korea
+      ///
+      /// Locales: en, ka, hy
+      static let south_korea = Rswift.StringResource(key: "south_korea", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: South Sudan
+      ///
+      /// Locales: en, ka, hy
+      static let south_sudan = Rswift.StringResource(key: "south_sudan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Spain
+      ///
+      /// Locales: en, ka, hy
+      static let spain = Rswift.StringResource(key: "spain", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Sports
       ///
       /// Locales: en, ka, hy
       static let sports_page_title = Rswift.StringResource(key: "sports_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Srilanka
+      ///
+      /// Locales: en, ka, hy
+      static let sri_lanka = Rswift.StringResource(key: "sri_lanka", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Status
       ///
       /// Locales: en, ka, hy
       static let account_info_status = Rswift.StringResource(key: "account_info_status", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Sudan
+      ///
+      /// Locales: en, ka, hy
+      static let sudan = Rswift.StringResource(key: "sudan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Suriname
+      ///
+      /// Locales: en, ka, hy
+      static let suriname = Rswift.StringResource(key: "suriname", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Surname
       ///
       /// Locales: en, ka, hy
@@ -3127,6 +3967,58 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let suspend_duration = Rswift.StringResource(key: "suspend_duration", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Svalbard & Jan Mayen
+      ///
+      /// Locales: en, ka, hy
+      static let svalbard_and_jan_mayen = Rswift.StringResource(key: "svalbard_and_jan_mayen", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Swaziland
+      ///
+      /// Locales: en, ka, hy
+      static let swaziland = Rswift.StringResource(key: "swaziland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Sweden
+      ///
+      /// Locales: en, ka, hy
+      static let sweden = Rswift.StringResource(key: "sweden", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Switzerland
+      ///
+      /// Locales: en, ka, hy
+      static let switzerland = Rswift.StringResource(key: "switzerland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Syria
+      ///
+      /// Locales: en, ka, hy
+      static let syria = Rswift.StringResource(key: "syria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Taiwan
+      ///
+      /// Locales: en, ka, hy
+      static let taiwan = Rswift.StringResource(key: "taiwan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Tajikistan
+      ///
+      /// Locales: en, ka, hy
+      static let tajikistan = Rswift.StringResource(key: "tajikistan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Tanzania
+      ///
+      /// Locales: en, ka, hy
+      static let tanzania = Rswift.StringResource(key: "tanzania", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Thailand
+      ///
+      /// Locales: en, ka, hy
+      static let thailand = Rswift.StringResource(key: "thailand", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Timorleste
+      ///
+      /// Locales: en, ka, hy
+      static let timor_leste = Rswift.StringResource(key: "timor_leste", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Togo
+      ///
+      /// Locales: en, ka, hy
+      static let togo = Rswift.StringResource(key: "togo", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Tokelau
+      ///
+      /// Locales: en, ka, hy
+      static let tokelau = Rswift.StringResource(key: "tokelau", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Tonga
+      ///
+      /// Locales: en, ka, hy
+      static let tonga = Rswift.StringResource(key: "tonga", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Total Balance
       ///
       /// Locales: en, ka, hy
@@ -3151,10 +4043,62 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let transfer_to_a_friend = Rswift.StringResource(key: "transfer_to_a_friend", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Trinidad And Tobago
+      ///
+      /// Locales: en, ka, hy
+      static let trinidad_and_tobago = Rswift.StringResource(key: "trinidad_and_tobago", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Tunisia
+      ///
+      /// Locales: en, ka, hy
+      static let tunisia = Rswift.StringResource(key: "tunisia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Turkey
+      ///
+      /// Locales: en, ka, hy
+      static let turkey = Rswift.StringResource(key: "turkey", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Turkmenistan
+      ///
+      /// Locales: en, ka, hy
+      static let turkmenistan = Rswift.StringResource(key: "turkmenistan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Turks And Caicos Islands
+      ///
+      /// Locales: en, ka, hy
+      static let turks_and_caicos_islands = Rswift.StringResource(key: "turks_and_caicos_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Tuvalu
+      ///
+      /// Locales: en, ka, hy
+      static let tuvalu = Rswift.StringResource(key: "tuvalu", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Uganda
+      ///
+      /// Locales: en, ka, hy
+      static let uganda = Rswift.StringResource(key: "uganda", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Ukraine
+      ///
+      /// Locales: en, ka, hy
+      static let ukraine = Rswift.StringResource(key: "ukraine", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: United Arab Emirates
+      ///
+      /// Locales: en, ka, hy
+      static let united_arab_emirates = Rswift.StringResource(key: "united_arab_emirates", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: United Kingdom
+      ///
+      /// Locales: en, ka, hy
+      static let united_kingdom = Rswift.StringResource(key: "united_kingdom", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: United States
+      ///
+      /// Locales: en, ka, hy
+      static let united_states = Rswift.StringResource(key: "united_states", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: United States Minor Outlying Islands
+      ///
+      /// Locales: en, ka, hy
+      static let united_states_minor_outlying_islands = Rswift.StringResource(key: "united_states_minor_outlying_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Update Password
       ///
       /// Locales: en, ka, hy
       static let update_password_button_title = Rswift.StringResource(key: "update_password_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Uruguay
+      ///
+      /// Locales: en, ka, hy
+      static let uruguay = Rswift.StringResource(key: "uruguay", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: User ID
       ///
       /// Locales: en, ka, hy
@@ -3167,18 +4111,58 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let login_username_input_title = Rswift.StringResource(key: "login_username_input_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Uzbekistan
+      ///
+      /// Locales: en, ka, hy
+      static let uzbekistan = Rswift.StringResource(key: "uzbekistan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Vanuatu
+      ///
+      /// Locales: en, ka, hy
+      static let vanuatu = Rswift.StringResource(key: "vanuatu", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Vatican
+      ///
+      /// Locales: en, ka, hy
+      static let vatican_city = Rswift.StringResource(key: "vatican_city", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Venezuela
+      ///
+      /// Locales: en, ka, hy
+      static let venezuela = Rswift.StringResource(key: "venezuela", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Vietnam
+      ///
+      /// Locales: en, ka, hy
+      static let vietnam = Rswift.StringResource(key: "vietnam", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: View All
       ///
       /// Locales: en, ka, hy
       static let view_all = Rswift.StringResource(key: "view_all", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Virgin Islands, British
+      ///
+      /// Locales: en, ka, hy
+      static let virgin_islands_british = Rswift.StringResource(key: "virgin_islands_british", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Virgin Islands, US
+      ///
+      /// Locales: en, ka, hy
+      static let virgin_islands_us = Rswift.StringResource(key: "virgin_islands_us", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Wallis And Futuna
+      ///
+      /// Locales: en, ka, hy
+      static let wallis_and_futuna = Rswift.StringResource(key: "wallis_and_futuna", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Well done!
       ///
       /// Locales: en, ka, hy
       static let sms_well_done = Rswift.StringResource(key: "sms_well_done", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Western Sahara
+      ///
+      /// Locales: en, ka, hy
+      static let western_sahara = Rswift.StringResource(key: "western_sahara", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Withdraw
       ///
       /// Locales: en, ka, hy
       static let withdraw_button_title = Rswift.StringResource(key: "withdraw_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Yemen
+      ///
+      /// Locales: en, ka, hy
+      static let yemen = Rswift.StringResource(key: "yemen", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: You are transfering to
       ///
       /// Locales: en, ka, hy
@@ -3195,6 +4179,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let verified = Rswift.StringResource(key: "verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Zambia
+      ///
+      /// Locales: en, ka, hy
+      static let zambia = Rswift.StringResource(key: "zambia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Zimbabwe
+      ///
+      /// Locales: en, ka, hy
+      static let zimbabwe = Rswift.StringResource(key: "zimbabwe", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: configure parameters
       ///
       /// Locales: en, ka, hy
@@ -3424,6 +4416,156 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_address", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Afghanistan
+      ///
+      /// Locales: en, ka, hy
+      static func afghanistan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("afghanistan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "afghanistan"
+        }
+
+        return NSLocalizedString("afghanistan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Aland Islands
+      ///
+      /// Locales: en, ka, hy
+      static func aland_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("aland_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "aland_islands"
+        }
+
+        return NSLocalizedString("aland_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Albania
+      ///
+      /// Locales: en, ka, hy
+      static func albania(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("albania", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "albania"
+        }
+
+        return NSLocalizedString("albania", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Algeria
+      ///
+      /// Locales: en, ka, hy
+      static func algeria(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("algeria", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "algeria"
+        }
+
+        return NSLocalizedString("algeria", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: American Samoa
+      ///
+      /// Locales: en, ka, hy
+      static func american_samoa(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("american_samoa", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "american_samoa"
+        }
+
+        return NSLocalizedString("american_samoa", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Andorra
+      ///
+      /// Locales: en, ka, hy
+      static func andorra(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("andorra", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "andorra"
+        }
+
+        return NSLocalizedString("andorra", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Angola
+      ///
+      /// Locales: en, ka, hy
+      static func angola(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("angola", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "angola"
+        }
+
+        return NSLocalizedString("angola", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Anguilla
+      ///
+      /// Locales: en, ka, hy
+      static func anguilla(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("anguilla", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "anguilla"
+        }
+
+        return NSLocalizedString("anguilla", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Antarctica
+      ///
+      /// Locales: en, ka, hy
+      static func antarctica(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("antarctica", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "antarctica"
+        }
+
+        return NSLocalizedString("antarctica", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Antigua And Barbuda
+      ///
+      /// Locales: en, ka, hy
+      static func antigua_and_barbuda(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("antigua_and_barbuda", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "antigua_and_barbuda"
+        }
+
+        return NSLocalizedString("antigua_and_barbuda", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Approve
       ///
       /// Locales: en, ka, hy
@@ -3452,6 +4594,246 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("approve_number_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Argentina
+      ///
+      /// Locales: en, ka, hy
+      static func argentina(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("argentina", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "argentina"
+        }
+
+        return NSLocalizedString("argentina", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Armenia
+      ///
+      /// Locales: en, ka, hy
+      static func armenia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("armenia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "armenia"
+        }
+
+        return NSLocalizedString("armenia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Aruba
+      ///
+      /// Locales: en, ka, hy
+      static func aruba(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("aruba", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "aruba"
+        }
+
+        return NSLocalizedString("aruba", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Australia
+      ///
+      /// Locales: en, ka, hy
+      static func australia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("australia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "australia"
+        }
+
+        return NSLocalizedString("australia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Austria
+      ///
+      /// Locales: en, ka, hy
+      static func austria(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("austria", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "austria"
+        }
+
+        return NSLocalizedString("austria", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Azerbaijan
+      ///
+      /// Locales: en, ka, hy
+      static func azerbaijan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("azerbaijan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "azerbaijan"
+        }
+
+        return NSLocalizedString("azerbaijan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bahamas
+      ///
+      /// Locales: en, ka, hy
+      static func bahamas(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bahamas", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bahamas"
+        }
+
+        return NSLocalizedString("bahamas", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bahrain
+      ///
+      /// Locales: en, ka, hy
+      static func bahrain(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bahrain", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bahrain"
+        }
+
+        return NSLocalizedString("bahrain", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bangladesh
+      ///
+      /// Locales: en, ka, hy
+      static func bangladesh(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bangladesh", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bangladesh"
+        }
+
+        return NSLocalizedString("bangladesh", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Barbados
+      ///
+      /// Locales: en, ka, hy
+      static func barbados(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("barbados", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "barbados"
+        }
+
+        return NSLocalizedString("barbados", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Belarus
+      ///
+      /// Locales: en, ka, hy
+      static func belarus(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("belarus", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "belarus"
+        }
+
+        return NSLocalizedString("belarus", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Belgium
+      ///
+      /// Locales: en, ka, hy
+      static func belgium(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("belgium", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "belgium"
+        }
+
+        return NSLocalizedString("belgium", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Belize
+      ///
+      /// Locales: en, ka, hy
+      static func belize(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("belize", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "belize"
+        }
+
+        return NSLocalizedString("belize", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Benin
+      ///
+      /// Locales: en, ka, hy
+      static func benin(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("benin", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "benin"
+        }
+
+        return NSLocalizedString("benin", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bermuda
+      ///
+      /// Locales: en, ka, hy
+      static func bermuda(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bermuda", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bermuda"
+        }
+
+        return NSLocalizedString("bermuda", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bhutan
+      ///
+      /// Locales: en, ka, hy
+      static func bhutan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bhutan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bhutan"
+        }
+
+        return NSLocalizedString("bhutan", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Biometry Authentication Parameters
@@ -3529,6 +4911,216 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_parameters_self_block", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Bolivia
+      ///
+      /// Locales: en, ka, hy
+      static func bolivia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bolivia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bolivia"
+        }
+
+        return NSLocalizedString("bolivia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bonaire Sint Eustatius And Saba
+      ///
+      /// Locales: en, ka, hy
+      static func bonaire_sint_eustatius_and_saba(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bonaire_sint_eustatius_and_saba", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bonaire_sint_eustatius_and_saba"
+        }
+
+        return NSLocalizedString("bonaire_sint_eustatius_and_saba", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bosnia And Herzegovina
+      ///
+      /// Locales: en, ka, hy
+      static func bosnia_and_herzegovina(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bosnia_and_herzegovina", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bosnia_and_herzegovina"
+        }
+
+        return NSLocalizedString("bosnia_and_herzegovina", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Botswana
+      ///
+      /// Locales: en, ka, hy
+      static func botswana(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("botswana", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "botswana"
+        }
+
+        return NSLocalizedString("botswana", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bouvet Island
+      ///
+      /// Locales: en, ka, hy
+      static func bouvet_island(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bouvet_island", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bouvet_island"
+        }
+
+        return NSLocalizedString("bouvet_island", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Brazil
+      ///
+      /// Locales: en, ka, hy
+      static func brazil(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("brazil", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "brazil"
+        }
+
+        return NSLocalizedString("brazil", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: British Indian Ocean Territory
+      ///
+      /// Locales: en, ka, hy
+      static func british_indian_ocean_territory(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("british_indian_ocean_territory", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "british_indian_ocean_territory"
+        }
+
+        return NSLocalizedString("british_indian_ocean_territory", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Brunei
+      ///
+      /// Locales: en, ka, hy
+      static func brunei(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("brunei", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "brunei"
+        }
+
+        return NSLocalizedString("brunei", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bulgaria
+      ///
+      /// Locales: en, ka, hy
+      static func bulgaria(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bulgaria", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bulgaria"
+        }
+
+        return NSLocalizedString("bulgaria", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Burkina Faso
+      ///
+      /// Locales: en, ka, hy
+      static func burkina_faso(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("burkina_faso", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "burkina_faso"
+        }
+
+        return NSLocalizedString("burkina_faso", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Burundi
+      ///
+      /// Locales: en, ka, hy
+      static func burundi(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("burundi", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "burundi"
+        }
+
+        return NSLocalizedString("burundi", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cambodia
+      ///
+      /// Locales: en, ka, hy
+      static func cambodia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cambodia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cambodia"
+        }
+
+        return NSLocalizedString("cambodia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cameroon
+      ///
+      /// Locales: en, ka, hy
+      static func cameroon(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cameroon", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cameroon"
+        }
+
+        return NSLocalizedString("cameroon", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Canada
+      ///
+      /// Locales: en, ka, hy
+      static func canada(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("canada", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "canada"
+        }
+
+        return NSLocalizedString("canada", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Cancel
       ///
       /// Locales: en, ka, hy
@@ -3542,6 +5134,66 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("cancel", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cape Verde
+      ///
+      /// Locales: en, ka, hy
+      static func cape_verde(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cape_verde", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cape_verde"
+        }
+
+        return NSLocalizedString("cape_verde", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cayman Islands
+      ///
+      /// Locales: en, ka, hy
+      static func cayman_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cayman_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cayman_islands"
+        }
+
+        return NSLocalizedString("cayman_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Central African Republic
+      ///
+      /// Locales: en, ka, hy
+      static func central_african_republic(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("central_african_republic", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "central_african_republic"
+        }
+
+        return NSLocalizedString("central_african_republic", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Chad
+      ///
+      /// Locales: en, ka, hy
+      static func chad(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("chad", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "chad"
+        }
+
+        return NSLocalizedString("chad", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Change Address
@@ -3619,6 +5271,66 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_parameters_change_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Chile
+      ///
+      /// Locales: en, ka, hy
+      static func chile(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("chile", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "chile"
+        }
+
+        return NSLocalizedString("chile", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: China
+      ///
+      /// Locales: en, ka, hy
+      static func china(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("china", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "china"
+        }
+
+        return NSLocalizedString("china", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Christmas Island
+      ///
+      /// Locales: en, ka, hy
+      static func christmas_island(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("christmas_island", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "christmas_island"
+        }
+
+        return NSLocalizedString("christmas_island", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cocos Islands
+      ///
+      /// Locales: en, ka, hy
+      static func cocos_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cocos_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cocos_islands"
+        }
+
+        return NSLocalizedString("cocos_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Code is sent to yout number
       ///
       /// Locales: en, ka, hy
@@ -3634,6 +5346,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sms_confirmation_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Colombia
+      ///
+      /// Locales: en, ka, hy
+      static func colombia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("colombia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "colombia"
+        }
+
+        return NSLocalizedString("colombia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Comoros
+      ///
+      /// Locales: en, ka, hy
+      static func comoros(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("comoros", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "comoros"
+        }
+
+        return NSLocalizedString("comoros", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Confirm
       ///
       /// Locales: en, ka, hy
@@ -3647,6 +5389,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("p2p_transfer_confirm", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Congo
+      ///
+      /// Locales: en, ka, hy
+      static func congo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("congo", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "congo"
+        }
+
+        return NSLocalizedString("congo", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Contact Information
@@ -3679,6 +5436,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("contact_us_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Cook Islands
+      ///
+      /// Locales: en, ka, hy
+      static func cook_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cook_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cook_islands"
+        }
+
+        return NSLocalizedString("cook_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Costa Rica
+      ///
+      /// Locales: en, ka, hy
+      static func costa_rica(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("costa_rica", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "costa_rica"
+        }
+
+        return NSLocalizedString("costa_rica", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Country
       ///
       /// Locales: en, ka, hy
@@ -3692,6 +5479,81 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_info_country", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Croatia
+      ///
+      /// Locales: en, ka, hy
+      static func croatia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("croatia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "croatia"
+        }
+
+        return NSLocalizedString("croatia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cuba
+      ///
+      /// Locales: en, ka, hy
+      static func cuba(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cuba", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cuba"
+        }
+
+        return NSLocalizedString("cuba", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Curacao
+      ///
+      /// Locales: en, ka, hy
+      static func curacao(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("curacao", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "curacao"
+        }
+
+        return NSLocalizedString("curacao", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cyprus
+      ///
+      /// Locales: en, ka, hy
+      static func cyprus(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cyprus", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "cyprus"
+        }
+
+        return NSLocalizedString("cyprus", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Czech Republic
+      ///
+      /// Locales: en, ka, hy
+      static func czech_republic(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("czech_republic", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "czech_republic"
+        }
+
+        return NSLocalizedString("czech_republic", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Delete
@@ -3724,6 +5586,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("notifications_page_delete_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Democratic Republic Of The Congo
+      ///
+      /// Locales: en, ka, hy
+      static func democratic_republic_of_the_congo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("democratic_republic_of_the_congo", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "democratic_republic_of_the_congo"
+        }
+
+        return NSLocalizedString("democratic_republic_of_the_congo", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Denmark
+      ///
+      /// Locales: en, ka, hy
+      static func denmark(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("denmark", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "denmark"
+        }
+
+        return NSLocalizedString("denmark", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Deposit
       ///
       /// Locales: en, ka, hy
@@ -3754,6 +5646,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sms_did_not_receive_message", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Djibouti
+      ///
+      /// Locales: en, ka, hy
+      static func djibouti(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("djibouti", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "djibouti"
+        }
+
+        return NSLocalizedString("djibouti", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Dominica
+      ///
+      /// Locales: en, ka, hy
+      static func dominica(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("dominica", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "dominica"
+        }
+
+        return NSLocalizedString("dominica", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Dominican Republic
+      ///
+      /// Locales: en, ka, hy
+      static func dominican_republic(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("dominican_republic", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "dominican_republic"
+        }
+
+        return NSLocalizedString("dominican_republic", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Done
       ///
       /// Locales: en, ka, hy
@@ -3767,6 +5704,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("cashflow_done_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Ecuador
+      ///
+      /// Locales: en, ka, hy
+      static func ecuador(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ecuador", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "ecuador"
+        }
+
+        return NSLocalizedString("ecuador", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Egypt
+      ///
+      /// Locales: en, ka, hy
+      static func egypt(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("egypt", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "egypt"
+        }
+
+        return NSLocalizedString("egypt", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: El Salvador
+      ///
+      /// Locales: en, ka, hy
+      static func el_salvador(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("el_salvador", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "el_salvador"
+        }
+
+        return NSLocalizedString("el_salvador", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Emails
@@ -3829,6 +5811,96 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("phone_number_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Equatorial Guinea
+      ///
+      /// Locales: en, ka, hy
+      static func equatorial_guinea(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("equatorial_guinea", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "equatorial_guinea"
+        }
+
+        return NSLocalizedString("equatorial_guinea", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Eritrea
+      ///
+      /// Locales: en, ka, hy
+      static func eritrea(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("eritrea", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "eritrea"
+        }
+
+        return NSLocalizedString("eritrea", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Estonia
+      ///
+      /// Locales: en, ka, hy
+      static func estonia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("estonia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "estonia"
+        }
+
+        return NSLocalizedString("estonia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Ethiopia
+      ///
+      /// Locales: en, ka, hy
+      static func ethiopia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ethiopia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "ethiopia"
+        }
+
+        return NSLocalizedString("ethiopia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Falkland Islands
+      ///
+      /// Locales: en, ka, hy
+      static func falkland_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("falkland_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "falkland_islands"
+        }
+
+        return NSLocalizedString("falkland_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Faroe Islands
+      ///
+      /// Locales: en, ka, hy
+      static func faroe_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("faroe_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "faroe_islands"
+        }
+
+        return NSLocalizedString("faroe_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Female
       ///
       /// Locales: en, ka, hy
@@ -3844,6 +5916,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("gender_female", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Fiji
+      ///
+      /// Locales: en, ka, hy
+      static func fiji(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("fiji", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "fiji"
+        }
+
+        return NSLocalizedString("fiji", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Filter
       ///
       /// Locales: en, ka, hy
@@ -3857,6 +5944,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("transactions_filter_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Finland
+      ///
+      /// Locales: en, ka, hy
+      static func finland(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("finland", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "finland"
+        }
+
+        return NSLocalizedString("finland", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Forgot Password?
@@ -3889,6 +5991,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login_forgot_username", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: France
+      ///
+      /// Locales: en, ka, hy
+      static func france(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("france", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "france"
+        }
+
+        return NSLocalizedString("france", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: French Guiana
+      ///
+      /// Locales: en, ka, hy
+      static func french_guiana(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("french_guiana", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "french_guiana"
+        }
+
+        return NSLocalizedString("french_guiana", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: French Polynesia
+      ///
+      /// Locales: en, ka, hy
+      static func french_polynesia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("french_polynesia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "french_polynesia"
+        }
+
+        return NSLocalizedString("french_polynesia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Friend ID
       ///
       /// Locales: en, ka, hy
@@ -3902,6 +6049,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("p2p_transfer_friend_id", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Gabon
+      ///
+      /// Locales: en, ka, hy
+      static func gabon(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gabon", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "gabon"
+        }
+
+        return NSLocalizedString("gabon", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Gambia
+      ///
+      /// Locales: en, ka, hy
+      static func gambia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gambia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "gambia"
+        }
+
+        return NSLocalizedString("gambia", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Games
@@ -3934,6 +6111,246 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_gender", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Georgia
+      ///
+      /// Locales: en, ka, hy
+      static func georgia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("georgia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "georgia"
+        }
+
+        return NSLocalizedString("georgia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Germany
+      ///
+      /// Locales: en, ka, hy
+      static func germany(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("germany", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "germany"
+        }
+
+        return NSLocalizedString("germany", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Ghana
+      ///
+      /// Locales: en, ka, hy
+      static func ghana(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ghana", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "ghana"
+        }
+
+        return NSLocalizedString("ghana", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Gibraltar
+      ///
+      /// Locales: en, ka, hy
+      static func gibraltar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gibraltar", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "gibraltar"
+        }
+
+        return NSLocalizedString("gibraltar", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Greece
+      ///
+      /// Locales: en, ka, hy
+      static func greece(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("greece", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "greece"
+        }
+
+        return NSLocalizedString("greece", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Greenland
+      ///
+      /// Locales: en, ka, hy
+      static func greenland(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("greenland", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "greenland"
+        }
+
+        return NSLocalizedString("greenland", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Grenada
+      ///
+      /// Locales: en, ka, hy
+      static func grenada(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("grenada", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "grenada"
+        }
+
+        return NSLocalizedString("grenada", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Guadaloupe
+      ///
+      /// Locales: en, ka, hy
+      static func guadaloupe(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guadaloupe", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "guadaloupe"
+        }
+
+        return NSLocalizedString("guadaloupe", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Guam
+      ///
+      /// Locales: en, ka, hy
+      static func guam(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guam", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "guam"
+        }
+
+        return NSLocalizedString("guam", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Guatemala
+      ///
+      /// Locales: en, ka, hy
+      static func guatemala(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guatemala", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "guatemala"
+        }
+
+        return NSLocalizedString("guatemala", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Guernsey
+      ///
+      /// Locales: en, ka, hy
+      static func guernsey(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guernsey", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "guernsey"
+        }
+
+        return NSLocalizedString("guernsey", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Guinea
+      ///
+      /// Locales: en, ka, hy
+      static func guinea(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guinea", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "guinea"
+        }
+
+        return NSLocalizedString("guinea", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Guinea Bissau
+      ///
+      /// Locales: en, ka, hy
+      static func guinea_bissau(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guinea_bissau", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "guinea_bissau"
+        }
+
+        return NSLocalizedString("guinea_bissau", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Guyana
+      ///
+      /// Locales: en, ka, hy
+      static func guyana(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("guyana", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "guyana"
+        }
+
+        return NSLocalizedString("guyana", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Haiti
+      ///
+      /// Locales: en, ka, hy
+      static func haiti(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("haiti", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "haiti"
+        }
+
+        return NSLocalizedString("haiti", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Heard & McDonald Islands
+      ///
+      /// Locales: en, ka, hy
+      static func heard_island_and_mc_donald_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("heard_island_and_mc_donald_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "heard_island_and_mc_donald_islands"
+        }
+
+        return NSLocalizedString("heard_island_and_mc_donald_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: High Secutiry On
       ///
       /// Locales: en, ka, hy
@@ -3964,6 +6381,66 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_parameters_high_security", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Honduras
+      ///
+      /// Locales: en, ka, hy
+      static func honduras(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("honduras", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "honduras"
+        }
+
+        return NSLocalizedString("honduras", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Hong Kong
+      ///
+      /// Locales: en, ka, hy
+      static func hong_kong(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("hong_kong", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "hong_kong"
+        }
+
+        return NSLocalizedString("hong_kong", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Hungary
+      ///
+      /// Locales: en, ka, hy
+      static func hungary(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("hungary", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "hungary"
+        }
+
+        return NSLocalizedString("hungary", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Iceland
+      ///
+      /// Locales: en, ka, hy
+      static func iceland(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("iceland", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "iceland"
+        }
+
+        return NSLocalizedString("iceland", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Incognito Card
       ///
       /// Locales: en, ka, hy
@@ -3977,6 +6454,171 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("incognito_card", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: India
+      ///
+      /// Locales: en, ka, hy
+      static func india(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("india", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "india"
+        }
+
+        return NSLocalizedString("india", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Indonesia
+      ///
+      /// Locales: en, ka, hy
+      static func indonesia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("indonesia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "indonesia"
+        }
+
+        return NSLocalizedString("indonesia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Iran
+      ///
+      /// Locales: en, ka, hy
+      static func iran(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("iran", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "iran"
+        }
+
+        return NSLocalizedString("iran", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Iraq
+      ///
+      /// Locales: en, ka, hy
+      static func iraq(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("iraq", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "iraq"
+        }
+
+        return NSLocalizedString("iraq", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Ireland
+      ///
+      /// Locales: en, ka, hy
+      static func ireland(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ireland", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "ireland"
+        }
+
+        return NSLocalizedString("ireland", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Isle Of Man
+      ///
+      /// Locales: en, ka, hy
+      static func isle_of_man(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("isle_of_man", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "isle_of_man"
+        }
+
+        return NSLocalizedString("isle_of_man", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Israel
+      ///
+      /// Locales: en, ka, hy
+      static func israel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("israel", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "israel"
+        }
+
+        return NSLocalizedString("israel", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Italy
+      ///
+      /// Locales: en, ka, hy
+      static func italy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("italy", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "italy"
+        }
+
+        return NSLocalizedString("italy", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Jamaica
+      ///
+      /// Locales: en, ka, hy
+      static func jamaica(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("jamaica", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "jamaica"
+        }
+
+        return NSLocalizedString("jamaica", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Japan
+      ///
+      /// Locales: en, ka, hy
+      static func japan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("japan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "japan"
+        }
+
+        return NSLocalizedString("japan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Jersey
+      ///
+      /// Locales: en, ka, hy
+      static func jersey(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("jersey", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "jersey"
+        }
+
+        return NSLocalizedString("jersey", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Join now
@@ -3994,6 +6636,111 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("join_now", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Jordan
+      ///
+      /// Locales: en, ka, hy
+      static func jordan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("jordan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "jordan"
+        }
+
+        return NSLocalizedString("jordan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Kazakhstan
+      ///
+      /// Locales: en, ka, hy
+      static func kazakhstan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("kazakhstan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "kazakhstan"
+        }
+
+        return NSLocalizedString("kazakhstan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Kenya
+      ///
+      /// Locales: en, ka, hy
+      static func kenya(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("kenya", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "kenya"
+        }
+
+        return NSLocalizedString("kenya", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Kiribati
+      ///
+      /// Locales: en, ka, hy
+      static func kiribati(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("kiribati", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "kiribati"
+        }
+
+        return NSLocalizedString("kiribati", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Kosovo
+      ///
+      /// Locales: en, ka, hy
+      static func kosovo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("kosovo", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "kosovo"
+        }
+
+        return NSLocalizedString("kosovo", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Kuwait
+      ///
+      /// Locales: en, ka, hy
+      static func kuwait(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("kuwait", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "kuwait"
+        }
+
+        return NSLocalizedString("kuwait", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Kyrgyzstan
+      ///
+      /// Locales: en, ka, hy
+      static func kyrgyzstan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("kyrgyzstan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "kyrgyzstan"
+        }
+
+        return NSLocalizedString("kyrgyzstan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: LOG IN
       ///
       /// Locales: en, ka, hy
@@ -4007,6 +6754,126 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Laos
+      ///
+      /// Locales: en, ka, hy
+      static func laos(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("laos", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "laos"
+        }
+
+        return NSLocalizedString("laos", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Latvia
+      ///
+      /// Locales: en, ka, hy
+      static func latvia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("latvia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "latvia"
+        }
+
+        return NSLocalizedString("latvia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Lebanon
+      ///
+      /// Locales: en, ka, hy
+      static func lebanon(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lebanon", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "lebanon"
+        }
+
+        return NSLocalizedString("lebanon", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Lesotho
+      ///
+      /// Locales: en, ka, hy
+      static func lesotho(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lesotho", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "lesotho"
+        }
+
+        return NSLocalizedString("lesotho", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Liberia
+      ///
+      /// Locales: en, ka, hy
+      static func liberia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("liberia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "liberia"
+        }
+
+        return NSLocalizedString("liberia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Libya
+      ///
+      /// Locales: en, ka, hy
+      static func libya(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("libya", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "libya"
+        }
+
+        return NSLocalizedString("libya", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Liechtenstein
+      ///
+      /// Locales: en, ka, hy
+      static func liechtenstein(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("liechtenstein", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "liechtenstein"
+        }
+
+        return NSLocalizedString("liechtenstein", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Lithuania
+      ///
+      /// Locales: en, ka, hy
+      static func lithuania(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lithuania", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "lithuania"
+        }
+
+        return NSLocalizedString("lithuania", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Log Out
@@ -4099,6 +6966,66 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_parameters_login_history", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Luxembourg
+      ///
+      /// Locales: en, ka, hy
+      static func luxembourg(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("luxembourg", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "luxembourg"
+        }
+
+        return NSLocalizedString("luxembourg", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Macao
+      ///
+      /// Locales: en, ka, hy
+      static func macao(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("macao", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "macao"
+        }
+
+        return NSLocalizedString("macao", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Macedonia
+      ///
+      /// Locales: en, ka, hy
+      static func macedonia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("macedonia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "macedonia"
+        }
+
+        return NSLocalizedString("macedonia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Madagascar
+      ///
+      /// Locales: en, ka, hy
+      static func madagascar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("madagascar", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "madagascar"
+        }
+
+        return NSLocalizedString("madagascar", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Mail
       ///
       /// Locales: en, ka, hy
@@ -4114,6 +7041,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_mail", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Malawi
+      ///
+      /// Locales: en, ka, hy
+      static func malawi(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("malawi", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "malawi"
+        }
+
+        return NSLocalizedString("malawi", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Malaysia
+      ///
+      /// Locales: en, ka, hy
+      static func malaysia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("malaysia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "malaysia"
+        }
+
+        return NSLocalizedString("malaysia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Maldives
+      ///
+      /// Locales: en, ka, hy
+      static func maldives(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("maldives", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "maldives"
+        }
+
+        return NSLocalizedString("maldives", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Male
       ///
       /// Locales: en, ka, hy
@@ -4127,6 +7099,246 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("gender_male", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mali
+      ///
+      /// Locales: en, ka, hy
+      static func mali(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mali", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mali"
+        }
+
+        return NSLocalizedString("mali", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Malta
+      ///
+      /// Locales: en, ka, hy
+      static func malta(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("malta", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "malta"
+        }
+
+        return NSLocalizedString("malta", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Marshall Islands
+      ///
+      /// Locales: en, ka, hy
+      static func marshall_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("marshall_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "marshall_islands"
+        }
+
+        return NSLocalizedString("marshall_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Martinique
+      ///
+      /// Locales: en, ka, hy
+      static func martinique(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("martinique", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "martinique"
+        }
+
+        return NSLocalizedString("martinique", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mauritania
+      ///
+      /// Locales: en, ka, hy
+      static func mauritania(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mauritania", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mauritania"
+        }
+
+        return NSLocalizedString("mauritania", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mauritius
+      ///
+      /// Locales: en, ka, hy
+      static func mauritius(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mauritius", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mauritius"
+        }
+
+        return NSLocalizedString("mauritius", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mayotte
+      ///
+      /// Locales: en, ka, hy
+      static func mayotte(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mayotte", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mayotte"
+        }
+
+        return NSLocalizedString("mayotte", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mexico
+      ///
+      /// Locales: en, ka, hy
+      static func mexico(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mexico", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mexico"
+        }
+
+        return NSLocalizedString("mexico", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Micronesia
+      ///
+      /// Locales: en, ka, hy
+      static func micronesia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("micronesia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "micronesia"
+        }
+
+        return NSLocalizedString("micronesia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Moldava
+      ///
+      /// Locales: en, ka, hy
+      static func moldava(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("moldava", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "moldava"
+        }
+
+        return NSLocalizedString("moldava", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Monaco
+      ///
+      /// Locales: en, ka, hy
+      static func monaco(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("monaco", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "monaco"
+        }
+
+        return NSLocalizedString("monaco", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mongolia
+      ///
+      /// Locales: en, ka, hy
+      static func mongolia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mongolia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mongolia"
+        }
+
+        return NSLocalizedString("mongolia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Montenegro
+      ///
+      /// Locales: en, ka, hy
+      static func montenegro(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("montenegro", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "montenegro"
+        }
+
+        return NSLocalizedString("montenegro", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Montserrat
+      ///
+      /// Locales: en, ka, hy
+      static func montserrat(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("montserrat", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "montserrat"
+        }
+
+        return NSLocalizedString("montserrat", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Morocco
+      ///
+      /// Locales: en, ka, hy
+      static func morocco(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("morocco", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "morocco"
+        }
+
+        return NSLocalizedString("morocco", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mozambique
+      ///
+      /// Locales: en, ka, hy
+      static func mozambique(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mozambique", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mozambique"
+        }
+
+        return NSLocalizedString("mozambique", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: My Balance
@@ -4174,6 +7386,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("my_cards", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Myanmar
+      ///
+      /// Locales: en, ka, hy
+      static func myanmar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("myanmar", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "myanmar"
+        }
+
+        return NSLocalizedString("myanmar", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Name
       ///
       /// Locales: en, ka, hy
@@ -4189,6 +7416,81 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_name", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Namibia
+      ///
+      /// Locales: en, ka, hy
+      static func namibia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("namibia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "namibia"
+        }
+
+        return NSLocalizedString("namibia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Nauru
+      ///
+      /// Locales: en, ka, hy
+      static func nauru(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("nauru", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "nauru"
+        }
+
+        return NSLocalizedString("nauru", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Nepal
+      ///
+      /// Locales: en, ka, hy
+      static func nepal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("nepal", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "nepal"
+        }
+
+        return NSLocalizedString("nepal", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Netherlands
+      ///
+      /// Locales: en, ka, hy
+      static func netherlands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("netherlands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "netherlands"
+        }
+
+        return NSLocalizedString("netherlands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: New Caledonia
+      ///
+      /// Locales: en, ka, hy
+      static func new_caledonia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("new_caledonia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "new_caledonia"
+        }
+
+        return NSLocalizedString("new_caledonia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: New Password
       ///
       /// Locales: en, ka, hy
@@ -4202,6 +7504,141 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("new_password", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: New Zealand
+      ///
+      /// Locales: en, ka, hy
+      static func new_zealand(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("new_zealand", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "new_zealand"
+        }
+
+        return NSLocalizedString("new_zealand", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Nicaragua
+      ///
+      /// Locales: en, ka, hy
+      static func nicaragua(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("nicaragua", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "nicaragua"
+        }
+
+        return NSLocalizedString("nicaragua", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Niger
+      ///
+      /// Locales: en, ka, hy
+      static func niger(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("niger", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "niger"
+        }
+
+        return NSLocalizedString("niger", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Nigeria
+      ///
+      /// Locales: en, ka, hy
+      static func nigeria(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("nigeria", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "nigeria"
+        }
+
+        return NSLocalizedString("nigeria", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Niue
+      ///
+      /// Locales: en, ka, hy
+      static func niue(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("niue", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "niue"
+        }
+
+        return NSLocalizedString("niue", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Norfolk Island
+      ///
+      /// Locales: en, ka, hy
+      static func norfolk_island(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("norfolk_island", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "norfolk_island"
+        }
+
+        return NSLocalizedString("norfolk_island", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: North Korea
+      ///
+      /// Locales: en, ka, hy
+      static func north_korea(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("north_korea", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "north_korea"
+        }
+
+        return NSLocalizedString("north_korea", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Northern Mariana Islands
+      ///
+      /// Locales: en, ka, hy
+      static func northern_mariana_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("northern_mariana_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "northern_mariana_islands"
+        }
+
+        return NSLocalizedString("northern_mariana_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Norway
+      ///
+      /// Locales: en, ka, hy
+      static func norway(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("norway", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "norway"
+        }
+
+        return NSLocalizedString("norway", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Not a member?
@@ -4249,6 +7686,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("old_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Oman
+      ///
+      /// Locales: en, ka, hy
+      static func oman(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("oman", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "oman"
+        }
+
+        return NSLocalizedString("oman", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia
       ///
       /// Locales: en, ka, hy
@@ -4292,6 +7744,96 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("p2p_transfer_p2p_transfer", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Pakistan
+      ///
+      /// Locales: en, ka, hy
+      static func pakistan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pakistan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "pakistan"
+        }
+
+        return NSLocalizedString("pakistan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Palau
+      ///
+      /// Locales: en, ka, hy
+      static func palau(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("palau", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "palau"
+        }
+
+        return NSLocalizedString("palau", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Palestine
+      ///
+      /// Locales: en, ka, hy
+      static func palestine(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("palestine", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "palestine"
+        }
+
+        return NSLocalizedString("palestine", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Panama
+      ///
+      /// Locales: en, ka, hy
+      static func panama(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("panama", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "panama"
+        }
+
+        return NSLocalizedString("panama", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Papua New Guinea
+      ///
+      /// Locales: en, ka, hy
+      static func papua_new_guinea(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("papua_new_guinea", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "papua_new_guinea"
+        }
+
+        return NSLocalizedString("papua_new_guinea", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Paraguay
+      ///
+      /// Locales: en, ka, hy
+      static func paraguay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("paraguay", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "paraguay"
+        }
+
+        return NSLocalizedString("paraguay", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Password
@@ -4354,6 +7896,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_info_personal_info_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Peru
+      ///
+      /// Locales: en, ka, hy
+      static func peru(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("peru", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "peru"
+        }
+
+        return NSLocalizedString("peru", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Phillipines
+      ///
+      /// Locales: en, ka, hy
+      static func phillipines(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("phillipines", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "phillipines"
+        }
+
+        return NSLocalizedString("phillipines", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Phone Number
       ///
       /// Locales: en, ka, hy
@@ -4384,6 +7956,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("new_phone_number", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Pitcairn
+      ///
+      /// Locales: en, ka, hy
+      static func pitcairn(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pitcairn", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "pitcairn"
+        }
+
+        return NSLocalizedString("pitcairn", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Poker Balance
       ///
       /// Locales: en, ka, hy
@@ -4397,6 +7984,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("poker_balance", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Poland
+      ///
+      /// Locales: en, ka, hy
+      static func poland(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("poland", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "poland"
+        }
+
+        return NSLocalizedString("poland", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Portugal
+      ///
+      /// Locales: en, ka, hy
+      static func portugal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("portugal", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "portugal"
+        }
+
+        return NSLocalizedString("portugal", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Prefer Not To Say
@@ -4489,6 +8106,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("promotions_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Puerto Rico
+      ///
+      /// Locales: en, ka, hy
+      static func puerto_rico(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("puerto_rico", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "puerto_rico"
+        }
+
+        return NSLocalizedString("puerto_rico", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Qatar
+      ///
+      /// Locales: en, ka, hy
+      static func qatar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("qatar", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "qatar"
+        }
+
+        return NSLocalizedString("qatar", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Quick Actions
       ///
       /// Locales: en, ka, hy
@@ -4564,6 +8211,66 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sms_resend_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Reunion
+      ///
+      /// Locales: en, ka, hy
+      static func reunion(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("reunion", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "reunion"
+        }
+
+        return NSLocalizedString("reunion", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Romania
+      ///
+      /// Locales: en, ka, hy
+      static func romania(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("romania", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "romania"
+        }
+
+        return NSLocalizedString("romania", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Russia
+      ///
+      /// Locales: en, ka, hy
+      static func russia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("russia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "russia"
+        }
+
+        return NSLocalizedString("russia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Rwanda
+      ///
+      /// Locales: en, ka, hy
+      static func rwanda(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("rwanda", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "rwanda"
+        }
+
+        return NSLocalizedString("rwanda", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: SELF SUSPEND
       ///
       /// Locales: en, ka, hy
@@ -4622,6 +8329,171 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_parameters_messages_sms_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saint Barthelemy
+      ///
+      /// Locales: en, ka, hy
+      static func saint_barthelemy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("saint_barthelemy", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "saint_barthelemy"
+        }
+
+        return NSLocalizedString("saint_barthelemy", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saint Helena
+      ///
+      /// Locales: en, ka, hy
+      static func saint_helena(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("saint_helena", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "saint_helena"
+        }
+
+        return NSLocalizedString("saint_helena", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saint Kitts And Nevis
+      ///
+      /// Locales: en, ka, hy
+      static func saint_kitts_and_nevis(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("saint_kitts_and_nevis", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "saint_kitts_and_nevis"
+        }
+
+        return NSLocalizedString("saint_kitts_and_nevis", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saint Lucia
+      ///
+      /// Locales: en, ka, hy
+      static func saint_lucia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("saint_lucia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "saint_lucia"
+        }
+
+        return NSLocalizedString("saint_lucia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saint Martin
+      ///
+      /// Locales: en, ka, hy
+      static func saint_martin(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("saint_martin", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "saint_martin"
+        }
+
+        return NSLocalizedString("saint_martin", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saint Pierre And Miquelon
+      ///
+      /// Locales: en, ka, hy
+      static func saint_pierre_and_miquelon(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("saint_pierre_and_miquelon", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "saint_pierre_and_miquelon"
+        }
+
+        return NSLocalizedString("saint_pierre_and_miquelon", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saint Vincent And The Grenadines
+      ///
+      /// Locales: en, ka, hy
+      static func saint_vincent_and_the_grenadines(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("saint_vincent_and_the_grenadines", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "saint_vincent_and_the_grenadines"
+        }
+
+        return NSLocalizedString("saint_vincent_and_the_grenadines", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Samoa
+      ///
+      /// Locales: en, ka, hy
+      static func samoa(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("samoa", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "samoa"
+        }
+
+        return NSLocalizedString("samoa", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: San Marino
+      ///
+      /// Locales: en, ka, hy
+      static func san_marino(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("san_marino", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "san_marino"
+        }
+
+        return NSLocalizedString("san_marino", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sao Tome And Principe
+      ///
+      /// Locales: en, ka, hy
+      static func sao_tome_and_principe(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sao_tome_and_principe", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sao_tome_and_principe"
+        }
+
+        return NSLocalizedString("sao_tome_and_principe", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saudi Arabia
+      ///
+      /// Locales: en, ka, hy
+      static func saudi_arabia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("saudi_arabia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "saudi_arabia"
+        }
+
+        return NSLocalizedString("saudi_arabia", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Save
@@ -4699,6 +8571,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("self_suspend_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Senegal
+      ///
+      /// Locales: en, ka, hy
+      static func senegal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("senegal", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "senegal"
+        }
+
+        return NSLocalizedString("senegal", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Serbia
+      ///
+      /// Locales: en, ka, hy
+      static func serbia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("serbia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "serbia"
+        }
+
+        return NSLocalizedString("serbia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Settings
       ///
       /// Locales: en, ka, hy
@@ -4712,6 +8614,201 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Seychelles
+      ///
+      /// Locales: en, ka, hy
+      static func seychelles(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("seychelles", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "seychelles"
+        }
+
+        return NSLocalizedString("seychelles", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sierraleone
+      ///
+      /// Locales: en, ka, hy
+      static func sierra_leone(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sierra_leone", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sierra_leone"
+        }
+
+        return NSLocalizedString("sierra_leone", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Singapore
+      ///
+      /// Locales: en, ka, hy
+      static func singapore(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("singapore", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "singapore"
+        }
+
+        return NSLocalizedString("singapore", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sint Maarten
+      ///
+      /// Locales: en, ka, hy
+      static func sint_maarten(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sint_maarten", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sint_maarten"
+        }
+
+        return NSLocalizedString("sint_maarten", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Slovakia
+      ///
+      /// Locales: en, ka, hy
+      static func slovakia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("slovakia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "slovakia"
+        }
+
+        return NSLocalizedString("slovakia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Slovenia
+      ///
+      /// Locales: en, ka, hy
+      static func slovenia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("slovenia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "slovenia"
+        }
+
+        return NSLocalizedString("slovenia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Solomon Islands
+      ///
+      /// Locales: en, ka, hy
+      static func solomon_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("solomon_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "solomon_islands"
+        }
+
+        return NSLocalizedString("solomon_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Somalia
+      ///
+      /// Locales: en, ka, hy
+      static func somalia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("somalia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "somalia"
+        }
+
+        return NSLocalizedString("somalia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: South Africa
+      ///
+      /// Locales: en, ka, hy
+      static func south_africa(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("south_africa", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "south_africa"
+        }
+
+        return NSLocalizedString("south_africa", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: South Georgia & The South Sandwich Islands
+      ///
+      /// Locales: en, ka, hy
+      static func south_georgia_and_the_south_sandwich_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("south_georgia_and_the_south_sandwich_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "south_georgia_and_the_south_sandwich_islands"
+        }
+
+        return NSLocalizedString("south_georgia_and_the_south_sandwich_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: South Korea
+      ///
+      /// Locales: en, ka, hy
+      static func south_korea(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("south_korea", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "south_korea"
+        }
+
+        return NSLocalizedString("south_korea", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: South Sudan
+      ///
+      /// Locales: en, ka, hy
+      static func south_sudan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("south_sudan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "south_sudan"
+        }
+
+        return NSLocalizedString("south_sudan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Spain
+      ///
+      /// Locales: en, ka, hy
+      static func spain(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("spain", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "spain"
+        }
+
+        return NSLocalizedString("spain", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Sports
@@ -4729,6 +8826,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sports_page_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Srilanka
+      ///
+      /// Locales: en, ka, hy
+      static func sri_lanka(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sri_lanka", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sri_lanka"
+        }
+
+        return NSLocalizedString("sri_lanka", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Status
       ///
       /// Locales: en, ka, hy
@@ -4742,6 +8854,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_info_status", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sudan
+      ///
+      /// Locales: en, ka, hy
+      static func sudan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sudan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sudan"
+        }
+
+        return NSLocalizedString("sudan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Suriname
+      ///
+      /// Locales: en, ka, hy
+      static func suriname(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("suriname", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "suriname"
+        }
+
+        return NSLocalizedString("suriname", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Surname
@@ -4772,6 +8914,201 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("suspend_duration", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Svalbard & Jan Mayen
+      ///
+      /// Locales: en, ka, hy
+      static func svalbard_and_jan_mayen(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("svalbard_and_jan_mayen", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "svalbard_and_jan_mayen"
+        }
+
+        return NSLocalizedString("svalbard_and_jan_mayen", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Swaziland
+      ///
+      /// Locales: en, ka, hy
+      static func swaziland(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("swaziland", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "swaziland"
+        }
+
+        return NSLocalizedString("swaziland", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sweden
+      ///
+      /// Locales: en, ka, hy
+      static func sweden(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sweden", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "sweden"
+        }
+
+        return NSLocalizedString("sweden", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Switzerland
+      ///
+      /// Locales: en, ka, hy
+      static func switzerland(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("switzerland", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "switzerland"
+        }
+
+        return NSLocalizedString("switzerland", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Syria
+      ///
+      /// Locales: en, ka, hy
+      static func syria(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("syria", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "syria"
+        }
+
+        return NSLocalizedString("syria", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Taiwan
+      ///
+      /// Locales: en, ka, hy
+      static func taiwan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("taiwan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "taiwan"
+        }
+
+        return NSLocalizedString("taiwan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tajikistan
+      ///
+      /// Locales: en, ka, hy
+      static func tajikistan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tajikistan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "tajikistan"
+        }
+
+        return NSLocalizedString("tajikistan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tanzania
+      ///
+      /// Locales: en, ka, hy
+      static func tanzania(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tanzania", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "tanzania"
+        }
+
+        return NSLocalizedString("tanzania", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Thailand
+      ///
+      /// Locales: en, ka, hy
+      static func thailand(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("thailand", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "thailand"
+        }
+
+        return NSLocalizedString("thailand", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Timorleste
+      ///
+      /// Locales: en, ka, hy
+      static func timor_leste(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("timor_leste", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "timor_leste"
+        }
+
+        return NSLocalizedString("timor_leste", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Togo
+      ///
+      /// Locales: en, ka, hy
+      static func togo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("togo", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "togo"
+        }
+
+        return NSLocalizedString("togo", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tokelau
+      ///
+      /// Locales: en, ka, hy
+      static func tokelau(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tokelau", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "tokelau"
+        }
+
+        return NSLocalizedString("tokelau", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tonga
+      ///
+      /// Locales: en, ka, hy
+      static func tonga(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tonga", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "tonga"
+        }
+
+        return NSLocalizedString("tonga", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Total Balance
@@ -4864,6 +9201,186 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("transfer_to_a_friend", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Trinidad And Tobago
+      ///
+      /// Locales: en, ka, hy
+      static func trinidad_and_tobago(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("trinidad_and_tobago", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "trinidad_and_tobago"
+        }
+
+        return NSLocalizedString("trinidad_and_tobago", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tunisia
+      ///
+      /// Locales: en, ka, hy
+      static func tunisia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tunisia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "tunisia"
+        }
+
+        return NSLocalizedString("tunisia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Turkey
+      ///
+      /// Locales: en, ka, hy
+      static func turkey(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("turkey", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "turkey"
+        }
+
+        return NSLocalizedString("turkey", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Turkmenistan
+      ///
+      /// Locales: en, ka, hy
+      static func turkmenistan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("turkmenistan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "turkmenistan"
+        }
+
+        return NSLocalizedString("turkmenistan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Turks And Caicos Islands
+      ///
+      /// Locales: en, ka, hy
+      static func turks_and_caicos_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("turks_and_caicos_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "turks_and_caicos_islands"
+        }
+
+        return NSLocalizedString("turks_and_caicos_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tuvalu
+      ///
+      /// Locales: en, ka, hy
+      static func tuvalu(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tuvalu", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "tuvalu"
+        }
+
+        return NSLocalizedString("tuvalu", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Uganda
+      ///
+      /// Locales: en, ka, hy
+      static func uganda(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("uganda", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "uganda"
+        }
+
+        return NSLocalizedString("uganda", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Ukraine
+      ///
+      /// Locales: en, ka, hy
+      static func ukraine(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ukraine", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "ukraine"
+        }
+
+        return NSLocalizedString("ukraine", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: United Arab Emirates
+      ///
+      /// Locales: en, ka, hy
+      static func united_arab_emirates(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("united_arab_emirates", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "united_arab_emirates"
+        }
+
+        return NSLocalizedString("united_arab_emirates", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: United Kingdom
+      ///
+      /// Locales: en, ka, hy
+      static func united_kingdom(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("united_kingdom", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "united_kingdom"
+        }
+
+        return NSLocalizedString("united_kingdom", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: United States
+      ///
+      /// Locales: en, ka, hy
+      static func united_states(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("united_states", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "united_states"
+        }
+
+        return NSLocalizedString("united_states", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: United States Minor Outlying Islands
+      ///
+      /// Locales: en, ka, hy
+      static func united_states_minor_outlying_islands(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("united_states_minor_outlying_islands", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "united_states_minor_outlying_islands"
+        }
+
+        return NSLocalizedString("united_states_minor_outlying_islands", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Update Password
       ///
       /// Locales: en, ka, hy
@@ -4877,6 +9394,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("update_password_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Uruguay
+      ///
+      /// Locales: en, ka, hy
+      static func uruguay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("uruguay", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "uruguay"
+        }
+
+        return NSLocalizedString("uruguay", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: User ID
@@ -4924,6 +9456,81 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login_username_input_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Uzbekistan
+      ///
+      /// Locales: en, ka, hy
+      static func uzbekistan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("uzbekistan", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "uzbekistan"
+        }
+
+        return NSLocalizedString("uzbekistan", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Vanuatu
+      ///
+      /// Locales: en, ka, hy
+      static func vanuatu(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("vanuatu", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "vanuatu"
+        }
+
+        return NSLocalizedString("vanuatu", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Vatican
+      ///
+      /// Locales: en, ka, hy
+      static func vatican_city(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("vatican_city", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "vatican_city"
+        }
+
+        return NSLocalizedString("vatican_city", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Venezuela
+      ///
+      /// Locales: en, ka, hy
+      static func venezuela(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("venezuela", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "venezuela"
+        }
+
+        return NSLocalizedString("venezuela", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Vietnam
+      ///
+      /// Locales: en, ka, hy
+      static func vietnam(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("vietnam", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "vietnam"
+        }
+
+        return NSLocalizedString("vietnam", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: View All
       ///
       /// Locales: en, ka, hy
@@ -4937,6 +9544,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("view_all", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Virgin Islands, British
+      ///
+      /// Locales: en, ka, hy
+      static func virgin_islands_british(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("virgin_islands_british", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "virgin_islands_british"
+        }
+
+        return NSLocalizedString("virgin_islands_british", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Virgin Islands, US
+      ///
+      /// Locales: en, ka, hy
+      static func virgin_islands_us(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("virgin_islands_us", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "virgin_islands_us"
+        }
+
+        return NSLocalizedString("virgin_islands_us", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Wallis And Futuna
+      ///
+      /// Locales: en, ka, hy
+      static func wallis_and_futuna(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("wallis_and_futuna", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "wallis_and_futuna"
+        }
+
+        return NSLocalizedString("wallis_and_futuna", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Well done!
@@ -4954,6 +9606,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sms_well_done", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Western Sahara
+      ///
+      /// Locales: en, ka, hy
+      static func western_sahara(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("western_sahara", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "western_sahara"
+        }
+
+        return NSLocalizedString("western_sahara", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Withdraw
       ///
       /// Locales: en, ka, hy
@@ -4967,6 +9634,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("withdraw_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Yemen
+      ///
+      /// Locales: en, ka, hy
+      static func yemen(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("yemen", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "yemen"
+        }
+
+        return NSLocalizedString("yemen", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: You are transfering to
@@ -5027,6 +9709,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("verified", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Zambia
+      ///
+      /// Locales: en, ka, hy
+      static func zambia(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("zambia", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "zambia"
+        }
+
+        return NSLocalizedString("zambia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Zimbabwe
+      ///
+      /// Locales: en, ka, hy
+      static func zimbabwe(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("zimbabwe", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "zimbabwe"
+        }
+
+        return NSLocalizedString("zimbabwe", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: configure parameters

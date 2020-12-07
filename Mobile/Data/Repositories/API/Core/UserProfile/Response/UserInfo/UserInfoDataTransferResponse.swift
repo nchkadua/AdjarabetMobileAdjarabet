@@ -25,7 +25,7 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
         public let gender: Int?
         public let userName: String?
         public let countryId: Int?
-        public let address: String?
+        // public let address: String? // FIXME: add real address
         public let birthDate: String?
         public let email: String?
         public let tel: String?
@@ -50,7 +50,7 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
             case gender = "Gender"
             case userName = "UserName"
             case countryId = "CountryID"
-            case address = "Address"
+            // case address = "Address" // FIXME: add real address
             case birthDate = "BirthDate"
             case email = "Email"
             case tel = "Tel"
@@ -76,10 +76,10 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
             name: body.name,
             surname: body.surname,
             middleName: body.middleName,
-            gender: GenderEntity(rawValue: body.gender ?? -1),
+            gender: body.gender != nil ? Gender(genderId: body.gender!) : nil,
             userName: body.userName,
-            countryId: body.countryId,
-            address: body.address,
+            country: body.countryId != nil ? Country(countryId: body.countryId!) : nil,
+            address: "", // body.address, // FIXME: add real address
             birthDate: body.birthDate,
             email: body.email,
             phone: body.tel,

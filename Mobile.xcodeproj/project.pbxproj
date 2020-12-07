@@ -75,8 +75,8 @@
 		76BDF47125760512007B27A7 /* AccountParametersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF46B25760512007B27A7 /* AccountParametersTableViewCell.swift */; };
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
 		C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487162571122E00E4A71D /* AccountInfoModel.swift */; };
-		C71487222571209600E4A71D /* GenderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487212571209600E4A71D /* GenderEntity.swift */; };
 		C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */; };
 		C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */; };
 		C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */; };
@@ -527,8 +527,8 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		C7036C33257CF42400AE7EB7 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		C71487162571122E00E4A71D /* AccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
-		C71487212571209600E4A71D /* GenderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderEntity.swift; sourceTree = "<group>"; };
 		C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsNavigator.swift; sourceTree = "<group>"; };
 		C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -1220,14 +1220,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C71487202571203400E4A71D /* Classification */ = {
-			isa = PBXGroup;
-			children = (
-				C71487212571209600E4A71D /* GenderEntity.swift */,
-			);
-			path = Classification;
-			sourceTree = "<group>";
-		};
 		C71F188D256411720026CEA2 /* BiometricSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1343,7 +1335,6 @@
 			children = (
 				76BDF44625755CF5007B27A7 /* TransactionHistory */,
 				C7EF9EBC257043CD00D2908C /* UserProfile */,
-				C71487202571203400E4A71D /* Classification */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2648,6 +2639,7 @@
 			children = (
 				D8FBA4F72449BE7D0015C03C /* Language.swift */,
 				C7B0DCED2575591100714B22 /* Country.swift */,
+				C7036C33257CF42400AE7EB7 /* Gender.swift */,
 				D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */,
 				D84202CF2451930A00F0F056 /* ABUserDefaults.swift */,
 				CE9B7F8525753784006FF756 /* DateFormatter.swift */,
@@ -3158,7 +3150,6 @@
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
-				C71487222571209600E4A71D /* GenderEntity.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
@@ -3268,6 +3259,7 @@
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */,
 				769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */,
+				C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */,
 				CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */,
 				D894CEB924BE2AD700FE143D /* ShimmerView.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,

@@ -13,9 +13,9 @@ public struct UserInfoEntity {
     public let name: String?
     public let surname: String?
     public let middleName: String?
-    public let gender: GenderEntity?
+    public let gender: Gender?
     public let userName: String?
-    public let countryId: Int? // TODO: change with enum
+    public let country: Country?
     public let address: String?
     public let birthDate: String? // TODO: format to Date
     public let email: String?
