@@ -28,12 +28,13 @@ public class ABTableViewController: AppTableViewController {
             NotificationTableViewCell.self,
             NotificationsHeaderCell.self,
             TransactionHistoryTableViewCell.self,
-            TransactionHistoryHeaderCell.self,
+            DateHeaderCell.self,
             TransactionDetailsTableViewCell.self,
             TransactionFilterTableViewCell.self,
             AccountParametersTableViewCell.self,
             AccountSecurityMessagesTableViewCell.self,
-            AccountParametersHeaderTableViewCell.self
+            AccountParametersHeaderTableViewCell.self,
+            AccessHistoryTableViewCell.self
         ])
 
         setupTableView()

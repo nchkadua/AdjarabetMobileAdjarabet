@@ -1,5 +1,5 @@
 //
-//  TransactionHistostoryHeaderComponentView.swift
+//  DateHeaderComponentView.swift
 //  Mobile
 //
 //  Created by Irakli Shelia on 11/17/20.
@@ -8,9 +8,9 @@
 
 import RxSwift
 
-class TransactionHistoryHeaderComponentView: UIView {
+class DateHeaderComponentView: UIView {
     private var disposeBag = DisposeBag()
-    private var viewModel: TransactionHistoryHeaderComponentViewModel!
+    private var viewModel: DateHeaderComponentViewModel!
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
@@ -25,7 +25,7 @@ class TransactionHistoryHeaderComponentView: UIView {
         super.init(coder: coder)
         nibSetup()
     }
-    public func setAndBind(viewModel: TransactionHistoryHeaderComponentViewModel) {
+    public func setAndBind(viewModel: DateHeaderComponentViewModel) {
         self.viewModel = viewModel
         bind()
     }
@@ -42,11 +42,17 @@ class TransactionHistoryHeaderComponentView: UIView {
     }
 
     private func set(title: String) {
-        titleLabel.text = title
+        // TODO Extract converting, handle language change
+        let relativeFormatter = RelativeDateTimeFormatter()
+//        relativeFormatter.locale = Locale(identifier: "ka_GE")
+        let dateFormatter = DateFormatter()
+        let date = dateFormatter.dayDate(from: title)
+        let relativeStringDate = relativeFormatter.localizedString(for: date!, relativeTo: Date())
+        titleLabel.text = relativeStringDate
     }
 }
 
-extension TransactionHistoryHeaderComponentView: Xibable {
+extension DateHeaderComponentView: Xibable {
     var mainView: UIView {
         get {
             view
@@ -58,7 +64,7 @@ extension TransactionHistoryHeaderComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.primaryBg().value
-        titleLabel.setFont(to: .footnote(fontCase: .lower))
+        titleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .bold))
         titleLabel.setTextColor(to: .primaryText())
     }
 }

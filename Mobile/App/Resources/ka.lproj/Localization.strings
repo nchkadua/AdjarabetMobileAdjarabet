@@ -181,9 +181,10 @@
 "transactions_details_total_amount" = "ჯამური თანხა";
 "transactions_details_fee_amount" = "ტრანზაქციის საკომისიო";
 "transactions_details_date" = "დრო";
-"trasnactions_details_type" = "გადახდის ტიპი";
-"trasnactions_details_type_deposit" = "შემოტანა";
-"trasnactions_details_type_withdraw" = "გატანა";
+"transactions_details_type" = "გადახდის ტიპი";
+"transactions_details_payment_provider_name" = "გადახდის პროვაიდერი";
+"transactions_details_type_deposit" = "შემოტანა";
+"transactions_details_type_withdraw" = "გატანა";
 
 /* Account Parameters */
 "account_parameters_change_password" = "პაროლის შეცვლა";

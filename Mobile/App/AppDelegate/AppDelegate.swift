@@ -75,6 +75,7 @@ public extension DependencyContainer {
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
         Module { DefaultPhoneNumberChangeViewModel(params: .init()) as PhoneNumberChangeViewModel }
         Module { DefaultOTPViewModel(params: .init()) as OTPViewModel }
+        Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
         Module { DefaultAddCardViewModel(params: .init()) as AddCardViewModel }
         Module { DefaultCardInfoViewModel(params: .init()) as CardInfoViewModel }
     }
@@ -98,6 +99,7 @@ public extension DependencyContainer {
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository.shared as TransactionHistoryRepository }
+        Module { CoreApiAccessListRepository.shared as AccessListRepository }
     }
 
     static var factories = DependencyContainer {
@@ -121,6 +123,7 @@ public extension DependencyContainer {
         Module { DefaultTransactionsFilterViewControllerFactory() as TransactionsFilterViewControllerFactory }
         Module { DefaultAccountParametersViewControllerFactory() as AccountParametersViewControllerFactory }
         Module { DefaultPhoneNumberChangeViewControllerFactory() as PhoneNumberChangeViewControllerFactory }
+        Module { DefaultAccessHistoryViewControllerFactory() as AccessHistoryViewControllerFactory }
         Module { DefaultAddCardViewControllerFactory() as AddCardViewControllerFactory }
         Module { DefaultCardInfoViewControllerFactory() as CardInfoViewControllerFactory }
     }
@@ -134,5 +137,6 @@ public extension DependencyContainer {
         Module { DefaultLobbyGamesUseCase() as LobbyGamesUseCase }
         Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
         Module { DefaultDisplayTransactionHistoriesUseCase() as DisplayTransactionHistoriesUseCase }
+        Module { DefaultAccessListUseCaseUseCase() as DisplayAccessListUseCase }
     }
 }

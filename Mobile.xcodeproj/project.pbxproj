@@ -23,18 +23,29 @@
 		7644B5F12563A72B006778B2 /* TransactionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */; };
 		7644B5F72563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B5F62563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift */; };
 		7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B5FA2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib */; };
-		7644B6002563E201006778B2 /* TransactionHistoryHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B5FF2563E201006778B2 /* TransactionHistoryHeaderCell.swift */; };
-		7644B6072563E516006778B2 /* TransactionHistoryHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B6062563E516006778B2 /* TransactionHistoryHeaderComponentView.swift */; };
-		7644B60D2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B60C2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift */; };
-		7644B6152563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B6142563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib */; };
-		7644B6192563EFA4006778B2 /* TransactionHistoryHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B6182563EFA4006778B2 /* TransactionHistoryHeaderCell.xib */; };
-		7644B61D2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B61C2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift */; };
+		7644B6002563E201006778B2 /* DateHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B5FF2563E201006778B2 /* DateHeaderCell.swift */; };
+		7644B6072563E516006778B2 /* DateHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B6062563E516006778B2 /* DateHeaderComponentView.swift */; };
+		7644B60D2563E53A006778B2 /* DateHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B60C2563E53A006778B2 /* DateHeaderComponentViewModel.swift */; };
+		7644B6152563ECAC006778B2 /* DateHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B6142563ECAC006778B2 /* DateHeaderComponentView.xib */; };
+		7644B6192563EFA4006778B2 /* DateHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B6182563EFA4006778B2 /* DateHeaderCell.xib */; };
+		7644B61D2563F08B006778B2 /* DateHeaderCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B61C2563F08B006778B2 /* DateHeaderCellDataProvider.swift */; };
 		7644B6222564F8E4006778B2 /* TransactionDetailComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B6212564F8E4006778B2 /* TransactionDetailComponentView.swift */; };
 		7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B6252564F910006778B2 /* TransactionDetailsComponentView.xib */; };
 		7644B62A256506B6006778B2 /* TransactionDetailComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B629256506B6006778B2 /* TransactionDetailComponentViewModel.swift */; };
 		7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B62E25650A3D006778B2 /* TransactionDetailsTableViewCell.swift */; };
 		7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B63425650C0D006778B2 /* TransactionDetailsTableViewCell.xib */; };
 		7644B63925650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */; };
+		7665D95F257E5CA600E5B35F /* AccessHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7665D95A257E5CA600E5B35F /* AccessHistory.storyboard */; };
+		7665D960257E5CA600E5B35F /* AccessHistoryNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D95B257E5CA600E5B35F /* AccessHistoryNavigator.swift */; };
+		7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D95C257E5CA600E5B35F /* AccessHistoryViewController.swift */; };
+		7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D95D257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift */; };
+		7665D963257E5CA600E5B35F /* AccessHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D95E257E5CA600E5B35F /* AccessHistoryViewModel.swift */; };
+		7665D97B257F4C0E00E5B35F /* AccessHistoryComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7665D975257F4C0E00E5B35F /* AccessHistoryComponentView.xib */; };
+		7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D976257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift */; };
+		7665D97D257F4C0E00E5B35F /* AccessHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7665D977257F4C0E00E5B35F /* AccessHistoryTableViewCell.xib */; };
+		7665D97E257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D978257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift */; };
+		7665D97F257F4C0E00E5B35F /* AccessHistoryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D979257F4C0E00E5B35F /* AccessHistoryComponentView.swift */; };
+		7665D980257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D97A257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift */; };
 		7668C7A92576785F0024DDE4 /* AccountParametersHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7668C7A32576785F0024DDE4 /* AccountParametersHeaderComponentView.xib */; };
 		7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668C7A42576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift */; };
 		7668C7AB2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7668C7A52576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib */; };
@@ -73,6 +84,12 @@
 		76BDF46F25760512007B27A7 /* AccountParametersComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF46925760512007B27A7 /* AccountParametersComponentViewModel.swift */; };
 		76BDF47025760512007B27A7 /* AccountParametersComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF46A25760512007B27A7 /* AccountParametersComponentView.swift */; };
 		76BDF47125760512007B27A7 /* AccountParametersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF46B25760512007B27A7 /* AccountParametersTableViewCell.swift */; };
+		76DBCE57257FAB000030E600 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DBCE56257FAB000030E600 /* DateFormatter+Extension.swift */; };
+		76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB36257E417D00C8DC6A /* AccessListUseCase.swift */; };
+		76EBDB3B257E417D00C8DC6A /* GetAccessListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB37257E417D00C8DC6A /* GetAccessListResponse.swift */; };
+		76EBDB3C257E417D00C8DC6A /* AccessListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */; };
+		76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB39257E417D00C8DC6A /* CoreApiAccessListRepository.swift */; };
+		76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB42257E426200C8DC6A /* AccessListEntity.swift */; };
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
 		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
@@ -163,7 +180,6 @@
 		CE7A241125796AD500A94E89 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A241025796AD500A94E89 /* Collection+Extension.swift */; };
 		CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A2414257C17A500A94E89 /* ABDatePickerView.swift */; };
 		CE7A241E257C19B200A94E89 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A241D257C19B200A94E89 /* Helper.swift */; };
-		CE7A2428257C1BA500A94E89 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A2427257C1BA500A94E89 /* DateFormatter+Extension.swift */; };
 		CE91C0D9257028C400A18255 /* TransactionsFilterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */; };
 		CE91C0DA257028C400A18255 /* TransactionsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */; };
 		CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */; };
@@ -497,18 +513,29 @@
 		7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		7644B5F62563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		7644B5FA2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryTableViewCell.xib; sourceTree = "<group>"; };
-		7644B5FF2563E201006778B2 /* TransactionHistoryHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryHeaderCell.swift; sourceTree = "<group>"; };
-		7644B6062563E516006778B2 /* TransactionHistoryHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryHeaderComponentView.swift; sourceTree = "<group>"; };
-		7644B60C2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryHeaderComponentViewModel.swift; sourceTree = "<group>"; };
-		7644B6142563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryHeaderComponentView.xib; sourceTree = "<group>"; };
-		7644B6182563EFA4006778B2 /* TransactionHistoryHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryHeaderCell.xib; sourceTree = "<group>"; };
-		7644B61C2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryHeaderCellDataProvider.swift; sourceTree = "<group>"; };
+		7644B5FF2563E201006778B2 /* DateHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderCell.swift; sourceTree = "<group>"; };
+		7644B6062563E516006778B2 /* DateHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderComponentView.swift; sourceTree = "<group>"; };
+		7644B60C2563E53A006778B2 /* DateHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderComponentViewModel.swift; sourceTree = "<group>"; };
+		7644B6142563ECAC006778B2 /* DateHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateHeaderComponentView.xib; sourceTree = "<group>"; };
+		7644B6182563EFA4006778B2 /* DateHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateHeaderCell.xib; sourceTree = "<group>"; };
+		7644B61C2563F08B006778B2 /* DateHeaderCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderCellDataProvider.swift; sourceTree = "<group>"; };
 		7644B6212564F8E4006778B2 /* TransactionDetailComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailComponentView.swift; sourceTree = "<group>"; };
 		7644B6252564F910006778B2 /* TransactionDetailsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsComponentView.xib; sourceTree = "<group>"; };
 		7644B629256506B6006778B2 /* TransactionDetailComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailComponentViewModel.swift; sourceTree = "<group>"; };
 		7644B62E25650A3D006778B2 /* TransactionDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		7644B63425650C0D006778B2 /* TransactionDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		7665D95A257E5CA600E5B35F /* AccessHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccessHistory.storyboard; sourceTree = "<group>"; };
+		7665D95B257E5CA600E5B35F /* AccessHistoryNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryNavigator.swift; sourceTree = "<group>"; };
+		7665D95C257E5CA600E5B35F /* AccessHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryViewController.swift; sourceTree = "<group>"; };
+		7665D95D257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryViewControllerFactory.swift; sourceTree = "<group>"; };
+		7665D95E257E5CA600E5B35F /* AccessHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryViewModel.swift; sourceTree = "<group>"; };
+		7665D975257F4C0E00E5B35F /* AccessHistoryComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccessHistoryComponentView.xib; sourceTree = "<group>"; };
+		7665D976257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		7665D977257F4C0E00E5B35F /* AccessHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccessHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		7665D978257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryComponentViewModel.swift; sourceTree = "<group>"; };
+		7665D979257F4C0E00E5B35F /* AccessHistoryComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryComponentView.swift; sourceTree = "<group>"; };
+		7665D97A257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		7668C7A32576785F0024DDE4 /* AccountParametersHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountParametersHeaderComponentView.xib; sourceTree = "<group>"; };
 		7668C7A42576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountParametersHeaderTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		7668C7A52576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountParametersHeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -547,6 +574,12 @@
 		76BDF46925760512007B27A7 /* AccountParametersComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountParametersComponentViewModel.swift; sourceTree = "<group>"; };
 		76BDF46A25760512007B27A7 /* AccountParametersComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountParametersComponentView.swift; sourceTree = "<group>"; };
 		76BDF46B25760512007B27A7 /* AccountParametersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountParametersTableViewCell.swift; sourceTree = "<group>"; };
+		76DBCE56257FAB000030E600 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		76EBDB36257E417D00C8DC6A /* AccessListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessListUseCase.swift; sourceTree = "<group>"; };
+		76EBDB37257E417D00C8DC6A /* GetAccessListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessListResponse.swift; sourceTree = "<group>"; };
+		76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessListRepository.swift; sourceTree = "<group>"; };
+		76EBDB39257E417D00C8DC6A /* CoreApiAccessListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiAccessListRepository.swift; sourceTree = "<group>"; };
+		76EBDB42257E426200C8DC6A /* AccessListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessListEntity.swift; sourceTree = "<group>"; };
 		78526968594DC2FF052D9FB5 /* Pods-MobileTests.debug-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.debug-stage.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.debug-stage.xcconfig"; sourceTree = "<group>"; };
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
@@ -638,7 +671,6 @@
 		CE7A241025796AD500A94E89 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		CE7A2414257C17A500A94E89 /* ABDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABDatePickerView.swift; sourceTree = "<group>"; };
 		CE7A241D257C19B200A94E89 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		CE7A2427257C1BA500A94E89 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterNavigator.swift; sourceTree = "<group>"; };
 		CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewController.swift; sourceTree = "<group>"; };
 		CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewModel.swift; sourceTree = "<group>"; };
@@ -990,6 +1022,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		761D993F257F7EDC002BCDB6 /* DateHeaderComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				7644B6062563E516006778B2 /* DateHeaderComponentView.swift */,
+				7644B60C2563E53A006778B2 /* DateHeaderComponentViewModel.swift */,
+				7644B6142563ECAC006778B2 /* DateHeaderComponentView.xib */,
+			);
+			path = DateHeaderComponentView;
+			sourceTree = "<group>";
+		};
+		761D9940257F7EF9002BCDB6 /* DateHeaderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7644B5FF2563E201006778B2 /* DateHeaderCell.swift */,
+				7644B6182563EFA4006778B2 /* DateHeaderCell.xib */,
+				7644B61C2563F08B006778B2 /* DateHeaderCellDataProvider.swift */,
+			);
+			path = DateHeaderTableViewCell;
+			sourceTree = "<group>";
+		};
 		763171A32566388400F6FD90 /* TransactionDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -1034,32 +1086,11 @@
 			isa = PBXGroup;
 			children = (
 				7644B62D256509AE006778B2 /* Details */,
-				7644B5FE2563E1E9006778B2 /* Header */,
 				7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */,
 				7644B5F62563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift */,
 				7644B5FA2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib */,
 			);
 			path = TransactionHistoryTableViewCell;
-			sourceTree = "<group>";
-		};
-		7644B5FE2563E1E9006778B2 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				7644B5FF2563E201006778B2 /* TransactionHistoryHeaderCell.swift */,
-				7644B6182563EFA4006778B2 /* TransactionHistoryHeaderCell.xib */,
-				7644B61C2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		7644B6052563E4C6006778B2 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				7644B6062563E516006778B2 /* TransactionHistoryHeaderComponentView.swift */,
-				7644B60C2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift */,
-				7644B6142563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib */,
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 		7644B6202564F8D0006778B2 /* Details */ = {
@@ -1080,6 +1111,38 @@
 				7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		7665D959257E5C8100E5B35F /* AccessHistory */ = {
+			isa = PBXGroup;
+			children = (
+				7665D95A257E5CA600E5B35F /* AccessHistory.storyboard */,
+				7665D95B257E5CA600E5B35F /* AccessHistoryNavigator.swift */,
+				7665D95C257E5CA600E5B35F /* AccessHistoryViewController.swift */,
+				7665D95D257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift */,
+				7665D95E257E5CA600E5B35F /* AccessHistoryViewModel.swift */,
+			);
+			path = AccessHistory;
+			sourceTree = "<group>";
+		};
+		7665D974257F4BF700E5B35F /* AccessHistoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7665D976257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift */,
+				7665D977257F4C0E00E5B35F /* AccessHistoryTableViewCell.xib */,
+				7665D97A257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift */,
+			);
+			path = AccessHistoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		7665D985257F4C5000E5B35F /* AccessHistoryComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				7665D975257F4C0E00E5B35F /* AccessHistoryComponentView.xib */,
+				7665D978257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift */,
+				7665D979257F4C0E00E5B35F /* AccessHistoryComponentView.swift */,
+			);
+			path = AccessHistoryComponentView;
 			sourceTree = "<group>";
 		};
 		7668C7A2257678480024DDE4 /* AccountParametersHeader */ = {
@@ -1129,12 +1192,44 @@
 			isa = PBXGroup;
 			children = (
 				7644B6202564F8D0006778B2 /* Details */,
-				7644B6052563E4C6006778B2 /* Header */,
 				7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */,
 				7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */,
 				7644B5EB25639786006778B2 /* TransactionHistoryComponentViewModel.swift */,
 			);
 			path = TransactionHistoryComponentView;
+			sourceTree = "<group>";
+		};
+		76811DC4257E4530004107E9 /* AccessList */ = {
+			isa = PBXGroup;
+			children = (
+				76811DC5257E453B004107E9 /* Response */,
+				76EBDB39257E417D00C8DC6A /* CoreApiAccessListRepository.swift */,
+			);
+			path = AccessList;
+			sourceTree = "<group>";
+		};
+		76811DC5257E453B004107E9 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				76EBDB37257E417D00C8DC6A /* GetAccessListResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		76811DC8257E4832004107E9 /* AccessList */ = {
+			isa = PBXGroup;
+			children = (
+				76EBDB42257E426200C8DC6A /* AccessListEntity.swift */,
+			);
+			path = AccessList;
+			sourceTree = "<group>";
+		};
+		76811DC9257E4854004107E9 /* AccessList */ = {
+			isa = PBXGroup;
+			children = (
+				76EBDB36257E417D00C8DC6A /* AccessListUseCase.swift */,
+			);
+			path = AccessList;
 			sourceTree = "<group>";
 		};
 		769886922571041100FA339E /* TransactionFilterComponentView */ = {
@@ -1243,6 +1338,14 @@
 			path = AccountParametersTableViewCell;
 			sourceTree = "<group>";
 		};
+		76EBDB35257E414300C8DC6A /* AccessList */ = {
+			isa = PBXGroup;
+			children = (
+				76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */,
+			);
+			path = AccessList;
+			sourceTree = "<group>";
+		};
 		9D1383A490506B12A0598302 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1329,6 +1432,7 @@
 		C7EF9E46256FECDD00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				76811DC4257E4530004107E9 /* AccessList */,
 				76BDF42325752CA3007B27A7 /* TransactionHistory */,
 				C7EF9E47256FED2600D2908C /* UserProfile */,
 			);
@@ -1355,6 +1459,7 @@
 		C7EF9E55256FF14A00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				76EBDB35257E414300C8DC6A /* AccessList */,
 				76BDF42B25754057007B27A7 /* TransactionHistory */,
 				C7EF9E56256FF15400D2908C /* UserProfile */,
 			);
@@ -1381,6 +1486,7 @@
 		C7EF9E75257039D100D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				76811DC8257E4832004107E9 /* AccessList */,
 				76BDF44625755CF5007B27A7 /* TransactionHistory */,
 				C7EF9EBC257043CD00D2908C /* UserProfile */,
 			);
@@ -2054,6 +2160,7 @@
 		D815850C24B0C66D00FFCA95 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
+				7665D959257E5C8100E5B35F /* AccessHistory */,
 				7676E54A2562852800234026 /* Transactions */,
 				D85C9C2424336CCC00F1D4FE /* MainTabBar */,
 				D8C73F7D2445A62D004C96DB /* Home */,
@@ -2204,6 +2311,8 @@
 		D85C9C1524336BF500F1D4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				761D993F257F7EDC002BCDB6 /* DateHeaderComponentView */,
+				7665D985257F4C5000E5B35F /* AccessHistoryComponentView */,
 				76BDF465257604FB007B27A7 /* AccountParametersComponentView */,
 				769886922571041100FA339E /* TransactionFilterComponentView */,
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
@@ -2453,6 +2562,7 @@
 		D885E75524714DA1007D85D3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
@@ -2619,7 +2729,7 @@
 				CEEBDFE4253095C1000C62D0 /* UINavigationBar+Extension.swift */,
 				CE6E294C256E8F1F001FE225 /* Double+Extension.swift */,
 				CE7A241025796AD500A94E89 /* Collection+Extension.swift */,
-				CE7A2427257C1BA500A94E89 /* DateFormatter+Extension.swift */,
+				76DBCE56257FAB000030E600 /* DateFormatter+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2712,6 +2822,8 @@
 		D8BF403F244EC91F008F0BAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				761D9940257F7EF9002BCDB6 /* DateHeaderTableViewCell */,
+				7665D974257F4BF700E5B35F /* AccessHistoryTableViewCell */,
 				76BDF47425760519007B27A7 /* AccountParametersTableViewCell */,
 				769886A32571046100FA339E /* TransactionFilterTableViewCell */,
 				7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */,
@@ -2876,10 +2988,11 @@
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
 				CECF7F7B256D9FAB001C0E50 /* PasswordChange.storyboard in Resources */,
 				D807848C2444727600003892 /* FiraGO-Bold.ttf in Resources */,
+				7665D97B257F4C0E00E5B35F /* AccessHistoryComponentView.xib in Resources */,
 				D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */,
 				C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */,
 				CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */,
-				7644B6192563EFA4006778B2 /* TransactionHistoryHeaderCell.xib in Resources */,
+				7644B6192563EFA4006778B2 /* DateHeaderCell.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				7698869B2571042A00FA339E /* TransactionFilterTableViewCell.xib in Resources */,
 				D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */,
@@ -2946,7 +3059,7 @@
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
 				CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */,
 				CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */,
-				7644B6152563ECAC006778B2 /* TransactionHistoryHeaderComponentView.xib in Resources */,
+				7644B6152563ECAC006778B2 /* DateHeaderComponentView.xib in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
 				76404F0B257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib in Resources */,
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
@@ -2969,7 +3082,9 @@
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,
 				76BDF45C2576043A007B27A7 /* AccountParameters.storyboard in Resources */,
 				CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */,
+				7665D95F257E5CA600E5B35F /* AccessHistory.storyboard in Resources */,
 				7668C7A92576785F0024DDE4 /* AccountParametersHeaderComponentView.xib in Resources */,
+				7665D97D257F4C0E00E5B35F /* AccessHistoryTableViewCell.xib in Resources */,
 				D8BF4043244EC949008F0BAF /* GameLauncherCollectionViewCell.xib in Resources */,
 				76404F09257625F900D14E0C /* AccountSecurityMessagesComponentView.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
@@ -3041,7 +3156,6 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
 			shellScript = "$SRCROOT/Pods/SwiftLint/swiftlint autocorrect\n$SRCROOT/Mobile/App/BuildPhases/SwiftLint.sh\n";
 		};
 		D853499824D1E26D00958B0E /* FirebaseCrashlytics */ = {
@@ -3151,6 +3265,7 @@
 				CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */,
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
+				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
 				D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */,
@@ -3165,6 +3280,7 @@
 				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
+				7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */,
 				D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
@@ -3206,9 +3322,11 @@
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				76BDF4602576043A007B27A7 /* AccountParametersViewModel.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
+				7665D963257E5CA600E5B35F /* AccessHistoryViewModel.swift in Sources */,
 				7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
-				7644B6002563E201006778B2 /* TransactionHistoryHeaderCell.swift in Sources */,
+				7644B6002563E201006778B2 /* DateHeaderCell.swift in Sources */,
+				76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
 				C7B0DCEE2575591100714B22 /* Country.swift in Sources */,
 				CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */,
@@ -3223,7 +3341,7 @@
 				D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */,
 				CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
-				7644B61D2563F08B006778B2 /* TransactionHistoryHeaderCellDataProvider.swift in Sources */,
+				7644B61D2563F08B006778B2 /* DateHeaderCellDataProvider.swift in Sources */,
 				CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */,
 				769886C225711C2B00FA339E /* TransactionTypeModel.swift in Sources */,
 				D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */,
@@ -3237,6 +3355,7 @@
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
+				76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */,
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
 				C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
@@ -3247,6 +3366,7 @@
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				D8AC492724CFE3E0000B2D80 /* AppDelegateServiceProvider.swift in Sources */,
+				7665D960257E5CA600E5B35F /* AccessHistoryNavigator.swift in Sources */,
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
 				C7405182256FA99A00EAC904 /* Formatter.swift in Sources */,
 				CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */,
@@ -3296,7 +3416,9 @@
 				CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */,
 				CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
+				76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */,
 				CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */,
+				76EBDB3C257E417D00C8DC6A /* AccessListRepository.swift in Sources */,
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
 				CEE537F3254ACA2200EDE6C0 /* CashFlowViewControllerFactory.swift in Sources */,
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
@@ -3313,8 +3435,9 @@
 				D8AC996B244F1A8600B16600 /* RecentlyPlayedCollectionViewCellDataProvider.swift in Sources */,
 				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
 				D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */,
+				7644B60D2563E53A006778B2 /* DateHeaderComponentViewModel.swift in Sources */,
 				CE7A23FA257956CA00A94E89 /* BarButtonWithImage.swift in Sources */,
-				7644B60D2563E53A006778B2 /* TransactionHistoryHeaderComponentViewModel.swift in Sources */,
+				7644B60D2563E53A006778B2 /* DateHeaderComponentViewModel.swift in Sources */,
 				CECF7F70256D9F99001C0E50 /* PasswordChangeViewController.swift in Sources */,
 				CECF7F77256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
@@ -3344,6 +3467,7 @@
 				76BDF441257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift in Sources */,
 				CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */,
 				CEE537EB254AC9FD00EDE6C0 /* CashFlowViewModel.swift in Sources */,
+				7665D980257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift in Sources */,
 				CE7A240925795B2500A94E89 /* CreditCardComponentViewModel.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
@@ -3362,7 +3486,7 @@
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
-				7644B6072563E516006778B2 /* TransactionHistoryHeaderComponentView.swift in Sources */,
+				7644B6072563E516006778B2 /* DateHeaderComponentView.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
 				D8F26A05246837B700137252 /* LoginType.swift in Sources */,
@@ -3386,6 +3510,7 @@
 				CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */,
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
+				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
@@ -3398,9 +3523,9 @@
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				CE91C0E1257028D400A18255 /* TransactionsFilterViewControllerFactory.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
+				7665D97F257F4C0E00E5B35F /* AccessHistoryComponentView.swift in Sources */,
 				CE9B7FED257544F5006FF756 /* PhoneNumberChangeViewModel.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
-				CE7A2428257C1BA500A94E89 /* DateFormatter+Extension.swift in Sources */,
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */,
@@ -3447,14 +3572,17 @@
 				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
 				CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */,
+				76DBCE57257FAB000030E600 /* DateFormatter+Extension.swift in Sources */,
 				7676E54E2562856600234026 /* TransactionsNavigator.swift in Sources */,
 				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
 				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
+				7665D97E257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
 				CE2F03C3252CC8E0006D8001 /* QuickActionComponentView.swift in Sources */,
+				76EBDB3B257E417D00C8DC6A /* GetAccessListResponse.swift in Sources */,
 				CE7A23F4257948F500A94E89 /* CardInfoViewController.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
 				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,

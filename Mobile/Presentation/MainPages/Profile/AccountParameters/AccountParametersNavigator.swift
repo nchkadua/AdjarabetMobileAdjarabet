@@ -10,6 +10,7 @@ public class AccountParametersNavigator: Navigator {
     @Inject(from: .factories) public var selfSuspendViewControllerFactory: SelfSuspendViewControllerFactory
     @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
     @Inject(from: .factories) public var otpViewControllerFactory: OTPFactory
+    @Inject(from: .factories) public var accessHistoryViewControllerFactory: AccessHistoryViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -30,6 +31,8 @@ public class AccountParametersNavigator: Navigator {
             navigateToPasswordChange(animate: animate)
         case .blockSelf:
             navigateToSelfSuspend(animate: animate)
+        case .loginHistory:
+            navigateToAccessHistory(animate: animate)
         default:
             break
         }
@@ -52,6 +55,13 @@ public class AccountParametersNavigator: Navigator {
     private func navigateToSelfSuspend(animate: Bool) {
         let vc = selfSuspendViewControllerFactory.make()
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+    }
+
+    private func navigateToAccessHistory(animate: Bool) {
+        let vc = accessHistoryViewControllerFactory.make(params: .init())
+        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }

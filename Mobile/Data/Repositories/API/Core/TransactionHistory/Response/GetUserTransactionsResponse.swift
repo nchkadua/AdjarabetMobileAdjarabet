@@ -9,8 +9,6 @@
 import Foundation
 
 public class GetUserTransactionsResponse: DataTransferResponse {
-    //    public typealias Body = [BodyEntity] // TODO: proper naming
-
     struct UsersTransaction: Codable {
         public let id: String?
         public let userAccountId: Int?
@@ -74,8 +72,9 @@ public class GetUserTransactionsResponse: DataTransferResponse {
     public typealias Entity = [TransactionHistoryEntity]
 
     public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
-        body.usersTransactions.map { TransactionHistoryEntity(totalAmount: $0.amount,
-                                                              date: $0.dateCreated ?? "",
+        let dateFormatter = DateFormatter()
+        return body.usersTransactions.compactMap { TransactionHistoryEntity(totalAmount: $0.amount,
+                                                                     date: dateFormatter.verboseDate(from: $0.dateCreated ?? ""),
                                                               feeAmount: $0.feeAmount,
                                                               providerName: $0.providerName ?? ""
         ) }

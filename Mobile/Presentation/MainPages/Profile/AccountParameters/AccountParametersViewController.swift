@@ -47,6 +47,8 @@ public class AccountParametersViewController: ABViewController {
             navigator.navigate(to: destination, animated: true)
         case .openOTP(let params):
             navigator.navigateToHighSecurity(with: params, animate: true)
+        case .openAccessHistory:
+            navigator.navigate(to: .loginHistory, animated: true)
         }
     }
 

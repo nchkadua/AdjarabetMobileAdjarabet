@@ -33,6 +33,7 @@ public enum AccountParametersViewModelOutputAction {
 public enum AccountParametersViewModelRoute {
     case openPage(_ destination: AccountParametersNavigator.Destination)
     case openOTP(params: OTPViewModelParams)
+    case openAccessHistory
 }
 
 public class DefaultAccountParametersViewModel: DefaultBaseViewModel {
@@ -68,7 +69,8 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                 if let defaultViewModel = componentViewModel as? DefaultAccountParametersComponentViewModel {
                     defaultViewModel.action.subscribe(onNext: { [weak self] action in
                         switch action {
-                        case .didSelect: self?.goToDestination(accountParameterModel.destination)
+                        case .didSelect:
+                            self?.goToDestination(accountParameterModel.destination)
                         default:
                             break
                         }
@@ -93,10 +95,15 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                                                                  icon: params.icon))
     }
 
+    // MARK: Routing
+
     private func goToDestination(_ destination: AccountParametersNavigator.Destination) {
         switch destination {
-        case .highSecurity: goToHighSecurity()
-        default: routeSubject.onNext(.openPage(destination))
+        case .highSecurity:
+            goToHighSecurity()
+        case .loginHistory:
+            goToAccessHistory()
+        default: break
         }
     }
 
@@ -104,6 +111,10 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
         let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.high_security_page_title.localized(), buttonTitle: R.string.localization.high_security_button_on(), showDismissButton: false, username: "")
         routeSubject.onNext(.openOTP(params: otpParams))
         subscribeTo(otpParams)
+    }
+
+    private func goToAccessHistory() {
+        routeSubject.onNext(.openAccessHistory)
     }
 
     private func subscribeTo(_ params: OTPViewModelParams) {

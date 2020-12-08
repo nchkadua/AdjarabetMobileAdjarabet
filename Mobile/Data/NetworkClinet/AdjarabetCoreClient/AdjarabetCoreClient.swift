@@ -28,5 +28,6 @@ public class AdjarabetCoreClient {
         case aliveSession = "isSessionActive"
         case currentUserInfo = "getUserInfo"
         case transactionHistory = "getUsersTransactions"
+        case accessList = "getAccessList"
     }
 }

@@ -24,11 +24,3 @@ public struct TransactionDetail {
     public let title: String
     public let description: String
 }
-
-public struct TransactionHistoryFormatter {
-    static var detailsDateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-        return dateFormatter
-    }()
-}

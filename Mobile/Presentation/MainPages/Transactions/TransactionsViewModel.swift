@@ -39,6 +39,8 @@ public class DefaultTransactionsViewModel: DefaultBaseViewModel {
     private var page: PageDescription = .init()
     private var transactionsDataProvider: AppCellDataProviders = []
     private var filteredParams: DisplayTransactionHistoriesUseCaseParams?
+    private let dateFormatter = DateFormatter()
+    private var datesSet: Set<String>  = []
     public override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)
     }
@@ -66,12 +68,13 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     private func displayEmptyTransactionList() {
         self.resetPaging()
         let initialEmptyDataProvider: AppCellDataProviders = []
+        datesSet.removeAll()
         self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
     }
 
     private func displayUnfilteredTransactions() {
-        let fromDate = TransactionHistoryEntity.dateFormatter.string(from: Date.distantPast)
-        let toDate = TransactionHistoryEntity.dateFormatter.string(from: Date.distantFuture)
+        let fromDate = dateFormatter.dayDateString(from: Date.distantPast)
+        let toDate = dateFormatter.dayDateString(from: Date.distantFuture)
         let params: DisplayTransactionHistoriesUseCaseParams = .init(fromDate: fromDate,
                                                                      toDate: toDate,
                                                                      transactionType: TransactionType.all.rawValue, // all transactions
@@ -87,12 +90,11 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     }
 
     private func constructFilteredTransactionParams(fromDate: Date?, toDate: Date?, providerType: ProviderType, transactionType: TransactionType) {
-        let fromDateString = TransactionHistoryEntity.dateFormatter.string(from: fromDate ?? Date.distantPast)
-        let toDateString = TransactionHistoryEntity.dateFormatter.string(from: toDate ?? Date.distantFuture)
-
-        let params: DisplayTransactionHistoriesUseCaseParams = .init(fromDate: fromDateString,
-                                                                     toDate: toDateString,
-                                                                     transactionType: transactionType.rawValue, // all transactions
+        let fromDate = dateFormatter.dayDateString(from: fromDate ?? Date.distantPast)
+        let toDate = dateFormatter.dayDateString(from: toDate ?? Date.distantFuture)
+        let params: DisplayTransactionHistoriesUseCaseParams = .init(fromDate: fromDate,
+                                                                     toDate: toDate,
+                                                                     transactionType: transactionType.rawValue,
                                                                      providerType: providerType.rawValue,
                                                                      pageIndex: page.current)
         self.filteredParams = params
@@ -103,18 +105,16 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
             guard let self = self else {return}
             switch result {
             case .success(let transactions):
-                var datesSet: Set<Date>  = []
                 var viewModels: AppCellDataProviders = []
                 transactions.forEach { transaction in
                     let transactionDetails = self.constructTransactionDetails(from: transaction)
                     let componentViewModel = self.consturctTransactionHistoryComponentViewModel(from: transaction, with: transactionDetails)
                     self.subscribeToTransactionComponent(componentViewModel)
-                    if let transactionDate = transaction.date {
-                        if !datesSet.contains(transactionDate) {
-                            datesSet.insert(transactionDate)
-                            let headerViewModel = self.constructTransactionHistoryHeader(from: transaction)
-                            viewModels.append(headerViewModel)
-                        }
+                    let dateDayString = self.dateFormatter.dayDateString(from: transaction.date)
+                    if !self.datesSet.contains(dateDayString) {
+                        self.datesSet.insert(dateDayString)
+                        let headerViewModel = self.constructTransactionHistoryHeader(from: transaction)
+                        viewModels.append(headerViewModel)
                     }
                     viewModels.append(componentViewModel)
                 }
@@ -190,27 +190,24 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
 
     // MARK: Component View Model Setups
 
-    private func constructTransactionHistoryHeader(from entity: TransactionHistoryEntity) -> DefaultTransactionHistostoryHeaderComponentViewModel {
-        let stringDate = TransactionHistoryEntity.dateFormatter.string(from: entity.date!)
-        let headerModel = DefaultTransactionHistostoryHeaderComponentViewModel(params: .init(title: stringDate))
+    private func constructTransactionHistoryHeader(from entity: TransactionHistoryEntity) -> DefaultDateHeaderComponentViewModel {
+        let stringDate = dateFormatter.dayDateString(from: entity.date)
+        let headerModel = DefaultDateHeaderComponentViewModel(params: .init(title: stringDate))
         return headerModel
     }
 
     private func constructTransactionDetails(from entity: TransactionHistoryEntity) -> [TransactionDetail] {
         var transactionDetails: [TransactionDetail] = []
-        let transactionType: TransactionType = entity.totalAmount ?? 0 < 0 ? .withdraw : .deposit
-        if let totalAmount = entity.totalAmount {
-            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_total_amount(),
-                                                        description: String(totalAmount)))
-        }
-        if let date = entity.date {
-            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_date(),
-                                                        description: TransactionHistoryFormatter.detailsDateFormatter.string(from: date)))
-        }
-        if let feeAmount = entity.feeAmount {
-            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_fee_amount(),
-                                                        description: String(feeAmount)))
-        }
+        let transactionType: TransactionType = entity.totalAmount < 0 ? .withdraw : .deposit
+
+        transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_date(),
+                                                    description: dateFormatter.hourDateString(from: entity.date)))
+
+        transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_total_amount(),
+                                                    description: String(entity.totalAmount)))
+
+        transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_fee_amount(),
+                                                    description: String(entity.feeAmount)))
 
         if transactionType == .deposit {
             transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_fee_amount(),
@@ -220,23 +217,26 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
                                                         description: R.string.localization.transactions_details_type_withdraw() ))
         }
 
+        transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_payment_provider_name(),
+                                                    description: String(entity.providerName)))
+
         return transactionDetails
     }
 
     private func consturctTransactionHistoryComponentViewModel(from entity: TransactionHistoryEntity, with details: [TransactionDetail]) -> DefaultTransactionHistoryComponentViewModel {
-        let transactionType: TransactionType = entity.totalAmount ?? 0 < 0 ? .withdraw : .deposit
+        let transactionType: TransactionType = entity.totalAmount < 0 ? .withdraw : .deposit
         var transactionHistory: TransactionHistory?
 
         if transactionType == .deposit {
-            transactionHistory = TransactionHistory(title: entity.providerName ?? "",
+            transactionHistory = TransactionHistory(title: entity.providerName ,
                                                     subtitle: R.string.localization.transactions_details_type_deposit(),
-                                                    amount: String(entity.totalAmount ?? 0),
+                                                    amount: String(entity.totalAmount ),
                                                     icon: R.image.transactionsHistory.deposit()!,
                                                     details: details)
         } else if transactionType == .withdraw {
-            transactionHistory = TransactionHistory(title: entity.providerName ?? "",
+            transactionHistory = TransactionHistory(title: entity.providerName ,
                                                     subtitle: R.string.localization.transactions_details_type_withdraw(),
-                                                    amount: String(entity.totalAmount ?? 0),
+                                                    amount: String(entity.totalAmount ),
                                                     icon: R.image.transactionsHistory.withdraw()!,
                                                     details: details)
         }

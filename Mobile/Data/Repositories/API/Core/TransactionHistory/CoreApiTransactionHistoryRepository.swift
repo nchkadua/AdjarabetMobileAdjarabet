@@ -13,6 +13,7 @@ public class CoreApiTransactionHistoryRepository {
     @Inject private var userSession: UserSessionServices
     @Inject private var dataTransferService: DataTransferService
     private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }
+    private init() {}
 }
 
 extension CoreApiTransactionHistoryRepository: TransactionHistoryRepository {

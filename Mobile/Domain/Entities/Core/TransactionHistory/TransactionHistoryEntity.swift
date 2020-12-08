@@ -9,20 +9,14 @@
 import Foundation
 
 public struct TransactionHistoryEntity {
-    static var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        return dateFormatter
-    }()
-
-    public let totalAmount: Double?
-    public let date: Date?
-    public let feeAmount: Double?
-    public var transactionType: Int?
-    public let providerName: String?
-    init(totalAmount: Double?, date: String, feeAmount: Double?, providerName: String) {
+    public let totalAmount: Double
+    public let date: Date
+    public let feeAmount: Double
+    public let providerName: String
+    init?(totalAmount: Double?, date: Date?, feeAmount: Double?, providerName: String?) {
+        guard let date = date, let providerName = providerName, let feeAmount = feeAmount, let totalAmount = totalAmount  else { return nil }
         self.totalAmount = totalAmount
-        self.date = TransactionHistoryEntity.dateFormatter.date(from: date)
+        self.date = date
         self.feeAmount = feeAmount
         self.providerName = providerName
     }
