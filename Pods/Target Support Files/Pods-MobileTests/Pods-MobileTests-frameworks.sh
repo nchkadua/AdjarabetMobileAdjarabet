@@ -188,6 +188,7 @@ if [[ "$CONFIGURATION" == "Debug-Production" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SharedFramework/SharedFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UAParserSwift/UAParserSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Debug-Stage" ]]; then
@@ -204,6 +205,7 @@ if [[ "$CONFIGURATION" == "Debug-Stage" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SharedFramework/SharedFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UAParserSwift/UAParserSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release-Production" ]]; then
@@ -219,6 +221,7 @@ if [[ "$CONFIGURATION" == "Release-Production" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SharedFramework/SharedFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UAParserSwift/UAParserSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release-Stage" ]]; then
@@ -234,6 +237,7 @@ if [[ "$CONFIGURATION" == "Release-Stage" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SharedFramework/SharedFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UAParserSwift/UAParserSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

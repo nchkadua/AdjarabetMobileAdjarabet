@@ -20,6 +20,7 @@ public struct AccountSecurityMessagesComponentViewModelParams {
 
 public protocol AccountSecurityMessagesComponentViewModelInput {
     func didBind()
+    func parametersSwitchToggled(to state: Bool)
 }
 
 public protocol AccountSecurityMessagesComponentViewModelOutput {
@@ -29,6 +30,7 @@ public protocol AccountSecurityMessagesComponentViewModelOutput {
 
 public enum AccountSecurityMessagesComponentViewModelOutputAction {
     case set(params: AccountSecurityMessagesComponentViewModelParams)
+    case parametersSwitchToggledTo(state: Bool)
 }
 
 public class DefaultAccountSecurityMessagesComponentViewModel {
@@ -40,6 +42,10 @@ public class DefaultAccountSecurityMessagesComponentViewModel {
 }
 
 extension DefaultAccountSecurityMessagesComponentViewModel: AccountSecurityMessagesComponentViewModel {
+    public func parametersSwitchToggled(to state: Bool) {
+        actionSubject.onNext(.parametersSwitchToggledTo(state: state))
+    }
+
     public var action: Observable<AccountSecurityMessagesComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }

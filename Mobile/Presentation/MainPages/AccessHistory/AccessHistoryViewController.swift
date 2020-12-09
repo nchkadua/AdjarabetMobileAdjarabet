@@ -64,7 +64,12 @@ public class AccessHistoryViewController: ABViewController {
     private func setupTableView() {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        appTableViewController.view.pin(to: view)
+        NSLayoutConstraint.activate([
+            appTableViewController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            appTableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            appTableViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            appTableViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
         appTableViewController.isTabBarManagementEnabled = true
         appTableViewController.delegate = viewModel
     }

@@ -19,6 +19,7 @@ def pods
   pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
   pod 'FSCalendar'
+  pod 'UAParserSwift'
   
   pod 'Reveal-SDK', :configurations => ['Debug-Stage', 'Debug-Production']
 end

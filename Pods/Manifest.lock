@@ -126,6 +126,7 @@ PODS:
   - RxSwift (5.1.1)
   - SharedFramework (0.0.6)
   - SwiftLint (0.39.1)
+  - UAParserSwift (1.2.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -140,6 +141,7 @@ DEPENDENCIES:
   - RxSwift
   - SharedFramework
   - SwiftLint (= 0.39.1)
+  - UAParserSwift
 
 SPEC REPOS:
   trunk:
@@ -173,6 +175,7 @@ SPEC REPOS:
     - RxSwift
     - SharedFramework
     - SwiftLint
+    - UAParserSwift
 
 SPEC CHECKSUMS:
   Firebase: 7cf5f9c67f03cb3b606d1d6535286e1080e57eb6
@@ -205,7 +208,8 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SharedFramework: 22dc84584a14646e5a4b13c899ba0a663aca3722
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  UAParserSwift: dc5e2717debc6e78a40487148d29649a0b311caf
 
-PODFILE CHECKSUM: cd6b490500a43c78ce933b59d0f226070ded811e
+PODFILE CHECKSUM: 0c36f561259497d7684bcaa2e0dd2ad2bb6da3ec
 
 COCOAPODS: 1.10.0
