@@ -114,6 +114,7 @@ public class AddCardViewController: ABViewController {
 
     private func setupContinueButton() {
         continueButton.setStyle(to: .secondary(state: .disabled, size: .large))
+        continueButton.isUserInteractionEnabled = false
         continueButton.setTitleWithoutAnimation(R.string.localization.add_card_continue_button_title.localized(), for: .normal)
         continueButton.addTarget(self, action: #selector(continueButtonDidTap), for: .touchUpInside)
     }
