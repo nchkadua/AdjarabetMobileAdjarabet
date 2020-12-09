@@ -71,7 +71,6 @@ public class AccessHistoryViewController: ABViewController {
             appTableViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         appTableViewController.isTabBarManagementEnabled = true
-        appTableViewController.delegate = viewModel
     }
 
     @objc private func calendarTabItemClicked() {
