@@ -14,11 +14,17 @@ public class CardInfoViewController: ABViewController {
     public lazy var navigator = CardInfoNavigator(viewController: self)
 
     // MARK: Outlets
+
+    @IBOutlet private weak var scannerFrameView: UIView!
     @IBOutlet private weak var creditCardComponentView: CreditCardComponentView!
     @IBOutlet private weak var cardNumberInputView: ABInputView!
     @IBOutlet private weak var expirationDateInputView: ABInputView!
     @IBOutlet private weak var cvvInputView: ABInputView!
     @IBOutlet private weak var addCardButton: ABButton!
+
+    private lazy var recognizer: PayCardsRecognizer = {
+        PayCardsRecognizer(delegate: self, recognizerMode: [.number, .date], resultMode: .sync, container: scannerFrameView, frameColor: DesignSystem.Color.primaryText().value)
+    }()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -32,6 +38,11 @@ public class CardInfoViewController: ABViewController {
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         cardNumberInputView.mainTextField.becomeFirstResponder()
+    }
+
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        recognizer.stopCamera()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -69,6 +80,7 @@ public class CardInfoViewController: ABViewController {
         setupKeyboard()
         setupInputViews()
         setupAddCardButton()
+        setupScannerFrameView()
     }
 
     private func setupNavigationItems() {
@@ -96,6 +108,11 @@ public class CardInfoViewController: ABViewController {
         handleCardNumberInputViewActions()
         handleExpirationDateInpirViewActions()
         handleCVVInputViewActions()
+    }
+
+    private func setupScannerFrameView() {
+        scannerFrameView.layer.cornerRadius = 10
+        scannerFrameView.isHidden = true
     }
 
     // MARK: InputView Actions
@@ -143,8 +160,38 @@ public class CardInfoViewController: ABViewController {
 
     // MARK: Action Methods
     @objc private func openScanner() {
-        print("Openning Scanner...")
+        closeKeyboard()
+        startScanning()
+    }
+
+    private func startScanning() {
+        scannerFrameView.isHidden = false
+        recognizer.startCamera()
+    }
+
+    private func endScanning() {
+        scannerFrameView.isHidden = true
+        recognizer.stopCamera()
+    }
+
+    private func handleScannerRespoonse(cardNumber: String, expireDateMonth: String, expireDateYear: String) {
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.endScanning()
+
+            self.cardNumberInputView.set(text: cardNumber)
+            self.expirationDateInputView.set(text: "\(expireDateMonth)\("/")\(expireDateYear)")
+            self.viewModel.setCardNumber(self.cardNumberInputView.mainTextField.text)
+            self.viewModel.setUsageDate(month: String(expireDateMonth), year: String(expireDateYear))
+        })
     }
 }
 
 extension CardInfoViewController: CommonBarButtonProviding { }
+
+// MARK: CreditCard Scanner
+extension CardInfoViewController: PayCardsRecognizerPlatformDelegate {
+    public func payCardsRecognizer(_ payCardsRecognizer: PayCardsRecognizer, didRecognize result: PayCardsRecognizerResult) {
+        handleScannerRespoonse(cardNumber: result.recognizedNumber ?? "", expireDateMonth: result.recognizedExpireDateMonth ?? "", expireDateYear: result.recognizedExpireDateYear ?? "")
+    }
+}
