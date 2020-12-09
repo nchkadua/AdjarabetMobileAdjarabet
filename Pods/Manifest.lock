@@ -112,6 +112,7 @@ PODS:
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - Nuke (8.4.1)
+  - PayCardsRecognizer (1.1.7)
   - PromisesObjC (1.2.9)
   - Protobuf (3.12.0)
   - R.swift (5.1.0):
@@ -134,6 +135,7 @@ DEPENDENCIES:
   - Firebase/Performance
   - FSCalendar
   - Nuke (= 8.4.1)
+  - PayCardsRecognizer
   - R.swift
   - Reveal-SDK
   - RxCocoa
@@ -163,6 +165,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - Nuke
+    - PayCardsRecognizer
     - PromisesObjC
     - Protobuf
     - R.swift
@@ -195,6 +198,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
+  PayCardsRecognizer: 2e4d1b2fdd5f1528fb56064a91e1d58a1af7a2db
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
@@ -206,6 +210,6 @@ SPEC CHECKSUMS:
   SharedFramework: 22dc84584a14646e5a4b13c899ba0a663aca3722
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: cd6b490500a43c78ce933b59d0f226070ded811e
+PODFILE CHECKSUM: 13c228cb3ab5bf1ae1d697d929a96e29a7d88288
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.9.3

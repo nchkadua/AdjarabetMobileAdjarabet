@@ -19,6 +19,7 @@ def pods
   pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
   pod 'FSCalendar'
+  pod 'PayCardsRecognizer'
   
   pod 'Reveal-SDK', :configurations => ['Debug-Stage', 'Debug-Production']
 end

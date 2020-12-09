@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import PayCardsRecognizer
 
 public class CardInfoViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: CardInfoViewModel
