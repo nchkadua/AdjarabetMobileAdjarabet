@@ -40,6 +40,7 @@ class TransactionHistoryComponentView: UIView {
         bind()
     }
     private func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let transactionHistory):

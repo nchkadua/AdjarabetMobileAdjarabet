@@ -54,6 +54,7 @@ class CreditCardComponentView: UIView {
     }
 
     public func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .setCardNumber(let cardNumber): self?.setCardNumber(cardNumber)

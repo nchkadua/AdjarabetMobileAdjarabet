@@ -33,6 +33,7 @@ class TransactionFilterComponentView: UIView {
     }
 
     private func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let title, let checked, _):

@@ -9,7 +9,7 @@
 import RxSwift
 
 class AccessHistoryComponentView: UIView {
-    private var diposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     private var viewModel: AccessHistoryComponentViewModel!
 
     // MARK: Outlets
@@ -40,6 +40,7 @@ class AccessHistoryComponentView: UIView {
     }
 
     private func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let ip, let device, let date, let deviceIcon):
