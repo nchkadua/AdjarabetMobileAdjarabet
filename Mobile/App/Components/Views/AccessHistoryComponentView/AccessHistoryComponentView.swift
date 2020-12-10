@@ -46,7 +46,7 @@ class AccessHistoryComponentView: UIView {
             case .set(let ip, let device, let date, let deviceIcon):
                 self?.set(ip: ip, device: device, date: date, deviceIcon: deviceIcon)
             }
-        }).disposed(by: diposeBag)
+        }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }

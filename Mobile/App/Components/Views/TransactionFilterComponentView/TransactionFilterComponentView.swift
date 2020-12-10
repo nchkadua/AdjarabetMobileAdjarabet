@@ -9,7 +9,7 @@
 import RxSwift
 
 class TransactionFilterComponentView: UIView {
-    private var diposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     private var viewModel: TransactionFilterComponentViewModel!
 
     // MARK: Outlets

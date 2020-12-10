@@ -38,7 +38,7 @@ class AccountParametersHeaderComponentView: UIView {
             case .set(let params):
                 self?.set(params: params)
             }
-        }).disposed(by: diposeBag)
+        }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }

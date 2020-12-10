@@ -48,7 +48,7 @@ class AccountSecurityMessagesComponentView: UIView {
             case .parametersSwitchToggledTo:
                 break
             }
-        }).disposed(by: diposeBag)
+        }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }

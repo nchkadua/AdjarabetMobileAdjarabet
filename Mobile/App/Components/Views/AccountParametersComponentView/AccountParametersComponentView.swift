@@ -47,7 +47,7 @@ class AccountParametersComponentView: UIView {
             case .didSelect:
                 break
             }
-        }).disposed(by: diposeBag)
+        }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }
