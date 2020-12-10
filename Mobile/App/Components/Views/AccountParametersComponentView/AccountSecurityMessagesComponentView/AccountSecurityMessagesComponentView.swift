@@ -44,6 +44,8 @@ class AccountSecurityMessagesComponentView: UIView {
             switch action {
             case .set(let params):
                 self?.set(params: params)
+            case .parametersSwitchToggledTo:
+                break
             }
         }).disposed(by: diposeBag)
 
@@ -55,6 +57,9 @@ class AccountSecurityMessagesComponentView: UIView {
         descriptionLabel.text = params.description
         setParametersButton.setTitle(params.buttonTitle, for: .normal)
         setParametersSwitch.isOn = params.switchState
+    }
+    @IBAction func parametersSwitchToggled(_ sender: UISwitch) {
+        viewModel.parametersSwitchToggled(to: sender.isOn)
     }
 }
 

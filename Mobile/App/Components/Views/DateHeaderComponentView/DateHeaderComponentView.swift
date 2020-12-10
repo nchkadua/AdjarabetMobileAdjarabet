@@ -42,13 +42,15 @@ class DateHeaderComponentView: UIView {
     }
 
     private func set(title: String) {
-        // TODO Extract converting, handle language change
-        let relativeFormatter = RelativeDateTimeFormatter()
-//        relativeFormatter.locale = Locale(identifier: "ka_GE")
         let dateFormatter = DateFormatter()
-        let date = dateFormatter.dayDate(from: title)
-        let relativeStringDate = relativeFormatter.localizedString(for: date!, relativeTo: Date())
-        titleLabel.text = relativeStringDate
+
+        guard let dayDate = dateFormatter.dayDate(from: title) else {
+            titleLabel.text = title
+            return
+        }
+        dateFormatter.dateFormat = "d MMMM"
+        let formattedDateString = dateFormatter.string(from: dayDate)
+        titleLabel.text = formattedDateString
     }
 }
 

@@ -199,6 +199,10 @@
 "account_parameters_messages_email_description" = "You'll recieve emails";
 "account_parameters_messages_email_button" = "configure parameters";
 
+/* Access History */
+"access_history_device_desktop" = "Desktop";
+"access_history_device_mobile" = "Mobile";
+
 /* High Secutiry */
 "high_security_page_title" = "High Secutiry On";
 "high_security_button_on" = "Activate";

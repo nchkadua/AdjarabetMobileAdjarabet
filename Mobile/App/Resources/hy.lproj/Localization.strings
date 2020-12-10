@@ -186,6 +186,9 @@
 "transactions_details_type_deposit" = "DEPOSIT";
 "transactions_details_type_withdraw" = "WITHDRAW";
 
+/* Access History */
+"access_history_device_desktop" = "Desktop";
+"access_history_device_mobile" = "Mobile";
 
 /* Account Parameters */
 "account_parameters_change_password" = "Change password";

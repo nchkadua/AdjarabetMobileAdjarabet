@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import UAParserSwift
 
 public protocol AccessHistoryViewModel: AccessHistoryViewModelInput, AccessHistoryViewModelOutput, ABTableViewControllerDelegate {
 }
@@ -123,15 +124,32 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
     }
 
     private func getDeviceTypeFrom(userAgent: String) -> DeviceType {
+        let parser = UAParser(agent: userAgent)
+
+        guard let userOS = parser.os?.name else { return .desktop }
+        if userOS.contains("android") || userOS.contains("ios") {
+            return .mobile
+        }
+
         return .desktop
     }
 
     private func getDeviceNameFor(deviceType: DeviceType) -> String {
-        return "ტელეფონით"
+        switch deviceType {
+        case .desktop:
+            return R.string.localization.access_history_device_desktop()
+        case .mobile:
+            return R.string.localization.access_history_device_mobile()
+        }
     }
 
     private func getDeviceIconFor(deviceType: DeviceType) -> UIImage {
-        return R.image.transactionsHistory.deposit()!
+        switch deviceType {
+        case .desktop:
+            return R.image.accessHistory.deviceDesktop()!
+        default:
+            return R.image.accessHistory.deviceMobile()!
+        }
     }
 
     private func constructHeaderComponentViewModel(from entity: AccessListEntity) -> DefaultDateHeaderComponentViewModel {

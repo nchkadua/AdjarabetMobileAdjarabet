@@ -1304,6 +1304,30 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    /// This `R.image.accessHistory` struct is generated, and contains static references to 2 images.
+    struct accessHistory {
+      /// Image `DeviceDesktop`.
+      static let deviceDesktop = Rswift.ImageResource(bundle: R.hostingBundle, name: "AccessHistory/DeviceDesktop")
+      /// Image `DeviceMobile`.
+      static let deviceMobile = Rswift.ImageResource(bundle: R.hostingBundle, name: "AccessHistory/DeviceMobile")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "DeviceDesktop", bundle: ..., traitCollection: ...)`
+      static func deviceDesktop(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.accessHistory.deviceDesktop, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "DeviceMobile", bundle: ..., traitCollection: ...)`
+      static func deviceMobile(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.accessHistory.deviceMobile, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.accountParameters` struct is generated, and contains static references to 4 images.
     struct accountParameters {
       /// Image `BlockSelf`.
@@ -2890,7 +2914,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 425 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 427 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
@@ -3300,6 +3324,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let deposit_button_title = Rswift.StringResource(key: "deposit_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Desktop
+      ///
+      /// Locales: en, ka, hy
+      static let access_history_device_desktop = Rswift.StringResource(key: "access_history_device_desktop", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Did not receive message?
       ///
       /// Locales: en, ka, hy
@@ -3760,6 +3788,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let add_card_minimum_amount = Rswift.StringResource(key: "add_card_minimum_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Mobile
+      ///
+      /// Locales: en, ka, hy
+      static let access_history_device_mobile = Rswift.StringResource(key: "access_history_device_mobile", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Moldava
       ///
       /// Locales: en, ka, hy
@@ -6123,6 +6155,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("deposit_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Desktop
+      ///
+      /// Locales: en, ka, hy
+      static func access_history_device_desktop(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("access_history_device_desktop", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "access_history_device_desktop"
+        }
+
+        return NSLocalizedString("access_history_device_desktop", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Did not receive message?
       ///
       /// Locales: en, ka, hy
@@ -7846,6 +7893,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("add_card_minimum_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mobile
+      ///
+      /// Locales: en, ka, hy
+      static func access_history_device_mobile(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("access_history_device_mobile", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "access_history_device_mobile"
+        }
+
+        return NSLocalizedString("access_history_device_mobile", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Moldava

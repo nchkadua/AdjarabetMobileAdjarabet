@@ -199,6 +199,10 @@
 "account_parameters_messages_email_description" = "თქვენ მიიღებთ შეტყობინებებს თქვენს ელ-ფოსტაზე";
 "account_parameters_messages_email_button" = "პარამეტრების დაყენება";
 
+/* Access History */
+"access_history_device_desktop" = "კომპიუტერით";
+"access_history_device_mobile" = "მობილურით";
+
 /* High Secutiry */
 "high_security_page_title" = "მაღალი დაცვის რეჟიმის ჩართვა";
 "high_security_button_on" = "აქტივაცია";

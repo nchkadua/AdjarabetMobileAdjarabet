@@ -1,0 +1,6 @@
+framework module UAParserSwift {
+  umbrella header "UAParserSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
