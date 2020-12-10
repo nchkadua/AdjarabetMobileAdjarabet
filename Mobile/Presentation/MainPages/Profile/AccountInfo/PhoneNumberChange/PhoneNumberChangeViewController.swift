@@ -63,7 +63,11 @@ public class PhoneNumberChangeViewController: ABViewController {
         phonePrefixInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         phonePrefixInputView.setPlaceholder(text: R.string.localization.phone_prefix.localized())
 
-        let titles = Country.allCases.map { $0.description.title }
+        let titles = Country.allCases
+            .map { $0.description }
+            .sorted { $0.alpha3Code < $1.alpha3Code }
+            .map { $0.title }
+
         phonePrefixInputView.setupPickerView(withItems: titles)
 
         phoneNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)

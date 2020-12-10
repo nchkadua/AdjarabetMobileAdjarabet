@@ -9,10 +9,6 @@
 import Foundation
 
 public enum Country {
-    case georgia // Popular
-    case armenia
-    case azerbaijan
-    case kazakhstan
     case afghanistan // A
     case alandIslands
     case albania
@@ -23,10 +19,12 @@ public enum Country {
     case anguilla
     case antarctica
     case antiguaAndBarbuda
-    case argentina // next should be armenia
+    case argentina
+    case armenia
     case aruba
     case australia
-    case austria // next should be azerbaijan
+    case austria
+    case azerbaijan
     case bahamas // B
     case bahrain
     case bangladesh
@@ -90,7 +88,8 @@ public enum Country {
     case frenchPolynesia
  // case frenchSouthernTerritories: ATF, nil, 🇹🇫
     case gabon // G
-    case gambia // next should be georgia
+    case gambia
+    case georgia // Popular
     case germany
     case ghana
     case gibraltar
@@ -121,8 +120,9 @@ public enum Country {
     case jamaica // J
     case japan
     case jersey
-    case jordan // next should be kazakhstan
-    case kenya // K
+    case jordan
+    case kazakhstan // K
+    case kenya
     case kiribati
     case kosovo
     case kuwait
@@ -302,7 +302,7 @@ public enum Country {
         case .britishIndianOceanTerritory:  return Description(r.british_indian_ocean_territory.localized(), "IOR", "+246", "🇮🇴")
         case .brunei:                       return Description(r.brunei.localized(), "BRN", "+673", "🇧🇳")
         case .bulgaria:                     return Description(r.bulgaria.localized(), "BGR", "+359", "🇧🇬")
-        case .burkinaFaso:                 return Description(r.burkina_faso.localized(), "BFA", "+226", "🇧🇫")
+        case .burkinaFaso:                  return Description(r.burkina_faso.localized(), "BFA", "+226", "🇧🇫")
         case .burundi:                      return Description(r.burundi.localized(), "BDI", "+257", "🇧🇮")
         /* C */
         case .cambodia:                return Description(r.cambodia.localized(), "KHM", "+855", "🇰🇭")
@@ -319,7 +319,7 @@ public enum Country {
         case .colombia:                return Description(r.colombia.localized(), "COL", "+57", "🇨🇴")
         case .comoros:                 return Description(r.comoros.localized(), "COM", "+269", "🇰🇲")
         case .congo:                   return Description(r.congo.localized(), "COG", "+242", "🇨🇬")
-        case .cookIslands:              return Description(r.cook_islands.localized(), "COK", "+682", "🇨🇰")
+        case .cookIslands:             return Description(r.cook_islands.localized(), "COK", "+682", "🇨🇰")
         case .costaRica:               return Description(r.costa_rica.localized(), "CRI", "+506", "🇨🇷")
         case .croatia:                 return Description(r.croatia.localized(), "HRV", "+385", "🇭🇷")
         case .cuba:                    return Description(r.cuba.localized(), "CUB", "+53", "🇨🇺")

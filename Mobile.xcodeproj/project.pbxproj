@@ -94,6 +94,11 @@
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
 		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
 		C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487162571122E00E4A71D /* AccountInfoModel.swift */; };
+		C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */; };
+		C71B4B72257EC57000538697 /* SecurityLevelsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B4B6D257EC57000538697 /* SecurityLevelsNavigator.swift */; };
+		C71B4B73257EC57000538697 /* SecurityLevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B4B6E257EC57000538697 /* SecurityLevelsViewController.swift */; };
+		C71B4B74257EC57000538697 /* SecurityLevelsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B4B6F257EC57000538697 /* SecurityLevelsViewControllerFactory.swift */; };
+		C71B4B75257EC57000538697 /* SecurityLevelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B4B70257EC57000538697 /* SecurityLevelsViewModel.swift */; };
 		C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */; };
 		C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */; };
 		C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */; };
@@ -109,6 +114,18 @@
 		C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */; };
 		C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */; };
 		C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */; };
+		C7C973292580D9550062C713 /* SecurityLevelComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C973232580D9550062C713 /* SecurityLevelComponentView.xib */; };
+		C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973242580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift */; };
+		C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C973252580D9550062C713 /* SecurityLevelTableViewCell.xib */; };
+		C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973262580D9550062C713 /* SecurityLevelComponentViewModel.swift */; };
+		C7C9732D2580D9550062C713 /* SecurityLevelComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973272580D9550062C713 /* SecurityLevelComponentView.swift */; };
+		C7C9732E2580D9550062C713 /* SecurityLevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973282580D9550062C713 /* SecurityLevelTableViewCell.swift */; };
+		C7C973AA2580EC990062C713 /* SecurityLevelTypeComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C973A42580EC990062C713 /* SecurityLevelTypeComponentView.xib */; };
+		C7C973AB2580EC990062C713 /* SecurityLevelTypeTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973A52580EC990062C713 /* SecurityLevelTypeTableViewCellDataProvider.swift */; };
+		C7C973AC2580EC990062C713 /* SecurityLevelTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C973A62580EC990062C713 /* SecurityLevelTypeTableViewCell.xib */; };
+		C7C973AD2580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973A72580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift */; };
+		C7C973AE2580EC990062C713 /* SecurityLevelTypeComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973A82580EC990062C713 /* SecurityLevelTypeComponentView.swift */; };
+		C7C973AF2580EC990062C713 /* SecurityLevelTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973A92580EC990062C713 /* SecurityLevelTypeTableViewCell.swift */; };
 		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
 		C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */; };
@@ -586,6 +603,11 @@
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
 		C7036C33257CF42400AE7EB7 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		C71487162571122E00E4A71D /* AccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
+		C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecurityLevels.storyboard; sourceTree = "<group>"; };
+		C71B4B6D257EC57000538697 /* SecurityLevelsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelsNavigator.swift; sourceTree = "<group>"; };
+		C71B4B6E257EC57000538697 /* SecurityLevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelsViewController.swift; sourceTree = "<group>"; };
+		C71B4B6F257EC57000538697 /* SecurityLevelsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelsViewControllerFactory.swift; sourceTree = "<group>"; };
+		C71B4B70257EC57000538697 /* SecurityLevelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelsViewModel.swift; sourceTree = "<group>"; };
 		C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsNavigator.swift; sourceTree = "<group>"; };
 		C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -600,6 +622,18 @@
 		C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewModel.swift; sourceTree = "<group>"; };
 		C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = P2PTransferView.storyboard; sourceTree = "<group>"; };
 		C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewControllerFactory.swift; sourceTree = "<group>"; };
+		C7C973232580D9550062C713 /* SecurityLevelComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityLevelComponentView.xib; sourceTree = "<group>"; };
+		C7C973242580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		C7C973252580D9550062C713 /* SecurityLevelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityLevelTableViewCell.xib; sourceTree = "<group>"; };
+		C7C973262580D9550062C713 /* SecurityLevelComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelComponentViewModel.swift; sourceTree = "<group>"; };
+		C7C973272580D9550062C713 /* SecurityLevelComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelComponentView.swift; sourceTree = "<group>"; };
+		C7C973282580D9550062C713 /* SecurityLevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelTableViewCell.swift; sourceTree = "<group>"; };
+		C7C973A42580EC990062C713 /* SecurityLevelTypeComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityLevelTypeComponentView.xib; sourceTree = "<group>"; };
+		C7C973A52580EC990062C713 /* SecurityLevelTypeTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelTypeTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		C7C973A62580EC990062C713 /* SecurityLevelTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityLevelTypeTableViewCell.xib; sourceTree = "<group>"; };
+		C7C973A72580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelTypeComponentViewModel.swift; sourceTree = "<group>"; };
+		C7C973A82580EC990062C713 /* SecurityLevelTypeComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelTypeComponentView.swift; sourceTree = "<group>"; };
+		C7C973A92580EC990062C713 /* SecurityLevelTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelTypeTableViewCell.swift; sourceTree = "<group>"; };
 		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
 		C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiUserProfileRepository.swift; sourceTree = "<group>"; };
@@ -1304,6 +1338,7 @@
 		76BDF45625760425007B27A7 /* AccountParameters */ = {
 			isa = PBXGroup;
 			children = (
+				C71B4B6B257EC4BB00538697 /* SecurityLevels */,
 				76404EEB257611D100D14E0C /* Data */,
 				76BDF4572576043A007B27A7 /* AccountParameters.storyboard */,
 				76BDF4582576043A007B27A7 /* AccountParametersNavigator.swift */,
@@ -1371,6 +1406,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C71B4B6B257EC4BB00538697 /* SecurityLevels */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973202580D8C60062C713 /* Cells */,
+				C71B4B70257EC57000538697 /* SecurityLevelsViewModel.swift */,
+				C71B4B6E257EC57000538697 /* SecurityLevelsViewController.swift */,
+				C71B4B6D257EC57000538697 /* SecurityLevelsNavigator.swift */,
+				C71B4B6F257EC57000538697 /* SecurityLevelsViewControllerFactory.swift */,
+				C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */,
+			);
+			path = SecurityLevels;
+			sourceTree = "<group>";
+		};
 		C71F188D256411720026CEA2 /* BiometricSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1418,6 +1466,41 @@
 				C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */,
 			);
 			path = P2PTransfer;
+			sourceTree = "<group>";
+		};
+		C7C973202580D8C60062C713 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973222580D8E80062C713 /* Level */,
+				C7C973212580D8CE0062C713 /* Type */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C7C973212580D8CE0062C713 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973A72580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift */,
+				C7C973A82580EC990062C713 /* SecurityLevelTypeComponentView.swift */,
+				C7C973A42580EC990062C713 /* SecurityLevelTypeComponentView.xib */,
+				C7C973A52580EC990062C713 /* SecurityLevelTypeTableViewCellDataProvider.swift */,
+				C7C973A92580EC990062C713 /* SecurityLevelTypeTableViewCell.swift */,
+				C7C973A62580EC990062C713 /* SecurityLevelTypeTableViewCell.xib */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		C7C973222580D8E80062C713 /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973262580D9550062C713 /* SecurityLevelComponentViewModel.swift */,
+				C7C973272580D9550062C713 /* SecurityLevelComponentView.swift */,
+				C7C973232580D9550062C713 /* SecurityLevelComponentView.xib */,
+				C7C973242580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift */,
+				C7C973282580D9550062C713 /* SecurityLevelTableViewCell.swift */,
+				C7C973252580D9550062C713 /* SecurityLevelTableViewCell.xib */,
+			);
+			path = Level;
 			sourceTree = "<group>";
 		};
 		C7CA6A0A2563B28000A9C6AB /* Popup */ = {
@@ -2939,7 +3022,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = Adjarabet;
 				TargetAttributes = {
 					D80784962444770F00003892 = {
@@ -3014,6 +3097,7 @@
 				CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
+				C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */,
 				CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */,
 				CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */,
 				CE95D00A25542035007D2084 /* NotoSansArmenian-Bold.ttf in Resources */,
@@ -3024,6 +3108,7 @@
 				D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */,
 				CE38F09E254B085200605524 /* CashFlowTabComponentView.xib in Resources */,
 				7676E55425628F3900234026 /* Transactions.storyboard in Resources */,
+				C7C973AC2580EC990062C713 /* SecurityLevelTypeTableViewCell.xib in Resources */,
 				D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */,
 				D807847E2444727600003892 /* FiraGO-ExtraLight.ttf in Resources */,
 				CE95FC44252DF3B6003E539B /* FooterTableViewCell.xib in Resources */,
@@ -3055,6 +3140,7 @@
 				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
 				76BDF46E25760512007B27A7 /* AccountParametersTableViewCell.xib in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
+				C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
 				CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */,
@@ -3084,6 +3170,7 @@
 				CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */,
 				7665D95F257E5CA600E5B35F /* AccessHistory.storyboard in Resources */,
 				7668C7A92576785F0024DDE4 /* AccountParametersHeaderComponentView.xib in Resources */,
+				C7C973AA2580EC990062C713 /* SecurityLevelTypeComponentView.xib in Resources */,
 				7665D97D257F4C0E00E5B35F /* AccessHistoryTableViewCell.xib in Resources */,
 				D8BF4043244EC949008F0BAF /* GameLauncherCollectionViewCell.xib in Resources */,
 				76404F09257625F900D14E0C /* AccountSecurityMessagesComponentView.xib in Resources */,
@@ -3093,6 +3180,7 @@
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
 				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
 				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
+				C7C973292580D9550062C713 /* SecurityLevelComponentView.xib in Resources */,
 				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
 				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
@@ -3192,7 +3280,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/Mobile/App/Resources/R.generated.swift",
+				$SRCROOT/Mobile/App/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3267,6 +3355,7 @@
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
 				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
+				C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
 				D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
@@ -3274,6 +3363,7 @@
 				CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */,
 				CEB285E5256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift in Sources */,
 				76404F0E257625F900D14E0C /* AccountSecurityMessagesTableViewCell.swift in Sources */,
+				C7C973AF2580EC990062C713 /* SecurityLevelTypeTableViewCell.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
 				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
@@ -3283,6 +3373,7 @@
 				7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */,
 				D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
+				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
@@ -3307,6 +3398,7 @@
 				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
 				CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */,
+				C71B4B72257EC57000538697 /* SecurityLevelsNavigator.swift in Sources */,
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */,
 				CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */,
@@ -3323,8 +3415,10 @@
 				76BDF4602576043A007B27A7 /* AccountParametersViewModel.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
 				7665D963257E5CA600E5B35F /* AccessHistoryViewModel.swift in Sources */,
+				C7C9732D2580D9550062C713 /* SecurityLevelComponentView.swift in Sources */,
 				7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
+				C71B4B74257EC57000538697 /* SecurityLevelsViewControllerFactory.swift in Sources */,
 				7644B6002563E201006778B2 /* DateHeaderCell.swift in Sources */,
 				76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
@@ -3365,6 +3459,7 @@
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
+				C7C973AE2580EC990062C713 /* SecurityLevelTypeComponentView.swift in Sources */,
 				D8AC492724CFE3E0000B2D80 /* AppDelegateServiceProvider.swift in Sources */,
 				7665D960257E5CA600E5B35F /* AccessHistoryNavigator.swift in Sources */,
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
@@ -3437,7 +3532,6 @@
 				D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				7644B60D2563E53A006778B2 /* DateHeaderComponentViewModel.swift in Sources */,
 				CE7A23FA257956CA00A94E89 /* BarButtonWithImage.swift in Sources */,
-				7644B60D2563E53A006778B2 /* DateHeaderComponentViewModel.swift in Sources */,
 				CECF7F70256D9F99001C0E50 /* PasswordChangeViewController.swift in Sources */,
 				CECF7F77256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
@@ -3445,6 +3539,7 @@
 				D850940E24839A4A00722040 /* PageDescription.swift in Sources */,
 				7644B6222564F8E4006778B2 /* TransactionDetailComponentView.swift in Sources */,
 				D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */,
+				C7C973AB2580EC990062C713 /* SecurityLevelTypeTableViewCellDataProvider.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */,
 				D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */,
 				CE55ED022526732A003E168F /* PromotionsNavigator.swift in Sources */,
@@ -3502,6 +3597,7 @@
 				D8BE830C24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift in Sources */,
 				76404F0A257625F900D14E0C /* AccountSecurityMessagesTableViewCellDataProvider.swift in Sources */,
 				C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */,
+				C71B4B75257EC57000538697 /* SecurityLevelsViewModel.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				76BDF47025760512007B27A7 /* AccountParametersComponentView.swift in Sources */,
 				D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */,
@@ -3578,6 +3674,7 @@
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
 				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
+				C7C9732E2580D9550062C713 /* SecurityLevelTableViewCell.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
 				7665D97E257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
@@ -3600,6 +3697,7 @@
 				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
 				CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */,
+				C7C973AD2580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift in Sources */,
 				D894CEBB24BE32FA00FE143D /* GamesListLoader.swift in Sources */,
 				763171A82566398F00F6FD90 /* TransactionDetailsViewController.swift in Sources */,
 				CE7A23F5257948F500A94E89 /* CardInfoViewControllerFactory.swift in Sources */,
@@ -3612,6 +3710,7 @@
 				D8AC492C24CFE835000B2D80 /* AppDelegateServices.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
+				C71B4B73257EC57000538697 /* SecurityLevelsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
