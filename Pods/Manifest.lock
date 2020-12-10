@@ -116,6 +116,7 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SharedFramework (0.0.8)
+  - SwiftKeychainWrapper (4.0.1)
   - SwiftLint (0.39.1)
   - UAParserSwift (1.2.1)
 
@@ -132,6 +133,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SharedFramework
+  - SwiftKeychainWrapper
   - SwiftLint (= 0.39.1)
   - UAParserSwift
 
@@ -164,6 +166,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SharedFramework
+    - SwiftKeychainWrapper
     - SwiftLint
     - UAParserSwift
 
@@ -195,9 +198,10 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SharedFramework: 2081e84ea73f1b25d4a8351b953621f177b4fd35
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   UAParserSwift: dc5e2717debc6e78a40487148d29649a0b311caf
 
-PODFILE CHECKSUM: 3c9b862eaa9135af7d423e8c064edc92ce650ba2
+PODFILE CHECKSUM: 0142fd3c4c98c820e0cb23f796eb917e88d7a099
 
 COCOAPODS: 1.10.0

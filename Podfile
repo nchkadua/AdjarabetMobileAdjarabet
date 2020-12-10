@@ -21,7 +21,7 @@ def pods
   pod 'FSCalendar'
   pod 'PayCardsRecognizer'
   pod 'UAParserSwift'
-  
+  pod 'SwiftKeychainWrapper'
   pod 'Reveal-SDK', :configurations => ['Debug-Stage', 'Debug-Production']
 end
 

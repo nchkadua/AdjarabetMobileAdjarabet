@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SwiftKeychainWrapper
 public class UserSessionCareTaker {
     private let storage: KeychainWrapper
     private let decoder: JSONDecoder
