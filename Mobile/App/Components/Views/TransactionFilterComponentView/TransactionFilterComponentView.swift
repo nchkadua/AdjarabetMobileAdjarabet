@@ -9,7 +9,7 @@
 import RxSwift
 
 class TransactionFilterComponentView: UIView {
-    private var diposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     private var viewModel: TransactionFilterComponentViewModel!
 
     // MARK: Outlets
@@ -33,6 +33,7 @@ class TransactionFilterComponentView: UIView {
     }
 
     private func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let title, let checked, _):
@@ -40,7 +41,7 @@ class TransactionFilterComponentView: UIView {
             case .checkBoxToggled:
                 break
             }
-        }).disposed(by: diposeBag)
+        }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }

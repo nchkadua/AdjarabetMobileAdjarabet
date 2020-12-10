@@ -9,7 +9,7 @@
 import RxSwift
 
 class TransactionDetailsComponentView: UIView {
-    private var diposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     private var viewModel: TransactionDetailsComponentViewModel!
 
     // MARK: Outlets
@@ -33,12 +33,13 @@ class TransactionDetailsComponentView: UIView {
     }
 
     private func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let title, let description):
                 self?.set(title: title, description: description)
             }
-        }).disposed(by: diposeBag)
+        }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }

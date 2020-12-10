@@ -9,7 +9,7 @@
 import RxSwift
 
 class AccountParametersComponentView: UIView {
-    private var diposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     private var viewModel: AccountParametersComponentViewModel!
 
     // MARK: Outlets
@@ -39,6 +39,7 @@ class AccountParametersComponentView: UIView {
     }
 
     private func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let params):
@@ -46,7 +47,7 @@ class AccountParametersComponentView: UIView {
             case .didSelect:
                 break
             }
-        }).disposed(by: diposeBag)
+        }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }

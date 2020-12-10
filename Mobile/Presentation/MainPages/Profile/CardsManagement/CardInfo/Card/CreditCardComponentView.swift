@@ -54,6 +54,7 @@ class CreditCardComponentView: UIView {
     }
 
     public func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .setCardNumber(let cardNumber): self?.setCardNumber(cardNumber)
@@ -77,12 +78,12 @@ class CreditCardComponentView: UIView {
 
     private func setCardNumber(_ cardNumber: String) {
         makeCardNumberBorderVisible(false)
-        guard cardNumberLabel.text != cardNumber.unfoldSubSequences(limitedTo: 4).joined(separator: " - ") else { return }
+        guard cardNumberLabel.text != cardNumber.unfoldSubSequences(limitedTo: 4).joined(separator: "    ") else { return }
         guard !cardNumber.isEmpty else { return }
 
         cardNumberLabel.text = ""
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: { [self] in
-            let number = cardNumber.unfoldSubSequences(limitedTo: 4).joined(separator: " - ")
+            let number = cardNumber.unfoldSubSequences(limitedTo: 4).joined(separator: "    ")
             cardNumberLabel.pushTransition(0.2)
             cardNumberLabel.text = number
         })
@@ -186,9 +187,9 @@ extension CreditCardComponentView: Xibable {
     }
 
     func setupFrontView() {
-        cardNumberLabel.setFont(to: .title3(fontCase: .upper))
+        cardNumberLabel.setFont(to: .title3(fontCase: .upper, fontStyle: .bold))
         cardNumberLabel.setTintColor(to: .primaryText())
-        cardNumberLabel.text = "____ - ____ - ____ - ____"
+        cardNumberLabel.text = "____    ____    ____    ____"
 
         usageDateTitleLabel.setFont(to: .caption2(fontCase: .lower))
         usageDateTitleLabel.setTextColor(to: .primaryText())

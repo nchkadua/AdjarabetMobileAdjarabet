@@ -9,7 +9,7 @@
 import RxSwift
 
 class SecurityLevelTypeComponentView: UIView {
-    private var diposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     private var viewModel: SecurityLevelTypeComponentViewModel!
 
     // MARK: Outlets
@@ -30,18 +30,18 @@ class SecurityLevelTypeComponentView: UIView {
 
     public func setAndBind(viewModel: SecurityLevelTypeComponentViewModel) {
         self.viewModel = viewModel
-        self.viewModel.actionSubject = .init()
         bind()
     }
 
     private func bind() {
+        disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let title, let checked):
                 self?.set(title: title, checked: checked)
             default: break // ignore toggleRequest
             }
-        }).disposed(by: diposeBag)
+        }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }

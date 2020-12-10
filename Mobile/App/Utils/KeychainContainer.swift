@@ -8,6 +8,7 @@
 
 import Foundation
 import SharedFramework
+import SwiftKeychainWrapper
 
 public class KeychainContainer {
     public static let defaultKeychainGroup = "RDJN6C84H4.com.adjarabet.Mobile.credentials"

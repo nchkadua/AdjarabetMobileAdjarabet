@@ -46,6 +46,7 @@ class CalendarComponentView: UIView {
     }
 
     public func bind() {
+        disposeBag = DisposeBag()
         viewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .setupCalendar: self?.setDate(self?.calendar.currentPage ?? Date())
