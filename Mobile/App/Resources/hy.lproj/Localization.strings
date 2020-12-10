@@ -261,6 +261,9 @@
 "gender_other" = "other";
 "gender_prefer_not_to_say" = "prefer not to say";
 
+/* Components */
+"component_date_header_today" = "Today";
+
 /* Countries */
 "georgia" = "Georgia";
 "armenia" = "Armenia";

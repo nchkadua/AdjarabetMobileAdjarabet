@@ -255,6 +255,9 @@
 "november" = "ნოემბერი";
 "december" = "დეკემბერი";
 
+/* Components */
+"component_date_header_today" = "Today";
+
 /* Gender */
 "gender_female" = "ქალი";
 "gender_male" = "მამაკაცი";

@@ -41,7 +41,7 @@ public final class DefaultDisplayTransactionHistoriesUseCase: DisplayTransaction
 public struct DisplayTransactionHistoriesUseCaseParams {
     let fromDate: String
     let toDate: String
-    let transactionType: Int
+    let transactionType: Int?
     let providerType: Int
     var pageIndex: Int
 }

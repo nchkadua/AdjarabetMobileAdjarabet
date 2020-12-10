@@ -88,8 +88,10 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
         return self
     }
 
-    public func set(transactionType: Int) -> Self {
-        queryItems.append(.init(key: .transactionType, value: "\(transactionType)"))
+    public func set(transactionType: Int?) -> Self {
+        if let transactionType = transactionType {
+            queryItems.append(.init(key: .transactionType, value: "\(transactionType)"))
+        }
         return self
     }
 

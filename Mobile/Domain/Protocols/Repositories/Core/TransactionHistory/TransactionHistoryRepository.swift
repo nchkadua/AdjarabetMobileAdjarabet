@@ -21,7 +21,7 @@ public protocol TransactionHistoryRedableRepository {
 public struct GetUserTransactionsParams {
     let fromDate: String
     let toDate: String
-    let transactionType: Int
+    let transactionType: Int?
     let providerType: Int
     let pageIndex: Int
 }

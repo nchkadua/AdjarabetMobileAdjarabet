@@ -34,7 +34,7 @@ extension CoreApiTransactionHistoryRepository: TransactionHistoryRepository {
             .set(transactionType: params.transactionType)
             .set(pageIndex: params.pageIndex)
             .set(providerType: params.providerType)
-            .set(maxResult: CoreApiTransactionHistoryRepository.maxResult) // TODO Make it static
+            .set(maxResult: CoreApiTransactionHistoryRepository.maxResult)
             .build()
 
         dataTransferService.performTask(expecting: GetUserTransactionsResponse.self,

@@ -101,7 +101,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
         let deviceName = getDeviceNameFor(deviceType: deviceType)
         let deviceIcon = getDeviceIconFor(deviceType: deviceType)
         return .init(params: .init(ip: entity.ip, device: deviceName,
-                                   date: dateFormatter.dayDateString(from: entity.date),
+                                   date: dateFormatter.hourDateString(from: entity.date),
                                    deviceIcon: deviceIcon))
     }
 

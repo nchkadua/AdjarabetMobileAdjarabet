@@ -77,7 +77,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
         let toDate = dateFormatter.dayDateString(from: Date.distantFuture)
         let params: DisplayTransactionHistoriesUseCaseParams = .init(fromDate: fromDate,
                                                                      toDate: toDate,
-                                                                     transactionType: TransactionType.all.rawValue, // all transactions
+                                                                     transactionType: nil, // all transactions
                                                                      providerType: ProviderType.transactions.rawValue,
                                                                      pageIndex: page.current)
         displayTransactions(params: params)
@@ -90,11 +90,12 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     }
 
     private func constructFilteredTransactionParams(fromDate: Date?, toDate: Date?, providerType: ProviderType, transactionType: TransactionType) {
+        let trType = transactionType.rawValue == 0 ? nil : transactionType.rawValue
         let fromDate = dateFormatter.dayDateString(from: fromDate ?? Date.distantPast)
         let toDate = dateFormatter.dayDateString(from: toDate ?? Date.distantFuture)
         let params: DisplayTransactionHistoriesUseCaseParams = .init(fromDate: fromDate,
                                                                      toDate: toDate,
-                                                                     transactionType: transactionType.rawValue,
+                                                                     transactionType: trType,
                                                                      providerType: providerType.rawValue,
                                                                      pageIndex: page.current)
         self.filteredParams = params

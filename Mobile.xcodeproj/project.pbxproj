@@ -1204,7 +1204,7 @@
 			children = (
 				CE91C0D5257028AB00A18255 /* Filter */,
 				763171A32566388400F6FD90 /* TransactionDetails */,
-				7676E55B2562D69D00234026 /* MockData */,
+				7676E55B2562D69D00234026 /* DataProvider */,
 				7676E54B2562856600234026 /* TransactionsNavigator.swift */,
 				7676E54C2562856600234026 /* TransactionsViewController.swift */,
 				7676E54D2562856600234026 /* TransactionsViewModel.swift */,
@@ -1214,12 +1214,12 @@
 			path = Transactions;
 			sourceTree = "<group>";
 		};
-		7676E55B2562D69D00234026 /* MockData */ = {
+		7676E55B2562D69D00234026 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
 				7676E55C2562D73100234026 /* TransactionHistoryProvider.swift */,
 			);
-			path = MockData;
+			path = DataProvider;
 			sourceTree = "<group>";
 		};
 		7676E5622562E19200234026 /* TransactionHistoryComponentView */ = {

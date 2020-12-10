@@ -261,6 +261,9 @@
 "gender_other" = "Other";
 "gender_prefer_not_to_say" = "Prefer Not To Say";
 
+/* Components */
+"component_date_header_today" = "დღეს განხორციელებული";
+
 /* Countries */
 "georgia" = "Georgia";
 "armenia" = "Armenia";

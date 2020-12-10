@@ -49,6 +49,10 @@ class DateHeaderComponentView: UIView {
             titleLabel.text = title
             return
         }
+        guard !Calendar.current.isDateInToday(dayDate) else {
+            titleLabel.text = R.string.localization.component_date_header_today()
+            return
+        }
         dateFormatter.dateFormat = "d MMMM"
         let formattedDateString = dateFormatter.string(from: dayDate)
         titleLabel.text = formattedDateString

@@ -3019,7 +3019,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 441 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 442 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
@@ -4741,6 +4741,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let deposit_description_proceed = Rswift.StringResource(key: "deposit_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დღეს განხორციელებული
+      ///
+      /// Locales: en, ka, hy
+      static let component_date_header_today = Rswift.StringResource(key: "component_date_header_today", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ელ.ფოსტის შეცვლა
       ///
       /// Locales: en, ka, hy
@@ -11236,6 +11240,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("deposit_description_proceed", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: დღეს განხორციელებული
+      ///
+      /// Locales: en, ka, hy
+      static func component_date_header_today(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("component_date_header_today", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "component_date_header_today"
+        }
+
+        return NSLocalizedString("component_date_header_today", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: ელ.ფოსტის შეცვლა
       ///
       /// Locales: en, ka, hy
@@ -11695,8 +11714,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -11737,8 +11756,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -12467,8 +12486,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
