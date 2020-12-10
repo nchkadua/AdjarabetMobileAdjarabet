@@ -9,7 +9,7 @@
 import RxSwift
 import UAParserSwift
 
-public protocol AccessHistoryViewModel: AccessHistoryViewModelInput, AccessHistoryViewModelOutput, ABTableViewControllerDelegate {
+public protocol AccessHistoryViewModel: AccessHistoryViewModelInput, AccessHistoryViewModelOutput {
 }
 
 public struct AccessHistoryViewModelParams {
@@ -41,6 +41,10 @@ public class DefaultAccessHistoryViewModel {
     private var accessHistoryDataProvider: AppCellDataProviders = []
     private let dateFormatter = DateFormatter()
     @Inject(from: .useCases) private var displayAccessListUseCase: DisplayAccessListUseCase
+    enum DeviceType {
+        case mobile
+        case desktop
+    }
 
     public init(params: AccessHistoryViewModelParams) {
         self.params = params
@@ -92,28 +96,6 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
         }
     }
 
-    // MARK: Paging
-
-    //    private func appendPage(history: AppCellDataProviders) {
-    //        let offset = self.accessHistoryDataProvider.count
-    //        self.page.setNextPage()
-    //        self.page.configureHasMore(forNumberOfItems: history.count)
-    //
-    //        self.accessHistoryDataProvider.append(contentsOf: history)
-    //
-    //        let indexPathes = history.enumerated().map { IndexPath(item: offset + $0.offset, section: 0) }
-    //        actionSubject.onNext(.reloadItems(items: history, insertionIndexPathes: indexPathes, deletionIndexPathes: []))
-    //    }
-    //
-    //    private func resetPaging() {
-    //        self.accessHistoryDataProvider = []
-    //        page.reset()
-    //        page.itemsPerPage = 10
-    //        page.current = 0
-    //    }
-
-    // MARK: ABTableViewControllerDelegate
-
     private func constructComponentViewModel(from entity: AccessListEntity) -> DefaultAccessHistoryComponentViewModel {
         let deviceType = getDeviceTypeFrom(userAgent: entity.userAgent)
         let deviceName = getDeviceNameFor(deviceType: deviceType)
@@ -125,12 +107,22 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
 
     private func getDeviceTypeFrom(userAgent: String) -> DeviceType {
         let parser = UAParser(agent: userAgent)
-
         guard let userOS = parser.os?.name else { return .desktop }
-        if userOS.contains("android") || userOS.contains("ios") {
+
+        if userOS.range(of: "windows", options: .caseInsensitive) != nil {
+            return .desktop
+        }
+        if userOS.range(of: "mac", options: .caseInsensitive) != nil {
+            return .desktop
+        }
+
+        if userOS.range(of: "ios", options: .caseInsensitive) != nil {
             return .mobile
         }
 
+        if userOS.range(of: "android", options: .caseInsensitive) != nil {
+            return .mobile
+        }
         return .desktop
     }
 
@@ -156,16 +148,5 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
         let stringDate = dateFormatter.dayDateString(from: entity.date)
         let headerModel = DefaultDateHeaderComponentViewModel(params: .init(title: stringDate))
         return headerModel
-    }
-
-    public func didDeleteCell(at indexPath: IndexPath) {
-    }
-
-    public func didLoadNextPage() {
-    }
-
-    public enum DeviceType {
-        case mobile
-        case desktop
     }
 }
