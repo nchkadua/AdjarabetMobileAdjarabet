@@ -10,6 +10,7 @@ public class AccountParametersNavigator: Navigator {
     @Inject(from: .factories) public var selfSuspendViewControllerFactory: SelfSuspendViewControllerFactory
     @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
     @Inject(from: .factories) public var otpViewControllerFactory: OTPFactory
+    @Inject(from: .factories) public var securityLevelsViewControllerFactory: SecurityLevelsViewControllerFactory
     @Inject(from: .factories) public var accessHistoryViewControllerFactory: AccessHistoryViewControllerFactory
 
     private weak var viewController: UIViewController?
@@ -23,6 +24,7 @@ public class AccountParametersNavigator: Navigator {
         case highSecurity
         case blockSelf
         case loginHistory
+        case securityLevels
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -33,6 +35,8 @@ public class AccountParametersNavigator: Navigator {
             navigateToSelfSuspend(animate: animate)
         case .loginHistory:
             navigateToAccessHistory(animate: animate)
+        case .securityLevels:
+            navigateToSecurityLevels(animate: animate)
         default:
             break
         }
@@ -45,6 +49,7 @@ public class AccountParametersNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 
+    // TODO: make private and call correctly through public 'navigate'
     public func navigateToHighSecurity(with params: OTPViewModelParams, animate: Bool) {
         let vc = otpViewControllerFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
@@ -57,6 +62,13 @@ public class AccountParametersNavigator: Navigator {
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+    }
+
+    private func navigateToSecurityLevels(animate: Bool) {
+        let vc = securityLevelsViewControllerFactory.make(params: .default)
+        let nvc = vc.wrapInNavWith(presentationStyle: .automatic)
+        nvc.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(nvc, animated: animate)
     }
 
     private func navigateToAccessHistory(animate: Bool) {

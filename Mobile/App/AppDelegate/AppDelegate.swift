@@ -78,6 +78,7 @@ public extension DependencyContainer {
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
         Module { DefaultAddCardViewModel(params: .init()) as AddCardViewModel }
         Module { DefaultCardInfoViewModel(params: .init()) as CardInfoViewModel }
+        Module { DefaultSecurityLevelsViewModel() as SecurityLevelsViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -126,6 +127,7 @@ public extension DependencyContainer {
         Module { DefaultAccessHistoryViewControllerFactory() as AccessHistoryViewControllerFactory }
         Module { DefaultAddCardViewControllerFactory() as AddCardViewControllerFactory }
         Module { DefaultCardInfoViewControllerFactory() as CardInfoViewControllerFactory }
+        Module { DefaultSecurityLevelsViewControllerFactory() as SecurityLevelsViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

@@ -225,6 +225,22 @@
 "card_cvv" = "CVV";
 "card_add_button_title" = "ბარათის დამატება";
 
+/* Security Levels */
+"security_levels_scene_title" = "SMS შეტყობინებები";
+"security_levels_standart_packet" = "სტანდარტული პაკეტი";
+"security_levels_high_security_parameters" = "მაღალი დაცვის პარამეტრები";
+"security_levels_individual" = "ინდივიდუალური";
+"security_levels_deposit" = "დეპოზიტი";
+"security_levels_withdraw" = "გატანა";
+"security_levels_password_change" = "პაროლის ცვლილება";
+"security_levels_password_update" = "პაროლის განახლება";
+"security_levels_other_ip_login" = "სხვა IP მისამართიდან შესვლა";
+"security_levels_contacts_change" = "საკონტაქტო ინფორმაციის ცვლილება";
+"security_levels_personal_info_change" = "პერსონალური ინფორმაციის ცვლილება";
+"security_levels_id_document_change" = "ID დოკუმენტების ცვლილება";
+"security_levels_account_block" = "ანგარიშის დაბლოკვა";
+"security_levels_high_security_activation_deactivation" = "მაღალი დაცვის რეჟიმის გააქტიურება/დეაქტივაცია";
+
 /* Dates */
 "january" = "იანვარი";
 "february" = "თებერვალი";

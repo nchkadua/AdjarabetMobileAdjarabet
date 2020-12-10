@@ -225,6 +225,22 @@
 "card_cvv" = "CVV";
 "card_add_button_title" = "ADD CARD";
 
+/* Security Levels */
+"security_levels_scene_title" = "SMS Messages";
+"security_levels_standart_packet" = "Standart Packet";
+"security_levels_high_security_parameters" = "High Security Parameters";
+"security_levels_individual" = "Individual";
+"security_levels_deposit" = "Deposit";
+"security_levels_withdraw" = "Withdraw";
+"security_levels_password_change" = "Password Change";
+"security_levels_password_update" = "Password Update";
+"security_levels_other_ip_login" = "Other IP Login";
+"security_levels_contacts_change" = "Contacts Change";
+"security_levels_personal_info_change" = "Personal Info Change";
+"security_levels_id_document_change" = "ID Document Change";
+"security_levels_account_block" = "Account Block";
+"security_levels_high_security_activation_deactivation" = "High Security Activation / Deactivation";
+
 /* Dates */
 "january" = "January";
 "february" = "February";

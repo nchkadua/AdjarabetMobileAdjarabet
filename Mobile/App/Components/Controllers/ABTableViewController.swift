@@ -34,7 +34,9 @@ public class ABTableViewController: AppTableViewController {
             AccountParametersTableViewCell.self,
             AccountSecurityMessagesTableViewCell.self,
             AccountParametersHeaderTableViewCell.self,
-            AccessHistoryTableViewCell.self
+            AccessHistoryTableViewCell.self,
+            SecurityLevelTableViewCell.self,
+            SecurityLevelTypeTableViewCell.self
         ])
 
         setupTableView()

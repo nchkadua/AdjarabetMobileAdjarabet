@@ -72,7 +72,7 @@ public extension UIViewController {
 
     @objc func backBarButtonItemDidTap() {
         if let nav = navigationController {
-            if nav.isBeingPresented || (nav.parent != nil && nav.parent!.isBeingPresented) {
+            if nav.presentingViewController != nil || nav.isBeingPresented || (nav.parent != nil && nav.parent!.isBeingPresented) {
                 dismiss(animated: true, completion: nil)
             } else {
                 navigationController?.popViewController(animated: true)

@@ -77,9 +77,19 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                     })
                 }
             } else if let accountParameterMessagesModel = $0 as? AccountParameterMessages {
-                componentViewModel = DefaultAccountSecurityMessagesComponentViewModel(params: .init(title: accountParameterMessagesModel.title,
+                let viewModel = DefaultAccountSecurityMessagesComponentViewModel(params: .init(title: accountParameterMessagesModel.title,
                                                                                                     description: accountParameterMessagesModel.description, buttonTitle: accountParameterMessagesModel.buttonTitle,
                                                                                                     switchState: accountParameterMessagesModel.switchState))
+                viewModel.action.subscribe(onNext: { [weak self] action in
+                    switch action {
+                    case .parametersSwitchToggledTo(let state):
+                        if state == true {
+                            self?.goToDestination(.securityLevels)
+                        }
+                    default: break
+                    }
+                }).disposed(by: disposeBag)
+                componentViewModel = viewModel
             } else if let accountParameterHeaderModel = $0 as? AccountParameterHeader {
                 componentViewModel = DefaultAccountParametersHeaderComponentViewModel(params: .init(title: accountParameterHeaderModel.title))
             }
@@ -103,7 +113,8 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
             goToHighSecurity()
         case .loginHistory:
             goToAccessHistory()
-        default: break
+        default:
+            routeSubject.onNext(.openPage(destination))
         }
     }
 

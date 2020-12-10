@@ -1,22 +1,23 @@
 //
-//  TransactionFilterComponentView.swift
+//  SecurityLevelTypeComponentView.swift
 //  Mobile
 //
-//  Created by Irakli Shelia on 11/27/20.
+//  Created by Giorgi Kratsashvili on 12/9/20.
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
 import RxSwift
 
-class TransactionFilterComponentView: UIView {
+class SecurityLevelTypeComponentView: UIView {
     private var disposeBag = DisposeBag()
-    private var viewModel: TransactionFilterComponentViewModel!
+    private var viewModel: SecurityLevelTypeComponentViewModel!
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
-    @IBOutlet weak private var separator: UIView!
-    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var label: UILabel!
     @IBOutlet weak private var checkbox: ABCheckbox!
+    @IBOutlet weak private var separator: UIView!
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -27,7 +28,7 @@ class TransactionFilterComponentView: UIView {
         nibSetup()
     }
 
-    public func setAndBind(viewModel: TransactionFilterComponentViewModel) {
+    public func setAndBind(viewModel: SecurityLevelTypeComponentViewModel) {
         self.viewModel = viewModel
         bind()
     }
@@ -36,10 +37,9 @@ class TransactionFilterComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title, let checked, _):
+            case .set(let title, let checked):
                 self?.set(title: title, checked: checked)
-            case .checkBoxToggled:
-                break
+            default: break // ignore toggleRequest
             }
         }).disposed(by: disposeBag)
 
@@ -47,17 +47,16 @@ class TransactionFilterComponentView: UIView {
     }
 
     private func set(title: String, checked: Bool) {
-        titleLabel.text = title
+        label.text = title
         checkbox.isSelected = checked
     }
 
-    @IBAction func toggleCheckbox(sender: UIButton) {
-        print(sender.isSelected)
-        viewModel.checkBoxToggled(to: sender.isSelected)
+    @IBAction func checkboxWillToggle(sender: UIButton) {
+        viewModel.toggleRequest()
     }
 }
 
-extension TransactionFilterComponentView: Xibable {
+extension SecurityLevelTypeComponentView: Xibable {
     var mainView: UIView {
         get {
             view
@@ -70,7 +69,8 @@ extension TransactionFilterComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = .clear
         separator.setBackgorundColor(to: .nonOpaque())
-        titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .headline(fontCase: .lower))
+        label.setTextColor(to: .primaryText())
+        label.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
+        checkbox.viewModel = ABCheckmarkCheckboxModel()
     }
 }
