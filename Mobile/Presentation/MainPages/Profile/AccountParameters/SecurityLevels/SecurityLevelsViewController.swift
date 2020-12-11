@@ -48,7 +48,7 @@ public class SecurityLevelsViewController: ABViewController {
 extension SecurityLevelsViewController {
     private func setup() {
         setTitle(title: R.string.localization.security_levels_scene_title.localized())
-        setBackBarButtonItemIfNeeded(width: 44)
+        setBackDismissBarButtonItemIfNeeded(width: 44)
         setupTableView()
     }
 
