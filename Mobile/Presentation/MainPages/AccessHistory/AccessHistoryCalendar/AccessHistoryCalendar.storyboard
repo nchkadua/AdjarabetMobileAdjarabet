@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Access History Calendar View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="AccessHistoryCalendarViewController" id="gAa-dD-eZu" customClass="AccessHistoryCalendarViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhC-q1-n7g" customClass="CalendarComponentView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="16" y="60" width="382" height="334"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bhC-q1-n7g" secondAttribute="height" multiplier="191:167" id="nG1-RJ-Eg1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <constraints>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="bhC-q1-n7g" secondAttribute="trailing" constant="16" id="0Mt-nu-DcR"/>
+                            <constraint firstItem="bhC-q1-n7g" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="16" id="Eve-2a-HVL"/>
+                            <constraint firstItem="bhC-q1-n7g" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="16" id="Wzo-pQ-ZCo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendarComponentView" destination="bhC-q1-n7g" id="Zpf-3u-Wob"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="30"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

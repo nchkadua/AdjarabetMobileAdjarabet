@@ -17,6 +17,7 @@ public struct AccessHistoryViewModelParams {
 
 public protocol AccessHistoryViewModelInput: AnyObject {
     var params: AccessHistoryViewModelParams { get set }
+    func calendarTabItemClicked()
     func viewDidLoad()
 }
 
@@ -31,15 +32,16 @@ public enum AccessHistoryViewModelOutputAction {
 }
 
 public enum AccessHistoryViewModelRoute {
+    case openAccessHistoryCalendar(params: AccessHistoryCalendarViewModelParams)
 }
 
-public class DefaultAccessHistoryViewModel {
+public class DefaultAccessHistoryViewModel: DefaultBaseViewModel {
     public var params: AccessHistoryViewModelParams
     private let actionSubject = PublishSubject<AccessHistoryViewModelOutputAction>()
     private let routeSubject = PublishSubject<AccessHistoryViewModelRoute>()
-    private var page: PageDescription = .init()
     private var accessHistoryDataProvider: AppCellDataProviders = []
     private let dateFormatter = DateFormatter()
+    private var filteredParams: DisplayAccessListUseCaseParams?
     @Inject(from: .useCases) private var displayAccessListUseCase: DisplayAccessListUseCase
     enum DeviceType {
         case mobile
@@ -56,28 +58,63 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
     public var route: Observable<AccessHistoryViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        displayEmptyList()
-        displayAccessHistory()
+        displayUnfilteredAccessHistory()
+    }
+
+    public func calendarTabItemClicked() {
+        let params = AccessHistoryCalendarViewModelParams()
+        subscribeToFilterViewModelParams(params)
+        routeSubject.onNext(.openAccessHistoryCalendar(params: params))
+    }
+
+    private func subscribeToFilterViewModelParams(_ params: AccessHistoryCalendarViewModelParams) {
+        params.paramsOutputAction.subscribe(onNext: {[weak self] action in
+            guard let self = self else { return }
+            switch action {
+            case .filterSelected(let fromDate, let toDate):
+                self.constructFilteredParams(fromDate: fromDate,
+                                                        toDate: toDate)
+                self.displayFilteredAccessHistory(params: self.filteredParams!)
+            }
+        })
+        .disposed(by: disposeBag)
+    }
+
+    private func constructFilteredParams(fromDate: Date?, toDate: Date?) {
+        let fromDate = dateFormatter.dayDateString(from: fromDate ?? Date.distantPast)
+        let toDate = dateFormatter.dayDateString(from: toDate ?? Date.distantFuture)
+        let params: DisplayAccessListUseCaseParams = .init(fromDate: fromDate,
+                                                                     toDate: toDate)
+        self.filteredParams = params
     }
 
     // MARK: Display Access History
 
     private func displayEmptyList() {
-        //        self.resetPaging()
         let initialEmptyDataProvider: AppCellDataProviders = []
         self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
     }
 
-    private func displayAccessHistory() {
+    private func displayFilteredAccessHistory(params: DisplayAccessListUseCaseParams) {
+        displayAccessHistory(params: params)
+    }
+
+    private func displayUnfilteredAccessHistory() {
         let fromDate = dateFormatter.verboseDateString(from: Date.distantPast)
         let toDate = dateFormatter.verboseDateString(from: Date.distantFuture)
         let params: DisplayAccessListUseCaseParams = .init(fromDate: fromDate,
                                                            toDate: toDate)
+        displayAccessHistory(params: params)
+    }
+
+    private func displayAccessHistory(params: DisplayAccessListUseCaseParams) {
+        self.displayEmptyList()
         displayAccessListUseCase.execute(params: params) { [weak self] result in
             guard let self = self else {return}
             switch result {
             case .success(let accessList):
                 var datesSet: Set<String>  = []
+                self.accessHistoryDataProvider = []
                 accessList.forEach { access in
                     let componentViewModel = self.constructComponentViewModel(from: access)
                     let dayString = self.dateFormatter.dayDateString(from: access.date)

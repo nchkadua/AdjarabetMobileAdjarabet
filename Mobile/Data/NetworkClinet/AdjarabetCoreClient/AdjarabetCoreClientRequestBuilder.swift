@@ -106,7 +106,7 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
     }
 
     public func set(providerType: Int) -> Self {
-        queryItems.append(.init(key: .pageIndex, value: "\(providerType)"))
+        queryItems.append(.init(key: .providerType, value: "\(providerType)"))
         return self
     }
 

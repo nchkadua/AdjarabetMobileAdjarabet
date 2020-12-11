@@ -42,6 +42,10 @@ public class AccessHistoryViewController: ABViewController {
     }
 
     private func didRecive(route: AccessHistoryViewModelRoute) {
+        switch route {
+        case .openAccessHistoryCalendar(let params):
+            navigator.navigate(to: .calendar(params: params), animated: true)
+        }
     }
 
     // MARK: Setup methods
@@ -74,7 +78,7 @@ public class AccessHistoryViewController: ABViewController {
     }
 
     @objc private func calendarTabItemClicked() {
-//        viewModel.calendarTabItemClicked()
+        viewModel.calendarTabItemClicked()
     }
 }
 

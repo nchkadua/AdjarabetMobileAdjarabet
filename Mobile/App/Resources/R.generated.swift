@@ -90,8 +90,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 29 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 30 storyboards.
   struct storyboard {
+    /// Storyboard `AccessHistoryCalendar`.
+    static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
     /// Storyboard `AccessHistory`.
     static let accessHistory = _R.storyboard.accessHistory()
     /// Storyboard `AccountInfo`.
@@ -155,6 +157,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AccessHistory", bundle: ...)`
     static func accessHistory(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.accessHistory)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AccessHistoryCalendar", bundle: ...)`
+    static func accessHistoryCalendar(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.accessHistoryCalendar)
     }
     #endif
 
@@ -11628,8 +11637,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -11646,8 +11655,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/QuickAction/withdraw", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/withdraw' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -11756,8 +11765,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -12169,6 +12178,9 @@ struct _R: Rswift.Validatable {
       try accessHistory.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try accessHistoryCalendar.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try accountInfo.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -12268,6 +12280,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.accessHistory().accessHistoryViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accessHistoryViewController' could not be loaded from storyboard 'AccessHistory' as 'AccessHistoryViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct accessHistoryCalendar: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let accessHistoryCalendarViewController = StoryboardViewControllerResource<AccessHistoryCalendarViewController>(identifier: "AccessHistoryCalendarViewController")
+      let bundle = R.hostingBundle
+      let name = "AccessHistoryCalendar"
+
+      func accessHistoryCalendarViewController(_: Void = ()) -> AccessHistoryCalendarViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: accessHistoryCalendarViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.accessHistoryCalendar().accessHistoryCalendarViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accessHistoryCalendarViewController' could not be loaded from storyboard 'AccessHistoryCalendar' as 'AccessHistoryCalendarViewController'.") }
       }
 
       fileprivate init() {}

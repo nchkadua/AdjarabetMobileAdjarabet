@@ -79,7 +79,6 @@ public class TransactionsFilterViewController: ABViewController {
 
     // MARK: Action methods
     private func filterWith(_ startDate: Date, _ endDate: Date) {
-        print("fromDate :\(startDate) --- toDate: \(endDate)")
         viewModel.filterSelected(fromDate: startDate, toDate: endDate)
     }
 

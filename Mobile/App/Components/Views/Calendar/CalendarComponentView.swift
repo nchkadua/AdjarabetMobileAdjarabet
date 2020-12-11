@@ -137,7 +137,8 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
         if firstDate == nil {
             firstDate = date
             datesRange = [firstDate!]
-            viewModel.didSelectRange(fromDate: datesRange!.first!, toDate: Date.distantFuture)
+            let nextDay = Calendar.current.date(byAdding: .day, value: 1, to: datesRange!.first!)!
+            viewModel.didSelectRange(fromDate: datesRange!.first!, toDate: nextDay)
             return
         }
 

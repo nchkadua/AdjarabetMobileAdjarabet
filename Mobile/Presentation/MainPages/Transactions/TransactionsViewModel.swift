@@ -205,13 +205,13 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
                                                     description: dateFormatter.hourDateString(from: entity.date)))
 
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_total_amount(),
-                                                    description: String(entity.totalAmount)))
+                                                    description: prettyAmount(from: entity.totalAmount)))
 
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_fee_amount(),
-                                                    description: String(entity.feeAmount)))
+                                                    description: prettyFeeAmount(from: entity.feeAmount)))
 
         if transactionType == .deposit {
-            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_fee_amount(),
+            transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_type(),
                                                         description: R.string.localization.transactions_details_type_deposit() ))
         } else if transactionType == .withdraw {
             transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_type(),
@@ -231,17 +231,31 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
         if transactionType == .deposit {
             transactionHistory = TransactionHistory(title: entity.providerName ,
                                                     subtitle: R.string.localization.transactions_details_type_deposit(),
-                                                    amount: String(entity.totalAmount ),
+                                                    amount: prettyAmount(from: entity.totalAmount),
                                                     icon: R.image.transactionsHistory.deposit()!,
                                                     details: details)
         } else if transactionType == .withdraw {
             transactionHistory = TransactionHistory(title: entity.providerName ,
                                                     subtitle: R.string.localization.transactions_details_type_withdraw(),
-                                                    amount: String(entity.totalAmount ),
+                                                    amount: prettyAmount(from: entity.totalAmount),
                                                     icon: R.image.transactionsHistory.withdraw()!,
                                                     details: details)
         }
         let componentViewModel = DefaultTransactionHistoryComponentViewModel(params: .init(transactionHistory: transactionHistory!))
         return componentViewModel
+    }
+
+    private func prettyAmount(from rawAmount: Double) -> String {
+        let rawInt = Int(rawAmount) / 100
+        let rawString = String(rawInt)
+        let prettyString = "\(rawString).00 ₾"
+        return prettyString
+    }
+
+    private func prettyFeeAmount(from rawAmount: Double) -> String {
+        let rawInt = Int(rawAmount) / 100
+        let rawString = String(rawInt)
+        let prettyString = "₾ \(rawString).00"
+        return prettyString
     }
 }

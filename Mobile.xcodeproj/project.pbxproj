@@ -90,6 +90,11 @@
 		76EBDB3C257E417D00C8DC6A /* AccessListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */; };
 		76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB39257E417D00C8DC6A /* CoreApiAccessListRepository.swift */; };
 		76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB42257E426200C8DC6A /* AccessListEntity.swift */; };
+		76EFF7C32582383000898819 /* AccessHistoryCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76EFF7BE2582383000898819 /* AccessHistoryCalendar.storyboard */; };
+		76EFF7C42582383000898819 /* AccessHistoryCalendarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EFF7BF2582383000898819 /* AccessHistoryCalendarNavigator.swift */; };
+		76EFF7C52582383000898819 /* AccessHistoryCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EFF7C02582383000898819 /* AccessHistoryCalendarViewController.swift */; };
+		76EFF7C62582383000898819 /* AccessHistoryCalendarViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EFF7C12582383000898819 /* AccessHistoryCalendarViewControllerFactory.swift */; };
+		76EFF7C72582383000898819 /* AccessHistoryCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EFF7C22582383000898819 /* AccessHistoryCalendarViewModel.swift */; };
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
 		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
@@ -597,6 +602,11 @@
 		76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessListRepository.swift; sourceTree = "<group>"; };
 		76EBDB39257E417D00C8DC6A /* CoreApiAccessListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiAccessListRepository.swift; sourceTree = "<group>"; };
 		76EBDB42257E426200C8DC6A /* AccessListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessListEntity.swift; sourceTree = "<group>"; };
+		76EFF7BE2582383000898819 /* AccessHistoryCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccessHistoryCalendar.storyboard; sourceTree = "<group>"; };
+		76EFF7BF2582383000898819 /* AccessHistoryCalendarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryCalendarNavigator.swift; sourceTree = "<group>"; };
+		76EFF7C02582383000898819 /* AccessHistoryCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryCalendarViewController.swift; sourceTree = "<group>"; };
+		76EFF7C12582383000898819 /* AccessHistoryCalendarViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryCalendarViewControllerFactory.swift; sourceTree = "<group>"; };
+		76EFF7C22582383000898819 /* AccessHistoryCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryCalendarViewModel.swift; sourceTree = "<group>"; };
 		78526968594DC2FF052D9FB5 /* Pods-MobileTests.debug-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.debug-stage.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.debug-stage.xcconfig"; sourceTree = "<group>"; };
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
@@ -1150,6 +1160,7 @@
 		7665D959257E5C8100E5B35F /* AccessHistory */ = {
 			isa = PBXGroup;
 			children = (
+				76EFF7BD2582380900898819 /* AccessHistoryCalendar */,
 				7665D95A257E5CA600E5B35F /* AccessHistory.storyboard */,
 				7665D95B257E5CA600E5B35F /* AccessHistoryNavigator.swift */,
 				7665D95C257E5CA600E5B35F /* AccessHistoryViewController.swift */,
@@ -1379,6 +1390,18 @@
 				76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */,
 			);
 			path = AccessList;
+			sourceTree = "<group>";
+		};
+		76EFF7BD2582380900898819 /* AccessHistoryCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				76EFF7BE2582383000898819 /* AccessHistoryCalendar.storyboard */,
+				76EFF7BF2582383000898819 /* AccessHistoryCalendarNavigator.swift */,
+				76EFF7C02582383000898819 /* AccessHistoryCalendarViewController.swift */,
+				76EFF7C12582383000898819 /* AccessHistoryCalendarViewControllerFactory.swift */,
+				76EFF7C22582383000898819 /* AccessHistoryCalendarViewModel.swift */,
+			);
+			path = AccessHistoryCalendar;
 			sourceTree = "<group>";
 		};
 		9D1383A490506B12A0598302 /* Pods */ = {
@@ -3153,6 +3176,7 @@
 				769886AE2571055000FA339E /* TransactionFilterComponentView.xib in Resources */,
 				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
 				CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */,
+				76EFF7C32582383000898819 /* AccessHistoryCalendar.storyboard in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
 				CE91C0E7257028DC00A18255 /* TransactionsFilter.storyboard in Resources */,
 				CE55ECFE25265CF1003E168F /* Profile.storyboard in Resources */,
@@ -3354,6 +3378,7 @@
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
 				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
+				76EFF7C72582383000898819 /* AccessHistoryCalendarViewModel.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
@@ -3670,6 +3695,7 @@
 				CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */,
 				76DBCE57257FAB000030E600 /* DateFormatter+Extension.swift in Sources */,
 				7676E54E2562856600234026 /* TransactionsNavigator.swift in Sources */,
+				76EFF7C52582383000898819 /* AccessHistoryCalendarViewController.swift in Sources */,
 				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
 				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
@@ -3682,6 +3708,7 @@
 				76EBDB3B257E417D00C8DC6A /* GetAccessListResponse.swift in Sources */,
 				CE7A23F4257948F500A94E89 /* CardInfoViewController.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
+				76EFF7C42582383000898819 /* AccessHistoryCalendarNavigator.swift in Sources */,
 				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,
 				C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */,
 				D8BA5A1A2499391C00F88433 /* AppConstant.swift in Sources */,
@@ -3708,6 +3735,7 @@
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
 				7644B5EC25639786006778B2 /* TransactionHistoryComponentViewModel.swift in Sources */,
 				D8AC492C24CFE835000B2D80 /* AppDelegateServices.swift in Sources */,
+				76EFF7C62582383000898819 /* AccessHistoryCalendarViewControllerFactory.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
 				C71B4B73257EC57000538697 /* SecurityLevelsViewController.swift in Sources */,
