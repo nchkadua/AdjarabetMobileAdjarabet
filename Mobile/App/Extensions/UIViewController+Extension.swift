@@ -72,7 +72,7 @@ public extension UIViewController {
 
     @objc func backBarButtonItemDidTap() {
         if let nav = navigationController {
-            if nav.presentingViewController != nil || nav.isBeingPresented || (nav.parent != nil && nav.parent!.isBeingPresented) {
+            if nav.isBeingPresented || (nav.parent != nil && nav.parent!.isBeingPresented) {
                 dismiss(animated: true, completion: nil)
             } else {
                 navigationController?.popViewController(animated: true)
@@ -83,9 +83,17 @@ public extension UIViewController {
     }
 
     func setDismissBarButtonItemIfNeeded(width: CGFloat = 26) {
+        setDismissBarButtonItemIfNeededHelper(width: width, icon: R.image.shared.close())
+    }
+
+    func setBackDismissBarButtonItemIfNeeded(width: CGFloat = 26) {
+        setDismissBarButtonItemIfNeededHelper(width: width, icon: R.image.shared.back())
+    }
+
+    private func setDismissBarButtonItemIfNeededHelper(width: CGFloat, icon: UIImage?) {
         navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
-        button.setImage(R.image.shared.close(), for: .normal)
+        button.setImage(icon, for: .normal)
         button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
