@@ -133,6 +133,7 @@
 		C7C973AF2580EC990062C713 /* SecurityLevelTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973A92580EC990062C713 /* SecurityLevelTypeTableViewCell.swift */; };
 		C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */; };
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
+		C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */; };
 		C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */; };
 		C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */; };
 		C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */; };
@@ -646,6 +647,7 @@
 		C7C973A92580EC990062C713 /* SecurityLevelTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelTypeTableViewCell.swift; sourceTree = "<group>"; };
 		C7CA6A0B2563B2F900A9C6AB /* ABPopupPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupPresentationController.swift; sourceTree = "<group>"; };
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
+		C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilder.swift; sourceTree = "<group>"; };
 		C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiUserProfileRepository.swift; sourceTree = "<group>"; };
 		C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepository.swift; sourceTree = "<group>"; };
 		C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
@@ -1535,6 +1537,29 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
+		C7D29F42258EA784006BEFAC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C7D29F45258EA78C006BEFAC /* HttpRequestBuilder */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C7D29F45258EA78C006BEFAC /* HttpRequestBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */,
+			);
+			path = HttpRequestBuilder;
+			sourceTree = "<group>";
+		};
+		C7D29F52258EA8CE006BEFAC /* HttpRequestBuilder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpRequestBuilder;
+			sourceTree = "<group>";
+		};
 		C7EF9E46256FECDD00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -1557,6 +1582,7 @@
 		C7EF9E4A256FEF1400D2908C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C7D29F42258EA784006BEFAC /* Helpers */,
 				C7EF9E46256FECDD00D2908C /* Core */,
 			);
 			path = API;
@@ -2232,6 +2258,7 @@
 		D80784A324447AA400003892 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				C7D29F52258EA8CE006BEFAC /* HttpRequestBuilder */,
 				D896E48625251E0000C02B39 /* Protocols */,
 				D84202D1245196C800F0F056 /* DesignSystem */,
 				D84202D2245196D800F0F056 /* Localization */,
@@ -3505,6 +3532,7 @@
 				D8BF4049244ECDB6008F0BAF /* CellHeighProvidering.swift in Sources */,
 				CE55ED2B252721A2003E168F /* ProfileViewControllerFactory.swift in Sources */,
 				CE7A241125796AD500A94E89 /* Collection+Extension.swift in Sources */,
+				C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */,
 				7668C7AC2576785F0024DDE4 /* AccountParametersHeaderComponentViewModel.swift in Sources */,
 				CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */,
 				D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */,
