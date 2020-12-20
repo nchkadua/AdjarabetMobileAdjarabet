@@ -135,7 +135,7 @@ public protocol UrlEncodedContentSetterHttpRequestBuilder {
 public typealias RawContentSetterReturnType = UrlRequestBuilderHttpRequestBuilder
 
 public protocol RawContentSetterHttpRequestBuilder {
-    func setBody(raw: String) -> RawContentSetterReturnType
+    func setBody(raw data: Data) -> RawContentSetterReturnType
 }
 
 /* Build */
@@ -157,10 +157,20 @@ private typealias HttpRequestBuilderProtocols = HttpRequestBuilder &
  HttpRequestBuilder Implementation
  */
 public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
-    private var components = URLComponents()
-    private var request = URLRequest(url: URL(string: "")!) // url will be updated later
+    private lazy var components: URLComponents = {
+        var components = URLComponents() // default initialization
+        components.queryItems = []
+        return components
+    }()
 
-    public init() { }
+    private lazy var request: URLRequest = {
+        let url = URL(string: .init())!       // default initialization
+        let urlRequest = URLRequest(url: url) // url will be updated later
+     // urlRequest.httpBody = nil
+        return urlRequest
+    }()
+
+    private init() { }
 
     public static func createInstance() -> HttpRequestBuilder {
         return HttpRequestBuilderImpl()
@@ -207,14 +217,32 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
     }
 
     public func setBody(key: String, value: String) -> UrlEncodedContentSetterReturnType {
+        components.queryItems?.append(.init(name: key, value: value))
         return self
     }
 
-    public func setBody(raw: String) -> RawContentSetterReturnType {
+    public func setBody(raw data: Data) -> RawContentSetterReturnType {
+        request.httpBody = data
         return self
     }
 
     public func build() -> URLRequest {
-        return URLRequest(url: URL(string: "")!)
+        // if Content-Type is set to application/x-www-form-urlencoded (if not - text/plain)
+        // we should fill httpBody
+        if request.allHTTPHeaderFields?["Content-Type"] == ContentType.urlEncoded.value {
+            request.httpBody = components.query?.data(using: String.Encoding.utf8)
+        }
+        // Log Request before returning
+        print("""
+            HttpRequestBuilder
+            Host:         \(components.host ?? "nil")
+            Path:         \(components.path)
+            URL:          \(request.url.stringValue ?? "nil")
+            Method:       \(request.httpMethod ?? "nil")
+            Headers:      \(request.allHTTPHeaderFields as AnyObject)
+            Content-Type: \(request.allHTTPHeaderFields?["Content-Type"] ?? "nil")
+            Body:         \(request.httpBody ?? .init())
+        """)
+        return request
     }
 }
