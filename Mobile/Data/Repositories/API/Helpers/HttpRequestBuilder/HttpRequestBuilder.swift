@@ -10,30 +10,29 @@ import Foundation
 
 /**
 
- URL --- URI --- Headers? --- Method --- GET --- Build
-                           '--- POST --- Content Type? --- Content? --- Build
+ Host --- Path --- Headers? --- Method --- GET --- Build
+                            '--- POST --- Content Type? --- Content? --- Build
 
  */
 
 // Initial interface known to user
-public protocol HttpRequestBuilder: UrlSetterHttpRequestBuilder { }
+public protocol HttpRequestBuilder: HostSetterHttpRequestBuilder { }
 
 // Interfaces known to user
 
-/* URL */
-public typealias UrlSetterReturnType = UriSetterHttpRequestBuilder
+/* Host */
+public typealias HostSetterReturnType = PathSetterHttpRequestBuilder
 
-public protocol UrlSetterHttpRequestBuilder {
-    func set(url: URL) -> UrlSetterReturnType
-    func set(url: String) -> UrlSetterReturnType
+public protocol HostSetterHttpRequestBuilder {
+    func set(host: String) -> HostSetterReturnType
 }
 
-/* URI */
-public typealias UriSetterReturnType = HeaderSetterHttpRequestBuilder &
-                                       HttpMethodSetterHttpRequestBuilder
+/* Path */
+public typealias PathSetterReturnType = HeaderSetterHttpRequestBuilder &
+                                        HttpMethodSetterHttpRequestBuilder
 
-public protocol UriSetterHttpRequestBuilder {
-    func set(uri: String) -> UriSetterReturnType
+public protocol PathSetterHttpRequestBuilder {
+    func set(path: String) -> PathSetterReturnType
 }
 
 /* Headers */
@@ -57,12 +56,17 @@ public protocol HttpMethodTypeInfo {
 
 /// Method Types
 public enum HttpMethodType {
-    case get
     case post
+    case get
     /**
      TO DO: Add cases (put, delete ...)
      */
-    // add description if needed ...
+    var value: String {
+        switch self {
+        case .post: return "POST"
+        case .get:  return "GET"
+        }
+    }
 }
 
 /// .get
@@ -96,7 +100,12 @@ public enum ContentType {
     /**
      TO DO: Add cases (none, graphql ...)
      */
-    // add description if needed ...
+    var value: String {
+        switch self {
+        case .urlEncoded: return "application/x-www-form-urlencoded"
+        case .raw:        return "text/plain"
+        }
+    }
 }
 
 /// .urlEncoded
@@ -135,8 +144,8 @@ public protocol UrlRequestBuilderHttpRequestBuilder {
 }
 
 private typealias HttpRequestBuilderProtocols = HttpRequestBuilder &
-                                                UrlSetterHttpRequestBuilder &
-                                                UriSetterHttpRequestBuilder &
+                                                HostSetterHttpRequestBuilder &
+                                                PathSetterHttpRequestBuilder &
                                                 HeaderSetterHttpRequestBuilder &
                                                 HttpMethodSetterHttpRequestBuilder &
                                                 ContentTypeSetterHttpRequestBuilder &
@@ -148,6 +157,9 @@ private typealias HttpRequestBuilderProtocols = HttpRequestBuilder &
  HttpRequestBuilder Implementation
  */
 public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
+    private var components = URLComponents()
+    private var request = URLRequest(url: URL(string: "")!) // url will be updated later
+
     public init() { }
 
     public static func createInstance() -> HttpRequestBuilder {
@@ -156,15 +168,14 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
 
     // protocol implementations
 
-    public func set(url: URL) -> UrlSetterReturnType {
+    public func set(host: String) -> HostSetterReturnType {
+        components.host = host
         return self
     }
 
-    public func set(url: String) -> UrlSetterReturnType {
-        return self
-    }
-
-    public func set(uri: String) -> UriSetterReturnType {
+    public func set(path: String) -> PathSetterReturnType {
+        components.path = path
+        request.url = components.url
         return self
     }
 
@@ -173,7 +184,7 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
         else {
             fatalError("Specify Content-Type using set(contentType:) method")
         }
-
+        request.setValue(value, forHTTPHeaderField: key)
         return self
     }
 
@@ -182,8 +193,7 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
         else {
             fatalError("Invalid call of set(method:), you must use only protocol specified 'HttpMethodTypeInfo' implementations")
         }
-
-        _ = info.method
+        request.httpMethod = info.method.value
         return self
     }
 
@@ -192,8 +202,7 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
         else {
             fatalError("Invalid call of set(contentType:), you must use only protocol specified 'ContentTypeInfo' implementations")
         }
-
-        _ = info.contentType
+        request.setValue(info.contentType.value, forHTTPHeaderField: "Content-Type")
         return self
     }
 
