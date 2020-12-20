@@ -40,6 +40,7 @@ public typealias HeaderSetterReturnType = HeaderSetterHttpRequestBuilder &
                                           HttpMethodSetterHttpRequestBuilder
 
 public protocol HeaderSetterHttpRequestBuilder {
+    func set(headers: [String: String]) -> HeaderSetterReturnType
     func setHeader(key: String, value: String) -> HeaderSetterReturnType
 }
 
@@ -128,6 +129,7 @@ public typealias UrlEncodedContentSetterReturnType = UrlEncodedContentSetterHttp
                                                      UrlRequestBuilderHttpRequestBuilder
 
 public protocol UrlEncodedContentSetterHttpRequestBuilder {
+    func set(body: [String: String]) -> UrlEncodedContentSetterReturnType
     func setBody(key: String, value: String) -> UrlEncodedContentSetterReturnType
 }
 
@@ -157,15 +159,14 @@ private typealias HttpRequestBuilderProtocols = HttpRequestBuilder &
  HttpRequestBuilder Implementation
  */
 public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
-    private lazy var components: URLComponents = {
+    private var components: URLComponents = {
         var components = URLComponents() // default initialization
         components.queryItems = []
         return components
     }()
 
     private lazy var request: URLRequest = {
-        let url = URL(string: .init())!       // default initialization
-        let urlRequest = URLRequest(url: url) // url will be updated later
+        let urlRequest = URLRequest(url: components.url!)
      // urlRequest.httpBody = nil
         return urlRequest
     }()
@@ -185,7 +186,14 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
 
     public func set(path: String) -> PathSetterReturnType {
         components.path = path
-        request.url = components.url
+        request.url = URL(string: components.host! + components.path)
+        return self
+    }
+
+    public func set(headers: [String: String]) -> HeaderSetterReturnType {
+        headers.forEach { key, value in
+            request.setValue(value, forHTTPHeaderField: key)
+        }
         return self
     }
 
@@ -216,6 +224,13 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
         return self
     }
 
+    public func set(body: [String: String]) -> UrlEncodedContentSetterReturnType {
+        body.forEach { key, value in
+            components.queryItems?.append(.init(name: key, value: value))
+        }
+        return self
+    }
+
     public func setBody(key: String, value: String) -> UrlEncodedContentSetterReturnType {
         components.queryItems?.append(.init(name: key, value: value))
         return self
@@ -234,14 +249,20 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
         }
         // Log Request before returning
         print("""
-            HttpRequestBuilder
-            Host:         \(components.host ?? "nil")
-            Path:         \(components.path)
-            URL:          \(request.url.stringValue ?? "nil")
-            Method:       \(request.httpMethod ?? "nil")
-            Headers:      \(request.allHTTPHeaderFields as AnyObject)
-            Content-Type: \(request.allHTTPHeaderFields?["Content-Type"] ?? "nil")
-            Body:         \(request.httpBody ?? .init())
+
+
+
+        HttpRequestBuilder
+        Host:         \(components.host ?? "nil")
+        Path:         \(components.path)
+        URL:          \(String(describing: request.url))
+        Method:       \(request.httpMethod ?? "nil")
+        Headers: \(request.allHTTPHeaderFields as AnyObject)
+        Content-Type: \(request.allHTTPHeaderFields?["Content-Type"] ?? "nil")
+        Body:         \(String(decoding: request.httpBody ?? .init(), as: UTF8.self))
+
+
+
         """)
         return request
     }

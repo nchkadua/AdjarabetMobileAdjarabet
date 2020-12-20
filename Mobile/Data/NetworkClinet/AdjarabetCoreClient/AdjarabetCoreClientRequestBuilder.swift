@@ -9,10 +9,11 @@
 public class AdjarabetCoreClientRequestBuilder: Builder {
     public typealias Buildable = URLRequest
 
+    @Inject private var requestBuilder: HttpRequestBuilder
     @Inject private var userAgentProvider: UserAgentProvider
 
     private var url: URL
-    private var queryItems: [URLQueryItem] = []
+    private var queryItems: [String: String] = [:]
     private var headers = [
         "Content-Type": "application/x-www-form-urlencoded",
         "Origin": AppConstant.coreOriginDomain,
@@ -25,39 +26,39 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
     }
 
     public func set(method: AdjarabetCoreClient.Method) -> Self {
-        queryItems.append(.init(key: .req, value: method.rawValue))
+        queryItems[Key.req.rawValue] = method.rawValue
         return self
     }
 
     public func set(username: String, password: String, channel: Int) -> Self {
-        queryItems.append(.init(key: .userIdentifier, value: username))
-        queryItems.append(.init(key: .password, value: password))
-        queryItems.append(.init(key: .otpDeliveryChannel, value: "\(channel)"))
+        queryItems[Key.userIdentifier.rawValue] = username
+        queryItems[Key.password.rawValue] = password
+        queryItems[Key.otpDeliveryChannel.rawValue] = "\(channel)"
         return self
     }
 
     public func set(userId: Int, currencyId: Int, isSingle: Int) -> Self {
-        queryItems.append(.init(key: .userId, value: "\(userId)"))
-        queryItems.append(.init(key: .currencyId, value: "\(currencyId)"))
-        queryItems.append(.init(key: .isSingle, value: "\(isSingle)"))
+        queryItems[Key.userId.rawValue] = "\(userId)"
+        queryItems[Key.currencyId.rawValue] = "\(currencyId)"
+        queryItems[Key.isSingle.rawValue] = "\(isSingle)"
         return self
     }
 
     public func set(username: String, channel: Int) -> Self {
-        queryItems.append(.init(key: .userIdentifier, value: username))
-        queryItems.append(.init(key: .channelType, value: "\(channel)"))
+        queryItems[Key.userIdentifier.rawValue] = username
+        queryItems[Key.channelType.rawValue] = "\(channel)"
         return self
     }
 
     public func set(userId: Int) -> Self {
-        queryItems.append(.init(key: .userId, value: "\(userId)"))
+        queryItems[Key.userId.rawValue] = "\(userId)"
         return self
     }
 
     public func set(username: String, code: String, loginType: LoginType) -> Self {
-        queryItems.append(.init(key: .userIdentifier, value: username))
-        queryItems.append(.init(key: .otp, value: code))
-        queryItems.append(.init(key: .loginType, value: loginType.rawValue))
+        queryItems[Key.userIdentifier.rawValue] = username
+        queryItems[Key.otp.rawValue] = code
+        queryItems[Key.loginType.rawValue] = loginType.rawValue
         return self
     }
 
@@ -67,46 +68,44 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
     }
 
     public func build() -> URLRequest {
-        headers["User-Agent"] = userAgentProvider.userAgent
-
-        var component = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        component?.queryItems = queryItems
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-        request.httpBody = component?.query?.data(using: String.Encoding.utf8)
-
-        return request
+        requestBuilder
+            .set(host: url.absoluteString)
+            .set(path: "")
+            .set(headers: headers)
+            .setHeader(key: "User-Agent", value: userAgentProvider.userAgent)
+            .set(method: HttpMethodPost())
+            .set(contentType: ContentTypeUrlEncoded())
+            .set(body: queryItems)
+            .build()
     }
 
     // MARK: Transaction History
 
     public func set(fromDate: String, toDate: String) -> Self {
-        queryItems.append(.init(key: .fromDate, value: fromDate))
-        queryItems.append(.init(key: .toDate, value: toDate))
+        queryItems[Key.fromDate.rawValue] = fromDate
+        queryItems[Key.toDate.rawValue] = toDate
         return self
     }
 
     public func set(transactionType: Int?) -> Self {
         if let transactionType = transactionType {
-            queryItems.append(.init(key: .transactionType, value: "\(transactionType)"))
+            queryItems[Key.transactionType.rawValue] = "\(transactionType)"
         }
         return self
     }
 
     public func set(maxResult: Int) -> Self {
-        queryItems.append(.init(key: .maxResult, value: "\(maxResult)"))
+        queryItems[Key.maxResult.rawValue] = "\(maxResult)"
         return self
     }
 
     public func set(pageIndex: Int) -> Self {
-        queryItems.append(.init(key: .pageIndex, value: "\(pageIndex)"))
+        queryItems[Key.pageIndex.rawValue] = "\(pageIndex)"
         return self
     }
 
     public func set(providerType: Int) -> Self {
-        queryItems.append(.init(key: .providerType, value: "\(providerType)"))
+        queryItems[Key.providerType.rawValue] = "\(providerType)"
         return self
     }
 
@@ -133,11 +132,5 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
 
     public enum HeaderKey: String {
         case cookie = "Cookie"
-    }
-}
-
-public extension URLQueryItem {
-    init(key: AdjarabetCoreClientRequestBuilder.Key, value: String?) {
-        self.init(name: key.rawValue, value: value)
     }
 }

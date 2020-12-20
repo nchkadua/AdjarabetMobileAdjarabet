@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Module { DefaultUserBalanceService.shared as UserBalanceService }
             Module { DefaultBiometricAuthentication() as BiometricAuthentication }
 
+            Module { HttpRequestBuilderImpl.createInstance() as HttpRequestBuilder }
             Module { DefaultUserAgentProvider() as UserAgentProvider }
         }
 
