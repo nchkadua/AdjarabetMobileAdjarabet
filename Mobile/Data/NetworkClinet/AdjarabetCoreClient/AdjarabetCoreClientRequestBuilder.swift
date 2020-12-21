@@ -15,7 +15,6 @@ public class AdjarabetCoreClientRequestBuilder: Builder {
     private var url: URL
     private var queryItems: [String: String] = [:]
     private var headers = [
-        "Content-Type": "application/x-www-form-urlencoded",
         "Origin": AppConstant.coreOriginDomain,
         "Referer": AppConstant.coreOriginDomain,
         "X-Requested-With": "XMLHttpRequest"
