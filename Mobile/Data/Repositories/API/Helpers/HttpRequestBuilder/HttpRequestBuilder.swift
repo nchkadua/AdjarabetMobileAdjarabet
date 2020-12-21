@@ -159,15 +159,17 @@ private typealias HttpRequestBuilderProtocols = HttpRequestBuilder &
  HttpRequestBuilder Implementation
  */
 public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
-    private var components: URLComponents = {
+    private lazy var components: URLComponents = {
         var components = URLComponents() // default initialization
         components.queryItems = []
         return components
     }()
 
     private lazy var request: URLRequest = {
-        let urlRequest = URLRequest(url: components.url!)
-     // urlRequest.httpBody = nil
+        // NOTE: components.host and components.path must be set
+        let url = URL(string: components.host! + components.path)!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpBody = nil
         return urlRequest
     }()
 
@@ -186,7 +188,6 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
 
     public func set(path: String) -> PathSetterReturnType {
         components.path = path
-        request.url = URL(string: components.host! + components.path)
         return self
     }
 
