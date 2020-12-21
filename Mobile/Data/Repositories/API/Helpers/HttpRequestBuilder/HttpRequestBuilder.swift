@@ -21,28 +21,28 @@ public protocol HttpRequestBuilder: HostSetterHttpRequestBuilder { }
 // Interfaces known to user
 
 /* Host */
-public typealias HostSetterReturnType = PathSetterHttpRequestBuilder
-
 public protocol HostSetterHttpRequestBuilder {
     func set(host: String) -> HostSetterReturnType
 }
 
-/* Path */
-public typealias PathSetterReturnType = HeaderSetterHttpRequestBuilder &
-                                        HttpMethodSetterHttpRequestBuilder
+public typealias HostSetterReturnType = PathSetterHttpRequestBuilder
 
+/* Path */
 public protocol PathSetterHttpRequestBuilder {
     func set(path: String) -> PathSetterReturnType
 }
 
-/* Headers */
-public typealias HeaderSetterReturnType = HeaderSetterHttpRequestBuilder &
-                                          HttpMethodSetterHttpRequestBuilder
+public typealias PathSetterReturnType = HeaderSetterHttpRequestBuilder &
+                                        HttpMethodSetterHttpRequestBuilder
 
+/* Headers */
 public protocol HeaderSetterHttpRequestBuilder {
     func set(headers: [String: String]) -> HeaderSetterReturnType
     func setHeader(key: String, value: String) -> HeaderSetterReturnType
 }
+
+public typealias HeaderSetterReturnType = HeaderSetterHttpRequestBuilder &
+                                          HttpMethodSetterHttpRequestBuilder
 
 /* Method */
 public protocol HttpMethodSetterHttpRequestBuilder {
@@ -125,20 +125,20 @@ public struct ContentTypeRaw: ContentTypeInfo {
 
 /* Content */
 // Url Encoded Content
-public typealias UrlEncodedContentSetterReturnType = UrlEncodedContentSetterHttpRequestBuilder &
-                                                     UrlRequestBuilderHttpRequestBuilder
-
 public protocol UrlEncodedContentSetterHttpRequestBuilder {
     func set(body: [String: String]) -> UrlEncodedContentSetterReturnType
     func setBody(key: String, value: String) -> UrlEncodedContentSetterReturnType
 }
 
-// Raw Content
-public typealias RawContentSetterReturnType = UrlRequestBuilderHttpRequestBuilder
+public typealias UrlEncodedContentSetterReturnType = UrlEncodedContentSetterHttpRequestBuilder &
+                                                     UrlRequestBuilderHttpRequestBuilder
 
+// Raw Content
 public protocol RawContentSetterHttpRequestBuilder {
     func setBody(raw data: Data) -> RawContentSetterReturnType
 }
+
+public typealias RawContentSetterReturnType = UrlRequestBuilderHttpRequestBuilder
 
 /* Build */
 public protocol UrlRequestBuilderHttpRequestBuilder {
@@ -192,7 +192,7 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
 
     public func set(headers: [String: String]) -> HeaderSetterReturnType {
         headers.forEach { key, value in
-            request.setValue(value, forHTTPHeaderField: key)
+            _ = setHeader(key: key, value: value)
         }
         return self
     }
@@ -226,7 +226,7 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
 
     public func set(body: [String: String]) -> UrlEncodedContentSetterReturnType {
         body.forEach { key, value in
-            components.queryItems?.append(.init(name: key, value: value))
+            _ = setBody(key: key, value: value)
         }
         return self
     }
