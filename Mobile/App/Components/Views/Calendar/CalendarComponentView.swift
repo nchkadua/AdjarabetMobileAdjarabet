@@ -118,7 +118,7 @@ extension CalendarComponentView: Xibable {
         calendar.appearance.titlePlaceholderColor = DesignSystem.Color.querternaryText().value
         calendar.appearance.titleDefaultColor = DesignSystem.Color.primaryText().value
         calendar.appearance.selectionColor = DesignSystem.Color.tertiaryText().value
-        calendar.appearance.todaySelectionColor = .clear
+        calendar.appearance.todaySelectionColor = DesignSystem.Color.tertiaryText().value
         calendar.appearance.todayColor = .clear
         calendar.appearance.titleTodayColor = DesignSystem.Color.primaryRed().value
         //Fonts
@@ -143,11 +143,10 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
         }
 
         if firstDate != nil && lastDate == nil {
-            if date <= firstDate! {
+            if date < firstDate! {
                 calendar.deselect(firstDate!)
                 firstDate = date
                 datesRange = [firstDate!]
-
                 return
             }
 
@@ -160,6 +159,26 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
             datesRange = range
             viewModel.didSelectRange(fromDate: datesRange!.first!, toDate: datesRange!.last!)
 
+            return
+        }
+
+        if firstDate != nil && lastDate != nil {
+            for d in calendar.selectedDates {
+                calendar.deselect(d)
+            }
+
+            lastDate = nil
+            firstDate = nil
+
+            datesRange = []
+        }
+    }
+
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        if date == firstDate! {
+            calendar.deselect(firstDate!)
+            firstDate = nil
+            datesRange?.removeAll()
             return
         }
 

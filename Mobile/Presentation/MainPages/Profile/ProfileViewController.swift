@@ -85,6 +85,7 @@ public class ProfileViewController: UIViewController {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
+        appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
 
         appTableViewController.tableView?.register(types: [
             ProfileInfoTableViewCell.self,
