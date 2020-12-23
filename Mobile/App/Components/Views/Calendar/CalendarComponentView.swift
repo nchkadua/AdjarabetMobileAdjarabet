@@ -175,8 +175,8 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
     }
 
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        if date == firstDate! {
-            calendar.deselect(firstDate!)
+        if let date = firstDate {
+            calendar.deselect(date)
             firstDate = nil
             datesRange?.removeAll()
             return
