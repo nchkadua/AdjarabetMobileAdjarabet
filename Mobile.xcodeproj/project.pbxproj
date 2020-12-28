@@ -1651,7 +1651,6 @@
 				76EBDB35257E414300C8DC6A /* AccessList */,
 				76BDF42B25754057007B27A7 /* TransactionHistory */,
 				C7EF9E56256FF15400D2908C /* UserProfile */,
-				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2743,6 +2742,7 @@
 			children = (
 				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
+				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
 				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
