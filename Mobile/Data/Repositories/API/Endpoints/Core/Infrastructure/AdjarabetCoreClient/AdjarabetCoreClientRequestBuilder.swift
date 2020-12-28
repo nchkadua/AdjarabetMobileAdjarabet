@@ -78,7 +78,7 @@ public class AdjarabetCoreClientRequestBuilder {
         case cookie = "Cookie"
     }
 
-    /* deprecated part */
+    /* deprecated part */ // TODO: Delete
 
     @available(*, deprecated, message: "Please use set(key:, value:)")
     public func set(method: AdjarabetCoreClient.Method) -> Self {
