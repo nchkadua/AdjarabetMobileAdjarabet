@@ -46,7 +46,7 @@ public class AdjarabetCoreClientRequestBuilder {
 
     public func build() -> URLRequest {
         requestBuilder
-            .set(host: url.absoluteString)
+            .set(host: url)
             .set(path: "")
             .set(headers: headers)
             .set(method: HttpMethodPost())

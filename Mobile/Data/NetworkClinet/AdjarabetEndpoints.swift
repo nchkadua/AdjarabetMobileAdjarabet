@@ -7,7 +7,7 @@
 //
 
 public class AdjarabetEndpoints {
-    public static var coreAPIUrl: URL {
+    public static var coreAPIUrl: String {
         Bundle.main.coreAPIUrl
     }
 

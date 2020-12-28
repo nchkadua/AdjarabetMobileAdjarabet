@@ -7,8 +7,8 @@
 //
 
 public extension Bundle {
-    var coreAPIUrl: URL {
-        URL(string: infoDictionary?["CORE_API_URL"] as? String ?? "")!
+    var coreAPIUrl: String {
+        return value(for: "CORE_API_URL")
     }
 
     var mobileAPIUrl: URL {
@@ -27,5 +27,13 @@ public extension Bundle {
         guard let versionNumber = versionNumber, let buildNumber = buildNumber else {return nil}
 
         return "\(versionNumber) (\(buildNumber))"
+    }
+
+    fileprivate func value(for key: String) -> String {
+        guard let value = infoDictionary?[key] as? String
+        else {
+            fatalError("Error due getting value for \(key) from infoDictionary")
+        }
+        return value
     }
 }
