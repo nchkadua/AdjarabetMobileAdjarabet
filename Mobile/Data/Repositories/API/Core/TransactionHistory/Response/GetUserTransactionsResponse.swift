@@ -31,7 +31,7 @@ public class GetUserTransactionsResponse: DataTransferResponse {
         public let isRoot: Bool?
         public let channelType: Int?
         public let providerOppCode: String?
-//        public let providerReferenceID: Int?
+        //        public let providerReferenceID: Int?
 
         enum CodingKeys: String, CodingKey {
             case id = "ID"
@@ -55,7 +55,7 @@ public class GetUserTransactionsResponse: DataTransferResponse {
             case isRoot = "IsRoot"
             case channelType = "ChannelType"
             case providerOppCode = "ProviderOppCode"
-//            case providerReferenceID = "ProviderTxReferenceID"
+            //            case providerReferenceID = "ProviderTxReferenceID"
         }
     }
 
@@ -72,11 +72,12 @@ public class GetUserTransactionsResponse: DataTransferResponse {
     public typealias Entity = [TransactionHistoryEntity]
 
     public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
-        let dateFormatter = DateFormatter()
-        return body.usersTransactions.compactMap { TransactionHistoryEntity(totalAmount: $0.amount,
-                                                                     date: dateFormatter.verboseDate(from: $0.dateCreated ?? ""),
-                                                              feeAmount: $0.feeAmount,
-                                                              providerName: $0.providerName ?? ""
-        ) }
+        let dateFormatter = ABDateFormater(with: .verbose)
+        return body.usersTransactions.compactMap {
+            TransactionHistoryEntity(totalAmount: $0.amount,
+                                     date: dateFormatter.date(from: $0.dateCreated ?? ""),
+                                     feeAmount: $0.feeAmount,
+                                     providerName: $0.providerName ?? ""
+            ) }
     }
 }

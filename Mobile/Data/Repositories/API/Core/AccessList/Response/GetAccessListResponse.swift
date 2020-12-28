@@ -42,9 +42,10 @@ public final class GetAccessListResponse: DataTransferResponse {
     public typealias Entity = [AccessListEntity]
 
     public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
-        let dateFormatter = DateFormatter()
-        return body.accesList.compactMap { AccessListEntity(ip: $0.authIp,
-                                              userAgent: $0.userAgentString,
-                                              date: dateFormatter.verboseDate(from: $0.authDate ?? "")) }
+        let dateFormatter = ABDateFormater(with: .verbose)
+        return body.accesList.compactMap {
+            AccessListEntity(ip: $0.authIp,
+                             userAgent: $0.userAgentString,
+                             date: dateFormatter.date(from: $0.authDate ?? "")) }
     }
 }

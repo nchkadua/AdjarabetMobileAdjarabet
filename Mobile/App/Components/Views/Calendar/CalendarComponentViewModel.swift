@@ -22,6 +22,7 @@ public protocol CalendarComponentViewModelOutput {
 
 public enum CalendarComponentViewModelOutputAction {
     case setupCalendar
+    case selectRange(fromDate: Date, toDate: Date)
     case didSelectRange(fromDate: Date, toDate: Date)
 }
 

@@ -60,34 +60,6 @@ public struct Notification {
     public var seen: Bool
 }
 
-// MARK: TODO move to helpers/utils/extensions
-extension Date {
-    static var today: Date { return Date().today }
-    static var yesterday: Date { return Date().dayBefore }
-    static var bYesterday: Date { return Date().bYesterday }
-
-    var today: Date {
-        Calendar.current.date(byAdding: .day, value: 0, to: noon)!
-    }
-    var dayBefore: Date {
-        Calendar.current.date(byAdding: .day, value: -1, to: noon)!
-    }
-    var bYesterday: Date {
-        Calendar.current.date(byAdding: .day, value: -2, to: noon)!
-    }
-    var noon: Date {
-        Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
-    }
-    var month: Int {
-        Calendar.current.component(.month, from: self)
-    }
-    var stringValue: String {
-        let formatter3 = DateFormatter()
-        formatter3.dateFormat = "d MMMM"
-        return formatter3.string(from: self)
-    }
-}
-
 extension Array where Element: Hashable {
     var uniques: Array {
         var buffer = Array()

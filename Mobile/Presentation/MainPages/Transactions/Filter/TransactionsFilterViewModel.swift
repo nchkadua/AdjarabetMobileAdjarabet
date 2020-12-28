@@ -22,15 +22,20 @@ public struct TransactionsFilterViewModelParams {
         case filterSelected(fromDate: Date?, toDate: Date?, providerType: ProviderType, transactionType: TransactionType)
     }
     public let paramsOutputAction = PublishSubject<Action>()
+    var selectedProviderType: ProviderType = .transactions
+    var selectedTransactionType: TransactionType = .all
+    var fromDate: Date?
+    var toDate: Date?
 }
 
 public protocol TransactionsFilterViewModelInput: AnyObject {
-    var params: TransactionsFilterViewModelParams? { get set }
+    var params: TransactionsFilterViewModelParams! { get set }
     func viewDidLoad()
     func onClick(type: ProviderType)
     func setupTransactionTypeList()
     func saveFilterClicked()
     func filterSelected(fromDate: Date, toDate: Date)
+    func setupCalendar()
 }
 
 public protocol TransactionsFilterViewModelOutput {
@@ -42,8 +47,8 @@ public enum TransactionsFilterViewModelOutputAction {
     case languageDidChange
     case initialize(AppListDataProvider)
     case providerTypeSelected(provider: ProviderType)
-    case bindToCalendarComponentViewModel(viewmodel: CalendarComponentViewModel)
     case transactionTypeToggled
+    case selectDateRange(fromDate: Date, toDate: Date)
 }
 
 public enum TransactionsFilterViewModelRoute {
@@ -52,38 +57,32 @@ public enum TransactionsFilterViewModelRoute {
 public class DefaultTransactionsFilterViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<TransactionsFilterViewModelOutputAction>()
     private let routeSubject = PublishSubject<TransactionsFilterViewModelRoute>()
-    private var selectedProviderType: ProviderType = .transactions
     private var transactionTypeManager = TransactionTypeManager()
-    public var params: TransactionsFilterViewModelParams?
-    private var fromDate: Date?
-    private var toDate: Date?
-    @Inject(from: .componentViewModels) private var calendarComponentViewModel: CalendarComponentViewModel
+    public var params: TransactionsFilterViewModelParams!
 }
 
 extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
     public var action: Observable<TransactionsFilterViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<TransactionsFilterViewModelRoute> { routeSubject.asObserver() }
     public func viewDidLoad() {
-        actionSubject.onNext(.providerTypeSelected(provider: .transactions))
-        actionSubject.onNext(.bindToCalendarComponentViewModel(viewmodel: calendarComponentViewModel))
+        actionSubject.onNext(.providerTypeSelected(provider: params.selectedProviderType))
     }
 
     public func saveFilterClicked() {
-        guard let params = params else { return }
-        params.paramsOutputAction.onNext(.filterSelected(fromDate: self.fromDate, toDate: self.toDate,
-                                                         providerType: selectedProviderType,
-                                                         transactionType: transactionTypeManager.selectedTransactionType ?? .all))
+        params.paramsOutputAction.onNext(.filterSelected(fromDate: params.fromDate, toDate: params.toDate,
+                                                         providerType: params.selectedProviderType,
+                                                         transactionType: params.selectedTransactionType))
     }
 
     public func onClick(type: ProviderType) {
-        guard type != selectedProviderType else { return }
+        guard type != params.selectedProviderType else { return }
 
-        if selectedProviderType == .transactions {
+        if params.selectedProviderType == .transactions {
             actionSubject.onNext(.providerTypeSelected(provider: .games))
-        } else if selectedProviderType == .games {
+        } else if params.selectedProviderType == .games {
             actionSubject.onNext(.providerTypeSelected(provider: .transactions))
         }
-        selectedProviderType = type
+        params.selectedProviderType = type
     }
 
     public func setupTransactionTypeList() {
@@ -97,6 +96,7 @@ extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
                 switch action {
                 case .checkBoxToggled(let state):
                     self.transactionTypeManager.setTransaction(type: viewModel.params.transactionType, to: state)
+                    self.params.selectedTransactionType = self.transactionTypeManager.selectedTransactionType ?? .all
                     self.actionSubject.onNext(.transactionTypeToggled)
                 default:
                     break
@@ -108,7 +108,14 @@ extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
     }
 
     public func filterSelected(fromDate: Date, toDate: Date) {
-        self.fromDate = fromDate
-        self.toDate = toDate
+        params.fromDate = fromDate
+        params.toDate = toDate
+    }
+
+    public func setupCalendar() {
+        self.transactionTypeManager.setTransaction(type: params.selectedTransactionType, to: true)
+        if params.fromDate != nil && params.toDate != nil {
+            actionSubject.onNext(.selectDateRange(fromDate: params.fromDate!, toDate: params.toDate!))
+        }
     }
 }

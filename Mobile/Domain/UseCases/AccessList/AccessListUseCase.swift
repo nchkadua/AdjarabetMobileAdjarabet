@@ -19,10 +19,14 @@ public protocol DisplayAccessListUseCase {
 public final class DefaultAccessListUseCaseUseCase: DisplayAccessListUseCase {
     @Inject(from: .repositories) private var repository: AccessListRepository
     @Inject private var userSession: UserSessionReadableServices
-
+    private let dayDateFormatter = ABDateFormater(with: .day)
     public func execute(params: DisplayAccessListUseCaseParams,
                         completion: @escaping AccessListUseCaseCompletion) -> Cancellable? {
-        let requestParams: GetAccessListParams = .init(fromDate: params.fromDate, toDate: params.toDate)
+        // Date Selection in UI is unclisve. Date selection in API is exclusive. We need to add 1 day to to include desired last day
+        let endDate = dayDateFormatter.date(from: params.toDate)
+        let correctEndDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate!)!
+        let correctEndDateString = dayDateFormatter.string(from: correctEndDate)
+        let requestParams: GetAccessListParams = .init(fromDate: params.fromDate, toDate: correctEndDateString)
 
         repository.getAccessList(params: requestParams) { result  in
             switch result {

@@ -40,9 +40,13 @@ public class DefaultAccessHistoryViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<AccessHistoryViewModelOutputAction>()
     private let routeSubject = PublishSubject<AccessHistoryViewModelRoute>()
     private var accessHistoryDataProvider: AppCellDataProviders = []
-    private let dateFormatter = DateFormatter()
+    private let dateFormatter = ABDateFormater(with: .day)
     private var filteredParams: DisplayAccessListUseCaseParams?
     @Inject(from: .useCases) private var displayAccessListUseCase: DisplayAccessListUseCase
+
+    private let dayDateFormatter = ABDateFormater(with: .day)
+    private let hourDateFormatter = ABDateFormater(with: .hour)
+
     enum DeviceType {
         case mobile
         case desktop
@@ -62,7 +66,11 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
     }
 
     public func calendarTabItemClicked() {
-        let params = AccessHistoryCalendarViewModelParams()
+        var params = AccessHistoryCalendarViewModelParams()
+        if let filteredParams = filteredParams {
+            params.fromDate = dayDateFormatter.date(from: filteredParams.fromDate)
+            params.toDate = dayDateFormatter.date(from: filteredParams.toDate)
+        }
         subscribeToFilterViewModelParams(params)
         routeSubject.onNext(.openAccessHistoryCalendar(params: params))
     }
@@ -73,7 +81,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
             switch action {
             case .filterSelected(let fromDate, let toDate):
                 self.constructFilteredParams(fromDate: fromDate,
-                                                        toDate: toDate)
+                                             toDate: toDate)
                 self.displayFilteredAccessHistory(params: self.filteredParams!)
             }
         })
@@ -81,10 +89,10 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
     }
 
     private func constructFilteredParams(fromDate: Date?, toDate: Date?) {
-        let fromDate = dateFormatter.dayDateString(from: fromDate ?? Date.distantPast)
-        let toDate = dateFormatter.dayDateString(from: toDate ?? Date.distantFuture)
+        let fromDate = dayDateFormatter.string(from: fromDate ?? Date.distantPast)
+        let toDate = dayDateFormatter.string(from: toDate ?? Date.distantFuture)
         let params: DisplayAccessListUseCaseParams = .init(fromDate: fromDate,
-                                                                     toDate: toDate)
+                                                           toDate: toDate)
         self.filteredParams = params
     }
 
@@ -100,8 +108,8 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
     }
 
     private func displayUnfilteredAccessHistory() {
-        let fromDate = dateFormatter.verboseDateString(from: Date.distantPast)
-        let toDate = dateFormatter.verboseDateString(from: Date.distantFuture)
+        let fromDate = dateFormatter.string(from: Date.distantPast)
+        let toDate = dateFormatter.string(from: Date.distantFuture)
         let params: DisplayAccessListUseCaseParams = .init(fromDate: fromDate,
                                                            toDate: toDate)
         displayAccessHistory(params: params)
@@ -117,7 +125,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
                 self.accessHistoryDataProvider = []
                 accessList.forEach { access in
                     let componentViewModel = self.constructComponentViewModel(from: access)
-                    let dayString = self.dateFormatter.dayDateString(from: access.date)
+                    let dayString = self.dayDateFormatter.string(from: access.date)
                     if !datesSet.contains(dayString) {
                         datesSet.insert(dayString)
                         let headerViewModel = self.constructHeaderComponentViewModel(from: access)
@@ -138,10 +146,11 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
         let deviceName = getDeviceNameFor(deviceType: deviceType)
         let deviceIcon = getDeviceIconFor(deviceType: deviceType)
         return .init(params: .init(ip: entity.ip, device: deviceName,
-                                   date: dateFormatter.hourDateString(from: entity.date),
+                                   date: hourDateFormatter.string(from: entity.date),
                                    deviceIcon: deviceIcon))
     }
 
+    // TODO Move somewhere to utils. change strings to enums
     private func getDeviceTypeFrom(userAgent: String) -> DeviceType {
         let parser = UAParser(agent: userAgent)
         guard let userOS = parser.os?.name else { return .desktop }
@@ -182,7 +191,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
     }
 
     private func constructHeaderComponentViewModel(from entity: AccessListEntity) -> DefaultDateHeaderComponentViewModel {
-        let stringDate = dateFormatter.dayDateString(from: entity.date)
+        let stringDate = dayDateFormatter.string(from: entity.date)
         let headerModel = DefaultDateHeaderComponentViewModel(params: .init(title: stringDate))
         return headerModel
     }

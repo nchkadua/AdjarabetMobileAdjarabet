@@ -44,8 +44,8 @@ class DateHeaderComponentView: UIView {
 
     private func set(title: String) {
         let dateFormatter = DateFormatter()
-
-        guard let dayDate = dateFormatter.dayDate(from: title) else {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let dayDate = dateFormatter.date(from: title) else {
             titleLabel.text = title
             return
         }

@@ -17,6 +17,7 @@ public class TransactionsFilterViewController: ABViewController {
 
     // MARK: - Properties
     @Inject(from: .viewModels) public var viewModel: TransactionsFilterViewModel
+    @Inject(from: .componentViewModels) private var calendarComponentViewModel: CalendarComponentViewModel
     public lazy var navigator = TransactionsFilterNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
 
@@ -26,6 +27,7 @@ public class TransactionsFilterViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        bindToCalendar(calendarComponentViewModel)
         viewModel.viewDidLoad()
         viewModel.setupTransactionTypeList()
     }
@@ -46,7 +48,6 @@ public class TransactionsFilterViewController: ABViewController {
         switch action {
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
-        case .bindToCalendarComponentViewModel(let calendarComponentViewModel): bindToCalendar(calendarComponentViewModel)
         case .languageDidChange:
             // TODO
             print("Handle language Change")
@@ -54,24 +55,25 @@ public class TransactionsFilterViewController: ABViewController {
             setupProviderButtons(forSelected: providerType)
         case .transactionTypeToggled:
             viewModel.setupTransactionTypeList()
+        case .selectDateRange(let fromDate, let toDate):
+            self.calendarComponentView.selectRange(fromDate: fromDate, toDate: toDate)
         }
     }
 
     // MARK: CalendarComponentView
     private func bindToCalendar(_ calendarViewModel: CalendarComponentViewModel) {
-        calendarComponentView.setAndBind(viewModel: calendarViewModel)
-        bind(to: calendarViewModel)
-    }
-
-    private func bind(to viewModel: CalendarComponentViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+        calendarComponentView.setAndBind(viewModel: calendarViewModel)
     }
 
     private func didRecive(action: CalendarComponentViewModelOutputAction) {
         switch action {
-        case .didSelectRange(let startDate, let endDate): filterWith(startDate, endDate)
+        case .didSelectRange(let startDate, let endDate):
+            filterWith(startDate, endDate)
+        case .setupCalendar:
+            viewModel.setupCalendar()
         default:
             break
         }
