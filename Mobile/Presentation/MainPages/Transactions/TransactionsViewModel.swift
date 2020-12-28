@@ -39,8 +39,10 @@ public class DefaultTransactionsViewModel: DefaultBaseViewModel {
     private var page: PageDescription = .init()
     private var transactionsDataProvider: AppCellDataProviders = []
     private var filteredParams: DisplayTransactionHistoriesUseCaseParams?
-    private let dateFormatter = DateFormatter()
-    private var datesSet: Set<String>  = []
+    private let dayDateFormatter = ABDateFormater(with: .day)
+    private let hourDateFormatter = ABDateFormater(with: .hour)
+
+    private var uniqueHeaderDatesSet: Set<String>  = []
     public override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)
     }
@@ -53,12 +55,18 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     // MARK: TransactionsViewModelInput
 
     public func viewDidLoad() {
-        displayEmptyTransactionList()
+        displayEmptyTransactionList() //TODO REMOVE?
         displayUnfilteredTransactions()
     }
 
     public func calendarTabItemClicked() {
-        let params = TransactionsFilterViewModelParams()
+        var params = TransactionsFilterViewModelParams()
+        if let filteredParams = filteredParams {
+            params.fromDate = dayDateFormatter.date(from: filteredParams.fromDate)
+            params.toDate = dayDateFormatter.date(from: filteredParams.toDate)
+            params.selectedTransactionType = TransactionType(rawValue: filteredParams.transactionType ?? 0)!
+            params.selectedProviderType = ProviderType(rawValue: filteredParams.providerType)!
+        }
         subscribeToTransactionsFilterViewModelParams(params)
         routeSubject.onNext(.openTransactionFilter(params: params))
     }
@@ -68,13 +76,13 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     private func displayEmptyTransactionList() {
         self.resetPaging()
         let initialEmptyDataProvider: AppCellDataProviders = []
-        datesSet.removeAll()
+        uniqueHeaderDatesSet.removeAll()
         self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
     }
 
     private func displayUnfilteredTransactions() {
-        let fromDate = dateFormatter.dayDateString(from: Date.distantPast)
-        let toDate = dateFormatter.dayDateString(from: Date.distantFuture)
+        let fromDate = dayDateFormatter.string(from: Date.distantPast)
+        let toDate = dayDateFormatter.string(from: Date.distantFuture)
         let params: DisplayTransactionHistoriesUseCaseParams = .init(fromDate: fromDate,
                                                                      toDate: toDate,
                                                                      transactionType: nil, // all transactions
@@ -91,8 +99,8 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
 
     private func constructFilteredTransactionParams(fromDate: Date?, toDate: Date?, providerType: ProviderType, transactionType: TransactionType) {
         let trType = transactionType.rawValue == 0 ? nil : transactionType.rawValue
-        let fromDate = dateFormatter.dayDateString(from: fromDate ?? Date.distantPast)
-        let toDate = dateFormatter.dayDateString(from: toDate ?? Date.distantFuture)
+        let fromDate = dayDateFormatter.string(from: fromDate ?? Date.distantPast)
+        let toDate = dayDateFormatter.string(from: toDate ?? Date.distantFuture)
         let params: DisplayTransactionHistoriesUseCaseParams = .init(fromDate: fromDate,
                                                                      toDate: toDate,
                                                                      transactionType: trType,
@@ -111,9 +119,9 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
                     let transactionDetails = self.constructTransactionDetails(from: transaction)
                     let componentViewModel = self.consturctTransactionHistoryComponentViewModel(from: transaction, with: transactionDetails)
                     self.subscribeToTransactionComponent(componentViewModel)
-                    let dateDayString = self.dateFormatter.dayDateString(from: transaction.date)
-                    if !self.datesSet.contains(dateDayString) {
-                        self.datesSet.insert(dateDayString)
+                    let dateDayString = self.dayDateFormatter.string(from: transaction.date)
+                    if !self.uniqueHeaderDatesSet.contains(dateDayString) {
+                        self.uniqueHeaderDatesSet.insert(dateDayString)
                         let headerViewModel = self.constructTransactionHistoryHeader(from: transaction)
                         viewModels.append(headerViewModel)
                     }
@@ -192,7 +200,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     // MARK: Component View Model Setups
 
     private func constructTransactionHistoryHeader(from entity: TransactionHistoryEntity) -> DefaultDateHeaderComponentViewModel {
-        let stringDate = dateFormatter.dayDateString(from: entity.date)
+        let stringDate = dayDateFormatter.string(from: entity.date)
         let headerModel = DefaultDateHeaderComponentViewModel(params: .init(title: stringDate))
         return headerModel
     }
@@ -202,7 +210,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
         let transactionType: TransactionType = entity.totalAmount < 0 ? .withdraw : .deposit
 
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_date(),
-                                                    description: dateFormatter.hourDateString(from: entity.date)))
+                                                    description: hourDateFormatter.string(from: entity.date)))
 
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_total_amount(),
                                                     description: prettyAmount(from: entity.totalAmount)))
@@ -246,16 +254,15 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     }
 
     private func prettyAmount(from rawAmount: Double) -> String {
-        let rawInt = Int(rawAmount) / 100
-        let rawString = String(rawInt)
-        let prettyString = "\(rawString).00 ₾"
-        return prettyString
+        let flooredAmount = Double(rawAmount) / 100
+        let finalString = String(format: "%.2f", flooredAmount)
+        return finalString
     }
 
     private func prettyFeeAmount(from rawAmount: Double) -> String {
-        let rawInt = Int(rawAmount) / 100
-        let rawString = String(rawInt)
-        let prettyString = "₾ \(rawString).00"
-        return prettyString
+        let flooredAmount = Double(rawAmount) / 100
+        let amountString = String(format: "%.2f", flooredAmount)
+        let finalString = "₾ \(amountString)"
+        return finalString
     }
 }

@@ -48,8 +48,11 @@ class CalendarComponentView: UIView {
     public func bind() {
         disposeBag = DisposeBag()
         viewModel.action.subscribe(onNext: { [weak self] action in
+            guard let self = self else { return }
             switch action {
-            case .setupCalendar: self?.setDate(self?.calendar.currentPage ?? Date())
+            case .setupCalendar: self.setDate(self.calendar.currentPage)
+            case .selectRange(let fromDate, let toDate):
+                self.selectRange(fromDate: fromDate, toDate: toDate)
             default:
                 break
             }
@@ -126,6 +129,13 @@ extension CalendarComponentView: Xibable {
         calendar.appearance.weekdayFont = DesignSystem.Typography.footnote(fontCase: .lower).description.font
         calendar.appearance.titleFont = DesignSystem.Typography.headline(fontCase: .lower).description.font
     }
+
+    public func selectRange(fromDate: Date, toDate: Date) {
+        // Check if passed date is within 'logical' range
+        guard fromDate >= Date.from(year: 1900, month: 01, day: 01)! else { return }
+        self.calendar(calendar, didSelect: fromDate, at: .current)
+        self.calendar(calendar, didSelect: toDate, at: .current)
+    }
 }
 
 extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
@@ -134,11 +144,13 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        // 'False Convert' to GMT+4. Better solution yet to come
+        // Setting calendar.dateformmater.timeZone not working
+        let date = date.advanced(by: 3600 * 4)
         if firstDate == nil {
             firstDate = date
             datesRange = [firstDate!]
-            let nextDay = Calendar.current.date(byAdding: .day, value: 1, to: datesRange!.first!)!
-            viewModel.didSelectRange(fromDate: datesRange!.first!, toDate: nextDay)
+            viewModel.didSelectRange(fromDate: datesRange!.first!, toDate: datesRange!.first!)
             return
         }
 
@@ -175,23 +187,13 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
     }
 
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        if let date = firstDate {
-            calendar.deselect(date)
-            firstDate = nil
-            datesRange?.removeAll()
-            return
+        datesRange = []
+        lastDate = nil
+        firstDate = nil
+        for d in calendar.selectedDates {
+            calendar.deselect(d)
         }
-
-        if firstDate != nil && lastDate != nil {
-            for d in calendar.selectedDates {
-                calendar.deselect(d)
-            }
-
-            lastDate = nil
-            firstDate = nil
-
-            datesRange = []
-        }
+        viewModel.didSelectRange(fromDate: Date.distantPast, toDate: Date.distantFuture)
     }
 
     func datesRange(from: Date, to: Date) -> [Date] {

@@ -73,8 +73,6 @@ public class AccountParametersNavigator: Navigator {
 
     private func navigateToAccessHistory(animate: Bool) {
         let vc = accessHistoryViewControllerFactory.make(params: .init())
-        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
-        navC.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

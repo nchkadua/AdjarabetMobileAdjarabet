@@ -13,6 +13,7 @@ public class AccessHistoryCalendarViewController: UIViewController {
     @IBOutlet private weak var calendarComponentView: CalendarComponentView!
     // MARK: Properties
     @Inject(from: .viewModels) public var viewModel: AccessHistoryCalendarViewModel
+    @Inject(from: .componentViewModels) private var calendarComponentViewModel: CalendarComponentViewModel
     public lazy var navigator = AccessHistoryCalendarNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 
@@ -21,6 +22,7 @@ public class AccessHistoryCalendarViewController: UIViewController {
         super.viewDidLoad()
         setup()
         bind(to: viewModel)
+        bindToCalendar(to: calendarComponentViewModel)
         viewModel.viewDidLoad()
     }
 
@@ -29,18 +31,12 @@ public class AccessHistoryCalendarViewController: UIViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-
-        viewModel.route.subscribe(onNext: { [weak self] route in
-            self?.didRecive(route: route)
-        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: AccessHistoryCalendarViewModelOutputAction) {
         switch action {
-        case .bindToCalendarComponentViewModel(let viewModel):
-            bind(to: viewModel)
-        default:
-            break
+        case .selectDateRange(let fromDate, let toDate):
+            self.calendarComponentView.selectRange(fromDate: fromDate, toDate: toDate)
         }
     }
 
@@ -67,17 +63,19 @@ public class AccessHistoryCalendarViewController: UIViewController {
 
     // MARK: CalendarComponentView
 
-    private func bind(to viewModel: CalendarComponentViewModel) {
-        calendarComponentView.setAndBind(viewModel: viewModel)
+    private func bindToCalendar(to viewModel: CalendarComponentViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+        calendarComponentView.setAndBind(viewModel: viewModel)
     }
 
     private func didRecive(action: CalendarComponentViewModelOutputAction) {
         switch action {
         case .didSelectRange(let startDate, let endDate):
             viewModel.filterSelected(fromDate: startDate, toDate: endDate)
+        case .setupCalendar:
+            viewModel.setupCalendar()
         default:
             break
         }

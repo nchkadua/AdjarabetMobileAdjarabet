@@ -16,12 +16,15 @@ public struct AccessHistoryCalendarViewModelParams {
         case filterSelected(fromDate: Date?, toDate: Date?)
     }
     public let paramsOutputAction = PublishSubject<Action>()
+    var fromDate: Date?
+    var toDate: Date?
 }
 
 public protocol AccessHistoryCalendarViewModelInput: AnyObject {
-    var params: AccessHistoryCalendarViewModelParams? { get set }
+    var params: AccessHistoryCalendarViewModelParams! { get set }
     func saveFilterClicked()
     func filterSelected(fromDate: Date, toDate: Date)
+    func setupCalendar()
     func viewDidLoad()
 }
 
@@ -31,20 +34,17 @@ public protocol AccessHistoryCalendarViewModelOutput {
 }
 
 public enum AccessHistoryCalendarViewModelOutputAction {
-    case filterSelected(fromDate: Date?, toDate: Date?)
-    case bindToCalendarComponentViewModel(viewmodel: CalendarComponentViewModel)
+    case selectDateRange(fromDate: Date, toDate: Date)
 }
 
 public enum AccessHistoryCalendarViewModelRoute {
 }
 
 public class DefaultAccessHistoryCalendarViewModel {
-    public var params: AccessHistoryCalendarViewModelParams?
+    public var params: AccessHistoryCalendarViewModelParams!
     private let actionSubject = PublishSubject<AccessHistoryCalendarViewModelOutputAction>()
     private let routeSubject = PublishSubject<AccessHistoryCalendarViewModelRoute>()
-    @Inject(from: .componentViewModels) private var calendarComponentViewModel: CalendarComponentViewModel
-    private var fromDate: Date?
-    private var toDate: Date?
+
     public init(params: AccessHistoryCalendarViewModelParams) {
         self.params = params
     }
@@ -55,15 +55,20 @@ extension DefaultAccessHistoryCalendarViewModel: AccessHistoryCalendarViewModel 
     public var route: Observable<AccessHistoryCalendarViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        actionSubject.onNext(.bindToCalendarComponentViewModel(viewmodel: calendarComponentViewModel))
     }
 
     public func saveFilterClicked() {
-        params!.paramsOutputAction.onNext(.filterSelected(fromDate: self.fromDate, toDate: self.toDate))
+        params!.paramsOutputAction.onNext(.filterSelected(fromDate: params.fromDate, toDate: params.toDate))
     }
 
     public func filterSelected(fromDate: Date, toDate: Date) {
-        self.fromDate = fromDate
-        self.toDate = toDate
+        params.fromDate = fromDate
+        params.toDate = toDate
+    }
+
+    public func setupCalendar() {
+        if params.fromDate != nil && params.toDate != nil {
+            actionSubject.onNext(.selectDateRange(fromDate: params.fromDate!, toDate: params.toDate!))
+        }
     }
 }

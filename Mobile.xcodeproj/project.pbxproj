@@ -68,6 +68,8 @@
 		769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886AC2571055000FA339E /* TransactionFilterComponentView.swift */; };
 		769886B92571091D00FA339E /* ABCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886B82571091D00FA339E /* ABCheckbox.swift */; };
 		769886C225711C2B00FA339E /* TransactionTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886C125711C2B00FA339E /* TransactionTypeModel.swift */; };
+		76B667982595F133001441BD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B667972595F133001441BD /* Date+Extension.swift */; };
+		76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B667A02596345C001441BD /* ABDateFormatter.swift */; };
 		76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */; };
 		76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */; };
 		76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */; };
@@ -581,6 +583,8 @@
 		769886AC2571055000FA339E /* TransactionFilterComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilterComponentView.swift; sourceTree = "<group>"; };
 		769886B82571091D00FA339E /* ABCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCheckbox.swift; sourceTree = "<group>"; };
 		769886C125711C2B00FA339E /* TransactionTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypeModel.swift; sourceTree = "<group>"; };
+		76B667972595F133001441BD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		76B667A02596345C001441BD /* ABDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABDateFormatter.swift; sourceTree = "<group>"; };
 		76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTransactionHistoriesUseCase.swift; sourceTree = "<group>"; };
 		76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserTransactionsResponse.swift; sourceTree = "<group>"; };
 		76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryRepository.swift; sourceTree = "<group>"; };
@@ -2606,6 +2610,7 @@
 				CEB937D9251E281B004195A1 /* LanguagesButton.swift */,
 				CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */,
 				CE7A23F9257956CA00A94E89 /* BarButtonWithImage.swift */,
+				76B667A02596345C001441BD /* ABDateFormatter.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -2863,6 +2868,7 @@
 				CE6E294C256E8F1F001FE225 /* Double+Extension.swift */,
 				CE7A241025796AD500A94E89 /* Collection+Extension.swift */,
 				76DBCE56257FAB000030E600 /* DateFormatter+Extension.swift */,
+				76B667972595F133001441BD /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -3613,6 +3619,7 @@
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
 				C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */,
 				76BDF441257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift in Sources */,
+				76B667982595F133001441BD /* Date+Extension.swift in Sources */,
 				CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */,
 				CEE537EB254AC9FD00EDE6C0 /* CashFlowViewModel.swift in Sources */,
 				7665D980257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift in Sources */,
@@ -3634,6 +3641,7 @@
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
+				76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */,
 				7644B6072563E516006778B2 /* DateHeaderComponentView.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,

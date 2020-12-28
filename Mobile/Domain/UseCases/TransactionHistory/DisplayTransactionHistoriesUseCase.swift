@@ -18,14 +18,17 @@ public protocol DisplayTransactionHistoriesUseCase {
 public final class DefaultDisplayTransactionHistoriesUseCase: DisplayTransactionHistoriesUseCase {
     @Inject(from: .repositories) private var transactionHistoryRepository: TransactionHistoryRepository
     @Inject private var userSession: UserSessionReadableServices
-
+    private let dayDateFormatter = ABDateFormater(with: .day)
     public func execute(params: DisplayTransactionHistoriesUseCaseParams, completion: @escaping DisplayTransactionHistoriesUseCaseCompletionHandler) -> Cancellable? {
+        // Date Selection in UI is unclisve. Date selection in API is exclusive. We need to add 1 day to to include desired last day
+        let endDate = dayDateFormatter.date(from: params.toDate)
+        let correctEndDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate!)!
+        let correctEndDateString = dayDateFormatter.string(from: correctEndDate)
         let requestParams: GetUserTransactionsParams = .init(fromDate: params.fromDate,
-                                                             toDate: params.toDate,
+                                                             toDate: correctEndDateString,
                                                              transactionType: params.transactionType,
                                                              providerType: params.providerType,
                                                              pageIndex: params.pageIndex)
-
         transactionHistoryRepository.getUserTransactions(params: requestParams) { result  in
             switch result {
             case .success(let transactionHistories):
