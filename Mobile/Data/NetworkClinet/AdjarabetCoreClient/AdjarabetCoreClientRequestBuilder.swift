@@ -10,13 +10,18 @@ public class AdjarabetCoreClientRequestBuilder {
     @Inject private var requestBuilder: HttpRequestBuilder
     @Inject private var userAgentProvider: UserAgentProvider
 
+    // url
     private var url = AdjarabetEndpoints.coreAPIUrl
 
-    private var headers = [
+    // header key:values
+    private lazy var headers = [
         "Origin": AppConstant.coreOriginDomain,
         "Referer": AppConstant.coreOriginDomain,
-        "X-Requested-With": "XMLHttpRequest"
+        "X-Requested-With": "XMLHttpRequest",
+        "User-Agent": userAgentProvider.userAgent
     ]
+
+    // body key:values
     private var body = [String: String]()
 
     public func setHeader(key: HeaderKey, value: String) -> Self {
@@ -44,7 +49,6 @@ public class AdjarabetCoreClientRequestBuilder {
             .set(host: url.absoluteString)
             .set(path: "")
             .set(headers: headers)
-            .setHeader(key: "User-Agent", value: userAgentProvider.userAgent)
             .set(method: HttpMethodPost())
             .set(contentType: ContentTypeUrlEncoded())
             .set(body: body)
