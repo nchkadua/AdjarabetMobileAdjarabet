@@ -408,7 +408,6 @@
 		D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C07243367D800F1D4FE /* AdjarabetWebAPICodable.swift */; };
 		D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C08243367D800F1D4FE /* AdjarabetWebAPIClientError.swift */; };
 		D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C0B243367DE00F1D4FE /* AdjarabetWebAPIServices.swift */; };
-		D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */; };
 		D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1124336B4C00F1D4FE /* R.generated.swift */; };
 		D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */; };
 		D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */; };
@@ -928,7 +927,6 @@
 		D85C9C07243367D800F1D4FE /* AdjarabetWebAPICodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPICodable.swift; sourceTree = "<group>"; };
 		D85C9C08243367D800F1D4FE /* AdjarabetWebAPIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClientError.swift; sourceTree = "<group>"; };
 		D85C9C0B243367DE00F1D4FE /* AdjarabetWebAPIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIServices.swift; sourceTree = "<group>"; };
-		D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetEndpoints.swift; sourceTree = "<group>"; };
 		D85C9C1124336B4C00F1D4FE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D85C9C1424336BA600F1D4FE /* Mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mobile.entitlements; sourceTree = "<group>"; };
 		D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
@@ -1550,7 +1548,6 @@
 				D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */,
 				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
 				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
-				D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -3529,7 +3526,6 @@
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
-				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,

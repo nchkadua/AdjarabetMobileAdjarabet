@@ -11,13 +11,9 @@ public class AdjarabetMobileClientRequestBuilder: Builder {
 
     public typealias Buildable = URLRequest
 
-    private var url: URL
+    private var url: URL = URL(string: Bundle.main.mobileApiUrl)!
     private var params: [Key: Any] = [:]
     private var sessionId: String?
-
-    public init(url: URL = AdjarabetEndpoints.mobileAPIUrl) {
-        self.url = url
-    }
 
     public func set(method: AdjarabetMobileClient.Method) -> Self {
         url.appendPathComponent(method.rawValue)
@@ -82,5 +78,12 @@ extension Dictionary where Key: RawRepresentable, Key.RawValue == String, Value 
         [String: Value](uniqueKeysWithValues: self.map {
             ($0.key.rawValue, $0.value)
         })
+    }
+}
+
+// MARK: - Bundle coreApiUrl
+fileprivate extension Bundle {
+    var mobileApiUrl: String {
+        return stringValue(forKey: "MOBILE_API_URL")
     }
 }

@@ -7,12 +7,15 @@
 //
 
 public extension Bundle {
-    var coreAPIUrl: String {
-        return value(for: "CORE_API_URL")
-    }
-
-    var mobileAPIUrl: URL {
-        URL(string: infoDictionary?["MOBILE_API_URL"] as? String ?? "")!
+    /**
+     Returns Value of some String object from infoDictionary
+     */
+    func stringValue(forKey key: String) -> String {
+        guard let value = infoDictionary?[key] as? String
+        else {
+            fatalError("Error due getting string value for \(key), from infoDictionary")
+        }
+        return value
     }
 
     var versionNumber: String? {
@@ -24,16 +27,11 @@ public extension Bundle {
     }
 
     var fullVersion: String? {
-        guard let versionNumber = versionNumber, let buildNumber = buildNumber else {return nil}
-
-        return "\(versionNumber) (\(buildNumber))"
-    }
-
-    fileprivate func value(for key: String) -> String {
-        guard let value = infoDictionary?[key] as? String
+        guard let versionNumber = versionNumber,
+              let buildNumber = buildNumber
         else {
-            fatalError("Error due getting value for \(key) from infoDictionary")
+            return nil
         }
-        return value
+        return "\(versionNumber) (\(buildNumber))"
     }
 }

@@ -11,7 +11,7 @@ public class AdjarabetCoreClientRequestBuilder {
     @Inject private var userAgentProvider: UserAgentProvider
 
     // url
-    private var url = AdjarabetEndpoints.coreAPIUrl
+    private var url = Bundle.main.coreApiUrl
 
     // header key:values
     private lazy var headers = [
@@ -154,5 +154,12 @@ public class AdjarabetCoreClientRequestBuilder {
     public func set(providerType: Int) -> Self {
         body[BodyKey.providerType.rawValue] = "\(providerType)"
         return self
+    }
+}
+
+// MARK: - Bundle coreApiUrl
+fileprivate extension Bundle {
+    var coreApiUrl: String {
+        return stringValue(forKey: "CORE_API_URL")
     }
 }
