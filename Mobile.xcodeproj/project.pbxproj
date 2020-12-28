@@ -1545,6 +1545,13 @@
 			isa = PBXGroup;
 			children = (
 				C7D29F45258EA78C006BEFAC /* HttpRequestBuilder */,
+				D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */,
+				D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */,
+				D86253B22464214B00F7DE0C /* NetworkService.swift */,
+				D86253B6246429D000F7DE0C /* DataTransferService.swift */,
+				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
+				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
+				D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -1564,9 +1571,56 @@
 			path = HttpRequestBuilder;
 			sourceTree = "<group>";
 		};
+		C7D86F0D259A05190021CF1C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D8A47DF5243367060077AA8E /* AdjarabetCoreClient */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C7D86F0E259A05640021CF1C /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				C7D86F0F259A05770021CF1C /* Infrastructure */,
+			);
+			path = Mobile;
+			sourceTree = "<group>";
+		};
+		C7D86F0F259A05770021CF1C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D8509403248260C400722040 /* AdjarabetMobileClient */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C7D86F10259A05BC0021CF1C /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		C7D86F11259A05CB0021CF1C /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E46256FECDD00D2908C /* Core */,
+				C7D86F0E259A05640021CF1C /* Mobile */,
+				C7D86F10259A05BC0021CF1C /* Web */,
+				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
+				D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */,
+				D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */,
+				D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 		C7EF9E46256FECDD00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C7D86F0D259A05190021CF1C /* Infrastructure */,
 				76811DC4257E4530004107E9 /* AccessList */,
 				76BDF42325752CA3007B27A7 /* TransactionHistory */,
 				C7EF9E47256FED2600D2908C /* UserProfile */,
@@ -1587,7 +1641,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D29F42258EA784006BEFAC /* Infrastructure */,
-				C7EF9E46256FECDD00D2908C /* Core */,
+				C7D86F11259A05CB0021CF1C /* Endpoints */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -2352,8 +2406,8 @@
 		D84202C82451919400F0F056 /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
-				C71F18A92564562D0026CEA2 /* BiometryStorage */,
 				D8AB806A24601371001C4E8A /* LanguageStorage */,
+				C71F18A92564562D0026CEA2 /* BiometryStorage */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
@@ -2581,22 +2635,9 @@
 			isa = PBXGroup;
 			children = (
 				C7EF9E4A256FEF1400D2908C /* API */,
-				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
-				D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */,
-				D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */,
-				D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */,
+				D84202C82451919400F0F056 /* PersistentStorages */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		D86253B12464213B00F7DE0C /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */,
-				D86253B22464214B00F7DE0C /* NetworkService.swift */,
-				D86253B6246429D000F7DE0C /* DataTransferService.swift */,
-			);
-			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		D86253BA24653AA000F7DE0C /* Button */ = {
@@ -2784,7 +2825,6 @@
 				D8A47DE824335DD70077AA8E /* Domain */,
 				D8A47DE924335DDE0077AA8E /* Presentation */,
 				D8A47DEA24335DE40077AA8E /* Data */,
-				D86253B12464213B00F7DE0C /* Infrastructure */,
 			);
 			path = Mobile;
 			sourceTree = "<group>";
@@ -2826,9 +2866,6 @@
 			isa = PBXGroup;
 			children = (
 				D86253AE2464199900F7DE0C /* Repositories */,
-				D8A47DF3243366F80077AA8E /* NetworkClinet */,
-				D84202C82451919400F0F056 /* PersistentStorages */,
-				D8AB806B246013EB001C4E8A /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -2873,17 +2910,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D8A47DF3243366F80077AA8E /* NetworkClinet */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */,
-				D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */,
-				D8A47DF5243367060077AA8E /* AdjarabetCoreClient */,
-				D8509403248260C400722040 /* AdjarabetMobileClient */,
-			);
-			path = NetworkClinet;
-			sourceTree = "<group>";
-		};
 		D8A47DF5243367060077AA8E /* AdjarabetCoreClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -2920,16 +2946,6 @@
 				D84202C9245191B100F0F056 /* LanguageStorage.swift */,
 			);
 			path = LanguageStorage;
-			sourceTree = "<group>";
-		};
-		D8AB806B246013EB001C4E8A /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
-				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
-				D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		D8AB806C246014DB001C4E8A /* UserSession */ = {
