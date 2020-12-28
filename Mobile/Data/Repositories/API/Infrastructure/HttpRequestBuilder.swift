@@ -248,6 +248,8 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
         if request.allHTTPHeaderFields?["Content-Type"] == ContentType.urlEncoded.value {
             request.httpBody = components.query?.data(using: String.Encoding.utf8)
         }
+
+        #if DEBUG
         // Log Request before returning
         print("""
 
@@ -265,6 +267,8 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
 
 
         """)
+        #endif
+
         return request
     }
 }

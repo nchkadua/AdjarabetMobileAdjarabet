@@ -71,7 +71,7 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
     public typealias Entity = UserInfoEntity
 
     public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
-        UserInfoEntity(
+        Entity(
             userId: body.userId,
             name: body.name,
             surname: body.surname,
