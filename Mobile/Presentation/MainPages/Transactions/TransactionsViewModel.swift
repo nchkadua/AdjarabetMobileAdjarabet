@@ -212,8 +212,9 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_date(),
                                                     description: hourDateFormatter.string(from: entity.date)))
 
+        let totalAndFee = entity.totalAmount + entity.feeAmount
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_total_amount(),
-                                                    description: prettyAmount(from: entity.totalAmount)))
+                                                    description: prettyAmount(from: totalAndFee)))
 
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_fee_amount(),
                                                     description: prettyFeeAmount(from: entity.feeAmount)))

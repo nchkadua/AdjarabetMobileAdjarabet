@@ -35,7 +35,7 @@ public protocol TransactionsFilterViewModelInput: AnyObject {
     func setupTransactionTypeList()
     func saveFilterClicked()
     func filterSelected(fromDate: Date, toDate: Date)
-    func setupCalendar()
+    func didSetupCalendar()
 }
 
 public protocol TransactionsFilterViewModelOutput {
@@ -65,7 +65,6 @@ extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
     public var action: Observable<TransactionsFilterViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<TransactionsFilterViewModelRoute> { routeSubject.asObserver() }
     public func viewDidLoad() {
-        actionSubject.onNext(.providerTypeSelected(provider: params.selectedProviderType))
     }
 
     public func saveFilterClicked() {
@@ -112,8 +111,9 @@ extension DefaultTransactionsFilterViewModel: TransactionsFilterViewModel {
         params.toDate = toDate
     }
 
-    public func setupCalendar() {
+    public func didSetupCalendar() {
         self.transactionTypeManager.setTransaction(type: params.selectedTransactionType, to: true)
+        actionSubject.onNext(.providerTypeSelected(provider: params.selectedProviderType))
         if params.fromDate != nil && params.toDate != nil {
             actionSubject.onNext(.selectDateRange(fromDate: params.fromDate!, toDate: params.toDate!))
         }

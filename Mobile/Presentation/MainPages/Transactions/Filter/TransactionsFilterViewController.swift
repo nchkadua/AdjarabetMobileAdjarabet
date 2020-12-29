@@ -62,7 +62,7 @@ public class TransactionsFilterViewController: ABViewController {
 
     // MARK: CalendarComponentView
     private func bindToCalendar(_ calendarViewModel: CalendarComponentViewModel) {
-        viewModel.action.subscribe(onNext: { [weak self] action in
+        calendarViewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
         calendarComponentView.setAndBind(viewModel: calendarViewModel)
@@ -73,7 +73,7 @@ public class TransactionsFilterViewController: ABViewController {
         case .didSelectRange(let startDate, let endDate):
             filterWith(startDate, endDate)
         case .setupCalendar:
-            viewModel.setupCalendar()
+            viewModel.didSetupCalendar()
         default:
             break
         }
