@@ -26,16 +26,22 @@ extension CoreApiTransactionHistoryRepository: TransactionHistoryRepository {
             return
         }
 
-        let request = requestBuilder
+        var requestBuilder = self.requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "getUsersTransactions")
-            .set(userId: userId)
-            .set(fromDate: params.fromDate, toDate: params.toDate)
-            .set(transactionType: params.transactionType)
-            .set(pageIndex: params.pageIndex)
-            .set(providerType: params.providerType)
-            .set(maxResult: CoreApiTransactionHistoryRepository.maxResult)
-            .build()
+            .setBody(key: .userId, value: "\(userId)")
+            .setBody(key: .fromDate, value: params.fromDate)
+            .setBody(key: .toDate, value: params.toDate)
+            .setBody(key: .pageIndex, value: "\(params.pageIndex)")
+            .setBody(key: .providerType, value: "\(params.providerType)")
+            .setBody(key: .maxResult, value: "\(CoreApiTransactionHistoryRepository.maxResult)")
+
+        if let transactionType = params.transactionType {
+            requestBuilder = requestBuilder
+                .setBody(key: .transactionType, value: "\(transactionType)")
+        }
+
+        let request = requestBuilder.build()
 
         dataTransferService.performTask(expecting: GetUserTransactionsResponse.self,
                                         request: request, respondOnQueue: .main, completion: completion)

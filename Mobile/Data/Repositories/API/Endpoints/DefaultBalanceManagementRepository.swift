@@ -16,9 +16,11 @@ public class DefaultBalanceManagementRepository {
 extension DefaultBalanceManagementRepository: BalanceManagementRepository {
     public func balance<T: HeaderProvidingCodableType>(userId: Int, currencyId: Int, isSingle: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable {
         let request = requestBuilder
-            .setBody(key: .req, value: "getBalance")
-            .set(userId: userId, currencyId: currencyId, isSingle: isSingle)
             .setHeader(key: .cookie, value: sessionId)
+            .setBody(key: .req, value: "getBalance")
+            .setBody(key: .userId, value: "\(userId)")
+            .setBody(key: .currencyId, value: "\(currencyId)")
+            .setBody(key: .isSingle, value: "\(isSingle)")
             .build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)

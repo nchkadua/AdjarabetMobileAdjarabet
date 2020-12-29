@@ -27,7 +27,7 @@ extension CoreApiUserProfileRepository: UserProfileRepository {
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "getUserInfo")
-            .set(userId: userId)
+            .setBody(key: .userId, value: "\(userId)")
             .build()
 
         dataTransferService.performTask(expecting: UserInfoDataTransferResponse.self,

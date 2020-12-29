@@ -28,8 +28,9 @@ extension CoreApiAccessListRepository: AccessListRepository {
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "getAccessList")
-            .set(userId: userId)
-            .set(fromDate: params.fromDate, toDate: params.toDate)
+            .setBody(key: .userId, value: "\(userId)")
+            .setBody(key: .fromDate, value: params.fromDate)
+            .setBody(key: .toDate, value: params.toDate)
             .build()
 
         dataTransferService.performTask(expecting: GetAccessListResponse.self,
