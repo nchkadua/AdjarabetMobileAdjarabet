@@ -12,7 +12,7 @@ public class CoreApiAccessListRepository {
     public static let shared = CoreApiAccessListRepository()
     @Inject public var userSession: UserSessionServices
     @Inject public var dataTransferService: DataTransferService
-    private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }
+    private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
     private init() {}
 }
 
@@ -27,7 +27,7 @@ extension CoreApiAccessListRepository: AccessListRepository {
 
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
-            .set(method: .accessList)
+            .setBody(key: .req, value: "getAccessList")
             .set(userId: userId)
             .set(fromDate: params.fromDate, toDate: params.toDate)
             .build()

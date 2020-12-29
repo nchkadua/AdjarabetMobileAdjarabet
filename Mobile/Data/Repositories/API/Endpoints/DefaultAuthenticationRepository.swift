@@ -10,13 +10,13 @@ import Foundation
 
 public class DefaultAuthenticationRepository {
     @Inject private var dataTransferService: DataTransferService
-    private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }
+    private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
 }
 
 extension DefaultAuthenticationRepository: AuthenticationRepository {
     public func login<T>(username: String, password: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
-            .set(method: .login)
+            .setBody(key: .req, value: "login")
             .set(username: username, password: password, channel: channel.rawValue)
             .build()
 
@@ -25,7 +25,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
 
     public func smsCode<T>(username: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
-            .set(method: .smsCode)
+            .setBody(key: .req, value: "getSmsCode")
             .set(username: username, channel: channel.rawValue)
             .build()
 
@@ -34,7 +34,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
 
     public func logout<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
-            .set(method: .logout)
+            .setBody(key: .req, value: "logout")
             .set(userId: userId)
             .setHeader(key: .cookie, value: sessionId)
             .build()
@@ -44,7 +44,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
 
     public func login<T>(username: String, code: String, loginType: LoginType, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
-            .set(method: .loginOtp)
+            .setBody(key: .req, value: "loginOtp")
             .set(username: username, code: code, loginType: loginType)
             .build()
 

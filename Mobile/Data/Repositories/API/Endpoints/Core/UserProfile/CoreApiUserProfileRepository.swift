@@ -12,7 +12,7 @@ public class CoreApiUserProfileRepository {
     public static let shared = CoreApiUserProfileRepository()
     @Inject private var userSession: UserSessionServices
     @Inject private var dataTransferService: DataTransferService
-    private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }
+    private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
 }
 
 extension CoreApiUserProfileRepository: UserProfileRepository {
@@ -26,7 +26,7 @@ extension CoreApiUserProfileRepository: UserProfileRepository {
 
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
-            .set(method: .currentUserInfo)
+            .setBody(key: .req, value: "getUserInfo")
             .set(userId: userId)
             .build()
 

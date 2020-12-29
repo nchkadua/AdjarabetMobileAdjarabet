@@ -12,7 +12,7 @@ public class CoreApiTransactionHistoryRepository {
     public static let shared = CoreApiTransactionHistoryRepository()
     @Inject private var userSession: UserSessionServices
     @Inject private var dataTransferService: DataTransferService
-    private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }
+    private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
     private init() {}
 }
 
@@ -28,7 +28,7 @@ extension CoreApiTransactionHistoryRepository: TransactionHistoryRepository {
 
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
-            .set(method: .transactionHistory)
+            .setBody(key: .req, value: "getUsersTransactions")
             .set(userId: userId)
             .set(fromDate: params.fromDate, toDate: params.toDate)
             .set(transactionType: params.transactionType)

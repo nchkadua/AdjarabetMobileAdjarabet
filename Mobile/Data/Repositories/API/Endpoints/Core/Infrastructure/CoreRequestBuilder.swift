@@ -1,12 +1,12 @@
 //
-//  AdjarabetCoreClientRequestBuilder.swift
+//  CoreRequestBuilder.swift
 //  Mobile
 //
 //  Created by Shota Ioramashvili on 4/12/20.
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public class AdjarabetCoreClientRequestBuilder {
+public class CoreRequestBuilder {
     @Inject private var requestBuilder: HttpRequestBuilder
     @Inject private var userAgentProvider: UserAgentProvider
 
@@ -34,12 +34,12 @@ public class AdjarabetCoreClientRequestBuilder {
         return self
     }
 
-    public func set(key: BodyKey, value: String) -> Self {
+    public func setBody(key: BodyKey, value: String) -> Self {
         body[key.rawValue] = value
         return self
     }
 
-    public func set(key: String, value: String) -> Self {
+    public func setBody(key: String, value: String) -> Self {
         body[key] = value
         return self
     }
@@ -79,12 +79,6 @@ public class AdjarabetCoreClientRequestBuilder {
     }
 
     /* deprecated part */ // TODO: Delete
-
-    @available(*, deprecated, message: "Please use set(key:, value:)")
-    public func set(method: AdjarabetCoreClient.Method) -> Self {
-        body[BodyKey.req.rawValue] = method.rawValue
-        return self
-    }
 
     @available(*, deprecated, message: "Please use set(key:, value:)")
     public func set(username: String, password: String, channel: Int) -> Self {

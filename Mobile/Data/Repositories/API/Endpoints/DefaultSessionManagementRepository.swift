@@ -10,13 +10,13 @@ import Foundation
 
 public class DefaultSessionManagementRepository {
     @Inject private var dataTransferService: DataTransferService
-    private var requestBuilder: AdjarabetCoreClientRequestBuilder { AdjarabetCoreClientRequestBuilder() }
+    private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
 }
 
 extension DefaultSessionManagementRepository: SessionManagementRepository {
     public func aliveSession<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
-            .set(method: .aliveSession)
+            .setBody(key: .req, value: "isSessionActive")
             .set(userId: userId)
             .setHeader(key: .cookie, value: sessionId)
             .build()
