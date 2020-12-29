@@ -1799,7 +1799,7 @@
 			isa = PBXGroup;
 			children = (
 				D85C9BF02433677100F1D4FE /* CoreRequestBuilder.swift */,
-				D8A47DF7243367160077AA8E /* Models */,
+				D8A47DF7243367160077AA8E /* Entities */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -1821,13 +1821,13 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		C7D86F11259A05CB0021CF1C /* Endpoints */ = {
+		C7D86F11259A05CB0021CF1C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				C7EF9E46256FECDD00D2908C /* Core */,
 				C7D86F0E259A05640021CF1C /* Mobile */,
 			);
-			path = Endpoints;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		C7D86F3A259A5CBD0021CF1C /* UserBalance */ = {
@@ -1862,7 +1862,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D29F42258EA784006BEFAC /* Infrastructure */,
-				C7D86F11259A05CB0021CF1C /* Endpoints */,
+				C7D86F11259A05CB0021CF1C /* Repositories */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -3045,7 +3045,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D8A47DF7243367160077AA8E /* Models */ = {
+		D8A47DF7243367160077AA8E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */,
@@ -3053,7 +3053,7 @@
 				D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */,
 				D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */,
 			);
-			path = Models;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D8AB80672460132B001C4E8A /* Services */ = {
