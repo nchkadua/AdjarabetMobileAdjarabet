@@ -11,7 +11,7 @@ public class CoreRequestBuilder {
     @Inject private var userAgentProvider: UserAgentProvider
 
     // url
-    private var url = Bundle.main.coreApiUrl
+    private var host = Bundle.main.coreApiUrl
 
     // header key:values
     private lazy var headers = [
@@ -46,13 +46,16 @@ public class CoreRequestBuilder {
 
     public func build() -> URLRequest {
         requestBuilder
-            .set(host: url)
-            .set(path: "")
+            .set(host: host)
             .set(headers: headers)
             .set(method: HttpMethodPost())
             .set(contentType: ContentTypeUrlEncoded())
             .set(body: body)
             .build()
+    }
+
+    public enum HeaderKey: String {
+        case cookie = "Cookie"
     }
 
     public enum BodyKey: String {
@@ -72,10 +75,6 @@ public class CoreRequestBuilder {
         case providerType
         case maxResult
         case pageIndex
-    }
-
-    public enum HeaderKey: String {
-        case cookie = "Cookie"
     }
 }
 

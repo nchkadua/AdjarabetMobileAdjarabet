@@ -389,8 +389,7 @@
 		D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8442AA92469A7A400F32676 /* LoginViewModel.swift */; };
 		D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845BFB82445F93900419A2C /* UIView+Extension.swift */; };
 		D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85094012482570200722040 /* UICollectionView+Extension.swift */; };
-		D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8509404248260DD00722040 /* AdjarabetMobileClient.swift */; };
-		D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8509406248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift */; };
+		D8509407248260E900722040 /* MobileRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8509406248260E900722040 /* MobileRequestBuilder.swift */; };
 		D850940A24828D5800722040 /* LobbyGamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940924828D5800722040 /* LobbyGamesRepository.swift */; };
 		D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */; };
 		D850940E24839A4A00722040 /* PageDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940D24839A4A00722040 /* PageDescription.swift */; };
@@ -900,8 +899,7 @@
 		D8442AA92469A7A400F32676 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D845BFB82445F93900419A2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D85094012482570200722040 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		D8509404248260DD00722040 /* AdjarabetMobileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetMobileClient.swift; sourceTree = "<group>"; };
-		D8509406248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetMobileClientRequestBuilder.swift; sourceTree = "<group>"; };
+		D8509406248260E900722040 /* MobileRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileRequestBuilder.swift; sourceTree = "<group>"; };
 		D850940924828D5800722040 /* LobbyGamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyGamesRepository.swift; sourceTree = "<group>"; };
 		D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLobbyGamesRepository.swift; sourceTree = "<group>"; };
 		D850940D24839A4A00722040 /* PageDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDescription.swift; sourceTree = "<group>"; };
@@ -1816,7 +1814,7 @@
 		C7D86F0F259A05770021CF1C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				D8509403248260C400722040 /* AdjarabetMobileClient */,
+				D8509406248260E900722040 /* MobileRequestBuilder.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -2634,15 +2632,6 @@
 				D87E3C552445FDEF004A4BDF /* Sports.storyboard */,
 			);
 			path = Sports;
-			sourceTree = "<group>";
-		};
-		D8509403248260C400722040 /* AdjarabetMobileClient */ = {
-			isa = PBXGroup;
-			children = (
-				D8509404248260DD00722040 /* AdjarabetMobileClient.swift */,
-				D8509406248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift */,
-			);
-			path = AdjarabetMobileClient;
 			sourceTree = "<group>";
 		};
 		D85C9C1524336BF500F1D4FE /* Views */ = {
@@ -3570,7 +3559,7 @@
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
 				7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */,
-				D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */,
+				D8509407248260E900722040 /* MobileRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
@@ -3747,7 +3736,6 @@
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
-				D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */,

@@ -25,7 +25,8 @@ public protocol HostSetterHttpRequestBuilder {
     func set(host: String) -> HostSetterReturnType
 }
 
-public typealias HostSetterReturnType = PathSetterHttpRequestBuilder
+public typealias HostSetterReturnType = PathSetterHttpRequestBuilder &
+                                        PathSetterReturnType // jump over path setting if decired
 
 /* Path */
 public protocol PathSetterHttpRequestBuilder {
@@ -97,6 +98,7 @@ public protocol ContentTypeInfo {
 /// Method Types
 public enum ContentType {
     case urlEncoded
+    case json
     case raw
     /**
      TO DO: Add cases (none, graphql ...)
@@ -104,6 +106,7 @@ public enum ContentType {
     var value: String {
         switch self {
         case .urlEncoded: return "application/x-www-form-urlencoded"
+        case .json:       return "application/json"
         case .raw:        return "text/plain"
         }
     }
@@ -113,6 +116,13 @@ public enum ContentType {
 public struct ContentTypeUrlEncoded: ContentTypeInfo {
     public let contentType: ContentType = .urlEncoded
     public typealias NextProtocol = UrlEncodedContentSetterHttpRequestBuilder &
+                                    UrlRequestBuilderHttpRequestBuilder
+}
+
+/// .json
+public struct ContentTypeJson: ContentTypeInfo {
+    public let contentType: ContentType = .json
+    public typealias NextProtocol = JsonContentSetterHttpRequestBuilder &
                                     UrlRequestBuilderHttpRequestBuilder
 }
 
@@ -133,6 +143,13 @@ public protocol UrlEncodedContentSetterHttpRequestBuilder {
 public typealias UrlEncodedContentSetterReturnType = UrlEncodedContentSetterHttpRequestBuilder &
                                                      UrlRequestBuilderHttpRequestBuilder
 
+// Json Content
+public protocol JsonContentSetterHttpRequestBuilder {
+    func setBody(json data: Any) -> JsonContentSetterReturnType
+}
+
+public typealias JsonContentSetterReturnType = UrlRequestBuilderHttpRequestBuilder
+
 // Raw Content
 public protocol RawContentSetterHttpRequestBuilder {
     func setBody(raw data: Data) -> RawContentSetterReturnType
@@ -152,6 +169,7 @@ private typealias HttpRequestBuilderProtocols = HttpRequestBuilder &
                                                 HttpMethodSetterHttpRequestBuilder &
                                                 ContentTypeSetterHttpRequestBuilder &
                                                 UrlEncodedContentSetterHttpRequestBuilder &
+                                                JsonContentSetterHttpRequestBuilder &
                                                 RawContentSetterHttpRequestBuilder &
                                                 UrlRequestBuilderHttpRequestBuilder
 
@@ -162,12 +180,13 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
     private lazy var components: URLComponents = {
         var components = URLComponents() // default initialization
         components.queryItems = []
+        components.path = ""
         return components
     }()
 
     private lazy var request: URLRequest = {
         // NOTE: components.host and components.path must be set
-        let url = URL(string: components.host! + components.path)!
+        let url = URL(string: components.host!)!.appendingPathComponent(components.path)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpBody = nil
         return urlRequest
@@ -235,6 +254,17 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
     public func setBody(key: String, value: String) -> UrlEncodedContentSetterReturnType {
         components.queryItems?.append(.init(name: key, value: value))
         return self
+    }
+
+    public func setBody(json obj: Any) -> JsonContentSetterReturnType {
+        do {
+            let data = try JSONSerialization.data(withJSONObject: obj)
+            request.httpBody = data
+            return self
+        } catch {
+         // fatalError("Invalid JSON Object passed")
+            return self
+        }
     }
 
     public func setBody(raw data: Data) -> RawContentSetterReturnType {

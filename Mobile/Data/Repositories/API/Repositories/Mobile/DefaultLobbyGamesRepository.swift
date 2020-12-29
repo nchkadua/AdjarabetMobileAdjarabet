@@ -8,15 +8,24 @@
 
 public class DefaultLobbyGamesRepository {
     @Inject private var dataTransferService: DataTransferService
-    private var requestBuilder: AdjarabetMobileClientRequestBuilder { AdjarabetMobileClientRequestBuilder() }
+    private var requestBuilder: MobileRequestBuilder { MobileRequestBuilder() }
 }
 
 extension DefaultLobbyGamesRepository: LobbyGamesRepository {
     public func games<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, searchTerm: String?, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
-        let request = requestBuilder
+        var requestBuilder = self.requestBuilder
             .set(method: .games)
-            .set(sessionId: sessionId, userId: userId, page: page, itemsPerPage: itemsPerPage, searchTerm: searchTerm)
-            .build()
+            .setBody(key: .sessionId, value: sessionId)
+            .setBody(key: .userId, value: "\(userId)")
+            .setBody(key: .page, value: "\(page)")
+            .setBody(key: .propousedNumberOfItems, value: "\(itemsPerPage)")
+
+        if let searchTerm = searchTerm {
+            requestBuilder = requestBuilder
+                .setBody(key: .term, value: searchTerm)
+        }
+
+        let request = requestBuilder.build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
@@ -24,7 +33,10 @@ extension DefaultLobbyGamesRepository: LobbyGamesRepository {
     public func recentlyPlayedGames<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
         let request = requestBuilder
             .set(method: .recentlyPlayed)
-            .set(sessionId: sessionId, userId: userId, page: page, itemsPerPage: itemsPerPage)
+            .setBody(key: .sessionId, value: sessionId)
+            .setBody(key: .userId, value: "\(userId)")
+            .setBody(key: .page, value: "\(page)")
+            .setBody(key: .propousedNumberOfItems, value: "\(itemsPerPage)")
             .build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
