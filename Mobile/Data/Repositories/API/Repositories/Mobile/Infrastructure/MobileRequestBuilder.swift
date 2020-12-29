@@ -20,12 +20,12 @@ public class MobileRequestBuilder {
         return self
     }
 
-    public func setBody(key: BodyKey, value: String) -> Self {
+    public func setBody(key: BodyKey, value: Any) -> Self {
         body[key.rawValue] = value
         return self
     }
 
-    public func setBody(key: String, value: String) -> Self {
+    public func setBody(key: String, value: Any) -> Self {
         body[key] = value
         return self
     }

@@ -16,16 +16,17 @@ extension DefaultLobbyGamesRepository: LobbyGamesRepository {
         var requestBuilder = self.requestBuilder
             .set(method: .games)
             .setBody(key: .sessionId, value: sessionId)
-            .setBody(key: .userId, value: "\(userId)")
-            .setBody(key: .page, value: "\(page)")
-            .setBody(key: .propousedNumberOfItems, value: "\(itemsPerPage)")
+            .setBody(key: .userId, value: userId)
+            .setBody(key: .page, value: page)
+            .setBody(key: .propousedNumberOfItems, value: itemsPerPage)
 
         if let searchTerm = searchTerm {
             requestBuilder = requestBuilder
                 .setBody(key: .term, value: searchTerm)
         }
 
-        let request = requestBuilder.build()
+        let request = requestBuilder
+            .build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
@@ -34,9 +35,9 @@ extension DefaultLobbyGamesRepository: LobbyGamesRepository {
         let request = requestBuilder
             .set(method: .recentlyPlayed)
             .setBody(key: .sessionId, value: sessionId)
-            .setBody(key: .userId, value: "\(userId)")
-            .setBody(key: .page, value: "\(page)")
-            .setBody(key: .propousedNumberOfItems, value: "\(itemsPerPage)")
+            .setBody(key: .userId, value: userId)
+            .setBody(key: .page, value: page)
+            .setBody(key: .propousedNumberOfItems, value: itemsPerPage)
             .build()
 
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
