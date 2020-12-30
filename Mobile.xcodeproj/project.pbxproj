@@ -389,26 +389,17 @@
 		D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8442AA92469A7A400F32676 /* LoginViewModel.swift */; };
 		D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845BFB82445F93900419A2C /* UIView+Extension.swift */; };
 		D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85094012482570200722040 /* UICollectionView+Extension.swift */; };
-		D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8509404248260DD00722040 /* AdjarabetMobileClient.swift */; };
-		D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8509406248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift */; };
+		D8509407248260E900722040 /* MobileRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8509406248260E900722040 /* MobileRequestBuilder.swift */; };
 		D850940A24828D5800722040 /* LobbyGamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940924828D5800722040 /* LobbyGamesRepository.swift */; };
 		D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */; };
 		D850940E24839A4A00722040 /* PageDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850940D24839A4A00722040 /* PageDescription.swift */; };
 		D853499724D1E1C100958B0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D853499624D1E1C100958B0E /* GoogleService-Info.plist */; };
-		D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */; };
-		D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */; };
+		D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF02433677100F1D4FE /* CoreRequestBuilder.swift */; };
 		D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */; };
 		D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF32433678000F1D4FE /* HeaderProvidingCodableType.swift */; };
 		D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */; };
 		D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */; };
 		D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */; };
-		D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9BFF243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift */; };
-		D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C00243367C900F1D4FE /* AdjarabetWebAPIClient.swift */; };
-		D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C05243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift */; };
-		D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C07243367D800F1D4FE /* AdjarabetWebAPICodable.swift */; };
-		D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C08243367D800F1D4FE /* AdjarabetWebAPIClientError.swift */; };
-		D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C0B243367DE00F1D4FE /* AdjarabetWebAPIServices.swift */; };
-		D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */; };
 		D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1124336B4C00F1D4FE /* R.generated.swift */; };
 		D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */; };
 		D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */; };
@@ -420,7 +411,6 @@
 		D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85C9C3124336D0800F1D4FE /* Login.storyboard */; };
 		D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */; };
 		D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */; };
-		D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA8B2466B5AB0054D058 /* Builder.swift */; };
 		D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */; };
 		D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */; };
 		D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DA922466BD060054D058 /* BalanceManagementRepository.swift */; };
@@ -909,26 +899,17 @@
 		D8442AA92469A7A400F32676 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D845BFB82445F93900419A2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D85094012482570200722040 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		D8509404248260DD00722040 /* AdjarabetMobileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetMobileClient.swift; sourceTree = "<group>"; };
-		D8509406248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetMobileClientRequestBuilder.swift; sourceTree = "<group>"; };
+		D8509406248260E900722040 /* MobileRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileRequestBuilder.swift; sourceTree = "<group>"; };
 		D850940924828D5800722040 /* LobbyGamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyGamesRepository.swift; sourceTree = "<group>"; };
 		D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLobbyGamesRepository.swift; sourceTree = "<group>"; };
 		D850940D24839A4A00722040 /* PageDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDescription.swift; sourceTree = "<group>"; };
 		D853499624D1E1C100958B0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClient.swift; sourceTree = "<group>"; };
-		D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientRequestBuilder.swift; sourceTree = "<group>"; };
+		D85C9BF02433677100F1D4FE /* CoreRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreRequestBuilder.swift; sourceTree = "<group>"; };
 		D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreClientError.swift; sourceTree = "<group>"; };
 		D85C9BF32433678000F1D4FE /* HeaderProvidingCodableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderProvidingCodableType.swift; sourceTree = "<group>"; };
 		D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreResult.swift; sourceTree = "<group>"; };
 		D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreStatusCode.swift; sourceTree = "<group>"; };
 		D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetCoreCodable.swift; sourceTree = "<group>"; };
-		D85C9BFF243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift"; sourceTree = "<group>"; };
-		D85C9C00243367C900F1D4FE /* AdjarabetWebAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClient.swift; sourceTree = "<group>"; };
-		D85C9C05243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClientRequestBuilder.swift; sourceTree = "<group>"; };
-		D85C9C07243367D800F1D4FE /* AdjarabetWebAPICodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPICodable.swift; sourceTree = "<group>"; };
-		D85C9C08243367D800F1D4FE /* AdjarabetWebAPIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIClientError.swift; sourceTree = "<group>"; };
-		D85C9C0B243367DE00F1D4FE /* AdjarabetWebAPIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjarabetWebAPIServices.swift; sourceTree = "<group>"; };
-		D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjarabetEndpoints.swift; sourceTree = "<group>"; };
 		D85C9C1124336B4C00F1D4FE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D85C9C1424336BA600F1D4FE /* Mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mobile.entitlements; sourceTree = "<group>"; };
 		D85C9C1624336C0B00F1D4FE /* LoadingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
@@ -942,7 +923,6 @@
 		D85C9C3324336D1F00F1D4FE /* ABNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABNavigationController.swift; sourceTree = "<group>"; };
 		D85C9C372433755E00F1D4FE /* RSwift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RSwift.sh; sourceTree = "<group>"; };
 		D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthenticationRepository.swift; sourceTree = "<group>"; };
-		D861DA8B2466B5AB0054D058 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagementRepository.swift; sourceTree = "<group>"; };
 		D861DA922466BD060054D058 /* BalanceManagementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceManagementRepository.swift; sourceTree = "<group>"; };
@@ -1250,29 +1230,12 @@
 			path = TransactionHistoryComponentView;
 			sourceTree = "<group>";
 		};
-		76811DC4257E4530004107E9 /* AccessList */ = {
-			isa = PBXGroup;
-			children = (
-				76811DC5257E453B004107E9 /* Response */,
-				76EBDB39257E417D00C8DC6A /* CoreApiAccessListRepository.swift */,
-			);
-			path = AccessList;
-			sourceTree = "<group>";
-		};
-		76811DC5257E453B004107E9 /* Response */ = {
+		76811DC5257E453B004107E9 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				76EBDB37257E417D00C8DC6A /* GetAccessListResponse.swift */,
 			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		76811DC8257E4832004107E9 /* AccessList */ = {
-			isa = PBXGroup;
-			children = (
-				76EBDB42257E426200C8DC6A /* AccessListEntity.swift */,
-			);
-			path = AccessList;
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		76811DC9257E4854004107E9 /* AccessList */ = {
@@ -1319,37 +1282,12 @@
 			path = TransactionHistory;
 			sourceTree = "<group>";
 		};
-		76BDF42325752CA3007B27A7 /* TransactionHistory */ = {
-			isa = PBXGroup;
-			children = (
-				76BDF42425752CB0007B27A7 /* Response */,
-				76BDF440257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift */,
-			);
-			path = TransactionHistory;
-			sourceTree = "<group>";
-		};
-		76BDF42425752CB0007B27A7 /* Response */ = {
+		76BDF42425752CB0007B27A7 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */,
 			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		76BDF42B25754057007B27A7 /* TransactionHistory */ = {
-			isa = PBXGroup;
-			children = (
-				76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */,
-			);
-			path = TransactionHistory;
-			sourceTree = "<group>";
-		};
-		76BDF44625755CF5007B27A7 /* TransactionHistory */ = {
-			isa = PBXGroup;
-			children = (
-				76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */,
-			);
-			path = TransactionHistory;
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		76BDF45625760425007B27A7 /* AccountParameters */ = {
@@ -1390,14 +1328,6 @@
 			path = AccountParametersTableViewCell;
 			sourceTree = "<group>";
 		};
-		76EBDB35257E414300C8DC6A /* AccessList */ = {
-			isa = PBXGroup;
-			children = (
-				76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */,
-			);
-			path = AccessList;
-			sourceTree = "<group>";
-		};
 		76EFF7BD2582380900898819 /* AccessHistoryCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1425,6 +1355,47 @@
 				8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C709D7FC259B8F4B0079E942 /* Authentication & Session Management */ = {
+			isa = PBXGroup;
+			children = (
+				C709D7FD259B8F620079E942 /* Authentication Operations */,
+				C709D7FE259B8F880079E942 /* Session Management Operations */,
+			);
+			path = "Authentication & Session Management";
+			sourceTree = "<group>";
+		};
+		C709D7FD259B8F620079E942 /* Authentication Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7991288259BA78D00F64676 /* Authentication */,
+			);
+			path = "Authentication Operations";
+			sourceTree = "<group>";
+		};
+		C709D7FE259B8F880079E942 /* Session Management Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7991289259BA79C00F64676 /* Session Management */,
+			);
+			path = "Session Management Operations";
+			sourceTree = "<group>";
+		};
+		C709D7FF259B902D0079E942 /* Balance Management */ = {
+			isa = PBXGroup;
+			children = (
+				C709D800259B90810079E942 /* Balance Management Operations */,
+			);
+			path = "Balance Management";
+			sourceTree = "<group>";
+		};
+		C709D800259B90810079E942 /* Balance Management Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C799129E259BA8EF00F64676 /* Balance Management */,
+			);
+			path = "Balance Management Operations";
 			sourceTree = "<group>";
 		};
 		C7148715257111F300E4A71D /* Model */ = {
@@ -1485,6 +1456,267 @@
 			path = Amount;
 			sourceTree = "<group>";
 		};
+		C7991273259BA3A300F64676 /* User Activity History & Transaction Management */ = {
+			isa = PBXGroup;
+			children = (
+				C7991274259BA3C800F64676 /* Authentication Log */,
+				C7991279259BA48000F64676 /* Transactions List & Management */,
+			);
+			path = "User Activity History & Transaction Management";
+			sourceTree = "<group>";
+		};
+		C7991274259BA3C800F64676 /* Authentication Log */ = {
+			isa = PBXGroup;
+			children = (
+				C7991275259BA3D700F64676 /* Authentication Log Operations */,
+			);
+			path = "Authentication Log";
+			sourceTree = "<group>";
+		};
+		C7991275259BA3D700F64676 /* Authentication Log Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C799128A259BA7D000F64676 /* Access List */,
+			);
+			path = "Authentication Log Operations";
+			sourceTree = "<group>";
+		};
+		C7991279259BA48000F64676 /* Transactions List & Management */ = {
+			isa = PBXGroup;
+			children = (
+				C799127A259BA49300F64676 /* Transaction List & Management Operations */,
+			);
+			path = "Transactions List & Management";
+			sourceTree = "<group>";
+		};
+		C799127A259BA49300F64676 /* Transaction List & Management Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C799128D259BA80100F64676 /* Transaction History */,
+			);
+			path = "Transaction List & Management Operations";
+			sourceTree = "<group>";
+		};
+		C799127B259BA50B00F64676 /* User Profile Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7991298259BA88100F64676 /* User Profile */,
+			);
+			path = "User Profile Operations";
+			sourceTree = "<group>";
+		};
+		C799127C259BA64500F64676 /* Authentication & Session Management */ = {
+			isa = PBXGroup;
+			children = (
+				C799127D259BA64E00F64676 /* Authentication Operations */,
+				C799127E259BA68100F64676 /* Session Management Operations */,
+			);
+			path = "Authentication & Session Management";
+			sourceTree = "<group>";
+		};
+		C799127D259BA64E00F64676 /* Authentication Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7991284259BA71500F64676 /* Authentication */,
+			);
+			path = "Authentication Operations";
+			sourceTree = "<group>";
+		};
+		C799127E259BA68100F64676 /* Session Management Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7991285259BA72500F64676 /* Session Management */,
+			);
+			path = "Session Management Operations";
+			sourceTree = "<group>";
+		};
+		C799127F259BA6A500F64676 /* User Activity History & Transaction Management */ = {
+			isa = PBXGroup;
+			children = (
+				C7991280259BA6B500F64676 /* Authentication Log */,
+				C7991282259BA6DE00F64676 /* Transactions List & Management */,
+			);
+			path = "User Activity History & Transaction Management";
+			sourceTree = "<group>";
+		};
+		C7991280259BA6B500F64676 /* Authentication Log */ = {
+			isa = PBXGroup;
+			children = (
+				C7991281259BA6C200F64676 /* Authentication Log Operations */,
+			);
+			path = "Authentication Log";
+			sourceTree = "<group>";
+		};
+		C7991281259BA6C200F64676 /* Authentication Log Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7991286259BA73900F64676 /* Access List */,
+			);
+			path = "Authentication Log Operations";
+			sourceTree = "<group>";
+		};
+		C7991282259BA6DE00F64676 /* Transactions List & Management */ = {
+			isa = PBXGroup;
+			children = (
+				C7991283259BA6EC00F64676 /* Transaction List & Management Operations */,
+			);
+			path = "Transactions List & Management";
+			sourceTree = "<group>";
+		};
+		C7991283259BA6EC00F64676 /* Transaction List & Management Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7991287259BA74A00F64676 /* Transaction History */,
+			);
+			path = "Transaction List & Management Operations";
+			sourceTree = "<group>";
+		};
+		C7991284259BA71500F64676 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
+				D8F26A04246837B700137252 /* LoginType.swift */,
+				D8BA5A1D249A5A0B00F88433 /* OTPDeliveryChannel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C7991285259BA72500F64676 /* Session Management */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */,
+			);
+			path = "Session Management";
+			sourceTree = "<group>";
+		};
+		C7991286259BA73900F64676 /* Access List */ = {
+			isa = PBXGroup;
+			children = (
+				76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */,
+				76EBDB42257E426200C8DC6A /* AccessListEntity.swift */,
+			);
+			path = "Access List";
+			sourceTree = "<group>";
+		};
+		C7991287259BA74A00F64676 /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */,
+				76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
+		C7991288259BA78D00F64676 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C7991289259BA79C00F64676 /* Session Management */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */,
+			);
+			path = "Session Management";
+			sourceTree = "<group>";
+		};
+		C799128A259BA7D000F64676 /* Access List */ = {
+			isa = PBXGroup;
+			children = (
+				76811DC5257E453B004107E9 /* Responses */,
+				76EBDB39257E417D00C8DC6A /* CoreApiAccessListRepository.swift */,
+			);
+			path = "Access List";
+			sourceTree = "<group>";
+		};
+		C799128D259BA80100F64676 /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF42425752CB0007B27A7 /* Responses */,
+				76BDF440257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
+		C7991294259BA84D00F64676 /* User Profile Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7991295259BA85C00F64676 /* User Profile */,
+			);
+			path = "User Profile Operations";
+			sourceTree = "<group>";
+		};
+		C7991295259BA85C00F64676 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */,
+				C7EF9E7025702AFA00D2908C /* User Info */,
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		C7991298259BA88100F64676 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C79912B0259BAC9500F64676 /* User Info */,
+				C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */,
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		C799129B259BA8CB00F64676 /* Balance Management */ = {
+			isa = PBXGroup;
+			children = (
+				C799129C259BA8D800F64676 /* Balance Management Operations */,
+			);
+			path = "Balance Management";
+			sourceTree = "<group>";
+		};
+		C799129C259BA8D800F64676 /* Balance Management Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C799129D259BA8DF00F64676 /* Balance Management */,
+			);
+			path = "Balance Management Operations";
+			sourceTree = "<group>";
+		};
+		C799129D259BA8DF00F64676 /* Balance Management */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA922466BD060054D058 /* BalanceManagementRepository.swift */,
+			);
+			path = "Balance Management";
+			sourceTree = "<group>";
+		};
+		C799129E259BA8EF00F64676 /* Balance Management */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */,
+			);
+			path = "Balance Management";
+			sourceTree = "<group>";
+		};
+		C799129F259BA90F00F64676 /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				D850940924828D5800722040 /* LobbyGamesRepository.swift */,
+				D815850724B09BC300FFCA95 /* Game.swift */,
+				D8BE830D24B1B5D900D7E94D /* JSONMessage.swift */,
+			);
+			path = Mobile;
+			sourceTree = "<group>";
+		};
+		C79912B0259BAC9500F64676 /* User Info */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9F3E257078F600D2908C /* Responses */,
+			);
+			path = "User Info";
+			sourceTree = "<group>";
+		};
 		C7BABFC725657966004E733E /* P2PTransfer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1541,20 +1773,17 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
-		C7D29F42258EA784006BEFAC /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C7D29F45258EA78C006BEFAC /* HttpRequestBuilder */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		C7D29F45258EA78C006BEFAC /* HttpRequestBuilder */ = {
+		C7D29F42258EA784006BEFAC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
 				C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */,
+				D86253B6246429D000F7DE0C /* DataTransferService.swift */,
+				D86253B22464214B00F7DE0C /* NetworkService.swift */,
+				D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */,
+				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
+				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
 			);
-			path = HttpRequestBuilder;
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		C7D29F52258EA8CE006BEFAC /* HttpRequestBuilder */ = {
@@ -1564,30 +1793,74 @@
 			path = HttpRequestBuilder;
 			sourceTree = "<group>";
 		};
+		C7D86F0D259A05190021CF1C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9BF02433677100F1D4FE /* CoreRequestBuilder.swift */,
+				D8A47DF7243367160077AA8E /* Entities */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C7D86F0E259A05640021CF1C /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				C7D86F0F259A05770021CF1C /* Infrastructure */,
+				D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */,
+			);
+			path = Mobile;
+			sourceTree = "<group>";
+		};
+		C7D86F0F259A05770021CF1C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D8509406248260E900722040 /* MobileRequestBuilder.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C7D86F11259A05CB0021CF1C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E46256FECDD00D2908C /* Core */,
+				C7D86F0E259A05640021CF1C /* Mobile */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C7D86F3A259A5CBD0021CF1C /* UserBalance */ = {
+			isa = PBXGroup;
+			children = (
+				D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */,
+			);
+			path = UserBalance;
+			sourceTree = "<group>";
+		};
 		C7EF9E46256FECDD00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				76811DC4257E4530004107E9 /* AccessList */,
-				76BDF42325752CA3007B27A7 /* TransactionHistory */,
-				C7EF9E47256FED2600D2908C /* UserProfile */,
+				C7D86F0D259A05190021CF1C /* Infrastructure */,
+				C709D7FC259B8F4B0079E942 /* Authentication & Session Management */,
+				C7EF9E47256FED2600D2908C /* User Profile Management */,
+				C7991273259BA3A300F64676 /* User Activity History & Transaction Management */,
+				C709D7FF259B902D0079E942 /* Balance Management */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		C7EF9E47256FED2600D2908C /* UserProfile */ = {
+		C7EF9E47256FED2600D2908C /* User Profile Management */ = {
 			isa = PBXGroup;
 			children = (
-				C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */,
-				C7EF9F3E257078F600D2908C /* Response */,
+				C799127B259BA50B00F64676 /* User Profile Operations */,
 			);
-			path = UserProfile;
+			path = "User Profile Management";
 			sourceTree = "<group>";
 		};
 		C7EF9E4A256FEF1400D2908C /* API */ = {
 			isa = PBXGroup;
 			children = (
-				C7D29F42258EA784006BEFAC /* Helpers */,
-				C7EF9E46256FECDD00D2908C /* Core */,
+				C7D29F42258EA784006BEFAC /* Infrastructure */,
+				C7D86F11259A05CB0021CF1C /* Repositories */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1595,70 +1868,37 @@
 		C7EF9E55256FF14A00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				76EBDB35257E414300C8DC6A /* AccessList */,
-				76BDF42B25754057007B27A7 /* TransactionHistory */,
-				C7EF9E56256FF15400D2908C /* UserProfile */,
+				C799127C259BA64500F64676 /* Authentication & Session Management */,
+				C7EF9E56256FF15400D2908C /* User Profile Management */,
+				C799127F259BA6A500F64676 /* User Activity History & Transaction Management */,
+				C799129B259BA8CB00F64676 /* Balance Management */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		C7EF9E56256FF15400D2908C /* UserProfile */ = {
+		C7EF9E56256FF15400D2908C /* User Profile Management */ = {
 			isa = PBXGroup;
 			children = (
-				C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */,
-				C7EF9E7025702AFA00D2908C /* UserInfo */,
+				C7991294259BA84D00F64676 /* User Profile Operations */,
 			);
-			path = UserProfile;
+			path = "User Profile Management";
 			sourceTree = "<group>";
 		};
-		C7EF9E7025702AFA00D2908C /* UserInfo */ = {
+		C7EF9E7025702AFA00D2908C /* User Info */ = {
 			isa = PBXGroup;
 			children = (
 				C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */,
-			);
-			path = UserInfo;
-			sourceTree = "<group>";
-		};
-		C7EF9E75257039D100D2908C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				76811DC8257E4832004107E9 /* AccessList */,
-				76BDF44625755CF5007B27A7 /* TransactionHistory */,
-				C7EF9EBC257043CD00D2908C /* UserProfile */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		C7EF9EBC257043CD00D2908C /* UserProfile */ = {
-			isa = PBXGroup;
-			children = (
-				C7EF9EBD257043E700D2908C /* UserInfo */,
-			);
-			path = UserProfile;
-			sourceTree = "<group>";
-		};
-		C7EF9EBD257043E700D2908C /* UserInfo */ = {
-			isa = PBXGroup;
-			children = (
 				C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */,
 			);
-			path = UserInfo;
+			path = "User Info";
 			sourceTree = "<group>";
 		};
-		C7EF9F192570764200D2908C /* UserInfo */ = {
+		C7EF9F3E257078F600D2908C /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */,
 			);
-			path = UserInfo;
-			sourceTree = "<group>";
-		};
-		C7EF9F3E257078F600D2908C /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				C7EF9F192570764200D2908C /* UserInfo */,
-			);
-			path = Response;
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		CE0818BE25389B5C00AD3B3B /* Header */ = {
@@ -2274,13 +2514,8 @@
 		D80AE7DC24683492009A7814 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				C7EF9E75257039D100D2908C /* Core */,
-				D8F26A04246837B700137252 /* LoginType.swift */,
-				D850940D24839A4A00722040 /* PageDescription.swift */,
 				D810FC3424856EAD00F81499 /* LoadingType.swift */,
-				D8BA5A1D249A5A0B00F88433 /* OTPDeliveryChannel.swift */,
-				D815850724B09BC300FFCA95 /* Game.swift */,
-				D8BE830D24B1B5D900D7E94D /* JSONMessage.swift */,
+				D850940D24839A4A00722040 /* PageDescription.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -2352,8 +2587,8 @@
 		D84202C82451919400F0F056 /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
-				C71F18A92564562D0026CEA2 /* BiometryStorage */,
 				D8AB806A24601371001C4E8A /* LanguageStorage */,
+				C71F18A92564562D0026CEA2 /* BiometryStorage */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
@@ -2397,52 +2632,6 @@
 				D87E3C552445FDEF004A4BDF /* Sports.storyboard */,
 			);
 			path = Sports;
-			sourceTree = "<group>";
-		};
-		D8509403248260C400722040 /* AdjarabetMobileClient */ = {
-			isa = PBXGroup;
-			children = (
-				D8509404248260DD00722040 /* AdjarabetMobileClient.swift */,
-				D8509406248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift */,
-			);
-			path = AdjarabetMobileClient;
-			sourceTree = "<group>";
-		};
-		D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C00243367C900F1D4FE /* AdjarabetWebAPIClient.swift */,
-				D85C9BE62433674800F1D4FE /* Services */,
-				D85C9BE52433674800F1D4FE /* Models */,
-				D85C9BE72433674800F1D4FE /* Builders */,
-			);
-			path = AdjarabetWebAPIClient;
-			sourceTree = "<group>";
-		};
-		D85C9BE52433674800F1D4FE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C08243367D800F1D4FE /* AdjarabetWebAPIClientError.swift */,
-				D85C9C07243367D800F1D4FE /* AdjarabetWebAPICodable.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		D85C9BE62433674800F1D4FE /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C0B243367DE00F1D4FE /* AdjarabetWebAPIServices.swift */,
-				D85C9BFF243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		D85C9BE72433674800F1D4FE /* Builders */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C05243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift */,
-			);
-			path = Builders;
 			sourceTree = "<group>";
 		};
 		D85C9C1524336BF500F1D4FE /* Views */ = {
@@ -2546,32 +2735,21 @@
 			path = BuildPhases;
 			sourceTree = "<group>";
 		};
-		D861DA8A2466B5A10054D058 /* Builders */ = {
-			isa = PBXGroup;
-			children = (
-				D861DA8B2466B5AB0054D058 /* Builder.swift */,
-			);
-			path = Builders;
-			sourceTree = "<group>";
-		};
-		D861DA8D2466BC820054D058 /* Repositories */ = {
+		D861DA8D2466BC820054D058 /* Repositories & Entities */ = {
 			isa = PBXGroup;
 			children = (
 				C7EF9E55256FF14A00D2908C /* Core */,
-				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
-				D861DA902466BCDC0054D058 /* SessionManagementRepository.swift */,
-				D861DA922466BD060054D058 /* BalanceManagementRepository.swift */,
-				D850940924828D5800722040 /* LobbyGamesRepository.swift */,
 				D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */,
+				C799129F259BA90F00F64676 /* Mobile */,
 			);
-			path = Repositories;
+			path = "Repositories & Entities";
 			sourceTree = "<group>";
 		};
 		D86253AB246416C800F7DE0C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				D861DA8D2466BC820054D058 /* Repositories */,
-				D861DA8A2466B5A10054D058 /* Builders */,
+				D80AE7DC24683492009A7814 /* Entities */,
+				D861DA8D2466BC820054D058 /* Repositories & Entities */,
 				D8AB80672460132B001C4E8A /* Services */,
 			);
 			path = Protocols;
@@ -2581,22 +2759,9 @@
 			isa = PBXGroup;
 			children = (
 				C7EF9E4A256FEF1400D2908C /* API */,
-				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
-				D861DA942466BD390054D058 /* DefaultSessionManagementRepository.swift */,
-				D861DA962466BDAB0054D058 /* DefaultBalanceManagementRepository.swift */,
-				D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */,
+				D84202C82451919400F0F056 /* PersistentStorages */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		D86253B12464213B00F7DE0C /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				D86253B42464219E00F7DE0C /* NetworkErrorLogger.swift */,
-				D86253B22464214B00F7DE0C /* NetworkService.swift */,
-				D86253B6246429D000F7DE0C /* DataTransferService.swift */,
-			);
-			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		D86253BA24653AA000F7DE0C /* Button */ = {
@@ -2702,6 +2867,7 @@
 			children = (
 				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
+				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
 				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
@@ -2784,7 +2950,6 @@
 				D8A47DE824335DD70077AA8E /* Domain */,
 				D8A47DE924335DDE0077AA8E /* Presentation */,
 				D8A47DEA24335DE40077AA8E /* Data */,
-				D86253B12464213B00F7DE0C /* Infrastructure */,
 			);
 			path = Mobile;
 			sourceTree = "<group>";
@@ -2806,7 +2971,6 @@
 		D8A47DE824335DD70077AA8E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D80AE7DC24683492009A7814 /* Entities */,
 				D86253AB246416C800F7DE0C /* Protocols */,
 				D885E75524714DA1007D85D3 /* UseCases */,
 			);
@@ -2826,9 +2990,6 @@
 			isa = PBXGroup;
 			children = (
 				D86253AE2464199900F7DE0C /* Repositories */,
-				D8A47DF3243366F80077AA8E /* NetworkClinet */,
-				D84202C82451919400F0F056 /* PersistentStorages */,
-				D8AB806B246013EB001C4E8A /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -2873,28 +3034,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D8A47DF3243366F80077AA8E /* NetworkClinet */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C0F2433692E00F1D4FE /* AdjarabetEndpoints.swift */,
-				D85C9BE42433673E00F1D4FE /* AdjarabetWebAPIClient */,
-				D8A47DF5243367060077AA8E /* AdjarabetCoreClient */,
-				D8509403248260C400722040 /* AdjarabetMobileClient */,
-			);
-			path = NetworkClinet;
-			sourceTree = "<group>";
-		};
-		D8A47DF5243367060077AA8E /* AdjarabetCoreClient */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9BEB2433675D00F1D4FE /* AdjarabetCoreClient.swift */,
-				D85C9BF02433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift */,
-				D8A47DF7243367160077AA8E /* Models */,
-			);
-			path = AdjarabetCoreClient;
-			sourceTree = "<group>";
-		};
-		D8A47DF7243367160077AA8E /* Models */ = {
+		D8A47DF7243367160077AA8E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */,
@@ -2902,7 +3042,7 @@
 				D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */,
 				D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */,
 			);
-			path = Models;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D8AB80672460132B001C4E8A /* Services */ = {
@@ -2920,16 +3060,6 @@
 				D84202C9245191B100F0F056 /* LanguageStorage.swift */,
 			);
 			path = LanguageStorage;
-			sourceTree = "<group>";
-		};
-		D8AB806B246013EB001C4E8A /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C1E24336CA400F1D4FE /* UserSession.swift */,
-				D85C9C1F24336CA400F1D4FE /* UserSessionCareTaker.swift */,
-				D8C6379D2471B89F00B9A50E /* UserBalanceService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		D8AB806C246014DB001C4E8A /* UserSession */ = {
@@ -3429,7 +3559,7 @@
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
 				7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */,
-				D8509407248260E900722040 /* AdjarabetMobileClientRequestBuilder.swift in Sources */,
+				D8509407248260E900722040 /* MobileRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
@@ -3450,10 +3580,8 @@
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
-				D85C9C0A243367D800F1D4FE /* AdjarabetWebAPIClientError.swift in Sources */,
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
-				D85C9BEC2433676700F1D4FE /* AdjarabetCoreClient.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
 				CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */,
 				C71B4B72257EC57000538697 /* SecurityLevelsNavigator.swift in Sources */,
@@ -3489,7 +3617,6 @@
 				CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */,
 				CE7A241E257C19B200A94E89 /* Helper.swift in Sources */,
 				769886B92571091D00FA339E /* ABCheckbox.swift in Sources */,
-				D85C9C0C243367DE00F1D4FE /* AdjarabetWebAPIServices.swift in Sources */,
 				D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */,
 				CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
@@ -3513,7 +3640,6 @@
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
-				D85C9C102433692E00F1D4FE /* AdjarabetEndpoints.swift in Sources */,
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
@@ -3529,7 +3655,6 @@
 				76404F0D257625F900D14E0C /* AccountSecurityMessagesComponentView.swift in Sources */,
 				CEF3685A2549C33E009FD456 /* DepositViewControllerFactory.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
-				D861DA8C2466B5AB0054D058 /* Builder.swift in Sources */,
 				CE9B7F8625753784006FF756 /* DateFormatter.swift in Sources */,
 				CEB937DA251E281B004195A1 /* LanguagesButton.swift in Sources */,
 				CE91C0DA257028C400A18255 /* TransactionsFilterViewController.swift in Sources */,
@@ -3611,10 +3736,9 @@
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
-				D8509405248260DD00722040 /* AdjarabetMobileClient.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
-				D85C9BF12433677100F1D4FE /* AdjarabetCoreClientRequestBuilder.swift in Sources */,
+				D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */,
 				C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
 				C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */,
@@ -3631,7 +3755,6 @@
 				C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */,
-				D85C9C06243367D100F1D4FE /* AdjarabetWebAPIClientRequestBuilder.swift in Sources */,
 				CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */,
 				C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */,
 				CEB285BD256D20B600584A65 /* SelfSuspendViewController.swift in Sources */,
@@ -3640,7 +3763,6 @@
 				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
-				D85C9C02243367C900F1D4FE /* AdjarabetWebAPIClient+AdjarabetWebAPIUserLoggedInServices.swift in Sources */,
 				76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */,
 				7644B6072563E516006778B2 /* DateHeaderComponentView.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
@@ -3751,13 +3873,11 @@
 				CEE356FA252C9C9100A0A25C /* BalanceComponentViewModel.swift in Sources */,
 				CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */,
 				CE0818CF25389EEE00AD3B3B /* NotificationsHeaderCell.swift in Sources */,
-				D85C9C03243367C900F1D4FE /* AdjarabetWebAPIClient.swift in Sources */,
 				CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */,
 				CEE15C4725349EDF0033BF93 /* NotificationTableViewCell.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
 				7644B62A256506B6006778B2 /* TransactionDetailComponentViewModel.swift in Sources */,
-				D85C9C09243367D800F1D4FE /* AdjarabetWebAPICodable.swift in Sources */,
 				D861DA972466BDAB0054D058 /* DefaultBalanceManagementRepository.swift in Sources */,
 				CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */,
 				C7C973AD2580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift in Sources */,
