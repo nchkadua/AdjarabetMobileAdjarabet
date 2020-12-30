@@ -126,7 +126,8 @@ public class AddCardViewController: ABViewController {
 
     // MARK: Action Methods
     private func updateAmountInputView(with minAmount: Double) {
-        amountInputView.setTextAndConfigure(text: String(minAmount), animated: true)
+        let text = NumberFormatter().string(from: NSNumber(value: minAmount))
+        amountInputView.setTextAndConfigure(text: text, animated: true)
         amountInputView.setRightButtonImage(R.image.cardManagement.checkmark() ?? UIImage(), for: .normal)
         amountInputView.mainTextField.resignFirstResponder()
         updateContinueButton()
@@ -138,7 +139,8 @@ public class AddCardViewController: ABViewController {
     }
 
     private func updateAmountInputViewImage() {
-        if Double(amountInputView.mainTextField.text ?? "0.0") ?? 0.0 >= minimumAmount {
+        if let amount = amount2Double(),
+            amount >= minimumAmount {
             amountInputView.setRightButtonImage(R.image.cardManagement.checkmark() ?? UIImage(), for: .normal)
         } else {
             amountInputView.setRightButtonImage(UIImage(), for: .normal)
@@ -146,7 +148,7 @@ public class AddCardViewController: ABViewController {
     }
 
     private func updateContinueButton() {
-        enteredAmount = Double(amountInputView.mainTextField.text ?? "0.0") ?? 0.0
+        enteredAmount = amount2Double() ?? 0.0
         if hasAgreedToTerms && enteredAmount >= minimumAmount {
             continueButton.setStyle(to: .secondary(state: .acvite, size: .large))
             continueButton.isUserInteractionEnabled = true
@@ -154,5 +156,17 @@ public class AddCardViewController: ABViewController {
             continueButton.setStyle(to: .secondary(state: .disabled, size: .large))
             continueButton.isUserInteractionEnabled = false
         }
+    }
+
+    // MARK: Helpers
+
+    private func amount2Double() -> Double? {
+        guard let text   = amountInputView.mainTextField.text,
+              let number = NumberFormatter().number(from: text),
+              let result = Double(exactly: number)
+        else {
+            return nil
+        }
+        return result
     }
 }
