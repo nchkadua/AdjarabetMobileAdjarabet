@@ -12,17 +12,18 @@ public class AmountFormatter: Formatter {
     private lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.groupingSeparator = ","
+        formatter.groupingSeparator = ""
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         return formatter
     }()
 
     public func formatted(string: String) -> String {
-        guard !string.isEmpty else { return "" }
-        var formattedString = string
-        let number = formatter.number(from: formattedString) ?? 0
-        formattedString = formatter.string(from: number)!
-        return formattedString
+        if !string.isEmpty,
+            let number = formatter.number(from: string) {
+            return formatter.string(from: number)!
+        } else {
+            return ""
+        }
     }
 }
