@@ -75,6 +75,7 @@ public class ABInputView: UIView {
 
     public func setTextAndConfigure(text: String?, animated animate: Bool = false) {
         textField.text = text
+        formatText()
         configurePosition(animated: animate)
     }
 
