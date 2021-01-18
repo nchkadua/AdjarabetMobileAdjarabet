@@ -116,6 +116,7 @@
 		C721EA5A259C9D9700F7C624 /* HttpRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */; };
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
+		C747734E25B5C1030083C845 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C747734D25B5C1030083C845 /* Currency.swift */; };
 		C7B0DCEE2575591100714B22 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0DCED2575591100714B22 /* Country.swift */; };
 		C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */; };
 		C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */; };
@@ -623,6 +624,7 @@
 		C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilderTests.swift; sourceTree = "<group>"; };
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C7405188256FAA8200EAC904 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
+		C747734D25B5C1030083C845 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C7B0DCED2575591100714B22 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferNavigator.swift; sourceTree = "<group>"; };
 		C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewController.swift; sourceTree = "<group>"; };
@@ -3150,6 +3152,7 @@
 			isa = PBXGroup;
 			children = (
 				D8FBA4F72449BE7D0015C03C /* Language.swift */,
+				C747734D25B5C1030083C845 /* Currency.swift */,
 				C7B0DCED2575591100714B22 /* Country.swift */,
 				C7036C33257CF42400AE7EB7 /* Gender.swift */,
 				D8BF4048244ECDB6008F0BAF /* CellHeighProvidering.swift */,
@@ -3576,6 +3579,7 @@
 				CEA77793256D4237008A4F6C /* MailChangeViewModel.swift in Sources */,
 				CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */,
 				CEE537E9254AC9FD00EDE6C0 /* CashFlowNavigator.swift in Sources */,
+				C747734E25B5C1030083C845 /* Currency.swift in Sources */,
 				CEF368502549C325009FD456 /* DepositViewModel.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
