@@ -71,6 +71,5 @@ extension SecurityLevelTypeComponentView: Xibable {
         separator.setBackgorundColor(to: .nonOpaque())
         label.setTextColor(to: .primaryText())
         label.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
-        checkbox.viewModel = ABCheckmarkCheckboxModel()
     }
 }
