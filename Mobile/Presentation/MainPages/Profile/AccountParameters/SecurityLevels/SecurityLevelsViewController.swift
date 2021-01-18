@@ -11,7 +11,7 @@ import RxSwift
 public class SecurityLevelsViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: SecurityLevelsViewModel
     public lazy var navigator = SecurityLevelsNavigator(viewController: self)
-    private lazy var appTableViewController = ABTableViewController()
+    private lazy var appTableViewController = SecurityLevelsTableViewController()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -62,5 +62,11 @@ extension SecurityLevelsViewController {
             appTableViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
             appTableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+}
+
+private class SecurityLevelsTableViewController: ABTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("SecurityLevelsTableViewController", indexPath)
     }
 }
