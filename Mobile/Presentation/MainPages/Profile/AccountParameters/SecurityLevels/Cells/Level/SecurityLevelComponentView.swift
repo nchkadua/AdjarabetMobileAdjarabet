@@ -15,7 +15,7 @@ class SecurityLevelComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var label: UILabel!
-    @IBOutlet weak private var checkbox: ABCheckbox!
+    @IBOutlet weak private var checkbox: UIButton!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)

@@ -28,8 +28,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKM-Sr-EVI" userLabel="Checkbox" customClass="ABCheckbox" customModule="Mobile" customModuleProvider="target">
-                    <rect key="frame" x="311" y="17" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKM-Sr-EVI" userLabel="Checkbox">
+                    <rect key="frame" x="313" y="18" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="dXl-gF-b0p"/>
+                        <constraint firstAttribute="width" secondItem="BKM-Sr-EVI" secondAttribute="height" multiplier="1:1" id="hQE-ka-Qwl"/>
+                    </constraints>
                     <connections>
                         <action selector="checkboxWillToggleWithSender:" destination="-1" eventType="touchUpInside" id="Bjt-ew-5jX"/>
                     </connections>
