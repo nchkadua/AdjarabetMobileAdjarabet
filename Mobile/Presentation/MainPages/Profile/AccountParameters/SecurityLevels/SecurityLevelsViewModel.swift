@@ -21,6 +21,7 @@ public extension SecurityLevelsViewModelParams {
 public protocol SecurityLevelsViewModelInput: AnyObject {
     var params: SecurityLevelsViewModelParams { get set }
     func viewDidLoad()
+    func didSelectRow(at indexPath: IndexPath)
     func securityLevelTapped(at index: Int)
     func typeTapped(at index: Int)
 }
@@ -167,6 +168,16 @@ extension DefaultSecurityLevelsViewModel: SecurityLevelsViewModel {
         actionSubject.onNext(.dataProvider(viewModels.makeList()))
     }
 
+    public func didSelectRow(at indexPath: IndexPath) {
+        var index = indexPath.row
+        if index < SecurityLevel.allCases.count {
+            securityLevelTapped(at: index)
+        } else {
+            index -= SecurityLevel.allCases.count
+            typeTapped(at: index)
+        }
+    }
+
     public func securityLevelTapped(at index: Int) {
         guard let newSecurityLevel = SecurityLevel(rawValue: index) else { return } // incorrect usage of securityLevelTapped function, wrong security level index
 
@@ -207,13 +218,13 @@ extension DefaultSecurityLevelsViewModel {
             let viewModel = DefaultSecurityLevelComponentViewModel(params: .init(title: title,
                                                                                  selected: selected))
 
-            viewModel.action.subscribe(onNext: { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .toggleRequest: self.securityLevelTapped(at: index)
-                default: break // ignore set(title, selected)
-                }
-            }).disposed(by: self.disposeBag)
+//            viewModel.action.subscribe(onNext: { [weak self] action in
+//                guard let self = self else { return }
+//                switch action {
+//                case .toggleRequest: self.securityLevelTapped(at: index)
+//                default: break // ignore set(title, selected)
+//                }
+//            }).disposed(by: self.disposeBag)
 
             levelViewModels.append(viewModel)
         }
@@ -231,13 +242,13 @@ extension DefaultSecurityLevelsViewModel {
             let viewModel = DefaultSecurityLevelTypeComponentViewModel(params: .init(title: title,
                                                                                      selected: selected))
 
-            viewModel.action.subscribe(onNext: { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .toggleRequest: self.typeTapped(at: index)
-                default: break // ignore set(title, selected)
-                }
-            }).disposed(by: self.disposeBag)
+//            viewModel.action.subscribe(onNext: { [weak self] action in
+//                guard let self = self else { return }
+//                switch action {
+//                case .toggleRequest: self.typeTapped(at: index)
+//                default: break // ignore set(title, selected)
+//                }
+//            }).disposed(by: self.disposeBag)
 
             typeViewModels.append(viewModel)
         }

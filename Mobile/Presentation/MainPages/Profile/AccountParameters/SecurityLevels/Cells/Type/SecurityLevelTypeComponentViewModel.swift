@@ -18,24 +18,15 @@ public struct SecurityLevelTypeComponentViewModelParams {
 
 public protocol SecurityLevelTypeComponentViewModelInput {
     func didBind()
-    func toggleRequest()
 }
 
 public protocol SecurityLevelTypeComponentViewModelOutput {
-    var actionSubject: PublishSubject<SecurityLevelTypeComponentViewModelOutputAction> { get set }
     var action: Observable<SecurityLevelTypeComponentViewModelOutputAction> { get }
     var params: SecurityLevelTypeComponentViewModelParams { get }
 }
 
-public extension SecurityLevelTypeComponentViewModelOutput {
-    public var action: Observable<SecurityLevelTypeComponentViewModelOutputAction> {
-        actionSubject.asObserver()
-    }
-}
-
 public enum SecurityLevelTypeComponentViewModelOutputAction {
     case set(title: String, selected: Bool)
-    case toggleRequest
 }
 
 public class DefaultSecurityLevelTypeComponentViewModel {
@@ -47,11 +38,11 @@ public class DefaultSecurityLevelTypeComponentViewModel {
 }
 
 extension DefaultSecurityLevelTypeComponentViewModel: SecurityLevelTypeComponentViewModel {
-    public func didBind() {
-        actionSubject.onNext(.set(title: params.title, selected: params.selected))
+    public var action: Observable<SecurityLevelTypeComponentViewModelOutputAction> {
+        actionSubject.asObserver()
     }
 
-    public func toggleRequest() {
-        actionSubject.onNext(.toggleRequest)
+    public func didBind() {
+        actionSubject.onNext(.set(title: params.title, selected: params.selected))
     }
 }
