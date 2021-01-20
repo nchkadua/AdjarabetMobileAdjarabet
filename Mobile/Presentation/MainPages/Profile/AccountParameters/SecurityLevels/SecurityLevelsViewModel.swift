@@ -189,12 +189,14 @@ extension DefaultSecurityLevelsViewModel: SecurityLevelsViewModel {
     }
 
     public func typeTapped(at index: Int) {
-        // guard state.level == .individual else { return } // ignore
         guard index < state.types.count else { return } // incorrect usage of securityLevelTypeTapped function, wrong security level index
         // update state
-        if state.level == .individual {
-            state.types[index].selected.toggle()
+        if state.level != .individual {
+            let types = state.types
+            state.level = .individual
+            state.types = types
         }
+        state.types[index].selected.toggle()
         actionSubject.onNext(.dataProvider(viewModels.makeList()))
     }
 }
