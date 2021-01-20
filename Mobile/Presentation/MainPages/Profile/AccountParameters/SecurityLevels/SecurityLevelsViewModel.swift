@@ -211,20 +211,12 @@ extension DefaultSecurityLevelsViewModel {
     private var levelViewModels: AppCellDataProviders {
         var levelViewModels: AppCellDataProviders = []
 
-        for (index, level) in SecurityLevel.allCases.enumerated() {
+        for level in SecurityLevel.allCases {
             let title = level.description.title // title
             let selected = level == state.level // selected
 
             let viewModel = DefaultSecurityLevelComponentViewModel(params: .init(title: title,
                                                                                  selected: selected))
-
-//            viewModel.action.subscribe(onNext: { [weak self] action in
-//                guard let self = self else { return }
-//                switch action {
-//                case .toggleRequest: self.securityLevelTapped(at: index)
-//                default: break // ignore set(title, selected)
-//                }
-//            }).disposed(by: self.disposeBag)
 
             levelViewModels.append(viewModel)
         }
@@ -241,14 +233,6 @@ extension DefaultSecurityLevelsViewModel {
 
             let viewModel = DefaultSecurityLevelTypeComponentViewModel(params: .init(title: title,
                                                                                      selected: selected))
-
-//            viewModel.action.subscribe(onNext: { [weak self] action in
-//                guard let self = self else { return }
-//                switch action {
-//                case .toggleRequest: self.typeTapped(at: index)
-//                default: break // ignore set(title, selected)
-//                }
-//            }).disposed(by: self.disposeBag)
 
             typeViewModels.append(viewModel)
         }
