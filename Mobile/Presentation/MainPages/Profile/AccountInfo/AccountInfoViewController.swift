@@ -108,7 +108,7 @@ public class AccountInfoViewController: ABViewController {
     }
 
     private func setupButtons() {
-        statusButton.setStyle(to: .textLink(state: .acvite, size: .small))
+        statusButton.setStyle(to: .textLink(state: .active, size: .small))
         statusButton.setTitleColor(to: .primaryRed(), for: .normal)
         statusButton.setTitleWithoutAnimation(R.string.localization.account_info_status_button_title(), for: .normal)
         statusButton.addTarget(self, action: #selector(selfSuspendButtonAction), for: .touchUpInside)

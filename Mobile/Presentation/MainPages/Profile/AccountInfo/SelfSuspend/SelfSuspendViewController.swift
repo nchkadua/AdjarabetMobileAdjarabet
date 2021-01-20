@@ -70,7 +70,7 @@ public class SelfSuspendViewController: ABViewController {
     }
 
     private func setupButtons() {
-        blockButton.setStyle(to: .tertiary(state: .acvite, size: .large))
+        blockButton.setStyle(to: .primary(state: .active, size: .large))
         blockButton.setTitleWithoutAnimation(R.string.localization.block_accound.localized(), for: .normal)
         blockButton.addTarget(self, action: #selector(blockButtonDidTap), for: .touchUpInside)
 

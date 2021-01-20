@@ -70,7 +70,7 @@ extension MinAmountComponentView: Xibable {
         minAmountTitleLabel.setTextColor(to: .primaryText())
         minAmountTitleLabel.text = R.string.localization.add_card_minimum_amount.localized()
 
-        minAmountButton.setStyle(to: .tertiary(state: .acvite, size: .xs))
+        minAmountButton.setStyle(to: .primary(state: .active, size: .xs))
         minAmountButton.setTitleWithoutAnimation("1.00 ₾", for: .normal)
         minAmountButton.setTintColor(to: .primaryText())
         minAmountButton.setButtonImage(R.image.components.profileCell.copy() ?? UIImage(), alignment: .right)

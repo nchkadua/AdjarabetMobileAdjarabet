@@ -62,7 +62,7 @@ public class LoginViewController: ABViewController {
 
     private func didRecive(action: LoginViewModelOutputAction) {
         switch action {
-        case .setLoginButton(let isLoading):    loginButton.set(isLoading: isLoading)
+        case .setLoginButton(let isLoading):    setLoginButtonLoading(isLoading)
         case .setSmsLoginButton(let isLoading): smsLoginButton.set(isLoading: isLoading)
         case .setBiometryButton(let isLoading): biometryButton.set(isLoading: isLoading)
         case .configureBiometryButton(let available, let icon, let title):
@@ -112,12 +112,12 @@ public class LoginViewController: ABViewController {
         smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
 
-        loginButton.setStyle(to: .tertiary(state: .acvite, size: .large))
+        loginButton.setStyle(to: .primary(state: .active, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
 //        updateLoginButton(isEnabled: false)
 
-        biometryButton.setStyle(to: .textLink(state: .acvite, size: .small))
+        biometryButton.setStyle(to: .textLink(state: .active, size: .small))
         biometryButton.setTitleColor(to: .primaryText(), for: .normal)
         biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
         biometryIconButton.setTintColor(to: .primaryText())
@@ -208,7 +208,7 @@ public class LoginViewController: ABViewController {
     // MARK: Configuration
     private func updateLoginButton(isEnabled: Bool) {
         loginButton.isUserInteractionEnabled = isEnabled
-        loginButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
+        loginButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
 
     private func updatePasswordRightButton() {
@@ -217,6 +217,13 @@ public class LoginViewController: ABViewController {
 
         let icon = isSecureTextEntry ? R.image.shared.viewText() : R.image.shared.hideText()
         passwordInputView.rightComponent.setImage(icon, for: .normal)
+    }
+
+    private func setLoginButtonLoading(_ loading: Bool) {
+        loginButton.set(isLoading: loading)
+
+        let title = loading ? "" : R.string.localization.login_button_title.localized()
+        loginButton.setTitleWithoutAnimation(title, for: .normal)
     }
 }
 

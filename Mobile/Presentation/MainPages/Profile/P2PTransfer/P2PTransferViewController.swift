@@ -127,7 +127,7 @@ public class P2PTransferViewController: ABViewController {
     }
 
     private func setupConfirmButton() {
-        confirmButton.setStyle(to: .tertiary(state: .acvite, size: .large))
+        confirmButton.setStyle(to: .primary(state: .active, size: .large))
         confirmButton.setTitleWithoutAnimation(R.string.localization.p2p_transfer_confirm.localized(), for: .normal)
     }
 

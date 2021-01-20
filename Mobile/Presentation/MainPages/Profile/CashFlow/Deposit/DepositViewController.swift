@@ -81,7 +81,7 @@ public class DepositViewController: ABViewController {
         addCardButton.setImage(R.image.deposit.addCard(), for: .normal)
         addCardButton.addTarget(self, action: #selector(addCardDidTap), for: .touchUpInside)
 
-        proceedButton.setStyle(to: .tertiary(state: .disabled, size: .large))
+        proceedButton.setStyle(to: .primary(state: .disabled, size: .large))
         proceedButton.setTitleWithoutAnimation(R.string.localization.deposit_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
         updateProceedButton(isEnabled: false)
@@ -111,7 +111,7 @@ public class DepositViewController: ABViewController {
     // MARK: Configuration
     private func updateProceedButton(isEnabled: Bool) {
         proceedButton.isUserInteractionEnabled = isEnabled
-        proceedButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
+        proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
 
     // MARK: Action methods

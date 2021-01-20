@@ -61,7 +61,7 @@ public class AddressChangeViewController: ABViewController {
     }
 
     private func setupApproveButton() {
-        approveButton.setStyle(to: .tertiary(state: .acvite, size: .large))
+        approveButton.setStyle(to: .primary(state: .active, size: .large))
         approveButton.setTitleWithoutAnimation(R.string.localization.approve_address_button_title.localized(), for: .normal)
         approveButton.addTarget(self, action: #selector(approveDidTap), for: .touchUpInside)
     }

@@ -103,7 +103,7 @@ public class PasswordChangeViewController: ABViewController {
     }
 
     private func setupPasswordButton() {
-        updatePasswordButton.setStyle(to: .tertiary(state: .acvite, size: .large))
+        updatePasswordButton.setStyle(to: .primary(state: .active, size: .large))
         updatePasswordButton.setTitleWithoutAnimation(R.string.localization.update_password_button_title.localized(), for: .normal)
         updatePasswordButton.addTarget(self, action: #selector(updatePasswordButtonDidTap), for: .touchUpInside)
     }

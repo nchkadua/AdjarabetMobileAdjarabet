@@ -293,18 +293,13 @@ public enum DesignSystem {
 
         public enum Style {
             case primary(state: State, size: Size)
-            case secondary(state: State, size: Size)
-            case tertiary(state: State, size: Size)
-            case outline(state: State, size: Size)
-            case ghost(state: State, size: Size)
             case textLink(state: State, size: Size)
 
             /// Concrete description for each case
             public func sizeDescription(for size: Size) -> Size.Description {
                 switch self {
-                case .primary, .secondary, .tertiary, .outline, .ghost:
-                    var fontCase: Typography.FontCase = .upper
-                    if case .ghost = self { fontCase = .lower }
+                case .primary:
+                    let fontCase: Typography.FontCase = .upper
 
                     switch size {
                     case .large:  return .init(typograhy: .subHeadline(fontCase: fontCase, fontStyle: .semiBold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
@@ -328,60 +323,14 @@ public enum DesignSystem {
                 case .primary(let state, let size):
                     let sd = sizeDescription(for: size)
                     switch state {
-                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryGreenNeutral())
-                    case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.8), backgorundColor: .primaryGreenNeutral(), overlayColor: .tertiaryBg())
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryGreenNeutral(), overlayColor: .tertiaryBg())
-                    case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryGreenNeutral(), overlayColor: .tertiaryBg())
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.4), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
-                    case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryGreenNeutral(), overlayColor: .primaryBg(alpha: 0.4))
-                    }
-                case .secondary(let state, let size):
-                    let sd = sizeDescription(for: size)
-                    switch state {
-                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .tertiaryBg())
-                    case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.8), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRedNeutral(), overlayColor: .tertiaryBg())
-                    case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .tertiaryBg(), overlayColor: .primaryBg(alpha: 0.4))
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.4), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
-                    case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
-                    }
-                case .tertiary(let state, let size):
-                    let sd = sizeDescription(for: size)
-                    switch state {
-                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRedNeutral())
-                    case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.8), backgorundColor: .primaryRedNeutral(), overlayColor: .primaryBg(alpha: 0.2))
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRed(), overlayColor: .primaryBg(alpha: 0.3))
-                    case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRedNeutral(), overlayColor: .primaryBg(alpha: 0.4))
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRedNeutral(), overlayColor: .tertiaryBg())
-                    case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRedNeutral(), overlayColor: .primaryBg(alpha: 0.4))
-                    }
-                case .outline(let state, let size):
-                    let sd = sizeDescription(for: size)
-                    switch state {
-                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), borderColor: .primaryText())
-                    case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.8), borderColor: .primaryText(alpha: 0.8))
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), borderColor: .primaryText(alpha: 0.8))
-                    case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), borderColor: .primaryText(alpha: 0.8))
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.4), borderColor: .primaryText(alpha: 0.5))
-                    case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), borderColor: .primaryText())
-                    }
-                case .ghost(let state, let size):
-                    let sd = sizeDescription(for: size)
-                    switch state {
-                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
-                    case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.8), backgorundColor: .tertiaryBg(), overlayColor: .primaryBg(alpha: 0.2))
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
-                    case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.8), backgorundColor: .tertiaryBg(), overlayColor: .primaryBg(alpha: 0.4))
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(alpha: 0.4))
-                    case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
+                    case .active:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRed())
+                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .querternaryText(), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
+                    case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRed(), overlayColor: .primaryRed())
                     }
                 case .textLink(let state, let size):
                     let sd = sizeDescription(for: size)
                     switch state {
-                    case .normal:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
-                    case .hovered:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .tertiaryText())
-                    case .acvite:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .systemRed())
-                    case .focused:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
+                    case .active:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
                     case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
                     case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
                     }
@@ -404,10 +353,7 @@ public enum DesignSystem {
         }
 
         public enum State: CaseIterable {
-            case normal
-            case hovered
-            case acvite
-            case focused
+            case active
             case disabled
             case loading
         }

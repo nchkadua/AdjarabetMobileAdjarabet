@@ -90,7 +90,7 @@ public class MailChangeViewController: ABViewController {
     }
 
     private func setupButtons() {
-        changeButton.setStyle(to: .tertiary(state: .acvite, size: .large))
+        changeButton.setStyle(to: .primary(state: .active, size: .large))
         changeButton.setTitleWithoutAnimation(R.string.localization.change_mail_button_title.localized(), for: .normal)
         changeButton.addTarget(self, action: #selector(changeMailDidTap), for: .touchUpInside)
     }
