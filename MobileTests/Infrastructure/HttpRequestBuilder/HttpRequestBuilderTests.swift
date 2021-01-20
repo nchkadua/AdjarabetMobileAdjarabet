@@ -126,24 +126,24 @@ class HttpRequestBuilderTests: XCTestCase {
         let key2 = "Key2"
         let val2 = "Val2"
 
-        let key3 = "Key3"
-        let val3 = "Val3"
-
         // when
         let request = requestBuilder
             .set(host: host)
             .set(method: HttpMethodPost())
             .set(contentType: ContentTypeUrlEncoded())
             .setBody(key: key1, value: val1)
-            .set(body: [key2: val2, key3: val3])
+            .set(body: [key2: val2])
             .build()
 
         // than
         XCTAssertEqual(request.allHTTPHeaderFields?["Content-Type"], "application/x-www-form-urlencoded")
 
-        let expected = "\(key1)=\(val1)&\(key2)=\(val2)&\(key3)=\(val3)"
-        let actual   = String(decoding: request.httpBody ?? .init(), as: UTF8.self)
-        XCTAssertEqual(expected, actual)
+        let expected1 = "\(key1)=\(val1)&\(key2)=\(val2)"
+        let expected2 = "\(key2)=\(val2)&\(key1)=\(val1)"
+
+        let actual = String(decoding: request.httpBody ?? .init(), as: UTF8.self)
+
+        XCTAssert(actual == expected1 || actual == expected2)
     }
 
     /// .json
@@ -165,9 +165,12 @@ class HttpRequestBuilderTests: XCTestCase {
         // than
         XCTAssertEqual(request.allHTTPHeaderFields?["Content-Type"], "application/json")
 
-        let expected = "{\"key1\":\"value1\",\"key2\":[]}"
-        let actual   = String(decoding: request.httpBody ?? .init(), as: UTF8.self)
-        XCTAssertEqual(expected, actual)
+        let expected1 = "{\"key1\":\"value1\",\"key2\":[]}"
+        let expected2 = "{\"key2\":[],\"key1\":\"value1\"}"
+
+        let actual = String(decoding: request.httpBody ?? .init(), as: UTF8.self)
+
+        XCTAssert(actual == expected1 || actual == expected2)
     }
 
     /// .raw
