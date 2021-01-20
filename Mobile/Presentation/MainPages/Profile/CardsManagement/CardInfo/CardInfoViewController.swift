@@ -149,7 +149,7 @@ public class CardInfoViewController: ABViewController {
     }
 
     private func setupAddCardButton() {
-        addCardButton.setStyle(to: .tertiary(state: .acvite, size: .large))
+        addCardButton.setStyle(to: .primary(state: .active, size: .large))
         addCardButton.setTitleWithoutAnimation(R.string.localization.card_add_button_title.localized(), for: .normal)
         addCardButton.addTarget(self, action: #selector(addCardDidTap), for: .touchUpInside)
     }

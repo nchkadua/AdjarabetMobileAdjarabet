@@ -122,7 +122,7 @@ public class OTPViewController: ABViewController {
         resendSMSButton.isUserInteractionEnabled = false
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
-        loginButton.setStyle(to: .tertiary(state: .disabled, size: .large))
+        loginButton.setStyle(to: .primary(state: .disabled, size: .large))
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
     }
 
@@ -199,12 +199,12 @@ public class OTPViewController: ABViewController {
         let isEnabled = viewModel.shoudEnableLoginButton(fot: smsCodeText)
         loginButton.isUserInteractionEnabled = isEnabled
 
-        loginButton.setStyle(to: .tertiary(state: isEnabled ? .acvite : .disabled, size: .large))
+        loginButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
 
     private func updateResendButton(activate: Bool) {
         if activate {
-            resendSMSButton.setStyle(to: .textLink(state: .acvite, size: .small))
+            resendSMSButton.setStyle(to: .textLink(state: .active, size: .small))
             resendSMSButton.setImage(R.image.otP.resend() ?? UIImage(), tintColor: .systemRed())
             resendSMSButton.isUserInteractionEnabled = true
         } else {
