@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecurityLevelTypeComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
-                <outlet property="checkbox" destination="BKM-Sr-EVI" id="D74-V4-xye"/>
+                <outlet property="checkbox" destination="pb8-4F-1Yi" id="tzA-a6-42p"/>
                 <outlet property="label" destination="61r-J7-m7i" id="gLM-Iz-nfV"/>
                 <outlet property="separator" destination="rZz-Ol-cKG" id="nVY-eZ-MQL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
@@ -28,16 +28,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKM-Sr-EVI" userLabel="Checkbox">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pb8-4F-1Yi" userLabel="Checkbox">
                     <rect key="frame" x="313" y="18" width="28" height="28"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="28" id="dXl-gF-b0p"/>
-                        <constraint firstAttribute="width" secondItem="BKM-Sr-EVI" secondAttribute="height" multiplier="1:1" id="hQE-ka-Qwl"/>
+                        <constraint firstAttribute="height" constant="28" id="8QM-Ct-C26"/>
+                        <constraint firstAttribute="width" secondItem="pb8-4F-1Yi" secondAttribute="height" multiplier="1:1" id="TL4-ya-By6"/>
                     </constraints>
-                    <connections>
-                        <action selector="checkboxWillToggleWithSender:" destination="-1" eventType="touchUpInside" id="Bjt-ew-5jX"/>
-                    </connections>
-                </button>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZz-Ol-cKG" userLabel="Separator">
                     <rect key="frame" x="16" y="63" width="359" height="1"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -50,12 +47,12 @@
             <constraints>
                 <constraint firstItem="61r-J7-m7i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="0k3-hO-OIe"/>
                 <constraint firstAttribute="bottom" secondItem="rZz-Ol-cKG" secondAttribute="bottom" id="3ET-1b-sGi"/>
-                <constraint firstItem="61r-J7-m7i" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="BKM-Sr-EVI" secondAttribute="leading" constant="-20" id="59D-nO-WAd"/>
+                <constraint firstItem="pb8-4F-1Yi" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GX3-YC-qzt"/>
                 <constraint firstItem="rZz-Ol-cKG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Xan-hS-Az2"/>
                 <constraint firstItem="61r-J7-m7i" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="biy-L0-JXs"/>
+                <constraint firstItem="61r-J7-m7i" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="pb8-4F-1Yi" secondAttribute="leading" constant="-20" id="h5s-i1-zaj"/>
+                <constraint firstAttribute="trailing" secondItem="pb8-4F-1Yi" secondAttribute="trailing" constant="34" id="izg-uU-mWa"/>
                 <constraint firstAttribute="trailing" secondItem="rZz-Ol-cKG" secondAttribute="trailing" id="oBq-Z0-bog"/>
-                <constraint firstItem="BKM-Sr-EVI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ozF-fu-I98"/>
-                <constraint firstAttribute="trailing" secondItem="BKM-Sr-EVI" secondAttribute="trailing" constant="34" id="rrZ-tJ-yxg"/>
                 <constraint firstItem="61r-J7-m7i" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="wrK-Rc-Eh7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

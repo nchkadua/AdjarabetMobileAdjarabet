@@ -12,10 +12,13 @@ class SecurityLevelTypeComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: SecurityLevelTypeComponentViewModel!
 
+    private let checked = R.image.components.abCheckbox.checkmark()!.withRenderingMode(.alwaysOriginal)
+    private let unchecked = R.image.components.abCheckbox.unchecked()!.withRenderingMode(.alwaysOriginal)
+
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var label: UILabel!
-    @IBOutlet weak private var checkbox: UIButton!
+    @IBOutlet weak private var checkbox: UIImageView!
     @IBOutlet weak private var separator: UIView!
 
     public override init(frame: CGRect) {
@@ -48,7 +51,7 @@ class SecurityLevelTypeComponentView: UIView {
 
     private func set(title: String, checked: Bool) {
         label.text = title
-        checkbox.isSelected = checked
+        checkbox.image = checked ? self.checked : unchecked
     }
 
     @IBAction func checkboxWillToggle(sender: UIButton) {
@@ -71,5 +74,6 @@ extension SecurityLevelTypeComponentView: Xibable {
         separator.setBackgorundColor(to: .nonOpaque())
         label.setTextColor(to: .primaryText())
         label.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
+        checkbox.image = unchecked
     }
 }
