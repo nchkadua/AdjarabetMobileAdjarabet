@@ -13,12 +13,11 @@ public protocol SecurityLevelComponentViewModel: SecurityLevelComponentViewModel
 
 public struct SecurityLevelComponentViewModelParams {
     public let title: String
-    public var selected: Bool
+    public let selected: Bool
 }
 
 public protocol SecurityLevelComponentViewModelInput {
     func didBind()
-    func toggleRequest()
 }
 
 public protocol SecurityLevelComponentViewModelOutput {
@@ -28,7 +27,6 @@ public protocol SecurityLevelComponentViewModelOutput {
 
 public enum SecurityLevelComponentViewModelOutputAction {
     case set(title: String, selected: Bool)
-    case toggleRequest
 }
 
 public class DefaultSecurityLevelComponentViewModel {
@@ -46,9 +44,5 @@ extension DefaultSecurityLevelComponentViewModel: SecurityLevelComponentViewMode
 
     public func didBind() {
         actionSubject.onNext(.set(title: params.title, selected: params.selected))
-    }
-
-    public func toggleRequest() {
-        actionSubject.onNext(.toggleRequest)
     }
 }

@@ -8,12 +8,8 @@
 
 import UIKit
 
-public class ABCheckbox: UIButton {
-    var viewModel: ABCheckboxModel = ABRedCheckboxModel() {
-        willSet {
-            setImage(newValue.checkedImage, for: .selected)
-        }
-    }
+class ABCheckbox: UIButton {
+    private var viewModel = ABCheckboxModel()
     public init() {
         super.init(frame: CGRect.zero)
         setupView()
@@ -49,23 +45,9 @@ public class ABCheckbox: UIButton {
     }
 }
 
-protocol ABCheckboxModel {
-    var checkedImage: UIImage { get }
-    var uncheckedImage: UIImage { get }
-    var width: CGFloat { get }
-    var height: CGFloat { get }
-}
-
-struct ABRedCheckboxModel: ABCheckboxModel {
-    var checkedImage = R.image.components.abCheckbox.checked()!.withRenderingMode(.alwaysOriginal)
-    var uncheckedImage = R.image.components.abCheckbox.unchecked()!.withRenderingMode(.alwaysOriginal)
-    let width: CGFloat = 28
-    let height: CGFloat = 28
-}
-
-struct ABCheckmarkCheckboxModel: ABCheckboxModel {
-    var checkedImage = R.image.components.abCheckbox.checkmark()!.withRenderingMode(.alwaysOriginal)
-    var uncheckedImage = R.image.components.abCheckbox.unchecked()!.withRenderingMode(.alwaysOriginal)
+private struct ABCheckboxModel {
+    lazy var checkedImage = R.image.components.abCheckbox.checked()!.withRenderingMode(.alwaysOriginal)
+    lazy var uncheckedImage = R.image.components.abCheckbox.unchecked()!.withRenderingMode(.alwaysOriginal)
     let width: CGFloat = 28
     let height: CGFloat = 28
 }

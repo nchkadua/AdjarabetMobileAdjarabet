@@ -12,10 +12,18 @@ class SecurityLevelTypeComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: SecurityLevelTypeComponentViewModel!
 
+    private var isChecked = false {
+        didSet {
+            let checked = R.image.components.abCheckbox.checkmark()!.withRenderingMode(.alwaysOriginal)
+            let unchecked = R.image.components.abCheckbox.unchecked()!.withRenderingMode(.alwaysOriginal)
+            checkbox.image = isChecked ? checked : unchecked
+        }
+    }
+
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var label: UILabel!
-    @IBOutlet weak private var checkbox: ABCheckbox!
+    @IBOutlet weak private var checkbox: UIImageView!
     @IBOutlet weak private var separator: UIView!
 
     public override init(frame: CGRect) {
@@ -37,9 +45,9 @@ class SecurityLevelTypeComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title, let checked):
+            case .set(let title, let checked, let separator):
                 self?.set(title: title, checked: checked)
-            default: break // ignore toggleRequest
+                self?.separator.isHidden = !separator
             }
         }).disposed(by: disposeBag)
 
@@ -48,11 +56,7 @@ class SecurityLevelTypeComponentView: UIView {
 
     private func set(title: String, checked: Bool) {
         label.text = title
-        checkbox.isSelected = checked
-    }
-
-    @IBAction func checkboxWillToggle(sender: UIButton) {
-        viewModel.toggleRequest()
+        isChecked = checked
     }
 }
 
@@ -71,6 +75,5 @@ extension SecurityLevelTypeComponentView: Xibable {
         separator.setBackgorundColor(to: .nonOpaque())
         label.setTextColor(to: .primaryText())
         label.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
-        checkbox.viewModel = ABCheckmarkCheckboxModel()
     }
 }

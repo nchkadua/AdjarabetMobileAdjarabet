@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecurityLevelComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
-                <outlet property="checkbox" destination="Xz4-Rd-DEq" id="lu6-My-llG"/>
+                <outlet property="checkbox" destination="uLc-wU-dI3" id="Hkj-gG-mUU"/>
                 <outlet property="label" destination="OUA-2G-Ieq" id="FQz-Mo-QCA"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
             </connections>
@@ -26,20 +26,21 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xz4-Rd-DEq" userLabel="Checkbox" customClass="ABCheckbox" customModule="Mobile" customModuleProvider="target">
-                    <rect key="frame" x="325" y="18" width="30" height="30"/>
-                    <connections>
-                        <action selector="checkboxWillToggleWithSender:" destination="-1" eventType="touchUpInside" id="hsA-Qe-2jQ"/>
-                    </connections>
-                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uLc-wU-dI3" userLabel="Checkbox">
+                    <rect key="frame" x="327" y="19" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="7vQ-vE-RDq"/>
+                        <constraint firstAttribute="width" secondItem="uLc-wU-dI3" secondAttribute="height" multiplier="1:1" id="AtH-Ig-G0W"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="Xz4-Rd-DEq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9Vl-3B-VUY"/>
                 <constraint firstItem="OUA-2G-Ieq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="AGC-4t-fWO"/>
-                <constraint firstItem="OUA-2G-Ieq" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Xz4-Rd-DEq" secondAttribute="leading" constant="-20" id="Awe-nj-QMP"/>
+                <constraint firstAttribute="trailing" secondItem="uLc-wU-dI3" secondAttribute="trailing" constant="20" id="EpU-bc-6Ae"/>
+                <constraint firstItem="uLc-wU-dI3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JRj-mh-Ca5"/>
+                <constraint firstItem="OUA-2G-Ieq" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uLc-wU-dI3" secondAttribute="leading" constant="-20" id="NwN-r8-F39"/>
                 <constraint firstItem="OUA-2G-Ieq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SxB-KI-sMq"/>
-                <constraint firstAttribute="trailing" secondItem="Xz4-Rd-DEq" secondAttribute="trailing" constant="20" id="nOr-j5-9JW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="61.594202898550726" y="117.85714285714285"/>

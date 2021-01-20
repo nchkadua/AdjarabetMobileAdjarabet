@@ -11,7 +11,7 @@ import RxSwift
 public class SecurityLevelsViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: SecurityLevelsViewModel
     public lazy var navigator = SecurityLevelsNavigator(viewController: self)
-    private lazy var appTableViewController = ABTableViewController()
+    private lazy var appTableViewController = SecurityLevelsTableViewController()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -47,6 +47,7 @@ public class SecurityLevelsViewController: ABViewController {
 // MARK: Helpers
 extension SecurityLevelsViewController {
     private func setup() {
+        appTableViewController.viewModel = viewModel
         setTitle(title: R.string.localization.security_levels_scene_title.localized())
         setBackDismissBarButtonItemIfNeeded(width: 44)
         setupTableView()
@@ -62,5 +63,12 @@ extension SecurityLevelsViewController {
             appTableViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
             appTableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+}
+
+private class SecurityLevelsTableViewController: ABTableViewController {
+    var viewModel: SecurityLevelsViewModel!
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(at: indexPath)
     }
 }

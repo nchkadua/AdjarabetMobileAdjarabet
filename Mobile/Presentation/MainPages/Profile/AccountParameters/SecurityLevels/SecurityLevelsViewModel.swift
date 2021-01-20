@@ -21,6 +21,7 @@ public extension SecurityLevelsViewModelParams {
 public protocol SecurityLevelsViewModelInput: AnyObject {
     var params: SecurityLevelsViewModelParams { get set }
     func viewDidLoad()
+    func didSelectRow(at indexPath: IndexPath)
     func securityLevelTapped(at index: Int)
     func typeTapped(at index: Int)
 }
@@ -167,6 +168,16 @@ extension DefaultSecurityLevelsViewModel: SecurityLevelsViewModel {
         actionSubject.onNext(.dataProvider(viewModels.makeList()))
     }
 
+    public func didSelectRow(at indexPath: IndexPath) {
+        var index = indexPath.row
+        if index < SecurityLevel.allCases.count {
+            securityLevelTapped(at: index)
+        } else {
+            index -= SecurityLevel.allCases.count
+            typeTapped(at: index)
+        }
+    }
+
     public func securityLevelTapped(at index: Int) {
         guard let newSecurityLevel = SecurityLevel(rawValue: index) else { return } // incorrect usage of securityLevelTapped function, wrong security level index
 
@@ -178,12 +189,14 @@ extension DefaultSecurityLevelsViewModel: SecurityLevelsViewModel {
     }
 
     public func typeTapped(at index: Int) {
-        // guard state.level == .individual else { return } // ignore
-        guard index < state.types.count  else { return } // incorrect usage of securityLevelTypeTapped function, wrong security level index
+        guard index < state.types.count else { return } // incorrect usage of securityLevelTypeTapped function, wrong security level index
         // update state
-        if state.level == .individual {
-            state.types[index].selected.toggle()
+        if state.level != .individual {
+            let types = state.types
+            state.level = .individual
+            state.types = types
         }
+        state.types[index].selected.toggle()
         actionSubject.onNext(.dataProvider(viewModels.makeList()))
     }
 }
@@ -200,20 +213,12 @@ extension DefaultSecurityLevelsViewModel {
     private var levelViewModels: AppCellDataProviders {
         var levelViewModels: AppCellDataProviders = []
 
-        for (index, level) in SecurityLevel.allCases.enumerated() {
+        for level in SecurityLevel.allCases {
             let title = level.description.title // title
             let selected = level == state.level // selected
 
             let viewModel = DefaultSecurityLevelComponentViewModel(params: .init(title: title,
                                                                                  selected: selected))
-
-            viewModel.action.subscribe(onNext: { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .toggleRequest: self.securityLevelTapped(at: index)
-                default: break // ignore set(title, selected)
-                }
-            }).disposed(by: self.disposeBag)
 
             levelViewModels.append(viewModel)
         }
@@ -224,20 +229,15 @@ extension DefaultSecurityLevelsViewModel {
     private var typeViewModels: AppCellDataProviders {
         var typeViewModels: AppCellDataProviders = []
 
-        for (index, type) in state.level.description.types.enumerated() {
+        let types = state.level.description.types
+        for (index, type) in types.enumerated() {
             let title = type.description.title         // title
             let selected = state.types[index].selected // selected
+            let separator = index != types.count - 1
 
             let viewModel = DefaultSecurityLevelTypeComponentViewModel(params: .init(title: title,
-                                                                                     selected: selected))
-
-            viewModel.action.subscribe(onNext: { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .toggleRequest: self.typeTapped(at: index)
-                default: break // ignore set(title, selected)
-                }
-            }).disposed(by: self.disposeBag)
+                                                                                     selected: selected,
+                                                                                     separator: separator))
 
             typeViewModels.append(viewModel)
         }
