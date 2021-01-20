@@ -190,7 +190,7 @@ extension DefaultSecurityLevelsViewModel: SecurityLevelsViewModel {
 
     public func typeTapped(at index: Int) {
         // guard state.level == .individual else { return } // ignore
-        guard index < state.types.count  else { return } // incorrect usage of securityLevelTypeTapped function, wrong security level index
+        guard index < state.types.count else { return } // incorrect usage of securityLevelTypeTapped function, wrong security level index
         // update state
         if state.level == .individual {
             state.types[index].selected.toggle()
@@ -227,12 +227,15 @@ extension DefaultSecurityLevelsViewModel {
     private var typeViewModels: AppCellDataProviders {
         var typeViewModels: AppCellDataProviders = []
 
-        for (index, type) in state.level.description.types.enumerated() {
+        let types = state.level.description.types
+        for (index, type) in types.enumerated() {
             let title = type.description.title         // title
             let selected = state.types[index].selected // selected
+            let separator = index != types.count - 1
 
             let viewModel = DefaultSecurityLevelTypeComponentViewModel(params: .init(title: title,
-                                                                                     selected: selected))
+                                                                                     selected: selected,
+                                                                                     separator: separator))
 
             typeViewModels.append(viewModel)
         }

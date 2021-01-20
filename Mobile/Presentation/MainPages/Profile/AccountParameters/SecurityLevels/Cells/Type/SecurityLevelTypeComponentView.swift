@@ -45,8 +45,9 @@ class SecurityLevelTypeComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title, let checked):
+            case .set(let title, let checked, let separator):
                 self?.set(title: title, checked: checked)
+                self?.separator.isHidden = !separator
             }
         }).disposed(by: disposeBag)
 

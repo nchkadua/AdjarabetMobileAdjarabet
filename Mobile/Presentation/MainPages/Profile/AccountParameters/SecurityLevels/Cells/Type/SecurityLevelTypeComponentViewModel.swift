@@ -13,7 +13,8 @@ public protocol SecurityLevelTypeComponentViewModel: SecurityLevelTypeComponentV
 
 public struct SecurityLevelTypeComponentViewModelParams {
     public let title: String
-    public var selected: Bool
+    public let selected: Bool
+    public let separator: Bool
 }
 
 public protocol SecurityLevelTypeComponentViewModelInput {
@@ -26,7 +27,7 @@ public protocol SecurityLevelTypeComponentViewModelOutput {
 }
 
 public enum SecurityLevelTypeComponentViewModelOutputAction {
-    case set(title: String, selected: Bool)
+    case set(title: String, selected: Bool, separator: Bool)
 }
 
 public class DefaultSecurityLevelTypeComponentViewModel {
@@ -43,6 +44,6 @@ extension DefaultSecurityLevelTypeComponentViewModel: SecurityLevelTypeComponent
     }
 
     public func didBind() {
-        actionSubject.onNext(.set(title: params.title, selected: params.selected))
+        actionSubject.onNext(.set(title: params.title, selected: params.selected, separator: params.separator))
     }
 }

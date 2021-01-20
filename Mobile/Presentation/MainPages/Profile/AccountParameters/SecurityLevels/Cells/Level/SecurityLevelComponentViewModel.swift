@@ -13,7 +13,7 @@ public protocol SecurityLevelComponentViewModel: SecurityLevelComponentViewModel
 
 public struct SecurityLevelComponentViewModelParams {
     public let title: String
-    public var selected: Bool
+    public let selected: Bool
 }
 
 public protocol SecurityLevelComponentViewModelInput {
