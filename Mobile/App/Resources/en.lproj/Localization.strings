@@ -243,6 +243,9 @@
 "security_levels_switched_to_individual" = "Do you want to activate an individual package?";
 "security_levels_individual_is_empty" = "You must select at least one type of sms notification, when you choose individual package, or standart packet will be chosen";
 
+/* MyCards */
+"my_cards_add_card" = "Add card";
+"my_cards_manage" = "Manage my cards";
 /* Dates */
 "january" = "January";
 "february" = "February";

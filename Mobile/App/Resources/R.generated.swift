@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 30 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 31 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -122,6 +122,8 @@ struct R: Rswift.Validatable {
     static let mailChange = _R.storyboard.mailChange()
     /// Storyboard `MainTabBar`.
     static let mainTabBar = _R.storyboard.mainTabBar()
+    /// Storyboard `MyCards`.
+    static let myCards = _R.storyboard.myCards()
     /// Storyboard `NotificationContent`.
     static let notificationContent = _R.storyboard.notificationContent()
     /// Storyboard `Notifications`.
@@ -255,6 +257,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "MainTabBar", bundle: ...)`
     static func mainTabBar(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.mainTabBar)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "MyCards", bundle: ...)`
+    static func myCards(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.myCards)
     }
     #endif
 
@@ -855,7 +864,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 28 files.
+  /// This `R.file` struct is generated, and contains static references to 29 files.
   struct file {
     /// Resource file `FiraGO-Bold.ttf`.
     static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
@@ -913,6 +922,8 @@ struct R: Rswift.Validatable {
     static let pantonNusx3BoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonNusx3-Bold", pathExtension: "otf")
     /// Resource file `PantonNusx3-Regular.otf`.
     static let pantonNusx3RegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonNusx3-Regular", pathExtension: "otf")
+    /// Resource file `incognito-card.mp4`.
+    static let incognitoCardMp4 = Rswift.FileResource(bundle: R.hostingBundle, name: "incognito-card", pathExtension: "mp4")
 
     /// `bundle.url(forResource: "FiraGO-Bold", withExtension: "ttf")`
     static func firaGOBoldTtf(_: Void = ()) -> Foundation.URL? {
@@ -1079,6 +1090,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "PantonNusx3-Regular", withExtension: "otf")`
     static func pantonNusx3RegularOtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.pantonNusx3RegularOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "incognito-card", withExtension: "mp4")`
+    static func incognitoCardMp4(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.incognitoCardMp4
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1798,6 +1815,57 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.myCards` struct is generated, and contains static references to 5 images.
+    struct myCards {
+      /// Image `addCard`.
+      static let addCard = Rswift.ImageResource(bundle: R.hostingBundle, name: "MyCards/addCard")
+      /// Image `bog`.
+      static let bog = Rswift.ImageResource(bundle: R.hostingBundle, name: "MyCards/bog")
+      /// Image `mc`.
+      static let mc = Rswift.ImageResource(bundle: R.hostingBundle, name: "MyCards/mc")
+      /// Image `tbc`.
+      static let tbc = Rswift.ImageResource(bundle: R.hostingBundle, name: "MyCards/tbc")
+      /// Image `visa`.
+      static let visa = Rswift.ImageResource(bundle: R.hostingBundle, name: "MyCards/visa")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "addCard", bundle: ..., traitCollection: ...)`
+      static func addCard(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.myCards.addCard, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "bog", bundle: ..., traitCollection: ...)`
+      static func bog(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.myCards.bog, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "mc", bundle: ..., traitCollection: ...)`
+      static func mc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.myCards.mc, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "tbc", bundle: ..., traitCollection: ...)`
+      static func tbc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.myCards.tbc, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "visa", bundle: ..., traitCollection: ...)`
+      static func visa(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.myCards.visa, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.notifications` struct is generated, and contains static references to 3 images.
     struct notifications {
       /// Image `oval`.
@@ -2222,7 +2290,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 57 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 63 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -2244,6 +2312,10 @@ struct R: Rswift.Validatable {
     static let accountSecurityMessagesComponentView = _R.nib._AccountSecurityMessagesComponentView()
     /// Nib `AccountSecurityMessagesTableViewCell`.
     static let accountSecurityMessagesTableViewCell = _R.nib._AccountSecurityMessagesTableViewCell()
+    /// Nib `AddMyCardComponentView`.
+    static let addMyCardComponentView = _R.nib._AddMyCardComponentView()
+    /// Nib `AddMyCardTableViewCell`.
+    static let addMyCardTableViewCell = _R.nib._AddMyCardTableViewCell()
     /// Nib `AgreementComponentView`.
     static let agreementComponentView = _R.nib._AgreementComponentView()
     /// Nib `BalanceComponentView`.
@@ -2278,6 +2350,10 @@ struct R: Rswift.Validatable {
     static let loadingComponentView = _R.nib._LoadingComponentView()
     /// Nib `MinAmountComponentView`.
     static let minAmountComponentView = _R.nib._MinAmountComponentView()
+    /// Nib `MyCardComponentView`.
+    static let myCardComponentView = _R.nib._MyCardComponentView()
+    /// Nib `MyCardTableViewCell`.
+    static let myCardTableViewCell = _R.nib._MyCardTableViewCell()
     /// Nib `NotificationComponentView`.
     static let notificationComponentView = _R.nib._NotificationComponentView()
     /// Nib `NotificationTableViewCell`.
@@ -2334,6 +2410,10 @@ struct R: Rswift.Validatable {
     static let transactionHistoryComponentView = _R.nib._TransactionHistoryComponentView()
     /// Nib `TransactionHistoryTableViewCell`.
     static let transactionHistoryTableViewCell = _R.nib._TransactionHistoryTableViewCell()
+    /// Nib `VideoCardComponentView`.
+    static let videoCardComponentView = _R.nib._VideoCardComponentView()
+    /// Nib `VideoCardTableViewCell`.
+    static let videoCardTableViewCell = _R.nib._VideoCardTableViewCell()
     /// Nib `WithdrawInstructionView`.
     static let withdrawInstructionView = _R.nib._WithdrawInstructionView()
     /// Nib `WithdrawTermsView`.
@@ -2416,6 +2496,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.accountSecurityMessagesTableViewCell) instead")
     static func accountSecurityMessagesTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.accountSecurityMessagesTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddMyCardComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addMyCardComponentView) instead")
+    static func addMyCardComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addMyCardComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddMyCardTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addMyCardTableViewCell) instead")
+    static func addMyCardTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addMyCardTableViewCell)
     }
     #endif
 
@@ -2552,6 +2648,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.minAmountComponentView) instead")
     static func minAmountComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.minAmountComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MyCardComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.myCardComponentView) instead")
+    static func myCardComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.myCardComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MyCardTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.myCardTableViewCell) instead")
+    static func myCardTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.myCardTableViewCell)
     }
     #endif
 
@@ -2780,6 +2892,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "VideoCardComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.videoCardComponentView) instead")
+    static func videoCardComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.videoCardComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "VideoCardTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.videoCardTableViewCell) instead")
+    static func videoCardTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.videoCardTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "WithdrawInstructionView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.withdrawInstructionView) instead")
     static func withdrawInstructionView(_: Void = ()) -> UIKit.UINib {
@@ -2833,6 +2961,14 @@ struct R: Rswift.Validatable {
 
     static func accountSecurityMessagesTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AccountSecurityMessagesTableViewCell? {
       return R.nib.accountSecurityMessagesTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountSecurityMessagesTableViewCell
+    }
+
+    static func addMyCardComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addMyCardComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func addMyCardTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddMyCardTableViewCell? {
+      return R.nib.addMyCardTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddMyCardTableViewCell
     }
 
     static func agreementComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -2901,6 +3037,14 @@ struct R: Rswift.Validatable {
 
     static func minAmountComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.minAmountComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func myCardComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.myCardComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func myCardTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MyCardTableViewCell? {
+      return R.nib.myCardTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MyCardTableViewCell
     }
 
     static func notificationComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -3015,6 +3159,14 @@ struct R: Rswift.Validatable {
       return R.nib.transactionHistoryTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TransactionHistoryTableViewCell
     }
 
+    static func videoCardComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.videoCardComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func videoCardTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VideoCardTableViewCell? {
+      return R.nib.videoCardTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VideoCardTableViewCell
+    }
+
     static func withdrawInstructionView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.withdrawInstructionView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -3028,7 +3180,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 444 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 446 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
@@ -3078,6 +3230,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let add_card_title = Rswift.StringResource(key: "add_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Add card
+      ///
+      /// Locales: en, ka, hy
+      static let my_cards_add_card = Rswift.StringResource(key: "my_cards_add_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Address
       ///
       /// Locales: en, ka, hy
@@ -3894,6 +4050,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let malta = Rswift.StringResource(key: "malta", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Manage my cards
+      ///
+      /// Locales: en, ka, hy
+      static let my_cards_manage = Rswift.StringResource(key: "my_cards_manage", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: March
       ///
       /// Locales: en, ka, hy
@@ -4985,6 +5145,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("add_card_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add card
+      ///
+      /// Locales: en, ka, hy
+      static func my_cards_add_card(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_cards_add_card", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "my_cards_add_card"
+        }
+
+        return NSLocalizedString("my_cards_add_card", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Address
@@ -8045,6 +8220,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("malta", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Manage my cards
+      ///
+      /// Locales: en, ka, hy
+      static func my_cards_manage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_cards_manage", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "my_cards_manage"
+        }
+
+        return NSLocalizedString("my_cards_manage", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: March
@@ -11627,6 +11817,28 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _AddMyCardComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AddMyCardComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddMyCardTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AddMyCardTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddMyCardTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddMyCardTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _AgreementComponentView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "AgreementComponentView"
@@ -11675,8 +11887,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -11803,8 +12015,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -11850,6 +12062,28 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MyCardComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MyCardComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MyCardTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MyCardTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MyCardTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MyCardTableViewCell
       }
 
       fileprivate init() {}
@@ -11941,8 +12175,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12177,6 +12411,28 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _VideoCardComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "VideoCardComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _VideoCardTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "VideoCardTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VideoCardTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VideoCardTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _WithdrawInstructionView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "WithdrawInstructionView"
@@ -12256,6 +12512,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try mainTabBar.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try myCards.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try notificationContent.validate()
@@ -12603,6 +12862,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.mainTabBar().mainTabBarViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarViewController' could not be loaded from storyboard 'MainTabBar' as 'MainTabBarViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct myCards: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let myCardsViewController = StoryboardViewControllerResource<MyCardsViewController>(identifier: "MyCardsViewController")
+      let name = "MyCards"
+
+      func myCardsViewController(_: Void = ()) -> MyCardsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: myCardsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.myCards().myCardsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'myCardsViewController' could not be loaded from storyboard 'MyCards' as 'MyCardsViewController'.") }
       }
 
       fileprivate init() {}

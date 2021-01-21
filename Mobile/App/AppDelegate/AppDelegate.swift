@@ -81,6 +81,7 @@ public extension DependencyContainer {
         Module { DefaultSecurityLevelsViewModel() as SecurityLevelsViewModel }
         Module { DefaultAccessHistoryCalendarViewModel(params: .init()) as AccessHistoryCalendarViewModel }
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
+        Module { DefaultMyCardsViewModel() as MyCardsViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -131,6 +132,7 @@ public extension DependencyContainer {
         Module { DefaultCardInfoViewControllerFactory() as CardInfoViewControllerFactory }
         Module { DefaultSecurityLevelsViewControllerFactory() as SecurityLevelsViewControllerFactory }
         Module { DefaultAccessHistoryCalendarViewControllerFactory() as AccessHistoryCalendarViewControllerFactory }
+        Module { DefaultMyCardsViewControllerFactory() as MyCardsViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

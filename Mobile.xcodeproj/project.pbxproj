@@ -60,6 +60,12 @@
 		7676E55D2562D73100234026 /* TransactionHistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E55C2562D73100234026 /* TransactionHistoryProvider.swift */; };
 		7676E5662562E26300234026 /* TransactionHistoryComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */; };
 		7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */; };
+		7682CF9025B8581600717090 /* AddMyCardComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7682CF8A25B8581600717090 /* AddMyCardComponentView.xib */; };
+		7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7682CF8B25B8581600717090 /* AddMyCardTableViewCellDataProvider.swift */; };
+		7682CF9225B8581600717090 /* AddMyCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7682CF8C25B8581600717090 /* AddMyCardTableViewCell.xib */; };
+		7682CF9325B8581600717090 /* AddMyCardComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7682CF8D25B8581600717090 /* AddMyCardComponentViewModel.swift */; };
+		7682CF9425B8581600717090 /* AddMyCardComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7682CF8E25B8581600717090 /* AddMyCardComponentView.swift */; };
+		7682CF9525B8581600717090 /* AddMyCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7682CF8F25B8581600717090 /* AddMyCardTableViewCell.swift */; };
 		7698869A2571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886942571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift */; };
 		7698869B2571042A00FA339E /* TransactionFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769886952571042A00FA339E /* TransactionFilterTableViewCell.xib */; };
 		7698869E2571042A00FA339E /* TransactionFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886982571042A00FA339E /* TransactionFilterTableViewCell.swift */; };
@@ -68,6 +74,7 @@
 		769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886AC2571055000FA339E /* TransactionFilterComponentView.swift */; };
 		769886B92571091D00FA339E /* ABCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886B82571091D00FA339E /* ABCheckbox.swift */; };
 		769886C225711C2B00FA339E /* TransactionTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886C125711C2B00FA339E /* TransactionTypeModel.swift */; };
+		76AB37F325B95C74004E1326 /* incognito-card.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 76AB37F225B95C74004E1326 /* incognito-card.mp4 */; };
 		76B667982595F133001441BD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B667972595F133001441BD /* Date+Extension.swift */; };
 		76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B667A02596345C001441BD /* ABDateFormatter.swift */; };
 		76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */; };
@@ -87,6 +94,27 @@
 		76BDF47025760512007B27A7 /* AccountParametersComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF46A25760512007B27A7 /* AccountParametersComponentView.swift */; };
 		76BDF47125760512007B27A7 /* AccountParametersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF46B25760512007B27A7 /* AccountParametersTableViewCell.swift */; };
 		76DBCE57257FAB000030E600 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DBCE56257FAB000030E600 /* DateFormatter+Extension.swift */; };
+		76DCF67425B80FB500150EE1 /* MyCards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DCF66F25B80FB500150EE1 /* MyCards.storyboard */; };
+		76DCF67525B80FB500150EE1 /* MyCardsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF67025B80FB500150EE1 /* MyCardsNavigator.swift */; };
+		76DCF67625B80FB500150EE1 /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF67125B80FB500150EE1 /* MyCardsViewController.swift */; };
+		76DCF67725B80FB500150EE1 /* MyCardsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF67225B80FB500150EE1 /* MyCardsViewControllerFactory.swift */; };
+		76DCF67825B80FB500150EE1 /* MyCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF67325B80FB500150EE1 /* MyCardsViewModel.swift */; };
+		76DCF68525B8159200150EE1 /* MyCardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF68425B8159200150EE1 /* MyCardable.swift */; };
+		76DCF68925B815AC00150EE1 /* MyCardsCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF68825B815AC00150EE1 /* MyCardsCreditCard.swift */; };
+		76DCF68E25B8203D00150EE1 /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF68D25B8203D00150EE1 /* AddCard.swift */; };
+		76DCF69A25B823F000150EE1 /* VideoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF69925B823F000150EE1 /* VideoCard.swift */; };
+		76DCF6AF25B8262300150EE1 /* MyCardComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DCF6A925B8262300150EE1 /* MyCardComponentView.xib */; };
+		76DCF6B025B8262300150EE1 /* MyCardTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF6AA25B8262300150EE1 /* MyCardTableViewCellDataProvider.swift */; };
+		76DCF6B125B8262300150EE1 /* MyCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DCF6AB25B8262300150EE1 /* MyCardTableViewCell.xib */; };
+		76DCF6B225B8262300150EE1 /* MyCardComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF6AC25B8262300150EE1 /* MyCardComponentViewModel.swift */; };
+		76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF6AD25B8262300150EE1 /* MyCardComponentView.swift */; };
+		76DCF6B425B8262300150EE1 /* MyCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DCF6AE25B8262300150EE1 /* MyCardTableViewCell.swift */; };
+		76E43EDB25B95303007B2D97 /* VideoCardComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E43ED525B95303007B2D97 /* VideoCardComponentView.xib */; };
+		76E43EDC25B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E43ED625B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift */; };
+		76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E43ED725B95303007B2D97 /* VideoCardTableViewCell.xib */; };
+		76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E43ED825B95303007B2D97 /* VideoCardComponentViewModel.swift */; };
+		76E43EDF25B95303007B2D97 /* VideoCardComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E43ED925B95303007B2D97 /* VideoCardComponentView.swift */; };
+		76E43EE025B95303007B2D97 /* VideoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E43EDA25B95303007B2D97 /* VideoCardTableViewCell.swift */; };
 		76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB36257E417D00C8DC6A /* AccessListUseCase.swift */; };
 		76EBDB3B257E417D00C8DC6A /* GetAccessListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB37257E417D00C8DC6A /* GetAccessListResponse.swift */; };
 		76EBDB3C257E417D00C8DC6A /* AccessListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */; };
@@ -567,6 +595,12 @@
 		7676E55C2562D73100234026 /* TransactionHistoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryProvider.swift; sourceTree = "<group>"; };
 		7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryComponentView.xib; sourceTree = "<group>"; };
 		7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryComponentView.swift; sourceTree = "<group>"; };
+		7682CF8A25B8581600717090 /* AddMyCardComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyCardComponentView.xib; sourceTree = "<group>"; };
+		7682CF8B25B8581600717090 /* AddMyCardTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyCardTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		7682CF8C25B8581600717090 /* AddMyCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyCardTableViewCell.xib; sourceTree = "<group>"; };
+		7682CF8D25B8581600717090 /* AddMyCardComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyCardComponentViewModel.swift; sourceTree = "<group>"; };
+		7682CF8E25B8581600717090 /* AddMyCardComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyCardComponentView.swift; sourceTree = "<group>"; };
+		7682CF8F25B8581600717090 /* AddMyCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyCardTableViewCell.swift; sourceTree = "<group>"; };
 		769886942571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilterTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		769886952571042A00FA339E /* TransactionFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionFilterTableViewCell.xib; sourceTree = "<group>"; };
 		769886982571042A00FA339E /* TransactionFilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilterTableViewCell.swift; sourceTree = "<group>"; };
@@ -575,6 +609,7 @@
 		769886AC2571055000FA339E /* TransactionFilterComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilterComponentView.swift; sourceTree = "<group>"; };
 		769886B82571091D00FA339E /* ABCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCheckbox.swift; sourceTree = "<group>"; };
 		769886C125711C2B00FA339E /* TransactionTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypeModel.swift; sourceTree = "<group>"; };
+		76AB37F225B95C74004E1326 /* incognito-card.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "incognito-card.mp4"; sourceTree = "<group>"; };
 		76B667972595F133001441BD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		76B667A02596345C001441BD /* ABDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABDateFormatter.swift; sourceTree = "<group>"; };
 		76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTransactionHistoriesUseCase.swift; sourceTree = "<group>"; };
@@ -594,6 +629,27 @@
 		76BDF46A25760512007B27A7 /* AccountParametersComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountParametersComponentView.swift; sourceTree = "<group>"; };
 		76BDF46B25760512007B27A7 /* AccountParametersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountParametersTableViewCell.swift; sourceTree = "<group>"; };
 		76DBCE56257FAB000030E600 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		76DCF66F25B80FB500150EE1 /* MyCards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyCards.storyboard; sourceTree = "<group>"; };
+		76DCF67025B80FB500150EE1 /* MyCardsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsNavigator.swift; sourceTree = "<group>"; };
+		76DCF67125B80FB500150EE1 /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
+		76DCF67225B80FB500150EE1 /* MyCardsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewControllerFactory.swift; sourceTree = "<group>"; };
+		76DCF67325B80FB500150EE1 /* MyCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewModel.swift; sourceTree = "<group>"; };
+		76DCF68425B8159200150EE1 /* MyCardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardable.swift; sourceTree = "<group>"; };
+		76DCF68825B815AC00150EE1 /* MyCardsCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsCreditCard.swift; sourceTree = "<group>"; };
+		76DCF68D25B8203D00150EE1 /* AddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCard.swift; sourceTree = "<group>"; };
+		76DCF69925B823F000150EE1 /* VideoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCard.swift; sourceTree = "<group>"; };
+		76DCF6A925B8262300150EE1 /* MyCardComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCardComponentView.xib; sourceTree = "<group>"; };
+		76DCF6AA25B8262300150EE1 /* MyCardTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		76DCF6AB25B8262300150EE1 /* MyCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCardTableViewCell.xib; sourceTree = "<group>"; };
+		76DCF6AC25B8262300150EE1 /* MyCardComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardComponentViewModel.swift; sourceTree = "<group>"; };
+		76DCF6AD25B8262300150EE1 /* MyCardComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardComponentView.swift; sourceTree = "<group>"; };
+		76DCF6AE25B8262300150EE1 /* MyCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardTableViewCell.swift; sourceTree = "<group>"; };
+		76E43ED525B95303007B2D97 /* VideoCardComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCardComponentView.xib; sourceTree = "<group>"; };
+		76E43ED625B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		76E43ED725B95303007B2D97 /* VideoCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCardTableViewCell.xib; sourceTree = "<group>"; };
+		76E43ED825B95303007B2D97 /* VideoCardComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardComponentViewModel.swift; sourceTree = "<group>"; };
+		76E43ED925B95303007B2D97 /* VideoCardComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardComponentView.swift; sourceTree = "<group>"; };
+		76E43EDA25B95303007B2D97 /* VideoCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardTableViewCell.swift; sourceTree = "<group>"; };
 		76EBDB36257E417D00C8DC6A /* AccessListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessListUseCase.swift; sourceTree = "<group>"; };
 		76EBDB37257E417D00C8DC6A /* GetAccessListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessListResponse.swift; sourceTree = "<group>"; };
 		76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessListRepository.swift; sourceTree = "<group>"; };
@@ -1088,12 +1144,12 @@
 			path = TransactionDetails;
 			sourceTree = "<group>";
 		};
-		76404EEB257611D100D14E0C /* Data */ = {
+		76404EEB257611D100D14E0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				76404EEC2576120800D14E0C /* AccountParametersModel.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		76404EF2257624B200D14E0C /* AccountSecurityMessagesComponentView */ = {
@@ -1250,6 +1306,26 @@
 			path = AccessList;
 			sourceTree = "<group>";
 		};
+		7682CF8925B857F500717090 /* AddMyCard */ = {
+			isa = PBXGroup;
+			children = (
+				7682CF8A25B8581600717090 /* AddMyCardComponentView.xib */,
+				7682CF8D25B8581600717090 /* AddMyCardComponentViewModel.swift */,
+				7682CF8E25B8581600717090 /* AddMyCardComponentView.swift */,
+			);
+			path = AddMyCard;
+			sourceTree = "<group>";
+		};
+		7682CF9825B8585300717090 /* AddMyCard */ = {
+			isa = PBXGroup;
+			children = (
+				7682CF8B25B8581600717090 /* AddMyCardTableViewCellDataProvider.swift */,
+				7682CF8C25B8581600717090 /* AddMyCardTableViewCell.xib */,
+				7682CF8F25B8581600717090 /* AddMyCardTableViewCell.swift */,
+			);
+			path = AddMyCard;
+			sourceTree = "<group>";
+		};
 		769886922571041100FA339E /* TransactionFilterComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1298,7 +1374,7 @@
 			isa = PBXGroup;
 			children = (
 				C71B4B6B257EC4BB00538697 /* SecurityLevels */,
-				76404EEB257611D100D14E0C /* Data */,
+				76404EEB257611D100D14E0C /* Model */,
 				76BDF4572576043A007B27A7 /* AccountParameters.storyboard */,
 				76BDF4582576043A007B27A7 /* AccountParametersNavigator.swift */,
 				76BDF4592576043A007B27A7 /* AccountParametersViewController.swift */,
@@ -1330,6 +1406,82 @@
 				76BDF46B25760512007B27A7 /* AccountParametersTableViewCell.swift */,
 			);
 			path = AccountParametersTableViewCell;
+			sourceTree = "<group>";
+		};
+		76DCF66E25B80EEC00150EE1 /* MyCards */ = {
+			isa = PBXGroup;
+			children = (
+				76DCF68C25B81F6700150EE1 /* MockData */,
+				76DCF67B25B8148300150EE1 /* Model */,
+				76DCF66F25B80FB500150EE1 /* MyCards.storyboard */,
+				76DCF67025B80FB500150EE1 /* MyCardsNavigator.swift */,
+				76DCF67125B80FB500150EE1 /* MyCardsViewController.swift */,
+				76DCF67225B80FB500150EE1 /* MyCardsViewControllerFactory.swift */,
+				76DCF67325B80FB500150EE1 /* MyCardsViewModel.swift */,
+			);
+			path = MyCards;
+			sourceTree = "<group>";
+		};
+		76DCF67B25B8148300150EE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76DCF68425B8159200150EE1 /* MyCardable.swift */,
+				76DCF68825B815AC00150EE1 /* MyCardsCreditCard.swift */,
+				76DCF68D25B8203D00150EE1 /* AddCard.swift */,
+				76DCF69925B823F000150EE1 /* VideoCard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76DCF68C25B81F6700150EE1 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		76DCF6A825B825FC00150EE1 /* MyCardComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				76E43ED425B952B6007B2D97 /* VideoCard */,
+				7682CF8925B857F500717090 /* AddMyCard */,
+				76DCF6A925B8262300150EE1 /* MyCardComponentView.xib */,
+				76DCF6AC25B8262300150EE1 /* MyCardComponentViewModel.swift */,
+				76DCF6AD25B8262300150EE1 /* MyCardComponentView.swift */,
+			);
+			path = MyCardComponentView;
+			sourceTree = "<group>";
+		};
+		76DCF6B925B8267900150EE1 /* MyCardTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				76E43EE325B9530F007B2D97 /* VideoCard */,
+				7682CF9825B8585300717090 /* AddMyCard */,
+				76DCF6AA25B8262300150EE1 /* MyCardTableViewCellDataProvider.swift */,
+				76DCF6AB25B8262300150EE1 /* MyCardTableViewCell.xib */,
+				76DCF6AE25B8262300150EE1 /* MyCardTableViewCell.swift */,
+			);
+			path = MyCardTableViewCell;
+			sourceTree = "<group>";
+		};
+		76E43ED425B952B6007B2D97 /* VideoCard */ = {
+			isa = PBXGroup;
+			children = (
+				76E43ED525B95303007B2D97 /* VideoCardComponentView.xib */,
+				76E43ED825B95303007B2D97 /* VideoCardComponentViewModel.swift */,
+				76E43ED925B95303007B2D97 /* VideoCardComponentView.swift */,
+			);
+			path = VideoCard;
+			sourceTree = "<group>";
+		};
+		76E43EE325B9530F007B2D97 /* VideoCard */ = {
+			isa = PBXGroup;
+			children = (
+				76E43ED625B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift */,
+				76E43ED725B95303007B2D97 /* VideoCardTableViewCell.xib */,
+				76E43EDA25B95303007B2D97 /* VideoCardTableViewCell.swift */,
+			);
+			path = VideoCard;
 			sourceTree = "<group>";
 		};
 		76EFF7BD2582380900898819 /* AccessHistoryCalendar */ = {
@@ -2537,6 +2689,7 @@
 		D815850C24B0C66D00FFCA95 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
+				76DCF66E25B80EEC00150EE1 /* MyCards */,
 				7665D959257E5C8100E5B35F /* AccessHistory */,
 				7676E54A2562852800234026 /* Transactions */,
 				D85C9C2424336CCC00F1D4FE /* MainTabBar */,
@@ -2642,6 +2795,7 @@
 		D85C9C1524336BF500F1D4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76DCF6A825B825FC00150EE1 /* MyCardComponentView */,
 				761D993F257F7EDC002BCDB6 /* DateHeaderComponentView */,
 				7665D985257F4C5000E5B35F /* AccessHistoryComponentView */,
 				76BDF465257604FB007B27A7 /* AccountParametersComponentView */,
@@ -3002,6 +3156,7 @@
 		D8A47DEB24335E070077AA8E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				76AB37F225B95C74004E1326 /* incognito-card.mp4 */,
 				D807846C2444726000003892 /* Fonts */,
 				D8FBA4F32449BD560015C03C /* Localization.strings */,
 				D85C9C1124336B4C00F1D4FE /* R.generated.swift */,
@@ -3096,6 +3251,7 @@
 		D8BF403F244EC91F008F0BAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				76DCF6B925B8267900150EE1 /* MyCardTableViewCell */,
 				761D9940257F7EF9002BCDB6 /* DateHeaderTableViewCell */,
 				7665D974257F4BF700E5B35F /* AccessHistoryTableViewCell */,
 				76BDF47425760519007B27A7 /* AccountParametersTableViewCell */,
@@ -3191,7 +3347,6 @@
 			buildPhases = (
 				E851500A85D349E8F223FF6F /* [CP] Check Pods Manifest.lock */,
 				D85C9C1324336B6F00F1D4FE /* RSwift */,
-				D827961B2434CA56006745E8 /* SwiftLint */,
 				D8A47DC724335B4B0077AA8E /* Sources */,
 				D8A47DC824335B4B0077AA8E /* Frameworks */,
 				D8A47DC924335B4B0077AA8E /* Resources */,
@@ -3266,6 +3421,7 @@
 				7665D97B257F4C0E00E5B35F /* AccessHistoryComponentView.xib in Resources */,
 				D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */,
 				C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */,
+				76DCF67425B80FB500150EE1 /* MyCards.storyboard in Resources */,
 				CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */,
 				7644B6192563EFA4006778B2 /* DateHeaderCell.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
@@ -3279,9 +3435,11 @@
 				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
 				CE2F03CD252CC8EE006D8001 /* QuickActionComponentView.xib in Resources */,
+				76AB37F325B95C74004E1326 /* incognito-card.mp4 in Resources */,
 				CE7A240125795B1800A94E89 /* CreditCardComponentView.xib in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
 				D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */,
+				76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */,
 				CE679FDC2578334B00F2EC1C /* AddCard.storyboard in Resources */,
 				CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */,
 				D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */,
@@ -3335,6 +3493,7 @@
 				C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
 				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
+				76DCF6AF25B8262300150EE1 /* MyCardComponentView.xib in Resources */,
 				CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */,
 				CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */,
 				7644B6152563ECAC006778B2 /* DateHeaderComponentView.xib in Resources */,
@@ -3343,6 +3502,8 @@
 				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
 				CEB285E1256D20C300584A65 /* SelfSuspend.storyboard in Resources */,
 				769886AE2571055000FA339E /* TransactionFilterComponentView.xib in Resources */,
+				76E43EDB25B95303007B2D97 /* VideoCardComponentView.xib in Resources */,
+				7682CF9225B8581600717090 /* AddMyCardTableViewCell.xib in Resources */,
 				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
 				CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */,
 				76EFF7C32582383000898819 /* AccessHistoryCalendar.storyboard in Resources */,
@@ -3373,7 +3534,9 @@
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
 				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
 				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
+				76DCF6B125B8262300150EE1 /* MyCardTableViewCell.xib in Resources */,
 				C7C973292580D9550062C713 /* SecurityLevelComponentView.xib in Resources */,
+				7682CF9025B8581600717090 /* AddMyCardComponentView.xib in Resources */,
 				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
 				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
@@ -3421,23 +3584,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		D827961B2434CA56006745E8 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellScript = "$SRCROOT/Pods/SwiftLint/swiftlint autocorrect\n$SRCROOT/Mobile/App/BuildPhases/SwiftLint.sh\n";
 		};
 		D853499824D1E26D00958B0E /* FirebaseCrashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3570,6 +3716,7 @@
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
+				76DCF68E25B8203D00150EE1 /* AddCard.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
 				CEBBB0742579151A0024D213 /* AgreementComponentViewModel.swift in Sources */,
@@ -3581,10 +3728,12 @@
 				CEE537E9254AC9FD00EDE6C0 /* CashFlowNavigator.swift in Sources */,
 				C747734E25B5C1030083C845 /* Currency.swift in Sources */,
 				CEF368502549C325009FD456 /* DepositViewModel.swift in Sources */,
+				76DCF69A25B823F000150EE1 /* VideoCard.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */,
 				CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */,
+				76DCF6B225B8262300150EE1 /* MyCardComponentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
@@ -3605,11 +3754,13 @@
 				76404F0C257625F900D14E0C /* AccountSecurityMessagesComponentViewModel.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
 				7644B5F12563A72B006778B2 /* TransactionHistoryTableViewCell.swift in Sources */,
+				76DCF68925B815AC00150EE1 /* MyCardsCreditCard.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				76BDF4602576043A007B27A7 /* AccountParametersViewModel.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
 				7665D963257E5CA600E5B35F /* AccessHistoryViewModel.swift in Sources */,
 				C7C9732D2580D9550062C713 /* SecurityLevelComponentView.swift in Sources */,
+				7682CF9425B8581600717090 /* AddMyCardComponentView.swift in Sources */,
 				7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				C71B4B74257EC57000538697 /* SecurityLevelsViewControllerFactory.swift in Sources */,
@@ -3635,6 +3786,7 @@
 				CE2D1DF22530753A00112A1D /* QuickActionsHeaderCell.swift in Sources */,
 				CE2F03C9252CC8E8006D8001 /* QuickActionComponentViewModel.swift in Sources */,
 				CE76FD7F25764FB500D8AB04 /* ABLocationManager.swift in Sources */,
+				76DCF67825B80FB500150EE1 /* MyCardsViewModel.swift in Sources */,
 				CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */,
 				76BDF45E2576043A007B27A7 /* AccountParametersViewController.swift in Sources */,
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
@@ -3645,10 +3797,13 @@
 				76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */,
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
 				C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */,
+				76DCF67625B80FB500150EE1 /* MyCardsViewController.swift in Sources */,
+				76DCF6B025B8262300150EE1 /* MyCardTableViewCellDataProvider.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
+				76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				C7C973AE2580EC990062C713 /* SecurityLevelTypeComponentView.swift in Sources */,
@@ -3657,6 +3812,7 @@
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
 				C7405182256FA99A00EAC904 /* Formatter.swift in Sources */,
 				CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */,
+				76DCF67725B80FB500150EE1 /* MyCardsViewControllerFactory.swift in Sources */,
 				7668C7AE2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.swift in Sources */,
 				C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */,
 				CEE537EA254AC9FD00EDE6C0 /* CashFlowViewController.swift in Sources */,
@@ -3697,6 +3853,7 @@
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
+				7682CF9325B8581600717090 /* AddMyCardComponentViewModel.swift in Sources */,
 				CE679FDD2578334B00F2EC1C /* AddCardNavigator.swift in Sources */,
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
@@ -3705,12 +3862,15 @@
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */,
 				CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */,
+				76E43EDF25B95303007B2D97 /* VideoCardComponentView.swift in Sources */,
 				76EBDB3C257E417D00C8DC6A /* AccessListRepository.swift in Sources */,
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
 				CEE537F3254ACA2200EDE6C0 /* CashFlowViewControllerFactory.swift in Sources */,
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
+				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
+				7682CF9525B8581600717090 /* AddMyCardTableViewCell.swift in Sources */,
 				D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */,
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
 				CE7A23F6257948F500A94E89 /* CardInfoViewModel.swift in Sources */,
@@ -3749,6 +3909,7 @@
 				D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */,
 				C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
+				76E43EDC25B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift in Sources */,
 				C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */,
 				76BDF441257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift in Sources */,
 				76B667982595F133001441BD /* Date+Extension.swift in Sources */,
@@ -3786,6 +3947,7 @@
 				CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */,
 				D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */,
 				D8BE830C24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift in Sources */,
+				76DCF6B425B8262300150EE1 /* MyCardTableViewCell.swift in Sources */,
 				76404F0A257625F900D14E0C /* AccountSecurityMessagesTableViewCellDataProvider.swift in Sources */,
 				C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */,
 				C71B4B75257EC57000538697 /* SecurityLevelsViewModel.swift in Sources */,
@@ -3798,6 +3960,7 @@
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
+				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
@@ -3813,11 +3976,13 @@
 				7665D97F257F4C0E00E5B35F /* AccessHistoryComponentView.swift in Sources */,
 				CE9B7FED257544F5006FF756 /* PhoneNumberChangeViewModel.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
+				76E43EE025B95303007B2D97 /* VideoCardTableViewCell.swift in Sources */,
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */,
 				769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */,
 				C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */,
+				76DCF68525B8159200150EE1 /* MyCardable.swift in Sources */,
 				CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */,
 				D894CEB924BE2AD700FE143D /* ShimmerView.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
@@ -3827,6 +3992,7 @@
 				7698869A2571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift in Sources */,
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */,
+				76DCF67525B80FB500150EE1 /* MyCardsNavigator.swift in Sources */,
 				C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */,

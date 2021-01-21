@@ -87,6 +87,13 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
+    func makeAddCardBarButonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
+        let button = UIButton()
+        button.setImage(R.image.myCards.addCard(), for: .normal) //todo change icon to add
+        return (UIBarButtonItem(customView: button), button)
+    }
+
+    @discardableResult
     func makeAccountParametersBarButtonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
         let button = UIButton()
         button.setTitle(R.string.localization.account_parameters.localized(), for: .normal)

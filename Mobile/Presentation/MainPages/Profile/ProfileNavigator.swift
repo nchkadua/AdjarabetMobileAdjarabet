@@ -15,6 +15,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
     @Inject(from: .factories) public var p2pTrasferViewControllerFactory: P2PTransferViewControllerFactory
     @Inject(from: .factories) public var accountParametersViewControllerFactory: AccountParametersViewControllerFactory
+    @Inject(from: .factories) public var myCardsViewControllerFactory: MyCardsViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -38,12 +39,13 @@ public class ProfileNavigator: Navigator {
         switch destination {
         case .deposit: navigateToCashFlow(animate: animate, initialPageIndex: 0)
         case .withdraw: navigateToCashFlow(animate: animate, initialPageIndex: 1)
+        case .transactionHistory: navigateToTransactionHistory(animate: animate)
+        case .myCards: navigateToMyCards(animate: animate)
         case .biometryParameters: navigateToBiometricSettings(animate: animate)
         case .transferToFriend: navigateToP2PTransfer(animate: animate)
         case .accountInformation: navigateToAccountInformation(animate: animate)
-        case .loginPage: navigateToLogin(animate: animate)
-        case .transactionHistory: navigateToTransactionHistory(animate: animate)
         case .accountParameters: navigateToAccountParameters(animate: animate)
+        case .loginPage: navigateToLogin(animate: animate)
         default:
             break
         }
@@ -57,6 +59,11 @@ public class ProfileNavigator: Navigator {
 
     private func navigateToTransactionHistory(animate: Bool) {
         let vc = transactionHistoryViewControllerFactory.make()
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
+    }
+
+    private func navigateToMyCards(animate: Bool) {
+        let vc = myCardsViewControllerFactory.make()
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 

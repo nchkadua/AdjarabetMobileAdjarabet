@@ -36,7 +36,10 @@ public class ABTableViewController: AppTableViewController {
             AccountParametersHeaderTableViewCell.self,
             AccessHistoryTableViewCell.self,
             SecurityLevelTableViewCell.self,
-            SecurityLevelTypeTableViewCell.self
+            SecurityLevelTypeTableViewCell.self,
+            MyCardTableViewCell.self,
+            AddMyCardTableViewCell.self,
+            VideoCardTableViewCell.self
         ])
 
         setupTableView()
