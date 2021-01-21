@@ -39,6 +39,8 @@ public class SecurityLevelsViewController: ABViewController {
             appTableViewController.dataProvider = dataProvider
         case .openOkCancelAlert(let title, let completion):
             openOkCancelAlert(title, completion)
+        case .close:
+            dismiss(animated: true, completion: nil)
         }
     }
 
@@ -51,8 +53,12 @@ extension SecurityLevelsViewController {
     private func setup() {
         appTableViewController.viewModel = viewModel
         setTitle(title: R.string.localization.security_levels_scene_title.localized())
-        setBackDismissBarButtonItemIfNeeded(width: 44)
+        setBackDismissBarButtonItemIfNeeded(width: 44, completion: #selector(backTapped))
         setupTableView()
+    }
+
+    @objc func backTapped() {
+        viewModel.backTapped()
     }
 
     private func setupTableView() {

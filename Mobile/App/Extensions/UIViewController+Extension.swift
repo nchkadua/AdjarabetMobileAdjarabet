@@ -86,18 +86,18 @@ public extension UIViewController {
         setDismissBarButtonItemIfNeededHelper(width: width, icon: R.image.shared.close())
     }
 
-    func setBackDismissBarButtonItemIfNeeded(width: CGFloat = 26) {
-        setDismissBarButtonItemIfNeededHelper(width: width, icon: R.image.shared.back())
+    func setBackDismissBarButtonItemIfNeeded(width: CGFloat = 26, completion: Selector = #selector(dismissBarButtonItemDidTap)) {
+        setDismissBarButtonItemIfNeededHelper(width: width, icon: R.image.shared.back(), completion: completion)
     }
 
-    private func setDismissBarButtonItemIfNeededHelper(width: CGFloat, icon: UIImage?) {
+    private func setDismissBarButtonItemIfNeededHelper(width: CGFloat, icon: UIImage?, completion: Selector = #selector(dismissBarButtonItemDidTap)) {
         navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
         button.setImage(icon, for: .normal)
         button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        button.addTarget(self, action: #selector(dismissBarButtonItemDidTap), for: .touchUpInside)
+        button.addTarget(self, action: completion, for: .touchUpInside)
         let dismissBarButtonItem = UIBarButtonItem(customView: button)
         navigationItem.leftBarButtonItem = dismissBarButtonItem
     }
