@@ -241,6 +241,7 @@
 "security_levels_account_block" = "Account Block";
 "security_levels_high_security_activation_deactivation" = "High Security Activation / Deactivation";
 "security_levels_switched_to_individual" = "Do you want to activate an individual package?";
+"security_levels_individual_is_empty" = "You must select at least one type of sms notification, when you choose individual package, or standart packet will be chosen";
 
 /* Dates */
 "january" = "January";

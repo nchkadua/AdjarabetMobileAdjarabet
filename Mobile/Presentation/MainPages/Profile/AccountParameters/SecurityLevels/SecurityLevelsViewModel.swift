@@ -24,6 +24,7 @@ public protocol SecurityLevelsViewModelInput: AnyObject {
     func didSelectRow(at indexPath: IndexPath)
     func securityLevelTapped(at index: Int)
     func typeTapped(at index: Int)
+    func backTapped()
 }
 
 public protocol SecurityLevelsViewModelOutput {
@@ -34,6 +35,7 @@ public protocol SecurityLevelsViewModelOutput {
 public enum SecurityLevelsViewModelOutputAction {
     case dataProvider(AppListDataProvider)
     case openOkCancelAlert(title: String, completion: (Bool) -> Void)
+    case close
 }
 
 public enum SecurityLevelsViewModelRoute {
@@ -208,6 +210,18 @@ extension DefaultSecurityLevelsViewModel: SecurityLevelsViewModel {
                 }
             }
             actionSubject.onNext(.openOkCancelAlert(title: title, completion: completion))
+        }
+    }
+
+    public func backTapped() {
+        if state.level == .individual && !state.types.contains(where: { $0.selected }) {
+            let title = R.string.localization.security_levels_individual_is_empty.localized()
+            let completion = { [weak self] (ok: Bool) -> Void in
+                if !ok { self?.actionSubject.onNext(.close) }
+            }
+            actionSubject.onNext(.openOkCancelAlert(title: title, completion: completion))
+        } else {
+            actionSubject.onNext(.close)
         }
     }
 }
