@@ -240,6 +240,7 @@
 "security_levels_id_document_change" = "ID დოკუმენტების ცვლილება";
 "security_levels_account_block" = "ანგარიშის დაბლოკვა";
 "security_levels_high_security_activation_deactivation" = "მაღალი დაცვის რეჟიმის გააქტიურება/დეაქტივაცია";
+"security_levels_switched_to_individual" = "გსურთ ინდივიდუალური პაკეტის გააქტიურება?";
 
 /* Dates */
 "january" = "იანვარი";

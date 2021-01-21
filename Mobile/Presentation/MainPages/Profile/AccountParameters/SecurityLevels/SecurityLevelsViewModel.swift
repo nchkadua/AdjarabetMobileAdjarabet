@@ -33,6 +33,7 @@ public protocol SecurityLevelsViewModelOutput {
 
 public enum SecurityLevelsViewModelOutputAction {
     case dataProvider(AppListDataProvider)
+    case openOkCancelAlert(title: String, completion: (Bool) -> Void)
 }
 
 public enum SecurityLevelsViewModelRoute {
@@ -191,13 +192,23 @@ extension DefaultSecurityLevelsViewModel: SecurityLevelsViewModel {
     public func typeTapped(at index: Int) {
         guard index < state.types.count else { return } // incorrect usage of securityLevelTypeTapped function, wrong security level index
         // update state
-        if state.level != .individual {
-            let types = state.types
-            state.level = .individual
-            state.types = types
+        if state.level == .individual {
+            state.types[index].selected.toggle()
+            actionSubject.onNext(.dataProvider(viewModels.makeList()))
+        } else {
+            let title = R.string.localization.security_levels_switched_to_individual.localized()
+            let completion = { [weak self] (ok: Bool) -> Void in
+                guard let self = self else { return }
+                if ok {
+                    let types = self.state.types
+                    self.state.level = .individual
+                    self.state.types = types
+                    self.state.types[index].selected.toggle()
+                    self.actionSubject.onNext(.dataProvider(self.viewModels.makeList()))
+                }
+            }
+            actionSubject.onNext(.openOkCancelAlert(title: title, completion: completion))
         }
-        state.types[index].selected.toggle()
-        actionSubject.onNext(.dataProvider(viewModels.makeList()))
     }
 }
 

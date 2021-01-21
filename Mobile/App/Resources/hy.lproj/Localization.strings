@@ -240,6 +240,7 @@
 "security_levels_id_document_change" = "id document change";
 "security_levels_account_block" = "account block";
 "security_levels_high_security_activation_deactivation" = "high security activation / deactivation";
+"security_levels_switched_to_individual" = "do you want to activate an individual package?";
 
 /* Dates */
 "january" = "January";
