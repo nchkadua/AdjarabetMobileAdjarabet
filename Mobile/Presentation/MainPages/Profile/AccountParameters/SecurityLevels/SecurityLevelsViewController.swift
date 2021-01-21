@@ -37,6 +37,8 @@ public class SecurityLevelsViewController: ABViewController {
         switch action {
         case .dataProvider(let dataProvider):
             appTableViewController.dataProvider = dataProvider
+        case .openOkCancelAlert(let title, let completion):
+            openOkCancelAlert(title, completion)
         }
     }
 
@@ -63,6 +65,13 @@ extension SecurityLevelsViewController {
             appTableViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
             appTableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+
+    private func openOkCancelAlert(_ title: String, _ completion: @escaping (Bool) -> Void) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in completion(true) }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in completion(false) }))
+        present(alert, animated: true, completion: nil)
     }
 }
 
