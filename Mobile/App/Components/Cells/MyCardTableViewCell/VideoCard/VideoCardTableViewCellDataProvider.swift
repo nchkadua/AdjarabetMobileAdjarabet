@@ -6,7 +6,8 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public protocol VideoCardTableViewCellDataProvider: VideoCardComponentViewModel, StaticHeightDataProvider { }
+public protocol VideoCardTableViewCellDataProvider: VideoCardComponentViewModel,
+                                                    StaticHeightDataProvider { }
 
 public extension VideoCardTableViewCellDataProvider {
     var identifier: String { VideoCardTableViewCell.identifierValue }

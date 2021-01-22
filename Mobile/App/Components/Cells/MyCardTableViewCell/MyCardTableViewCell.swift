@@ -6,7 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public class MyCardTableViewCell: AppTableViewCell {
+public class MyCardTableViewCell: AppTableViewCell, EditableCell {
     @IBOutlet weak private var componentView: MyCardComponentView!
     override public class var identifier: Identifierable { R.nib.myCardTableViewCell.name }
 

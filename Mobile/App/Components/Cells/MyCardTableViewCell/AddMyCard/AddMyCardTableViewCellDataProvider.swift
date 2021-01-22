@@ -6,8 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public protocol AddMyCardTableViewCellDataProvider: AppCellDelegate ,
-                                                    AddMyCardComponentViewModel,
+public protocol AddMyCardTableViewCellDataProvider: AddMyCardComponentViewModel,
                                                     StaticHeightDataProvider { }
 
 public extension AddMyCardTableViewCellDataProvider {

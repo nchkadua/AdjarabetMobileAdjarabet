@@ -34,6 +34,7 @@ public enum MyCardComponentViewModelOutputAction {
              dateAdded: Date,
              cardNumber: String,
              issuerIcon: UIImage?)
+    case didDelete(atIndex: IndexPath)
 }
 
 public class DefaultMyCardComponentViewModel {
@@ -55,5 +56,12 @@ extension DefaultMyCardComponentViewModel: MyCardComponentViewModel {
                                   dateAdded: params.dateAdded,
                                   cardNumber: params.cardNumber,
                                   issuerIcon: params.issuerIcon))
+    }
+    
+    public func didSelect(at indexPath: IndexPath) {
+    }
+
+    public func didDelete(at indexPath: IndexPath) {
+        actionSubject.onNext(.didDelete(atIndex: indexPath))
     }
 }

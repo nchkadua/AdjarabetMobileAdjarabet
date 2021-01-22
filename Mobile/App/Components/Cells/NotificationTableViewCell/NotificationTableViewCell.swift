@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public class NotificationTableViewCell: AppTableViewCell {
+public class NotificationTableViewCell: AppTableViewCell, EditableCell {
     @IBOutlet weak private var notificationComponentView: NotificationComponentView!
 
     override public class var identifier: Identifierable { R.nib.notificationTableViewCell.name }

@@ -19,7 +19,6 @@ public class ABTableViewController: AppTableViewController {
     private let disposeBag = DisposeBag()
     public var isTabBarManagementEnabled: Bool = false
     public var canEditRow: Bool = false
-
     public override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -99,7 +98,8 @@ public class ABTableViewController: AppTableViewController {
 
     // MARK: Deletable Cell Management
     public override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        guard !(tableView.cellForRow(at: indexPath) is NotificationsHeaderCell) else { return false }
+        let cell = tableView.cellForRow(at: indexPath)
+        guard cell is EditableCell else { return false }
         return canEditRow
     }
 

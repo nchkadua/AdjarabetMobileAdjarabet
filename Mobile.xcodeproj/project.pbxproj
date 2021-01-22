@@ -35,6 +35,7 @@
 		7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B62E25650A3D006778B2 /* TransactionDetailsTableViewCell.swift */; };
 		7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7644B63425650C0D006778B2 /* TransactionDetailsTableViewCell.xib */; };
 		7644B63925650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */; };
+		765EDFD325BAE08300089B49 /* EditableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765EDFD225BAE08300089B49 /* EditableCell.swift */; };
 		7665D95F257E5CA600E5B35F /* AccessHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7665D95A257E5CA600E5B35F /* AccessHistory.storyboard */; };
 		7665D960257E5CA600E5B35F /* AccessHistoryNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D95B257E5CA600E5B35F /* AccessHistoryNavigator.swift */; };
 		7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7665D95C257E5CA600E5B35F /* AccessHistoryViewController.swift */; };
@@ -570,6 +571,7 @@
 		7644B62E25650A3D006778B2 /* TransactionDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		7644B63425650C0D006778B2 /* TransactionDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		765EDFD225BAE08300089B49 /* EditableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableCell.swift; sourceTree = "<group>"; };
 		7665D95A257E5CA600E5B35F /* AccessHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccessHistory.storyboard; sourceTree = "<group>"; };
 		7665D95B257E5CA600E5B35F /* AccessHistoryNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryNavigator.swift; sourceTree = "<group>"; };
 		7665D95C257E5CA600E5B35F /* AccessHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessHistoryViewController.swift; sourceTree = "<group>"; };
@@ -3267,6 +3269,7 @@
 				D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */,
 				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,
 				D8212F062485847300B74AB9 /* LoadingCollectionViewCell */,
+				765EDFD225BAE08300089B49 /* EditableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3938,6 +3941,7 @@
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
 				D8F26A05246837B700137252 /* LoginType.swift in Sources */,
 				CE2F03D6252CD6B0006D8001 /* QuickActionTableViewCellDataProvider.swift in Sources */,
+				765EDFD325BAE08300089B49 /* EditableCell.swift in Sources */,
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				CECCE3CE254F0A43005CC660 /* Payments.swift in Sources */,
 				CE7A240525795B1F00A94E89 /* CreditCardComponentView.swift in Sources */,

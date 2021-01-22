@@ -17,6 +17,7 @@ public struct MyCardsViewModelParams {
 public protocol MyCardsViewModelInput: AnyObject {
     func viewDidLoad()
     func addCardsClicked()
+    func deleteCell(at index: Int)
 }
 
 public protocol MyCardsViewModelOutput {
@@ -26,19 +27,21 @@ public protocol MyCardsViewModelOutput {
 
 public enum MyCardsViewModelOutputAction {
     case initialize(AppListDataProvider)
+    case didDeleteCell(atIndexPath: IndexPath)
 }
 
 public enum MyCardsViewModelRoute {
 }
 
-public class DefaultMyCardsViewModel {
+public class DefaultMyCardsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<MyCardsViewModelOutputAction>()
     private let routeSubject = PublishSubject<MyCardsViewModelRoute>()
-    private var myCardsTable = MyCardsTable()
+    private static var myCardsTable = MyCardsTable()
     private var dataProvider: AppCellDataProviders = []
 }
 
 extension DefaultMyCardsViewModel: MyCardsViewModel {
+    
     public var action: Observable<MyCardsViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<MyCardsViewModelRoute> { routeSubject.asObserver() }
 
@@ -47,7 +50,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
     }
 
     private func setupMyCardsTable() {
-        myCardsTable.dataSource.forEach {
+        DefaultMyCardsViewModel.myCardsTable.dataSource.forEach {
             var componentViewModel: AppCellDataProvider?
             if let myCard = $0 as? MyCard {
                 let bankIcon = iconForBank(myCard.bank)
@@ -58,6 +61,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
                                                                                           dateAdded: myCard.dateAdded,
                                                                                           cardNumber: myCard.number,
                                                                                           issuerIcon: issuerIcon))
+                subscribe(to: componentViewModel as! MyCardComponentViewModel)
             } else if $0 is AddCard {
                 componentViewModel = DefaultAddMyCardComponentViewModel()
             } else if $0 is VideoCard {
@@ -68,6 +72,22 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
             }
         }
         actionSubject.onNext(.initialize(dataProvider.makeList()))
+    }
+    
+    private func subscribe(to myCardComponent: MyCardComponentViewModel) {
+        myCardComponent.action.subscribe(onNext: { [weak self] action in
+            guard let self = self else { return }
+            switch action {
+            case .didDelete(let indexPath):
+                self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
+            default:
+                break
+            }
+        }).disposed(by: disposeBag)
+    }
+    
+    public func deleteCell(at index: Int) {
+        DefaultMyCardsViewModel.myCardsTable.dataSource.remove(at: index)
     }
 
     private func aliasForBank(_ bank: MyCard.Bank) -> String {
@@ -105,5 +125,6 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
     }
 
     public func addCardsClicked() {
+        
     }
 }

@@ -55,6 +55,8 @@ class MyCardComponentView: UIView {
             switch action {
             case .set(let bankIcon, let bankAlias, let dateAdded, let cardNumber, let issuerIcon):
                 self.set(bankIcon, bankAlias, dateAdded, cardNumber, issuerIcon)
+            default:
+                break
             }
         }).disposed(by: disposeBag)
 
