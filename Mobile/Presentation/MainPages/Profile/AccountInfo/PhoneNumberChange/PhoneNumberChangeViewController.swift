@@ -73,6 +73,14 @@ public class PhoneNumberChangeViewController: ABViewController {
         phoneNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         phoneNumberInputView.setPlaceholder(text: R.string.localization.new_phone_number.localized())
         phoneNumberInputView.mainTextField.keyboardType = .numberPad
+
+        Observable.combineLatest([phoneNumberInputView.rx.text.orEmpty])
+            .map { $0.map { !$0.isEmpty } }
+            .map { $0.allSatisfy { $0 == true } }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.updateApproveButton(isEnabled: isValid)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setDefaultPrexif(_ prefix: String) {
@@ -81,7 +89,7 @@ public class PhoneNumberChangeViewController: ABViewController {
     }
 
     private func setupApproveButton() {
-        approveButton.setStyle(to: .primary(state: .active, size: .large))
+        approveButton.setStyle(to: .primary(state: .disabled, size: .large))
         approveButton.setTitleWithoutAnimation(R.string.localization.approve_address_button_title.localized(), for: .normal)
         approveButton.addTarget(self, action: #selector(approveDidTap), for: .touchUpInside)
     }
@@ -94,5 +102,11 @@ public class PhoneNumberChangeViewController: ABViewController {
         subtitleLabel.setFont(to: .caption2(fontCase: .lower))
         subtitleLabel.setTextColor(to: .primaryText())
         subtitleLabel.text = R.string.localization.phone_number_subtitle.localized()
+    }
+
+    // MARK: Configuration
+    private func updateApproveButton(isEnabled: Bool) {
+        approveButton.isUserInteractionEnabled = isEnabled
+        approveButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
 }

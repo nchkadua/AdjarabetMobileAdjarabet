@@ -266,6 +266,8 @@ extension ABInputView {
     }
 
     public func setDefaultValue(_ value: String) {
+        guard !dataSourceItems.isEmpty else { return }
+
         setTextAndConfigure(text: value)
         pickerView.selectRow(dataSourceItems.firstIndex(of: value) ?? 0, inComponent: 0, animated: false)
     }

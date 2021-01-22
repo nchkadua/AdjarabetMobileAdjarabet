@@ -72,6 +72,14 @@ public class MailChangeViewController: ABViewController {
         passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updatePasswordRightButton()
         }).disposed(by: disposeBag)
+
+        Observable.combineLatest([mailInputView.rx.text.orEmpty, passwordInputView.rx.text.orEmpty])
+            .map { $0.map { !$0.isEmpty } }
+            .map { $0.allSatisfy { $0 == true } }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.updateChangeButton(isEnabled: isValid)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupInputViewsObservation() {
@@ -81,16 +89,8 @@ public class MailChangeViewController: ABViewController {
         }
     }
 
-    private func updatePasswordRightButton() {
-        let isSecureTextEntry = passwordInputView.mainTextField.isSecureTextEntry
-        passwordInputView.toggleSecureTextEntry()
-
-        let icon = isSecureTextEntry ? R.image.shared.viewText() : R.image.shared.hideText()
-        passwordInputView.rightComponent.setImage(icon, for: .normal)
-    }
-
     private func setupButtons() {
-        changeButton.setStyle(to: .primary(state: .active, size: .large))
+        changeButton.setStyle(to: .primary(state: .disabled, size: .large))
         changeButton.setTitleWithoutAnimation(R.string.localization.change_mail_button_title.localized(), for: .normal)
         changeButton.addTarget(self, action: #selector(changeMailDidTap), for: .touchUpInside)
     }
@@ -103,6 +103,20 @@ public class MailChangeViewController: ABViewController {
         titleLabel.setFont(to: .footnote(fontCase: .lower))
         titleLabel.setTextColor(to: .secondaryText())
         titleLabel.text = "\("•")   \(R.string.localization.approve_password.localized())"
+    }
+
+    // MARK: Configuration
+    private func updateChangeButton(isEnabled: Bool) {
+        changeButton.isUserInteractionEnabled = isEnabled
+        changeButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+    }
+
+    private func updatePasswordRightButton() {
+        let isSecureTextEntry = passwordInputView.mainTextField.isSecureTextEntry
+        passwordInputView.toggleSecureTextEntry()
+
+        let icon = isSecureTextEntry ? R.image.shared.viewText() : R.image.shared.hideText()
+        passwordInputView.rightComponent.setImage(icon, for: .normal)
     }
 }
 

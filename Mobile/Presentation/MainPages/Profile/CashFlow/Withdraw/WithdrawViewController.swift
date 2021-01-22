@@ -34,6 +34,13 @@ public class WithdrawViewController: ABViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.cardNumberInputView.mainTextField.becomeFirstResponder()
+        }
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: WithdrawViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
@@ -93,15 +100,11 @@ public class WithdrawViewController: ABViewController {
         proceedButton.setStyle(to: .primary(state: .disabled, size: .large))
         proceedButton.setTitleWithoutAnimation(R.string.localization.withdraw_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
-        updateProceedButton(isEnabled: false)
 
-        Observable.combineLatest([cardNumberInputView.rx.text.orEmpty, amountInputView.rx.text.orEmpty])
-            .map { $0.map { !$0.isEmpty } }
-            .map { $0.allSatisfy { $0 == true } }
-            .subscribe(onNext: { [weak self] isValid in
-                self?.updateProceedButton(isEnabled: isValid)
-            })
-            .disposed(by: disposeBag)
+        amountInputView.mainTextField.rx.controlEvent([.editingChanged])
+            .asObservable().subscribe({ [weak self] _ in
+                self?.updateProceedButton()
+            }).disposed(by: disposeBag)
     }
 
     private func setupInputViews() {
@@ -121,7 +124,14 @@ public class WithdrawViewController: ABViewController {
     }
 
     // MARK: Configuration
-    private func updateProceedButton(isEnabled: Bool) {
+    private func updateProceedButton() {
+        var isEnabled = true
+        if !(cardNumberInputView.mainTextField.text?.isEmpty ?? false) && !(amountInputView.mainTextField.text?.isEmpty ?? false) {
+            isEnabled = true
+        } else {
+            isEnabled = false
+        }
+
         proceedButton.isUserInteractionEnabled = isEnabled
         proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }

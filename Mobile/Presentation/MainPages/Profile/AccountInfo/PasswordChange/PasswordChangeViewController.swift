@@ -81,6 +81,14 @@ public class PasswordChangeViewController: ABViewController {
         inputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updateRightButton(of: inputView)
         }).disposed(by: disposeBag)
+
+        Observable.combineLatest([oldPasswordInputView.rx.text.orEmpty, newPasswordInputView.rx.text.orEmpty, repeatePasswordInputView.rx.text.orEmpty])
+            .map { $0.map { !$0.isEmpty } }
+            .map { $0.allSatisfy { $0 == true } }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.updatePasswordButton(isEnabled: isValid)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupInputViewsObservation() {
@@ -94,16 +102,8 @@ public class PasswordChangeViewController: ABViewController {
         viewModel.newPasswordDidChange(to: textField.text ?? "")
     }
 
-    private func updateRightButton(of passwordView: ABInputView) {
-        let isSecureTextEntry = passwordView.mainTextField.isSecureTextEntry
-        passwordView.toggleSecureTextEntry()
-
-        let icon = isSecureTextEntry ? R.image.shared.viewText() : R.image.shared.hideText()
-        passwordView.rightComponent.setImage(icon, for: .normal)
-    }
-
     private func setupPasswordButton() {
-        updatePasswordButton.setStyle(to: .primary(state: .active, size: .large))
+        updatePasswordButton.setStyle(to: .primary(state: .disabled, size: .large))
         updatePasswordButton.setTitleWithoutAnimation(R.string.localization.update_password_button_title.localized(), for: .normal)
         updatePasswordButton.addTarget(self, action: #selector(updatePasswordButtonDidTap), for: .touchUpInside)
     }
@@ -114,6 +114,20 @@ public class PasswordChangeViewController: ABViewController {
 
     private func setupViews() {
         passwordChangeRulesView.setBackgorundColor(to: .secondaryBg())
+    }
+
+    // MARK: Configuration
+    private func updatePasswordButton(isEnabled: Bool) {
+        updatePasswordButton.isUserInteractionEnabled = isEnabled
+        updatePasswordButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+    }
+
+    private func updateRightButton(of passwordView: ABInputView) {
+        let isSecureTextEntry = passwordView.mainTextField.isSecureTextEntry
+        passwordView.toggleSecureTextEntry()
+
+        let icon = isSecureTextEntry ? R.image.shared.viewText() : R.image.shared.hideText()
+        passwordView.rightComponent.setImage(icon, for: .normal)
     }
 }
 
