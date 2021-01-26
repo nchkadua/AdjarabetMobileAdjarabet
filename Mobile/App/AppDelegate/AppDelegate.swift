@@ -98,6 +98,7 @@ public extension DependencyContainer {
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
         Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }
+        Module { CoreApiPaymentAccountRepository() as PaymentAccountRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
 
@@ -148,5 +149,6 @@ public extension DependencyContainer {
         Module { DefaultDisplayTransactionHistoriesUseCase() as DisplayTransactionHistoriesUseCase }
         Module { DefaultAccessListUseCaseUseCase() as DisplayAccessListUseCase }
         Module { DefaultGameLauncherUseCase() as GameLauncherUseCase }
+        Module { DefaultPaymentAccountUseCase() as PaymentAccountUseCase }
     }
 }

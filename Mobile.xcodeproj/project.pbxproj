@@ -143,6 +143,7 @@
 		C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */; };
 		C701C71625C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */; };
 		C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */; };
+		C701C71F25C0597400B059A6 /* PaymentAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */; };
 		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
 		C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487162571122E00E4A71D /* AccountInfoModel.swift */; };
 		C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */; };
@@ -696,6 +697,7 @@
 		C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCount.swift; sourceTree = "<group>"; };
 		C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDataTransferResponse.swift; sourceTree = "<group>"; };
 		C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCountDataTransferResponse.swift; sourceTree = "<group>"; };
+		C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCase.swift; sourceTree = "<group>"; };
 		C7036C33257CF42400AE7EB7 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		C71487162571122E00E4A71D /* AccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
 		C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecurityLevels.storyboard; sourceTree = "<group>"; };
@@ -1705,6 +1707,14 @@
 				C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		C701C71D25C0595000B059A6 /* PaymentAccounts */ = {
+			isa = PBXGroup;
+			children = (
+				C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */,
+			);
+			path = PaymentAccounts;
 			sourceTree = "<group>";
 		};
 		C709D7FC259B8F4B0079E942 /* Authentication & Session Management */ = {
@@ -3226,6 +3236,7 @@
 				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
 				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
+				C701C71D25C0595000B059A6 /* PaymentAccounts */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
 				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
@@ -4035,6 +4046,7 @@
 				CE55ED2B252721A2003E168F /* ProfileViewControllerFactory.swift in Sources */,
 				CE7A241125796AD500A94E89 /* Collection+Extension.swift in Sources */,
 				C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */,
+				C701C71F25C0597400B059A6 /* PaymentAccountUseCase.swift in Sources */,
 				7668C7AC2576785F0024DDE4 /* AccountParametersHeaderComponentViewModel.swift in Sources */,
 				CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */,
 				D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */,
