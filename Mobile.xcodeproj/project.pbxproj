@@ -140,6 +140,7 @@
 		C701C6DC25C034F000B059A6 /* GameLauchUrlRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */; };
 		C701C6E025C0350700B059A6 /* ServiceAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6DF25C0350600B059A6 /* ServiceAuthToken.swift */; };
 		C701C6E425C0351000B059A6 /* GameLaunchUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E325C0351000B059A6 /* GameLaunchUrlEntity.swift */; };
+		C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */; };
 		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
 		C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487162571122E00E4A71D /* AccountInfoModel.swift */; };
 		C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */; };
@@ -690,6 +691,7 @@
 		C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLauchUrlRepository.swift; sourceTree = "<group>"; };
 		C701C6DF25C0350600B059A6 /* ServiceAuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAuthToken.swift; sourceTree = "<group>"; };
 		C701C6E325C0351000B059A6 /* GameLaunchUrlEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLaunchUrlEntity.swift; sourceTree = "<group>"; };
+		C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCount.swift; sourceTree = "<group>"; };
 		C7036C33257CF42400AE7EB7 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		C71487162571122E00E4A71D /* AccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
 		C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecurityLevels.storyboard; sourceTree = "<group>"; };
@@ -1582,8 +1584,8 @@
 		C701C60325C00A9D00B059A6 /* Payment Account */ = {
 			isa = PBXGroup;
 			children = (
+				C701C6EF25C0500700B059A6 /* Entities */,
 				C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */,
-				C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */,
 			);
 			path = "Payment Account";
 			sourceTree = "<group>";
@@ -1680,6 +1682,15 @@
 				C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */,
 			);
 			path = LaunchUrl;
+			sourceTree = "<group>";
+		};
+		C701C6EF25C0500700B059A6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */,
+				C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C709D7FC259B8F4B0079E942 /* Authentication & Session Management */ = {
@@ -3970,6 +3981,7 @@
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
 				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
+				C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */,
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
 				C701C6DC25C034F000B059A6 /* GameLauchUrlRepository.swift in Sources */,
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,

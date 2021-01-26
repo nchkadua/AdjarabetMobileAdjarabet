@@ -15,16 +15,28 @@ public protocol PaymentAccountRepository: PaymentAccountReadableRepository,
 // MARK: - Readable Repository
 public protocol PaymentAccountReadableRepository {
     /**
-     Returns currently available all the payment accounts and
-     their details for the currently authenticated user
+     Returns count of payment accounts
+     for the currently authenticated user
+     */
+    typealias CurrentUserPaymentAccountsCountHandler = (Result<PaymentAccountCount, Error>) -> Void
+    func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
+                                         completion: CurrentUserPaymentAccountsCountHandler)
+
+    /**
+     Returns payment accounts and their details
+     at specified 'pageIndex' and 'pageCount'
+     for the currently authenticated user
      */
     typealias CurrentUserPaymentAccountsHandler = (Result<[PaymentAccountEntity], Error>) -> Void
-    func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsParams,
+    func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
                                     completion: @escaping CurrentUserPaymentAccountsHandler)
 }
 
+// for currentUserPaymentAccountsCount
+public struct CurrentUserPaymentAccountsCountParams { }
+
 // for currentUserPaymentAccounts
-public struct CurrentUserPaymentAccountsParams {
+public struct CurrentUserPaymentAccountsPageParams {
     public let pageIndex: Int
     public let pageCount: Int
 }
