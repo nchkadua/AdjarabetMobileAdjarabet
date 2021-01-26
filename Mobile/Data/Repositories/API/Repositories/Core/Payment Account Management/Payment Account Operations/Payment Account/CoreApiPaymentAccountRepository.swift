@@ -36,7 +36,22 @@ extension CoreApiPaymentAccountRepository: PaymentAccountRepository {
 
     public func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
                                            completion: @escaping CurrentUserPaymentAccountsHandler) {
+        guard let sessionId = userSession.sessionId,
+              let userId = userSession.userId
+        else {
+            // TODO: completion(.failure("no session id or user id found"))
+            return
+        }
 
-        //
+        let request = requestBuilder
+            .setHeader(key: .cookie, value: sessionId)
+            .setBody(key: .req, value: "getPaymentAccounts")
+            .setBody(key: .userId, value: "\(userId)")
+            .setBody(key: "pageIndex", value: "\(params.pageIndex)")
+            .setBody(key: "maxResult", value: "\(params.pageCount)")
+            .build()
+
+        dataTransferService.performTask(expecting: PaymentAccountDataTransferResponse.self,
+                                        request: request, respondOnQueue: .main, completion: completion)
     }
 }

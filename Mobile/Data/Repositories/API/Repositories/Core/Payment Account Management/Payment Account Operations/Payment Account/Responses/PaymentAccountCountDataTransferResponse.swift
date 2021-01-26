@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class PaymentAccountCountDataTransferResponse: DataTransferResponse {
+struct PaymentAccountCountDataTransferResponse: DataTransferResponse {
 
-    public struct Body: Codable {
-        public let statusCode: Int?
-        public let count: Int?
+    struct Body: Codable {
+        let statusCode: Int?
+        let count: Int?
 
         enum CodingKeys: String, CodingKey {
             case statusCode = "StatusCode"
@@ -20,9 +20,9 @@ public class PaymentAccountCountDataTransferResponse: DataTransferResponse {
         }
     }
 
-    public typealias Entity = PaymentAccountCount
+    typealias Entity = PaymentAccountCount
 
-    public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
         Entity(count: body.count)
     }
 }

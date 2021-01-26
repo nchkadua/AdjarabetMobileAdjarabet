@@ -23,10 +23,13 @@ public struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
     @Inject(from: .repositories) private var paymentAccountRepository: PaymentAccountRepository
 
     public func execute(params: PaymentAccountUseCaseParams, completion: @escaping PaymentAccountUseCaseHandler) {
+        // fetch count
         paymentAccountRepository.currentUserPaymentAccountsCount(params: .init()) { (result) in
             switch result {
             case .success(let count):
-                print(count)
+                // fetch payment accounts
+                paymentAccountRepository.currentUserPaymentAccounts(params: .init(pageIndex: 0, pageCount: count.count ?? 0), // FIXME: ?? error
+                                                                    completion: completion)
             case .failure(let error):
                 completion(.failure(error))
             }
