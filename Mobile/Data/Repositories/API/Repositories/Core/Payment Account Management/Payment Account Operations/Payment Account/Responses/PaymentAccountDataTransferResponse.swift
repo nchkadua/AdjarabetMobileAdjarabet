@@ -1,5 +1,5 @@
 //
-//  PaymentAccountCount.swift
+//  PaymentAccountDataTransferResponse.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 1/26/21.
@@ -7,7 +7,3 @@
 //
 
 import Foundation
-
-public struct PaymentAccountCount {
-    public let count: Int?
-}

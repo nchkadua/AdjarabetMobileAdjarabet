@@ -20,7 +20,7 @@ public protocol PaymentAccountReadableRepository {
      */
     typealias CurrentUserPaymentAccountsCountHandler = (Result<PaymentAccountCount, Error>) -> Void
     func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
-                                         completion: CurrentUserPaymentAccountsCountHandler)
+                                         completion: @escaping CurrentUserPaymentAccountsCountHandler)
 
     /**
      Returns payment accounts and their details
