@@ -104,6 +104,8 @@ public extension DependencyContainer {
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository.shared as TransactionHistoryRepository }
         Module { CoreApiAccessListRepository.shared as AccessListRepository }
+        Module { CoreApiGameLaunchRepository() as GameLaunchRepository }
+        Module { CoreApiGameLauchUrlRepository() as GameLauchUrlRepository }
     }
 
     static var factories = DependencyContainer {
@@ -145,5 +147,6 @@ public extension DependencyContainer {
         Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
         Module { DefaultDisplayTransactionHistoriesUseCase() as DisplayTransactionHistoriesUseCase }
         Module { DefaultAccessListUseCaseUseCase() as DisplayAccessListUseCase }
+        Module { DefaultGameLauncherUseCase() as GameLauncherUseCase }
     }
 }
