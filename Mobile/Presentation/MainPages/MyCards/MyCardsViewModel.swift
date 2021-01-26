@@ -36,6 +36,7 @@ public enum MyCardsViewModelRoute {
 public class DefaultMyCardsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<MyCardsViewModelOutputAction>()
     private let routeSubject = PublishSubject<MyCardsViewModelRoute>()
+    @Inject(from: .useCases) private var paymentAccountUseCase: PaymentAccountUseCase
     private static var myCardsTable = MyCardsTable()
     private var dataProvider: AppCellDataProviders = []
 }
@@ -47,6 +48,15 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
 
     public func viewDidLoad() {
         setupMyCardsTable()
+
+        paymentAccountUseCase.execute(params: .init()) { (result) in
+            switch result {
+            case .success(let paymentAccounts): // type - [PaymentAccountEntity]
+                print(paymentAccounts)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     private func setupMyCardsTable() {

@@ -140,6 +140,11 @@
 		C701C6DC25C034F000B059A6 /* GameLauchUrlRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */; };
 		C701C6E025C0350700B059A6 /* ServiceAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6DF25C0350600B059A6 /* ServiceAuthToken.swift */; };
 		C701C6E425C0351000B059A6 /* GameLaunchUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E325C0351000B059A6 /* GameLaunchUrlEntity.swift */; };
+		C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */; };
+		C701C71625C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */; };
+		C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */; };
+		C701C71F25C0597400B059A6 /* PaymentAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */; };
+		C701C72725C06C0600B059A6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C72625C06C0600B059A6 /* Status.swift */; };
 		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
 		C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487162571122E00E4A71D /* AccountInfoModel.swift */; };
 		C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */; };
@@ -690,6 +695,11 @@
 		C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLauchUrlRepository.swift; sourceTree = "<group>"; };
 		C701C6DF25C0350600B059A6 /* ServiceAuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAuthToken.swift; sourceTree = "<group>"; };
 		C701C6E325C0351000B059A6 /* GameLaunchUrlEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLaunchUrlEntity.swift; sourceTree = "<group>"; };
+		C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCount.swift; sourceTree = "<group>"; };
+		C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDataTransferResponse.swift; sourceTree = "<group>"; };
+		C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCountDataTransferResponse.swift; sourceTree = "<group>"; };
+		C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCase.swift; sourceTree = "<group>"; };
+		C701C72625C06C0600B059A6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C7036C33257CF42400AE7EB7 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		C71487162571122E00E4A71D /* AccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
 		C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecurityLevels.storyboard; sourceTree = "<group>"; };
@@ -1558,6 +1568,7 @@
 		C701C5FC25C009C900B059A6 /* Payment Account */ = {
 			isa = PBXGroup;
 			children = (
+				C701C71425C0517000B059A6 /* Responses */,
 				C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */,
 			);
 			path = "Payment Account";
@@ -1582,8 +1593,8 @@
 		C701C60325C00A9D00B059A6 /* Payment Account */ = {
 			isa = PBXGroup;
 			children = (
+				C701C6EF25C0500700B059A6 /* Entities */,
 				C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */,
-				C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */,
 			);
 			path = "Payment Account";
 			sourceTree = "<group>";
@@ -1680,6 +1691,32 @@
 				C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */,
 			);
 			path = LaunchUrl;
+			sourceTree = "<group>";
+		};
+		C701C6EF25C0500700B059A6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */,
+				C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C701C71425C0517000B059A6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */,
+				C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		C701C71D25C0595000B059A6 /* PaymentAccounts */ = {
+			isa = PBXGroup;
+			children = (
+				C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */,
+			);
+			path = PaymentAccounts;
 			sourceTree = "<group>";
 		};
 		C709D7FC259B8F4B0079E942 /* Authentication & Session Management */ = {
@@ -3201,6 +3238,7 @@
 				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
 				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
+				C701C71D25C0595000B059A6 /* PaymentAccounts */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
 				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
@@ -3482,6 +3520,7 @@
 		D8FBA4F62449BE6E0015C03C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C701C72625C06C0600B059A6 /* Status.swift */,
 				D8FBA4F72449BE7D0015C03C /* Language.swift */,
 				C747734D25B5C1030083C845 /* Currency.swift */,
 				C7B0DCED2575591100714B22 /* Country.swift */,
@@ -3869,6 +3908,7 @@
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
 				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
+				C701C72725C06C0600B059A6 /* Status.swift in Sources */,
 				76EFF7C72582383000898819 /* AccessHistoryCalendarViewModel.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */,
@@ -3914,6 +3954,7 @@
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				C701C6D025C033F400B059A6 /* GameLaunchUrlDataTransferResponse.swift in Sources */,
+				C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
@@ -3970,6 +4011,7 @@
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
 				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
+				C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */,
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
 				C701C6DC25C034F000B059A6 /* GameLauchUrlRepository.swift in Sources */,
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
@@ -4008,6 +4050,7 @@
 				CE55ED2B252721A2003E168F /* ProfileViewControllerFactory.swift in Sources */,
 				CE7A241125796AD500A94E89 /* Collection+Extension.swift in Sources */,
 				C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */,
+				C701C71F25C0597400B059A6 /* PaymentAccountUseCase.swift in Sources */,
 				7668C7AC2576785F0024DDE4 /* AccountParametersHeaderComponentViewModel.swift in Sources */,
 				CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */,
 				D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */,
@@ -4141,6 +4184,7 @@
 				76BDF47025760512007B27A7 /* AccountParametersComponentView.swift in Sources */,
 				D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */,
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
+				C701C71625C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */,
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,

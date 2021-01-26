@@ -1,5 +1,5 @@
 //
-//  PaymentAccountEntity.swift
+//  PaymentAccountCount.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 1/26/21.
@@ -8,4 +8,6 @@
 
 import Foundation
 
-public struct PaymentAccountEntity { }
+public struct PaymentAccountCount {
+    public let count: Int?
+}
