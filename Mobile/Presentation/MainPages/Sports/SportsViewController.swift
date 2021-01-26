@@ -58,13 +58,15 @@ public class SportsViewController: UIViewController {
 
     private func setupWebView() {
         webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.backgroundColor = .clear
+        webView.isOpaque = false
 
         webView.configuration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webView.configuration.setValue("TRUE", forKey: "allowUniversalAccessFromFileURLs")
         webView.configuration.preferences.javaScriptEnabled = true
 
         view.addSubview(webView)
-        webView.pin(to: view)
+        webView.pinSafely(to: view)
     }
 
     /*func unzip () -> URL {
