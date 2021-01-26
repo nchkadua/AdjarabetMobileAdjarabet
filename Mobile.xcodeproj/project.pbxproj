@@ -128,6 +128,9 @@
 		76EFF7C72582383000898819 /* AccessHistoryCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EFF7C22582383000898819 /* AccessHistoryCalendarViewModel.swift */; };
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
+		C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */; };
+		C701C60525C00AB200B059A6 /* PaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */; };
+		C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */; };
 		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
 		C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71487162571122E00E4A71D /* AccountInfoModel.swift */; };
 		C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */; };
@@ -666,6 +669,9 @@
 		8B0B491F828D91425F70E799 /* Pods-MobileTests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTests.release-production.xcconfig"; path = "Target Support Files/Pods-MobileTests/Pods-MobileTests.release-production.xcconfig"; sourceTree = "<group>"; };
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
+		C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPaymentAccountRepository.swift; sourceTree = "<group>"; };
+		C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountRepository.swift; sourceTree = "<group>"; };
+		C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountEntity.swift; sourceTree = "<group>"; };
 		C7036C33257CF42400AE7EB7 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		C71487162571122E00E4A71D /* AccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoModel.swift; sourceTree = "<group>"; };
 		C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecurityLevels.storyboard; sourceTree = "<group>"; };
@@ -1515,6 +1521,55 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C701C5F825C0097600B059A6 /* Payment Account Management */ = {
+			isa = PBXGroup;
+			children = (
+				C701C5FB25C0098E00B059A6 /* Payment Account Operations */,
+			);
+			path = "Payment Account Management";
+			sourceTree = "<group>";
+		};
+		C701C5FB25C0098E00B059A6 /* Payment Account Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C701C5FC25C009C900B059A6 /* Payment Account */,
+			);
+			path = "Payment Account Operations";
+			sourceTree = "<group>";
+		};
+		C701C5FC25C009C900B059A6 /* Payment Account */ = {
+			isa = PBXGroup;
+			children = (
+				C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */,
+			);
+			path = "Payment Account";
+			sourceTree = "<group>";
+		};
+		C701C60125C00A7700B059A6 /* Payment Account Management */ = {
+			isa = PBXGroup;
+			children = (
+				C701C60225C00A8A00B059A6 /* Payment Account Operations */,
+			);
+			path = "Payment Account Management";
+			sourceTree = "<group>";
+		};
+		C701C60225C00A8A00B059A6 /* Payment Account Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C701C60325C00A9D00B059A6 /* Payment Account */,
+			);
+			path = "Payment Account Operations";
+			sourceTree = "<group>";
+		};
+		C701C60325C00A9D00B059A6 /* Payment Account */ = {
+			isa = PBXGroup;
+			children = (
+				C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */,
+				C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */,
+			);
+			path = "Payment Account";
+			sourceTree = "<group>";
+		};
 		C709D7FC259B8F4B0079E942 /* Authentication & Session Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -2003,6 +2058,7 @@
 				C7EF9E47256FED2600D2908C /* User Profile Management */,
 				C7991273259BA3A300F64676 /* User Activity History & Transaction Management */,
 				C709D7FF259B902D0079E942 /* Balance Management */,
+				C701C5F825C0097600B059A6 /* Payment Account Management */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2031,6 +2087,7 @@
 				C7EF9E56256FF15400D2908C /* User Profile Management */,
 				C799127F259BA6A500F64676 /* User Activity History & Transaction Management */,
 				C799129B259BA8CB00F64676 /* Balance Management */,
+				C701C60125C00A7700B059A6 /* Payment Account Management */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -3702,6 +3759,7 @@
 				C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
 				D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */,
+				C701C60525C00AB200B059A6 /* PaymentAccountRepository.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
 				CE660C52254C3162002667D0 /* DepositInstructionView.swift in Sources */,
 				CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */,
@@ -3808,6 +3866,7 @@
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
 				76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
+				C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				C7C973AE2580EC990062C713 /* SecurityLevelTypeComponentView.swift in Sources */,
 				D8AC492724CFE3E0000B2D80 /* AppDelegateServiceProvider.swift in Sources */,
@@ -3847,6 +3906,7 @@
 				CEA77799256D4244008A4F6C /* MailChangeViewControllerFactory.swift in Sources */,
 				76BDF46D25760512007B27A7 /* AccountParametersTableViewCellDataProvider.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
+				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
