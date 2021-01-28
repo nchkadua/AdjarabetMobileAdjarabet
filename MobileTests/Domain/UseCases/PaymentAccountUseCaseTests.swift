@@ -11,36 +11,126 @@ import XCTest
 
 class PaymentAccountUseCaseTests: XCTestCase {
 
-    struct MockPaymentAccountRepository: PaymentAccountRepository {
-        func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
-                                             completion: @escaping CurrentUserPaymentAccountsCountHandler) {
-            completion(.success(.init(count: 0)))
-        }
+    private var useCase: PaymentAccountUseCase { DefaultPaymentAccountUseCase() }
 
-        func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
-                                        completion: @escaping CurrentUserPaymentAccountsHandler) {
-            completion(.success([]))
-        }
-    }
+    // helper error struct
+    struct EmptyError: Error { }
 
-    func testExample() throws {
+    func testSuccess() {
 
-        DependencyContainer.repositories.register { () -> [Module] in
-            return [ Module { MockPaymentAccountRepository() as PaymentAccountRepository } ]
-        }.build()
+        // create Mock repository
+        struct MockPaymentAccountRepository: PaymentAccountRepository {
+            func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
+                                                 completion: @escaping CurrentUserPaymentAccountsCountHandler) {
+                completion(.success(.init(count: 0)))
+            }
 
-        let useCase: PaymentAccountUseCase = DefaultPaymentAccountUseCase()
-
-        useCase.execute(params: .init()) { (result) in
-            switch result {
-            case .success(let paymentAccounts): // type - [PaymentAccountEntity]
-                print("Test Success:", paymentAccounts)
-            case .failure(let error):
-                print("Test Failure:", error)
+            func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
+                                            completion: @escaping CurrentUserPaymentAccountsHandler) {
+                completion(.success([]))
             }
         }
 
-        print("Assert")
-        XCTAssert(true)
+        // override repository in DependencyContainer
+        DependencyContainer.repositories.register { return [
+            Module { MockPaymentAccountRepository() as PaymentAccountRepository }
+        ] }.build()
+
+        // test
+        useCase.execute(params: .init()) { (result) in
+            switch result {
+            case .success(let paymentAccounts):
+                XCTAssert(paymentAccounts.isEmpty)
+            case .failure:
+                XCTAssert(false)
+            }
+        }
+    }
+
+    func testCountFailure() {
+
+        // create Mock repository
+        struct MockPaymentAccountRepository: PaymentAccountRepository {
+            func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
+                                                 completion: @escaping CurrentUserPaymentAccountsCountHandler) {
+                completion(.failure(EmptyError()))
+            }
+
+            func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
+                                            completion: @escaping CurrentUserPaymentAccountsHandler) {
+                completion(.success([]))
+            }
+        }
+
+        // override repository in DependencyContainer
+        DependencyContainer.repositories.register { return [
+            Module { MockPaymentAccountRepository() as PaymentAccountRepository }
+        ] }.build()
+
+        // test
+        useCase.execute(params: .init()) { (result) in
+            switch result {
+            case .success: XCTAssert(false)
+            case .failure: XCTAssert(true)
+            }
+        }
+    }
+
+    func testPaymentAccountsFailure() {
+
+        // create Mock repository
+        struct MockPaymentAccountRepository: PaymentAccountRepository {
+            func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
+                                                 completion: @escaping CurrentUserPaymentAccountsCountHandler) {
+                completion(.success(.init(count: 0)))
+            }
+
+            func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
+                                            completion: @escaping CurrentUserPaymentAccountsHandler) {
+                completion(.failure(EmptyError()))
+            }
+        }
+
+        // override repository in DependencyContainer
+        DependencyContainer.repositories.register { return [
+            Module { MockPaymentAccountRepository() as PaymentAccountRepository }
+        ] }.build()
+
+        // test
+        useCase.execute(params: .init()) { (result) in
+            switch result {
+            case .success: XCTAssert(false)
+            case .failure: XCTAssert(true)
+            }
+        }
+    }
+
+    func testCountAndPaymentAccountsFailure() {
+
+        // create Mock repository
+        struct MockPaymentAccountRepository: PaymentAccountRepository {
+            func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
+                                                 completion: @escaping CurrentUserPaymentAccountsCountHandler) {
+                completion(.failure(EmptyError()))
+            }
+
+            func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
+                                            completion: @escaping CurrentUserPaymentAccountsHandler) {
+                completion(.failure(EmptyError()))
+            }
+        }
+
+        // override repository in DependencyContainer
+        DependencyContainer.repositories.register { return [
+            Module { MockPaymentAccountRepository() as PaymentAccountRepository }
+        ] }.build()
+
+        // test
+        useCase.execute(params: .init()) { (result) in
+            switch result {
+            case .success: XCTAssert(false)
+            case .failure: XCTAssert(true)
+            }
+        }
     }
 }
