@@ -315,6 +315,9 @@
 		CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */; };
 		CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB06F257915100024D213 /* AgreementComponentView.xib */; };
 		CEBBB0742579151A0024D213 /* AgreementComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */; };
+		CEC9A34525C0970C00BE853D /* ODRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A34425C0970C00BE853D /* ODRManager.swift */; };
+		CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */; };
+		CEC9A37225C1A93300BE853D /* GameBundle.zip in Resources */ = {isa = PBXBuildFile; fileRef = CEC9A37125C1A93300BE853D /* GameBundle.zip */; settings = {ASSET_TAGS = (EGT, ); }; };
 		CECCE37E254EE7D4005CC660 /* WithdrawTermsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECCE37D254EE7D4005CC660 /* WithdrawTermsView.xib */; };
 		CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE381254EE7E0005CC660 /* WithdrawTermsView.swift */; };
 		CECCE3AE254EFA7B005CC660 /* DepositInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECCE3AD254EFA7B005CC660 /* DepositInstructionView.xib */; };
@@ -872,6 +875,9 @@
 		CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentView.swift; sourceTree = "<group>"; };
 		CEBBB06F257915100024D213 /* AgreementComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementComponentView.xib; sourceTree = "<group>"; };
 		CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentViewModel.swift; sourceTree = "<group>"; };
+		CEC9A34425C0970C00BE853D /* ODRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODRManager.swift; sourceTree = "<group>"; };
+		CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtractor.swift; sourceTree = "<group>"; };
+		CEC9A37125C1A93300BE853D /* GameBundle.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = GameBundle.zip; sourceTree = "<group>"; };
 		CECCE37D254EE7D4005CC660 /* WithdrawTermsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawTermsView.xib; sourceTree = "<group>"; };
 		CECCE381254EE7E0005CC660 /* WithdrawTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawTermsView.swift; sourceTree = "<group>"; };
 		CECCE3AD254EFA7B005CC660 /* DepositInstructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DepositInstructionView.xib; sourceTree = "<group>"; };
@@ -2689,6 +2695,40 @@
 			path = Agreement;
 			sourceTree = "<group>";
 		};
+		CEC9A34225C096E800BE853D /* GameLaunchManager */ = {
+			isa = PBXGroup;
+			children = (
+				CEC9A37525C1A96800BE853D /* Resources */,
+				CEC9A34325C0970100BE853D /* ODR */,
+			);
+			path = GameLaunchManager;
+			sourceTree = "<group>";
+		};
+		CEC9A34325C0970100BE853D /* ODR */ = {
+			isa = PBXGroup;
+			children = (
+				CEC9A34425C0970C00BE853D /* ODRManager.swift */,
+				CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */,
+			);
+			path = ODR;
+			sourceTree = "<group>";
+		};
+		CEC9A37525C1A96800BE853D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEC9A37625C1A96E00BE853D /* EGT */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CEC9A37625C1A96E00BE853D /* EGT */ = {
+			isa = PBXGroup;
+			children = (
+				CEC9A37125C1A93300BE853D /* GameBundle.zip */,
+			);
+			path = EGT;
+			sourceTree = "<group>";
+		};
 		CECCE37C254EE7B9005CC660 /* Terms */ = {
 			isa = PBXGroup;
 			children = (
@@ -3346,6 +3386,7 @@
 				D8A47DE824335DD70077AA8E /* Domain */,
 				D8A47DE924335DDE0077AA8E /* Presentation */,
 				D8A47DEA24335DE40077AA8E /* Data */,
+				CEC9A34225C096E800BE853D /* GameLaunchManager */,
 			);
 			path = Mobile;
 			sourceTree = "<group>";
@@ -3565,6 +3606,7 @@
 			buildConfigurationList = D807849E2444770F00003892 /* Build configuration list for PBXNativeTarget "MobileTests" */;
 			buildPhases = (
 				70C09300C21AF5BD463E1110 /* [CP] Check Pods Manifest.lock */,
+				3A2A858FECD99DDD4317F410 /* [CP] Prepare Artifacts */,
 				D80784932444770F00003892 /* Sources */,
 				D80784942444770F00003892 /* Frameworks */,
 				D80784952444770F00003892 /* Resources */,
@@ -3586,6 +3628,7 @@
 			buildPhases = (
 				E851500A85D349E8F223FF6F /* [CP] Check Pods Manifest.lock */,
 				D85C9C1324336B6F00F1D4FE /* RSwift */,
+				BB4E37161D06D1EB5B907702 /* [CP] Prepare Artifacts */,
 				D8A47DC724335B4B0077AA8E /* Sources */,
 				D8A47DC824335B4B0077AA8E /* Frameworks */,
 				D8A47DC924335B4B0077AA8E /* Resources */,
@@ -3607,6 +3650,9 @@
 		D8A47DC324335B4B0077AA8E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					EGT,
+				);
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = Adjarabet;
@@ -3715,6 +3761,7 @@
 				D853499724D1E1C100958B0E /* GoogleService-Info.plist in Resources */,
 				CEE537EF254ACA0500EDE6C0 /* CashFlow.storyboard in Resources */,
 				CEF368682549C368009FD456 /* Withdraw.storyboard in Resources */,
+				CEC9A37225C1A93300BE853D /* GameBundle.zip in Resources */,
 				CEF368562549C32E009FD456 /* Deposit.storyboard in Resources */,
 				CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */,
 				CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */,
@@ -3802,6 +3849,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3A2A858FECD99DDD4317F410 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileTests/Pods-MobileTests-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileTests/Pods-MobileTests-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileTests/Pods-MobileTests-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		70C09300C21AF5BD463E1110 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3822,6 +3886,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB4E37161D06D1EB5B907702 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D853499824D1E26D00958B0E /* FirebaseCrashlytics */ = {
@@ -4041,6 +4122,7 @@
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */,
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
+				CEC9A34525C0970C00BE853D /* ODRManager.swift in Sources */,
 				C701C6DC25C034F000B059A6 /* GameLauchUrlRepository.swift in Sources */,
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
 				76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */,
@@ -4097,6 +4179,7 @@
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
+				CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */,
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,

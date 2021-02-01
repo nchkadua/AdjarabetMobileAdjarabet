@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+
 /*import GCDWebServer
 import Zip*/
 
@@ -28,6 +29,21 @@ public class SportsViewController: UIViewController {
         setup()
 //        initWebServer()
         getLaunchUrl()
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        downloadResources()
+    }
+    
+    // MARK: ODR
+    private func downloadResources() {
+        let egtTag = "EGT"
+        ODRManager.shared.loadResourcesWithTags([egtTag], completion: { result in
+            FileExtractor.shared.extractFileWithName("GameBundle", completion: { result in
+                //To Do Giorgi
+            })
+        })
     }
 
     // MARK: Setup methods

@@ -864,7 +864,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 29 files.
+  /// This `R.file` struct is generated, and contains static references to 30 files.
   struct file {
     /// Resource file `FiraGO-Bold.ttf`.
     static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
@@ -896,6 +896,8 @@ struct R: Rswift.Validatable {
     static let firaGOTwoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Two", pathExtension: "ttf")
     /// Resource file `FiraGO-UltraLight.ttf`.
     static let firaGOUltraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-UltraLight", pathExtension: "ttf")
+    /// Resource file `GameBundle.zip`.
+    static let gameBundleZip = Rswift.FileResource(bundle: R.hostingBundle, name: "GameBundle", pathExtension: "zip")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `NotoSansArmenian-Bold.ttf`.
@@ -1012,6 +1014,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "FiraGO-UltraLight", withExtension: "ttf")`
     static func firaGOUltraLightTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.firaGOUltraLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GameBundle", withExtension: "zip")`
+    static func gameBundleZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gameBundleZip
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -11887,8 +11895,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
