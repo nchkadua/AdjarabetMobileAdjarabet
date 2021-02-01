@@ -10,8 +10,15 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        window?.rootViewController = DefaultLoginViewControllerFactory().make(params: LoginViewModelParams(showBiometryLoginAutomatically: true)).wrap(in: ABNavigationController.self)
+        guard let scene = (scene as? UIWindowScene) else { return }
+    
+        let window = UIWindow(windowScene: scene)
+        self.window = window
+        let viewModelParams = LoginViewModelParams(showBiometryLoginAutomatically: true)
+        let vc = DefaultLoginViewControllerFactory().make(params: viewModelParams)
+        let wrappedVC = vc.wrap(in: ABNavigationController.self)
+        window.rootViewController = wrappedVC
     }
 }
