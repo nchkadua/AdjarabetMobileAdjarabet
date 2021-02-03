@@ -18,8 +18,6 @@ struct MyCardsTable {
     var dataSource: [MyCardable] = []
     init() {
         dataSource = [
-            dummyVisaCard,
-            dummyMCCard,
             dummyAddCards,
             dummyVideoCards,
         ]

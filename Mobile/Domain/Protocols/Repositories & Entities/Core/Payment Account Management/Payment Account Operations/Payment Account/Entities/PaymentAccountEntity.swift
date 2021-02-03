@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct PaymentAccountEntity {
+public struct PaymentAccountEntity: MyCardable {
     public let id: Int64?
     public let status: Status?
     public let isVerified: Bool?

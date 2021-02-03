@@ -45,45 +45,62 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
     
     public var action: Observable<MyCardsViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<MyCardsViewModelRoute> { routeSubject.asObserver() }
-
+    
     public func viewDidLoad() {
-        setupMyCardsTable()
-
-        paymentAccountUseCase.execute(params: .init()) { (result) in
+        fetchMyCards { result in
+            switch result {
+            case .success(_):
+                self.setupStaticCards()
+                self.actionSubject.onNext(.initialize(self.dataProvider.makeList()))
+            case .failure(_):
+                self.setupStaticCards()
+                self.actionSubject.onNext(.initialize(self.dataProvider.makeList()))
+            }
+        }
+    }
+    
+    private func fetchMyCards(completion: @escaping (Result<Bool, Error>) -> Void) {
+        paymentAccountUseCase.execute(params: .init()) { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
             case .success(let paymentAccounts): // type - [PaymentAccountEntity]
-                print(paymentAccounts)
+                var componentViewModel: AppCellDataProvider?
+                paymentAccounts.forEach { myCard in
+                    if let providerName = myCard.providerName, let dateCreated = myCard.dateCreated, let accountVisual = myCard.accountVisual {
+                        componentViewModel = DefaultMyCardComponentViewModel(params: .init(bankIcon: nil,
+                                                                                           bankAlias: providerName,
+                                                                                           dateAdded: dateCreated,
+                                                                                           cardNumber: accountVisual,
+                                                                                           issuerIcon: nil))
+                        self.subscribe(to: componentViewModel as! MyCardComponentViewModel)
+                    }
+                    
+                    if let componentViewModel = componentViewModel {
+                        self.dataProvider.append(componentViewModel)
+                    }
+                }
+                completion(.success(true))
             case .failure(let error):
+                self.setupStaticCards()
                 print(error)
             }
         }
     }
-
-    private func setupMyCardsTable() {
+    
+    private func setupStaticCards() {
+        var componentViewModel: AppCellDataProvider?
         DefaultMyCardsViewModel.myCardsTable.dataSource.forEach {
-            var componentViewModel: AppCellDataProvider?
-            if let myCard = $0 as? MyCard {
-                let bankIcon = iconForBank(myCard.bank)
-                let issuerIcon = iconForIssuer(myCard.issuer)
-                let bankAlias = aliasForBank(myCard.bank)
-                componentViewModel = DefaultMyCardComponentViewModel(params: .init(bankIcon: bankIcon,
-                                                                                          bankAlias: bankAlias,
-                                                                                          dateAdded: myCard.dateAdded,
-                                                                                          cardNumber: myCard.number,
-                                                                                          issuerIcon: issuerIcon))
-                subscribe(to: componentViewModel as! MyCardComponentViewModel)
-            } else if $0 is AddCard {
+             if $0 is AddCard {
                 componentViewModel = DefaultAddMyCardComponentViewModel()
             } else if $0 is VideoCard {
                 componentViewModel = DefaultVideoCardComponentViewModel(params: .init())
             }
             if let componentViewModel = componentViewModel {
-                dataProvider.append(componentViewModel)
+                self.dataProvider.append(componentViewModel)
             }
         }
-        actionSubject.onNext(.initialize(dataProvider.makeList()))
     }
-    
+
     private func subscribe(to myCardComponent: MyCardComponentViewModel) {
         myCardComponent.action.subscribe(onNext: { [weak self] action in
             guard let self = self else { return }
@@ -97,9 +114,11 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
     }
     
     public func deleteCell(at index: Int) {
-        DefaultMyCardsViewModel.myCardsTable.dataSource.remove(at: index)
+        
     }
-
+    
+    // MARK: Helper methods for future
+    
     private func aliasForBank(_ bank: MyCard.Bank) -> String {
         var alias = ""
         switch bank {
@@ -112,7 +131,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         }
         return alias
     }
-
+    
     private func iconForBank(_ bank: MyCard.Bank) -> UIImage? {
         var icon: UIImage?
         switch bank {
@@ -120,10 +139,10 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         case .tbc: icon = R.image.myCards.tbc()
         case .other: icon = nil
         }
-
+        
         return icon
     }
-
+    
     private func iconForIssuer(_ issuer: MyCard.Issuer) -> UIImage? {
         var icon: UIImage?
         switch issuer {
@@ -133,7 +152,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         }
         return icon
     }
-
+    
     public func addCardsClicked() {
         
     }

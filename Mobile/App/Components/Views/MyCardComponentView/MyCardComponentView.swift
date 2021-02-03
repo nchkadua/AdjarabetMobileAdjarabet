@@ -69,9 +69,13 @@ class MyCardComponentView: UIView {
                      _ issuerIcon: UIImage?) {
         bankImageView.image = bankIcon
         bankAliasLbl.text = bankAlias
-        cardNumberLbl.text = cardNumber
+        cardNumberLbl.text = formatCardNumber(cardNumber)
         issuerImageView.image = issuerIcon
         dateAddedLbl.text = cardDateFormatter.string(from: dateAdded)
+    }
+    
+    private func formatCardNumber(_ number: String) -> String {
+        return number.replacingOccurrences(of: "[*x]", with: "•", options: .regularExpression, range: nil)
     }
 }
 
