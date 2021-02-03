@@ -14,7 +14,7 @@ def pods
 
   pod 'SwiftLint', '0.39.1'
 
-  pod 'ZIPFoundation'
+  # pod 'ZIPFoundation'
   
   pod 'Firebase/Core'
   pod 'Firebase/Crashlytics'

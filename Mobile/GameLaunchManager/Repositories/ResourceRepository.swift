@@ -1,0 +1,58 @@
+//
+//  ResourceRepository.swift
+//  Mobile
+//
+//  Created by Giorgi Kratsashvili on 2/3/21.
+//  Copyright © 2021 Adjarabet. All rights reserved.
+//
+
+import Foundation
+
+/**
+ Repository for managing Resources
+ */
+protocol ResourceRepository {
+    /**
+     Load Game Bundle specified by Game Identifier
+     */
+    // output
+    typealias LoadHandler = (Result<Void, Error>) -> Void
+    // input
+    func load(identifier: GameIdentifier, handler: @escaping LoadHandler)
+
+    /**
+     Extracts already loaded Game Bundle specified by Game Identifier
+     Returns Path of extracted archive (prefix of Final URL)
+     */
+    // output
+    typealias PathHandler = (Result<String, Error>) -> Void
+    // input
+    func extract(identifier: GameIdentifier, handler: @escaping PathHandler)
+}
+
+// MARK: - Default Implementation of ResourceRepository
+struct DefaultResourceRepository: ResourceRepository {
+
+    let odrManager = ODRManager.shared
+    let fileExtractor = FileExtractor.shared
+
+    func load(identifier: GameIdentifier, handler: @escaping LoadHandler) {
+        let tag = identifier.description.tag
+        odrManager.loadResourcesWithTags([tag]) { (result) in
+            switch result {
+            case .success: handler(.success(()))
+            case .failure(let error): handler(.failure(error))
+            }
+        }
+    }
+
+    func extract(identifier: GameIdentifier, handler: @escaping PathHandler) {
+        fileExtractor.extractFileWithName("GameBundle") { (result) in
+            switch result {
+            case .success(let path): handler(.success(path as String))
+            case .failure /* (let errorMsg) */ :
+                {}() // TODO: error handling
+            }
+        }
+    }
+}

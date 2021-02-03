@@ -172,6 +172,11 @@
 		C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */; };
 		C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */; };
 		C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */; };
+		C7C35FD925C93C0000ADCBB6 /* GameLaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C35FD825C93C0000ADCBB6 /* GameLaunchInteractor.swift */; };
+		C7C35FE025C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C35FDF25C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift */; };
+		C7C35FE525C9B8B100ADCBB6 /* LaunchUrlRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C35FE425C9B8B100ADCBB6 /* LaunchUrlRepository.swift */; };
+		C7C35FF325C9E79800ADCBB6 /* ResourceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C35FF225C9E79800ADCBB6 /* ResourceRepository.swift */; };
+		C7C3600425CAA6D600ADCBB6 /* GameIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3600325CAA6D600ADCBB6 /* GameIdentifier.swift */; };
 		C7C973292580D9550062C713 /* SecurityLevelComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C973232580D9550062C713 /* SecurityLevelComponentView.xib */; };
 		C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C973242580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift */; };
 		C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C973252580D9550062C713 /* SecurityLevelTableViewCell.xib */; };
@@ -732,6 +737,11 @@
 		C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewModel.swift; sourceTree = "<group>"; };
 		C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = P2PTransferView.storyboard; sourceTree = "<group>"; };
 		C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewControllerFactory.swift; sourceTree = "<group>"; };
+		C7C35FD825C93C0000ADCBB6 /* GameLaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLaunchInteractor.swift; sourceTree = "<group>"; };
+		C7C35FDF25C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartGameLaunchUseCase.swift; sourceTree = "<group>"; };
+		C7C35FE425C9B8B100ADCBB6 /* LaunchUrlRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUrlRepository.swift; sourceTree = "<group>"; };
+		C7C35FF225C9E79800ADCBB6 /* ResourceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRepository.swift; sourceTree = "<group>"; };
+		C7C3600325CAA6D600ADCBB6 /* GameIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIdentifier.swift; sourceTree = "<group>"; };
 		C7C973232580D9550062C713 /* SecurityLevelComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityLevelComponentView.xib; sourceTree = "<group>"; };
 		C7C973242580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		C7C973252580D9550062C713 /* SecurityLevelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityLevelTableViewCell.xib; sourceTree = "<group>"; };
@@ -1477,7 +1487,6 @@
 		76DCF66E25B80EEC00150EE1 /* MyCards */ = {
 			isa = PBXGroup;
 			children = (
-				76DCF68C25B81F6700150EE1 /* MockData */,
 				76DCF67B25B8148300150EE1 /* Model */,
 				76DCF66F25B80FB500150EE1 /* MyCards.storyboard */,
 				76DCF67025B80FB500150EE1 /* MyCardsNavigator.swift */,
@@ -1497,13 +1506,6 @@
 				76DCF69925B823F000150EE1 /* VideoCard.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		76DCF68C25B81F6700150EE1 /* MockData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MockData;
 			sourceTree = "<group>";
 		};
 		76DCF6A825B825FC00150EE1 /* MyCardComponentView */ = {
@@ -2121,6 +2123,39 @@
 			path = P2PTransfer;
 			sourceTree = "<group>";
 		};
+		C7C35FD725C93BD100ADCBB6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C7C35FD825C93C0000ADCBB6 /* GameLaunchInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C7C35FDE25C95D4F00ADCBB6 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				C7C35FDF25C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		C7C35FE325C9B7D400ADCBB6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C7C35FE425C9B8B100ADCBB6 /* LaunchUrlRepository.swift */,
+				C7C35FF225C9E79800ADCBB6 /* ResourceRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C7C35FFC25CA97C300ADCBB6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C7C3600325CAA6D600ADCBB6 /* GameIdentifier.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		C7C973202580D8C60062C713 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2698,6 +2733,10 @@
 		CEC9A34225C096E800BE853D /* GameLaunchManager */ = {
 			isa = PBXGroup;
 			children = (
+				C7C35FD725C93BD100ADCBB6 /* Interactor */,
+				C7C35FDE25C95D4F00ADCBB6 /* UseCase */,
+				C7C35FE325C9B7D400ADCBB6 /* Repositories */,
+				C7C35FFC25CA97C300ADCBB6 /* Entities */,
 				CEC9A37525C1A96800BE853D /* Resources */,
 				CEC9A34325C0970100BE853D /* ODR */,
 			);
@@ -3606,7 +3645,6 @@
 			buildConfigurationList = D807849E2444770F00003892 /* Build configuration list for PBXNativeTarget "MobileTests" */;
 			buildPhases = (
 				70C09300C21AF5BD463E1110 /* [CP] Check Pods Manifest.lock */,
-				3A2A858FECD99DDD4317F410 /* [CP] Prepare Artifacts */,
 				D80784932444770F00003892 /* Sources */,
 				D80784942444770F00003892 /* Frameworks */,
 				D80784952444770F00003892 /* Resources */,
@@ -3628,7 +3666,6 @@
 			buildPhases = (
 				E851500A85D349E8F223FF6F /* [CP] Check Pods Manifest.lock */,
 				D85C9C1324336B6F00F1D4FE /* RSwift */,
-				BB4E37161D06D1EB5B907702 /* [CP] Prepare Artifacts */,
 				D8A47DC724335B4B0077AA8E /* Sources */,
 				D8A47DC824335B4B0077AA8E /* Frameworks */,
 				D8A47DC924335B4B0077AA8E /* Resources */,
@@ -3849,23 +3886,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3A2A858FECD99DDD4317F410 /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileTests/Pods-MobileTests-artifacts-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileTests/Pods-MobileTests-artifacts-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileTests/Pods-MobileTests-artifacts.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		70C09300C21AF5BD463E1110 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3886,23 +3906,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB4E37161D06D1EB5B907702 /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-artifacts-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-artifacts-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile/Pods-Mobile-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D853499824D1E26D00958B0E /* FirebaseCrashlytics */ = {
@@ -3939,7 +3942,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/Mobile/App/Resources/R.generated.swift,
+				"$SRCROOT/Mobile/App/Resources/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4050,6 +4053,7 @@
 				CEF3684E2549C325009FD456 /* DepositNavigator.swift in Sources */,
 				C701C6E425C0351000B059A6 /* GameLaunchUrlEntity.swift in Sources */,
 				CEA77793256D4237008A4F6C /* MailChangeViewModel.swift in Sources */,
+				C7C35FE525C9B8B100ADCBB6 /* LaunchUrlRepository.swift in Sources */,
 				CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */,
 				CEE537E9254AC9FD00EDE6C0 /* CashFlowNavigator.swift in Sources */,
 				C747734E25B5C1030083C845 /* Currency.swift in Sources */,
@@ -4058,6 +4062,7 @@
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */,
+				C7C3600425CAA6D600ADCBB6 /* GameIdentifier.swift in Sources */,
 				CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */,
 				76DCF6B225B8262300150EE1 /* MyCardComponentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
@@ -4148,6 +4153,7 @@
 				7668C7AE2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.swift in Sources */,
 				C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */,
 				CEE537EA254AC9FD00EDE6C0 /* CashFlowViewController.swift in Sources */,
+				C7C35FD925C93C0000ADCBB6 /* GameLaunchInteractor.swift in Sources */,
 				76404F0D257625F900D14E0C /* AccountSecurityMessagesComponentView.swift in Sources */,
 				CEF3685A2549C33E009FD456 /* DepositViewControllerFactory.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
@@ -4160,6 +4166,7 @@
 				CE55ED2B252721A2003E168F /* ProfileViewControllerFactory.swift in Sources */,
 				CE7A241125796AD500A94E89 /* Collection+Extension.swift in Sources */,
 				C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */,
+				C7C35FF325C9E79800ADCBB6 /* ResourceRepository.swift in Sources */,
 				C701C71F25C0597400B059A6 /* PaymentAccountUseCase.swift in Sources */,
 				7668C7AC2576785F0024DDE4 /* AccountParametersHeaderComponentViewModel.swift in Sources */,
 				CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */,
@@ -4180,6 +4187,7 @@
 				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */,
+				C7C35FE025C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift in Sources */,
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,

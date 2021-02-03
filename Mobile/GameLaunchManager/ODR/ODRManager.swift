@@ -27,7 +27,7 @@ class ODRManager {
         resourceRequest.conditionallyBeginAccessingResources(completionHandler: { (resourcesAvailable: Bool) -> Void in
             
             if resourcesAvailable {
-//                print("odrResources already available")
+                print("odrResources already available")
                 completion(.success(true))
             } else {
                 
@@ -36,7 +36,7 @@ class ODRManager {
                         completion(.failure(error as NSError))
                         print("Error: \(error)")
                     } else {
-//                        print("odrResources loading")
+                        print("odrResources loading")
                         completion(.success(true))
                     }
                 })
