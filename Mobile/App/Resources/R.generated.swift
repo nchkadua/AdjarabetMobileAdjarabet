@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 31 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 30 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -106,8 +106,6 @@ struct R: Rswift.Validatable {
     static let addressChange = _R.storyboard.addressChange()
     /// Storyboard `BiometricSettingsView`.
     static let biometricSettingsView = _R.storyboard.biometricSettingsView()
-    /// Storyboard `CardInfo`.
-    static let cardInfo = _R.storyboard.cardInfo()
     /// Storyboard `CashFlow`.
     static let cashFlow = _R.storyboard.cashFlow()
     /// Storyboard `Deposit`.
@@ -201,13 +199,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "BiometricSettingsView", bundle: ...)`
     static func biometricSettingsView(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.biometricSettingsView)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "CardInfo", bundle: ...)`
-    static func cardInfo(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.cardInfo)
     }
     #endif
 
@@ -2298,7 +2289,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 63 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 62 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -2334,8 +2325,6 @@ struct R: Rswift.Validatable {
     static let calendarComponentView = _R.nib._CalendarComponentView()
     /// Nib `CashFlowTabComponentView`.
     static let cashFlowTabComponentView = _R.nib._CashFlowTabComponentView()
-    /// Nib `CreditCardComponentView`.
-    static let creditCardComponentView = _R.nib._CreditCardComponentView()
     /// Nib `DateHeaderCell`.
     static let dateHeaderCell = _R.nib._DateHeaderCell()
     /// Nib `DateHeaderComponentView`.
@@ -2560,14 +2549,6 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.cashFlowTabComponentView) instead")
     static func cashFlowTabComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.cashFlowTabComponentView)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "CreditCardComponentView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.creditCardComponentView) instead")
-    static func creditCardComponentView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.creditCardComponentView)
     }
     #endif
 
@@ -2997,10 +2978,6 @@ struct R: Rswift.Validatable {
 
     static func cashFlowTabComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.cashFlowTabComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-
-    static func creditCardComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.creditCardComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func dateHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DateHeaderCell? {
@@ -11701,7 +11678,6 @@ struct _R: Rswift.Validatable {
       try _BalanceComponentView.validate()
       try _CalendarComponentView.validate()
       try _CashFlowTabComponentView.validate()
-      try _CreditCardComponentView.validate()
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
       try _ProfileInfoComponentView.validate()
@@ -11915,23 +11891,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/QuickAction/withdraw", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/withdraw' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _CreditCardComponentView: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "CreditCardComponentView"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "CardManagement/card_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CardManagement/card_back' is used in nib 'CreditCardComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12498,9 +12457,6 @@ struct _R: Rswift.Validatable {
       try biometricSettingsView.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try cardInfo.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
       try cashFlow.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -12706,26 +12662,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.biometricSettingsView().biometricSettingsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'biometricSettingsViewController' could not be loaded from storyboard 'BiometricSettingsView' as 'BiometricSettingsViewController'.") }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct cardInfo: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let cardInfoViewController = StoryboardViewControllerResource<CardInfoViewController>(identifier: "CardInfoViewController")
-      let name = "CardInfo"
-
-      func cardInfoViewController(_: Void = ()) -> CardInfoViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: cardInfoViewController)
-      }
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-        if _R.storyboard.cardInfo().cardInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'cardInfoViewController' could not be loaded from storyboard 'CardInfo' as 'CardInfoViewController'.") }
       }
 
       fileprivate init() {}

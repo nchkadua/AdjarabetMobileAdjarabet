@@ -121,7 +121,6 @@ public class AddCardViewController: ABViewController {
 
     @objc private func continueButtonDidTap() {
         closeKeyboard()
-        navigator.navigate(to: .cardInfo(params: CardInfoViewModelParams(amount: enteredAmount)), animated: true)
     }
 
     // MARK: Action Methods

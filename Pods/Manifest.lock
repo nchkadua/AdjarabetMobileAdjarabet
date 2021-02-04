@@ -119,6 +119,7 @@ PODS:
   - SwiftKeychainWrapper (4.0.1)
   - SwiftLint (0.39.1)
   - UAParserSwift (1.2.1)
+  - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -136,6 +137,7 @@ DEPENDENCIES:
   - SwiftKeychainWrapper
   - SwiftLint (= 0.39.1)
   - UAParserSwift
+  - ZIPFoundation
 
 SPEC REPOS:
   trunk:
@@ -169,6 +171,7 @@ SPEC REPOS:
     - SwiftKeychainWrapper
     - SwiftLint
     - UAParserSwift
+    - ZIPFoundation
 
 SPEC CHECKSUMS:
   Firebase: 50be68416f50eb4eb2ecb0e78acab9a051ef95df
@@ -201,7 +204,8 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   UAParserSwift: dc5e2717debc6e78a40487148d29649a0b311caf
+  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 1b96696ad7baa01032c1f25b7d82641f0f1270f9
+PODFILE CHECKSUM: ba265f98dd4ac0e6facaae2312aade4ca49843a1
 
 COCOAPODS: 1.10.1
