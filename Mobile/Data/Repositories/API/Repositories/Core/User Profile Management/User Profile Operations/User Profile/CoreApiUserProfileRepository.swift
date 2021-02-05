@@ -8,29 +8,14 @@
 
 import Foundation
 
-public class CoreApiUserProfileRepository {
-    public static let shared = CoreApiUserProfileRepository()
-    @Inject private var userSession: UserSessionServices
-    @Inject private var dataTransferService: DataTransferService
-    private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
-}
+public struct CoreApiUserProfileRepository: CoreApiRepository { }
 
 extension CoreApiUserProfileRepository: UserProfileRepository {
+
     public func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler) {
-        guard let sessionId = userSession.sessionId,
-              let userId = userSession.userId
-        else {
-            // TODO: completion(.failure("no session id or user id found"))
-            return
+        performTask(expecting: UserInfoDataTransferResponse.self, completion: completion) { (requestBuilder) in
+            return requestBuilder
+                .setBody(key: .req, value: "getUserInfo")
         }
-
-        let request = requestBuilder
-            .setHeader(key: .cookie, value: sessionId)
-            .setBody(key: .req, value: "getUserInfo")
-            .setBody(key: .userId, value: "\(userId)")
-            .build()
-
-        dataTransferService.performTask(expecting: UserInfoDataTransferResponse.self,
-                                        request: request, respondOnQueue: .main, completion: completion)
     }
 }

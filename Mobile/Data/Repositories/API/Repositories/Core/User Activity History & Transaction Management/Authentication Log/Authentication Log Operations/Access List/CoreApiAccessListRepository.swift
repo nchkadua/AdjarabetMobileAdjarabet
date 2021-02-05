@@ -8,32 +8,16 @@
 
 import Foundation
 
-public class CoreApiAccessListRepository {
-    public static let shared = CoreApiAccessListRepository()
-    @Inject public var userSession: UserSessionServices
-    @Inject public var dataTransferService: DataTransferService
-    private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
-    private init() {}
-}
+public struct CoreApiAccessListRepository: CoreApiRepository { }
 
 extension CoreApiAccessListRepository: AccessListRepository {
+
     public func getAccessList(params: GetAccessListParams, completion: @escaping GetAccessListCompletion) {
-        guard let sessionId = userSession.sessionId,
-              let userId = userSession.userId
-        else {
-            // TODO: completion(.failure("no session id or user id found"))
-            return
+        performTask(expecting: GetAccessListResponse.self, completion: completion) { (requestBuilder) in
+            return requestBuilder
+                .setBody(key: .req, value: "getAccessList")
+                .setBody(key: .fromDate, value: params.fromDate)
+                .setBody(key: .toDate, value: params.toDate)
         }
-
-        let request = requestBuilder
-            .setHeader(key: .cookie, value: sessionId)
-            .setBody(key: .req, value: "getAccessList")
-            .setBody(key: .userId, value: "\(userId)")
-            .setBody(key: .fromDate, value: params.fromDate)
-            .setBody(key: .toDate, value: params.toDate)
-            .build()
-
-        dataTransferService.performTask(expecting: GetAccessListResponse.self,
-                                        request: request, respondOnQueue: .main, completion: completion)
     }
 }

@@ -22,7 +22,7 @@ struct PaymentAccountCountDataTransferResponse: DataTransferResponse {
 
     typealias Entity = PaymentAccountCount
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
         Entity(count: body.count)
     }
 }

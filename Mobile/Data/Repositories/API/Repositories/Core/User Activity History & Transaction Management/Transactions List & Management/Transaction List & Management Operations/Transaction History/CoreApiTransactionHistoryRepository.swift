@@ -8,42 +8,28 @@
 
 import Foundation
 
-public class CoreApiTransactionHistoryRepository {
-    public static let shared = CoreApiTransactionHistoryRepository()
-    @Inject private var userSession: UserSessionServices
-    @Inject private var dataTransferService: DataTransferService
-    private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
-    private init() {}
-}
+public struct CoreApiTransactionHistoryRepository: CoreApiRepository { }
 
 extension CoreApiTransactionHistoryRepository: TransactionHistoryRepository {
+
     private static let maxResult = 10
+
     public func getUserTransactions(params: GetUserTransactionsParams, completion: @escaping GetUserTransactionsCompletionHandler) {
-        guard let sessionId = userSession.sessionId,
-              let userId = userSession.userId
-        else {
-            // TODO: completion(.failure("no session id or user id found"))
-            return
+        performTask(expecting: GetUserTransactionsResponse.self, completion: completion) { (requestBuilder) in
+            var requestBuilder = requestBuilder
+                .setBody(key: .req, value: "getUsersTransactions")
+                .setBody(key: .fromDate, value: params.fromDate)
+                .setBody(key: .toDate, value: params.toDate)
+                .setBody(key: .pageIndex, value: "\(params.pageIndex)")
+                .setBody(key: .providerType, value: "\(params.providerType)")
+                .setBody(key: .maxResult, value: "\(CoreApiTransactionHistoryRepository.maxResult)")
+
+            if let transactionType = params.transactionType {
+                requestBuilder = requestBuilder
+                    .setBody(key: .transactionType, value: "\(transactionType)")
+            }
+
+            return requestBuilder
         }
-
-        var requestBuilder = self.requestBuilder
-            .setHeader(key: .cookie, value: sessionId)
-            .setBody(key: .req, value: "getUsersTransactions")
-            .setBody(key: .userId, value: "\(userId)")
-            .setBody(key: .fromDate, value: params.fromDate)
-            .setBody(key: .toDate, value: params.toDate)
-            .setBody(key: .pageIndex, value: "\(params.pageIndex)")
-            .setBody(key: .providerType, value: "\(params.providerType)")
-            .setBody(key: .maxResult, value: "\(CoreApiTransactionHistoryRepository.maxResult)")
-
-        if let transactionType = params.transactionType {
-            requestBuilder = requestBuilder
-                .setBody(key: .transactionType, value: "\(transactionType)")
-        }
-
-        let request = requestBuilder.build()
-
-        dataTransferService.performTask(expecting: GetUserTransactionsResponse.self,
-                                        request: request, respondOnQueue: .main, completion: completion)
     }
 }

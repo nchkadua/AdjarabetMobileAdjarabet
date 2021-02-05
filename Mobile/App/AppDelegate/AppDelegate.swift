@@ -92,7 +92,7 @@ public extension DependencyContainer {
 
     static var repositories = DependencyContainer {
         // Core
-        Module { CoreApiUserProfileRepository.shared as UserInfoReadableRepository }
+        Module { CoreApiUserProfileRepository() as UserInfoReadableRepository }
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
         Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }
@@ -101,10 +101,8 @@ public extension DependencyContainer {
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
-        Module { CoreApiTransactionHistoryRepository.shared as TransactionHistoryRepository }
-        Module { CoreApiAccessListRepository.shared as AccessListRepository }
-        Module { CoreApiGameLaunchRepository() as GameLaunchRepository }
-        Module { CoreApiGameLauchUrlRepository() as GameLauchUrlRepository }
+        Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
+        Module { CoreApiAccessListRepository() as AccessListRepository }
     }
 
     static var factories = DependencyContainer {
@@ -145,7 +143,6 @@ public extension DependencyContainer {
         Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
         Module { DefaultDisplayTransactionHistoriesUseCase() as DisplayTransactionHistoriesUseCase }
         Module { DefaultAccessListUseCaseUseCase() as DisplayAccessListUseCase }
-        Module { DefaultGameLauncherUseCase() as GameLauncherUseCase }
         Module { DefaultPaymentAccountUseCase() as PaymentAccountUseCase }
     }
 }

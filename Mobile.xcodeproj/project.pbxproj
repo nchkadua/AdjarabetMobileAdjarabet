@@ -133,15 +133,6 @@
 		C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */; };
 		C701C60525C00AB200B059A6 /* PaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */; };
 		C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */; };
-		C701C6BE25C0320900B059A6 /* GameLauncherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6BD25C0320900B059A6 /* GameLauncherUseCase.swift */; };
-		C701C6C725C033EC00B059A6 /* AuthTokenDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6C525C033EC00B059A6 /* AuthTokenDataTransferResponse.swift */; };
-		C701C6C825C033EC00B059A6 /* CoreApiGameLaunchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6C625C033EC00B059A6 /* CoreApiGameLaunchRepository.swift */; };
-		C701C6D025C033F400B059A6 /* GameLaunchUrlDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6CE25C033F400B059A6 /* GameLaunchUrlDataTransferResponse.swift */; };
-		C701C6D125C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6CF25C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift */; };
-		C701C6D725C034E800B059A6 /* GameLaunchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6D625C034E800B059A6 /* GameLaunchRepository.swift */; };
-		C701C6DC25C034F000B059A6 /* GameLauchUrlRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */; };
-		C701C6E025C0350700B059A6 /* ServiceAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6DF25C0350600B059A6 /* ServiceAuthToken.swift */; };
-		C701C6E425C0351000B059A6 /* GameLaunchUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E325C0351000B059A6 /* GameLaunchUrlEntity.swift */; };
 		C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */; };
 		C701C71625C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */; };
 		C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */; };
@@ -166,6 +157,7 @@
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
 		C747734E25B5C1030083C845 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C747734D25B5C1030083C845 /* Currency.swift */; };
+		C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766086325CC3FF700A59534 /* CoreApiRepository.swift */; };
 		C7B0DCEE2575591100714B22 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0DCED2575591100714B22 /* Country.swift */; };
 		C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */; };
 		C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */; };
@@ -197,6 +189,8 @@
 		C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */; };
 		C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */; };
 		C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */; };
+		C7FB267C25CD87FE00111106 /* ServiceAuthTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */; };
+		C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
 		CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */; };
 		CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */; };
@@ -691,15 +685,6 @@
 		C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPaymentAccountRepository.swift; sourceTree = "<group>"; };
 		C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountRepository.swift; sourceTree = "<group>"; };
 		C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountEntity.swift; sourceTree = "<group>"; };
-		C701C6BD25C0320900B059A6 /* GameLauncherUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLauncherUseCase.swift; sourceTree = "<group>"; };
-		C701C6C525C033EC00B059A6 /* AuthTokenDataTransferResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenDataTransferResponse.swift; sourceTree = "<group>"; };
-		C701C6C625C033EC00B059A6 /* CoreApiGameLaunchRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreApiGameLaunchRepository.swift; sourceTree = "<group>"; };
-		C701C6CE25C033F400B059A6 /* GameLaunchUrlDataTransferResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLaunchUrlDataTransferResponse.swift; sourceTree = "<group>"; };
-		C701C6CF25C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreApiGameLauchUrlRepository.swift; sourceTree = "<group>"; };
-		C701C6D625C034E800B059A6 /* GameLaunchRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLaunchRepository.swift; sourceTree = "<group>"; };
-		C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLauchUrlRepository.swift; sourceTree = "<group>"; };
-		C701C6DF25C0350600B059A6 /* ServiceAuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAuthToken.swift; sourceTree = "<group>"; };
-		C701C6E325C0351000B059A6 /* GameLaunchUrlEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLaunchUrlEntity.swift; sourceTree = "<group>"; };
 		C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCount.swift; sourceTree = "<group>"; };
 		C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDataTransferResponse.swift; sourceTree = "<group>"; };
 		C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCountDataTransferResponse.swift; sourceTree = "<group>"; };
@@ -723,6 +708,7 @@
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C7405188256FAA8200EAC904 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		C747734D25B5C1030083C845 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C766086325CC3FF700A59534 /* CoreApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiRepository.swift; sourceTree = "<group>"; };
 		C7B0DCED2575591100714B22 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferNavigator.swift; sourceTree = "<group>"; };
 		C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewController.swift; sourceTree = "<group>"; };
@@ -754,6 +740,8 @@
 		C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEntity.swift; sourceTree = "<group>"; };
 		C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDataTransferResponse.swift; sourceTree = "<group>"; };
+		C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDTO.swift; sourceTree = "<group>"; };
+		C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUrlDTO.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentView.swift; sourceTree = "<group>"; };
 		CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentViewModel.swift; sourceTree = "<group>"; };
@@ -1615,100 +1603,6 @@
 			path = "Payment Account";
 			sourceTree = "<group>";
 		};
-		C701C6BC25C0320900B059A6 /* GameLauncher */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6BD25C0320900B059A6 /* GameLauncherUseCase.swift */,
-			);
-			path = GameLauncher;
-			sourceTree = "<group>";
-		};
-		C701C6C125C033D700B059A6 /* Integration */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6C225C033EC00B059A6 /* GameLaunch */,
-				C701C6CB25C033F400B059A6 /* LaunchUrl */,
-			);
-			path = Integration;
-			sourceTree = "<group>";
-		};
-		C701C6C225C033EC00B059A6 /* GameLaunch */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6C325C033EC00B059A6 /* Response */,
-				C701C6C625C033EC00B059A6 /* CoreApiGameLaunchRepository.swift */,
-			);
-			path = GameLaunch;
-			sourceTree = "<group>";
-		};
-		C701C6C325C033EC00B059A6 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6C425C033EC00B059A6 /* AuthToken */,
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		C701C6C425C033EC00B059A6 /* AuthToken */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6C525C033EC00B059A6 /* AuthTokenDataTransferResponse.swift */,
-			);
-			path = AuthToken;
-			sourceTree = "<group>";
-		};
-		C701C6CB25C033F400B059A6 /* LaunchUrl */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6CC25C033F400B059A6 /* Response */,
-				C701C6CF25C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift */,
-			);
-			path = LaunchUrl;
-			sourceTree = "<group>";
-		};
-		C701C6CC25C033F400B059A6 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6CD25C033F400B059A6 /* LaunchUrl */,
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		C701C6CD25C033F400B059A6 /* LaunchUrl */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6CE25C033F400B059A6 /* GameLaunchUrlDataTransferResponse.swift */,
-			);
-			path = LaunchUrl;
-			sourceTree = "<group>";
-		};
-		C701C6D425C034B800B059A6 /* Integration */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6D525C034E800B059A6 /* GameLaunch */,
-				C701C6DA25C034F000B059A6 /* LaunchUrl */,
-			);
-			path = Integration;
-			sourceTree = "<group>";
-		};
-		C701C6D525C034E800B059A6 /* GameLaunch */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6DF25C0350600B059A6 /* ServiceAuthToken.swift */,
-				C701C6D625C034E800B059A6 /* GameLaunchRepository.swift */,
-			);
-			path = GameLaunch;
-			sourceTree = "<group>";
-		};
-		C701C6DA25C034F000B059A6 /* LaunchUrl */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6E325C0351000B059A6 /* GameLaunchUrlEntity.swift */,
-				C701C6DB25C034F000B059A6 /* GameLauchUrlRepository.swift */,
-			);
-			path = LaunchUrl;
-			sourceTree = "<group>";
-		};
 		C701C6EF25C0500700B059A6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -1832,6 +1726,24 @@
 				C7405188256FAA8200EAC904 /* AmountFormatter.swift */,
 			);
 			path = Amount;
+			sourceTree = "<group>";
+		};
+		C766086925CD842D00A59534 /* Launch Url Repository */ = {
+			isa = PBXGroup;
+			children = (
+				C766086A25CD843F00A59534 /* Entities */,
+				C7C35FE425C9B8B100ADCBB6 /* LaunchUrlRepository.swift */,
+			);
+			path = "Launch Url Repository";
+			sourceTree = "<group>";
+		};
+		C766086A25CD843F00A59534 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */,
+				C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C7991273259BA3A300F64676 /* User Activity History & Transaction Management */ = {
@@ -2126,7 +2038,7 @@
 		C7C35FE325C9B7D400ADCBB6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				C7C35FE425C9B8B100ADCBB6 /* LaunchUrlRepository.swift */,
+				C766086925CD842D00A59534 /* Launch Url Repository */,
 				C7C35FF225C9E79800ADCBB6 /* ResourceRepository.swift */,
 			);
 			path = Repositories;
@@ -2209,6 +2121,7 @@
 			isa = PBXGroup;
 			children = (
 				D85C9BF02433677100F1D4FE /* CoreRequestBuilder.swift */,
+				C766086325CC3FF700A59534 /* CoreApiRepository.swift */,
 				D8A47DF7243367160077AA8E /* Entities */,
 			);
 			path = Infrastructure;
@@ -2252,7 +2165,6 @@
 			isa = PBXGroup;
 			children = (
 				C7D86F0D259A05190021CF1C /* Infrastructure */,
-				C701C6C125C033D700B059A6 /* Integration */,
 				C709D7FC259B8F4B0079E942 /* Authentication & Session Management */,
 				C7EF9E47256FED2600D2908C /* User Profile Management */,
 				C7991273259BA3A300F64676 /* User Activity History & Transaction Management */,
@@ -2282,7 +2194,6 @@
 		C7EF9E55256FF14A00D2908C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C701C6D425C034B800B059A6 /* Integration */,
 				C799127C259BA64500F64676 /* Authentication & Session Management */,
 				C7EF9E56256FF15400D2908C /* User Profile Management */,
 				C799127F259BA6A500F64676 /* User Activity History & Transaction Management */,
@@ -3298,7 +3209,6 @@
 		D885E75524714DA1007D85D3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				C701C6BC25C0320900B059A6 /* GameLauncher */,
 				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
 				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
@@ -4009,7 +3919,6 @@
 				7644B63925650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift in Sources */,
 				CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */,
 				CEF3684E2549C325009FD456 /* DepositNavigator.swift in Sources */,
-				C701C6E425C0351000B059A6 /* GameLaunchUrlEntity.swift in Sources */,
 				CEA77793256D4237008A4F6C /* MailChangeViewModel.swift in Sources */,
 				C7C35FE525C9B8B100ADCBB6 /* LaunchUrlRepository.swift in Sources */,
 				CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */,
@@ -4025,7 +3934,6 @@
 				76DCF6B225B8262300150EE1 /* MyCardComponentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
-				C701C6D025C033F400B059A6 /* GameLaunchUrlDataTransferResponse.swift in Sources */,
 				C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
@@ -4056,8 +3964,10 @@
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				C71B4B74257EC57000538697 /* SecurityLevelsViewControllerFactory.swift in Sources */,
 				7644B6002563E201006778B2 /* DateHeaderCell.swift in Sources */,
+				C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */,
 				76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
+				C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */,
 				C7B0DCEE2575591100714B22 /* Country.swift in Sources */,
 				CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
@@ -4086,7 +3996,6 @@
 				C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */,
 				CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */,
 				CEC9A34525C0970C00BE853D /* ODRManager.swift in Sources */,
-				C701C6DC25C034F000B059A6 /* GameLauchUrlRepository.swift in Sources */,
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
 				76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */,
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
@@ -4109,6 +4018,7 @@
 				CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */,
 				76DCF67725B80FB500150EE1 /* MyCardsViewControllerFactory.swift in Sources */,
 				7668C7AE2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.swift in Sources */,
+				C7FB267C25CD87FE00111106 /* ServiceAuthTokenDTO.swift in Sources */,
 				C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */,
 				CEE537EA254AC9FD00EDE6C0 /* CashFlowViewController.swift in Sources */,
 				C7C35FD925C93C0000ADCBB6 /* GameLaunchInteractor.swift in Sources */,
@@ -4168,14 +4078,12 @@
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
 				CEE537F3254ACA2200EDE6C0 /* CashFlowViewControllerFactory.swift in Sources */,
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
-				C701C6D125C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
 				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
 				7682CF9525B8581600717090 /* AddMyCardTableViewCell.swift in Sources */,
 				D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */,
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
-				C701C6C725C033EC00B059A6 /* AuthTokenDataTransferResponse.swift in Sources */,
 				CE95FC16252DED0A003E539B /* FooterComponentViewModel.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
 				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,
@@ -4205,14 +4113,12 @@
 				CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
-				C701C6E025C0350700B059A6 /* ServiceAuthToken.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */,
 				C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
-				C701C6D725C034E800B059A6 /* GameLaunchRepository.swift in Sources */,
 				76E43EDC25B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift in Sources */,
 				C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */,
 				76BDF441257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift in Sources */,
@@ -4301,7 +4207,6 @@
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
-				C701C6BE25C0320900B059A6 /* GameLauncherUseCase.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
@@ -4351,7 +4256,6 @@
 				CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */,
 				CE0818CF25389EEE00AD3B3B /* NotificationsHeaderCell.swift in Sources */,
 				CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */,
-				C701C6C825C033EC00B059A6 /* CoreApiGameLaunchRepository.swift in Sources */,
 				CEE15C4725349EDF0033BF93 /* NotificationTableViewCell.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */,
