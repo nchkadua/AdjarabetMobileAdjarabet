@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CoreApiUserProfileRepository: CoreApiRepository { }
+public struct CoreApiUserProfileRepository: CoreApiRepository { }
 
 extension CoreApiUserProfileRepository: UserProfileRepository {
 

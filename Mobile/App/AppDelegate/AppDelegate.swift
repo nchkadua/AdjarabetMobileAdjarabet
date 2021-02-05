@@ -101,8 +101,8 @@ public extension DependencyContainer {
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
-        Module { CoreApiTransactionHistoryRepository.shared as TransactionHistoryRepository }
-        Module { CoreApiAccessListRepository.shared as AccessListRepository }
+        Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
+        Module { CoreApiAccessListRepository() as AccessListRepository }
     }
 
     static var factories = DependencyContainer {
