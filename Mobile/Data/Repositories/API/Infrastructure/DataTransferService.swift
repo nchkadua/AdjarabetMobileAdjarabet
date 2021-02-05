@@ -71,7 +71,7 @@ extension DefaultDataTransferService: DataTransferService {
                     if let result = result {
                         respondOnQueue.async { completion(.success(result)) }
                     } else {
-                        respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) } // FIXME: return another error !!!
+                        respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) }
                     }
                 } catch {
                     respondOnQueue.async { completion(.failure(DataTransferError.parsingJSONFailure(error))) }

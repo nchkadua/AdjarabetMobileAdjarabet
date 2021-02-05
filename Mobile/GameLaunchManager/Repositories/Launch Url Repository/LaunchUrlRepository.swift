@@ -34,14 +34,14 @@ protocol LaunchUrlRepository {
 /**
  Token Parameters Struct
  */
-struct LaunchUrlRepositoryTokenParams { // FIXME: Fix after reciving doc from Singular
+struct LaunchUrlRepositoryTokenParams {
     let providerId: String
 }
 
 /**
  Url Paramters Struct
  */
-struct LaunchUrlRepositoryUrlParams { // FIXME: Fix after reciving doc from Singular
+struct LaunchUrlRepositoryUrlParams {
     let token: String
     let gameId: String
 }
@@ -64,8 +64,7 @@ struct DefaultLaunchUrlRepository: LaunchUrlRepository, CoreApiRepository {
     func url(params: LaunchUrlRepositoryUrlParams, handler: @escaping UrlHandler) {
 
         guard let sessionId = userSession.sessionId else {
-            // FIXME: return another error !!!
-            handler(.failure(AdjarabetCoreClientError.invalidStatusCode(code: .ACCESS_DENIED)))
+            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
             return
         }
 

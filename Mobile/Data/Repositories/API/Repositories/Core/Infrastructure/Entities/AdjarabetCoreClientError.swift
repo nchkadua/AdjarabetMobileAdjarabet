@@ -10,6 +10,7 @@ public enum AdjarabetCoreClientError: Swift.Error {
     case dataIsEmpty(context: URL)
     case invalidHeader(context: [AnyHashable: Any]?)
     case invalidStatusCode(code: AdjarabetCoreStatusCode)
+    case sessionUninitialzed
 }
 
 extension AdjarabetCoreClientError: LocalizedError {
@@ -21,6 +22,8 @@ extension AdjarabetCoreClientError: LocalizedError {
             return NSLocalizedString("Invalid Header \(String(describing: context))", comment: "Adjarabet Core Error")
         case .dataIsEmpty(let context):
             return NSLocalizedString("Data was empty \(context)", comment: "Adjarabet Core Error")
+        case .sessionUninitialzed:
+            return NSLocalizedString("Session uninitialzed", comment: "Adjarabet Core Error")
         }
     }
 }

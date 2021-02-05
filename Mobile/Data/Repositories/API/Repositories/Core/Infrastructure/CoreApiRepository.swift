@@ -43,8 +43,7 @@ extension CoreApiRepository {
         guard let sessionId = userSession.sessionId,
               let userId = userSession.userId
         else {
-            // FIXME: return another error !!!
-            return .failure(AdjarabetCoreClientError.invalidStatusCode(code: .ACCESS_DENIED))
+            return .failure(AdjarabetCoreClientError.sessionUninitialzed)
         }
 
         requestBuilder = requestBuilder
