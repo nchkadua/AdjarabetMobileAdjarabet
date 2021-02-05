@@ -15,9 +15,6 @@ import Zip*/
 public class SportsViewController: UIViewController {
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
-    @Inject(from: .useCases) private var gameLauncherUseCase: GameLauncherUseCase
-    @Inject public var userSession: UserSessionServices
-
     private lazy var webView: WKWebView = {
         WKWebView()
     }()
@@ -100,11 +97,20 @@ extension SportsViewController: CommonBarButtonProviding { }
 
 extension SportsViewController {
     func getLaunchUrl() {
-        // EGT "11e7b7ca-14f1-b0b0-88fc-005056adb106"
-        gameLauncherUseCase.execute(params: .init(gameId: "7382", providerId: "11e7b7ca-14f1-b0b0-88fc-005056adb106")) { result in
+        let webUrlRepo: LaunchUrlRepository = DefaultLaunchUrlRepository()
+        webUrlRepo.token(params: .init(providerId: "11e7b7ca-14f1-b0b0-88fc-005056adb106")) { (result) in
             switch result {
-            case .success(let launchUrl): self.initWebServer(launchUrl.url ?? "")
-            case .failure(let error): print(error)
+            case .success(let token):
+                webUrlRepo.url(params: .init(token: token, gameId: "7382")) { [weak self] (result) in
+                    switch result {
+                    case .success(let url):
+                        self?.initWebServer(url)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            case .failure(let error):
+                print(error)
             }
         }
     }

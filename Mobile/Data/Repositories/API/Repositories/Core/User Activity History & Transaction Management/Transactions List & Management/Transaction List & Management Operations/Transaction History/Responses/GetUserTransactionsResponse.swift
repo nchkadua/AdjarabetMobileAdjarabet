@@ -71,7 +71,7 @@ public class GetUserTransactionsResponse: DataTransferResponse {
 
     public typealias Entity = [TransactionHistoryEntity]
 
-    public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
+    public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
         let dateFormatter = ABDateFormater(with: .verbose)
         return body.usersTransactions.compactMap {
             TransactionHistoryEntity(totalAmount: $0.amount,

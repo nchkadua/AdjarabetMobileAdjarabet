@@ -48,7 +48,7 @@ struct PaymentAccountDataTransferResponse: DataTransferResponse {
 
     typealias Entity = [PaymentAccountEntity]
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
         let dateFormatter = ABDateFormater(with: .verbose)
         return body.paymentAccounts?.map {
 

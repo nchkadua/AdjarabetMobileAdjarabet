@@ -24,7 +24,7 @@ public protocol DataTransferResponse {
      P. S.
      Also you can pre-process header and body before returning Entity.
      */
-    static func entity(header: Header, body: Body) -> Entity
+    static func entity(header: Header, body: Body) -> Entity?
 }
 
 public struct DataTransferResponseDefaultHeader: HeaderProtocol {
@@ -68,7 +68,11 @@ extension DefaultDataTransferService: DataTransferService {
                     let body    = try decoder.decode(Response.Body.self, from: data)
                     let header  = try Response.Header(headers: response.headerFields)
                     let result  = Response.entity(header: header, body: body)
-                    respondOnQueue.async { completion(.success(result)) }
+                    if let result = result {
+                        respondOnQueue.async { completion(.success(result)) }
+                    } else {
+                        respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) } // FIXME: return another error !!!
+                    }
                 } catch {
                     respondOnQueue.async { completion(.failure(DataTransferError.parsingJSONFailure(error))) }
                 }
