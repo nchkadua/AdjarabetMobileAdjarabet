@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ODRManager {
+class ODRManager: NSObject {
     static let shared = ODRManager()
-    
-    public var progressObservingContext = 0
+    private static let progressObservingKeyPath = "fractionCompleted"
+    var progressObservingContext: UnsafeMutableRawPointer? = nil
     
     public func loadResourcesWithTags(_ tagArray: Array<String>, completion: @escaping ((ODRResult<Bool, NSError>) -> Void)) {
         
@@ -24,6 +24,8 @@ class ODRManager {
         resourceRequest.endAccessingResources()
         
         resourceRequest.loadingPriority = NSBundleResourceRequestLoadingPriorityUrgent // value between 0.0 and 1.0, urgent will have most priority and resources will be downloaded immediatelly
+        
+        addDownloadProgressObserver(toRequest: resourceRequest)
         resourceRequest.conditionallyBeginAccessingResources(completionHandler: { (resourcesAvailable: Bool) -> Void in
             
             if resourcesAvailable {
@@ -42,6 +44,23 @@ class ODRManager {
                 })
             }
         })
+    }
+}
+
+// MARK: Observe resource download progress
+extension ODRManager {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if context == progressObservingContext
+            && keyPath == ODRManager.progressObservingKeyPath {
+            print("ODR Progress: \(Float((object as! Progress).fractionCompleted))")
+        }
+    }
+    
+    private func addDownloadProgressObserver(toRequest request: NSBundleResourceRequest) {
+        request.progress.addObserver(self,
+                                             forKeyPath: ODRManager.progressObservingKeyPath,
+                                             options: [.new, .initial],
+                                             context: self.progressObservingContext)
     }
 }
 
