@@ -133,7 +133,6 @@
 		C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */; };
 		C701C60525C00AB200B059A6 /* PaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */; };
 		C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */; };
-		C701C6D125C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6CF25C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift */; };
 		C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */; };
 		C701C71625C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */; };
 		C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */; };
@@ -686,7 +685,6 @@
 		C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPaymentAccountRepository.swift; sourceTree = "<group>"; };
 		C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountRepository.swift; sourceTree = "<group>"; };
 		C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountEntity.swift; sourceTree = "<group>"; };
-		C701C6CF25C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreApiGameLauchUrlRepository.swift; sourceTree = "<group>"; };
 		C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCount.swift; sourceTree = "<group>"; };
 		C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDataTransferResponse.swift; sourceTree = "<group>"; };
 		C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCountDataTransferResponse.swift; sourceTree = "<group>"; };
@@ -1605,22 +1603,6 @@
 			path = "Payment Account";
 			sourceTree = "<group>";
 		};
-		C701C6C125C033D700B059A6 /* Integration */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6CB25C033F400B059A6 /* LaunchUrl */,
-			);
-			path = Integration;
-			sourceTree = "<group>";
-		};
-		C701C6CB25C033F400B059A6 /* LaunchUrl */ = {
-			isa = PBXGroup;
-			children = (
-				C701C6CF25C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift */,
-			);
-			path = LaunchUrl;
-			sourceTree = "<group>";
-		};
 		C701C6EF25C0500700B059A6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -2183,7 +2165,6 @@
 			isa = PBXGroup;
 			children = (
 				C7D86F0D259A05190021CF1C /* Infrastructure */,
-				C701C6C125C033D700B059A6 /* Integration */,
 				C709D7FC259B8F4B0079E942 /* Authentication & Session Management */,
 				C7EF9E47256FED2600D2908C /* User Profile Management */,
 				C7991273259BA3A300F64676 /* User Activity History & Transaction Management */,
@@ -4097,7 +4078,6 @@
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
 				CEE537F3254ACA2200EDE6C0 /* CashFlowViewControllerFactory.swift in Sources */,
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
-				C701C6D125C033F400B059A6 /* CoreApiGameLauchUrlRepository.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
 				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
