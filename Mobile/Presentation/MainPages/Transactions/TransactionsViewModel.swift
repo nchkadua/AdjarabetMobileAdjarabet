@@ -206,13 +206,19 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     }
 
     private func constructTransactionDetails(from entity: TransactionHistoryEntity) -> [TransactionDetail] {
+        var totalAndFee = 0.0
         var transactionDetails: [TransactionDetail] = []
         let transactionType: TransactionType = entity.totalAmount < 0 ? .withdraw : .deposit
 
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_date(),
                                                     description: hourDateFormatter.string(from: entity.date)))
 
-        let totalAndFee = entity.totalAmount + entity.feeAmount
+        if transactionType == .deposit {
+            totalAndFee = entity.totalAmount + entity.feeAmount
+        } else if transactionType == .withdraw {
+            totalAndFee = entity.totalAmount - entity.feeAmount
+        }
+        
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_total_amount(),
                                                     description: prettyAmount(from: totalAndFee)))
 
