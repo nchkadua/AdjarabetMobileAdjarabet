@@ -77,6 +77,7 @@
 		769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886AC2571055000FA339E /* TransactionFilterComponentView.swift */; };
 		769886B92571091D00FA339E /* ABCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886B82571091D00FA339E /* ABCheckbox.swift */; };
 		769886C225711C2B00FA339E /* TransactionTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769886C125711C2B00FA339E /* TransactionTypeModel.swift */; };
+		769EDC2325D294F000C18B52 /* Accessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EDC2225D294F000C18B52 /* Accessible.swift */; };
 		76AB37F325B95C74004E1326 /* incognito-card.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 76AB37F225B95C74004E1326 /* incognito-card.mp4 */; };
 		76B667982595F133001441BD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B667972595F133001441BD /* Date+Extension.swift */; };
 		76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B667A02596345C001441BD /* ABDateFormatter.swift */; };
@@ -632,6 +633,7 @@
 		769886AC2571055000FA339E /* TransactionFilterComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilterComponentView.swift; sourceTree = "<group>"; };
 		769886B82571091D00FA339E /* ABCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABCheckbox.swift; sourceTree = "<group>"; };
 		769886C125711C2B00FA339E /* TransactionTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypeModel.swift; sourceTree = "<group>"; };
+		769EDC2225D294F000C18B52 /* Accessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessible.swift; sourceTree = "<group>"; };
 		76AB37F225B95C74004E1326 /* incognito-card.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "incognito-card.mp4"; sourceTree = "<group>"; };
 		76B667972595F133001441BD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		76B667A02596345C001441BD /* ABDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABDateFormatter.swift; sourceTree = "<group>"; };
@@ -3051,6 +3053,7 @@
 				CEE0E09F254869F200949417 /* AppSessionProvider.swift */,
 				CEB6643E255027E1003D7D6D /* ABConstant.swift */,
 				CE76FD7E25764FB500D8AB04 /* ABLocationManager.swift */,
+				769EDC2225D294F000C18B52 /* Accessible.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -4212,6 +4215,7 @@
 				CE91C0E1257028D400A18255 /* TransactionsFilterViewControllerFactory.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
 				7665D97F257F4C0E00E5B35F /* AccessHistoryComponentView.swift in Sources */,
+				769EDC2325D294F000C18B52 /* Accessible.swift in Sources */,
 				CE9B7FED257544F5006FF756 /* PhoneNumberChangeViewModel.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
 				76E43EE025B95303007B2D97 /* VideoCardTableViewCell.swift in Sources */,
