@@ -61,13 +61,25 @@ class CashFlowTabComponentView: UIView {
     @objc private func depositButtonAction() {
         selectDepositButton(animate: true)
         viewModel.selectButton(at: 0, animate: true)
+        
+        /// Wait before keyboard animation ends
+        withdrawButton.isUserInteractionEnabled = false
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+            self.withdrawButton.isUserInteractionEnabled = true
+        })
     }
 
     @objc private func withdrawButtonAction() {
         selectWithdrawButton(animate: true)
         viewModel.selectButton(at: 1, animate: true)
+        
+        /// Wait before keyboard animation ends
+        depositButton.isUserInteractionEnabled = false
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+            self.depositButton.isUserInteractionEnabled = true
+        })
     }
-
+    
     public func selectDepositButton(animate: Bool) {
         UIView.animate(withDuration: animate ? animationTime : 0, animations: { [self] in
             depositButton.alpha = 1
