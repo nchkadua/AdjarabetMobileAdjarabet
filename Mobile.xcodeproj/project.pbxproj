@@ -233,6 +233,14 @@
 		CE55ED55252B3881003E168F /* ProfileInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ED54252B3881003E168F /* ProfileInfoComponentView.swift */; };
 		CE55ED59252B38BA003E168F /* ProfileInfoComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ED58252B38BA003E168F /* ProfileInfoComponentViewModel.swift */; };
 		CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE55ED81252B437F003E168F /* ProfileInfoComponentView.xib */; };
+		CE64EA7A25D1695400438974 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE64EA7525D1695400438974 /* Game.storyboard */; };
+		CE64EA7B25D1695400438974 /* GameNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA7625D1695400438974 /* GameNavigator.swift */; };
+		CE64EA7C25D1695400438974 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA7725D1695400438974 /* GameViewController.swift */; };
+		CE64EA7D25D1695400438974 /* GameViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA7825D1695400438974 /* GameViewControllerFactory.swift */; };
+		CE64EA7E25D1695400438974 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA7925D1695400438974 /* GameViewModel.swift */; };
+		CE64EA9B25D2D51A00438974 /* GameLoaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA9825D2D51A00438974 /* GameLoaderComponentView.swift */; };
+		CE64EA9C25D2D51A00438974 /* GameLoaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA9925D2D51A00438974 /* GameLoaderComponentViewModel.swift */; };
+		CE64EA9D25D2D51A00438974 /* GameLoaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE64EA9A25D2D51A00438974 /* GameLoaderComponentView.xib */; };
 		CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C42254C057F002667D0 /* LabelComponentView.swift */; };
 		CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE660C46254C0587002667D0 /* LabelComponentView.xib */; };
 		CE660C52254C3162002667D0 /* DepositInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C51254C3162002667D0 /* DepositInstructionView.swift */; };
@@ -790,6 +798,14 @@
 		CE55ED54252B3881003E168F /* ProfileInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoComponentView.swift; sourceTree = "<group>"; };
 		CE55ED58252B38BA003E168F /* ProfileInfoComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoComponentViewModel.swift; sourceTree = "<group>"; };
 		CE55ED81252B437F003E168F /* ProfileInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoComponentView.xib; sourceTree = "<group>"; };
+		CE64EA7525D1695400438974 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		CE64EA7625D1695400438974 /* GameNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNavigator.swift; sourceTree = "<group>"; };
+		CE64EA7725D1695400438974 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CE64EA7825D1695400438974 /* GameViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE64EA7925D1695400438974 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		CE64EA9825D2D51A00438974 /* GameLoaderComponentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoaderComponentView.swift; sourceTree = "<group>"; };
+		CE64EA9925D2D51A00438974 /* GameLoaderComponentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoaderComponentViewModel.swift; sourceTree = "<group>"; };
+		CE64EA9A25D2D51A00438974 /* GameLoaderComponentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameLoaderComponentView.xib; sourceTree = "<group>"; };
 		CE660C42254C057F002667D0 /* LabelComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponentView.swift; sourceTree = "<group>"; };
 		CE660C46254C0587002667D0 /* LabelComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelComponentView.xib; sourceTree = "<group>"; };
 		CE660C51254C3162002667D0 /* DepositInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositInstructionView.swift; sourceTree = "<group>"; };
@@ -2394,6 +2410,28 @@
 			path = ProfileInfoComponentView;
 			sourceTree = "<group>";
 		};
+		CE64EA7425D168EF00438974 /* GameVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE64EA7525D1695400438974 /* Game.storyboard */,
+				CE64EA7625D1695400438974 /* GameNavigator.swift */,
+				CE64EA7725D1695400438974 /* GameViewController.swift */,
+				CE64EA7825D1695400438974 /* GameViewControllerFactory.swift */,
+				CE64EA7925D1695400438974 /* GameViewModel.swift */,
+			);
+			path = GameVC;
+			sourceTree = "<group>";
+		};
+		CE64EA8325D1749B00438974 /* GameLoader */ = {
+			isa = PBXGroup;
+			children = (
+				CE64EA9A25D2D51A00438974 /* GameLoaderComponentView.xib */,
+				CE64EA9825D2D51A00438974 /* GameLoaderComponentView.swift */,
+				CE64EA9925D2D51A00438974 /* GameLoaderComponentViewModel.swift */,
+			);
+			path = GameLoader;
+			sourceTree = "<group>";
+		};
 		CE660C41254C0515002667D0 /* LabelComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3005,6 +3043,7 @@
 		D85C9C1524336BF500F1D4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE64EA8325D1749B00438974 /* GameLoader */,
 				76DCF6A825B825FC00150EE1 /* MyCardComponentView */,
 				761D993F257F7EDC002BCDB6 /* DateHeaderComponentView */,
 				7665D985257F4C5000E5B35F /* AccessHistoryComponentView */,
@@ -3498,6 +3537,7 @@
 		D8C73F7D2445A62D004C96DB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CE64EA7425D168EF00438974 /* GameVC */,
 				D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */,
 				D8BB242D246E7F5A00244FF4 /* HomeNavigator.swift */,
 				D8C73F7E2445A64E004C96DB /* HomeViewController.swift */,
@@ -3663,6 +3703,7 @@
 				7676E5662562E26300234026 /* TransactionHistoryComponentView.xib in Resources */,
 				CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
+				CE64EA7A25D1695400438974 /* Game.storyboard in Resources */,
 				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
 				C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */,
 				CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */,
@@ -3756,6 +3797,7 @@
 				C7C973292580D9550062C713 /* SecurityLevelComponentView.xib in Resources */,
 				7682CF9025B8581600717090 /* AddMyCardComponentView.xib in Resources */,
 				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
+				CE64EA9D25D2D51A00438974 /* GameLoaderComponentView.xib in Resources */,
 				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
 			);
@@ -3976,6 +4018,7 @@
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */,
 				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
+				CE64EA7E25D1695400438974 /* GameViewModel.swift in Sources */,
 				CE679FE02578334B00F2EC1C /* AddCardViewModel.swift in Sources */,
 				769886B12571055000FA339E /* TransactionFilterComponentViewModel.swift in Sources */,
 				76404F0C257625F900D14E0C /* AccountSecurityMessagesComponentViewModel.swift in Sources */,
@@ -4037,6 +4080,7 @@
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
 				76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
+				CE64EA9B25D2D51A00438974 /* GameLoaderComponentView.swift in Sources */,
 				C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				C7C973AE2580EC990062C713 /* SecurityLevelTypeComponentView.swift in Sources */,
@@ -4069,6 +4113,7 @@
 				CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */,
 				D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */,
 				C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */,
+				CE64EA9C25D2D51A00438974 /* GameLoaderComponentViewModel.swift in Sources */,
 				CE2D1DEB2530738600112A1D /* QuickActionsHeaderViewModel.swift in Sources */,
 				CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */,
 				76BDF46F25760512007B27A7 /* AccountParametersComponentViewModel.swift in Sources */,
@@ -4127,6 +4172,7 @@
 				CECF7F77256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
 				7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */,
+				CE64EA7C25D1695400438974 /* GameViewController.swift in Sources */,
 				D850940E24839A4A00722040 /* PageDescription.swift in Sources */,
 				7644B6222564F8E4006778B2 /* TransactionDetailComponentView.swift in Sources */,
 				D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */,
@@ -4268,10 +4314,12 @@
 				CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */,
 				76DBCE57257FAB000030E600 /* DateFormatter+Extension.swift in Sources */,
 				7676E54E2562856600234026 /* TransactionsNavigator.swift in Sources */,
+				CE64EA7B25D1695400438974 /* GameNavigator.swift in Sources */,
 				76EFF7C52582383000898819 /* AccessHistoryCalendarViewController.swift in Sources */,
 				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
 				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
+				CE64EA7D25D1695400438974 /* GameViewControllerFactory.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				C7C9732E2580D9550062C713 /* SecurityLevelTableViewCell.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,

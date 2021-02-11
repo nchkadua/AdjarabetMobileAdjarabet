@@ -80,7 +80,7 @@ public class HomeViewController: UIViewController {
 
     private func didReceive(action: HomeViewModelRoute) {
         switch action {
-        case .openGame(let title): showAlert(title: "Welcome to \(title)")
+        case .openGame(_): navigator.navigate(to: .game, animated: true)
         }
     }
 

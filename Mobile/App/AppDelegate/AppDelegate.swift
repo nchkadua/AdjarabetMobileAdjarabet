@@ -82,6 +82,7 @@ public extension DependencyContainer {
         Module { DefaultAccessHistoryCalendarViewModel(params: .init()) as AccessHistoryCalendarViewModel }
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
         Module { DefaultMyCardsViewModel() as MyCardsViewModel }
+        Module { DefaultGameViewModel(params: .init()) as GameViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -89,6 +90,7 @@ public extension DependencyContainer {
         Module { DefaultCashFlowTabComponentViewModel() as CashFlowTabComponentViewModel }
         Module { DefaultMinAmountComponentViewModel() as MinAmountComponentViewModel }
         Module { DefaultAgreementComponentViewModel() as AgreementComponentViewModel }
+        Module { DefaultGameLoaderComponentViewModel() as GameLoaderComponentViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -133,6 +135,7 @@ public extension DependencyContainer {
         Module { DefaultSecurityLevelsViewControllerFactory() as SecurityLevelsViewControllerFactory }
         Module { DefaultAccessHistoryCalendarViewControllerFactory() as AccessHistoryCalendarViewControllerFactory }
         Module { DefaultMyCardsViewControllerFactory() as MyCardsViewControllerFactory }
+        Module { DefaultGameViewControllerFactory() as GameViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

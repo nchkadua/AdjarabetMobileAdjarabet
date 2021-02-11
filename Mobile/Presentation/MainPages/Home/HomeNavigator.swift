@@ -8,6 +8,7 @@
 
 public class HomeNavigator: Navigator {
     @Inject(from: .factories) public var profileFactory: ProfileFactory
+    @Inject(from: .factories) public var gameFactory: GameViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -17,16 +18,31 @@ public class HomeNavigator: Navigator {
 
     public enum Destination {
         case profile
+        case game
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .profile:
-            let vc = profileFactory.make()
-            let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
-            navC.navigationBar.styleForSecondaryPage()
-
-            viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+            navigateToProfile(animate: animate)
+        case .game:
+            navigatetoGame(animate: animate)
         }
+    }
+    
+    private func navigateToProfile(animate: Bool) {
+        let vc = profileFactory.make()
+        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+        navC.navigationBar.styleForSecondaryPage()
+
+        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+    }
+    
+    private func navigatetoGame(animate: Bool) {
+        let vc = gameFactory.make(params: .init())
+        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+        navC.navigationBar.styleForSecondaryPage()
+
+        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 }

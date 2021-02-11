@@ -106,14 +106,9 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
-    func makeScanBarButtonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
-        let button = BarButtonWithImage()
-        button.setTitle(R.string.localization.scan_card_title.localized(), for: .normal)
-        button.titleLabel?.textAlignment = .left
-        button.setFont(to: .footnote(fontCase: .lower))
-        button.setButtonImage(R.image.cardManagement.scan() ?? UIImage(), alignment: .right)
-        button.widthAnchor.constraint(equalToConstant: width).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    func makeGameDepositBarButtonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
+        let button = UIButton()
+        button.setImage(R.image.game.deposit(), for: .normal)
 
         return (UIBarButtonItem(customView: button), button)
     }

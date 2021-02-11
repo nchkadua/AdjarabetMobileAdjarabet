@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 31 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 32 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -112,6 +112,8 @@ struct R: Rswift.Validatable {
     static let cashFlow = _R.storyboard.cashFlow()
     /// Storyboard `Deposit`.
     static let deposit = _R.storyboard.deposit()
+    /// Storyboard `Game`.
+    static let game = _R.storyboard.game()
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
     /// Storyboard `LaunchScreen`.
@@ -222,6 +224,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Deposit", bundle: ...)`
     static func deposit(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.deposit)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Game", bundle: ...)`
+    static func game(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.game)
     }
     #endif
 
@@ -1745,6 +1754,39 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.game` struct is generated, and contains static references to 3 images.
+    struct game {
+      /// Image `back`.
+      static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Game/back")
+      /// Image `deposit`.
+      static let deposit = Rswift.ImageResource(bundle: R.hostingBundle, name: "Game/deposit")
+      /// Image `logo`.
+      static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Game/logo")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
+      static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.game.back, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "deposit", bundle: ..., traitCollection: ...)`
+      static func deposit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.game.deposit, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "logo", bundle: ..., traitCollection: ...)`
+      static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.game.logo, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.login` struct is generated, and contains static references to 8 images.
     struct login {
       /// Image `legal`.
@@ -2298,7 +2340,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 62 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 63 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -2348,6 +2390,8 @@ struct R: Rswift.Validatable {
     static let gameLauncherCollectionViewCell = _R.nib._GameLauncherCollectionViewCell()
     /// Nib `GameLauncherComponentView`.
     static let gameLauncherComponentView = _R.nib._GameLauncherComponentView()
+    /// Nib `GameLoaderComponentView`.
+    static let gameLoaderComponentView = _R.nib._GameLoaderComponentView()
     /// Nib `LabelComponentView`.
     static let labelComponentView = _R.nib._LabelComponentView()
     /// Nib `LoadingCollectionViewCell`.
@@ -2614,6 +2658,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLauncherComponentView) instead")
     static func gameLauncherComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gameLauncherComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameLoaderComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameLoaderComponentView) instead")
+    static func gameLoaderComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameLoaderComponentView)
     }
     #endif
 
@@ -3015,6 +3067,10 @@ struct R: Rswift.Validatable {
 
     static func gameLauncherComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gameLauncherComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gameLoaderComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gameLoaderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func labelComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -11880,8 +11936,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -11949,8 +12005,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -11994,6 +12050,17 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GameLoaderComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GameLoaderComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -12475,6 +12542,9 @@ struct _R: Rswift.Validatable {
       try deposit.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try game.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try home.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -12734,6 +12804,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.deposit().depositViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'depositViewController' could not be loaded from storyboard 'Deposit' as 'DepositViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct game: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let gameViewController = StoryboardViewControllerResource<GameViewController>(identifier: "GameViewController")
+      let name = "Game"
+
+      func gameViewController(_: Void = ()) -> GameViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: gameViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.game().gameViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'gameViewController' could not be loaded from storyboard 'Game' as 'GameViewController'.") }
       }
 
       fileprivate init() {}
