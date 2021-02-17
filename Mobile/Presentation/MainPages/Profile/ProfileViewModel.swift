@@ -95,7 +95,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
     }
     
     public func logout() {
-        logoutUseCase.execute(userId: userSession.userId ?? 0, sessionId: userSession.sessionId ?? "", completion: { [weak self] result in
+        logoutUseCase.execute(userId: userSession.userId ?? -1, sessionId: userSession.sessionId ?? "", completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(_): self.actionSubject.onNext(.didLogoutWithSuccess)
