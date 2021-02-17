@@ -81,6 +81,11 @@ public class SportsViewController: UIViewController {
         view.addSubview(webView)
         webView.pinSafely(to: view)
     }
+    
+    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        let cred = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+        completionHandler(.useCredential, cred)
+    }
 
     /*func unzip () -> URL {
         do {
