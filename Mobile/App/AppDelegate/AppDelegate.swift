@@ -149,5 +149,6 @@ public extension DependencyContainer {
         Module { DefaultDisplayTransactionHistoriesUseCase() as DisplayTransactionHistoriesUseCase }
         Module { DefaultAccessListUseCaseUseCase() as DisplayAccessListUseCase }
         Module { DefaultPaymentAccountUseCase() as PaymentAccountUseCase }
+        Module { DefaultLogoutUseCase() as LogoutUseCase }
     }
 }

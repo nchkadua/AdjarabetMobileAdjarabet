@@ -241,6 +241,7 @@
 		CE64EA9B25D2D51A00438974 /* GameLoaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA9825D2D51A00438974 /* GameLoaderComponentView.swift */; };
 		CE64EA9C25D2D51A00438974 /* GameLoaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA9925D2D51A00438974 /* GameLoaderComponentViewModel.swift */; };
 		CE64EA9D25D2D51A00438974 /* GameLoaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE64EA9A25D2D51A00438974 /* GameLoaderComponentView.xib */; };
+		CE64EAAB25DD466D00438974 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */; };
 		CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C42254C057F002667D0 /* LabelComponentView.swift */; };
 		CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE660C46254C0587002667D0 /* LabelComponentView.xib */; };
 		CE660C52254C3162002667D0 /* DepositInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE660C51254C3162002667D0 /* DepositInstructionView.swift */; };
@@ -806,6 +807,7 @@
 		CE64EA9825D2D51A00438974 /* GameLoaderComponentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoaderComponentView.swift; sourceTree = "<group>"; };
 		CE64EA9925D2D51A00438974 /* GameLoaderComponentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoaderComponentViewModel.swift; sourceTree = "<group>"; };
 		CE64EA9A25D2D51A00438974 /* GameLoaderComponentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameLoaderComponentView.xib; sourceTree = "<group>"; };
+		CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		CE660C42254C057F002667D0 /* LabelComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponentView.swift; sourceTree = "<group>"; };
 		CE660C46254C0587002667D0 /* LabelComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelComponentView.xib; sourceTree = "<group>"; };
 		CE660C51254C3162002667D0 /* DepositInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositInstructionView.swift; sourceTree = "<group>"; };
@@ -3285,6 +3287,7 @@
 				D83E4225247A92D800E9615F /* UserSessionUseCase.swift */,
 				D815850924B09E0100FFCA95 /* LobbyGamesUseCase.swift */,
 				D8BE830B24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift */,
+				CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -4134,6 +4137,7 @@
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
+				CE64EAAB25DD466D00438974 /* LogoutUseCase.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,

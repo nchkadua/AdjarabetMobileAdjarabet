@@ -43,6 +43,8 @@ public class ProfileViewController: UIViewController {
         switch action {
         case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
         case .didCopyUserId(let userId): didCopyUserId(userId: userId)
+        case .didLogoutWithSuccess: navigator.navigate(to: .loginPage, animated: true)
+        case .didLogoutWithError(let error): print("Logout with error , \(error)")
         }
     }
 
@@ -51,7 +53,12 @@ public class ProfileViewController: UIViewController {
         case .openBalance: openBalance()
         case .openDeposit: openDeposit()
         case .openWithdraw: openWithdraw()
-        case .openPage(let destination): openPage(destination: destination)
+        case .openPage(let destination):
+            switch destination {
+            case .loginPage: viewModel.logout()
+            default:
+                openPage(destination: destination)
+            }
         }
     }
 

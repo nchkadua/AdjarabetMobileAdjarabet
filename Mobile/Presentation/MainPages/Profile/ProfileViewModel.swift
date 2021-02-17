@@ -17,6 +17,7 @@ public struct ProfileViewModelParams {
 
 public protocol ProfileViewModelInput {
     func viewDidLoad()
+    func logout()
 }
 
 public protocol ProfileViewModelOutput {
@@ -27,6 +28,8 @@ public protocol ProfileViewModelOutput {
 public enum ProfileViewModelOutputAction {
     case initialize(AppListDataProvider)
     case didCopyUserId(userId: String)
+    case didLogoutWithSuccess
+    case didLogoutWithError(error: Error)
 }
 
 public enum ProfileViewModelRoute {
@@ -42,6 +45,7 @@ public class DefaultProfileViewModel: DefaultBaseViewModel {
 
     @Inject private var userSession: UserSessionServices
     @Inject private var userBalanceService: UserBalanceService
+    @Inject(from: .useCases) private var logoutUseCase: LogoutUseCase
 }
 
 extension DefaultProfileViewModel: ProfileViewModel {
@@ -88,5 +92,15 @@ extension DefaultProfileViewModel: ProfileViewModel {
         }
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))
+    }
+    
+    public func logout() {
+        logoutUseCase.execute(userId: userSession.userId ?? -1, sessionId: userSession.sessionId ?? "", completion: { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(_): self.actionSubject.onNext(.didLogoutWithSuccess)
+            case .failure(.unknown(let error)): self.actionSubject.onNext(.didLogoutWithError(error: error))
+            }
+        })
     }
 }
