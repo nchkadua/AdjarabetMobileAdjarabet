@@ -29,4 +29,13 @@ extension CoreApiPaymentAccountRepository: PaymentAccountRepository {
                 .setBody(key: "maxResult", value: "\(params.pageCount)")
         }
     }
+
+    public func currentUserPaymentAccountDelete(params: CurrentUserPaymentAccountDeleteParams,
+                                                completion: @escaping CurrentUserPaymentAccountDeleteHandler) {
+        performTask(expecting: PaymentAccountDeleteDataTransferResponse.self, completion: completion) { (requestBuilder) -> CoreRequestBuilder in
+            return requestBuilder
+                .setBody(key: .req, value: "deletePaymentAccount")
+                .setBody(key: "paymentAccountID", value: "\(params.id)")
+        }
+    }
 }

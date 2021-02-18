@@ -20,6 +20,7 @@ class PaymentAccountUseCaseTests: XCTestCase {
 
         // create Mock repository
         struct MockPaymentAccountRepository: PaymentAccountRepository {
+
             func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
                                                  completion: @escaping CurrentUserPaymentAccountsCountHandler) {
                 completion(.success(.init(count: 0)))
@@ -29,6 +30,8 @@ class PaymentAccountUseCaseTests: XCTestCase {
                                             completion: @escaping CurrentUserPaymentAccountsHandler) {
                 completion(.success([]))
             }
+
+            func currentUserPaymentAccountDelete(params: CurrentUserPaymentAccountDeleteParams, completion: @escaping CurrentUserPaymentAccountDeleteHandler) { }
         }
 
         // override repository in DependencyContainer
@@ -51,6 +54,7 @@ class PaymentAccountUseCaseTests: XCTestCase {
 
         // create Mock repository
         struct MockPaymentAccountRepository: PaymentAccountRepository {
+
             func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
                                                  completion: @escaping CurrentUserPaymentAccountsCountHandler) {
                 completion(.failure(EmptyError()))
@@ -60,6 +64,8 @@ class PaymentAccountUseCaseTests: XCTestCase {
                                             completion: @escaping CurrentUserPaymentAccountsHandler) {
                 completion(.success([]))
             }
+
+            func currentUserPaymentAccountDelete(params: CurrentUserPaymentAccountDeleteParams, completion: @escaping CurrentUserPaymentAccountDeleteHandler) { }
         }
 
         // override repository in DependencyContainer
@@ -80,6 +86,7 @@ class PaymentAccountUseCaseTests: XCTestCase {
 
         // create Mock repository
         struct MockPaymentAccountRepository: PaymentAccountRepository {
+
             func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
                                                  completion: @escaping CurrentUserPaymentAccountsCountHandler) {
                 completion(.success(.init(count: 0)))
@@ -89,6 +96,8 @@ class PaymentAccountUseCaseTests: XCTestCase {
                                             completion: @escaping CurrentUserPaymentAccountsHandler) {
                 completion(.failure(EmptyError()))
             }
+
+            func currentUserPaymentAccountDelete(params: CurrentUserPaymentAccountDeleteParams, completion: @escaping CurrentUserPaymentAccountDeleteHandler) { }
         }
 
         // override repository in DependencyContainer
@@ -109,6 +118,7 @@ class PaymentAccountUseCaseTests: XCTestCase {
 
         // create Mock repository
         struct MockPaymentAccountRepository: PaymentAccountRepository {
+
             func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
                                                  completion: @escaping CurrentUserPaymentAccountsCountHandler) {
                 completion(.failure(EmptyError()))
@@ -117,6 +127,10 @@ class PaymentAccountUseCaseTests: XCTestCase {
             func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
                                             completion: @escaping CurrentUserPaymentAccountsHandler) {
                 completion(.failure(EmptyError()))
+            }
+
+            func currentUserPaymentAccountDelete(params: CurrentUserPaymentAccountDeleteParams, completion: @escaping CurrentUserPaymentAccountDeleteHandler) {
+                completion(.success(10))
             }
         }
 

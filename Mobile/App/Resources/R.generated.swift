@@ -873,7 +873,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 30 files.
+  /// This `R.file` struct is generated, and contains static references to 33 files.
   struct file {
     /// Resource file `FiraGO-Bold.ttf`.
     static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
@@ -905,8 +905,6 @@ struct R: Rswift.Validatable {
     static let firaGOTwoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Two", pathExtension: "ttf")
     /// Resource file `FiraGO-UltraLight.ttf`.
     static let firaGOUltraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-UltraLight", pathExtension: "ttf")
-    /// Resource file `GameBundle.zip`.
-    static let gameBundleZip = Rswift.FileResource(bundle: R.hostingBundle, name: "GameBundle", pathExtension: "zip")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `NotoSansArmenian-Bold.ttf`.
@@ -933,8 +931,16 @@ struct R: Rswift.Validatable {
     static let pantonNusx3BoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonNusx3-Bold", pathExtension: "otf")
     /// Resource file `PantonNusx3-Regular.otf`.
     static let pantonNusx3RegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonNusx3-Regular", pathExtension: "otf")
+    /// Resource file `bundles.zip`.
+    static let bundlesZip = Rswift.FileResource(bundle: R.hostingBundle, name: "bundles", pathExtension: "zip")
+    /// Resource file `ca.der`.
+    static let caDer = Rswift.FileResource(bundle: R.hostingBundle, name: "ca", pathExtension: "der")
+    /// Resource file `exitButton.png`.
+    static let exitButtonPng = Rswift.FileResource(bundle: R.hostingBundle, name: "exitButton", pathExtension: "png")
     /// Resource file `incognito-card.mp4`.
     static let incognitoCardMp4 = Rswift.FileResource(bundle: R.hostingBundle, name: "incognito-card", pathExtension: "mp4")
+    /// Resource file `localhost.p12`.
+    static let localhostP12 = Rswift.FileResource(bundle: R.hostingBundle, name: "localhost", pathExtension: "p12")
 
     /// `bundle.url(forResource: "FiraGO-Bold", withExtension: "ttf")`
     static func firaGOBoldTtf(_: Void = ()) -> Foundation.URL? {
@@ -1026,12 +1032,6 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "GameBundle", withExtension: "zip")`
-    static func gameBundleZip(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.gameBundleZip
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
@@ -1110,9 +1110,33 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "bundles", withExtension: "zip")`
+    static func bundlesZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.bundlesZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ca", withExtension: "der")`
+    static func caDer(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.caDer
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "exitButton", withExtension: "png")`
+    static func exitButtonPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.exitButtonPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "incognito-card", withExtension: "mp4")`
     static func incognitoCardMp4(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.incognitoCardMp4
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "localhost", withExtension: "p12")`
+    static func localhostP12(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.localhostP12
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1344,15 +1368,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
     /// Image `edit`.
     static let edit = Rswift.ImageResource(bundle: R.hostingBundle, name: "edit")
+    /// Image `exitButton`.
+    static let exitButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "exitButton")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "edit", bundle: ..., traitCollection: ...)`
     static func edit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.edit, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "exitButton", bundle: ..., traitCollection: ...)`
+    static func exitButton(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.exitButton, compatibleWith: traitCollection)
     }
     #endif
 
@@ -11954,8 +11987,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/QuickAction/withdraw", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/withdraw' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/QuickAction/withdraw", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/withdraw' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12218,8 +12251,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12881,8 +12914,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

@@ -18,6 +18,7 @@ class FileExtractor: NSObject {
     
     public func extractFileWithName(_ name: String, _ fileExtension: String = "zip", completion: @escaping ((ExtractResult<NSString, NSString>) -> Void)) {
         do {
+            print(name, fileExtension)
             let filePath = Bundle.main.url(forResource: name, withExtension: fileExtension)!
 
             let documentsPath = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
@@ -31,7 +32,7 @@ class FileExtractor: NSObject {
                     completion(.success(downloadedResourcesPath.appendingPathComponent(name).relativePath as NSString))
                     /// Temp: Check for unzipped files
                     do {
-                        let fullPath = downloadedResourcesPath.appendingPathComponent("GameBundle")
+                        let fullPath = downloadedResourcesPath.appendingPathComponent("bundles")
                         print("ODResources contains: fullPath ", fullPath)
                         let docsArray = try fileManager.contentsOfDirectory(atPath: fullPath.relativePath)
                         print("ODResources contains: ", docsArray)

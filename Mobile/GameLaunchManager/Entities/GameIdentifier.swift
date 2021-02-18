@@ -13,10 +13,12 @@ import Foundation
  */
 enum GameIdentifier {
     case egt5BurningHeart
+    case riseOfRa
 
     var description: Description {
         switch self {
         case .egt5BurningHeart: return Description(tag: "EGT")
+        case .riseOfRa: return Description(tag: "EGT")
         }
     }
 
@@ -34,6 +36,7 @@ extension GameIdentifier {
         case "11e7b7ca-14f1-b0b0-88fc-005056adb106":
             switch gameId {
             case "7382": self = .egt5BurningHeart
+            case "7463": self = .riseOfRa
             default: return nil
             }
 

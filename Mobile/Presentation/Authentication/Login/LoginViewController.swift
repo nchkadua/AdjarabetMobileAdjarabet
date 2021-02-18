@@ -41,7 +41,7 @@ public class LoginViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-//        viewModel.login(username: "testpng", password: "Paroli1")
+        viewModel.login(username: "testpng", password: "Paroli1")
     }
 
     public override func viewDidAppear(_ animated: Bool) {

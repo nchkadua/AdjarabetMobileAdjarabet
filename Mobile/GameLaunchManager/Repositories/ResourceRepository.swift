@@ -28,6 +28,11 @@ protocol ResourceRepository {
     typealias PathHandler = (Result<String, Error>) -> Void
     // input
     func extract(identifier: GameIdentifier, handler: @escaping PathHandler)
+
+    /**
+     Wrapper for loading and extracting the game resources
+     */
+    func loadAndExtract(identifier: GameIdentifier, handler: @escaping PathHandler)
 }
 
 // MARK: - Default Implementation of ResourceRepository
@@ -40,18 +45,32 @@ struct DefaultResourceRepository: ResourceRepository {
         let tag = identifier.description.tag
         odrManager.loadResourcesWithTags([tag]) { (result) in
             switch result {
-            case .success: handler(.success(()))
-            case .failure(let error): handler(.failure(error))
+            case .success:
+                handler(.success(()))
+            case .failure(let error):
+                handler(.failure(error))
             }
         }
     }
 
     func extract(identifier: GameIdentifier, handler: @escaping PathHandler) {
-        fileExtractor.extractFileWithName("GameBundle") { (result) in
+        fileExtractor.extractFileWithName("bundles") { (result) in
             switch result {
-            case .success(let path): handler(.success(path as String))
-            case .failure /* (let errorMsg) */ :
-                {}() // TODO: error handling
+            case .success(let path):
+                handler(.success(path as String))
+            case .failure(let error):
+                handler(.failure(AdjarabetCoreClientError.coreError(description: error as String)))
+            }
+        }
+    }
+
+    func loadAndExtract(identifier: GameIdentifier, handler: @escaping PathHandler) {
+        load(identifier: identifier) { (result) in
+            switch result {
+            case .success:
+                extract(identifier: identifier, handler: handler)
+            case .failure(let error):
+                handler(.failure(error))
             }
         }
     }

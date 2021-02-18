@@ -42,4 +42,18 @@ public struct CurrentUserPaymentAccountsPageParams {
 }
 
 // MARK: - Writable Repository
-public protocol PaymentAccountWritableRepository { }
+public protocol PaymentAccountWritableRepository {
+    /**
+     Deletes payment account specified by payment account ID
+     for the currently authenticated user
+     Returns Status Code
+     */
+    typealias CurrentUserPaymentAccountDeleteHandler = (Result<Int, Error>) -> Void
+    func currentUserPaymentAccountDelete(params: CurrentUserPaymentAccountDeleteParams,
+                                         completion: @escaping CurrentUserPaymentAccountDeleteHandler)
+}
+
+// for currentUserPaymentAccountDelete
+public struct CurrentUserPaymentAccountDeleteParams {
+    public let id: Int64
+}

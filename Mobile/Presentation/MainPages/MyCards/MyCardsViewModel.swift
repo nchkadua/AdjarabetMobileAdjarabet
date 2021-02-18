@@ -66,8 +66,9 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
             case .success(let paymentAccounts): // type - [PaymentAccountEntity]
                 var componentViewModel: AppCellDataProvider?
                 paymentAccounts.forEach { myCard in
-                    if let providerName = myCard.providerName, let dateCreated = myCard.dateCreated, let accountVisual = myCard.accountVisual {
-                        componentViewModel = DefaultMyCardComponentViewModel(params: .init(bankIcon: nil,
+                    if let id = myCard.id, let providerName = myCard.providerName, let dateCreated = myCard.dateCreated, let accountVisual = myCard.accountVisual {
+                        componentViewModel = DefaultMyCardComponentViewModel(params: .init(id: id,
+                                                                                           bankIcon: nil,
                                                                                            bankAlias: providerName,
                                                                                            dateAdded: dateCreated,
                                                                                            cardNumber: accountVisual,
@@ -152,8 +153,18 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         }
         return icon
     }
-    
+
+    // TODO: Irakli
     public func addCardsClicked() {
-        
+        // TODO: delete first
+        let id = (dataProvider[0] as! DefaultMyCardComponentViewModel).params.id
+        paymentAccountUseCase.execute(params: .init(id: id)) { (result) in
+            switch result {
+            case .success:
+                print("DeleteCard Success")
+            case .failure(let error):
+                print("DeleteCard Failure:", error)
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ def pods
   pod 'Nuke', '8.4.1'
 
   pod 'SwiftLint', '0.39.1'
-
+  pod 'Telegraph'
   pod 'ZIPFoundation'
   
   pod 'Firebase/Core'

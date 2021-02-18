@@ -1,4 +1,5 @@
 PODS:
+  - CocoaAsyncSocket (7.6.5)
   - Firebase/Analytics (7.0.0):
     - Firebase/Core
   - Firebase/Core (7.0.0):
@@ -96,6 +97,7 @@ PODS:
   - GoogleUtilities/UserDefaults (7.0.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - HTTPParserC (2.9.2)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -118,6 +120,9 @@ PODS:
   - SharedFramework (0.0.8)
   - SwiftKeychainWrapper (4.0.1)
   - SwiftLint (0.39.1)
+  - Telegraph (0.28):
+    - CocoaAsyncSocket (~> 7.5)
+    - HTTPParserC (~> 2.7)
   - UAParserSwift (1.2.1)
   - ZIPFoundation (0.9.11)
 
@@ -136,11 +141,13 @@ DEPENDENCIES:
   - SharedFramework
   - SwiftKeychainWrapper
   - SwiftLint (= 0.39.1)
+  - Telegraph
   - UAParserSwift
   - ZIPFoundation
 
 SPEC REPOS:
   trunk:
+    - CocoaAsyncSocket
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -156,6 +163,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - HTTPParserC
     - nanopb
     - Nuke
     - PayCardsRecognizer
@@ -170,10 +178,12 @@ SPEC REPOS:
     - SharedFramework
     - SwiftKeychainWrapper
     - SwiftLint
+    - Telegraph
     - UAParserSwift
     - ZIPFoundation
 
 SPEC CHECKSUMS:
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Firebase: 50be68416f50eb4eb2ecb0e78acab9a051ef95df
   FirebaseABTesting: b78ae653b7658b8f1c076eaa21029c936d58f758
   FirebaseAnalytics: c1166b7990bae464c6436132510bb718c6680f80
@@ -189,6 +199,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 1350d40e86a76f7863928d63bcb0b89c84c521c5
   GoogleUtilities: ffb2f4159f2c897c6e8992bd7fbcdef8a300589c
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  HTTPParserC: 1ed389f80bb57a5b967d87d5358b8a94418394ee
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   PayCardsRecognizer: 2e4d1b2fdd5f1528fb56064a91e1d58a1af7a2db
@@ -203,9 +214,10 @@ SPEC CHECKSUMS:
   SharedFramework: 2081e84ea73f1b25d4a8351b953621f177b4fd35
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  Telegraph: 6820cf262064f2c15a393fb56401834141d0310e
   UAParserSwift: dc5e2717debc6e78a40487148d29649a0b311caf
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: ba265f98dd4ac0e6facaae2312aade4ca49843a1
+PODFILE CHECKSUM: d3680a7b09790b33d9eccd352b1a313e9fba6542
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0

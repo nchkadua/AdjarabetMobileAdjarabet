@@ -12,6 +12,7 @@ public protocol MyCardComponentViewModel: MyCardComponentViewModelInput,
                                                 MyCardComponentViewModelOutput {}
 
 public struct MyCardComponentViewModelParams {
+    let id: Int64
     let bankIcon: UIImage?
     let bankAlias: String
     let dateAdded: Date
