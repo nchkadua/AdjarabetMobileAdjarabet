@@ -50,9 +50,9 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     private let bannerSection = AppSectionDataProvider(dataProviders: [
         DefaultHomeBannerContainerComponentViewModel(params: .init(banners: [
             DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_back()!)),
-            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_back()!)),
-            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_back()!)),
-            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_back()!))
+            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_front()!)),
+            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card()!)),
+            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.scan()!))
         ]))
     ])
     private var loadingType: LoadingType = .none {

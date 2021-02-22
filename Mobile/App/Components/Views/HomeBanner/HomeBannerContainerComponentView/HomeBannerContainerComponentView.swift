@@ -11,7 +11,7 @@ import RxSwift
 class HomeBannerContainerComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: HomeBannerContainerComponentViewModel!
-    
+    private static let infinite_limit = 999 // Set 'infinite' limit for the data source
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var bannerCollectionView: UICollectionView!
@@ -30,17 +30,10 @@ class HomeBannerContainerComponentView: UIView {
     public func setAndBind(viewModel: HomeBannerContainerComponentViewModel) {
         self.viewModel = viewModel
         bind()
+        setupPageControl()
     }
     
     private func bind() {
-        // TODO EXTRACT Collection Setup ////////////
-        bannerCollectionView.dataSource = self
-        bannerCollectionView.delegate = self
-        bannerCollectionView.contentInset.left = 20
-        bannerCollectionView.contentInset.right = 20
-        bannerCollectionView.isPagingEnabled = true
-        pageControl.numberOfPages = viewModel.params.banners.count
-        ////////////////////////////////////////////////////////////
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
@@ -57,6 +50,10 @@ class HomeBannerContainerComponentView: UIView {
     private func set(banners: [AppCellDataProvider]) {
         
     }
+    
+    private func setupPageControl() {
+        pageControl.numberOfPages = viewModel.params.banners.count
+    }
 }
 
 extension HomeBannerContainerComponentView: UICollectionViewDelegate {
@@ -69,7 +66,7 @@ extension HomeBannerContainerComponentView: UICollectionViewDelegate {
 
 extension HomeBannerContainerComponentView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 999 // "Set 'infinite' limit
+        return HomeBannerContainerComponentView.infinite_limit
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -105,11 +102,20 @@ extension HomeBannerContainerComponentView: Xibable {
     
     func setupUI() {
         view.backgroundColor = UIColor.clear
+        setupBannerCollectionView()
+    }
+    
+    private func setupBannerCollectionView() {
         bannerCollectionView.register(types: HomeBannerCollectionViewCell.self)
         bannerCollectionView.showsHorizontalScrollIndicator = false
         bannerCollectionView.flowLayout?.scrollDirection = .horizontal
         bannerCollectionView.flowLayout?.sectionInset = .zero
         bannerCollectionView.flowLayout?.minimumLineSpacing = 0
         bannerCollectionView.flowLayout?.minimumInteritemSpacing = 0
+        bannerCollectionView.dataSource = self
+        bannerCollectionView.delegate = self
+        bannerCollectionView.contentInset.left = 20
+        bannerCollectionView.contentInset.right = 20
+        bannerCollectionView.isPagingEnabled = true
     }
 }
