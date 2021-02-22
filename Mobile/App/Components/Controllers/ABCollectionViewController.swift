@@ -32,7 +32,8 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
             RecentlyPlayedCollectionViewCell.self,
             PlayedGameLauncherCollectionViewCell.self,
             GameLauncherCollectionViewCell.self,
-            LoadingCollectionViewCell.self
+            LoadingCollectionViewCell.self,
+            HomeBannerContainerCollectionViewCell.self
         ])
 
         setupCollectionView()

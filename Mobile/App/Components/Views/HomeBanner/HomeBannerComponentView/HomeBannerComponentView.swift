@@ -11,9 +11,10 @@ import RxSwift
 class HomeBannerComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: HomeBannerComponentViewModel!
-
+    
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var bannerImageView: UIImageView!
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,12 +35,18 @@ class HomeBannerComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
+            case .set(let banner):
+                self?.set(banner: banner)
             default:
                 break
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
+    }
+    
+    private func set(banner: UIImage) {
+        bannerImageView.image = banner
     }
 }
 

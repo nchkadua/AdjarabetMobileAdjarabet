@@ -12,7 +12,7 @@ public protocol HomeBannerContainerComponentViewModel: HomeBannerContainerCompon
                                                 HomeBannerContainerComponentViewModelOutput {}
 
 public struct HomeBannerContainerComponentViewModelParams {
-    
+    let banners: [AppCellDataProvider]
 }
 
 public protocol HomeBannerContainerComponentViewModelInput {
@@ -25,7 +25,7 @@ public protocol HomeBannerContainerComponentViewModelOutput {
 }
 
 public enum HomeBannerContainerComponentViewModelOutputAction {
-    
+    case set(banners: [AppCellDataProvider])
 }
 
 public class DefaultHomeBannerContainerComponentViewModel {
@@ -42,6 +42,6 @@ extension DefaultHomeBannerContainerComponentViewModel: HomeBannerContainerCompo
     }
 
     public func didBind() {
-//        actionSubject.onNext()
+        actionSubject.onNext(.set(banners: params.banners))
     }
 }

@@ -12,7 +12,7 @@ public protocol HomeBannerComponentViewModel: HomeBannerComponentViewModelInput,
                                                 HomeBannerComponentViewModelOutput {}
 
 public struct HomeBannerComponentViewModelParams {
-    
+    let banner: UIImage
 }
 
 public protocol HomeBannerComponentViewModelInput {
@@ -25,7 +25,7 @@ public protocol HomeBannerComponentViewModelOutput {
 }
 
 public enum HomeBannerComponentViewModelOutputAction {
-    
+    case set(banner: UIImage)
 }
 
 public class DefaultHomeBannerComponentViewModel {
@@ -42,6 +42,6 @@ extension DefaultHomeBannerComponentViewModel: HomeBannerComponentViewModel {
     }
 
     public func didBind() {
-//        actionSubject.onNext()
+        actionSubject.onNext(.set(banner: params.banner))
     }
 }

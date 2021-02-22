@@ -47,7 +47,14 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     private var page: PageDescription = .init()
     private var games: AppCellDataProviders = []
     public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .secondaryText(), height: 55))
-
+    private let bannerSection = AppSectionDataProvider(dataProviders: [
+        DefaultHomeBannerContainerComponentViewModel(params: .init(banners: [
+            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_back()!)),
+            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_back()!)),
+            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_back()!)),
+            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.cardManagement.card_back()!))
+        ]))
+    ])
     private var loadingType: LoadingType = .none {
         didSet {
             guard loadingType != oldValue else {return}
@@ -166,11 +173,10 @@ extension DefaultHomeViewModel: HomeViewModel {
 
     public func viewDidLoad() {
         observeLanguageChange()
-
+//
         let recentryPlayedSection = AppSectionDataProvider(dataProviders: [recentlyPlayedComponentViewModel])
         let gamesSection = AppSectionDataProvider(dataProviders: [loading])
-
-        actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [recentryPlayedSection, gamesSection])))
+        actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [bannerSection, recentryPlayedSection, gamesSection])))
 
         loadRecentryPlayedGames()
         load(loadingType: .fullScreen)
