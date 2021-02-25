@@ -36,7 +36,7 @@ public class HomeViewController: UIViewController {
         bind(to: viewModel)
         viewModel.viewDidLoad()
         
-        addLayoutButton()
+//        addLayoutButton()
     }
     
     // TEST BUTTON
