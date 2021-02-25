@@ -185,6 +185,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 extension DefaultHomeViewModel: HomeViewModel {
     
     public func layoutChangeTapped() {
+        DisplayEmptyGames()
         selectedLayout = selectedLayout == GamesLayout.list ? .grid : .list
         let viewModels: [AppCellDataProvider] = fetchedGames.compactMap {
             let vm = createGameComponentFrom(game: $0)
@@ -206,13 +207,17 @@ extension DefaultHomeViewModel: HomeViewModel {
     public func viewDidLoad() {
         observeLanguageChange()
 
+        DisplayEmptyGames()
+
+        loadRecentryPlayedGames()
+        load(loadingType: .fullScreen)
+    }
+    
+    private func DisplayEmptyGames() {
         let recentryPlayedSection = AppSectionDataProvider(dataProviders: [recentlyPlayedComponentViewModel])
         let gamesSection = AppSectionDataProvider(dataProviders: [loading])
 
         actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [recentryPlayedSection, gamesSection])))
-
-        loadRecentryPlayedGames()
-        load(loadingType: .fullScreen)
     }
 
     public func viewDidAppear() {
