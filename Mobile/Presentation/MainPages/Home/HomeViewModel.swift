@@ -17,6 +17,7 @@ public protocol HomeViewModelInput {
     func viewWillAppear()
     func viewDidAppear()
     func didLoadNextPage()
+    func layoutChangeTapped()
 }
 
 public protocol HomeViewModelOutput {
@@ -37,6 +38,11 @@ public enum HomeViewModelRoute {
 }
 
 public class DefaultHomeViewModel: DefaultBaseViewModel {
+    private enum GamesLayout {
+        case list
+        case grid
+    }
+    private var selectedLayout: GamesLayout = .list
     private let actionSubject = PublishSubject<HomeViewModelOutputAction>()
     private let routeSubject = PublishSubject<HomeViewModelRoute>()
 
@@ -47,7 +53,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     private var page: PageDescription = .init()
     private var games: AppCellDataProviders = []
     public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .secondaryText(), height: 55))
-
+    private var fetchedGames: [Game] = []
     private var loadingType: LoadingType = .none {
         didSet {
             guard loadingType != oldValue else {return}
@@ -88,34 +94,55 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         actionSubject.onNext(.languageDidChange)
     }
 
-    private func load(loadingType: LoadingType) {
+    public func load(loadingType: LoadingType) {
         self.loadingType = loadingType
-
         lobbyGamesUseCase.execute(request: .init(page: page.current, itemsPerPage: page.itemsPerPage)) { result in
             defer { self.loadingType = .none }
 
             switch result {
             case .success(let params):
-                let viewModels: [DefaultGameLauncherComponentViewModel] = params.games.compactMap { [weak self] in
+                self.saveGamesToCache(params.games)
+                let viewModels: [AppCellDataProvider] = params.games.compactMap { [weak self] in
                     guard let self = self else {return nil}
-
-                    let vm = DefaultGameLauncherComponentViewModel(game: $0)
-                    vm.action.subscribe(onNext: { action in
-                        switch action {
-                        case .didSelect(let model, _): self.routeSubject.onNext(.openGame(title: model.params.game.name))
-                        default: break
-                        }
-                    }).disposed(by: self.disposeBag)
-                    return vm
+                    return self.createGameComponentFrom(game: $0)
                 }
-
                 self.appendPage(games: viewModels)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-
+    
+    private func setupListGameLauncherComponentFrom(game: Game) -> DefaultGameLauncherComponentViewModel {
+        let vm = DefaultGameLauncherComponentViewModel(game: game)
+        vm.action.subscribe(onNext: { action in
+            switch action {
+            case .didSelect(let model, _): self.routeSubject.onNext(.openGame(title: model.params.game.name))
+            default: break
+            }
+        }).disposed(by: self.disposeBag)
+        return vm
+    }
+    
+    private func setupGridGameLauncherComponentFrom(game: Game) -> DefaultGameLauncherGridComponentViewModel {
+        let vm = DefaultGameLauncherGridComponentViewModel(game: game)
+//        vm.action.subscribe(onNext: { action in
+//            switch action {
+//            case .didSelect(let model, _): self.routeSubject.onNext(.openGame(title: model.params.game.name))
+//            default: break
+//            }
+//        }).disposed(by: self.disposeBag)
+        return vm
+    }
+    
+    private func createGameComponentFrom(game: Game) -> AppCellDataProvider {
+        return selectedLayout == GamesLayout.list ? setupListGameLauncherComponentFrom(game: game) : setupGridGameLauncherComponentFrom(game: game)
+    }
+    
+    private func saveGamesToCache(_ games: [Game]) {
+        fetchedGames.append(contentsOf: games)
+    }
+    
     private func appendPage(games: AppCellDataProviders) {
         let offset = self.games.count
 
@@ -156,6 +183,18 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 }
 
 extension DefaultHomeViewModel: HomeViewModel {
+    
+    public func layoutChangeTapped() {
+        selectedLayout = selectedLayout == GamesLayout.list ? .grid : .list
+        let viewModels: [AppCellDataProvider] = fetchedGames.compactMap {
+            let vm = createGameComponentFrom(game: $0)
+            return vm
+        }
+        games = []
+        page = .init()
+        self.appendPage(games: viewModels)
+    }
+    
     public var action: Observable<HomeViewModelOutputAction> { actionSubject.asObserver() }
 
     public var route: Observable<HomeViewModelRoute> { routeSubject.asObserver() }
