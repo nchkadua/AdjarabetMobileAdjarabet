@@ -26,6 +26,11 @@ class GameLauncherGridComponentView: UIView {
         super.init(coder: coder)
         nibSetup()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        roundCorners(.allCorners, radius: 10)
+    }
 
     public func setAndBind(viewModel: GameLauncherGridComponentViewModel) {
         self.viewModel = viewModel
@@ -47,6 +52,7 @@ class GameLauncherGridComponentView: UIView {
     }
     private func setupUI(coverUrl: URL, title: String, category: String, jackpotAmount: String?) {
         let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
+        coverImageView.contentMode = .scaleAspectFill
         loadImage(with: coverUrl, options: options, into: coverImageView)
     }
 }
@@ -62,6 +68,6 @@ extension GameLauncherGridComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.secondaryBg().value
+        view.backgroundColor = UIColor.clear
     }
 }

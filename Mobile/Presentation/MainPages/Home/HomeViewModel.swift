@@ -126,6 +126,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     
     private func setupGridGameLauncherComponentFrom(game: Game) -> DefaultGameLauncherGridComponentViewModel {
         let vm = DefaultGameLauncherGridComponentViewModel(game: game)
+        // subscribe to didSelect here
 //        vm.action.subscribe(onNext: { action in
 //            switch action {
 //            case .didSelect(let model, _): self.routeSubject.onNext(.openGame(title: model.params.game.name))
@@ -185,14 +186,14 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 extension DefaultHomeViewModel: HomeViewModel {
     
     public func layoutChangeTapped() {
-        DisplayEmptyGames()
+        games = []
+        page = .init()
+        displayEmptyGames()
         selectedLayout = selectedLayout == GamesLayout.list ? .grid : .list
         let viewModels: [AppCellDataProvider] = fetchedGames.compactMap {
             let vm = createGameComponentFrom(game: $0)
             return vm
         }
-        games = []
-        page = .init()
         self.appendPage(games: viewModels)
     }
     
@@ -207,13 +208,13 @@ extension DefaultHomeViewModel: HomeViewModel {
     public func viewDidLoad() {
         observeLanguageChange()
 
-        DisplayEmptyGames()
+        displayEmptyGames()
 
         loadRecentryPlayedGames()
         load(loadingType: .fullScreen)
     }
     
-    private func DisplayEmptyGames() {
+    private func displayEmptyGames() {
         let recentryPlayedSection = AppSectionDataProvider(dataProviders: [recentlyPlayedComponentViewModel])
         let gamesSection = AppSectionDataProvider(dataProviders: [loading])
 

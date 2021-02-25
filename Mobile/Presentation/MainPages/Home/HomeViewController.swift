@@ -35,6 +35,12 @@ public class HomeViewController: UIViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        
+        addLayoutButton()
+    }
+    
+    // TEST BUTTON
+    private func addLayoutButton() {
         let button = UIButton(type: .contactAdd)
         button.addTarget(self, action: #selector(changeLayout), for: .touchUpInside)
         button.backgroundColor = UIColor.red
