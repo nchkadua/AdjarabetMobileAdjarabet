@@ -29,7 +29,7 @@ public class MainTabBarNavigator: Navigator {
         let sports = sportsVCFactory.make()
         let promotions = promotionsVCFactory.make()
         let notifications = notificationsVCFacotry.make()
-        home.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: nil)
+        home.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: R.image.tabBar.home_selected())
         sports.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.sports(), selectedImage: nil)
         promotions.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
         notifications.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
