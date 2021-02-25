@@ -93,6 +93,12 @@
 		76AB37F325B95C74004E1326 /* incognito-card.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 76AB37F225B95C74004E1326 /* incognito-card.mp4 */; };
 		76B667982595F133001441BD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B667972595F133001441BD /* Date+Extension.swift */; };
 		76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B667A02596345C001441BD /* ABDateFormatter.swift */; };
+		76BA7BD825E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BA7BD225E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib */; };
+		76BA7BD925E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA7BD325E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCellDataProvider.swift */; };
+		76BA7BDA25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BA7BD425E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib */; };
+		76BA7BDB25E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA7BD525E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift */; };
+		76BA7BDC25E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA7BD625E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift */; };
+		76BA7BDD25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA7BD725E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.swift */; };
 		76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */; };
 		76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */; };
 		76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */; };
@@ -674,6 +680,12 @@
 		76AB37F225B95C74004E1326 /* incognito-card.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "incognito-card.mp4"; sourceTree = "<group>"; };
 		76B667972595F133001441BD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		76B667A02596345C001441BD /* ABDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABDateFormatter.swift; sourceTree = "<group>"; };
+		76BA7BD225E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLauncherGridComponentView.xib; sourceTree = "<group>"; };
+		76BA7BD325E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherGridCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		76BA7BD425E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLauncherGridCollectionViewCell.xib; sourceTree = "<group>"; };
+		76BA7BD525E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherGridComponentViewModel.swift; sourceTree = "<group>"; };
+		76BA7BD625E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherGridComponentView.swift; sourceTree = "<group>"; };
+		76BA7BD725E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTransactionHistoriesUseCase.swift; sourceTree = "<group>"; };
 		76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserTransactionsResponse.swift; sourceTree = "<group>"; };
 		76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryRepository.swift; sourceTree = "<group>"; };
@@ -1520,6 +1532,26 @@
 				769886C125711C2B00FA339E /* TransactionTypeModel.swift */,
 			);
 			path = TransactionFilter;
+			sourceTree = "<group>";
+		};
+		76BA7BD125E7A9DC00CB77A5 /* GameLauncherGridComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				76BA7BD225E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib */,
+				76BA7BD525E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift */,
+				76BA7BD625E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift */,
+			);
+			path = GameLauncherGridComponentView;
+			sourceTree = "<group>";
+		};
+		76BA7BE825E7AABA00CB77A5 /* GameLauncherGridComponentCell */ = {
+			isa = PBXGroup;
+			children = (
+				76BA7BD325E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCellDataProvider.swift */,
+				76BA7BD425E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib */,
+				76BA7BD725E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.swift */,
+			);
+			path = GameLauncherGridComponentCell;
 			sourceTree = "<group>";
 		};
 		76BADBA1257756560080AB76 /* TransactionHistory */ = {
@@ -3626,6 +3658,7 @@
 		D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */ = {
 			isa = PBXGroup;
 			children = (
+				76BA7BE825E7AABA00CB77A5 /* GameLauncherGridComponentCell */,
 				D8BF4040244EC949008F0BAF /* GameLauncherCollectionViewCell.swift */,
 				D8BF4044244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift */,
 				D8BF4041244EC949008F0BAF /* GameLauncherCollectionViewCell.xib */,
@@ -3650,6 +3683,7 @@
 		D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */ = {
 			isa = PBXGroup;
 			children = (
+				76BA7BD125E7A9DC00CB77A5 /* GameLauncherGridComponentView */,
 				D8CFD8AE244C850D001F4BAA /* GameLauncherComponentView.swift */,
 				D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */,
 				D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */,
@@ -3792,6 +3826,7 @@
 				D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */,
 				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
+				76BA7BD825E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib in Resources */,
 				CE2F03CD252CC8EE006D8001 /* QuickActionComponentView.xib in Resources */,
 				76AB37F325B95C74004E1326 /* incognito-card.mp4 in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
@@ -3824,6 +3859,7 @@
 				CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */,
 				CE2F03DA252CD6B6006D8001 /* QuickActionTableViewCell.xib in Resources */,
 				D80784842444727600003892 /* FiraGO-Hair.ttf in Resources */,
+				76BA7BDA25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib in Resources */,
 				D80784862444727600003892 /* FiraGO-Book.ttf in Resources */,
 				D807848A2444727600003892 /* FiraGO-UltraLight.ttf in Resources */,
 				CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */,
@@ -4149,6 +4185,7 @@
 				C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */,
 				C7B0DCEE2575591100714B22 /* Country.swift in Sources */,
 				CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */,
+				76BA7BDC25E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				CE9B7FEC257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift in Sources */,
@@ -4336,6 +4373,7 @@
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
 				D8F26A05246837B700137252 /* LoginType.swift in Sources */,
+				76BA7BDD25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.swift in Sources */,
 				CE2F03D6252CD6B0006D8001 /* QuickActionTableViewCellDataProvider.swift in Sources */,
 				765EDFD325BAE08300089B49 /* EditableCell.swift in Sources */,
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
@@ -4364,6 +4402,7 @@
 				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
+				76BA7BDB25E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				CE9B7FEA257544F5006FF756 /* PhoneNumberChangeNavigator.swift in Sources */,
 				CEF3684F2549C325009FD456 /* DepositViewController.swift in Sources */,
@@ -4471,6 +4510,7 @@
 				76EFF7C62582383000898819 /* AccessHistoryCalendarViewControllerFactory.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
+				76BA7BD925E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCellDataProvider.swift in Sources */,
 				C71B4B73257EC57000538697 /* SecurityLevelsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
