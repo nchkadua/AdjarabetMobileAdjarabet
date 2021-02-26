@@ -79,7 +79,7 @@ extension BalanceComponentView: Xibable {
         }
     }
 
-    //Fonts should be changed in design system
+    // Fonts should be changed in design system
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.secondaryBg().value
 

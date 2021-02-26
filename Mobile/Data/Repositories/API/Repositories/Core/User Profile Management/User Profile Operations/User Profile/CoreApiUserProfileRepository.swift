@@ -11,9 +11,8 @@ import Foundation
 public struct CoreApiUserProfileRepository: CoreApiRepository { }
 
 extension CoreApiUserProfileRepository: UserProfileRepository {
-
     public func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler) {
-        performTask(expecting: UserInfoDataTransferResponse.self, completion: completion) { (requestBuilder) in
+        performTask(expecting: UserInfoDataTransferResponse.self, completion: completion) { requestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "getUserInfo")
         }

@@ -33,12 +33,10 @@ protocol StandartGameLaunchUseCase {
 // MARK: - Default Implementation of StandartGameLaunchUseCase
 
 struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
-
     let webUrlRepo: LaunchUrlRepository = DefaultLaunchUrlRepository()
     let resRepo: ResourceRepository = DefaultResourceRepository()
 
     func launch(gameId: String, providerId: String, handler: @escaping UrlHandler) {
-
         // Identify the game
         guard let identifier = GameIdentifier(providerId: providerId, gameId: gameId)
         else {
@@ -48,7 +46,7 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
 
         // 1. Fetch Service Auth Token
         // 2. Fetch Web URL
-        webUrlRepo.url(gameId: gameId, providerId: providerId) { (result) in
+        webUrlRepo.url(gameId: gameId, providerId: providerId) { result in
             switch result {
             case .success(let webUrl):
                 // Continue the flow here ...
@@ -64,7 +62,7 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
                               _ handler: @escaping UrlHandler) {
         // 3. Fetch Game Bundle archive
         // 4. Extract fetched Game Bundle archive and get Path of extracted archive
-        resRepo.loadAndExtract(identifier: identifier) { (result) in
+        resRepo.loadAndExtract(identifier: identifier) { result in
             switch result {
             case .success(let gameBundlepath):
                 // Continue the flow here ...
@@ -78,7 +76,6 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
     private func handlePaths(_ gameBundlepath: String,
                              _ webUrl: String,
                              _ handler: @escaping UrlHandler) {
-
         DispatchQueue.main.async { // TODO: somehow this is called in background thread
 
             // Create final URL object
@@ -99,7 +96,7 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
             let webServer = Server(identity: identity, caCertificates: [caCertificate])
 
             webServer.serveDirectory(URL(string: path)!, "")
-            try! webServer.start(port: 8080, interface: "localhost")
+            try? webServer.start(port: 8080, interface: "localhost")
 
             handler(.success(.init(url: finalUrl, gc: StandartGameLaunchGarbageCollector(webServer: webServer))))
         }
@@ -107,7 +104,6 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
 }
 
 struct StandartGameLaunchGarbageCollector: GameLaunchGarbageCollector {
-
     var webServer: Server
 
     func free() {

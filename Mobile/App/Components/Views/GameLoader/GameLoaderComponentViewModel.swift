@@ -39,19 +39,19 @@ extension DefaultGameLoaderComponentViewModel: GameLoaderComponentViewModel {
 
     public func didBind() {
     }
-    
+
     public func begindAnimation() {
         actionSubject.onNext(.beginAnimation)
     }
-    
+
     public func finishAnimation() {
         actionSubject.onNext(.finishAnimation)
     }
-    
+
     public func didBeginAnimation() {
         actionSubject.onNext(.didBeginAnimation)
     }
-    
+
     public func didFinishAnimation() {
         actionSubject.onNext(.didFinishAnimation)
     }

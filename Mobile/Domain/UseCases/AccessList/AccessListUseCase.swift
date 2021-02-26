@@ -34,7 +34,7 @@ public class DefaultAccessListUseCaseUseCase: DisplayAccessListUseCase {
         }
         return nil // TODO??
     }
-    
+
     public func generateRequestParams(from useCaseParams: DisplayAccessListUseCaseParams) -> GetAccessListParams {
         // Date Selection in UI is unclisve. Date selection in API is exclusive. We need to add 1 day to to include desired last day
         let endDate = dayDateFormatter.date(from: useCaseParams.toDate)
@@ -43,9 +43,8 @@ public class DefaultAccessListUseCaseUseCase: DisplayAccessListUseCase {
         let requestParams: GetAccessListParams = .init(fromDate: useCaseParams.fromDate, toDate: correctEndDateString)
         return requestParams
     }
-    
+
     public init() {
-        
     }
 }
 

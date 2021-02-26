@@ -11,10 +11,9 @@ import Foundation
 public struct CoreApiPaymentAccountRepository: CoreApiRepository { }
 
 extension CoreApiPaymentAccountRepository: PaymentAccountRepository {
-
     public func currentUserPaymentAccountsCount(params: CurrentUserPaymentAccountsCountParams,
                                                 completion: @escaping CurrentUserPaymentAccountsCountHandler) {
-        performTask(expecting: PaymentAccountCountDataTransferResponse.self, completion: completion) { (requestBuilder) in
+        performTask(expecting: PaymentAccountCountDataTransferResponse.self, completion: completion) { requestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "getPaymentAccountsCount")
         }
@@ -22,7 +21,7 @@ extension CoreApiPaymentAccountRepository: PaymentAccountRepository {
 
     public func currentUserPaymentAccounts(params: CurrentUserPaymentAccountsPageParams,
                                            completion: @escaping CurrentUserPaymentAccountsHandler) {
-        performTask(expecting: PaymentAccountDataTransferResponse.self, completion: completion) { (requestBuilder) in
+        performTask(expecting: PaymentAccountDataTransferResponse.self, completion: completion) { requestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "getPaymentAccounts")
                 .setBody(key: "pageIndex", value: "\(params.pageIndex)")
@@ -32,7 +31,7 @@ extension CoreApiPaymentAccountRepository: PaymentAccountRepository {
 
     public func currentUserPaymentAccountDelete(params: CurrentUserPaymentAccountDeleteParams,
                                                 completion: @escaping CurrentUserPaymentAccountDeleteHandler) {
-        performTask(expecting: PaymentAccountDeleteDataTransferResponse.self, completion: completion) { (requestBuilder) -> CoreRequestBuilder in
+        performTask(expecting: PaymentAccountDeleteDataTransferResponse.self, completion: completion) { requestBuilder -> CoreRequestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "deletePaymentAccount")
                 .setBody(key: "paymentAccountID", value: "\(params.id)")

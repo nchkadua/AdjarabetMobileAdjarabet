@@ -37,13 +37,12 @@ protocol ResourceRepository {
 
 // MARK: - Default Implementation of ResourceRepository
 struct DefaultResourceRepository: ResourceRepository {
-
     let odrManager = ODRManager.shared
     let fileExtractor = FileExtractor.shared
 
     func load(identifier: GameIdentifier, handler: @escaping LoadHandler) {
         let tag = identifier.description.tag
-        odrManager.loadResourcesWithTags([tag]) { (result) in
+        odrManager.loadResourcesWithTags([tag]) { result in
             switch result {
             case .success:
                 handler(.success(()))
@@ -54,7 +53,7 @@ struct DefaultResourceRepository: ResourceRepository {
     }
 
     func extract(identifier: GameIdentifier, handler: @escaping PathHandler) {
-        fileExtractor.extractFileWithName("bundles") { (result) in
+        fileExtractor.extractFileWithName("bundles") { result in
             switch result {
             case .success(let path):
                 handler(.success(path as String))
@@ -65,7 +64,7 @@ struct DefaultResourceRepository: ResourceRepository {
     }
 
     func loadAndExtract(identifier: GameIdentifier, handler: @escaping PathHandler) {
-        load(identifier: identifier) { (result) in
+        load(identifier: identifier) { result in
             switch result {
             case .success:
                 extract(identifier: identifier, handler: handler)

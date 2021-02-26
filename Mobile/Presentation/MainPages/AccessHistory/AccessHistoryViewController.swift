@@ -19,6 +19,7 @@ public class AccessHistoryViewController: ABViewController {
         bind(to: viewModel)
         setup()
         viewModel.viewDidLoad()
+        generateAccessibilityIdentifiers()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -83,3 +84,5 @@ public class AccessHistoryViewController: ABViewController {
 }
 
 extension AccessHistoryViewController: CommonBarButtonProviding { }
+
+extension AccessHistoryViewController: Accessible {}

@@ -40,7 +40,6 @@ protocol LaunchUrlRepository {
 // MARK: - Default Implementation of LaunchUrlRepository
 
 struct DefaultLaunchUrlRepository: LaunchUrlRepository, CoreApiRepository {
-
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
     @Inject private var userAgentProvider: UserAgentProvider
 
@@ -53,7 +52,6 @@ struct DefaultLaunchUrlRepository: LaunchUrlRepository, CoreApiRepository {
     }
 
     func url(token: String, gameId: String, handler: @escaping UrlHandler) {
-
         guard let sessionId = userSession.sessionId else {
             handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
             return
@@ -97,7 +95,7 @@ struct DefaultLaunchUrlRepository: LaunchUrlRepository, CoreApiRepository {
     }
 
     func url(gameId: String, providerId: String, handler: @escaping UrlHandler) {
-        token(providerId: providerId) { (result) in
+        token(providerId: providerId) { result in
             switch result {
             case .success(let token):
                 url(token: token, gameId: gameId, handler: handler)

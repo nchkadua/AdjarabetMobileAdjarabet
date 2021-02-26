@@ -31,7 +31,6 @@ enum GameIdentifier {
 extension GameIdentifier {
     init?(providerId: String, gameId: String) {
         switch providerId {
-
         /* EGT Games */
         case "11e7b7ca-14f1-b0b0-88fc-005056adb106":
             switch gameId {

@@ -29,11 +29,10 @@ public class DefaultAddMyCardComponentViewModel {
 }
 
 extension DefaultAddMyCardComponentViewModel: AddMyCardComponentViewModel {
-    
     public func didSelect(at indexPath: IndexPath) {
         actionSubject.onNext(.didSelect(indexPath: indexPath))
     }
-    
+
     public var action: Observable<AddMyCardComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }

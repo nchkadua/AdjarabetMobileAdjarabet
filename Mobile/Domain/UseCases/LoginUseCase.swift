@@ -43,7 +43,7 @@ public final class DefaultLoginUseCase: LoginUseCase {
                         sessionId: params.header?.sessionId ?? "",
                         currencyId: params.codable.preferredCurrency,
                         password: password)
-        
+
         userSession.login()
     }
 

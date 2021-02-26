@@ -9,7 +9,6 @@
 import Foundation
 
 struct PaymentAccountDataTransferResponse: DataTransferResponse {
-
     struct Body: Codable {
         let statusCode: Int?
         let paymentAccounts: [BodyPaymentAccount]?
@@ -51,7 +50,6 @@ struct PaymentAccountDataTransferResponse: DataTransferResponse {
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
         let dateFormatter = ABDateFormater(with: .verbose)
         return body.paymentAccounts?.map {
-
             PaymentAccountEntity(
                 id: $0.id,
                 status: Status(statusId: $0.statusId ?? -1),
@@ -64,7 +62,6 @@ struct PaymentAccountDataTransferResponse: DataTransferResponse {
                 dateCreated: dateFormatter.date(from: $0.dateCreated ?? ""),
                 dateModified: dateFormatter.date(from: $0.dateModified ?? "")
             )
-
         } ?? []
     }
 }

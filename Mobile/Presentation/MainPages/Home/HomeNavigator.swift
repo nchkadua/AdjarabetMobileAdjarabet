@@ -29,7 +29,7 @@ public class HomeNavigator: Navigator {
             navigatetoGame(animate: animate)
         }
     }
-    
+
     private func navigateToProfile(animate: Bool) {
         let vc = profileFactory.make()
         let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
@@ -37,7 +37,7 @@ public class HomeNavigator: Navigator {
 
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
-    
+
     private func navigatetoGame(animate: Bool) {
         let vc = gameFactory.make(params: .init())
         let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)

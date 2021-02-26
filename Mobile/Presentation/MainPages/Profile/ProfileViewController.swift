@@ -26,6 +26,7 @@ public class ProfileViewController: UIViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        generateAccessibilityIdentifiers()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -117,3 +118,5 @@ public class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: CommonBarButtonProviding { }
+
+extension ProfileViewController: Accessible {}

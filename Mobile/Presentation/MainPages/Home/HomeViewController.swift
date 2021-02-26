@@ -35,6 +35,21 @@ public class HomeViewController: UIViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        generateAccessibilityIdentifiers()
+//        addLayoutButton()
+    }
+
+    // TEST BUTTON
+    private func addLayoutButton() {
+        let button = UIButton(type: .contactAdd)
+        button.addTarget(self, action: #selector(changeLayout), for: .touchUpInside)
+        button.backgroundColor = UIColor.red
+        view.addSubview(button)
+        button.center = view.center
+    }
+
+    @objc func changeLayout() {
+        viewModel.layoutChangeTapped()
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -80,7 +95,7 @@ public class HomeViewController: UIViewController {
 
     private func didReceive(action: HomeViewModelRoute) {
         switch action {
-        case .openGame(_): navigator.navigate(to: .game, animated: true)
+        case .openGame: navigator.navigate(to: .game, animated: true)
         }
     }
 
@@ -206,3 +221,5 @@ extension HomeViewController: UISearchControllerDelegate {
         searchViewModel.didDismiss()
     }
 }
+
+extension HomeViewController: Accessible {}

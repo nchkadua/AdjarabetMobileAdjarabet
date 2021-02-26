@@ -50,7 +50,6 @@ protocol GameLaunchGarbageCollector {
 // MARK: - Default Implementation of GameLaunchInteractor
 
 struct DefaultGameLaunchInteractor: GameLaunchInteractor {
-
     // Use Case
     let standart: StandartGameLaunchUseCase = DefaultStandartGameLaunchUseCase()
 

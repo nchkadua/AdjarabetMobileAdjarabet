@@ -9,7 +9,6 @@
 import Foundation
 
 struct ServiceAuthTokenDTO: DataTransferResponse {
-
     struct Body: Codable {
         let token: String?
 

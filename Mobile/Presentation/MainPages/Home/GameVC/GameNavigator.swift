@@ -23,7 +23,7 @@ public class GameNavigator: Navigator {
         case .deposit: navigateToCashFlow(animate: animate, initialPageIndex: 0)
         }
     }
-    
+
     // MARK: Navigations
     private func navigateToCashFlow(animate: Bool, initialPageIndex: Int) {
         let vc = cashFlowViewControllerFactory.make(params: CashFlowViewModelParams(initialPageIndex: initialPageIndex))

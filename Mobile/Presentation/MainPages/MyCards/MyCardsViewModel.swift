@@ -42,25 +42,24 @@ public class DefaultMyCardsViewModel: DefaultBaseViewModel {
 }
 
 extension DefaultMyCardsViewModel: MyCardsViewModel {
-    
     public var action: Observable<MyCardsViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<MyCardsViewModelRoute> { routeSubject.asObserver() }
-    
+
     public func viewDidLoad() {
         fetchMyCards { result in
             switch result {
-            case .success(_):
+            case .success:
                 self.setupStaticCards()
                 self.actionSubject.onNext(.initialize(self.dataProvider.makeList()))
-            case .failure(_):
+            case .failure:
                 self.setupStaticCards()
                 self.actionSubject.onNext(.initialize(self.dataProvider.makeList()))
             }
         }
     }
-    
+
     private func fetchMyCards(completion: @escaping (Result<Bool, Error>) -> Void) {
-        paymentAccountUseCase.execute(params: .init()) { [weak self] (result) in
+        paymentAccountUseCase.execute(params: .init()) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let paymentAccounts): // type - [PaymentAccountEntity]
@@ -73,9 +72,10 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
                                                                                            dateAdded: dateCreated,
                                                                                            cardNumber: accountVisual,
                                                                                            issuerIcon: nil))
+                        // swiftlint:disable force_cast
                         self.subscribe(to: componentViewModel as! MyCardComponentViewModel)
                     }
-                    
+
                     if let componentViewModel = componentViewModel {
                         self.dataProvider.append(componentViewModel)
                     }
@@ -87,7 +87,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
             }
         }
     }
-    
+
     private func setupStaticCards() {
         var componentViewModel: AppCellDataProvider?
         DefaultMyCardsViewModel.myCardsTable.dataSource.forEach {
@@ -113,13 +113,12 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
             }
         }).disposed(by: disposeBag)
     }
-    
+
     public func deleteCell(at index: Int) {
-        
     }
-    
+
     // MARK: Helper methods for future
-    
+
     private func aliasForBank(_ bank: MyCard.Bank) -> String {
         var alias = ""
         switch bank {
@@ -132,7 +131,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         }
         return alias
     }
-    
+
     private func iconForBank(_ bank: MyCard.Bank) -> UIImage? {
         var icon: UIImage?
         switch bank {
@@ -140,10 +139,10 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         case .tbc: icon = R.image.myCards.tbc()
         case .other: icon = nil
         }
-        
+
         return icon
     }
-    
+
     private func iconForIssuer(_ issuer: MyCard.Issuer) -> UIImage? {
         var icon: UIImage?
         switch issuer {
@@ -157,8 +156,9 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
     // TODO: Irakli
     public func addCardsClicked() {
         // TODO: delete first
+        // swiftlint:disable force_cast
         let id = (dataProvider[0] as! DefaultMyCardComponentViewModel).params.id
-        paymentAccountUseCase.execute(params: .init(id: id)) { (result) in
+        paymentAccountUseCase.execute(params: .init(id: id)) { result in
             switch result {
             case .success:
                 print("DeleteCard Success")

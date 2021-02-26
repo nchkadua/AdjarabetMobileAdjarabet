@@ -9,7 +9,7 @@
 public class VideoCardTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: VideoCardComponentView!
     override public class var identifier: Identifierable { R.nib.videoCardTableViewCell.name }
-    
+
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? VideoCardTableViewCellDataProvider else {

@@ -19,7 +19,7 @@ struct MyCardsTable {
     init() {
         dataSource = [
             dummyAddCards,
-            dummyVideoCards,
+            dummyVideoCards
         ]
     }
 }
