@@ -35,7 +35,7 @@ public class HomeViewController: UIViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        
+        generateAccessibilityIdentifiers()
 //        addLayoutButton()
     }
     
@@ -221,3 +221,5 @@ extension HomeViewController: UISearchControllerDelegate {
         searchViewModel.didDismiss()
     }
 }
+
+extension HomeViewController: Accessible {}

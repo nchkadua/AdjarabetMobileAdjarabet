@@ -24,6 +24,7 @@ public class NotificationsViewController: UIViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        generateAccessibilityIdentifiers()
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -94,3 +95,5 @@ public class NotificationsViewController: UIViewController {
 }
 
 extension NotificationsViewController: CommonBarButtonProviding { }
+
+extension NotificationsViewController: Accessible {}
