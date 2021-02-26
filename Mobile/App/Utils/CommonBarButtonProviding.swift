@@ -89,7 +89,7 @@ public extension CommonBarButtonProviding {
     @discardableResult
     func makeAddCardBarButonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
         let button = UIButton()
-        button.setImage(R.image.myCards.addCard(), for: .normal) //todo change icon to add
+        button.setImage(R.image.myCards.addCard(), for: .normal) // todo change icon to add
         return (UIBarButtonItem(customView: button), button)
     }
 

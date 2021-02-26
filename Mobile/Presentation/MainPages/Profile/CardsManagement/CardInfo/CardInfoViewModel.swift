@@ -48,7 +48,7 @@ public class DefaultCardInfoViewModel {
 extension DefaultCardInfoViewModel: CardInfoViewModel {
     public var action: Observable<CardInfoViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<CardInfoViewModelRoute> { routeSubject.asObserver() }
-    
+
     public func viewDidLoad() {
     }
 }

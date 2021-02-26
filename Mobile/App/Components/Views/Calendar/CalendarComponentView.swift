@@ -114,7 +114,7 @@ extension CalendarComponentView: Xibable {
         calendar.locale = Locale(identifier: languageStorage.currentLanguage.localizableIdentifier)
         calendar.placeholderType = .none
         calendar.headerHeight = 0
-        //Colors
+        // Colors
         calendar.setBackgorundColor(to: .tertiaryBg())
         calendar.appearance.headerTitleColor = DesignSystem.Color.primaryText().value
         calendar.appearance.weekdayTextColor = DesignSystem.Color.tertiaryText().value
@@ -124,7 +124,7 @@ extension CalendarComponentView: Xibable {
         calendar.appearance.todaySelectionColor = DesignSystem.Color.tertiaryText().value
         calendar.appearance.todayColor = .clear
         calendar.appearance.titleTodayColor = DesignSystem.Color.primaryRed().value
-        //Fonts
+        // Fonts
         calendar.appearance.headerTitleFont = DesignSystem.Typography.title3(fontCase: .lower).description.font
         calendar.appearance.weekdayFont = DesignSystem.Typography.footnote(fontCase: .lower).description.font
         calendar.appearance.titleFont = DesignSystem.Typography.headline(fontCase: .lower).description.font

@@ -93,12 +93,12 @@ extension DefaultProfileViewModel: ProfileViewModel {
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
-    
+
     public func logout() {
         logoutUseCase.execute(userId: userSession.userId ?? -1, sessionId: userSession.sessionId ?? "", completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(_): self.actionSubject.onNext(.didLogoutWithSuccess)
+            case .success: self.actionSubject.onNext(.didLogoutWithSuccess)
             case .failure(.unknown(let error)): self.actionSubject.onNext(.didLogoutWithError(error: error))
             }
         })

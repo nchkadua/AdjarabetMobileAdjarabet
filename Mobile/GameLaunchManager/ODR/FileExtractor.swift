@@ -10,12 +10,12 @@ import Foundation
 import ZIPFoundation
 
 class FileExtractor: NSObject {
-    //Directories
+    // Directories
     private let fileManager = FileManager()
     private let directoryName = "DownloadedResources"
 
     public static let shared = FileExtractor()
-    
+
     public func extractFileWithName(_ name: String, _ fileExtension: String = "zip", completion: @escaping ((ExtractResult<NSString, NSString>) -> Void)) {
         do {
             print(name, fileExtension)
@@ -47,7 +47,7 @@ class FileExtractor: NSObject {
             }
         }
     }
-    
+
     func clearUnzippedResourcesFolder() {
         let fileManager = FileManager.default
         let tempFolderPath = NSTemporaryDirectory()
@@ -60,7 +60,7 @@ class FileExtractor: NSObject {
             print("ODResources: Could not clear temp folder: \(error)")
         }
     }
-    
+
     // MARK: App Lifecycle Observation
     private override init() {
         super.init()
@@ -80,4 +80,3 @@ public enum ExtractResult<Success: NSString, Failure: NSString> {
     case success(Success)
     case failure(Failure)
 }
-

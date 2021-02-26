@@ -120,7 +120,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
             }
         }
     }
-    
+
     private func setupListGameLauncherComponentFrom(game: Game) -> DefaultGameLauncherComponentViewModel {
         let vm = DefaultGameLauncherComponentViewModel(game: game)
         vm.action.subscribe(onNext: { action in
@@ -131,7 +131,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         }).disposed(by: self.disposeBag)
         return vm
     }
-    
+
     private func setupGridGameLauncherComponentFrom(game: Game) -> DefaultGameLauncherGridComponentViewModel {
         let vm = DefaultGameLauncherGridComponentViewModel(game: game)
         // subscribe to didSelect here
@@ -143,15 +143,15 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 //        }).disposed(by: self.disposeBag)
         return vm
     }
-    
+
     private func createGameComponentFrom(game: Game) -> AppCellDataProvider {
         return selectedLayout == GamesLayout.list ? setupListGameLauncherComponentFrom(game: game) : setupGridGameLauncherComponentFrom(game: game)
     }
-    
+
     private func saveGamesToCache(_ games: [Game]) {
         fetchedGames.append(contentsOf: games)
     }
-    
+
     private func appendPage(games: AppCellDataProviders) {
         let offset = self.games.count
 
@@ -192,7 +192,6 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 }
 
 extension DefaultHomeViewModel: HomeViewModel {
-    
     public func layoutChangeTapped() {
         games = []
         page = .init()
@@ -204,7 +203,7 @@ extension DefaultHomeViewModel: HomeViewModel {
         }
         self.appendPage(games: viewModels)
     }
-    
+
     public var action: Observable<HomeViewModelOutputAction> { actionSubject.asObserver() }
 
     public var route: Observable<HomeViewModelRoute> { routeSubject.asObserver() }
@@ -220,7 +219,7 @@ extension DefaultHomeViewModel: HomeViewModel {
         loadRecentryPlayedGames()
         load(loadingType: .fullScreen)
     }
-    
+
     private func displayEmptyGames() {
         let recentryPlayedSection = AppSectionDataProvider(dataProviders: [recentlyPlayedComponentViewModel])
         let gamesSection = AppSectionDataProvider(dataProviders: [loading])

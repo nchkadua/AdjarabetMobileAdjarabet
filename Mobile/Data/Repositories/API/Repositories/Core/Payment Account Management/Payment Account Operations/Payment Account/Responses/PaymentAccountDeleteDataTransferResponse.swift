@@ -9,7 +9,6 @@
 import Foundation
 
 struct PaymentAccountDeleteDataTransferResponse: DataTransferResponse {
-
     struct Body: Codable {
         let statusCode: Int?
 

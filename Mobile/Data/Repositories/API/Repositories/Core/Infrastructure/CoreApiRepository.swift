@@ -23,7 +23,6 @@ protocol CoreApiRepository {
 }
 
 extension CoreApiRepository {
-
     /**
      Default properties
      Implementer can override on desire

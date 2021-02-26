@@ -12,7 +12,7 @@ import WebKit
 public class CardInfoViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: CardInfoViewModel
     public lazy var navigator = CardInfoNavigator(viewController: self)
-    
+
     private lazy var webView: WKWebView = {
         WKWebView()
     }()
@@ -35,7 +35,7 @@ public class CardInfoViewController: ABViewController {
 
     private func didRecive(action: CardInfoViewModelOutputAction) {
     }
-    
+
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .secondaryBg())
@@ -46,10 +46,10 @@ public class CardInfoViewController: ABViewController {
     private func setupNavigationItems() {
         setBackBarButtonItemIfNeeded()
     }
-    
+
     private func setupWebView() {
         webView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         webView.backgroundColor = .clear
         webView.isOpaque = false
         view.addSubview(webView)

@@ -38,7 +38,7 @@ public class HomeViewController: UIViewController {
         generateAccessibilityIdentifiers()
 //        addLayoutButton()
     }
-    
+
     // TEST BUTTON
     private func addLayoutButton() {
         let button = UIButton(type: .contactAdd)
@@ -47,7 +47,7 @@ public class HomeViewController: UIViewController {
         view.addSubview(button)
         button.center = view.center
     }
-    
+
     @objc func changeLayout() {
         viewModel.layoutChangeTapped()
     }
@@ -95,7 +95,7 @@ public class HomeViewController: UIViewController {
 
     private func didReceive(action: HomeViewModelRoute) {
         switch action {
-        case .openGame(_): navigator.navigate(to: .game, animated: true)
+        case .openGame: navigator.navigate(to: .game, animated: true)
         }
     }
 

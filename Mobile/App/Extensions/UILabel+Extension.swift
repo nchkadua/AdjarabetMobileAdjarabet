@@ -60,15 +60,14 @@ public extension UILabel {
         animation.duration = duration
         layer.add(animation, forKey: CATransitionType.push.rawValue)
     }
-    
+
     @IBInspectable
     var letterSpace: CGFloat {
         set {
             let attributedString: NSMutableAttributedString!
             if let currentAttrString = attributedText {
                 attributedString = NSMutableAttributedString(attributedString: currentAttrString)
-            }
-            else {
+            } else {
                 attributedString = NSMutableAttributedString(string: text ?? "")
                 text = nil
             }
@@ -83,8 +82,7 @@ public extension UILabel {
         get {
             if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern, at: 0, effectiveRange: .none) as? CGFloat {
                 return currentLetterSpace
-            }
-            else {
+            } else {
                 return 0
             }
         }

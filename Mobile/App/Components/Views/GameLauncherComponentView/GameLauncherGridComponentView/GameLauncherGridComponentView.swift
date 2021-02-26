@@ -16,7 +16,7 @@ class GameLauncherGridComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var coverImageView: UIImageView!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -26,7 +26,7 @@ class GameLauncherGridComponentView: UIView {
         super.init(coder: coder)
         nibSetup()
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         roundCorners(.allCorners, radius: 10)

@@ -12,7 +12,6 @@ public protocol VideoCardComponentViewModel: VideoCardComponentViewModelInput,
                                                 VideoCardComponentViewModelOutput {}
 
 public struct VideoCardComponentViewModelParams {
-    
 }
 
 public protocol VideoCardComponentViewModelInput {
@@ -25,7 +24,6 @@ public protocol VideoCardComponentViewModelOutput {
 }
 
 public enum VideoCardComponentViewModelOutputAction {
-    
 }
 
 public class DefaultVideoCardComponentViewModel {

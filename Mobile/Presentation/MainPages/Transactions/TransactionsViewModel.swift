@@ -55,7 +55,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     // MARK: TransactionsViewModelInput
 
     public func viewDidLoad() {
-        displayEmptyTransactionList() //TODO REMOVE?
+        displayEmptyTransactionList() // TODO REMOVE?
         displayUnfilteredTransactions()
     }
 
@@ -218,7 +218,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
         } else if transactionType == .withdraw {
             totalAndFee = entity.totalAmount - entity.feeAmount
         }
-        
+
         transactionDetails.append(TransactionDetail(title: R.string.localization.transactions_details_total_amount(),
                                                     description: prettyAmount(from: totalAndFee)))
 

@@ -17,44 +17,42 @@ class VideoCardComponentView: UIView {
     private var playerLayer: AVPlayerLayer!
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
     }
-    
+
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         setupPlayer()
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         roundCorners(.allCorners, radius: 10)
         playerLayer.frame = self.view.bounds
     }
-    
+
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         nibSetup()
     }
-    
+
     public func setAndBind(viewModel: VideoCardComponentViewModel) {
         self.viewModel = viewModel
         bind()
     }
-    
+
     private func bind() {
         disposeBag = DisposeBag()
-        viewModel?.action.subscribe(onNext: { action in
-            
+        viewModel?.action.subscribe(onNext: { _ in
         }).disposed(by: disposeBag)
-        
+
         viewModel.didBind()
     }
-    
-    private func setupPlayer() {
 
+    private func setupPlayer() {
         let playerItem = AVPlayerItem(asset: VideoCardComponentView.videoAssetFlyweight)
         queuePlayer = AVQueuePlayer(playerItem: playerItem)
         playerLooper = AVPlayerLooper(player: queuePlayer, templateItem: playerItem)
@@ -75,14 +73,13 @@ extension VideoCardComponentView: Xibable {
             view = newValue
         }
     }
-    
+
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
     }
 }
 
 extension VideoCardComponentView {
-    
     private static var videoAssetFlyweight: AVAsset {
         return AVAsset(url: URL(fileURLWithPath: Bundle.main.path(forResource: "incognito-card", ofType: "mp4")!))
     }

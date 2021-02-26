@@ -75,7 +75,7 @@ extension TransactionDetailsViewController: UIViewControllerTransitioningDelegat
             presentedViewController: presented,
             presenting: presenting,
             params: .init(
-                heightConstant: 330 //TODO compute desired height
+                heightConstant: 330 // TODO compute desired height
             )
         )
     }

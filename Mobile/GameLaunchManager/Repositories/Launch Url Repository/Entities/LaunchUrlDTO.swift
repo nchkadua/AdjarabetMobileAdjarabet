@@ -9,7 +9,6 @@
 import Foundation
 
 struct LaunchUrlDTO: DataTransferResponse {
-
     struct Body: Codable {
         let data: Data?
 

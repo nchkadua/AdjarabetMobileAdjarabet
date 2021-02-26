@@ -11,28 +11,28 @@ import RxSwift
 class HomeBannerContainerComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: HomeBannerContainerComponentViewModel!
-    private static let infinite_limit = 999 // Set 'infinite' limit for the data source
+    private static let infiniteLimit = 999 // Set 'infinite' limit for the data source
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var bannerCollectionView: UICollectionView!
     @IBOutlet weak private var pageControl: UIPageControl!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
     }
-    
+
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         nibSetup()
     }
-    
+
     public func setAndBind(viewModel: HomeBannerContainerComponentViewModel) {
         self.viewModel = viewModel
         bind()
         setupPageControl()
     }
-    
+
     private func bind() {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
@@ -43,14 +43,13 @@ class HomeBannerContainerComponentView: UIView {
                 break
             }
         }).disposed(by: disposeBag)
-        
+
         viewModel.didBind()
     }
-    
+
     private func set(banners: [AppCellDataProvider]) {
-        
     }
-    
+
     private func setupPageControl() {
         pageControl.numberOfPages = viewModel.params.banners.count
     }
@@ -66,9 +65,9 @@ extension HomeBannerContainerComponentView: UICollectionViewDelegate {
 
 extension HomeBannerContainerComponentView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HomeBannerContainerComponentView.infinite_limit
+        return HomeBannerContainerComponentView.infiniteLimit
     }
-    
+
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let dataProvider = viewModel.params.banners[indexPath.row % viewModel.params.banners.count]
         let cell = collectionView.dequeueReusable(dataProvider: dataProvider, for: indexPath)
@@ -99,12 +98,12 @@ extension HomeBannerContainerComponentView: Xibable {
             view = newValue
         }
     }
-    
+
     func setupUI() {
         view.backgroundColor = UIColor.clear
         setupBannerCollectionView()
     }
-    
+
     private func setupBannerCollectionView() {
         bannerCollectionView.register(types: HomeBannerCollectionViewCell.self)
         bannerCollectionView.showsHorizontalScrollIndicator = false

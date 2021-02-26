@@ -58,7 +58,7 @@ extension DefaultMyCardComponentViewModel: MyCardComponentViewModel {
                                   cardNumber: params.cardNumber,
                                   issuerIcon: params.issuerIcon))
     }
-    
+
     public func didSelect(at indexPath: IndexPath) {
     }
 

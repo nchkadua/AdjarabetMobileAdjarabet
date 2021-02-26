@@ -37,7 +37,7 @@ public class DefaultGameViewModel {
     public var params: GameViewModelParams
     private let actionSubject = PublishSubject<GameViewModelOutputAction>()
     private let routeSubject = PublishSubject<GameViewModelRoute>()
-    
+
     @Inject(from: .componentViewModels) private var gameLoaderViewModel: GameLoaderComponentViewModel
 
     public init(params: GameViewModelParams) {
@@ -48,15 +48,15 @@ public class DefaultGameViewModel {
 extension DefaultGameViewModel: GameViewModel {
     public var action: Observable<GameViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<GameViewModelRoute> { routeSubject.asObserver() }
-    
+
     public func viewDidLoad() {
         actionSubject.onNext(.bindToGameLoader(viewModel: gameLoaderViewModel))
     }
-    
+
     public func bedginGameLoadingAnimation() {
         gameLoaderViewModel.begindAnimation()
     }
-    
+
     public func finishGameLoadingAnimation() {
         gameLoaderViewModel.finishAnimation()
     }

@@ -11,11 +11,11 @@ import RxSwift
 class HomeBannerComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: HomeBannerComponentViewModel!
-    
+
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var bannerImageView: UIImageView!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -44,7 +44,7 @@ class HomeBannerComponentView: UIView {
 
         viewModel.didBind()
     }
-    
+
     private func set(banner: UIImage) {
         bannerImageView.image = banner
     }

@@ -31,12 +31,11 @@ public protocol PaymentAccountUseCase {
 }
 
 public struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
-
     @Inject(from: .repositories) private var paymentAccountRepository: PaymentAccountRepository
 
     public func execute(params: PaymentAccountUseCaseParams, completion: @escaping PaymentAccountUseCaseHandler) {
         // fetch count
-        paymentAccountRepository.currentUserPaymentAccountsCount(params: .init()) { (result) in
+        paymentAccountRepository.currentUserPaymentAccountsCount(params: .init()) { result in
             switch result {
             case .success(let count):
                 // fetch payment accounts
@@ -51,7 +50,7 @@ public struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
     public func execute(params: PaymentAccountUseCaseDeleteParams,
                         completion: @escaping PaymentAccountUseCaseDeleteHandler) {
         // delete payment account
-        paymentAccountRepository.currentUserPaymentAccountDelete(params: .init(id: params.id)) { (result) in
+        paymentAccountRepository.currentUserPaymentAccountDelete(params: .init(id: params.id)) { result in
             switch result {
             case .success(let statusCode):
                 if statusCode == 10 { // TODO: 10 is success status code, refactor with enum

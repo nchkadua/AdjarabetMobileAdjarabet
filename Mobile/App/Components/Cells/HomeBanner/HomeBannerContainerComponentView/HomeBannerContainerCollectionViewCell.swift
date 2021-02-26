@@ -8,10 +8,10 @@
 
 public class HomeBannerContainerCollectionViewCell: AppCollectionViewCell {
     @IBOutlet weak private var componentView: HomeBannerContainerComponentView!
-    override public class var identifier: Identifierable { R.nib.homeBannerContainerCollectionViewCell.name }  
-    
+    override public class var identifier: Identifierable { R.nib.homeBannerContainerCollectionViewCell.name }
+
     public override var dataProvider: AppCellDataProvider? {
-        didSet {                                      
+        didSet {
             guard let dataProvider = dataProvider as? HomeBannerContainerCollectionViewCellDataProvider else {
                 fatalError("error")
             }

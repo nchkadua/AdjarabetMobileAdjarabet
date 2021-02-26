@@ -91,7 +91,7 @@ public class DepositViewController: ABViewController {
         proceedButton.setStyle(to: .primary(state: .disabled, size: .large))
         proceedButton.setTitleWithoutAnimation(R.string.localization.deposit_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
-        
+
         amountInputView.mainTextField.rx.controlEvent([.editingChanged])
             .asObservable().subscribe({ [weak self] _ in
                 self?.updateProceedButton()

@@ -17,7 +17,7 @@ public enum LogoutUseCaseSuccess {
 
 public enum LogoutUseCaseError: Error, LocalizedError {
     case unknown(error: Error)
-    
+
     public var errorDescription: String? {
         switch self {
         case .unknown(let error):
@@ -28,11 +28,11 @@ public enum LogoutUseCaseError: Error, LocalizedError {
 
 public final class DefaultLogoutUseCase: LogoutUseCase {
     @Inject(from: .repositories) private var authenticationRepository: AuthenticationRepository
-    
+
     public func execute(userId: Int, sessionId: String, completion: @escaping (Result<LogoutUseCaseSuccess, LogoutUseCaseError>) -> Void) -> Cancellable? {
         authenticationRepository.logout(userId: userId, sessionId: sessionId) {(result: Result<AdjarabetCoreResult.Logout, Error>) in
             switch result {
-            case .success(_):
+            case .success:
                 completion(.success(.success))
             case .failure(let error):
                 completion(.failure(.unknown(error: error)))

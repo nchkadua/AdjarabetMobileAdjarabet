@@ -26,7 +26,7 @@ class AddMyCardComponentView: UIView {
         super.init(coder: coder)
         nibSetup()
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         roundCorners(.allCorners, radius: 10)

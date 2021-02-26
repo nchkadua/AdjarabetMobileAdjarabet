@@ -8,14 +8,13 @@
 
 import RxSwift
 
-
 class GameLoaderComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: GameLoaderComponentViewModel!
-    
+
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -45,14 +44,14 @@ class GameLoaderComponentView: UIView {
 
         viewModel.didBind()
     }
-    
+
     private func beginAnimation() {
         isHidden = false
-        
+
         pulse()
         viewModel.didBeginAnimation()
     }
-    
+
     private func finishAnimation() {
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction, .curveEaseIn], animations: {
             self.logoImageView.alpha = 0.0
@@ -77,7 +76,7 @@ extension GameLoaderComponentView: Xibable {
         logoImageView.image = R.image.game.logo()
         logoImageView.tintColor = DesignSystem.Color.primaryText().value
         logoImageView.alpha = 0.5
-        
+
         isHidden = true
     }
 }
@@ -87,7 +86,7 @@ extension GameLoaderComponentView {
         UIView.animate(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.logoImageView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             self.logoImageView.alpha = 1.0
-        }, completion: {_ in 
+        }, completion: {_ in
             self.viewModel.didFinishAnimation()
         })
     }
