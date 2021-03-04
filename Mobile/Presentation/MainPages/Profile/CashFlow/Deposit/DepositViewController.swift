@@ -20,6 +20,8 @@ public class DepositViewController: ABViewController {
     @IBOutlet private weak var addCardButton: UIButton!
     @IBOutlet private weak var proceedButton: ABButton!
 
+    var tBCRegularPaymentsRepository = TBCRegularPaymentsRepository()
+
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,5 +133,11 @@ public class DepositViewController: ABViewController {
     }
 
     @objc private func proceedDidTap() {
+        tBCRegularPaymentsRepository.deposit { result in
+            switch result {
+            case .success(let tbcRegularPaymentsEntity): print("asdasd ", tbcRegularPaymentsEntity)
+            case .failure(let error): print("asdasd ", error)
+            }
+        }
     }
 }
