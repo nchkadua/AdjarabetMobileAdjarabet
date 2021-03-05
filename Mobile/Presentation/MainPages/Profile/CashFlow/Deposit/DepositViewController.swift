@@ -135,8 +135,8 @@ public class DepositViewController: ABViewController {
     @objc private func proceedDidTap() {
         tBCRegularPaymentsRepository.deposit { result in
             switch result {
-            case .success(let tbcRegularPaymentsEntity): print("asdasd ", tbcRegularPaymentsEntity)
-            case .failure(let error): print("asdasd ", error)
+            case .success(let tbcRegularPaymentsEntity): print("asdasd 1 ", tbcRegularPaymentsEntity)
+            case .failure(let error): print("asdasd 2 ", error)
             }
         }
     }

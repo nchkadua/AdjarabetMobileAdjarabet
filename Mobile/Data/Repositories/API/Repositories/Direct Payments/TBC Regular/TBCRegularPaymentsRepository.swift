@@ -23,18 +23,23 @@ public extension TBCRegularPaymentsRepository {
 
         let body: [String: Any] = [
             "op_type": "initDeposit",
-            "user_id": "608510",
+            "user_id": 1328542,
             "provider_id": "c47e7151-a66f-4430-9c2d-adb656c14bb6",
             "service_name": "ufc",
-            "service_id": "1030",
+            "service_id": 1030,
             "currency": "GEL",
             "save_for_recurring": 0,
-            "account_id": 8823972,    // FIXME: fix with dynamic payment account id
+//            "lang": "ka",
+//            "account_id": 8823972,    // FIXME: fix with dynamic payment account id
             "amount": 5.00
         ]
 
         let headers = [
-            "Cookie": sessionId
+            "Cookie": sessionId,
+            "Origin": "https://www.adjarabet.com",
+            "Referer": "https://www.adjarabet.com",
+            "X-Requested-With": "XMLHttpRequest"
+//            "Content-Type": "application/x-www-form-urlencoded"
         ]
 
         let request = httpRequestBuilder

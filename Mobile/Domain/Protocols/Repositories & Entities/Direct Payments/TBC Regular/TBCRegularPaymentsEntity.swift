@@ -9,6 +9,5 @@
 import Foundation
 
 public struct TBCRegularPaymentsEntity {
-    public let fee: Int?
-    public let sessionId: String?
+    public let message: String?
 }
