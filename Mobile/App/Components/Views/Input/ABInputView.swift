@@ -156,6 +156,10 @@ public class ABInputView: UIView {
         hasDropdownImage = false
     }
 
+    public func setAccessibilityIdTextfield(id: String) {
+        textField.accessibilityIdentifier = id
+    }
+
     private func setDropdownImage(tintColor: DesignSystem.Color = .primaryText()) {
         rightComponent.setImage(R.image.shared.dropDown(), for: .normal)
         rightComponent.setTintColor(to: tintColor)

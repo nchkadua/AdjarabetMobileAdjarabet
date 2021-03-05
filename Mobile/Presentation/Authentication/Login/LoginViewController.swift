@@ -41,7 +41,7 @@ public class LoginViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
+        setupAccessibilityIdentifiers()
 //        viewModel.login(username: "testpng", password: "Paroli1")
     }
 
@@ -240,4 +240,14 @@ extension LoginViewController: FooterComponentViewDelegate {
 }
 
 // MARK: Appium
-extension LoginViewController: Accessible { }
+//extension LoginViewController: Accessible { }
+
+extension LoginViewController: Accessible {
+    private func setupAccessibilityIdentifiers() {
+        generateAccessibilityIdentifiers()
+        usernameInputView.setAccessibilityIdTextfield(id: "LoginViewController.usernameInputTextField")
+        passwordInputView.setAccessibilityIdTextfield(id: "LoginViewController.passwordInputTextField")
+        
+        footerComponentView.setAccessibilityIdToLAnguageButton("LoginViewController.languageButton")
+    }
+}

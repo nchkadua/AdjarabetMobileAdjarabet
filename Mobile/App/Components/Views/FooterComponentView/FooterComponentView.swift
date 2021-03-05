@@ -101,3 +101,10 @@ extension FooterComponentView: Xibable {
         setDelegates()
     }
 }
+
+// MARK: Appium
+extension FooterComponentView {
+    public func setAccessibilityIdToLAnguageButton(_ id: String) {
+        languageButton.accessibilityIdentifier = id
+    }
+}
