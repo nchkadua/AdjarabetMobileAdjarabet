@@ -29,9 +29,9 @@ public extension TBCRegularPaymentsRepository {
             "service_id": 1030,
             "currency": "GEL",
             "save_for_recurring": 0,
-//            "lang": "ka",
+            "lang": "ka",
 //            "account_id": 8823972,    // FIXME: fix with dynamic payment account id
-            "amount": 5.00
+            "amount": "5.00"
         ]
 
         let headers = [
@@ -39,16 +39,17 @@ public extension TBCRegularPaymentsRepository {
             "Origin": "https://www.adjarabet.com",
             "Referer": "https://www.adjarabet.com",
             "X-Requested-With": "XMLHttpRequest"
-//            "Content-Type": "application/x-www-form-urlencoded"
         ]
+
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: body, options: []), let jsonStr = String(data: jsonData, encoding: .ascii) else { return }
 
         let request = httpRequestBuilder
             .set(host: "https://coreapi.adjarabet.com/AuthenticationProxy")
-            .set(path: "initDeposit")
             .set(headers: headers)
             .set(method: HttpMethodPost())
-            .set(contentType: ContentTypeJson())
-            .setBody(json: body)
+            .set(contentType: ContentTypeUrlEncoded())
+            .setBody(key: "data", value: jsonStr)
+            .setBody(key: "req", value: "initDeposit")
             .build()
 
         dataTransferService.performTask(expecting: TBCRegularPaymentDepositDTO.self,
