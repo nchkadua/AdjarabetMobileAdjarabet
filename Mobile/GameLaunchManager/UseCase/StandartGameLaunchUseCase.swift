@@ -44,6 +44,7 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
             return
         }
 
+        // handleWebUrl("www.example.com", identifier, handler)
         // 1. Fetch Service Auth Token
         // 2. Fetch Web URL
         webUrlRepo.url(gameId: gameId, providerId: providerId) { result in
@@ -86,6 +87,14 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
             }
 
             let path = "file://" + gameBundlepath + "/" + "RORJSlot" + "/"
+
+            do {
+                let fileManager = FileManager()
+                try fileManager.createSymbolicLink(at: URL(string: "\(path)hybrid/games/")!, withDestinationURL: URL(string: "\(path)games/")!)
+                print("success") // TODO
+            } catch let error {
+                print("createSymbolicLink error:", error) // TODO
+            }
 
             let caCertificateURL = Bundle.main.url(forResource: "ca", withExtension: "der")!
             let caCertificate = Certificate(derURL: caCertificateURL)!

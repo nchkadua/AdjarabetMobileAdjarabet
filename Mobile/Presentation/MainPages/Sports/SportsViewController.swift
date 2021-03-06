@@ -63,6 +63,7 @@ extension SportsViewController {
             switch result {
             case .success(let launchUrl):
                 self?.result = launchUrl
+             // let url = URL(string: "https://localhost:8080/hybrid/games/assets/helpImages/autoplayStartButton.png")!
                 self?.initWebServer(launchUrl.url)
             case .failure(let error):
                 print(error.localizedDescription)
