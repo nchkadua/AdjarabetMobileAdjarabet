@@ -12,9 +12,9 @@ struct PaymentListEntity {
     let elements: [ElementEntity]
 
     struct ElementEntity {
-        var applePay: [String]?
-        var segmentList: [String]?
-        var segmentListEmoney: [String]?
+        let applePay: [String]?
+        let segmentList: [String]?
+        let segmentListEmoney: [String]?
         let method: PaymentMethodEntity
     }
 }

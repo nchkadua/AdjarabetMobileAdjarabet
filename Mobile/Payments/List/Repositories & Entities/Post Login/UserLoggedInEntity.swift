@@ -9,7 +9,7 @@
 import Foundation
 
 struct UserLoggedInEntity {
-    var applePay: [String]?
-    var segmentList: [String]?
-    var segmentListEmoney: [String]?
+    let applePay: [String]?
+    let segmentList: [String]?
+    let segmentListEmoney: [String]?
 }

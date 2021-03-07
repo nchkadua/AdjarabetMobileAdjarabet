@@ -153,5 +153,7 @@ public extension DependencyContainer {
         Module { DefaultAccessListUseCaseUseCase() as DisplayAccessListUseCase }
         Module { DefaultPaymentAccountUseCase() as PaymentAccountUseCase }
         Module { DefaultLogoutUseCase() as LogoutUseCase }
+        // Payments
+        Module { DefaultPaymentListUseCase() as PaymentListUseCase }
     }
 }
