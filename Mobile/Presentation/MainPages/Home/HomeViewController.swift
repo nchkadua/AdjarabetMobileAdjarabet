@@ -49,7 +49,7 @@ public class HomeViewController: UIViewController {
         repo2.list(params: .init()) { result in
             switch result {
             case .success(let entity):
-                print("paymentList:", entity.temp)
+                print("paymentList:", entity)
             case .failure(let error):
                 print(error)
             }

@@ -9,5 +9,11 @@
 import Foundation
 
 struct PaymentListEntity {
-    let temp: String
+    let methods: [PaymentMethodEntity]
+}
+
+struct PaymentMethodEntity {
+    var applePay: [String]?
+    var segmentList: [String]?
+    var segmentListEmoney: [String]?
 }
