@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+struct PaymentListDTO: DataTransferResponse {
+    struct Body: Codable {
+        let itemClass: String?
+    }
+
+    typealias Entity = PaymentListEntity
+
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
+        .init(temp: body.itemClass ?? "nil")
+    }
+}

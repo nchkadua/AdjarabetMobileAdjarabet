@@ -12,8 +12,8 @@ protocol PaymentListRepository {
     /**
      Retusn list of all payment methods
      */
-    typealias ListHandler = (Result<Void, Error>) -> Void
-    func list(params: PaymentListRepositoryListParams, handler: ListHandler)
+    typealias ListHandler = (Result<PaymentListEntity, Error>) -> Void
+    func list(params: PaymentListRepositoryListParams, handler: @escaping ListHandler)
 }
 
 struct PaymentListRepositoryListParams {
@@ -25,11 +25,18 @@ struct DefaultPaymentListRepository: PaymentListRepository {
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
     private var dataTransferService: DataTransferService { DefaultDataTransferService() }
 
-    func list(params: PaymentListRepositoryListParams, handler: ListHandler) {
+    func list(params: PaymentListRepositoryListParams, handler: @escaping ListHandler) {
         let request = httpRequestBuilder
             .set(host: "https://newstatic.adjarabet.com")
             .set(path: "static/paymentPopUpNavAppleKa.json") // FIXME: Ka, En, Ru
             .set(method: HttpMethodGet())
             .build()
+
+        dataTransferService.performTask(
+            expecting: PaymentListDTO.self,
+            request: request,
+            respondOnQueue: .main,
+            completion: handler
+        )
     }
 }

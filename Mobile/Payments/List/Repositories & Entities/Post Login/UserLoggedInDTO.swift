@@ -9,7 +9,6 @@
 import Foundation
 
 struct UserLoggedInDTO: DataTransferResponse {
-
     struct Body: Codable {
         let data: Data?
 
