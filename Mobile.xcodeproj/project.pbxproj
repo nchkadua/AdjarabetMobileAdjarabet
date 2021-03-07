@@ -232,6 +232,8 @@
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
 		CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */; };
 		CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */; };
+		CE0FF91F25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift */; };
+		CE0FF92525F10A0800C18F9C /* TBCRegularPaymentsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
 		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
@@ -253,6 +255,7 @@
 		CE38F09E254B085200605524 /* CashFlowTabComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38F09D254B085200605524 /* CashFlowTabComponentView.xib */; };
 		CE38F0A2254B085E00605524 /* CashFlowTabComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38F0A1254B085E00605524 /* CashFlowTabComponentView.swift */; };
 		CE38F0A6254B086800605524 /* CashFlowTabComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38F0A5254B086800605524 /* CashFlowTabComponentViewModel.swift */; };
+		CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */; };
 		CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF525265CDA003E168F /* ProfileNavigator.swift */; };
 		CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF625265CDA003E168F /* ProfileViewController.swift */; };
 		CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF725265CDA003E168F /* ProfileViewModel.swift */; };
@@ -827,6 +830,8 @@
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
 		CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInstructionView.xib; sourceTree = "<group>"; };
 		CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInstructionView.swift; sourceTree = "<group>"; };
+		CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentDepositDTO.swift; sourceTree = "<group>"; };
+		CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentsEntity.swift; sourceTree = "<group>"; };
 		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
 		CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoComponentView.xib; sourceTree = "<group>"; };
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
@@ -848,6 +853,7 @@
 		CE38F09D254B085200605524 /* CashFlowTabComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CashFlowTabComponentView.xib; sourceTree = "<group>"; };
 		CE38F0A1254B085E00605524 /* CashFlowTabComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowTabComponentView.swift; sourceTree = "<group>"; };
 		CE38F0A5254B086800605524 /* CashFlowTabComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowTabComponentViewModel.swift; sourceTree = "<group>"; };
+		CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentsRepository.swift; sourceTree = "<group>"; };
 		CE55ECF525265CDA003E168F /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
 		CE55ECF625265CDA003E168F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CE55ECF725265CDA003E168F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -2360,6 +2366,7 @@
 		C7D86F11259A05CB0021CF1C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				CE53C22C25F0DE650030FB77 /* Direct Payments */,
 				C7EF9E46256FECDD00D2908C /* Core */,
 				C7D86F0E259A05640021CF1C /* Mobile */,
 			);
@@ -2470,6 +2477,22 @@
 			path = Instruction;
 			sourceTree = "<group>";
 		};
+		CE0FF92225F109F100C18F9C /* Direct Payments */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FF92325F109F900C18F9C /* TBC Regular */,
+			);
+			path = "Direct Payments";
+			sourceTree = "<group>";
+		};
+		CE0FF92325F109F900C18F9C /* TBC Regular */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */,
+			);
+			path = "TBC Regular";
+			sourceTree = "<group>";
+		};
 		CE1693692541AB100043B1A4 /* AccountInfoComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2564,6 +2587,23 @@
 				CE38F09D254B085200605524 /* CashFlowTabComponentView.xib */,
 			);
 			path = CashFlowTab;
+			sourceTree = "<group>";
+		};
+		CE53C22C25F0DE650030FB77 /* Direct Payments */ = {
+			isa = PBXGroup;
+			children = (
+				CE53C22D25F0DE770030FB77 /* TBC Regular */,
+			);
+			path = "Direct Payments";
+			sourceTree = "<group>";
+		};
+		CE53C22D25F0DE770030FB77 /* TBC Regular */ = {
+			isa = PBXGroup;
+			children = (
+				CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */,
+				CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift */,
+			);
+			path = "TBC Regular";
 			sourceTree = "<group>";
 		};
 		CE55ECF425265B7D003E168F /* Profile */ = {
@@ -3333,6 +3373,7 @@
 		D861DA8D2466BC820054D058 /* Repositories & Entities */ = {
 			isa = PBXGroup;
 			children = (
+				CE0FF92225F109F100C18F9C /* Direct Payments */,
 				C7EF9E55256FF14A00D2908C /* Core */,
 				D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */,
 				C799129F259BA90F00F64676 /* Mobile */,
@@ -4363,6 +4404,7 @@
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,
+				CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				CE64EAAB25DD466D00438974 /* LogoutUseCase.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
@@ -4450,6 +4492,7 @@
 				CEB285BD256D20B600584A65 /* SelfSuspendViewController.swift in Sources */,
 				CE679FDF2578334B00F2EC1C /* AddCardViewControllerFactory.swift in Sources */,
 				76BDF47125760512007B27A7 /* AccountParametersTableViewCell.swift in Sources */,
+				CE0FF92525F10A0800C18F9C /* TBCRegularPaymentsEntity.swift in Sources */,
 				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				7640C85525E3994B006D7100 /* HomeBannerCollectionViewCell.swift in Sources */,
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
@@ -4467,6 +4510,7 @@
 				D8442AA22469716600F32676 /* ABInputView.swift in Sources */,
 				CECF7F80256DAD9E001C0E50 /* PasswordChangeRulesView.swift in Sources */,
 				C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */,
+				CE0FF91F25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift in Sources */,
 				CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */,
 				D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */,
 				C7DE3ADF25F529670082D5EF /* UserLoggedInEntity.swift in Sources */,
