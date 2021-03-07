@@ -102,6 +102,9 @@ public extension DependencyContainer {
         Module { CoreApiPaymentAccountRepository() as PaymentAccountRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
+        // Payments
+        Module { DefaultPostLoginRepository() as PostLoginRepository }
+        Module { DefaultPaymentListRepository() as PaymentListRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }

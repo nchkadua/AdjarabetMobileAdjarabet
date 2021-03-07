@@ -17,8 +17,7 @@ public class HomeViewController: UIViewController {
     public lazy var navigator = HomeNavigator(viewController: self)
     private lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
     private lazy var searchController = GamesSearchViewController(viewModel: DefaultGamesSearchViewModel(params: .init()))
-    let repo: PostLoginRepository = DefaultPostLoginRepository()
-    let repo2: PaymentListRepository = DefaultPaymentListRepository()
+
     // shimmer loader
     private lazy var loader: GamesListLoader = {
         let l = addDefaultGamesListLoader(isRecentlyPlayedEnabled: true)
@@ -38,22 +37,6 @@ public class HomeViewController: UIViewController {
         viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
 //        addLayoutButton()
-        repo.userLoggedIn(params: .init(fromRegistration: false)) { result in
-            switch result {
-            case .success(let entity):
-                print("paymentList:", entity)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        repo2.list { result in
-            switch result {
-            case .success(let entity):
-                print("paymentList:", entity, entity.elements.count)
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
 
     // TEST BUTTON
