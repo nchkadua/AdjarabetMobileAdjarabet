@@ -13,14 +13,26 @@ struct PaymentListDTO: DataTransferResponse {
         let list: [PaymentMethod]?
 
         struct PaymentMethod: Codable {
+            /* Segments */
             let applePay: [String]?
             let segmentList: [String]?
             let segmentListEmoney: [String]?
+            /* Desired Values for result */
+            let methodType: String?
+            let flowId: String?
+            let iconUrl: String?
+            let downtimeId: String?
+            let channelId: String?
 
             enum CodingKeys: String, CodingKey {
                 case applePay = "Apple_Pay"
-                case segmentList // = "segmentList"
-                case segmentListEmoney // = "segmentListEmoney"
+                case segmentList
+                case segmentListEmoney
+                case methodType
+                case flowId
+                case iconUrl = "img"
+                case downtimeId
+                case channelId
             }
         }
 
@@ -33,14 +45,33 @@ struct PaymentListDTO: DataTransferResponse {
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
         guard let list = body.list else { return nil }
-        return .init (
-            methods: list.map {
-                PaymentMethodEntity (
+
+        var elements: [PaymentListEntity.ElementEntity] = []
+
+        list.forEach {
+            if let methodType = $0.methodType,
+               let flowId = $0.flowId,
+               let iconUrl = $0.iconUrl,
+               let downtimeId = $0.downtimeId,
+               let channelId = $0.channelId {
+                // Create element entity
+                let element = PaymentListEntity.ElementEntity(
                     applePay: $0.applePay,
                     segmentList: $0.segmentList,
-                    segmentListEmoney: $0.segmentListEmoney
+                    segmentListEmoney: $0.segmentListEmoney,
+                    method: .init (
+                        methodType: methodType,
+                        flowId: flowId,
+                        iconUrl: iconUrl,
+                        downtimeId: downtimeId,
+                        channelId: channelId
+                    )
                 )
+                // Append to list
+                elements.append(element)
             }
-        )
+        }
+
+        return .init(elements: elements)
     }
 }
