@@ -19,18 +19,19 @@ public enum Currency {
 
     public var description: Description {
         switch self {
-        case .gel: return Description(stringValue: "₾")
-        case .usd: return Description(stringValue: "$")
-        case .eur: return Description(stringValue: "€")
-        case .gbp: return Description(stringValue: "£")
-        case .rub: return Description(stringValue: "₽")
-        case .uah: return Description(stringValue: "₴")
-        case .amd: return Description(stringValue: "֏")
+        case .gel: return Description(symbol: "₾", abbreviation: "GEL")
+        case .usd: return Description(symbol: "$", abbreviation: "USD")
+        case .eur: return Description(symbol: "€", abbreviation: "EUR")
+        case .gbp: return Description(symbol: "£", abbreviation: "GBP")
+        case .rub: return Description(symbol: "₽", abbreviation: "RUB")
+        case .uah: return Description(symbol: "₴", abbreviation: "UAH")
+        case .amd: return Description(symbol: "֏", abbreviation: "AMD")
         }
     }
 
     public struct Description {
-        public let stringValue: String
+        public let symbol: String
+        public let abbreviation: String
     }
 }
 
