@@ -179,6 +179,8 @@
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
 		C747734E25B5C1030083C845 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C747734D25B5C1030083C845 /* Currency.swift */; };
+		C754317F25F5605900E485DD /* PaymentListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754317E25F5605900E485DD /* PaymentListDTO.swift */; };
+		C754318325F5606D00E485DD /* PaymentListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754318225F5606D00E485DD /* PaymentListEntity.swift */; };
 		C764266025D57F7A00A11E36 /* bundles.zip in Resources */ = {isa = PBXBuildFile; fileRef = C764265D25D578F000A11E36 /* bundles.zip */; settings = {ASSET_TAGS = (EGT, ); }; };
 		C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766086325CC3FF700A59534 /* CoreApiRepository.swift */; };
 		C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C77206DA25DAAC5E0037D8A0 /* exitButton.png */; };
@@ -772,6 +774,8 @@
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C7405188256FAA8200EAC904 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		C747734D25B5C1030083C845 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C754317E25F5605900E485DD /* PaymentListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListDTO.swift; sourceTree = "<group>"; };
+		C754318225F5606D00E485DD /* PaymentListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListEntity.swift; sourceTree = "<group>"; };
 		C764265D25D578F000A11E36 /* bundles.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = bundles.zip; sourceTree = "<group>"; };
 		C766086325CC3FF700A59534 /* CoreApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiRepository.swift; sourceTree = "<group>"; };
 		C77206DA25DAAC5E0037D8A0 /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButton.png; sourceTree = "<group>"; };
@@ -1804,10 +1808,7 @@
 			isa = PBXGroup;
 			children = (
 				C707548825F396130033050E /* PaymentListUseCase.swift */,
-				C707549225F3963C0033050E /* PaymentListRepository.swift */,
-				C70754E225F3B84F0033050E /* PostLoginRepository.swift */,
-				C7DE3ADA25F5293E0082D5EF /* UserLoggedInDTO.swift */,
-				C7DE3ADE25F529670082D5EF /* UserLoggedInEntity.swift */,
+				C754317225F55FE100E485DD /* Repositories & Entities */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -1909,6 +1910,35 @@
 				C7405188256FAA8200EAC904 /* AmountFormatter.swift */,
 			);
 			path = Amount;
+			sourceTree = "<group>";
+		};
+		C754317125F55FCA00E485DD /* Post Login */ = {
+			isa = PBXGroup;
+			children = (
+				C70754E225F3B84F0033050E /* PostLoginRepository.swift */,
+				C7DE3ADA25F5293E0082D5EF /* UserLoggedInDTO.swift */,
+				C7DE3ADE25F529670082D5EF /* UserLoggedInEntity.swift */,
+			);
+			path = "Post Login";
+			sourceTree = "<group>";
+		};
+		C754317225F55FE100E485DD /* Repositories & Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C754317125F55FCA00E485DD /* Post Login */,
+				C754317925F5600F00E485DD /* Payment List */,
+			);
+			path = "Repositories & Entities";
+			sourceTree = "<group>";
+		};
+		C754317925F5600F00E485DD /* Payment List */ = {
+			isa = PBXGroup;
+			children = (
+				C707549225F3963C0033050E /* PaymentListRepository.swift */,
+				C754317E25F5605900E485DD /* PaymentListDTO.swift */,
+				C754318225F5606D00E485DD /* PaymentListEntity.swift */,
+			);
+			path = "Payment List";
 			sourceTree = "<group>";
 		};
 		C766086925CD842D00A59534 /* Launch Url Repository */ = {
@@ -4153,6 +4183,7 @@
 				76EFF7C72582383000898819 /* AccessHistoryCalendarViewModel.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */,
+				C754318325F5606D00E485DD /* PaymentListEntity.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
 				D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */,
 				C701C60525C00AB200B059A6 /* PaymentAccountRepository.swift in Sources */,
@@ -4232,6 +4263,7 @@
 				C71B4B74257EC57000538697 /* SecurityLevelsViewControllerFactory.swift in Sources */,
 				7644B6002563E201006778B2 /* DateHeaderCell.swift in Sources */,
 				C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */,
+				C754317F25F5605900E485DD /* PaymentListDTO.swift in Sources */,
 				76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
 				C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */,
