@@ -20,12 +20,13 @@ protocol PostLoginRepository {
 }
 
 struct PostLoginRepositoryUserLoggedInParams {
-    
+    let fromRegistration: Bool
+    let domain: String = ".com" // FIXME: [.com, .hy]
+    let dateRegistered: String = ""
 }
 
 // MARK: - Default Implementation
 struct DefaultPostLoginRepository: PostLoginRepository {
-
     @Inject private var userSession: UserSessionReadableServices
     @Inject private var userAgentProvider: UserAgentProvider
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
@@ -33,8 +34,10 @@ struct DefaultPostLoginRepository: PostLoginRepository {
 
     func userLoggedIn(params: PostLoginRepositoryUserLoggedInParams,
                       handler: @escaping UserLoggedInHandler) {
-
-        guard let sessionId = userSession.sessionId else {
+        guard let sessionId = userSession.sessionId,
+              let userId = userSession.userId,
+              let currencyId = userSession.currencyId
+        else {
             handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
             return
         }
@@ -56,11 +59,11 @@ struct DefaultPostLoginRepository: PostLoginRepository {
         ]
 
         let body = [
-            "user_id": "",           // params.userId
-            "from_registration": "", // params.fromRegistration
-            "CurrencyID": "",        // params.currencyID
-            "domain": "",            // params.domain
-            "DateRegistered": ""     // params.dateRegistered
+            "user_id": "\(userId)",
+            "from_registration": "\(params.fromRegistration)",
+            "CurrencyID": "\(currencyId)",
+            "domain": params.domain,
+            "DateRegistered": params.dateRegistered
         ]
 
         let request = httpRequestBuilder
