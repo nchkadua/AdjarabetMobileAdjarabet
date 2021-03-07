@@ -40,7 +40,7 @@ public class HomeViewController: UIViewController {
         repo.userLoggedIn(params: .init(fromRegistration: false)) { result in
             switch result {
             case .success(let entity):
-                print("userLoggedIn:", entity.applePay ?? "nil")
+                print("userLoggedIn:", entity)
             case .failure(let error):
                 print(error)
             }
