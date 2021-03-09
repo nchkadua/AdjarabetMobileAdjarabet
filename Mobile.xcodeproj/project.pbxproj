@@ -222,6 +222,7 @@
 		C7F5477325DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */; };
 		C7FB267C25CD87FE00111106 /* ServiceAuthTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */; };
 		C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */; };
+		CE03740525F78A4A0061F507 /* TBCRegularUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
 		CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */; };
 		CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */; };
@@ -820,6 +821,7 @@
 		C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDeleteDataTransferResponse.swift; sourceTree = "<group>"; };
 		C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDTO.swift; sourceTree = "<group>"; };
 		C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUrlDTO.swift; sourceTree = "<group>"; };
+		CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularUseCase.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentView.swift; sourceTree = "<group>"; };
 		CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentViewModel.swift; sourceTree = "<group>"; };
@@ -1806,6 +1808,7 @@
 			isa = PBXGroup;
 			children = (
 				C707548725F391F40033050E /* List */,
+				CE0FF92325F109F900C18F9C /* TBC Regular */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -2366,7 +2369,6 @@
 		C7D86F11259A05CB0021CF1C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				CE53C22C25F0DE650030FB77 /* Direct Payments */,
 				C7EF9E46256FECDD00D2908C /* Core */,
 				C7D86F0E259A05640021CF1C /* Mobile */,
 			);
@@ -2448,6 +2450,24 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
+		CE03740025F789600061F507 /* Repositories & Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE03740125F78A360061F507 /* Deposit */,
+			);
+			path = "Repositories & Entities";
+			sourceTree = "<group>";
+		};
+		CE03740125F78A360061F507 /* Deposit */ = {
+			isa = PBXGroup;
+			children = (
+				CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */,
+				CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift */,
+				CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */,
+			);
+			path = Deposit;
+			sourceTree = "<group>";
+		};
 		CE0818BE25389B5C00AD3B3B /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -2477,18 +2497,11 @@
 			path = Instruction;
 			sourceTree = "<group>";
 		};
-		CE0FF92225F109F100C18F9C /* Direct Payments */ = {
-			isa = PBXGroup;
-			children = (
-				CE0FF92325F109F900C18F9C /* TBC Regular */,
-			);
-			path = "Direct Payments";
-			sourceTree = "<group>";
-		};
 		CE0FF92325F109F900C18F9C /* TBC Regular */ = {
 			isa = PBXGroup;
 			children = (
-				CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */,
+				CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */,
+				CE03740025F789600061F507 /* Repositories & Entities */,
 			);
 			path = "TBC Regular";
 			sourceTree = "<group>";
@@ -2587,23 +2600,6 @@
 				CE38F09D254B085200605524 /* CashFlowTabComponentView.xib */,
 			);
 			path = CashFlowTab;
-			sourceTree = "<group>";
-		};
-		CE53C22C25F0DE650030FB77 /* Direct Payments */ = {
-			isa = PBXGroup;
-			children = (
-				CE53C22D25F0DE770030FB77 /* TBC Regular */,
-			);
-			path = "Direct Payments";
-			sourceTree = "<group>";
-		};
-		CE53C22D25F0DE770030FB77 /* TBC Regular */ = {
-			isa = PBXGroup;
-			children = (
-				CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */,
-				CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift */,
-			);
-			path = "TBC Regular";
 			sourceTree = "<group>";
 		};
 		CE55ECF425265B7D003E168F /* Profile */ = {
@@ -3373,7 +3369,6 @@
 		D861DA8D2466BC820054D058 /* Repositories & Entities */ = {
 			isa = PBXGroup;
 			children = (
-				CE0FF92225F109F100C18F9C /* Direct Payments */,
 				C7EF9E55256FF14A00D2908C /* Core */,
 				D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */,
 				C799129F259BA90F00F64676 /* Mobile */,
@@ -4329,6 +4324,7 @@
 				CE2F03C9252CC8E8006D8001 /* QuickActionComponentViewModel.swift in Sources */,
 				CE76FD7F25764FB500D8AB04 /* ABLocationManager.swift in Sources */,
 				76DCF67825B80FB500150EE1 /* MyCardsViewModel.swift in Sources */,
+				CE03740525F78A4A0061F507 /* TBCRegularUseCase.swift in Sources */,
 				CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */,
 				76BDF45E2576043A007B27A7 /* AccountParametersViewController.swift in Sources */,
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,

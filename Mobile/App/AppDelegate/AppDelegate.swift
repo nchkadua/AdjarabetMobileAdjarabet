@@ -105,6 +105,7 @@ public extension DependencyContainer {
         // Payments
         Module { DefaultPostLoginRepository() as PostLoginRepository }
         Module { DefaultPaymentListRepository() as PaymentListRepository }
+        Module { DefaultTBCRegularPaymentsRepository() as TBCRegularPaymentsRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }

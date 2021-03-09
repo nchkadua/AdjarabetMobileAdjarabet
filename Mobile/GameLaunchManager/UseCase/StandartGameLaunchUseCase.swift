@@ -92,7 +92,7 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
                 let fileManager = FileManager()
                 try fileManager.createSymbolicLink(at: URL(string: "\(path)hybrid/games/")!, withDestinationURL: URL(string: "\(path)games/")!)
                 print("success") // TODO
-            } catch let error {
+            } catch {
                 print("createSymbolicLink error:", error) // TODO
             }
 

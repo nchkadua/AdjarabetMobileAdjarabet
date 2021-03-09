@@ -10,4 +10,6 @@ import Foundation
 
 public struct TBCRegularPaymentsEntity {
     public let message: String?
+    public let code: Int?
+    public let sessionId: String?
 }

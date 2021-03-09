@@ -12,6 +12,8 @@ public class DepositViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: DepositViewModel
     public lazy var navigator = DepositNavigator(viewController: self)
 
+    @Inject(from: .repositories) private var tBCRegularPaymentsRepository: TBCRegularPaymentsRepository
+
     // MARK: Outlets
     @IBOutlet private weak var labelComponentView: LabelComponentView!
     @IBOutlet private weak var paymentMethodInputView: ABInputView!
@@ -19,8 +21,6 @@ public class DepositViewController: ABViewController {
     @IBOutlet private weak var cardNumberInputView: ABInputView!
     @IBOutlet private weak var addCardButton: UIButton!
     @IBOutlet private weak var proceedButton: ABButton!
-
-    var tBCRegularPaymentsRepository = TBCRegularPaymentsRepository()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -133,7 +133,7 @@ public class DepositViewController: ABViewController {
     }
 
     @objc private func proceedDidTap() {
-        tBCRegularPaymentsRepository.deposit { result in
+        tBCRegularPaymentsRepository.initDeposit(params: .init(amount: 5.00, accountId: 376155)) { result in
             switch result {
             case .success(let tbcRegularPaymentsEntity): print("asdasd 1 ", tbcRegularPaymentsEntity)
             case .failure(let error): print("asdasd 2 ", error)
