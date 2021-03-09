@@ -248,6 +248,9 @@ extension LoginViewController: Accessible {
         usernameInputView.setAccessibilityIdTextfield(id: "LoginViewController.usernameInputTextField")
         passwordInputView.setAccessibilityIdTextfield(id: "LoginViewController.passwordInputTextField")
 
+        usernameInputView.setAccessibilityIdsToPlaceholderLabels(id: "LoginViewController.usernameInputTextField.placeholder")
+        passwordInputView.setAccessibilityIdsToPlaceholderLabels(id: "LoginViewController.passwordInputTextField.placeholder")
+
         footerComponentView.setAccessibilityIdToLAnguageButton("LoginViewController.languageButton")
     }
 }

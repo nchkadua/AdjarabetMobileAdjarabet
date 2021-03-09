@@ -156,10 +156,6 @@ public class ABInputView: UIView {
         hasDropdownImage = false
     }
 
-    public func setAccessibilityIdTextfield(id: String) {
-        textField.accessibilityIdentifier = id
-    }
-
     private func setDropdownImage(tintColor: DesignSystem.Color = .primaryText()) {
         rightComponent.setImage(R.image.shared.dropDown(), for: .normal)
         rightComponent.setTintColor(to: tintColor)
@@ -236,6 +232,19 @@ public class ABInputView: UIView {
     private func setupRightButton() {
         rightButton.backgroundColor = nil
         rightButton.superview?.isHidden = true
+    }
+
+    // MARK: Accessibility Identifiers
+    public func setAccessibilityIdTextfield(id: String) {
+        textField.accessibilityIdentifier = id
+    }
+
+    public func setAccessibilityIdsToPlaceholderLabels(id: String) {
+        placeholderLabel.accessibilityIdentifier = id
+    }
+
+    public func setAccessibilityIdsToRightImage(id: String) {
+        rightButton.accessibilityIdentifier = id
     }
 }
 

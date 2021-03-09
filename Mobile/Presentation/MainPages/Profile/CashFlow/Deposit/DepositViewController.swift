@@ -136,17 +136,19 @@ public class DepositViewController: ABViewController {
         tBCRegularPaymentsRepository.initDeposit(params: .init(amount: 5.00)) { result in
             switch result {
             case .success(let tbcRegularPaymentsEntity): self.deposit(with: tbcRegularPaymentsEntity.sessionId ?? "")
-            case .failure(let error): print("asdasd 2 ", error)
+            case .failure(let error): print("Payment init deposit: ", error)
             }
         }
     }
 
     private func deposit(with session: String) {
-        print("asdasd session ", session)
+        print("Payment init deposit: session ", session)
         tBCRegularPaymentsRepository.deposit(params: .init(amount: 5.00, session: session)) { result in
             switch result {
-            case .success(let tbcResularPaymentsDepositEntity): print("asdasd 1 ", tbcResularPaymentsDepositEntity)
-            case .failure(let error): print("asdasd 2 ", error)
+            case .success(let tbcResularPaymentsDepositEntity):
+                print("Payment init deposit: deposit url ", tbcResularPaymentsDepositEntity.url)
+                print("Payment init deposit: deposit transID ", tbcResularPaymentsDepositEntity.transId)
+            case .failure(let error): print("Payment init deposit: ", error)
             }
         }
     }

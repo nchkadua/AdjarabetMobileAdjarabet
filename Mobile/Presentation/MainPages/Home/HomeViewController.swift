@@ -133,6 +133,7 @@ public class HomeViewController: UIViewController {
         let profileButtonGroup = makeBalanceBarButtonItem()
         navigationItem.rightBarButtonItem = profileButtonGroup.barButtonItem
         profileButtonGroup.button.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
+        profileButtonGroup.button.accessibilityIdentifier = "profileButton"
     }
 
     @objc private func openProfile() {
