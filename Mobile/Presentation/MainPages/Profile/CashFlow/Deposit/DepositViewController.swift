@@ -133,9 +133,19 @@ public class DepositViewController: ABViewController {
     }
 
     @objc private func proceedDidTap() {
-        tBCRegularPaymentsRepository.initDeposit(params: .init(amount: 5.00, accountId: 376155)) { result in
+        tBCRegularPaymentsRepository.initDeposit(params: .init(amount: 5.00)) { result in
             switch result {
-            case .success(let tbcRegularPaymentsEntity): print("asdasd 1 ", tbcRegularPaymentsEntity)
+            case .success(let tbcRegularPaymentsEntity): self.deposit(with: tbcRegularPaymentsEntity.sessionId ?? "")
+            case .failure(let error): print("asdasd 2 ", error)
+            }
+        }
+    }
+
+    private func deposit(with session: String) {
+        print("asdasd session ", session)
+        tBCRegularPaymentsRepository.deposit(params: .init(amount: 5.00, session: session)) { result in
+            switch result {
+            case .success(let tbcResularPaymentsDepositEntity): print("asdasd 1 ", tbcResularPaymentsDepositEntity)
             case .failure(let error): print("asdasd 2 ", error)
             }
         }

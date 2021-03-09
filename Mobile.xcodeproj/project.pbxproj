@@ -223,6 +223,7 @@
 		C7FB267C25CD87FE00111106 /* ServiceAuthTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */; };
 		C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */; };
 		CE03740525F78A4A0061F507 /* TBCRegularUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */; };
+		CE03746125F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
 		CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */; };
 		CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */; };
@@ -233,7 +234,7 @@
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
 		CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */; };
 		CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */; };
-		CE0FF91F25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift */; };
+		CE0FF91F25F0EB3300C18F9C /* TBCRegularPaymentInitDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentInitDepositDTO.swift */; };
 		CE0FF92525F10A0800C18F9C /* TBCRegularPaymentsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
 		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
@@ -822,6 +823,7 @@
 		C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDTO.swift; sourceTree = "<group>"; };
 		C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUrlDTO.swift; sourceTree = "<group>"; };
 		CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularUseCase.swift; sourceTree = "<group>"; };
+		CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentDepositDTO.swift; sourceTree = "<group>"; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentView.swift; sourceTree = "<group>"; };
 		CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentViewModel.swift; sourceTree = "<group>"; };
@@ -832,7 +834,7 @@
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
 		CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInstructionView.xib; sourceTree = "<group>"; };
 		CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInstructionView.swift; sourceTree = "<group>"; };
-		CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentDepositDTO.swift; sourceTree = "<group>"; };
+		CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentInitDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentInitDepositDTO.swift; sourceTree = "<group>"; };
 		CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentsEntity.swift; sourceTree = "<group>"; };
 		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
 		CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoComponentView.xib; sourceTree = "<group>"; };
@@ -2462,8 +2464,9 @@
 			isa = PBXGroup;
 			children = (
 				CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */,
-				CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift */,
+				CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentInitDepositDTO.swift */,
 				CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */,
+				CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */,
 			);
 			path = Deposit;
 			sourceTree = "<group>";
@@ -4428,6 +4431,7 @@
 				7682CF9525B8581600717090 /* AddMyCardTableViewCell.swift in Sources */,
 				D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */,
 				767C7D8F25E39FA9008F2CE9 /* HomeBannerContainerCollectionViewCellDataProvider.swift in Sources */,
+				CE03746125F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift in Sources */,
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
 				CE95FC16252DED0A003E539B /* FooterComponentViewModel.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
@@ -4506,7 +4510,7 @@
 				D8442AA22469716600F32676 /* ABInputView.swift in Sources */,
 				CECF7F80256DAD9E001C0E50 /* PasswordChangeRulesView.swift in Sources */,
 				C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */,
-				CE0FF91F25F0EB3300C18F9C /* TBCRegularPaymentDepositDTO.swift in Sources */,
+				CE0FF91F25F0EB3300C18F9C /* TBCRegularPaymentInitDepositDTO.swift in Sources */,
 				CE660C43254C057F002667D0 /* LabelComponentView.swift in Sources */,
 				D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */,
 				C7DE3ADF25F529670082D5EF /* UserLoggedInEntity.swift in Sources */,
