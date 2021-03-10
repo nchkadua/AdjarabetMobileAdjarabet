@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 32 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 33 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -154,6 +154,8 @@ struct R: Rswift.Validatable {
     static let transactionsFilter = _R.storyboard.transactionsFilter()
     /// Storyboard `Transactions`.
     static let transactions = _R.storyboard.transactions()
+    /// Storyboard `Web`.
+    static let web = _R.storyboard.web()
     /// Storyboard `Withdraw`.
     static let withdraw = _R.storyboard.withdraw()
 
@@ -371,6 +373,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "TransactionsFilter", bundle: ...)`
     static func transactionsFilter(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.transactionsFilter)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Web", bundle: ...)`
+    static func web(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.web)
     }
     #endif
 
@@ -1363,6 +1372,18 @@ struct R: Rswift.Validatable {
       if R.font.pantonMtav3Regular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Regular' could not be loaded, is 'PantonMtav3-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.pantonNusx3Bold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonNusx3-Bold' could not be loaded, is 'PantonNusx3-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.pantonNusx3Regular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonNusx3-Regular' could not be loaded, is 'PantonNusx3-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.id` struct is generated, and contains static references to accessibility identifiers.
+  struct id {
+    struct accountInfo {
+      /// Accessibility identifier `AccountInfoViewController.password`.
+      static let accountInfoViewControllerPassword: String = "AccountInfoViewController.password"
+
+      fileprivate init() {}
     }
 
     fileprivate init() {}
@@ -12104,8 +12125,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/QuickAction/withdraw", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/withdraw' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12155,8 +12176,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12434,8 +12455,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12819,6 +12840,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try transactionsFilter.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try web.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try withdraw.validate()
@@ -13453,6 +13477,26 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "ColorGuide/SystemGrays/systemGrey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemGrays/systemGrey' is used in storyboard 'TransactionsFilter', but couldn't be loaded.") }
         }
         if _R.storyboard.transactionsFilter().transactionsFilterViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'transactionsFilterViewController' could not be loaded from storyboard 'TransactionsFilter' as 'TransactionsFilterViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct web: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Web"
+      let webViewController = StoryboardViewControllerResource<WebViewController>(identifier: "WebViewController")
+
+      func webViewController(_: Void = ()) -> WebViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: webViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.web().webViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'webViewController' could not be loaded from storyboard 'Web' as 'WebViewController'.") }
       }
 
       fileprivate init() {}

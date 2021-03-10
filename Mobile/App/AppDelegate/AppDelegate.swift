@@ -83,6 +83,7 @@ public extension DependencyContainer {
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
         Module { DefaultMyCardsViewModel() as MyCardsViewModel }
         Module { DefaultGameViewModel(params: .init()) as GameViewModel }
+        Module { DefaultWebViewModel(params: .init()) as WebViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -140,6 +141,7 @@ public extension DependencyContainer {
         Module { DefaultAccessHistoryCalendarViewControllerFactory() as AccessHistoryCalendarViewControllerFactory }
         Module { DefaultMyCardsViewControllerFactory() as MyCardsViewControllerFactory }
         Module { DefaultGameViewControllerFactory() as GameViewControllerFactory }
+        Module { DefaultWebViewControllerFactory() as WebViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

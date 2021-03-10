@@ -224,6 +224,11 @@
 		C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */; };
 		CE03740525F78A4A0061F507 /* TBCRegularUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */; };
 		CE03746125F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */; };
+		CE03746E25F8D7180061F507 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE03746925F8D7180061F507 /* Web.storyboard */; };
+		CE03746F25F8D7180061F507 /* WebNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746A25F8D7180061F507 /* WebNavigator.swift */; };
+		CE03747025F8D7180061F507 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746B25F8D7180061F507 /* WebViewController.swift */; };
+		CE03747125F8D7180061F507 /* WebViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746C25F8D7180061F507 /* WebViewControllerFactory.swift */; };
+		CE03747225F8D7180061F507 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746D25F8D7180061F507 /* WebViewModel.swift */; };
 		CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */; };
 		CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */; };
 		CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */; };
@@ -824,6 +829,11 @@
 		C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUrlDTO.swift; sourceTree = "<group>"; };
 		CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularUseCase.swift; sourceTree = "<group>"; };
 		CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentDepositDTO.swift; sourceTree = "<group>"; };
+		CE03746925F8D7180061F507 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Web.storyboard; path = "Mobile/Payments/TBC Regular/Repositories & Entities/Deposit/Web.storyboard"; sourceTree = SOURCE_ROOT; };
+		CE03746A25F8D7180061F507 /* WebNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebNavigator.swift; path = "Mobile/Payments/TBC Regular/Repositories & Entities/Deposit/WebNavigator.swift"; sourceTree = SOURCE_ROOT; };
+		CE03746B25F8D7180061F507 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = "Mobile/Payments/TBC Regular/Repositories & Entities/Deposit/WebViewController.swift"; sourceTree = SOURCE_ROOT; };
+		CE03746C25F8D7180061F507 /* WebViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewControllerFactory.swift; path = "Mobile/Payments/TBC Regular/Repositories & Entities/Deposit/WebViewControllerFactory.swift"; sourceTree = SOURCE_ROOT; };
+		CE03746D25F8D7180061F507 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewModel.swift; path = "Mobile/Payments/TBC Regular/Repositories & Entities/Deposit/WebViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentView.swift; sourceTree = "<group>"; };
 		CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderComponentViewModel.swift; sourceTree = "<group>"; };
@@ -2471,6 +2481,18 @@
 			path = Deposit;
 			sourceTree = "<group>";
 		};
+		CE03746825F8D6F00061F507 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE03746925F8D7180061F507 /* Web.storyboard */,
+				CE03746A25F8D7180061F507 /* WebNavigator.swift */,
+				CE03746B25F8D7180061F507 /* WebViewController.swift */,
+				CE03746C25F8D7180061F507 /* WebViewControllerFactory.swift */,
+				CE03746D25F8D7180061F507 /* WebViewModel.swift */,
+			);
+			path = WebViewController;
+			sourceTree = "<group>";
+		};
 		CE0818BE25389B5C00AD3B3B /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -3161,6 +3183,7 @@
 		D815850C24B0C66D00FFCA95 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
+				CE03746825F8D6F00061F507 /* WebViewController */,
 				76DCF66E25B80EEC00150EE1 /* MyCards */,
 				7665D959257E5C8100E5B35F /* AccessHistory */,
 				7676E54A2562852800234026 /* Transactions */,
@@ -3921,6 +3944,7 @@
 				D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */,
 				CEE25089256FE3C10089F805 /* TimerComponentView.xib in Resources */,
 				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
+				CE03746E25F8D7180061F507 /* Web.storyboard in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
 				C77206E125DAB0B50037D8A0 /* ca.der in Resources */,
 				D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */,
@@ -4369,6 +4393,7 @@
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
 				CE9B7F8625753784006FF756 /* DateFormatter.swift in Sources */,
 				CEB937DA251E281B004195A1 /* LanguagesButton.swift in Sources */,
+				CE03747125F8D7180061F507 /* WebViewControllerFactory.swift in Sources */,
 				CE91C0DA257028C400A18255 /* TransactionsFilterViewController.swift in Sources */,
 				CE91C0D9257028C400A18255 /* TransactionsFilterNavigator.swift in Sources */,
 				CEE356C4252B643600A0A25C /* ProfileInfoTableViewCell.swift in Sources */,
@@ -4395,6 +4420,7 @@
 				CEA77799256D4244008A4F6C /* MailChangeViewControllerFactory.swift in Sources */,
 				76BDF46D25760512007B27A7 /* AccountParametersTableViewCellDataProvider.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
+				CE03746F25F8D7180061F507 /* WebNavigator.swift in Sources */,
 				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */,
@@ -4420,6 +4446,7 @@
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */,
 				CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */,
+				CE03747225F8D7180061F507 /* WebViewModel.swift in Sources */,
 				76E43EDF25B95303007B2D97 /* VideoCardComponentView.swift in Sources */,
 				76EBDB3C257E417D00C8DC6A /* AccessListRepository.swift in Sources */,
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
@@ -4483,6 +4510,7 @@
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
 				7668C7AD2576785F0024DDE4 /* AccountParametersHeaderComponentView.swift in Sources */,
+				CE03747025F8D7180061F507 /* WebViewController.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,

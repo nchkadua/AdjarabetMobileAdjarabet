@@ -146,8 +146,7 @@ public class DepositViewController: ABViewController {
         tBCRegularPaymentsRepository.deposit(params: .init(amount: 5.00, session: session)) { result in
             switch result {
             case .success(let tbcResularPaymentsDepositEntity):
-                print("Payment init deposit: deposit url ", tbcResularPaymentsDepositEntity.url)
-                print("Payment init deposit: deposit transID ", tbcResularPaymentsDepositEntity.transId)
+                self.navigator.navigate(to: .webView(params: .init(url: tbcResularPaymentsDepositEntity.url ?? "", params: ["trans_id": tbcResularPaymentsDepositEntity.transId!])), animated: true)
             case .failure(let error): print("Payment init deposit: ", error)
             }
         }
