@@ -110,6 +110,7 @@ public class ProfileViewController: UIViewController {
         let accountParametersButtonGroup = makeAccountParametersBarButtonItem(width: 120)
         navigationItem.rightBarButtonItem = accountParametersButtonGroup.barButtonItem
         accountParametersButtonGroup.button.addTarget(self, action: #selector(openAccountParameters), for: .touchUpInside)
+        accountParametersButtonGroup.button.accessibilityIdentifier = "ProfileViewController.accountParametersButton"
     }
 
     @objc private func openAccountParameters() {

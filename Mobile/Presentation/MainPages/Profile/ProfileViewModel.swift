@@ -80,7 +80,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
 
         QuickActionItemProvider.items().reversed().forEach {
             let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, hidesSeparator: $0.hidesSeparator, destination: $0.destionation, roundedCorners: $0.roundedCorners))
-
+            
             quickActionViewModel.action.subscribe(onNext: { [weak self] action in
                 switch action {
                 case .didSelect: self?.routeSubject.onNext(.openPage(destionation: quickActionViewModel.params.destination))

@@ -155,5 +155,7 @@ extension PasswordChangeViewController: Accessible {
         repeatePasswordInputView.setAccessibilityIdsToRightImage(id: "PasswordChangeViewController.repeatePasswordInputView.rightImage")
 
         updatePasswordButton.accessibilityIdentifier = "PasswordChangeViewController.updatePasswordButton"
+        
+        navigationItem.titleView?.accessibilityIdentifier = "PasswordChangeViewController.title"
     }
 }
