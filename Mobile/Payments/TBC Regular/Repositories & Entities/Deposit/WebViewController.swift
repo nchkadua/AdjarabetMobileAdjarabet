@@ -18,8 +18,6 @@ public class WebViewController: UIViewController {
         WKWebView()
     }()
 
-    @IBOutlet weak var wv: WKWebView!
-
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +50,10 @@ public class WebViewController: UIViewController {
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.backgroundColor = .clear
         webView.isOpaque = false
+
+        webView.configuration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
+        webView.configuration.setValue("TRUE", forKey: "allowUniversalAccessFromFileURLs")
+        webView.configuration.preferences.javaScriptEnabled = true
 
         view.addSubview(webView)
         webView.pinSafely(to: view)
