@@ -2954,12 +2954,12 @@
 			path = Terms;
 			sourceTree = "<group>";
 		};
-		CECCE3CC254F0A33005CC660 /* Temporary */ = {
+		CECCE3CC254F0A33005CC660 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				CECCE3CD254F0A43005CC660 /* Payments.swift */,
 			);
-			path = Temporary;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		CECF7F3F256D5A68001C0E50 /* AddressChange */ = {
@@ -3077,7 +3077,7 @@
 		CEF368492549C2F0009FD456 /* Deposit */ = {
 			isa = PBXGroup;
 			children = (
-				CECCE3CC254F0A33005CC660 /* Temporary */,
+				CECCE3CC254F0A33005CC660 /* ViewModels */,
 				CE660C4C254C314D002667D0 /* Instruction */,
 				CEF368592549C33E009FD456 /* DepositViewControllerFactory.swift */,
 				CEF3684B2549C325009FD456 /* DepositNavigator.swift */,

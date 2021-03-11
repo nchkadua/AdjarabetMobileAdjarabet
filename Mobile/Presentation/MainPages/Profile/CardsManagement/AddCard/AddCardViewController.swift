@@ -169,7 +169,7 @@ public class AddCardViewController: ABViewController {
     }
 
     // MARK: Helpers
-
+    // FIXME: Common with deposit
     private func amount2Double() -> Double? {
         guard let text   = amountInputView.mainTextField.text,
               let number = NumberFormatter().number(from: text),

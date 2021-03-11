@@ -10,3 +10,11 @@ public class Payment {
     var paymentMethods = ["VISA/MASTERCARD", "EMONEY"]
     var cards = ["123456xxxxxxxx0211", "789123xxxxxxxx0211"]
 }
+
+public struct PaymentMethods {
+    let methods: [String]
+}
+
+public struct PaymentCards {
+    let cards: [String]
+}
