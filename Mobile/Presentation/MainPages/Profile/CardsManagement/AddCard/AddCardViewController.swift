@@ -11,9 +11,6 @@ import RxSwift
 public class AddCardViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: AddCardViewModel
     public lazy var navigator = AddCardNavigator(viewController: self)
-    private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
-
-    @Inject(from: .repositories) private var tBCRegularPaymentsRepository: TBCRegularPaymentsRepository
 
     // MARK: Outlets
     @IBOutlet private weak var minAmountComponentView: MinAmountComponentView!
@@ -45,12 +42,22 @@ public class AddCardViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: AddCardViewModelOutputAction) {
         switch action {
         case .bindToMinAmountComponentViewModel(let viewModel): bindToMinAmount(viewModel)
         case .bindToAgreementComponentViewModel(let viewModel): bindAgreement(viewModel)
+        }
+    }
+
+    private func didRecive(route: AddCardViewModelRoute) {
+        switch route {
+        case .webView(let params):
+            navigator.navigate(to: .webView(params: params), animated: true)
         }
     }
 
@@ -124,41 +131,7 @@ public class AddCardViewController: ABViewController {
 
     @objc private func continueButtonDidTap() {
         closeKeyboard()
-
-        tBCRegularPaymentsRepository.initDeposit(params: .init(amount: enteredAmount)) { result in
-            switch result {
-            case .success(let tbcRegularPaymentsEntity): self.deposit(with: tbcRegularPaymentsEntity.sessionId ?? "")
-            case .failure(let error): print("Payment init deposit: ", error)
-            }
-        }
-    }
-
-    private func deposit(with session: String) {
-        print("Payment init deposit: session ", session)
-        tBCRegularPaymentsRepository.deposit(params: .init(amount: enteredAmount, session: session)) { result in
-            switch result {
-            case .success(let tbcResularPaymentsDepositEntity):
-
-                let headers = [
-                    "Cache-control": "no-store",
-                    "Connection": "Keep-Alive",
-                    "Keep-Alive": "timeout=5, max=100",
-                    "Pragma": "no-cache",
-                    "X-Content-Type-Options": "nosniff",
-                    "X-XSS-Protection": "1; mode=block"
-                ]
-
-                let request = self.httpRequestBuilder
-                    .set(host: "\(tbcResularPaymentsDepositEntity.url!)?trans_id=\(tbcResularPaymentsDepositEntity.transId!)")
-                    .set(headers: headers)
-                    .set(method: HttpMethodGet())
-                    .build()
-
-                self.navigator.navigate(to: .webView(params: .init(request: request)), animated: true)
-
-            case .failure(let error): print("Payment init deposit: ", error)
-            }
-        }
+        viewModel.continueTapped(with: enteredAmount)
     }
 
     // MARK: Action Methods
