@@ -34,6 +34,7 @@ public class DefaultDepositViewModel {
     private let routeSubject = PublishSubject<DepositViewModelRoute>()
 
     @Inject public var userBalanceService: UserBalanceService
+    @Inject(from: .useCases) private var paymentListUseCase: PaymentListUseCase
 }
 
 extension DefaultDepositViewModel: DepositViewModel {
