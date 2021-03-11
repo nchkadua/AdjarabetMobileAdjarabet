@@ -15,7 +15,7 @@ public protocol WebViewControllerFactory {
 public class DefaultWebViewControllerFactory: WebViewControllerFactory {
     public func make(params: WebViewModelParams) -> WebViewController {
         let vc = R.storyboard.web().instantiate(controller: WebViewController.self)!
-        vc.viewModel.params = params
+        vc.viewModel = DefaultWebViewModel(params: params)
         return vc
     }
 }

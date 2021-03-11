@@ -12,12 +12,10 @@ public protocol WebViewModel: WebViewModelInput, WebViewModelOutput {
 }
 
 public struct WebViewModelParams {
-    public let url: String
-    public let params: [String: String]
+    public let request: URLRequest
 
-    public init(url: String = "", params: [String: String] = ["": ""]) {
-        self.url = url
-        self.params = params
+    public init(request: URLRequest) {
+        self.request = request
     }
 }
 
@@ -32,7 +30,7 @@ public protocol WebViewModelOutput {
 }
 
 public enum WebViewModelOutputAction {
-    case load(_ url: String, _ params: [String: String])
+    case load(_ request: URLRequest)
 }
 
 public enum WebViewModelRoute {
@@ -53,6 +51,6 @@ extension DefaultWebViewModel: WebViewModel {
     public var route: Observable<WebViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        actionSubject.onNext(.load(params.url, params.params))
+        actionSubject.onNext(.load(params.request))
     }
 }

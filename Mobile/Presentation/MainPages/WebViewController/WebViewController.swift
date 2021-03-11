@@ -10,20 +10,13 @@ import RxSwift
 import WebKit
 
 public class WebViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: WebViewModel
-    public lazy var navigator = WebNavigator(viewController: self)
+    public var viewModel: WebViewModel!
     private let disposeBag = DisposeBag()
-
-    private lazy var webView: WKWebView = {
-        WKWebView()
-    }()
-
-    @IBOutlet weak var wv: WKWebView!
+    private let webView = WKWebView()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
@@ -38,7 +31,7 @@ public class WebViewController: UIViewController {
 
     private func didRecive(action: WebViewModelOutputAction) {
         switch action {
-        case .load(let url, let params): load(url, params)
+        case .load(let request): load(request)
         }
     }
 
@@ -52,26 +45,12 @@ public class WebViewController: UIViewController {
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.backgroundColor = .clear
         webView.isOpaque = false
-
         view.addSubview(webView)
         webView.pinSafely(to: view)
     }
 
     // MARK: Action methods
-    private func load(_ url: String, _ params: [String: String]) {
-        let url = URL(string: url)
-        let request = NSMutableURLRequest(url: url!)
-        request.httpMethod = "POST"
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-        var post = ""
-        for (key, value) in params {
-            post = key + "=" + value + "&"
-        }
-
-        let postData: Data = post.data(using: String.Encoding.ascii, allowLossyConversion: true)!
-
-        request.httpBody = postData
+    private func load(_ request: URLRequest) {
         webView.load(request as URLRequest)
     }
 }

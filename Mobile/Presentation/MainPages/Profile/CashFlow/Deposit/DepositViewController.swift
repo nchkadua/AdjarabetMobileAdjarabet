@@ -11,6 +11,7 @@ import RxSwift
 public class DepositViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: DepositViewModel
     public lazy var navigator = DepositNavigator(viewController: self)
+    private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
     @Inject(from: .repositories) private var tBCRegularPaymentsRepository: TBCRegularPaymentsRepository
 
@@ -57,21 +58,30 @@ public class DepositViewController: ABViewController {
     private func didRecive(action: DepositViewModelOutputAction) {
         switch action {
         case .setupWithLabel(let label): setupLabel(with: label)
-        case .setupPaymentMethods(let payment): setupPaymentMethods(with: payment)
+        case .setupPaymentMethods(let methods): setupPaymentMethods(with: methods)
+        case .setupPaymentCards(let cards): setupPaymentCards(with: cards)
         }
     }
 
     private func didRecive(route: DepositViewModelRoute) {
+        switch route {
+        case .webView(let params):
+            navigator.navigate(to: .webView(params: params), animated: true)
+        case .addCard:
+            navigator.navigate(to: .addCard, animated: true)
+        }
     }
 
     private func setupLabel(with label: LabelComponentViewModel) {
         labelComponentView.set(label: label)
     }
 
-    private func setupPaymentMethods(with payment: Payment) {
-        paymentMethodInputView.setupPickerView(withItems: payment.paymentMethods)
-        paymentMethodInputView.setDefaultValue(payment.paymentMethods.first ?? "")
+    private func setupPaymentMethods(with payment: PaymentMethods) {
+        paymentMethodInputView.setupPickerView(withItems: payment.methods)
+        paymentMethodInputView.setDefaultValue(payment.methods.first ?? "")
+    }
 
+    private func setupPaymentCards(with payment: PaymentCards) {
         cardNumberInputView.setupPickerView(withItems: payment.cards)
         cardNumberInputView.setDefaultValue(payment.cards.first ?? "")
     }
@@ -133,22 +143,20 @@ public class DepositViewController: ABViewController {
     }
 
     @objc private func proceedDidTap() {
-        tBCRegularPaymentsRepository.initDeposit(params: .init(amount: 5.00)) { result in
-            switch result {
-            case .success(let tbcRegularPaymentsEntity): self.deposit(with: tbcRegularPaymentsEntity.sessionId ?? "")
-            case .failure(let error): print("Payment init deposit: ", error)
-            }
-        }
+        let amount = amount2Double() ?? 0.0
+        let method = paymentMethodInputView.text ?? ""
+        let card = cardNumberInputView.text ?? ""
+        viewModel.proceedTapped(amount: amount, method: method, card: card)
     }
 
-    private func deposit(with session: String) {
-        print("Payment init deposit: session ", session)
-        tBCRegularPaymentsRepository.deposit(params: .init(amount: 5.00, session: session)) { result in
-            switch result {
-            case .success(let tbcResularPaymentsDepositEntity):
-                self.navigator.navigate(to: .webView(params: .init(url: tbcResularPaymentsDepositEntity.url ?? "", params: ["trans_id": tbcResularPaymentsDepositEntity.transId!])), animated: true)
-            case .failure(let error): print("Payment init deposit: ", error)
-            }
+    // FIXME: Common with addCards
+    private func amount2Double() -> Double? {
+        guard let text   = amountInputView.mainTextField.text,
+              let number = NumberFormatter().number(from: text),
+              let result = Double(exactly: number)
+        else {
+            return nil
         }
+        return result
     }
 }

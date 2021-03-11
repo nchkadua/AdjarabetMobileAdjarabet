@@ -42,12 +42,22 @@ public class AddCardViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: AddCardViewModelOutputAction) {
         switch action {
         case .bindToMinAmountComponentViewModel(let viewModel): bindToMinAmount(viewModel)
         case .bindToAgreementComponentViewModel(let viewModel): bindAgreement(viewModel)
+        }
+    }
+
+    private func didRecive(route: AddCardViewModelRoute) {
+        switch route {
+        case .webView(let params):
+            navigator.navigate(to: .webView(params: params), animated: true)
         }
     }
 
@@ -121,7 +131,7 @@ public class AddCardViewController: ABViewController {
 
     @objc private func continueButtonDidTap() {
         closeKeyboard()
-        navigator.navigate(to: .cardInfo(params: CardInfoViewModelParams(amount: enteredAmount)), animated: true)
+        viewModel.continueTapped(with: enteredAmount)
     }
 
     // MARK: Action Methods
@@ -159,7 +169,7 @@ public class AddCardViewController: ABViewController {
     }
 
     // MARK: Helpers
-
+    // FIXME: Common with deposit
     private func amount2Double() -> Double? {
         guard let text   = amountInputView.mainTextField.text,
               let number = NumberFormatter().number(from: text),

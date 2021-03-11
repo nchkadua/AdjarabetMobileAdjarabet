@@ -36,7 +36,7 @@ public class DepositNavigator: Navigator {
     }
 
     private func navigateToWebView(with params: WebViewModelParams, animate: Bool) {
-        let vc = webViewControllerFactory.make(params: .init(url: params.url, params: params.params))
+        let vc = webViewControllerFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)

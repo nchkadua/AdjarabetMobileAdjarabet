@@ -69,6 +69,8 @@ public class ABInputView: UIView {
         setTextAndConfigure(text: text)
     }
 
+    public var text: String? { textField.text }
+
     public func setPlaceholder(text: String?) {
         placeholderLabel.text = text
     }
