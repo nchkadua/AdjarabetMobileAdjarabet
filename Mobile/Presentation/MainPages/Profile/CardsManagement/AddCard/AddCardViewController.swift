@@ -12,6 +12,8 @@ public class AddCardViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: AddCardViewModel
     public lazy var navigator = AddCardNavigator(viewController: self)
 
+    @Inject(from: .repositories) private var tBCRegularPaymentsRepository: TBCRegularPaymentsRepository
+
     // MARK: Outlets
     @IBOutlet private weak var minAmountComponentView: MinAmountComponentView!
     @IBOutlet private weak var amountInputView: ABInputView!
@@ -121,7 +123,24 @@ public class AddCardViewController: ABViewController {
 
     @objc private func continueButtonDidTap() {
         closeKeyboard()
-        navigator.navigate(to: .cardInfo(params: CardInfoViewModelParams(amount: enteredAmount)), animated: true)
+
+        tBCRegularPaymentsRepository.initDeposit(params: .init(amount: enteredAmount)) { result in
+            switch result {
+            case .success(let tbcRegularPaymentsEntity): self.deposit(with: tbcRegularPaymentsEntity.sessionId ?? "")
+            case .failure(let error): print("Payment init deposit: ", error)
+            }
+        }
+    }
+
+    private func deposit(with session: String) {
+        print("Payment init deposit: session ", session)
+        tBCRegularPaymentsRepository.deposit(params: .init(amount: enteredAmount, session: session)) { result in
+            switch result {
+            case .success(let tbcResularPaymentsDepositEntity):
+                self.navigator.navigate(to: .webView(params: .init(url: tbcResularPaymentsDepositEntity.url ?? "", params: ["trans_id": tbcResularPaymentsDepositEntity.transId!])), animated: true)
+            case .failure(let error): print("Payment init deposit: ", error)
+            }
+        }
     }
 
     // MARK: Action Methods
