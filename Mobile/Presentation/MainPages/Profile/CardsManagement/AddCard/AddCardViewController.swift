@@ -11,6 +11,7 @@ import RxSwift
 public class AddCardViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: AddCardViewModel
     public lazy var navigator = AddCardNavigator(viewController: self)
+    private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
     @Inject(from: .repositories) private var tBCRegularPaymentsRepository: TBCRegularPaymentsRepository
 
@@ -137,7 +138,24 @@ public class AddCardViewController: ABViewController {
         tBCRegularPaymentsRepository.deposit(params: .init(amount: enteredAmount, session: session)) { result in
             switch result {
             case .success(let tbcResularPaymentsDepositEntity):
-                self.navigator.navigate(to: .webView(params: .init(url: tbcResularPaymentsDepositEntity.url ?? "", params: ["trans_id": tbcResularPaymentsDepositEntity.transId!])), animated: true)
+
+                let headers = [
+                    "Cache-control": "no-store",
+                    "Connection": "Keep-Alive",
+                    "Keep-Alive": "timeout=5, max=100",
+                    "Pragma": "no-cache",
+                    "X-Content-Type-Options": "nosniff",
+                    "X-XSS-Protection": "1; mode=block"
+                ]
+
+                let request = self.httpRequestBuilder
+                    .set(host: "\(tbcResularPaymentsDepositEntity.url!)?trans_id=\(tbcResularPaymentsDepositEntity.transId!)")
+                    .set(headers: headers)
+                    .set(method: HttpMethodGet())
+                    .build()
+
+                self.navigator.navigate(to: .webView(params: .init(request: request)), animated: true)
+
             case .failure(let error): print("Payment init deposit: ", error)
             }
         }

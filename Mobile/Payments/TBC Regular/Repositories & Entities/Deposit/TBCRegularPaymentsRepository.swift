@@ -22,7 +22,7 @@ struct Params {
     let providerId = "c47e7151-a66f-4430-9c2d-adb656c14bb6"
     let serviceName = "ufc"
     let serviceId = 1030
-    let saveForRecurring = 0
+    let saveForRecurring = 1
     let amount: Double
     var accountId: Int64?
     var session: String?
@@ -52,12 +52,11 @@ struct DefaultTBCRegularPaymentsRepository: TBCRegularPaymentsRepository {
             "service_id": params.serviceId,
             "currency": currency.description.abbreviation,
             "save_for_recurring": params.saveForRecurring,
-            "lang": languageStorage.currentLanguage.localizableIdentifier,
-            "amount": params.amount
+            "amount": "\(params.amount)"
         ]
 
         if let accountId = params.accountId {
-            body["account_id"] = accountId
+            body["account_id"] = "\(accountId)"
         }
 
         let headers = [
@@ -103,12 +102,12 @@ struct DefaultTBCRegularPaymentsRepository: TBCRegularPaymentsRepository {
             "currency": currency.description.abbreviation,
             "save_for_recurring": params.saveForRecurring,
             "lang": languageStorage.currentLanguage.localizableIdentifier,
-            "amount": params.amount,
+            "amount": "\(params.amount)",
             "session": params.session ?? ""
         ]
 
         if let accountId = params.accountId {
-            body["account_id"] = accountId
+            body["account_id"] = "\(accountId)"
         }
 
         let headers = [
