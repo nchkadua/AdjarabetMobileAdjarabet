@@ -10,7 +10,7 @@ import Foundation
 
 protocol PaymentListUseCase {
     /**
-     Retusn list of available payment methods
+     Returns list of available payment methods
      */
     typealias ListHandler = (Result<[PaymentMethodEntity], Error>) -> Void
     func list(handler: @escaping ListHandler)
@@ -61,9 +61,9 @@ struct DefaultPaymentListUseCase: PaymentListUseCase {
         }
 
         // Initialize Segments
-        let applePay = validateSegment(userLoggedInEntity.applePay)
         let segmentList = validateSegment(userLoggedInEntity.segmentList)
         let segmentListEmoney = validateSegment(userLoggedInEntity.segmentListEmoney)
+     // let applePay = validateSegment(userLoggedInEntity.applePay)
 
         // Define Element Segment Validator Function
         let validateElement: ([String]?) -> Set<String> = { segment in
@@ -78,14 +78,20 @@ struct DefaultPaymentListUseCase: PaymentListUseCase {
 
         // Iterate over all payment methods
         for elem in paymentListEntity.elements {
-            let elemApplePay = validateElement(elem.applePay)
-            let elemSegmentList = validateSegment(elem.segmentList)
-            let elemSegmentListEmoney = validateSegment(elem.segmentListEmoney)
+            if elem.method.flowId.lowercased().contains("applepay") { // if Apple Pay
+                paymentMethods.append(elem.method)                    // append immediately
+                continue
+            }
+
+            let elemSegmentList = validateElement(elem.segmentList)
+            let elemSegmentListEmoney = validateElement(elem.segmentListEmoney)
+         // let elemApplePay = validateElement(elem.applePay)
 
             // Check for matching
-            if applePay.isSubset(of: elemApplePay),
-               segmentList.isSubset(of: elemSegmentList),
-               segmentListEmoney.isSubset(of: elemSegmentListEmoney) {
+            if segmentList.isSubset(of: elemSegmentList),
+               segmentListEmoney.isSubset(of: elemSegmentListEmoney)
+            // applePay.isSubset(of: elemApplePay)
+            {
                 // Append to Result
                 paymentMethods.append(elem.method)
             }
