@@ -10,7 +10,7 @@ import Foundation
 
 protocol PaymentListRepository {
     /**
-     Retusn list of all payment methods
+     Returns list of all payment methods
      */
     typealias ListHandler = (Result<PaymentListEntity, Error>) -> Void
     func list(handler: @escaping ListHandler)
@@ -24,7 +24,7 @@ struct DefaultPaymentListRepository: PaymentListRepository {
     func list(handler: @escaping ListHandler) {
         let request = httpRequestBuilder
             .set(host: "https://newstatic.adjarabet.com")
-            .set(path: "static/paymentPopUpNavAppleKa.json") // FIXME: Ka, En, Ru
+            .set(path: "static/paymentPopUpNavMobileAppleKa.json") // FIXME: Ka, En, Ru
             .set(method: HttpMethodGet())
             .build()
 
