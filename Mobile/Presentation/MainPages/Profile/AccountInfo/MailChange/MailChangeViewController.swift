@@ -123,3 +123,22 @@ public class MailChangeViewController: ABViewController {
 extension MailChangeViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [mailInputView, passwordInputView] }
 }
+
+// MARK: Accessibility Identifiers
+extension MailChangeViewController: Accessible {
+    private func setupAccessibilityIdentifiers() {
+        generateAccessibilityIdentifiers()
+        
+        mailInputView.setAccessibilityIdTextfield(id: "MailChangeViewController.mailInputViewTextField")
+        passwordInputView.setAccessibilityIdTextfield(id: "MailChangeViewController.passwordInputView")
+        
+        mailInputView.setAccessibilityIdsToPlaceholderLabels(id: "MailChangeViewController.mailInputViewTextField.placeholder")
+        passwordInputView.setAccessibilityIdsToPlaceholderLabels(id: "MailChangeViewController.passwordInputView.placeholder")
+        
+        mailInputView.setAccessibilityIdsToRightImage(id: "MailChangeViewController.mailInputViewTextField.rightImage")
+        passwordInputView.setAccessibilityIdsToRightImage(id: "MailChangeViewController.passwordInputView.rightImage")
+        
+        changeButton.accessibilityIdentifier = "MailChangeViewController.changeButton"
+        navigationItem.titleView?.accessibilityIdentifier = "MailChangeViewController.title"
+    }
+}
