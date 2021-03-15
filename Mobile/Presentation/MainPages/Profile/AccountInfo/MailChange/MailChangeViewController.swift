@@ -25,6 +25,7 @@ public class MailChangeViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        setupAccessibilityIdentifiers()
     }
 
     public override func viewDidAppear(_ animated: Bool) {
