@@ -178,8 +178,8 @@
 		C72EA8E425C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */; };
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
-		C744040B26000F58003E554B /* RORJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744040A26000F58003E554B /* RORJSlot.zip */; settings = {ASSET_TAGS = (EGT/RORJSlot, ); }; };
-		C744041326001138003E554B /* BHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744041226001138003E554B /* BHJSlot.zip */; settings = {ASSET_TAGS = (EGT/BHJSlot, ); }; };
+		C744040B26000F58003E554B /* RORJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744040A26000F58003E554B /* RORJSlot.zip */; settings = {ASSET_TAGS = (RORJSlot, ); }; };
+		C744041326001138003E554B /* BHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744041226001138003E554B /* BHJSlot.zip */; settings = {ASSET_TAGS = (BHJSlot, ); }; };
 		C747734E25B5C1030083C845 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C747734D25B5C1030083C845 /* Currency.swift */; };
 		C754317F25F5605900E485DD /* PaymentListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754317E25F5605900E485DD /* PaymentListDTO.swift */; };
 		C754318325F5606D00E485DD /* PaymentListEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754318225F5606D00E485DD /* PaymentListEntities.swift */; };
@@ -3881,9 +3881,11 @@
 			isa = PBXProject;
 			attributes = {
 				KnownAssetTags = (
+					BHJSlot,
 					EGT,
 					EGT/BHJSlot,
 					EGT/RORJSlot,
+					RORJSlot,
 				);
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1220;

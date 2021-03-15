@@ -17,13 +17,14 @@ enum GameIdentifier {
 
     var description: Description {
         switch self {
-        case .BHJSlot:  return Description(tag: "EGT/BHJSlot")
-        case .RORJSlot: return Description(tag: "EGT/RORJSlot")
+        case .BHJSlot:  return Description(tag: "BHJSlot")
+        case .RORJSlot: return Description(tag: "RORJSlot")
         }
     }
 
     struct Description {
         let tag: String
+        var fileName: String { tag } // assumption
     }
 }
 

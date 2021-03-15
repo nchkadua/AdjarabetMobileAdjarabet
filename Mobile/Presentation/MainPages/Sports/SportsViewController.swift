@@ -59,7 +59,7 @@ extension SportsViewController: CommonBarButtonProviding { }
 
 extension SportsViewController {
     func getLaunchUrl() {
-        interactor.launch(gameId: "7463") { [weak self] result in
+        interactor.launch(gameId: "7397") { [weak self] result in
             switch result {
             case .success(let launchUrl):
                 self?.result = launchUrl
