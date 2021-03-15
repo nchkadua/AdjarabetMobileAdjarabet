@@ -9,74 +9,69 @@
 import Foundation
 import ZIPFoundation
 
-class FileExtractor: NSObject {
-    // Directories
-    private let fileManager = FileManager()
+class FileExtractor {
+    static let shared = FileExtractor()
+    private let fileManager = FileManager.default
     private let directoryName = "DownloadedResources"
 
-    public static let shared = FileExtractor()
-
-    public func extractFileWithName(_ name: String, _ fileExtension: String = "zip", completion: @escaping ((ExtractResult<NSString, NSString>) -> Void)) {
-        do {
-            print(name, fileExtension)
-            let filePath = Bundle.main.url(forResource: name, withExtension: fileExtension)!
-
-            let documentsPath = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
-            let downloadedResourcesPath = documentsPath.appendingPathComponent(directoryName)!
-            do {
-                try FileManager.default.createDirectory(atPath: downloadedResourcesPath.relativePath, withIntermediateDirectories: true, attributes: nil)
-                do {
-                    try fileManager.createDirectory(at: downloadedResourcesPath, withIntermediateDirectories: true, attributes: nil)
-                    try fileManager.unzipItem(at: filePath, to: downloadedResourcesPath)
-
-                    completion(.success(downloadedResourcesPath.appendingPathComponent(name).relativePath as NSString))
-                    /// Temp: Check for unzipped files
-                    do {
-                        let fullPath = downloadedResourcesPath.appendingPathComponent("bundles")
-                        print("ODResources contains: fullPath ", fullPath)
-                        let docsArray = try fileManager.contentsOfDirectory(atPath: fullPath.relativePath)
-                        print("ODResources contains: ", docsArray)
-                    } catch {
-                        print("ODResources: ", error)
-                    }
-                } catch {
-                    completion(.failure("ODResources: Extraction of ZIP archive failed with error:\(error)" as NSString))
-                }
-            } catch let error as NSError {
-                completion(.failure("ODResources: Unable to create directory \(error.debugDescription)" as NSString))
-            }
-        }
+    private init() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(applicationWillTerminate),
+                                               name: UIApplication.willTerminateNotification,
+                                               object: nil)
     }
 
-    func clearUnzippedResourcesFolder() {
-        let fileManager = FileManager.default
-        let tempFolderPath = NSTemporaryDirectory()
-        do {
-            let filePaths = try fileManager.contentsOfDirectory(atPath: tempFolderPath)
-            for filePath in filePaths {
-                try fileManager.removeItem(atPath: tempFolderPath + filePath)
-            }
-        } catch {
-            print("ODResources: Could not clear temp folder: \(error)")
-        }
-    }
-
-    // MARK: App Lifecycle Observation
-    private override init() {
-        super.init()
-        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillTerminate), name: UIApplication.willTerminateNotification, object: nil)
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     @objc private func applicationWillTerminate() {
         clearUnzippedResourcesFolder()
     }
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+    func clearUnzippedResourcesFolder(_ handler: ((Result<Void, Error>) -> Void)? = nil) {
+        guard let resources = resources
+        else {
+            handler?(.success(())) // For some reason resources does not exist, so they are already deleted
+            return
+        }
+        do {
+            let files = try fileManager.contentsOfDirectory(atPath: resources.relativePath)
+            for file in files {
+                try fileManager.removeItem(atPath: resources.appendingPathComponent(file).relativePath)
+            }
+            handler?(.success(()))
+        } catch {
+            handler?(.failure(error))
+        }
     }
-}
 
-public enum ExtractResult<Success: NSString, Failure: NSString> {
-    case success(Success)
-    case failure(Failure)
+    public func extractFileWithName(_ name: String,
+                                    _ fileExtension: String = "zip",
+                                    _ completion: @escaping (Result<String, Error>) -> Void) {
+        let fileNotFoundError = { AdjarabetCoreClientError.coreError(description: "File Not Found") }
+
+        guard let filePath = Bundle.main.url(forResource: name, withExtension: fileExtension),
+              let resources = resources
+        else {
+            completion(.failure(fileNotFoundError()))
+            return
+        }
+
+        do {
+            try fileManager.createDirectory(at: resources, withIntermediateDirectories: true, attributes: nil)
+            try fileManager.unzipItem(at: filePath, to: resources)
+            completion(.success(resources.appendingPathComponent(name).relativePath))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+
+    private var resources: URL? {
+        let pathForDirs = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        guard !pathForDirs.isEmpty
+        else { return nil }
+        let documents = NSURL(fileURLWithPath: pathForDirs[0])
+        return documents.appendingPathComponent(directoryName)
+    }
 }

@@ -56,9 +56,9 @@ struct DefaultResourceRepository: ResourceRepository {
         fileExtractor.extractFileWithName("bundles") { result in
             switch result {
             case .success(let path):
-                handler(.success(path as String))
+                handler(.success(path))
             case .failure(let error):
-                handler(.failure(AdjarabetCoreClientError.coreError(description: error as String)))
+                handler(.failure(error))
             }
         }
     }
