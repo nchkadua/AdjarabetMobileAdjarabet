@@ -131,7 +131,7 @@ extension MailChangeViewController: Accessible {
         generateAccessibilityIdentifiers()
         
         mailInputView.setAccessibilityIdTextfield(id: "MailChangeViewController.mailInputViewTextField")
-        passwordInputView.setAccessibilityIdTextfield(id: "MailChangeViewController.passwordInputView")
+        passwordInputView.setAccessibilityIdTextfield(id: "MailChangeViewController.passwordInputViewTextField")
         
         mailInputView.setAccessibilityIdsToPlaceholderLabels(id: "MailChangeViewController.mailInputViewTextField.placeholder")
         passwordInputView.setAccessibilityIdsToPlaceholderLabels(id: "MailChangeViewController.passwordInputView.placeholder")
