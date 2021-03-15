@@ -6,7 +6,6 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-import Foundation
 import ZIPFoundation
 
 class FileExtractor {
@@ -49,12 +48,10 @@ class FileExtractor {
     public func extractFileWithName(_ name: String,
                                     _ fileExtension: String = "zip",
                                     _ completion: @escaping (Result<String, Error>) -> Void) {
-        let fileNotFoundError = { AdjarabetCoreClientError.coreError(description: "File Not Found") }
-
         guard let filePath = Bundle.main.url(forResource: name, withExtension: fileExtension),
               let resources = resources
         else {
-            completion(.failure(fileNotFoundError()))
+            completion(.failure(AdjarabetCoreClientError.coreError(description: "File Not Found")))
             return
         }
 

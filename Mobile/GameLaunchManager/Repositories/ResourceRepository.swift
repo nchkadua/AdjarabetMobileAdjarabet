@@ -53,7 +53,7 @@ struct DefaultResourceRepository: ResourceRepository {
     }
 
     func extract(identifier: GameIdentifier, handler: @escaping PathHandler) {
-        fileExtractor.extractFileWithName("bundles") { result in
+        fileExtractor.extractFileWithName("BHJSlot") { result in
             switch result {
             case .success(let path):
                 handler(.success(path))
