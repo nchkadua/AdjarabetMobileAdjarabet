@@ -12,6 +12,8 @@ public class WithdrawViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: WithdrawViewModel
     public lazy var navigator = WithdrawNavigator(viewController: self)
 
+    @Inject(from: .repositories) private var repo: TBCRegularPaymentsRepository
+
     // MARK: Outlets
     @IBOutlet private weak var titleLabelComponentView: LabelComponentView!
     @IBOutlet private weak var cardNumberInputView: ABInputView!
@@ -138,5 +140,26 @@ public class WithdrawViewController: ABViewController {
 
     // MARK: Action methods
     @objc private func proceedDidTap() {
+        repo.initWithdraw(params: .init(amount: 10)) { result in
+            switch result {
+            case .success(let entity): self.withdraw(with: entity.fee ?? 0.0, session: entity.sessionId ?? "")
+            case .failure(let error): print("Payment.Withdraw: ", error)
+            }
+        }
+    }
+
+    // Temporary
+    private func withdraw(with fee: Double, session: String) {
+        print("Payment.Withdraw: ", fee)
+        repo.withdraw(params: .init(amount: 10, accountId: 8310929, session: session)) { result in
+            switch result {
+            case .success(let entity):
+                print("Payment.Withdraw: ", entity.message)
+                self.showAlert(title: "\(entity.message)")
+            case .failure(let error):
+                print("Payment.Withdraw: ", error)
+                self.showAlert(title: "\(error)")
+            }
+        }
     }
 }
