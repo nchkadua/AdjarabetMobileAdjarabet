@@ -6,19 +6,20 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public class GameNavigator: Navigator {
+struct GameNavigator: Navigator {
     private weak var viewController: UIViewController?
-    @Inject(from: .factories) public var cashFlowViewControllerFactory: CashFlowViewControllerFactory
+    @Inject(from: .factories)
+    private var cashFlowViewControllerFactory: CashFlowViewControllerFactory
 
-    public init(viewController: UIViewController) {
+    init(viewController: UIViewController) {
         self.viewController = viewController
     }
 
-    public enum Destination {
+    enum Destination {
         case deposit
     }
 
-    public func navigate(to destination: Destination, animated animate: Bool) {
+    func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .deposit: navigateToCashFlow(animate: animate, initialPageIndex: 0)
         }

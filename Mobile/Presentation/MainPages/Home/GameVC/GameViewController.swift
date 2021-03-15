@@ -9,20 +9,16 @@
 import RxSwift
 import WebKit
 
-public class GameViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: GameViewModel
-    public lazy var navigator = GameNavigator(viewController: self)
-
-    @IBOutlet weak var gameLoaderView: GameLoaderComponentView!
-
-    private lazy var webView: WKWebView = {
-        WKWebView()
-    }()
+class GameViewController: ABViewController {
+    var viewModel: GameViewModel!
+    private lazy var navigator = GameNavigator(viewController: self)
+    // Views
+    @IBOutlet private weak var gameLoaderView: GameLoaderComponentView!
+    private lazy var webView = WKWebView()
 
     // MARK: - Lifecycle methods
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
@@ -70,9 +66,8 @@ public class GameViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        setTitle(title: "Game")
+     // setTitle(title: "თამაშის სათაური")
         setGameBackButton(width: 54)
-
         let depositButton = makeGameDepositBarButtonItem()
         navigationItem.rightBarButtonItem = depositButton.barButtonItem
         depositButton.button.addTarget(self, action: #selector(openDeposit), for: .touchUpInside)
@@ -100,9 +95,8 @@ extension GameViewController: CommonBarButtonProviding { }
 
 // MARK: - GameViewController Navigation Items
 extension GameViewController {
-    func setGameBackButton(width: CGFloat = 26) {
+    private func setGameBackButton(width: CGFloat = 26) {
         navigationItem.leftBarButtonItems?.removeAll()
-
         let button = UIButton()
         button.setImage(R.image.game.back(), for: .normal)
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
@@ -112,7 +106,7 @@ extension GameViewController {
         navigationItem.leftBarButtonItem = backBarButtonItem
     }
 
-    @objc func dismissGameView() {
+    @objc private func dismissGameView() {
         dismiss(animated: true, completion: nil)
     }
 }

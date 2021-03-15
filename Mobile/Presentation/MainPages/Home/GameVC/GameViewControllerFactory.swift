@@ -8,14 +8,14 @@
 
 import Foundation
 
-public protocol GameViewControllerFactory {
+protocol GameViewControllerFactory {
     func make(params: GameViewModelParams) -> GameViewController
 }
 
-public class DefaultGameViewControllerFactory: GameViewControllerFactory {
-    public func make(params: GameViewModelParams) -> GameViewController {
+struct DefaultGameViewControllerFactory: GameViewControllerFactory {
+    func make(params: GameViewModelParams) -> GameViewController {
         let vc = R.storyboard.game().instantiate(controller: GameViewController.self)!
-        vc.viewModel.params = params
+        vc.viewModel = DefaultGameViewModel(params: params)
         return vc
     }
 }

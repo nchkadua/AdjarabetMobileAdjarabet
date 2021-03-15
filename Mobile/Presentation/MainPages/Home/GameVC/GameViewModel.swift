@@ -8,37 +8,37 @@
 
 import RxSwift
 
-public protocol GameViewModel: GameViewModelInput, GameViewModelOutput {
+protocol GameViewModel: GameViewModelInput, GameViewModelOutput { }
+
+struct GameViewModelParams {
+    let game: Game
 }
 
-public struct GameViewModelParams {
-}
-
-public protocol GameViewModelInput: AnyObject {
+protocol GameViewModelInput: AnyObject {
     var params: GameViewModelParams { get set }
     func viewDidLoad()
     func bedginGameLoadingAnimation()
     func finishGameLoadingAnimation()
 }
 
-public protocol GameViewModelOutput {
+protocol GameViewModelOutput {
     var action: Observable<GameViewModelOutputAction> { get }
     var route: Observable<GameViewModelRoute> { get }
 }
 
-public enum GameViewModelOutputAction {
+enum GameViewModelOutputAction {
     case bindToGameLoader(viewModel: GameLoaderComponentViewModel)
 }
 
-public enum GameViewModelRoute {
-}
+enum GameViewModelRoute { }
 
-public class DefaultGameViewModel {
-    public var params: GameViewModelParams
+class DefaultGameViewModel {
+    var params: GameViewModelParams
     private let actionSubject = PublishSubject<GameViewModelOutputAction>()
     private let routeSubject = PublishSubject<GameViewModelRoute>()
-
-    @Inject(from: .componentViewModels) private var gameLoaderViewModel: GameLoaderComponentViewModel
+    private let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor()
+    @Inject(from: .componentViewModels)
+    private var gameLoaderViewModel: GameLoaderComponentViewModel
 
     public init(params: GameViewModelParams) {
         self.params = params
@@ -46,18 +46,19 @@ public class DefaultGameViewModel {
 }
 
 extension DefaultGameViewModel: GameViewModel {
-    public var action: Observable<GameViewModelOutputAction> { actionSubject.asObserver() }
-    public var route: Observable<GameViewModelRoute> { routeSubject.asObserver() }
+    var action: Observable<GameViewModelOutputAction> { actionSubject.asObserver() }
+    var route: Observable<GameViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    func viewDidLoad() {
         actionSubject.onNext(.bindToGameLoader(viewModel: gameLoaderViewModel))
+        print("GameViewModel.ViewDidLoad:", params.game.name)
     }
 
-    public func bedginGameLoadingAnimation() {
+    func bedginGameLoadingAnimation() {
         gameLoaderViewModel.begindAnimation()
     }
 
-    public func finishGameLoadingAnimation() {
+    func finishGameLoadingAnimation() {
         gameLoaderViewModel.finishAnimation()
     }
 }

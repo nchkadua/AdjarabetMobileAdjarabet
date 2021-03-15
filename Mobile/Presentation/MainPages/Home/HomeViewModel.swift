@@ -34,7 +34,7 @@ public enum HomeViewModelOutputAction {
 }
 
 public enum HomeViewModelRoute {
-    case openGame(title: String)
+    case open(game: Game)
 }
 
 public class DefaultHomeViewModel: DefaultBaseViewModel {
@@ -88,9 +88,9 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         recentryPlayed.action.subscribe(onNext: { action in
             switch action {
             case .didSelectViewAll:
-                self.routeSubject.onNext(.openGame(title: "View All"))
+                {}() // self.routeSubject.onNext(.openGame(title: "View All"))
             case .didSelectPlayedGame(let model, _):
-                self.routeSubject.onNext(.openGame(title: model.params.game.name))
+                self.routeSubject.onNext(.open(game: model.params.game))
             default: break
             }
         }).disposed(by: disposeBag)
@@ -125,7 +125,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         let vm = DefaultGameLauncherComponentViewModel(game: game)
         vm.action.subscribe(onNext: { action in
             switch action {
-            case .didSelect(let model, _): self.routeSubject.onNext(.openGame(title: model.params.game.name))
+            case .didSelect(let model, _): self.routeSubject.onNext(.open(game: model.params.game))
             default: break
             }
         }).disposed(by: self.disposeBag)
@@ -174,7 +174,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
                     let vm = DefaultPlayedGameLauncherComponentViewModel(params: .init(game: $0, lastWon: nil))
                     vm.action.subscribe(onNext: { action in
                         switch action {
-                        case .didSelect(let model, _): self.routeSubject.onNext(.openGame(title: model.params.game.name))
+                        case .didSelect(let model, _): self.routeSubject.onNext(.open(game: model.params.game))
                         default: break
                         }
                     }).disposed(by: self.disposeBag)

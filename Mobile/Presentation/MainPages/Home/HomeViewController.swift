@@ -95,7 +95,8 @@ public class HomeViewController: UIViewController {
 
     private func didReceive(action: HomeViewModelRoute) {
         switch action {
-        case .openGame: navigator.navigate(to: .game, animated: true)
+        case .open(let game):
+            navigator.navigate(to: .game(game), animated: true)
         }
     }
 
