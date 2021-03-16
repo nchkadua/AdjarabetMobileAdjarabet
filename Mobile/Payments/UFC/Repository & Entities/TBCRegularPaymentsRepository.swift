@@ -23,9 +23,9 @@ protocol TBCRegularPaymentsRepository {
     func initWithdraw(params: Params,
                       handler: @escaping InitWithdrawHandler)
 
-    typealias WithdrawHandler = (Result<TBCRegularPaymentsWithdrawEntity, Error>) -> Void
+    typealias WithdrawHandler = (Result<UFCWithdrawEntity, Error>) -> Void
     func withdraw(params: Params,
-                      handler: @escaping WithdrawHandler)
+                  handler: @escaping WithdrawHandler)
 }
 
 struct Params {
@@ -239,7 +239,7 @@ struct DefaultTBCRegularPaymentsRepository: TBCRegularPaymentsRepository {
             .setBody(key: "req", value: "withdraw")
             .build()
 
-        dataTransferService.performTask(expecting: TBCRegularPaymentWithdrawDTO.self,
+        dataTransferService.performTask(expecting: UFCWithdrawDTO.self,
                                         request: request,
                                         respondOnQueue: .main,
                                         completion: handler)

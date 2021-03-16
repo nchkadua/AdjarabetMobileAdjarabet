@@ -1,14 +1,14 @@
 //
-//  TBCRegularPaymentWithdrawDTO.swift
+//  UFCWithdrawDTO.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 3/15/21.
+//  Created by Giorgi Kratsashvili on 3/16/21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import Foundation
 
-struct TBCRegularPaymentWithdrawDTO: DataTransferResponse {
+struct UFCWithdrawDTO: DataTransferResponse {
     struct Body: Codable {
         let message: String?
         let code: Int?
@@ -19,9 +19,9 @@ struct TBCRegularPaymentWithdrawDTO: DataTransferResponse {
         }
     }
 
-    typealias Entity = TBCRegularPaymentsWithdrawEntity
+    typealias Entity = UFCWithdrawEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> TBCRegularPaymentsWithdrawEntity? {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
         Entity(
             message: body.message,
             code: body.code
