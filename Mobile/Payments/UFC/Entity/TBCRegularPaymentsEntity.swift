@@ -8,14 +8,6 @@
 
 import Foundation
 
-// MARK: Deposit
-public struct TBCRegularPaymentsDepositEntity {
-    public let message: String?
-    public let code: Int?
-    public let url: String?
-    public let transId: String?
-}
-
 // MARK: Withdraw
 public struct TBCRegularPaymentsInitWithdrawEntity {
     public let message: String?

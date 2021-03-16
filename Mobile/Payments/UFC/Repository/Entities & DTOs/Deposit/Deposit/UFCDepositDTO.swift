@@ -1,14 +1,14 @@
 //
-//  TBCRegularPaymentDepositDTO.swift
+//  UFCDepositDTO.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 3/9/21.
+//  Created by Giorgi Kratsashvili on 3/16/21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import Foundation
 
-struct TBCRegularPaymentDepositDTO: DataTransferResponse {
+struct UFCDepositDTO: DataTransferResponse {
     struct Body: Codable {
         let message: String?
         let code: Int?
@@ -34,7 +34,7 @@ struct TBCRegularPaymentDepositDTO: DataTransferResponse {
         }
     }
 
-    typealias Entity = TBCRegularPaymentsDepositEntity
+    typealias Entity = UFCDepositEntity
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
         Entity(

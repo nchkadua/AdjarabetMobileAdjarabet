@@ -225,9 +225,10 @@
 		C7F5477325DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */; };
 		C7FAA3B22600C04A00265995 /* UFCInitDepositEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3B12600C04A00265995 /* UFCInitDepositEntity.swift */; };
 		C7FAA3B62600C06100265995 /* UFCInitDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3B52600C06100265995 /* UFCInitDepositDTO.swift */; };
+		C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3BD2600C26F00265995 /* UFCDepositDTO.swift */; };
+		C7FAA3C22600C28600265995 /* UFCDepositEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3C12600C28600265995 /* UFCDepositEntity.swift */; };
 		C7FB267C25CD87FE00111106 /* ServiceAuthTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */; };
 		C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */; };
-		CE03746125F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */; };
 		CE03746E25F8D7180061F507 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE03746925F8D7180061F507 /* Web.storyboard */; };
 		CE03747025F8D7180061F507 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746B25F8D7180061F507 /* WebViewController.swift */; };
 		CE03747125F8D7180061F507 /* WebViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746C25F8D7180061F507 /* WebViewControllerFactory.swift */; };
@@ -834,9 +835,10 @@
 		C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDeleteDataTransferResponse.swift; sourceTree = "<group>"; };
 		C7FAA3B12600C04A00265995 /* UFCInitDepositEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCInitDepositEntity.swift; sourceTree = "<group>"; };
 		C7FAA3B52600C06100265995 /* UFCInitDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCInitDepositDTO.swift; sourceTree = "<group>"; };
+		C7FAA3BD2600C26F00265995 /* UFCDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositDTO.swift; sourceTree = "<group>"; };
+		C7FAA3C12600C28600265995 /* UFCDepositEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositEntity.swift; sourceTree = "<group>"; };
 		C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDTO.swift; sourceTree = "<group>"; };
 		C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUrlDTO.swift; sourceTree = "<group>"; };
-		CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentDepositDTO.swift; sourceTree = "<group>"; };
 		CE03746925F8D7180061F507 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Web.storyboard; path = Mobile/Presentation/MainPages/WebViewController/Web.storyboard; sourceTree = SOURCE_ROOT; };
 		CE03746B25F8D7180061F507 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Mobile/Presentation/MainPages/WebViewController/WebViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE03746C25F8D7180061F507 /* WebViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewControllerFactory.swift; path = Mobile/Presentation/MainPages/WebViewController/WebViewControllerFactory.swift; sourceTree = SOURCE_ROOT; };
@@ -1963,7 +1965,8 @@
 		C72FA7502600BD7E00A9C493 /* Deposit */ = {
 			isa = PBXGroup;
 			children = (
-				CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */,
+				C7FAA3BD2600C26F00265995 /* UFCDepositDTO.swift */,
+				C7FAA3C12600C28600265995 /* UFCDepositEntity.swift */,
 			);
 			path = Deposit;
 			sourceTree = "<group>";
@@ -4350,6 +4353,7 @@
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				C707548925F396130033050E /* PaymentListUseCase.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
+				C7FAA3C22600C28600265995 /* UFCDepositEntity.swift in Sources */,
 				76DCF68E25B8203D00150EE1 /* AddCard.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
@@ -4540,7 +4544,6 @@
 				7682CF9525B8581600717090 /* AddMyCardTableViewCell.swift in Sources */,
 				D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */,
 				767C7D8F25E39FA9008F2CE9 /* HomeBannerContainerCollectionViewCellDataProvider.swift in Sources */,
-				CE03746125F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift in Sources */,
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
 				CE95FC16252DED0A003E539B /* FooterComponentViewModel.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
@@ -4641,6 +4644,7 @@
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
+				C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */,
 				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
