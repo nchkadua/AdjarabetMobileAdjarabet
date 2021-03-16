@@ -31,6 +31,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Access camera</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>$(PRODUCT_NAME) requests access to Face ID to simplify the login process</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -39,33 +41,16 @@
 	<string>Adjarabet App Wants To Access Your Location</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>PantonMtav3-Bold.otf</string>
-		<string>PantonMtav3-ExtraBold.otf</string>
-		<string>PantonMtav3-Regular.otf</string>
-		<string>FiraGO-Bold.ttf</string>
-		<string>FiraGO-Book.ttf</string>
-		<string>FiraGO-Eight.ttf</string>
-		<string>FiraGO-ExtraBold.ttf</string>
-		<string>FiraGO-ExtraLight.ttf</string>
-		<string>FiraGO-Four.ttf</string>
-		<string>FiraGO-Hair.ttf</string>
-		<string>FiraGO-Heavy.ttf</string>
-		<string>FiraGO-Light.ttf</string>
-		<string>FiraGO-Medium.ttf</string>
-		<string>FiraGO-Regular.ttf</string>
-		<string>FiraGO-SemiBold.ttf</string>
-		<string>FiraGO-Thin.ttf</string>
-		<string>FiraGO-Two.ttf</string>
-		<string>FiraGO-UltraLight.ttf</string>
-		<string>PantonAM-Bold.otf</string>
-		<string>PantonAM-ExtraBold.otf</string>
-		<string>PantonAM-Regular.otf</string>
-		<string>PantonNusx3-Bold.otf</string>
-		<string>PantonNusx3-Regular.otf</string>
-		<string>NotoSansArmenian-Bold</string>
-		<string>NotoSansArmenian-Regular</string>
-		<string>NotoSansArmenian-SemiBold</string>
-		<string>NotoSansArmenian-Medium</string>
+		<string>AdjaraMont-Bold.ttf</string>
+		<string>AdjaraMont-Heavy.ttf</string>
+		<string>AdjaraMont-Light.ttf</string>
+		<string>AdjaraMont-Regular.ttf</string>
+		<string>AdjaraMont-SemiBold.ttf</string>
+		<string>AdjaraMontPro-Bold.ttf</string>
+		<string>AdjaraMontPro-Heavy.ttf</string>
+		<string>AdjaraMontPro-Light.ttf</string>
+		<string>AdjaraMontPro-Regular.ttf</string>
+		<string>AdjaraMontPro-SemiBold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -109,7 +94,5 @@
 	<string>Dark</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string>Access camera</string>
 </dict>
 </plist>

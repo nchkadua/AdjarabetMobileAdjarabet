@@ -312,10 +312,6 @@
 		CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C10D25702C4700A18255 /* CalendarComponentView.swift */; };
 		CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C11125702C4E00A18255 /* CalendarComponentViewModel.swift */; };
 		CE91C11825702C5700A18255 /* CalendarComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE91C11725702C5700A18255 /* CalendarComponentView.xib */; };
-		CE95D00725542035007D2084 /* NotoSansArmenian-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00325542035007D2084 /* NotoSansArmenian-SemiBold.ttf */; };
-		CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00425542035007D2084 /* NotoSansArmenian-Regular.ttf */; };
-		CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00525542035007D2084 /* NotoSansArmenian-Medium.ttf */; };
-		CE95D00A25542035007D2084 /* NotoSansArmenian-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE95D00625542035007D2084 /* NotoSansArmenian-Bold.ttf */; };
 		CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FB9C252CDE86003E539B /* QuickActionsHeaderView.xib */; };
 		CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FBBF252CDEF7003E539B /* QuickActionsHeaderView.swift */; };
 		CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FBC8252DC3A7003E539B /* QuickActionItemProvider.swift */; };
@@ -404,6 +400,16 @@
 		CEE356F2252C9C8100A0A25C /* BalanceComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE356F1252C9C8100A0A25C /* BalanceComponentView.xib */; };
 		CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE356F5252C9C8900A0A25C /* BalanceComponentView.swift */; };
 		CEE356FA252C9C9100A0A25C /* BalanceComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE356F9252C9C9000A0A25C /* BalanceComponentViewModel.swift */; };
+		CEE44E852600B5C100A83BD2 /* AdjaraMontPro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E732600B41800A83BD2 /* AdjaraMontPro-Heavy.ttf */; };
+		CEE44E862600B5C100A83BD2 /* AdjaraMontPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E6B2600B41700A83BD2 /* AdjaraMontPro-Bold.ttf */; };
+		CEE44E872600B5C100A83BD2 /* AdjaraMontPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E712600B41800A83BD2 /* AdjaraMontPro-SemiBold.ttf */; };
+		CEE44E882600B5C100A83BD2 /* AdjaraMont-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E6D2600B41800A83BD2 /* AdjaraMont-Light.ttf */; };
+		CEE44E892600B5C100A83BD2 /* AdjaraMont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E742600B41800A83BD2 /* AdjaraMont-Regular.ttf */; };
+		CEE44E8A2600B5C100A83BD2 /* AdjaraMontPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E702600B41800A83BD2 /* AdjaraMontPro-Light.ttf */; };
+		CEE44E8B2600B5C100A83BD2 /* AdjaraMont-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E6E2600B41800A83BD2 /* AdjaraMont-SemiBold.ttf */; };
+		CEE44E8C2600B5C100A83BD2 /* AdjaraMont-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E722600B41800A83BD2 /* AdjaraMont-Bold.ttf */; };
+		CEE44E8D2600B5C100A83BD2 /* AdjaraMontPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E6C2600B41700A83BD2 /* AdjaraMontPro-Regular.ttf */; };
+		CEE44E8E2600B5C100A83BD2 /* AdjaraMont-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEE44E6F2600B41800A83BD2 /* AdjaraMont-Heavy.ttf */; };
 		CEE537E9254AC9FD00EDE6C0 /* CashFlowNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE537E6254AC9FD00EDE6C0 /* CashFlowNavigator.swift */; };
 		CEE537EA254AC9FD00EDE6C0 /* CashFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE537E7254AC9FD00EDE6C0 /* CashFlowViewController.swift */; };
 		CEE537EB254AC9FD00EDE6C0 /* CashFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE537E8254AC9FD00EDE6C0 /* CashFlowViewModel.swift */; };
@@ -427,24 +433,6 @@
 		D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
 		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
-		D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807846D2444727500003892 /* FiraGO-Light.ttf */; };
-		D807847E2444727600003892 /* FiraGO-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807846E2444727500003892 /* FiraGO-ExtraLight.ttf */; };
-		D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807846F2444727500003892 /* FiraGO-Four.ttf */; };
-		D80784802444727600003892 /* FiraGO-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784702444727500003892 /* FiraGO-Thin.ttf */; };
-		D80784822444727600003892 /* FiraGO-Two.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784722444727500003892 /* FiraGO-Two.ttf */; };
-		D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784732444727500003892 /* FiraGO-Heavy.ttf */; };
-		D80784842444727600003892 /* FiraGO-Hair.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784742444727500003892 /* FiraGO-Hair.ttf */; };
-		D80784852444727600003892 /* FiraGO-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784752444727500003892 /* FiraGO-SemiBold.ttf */; };
-		D80784862444727600003892 /* FiraGO-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784762444727600003892 /* FiraGO-Book.ttf */; };
-		D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784772444727600003892 /* FiraGO-Medium.ttf */; };
-		D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784782444727600003892 /* FiraGO-Eight.ttf */; };
-		D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D80784792444727600003892 /* FiraGO-Regular.ttf */; };
-		D807848A2444727600003892 /* FiraGO-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807847A2444727600003892 /* FiraGO-UltraLight.ttf */; };
-		D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807847B2444727600003892 /* FiraGO-ExtraBold.ttf */; };
-		D807848C2444727600003892 /* FiraGO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D807847C2444727600003892 /* FiraGO-Bold.ttf */; };
-		D80784902444727E00003892 /* PantonMtav3-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848D2444727E00003892 /* PantonMtav3-Bold.otf */; };
-		D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */; };
-		D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D807848F2444727E00003892 /* PantonMtav3-Regular.otf */; };
 		D80784A524447ABF00003892 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784A424447ABF00003892 /* DesignSystemTests.swift */; };
 		D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809B7D02446FFC4000E861E /* UIViewController+Extension.swift */; };
 		D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810FC3424856EAD00F81499 /* LoadingType.swift */; };
@@ -458,9 +446,6 @@
 		D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8212F032485846C00B74AB9 /* LoadingCollectionViewCell.xib */; };
 		D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212F072485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift */; };
 		D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */; };
-		D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */; };
-		D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */; };
-		D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */; };
 		D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */; };
 		D8390E76246B14F600EF8CB5 /* ABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E75246B14F600EF8CB5 /* ABViewController.swift */; };
 		D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */; };
@@ -594,8 +579,6 @@
 		D8CFDA8C2530E311002002BC /* ABTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFDA8B2530E311002002BC /* ABTableViewController.swift */; };
 		D8D11B442498E63D0010F4C8 /* UserAgentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D11B432498E63D0010F4C8 /* UserAgentProvider.swift */; };
 		D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */; };
-		D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */; };
-		D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */; };
 		D8F26A05246837B700137252 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F26A04246837B700137252 /* LoginType.swift */; };
 		D8FBA4F12449BD560015C03C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8FBA4F32449BD560015C03C /* Localization.strings */; };
 		D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4F72449BE7D0015C03C /* Language.swift */; };
@@ -924,10 +907,6 @@
 		CE91C10D25702C4700A18255 /* CalendarComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponentView.swift; sourceTree = "<group>"; };
 		CE91C11125702C4E00A18255 /* CalendarComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponentViewModel.swift; sourceTree = "<group>"; };
 		CE91C11725702C5700A18255 /* CalendarComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarComponentView.xib; sourceTree = "<group>"; };
-		CE95D00325542035007D2084 /* NotoSansArmenian-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-SemiBold.ttf"; sourceTree = "<group>"; };
-		CE95D00425542035007D2084 /* NotoSansArmenian-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-Regular.ttf"; sourceTree = "<group>"; };
-		CE95D00525542035007D2084 /* NotoSansArmenian-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-Medium.ttf"; sourceTree = "<group>"; };
-		CE95D00625542035007D2084 /* NotoSansArmenian-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArmenian-Bold.ttf"; sourceTree = "<group>"; };
 		CE95FB9C252CDE86003E539B /* QuickActionsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionsHeaderView.xib; sourceTree = "<group>"; };
 		CE95FBBF252CDEF7003E539B /* QuickActionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsHeaderView.swift; sourceTree = "<group>"; };
 		CE95FBC8252DC3A7003E539B /* QuickActionItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionItemProvider.swift; sourceTree = "<group>"; };
@@ -1016,6 +995,16 @@
 		CEE356F1252C9C8100A0A25C /* BalanceComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceComponentView.xib; sourceTree = "<group>"; };
 		CEE356F5252C9C8900A0A25C /* BalanceComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceComponentView.swift; sourceTree = "<group>"; };
 		CEE356F9252C9C9000A0A25C /* BalanceComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceComponentViewModel.swift; sourceTree = "<group>"; };
+		CEE44E6B2600B41700A83BD2 /* AdjaraMontPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMontPro-Bold.ttf"; sourceTree = "<group>"; };
+		CEE44E6C2600B41700A83BD2 /* AdjaraMontPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMontPro-Regular.ttf"; sourceTree = "<group>"; };
+		CEE44E6D2600B41800A83BD2 /* AdjaraMont-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMont-Light.ttf"; sourceTree = "<group>"; };
+		CEE44E6E2600B41800A83BD2 /* AdjaraMont-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMont-SemiBold.ttf"; sourceTree = "<group>"; };
+		CEE44E6F2600B41800A83BD2 /* AdjaraMont-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMont-Heavy.ttf"; sourceTree = "<group>"; };
+		CEE44E702600B41800A83BD2 /* AdjaraMontPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMontPro-Light.ttf"; sourceTree = "<group>"; };
+		CEE44E712600B41800A83BD2 /* AdjaraMontPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMontPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		CEE44E722600B41800A83BD2 /* AdjaraMont-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMont-Bold.ttf"; sourceTree = "<group>"; };
+		CEE44E732600B41800A83BD2 /* AdjaraMontPro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMontPro-Heavy.ttf"; sourceTree = "<group>"; };
+		CEE44E742600B41800A83BD2 /* AdjaraMont-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdjaraMont-Regular.ttf"; sourceTree = "<group>"; };
 		CEE537E6254AC9FD00EDE6C0 /* CashFlowNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowNavigator.swift; sourceTree = "<group>"; };
 		CEE537E7254AC9FD00EDE6C0 /* CashFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowViewController.swift; sourceTree = "<group>"; };
 		CEE537E8254AC9FD00EDE6C0 /* CashFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowViewModel.swift; sourceTree = "<group>"; };
@@ -1040,24 +1029,6 @@
 		D803F42724A251C700A16CB2 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		D807846A24439E4500003892 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		D807846D2444727500003892 /* FiraGO-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Light.ttf"; sourceTree = "<group>"; };
-		D807846E2444727500003892 /* FiraGO-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-ExtraLight.ttf"; sourceTree = "<group>"; };
-		D807846F2444727500003892 /* FiraGO-Four.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Four.ttf"; sourceTree = "<group>"; };
-		D80784702444727500003892 /* FiraGO-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Thin.ttf"; sourceTree = "<group>"; };
-		D80784722444727500003892 /* FiraGO-Two.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Two.ttf"; sourceTree = "<group>"; };
-		D80784732444727500003892 /* FiraGO-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Heavy.ttf"; sourceTree = "<group>"; };
-		D80784742444727500003892 /* FiraGO-Hair.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Hair.ttf"; sourceTree = "<group>"; };
-		D80784752444727500003892 /* FiraGO-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-SemiBold.ttf"; sourceTree = "<group>"; };
-		D80784762444727600003892 /* FiraGO-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Book.ttf"; sourceTree = "<group>"; };
-		D80784772444727600003892 /* FiraGO-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Medium.ttf"; sourceTree = "<group>"; };
-		D80784782444727600003892 /* FiraGO-Eight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Eight.ttf"; sourceTree = "<group>"; };
-		D80784792444727600003892 /* FiraGO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Regular.ttf"; sourceTree = "<group>"; };
-		D807847A2444727600003892 /* FiraGO-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-UltraLight.ttf"; sourceTree = "<group>"; };
-		D807847B2444727600003892 /* FiraGO-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-ExtraBold.ttf"; sourceTree = "<group>"; };
-		D807847C2444727600003892 /* FiraGO-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Bold.ttf"; sourceTree = "<group>"; };
-		D807848D2444727E00003892 /* PantonMtav3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-Bold.otf"; sourceTree = "<group>"; };
-		D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-ExtraBold.otf"; sourceTree = "<group>"; };
-		D807848F2444727E00003892 /* PantonMtav3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonMtav3-Regular.otf"; sourceTree = "<group>"; };
 		D80784972444770F00003892 /* MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D807849B2444770F00003892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D80784A424447ABF00003892 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
@@ -1074,9 +1045,6 @@
 		D8212F072485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginUseCase.swift; sourceTree = "<group>"; };
 		D827961C2434CA81006745E8 /* Swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Swiftlint.sh; sourceTree = "<group>"; };
-		D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-ExtraBold.otf"; sourceTree = "<group>"; };
-		D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Bold.otf"; sourceTree = "<group>"; };
-		D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonAM-Regular.otf"; sourceTree = "<group>"; };
 		D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardListening.swift; sourceTree = "<group>"; };
 		D8390E75246B14F600EF8CB5 /* ABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABViewController.swift; sourceTree = "<group>"; };
 		D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPNavigator.swift; sourceTree = "<group>"; };
@@ -1217,8 +1185,6 @@
 		D8CFDA8B2530E311002002BC /* ABTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTableViewController.swift; sourceTree = "<group>"; };
 		D8D11B432498E63D0010F4C8 /* UserAgentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgentProvider.swift; sourceTree = "<group>"; };
 		D8D96C902446FE5500EFC0B1 /* FloatingTabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBarManager.swift; sourceTree = "<group>"; };
-		D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Bold.otf"; sourceTree = "<group>"; };
-		D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonNusx3-Regular.otf"; sourceTree = "<group>"; };
 		D8F26A04246837B700137252 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		D8FBA4F22449BD560015C03C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		D8FBA4F72449BE7D0015C03C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
@@ -3193,33 +3159,16 @@
 		D807846C2444726000003892 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				CE95D00625542035007D2084 /* NotoSansArmenian-Bold.ttf */,
-				CE95D00525542035007D2084 /* NotoSansArmenian-Medium.ttf */,
-				CE95D00425542035007D2084 /* NotoSansArmenian-Regular.ttf */,
-				CE95D00325542035007D2084 /* NotoSansArmenian-SemiBold.ttf */,
-				D8EE9CDA2462A9A100E54967 /* PantonNusx3-Bold.otf */,
-				D8EE9CDB2462A9A100E54967 /* PantonNusx3-Regular.otf */,
-				D83026BA2450B3AB006FF7FB /* PantonAM-Bold.otf */,
-				D83026B92450B3AB006FF7FB /* PantonAM-ExtraBold.otf */,
-				D83026BB2450B3AB006FF7FB /* PantonAM-Regular.otf */,
-				D807848D2444727E00003892 /* PantonMtav3-Bold.otf */,
-				D807848E2444727E00003892 /* PantonMtav3-ExtraBold.otf */,
-				D807848F2444727E00003892 /* PantonMtav3-Regular.otf */,
-				D807847C2444727600003892 /* FiraGO-Bold.ttf */,
-				D80784762444727600003892 /* FiraGO-Book.ttf */,
-				D80784782444727600003892 /* FiraGO-Eight.ttf */,
-				D807847B2444727600003892 /* FiraGO-ExtraBold.ttf */,
-				D807846E2444727500003892 /* FiraGO-ExtraLight.ttf */,
-				D807846F2444727500003892 /* FiraGO-Four.ttf */,
-				D80784742444727500003892 /* FiraGO-Hair.ttf */,
-				D80784732444727500003892 /* FiraGO-Heavy.ttf */,
-				D807846D2444727500003892 /* FiraGO-Light.ttf */,
-				D80784772444727600003892 /* FiraGO-Medium.ttf */,
-				D80784792444727600003892 /* FiraGO-Regular.ttf */,
-				D80784752444727500003892 /* FiraGO-SemiBold.ttf */,
-				D80784702444727500003892 /* FiraGO-Thin.ttf */,
-				D80784722444727500003892 /* FiraGO-Two.ttf */,
-				D807847A2444727600003892 /* FiraGO-UltraLight.ttf */,
+				CEE44E722600B41800A83BD2 /* AdjaraMont-Bold.ttf */,
+				CEE44E6F2600B41800A83BD2 /* AdjaraMont-Heavy.ttf */,
+				CEE44E6D2600B41800A83BD2 /* AdjaraMont-Light.ttf */,
+				CEE44E742600B41800A83BD2 /* AdjaraMont-Regular.ttf */,
+				CEE44E6E2600B41800A83BD2 /* AdjaraMont-SemiBold.ttf */,
+				CEE44E6B2600B41700A83BD2 /* AdjaraMontPro-Bold.ttf */,
+				CEE44E732600B41800A83BD2 /* AdjaraMontPro-Heavy.ttf */,
+				CEE44E702600B41800A83BD2 /* AdjaraMontPro-Light.ttf */,
+				CEE44E6C2600B41700A83BD2 /* AdjaraMontPro-Regular.ttf */,
+				CEE44E712600B41800A83BD2 /* AdjaraMontPro-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -4019,39 +3968,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE44E8D2600B5C100A83BD2 /* AdjaraMontPro-Regular.ttf in Resources */,
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
 				CECF7F7B256D9FAB001C0E50 /* PasswordChange.storyboard in Resources */,
-				D807848C2444727600003892 /* FiraGO-Bold.ttf in Resources */,
 				7665D97B257F4C0E00E5B35F /* AccessHistoryComponentView.xib in Resources */,
-				D80784892444727600003892 /* FiraGO-Regular.ttf in Resources */,
 				C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */,
 				76DCF67425B80FB500150EE1 /* MyCards.storyboard in Resources */,
 				CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */,
 				7644B6192563EFA4006778B2 /* DateHeaderCell.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				7698869B2571042A00FA339E /* TransactionFilterTableViewCell.xib in Resources */,
-				D83026BD2450B3AC006FF7FB /* PantonAM-Bold.otf in Resources */,
 				CEE25089256FE3C10089F805 /* TimerComponentView.xib in Resources */,
 				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
 				CE03746E25F8D7180061F507 /* Web.storyboard in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
+				CEE44E872600B5C100A83BD2 /* AdjaraMontPro-SemiBold.ttf in Resources */,
 				C77206E125DAB0B50037D8A0 /* ca.der in Resources */,
-				D807848B2444727600003892 /* FiraGO-ExtraBold.ttf in Resources */,
-				D80784882444727600003892 /* FiraGO-Eight.ttf in Resources */,
 				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
 				76BA7BD825E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib in Resources */,
 				CE2F03CD252CC8EE006D8001 /* QuickActionComponentView.xib in Resources */,
 				76AB37F325B95C74004E1326 /* incognito-card.mp4 in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
-				D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */,
 				76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */,
+				CEE44E8C2600B5C100A83BD2 /* AdjaraMont-Bold.ttf in Resources */,
 				CE679FDC2578334B00F2EC1C /* AddCard.storyboard in Resources */,
 				C744041326001138003E554B /* BHJSlot.zip in Resources */,
 				CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */,
-				D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */,
 				7676E5662562E26300234026 /* TransactionHistoryComponentView.xib in Resources */,
-				CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */,
+				CEE44E8E2600B5C100A83BD2 /* AdjaraMont-Heavy.ttf in Resources */,
 				C744040B26000F58003E554B /* RORJSlot.zip in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				CE64EA7A25D1695400438974 /* Game.storyboard in Resources */,
@@ -4059,60 +4004,49 @@
 				C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */,
 				CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */,
 				CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */,
-				CE95D00A25542035007D2084 /* NotoSansArmenian-Bold.ttf in Resources */,
 				CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */,
-				D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */,
 				CE91C11825702C5700A18255 /* CalendarComponentView.xib in Resources */,
 				C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */,
 				D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */,
 				CE38F09E254B085200605524 /* CashFlowTabComponentView.xib in Resources */,
+				CEE44E8A2600B5C100A83BD2 /* AdjaraMontPro-Light.ttf in Resources */,
 				7676E55425628F3900234026 /* Transactions.storyboard in Resources */,
 				C7C973AC2580EC990062C713 /* SecurityLevelTypeTableViewCell.xib in Resources */,
-				D80784922444727E00003892 /* PantonMtav3-Regular.otf in Resources */,
-				D807847E2444727600003892 /* FiraGO-ExtraLight.ttf in Resources */,
 				CE95FC44252DF3B6003E539B /* FooterTableViewCell.xib in Resources */,
+				CEE44E852600B5C100A83BD2 /* AdjaraMontPro-Heavy.ttf in Resources */,
 				CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */,
 				CE2F03DA252CD6B6006D8001 /* QuickActionTableViewCell.xib in Resources */,
-				D80784842444727600003892 /* FiraGO-Hair.ttf in Resources */,
 				76BA7BDA25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib in Resources */,
-				D80784862444727600003892 /* FiraGO-Book.ttf in Resources */,
-				D807848A2444727600003892 /* FiraGO-UltraLight.ttf in Resources */,
+				CEE44E862600B5C100A83BD2 /* AdjaraMontPro-Bold.ttf in Resources */,
 				CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */,
-				D80784852444727600003892 /* FiraGO-SemiBold.ttf in Resources */,
 				7668C7AB2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib in Resources */,
+				CEE44E8B2600B5C100A83BD2 /* AdjaraMont-SemiBold.ttf in Resources */,
 				C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */,
 				CE95FC12252DE60F003E539B /* FooterComponentView.xib in Resources */,
 				CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */,
-				D80784902444727E00003892 /* PantonMtav3-Bold.otf in Resources */,
 				D853499724D1E1C100958B0E /* GoogleService-Info.plist in Resources */,
 				7640C85225E3994B006D7100 /* HomeBannerCollectionViewCell.xib in Resources */,
 				CEE537EF254ACA0500EDE6C0 /* CashFlow.storyboard in Resources */,
+				CEE44E892600B5C100A83BD2 /* AdjaraMont-Regular.ttf in Resources */,
 				CEF368682549C368009FD456 /* Withdraw.storyboard in Resources */,
 				CEF368562549C32E009FD456 /* Deposit.storyboard in Resources */,
 				CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */,
 				CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */,
-				D80784802444727600003892 /* FiraGO-Thin.ttf in Resources */,
-				D80784822444727600003892 /* FiraGO-Two.ttf in Resources */,
-				D80784832444727600003892 /* FiraGO-Heavy.ttf in Resources */,
 				CECCE37E254EE7D4005CC660 /* WithdrawTermsView.xib in Resources */,
 				CECCE3AE254EFA7B005CC660 /* DepositInstructionView.xib in Resources */,
 				763171AD25663E1500F6FD90 /* TransactionDetails.storyboard in Resources */,
-				CE95D00725542035007D2084 /* NotoSansArmenian-SemiBold.ttf in Resources */,
 				CE9B7FE9257544F5006FF756 /* PhoneNumberChange.storyboard in Resources */,
 				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
 				76BDF46E25760512007B27A7 /* AccountParametersTableViewCell.xib in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
 				C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
-				D807847D2444727600003892 /* FiraGO-Light.ttf in Resources */,
 				76DCF6AF25B8262300150EE1 /* MyCardComponentView.xib in Resources */,
 				CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */,
 				767C7D9025E39FA9008F2CE9 /* HomeBannerContainerCollectionViewCell.xib in Resources */,
-				CE95D00825542035007D2084 /* NotoSansArmenian-Regular.ttf in Resources */,
 				7644B6152563ECAC006778B2 /* DateHeaderComponentView.xib in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
 				76404F0B257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib in Resources */,
-				D80784912444727E00003892 /* PantonMtav3-ExtraBold.otf in Resources */,
 				C77206E525DAB0BF0037D8A0 /* localhost.p12 in Resources */,
 				CEB285E1256D20C300584A65 /* SelfSuspend.storyboard in Resources */,
 				769886AE2571055000FA339E /* TransactionFilterComponentView.xib in Resources */,
@@ -4125,10 +4059,8 @@
 				767C7D8E25E39FA9008F2CE9 /* HomeBannerContainerComponentView.xib in Resources */,
 				CE91C0E7257028DC00A18255 /* TransactionsFilter.storyboard in Resources */,
 				CE55ECFE25265CF1003E168F /* Profile.storyboard in Resources */,
-				D8EE9CDC2462A9A100E54967 /* PantonNusx3-Bold.otf in Resources */,
 				CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */,
 				CEC54BB425CD67D100154580 /* CardInfo.storyboard in Resources */,
-				D807847F2444727600003892 /* FiraGO-Four.ttf in Resources */,
 				7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */,
@@ -4145,9 +4077,9 @@
 				76404F09257625F900D14E0C /* AccountSecurityMessagesComponentView.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
 				CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */,
+				CEE44E882600B5C100A83BD2 /* AdjaraMont-Light.ttf in Resources */,
 				CEA7779D256D4250008A4F6C /* MailChange.storyboard in Resources */,
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
-				D80784872444727600003892 /* FiraGO-Medium.ttf in Resources */,
 				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
 				76DCF6B125B8262300150EE1 /* MyCardTableViewCell.xib in Resources */,
 				7640C85025E3994B006D7100 /* HomeBannerComponentView.xib in Resources */,

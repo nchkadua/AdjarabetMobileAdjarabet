@@ -118,7 +118,7 @@ public class P2PTransferViewController: ABViewController {
         descriptionLabel.setTextColor(to: .primaryText())
         descriptionLabel.text = R.string.localization.p2p_transfer_you_are_transfering_to.localized()
 
-        personNameLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .medium))
+        personNameLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         personNameLabel.setTextColor(to: .primaryText())
 
         // delete me later
