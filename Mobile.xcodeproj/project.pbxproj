@@ -2982,7 +2982,7 @@
 			path = CardInfo;
 			sourceTree = "<group>";
 		};
-		CEC9A34225C096E800BE853D /* GameLaunchManager */ = {
+		CEC9A34225C096E800BE853D /* Game Launch Manager */ = {
 			isa = PBXGroup;
 			children = (
 				C7C35FD725C93BD100ADCBB6 /* Interactor */,
@@ -2992,7 +2992,7 @@
 				CEC9A37525C1A96800BE853D /* Resources */,
 				CEC9A34325C0970100BE853D /* ODR */,
 			);
-			path = GameLaunchManager;
+			path = "Game Launch Manager";
 			sourceTree = "<group>";
 		};
 		CEC9A34325C0970100BE853D /* ODR */ = {
@@ -3682,7 +3682,7 @@
 				D8A47DE824335DD70077AA8E /* Domain */,
 				D8A47DE924335DDE0077AA8E /* Presentation */,
 				D8A47DEA24335DE40077AA8E /* Data */,
-				CEC9A34225C096E800BE853D /* GameLaunchManager */,
+				CEC9A34225C096E800BE853D /* Game Launch Manager */,
 				C707547D25F391480033050E /* Payments */,
 			);
 			path = Mobile;
