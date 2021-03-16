@@ -216,6 +216,7 @@
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
 		C7CE2D792600C7E100251FE3 /* UFCWithdrawDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CE2D782600C7E100251FE3 /* UFCWithdrawDTO.swift */; };
 		C7CE2D7D2600C80A00251FE3 /* UFCWithdrawEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CE2D7C2600C80A00251FE3 /* UFCWithdrawEntity.swift */; };
+		C7CE2D8D2600DCC100251FE3 /* UFCTransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */; };
 		C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */; };
 		C7DE3ADB25F5293E0082D5EF /* UserLoggedInDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE3ADA25F5293E0082D5EF /* UserLoggedInDTO.swift */; };
 		C7DE3ADF25F529670082D5EF /* UserLoggedInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE3ADE25F529670082D5EF /* UserLoggedInEntity.swift */; };
@@ -827,6 +828,7 @@
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
 		C7CE2D782600C7E100251FE3 /* UFCWithdrawDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawDTO.swift; sourceTree = "<group>"; };
 		C7CE2D7C2600C80A00251FE3 /* UFCWithdrawEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawEntity.swift; sourceTree = "<group>"; };
+		C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCTransactionRepository.swift; sourceTree = "<group>"; };
 		C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilder.swift; sourceTree = "<group>"; };
 		C7DE3ADA25F5293E0082D5EF /* UserLoggedInDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoggedInDTO.swift; sourceTree = "<group>"; };
 		C7DE3ADE25F529670082D5EF /* UserLoggedInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoggedInEntity.swift; sourceTree = "<group>"; };
@@ -2550,6 +2552,7 @@
 			isa = PBXGroup;
 			children = (
 				C72FA74C2600BD3B00A9C493 /* Entities & DTOs */,
+				C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */,
 				CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */,
 			);
 			path = "Repository & Entities";
@@ -4742,6 +4745,7 @@
 				C7C973AD2580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift in Sources */,
 				D894CEBB24BE32FA00FE143D /* GamesListLoader.swift in Sources */,
 				763171A82566398F00F6FD90 /* TransactionDetailsViewController.swift in Sources */,
+				C7CE2D8D2600DCC100251FE3 /* UFCTransactionRepository.swift in Sources */,
 				CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
 				76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */,
