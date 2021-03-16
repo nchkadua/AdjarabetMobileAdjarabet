@@ -10,7 +10,7 @@ import Foundation
 
 protocol TBCRegularPaymentsRepository {
     // MARK: Deposit
-    typealias InitDepositHandler = (Result<TBCRegularPaymentsInitDepositEntity, Error>) -> Void
+    typealias InitDepositHandler = (Result<UFCInitDepositEntity, Error>) -> Void
     func initDeposit(params: Params,
                      handler: @escaping InitDepositHandler)
 
@@ -88,7 +88,7 @@ struct DefaultTBCRegularPaymentsRepository: TBCRegularPaymentsRepository {
             .setBody(key: "req", value: "initDeposit")
             .build()
 
-        dataTransferService.performTask(expecting: TBCRegularPaymentInitDepositDTO.self,
+        dataTransferService.performTask(expecting: UFCInitDepositDTO.self,
                                         request: request,
                                         respondOnQueue: .main,
                                         completion: handler)

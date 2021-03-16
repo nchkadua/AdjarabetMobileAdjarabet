@@ -9,12 +9,6 @@
 import Foundation
 
 // MARK: Deposit
-public struct TBCRegularPaymentsInitDepositEntity {
-    public let message: String?
-    public let code: Int?
-    public let sessionId: String?
-}
-
 public struct TBCRegularPaymentsDepositEntity {
     public let message: String?
     public let code: Int?
