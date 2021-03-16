@@ -105,6 +105,10 @@ public extension DependencyContainer {
         Module { DefaultPostLoginRepository() as PostLoginRepository }
         Module { DefaultPaymentListRepository() as PaymentListRepository }
         Module { DefaultTBCRegularPaymentsRepository() as TBCRegularPaymentsRepository }
+        // Payments.UFC
+        Module { DefaultUFCTransactionRepository() as UFCDepositRepository }
+        Module { DefaultUFCTransactionRepository() as UFCWithdrawRepository }
+        Module { DefaultUFCTransactionRepository() as UFCTransactionRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
@@ -140,6 +144,8 @@ public extension DependencyContainer {
         Module { DefaultMyCardsViewControllerFactory() as MyCardsViewControllerFactory }
         Module { DefaultGameViewControllerFactory() as GameViewControllerFactory }
         Module { DefaultWebViewControllerFactory() as WebViewControllerFactory }
+        // Payments
+        Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
     }
 
     static var useCases = DependencyContainer {
@@ -156,5 +162,6 @@ public extension DependencyContainer {
         Module { DefaultLogoutUseCase() as LogoutUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
+        Module { UFCDepositUseCase() as UFCDepositUseCase }
     }
 }

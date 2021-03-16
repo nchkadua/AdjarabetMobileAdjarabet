@@ -19,7 +19,7 @@ public struct AddCardViewModelParams {
 public protocol AddCardViewModelInput: AnyObject {
     var params: AddCardViewModelParams { get set }
     func viewDidLoad()
-    func continueTapped(with amount: Double)
+    func continueTapped(with amount: Double, hasAgreedToTerms: Bool)
 }
 
 public protocol AddCardViewModelOutput {
@@ -42,7 +42,7 @@ public class DefaultAddCardViewModel {
     private let routeSubject = PublishSubject<AddCardViewModelRoute>()
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
-    @Inject(from: .repositories) private var repo: TBCRegularPaymentsRepository // FIXME: UseCase
+    @Inject(from: .useCases) private var ufcDepositUseCase: UFCDepositUseCase
 
     @Inject (from: .componentViewModels) private var minAmountComponentViewModel: MinAmountComponentViewModel
     @Inject (from: .componentViewModels) private var agreementComponentViewModel: AgreementComponentViewModel
@@ -61,43 +61,14 @@ extension DefaultAddCardViewModel: AddCardViewModel {
         actionSubject.onNext(.bindToAgreementComponentViewModel(agreementComponentViewModel))
     }
 
-    public func continueTapped(with amount: Double) {
-        repo.initDeposit(params: .init(amount: amount)) { [weak self] result in
-            guard let self = self else { return }
+    public func continueTapped(with amount: Double, hasAgreedToTerms: Bool) {
+        // FIXME: serviceType - .regular or .vip
+        ufcDepositUseCase.execute(serviceType: .regular, amount: amount, saveAccount: hasAgreedToTerms) { [weak self] result in
             switch result {
-            case .success(let entity):
-                self.deposit(amount, entity.sessionId!)
+            case .success(let request):
+                self?.routeSubject.onNext(.webView(.init(request: request)))
             case .failure(let error):
-                print("Payment.InitDeposit:", error) // FIXME
-            }
-        }
-    }
-
-    private func deposit(_ amount: Double, _ session: String) {
-        repo.deposit(params: .init(amount: amount, session: session)) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let entity):
-
-                let headers = [ // FIXME: Common
-                    "Cache-control": "no-store",
-                    "Connection": "Keep-Alive",
-                    "Keep-Alive": "timeout=5, max=100",
-                    "Pragma": "no-cache",
-                    "X-Content-Type-Options": "nosniff",
-                    "X-XSS-Protection": "1; mode=block"
-                ]
-
-                let request = self.httpRequestBuilder
-                    .set(host: "\(entity.url!)?trans_id=\(entity.transId!)")
-                    .set(headers: headers)
-                    .set(method: HttpMethodGet())
-                    .build()
-
-                self.routeSubject.onNext(.webView(.init(request: request)))
-
-            case .failure(let error):
-                print("Payment.Deposit:", error) // FIXME
+                print("AddCard.Payments.DepositUseCase:", error) // FIXME
             }
         }
     }

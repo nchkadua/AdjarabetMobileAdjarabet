@@ -10,22 +10,22 @@ import Foundation
 
 protocol TBCRegularPaymentsRepository {
     // MARK: Deposit
-    typealias InitDepositHandler = (Result<TBCRegularPaymentsInitDepositEntity, Error>) -> Void
+    typealias InitDepositHandler = (Result<UFCInitDepositEntity, Error>) -> Void
     func initDeposit(params: Params,
                      handler: @escaping InitDepositHandler)
 
-    typealias DepositHandler = (Result<TBCRegularPaymentsDepositEntity, Error>) -> Void
+    typealias DepositHandler = (Result<UFCDepositEntity, Error>) -> Void
     func deposit(params: Params,
                  handler: @escaping DepositHandler)
 
     // MARK: Withdraw
-    typealias InitWithdrawHandler = (Result<TBCRegularPaymentsInitWithdrawEntity, Error>) -> Void
+    typealias InitWithdrawHandler = (Result<UFCInitWithdrawEntity, Error>) -> Void
     func initWithdraw(params: Params,
                       handler: @escaping InitWithdrawHandler)
 
-    typealias WithdrawHandler = (Result<TBCRegularPaymentsWithdrawEntity, Error>) -> Void
+    typealias WithdrawHandler = (Result<Void, Error>) -> Void
     func withdraw(params: Params,
-                      handler: @escaping WithdrawHandler)
+                  handler: @escaping WithdrawHandler)
 }
 
 struct Params {
@@ -88,7 +88,7 @@ struct DefaultTBCRegularPaymentsRepository: TBCRegularPaymentsRepository {
             .setBody(key: "req", value: "initDeposit")
             .build()
 
-        dataTransferService.performTask(expecting: TBCRegularPaymentInitDepositDTO.self,
+        dataTransferService.performTask(expecting: UFCInitDepositDTO.self,
                                         request: request,
                                         respondOnQueue: .main,
                                         completion: handler)
@@ -139,7 +139,7 @@ struct DefaultTBCRegularPaymentsRepository: TBCRegularPaymentsRepository {
             .setBody(key: "req", value: "Deposit")
             .build()
 
-        dataTransferService.performTask(expecting: TBCRegularPaymentDepositDTO.self,
+        dataTransferService.performTask(expecting: UFCDepositDTO.self,
                                         request: request,
                                         respondOnQueue: .main,
                                         completion: handler)
@@ -188,7 +188,7 @@ struct DefaultTBCRegularPaymentsRepository: TBCRegularPaymentsRepository {
             .setBody(key: "req", value: "initWithdraw")
             .build()
 
-        dataTransferService.performTask(expecting: TBCRegularPaymentInitWithdrawDTO.self,
+        dataTransferService.performTask(expecting: UFCInitWithdrawDTO.self,
                                         request: request,
                                         respondOnQueue: .main,
                                         completion: handler)
@@ -239,7 +239,7 @@ struct DefaultTBCRegularPaymentsRepository: TBCRegularPaymentsRepository {
             .setBody(key: "req", value: "withdraw")
             .build()
 
-        dataTransferService.performTask(expecting: TBCRegularPaymentWithdrawDTO.self,
+        dataTransferService.performTask(expecting: UFCWithdrawDTO.self,
                                         request: request,
                                         respondOnQueue: .main,
                                         completion: handler)
