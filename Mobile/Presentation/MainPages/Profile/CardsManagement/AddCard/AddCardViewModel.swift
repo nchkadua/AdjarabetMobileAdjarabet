@@ -63,7 +63,6 @@ extension DefaultAddCardViewModel: AddCardViewModel {
 
     public func continueTapped(with amount: Double, hasAgreedToTerms: Bool) {
         // FIXME: serviceType - .regular or .vip
-        //        pass saveAccount parameter
         ufcDepositUseCase.execute(serviceType: .regular, amount: amount, saveAccount: hasAgreedToTerms) { [weak self] result in
             switch result {
             case .success(let request):
