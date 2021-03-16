@@ -24,6 +24,11 @@ class GameViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear()
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: GameViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
@@ -34,6 +39,8 @@ class GameViewController: ABViewController {
     private func didRecive(action: GameViewModelOutputAction) {
         switch action {
         case .bindToGameLoader(let viewModel): bindToGameLoader(viewModel)
+        case .load(let url): webView.load(URLRequest(url: url))
+        case .show(let error): showAlert(title: error) { [weak self] _ in self?.dismissGameView() }
         }
     }
 

@@ -110,10 +110,9 @@ public extension UIViewController {
         }
     }
 
-    func showAlert(title: String) {
+    func showAlert(title: String, _ handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-        }))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: handler))
         present(alert, animated: true, completion: nil)
     }
 

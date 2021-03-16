@@ -17,6 +17,7 @@ struct GameViewModelParams {
 protocol GameViewModelInput: AnyObject {
     var params: GameViewModelParams { get set }
     func viewDidLoad()
+    func viewDidDisappear()
     func bedginGameLoadingAnimation()
     func finishGameLoadingAnimation()
 }
@@ -28,6 +29,8 @@ protocol GameViewModelOutput {
 
 enum GameViewModelOutputAction {
     case bindToGameLoader(viewModel: GameLoaderComponentViewModel)
+    case load(url: URL)
+    case show(error: String)
 }
 
 enum GameViewModelRoute { }
@@ -39,6 +42,8 @@ class DefaultGameViewModel {
     private let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor()
     @Inject(from: .componentViewModels)
     private var gameLoaderViewModel: GameLoaderComponentViewModel
+    // state
+    private var result: GameLaunchUrlResult?
 
     public init(params: GameViewModelParams) {
         self.params = params
@@ -51,7 +56,20 @@ extension DefaultGameViewModel: GameViewModel {
 
     func viewDidLoad() {
         actionSubject.onNext(.bindToGameLoader(viewModel: gameLoaderViewModel))
-        print("GameViewModel.ViewDidLoad:", params.game.name)
+        let gameId = Int(params.game.id) ?? 0 == 0 ? "7400" : "7463" // FIXME
+        interactor.launch(gameId: gameId) { [weak self] result in
+            switch result {
+            case .success(let result):
+                self?.result = result
+                self?.actionSubject.onNext(.load(url: result.url))
+            case .failure(let error):
+                self?.actionSubject.onNext(.show(error: error.localizedDescription))
+            }
+        }
+    }
+
+    func viewDidDisappear() {
+        result?.gc.free()
     }
 
     func bedginGameLoadingAnimation() {
