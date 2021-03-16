@@ -13,7 +13,7 @@ import SafariServices
 public class SportsViewController: UIViewController {
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
-    var result: GameLaunchUrlResult!
+    var result: GameLaunchUrlResult?
     let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor()
 
     private lazy var webView = WKWebView()
@@ -21,11 +21,16 @@ public class SportsViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        getLaunchUrl()
     }
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        getLaunchUrl()
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        result?.gc.free()
     }
 
     // MARK: Setup methods
@@ -59,7 +64,7 @@ extension SportsViewController: CommonBarButtonProviding { }
 
 extension SportsViewController {
     func getLaunchUrl() {
-        interactor.launch(gameId: "7397") { [weak self] result in
+        interactor.launch(gameId: "7400") { [weak self] result in
             switch result {
             case .success(let launchUrl):
                 self?.result = launchUrl

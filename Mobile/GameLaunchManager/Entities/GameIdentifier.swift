@@ -36,7 +36,7 @@ extension GameIdentifier {
         case "11e7b7ca-14f1-b0b0-88fc-005056adb106":
             switch gameId {
             /* EGT */
-            case "7397": self = .BHJSlot
+            case "7400": self = .BHJSlot
             case "7463": self = .RORJSlot
             default: return nil
             }

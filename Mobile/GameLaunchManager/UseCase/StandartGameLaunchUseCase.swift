@@ -64,7 +64,7 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
         resRepo.loadAndExtract(identifier: identifier) { result in
             switch result {
             case .success(let gameBundlepath):
-                handlePaths(gameBundlepath, webUrl, handler) // Continue the flow here ...
+                handlePaths(gameBundlepath, identifier, webUrl, handler) // Continue the flow here ...
             case .failure(let error):
                 handler(.failure(error))
             }
@@ -72,23 +72,24 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
     }
 
     private func handlePaths(_ gameBundlepath: String,
+                             _ identifier: GameIdentifier,
                              _ webUrl: String,
                              _ handler: @escaping UrlHandler) {
         // Create final URL object
-        guard let finalUrl = URL(string: webUrl) // .replacingOccurrences(of: "Singular_NewAPI_stg_Portal_GEL", with: "8181")
+        guard let finalUrl = URL(string: webUrl)
         else {
             handler(.failure(AdjarabetCoreClientError.coreError(description: "Could not specify the URL")))
             return
         }
 
-        let path = "file://" + gameBundlepath + "/" + "RORJSlot" + "/"
+        let path = "file://\(gameBundlepath)/"
 
         do {
             let fileManager = FileManager()
             try fileManager.createSymbolicLink(at: URL(string: "\(path)hybrid/games/")!, withDestinationURL: URL(string: "\(path)games/")!)
-            print("success") // TODO
         } catch {
-            print("createSymbolicLink error:", error) // TODO
+            handler(.failure(AdjarabetCoreClientError.coreError(description: "Could not create Symbolic Link")))
+            return
         }
 
         let caCertificateURL = Bundle.main.url(forResource: "ca", withExtension: "der")!
@@ -107,9 +108,11 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
 }
 
 struct StandartGameLaunchGarbageCollector: GameLaunchGarbageCollector {
-    var webServer: Server
+    let webServer: Server
+    let fileExtractor: FileExtractor = .shared
 
     func free() {
-        //
+        webServer.stop(immediately: true)
+        fileExtractor.clearUnzippedResourcesFolder()
     }
 }
