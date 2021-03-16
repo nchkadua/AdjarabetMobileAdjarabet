@@ -11,7 +11,6 @@ import RxSwift
 public class DepositViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: DepositViewModel
     public lazy var navigator = DepositNavigator(viewController: self)
-    private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
     @Inject(from: .repositories) private var tBCRegularPaymentsRepository: TBCRegularPaymentsRepository
 
