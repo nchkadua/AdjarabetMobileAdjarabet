@@ -19,7 +19,7 @@ public struct AddCardViewModelParams {
 public protocol AddCardViewModelInput: AnyObject {
     var params: AddCardViewModelParams { get set }
     func viewDidLoad()
-    func continueTapped(with amount: Double)
+    func continueTapped(with amount: Double, hasAgreedToTerms: Bool)
 }
 
 public protocol AddCardViewModelOutput {
@@ -61,10 +61,10 @@ extension DefaultAddCardViewModel: AddCardViewModel {
         actionSubject.onNext(.bindToAgreementComponentViewModel(agreementComponentViewModel))
     }
 
-    public func continueTapped(with amount: Double) {
+    public func continueTapped(with amount: Double, hasAgreedToTerms: Bool) {
         // FIXME: serviceType - .regular or .vip
         //        pass saveAccount parameter
-        ufcDepositUseCase.execute(serviceType: .regular, amount: amount) { [weak self] result in
+        ufcDepositUseCase.execute(serviceType: .regular, amount: amount, saveAccount: hasAgreedToTerms) { [weak self] result in
             switch result {
             case .success(let request):
                 self?.routeSubject.onNext(.webView(.init(request: request)))
