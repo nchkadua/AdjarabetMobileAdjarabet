@@ -18,7 +18,7 @@ protocol GameViewModelInput: AnyObject {
     var params: GameViewModelParams { get set }
     func viewDidLoad()
     func viewDidDisappear()
-    func bedginGameLoadingAnimation()
+    func beginGameLoadingAnimation()
     func finishGameLoadingAnimation()
 }
 
@@ -56,6 +56,7 @@ extension DefaultGameViewModel: GameViewModel {
 
     func viewDidLoad() {
         actionSubject.onNext(.bindToGameLoader(viewModel: gameLoaderViewModel))
+        beginGameLoadingAnimation()
         let gameId = Int(params.game.id) ?? 0 == 0 ? "7400" : "7463" // FIXME
         interactor.launch(gameId: gameId) { [weak self] result in
             switch result {
@@ -65,6 +66,7 @@ extension DefaultGameViewModel: GameViewModel {
             case .failure(let error):
                 self?.actionSubject.onNext(.show(error: error.localizedDescription))
             }
+            self?.finishGameLoadingAnimation()
         }
     }
 
@@ -72,7 +74,7 @@ extension DefaultGameViewModel: GameViewModel {
         result?.gc.free()
     }
 
-    func bedginGameLoadingAnimation() {
+    func beginGameLoadingAnimation() {
         gameLoaderViewModel.begindAnimation()
     }
 
