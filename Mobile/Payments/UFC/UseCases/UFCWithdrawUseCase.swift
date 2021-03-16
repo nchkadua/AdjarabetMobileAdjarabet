@@ -1,8 +1,8 @@
 //
-//  TBCRegularUseCase.swift
+//  UFCWithdrawUseCase.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 3/9/21.
+//  Created by Giorgi Kratsashvili on 3/16/21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 

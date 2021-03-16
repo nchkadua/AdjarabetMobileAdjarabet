@@ -176,6 +176,8 @@
 		C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */; };
 		C721EA5A259C9D9700F7C624 /* HttpRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */; };
 		C72EA8E425C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */; };
+		C72FA73D2600BBE100A9C493 /* UFCDepositUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */; };
+		C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */; };
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
 		C744040B26000F58003E554B /* RORJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744040A26000F58003E554B /* RORJSlot.zip */; settings = {ASSET_TAGS = (RORJSlot, ); }; };
@@ -223,7 +225,6 @@
 		C7F5477325DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */; };
 		C7FB267C25CD87FE00111106 /* ServiceAuthTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */; };
 		C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */; };
-		CE03740525F78A4A0061F507 /* TBCRegularUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */; };
 		CE03746125F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */; };
 		CE03746E25F8D7180061F507 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE03746925F8D7180061F507 /* Web.storyboard */; };
 		CE03747025F8D7180061F507 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03746B25F8D7180061F507 /* WebViewController.swift */; };
@@ -783,6 +784,8 @@
 		C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometryStorage.swift; sourceTree = "<group>"; };
 		C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilderTests.swift; sourceTree = "<group>"; };
 		C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCaseTests.swift; sourceTree = "<group>"; };
+		C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositUseCase.swift; sourceTree = "<group>"; };
+		C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawUseCase.swift; sourceTree = "<group>"; };
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C7405188256FAA8200EAC904 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		C744040A26000F58003E554B /* RORJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RORJSlot.zip; sourceTree = "<group>"; };
@@ -830,7 +833,6 @@
 		C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDeleteDataTransferResponse.swift; sourceTree = "<group>"; };
 		C7FB267B25CD87FE00111106 /* ServiceAuthTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDTO.swift; sourceTree = "<group>"; };
 		C7FB268925CD8A0800111106 /* LaunchUrlDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUrlDTO.swift; sourceTree = "<group>"; };
-		CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularUseCase.swift; sourceTree = "<group>"; };
 		CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentDepositDTO.swift; sourceTree = "<group>"; };
 		CE03746925F8D7180061F507 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Web.storyboard; path = Mobile/Presentation/MainPages/WebViewController/Web.storyboard; sourceTree = SOURCE_ROOT; };
 		CE03746B25F8D7180061F507 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Mobile/Presentation/MainPages/WebViewController/WebViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -1824,7 +1826,7 @@
 			isa = PBXGroup;
 			children = (
 				C707548725F391F40033050E /* List */,
-				CE0FF92325F109F900C18F9C /* TBC Regular */,
+				CE0FF92325F109F900C18F9C /* UFC */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -1918,6 +1920,82 @@
 				C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */,
 			);
 			path = BiometryStorage;
+			sourceTree = "<group>";
+		};
+		C72FA74C2600BD3B00A9C493 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				C72FA74D2600BD5A00A9C493 /* Deposit */,
+				C72FA74E2600BD6700A9C493 /* Withdraw */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		C72FA74D2600BD5A00A9C493 /* Deposit */ = {
+			isa = PBXGroup;
+			children = (
+				C72FA74F2600BD7300A9C493 /* Init */,
+				C72FA7502600BD7E00A9C493 /* Deposit */,
+			);
+			path = Deposit;
+			sourceTree = "<group>";
+		};
+		C72FA74E2600BD6700A9C493 /* Withdraw */ = {
+			isa = PBXGroup;
+			children = (
+				C72FA7522600BD9400A9C493 /* Init */,
+				C72FA7512600BD8900A9C493 /* Withdraw */,
+			);
+			path = Withdraw;
+			sourceTree = "<group>";
+		};
+		C72FA74F2600BD7300A9C493 /* Init */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentInitDepositDTO.swift */,
+			);
+			path = Init;
+			sourceTree = "<group>";
+		};
+		C72FA7502600BD7E00A9C493 /* Deposit */ = {
+			isa = PBXGroup;
+			children = (
+				CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */,
+			);
+			path = Deposit;
+			sourceTree = "<group>";
+		};
+		C72FA7512600BD8900A9C493 /* Withdraw */ = {
+			isa = PBXGroup;
+			children = (
+				CEC531F925FF8708001CCC97 /* TBCRegularPaymentWithdrawDTO.swift */,
+			);
+			path = Withdraw;
+			sourceTree = "<group>";
+		};
+		C72FA7522600BD9400A9C493 /* Init */ = {
+			isa = PBXGroup;
+			children = (
+				CEC531FD25FF8712001CCC97 /* TBCRegularPaymentInitWithdrawDTO.swift */,
+			);
+			path = Init;
+			sourceTree = "<group>";
+		};
+		C72FA7532600BDD900A9C493 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C72FA7542600BDE500A9C493 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */,
+				C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		C7405180256FA97700EAC904 /* Formatters */ = {
@@ -2466,14 +2544,13 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		CE03740025F789600061F507 /* Repositories & Entities */ = {
+		CE03740025F789600061F507 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				CEC531F425FF7F9F001CCC97 /* Entity */,
-				CEC531F325FF7F8A001CCC97 /* DTO */,
+				C72FA74C2600BD3B00A9C493 /* DTOs */,
 				CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */,
 			);
-			path = "Repositories & Entities";
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		CE03746825F8D6F00061F507 /* WebViewController */ = {
@@ -2516,13 +2593,14 @@
 			path = Instruction;
 			sourceTree = "<group>";
 		};
-		CE0FF92325F109F900C18F9C /* TBC Regular */ = {
+		CE0FF92325F109F900C18F9C /* UFC */ = {
 			isa = PBXGroup;
 			children = (
-				CE03740425F78A4A0061F507 /* TBCRegularUseCase.swift */,
-				CE03740025F789600061F507 /* Repositories & Entities */,
+				C72FA7542600BDE500A9C493 /* UseCases */,
+				CE03740025F789600061F507 /* Repository */,
+				C72FA7532600BDD900A9C493 /* Entity */,
 			);
-			path = "TBC Regular";
+			path = UFC;
 			sourceTree = "<group>";
 		};
 		CE1693692541AB100043B1A4 /* AccountInfoComponentView */ = {
@@ -2890,25 +2968,6 @@
 				CEBBB06F257915100024D213 /* AgreementComponentView.xib */,
 			);
 			path = Agreement;
-			sourceTree = "<group>";
-		};
-		CEC531F325FF7F8A001CCC97 /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				CE03746025F7A4DC0061F507 /* TBCRegularPaymentDepositDTO.swift */,
-				CE0FF91E25F0EB3300C18F9C /* TBCRegularPaymentInitDepositDTO.swift */,
-				CEC531F925FF8708001CCC97 /* TBCRegularPaymentWithdrawDTO.swift */,
-				CEC531FD25FF8712001CCC97 /* TBCRegularPaymentInitWithdrawDTO.swift */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		CEC531F425FF7F9F001CCC97 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				CE0FF92425F10A0800C18F9C /* TBCRegularPaymentsEntity.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		CEC54BAE25CD66A000154580 /* CardInfo */ = {
@@ -4328,6 +4387,7 @@
 				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
 				CE64EA7E25D1695400438974 /* GameViewModel.swift in Sources */,
 				CE679FE02578334B00F2EC1C /* AddCardViewModel.swift in Sources */,
+				C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */,
 				769886B12571055000FA339E /* TransactionFilterComponentViewModel.swift in Sources */,
 				76404F0C257625F900D14E0C /* AccountSecurityMessagesComponentViewModel.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
@@ -4370,7 +4430,6 @@
 				CE2F03C9252CC8E8006D8001 /* QuickActionComponentViewModel.swift in Sources */,
 				CE76FD7F25764FB500D8AB04 /* ABLocationManager.swift in Sources */,
 				76DCF67825B80FB500150EE1 /* MyCardsViewModel.swift in Sources */,
-				CE03740525F78A4A0061F507 /* TBCRegularUseCase.swift in Sources */,
 				CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */,
 				76BDF45E2576043A007B27A7 /* AccountParametersViewController.swift in Sources */,
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
@@ -4501,6 +4560,7 @@
 				C7C973AB2580EC990062C713 /* SecurityLevelTypeTableViewCellDataProvider.swift in Sources */,
 				D85C9BF82433678000F1D4FE /* HeaderProvidingCodableType.swift in Sources */,
 				D885E75B24715854007D85D3 /* SMSLoginUseCase.swift in Sources */,
+				C72FA73D2600BBE100A9C493 /* UFCDepositUseCase.swift in Sources */,
 				CE55ED022526732A003E168F /* PromotionsNavigator.swift in Sources */,
 				CEE356CA252B644300A0A25C /* ProfileInfoTableViewCellDataProvider.swift in Sources */,
 				CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */,
