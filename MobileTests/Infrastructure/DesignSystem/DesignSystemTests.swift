@@ -71,14 +71,14 @@ class DesignSystemTests: XCTestCase {
             
             switch language {
             case .georgian:
-                upperHeaderFontName = R.font.pantonMtav3Regular.fontName
-                lowerHeaderFontName = R.font.firaGORegular.fontName
+                upperHeaderFontName = R.font.adjaraMontRegular.fontName
+                lowerHeaderFontName = R.font.adjaraMontRegular.fontName
             case .armenian:
-                upperHeaderFontName = R.font.pantonAMRegular.fontName
-                lowerHeaderFontName = R.font.notoSansArmenianRegular.fontName
+                upperHeaderFontName = R.font.adjaraMontRegular.fontName
+                lowerHeaderFontName = R.font.adjaraMontRegular.fontName
             case .english:
-                upperHeaderFontName = R.font.pantonMtav3Regular.fontName
-                lowerHeaderFontName = R.font.firaGORegular.fontName
+                upperHeaderFontName = R.font.adjaraMontRegular.fontName
+                lowerHeaderFontName = R.font.adjaraMontRegular.fontName
             }
             
             func testDescription(typography: DesignSystem.Typography, pointSize: CGFloat, lineSpasing: CGFloat, lineHeight: CGFloat) {
@@ -87,70 +87,75 @@ class DesignSystemTests: XCTestCase {
                 XCTAssertEqual(typography.description.lineHeight, lineHeight)
             }
 
-            XCTAssertEqual(DesignSystem.Typography.largeTitle(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.largeTitle(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .largeTitle(fontCase: .lower), pointSize: 34, lineSpasing: 0.37, lineHeight: 41)
-            testDescription(typography: .largeTitle(fontCase: .upper), pointSize: 34, lineSpasing: 0.37, lineHeight: 41)
+            XCTAssertEqual(DesignSystem.Typography.largeTitle34(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.largeTitle34(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .largeTitle34(fontCase: .lower), pointSize: 34, lineSpasing: 0.0, lineHeight: 47)
+            testDescription(typography: .largeTitle34(fontCase: .upper), pointSize: 34, lineSpasing: 0.0, lineHeight: 47)
+            
+            XCTAssertEqual(DesignSystem.Typography.largeTitle32(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.largeTitle32(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .largeTitle32(fontCase: .lower), pointSize: 32, lineSpasing: 0.0, lineHeight: 44)
+            testDescription(typography: .largeTitle32(fontCase: .upper), pointSize: 32, lineSpasing: 0.0, lineHeight: 44)
             
             XCTAssertEqual(DesignSystem.Typography.title1(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.title1(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .title1(fontCase: .lower), pointSize: 28, lineSpasing: 0.36, lineHeight: 34)
-            testDescription(typography: .title1(fontCase: .upper), pointSize: 28, lineSpasing: 0.36, lineHeight: 34)
+            testDescription(typography: .title1(fontCase: .lower), pointSize: 28, lineSpasing: 0.0, lineHeight: 39)
+            testDescription(typography: .title1(fontCase: .upper), pointSize: 28, lineSpasing: 0.0, lineHeight: 39)
+            
+            XCTAssertEqual(DesignSystem.Typography.midline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.midline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .midline(fontCase: .lower), pointSize: 24, lineSpasing: 0.0, lineHeight: 33)
+            testDescription(typography: .midline(fontCase: .upper), pointSize: 24, lineSpasing: 0.0, lineHeight: 33)
             
             XCTAssertEqual(DesignSystem.Typography.title2(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.title2(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .title2(fontCase: .lower), pointSize: 22, lineSpasing: 0.35, lineHeight: 28)
-            testDescription(typography: .title2(fontCase: .upper), pointSize: 22, lineSpasing: 0.35, lineHeight: 28)
+            testDescription(typography: .title2(fontCase: .lower), pointSize: 22, lineSpasing: 0.0, lineHeight: 30)
+            testDescription(typography: .title2(fontCase: .upper), pointSize: 22, lineSpasing: 0.0, lineHeight: 30)
             
             XCTAssertEqual(DesignSystem.Typography.title3(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.title3(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .title3(fontCase: .lower), pointSize: 20, lineSpasing: 0.38, lineHeight: 24)
-            testDescription(typography: .title3(fontCase: .upper), pointSize: 20, lineSpasing: 0.38, lineHeight: 24)
+            testDescription(typography: .title3(fontCase: .lower), pointSize: 20, lineSpasing: 0.0, lineHeight: 28)
+            testDescription(typography: .title3(fontCase: .upper), pointSize: 20, lineSpasing: 0.0, lineHeight: 28)
             
             XCTAssertEqual(DesignSystem.Typography.headline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.headline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .headline(fontCase: .lower), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
-            testDescription(typography: .headline(fontCase: .upper), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            testDescription(typography: .headline(fontCase: .lower), pointSize: 18, lineSpasing: 0.0, lineHeight: 25)
+            testDescription(typography: .headline(fontCase: .upper), pointSize: 18, lineSpasing: 0.0, lineHeight: 25)
             
-            XCTAssertEqual(DesignSystem.Typography.headline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.headline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .headline(fontCase: .lower), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
-            testDescription(typography: .headline(fontCase: .upper), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            XCTAssertEqual(DesignSystem.Typography.body1(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.body1(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .body1(fontCase: .lower), pointSize: 17, lineSpasing: 0.0, lineHeight: 23)
+            testDescription(typography: .body1(fontCase: .upper), pointSize: 17, lineSpasing: 0.0, lineHeight: 23)
             
-            XCTAssertEqual(DesignSystem.Typography.body(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.body(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .body(fontCase: .lower), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
-            testDescription(typography: .body(fontCase: .upper), pointSize: 17, lineSpasing: -0.41, lineHeight: 22)
+            XCTAssertEqual(DesignSystem.Typography.body2(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
+            XCTAssertEqual(DesignSystem.Typography.body2(fontCase: .upper).description.font.fontName, upperHeaderFontName)
+            testDescription(typography: .body2(fontCase: .lower), pointSize: 16, lineSpasing: 0.0, lineHeight: 22)
+            testDescription(typography: .body2(fontCase: .upper), pointSize: 16, lineSpasing: 0.0, lineHeight: 22)
             
             XCTAssertEqual(DesignSystem.Typography.callout(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.callout(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .callout(fontCase: .lower), pointSize: 16, lineSpasing: -0.32, lineHeight: 21)
-            testDescription(typography: .callout(fontCase: .upper), pointSize: 16, lineSpasing: -0.32, lineHeight: 21)
+            testDescription(typography: .callout(fontCase: .lower), pointSize: 15, lineSpasing: 0.0, lineHeight: 21)
+            testDescription(typography: .callout(fontCase: .upper), pointSize: 15, lineSpasing: 0.0, lineHeight: 21)
             
             XCTAssertEqual(DesignSystem.Typography.subHeadline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.subHeadline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .subHeadline(fontCase: .lower), pointSize: 15, lineSpasing: -0.24, lineHeight: 20)
-            testDescription(typography: .subHeadline(fontCase: .upper), pointSize: 15, lineSpasing: -0.24, lineHeight: 20)
-            
-            XCTAssertEqual(DesignSystem.Typography.subHeadline(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
-            XCTAssertEqual(DesignSystem.Typography.subHeadline(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .subHeadline(fontCase: .lower), pointSize: 15, lineSpasing: -0.24, lineHeight: 20)
-            testDescription(typography: .subHeadline(fontCase: .upper), pointSize: 15, lineSpasing: -0.24, lineHeight: 20)
+            testDescription(typography: .subHeadline(fontCase: .lower), pointSize: 14, lineSpasing: 0.0, lineHeight: 19)
+            testDescription(typography: .subHeadline(fontCase: .upper), pointSize: 14, lineSpasing: 0.0, lineHeight: 19)
             
             XCTAssertEqual(DesignSystem.Typography.footnote(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.footnote(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .footnote(fontCase: .lower), pointSize: 13, lineSpasing: -0.08, lineHeight: 18)
-            testDescription(typography: .footnote(fontCase: .upper), pointSize: 13, lineSpasing: -0.08, lineHeight: 18)
+            testDescription(typography: .footnote(fontCase: .lower), pointSize: 13, lineSpasing: 0.0, lineHeight: 18)
+            testDescription(typography: .footnote(fontCase: .upper), pointSize: 13, lineSpasing: 0.0, lineHeight: 18)
             
             XCTAssertEqual(DesignSystem.Typography.caption1(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.caption1(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .caption1(fontCase: .lower), pointSize: 12, lineSpasing: 0.0, lineHeight: 16)
-            testDescription(typography: .caption1(fontCase: .upper), pointSize: 12, lineSpasing: 0.0, lineHeight: 16)
+            testDescription(typography: .caption1(fontCase: .lower), pointSize: 12, lineSpasing: 0.0, lineHeight: 17)
+            testDescription(typography: .caption1(fontCase: .upper), pointSize: 12, lineSpasing: 0.0, lineHeight: 17)
             
             XCTAssertEqual(DesignSystem.Typography.caption2(fontCase: .lower).description.font.fontName, lowerHeaderFontName)
             XCTAssertEqual(DesignSystem.Typography.caption2(fontCase: .upper).description.font.fontName, upperHeaderFontName)
-            testDescription(typography: .caption2(fontCase: .lower), pointSize: 11, lineSpasing: 0.07, lineHeight: 13)
-            testDescription(typography: .caption2(fontCase: .upper), pointSize: 11, lineSpasing: 0.07, lineHeight: 13)
+            testDescription(typography: .caption2(fontCase: .lower), pointSize: 11, lineSpasing: 0.0, lineHeight: 15)
+            testDescription(typography: .caption2(fontCase: .upper), pointSize: 11, lineSpasing: 0.0, lineHeight: 15)
         }
     }
     

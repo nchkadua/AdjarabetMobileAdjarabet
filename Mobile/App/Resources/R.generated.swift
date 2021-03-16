@@ -882,66 +882,32 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 34 files.
+  /// This `R.file` struct is generated, and contains static references to 17 files.
   struct file {
+    /// Resource file `AdjaraMont-Bold.ttf`.
+    static let adjaraMontBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMont-Bold", pathExtension: "ttf")
+    /// Resource file `AdjaraMont-Heavy.ttf`.
+    static let adjaraMontHeavyTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMont-Heavy", pathExtension: "ttf")
+    /// Resource file `AdjaraMont-Light.ttf`.
+    static let adjaraMontLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMont-Light", pathExtension: "ttf")
+    /// Resource file `AdjaraMont-Regular.ttf`.
+    static let adjaraMontRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMont-Regular", pathExtension: "ttf")
+    /// Resource file `AdjaraMont-SemiBold.ttf`.
+    static let adjaraMontSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMont-SemiBold", pathExtension: "ttf")
+    /// Resource file `AdjaraMontPro-Bold.ttf`.
+    static let adjaraMontProBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMontPro-Bold", pathExtension: "ttf")
+    /// Resource file `AdjaraMontPro-Heavy.ttf`.
+    static let adjaraMontProHeavyTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMontPro-Heavy", pathExtension: "ttf")
+    /// Resource file `AdjaraMontPro-Light.ttf`.
+    static let adjaraMontProLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMontPro-Light", pathExtension: "ttf")
+    /// Resource file `AdjaraMontPro-Regular.ttf`.
+    static let adjaraMontProRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMontPro-Regular", pathExtension: "ttf")
+    /// Resource file `AdjaraMontPro-SemiBold.ttf`.
+    static let adjaraMontProSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMontPro-SemiBold", pathExtension: "ttf")
     /// Resource file `BHJSlot.zip`.
     static let bhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "BHJSlot", pathExtension: "zip")
-    /// Resource file `FiraGO-Bold.ttf`.
-    static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
-    /// Resource file `FiraGO-Book.ttf`.
-    static let firaGOBookTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Book", pathExtension: "ttf")
-    /// Resource file `FiraGO-Eight.ttf`.
-    static let firaGOEightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Eight", pathExtension: "ttf")
-    /// Resource file `FiraGO-ExtraBold.ttf`.
-    static let firaGOExtraBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-ExtraBold", pathExtension: "ttf")
-    /// Resource file `FiraGO-ExtraLight.ttf`.
-    static let firaGOExtraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-ExtraLight", pathExtension: "ttf")
-    /// Resource file `FiraGO-Four.ttf`.
-    static let firaGOFourTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Four", pathExtension: "ttf")
-    /// Resource file `FiraGO-Hair.ttf`.
-    static let firaGOHairTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Hair", pathExtension: "ttf")
-    /// Resource file `FiraGO-Heavy.ttf`.
-    static let firaGOHeavyTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Heavy", pathExtension: "ttf")
-    /// Resource file `FiraGO-Light.ttf`.
-    static let firaGOLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Light", pathExtension: "ttf")
-    /// Resource file `FiraGO-Medium.ttf`.
-    static let firaGOMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Medium", pathExtension: "ttf")
-    /// Resource file `FiraGO-Regular.ttf`.
-    static let firaGORegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Regular", pathExtension: "ttf")
-    /// Resource file `FiraGO-SemiBold.ttf`.
-    static let firaGOSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-SemiBold", pathExtension: "ttf")
-    /// Resource file `FiraGO-Thin.ttf`.
-    static let firaGOThinTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Thin", pathExtension: "ttf")
-    /// Resource file `FiraGO-Two.ttf`.
-    static let firaGOTwoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Two", pathExtension: "ttf")
-    /// Resource file `FiraGO-UltraLight.ttf`.
-    static let firaGOUltraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-UltraLight", pathExtension: "ttf")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
-    /// Resource file `NotoSansArmenian-Bold.ttf`.
-    static let notoSansArmenianBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "NotoSansArmenian-Bold", pathExtension: "ttf")
-    /// Resource file `NotoSansArmenian-Medium.ttf`.
-    static let notoSansArmenianMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "NotoSansArmenian-Medium", pathExtension: "ttf")
-    /// Resource file `NotoSansArmenian-Regular.ttf`.
-    static let notoSansArmenianRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "NotoSansArmenian-Regular", pathExtension: "ttf")
-    /// Resource file `NotoSansArmenian-SemiBold.ttf`.
-    static let notoSansArmenianSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "NotoSansArmenian-SemiBold", pathExtension: "ttf")
-    /// Resource file `PantonAM-Bold.otf`.
-    static let pantonAMBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-Bold", pathExtension: "otf")
-    /// Resource file `PantonAM-ExtraBold.otf`.
-    static let pantonAMExtraBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-ExtraBold", pathExtension: "otf")
-    /// Resource file `PantonAM-Regular.otf`.
-    static let pantonAMRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonAM-Regular", pathExtension: "otf")
-    /// Resource file `PantonMtav3-Bold.otf`.
-    static let pantonMtav3BoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonMtav3-Bold", pathExtension: "otf")
-    /// Resource file `PantonMtav3-ExtraBold.otf`.
-    static let pantonMtav3ExtraBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonMtav3-ExtraBold", pathExtension: "otf")
-    /// Resource file `PantonMtav3-Regular.otf`.
-    static let pantonMtav3RegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonMtav3-Regular", pathExtension: "otf")
-    /// Resource file `PantonNusx3-Bold.otf`.
-    static let pantonNusx3BoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonNusx3-Bold", pathExtension: "otf")
-    /// Resource file `PantonNusx3-Regular.otf`.
-    static let pantonNusx3RegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonNusx3-Regular", pathExtension: "otf")
     /// Resource file `RORJSlot.zip`.
     static let rorjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RORJSlot", pathExtension: "zip")
     /// Resource file `ca.der`.
@@ -953,177 +919,75 @@ struct R: Rswift.Validatable {
     /// Resource file `localhost.p12`.
     static let localhostP12 = Rswift.FileResource(bundle: R.hostingBundle, name: "localhost", pathExtension: "p12")
 
+    /// `bundle.url(forResource: "AdjaraMont-Bold", withExtension: "ttf")`
+    static func adjaraMontBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMont-Heavy", withExtension: "ttf")`
+    static func adjaraMontHeavyTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontHeavyTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMont-Light", withExtension: "ttf")`
+    static func adjaraMontLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMont-Regular", withExtension: "ttf")`
+    static func adjaraMontRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMont-SemiBold", withExtension: "ttf")`
+    static func adjaraMontSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMontPro-Bold", withExtension: "ttf")`
+    static func adjaraMontProBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontProBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMontPro-Heavy", withExtension: "ttf")`
+    static func adjaraMontProHeavyTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontProHeavyTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMontPro-Light", withExtension: "ttf")`
+    static func adjaraMontProLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontProLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMontPro-Regular", withExtension: "ttf")`
+    static func adjaraMontProRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontProRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AdjaraMontPro-SemiBold", withExtension: "ttf")`
+    static func adjaraMontProSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjaraMontProSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "BHJSlot", withExtension: "zip")`
     static func bhjSlotZip(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.bhjSlotZip
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "FiraGO-Bold", withExtension: "ttf")`
-    static func firaGOBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Book", withExtension: "ttf")`
-    static func firaGOBookTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOBookTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Eight", withExtension: "ttf")`
-    static func firaGOEightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOEightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-ExtraBold", withExtension: "ttf")`
-    static func firaGOExtraBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOExtraBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-ExtraLight", withExtension: "ttf")`
-    static func firaGOExtraLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOExtraLightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Four", withExtension: "ttf")`
-    static func firaGOFourTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOFourTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Hair", withExtension: "ttf")`
-    static func firaGOHairTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOHairTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Heavy", withExtension: "ttf")`
-    static func firaGOHeavyTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOHeavyTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Light", withExtension: "ttf")`
-    static func firaGOLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOLightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Medium", withExtension: "ttf")`
-    static func firaGOMediumTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOMediumTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Regular", withExtension: "ttf")`
-    static func firaGORegularTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGORegularTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-SemiBold", withExtension: "ttf")`
-    static func firaGOSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOSemiBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Thin", withExtension: "ttf")`
-    static func firaGOThinTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOThinTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-Two", withExtension: "ttf")`
-    static func firaGOTwoTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOTwoTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "FiraGO-UltraLight", withExtension: "ttf")`
-    static func firaGOUltraLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.firaGOUltraLightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "NotoSansArmenian-Bold", withExtension: "ttf")`
-    static func notoSansArmenianBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.notoSansArmenianBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "NotoSansArmenian-Medium", withExtension: "ttf")`
-    static func notoSansArmenianMediumTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.notoSansArmenianMediumTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "NotoSansArmenian-Regular", withExtension: "ttf")`
-    static func notoSansArmenianRegularTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.notoSansArmenianRegularTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "NotoSansArmenian-SemiBold", withExtension: "ttf")`
-    static func notoSansArmenianSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.notoSansArmenianSemiBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "PantonAM-Bold", withExtension: "otf")`
-    static func pantonAMBoldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pantonAMBoldOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "PantonAM-ExtraBold", withExtension: "otf")`
-    static func pantonAMExtraBoldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pantonAMExtraBoldOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "PantonAM-Regular", withExtension: "otf")`
-    static func pantonAMRegularOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pantonAMRegularOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "PantonMtav3-Bold", withExtension: "otf")`
-    static func pantonMtav3BoldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pantonMtav3BoldOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "PantonMtav3-ExtraBold", withExtension: "otf")`
-    static func pantonMtav3ExtraBoldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pantonMtav3ExtraBoldOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "PantonMtav3-Regular", withExtension: "otf")`
-    static func pantonMtav3RegularOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pantonMtav3RegularOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "PantonNusx3-Bold", withExtension: "otf")`
-    static func pantonNusx3BoldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pantonNusx3BoldOtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "PantonNusx3-Regular", withExtension: "otf")`
-    static func pantonNusx3RegularOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.pantonNusx3RegularOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1160,226 +1024,90 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 27 fonts.
+  /// This `R.font` struct is generated, and contains static references to 10 fonts.
   struct font: Rswift.Validatable {
-    /// Font `FiraGO-Bold`.
-    static let firaGOBold = Rswift.FontResource(fontName: "FiraGO-Bold")
-    /// Font `FiraGO-Book`.
-    static let firaGOBook = Rswift.FontResource(fontName: "FiraGO-Book")
-    /// Font `FiraGO-Eight`.
-    static let firaGOEight = Rswift.FontResource(fontName: "FiraGO-Eight")
-    /// Font `FiraGO-ExtraBold`.
-    static let firaGOExtraBold = Rswift.FontResource(fontName: "FiraGO-ExtraBold")
-    /// Font `FiraGO-ExtraLight`.
-    static let firaGOExtraLight = Rswift.FontResource(fontName: "FiraGO-ExtraLight")
-    /// Font `FiraGO-Four`.
-    static let firaGOFour = Rswift.FontResource(fontName: "FiraGO-Four")
-    /// Font `FiraGO-Hair`.
-    static let firaGOHair = Rswift.FontResource(fontName: "FiraGO-Hair")
-    /// Font `FiraGO-Heavy`.
-    static let firaGOHeavy = Rswift.FontResource(fontName: "FiraGO-Heavy")
-    /// Font `FiraGO-Light`.
-    static let firaGOLight = Rswift.FontResource(fontName: "FiraGO-Light")
-    /// Font `FiraGO-Medium`.
-    static let firaGOMedium = Rswift.FontResource(fontName: "FiraGO-Medium")
-    /// Font `FiraGO-Regular`.
-    static let firaGORegular = Rswift.FontResource(fontName: "FiraGO-Regular")
-    /// Font `FiraGO-SemiBold`.
-    static let firaGOSemiBold = Rswift.FontResource(fontName: "FiraGO-SemiBold")
-    /// Font `FiraGO-Thin`.
-    static let firaGOThin = Rswift.FontResource(fontName: "FiraGO-Thin")
-    /// Font `FiraGO-Two`.
-    static let firaGOTwo = Rswift.FontResource(fontName: "FiraGO-Two")
-    /// Font `FiraGO-UltraLight`.
-    static let firaGOUltraLight = Rswift.FontResource(fontName: "FiraGO-UltraLight")
-    /// Font `NotoSansArmenian-Bold`.
-    static let notoSansArmenianBold = Rswift.FontResource(fontName: "NotoSansArmenian-Bold")
-    /// Font `NotoSansArmenian-Medium`.
-    static let notoSansArmenianMedium = Rswift.FontResource(fontName: "NotoSansArmenian-Medium")
-    /// Font `NotoSansArmenian-Regular`.
-    static let notoSansArmenianRegular = Rswift.FontResource(fontName: "NotoSansArmenian-Regular")
-    /// Font `NotoSansArmenian-SemiBold`.
-    static let notoSansArmenianSemiBold = Rswift.FontResource(fontName: "NotoSansArmenian-SemiBold")
-    /// Font `PantonAM-Bold`.
-    static let pantonAMBold = Rswift.FontResource(fontName: "PantonAM-Bold")
-    /// Font `PantonAM-ExtraBold`.
-    static let pantonAMExtraBold = Rswift.FontResource(fontName: "PantonAM-ExtraBold")
-    /// Font `PantonAM-Regular`.
-    static let pantonAMRegular = Rswift.FontResource(fontName: "PantonAM-Regular")
-    /// Font `PantonMtav3-Bold`.
-    static let pantonMtav3Bold = Rswift.FontResource(fontName: "PantonMtav3-Bold")
-    /// Font `PantonMtav3-ExtraBold`.
-    static let pantonMtav3ExtraBold = Rswift.FontResource(fontName: "PantonMtav3-ExtraBold")
-    /// Font `PantonMtav3-Regular`.
-    static let pantonMtav3Regular = Rswift.FontResource(fontName: "PantonMtav3-Regular")
-    /// Font `PantonNusx3-Bold`.
-    static let pantonNusx3Bold = Rswift.FontResource(fontName: "PantonNusx3-Bold")
-    /// Font `PantonNusx3-Regular`.
-    static let pantonNusx3Regular = Rswift.FontResource(fontName: "PantonNusx3-Regular")
+    /// Font `AdjaraMont-Bold`.
+    static let adjaraMontBold = Rswift.FontResource(fontName: "AdjaraMont-Bold")
+    /// Font `AdjaraMont-Heavy`.
+    static let adjaraMontHeavy = Rswift.FontResource(fontName: "AdjaraMont-Heavy")
+    /// Font `AdjaraMont-Light`.
+    static let adjaraMontLight = Rswift.FontResource(fontName: "AdjaraMont-Light")
+    /// Font `AdjaraMont-Regular`.
+    static let adjaraMontRegular = Rswift.FontResource(fontName: "AdjaraMont-Regular")
+    /// Font `AdjaraMont-SemiBold`.
+    static let adjaraMontSemiBold = Rswift.FontResource(fontName: "AdjaraMont-SemiBold")
+    /// Font `AdjaraMontPro-Bold`.
+    static let adjaraMontProBold = Rswift.FontResource(fontName: "AdjaraMontPro-Bold")
+    /// Font `AdjaraMontPro-Heavy`.
+    static let adjaraMontProHeavy = Rswift.FontResource(fontName: "AdjaraMontPro-Heavy")
+    /// Font `AdjaraMontPro-Light`.
+    static let adjaraMontProLight = Rswift.FontResource(fontName: "AdjaraMontPro-Light")
+    /// Font `AdjaraMontPro-Regular`.
+    static let adjaraMontProRegular = Rswift.FontResource(fontName: "AdjaraMontPro-Regular")
+    /// Font `AdjaraMontPro-SemiBold`.
+    static let adjaraMontProSemiBold = Rswift.FontResource(fontName: "AdjaraMontPro-SemiBold")
 
-    /// `UIFont(name: "FiraGO-Bold", size: ...)`
-    static func firaGOBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOBold, size: size)
+    /// `UIFont(name: "AdjaraMont-Bold", size: ...)`
+    static func adjaraMontBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontBold, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-Book", size: ...)`
-    static func firaGOBook(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOBook, size: size)
+    /// `UIFont(name: "AdjaraMont-Heavy", size: ...)`
+    static func adjaraMontHeavy(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontHeavy, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-Eight", size: ...)`
-    static func firaGOEight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOEight, size: size)
+    /// `UIFont(name: "AdjaraMont-Light", size: ...)`
+    static func adjaraMontLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontLight, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-ExtraBold", size: ...)`
-    static func firaGOExtraBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOExtraBold, size: size)
+    /// `UIFont(name: "AdjaraMont-Regular", size: ...)`
+    static func adjaraMontRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontRegular, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-ExtraLight", size: ...)`
-    static func firaGOExtraLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOExtraLight, size: size)
+    /// `UIFont(name: "AdjaraMont-SemiBold", size: ...)`
+    static func adjaraMontSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontSemiBold, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-Four", size: ...)`
-    static func firaGOFour(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOFour, size: size)
+    /// `UIFont(name: "AdjaraMontPro-Bold", size: ...)`
+    static func adjaraMontProBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontProBold, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-Hair", size: ...)`
-    static func firaGOHair(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOHair, size: size)
+    /// `UIFont(name: "AdjaraMontPro-Heavy", size: ...)`
+    static func adjaraMontProHeavy(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontProHeavy, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-Heavy", size: ...)`
-    static func firaGOHeavy(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOHeavy, size: size)
+    /// `UIFont(name: "AdjaraMontPro-Light", size: ...)`
+    static func adjaraMontProLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontProLight, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-Light", size: ...)`
-    static func firaGOLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOLight, size: size)
+    /// `UIFont(name: "AdjaraMontPro-Regular", size: ...)`
+    static func adjaraMontProRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontProRegular, size: size)
     }
 
-    /// `UIFont(name: "FiraGO-Medium", size: ...)`
-    static func firaGOMedium(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOMedium, size: size)
-    }
-
-    /// `UIFont(name: "FiraGO-Regular", size: ...)`
-    static func firaGORegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGORegular, size: size)
-    }
-
-    /// `UIFont(name: "FiraGO-SemiBold", size: ...)`
-    static func firaGOSemiBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOSemiBold, size: size)
-    }
-
-    /// `UIFont(name: "FiraGO-Thin", size: ...)`
-    static func firaGOThin(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOThin, size: size)
-    }
-
-    /// `UIFont(name: "FiraGO-Two", size: ...)`
-    static func firaGOTwo(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOTwo, size: size)
-    }
-
-    /// `UIFont(name: "FiraGO-UltraLight", size: ...)`
-    static func firaGOUltraLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: firaGOUltraLight, size: size)
-    }
-
-    /// `UIFont(name: "NotoSansArmenian-Bold", size: ...)`
-    static func notoSansArmenianBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: notoSansArmenianBold, size: size)
-    }
-
-    /// `UIFont(name: "NotoSansArmenian-Medium", size: ...)`
-    static func notoSansArmenianMedium(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: notoSansArmenianMedium, size: size)
-    }
-
-    /// `UIFont(name: "NotoSansArmenian-Regular", size: ...)`
-    static func notoSansArmenianRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: notoSansArmenianRegular, size: size)
-    }
-
-    /// `UIFont(name: "NotoSansArmenian-SemiBold", size: ...)`
-    static func notoSansArmenianSemiBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: notoSansArmenianSemiBold, size: size)
-    }
-
-    /// `UIFont(name: "PantonAM-Bold", size: ...)`
-    static func pantonAMBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: pantonAMBold, size: size)
-    }
-
-    /// `UIFont(name: "PantonAM-ExtraBold", size: ...)`
-    static func pantonAMExtraBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: pantonAMExtraBold, size: size)
-    }
-
-    /// `UIFont(name: "PantonAM-Regular", size: ...)`
-    static func pantonAMRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: pantonAMRegular, size: size)
-    }
-
-    /// `UIFont(name: "PantonMtav3-Bold", size: ...)`
-    static func pantonMtav3Bold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: pantonMtav3Bold, size: size)
-    }
-
-    /// `UIFont(name: "PantonMtav3-ExtraBold", size: ...)`
-    static func pantonMtav3ExtraBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: pantonMtav3ExtraBold, size: size)
-    }
-
-    /// `UIFont(name: "PantonMtav3-Regular", size: ...)`
-    static func pantonMtav3Regular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: pantonMtav3Regular, size: size)
-    }
-
-    /// `UIFont(name: "PantonNusx3-Bold", size: ...)`
-    static func pantonNusx3Bold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: pantonNusx3Bold, size: size)
-    }
-
-    /// `UIFont(name: "PantonNusx3-Regular", size: ...)`
-    static func pantonNusx3Regular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: pantonNusx3Regular, size: size)
+    /// `UIFont(name: "AdjaraMontPro-SemiBold", size: ...)`
+    static func adjaraMontProSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: adjaraMontProSemiBold, size: size)
     }
 
     static func validate() throws {
-      if R.font.firaGOBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Bold' could not be loaded, is 'FiraGO-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOBook(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Book' could not be loaded, is 'FiraGO-Book.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOEight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Eight' could not be loaded, is 'FiraGO-Eight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-ExtraBold' could not be loaded, is 'FiraGO-ExtraBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOExtraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-ExtraLight' could not be loaded, is 'FiraGO-ExtraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOFour(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Four' could not be loaded, is 'FiraGO-Four.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOHair(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Hair' could not be loaded, is 'FiraGO-Hair.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOHeavy(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Heavy' could not be loaded, is 'FiraGO-Heavy.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Light' could not be loaded, is 'FiraGO-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Medium' could not be loaded, is 'FiraGO-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGORegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Regular' could not be loaded, is 'FiraGO-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-SemiBold' could not be loaded, is 'FiraGO-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Thin' could not be loaded, is 'FiraGO-Thin.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOTwo(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-Two' could not be loaded, is 'FiraGO-Two.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.firaGOUltraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'FiraGO-UltraLight' could not be loaded, is 'FiraGO-UltraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.notoSansArmenianBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'NotoSansArmenian-Bold' could not be loaded, is 'NotoSansArmenian-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.notoSansArmenianMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'NotoSansArmenian-Medium' could not be loaded, is 'NotoSansArmenian-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.notoSansArmenianRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'NotoSansArmenian-Regular' could not be loaded, is 'NotoSansArmenian-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.notoSansArmenianSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'NotoSansArmenian-SemiBold' could not be loaded, is 'NotoSansArmenian-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.pantonAMBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-Bold' could not be loaded, is 'PantonAM-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.pantonAMExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-ExtraBold' could not be loaded, is 'PantonAM-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.pantonAMRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonAM-Regular' could not be loaded, is 'PantonAM-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.pantonMtav3Bold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Bold' could not be loaded, is 'PantonMtav3-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.pantonMtav3ExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-ExtraBold' could not be loaded, is 'PantonMtav3-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.pantonMtav3Regular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonMtav3-Regular' could not be loaded, is 'PantonMtav3-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.pantonNusx3Bold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonNusx3-Bold' could not be loaded, is 'PantonNusx3-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.pantonNusx3Regular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PantonNusx3-Regular' could not be loaded, is 'PantonNusx3-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMont-Bold' could not be loaded, is 'AdjaraMont-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontHeavy(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMont-Heavy' could not be loaded, is 'AdjaraMont-Heavy.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMont-Light' could not be loaded, is 'AdjaraMont-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMont-Regular' could not be loaded, is 'AdjaraMont-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMont-SemiBold' could not be loaded, is 'AdjaraMont-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontProBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMontPro-Bold' could not be loaded, is 'AdjaraMontPro-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontProHeavy(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMontPro-Heavy' could not be loaded, is 'AdjaraMontPro-Heavy.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontProLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMontPro-Light' could not be loaded, is 'AdjaraMontPro-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontProRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMontPro-Regular' could not be loaded, is 'AdjaraMontPro-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.adjaraMontProSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AdjaraMontPro-SemiBold' could not be loaded, is 'AdjaraMontPro-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}
@@ -12115,8 +11843,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12133,8 +11861,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/QuickAction/withdraw", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/withdraw' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/QuickAction/deposit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/deposit' is used in nib 'CashFlowTabComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12226,8 +11954,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -12463,8 +12191,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13129,8 +12857,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

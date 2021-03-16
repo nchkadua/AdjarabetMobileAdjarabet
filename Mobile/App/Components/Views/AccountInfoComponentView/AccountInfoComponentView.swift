@@ -55,7 +55,7 @@ extension AccountInfoComponentView: Xibable {
         placeholderLabel.setFont(to: .subHeadline(fontCase: .lower))
         placeholderLabel.setTextColor(to: .secondaryText())
 
-        titleLabel.setFont(to: .body(fontCase: .lower))
+        titleLabel.setFont(to: .body1(fontCase: .lower))
         titleLabel.setTextColor(to: .primaryText())
     }
 }

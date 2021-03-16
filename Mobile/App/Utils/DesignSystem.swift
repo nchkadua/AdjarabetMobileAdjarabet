@@ -115,15 +115,18 @@ public enum DesignSystem {
         }
 
         public enum FontStyle: CaseIterable {
-            case regular, medium, bold, semiBold
+            case heavy, bold, semiBold, regular, light
         }
 
-        case largeTitle(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case largeTitle34(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case largeTitle32(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case title1(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case midline(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case title2(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case title3(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case headline(fontCase: FontCase, fontStyle: FontStyle = .regular)
-        case body(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case body1(fontCase: FontCase, fontStyle: FontStyle = .regular)
+        case body2(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case callout(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case subHeadline(fontCase: FontCase, fontStyle: FontStyle = .regular)
         case footnote(fontCase: FontCase, fontStyle: FontStyle = .regular)
@@ -135,76 +138,56 @@ public enum DesignSystem {
             let language = Typography.languageStorage.currentLanguage
 
             switch self {
-            case .largeTitle:   return .init(font: font(by: language), lineSpasing: 0.37, lineHeight: 41)
-            case .title1:       return .init(font: font(by: language), lineSpasing: 0.36, lineHeight: 34)
-            case .title2:       return .init(font: font(by: language), lineSpasing: 0.35, lineHeight: 28)
-            case .title3:       return .init(font: font(by: language), lineSpasing: 0.38, lineHeight: 24)
-            case .headline:     return .init(font: font(by: language), lineSpasing: -0.41, lineHeight: 22)
-            case .body:         return .init(font: font(by: language), lineSpasing: -0.41, lineHeight: 22)
-            case .callout:      return .init(font: font(by: language), lineSpasing: -0.32, lineHeight: 21)
-            case .subHeadline:  return .init(font: font(by: language), lineSpasing: -0.24, lineHeight: 20)
-            case .footnote:     return .init(font: font(by: language), lineSpasing: -0.08, lineHeight: 18)
-            case .caption1:     return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 16)
-            case .caption2:     return .init(font: font(by: language), lineSpasing: 0.07, lineHeight: 13)
+            case .largeTitle34: return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 47)
+            case .largeTitle32: return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 44)
+            case .title1:       return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 39)
+            case .midline:      return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 33)
+            case .title2:       return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 30)
+            case .title3:       return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 28)
+            case .headline:     return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 25)
+            case .body1:        return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 23)
+            case .body2:        return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 22)
+            case .callout:      return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 21)
+            case .subHeadline:  return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 19)
+            case .footnote:     return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 18)
+            case .caption1:     return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 17)
+            case .caption2:     return .init(font: font(by: language), lineSpasing: 0.0, lineHeight: 15)
             }
         }
 
         func font(by language: Language) -> UIFont {
             /// Fonts
-            func firaGo(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
+            func adjaraMont(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
                 switch fontStyle {
-                case .regular:      return R.font.firaGORegular(size: pointSize)!
-                case .medium:       return R.font.firaGOMedium(size: pointSize)!
-                case .bold:         return R.font.firaGOBold(size: pointSize)!
-                case .semiBold:     return R.font.firaGOSemiBold(size: pointSize)!
-                }
-            }
-
-            func notoSansArmenian(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
-                switch fontStyle {
-                case .regular:      return R.font.notoSansArmenianRegular(size: pointSize)!
-                case .medium:       return R.font.notoSansArmenianMedium(size: pointSize)!
-                case .bold:         return R.font.notoSansArmenianBold(size: pointSize)!
-                case .semiBold:     return R.font.notoSansArmenianBold(size: pointSize)!
-                }
-            }
-
-            func pantonMtav3(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
-                switch fontStyle {
-                case .regular:      return R.font.pantonMtav3Regular(size: pointSize)!
-                case .medium:       return R.font.pantonMtav3Regular(size: pointSize)! // Same as regular
-                case .bold:         return R.font.pantonMtav3Bold(size: pointSize)!
-                case .semiBold:     return R.font.pantonMtav3Bold(size: pointSize)! // Same as bold
-                }
-            }
-
-            func pantonAM(with fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
-                switch fontStyle {
-                case .regular:      return R.font.pantonAMRegular(size: pointSize)!
-                case .medium:       return R.font.pantonAMRegular(size: pointSize)! // Same as regular
-                case .bold:         return R.font.pantonAMBold(size: pointSize)!
-                case .semiBold:     return R.font.pantonAMBold(size: pointSize)! // Same as bold
+                case .heavy:        return R.font.adjaraMontHeavy(size: pointSize)!
+                case .bold:         return R.font.adjaraMontBold(size: pointSize)!
+                case .semiBold:     return R.font.adjaraMontSemiBold(size: pointSize)!
+                case .regular:      return R.font.adjaraMontRegular(size: pointSize)!
+                case .light:        return R.font.adjaraMontLight(size: pointSize)!
                 }
             }
 
             //
             func font(by language: Language, fontCase: FontCase, fontStyle: FontStyle, pointSize: CGFloat) -> UIFont {
                 switch language {
-                case .georgian: return fontCase == .lower ? firaGo(with: fontStyle, pointSize: pointSize) : pantonMtav3(with: fontStyle, pointSize: pointSize)
-                case .armenian: return fontCase == .lower ? notoSansArmenian(with: fontStyle, pointSize: pointSize) : pantonAM(with: fontStyle, pointSize: pointSize)
-                case .english:  return fontCase == .lower ? firaGo(with: fontStyle, pointSize: pointSize) : pantonMtav3(with: fontStyle, pointSize: pointSize)
+                case .georgian: return adjaraMont(with: fontStyle, pointSize: pointSize)
+                case .armenian: return adjaraMont(with: fontStyle, pointSize: pointSize)
+                case .english:  return adjaraMont(with: fontStyle, pointSize: pointSize)
                 }
             }
 
             switch self {
-            case .largeTitle(let fontCase, let fontStyle):      return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 34)
+            case .largeTitle34(let fontCase, let fontStyle):    return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 34)
+            case .largeTitle32(let fontCase, let fontStyle):    return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 32)
             case .title1(let fontCase, let fontStyle):          return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 28)
+            case .midline(let fontCase, let fontStyle):         return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 24)
             case .title2(let fontCase, let fontStyle):          return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 22)
             case .title3(let fontCase, let fontStyle):          return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 20)
-            case .headline(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 17)
-            case .body(let fontCase, let fontStyle):            return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 17)
-            case .callout(let fontCase, let fontStyle):         return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 16)
-            case .subHeadline(let fontCase, let fontStyle):     return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 15)
+            case .headline(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 18)
+            case .body1(let fontCase, let fontStyle):           return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 17)
+            case .body2(let fontCase, let fontStyle):           return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 16)
+            case .callout(let fontCase, let fontStyle):         return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 15)
+            case .subHeadline(let fontCase, let fontStyle):     return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 14)
             case .footnote(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 13)
             case .caption1(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 12)
             case .caption2(let fontCase, let fontStyle):        return font(by: language, fontCase: fontCase, fontStyle: fontStyle, pointSize: 11)
