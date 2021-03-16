@@ -12,8 +12,6 @@ public class DepositViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: DepositViewModel
     public lazy var navigator = DepositNavigator(viewController: self)
 
-    @Inject(from: .repositories) private var tBCRegularPaymentsRepository: TBCRegularPaymentsRepository
-
     // MARK: Outlets
     @IBOutlet private weak var labelComponentView: LabelComponentView!
     @IBOutlet private weak var paymentMethodInputView: ABInputView!

@@ -10,7 +10,7 @@ import Foundation
 
 struct UFCDepositUseCase {
     @Inject(from: .repositories) private var depositRepo: UFCDepositRepository
-    @Inject private var paramsFactory: UFCTransactionParamsFactory
+    @Inject(from: .factories) private var paramsFactory: UFCTransactionParamsFactory
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
     typealias Handler = (Result<URLRequest, Error>) -> Void

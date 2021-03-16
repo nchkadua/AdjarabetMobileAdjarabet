@@ -47,8 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             Module { HttpRequestBuilderImpl.createInstance() as HttpRequestBuilder }
             Module { DefaultUserAgentProvider() as UserAgentProvider }
-
-            Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         }
 
         dependencies.build()
@@ -146,6 +144,8 @@ public extension DependencyContainer {
         Module { DefaultMyCardsViewControllerFactory() as MyCardsViewControllerFactory }
         Module { DefaultGameViewControllerFactory() as GameViewControllerFactory }
         Module { DefaultWebViewControllerFactory() as WebViewControllerFactory }
+        // Payments
+        Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
     }
 
     static var useCases = DependencyContainer {
@@ -162,5 +162,6 @@ public extension DependencyContainer {
         Module { DefaultLogoutUseCase() as LogoutUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
+        Module { UFCDepositUseCase() as UFCDepositUseCase }
     }
 }

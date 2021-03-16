@@ -57,7 +57,7 @@ public class DefaultDepositViewModel {
     @Inject public var userBalanceService: UserBalanceService
     @Inject(from: .useCases) private var paymentListUseCase: PaymentListUseCase
     @Inject(from: .useCases) private var paymentAccountUseCase: PaymentAccountUseCase
-    @Inject(from: .repositories) private var repo: TBCRegularPaymentsRepository // FIXME: UseCase
+    @Inject(from: .useCases) private var ufcDepositUseCase: UFCDepositUseCase
 }
 
 extension DefaultDepositViewModel: DepositViewModel {
@@ -112,45 +112,17 @@ extension DefaultDepositViewModel: DepositViewModel {
         let card = paymentAccounts[cardIndex]
         let accountId = card.id!
 
-        repo.initDeposit(params: .init(amount: amount, accountId: accountId)) { [weak self] result in
-            guard let self = self else { return }
+        // FIXME: serviceType - .regular or .vip
+        ufcDepositUseCase.execute(serviceType: .regular, amount: amount, accountId: accountId) { [weak self] result in
             switch result {
-            case .success(let entity):
-                self.deposit(amount, accountId, entity.session)
+            case .success(let request):
+                self?.routeSubject.onNext(.webView(.init(request: request)))
             case .failure(let error):
-                print("Payment.InitDeposit:", error) // FIXME
+                print("Deposit.Payments.DepositUseCase:", error) // FIXME
             }
         }
     }
 
-    private func deposit(_ amount: Double, _ accountId: Int64, _ session: String) {
-        repo.deposit(params: .init(amount: amount, accountId: accountId, session: session)) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let entity):
-
-                let headers = [ // FIXME: Common
-                    "Cache-control": "no-store",
-                    "Connection": "Keep-Alive",
-                    "Keep-Alive": "timeout=5, max=100",
-                    "Pragma": "no-cache",
-                    "X-Content-Type-Options": "nosniff",
-                    "X-XSS-Protection": "1; mode=block"
-                ]
-
-                let request = self.httpRequestBuilder
-                    .set(host: "\(entity.url)?trans_id=\(entity.transactionId)")
-                    .set(headers: headers)
-                    .set(method: HttpMethodGet())
-                    .build()
-
-                self.routeSubject.onNext(.webView(.init(request: request)))
-
-            case .failure(let error):
-                print("Payment.Deposit:", error) // FIXME
-            }
-        }
-    }
     public func addCard() {
     }
 }
