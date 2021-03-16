@@ -14,11 +14,11 @@ import Foundation
 struct UFCTransactionParams {
     let providerId: String
     let serviceId: Int
-    let amount: Double
     let serviceName: String
+    let amount: Double
     let saveForRecurring: Int
     let accountId: Int64? // if null add card service is called
-    let session: String?  // if null is init method
+    var session: String?  // if null is init method
 }
 
 // Init Deposit Parameters
@@ -116,11 +116,11 @@ struct DefaultUFCTransactionRepository: UFCTransactionRepository {
             "op_type": operation,
             "user_id": userId,
             "provider_id": params.providerId,
-            "service_name": params.serviceName,
             "service_id": params.serviceId,
+            "service_name": params.serviceName,
             "currency": currency.description.abbreviation,
-            "save_for_recurring": params.saveForRecurring,
             "lang": languageStorage.currentLanguage.localizableIdentifier,
+            "save_for_recurring": params.saveForRecurring,
             "amount": "\(params.amount)"
         ]
 

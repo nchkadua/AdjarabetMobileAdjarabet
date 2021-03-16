@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             Module { HttpRequestBuilderImpl.createInstance() as HttpRequestBuilder }
             Module { DefaultUserAgentProvider() as UserAgentProvider }
+
+            Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         }
 
         dependencies.build()
@@ -105,6 +107,10 @@ public extension DependencyContainer {
         Module { DefaultPostLoginRepository() as PostLoginRepository }
         Module { DefaultPaymentListRepository() as PaymentListRepository }
         Module { DefaultTBCRegularPaymentsRepository() as TBCRegularPaymentsRepository }
+        // Payments.UFC
+        Module { DefaultUFCTransactionRepository() as UFCDepositRepository }
+        Module { DefaultUFCTransactionRepository() as UFCWithdrawRepository }
+        Module { DefaultUFCTransactionRepository() as UFCTransactionRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }

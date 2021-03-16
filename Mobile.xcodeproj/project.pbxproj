@@ -180,6 +180,7 @@
 		C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */; };
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
+		C74334F12601232700945C8C /* UFCTransactionEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74334F02601232700945C8C /* UFCTransactionEntities.swift */; };
 		C744040B26000F58003E554B /* RORJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744040A26000F58003E554B /* RORJSlot.zip */; settings = {ASSET_TAGS = (RORJSlot, ); }; };
 		C744041326001138003E554B /* BHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744041226001138003E554B /* BHJSlot.zip */; settings = {ASSET_TAGS = (BHJSlot, ); }; };
 		C747734E25B5C1030083C845 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C747734D25B5C1030083C845 /* Currency.swift */; };
@@ -792,6 +793,7 @@
 		C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawUseCase.swift; sourceTree = "<group>"; };
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C7405188256FAA8200EAC904 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
+		C74334F02601232700945C8C /* UFCTransactionEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCTransactionEntities.swift; sourceTree = "<group>"; };
 		C744040A26000F58003E554B /* RORJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RORJSlot.zip; sourceTree = "<group>"; };
 		C744041226001138003E554B /* BHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BHJSlot.zip; sourceTree = "<group>"; };
 		C747734D25B5C1030083C845 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -1996,6 +1998,7 @@
 		C72FA7542600BDE500A9C493 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				C74334EB26011B3600945C8C /* Common */,
 				C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */,
 				C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */,
 			);
@@ -2017,6 +2020,14 @@
 				C7405188256FAA8200EAC904 /* AmountFormatter.swift */,
 			);
 			path = Amount;
+			sourceTree = "<group>";
+		};
+		C74334EB26011B3600945C8C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C74334F02601232700945C8C /* UFCTransactionEntities.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		C754317125F55FCA00E485DD /* Post Login */ = {
@@ -4508,6 +4519,7 @@
 				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
 				C7CE2D7D2600C80A00251FE3 /* UFCWithdrawEntity.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
+				C74334F12601232700945C8C /* UFCTransactionEntities.swift in Sources */,
 				CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */,
 				C7C35FE025C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift in Sources */,
 				767C7D9225E39FAA008F2CE9 /* HomeBannerContainerComponentView.swift in Sources */,
