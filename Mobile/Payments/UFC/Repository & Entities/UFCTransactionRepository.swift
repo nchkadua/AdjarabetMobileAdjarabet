@@ -66,7 +66,7 @@ protocol UFCWithdrawRepository {
      Performs Withdraw Transaction
      */
     // output
-    typealias WithdrawHandler = (Result<UFCWithdrawEntity, Error>) -> Void
+    typealias WithdrawHandler = (Result<Void, Error>) -> Void
     // input
     func withdraw(with params: UFCWithdrawParams, _ handler: @escaping WithdrawHandler)
 }

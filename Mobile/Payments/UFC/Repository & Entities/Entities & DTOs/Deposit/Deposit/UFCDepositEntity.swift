@@ -9,8 +9,6 @@
 import Foundation
 
 struct UFCDepositEntity {
-    let message: String?
-    let code: Int?
-    let url: String?
-    let transId: String?
+    let url: String
+    let transactionId: String
 }

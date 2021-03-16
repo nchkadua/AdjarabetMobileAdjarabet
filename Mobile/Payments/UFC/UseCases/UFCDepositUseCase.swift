@@ -28,8 +28,7 @@ struct UFCDepositUseCase {
         depositRepo.initDeposit(with: parameters) { result in
             switch result {
             case .success(let entity):
-                let session = entity.sessionId!
-                parameters.session = session
+                parameters.session = entity.session
                 // call deposit service
                 depositRepo.deposit(with: parameters) { result in
                     switch result {
@@ -45,7 +44,7 @@ struct UFCDepositUseCase {
                         ]
 
                         let request = httpRequestBuilder
-                            .set(host: "\(entity.url!)?trans_id=\(entity.transId!)")
+                            .set(host: "\(entity.url)?trans_id=\(entity.transactionId)")
                             .set(headers: headers)
                             .set(method: HttpMethodGet())
                             .build()

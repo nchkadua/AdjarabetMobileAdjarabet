@@ -142,7 +142,7 @@ public class WithdrawViewController: ABViewController {
     @objc private func proceedDidTap() {
         repo.initWithdraw(params: .init(amount: 10)) { result in
             switch result {
-            case .success(let entity): self.withdraw(with: entity.fee ?? 0.0, session: entity.sessionId ?? "")
+            case .success(let entity): self.withdraw(with: entity.fee, session: entity.session)
             case .failure(let error): print("Payment.Withdraw: ", error)
             }
         }
@@ -153,9 +153,8 @@ public class WithdrawViewController: ABViewController {
         print("Payment.Withdraw: ", fee)
         repo.withdraw(params: .init(amount: 10, accountId: 8310929, session: session)) { result in
             switch result {
-            case .success(let entity):
-                print("Payment.Withdraw: ", entity.message)
-                self.showAlert(title: "\(entity.message)")
+            case .success:
+                print("Payment.Withdraw: Success")
             case .failure(let error):
                 print("Payment.Withdraw: ", error)
                 self.showAlert(title: "\(error)")

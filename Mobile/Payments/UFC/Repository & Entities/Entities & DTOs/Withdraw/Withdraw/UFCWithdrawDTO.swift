@@ -10,21 +10,17 @@ import Foundation
 
 struct UFCWithdrawDTO: DataTransferResponse {
     struct Body: Codable {
-        let message: String?
-        let code: Int?
+        let code: Int
 
         enum CodingKeys: String, CodingKey {
-            case message
             case code
         }
     }
 
-    typealias Entity = UFCWithdrawEntity
+    typealias Entity = Void
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        Entity(
-            message: body.message,
-            code: body.code
-        )
+        if body.code == 10 { return () }
+        return nil
     }
 }

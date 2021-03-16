@@ -10,22 +10,20 @@ import Foundation
 
 struct UFCInitWithdrawDTO: DataTransferResponse {
     struct Body: Codable {
-        let message: String?
         let code: Int?
         let rules: Rules
 
         struct Rules: Codable {
-            let fee: Double?
-            let sessionId: String?
+            let fee: Double
+            let session: String
 
             enum CodingKeys: String, CodingKey {
                 case fee
-                case sessionId = "session"
+                case session
             }
         }
 
         enum CodingKeys: String, CodingKey {
-            case message
             case code
             case rules
         }
@@ -34,11 +32,8 @@ struct UFCInitWithdrawDTO: DataTransferResponse {
     typealias Entity = UFCInitWithdrawEntity
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        Entity(
-            message: body.message,
-            code: body.code,
-            sessionId: body.rules.sessionId,
-            fee: body.rules.fee
-        )
+        if let code = body.code, code != 10 { return nil } // FIXME: 10 == Success
+        return .init(session: body.rules.session,
+                     fee: body.rules.fee)
     }
 }

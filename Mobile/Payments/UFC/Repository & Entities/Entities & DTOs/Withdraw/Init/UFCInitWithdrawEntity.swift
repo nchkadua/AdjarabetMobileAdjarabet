@@ -9,8 +9,6 @@
 import Foundation
 
 struct UFCInitWithdrawEntity {
-    let message: String?
-    let code: Int?
-    let sessionId: String?
-    let fee: Double?
+    let session: String
+    let fee: Double
 }

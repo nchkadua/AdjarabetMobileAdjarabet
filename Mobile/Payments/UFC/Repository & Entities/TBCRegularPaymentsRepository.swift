@@ -23,7 +23,7 @@ protocol TBCRegularPaymentsRepository {
     func initWithdraw(params: Params,
                       handler: @escaping InitWithdrawHandler)
 
-    typealias WithdrawHandler = (Result<UFCWithdrawEntity, Error>) -> Void
+    typealias WithdrawHandler = (Result<Void, Error>) -> Void
     func withdraw(params: Params,
                   handler: @escaping WithdrawHandler)
 }

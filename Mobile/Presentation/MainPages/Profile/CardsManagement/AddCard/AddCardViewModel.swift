@@ -66,7 +66,7 @@ extension DefaultAddCardViewModel: AddCardViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let entity):
-                self.deposit(amount, entity.sessionId!)
+                self.deposit(amount, entity.session)
             case .failure(let error):
                 print("Payment.InitDeposit:", error) // FIXME
             }
@@ -89,7 +89,7 @@ extension DefaultAddCardViewModel: AddCardViewModel {
                 ]
 
                 let request = self.httpRequestBuilder
-                    .set(host: "\(entity.url!)?trans_id=\(entity.transId!)")
+                    .set(host: "\(entity.url)?trans_id=\(entity.transactionId)")
                     .set(headers: headers)
                     .set(method: HttpMethodGet())
                     .build()

@@ -9,7 +9,5 @@
 import Foundation
 
 struct UFCInitDepositEntity {
-    let message: String?
-    let code: Int?
-    let sessionId: String?
+    let session: String
 }

@@ -10,25 +10,23 @@ import Foundation
 
 struct UFCDepositDTO: DataTransferResponse {
     struct Body: Codable {
-        let message: String?
         let code: Int?
         let data: Data
 
         struct Data: Codable {
-            let url: String?
+            let url: String
             let parameters: Parameters
 
             struct Parameters: Codable {
-                let transId: String?
+                let transactionId: String
 
                 enum CodingKeys: String, CodingKey {
-                    case transId = "trans_id"
+                    case transactionId = "trans_id"
                 }
             }
         }
 
         enum CodingKeys: String, CodingKey {
-            case message
             case code
             case data
         }
@@ -37,11 +35,8 @@ struct UFCDepositDTO: DataTransferResponse {
     typealias Entity = UFCDepositEntity
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        Entity(
-            message: body.message,
-            code: body.code,
-            url: body.data.url,
-            transId: body.data.parameters.transId
-        )
+        if let code = body.code, code != 10 { return nil } // FIXME: 10 == Success
+        return .init(url: body.data.url,
+                     transactionId: body.data.parameters.transactionId)
     }
 }
