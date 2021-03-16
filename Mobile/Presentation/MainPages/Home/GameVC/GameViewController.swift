@@ -92,6 +92,7 @@ class GameViewController: ABViewController {
         webView.configuration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webView.configuration.setValue("TRUE", forKey: "allowUniversalAccessFromFileURLs")
         webView.configuration.preferences.javaScriptEnabled = true
+        webView.navigationDelegate = self
 
         view.addSubview(webView)
         webView.pinSafely(to: view)
@@ -115,5 +116,23 @@ extension GameViewController {
 
     @objc private func dismissGameView() {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension GameViewController: WKNavigationDelegate {
+    public func webView(_ webView: WKWebView,
+                        decidePolicyFor navigationAction: WKNavigationAction,
+                        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+
+    public func webView(_ webView: WKWebView,
+                        didReceive challenge: URLAuthenticationChallenge,
+                        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Swift.Void) {
+        if let trust = challenge.protectionSpace.serverTrust {
+            completionHandler(.useCredential, URLCredential(trust: trust))
+        } else {
+            completionHandler(.performDefaultHandling, nil)
+        }
     }
 }
