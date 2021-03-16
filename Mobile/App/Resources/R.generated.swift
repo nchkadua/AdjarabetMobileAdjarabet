@@ -882,8 +882,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 33 files.
+  /// This `R.file` struct is generated, and contains static references to 34 files.
   struct file {
+    /// Resource file `BHJSlot.zip`.
+    static let bhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "BHJSlot", pathExtension: "zip")
     /// Resource file `FiraGO-Bold.ttf`.
     static let firaGOBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "FiraGO-Bold", pathExtension: "ttf")
     /// Resource file `FiraGO-Book.ttf`.
@@ -940,8 +942,8 @@ struct R: Rswift.Validatable {
     static let pantonNusx3BoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonNusx3-Bold", pathExtension: "otf")
     /// Resource file `PantonNusx3-Regular.otf`.
     static let pantonNusx3RegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PantonNusx3-Regular", pathExtension: "otf")
-    /// Resource file `bundles.zip`.
-    static let bundlesZip = Rswift.FileResource(bundle: R.hostingBundle, name: "bundles", pathExtension: "zip")
+    /// Resource file `RORJSlot.zip`.
+    static let rorjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RORJSlot", pathExtension: "zip")
     /// Resource file `ca.der`.
     static let caDer = Rswift.FileResource(bundle: R.hostingBundle, name: "ca", pathExtension: "der")
     /// Resource file `exitButton.png`.
@@ -950,6 +952,12 @@ struct R: Rswift.Validatable {
     static let incognitoCardMp4 = Rswift.FileResource(bundle: R.hostingBundle, name: "incognito-card", pathExtension: "mp4")
     /// Resource file `localhost.p12`.
     static let localhostP12 = Rswift.FileResource(bundle: R.hostingBundle, name: "localhost", pathExtension: "p12")
+
+    /// `bundle.url(forResource: "BHJSlot", withExtension: "zip")`
+    static func bhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.bhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "FiraGO-Bold", withExtension: "ttf")`
     static func firaGOBoldTtf(_: Void = ()) -> Foundation.URL? {
@@ -1119,9 +1127,9 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "bundles", withExtension: "zip")`
-    static func bundlesZip(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.bundlesZip
+    /// `bundle.url(forResource: "RORJSlot", withExtension: "zip")`
+    static func rorjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rorjSlotZip
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -12107,8 +12115,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12218,8 +12226,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 

@@ -76,7 +76,7 @@ struct DefaultLaunchUrlRepository: LaunchUrlRepository, CoreApiRepository {
             "lang": "en",            // FIXME: fix with correct language
             "gameId": gameId,
             "token": token,
-            "exitUrl": "test.com",   // FIXME
+            "exitUrl": "test.com",   // FIXME: fill with correct exit url
             "applicationType": "Android"
         ]
 

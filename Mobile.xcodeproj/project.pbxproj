@@ -178,10 +178,11 @@
 		C72EA8E425C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */; };
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
+		C744040B26000F58003E554B /* RORJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744040A26000F58003E554B /* RORJSlot.zip */; settings = {ASSET_TAGS = (RORJSlot, ); }; };
+		C744041326001138003E554B /* BHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744041226001138003E554B /* BHJSlot.zip */; settings = {ASSET_TAGS = (BHJSlot, ); }; };
 		C747734E25B5C1030083C845 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C747734D25B5C1030083C845 /* Currency.swift */; };
 		C754317F25F5605900E485DD /* PaymentListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754317E25F5605900E485DD /* PaymentListDTO.swift */; };
 		C754318325F5606D00E485DD /* PaymentListEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754318225F5606D00E485DD /* PaymentListEntities.swift */; };
-		C764266025D57F7A00A11E36 /* bundles.zip in Resources */ = {isa = PBXBuildFile; fileRef = C764265D25D578F000A11E36 /* bundles.zip */; settings = {ASSET_TAGS = (EGT, ); }; };
 		C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766086325CC3FF700A59534 /* CoreApiRepository.swift */; };
 		C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C77206DA25DAAC5E0037D8A0 /* exitButton.png */; };
 		C77206E125DAB0B50037D8A0 /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = C77206E025DAB0B50037D8A0 /* ca.der */; };
@@ -784,10 +785,11 @@
 		C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCaseTests.swift; sourceTree = "<group>"; };
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C7405188256FAA8200EAC904 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
+		C744040A26000F58003E554B /* RORJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RORJSlot.zip; sourceTree = "<group>"; };
+		C744041226001138003E554B /* BHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BHJSlot.zip; sourceTree = "<group>"; };
 		C747734D25B5C1030083C845 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C754317E25F5605900E485DD /* PaymentListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListDTO.swift; sourceTree = "<group>"; };
 		C754318225F5606D00E485DD /* PaymentListEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListEntities.swift; sourceTree = "<group>"; };
-		C764265D25D578F000A11E36 /* bundles.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = bundles.zip; sourceTree = "<group>"; };
 		C766086325CC3FF700A59534 /* CoreApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiRepository.swift; sourceTree = "<group>"; };
 		C77206DA25DAAC5E0037D8A0 /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButton.png; sourceTree = "<group>"; };
 		C77206E025DAB0B50037D8A0 /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
@@ -2954,7 +2956,8 @@
 		CEC9A37625C1A96E00BE853D /* EGT */ = {
 			isa = PBXGroup;
 			children = (
-				C764265D25D578F000A11E36 /* bundles.zip */,
+				C744041226001138003E554B /* BHJSlot.zip */,
+				C744040A26000F58003E554B /* RORJSlot.zip */,
 			);
 			path = EGT;
 			sourceTree = "<group>";
@@ -3892,7 +3895,11 @@
 			isa = PBXProject;
 			attributes = {
 				KnownAssetTags = (
+					BHJSlot,
 					EGT,
+					EGT/BHJSlot,
+					EGT/RORJSlot,
+					RORJSlot,
 				);
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1220;
@@ -3969,10 +3976,12 @@
 				D8EE9CDD2462A9A100E54967 /* PantonNusx3-Regular.otf in Resources */,
 				76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */,
 				CE679FDC2578334B00F2EC1C /* AddCard.storyboard in Resources */,
+				C744041326001138003E554B /* BHJSlot.zip in Resources */,
 				CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */,
 				D83026BC2450B3AC006FF7FB /* PantonAM-ExtraBold.otf in Resources */,
 				7676E5662562E26300234026 /* TransactionHistoryComponentView.xib in Resources */,
 				CE95D00925542035007D2084 /* NotoSansArmenian-Medium.ttf in Resources */,
+				C744040B26000F58003E554B /* RORJSlot.zip in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				CE64EA7A25D1695400438974 /* Game.storyboard in Resources */,
 				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
@@ -3981,7 +3990,6 @@
 				CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */,
 				CE95D00A25542035007D2084 /* NotoSansArmenian-Bold.ttf in Resources */,
 				CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */,
-				C764266025D57F7A00A11E36 /* bundles.zip in Resources */,
 				D83026BE2450B3AC006FF7FB /* PantonAM-Regular.otf in Resources */,
 				CE91C11825702C5700A18255 /* CalendarComponentView.xib in Resources */,
 				C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */,

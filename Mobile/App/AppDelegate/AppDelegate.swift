@@ -82,7 +82,6 @@ public extension DependencyContainer {
         Module { DefaultAccessHistoryCalendarViewModel(params: .init()) as AccessHistoryCalendarViewModel }
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
         Module { DefaultMyCardsViewModel() as MyCardsViewModel }
-        Module { DefaultGameViewModel(params: .init()) as GameViewModel }
     }
 
     static var componentViewModels = DependencyContainer {

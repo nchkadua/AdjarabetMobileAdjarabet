@@ -25,7 +25,7 @@ protocol GameLaunchInteractor {
     // output
     typealias UrlHandler = (Result<GameLaunchUrlResult, Error>) -> Void
     // input
-    func launch(gameId: String, providerId: String, handler: @escaping UrlHandler)
+    func launch(gameId: String, handler: @escaping UrlHandler)
     /// add new functions if needed ...
 }
 
@@ -53,8 +53,8 @@ struct DefaultGameLaunchInteractor: GameLaunchInteractor {
     // Use Case
     let standart: StandartGameLaunchUseCase = DefaultStandartGameLaunchUseCase()
 
-    func launch(gameId: String, providerId: String, handler: @escaping UrlHandler) {
+    func launch(gameId: String, handler: @escaping UrlHandler) {
         // assumption: every game launches in standart way
-        standart.launch(gameId: gameId, providerId: providerId, handler: handler)
+        standart.launch(gameId: gameId, providerId: "11e7b7ca-14f1-b0b0-88fc-005056adb106", handler: handler)
     }
 }

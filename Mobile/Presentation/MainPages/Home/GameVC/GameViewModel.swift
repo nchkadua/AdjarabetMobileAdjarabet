@@ -8,37 +8,42 @@
 
 import RxSwift
 
-public protocol GameViewModel: GameViewModelInput, GameViewModelOutput {
+protocol GameViewModel: GameViewModelInput, GameViewModelOutput { }
+
+struct GameViewModelParams {
+    let game: Game
 }
 
-public struct GameViewModelParams {
-}
-
-public protocol GameViewModelInput: AnyObject {
+protocol GameViewModelInput: AnyObject {
     var params: GameViewModelParams { get set }
     func viewDidLoad()
-    func bedginGameLoadingAnimation()
+    func viewDidDisappear()
+    func beginGameLoadingAnimation()
     func finishGameLoadingAnimation()
 }
 
-public protocol GameViewModelOutput {
+protocol GameViewModelOutput {
     var action: Observable<GameViewModelOutputAction> { get }
     var route: Observable<GameViewModelRoute> { get }
 }
 
-public enum GameViewModelOutputAction {
+enum GameViewModelOutputAction {
     case bindToGameLoader(viewModel: GameLoaderComponentViewModel)
+    case load(url: URL)
+    case show(error: String)
 }
 
-public enum GameViewModelRoute {
-}
+enum GameViewModelRoute { }
 
-public class DefaultGameViewModel {
-    public var params: GameViewModelParams
+class DefaultGameViewModel {
+    var params: GameViewModelParams
     private let actionSubject = PublishSubject<GameViewModelOutputAction>()
     private let routeSubject = PublishSubject<GameViewModelRoute>()
-
-    @Inject(from: .componentViewModels) private var gameLoaderViewModel: GameLoaderComponentViewModel
+    private let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor()
+    @Inject(from: .componentViewModels)
+    private var gameLoaderViewModel: GameLoaderComponentViewModel
+    // state
+    private var result: GameLaunchUrlResult?
 
     public init(params: GameViewModelParams) {
         self.params = params
@@ -46,18 +51,34 @@ public class DefaultGameViewModel {
 }
 
 extension DefaultGameViewModel: GameViewModel {
-    public var action: Observable<GameViewModelOutputAction> { actionSubject.asObserver() }
-    public var route: Observable<GameViewModelRoute> { routeSubject.asObserver() }
+    var action: Observable<GameViewModelOutputAction> { actionSubject.asObserver() }
+    var route: Observable<GameViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    func viewDidLoad() {
         actionSubject.onNext(.bindToGameLoader(viewModel: gameLoaderViewModel))
+        beginGameLoadingAnimation()
+        let gameId = Int(params.game.id) ?? 0 == 0 ? "7400" : "7463" // FIXME
+        interactor.launch(gameId: gameId) { [weak self] result in
+            switch result {
+            case .success(let result):
+                self?.result = result
+                self?.actionSubject.onNext(.load(url: result.url))
+            case .failure(let error):
+                self?.actionSubject.onNext(.show(error: error.localizedDescription))
+            }
+            self?.finishGameLoadingAnimation()
+        }
     }
 
-    public func bedginGameLoadingAnimation() {
+    func viewDidDisappear() {
+        result?.gc.free()
+    }
+
+    func beginGameLoadingAnimation() {
         gameLoaderViewModel.begindAnimation()
     }
 
-    public func finishGameLoadingAnimation() {
+    func finishGameLoadingAnimation() {
         gameLoaderViewModel.finishAnimation()
     }
 }

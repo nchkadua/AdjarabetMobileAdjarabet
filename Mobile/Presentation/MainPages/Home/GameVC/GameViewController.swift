@@ -9,23 +9,24 @@
 import RxSwift
 import WebKit
 
-public class GameViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: GameViewModel
-    public lazy var navigator = GameNavigator(viewController: self)
-
-    @IBOutlet weak var gameLoaderView: GameLoaderComponentView!
-
-    private lazy var webView: WKWebView = {
-        WKWebView()
-    }()
+class GameViewController: ABViewController {
+    var viewModel: GameViewModel!
+    private lazy var navigator = GameNavigator(viewController: self)
+    // Views
+    @IBOutlet private weak var gameLoaderView: GameLoaderComponentView!
+    private lazy var webView = WKWebView()
 
     // MARK: - Lifecycle methods
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -38,6 +39,8 @@ public class GameViewController: ABViewController {
     private func didRecive(action: GameViewModelOutputAction) {
         switch action {
         case .bindToGameLoader(let viewModel): bindToGameLoader(viewModel)
+        case .load(let url): webView.load(URLRequest(url: url))
+        case .show(let error): showAlert(title: error) { [weak self] _ in self?.dismissGameView() }
         }
     }
 
@@ -70,9 +73,8 @@ public class GameViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        setTitle(title: "Game")
+     // setTitle(title: "თამაშის სათაური")
         setGameBackButton(width: 54)
-
         let depositButton = makeGameDepositBarButtonItem()
         navigationItem.rightBarButtonItem = depositButton.barButtonItem
         depositButton.button.addTarget(self, action: #selector(openDeposit), for: .touchUpInside)
@@ -90,6 +92,7 @@ public class GameViewController: ABViewController {
         webView.configuration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webView.configuration.setValue("TRUE", forKey: "allowUniversalAccessFromFileURLs")
         webView.configuration.preferences.javaScriptEnabled = true
+        webView.navigationDelegate = self
 
         view.addSubview(webView)
         webView.pinSafely(to: view)
@@ -100,9 +103,8 @@ extension GameViewController: CommonBarButtonProviding { }
 
 // MARK: - GameViewController Navigation Items
 extension GameViewController {
-    func setGameBackButton(width: CGFloat = 26) {
+    private func setGameBackButton(width: CGFloat = 26) {
         navigationItem.leftBarButtonItems?.removeAll()
-
         let button = UIButton()
         button.setImage(R.image.game.back(), for: .normal)
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
@@ -112,7 +114,25 @@ extension GameViewController {
         navigationItem.leftBarButtonItem = backBarButtonItem
     }
 
-    @objc func dismissGameView() {
+    @objc private func dismissGameView() {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension GameViewController: WKNavigationDelegate {
+    public func webView(_ webView: WKWebView,
+                        decidePolicyFor navigationAction: WKNavigationAction,
+                        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+
+    public func webView(_ webView: WKWebView,
+                        didReceive challenge: URLAuthenticationChallenge,
+                        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Swift.Void) {
+        if let trust = challenge.protectionSpace.serverTrust {
+            completionHandler(.useCredential, URLCredential(trust: trust))
+        } else {
+            completionHandler(.performDefaultHandling, nil)
+        }
     }
 }

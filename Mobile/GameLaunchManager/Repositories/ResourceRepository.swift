@@ -53,12 +53,13 @@ struct DefaultResourceRepository: ResourceRepository {
     }
 
     func extract(identifier: GameIdentifier, handler: @escaping PathHandler) {
-        fileExtractor.extractFileWithName("bundles") { result in
+        let fileName = identifier.description.fileName
+        fileExtractor.extractFileWithName(fileName) { result in
             switch result {
             case .success(let path):
-                handler(.success(path as String))
+                handler(.success(path))
             case .failure(let error):
-                handler(.failure(AdjarabetCoreClientError.coreError(description: error as String)))
+                handler(.failure(error))
             }
         }
     }
