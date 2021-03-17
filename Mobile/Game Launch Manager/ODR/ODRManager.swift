@@ -30,7 +30,7 @@ class ODRManager: NSObject {
 
         resourceRequest.conditionallyBeginAccessingResources(completionHandler: { (resourcesAvailable: Bool) -> Void in
             if resourcesAvailable {
-                DispatchQueue.main.async { completion(.success(())) }
+                completion(.success(()))
             } else {
                 resourceRequest.beginAccessingResources(completionHandler: { error in
                     let result: Result<Void, Error>
@@ -39,7 +39,7 @@ class ODRManager: NSObject {
                     } else {
                         result = .success(())
                     }
-                    DispatchQueue.main.async { completion(result) }
+                    completion(result)
                 })
             }
         })
