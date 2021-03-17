@@ -104,13 +104,11 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - Nuke (8.4.1)
-  - PayCardsRecognizer (1.1.7)
   - PromisesObjC (1.2.11)
   - Protobuf (3.13.0)
   - R.swift (5.3.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
-  - Reveal-SDK (27)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -133,9 +131,7 @@ DEPENDENCIES:
   - Firebase/Performance
   - FSCalendar
   - Nuke (= 8.4.1)
-  - PayCardsRecognizer
   - R.swift
-  - Reveal-SDK
   - RxCocoa
   - RxSwift
   - SharedFramework
@@ -166,12 +162,10 @@ SPEC REPOS:
     - HTTPParserC
     - nanopb
     - Nuke
-    - PayCardsRecognizer
     - PromisesObjC
     - Protobuf
     - R.swift
     - R.swift.Library
-    - Reveal-SDK
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -202,12 +196,10 @@ SPEC CHECKSUMS:
   HTTPParserC: 1ed389f80bb57a5b967d87d5358b8a94418394ee
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
-  PayCardsRecognizer: 2e4d1b2fdd5f1528fb56064a91e1d58a1af7a2db
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   R.swift: 4170fb7161c67be3bc1a847040b79367d69c419f
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
-  Reveal-SDK: 306e2880395ee396f5a8b4c485c3a86dd19866c7
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
@@ -218,6 +210,6 @@ SPEC CHECKSUMS:
   UAParserSwift: dc5e2717debc6e78a40487148d29649a0b311caf
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: d3680a7b09790b33d9eccd352b1a313e9fba6542
+PODFILE CHECKSUM: 85106d719b0ea9170a6ecb51c0aafb48069b6b08
 
 COCOAPODS: 1.10.0

@@ -77,7 +77,6 @@ public extension DependencyContainer {
         Module { DefaultPhoneNumberChangeViewModel(params: .init()) as PhoneNumberChangeViewModel }
         Module { DefaultOTPViewModel(params: .init()) as OTPViewModel }
         Module { DefaultAddCardViewModel(params: .init()) as AddCardViewModel }
-        Module { DefaultCardInfoViewModel(params: .init()) as CardInfoViewModel }
         Module { DefaultSecurityLevelsViewModel() as SecurityLevelsViewModel }
         Module { DefaultAccessHistoryCalendarViewModel(params: .init()) as AccessHistoryCalendarViewModel }
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
@@ -138,7 +137,6 @@ public extension DependencyContainer {
         Module { DefaultPhoneNumberChangeViewControllerFactory() as PhoneNumberChangeViewControllerFactory }
         Module { DefaultAccessHistoryViewControllerFactory() as AccessHistoryViewControllerFactory }
         Module { DefaultAddCardViewControllerFactory() as AddCardViewControllerFactory }
-        Module { DefaultCardInfoViewControllerFactory() as CardInfoViewControllerFactory }
         Module { DefaultSecurityLevelsViewControllerFactory() as SecurityLevelsViewControllerFactory }
         Module { DefaultAccessHistoryCalendarViewControllerFactory() as AccessHistoryCalendarViewControllerFactory }
         Module { DefaultMyCardsViewControllerFactory() as MyCardsViewControllerFactory }

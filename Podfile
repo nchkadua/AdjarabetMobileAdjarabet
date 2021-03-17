@@ -21,10 +21,8 @@ def pods
   pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
   pod 'FSCalendar'
-  pod 'PayCardsRecognizer'
   pod 'UAParserSwift'
   pod 'SwiftKeychainWrapper'
-  pod 'Reveal-SDK', :configurations => ['Debug-Stage', 'Debug-Production']
 end
 
 target 'Mobile' do
