@@ -13,10 +13,10 @@ import Telegraph // Web Server Library
 
  Responsibilities of Standart Game Launch Use Case
  * Assemble all Repositories (Singular API calls, ODR ...) to assemble Final result
-   1. Fetches Service Auth Token for fetching Web URL --- using Signular API call
-   2. Fetches Web URL (suffix of Final URL) --- using Signular API call
-   3. Loads Game Bundle archive --- using Resource Repository (ODR)
-   4. Extracts fetched Game Bundle archive and gets Path of extracted archive (prefix of Final URL) -- using ResourceRepository (File Extractor)
+   1. Loads Game Bundle archive --- using Resource Repository (ODR)
+   2. Extracts fetched Game Bundle archive and gets Path of extracted archive (prefix of Final URL) -- using ResourceRepository (File Extractor)
+   3. Fetches Service Auth Token for fetching Web URL --- using Signular API call
+   4. Fetches Web URL (suffix of Final URL) --- using Signular API call
    5. Assembles Final URL with extracted Game Bundle Path and Web URL
    6. Starts Local Web Server
    7. Returns Final URL and Standart Game Launch Garbage Collector (for freeing Resources and other Clean Up)
@@ -44,26 +44,29 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
             return
         }
 
-        // 1. Fetch Service Auth Token
-        // 2. Fetch Web URL
-        webUrlRepo.url(gameId: gameId, providerId: providerId) { result in
+        // 1. Load Game Bundle archive
+        // 2. Extract fetched Game Bundle archive and get Path of extracted archive
+        resRepo.loadAndExtract(identifier: identifier) { result in
             switch result {
-            case .success(let webUrl):
-                handleWebUrl(webUrl, identifier, handler) // Continue the flow here ...
+            case .success((let root, let gameDir)):
+                handleResPath(root, gameDir, gameId, providerId, identifier, handler) // Continue the flow here ...
             case .failure(let error):
                 handler(.failure(error))
             }
         }
     }
 
-    private func handleWebUrl(_ webUrl: String,
-                              _ identifier: GameIdentifier,
-                              _ handler: @escaping UrlHandler) {
-        // 3. Load Game Bundle archive
-        // 4. Extract fetched Game Bundle archive and get Path of extracted archive
-        resRepo.loadAndExtract(identifier: identifier) { result in
+    private func handleResPath(_ root: String,
+                               _ gameDir: String,
+                               _ gameId: String,
+                               _ providerId: String,
+                               _ identifier: GameIdentifier,
+                               _ handler: @escaping UrlHandler) {
+        // 3. Fetch Service Auth Token
+        // 4. Fetch Web URL
+        webUrlRepo.url(gameId: gameId, providerId: providerId) { result in
             switch result {
-            case .success((let root, let gameDir)):
+            case .success(let webUrl):
                 handlePaths(root, gameDir, identifier, webUrl, handler) // Continue the flow here ...
             case .failure(let error):
                 handler(.failure(error))
