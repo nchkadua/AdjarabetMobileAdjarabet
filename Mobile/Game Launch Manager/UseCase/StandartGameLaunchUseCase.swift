@@ -63,15 +63,16 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
         // 4. Extract fetched Game Bundle archive and get Path of extracted archive
         resRepo.loadAndExtract(identifier: identifier) { result in
             switch result {
-            case .success(let gameBundlepath):
-                handlePaths(gameBundlepath, identifier, webUrl, handler) // Continue the flow here ...
+            case .success((let root, let gameDir)):
+                handlePaths(root, gameDir, identifier, webUrl, handler) // Continue the flow here ...
             case .failure(let error):
                 handler(.failure(error))
             }
         }
     }
 
-    private func handlePaths(_ gameBundlepath: String,
+    private func handlePaths(_ root: String,
+                             _ gameDir: String,
                              _ identifier: GameIdentifier,
                              _ webUrl: String,
                              _ handler: @escaping UrlHandler) {
@@ -82,6 +83,7 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
             return
         }
 
+        let gameBundlepath = "\(root)/\(gameDir)"
         let path = "file://\(gameBundlepath)/"
 
         do {
@@ -103,16 +105,17 @@ struct DefaultStandartGameLaunchUseCase: StandartGameLaunchUseCase {
         webServer.serveDirectory(URL(string: path)!, "")
         try? webServer.start(port: 8080, interface: "localhost")
 
-        handler(.success(.init(url: finalUrl, gc: StandartGameLaunchGarbageCollector(webServer: webServer))))
+        handler(.success(.init(url: finalUrl, gc: StandartGameLaunchGarbageCollector(webServer: webServer, dir: root))))
     }
 }
 
 struct StandartGameLaunchGarbageCollector: GameLaunchGarbageCollector {
     let webServer: Server
+    let dir: String
     let fileExtractor: FileExtractor = .shared
 
     func free() {
         webServer.stop(immediately: true)
-        fileExtractor.clearUnzippedResourcesFolder()
+        fileExtractor.clearUnzippedResourcesFolder(named: dir)
     }
 }
