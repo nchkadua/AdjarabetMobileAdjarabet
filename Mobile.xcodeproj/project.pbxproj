@@ -359,11 +359,6 @@
 		CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */; };
 		CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB06F257915100024D213 /* AgreementComponentView.xib */; };
 		CEBBB0742579151A0024D213 /* AgreementComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */; };
-		CEC54BB425CD67D100154580 /* CardInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC54BAF25CD67D100154580 /* CardInfo.storyboard */; };
-		CEC54BB525CD67D100154580 /* CardInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC54BB025CD67D100154580 /* CardInfoNavigator.swift */; };
-		CEC54BB625CD67D100154580 /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC54BB125CD67D100154580 /* CardInfoViewController.swift */; };
-		CEC54BB725CD67D100154580 /* CardInfoViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC54BB225CD67D100154580 /* CardInfoViewControllerFactory.swift */; };
-		CEC54BB825CD67D100154580 /* CardInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC54BB325CD67D100154580 /* CardInfoViewModel.swift */; };
 		CEC9A34525C0970C00BE853D /* ODRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A34425C0970C00BE853D /* ODRManager.swift */; };
 		CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */; };
 		CECCE37E254EE7D4005CC660 /* WithdrawTermsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECCE37D254EE7D4005CC660 /* WithdrawTermsView.xib */; };
@@ -954,11 +949,6 @@
 		CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentView.swift; sourceTree = "<group>"; };
 		CEBBB06F257915100024D213 /* AgreementComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementComponentView.xib; sourceTree = "<group>"; };
 		CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentViewModel.swift; sourceTree = "<group>"; };
-		CEC54BAF25CD67D100154580 /* CardInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardInfo.storyboard; sourceTree = "<group>"; };
-		CEC54BB025CD67D100154580 /* CardInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoNavigator.swift; sourceTree = "<group>"; };
-		CEC54BB125CD67D100154580 /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
-		CEC54BB225CD67D100154580 /* CardInfoViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewControllerFactory.swift; sourceTree = "<group>"; };
-		CEC54BB325CD67D100154580 /* CardInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewModel.swift; sourceTree = "<group>"; };
 		CEC9A34425C0970C00BE853D /* ODRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODRManager.swift; sourceTree = "<group>"; };
 		CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtractor.swift; sourceTree = "<group>"; };
 		CECCE37D254EE7D4005CC660 /* WithdrawTermsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawTermsView.xib; sourceTree = "<group>"; };
@@ -2749,7 +2739,6 @@
 		CE679FD62578332200F2EC1C /* CardsManagement */ = {
 			isa = PBXGroup;
 			children = (
-				CEC54BAE25CD66A000154580 /* CardInfo */,
 				CE29FC302578EB7700402D0D /* AddCard */,
 			);
 			path = CardsManagement;
@@ -2946,18 +2935,6 @@
 				CEBBB06F257915100024D213 /* AgreementComponentView.xib */,
 			);
 			path = Agreement;
-			sourceTree = "<group>";
-		};
-		CEC54BAE25CD66A000154580 /* CardInfo */ = {
-			isa = PBXGroup;
-			children = (
-				CEC54BAF25CD67D100154580 /* CardInfo.storyboard */,
-				CEC54BB025CD67D100154580 /* CardInfoNavigator.swift */,
-				CEC54BB125CD67D100154580 /* CardInfoViewController.swift */,
-				CEC54BB225CD67D100154580 /* CardInfoViewControllerFactory.swift */,
-				CEC54BB325CD67D100154580 /* CardInfoViewModel.swift */,
-			);
-			path = CardInfo;
 			sourceTree = "<group>";
 		};
 		CEC9A34225C096E800BE853D /* Game Launch Manager */ = {
@@ -4060,7 +4037,6 @@
 				CE91C0E7257028DC00A18255 /* TransactionsFilter.storyboard in Resources */,
 				CE55ECFE25265CF1003E168F /* Profile.storyboard in Resources */,
 				CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */,
-				CEC54BB425CD67D100154580 /* CardInfo.storyboard in Resources */,
 				7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */,
@@ -4325,7 +4301,6 @@
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */,
 				CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */,
-				CEC54BB725CD67D100154580 /* CardInfoViewControllerFactory.swift in Sources */,
 				C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */,
@@ -4339,7 +4314,6 @@
 				7644B5F12563A72B006778B2 /* TransactionHistoryTableViewCell.swift in Sources */,
 				76DCF68925B815AC00150EE1 /* MyCardsCreditCard.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
-				CEC54BB825CD67D100154580 /* CardInfoViewModel.swift in Sources */,
 				76BDF4602576043A007B27A7 /* AccountParametersViewModel.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
 				7665D963257E5CA600E5B35F /* AccessHistoryViewModel.swift in Sources */,
@@ -4511,7 +4485,6 @@
 				CEE356CA252B644300A0A25C /* ProfileInfoTableViewCellDataProvider.swift in Sources */,
 				CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */,
 				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
-				CEC54BB525CD67D100154580 /* CardInfoNavigator.swift in Sources */,
 				D8390E7D246C1B5D00EF8CB5 /* OTPViewModel.swift in Sources */,
 				D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */,
 				CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */,
@@ -4573,7 +4546,6 @@
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				76BDF47025760512007B27A7 /* AccountParametersComponentView.swift in Sources */,
 				D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */,
-				CEC54BB625CD67D100154580 /* CardInfoViewController.swift in Sources */,
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
 				C701C71625C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
