@@ -14,7 +14,7 @@ public class SportsViewController: UIViewController {
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     var result: GameLaunchUrlResult?
-    let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor()
+    let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor.default
 
     private lazy var webView = WKWebView()
 

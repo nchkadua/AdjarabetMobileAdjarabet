@@ -25,7 +25,7 @@ protocol ResourceRepository {
      Returns Path of extracted archive (prefix of Final URL)
      */
     // output
-    typealias PathHandler = (Result<String, Error>) -> Void
+    typealias PathHandler = (Result<(String, String), Error>) -> Void
     // input
     func extract(identifier: GameIdentifier, handler: @escaping PathHandler)
 

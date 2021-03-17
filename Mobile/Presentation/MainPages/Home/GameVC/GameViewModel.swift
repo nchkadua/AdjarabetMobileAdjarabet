@@ -39,7 +39,7 @@ class DefaultGameViewModel {
     var params: GameViewModelParams
     private let actionSubject = PublishSubject<GameViewModelOutputAction>()
     private let routeSubject = PublishSubject<GameViewModelRoute>()
-    private let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor()
+    private let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor.default
     @Inject(from: .componentViewModels)
     private var gameLoaderViewModel: GameLoaderComponentViewModel
     // state
