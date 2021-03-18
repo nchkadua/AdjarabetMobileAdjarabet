@@ -161,5 +161,6 @@ public extension DependencyContainer {
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }
+        Module { UFCWithdrawUseCase() as UFCWithdrawUseCase }
     }
 }

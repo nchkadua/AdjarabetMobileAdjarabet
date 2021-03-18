@@ -7,3 +7,35 @@
 //
 
 import Foundation
+
+struct UFCWithdrawUseCase {
+    @Inject(from: .repositories) private var withdrawRepo: UFCWithdrawRepository
+    @Inject(from: .factories) private var paramsFactory: UFCTransactionParamsFactory
+    private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
+
+    typealias InitWithdrawHandler = (Result<UFCInitWithdrawEntity, Error>) -> Void
+    func execute(serviceType: UFCServiceType,
+                 amount: Double,
+                 accountId: Int64? = nil,
+                 _ handler: @escaping InitWithdrawHandler) {
+        let parameters = paramsFactory.make(serviceType: serviceType,
+                                            amount: amount,
+                                            accountId: accountId)
+
+        withdrawRepo.initWithdraw(with: parameters, handler)
+    }
+
+    typealias WithdrawHandler = (Result<Void, Error>) -> Void
+    func execute(serviceType: UFCServiceType,
+                 amount: Double,
+                 accountId: Int64? = nil,
+                 session: String,
+                 _ handler: @escaping WithdrawHandler) {
+        let parameters = paramsFactory.make(serviceType: serviceType,
+                                            amount: amount,
+                                            accountId: accountId,
+                                            session: session)
+
+        withdrawRepo.withdraw(with: parameters, handler)
+    }
+}

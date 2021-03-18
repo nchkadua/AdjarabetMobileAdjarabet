@@ -12,8 +12,6 @@ public class WithdrawViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: WithdrawViewModel
     public lazy var navigator = WithdrawNavigator(viewController: self)
 
-    @Inject(from: .repositories) private var repo: TBCRegularPaymentsRepository
-
     // MARK: Outlets
     @IBOutlet private weak var titleLabelComponentView: LabelComponentView!
     @IBOutlet private weak var cardNumberInputView: ABInputView!
@@ -21,6 +19,9 @@ public class WithdrawViewController: ABViewController {
     @IBOutlet private weak var commissionLabelComponentView: LabelComponentView!
     @IBOutlet private weak var totalAmountLabelComponentView: LabelComponentView!
     @IBOutlet private weak var proceedButton: ABButton!
+
+    // FIXME: Temporary
+    var count: Bool = true
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -48,22 +49,16 @@ public class WithdrawViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-
-        viewModel.route.subscribe(onNext: { [weak self] route in
-            self?.didRecive(route: route)
-        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: WithdrawViewModelOutputAction) {
         switch action {
         case .setupWithLabel(let label): setupLabel(with: label)
         case .setupPaymentMethods(let payment): setupPaymentMethods(with: payment)
-        case .updateCommission(let commission): commissionLabelComponentView.change(value: "\(commission) ₾")
         case .updateTotalAmount(let totalAmount): totalAmountLabelComponentView.change(value: "\(totalAmount) ₾")
+        case .updateSumWith(let fee): commissionLabelComponentView.change(value: "\(fee) ₾")
+        case .showAlert(let message): showAlert(title: message)
         }
-    }
-
-    private func didRecive(route: WithdrawViewModelRoute) {
     }
 
     private func setupLabel(with label: LabelComponentViewModel) {
@@ -122,7 +117,12 @@ public class WithdrawViewController: ABViewController {
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
-        viewModel.textDidChange(to: textField.text)
+        // FIXME: Bounce time
+        if !count {
+            return
+        }
+        viewModel.handleTextDidChange(amount: amount2Double() ?? 0.0)
+        count = false
     }
 
     // MARK: Configuration
@@ -140,25 +140,17 @@ public class WithdrawViewController: ABViewController {
 
     // MARK: Action methods
     @objc private func proceedDidTap() {
-        repo.initWithdraw(params: .init(amount: 10)) { result in
-            switch result {
-            case .success(let entity): self.withdraw(with: entity.fee, session: entity.session)
-            case .failure(let error): print("Payment.Withdraw: ", error)
-            }
-        }
+        viewModel.proceedTapped(amount: amount2Double() ?? 0.0)
     }
 
-    // Temporary
-    private func withdraw(with fee: Double, session: String) {
-        print("Payment.Withdraw: ", fee)
-        repo.withdraw(params: .init(amount: 10, accountId: 8310929, session: session)) { result in
-            switch result {
-            case .success:
-                print("Payment.Withdraw: Success")
-            case .failure(let error):
-                print("Payment.Withdraw: ", error)
-                self.showAlert(title: "\(error)")
-            }
+    // FIXME: Common with addCards
+    private func amount2Double() -> Double? {
+        guard let text   = amountInputView.mainTextField.text,
+              let number = NumberFormatter().number(from: text),
+              let result = Double(exactly: number)
+        else {
+            return nil
         }
+        return result
     }
 }
