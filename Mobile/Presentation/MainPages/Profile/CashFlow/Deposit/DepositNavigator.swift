@@ -20,4 +20,14 @@ public class DepositNavigator: Navigator {
 
     public func navigate(to destination: Destination, animated animate: Bool) {
     }
+
+    public func viewController(by paymentMethodType: PaymentMethodType) -> UIViewController? {
+        switch paymentMethodType {
+        case .tbcVip: return visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)
+        case .tbcRegular: return visaViewControllerFactory.make(params: .init(serviceType: .regular)).wrap(in: ABNavigationController.self)
+        case .eMoney: return emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self)
+        default:
+            return nil
+        }
+    }
 }

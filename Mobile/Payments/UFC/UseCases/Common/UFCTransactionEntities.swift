@@ -49,3 +49,36 @@ struct UFCTransactionParamsFactory {
                      session: session)
     }
 }
+
+// MARK: - UFCServiceType Constructor
+extension UFCServiceType {
+    init?(paymentMethodType: PaymentMethodType) {
+        switch paymentMethodType {
+        case .tbcVip: self = .vip
+        case .tbcRegular: self = .regular
+        default:
+            return nil
+        }
+    }
+}
+
+// MARK: - Payment Methods
+public enum PaymentMethodType {
+    case tbcVip
+    case tbcRegular
+    case eMoney
+    case aPay
+}
+
+public extension PaymentMethodType {
+    init?(flowId: String) {
+        switch flowId {
+        case "deposite_tbc_ufc_vip": self = .tbcVip
+        case "deposite_tbc_ufc_regular": self = .tbcRegular
+        case "deposite_emoney": self = .eMoney
+        case "deposit_applepay": self = .aPay
+        default:
+            return nil
+        }
+    }
+}
