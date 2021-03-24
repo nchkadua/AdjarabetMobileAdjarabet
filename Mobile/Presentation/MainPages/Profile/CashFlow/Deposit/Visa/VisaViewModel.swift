@@ -81,10 +81,10 @@ extension DefaultVisaViewModel: VisaViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let list):
-                self.accounts = list                      // 2. update accounts
-                if self.accounts.isEmpty {                // if user has no accounts:
+                self.accounts = list                            // 2. update accounts
+                if self.accounts.isEmpty {                      // if user has no accounts:
                     self.notify(.showView(ofType: .addAccount)) // 3. notify view to show Add Account view
-                } else {                                  // else:
+                } else {                                        // else:
                     self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
                     // create account list for view
                     var viewAccounts = [R.string.localization.deposit_visa_choose_account.localized()] // first element is "Choose Account" placeholder
