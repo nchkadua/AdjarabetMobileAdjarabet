@@ -11,7 +11,7 @@ import Foundation
 /**
  Service Types of UFC
  */
-enum UFCServiceType {
+public enum UFCServiceType {
     case regular
     case vip
 

@@ -27,7 +27,8 @@ public protocol DepositViewModelOutput {
 public enum DepositViewModelOutputAction {
     case set(totalBalance: Double)
     case bindToGridViewModel(viewModel: PaymentMethodGridComponentViewModel)
-    case didSelect(indexPath: IndexPath)
+    case didLoadPaymentMethods
+    case showMessage(message: String)
 }
 
 public enum DepositViewModelRoute {
@@ -65,15 +66,8 @@ extension DefaultDepositViewModel: DepositViewModel {
                 }
 
                 self?.paymentGridComponentViewModel.reloadCollectionView(with: viewModels)
-                self?.paymentGridComponentViewModel.action.subscribe(onNext: { [weak self] action in
-                    switch action {
-                    case .didSelectPaymentMethod(_, let indexPath): self?.actionSubject.onNext(.didSelect(indexPath: indexPath))
-                    default:
-                        break
-                    }
-                }).disposed(by: self?.disposeBag ?? DisposeBag())
-            case .failure(let error):
-                print("PaymentList.List:", error) // FIXME
+                self?.actionSubject.onNext(.didLoadPaymentMethods)
+            case .failure(let error): self?.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
     }

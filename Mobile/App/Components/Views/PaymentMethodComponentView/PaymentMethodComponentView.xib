@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentMethodComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
                 <outlet property="iconImageView" destination="ZLa-Ar-SD2" id="jWp-4Q-Xch"/>
+                <outlet property="loaderView" destination="OVA-D4-G7u" id="MAz-RH-jqp"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
             </connections>
         </placeholder>
@@ -22,13 +23,21 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLa-Ar-SD2">
                     <rect key="frame" x="8" y="8" width="94" height="24"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVA-D4-G7u" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="110" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
+                <constraint firstItem="OVA-D4-G7u" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="45h-lI-Ey9"/>
                 <constraint firstItem="ZLa-Ar-SD2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="9U1-kQ-pRr"/>
                 <constraint firstAttribute="bottom" secondItem="ZLa-Ar-SD2" secondAttribute="bottom" constant="8" id="B4n-Q6-1gu"/>
+                <constraint firstAttribute="bottom" secondItem="OVA-D4-G7u" secondAttribute="bottom" id="Enb-GK-4Lf"/>
                 <constraint firstAttribute="trailing" secondItem="ZLa-Ar-SD2" secondAttribute="trailing" constant="8" id="I4R-e5-RQJ"/>
                 <constraint firstItem="ZLa-Ar-SD2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="PFx-aC-fQr"/>
+                <constraint firstItem="OVA-D4-G7u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lAs-nM-9eH"/>
+                <constraint firstAttribute="trailing" secondItem="OVA-D4-G7u" secondAttribute="trailing" id="nTU-0D-ASg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="60.869565217391312" y="107.8125"/>

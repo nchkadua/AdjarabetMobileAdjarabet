@@ -10,6 +10,8 @@ struct EmoneyNavigator {
     @Inject(from: .factories) private var webViewControllerFactory: WebViewControllerFactory
     private weak var viewController: UIViewController?
 
+    @Inject(from: .factories) private var f: VisaViewControllerFactory
+
     init(viewController: UIViewController) {
         self.viewController = viewController
     }

@@ -37,6 +37,7 @@ public enum PaymentMethodComponentViewModelOutputAction {
 public class DefaultPaymentMethodComponentViewModel {
     public var params: PaymentMethodComponentViewModelParams
     private let actionSubject = PublishSubject<PaymentMethodComponentViewModelOutputAction>()
+
     public init(params: PaymentMethodComponentViewModelParams) {
         self.params = params
     }

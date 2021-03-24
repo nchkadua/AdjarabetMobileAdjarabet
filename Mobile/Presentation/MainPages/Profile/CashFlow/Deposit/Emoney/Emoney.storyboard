@@ -17,18 +17,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfg-S1-WVz">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qk-vO-mTQ" customClass="EmoneyButton" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="16" y="186" width="382" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="IHf-Ue-qdd"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="navigateTapped" destination="gAa-dD-eZu" eventType="touchUpInside" id="X2g-JH-lhs"/>
+                                    <action selector="navigateTapped" destination="gAa-dD-eZu" eventType="touchUpInside" id="18R-Xu-GbE"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcX-Km-y0a" customClass="EmoneyInstructionsView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="16" y="255" width="382" height="265"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="265" id="it0-gT-Pbk"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNL-nU-zRe">
+                                <rect key="frame" x="16" y="62" width="382" height="104"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bP-AZ-Zdx">
+                                        <rect key="frame" x="21" y="15" width="340" height="74"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="DZh-QH-GqH"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="15" left="21" bottom="15" right="21"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HcX-Km-y0a" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="16" id="BwC-1m-G72"/>
+                            <constraint firstItem="DNL-nU-zRe" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="18" id="Jqz-5U-qrQ"/>
+                            <constraint firstItem="DNL-nU-zRe" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="16" id="Rcb-hk-bQB"/>
+                            <constraint firstItem="8Qk-vO-mTQ" firstAttribute="top" secondItem="DNL-nU-zRe" secondAttribute="bottom" constant="20" id="TOT-2t-9Om"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="HcX-Km-y0a" secondAttribute="trailing" constant="16" id="dt6-lr-W1V"/>
+                            <constraint firstItem="8Qk-vO-mTQ" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="16" id="fdG-UF-cnm"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="DNL-nU-zRe" secondAttribute="trailing" constant="16" id="h3D-wz-omp"/>
+                            <constraint firstItem="HcX-Km-y0a" firstAttribute="top" secondItem="8Qk-vO-mTQ" secondAttribute="bottom" constant="15" id="irT-2d-4dT"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="8Qk-vO-mTQ" secondAttribute="trailing" constant="16" id="rtr-F1-QFM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emoneyButton" destination="8Qk-vO-mTQ" id="1Na-vE-kZR"/>
+                        <outlet property="instructionsView" destination="HcX-Km-y0a" id="Dnl-wb-iQp"/>
+                        <outlet property="titleLabel" destination="7bP-AZ-Zdx" id="r0E-aL-H8Y"/>
+                        <outlet property="titleStackView" destination="DNL-nU-zRe" id="zau-8k-F7R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

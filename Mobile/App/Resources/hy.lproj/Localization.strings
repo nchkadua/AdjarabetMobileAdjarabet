@@ -148,6 +148,13 @@
 "deposit_title" = "თანხის შევსება";
 "deposit_balance_title" = "ბალანსი";
 
+"emoney_title" = "გადახდის დასასრულებლად თქვენ გადამისამართდებით პროვაიდერის ვებ-გვერდზე";
+"emoney_goto" = "გადასვლა";
+"emoney_instruction_title" = "გატანის ინსტრუქცია";
+"emoney_rule1" = "შეიყვანეთ eMoney-ს მომხმარებლის სახელი";
+"emoney_rule2" = "შეიყვანეთ eMoney-ს ვებ გვერდზე შესასვლელი პაროლი";
+"emoney_rule3" = "შეიყვანეთ მითითებული უსაფრთხოების კოდი და დააჭირეთ 'გადახდას'";
+
 /* Withdraw */
 "withdraw_amount_title" = "თანხა";
 "withdraw_card_title" = "ბარათი";
