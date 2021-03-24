@@ -145,6 +145,9 @@
 "deposit_description_card" = "მონიშნე სასურველი დამახსოვრებული ბარათი";
 "deposit_description_proceed" = "დააჭირეთ ღილაკს გადახდა";
 
+"deposit_title" = "თანხის შევსება";
+"deposit_balance_title" = "ბალანსი";
+
 /* Withdraw */
 "withdraw_amount_title" = "თანხა";
 "withdraw_card_title" = "ბარათი";
@@ -268,6 +271,13 @@
 
 /* Components */
 "component_date_header_today" = "დღეს განხორციელებული";
+
+/* Deposit.Visa */
+"deposit_visa_choose_account" = "Choose Account";
+"deposit_visa_amount" = "Amount";
+"deposit_visa_wrong_format_amount" = "Amount specified in wrong format";
+"deposit_visa_negative_amount" = "Please, enter possitive amount";
+"deposit_visa_some_field_is_not_specified" = "Please, enter all required fields to make transaction";
 
 /* Countries */
 "georgia" = "Georgia";

@@ -10,7 +10,8 @@ public class ProfileNavigator: Navigator {
     private weak var viewController: UIViewController?
     @Inject(from: .factories) public var loginViewControllerFactory: LoginViewControllerFactory
     @Inject(from: .factories) public var accountInfoViewControllerFactory: AccountInfoViewControllerFactory
-    @Inject(from: .factories) public var cashFlowViewControllerFactory: CashFlowViewControllerFactory
+    @Inject(from: .factories) public var depositViewControllerFactory: DepositViewControllerFactory
+    @Inject(from: .factories) public var withdrawViewControllerFactory: WithdrawViewControllerFactory
     @Inject(from: .factories) public var transactionHistoryViewControllerFactory: TransactionsViewControllerFactory
     @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
     @Inject(from: .factories) public var p2pTrasferViewControllerFactory: P2PTransferViewControllerFactory
@@ -37,8 +38,8 @@ public class ProfileNavigator: Navigator {
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
-        case .deposit: navigateToCashFlow(animate: animate, initialPageIndex: 0)
-        case .withdraw: navigateToCashFlow(animate: animate, initialPageIndex: 1)
+        case .deposit: navigateToDeposit(animate: animate)
+        case .withdraw: navigateToWithdraw(animate: animate)
         case .transactionHistory: navigateToTransactionHistory(animate: animate)
         case .myCards: navigateToMyCards(animate: animate)
         case .biometryParameters: navigateToBiometricSettings(animate: animate)
@@ -52,8 +53,30 @@ public class ProfileNavigator: Navigator {
     }
 
     // MARK: Navigations
-    private func navigateToCashFlow(animate: Bool, initialPageIndex: Int) {
-        let vc = cashFlowViewControllerFactory.make(params: CashFlowViewModelParams(initialPageIndex: initialPageIndex))
+    private func navigateToDeposit(animate: Bool) {
+        let vc = depositViewControllerFactory.make(params: .init())
+        viewController?.navigationController?.present(vc, animated: animate, completion: nil)
+        /*
+        // TODO: Nika move to the appropriate place
+        let factory: EmoneyViewControllerFactory = DefaultEmoneyViewControllerFactory()
+        let vc = factory.make()
+        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
+        navc.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navc, animated: true, completion: nil)
+        */
+        /*
+        // TODO: Nika move to the appropriate place
+        let factory: VisaViewControllerFactory = DefaultVisaViewControllerFactory()
+        let serviceType: UFCServiceType = .regular
+        let vc = factory.make(params: .init(serviceType: serviceType))
+        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
+        navc.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navc, animated: true, completion: nil)
+        */
+    }
+
+    private func navigateToWithdraw(animate: Bool) {
+        let vc = withdrawViewControllerFactory.make()
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 

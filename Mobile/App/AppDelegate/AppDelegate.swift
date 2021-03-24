@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import SDWebImageSVGCoder
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let services: AppDelegateServices
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        services.application(application, didFinishLaunchingWithOptions: launchOptions)
+        //SVG
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+
+        return services.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     // MARK: UISceneSession Lifecycle
@@ -61,8 +66,7 @@ public extension DependencyContainer {
         Module { DefaultNotificationsViewModel() as NotificationsViewModel }
         Module { DefaultProfileViewModel() as ProfileViewModel }
         Module { DefaultAccountInfoViewModel() as AccountInfoViewModel }
-        Module { DefaultCashFlowViewModel() as CashFlowViewModel }
-        Module { DefaultDepositViewModel() as DepositViewModel }
+        Module { DefaultDepositViewModel(params: .init()) as DepositViewModel }
         Module { DefaultWithdrawViewModel() as WithdrawViewModel }
         Module { DefaultTransactionsViewModel() as TransactionsViewModel }
         Module { DefaultBiometricSettingsViewModel() as BiometricSettingsViewModel }
@@ -81,14 +85,15 @@ public extension DependencyContainer {
         Module { DefaultAccessHistoryCalendarViewModel(params: .init()) as AccessHistoryCalendarViewModel }
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
         Module { DefaultMyCardsViewModel() as MyCardsViewModel }
+        Module { DefaultEmoneyViewModel() as EmoneyViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
         Module { DefaultCalendarComponentViewModel() as CalendarComponentViewModel }
-        Module { DefaultCashFlowTabComponentViewModel() as CashFlowTabComponentViewModel }
         Module { DefaultMinAmountComponentViewModel() as MinAmountComponentViewModel }
         Module { DefaultAgreementComponentViewModel() as AgreementComponentViewModel }
         Module { DefaultGameLoaderComponentViewModel() as GameLoaderComponentViewModel }
+        Module { DefaultPaymentMethodGridComponentViewModel(params: .init(paymentMethods: [])) as PaymentMethodGridComponentViewModel }
     }
 
     static var repositories = DependencyContainer {
@@ -121,7 +126,6 @@ public extension DependencyContainer {
         Module { DefaultProfileFactory() as ProfileFactory }
         Module { DefaultNotificationContentFactory() as NotificationContentFactory }
         Module { DefaultAccountInfoViewControllerFactory() as AccountInfoViewControllerFactory }
-        Module { DefaultCashFlowViewControllerFactory() as CashFlowViewControllerFactory }
         Module { DefaultDepositViewControllerFactory() as DepositViewControllerFactory }
         Module { DefaultWithdrawViewControllerFactory() as WithdrawViewControllerFactory }
         Module { DefaultTransactionsViewControllerFactory() as TransactionsViewControllerFactory }
@@ -158,6 +162,7 @@ public extension DependencyContainer {
         Module { DefaultAccessListUseCaseUseCase() as DisplayAccessListUseCase }
         Module { DefaultPaymentAccountUseCase() as PaymentAccountUseCase }
         Module { DefaultLogoutUseCase() as LogoutUseCase }
+        Module { DefaultAmountFormatterUseCase() as AmountFormatterUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }

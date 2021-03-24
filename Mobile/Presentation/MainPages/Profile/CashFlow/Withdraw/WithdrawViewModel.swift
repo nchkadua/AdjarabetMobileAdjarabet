@@ -24,7 +24,6 @@ public protocol WithdrawViewModelOutput {
 
 public enum WithdrawViewModelOutputAction {
     case setupWithLabel(_ label: LabelComponentViewModel)
-    case setupPaymentMethods(_ payment: Payment)
     case updateTotalAmount(_ value: String)
     case updateSumWith(_ fee: Double)
     case showAlert(_ message: String)
@@ -48,8 +47,6 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
     public var route: Observable<WithdrawViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        actionSubject.onNext(.setupWithLabel(LabelComponentViewModel(title: R.string.localization.balance_title(), value: "\(userBalanceService.balance?.formattedBalance ?? "0.0") ₾"))) // FIXME: Currency
-        actionSubject.onNext(.setupPaymentMethods(Payment()))
     }
 
     public func handleTextDidChange(amount: Double) {

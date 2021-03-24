@@ -8,6 +8,7 @@
 
 import Foundation
 
+// FIXME: Make accountVisual (and all other fields) required
 public struct PaymentAccountEntity: MyCardable {
     public let id: Int64?
     public let status: Status?

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaymentListEntity {
+public struct PaymentListEntity {
     let elements: [ElementEntity]
 
     struct ElementEntity {
@@ -19,7 +19,7 @@ struct PaymentListEntity {
     }
 }
 
-struct PaymentMethodEntity {
+public struct PaymentMethodEntity {
     let methodType: String
     let flowId: String
     let iconUrl: String

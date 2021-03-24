@@ -54,7 +54,6 @@ public class WithdrawViewController: ABViewController {
     private func didRecive(action: WithdrawViewModelOutputAction) {
         switch action {
         case .setupWithLabel(let label): setupLabel(with: label)
-        case .setupPaymentMethods(let payment): setupPaymentMethods(with: payment)
         case .updateTotalAmount(let totalAmount): totalAmountLabelComponentView.change(value: "\(totalAmount) ₾")
         case .updateSumWith(let fee): commissionLabelComponentView.change(value: "\(fee) ₾")
         case .showAlert(let message): showAlert(title: message)
@@ -63,11 +62,6 @@ public class WithdrawViewController: ABViewController {
 
     private func setupLabel(with label: LabelComponentViewModel) {
         titleLabelComponentView.set(label: label)
-    }
-
-    private func setupPaymentMethods(with payment: Payment) {
-        cardNumberInputView.setupPickerView(withItems: payment.cards)
-        cardNumberInputView.setDefaultValue(payment.cards.first ?? "")
     }
 
     // MARK: Setup methods

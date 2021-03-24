@@ -2,23 +2,25 @@
 //  DepositViewController.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 10/28/20.
-//  Copyright © 2020 Adjarabet. All rights reserved.
+//  Created by Nika Chkadua on 3/22/21.
+//  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import RxSwift
 
-public class DepositViewController: ABViewController {
-    @Inject(from: .viewModels) private var viewModel: DepositViewModel
+public class DepositViewController: UIViewController {
+    @Inject(from: .viewModels) public var viewModel: DepositViewModel
     public lazy var navigator = DepositNavigator(viewController: self)
+    private let disposeBag = DisposeBag()
 
-    // MARK: Outlets
-    @IBOutlet private weak var labelComponentView: LabelComponentView!
-    @IBOutlet private weak var paymentMethodInputView: ABInputView!
-    @IBOutlet private weak var amountInputView: ABInputView!
-    @IBOutlet private weak var cardNumberInputView: ABInputView!
-    @IBOutlet private weak var addCardButton: UIButton!
-    @IBOutlet private weak var proceedButton: ABButton!
+    @IBOutlet private weak var iconImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var balanceTitleLabel: UILabel!
+    @IBOutlet private weak var balanceLabel: UILabel!
+
+    @IBOutlet private weak var paymentGridComponentView: PaymentMethodGridComponentView!
+    @IBOutlet private weak var childrenVCFrameView: UIView!
+    private lazy var appPageViewController: ABPageViewController = ABPageViewController(transitionStyle: .scroll)
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -29,131 +31,73 @@ public class DepositViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.paymentMethodInputView.mainTextField.becomeFirstResponder()
-        }
-    }
-
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: DepositViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-
-        viewModel.route.subscribe(onNext: { [weak self] route in
-            self?.didRecive(route: route)
-        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: DepositViewModelOutputAction) {
         switch action {
-        case .setupWithLabel(let label): setupLabel(with: label)
-        case .setupPaymentMethods(let methods): setupPaymentMethods(with: methods)
-        case .setupPaymentCards(let cards): setupPaymentCards(with: cards)
+        case .set(let totalBalance): set(totalBalance)
+        case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
+        case .didSelect(let indexPath): print("indexPath ", indexPath)
         }
-    }
-
-    private func didRecive(route: DepositViewModelRoute) {
-        switch route {
-        case .webView(let params):
-            navigator.navigate(to: .webView(params: params), animated: true)
-        case .addCard:
-            navigator.navigate(to: .addCard, animated: true)
-        }
-    }
-
-    private func setupLabel(with label: LabelComponentViewModel) {
-        labelComponentView.set(label: label)
-    }
-
-    private func setupPaymentMethods(with payment: PaymentMethods) {
-        paymentMethodInputView.setupPickerView(withItems: payment.methods)
-        paymentMethodInputView.setDefaultValue(payment.methods.first ?? "")
-    }
-
-    private func setupPaymentCards(with payment: PaymentCards) {
-        cardNumberInputView.setupPickerView(withItems: payment.cards)
-        cardNumberInputView.setDefaultValue(payment.cards.first ?? "")
     }
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .secondaryBg())
-        setupKeyboard()
-        setupButtons()
-        setupInputViews()
+        setBaseBackgorundColor()
+        setupPageViewController()
+        setupLabels()
+        setupImageView()
     }
 
-    private func setupButtons() {
-        addCardButton.setBackgorundColor(to: .querternaryFill())
-        addCardButton.layer.cornerRadius = 8
-        addCardButton.setImage(R.image.deposit.addCard(), for: .normal)
-        addCardButton.addTarget(self, action: #selector(addCardDidTap), for: .touchUpInside)
+    private func setupPageViewController() {
+        add(child: appPageViewController)
+        appPageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        appPageViewController.view.pin(to: childrenVCFrameView)
 
-        proceedButton.setStyle(to: .primary(state: .disabled, size: .large))
-        proceedButton.setTitleWithoutAnimation(R.string.localization.deposit_proceed_button_title(), for: .normal)
-        proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
-
-        amountInputView.mainTextField.rx.controlEvent([.editingChanged])
-            .asObservable().subscribe({ [weak self] _ in
-                self?.updateProceedButton()
-            }).disposed(by: disposeBag)
+        appPageViewController.orderedViewControllers = []
     }
 
-    private func setupInputViews() {
-        paymentMethodInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
-        paymentMethodInputView.setPlaceholder(text: R.string.localization.deposit_payment_method_title())
-
-        amountInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
-        amountInputView.mainTextField.keyboardType = .decimalPad
-        amountInputView.setPlaceholder(text: R.string.localization.deposit_amount_title())
-        amountInputView.formatter = AmountFormatter()
-
-        cardNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
-        cardNumberInputView.setPlaceholder(text: R.string.localization.deposit_card_title())
+    private func setupImageView() {
+        iconImageView.image = R.image.deposit.icon()
     }
 
-    // MARK: Configuration
-    private func updateProceedButton() {
-        var isEnabled = true
-        if !(cardNumberInputView.mainTextField.text?.isEmpty ?? false) && !(amountInputView.mainTextField.text?.isEmpty ?? false) &&
-            !(paymentMethodInputView.mainTextField.text?.isEmpty ?? false) {
-            isEnabled = true
-        } else {
-            isEnabled = false
-        }
+    private func setupLabels() {
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
+        titleLabel.text = R.string.localization.deposit_title.localized().uppercased()
 
-        proceedButton.isUserInteractionEnabled = isEnabled
-        proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+        balanceTitleLabel.setTextColor(to: .secondaryText())
+        balanceTitleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+        balanceTitleLabel.text = R.string.localization.deposit_balance_title.localized()
+
+        balanceLabel.setTextColor(to: .primaryText())
+        balanceLabel.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))
     }
 
-    // MARK: Action methods
-    @objc private func addCardDidTap() {
-        navigator.navigate(to: .addCard, animated: true)
+    private func set(_ totalBalance: Double) {
+        balanceLabel.text = totalBalance.formattedBalanceWithCurrencySign
     }
 
-    @objc private func proceedDidTap() {
-        let amount = amount2Double() ?? 0.0
-        let method = paymentMethodInputView.text ?? ""
-        let card = cardNumberInputView.text ?? ""
-        viewModel.proceedTapped(amount: amount, method: method, card: card)
+    /// Payment Grid
+    private func bindToGrid(_ viewModel: PaymentMethodGridComponentViewModel) {
+        paymentGridComponentView.setAndBind(viewModel: viewModel)
+        bind(to: viewModel)
     }
 
-    // FIXME: Common with addCards
-    private func amount2Double() -> Double? {
-        guard let text   = amountInputView.mainTextField.text,
-              let number = NumberFormatter().number(from: text),
-              let result = Double(exactly: number)
-        else {
-            return nil
-        }
-        return result
+    private func bind(to viewModel: PaymentMethodGridComponentViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: PaymentMethodGridComponentViewModelOutputAction) {
+    }
+
+    private func setupPaymentMethods(_ paymentMethods: PaymentMethods) {
     }
 }

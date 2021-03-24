@@ -307,7 +307,7 @@ public enum DesignSystem {
                     let sd = sizeDescription(for: size)
                     switch state {
                     case .active:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRed())
-                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .querternaryText(), backgorundColor: .tertiaryBg(), overlayColor: .tertiaryBg())
+                    case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .querternaryText(), backgorundColor: .thick(), overlayColor: .thick())
                     case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRed(), overlayColor: .primaryRed())
                     }
                 case .textLink(let state, let size):

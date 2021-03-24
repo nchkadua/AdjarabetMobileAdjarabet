@@ -145,6 +145,9 @@
 "deposit_description_card" = "მონიშნე სასურველი დამახსოვრებული ბარათი";
 "deposit_description_proceed" = "დააჭირეთ ღილაკს გადახდა";
 
+"deposit_title" = "თანხის შევსება";
+"deposit_balance_title" = "ბალანსი";
+
 /* Withdraw */
 "withdraw_amount_title" = "თანხა";
 "withdraw_card_title" = "ბარათი";
@@ -260,14 +263,21 @@
 "november" = "ნოემბერი";
 "december" = "დეკემბერი";
 
-/* Components */
-"component_date_header_today" = "Today";
-
 /* Gender */
 "gender_female" = "ქალი";
 "gender_male" = "მამაკაცი";
 "gender_other" = "სხვა";
 "gender_prefer_not_to_say" = "ამჯობინა არ დაეზუსტებინა";
+
+/* Components */
+"component_date_header_today" = "Today";
+
+/* Deposit.Visa */
+"deposit_visa_choose_account" = "ანგარიში";
+"deposit_visa_amount" = "თანხა";
+"deposit_visa_wrong_format_amount" = "თანხა არასწორი ფორმატით არის შეყვანილი";
+"deposit_visa_negative_amount" = "გთხოვთ, შეიყვანოთ დადებითი თანხა";
+"deposit_visa_some_field_is_not_specified" = "ტრანზაქციის შესარულებლად, გთხოვთ შეიყვანოთ ყველა საჭირო ველი";
 
 /* Countries */
 "georgia" = "Georgia";

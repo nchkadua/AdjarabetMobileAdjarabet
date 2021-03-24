@@ -2,14 +2,9 @@
 //  Payments.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 11/1/20.
-//  Copyright © 2020 Adjarabet. All rights reserved.
+//  Created by Nika Chkadua on 3/23/21.
+//  Copyright © 2021 Adjarabet. All rights reserved.
 //
-
-public class Payment {
-    var paymentMethods = ["VISA/MASTERCARD", "EMONEY"]
-    var cards = ["123456xxxxxxxx0211", "789123xxxxxxxx0211"]
-}
 
 public struct PaymentMethods {
     let methods: [String]

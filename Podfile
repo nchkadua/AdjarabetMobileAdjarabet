@@ -11,6 +11,7 @@ def pods
   pod 'RxCocoa'
   
   pod 'Nuke', '8.4.1'
+  pod 'SDWebImageSVGCoder'
 
   pod 'SwiftLint', '0.39.1'
   pod 'Telegraph'
