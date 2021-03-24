@@ -17,11 +17,11 @@ public struct VisaViewModelParams {
 
 protocol VisaViewModelInput {
     var params: VisaViewModelParams { get set }
-    func viewDidLoad()
-    func entered(amount: String)
-    func accountSelected(at index: Int)
-    func addAccountTapped()
-    func continueTapped()
+    func viewDidLoad()                           // call on viewDidLoad()
+    func entered(amount: String, account: Int)   // call on entering amount
+    func selected(account: Int, amount: String)  // call on selecting account
+    func continued(amount: String, account: Int) // call on tapping continue button
+    func added()                                 // call on tapping add account button
 }
 
 protocol VisaViewModelOutput {
@@ -30,23 +30,24 @@ protocol VisaViewModelOutput {
 }
 
 enum VisaViewModelOutputAction {
-    case placeholdAmount(with: String)
-    case updateAmount(with: String)
-    case updateContinue(isUserInteractionEnabled: Bool)
     case showView(ofType: VisaViewType)
+    case enterAmount(with: String) // view should call viewModel.entered(amount:, accountIndex:)
+    case updateAmount(with: String)
+    case updateAccounts(with: [String])
+    case updateContinue(with: Bool)
+    case updateMin(with: String)
+    case updateDisposable(with: String)
+    case updateMax(with: String)
     case show(error: String)
 }
-
-enum VisaViewModelRoute {
-    case webView(params: WebViewModelParams)
+// view type enum
+enum VisaViewType {
+    case accounts
     case addAccount
 }
 
-/* helper models to communicate with view */
-
-// view type enum
-enum VisaViewType {
-    case accounts(list: [String], selectedIndex: Int)
+enum VisaViewModelRoute {
+    case webView(with: WebViewModelParams)
     case addAccount
 }
 
@@ -59,9 +60,7 @@ class DefaultVisaViewModel {
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
     @Inject(from: .useCases) private var depositUseCase: UFCDepositUseCase
     // state
-    private var accounts: [PaymentAccountEntity]?
-    private var selectedAccount: Int? // index of accounts array
-    private var amount: Double?
+    private var accounts: [PaymentAccountEntity] = .init()
 
     init(params: VisaViewModelParams) {
         self.params = params
@@ -73,164 +72,135 @@ extension DefaultVisaViewModel: VisaViewModel {
     var route: Observable<VisaViewModelRoute> { routeSubject.asObserver() }
 
     func viewDidLoad() {
-        refreshState()
+        refresh()
     }
 
-    func entered(amount: String) {
-        guard let amount = Double(amount)
-        else {
-            updateAmount(with: nil)
-            let message = R.string.localization.deposit_visa_wrong_format_amount.localized()
-            actionSubject.onNext(.show(error: message))
-            return
-        }
-        updateAmount(with: amount)
-    }
-
-    func accountSelected(at index: Int) {
-        guard let accounts = accounts,
-              index == 0 || index - 1 < accounts.count // "Choose Account" Placeholder or some account was chosen
-        else {
-            actionSubject.onNext(.show(error: "wrong account index was passed: \(index)"))
-            return
-        }
-        if index == 0 { // "Choose Account" Placeholder was chosen
-            selectedAccount = nil
-        } else { // some account was chosen, so update state
-            selectedAccount = index - 1
-        }
-        updateContinue()
-    }
-
-    func addAccountTapped() {
-        routeSubject.onNext(.addAccount)
-    }
-
-    func continueTapped() {
-        guardContinuablility { result in
-            guard let result = result
-            else {
-                let message = R.string.localization.deposit_visa_some_field_is_not_specified.localized()
-                actionSubject.onNext(.show(error: message))
-                return
-            }
-            depositUseCase.execute(serviceType: params.serviceType,
-                                   amount: result.amount,
-                                   accountId: result.account.id!) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let request):
-                    self.routeSubject.onNext(.webView(params: .init(request: request)))
-                case .failure(let error):
-                    self.actionSubject.onNext(.show(error: error.localizedDescription))
-                }
-            }
-        }
-    }
-
-    /* helpers */
-
-    private func refreshState() {
-        // reinit state variables
-        accounts = nil
-        selectedAccount = nil
-        updateAmount(with: nil) // also updates continue button
-        // fetch account/card list
+    private func refresh() {
+        // 1. fetch account/card list
         accountListUseCase.execute(params: .init()) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let list):
-                self.accounts = list
-                self.selectedAccount = nil // by default do not select any account = "Choose Account" Placeholder is selected
-                self.refreshAccounts()     // show appropriate accounts
+                self.accounts = list                            // 2. update accounts
+                if self.accounts.isEmpty {                      // if user has no accounts:
+                    self.notify(.showView(ofType: .addAccount)) // 3. notify view to show Add Account view
+                } else {                                        // else:
+                    self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
+                    // create account list for view
+                    var viewAccounts = [R.string.localization.deposit_visa_choose_account.localized()] // first element is "Choose Account" placeholder
+                    viewAccounts.append(contentsOf: self.accounts.map { $0.accountVisual! })
+                    self.notify(.updateAccounts(with: viewAccounts)) // 4. update accounts on shown view
+                    self.fetchSuggested() // continue here...
+                }
             case .failure(let error):
                 self.actionSubject.onNext(.show(error: error.localizedDescription))
             }
         }
-        // fetch suggested amount list
-        let suggestedAmounts: [Double] = [1, 1.5, 2, 2.5, 3, 3.5] // TODO: Change with real data later
+    }
+
+    private func fetchSuggested() {
+        // 3. fetch suggested amount list
+        // TODO: Change with real data later
+        let suggested: [Double] = [1, 1.5, 2, 2.5, 3, 3.5]
         /*
          TODO: Nika
-         Here, create Data Providing Cell View Models using suggestedAmounts
+         Here, create Data Providing Cell View Models using "suggested"
          and Subsribe on Tap Action
-         Call suggestedTapped(with:) fuction in each cells' action
+         Call suggestedTapped(with:) function in each cells' action
          to update amount on view
          */
-        // TODO: fetch min, max, once amounts lates
+        fetchLimits() // continue here...
     }
 
-    private func refreshAccounts() {
-        if let accounts = accounts {
-            if accounts.isEmpty { // if fetched account/card list is empty
-                // show view with add account button
-                actionSubject.onNext(.showView(ofType: .addAccount))
-            } else {
-                // show view with fetched card list
+    private func fetchLimits() {
+        // 4. fetch min, disposable, max amounts
+        // TODO: Change with real data later
+        let min = amountFormatter.format(number: 1, in: .sn)
+        let disposable = amountFormatter.format(number: 10000, in: .sn)
+        let max = amountFormatter.format(number: 50000, in: .sn)
+        // 5. notify view to show min, disposable, max amounts
+        notify(.updateMin(with: min))
+        notify(.updateDisposable(with: disposable))
+        notify(.updateMax(with: max))
+        // 6. clean amount field
+        notify(.updateAmount(with: ""))
+    }
 
-                /// initialize list of accounts to visualize
-                var list = [R.string.localization.deposit_visa_choose_account.localized()] // first element is "Choose Account" placeholder
-                list.append(contentsOf: accounts.map { $0.accountVisual! })
+    func entered(amount: String, account: Int) {
+        // sanity check
+        guard (0...accounts.count).contains(account) // == because of placeholder
+        else {
+            notify(.show(error: "wrong account index was passed: \(account)"))
+            return
+        }
+        // validation
+        guard let amount = Double(amount), amount > 0
+        else {
+            notify(.updateContinue(with: false))
+            let message = R.string.localization.deposit_visa_wrong_format_amount.localized()
+            notify(.show(error: message))
+            return
+        }
+        /*
+         * TODO:
+         * Check for min, disposable
+         */
+        // notify to update amount with formatted version
+        let formattedAmount = amountFormatter.format(number: amount, in: .s_n_a)
+        notify(.updateAmount(with: formattedAmount))
 
-                /// initialize selected index
-                let selectedIndex: Int
-                if let selectedAccount = selectedAccount {
-                    selectedIndex = selectedAccount + 1
-                } else {
-                    selectedIndex = 0
-                }
-
-                actionSubject.onNext(.showView(ofType: .accounts(list: list, selectedIndex: selectedIndex)))
-                updateContinue()
-            }
-        } else {
-            actionSubject.onNext(.show(error: "required state not specified"))
+        if account > 0 { // is not placeholder
+            notify(.updateContinue(with: true))
         }
     }
+
+    func selected(account: Int, amount: String) {
+        // sanity check
+        guard (0...accounts.count).contains(account) // == because of placeholder
+        else {
+            notify(.show(error: "wrong account index was passed: \(account)"))
+            return
+        }
+        // update continue button state
+        if account == 0 || amountFormatter.unformat(number: amount, from: .s_n_a) == nil { // is placeholder or wrong amount
+            notify(.updateContinue(with: false))
+        } else {
+            notify(.updateContinue(with: true))
+        }
+    }
+
+    func continued(amount: String, account: Int) {
+        // sanity check
+        guard (0..<accounts.count).contains(account - 1),                          // non-placeholder is checked
+              let damount = amountFormatter.unformat(number: amount, from: .s_n_a) // amount is valid
+        else {
+            notify(.show(error: "wrong parameters was passed - amount: \(amount); account: \(account)"))
+            return
+        }
+        depositUseCase.execute(serviceType: params.serviceType,
+                               amount: damount,
+                               accountId: accounts[account - 1].id!) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let request):
+                self.routeSubject.onNext(.webView(with: .init(request: request)))
+            case .failure(let error):
+                self.actionSubject.onNext(.show(error: error.localizedDescription))
+            }
+        }
+    }
+
+    func added() {
+        routeSubject.onNext(.addAccount)
+    }
+
+    /* helpers */
 
     private func suggestedTapped(with amount: Double) {
-        updateAmount(with: amount)
+        notify(.enterAmount(with: "\(amount)"))
     }
 
-    private func updateAmount(with amount: Double?) {
-        // if amount is nil, placehold amount
-        guard let amount = amount
-        else {
-            let amountPlaceholder = R.string.localization.deposit_visa_amount.localized()
-            actionSubject.onNext(.placeholdAmount(with: amountPlaceholder))
-            return
-        }
-        // if amount is negative show error
-        guard amount > 0
-        else {
-            let message = R.string.localization.deposit_visa_negative_amount.localized()
-            actionSubject.onNext(.show(error: message))
-            return
-        }
-        // update state
-        self.amount = amount
-        // visualize amount
-        let formattedAmount = amountFormatter.format(amount)
-        actionSubject.onNext(.updateAmount(with: formattedAmount))
-        // update continue
-        updateContinue()
-    }
-
-    private func updateContinue() {
-        guardContinuablility { result in
-            let state: Bool
-            if result == nil { state = false } else { state = true }
-            actionSubject.onNext(.updateContinue(isUserInteractionEnabled: state))
-        }
-    }
-
-    private func guardContinuablility(_ handler: ((account: PaymentAccountEntity, amount: Double)?) -> Void) {
-        if let accounts = accounts,
-           let selectedAccount = selectedAccount,
-           (0..<accounts.count).contains(selectedAccount),
-           let amount = amount, amount > 0 {
-            handler((account: accounts[selectedAccount], amount: amount))
-        } else {
-            handler(nil)
-        }
+    private func notify(_ action: VisaViewModelOutputAction) {
+        actionSubject.onNext(action)
     }
 }
