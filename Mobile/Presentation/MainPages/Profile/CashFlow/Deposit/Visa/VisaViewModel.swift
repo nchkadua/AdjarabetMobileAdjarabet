@@ -141,6 +141,10 @@ extension DefaultVisaViewModel: VisaViewModel {
             notify(.show(error: message))
             return
         }
+        /*
+         * TODO:
+         * Check for min, disposable
+         */
         // notify to update amount with formatted version
         let formattedAmount = amountFormatter.format(number: amount, in: .s_n_a)
         notify(.updateAmount(with: formattedAmount))
