@@ -85,6 +85,7 @@ public extension DependencyContainer {
         Module { DefaultAccessHistoryCalendarViewModel(params: .init()) as AccessHistoryCalendarViewModel }
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }
         Module { DefaultMyCardsViewModel() as MyCardsViewModel }
+        Module { DefaultVisaViewModel(params: .init(serviceType: .regular)) as VisaViewModel }
         Module { DefaultEmoneyViewModel() as EmoneyViewModel }
     }
 
@@ -148,6 +149,8 @@ public extension DependencyContainer {
         Module { DefaultWebViewControllerFactory() as WebViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
+        Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }
+        Module { DefaultEmoneyViewControllerFactory() as EmoneyViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

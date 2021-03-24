@@ -8,16 +8,22 @@
 
 import RxSwift
 
-class VisaViewController: UIViewController {
+public class VisaViewController: UIViewController {
     var viewModel: VisaViewModel!
     private lazy var navigator = VisaNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle methods
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
+
         bind(to: viewModel)
         viewModel.viewDidLoad()
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     // MARK: Bind to viewModel's observable properties

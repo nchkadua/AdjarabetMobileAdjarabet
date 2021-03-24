@@ -42,7 +42,8 @@ public class DepositViewController: UIViewController {
         switch action {
         case .set(let totalBalance): set(totalBalance)
         case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
-        case .didSelect(let indexPath): print("indexPath ", indexPath)
+        case .didLoadPaymentMethods: setChildViewControllers()
+        case .showMessage(let message): showAlert(title: message)
         }
     }
 
@@ -58,8 +59,6 @@ public class DepositViewController: UIViewController {
         add(child: appPageViewController)
         appPageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appPageViewController.view.pin(to: childrenVCFrameView)
-
-        appPageViewController.orderedViewControllers = []
     }
 
     private func setupImageView() {
@@ -96,8 +95,19 @@ public class DepositViewController: UIViewController {
     }
 
     private func didRecive(action: PaymentMethodGridComponentViewModelOutputAction) {
+        switch action {
+        case .didSelectPaymentMethod(let method, let indexPath): jumpToViewController(method, indexPath)
+        default:
+            break
+        }
     }
 
-    private func setupPaymentMethods(_ paymentMethods: PaymentMethods) {
+    // MARK: Action methods
+    private func setChildViewControllers() {
+        appPageViewController.orderedViewControllers = [navigator.emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self), navigator.visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)]
+    }
+
+    private func jumpToViewController(_ method: PaymentMethodComponentViewModel, _ indexPath: IndexPath) {
+        print("Asdadasdas ", method)
     }
 }

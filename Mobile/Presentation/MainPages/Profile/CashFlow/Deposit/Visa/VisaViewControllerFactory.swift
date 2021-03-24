@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol VisaViewControllerFactory {
+public protocol VisaViewControllerFactory {
     func make(params: VisaViewModelParams) -> VisaViewController
 }
 

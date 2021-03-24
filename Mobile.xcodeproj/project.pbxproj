@@ -278,6 +278,10 @@
 		CE55ED55252B3881003E168F /* ProfileInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ED54252B3881003E168F /* ProfileInfoComponentView.swift */; };
 		CE55ED59252B38BA003E168F /* ProfileInfoComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ED58252B38BA003E168F /* ProfileInfoComponentViewModel.swift */; };
 		CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE55ED81252B437F003E168F /* ProfileInfoComponentView.xib */; };
+		CE587497260B66C300F03AB5 /* EmoneyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE587496260B66C300F03AB5 /* EmoneyButton.swift */; };
+		CE58749B260B66CB00F03AB5 /* EmoneyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE58749A260B66CB00F03AB5 /* EmoneyButton.xib */; };
+		CE5874A2260B8B3C00F03AB5 /* EmoneyInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5874A1260B8B3C00F03AB5 /* EmoneyInstructionsView.swift */; };
+		CE5874A8260B8B4100F03AB5 /* EmoneyInstructionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5874A7260B8B4100F03AB5 /* EmoneyInstructionsView.xib */; };
 		CE64EA7A25D1695400438974 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE64EA7525D1695400438974 /* Game.storyboard */; };
 		CE64EA7B25D1695400438974 /* GameNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA7625D1695400438974 /* GameNavigator.swift */; };
 		CE64EA7C25D1695400438974 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA7725D1695400438974 /* GameViewController.swift */; };
@@ -878,6 +882,10 @@
 		CE55ED54252B3881003E168F /* ProfileInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoComponentView.swift; sourceTree = "<group>"; };
 		CE55ED58252B38BA003E168F /* ProfileInfoComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoComponentViewModel.swift; sourceTree = "<group>"; };
 		CE55ED81252B437F003E168F /* ProfileInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoComponentView.xib; sourceTree = "<group>"; };
+		CE587496260B66C300F03AB5 /* EmoneyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoneyButton.swift; sourceTree = "<group>"; };
+		CE58749A260B66CB00F03AB5 /* EmoneyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoneyButton.xib; sourceTree = "<group>"; };
+		CE5874A1260B8B3C00F03AB5 /* EmoneyInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoneyInstructionsView.swift; sourceTree = "<group>"; };
+		CE5874A7260B8B4100F03AB5 /* EmoneyInstructionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoneyInstructionsView.xib; sourceTree = "<group>"; };
 		CE64EA7525D1695400438974 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		CE64EA7625D1695400438974 /* GameNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNavigator.swift; sourceTree = "<group>"; };
 		CE64EA7725D1695400438974 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -2701,6 +2709,24 @@
 			path = ProfileInfoComponentView;
 			sourceTree = "<group>";
 		};
+		CE587493260B66A200F03AB5 /* EmoneyButton */ = {
+			isa = PBXGroup;
+			children = (
+				CE587496260B66C300F03AB5 /* EmoneyButton.swift */,
+				CE58749A260B66CB00F03AB5 /* EmoneyButton.xib */,
+			);
+			path = EmoneyButton;
+			sourceTree = "<group>";
+		};
+		CE58749E260B815A00F03AB5 /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				CE5874A1260B8B3C00F03AB5 /* EmoneyInstructionsView.swift */,
+				CE5874A7260B8B4100F03AB5 /* EmoneyInstructionsView.xib */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
 		CE64EA7425D168EF00438974 /* GameVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2968,6 +2994,8 @@
 		CEBB007A2609D3E800D1B510 /* Emoney */ = {
 			isa = PBXGroup;
 			children = (
+				CE58749E260B815A00F03AB5 /* Instructions */,
+				CE587493260B66A200F03AB5 /* EmoneyButton */,
 				CEBB007B2609D3F900D1B510 /* Emoney.storyboard */,
 				CEBB007C2609D3F900D1B510 /* EmoneyNavigator.swift */,
 				CEBB007D2609D3F900D1B510 /* EmoneyViewController.swift */,
@@ -4091,6 +4119,7 @@
 				767C7D8E25E39FA9008F2CE9 /* HomeBannerContainerComponentView.xib in Resources */,
 				CE91C0E7257028DC00A18255 /* TransactionsFilter.storyboard in Resources */,
 				CE55ECFE25265CF1003E168F /* Profile.storyboard in Resources */,
+				CE5874A8260B8B4100F03AB5 /* EmoneyInstructionsView.xib in Resources */,
 				CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */,
 				7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
@@ -4098,6 +4127,7 @@
 				CEE356F2252C9C8100A0A25C /* BalanceComponentView.xib in Resources */,
 				76BDF46C25760512007B27A7 /* AccountParametersComponentView.xib in Resources */,
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,
+				CE58749B260B66CB00F03AB5 /* EmoneyButton.xib in Resources */,
 				76BDF45C2576043A007B27A7 /* AccountParameters.storyboard in Resources */,
 				CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */,
 				7665D95F257E5CA600E5B35F /* AccessHistory.storyboard in Resources */,
@@ -4385,6 +4415,7 @@
 				C7B0DCEE2575591100714B22 /* Country.swift in Sources */,
 				CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */,
 				C7FAA3B22600C04A00265995 /* UFCInitDepositEntity.swift in Sources */,
+				CE587497260B66C300F03AB5 /* EmoneyButton.swift in Sources */,
 				76BA7BDC25E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
@@ -4640,6 +4671,7 @@
 				C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */,
 				76DCF68525B8159200150EE1 /* MyCardable.swift in Sources */,
 				CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */,
+				CE5874A2260B8B3C00F03AB5 /* EmoneyInstructionsView.swift in Sources */,
 				D894CEB924BE2AD700FE143D /* ShimmerView.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,

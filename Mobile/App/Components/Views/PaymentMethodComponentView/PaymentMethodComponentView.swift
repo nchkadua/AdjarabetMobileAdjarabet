@@ -17,6 +17,9 @@ class PaymentMethodComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var iconImageView: UIImageView!
 
+    @IBOutlet weak private var loaderView: ShimmerView!
+    public var shimmerViews: [ShimmerView] { [loaderView] }
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -55,6 +58,8 @@ class PaymentMethodComponentView: UIView {
     private func set(iconUrl: String) {
         guard let url = URL(string: iconUrl) else { return }
         iconImageView.sd_setImage(with: url)
+
+        loaderView.alpha = 0
     }
 
     private func select() {
@@ -83,4 +88,10 @@ extension PaymentMethodComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.systemGrey5().value
     }
+}
+
+public class PaymentMethodComponentViewLoaderView: UIView {
+    @IBOutlet weak private var iconImageView: ShimmerView!
+
+    public var shimmerViews: [ShimmerView] { [iconImageView] }
 }

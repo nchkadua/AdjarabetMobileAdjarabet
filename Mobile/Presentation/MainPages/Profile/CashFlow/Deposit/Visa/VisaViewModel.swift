@@ -11,7 +11,7 @@ import RxSwift
 protocol VisaViewModel: VisaViewModelInput, VisaViewModelOutput {
 }
 
-struct VisaViewModelParams {
+public struct VisaViewModelParams {
     let serviceType: UFCServiceType
 }
 

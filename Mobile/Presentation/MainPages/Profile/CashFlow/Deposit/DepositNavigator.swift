@@ -8,6 +8,8 @@
 
 public class DepositNavigator: Navigator {
     private weak var viewController: UIViewController?
+    @Inject(from: .factories) public var visaViewControllerFactory: VisaViewControllerFactory
+    @Inject(from: .factories) public var emoneyViewControllerFactory: EmoneyViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController

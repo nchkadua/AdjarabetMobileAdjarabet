@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EmoneyViewControllerFactory {
+public protocol EmoneyViewControllerFactory {
     func make() -> EmoneyViewController
 }
 

@@ -56,23 +56,6 @@ public class ProfileNavigator: Navigator {
     private func navigateToDeposit(animate: Bool) {
         let vc = depositViewControllerFactory.make(params: .init())
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
-        /*
-        // TODO: Nika move to the appropriate place
-        let factory: EmoneyViewControllerFactory = DefaultEmoneyViewControllerFactory()
-        let vc = factory.make()
-        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
-        navc.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navc, animated: true, completion: nil)
-        */
-        /*
-        // TODO: Nika move to the appropriate place
-        let factory: VisaViewControllerFactory = DefaultVisaViewControllerFactory()
-        let serviceType: UFCServiceType = .regular
-        let vc = factory.make(params: .init(serviceType: serviceType))
-        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
-        navc.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navc, animated: true, completion: nil)
-        */
     }
 
     private func navigateToWithdraw(animate: Bool) {

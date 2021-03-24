@@ -17,6 +17,7 @@ public class WebViewController: UIViewController {
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
+
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
@@ -38,7 +39,12 @@ public class WebViewController: UIViewController {
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .primaryBg())
+        setupNavigationItems()
         setupWebView()
+    }
+
+    private func setupNavigationItems() {
+        setDismissBarButtonItemIfNeeded(width: 44)
     }
 
     private func setupWebView() {
