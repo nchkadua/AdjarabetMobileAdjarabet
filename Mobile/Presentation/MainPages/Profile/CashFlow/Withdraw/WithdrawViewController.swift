@@ -84,11 +84,11 @@ public class WithdrawViewController: ABViewController {
             navigator.navigate(to: .addAccount)
         }
     }
-
+    /*
     private func setupLabel(with label: LabelComponentViewModel) {
         titleLabelComponentView.set(label: label)
     }
-
+    */
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .secondaryBg())
@@ -105,8 +105,8 @@ public class WithdrawViewController: ABViewController {
         commissionLabelComponentView.valueLabelComponent.setFont(to: .subHeadline(fontCase: .upper))
         totalAmountLabelComponentView.valueLabelComponent.setFont(to: .subHeadline(fontCase: .upper))
 
-        commissionLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_commission_title(), value: "0.0 ₾"))
-        totalAmountLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_total_amount_title(), value: "0.0 ₾"))
+        commissionLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_commission_title(), value: ""))
+        totalAmountLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_total_amount_title(), value: ""))
 
         commissionLabelComponentView.roundCorners([.topLeft, .topRight], radius: 8)
         totalAmountLabelComponentView.roundCorners([.bottomLeft, .bottomRight], radius: 8)
@@ -116,30 +116,36 @@ public class WithdrawViewController: ABViewController {
         proceedButton.setStyle(to: .primary(state: .disabled, size: .large))
         proceedButton.setTitleWithoutAnimation(R.string.localization.withdraw_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
-
+        /*
         amountInputView.mainTextField.rx.controlEvent([.editingChanged])
             .asObservable().subscribe({ [weak self] _ in
                 self?.updateProceedButton()
             }).disposed(by: disposeBag)
+        */
     }
 
     private func setupInputViews() {
         amountInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.withdraw_amount_title())
-        amountInputView.formatter = AmountFormatter()
+     // amountInputView.formatter = AmountFormatter() // TODO: Giorgi wooow?
 
         cardNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
-        cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())
+     // cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())
+        cardNumberInputView.delegate = self
 
-        amountInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)
+        amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidEnd), for: .editingDidEnd)
     }
 
-    @objc private func textFieldDidChange(_ textField: UITextField) {
-        // FIXME: Bounce time
-        //viewModel.handleTextDidChange(amount: amount2Double() ?? 0.0)
+    @objc private func amountEditingDidBegin() {
+        amountInputView.set(text: "")
     }
 
+    @objc private func amountEditingDidEnd() {
+        viewModel.entered(amount: amount, account: account)
+    }
+    /*
     // MARK: Configuration
     private func updateProceedButton() {
         var isEnabled = true
@@ -151,9 +157,20 @@ public class WithdrawViewController: ABViewController {
         proceedButton.isUserInteractionEnabled = isEnabled
         proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
-
+    */
     // MARK: Action methods
     @objc private func proceedDidTap() {
-        //viewModel.proceedTapped(amount: amount2Double() ?? 0.0)
+        viewModel.continued(amount: amount, account: account)
+    }
+
+    /* helpers */
+
+    private var amount: String { amountInputView.text ?? "" }
+    private var account: Int { cardNumberInputView.pickerView.selectedRow(inComponent: 0) }
+}
+
+extension WithdrawViewController: ABInputViewDelegate {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.selected(account: account, amount: amount)
     }
 }

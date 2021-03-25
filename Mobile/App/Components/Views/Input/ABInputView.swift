@@ -53,6 +53,8 @@ public class ABInputView: UIView {
     public var pickerView = UIPickerView()
     private var dataSourceItems = [String]()
 
+    weak var delegate: ABInputViewDelegate?
+
     // MARK: Init
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -329,6 +331,7 @@ extension ABInputView {
 extension ABInputView: UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         setTextAndConfigure(text: dataSourceItems[row])
+        delegate?.pickerView(pickerView, didSelectRow: row, inComponent: component)
     }
 }
 
@@ -372,4 +375,8 @@ extension ABInputView: UITextFieldDelegate {
             currentString.replacingCharacters(in: range, with: string) as NSString
         return newString.length <= maxLength
     }
+}
+
+public protocol ABInputViewDelegate: class {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
 }
