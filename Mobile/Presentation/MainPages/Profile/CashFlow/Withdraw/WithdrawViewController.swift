@@ -10,7 +10,7 @@ import RxSwift
 
 public class WithdrawViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: WithdrawViewModel
-    public lazy var navigator = WithdrawNavigator(viewController: self)
+    private lazy var navigator = WithdrawNavigator(viewController: self)
 
     // MARK: Outlets
     @IBOutlet private weak var titleLabelComponentView: LabelComponentView!
@@ -26,7 +26,6 @@ public class WithdrawViewController: ABViewController {
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
@@ -49,14 +48,47 @@ public class WithdrawViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
+    /*
+     case .setupWithLabel(let label): setupLabel(with: label)
+     case .updateTotalAmount(let totalAmount): totalAmountLabelComponentView.change(value: "\(totalAmount) ₾")
+     case .updateSumWith(let fee): commissionLabelComponentView.change(value: "\(fee) ₾")
+     case .showAlert(let message): showAlert(title: message)
+     */
     private func didRecive(action: WithdrawViewModelOutputAction) {
         switch action {
-        case .setupWithLabel(let label): setupLabel(with: label)
-        case .updateTotalAmount(let totalAmount): totalAmountLabelComponentView.change(value: "\(totalAmount) ₾")
-        case .updateSumWith(let fee): commissionLabelComponentView.change(value: "\(fee) ₾")
-        case .showAlert(let message): showAlert(title: message)
+        case .showView(let type):
+            {}()
+        case .updateAmount(let amount):
+            {}()
+        case .updateAccounts(let accounts):
+            {}()
+        case .updateFee(let fee):
+            {}()
+        case .updateSum(let sum):
+            {}()
+        case .updateContinue(let isEnabled):
+            {}()
+        case .updateMin(let min):
+            {}()
+        case .updateDisposable(let disposable):
+            {}()
+        case .updateMax(let max):
+            {}()
+        case .show(let error):
+            {}()
+        }
+    }
+
+    private func didRecive(route: WithdrawViewModelRoute) {
+        switch route {
+        case .addAccount:
+            navigator.navigate(to: .addAccount)
         }
     }
 
@@ -115,7 +147,7 @@ public class WithdrawViewController: ABViewController {
         if !count {
             return
         }
-        viewModel.handleTextDidChange(amount: amount2Double() ?? 0.0)
+        //viewModel.handleTextDidChange(amount: amount2Double() ?? 0.0)
         count = false
     }
 
@@ -134,7 +166,7 @@ public class WithdrawViewController: ABViewController {
 
     // MARK: Action methods
     @objc private func proceedDidTap() {
-        viewModel.proceedTapped(amount: amount2Double() ?? 0.0)
+        //viewModel.proceedTapped(amount: amount2Double() ?? 0.0)
     }
 
     // FIXME: Common with addCards

@@ -8,69 +8,72 @@
 
 import RxSwift
 
-public protocol WithdrawViewModel: WithdrawViewModelInput, WithdrawViewModelOutput {
+protocol WithdrawViewModel: WithdrawViewModelInput, WithdrawViewModelOutput { }
+
+protocol WithdrawViewModelInput {
+    func viewDidLoad()                           // call on viewDidLoad()
+    func entered(amount: String, account: Int)   // call on entering amount
+    func selected(account: Int, amount: String)  // call on selecting account
+    func continued(amount: String, account: Int) // call on tapping continue button
+    func added()                                 // call on tapping add account button
 }
 
-public protocol WithdrawViewModelInput {
-    func viewDidLoad()
-    func handleTextDidChange(amount: Double)
-    func proceedTapped(amount: Double)
-}
-
-public protocol WithdrawViewModelOutput {
+protocol WithdrawViewModelOutput {
     var action: Observable<WithdrawViewModelOutputAction> { get }
     var route: Observable<WithdrawViewModelRoute> { get }
 }
 
-public enum WithdrawViewModelOutputAction {
-    case setupWithLabel(_ label: LabelComponentViewModel)
-    case updateTotalAmount(_ value: String)
-    case updateSumWith(_ fee: Double)
-    case showAlert(_ message: String)
+enum WithdrawViewModelOutputAction {
+    case showView(ofType: WithdrawViewType)
+    case updateAmount(with: String)
+    case updateAccounts(with: [String])
+    case updateFee(with: String)
+    case updateSum(with: String)
+    case updateContinue(with: Bool)
+    case updateMin(with: String)
+    case updateDisposable(with: String)
+    case updateMax(with: String)
+    case show(error: String)
+}
+// view type enum
+enum WithdrawViewType {
+    case accounts
+    case addAccount
 }
 
-public enum WithdrawViewModelRoute {
+enum WithdrawViewModelRoute {
+    case addAccount
 }
 
-public class DefaultWithdrawViewModel {
+class DefaultWithdrawViewModel {
     private let actionSubject = PublishSubject<WithdrawViewModelOutputAction>()
     private let routeSubject = PublishSubject<WithdrawViewModelRoute>()
-
-    @Inject public var userBalanceService: UserBalanceService
-    @Inject(from: .useCases) private var ufcWithdrawUseCase: UFCWithdrawUseCase
-
-    private var session: String?
+    // use cases
+    @Inject(from: .useCases) private var withdrawUseCase: UFCWithdrawUseCase
+    // state
 }
 
 extension DefaultWithdrawViewModel: WithdrawViewModel {
-    public var action: Observable<WithdrawViewModelOutputAction> { actionSubject.asObserver() }
-    public var route: Observable<WithdrawViewModelRoute> { routeSubject.asObserver() }
+    var action: Observable<WithdrawViewModelOutputAction> { actionSubject.asObserver() }
+    var route: Observable<WithdrawViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    func viewDidLoad() {
+        //
     }
 
-    public func handleTextDidChange(amount: Double) {
-        // FIXME: serviceType
-        ufcWithdrawUseCase.execute(serviceType: .regular, amount: amount) { [weak self] result in
-            switch result {
-            case .success(let entity):
-                self?.actionSubject.onNext(.updateSumWith(entity.fee))
-                self?.session = entity.session
-            case .failure(let error): self?.actionSubject.onNext(.showAlert(error.localizedDescription))
-            }
-        }
+    func entered(amount: String, account: Int) {
+        //
     }
 
-    public func proceedTapped(amount: Double) {
-        guard let session = session else {
-            actionSubject.onNext(.showAlert("Session Uninitialized"))
-            return
-        }
-        ufcWithdrawUseCase.execute(serviceType: .regular, amount: amount, accountId: 9313241, session: session) { [weak self] result in
-            switch result {
-            case .success: self?.actionSubject.onNext(.showAlert("Transaction Successfull"))
-            case .failure(let error): self?.actionSubject.onNext(.showAlert(error.localizedDescription))
-            }
-        }
+    func selected(account: Int, amount: String) {
+        //
+    }
+
+    func continued(amount: String, account: Int) {
+        //
+    }
+
+    func added() {
+        routeSubject.onNext(.addAccount)
     }
 }
