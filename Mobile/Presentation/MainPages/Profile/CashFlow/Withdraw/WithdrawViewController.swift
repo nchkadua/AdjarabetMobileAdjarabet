@@ -10,7 +10,7 @@ import RxSwift
 
 public class WithdrawViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: WithdrawViewModel
-    public lazy var navigator = WithdrawNavigator(viewController: self)
+    private lazy var navigator = WithdrawNavigator(viewController: self)
 
     // MARK: Outlets
     @IBOutlet private weak var titleLabelComponentView: LabelComponentView!
@@ -20,13 +20,9 @@ public class WithdrawViewController: ABViewController {
     @IBOutlet private weak var totalAmountLabelComponentView: LabelComponentView!
     @IBOutlet private weak var proceedButton: ABButton!
 
-    // FIXME: Temporary
-    var count: Bool = true
-
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
@@ -49,21 +45,52 @@ public class WithdrawViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: WithdrawViewModelOutputAction) {
         switch action {
-        case .setupWithLabel(let label): setupLabel(with: label)
-        case .updateTotalAmount(let totalAmount): totalAmountLabelComponentView.change(value: "\(totalAmount) ₾")
-        case .updateSumWith(let fee): commissionLabelComponentView.change(value: "\(fee) ₾")
-        case .showAlert(let message): showAlert(title: message)
+        case .showView(let type):
+            {}() // TODO: Giorgi
+        case .updateAmount(let amount):
+            amountInputView.set(text: amount)
+        case .updateAccounts(let accounts):
+            cardNumberInputView.setupPickerView(withItems: accounts)
+            cardNumberInputView.setDefaultValue(accounts.first ?? "")
+        case .updateFee(let fee):
+            commissionLabelComponentView.change(value: fee)
+        case .updateSum(let sum):
+            totalAmountLabelComponentView.change(value: sum)
+        case .updateContinue(let isEnabled):
+            proceedButton.isUserInteractionEnabled = isEnabled
+            proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+        case .updateMin(let min):
+            {}() // TODO: Giorgi
+        case .updateDisposable(let disposable):
+            {}() // TODO: Giorgi
+        case .updateMax(let max):
+            {}() // TODO: Giorgi
+        case .show(let error):
+            showAlert(title: error)
+        case .showMessage(let message):
+            showAlert(title: message)
         }
     }
 
+    private func didRecive(route: WithdrawViewModelRoute) {
+        switch route {
+        case .addAccount:
+            navigator.navigate(to: .addAccount)
+        }
+    }
+    /*
     private func setupLabel(with label: LabelComponentViewModel) {
         titleLabelComponentView.set(label: label)
     }
-
+    */
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .secondaryBg())
@@ -80,8 +107,8 @@ public class WithdrawViewController: ABViewController {
         commissionLabelComponentView.valueLabelComponent.setFont(to: .subHeadline(fontCase: .upper))
         totalAmountLabelComponentView.valueLabelComponent.setFont(to: .subHeadline(fontCase: .upper))
 
-        commissionLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_commission_title(), value: "0.0 ₾"))
-        totalAmountLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_total_amount_title(), value: "0.0 ₾"))
+        commissionLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_commission_title(), value: ""))
+        totalAmountLabelComponentView.set(label: LabelComponentViewModel(title: R.string.localization.withdraw_total_amount_title(), value: ""))
 
         commissionLabelComponentView.roundCorners([.topLeft, .topRight], radius: 8)
         totalAmountLabelComponentView.roundCorners([.bottomLeft, .bottomRight], radius: 8)
@@ -91,34 +118,36 @@ public class WithdrawViewController: ABViewController {
         proceedButton.setStyle(to: .primary(state: .disabled, size: .large))
         proceedButton.setTitleWithoutAnimation(R.string.localization.withdraw_proceed_button_title(), for: .normal)
         proceedButton.addTarget(self, action: #selector(proceedDidTap), for: .touchUpInside)
-
+        /*
         amountInputView.mainTextField.rx.controlEvent([.editingChanged])
             .asObservable().subscribe({ [weak self] _ in
                 self?.updateProceedButton()
             }).disposed(by: disposeBag)
+        */
     }
 
     private func setupInputViews() {
         amountInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.withdraw_amount_title())
-        amountInputView.formatter = AmountFormatter()
+     // amountInputView.formatter = AmountFormatter() // TODO: Giorgi wooow?
 
         cardNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
-        cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())
+     // cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())
+        cardNumberInputView.delegate = self
 
-        amountInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)
+        amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidEnd), for: .editingDidEnd)
     }
 
-    @objc private func textFieldDidChange(_ textField: UITextField) {
-        // FIXME: Bounce time
-        if !count {
-            return
-        }
-        viewModel.handleTextDidChange(amount: amount2Double() ?? 0.0)
-        count = false
+    @objc private func amountEditingDidBegin() {
+        amountInputView.set(text: "")
     }
 
+    @objc private func amountEditingDidEnd() {
+        viewModel.entered(amount: amount, account: account)
+    }
+    /*
     // MARK: Configuration
     private func updateProceedButton() {
         var isEnabled = true
@@ -127,24 +156,23 @@ public class WithdrawViewController: ABViewController {
         } else {
             isEnabled = false
         }
-
         proceedButton.isUserInteractionEnabled = isEnabled
         proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
-
+    */
     // MARK: Action methods
     @objc private func proceedDidTap() {
-        viewModel.proceedTapped(amount: amount2Double() ?? 0.0)
+        viewModel.continued(amount: amount, account: account)
     }
 
-    // FIXME: Common with addCards
-    private func amount2Double() -> Double? {
-        guard let text   = amountInputView.mainTextField.text,
-              let number = NumberFormatter().number(from: text),
-              let result = Double(exactly: number)
-        else {
-            return nil
-        }
-        return result
+    /* helpers */
+
+    private var amount: String { amountInputView.text ?? "" }
+    private var account: Int { cardNumberInputView.pickerView.selectedRow(inComponent: 0) }
+}
+
+extension WithdrawViewController: ABInputViewDelegate {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.selected(account: account, amount: amount)
     }
 }

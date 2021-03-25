@@ -167,6 +167,9 @@
 "withdraw_description_proceed" = "დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე";
 "withdraw_rule1" = "ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო";
 "withdraw_rule2" = "გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს";
+"withdraw_transaction_successed" = "transaction successed";
+"withdraw_service_type_init_error" = "service type can not be specified";
+"withdraw_missing_params_error" = "some parameters are missing";
 
 /* Notifications */
 "delete_button_title" = "Delete";
