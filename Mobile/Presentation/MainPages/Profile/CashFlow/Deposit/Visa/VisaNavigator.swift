@@ -21,24 +21,24 @@ struct VisaNavigator {
         case addAccount
     }
 
-    func navigate(to destination: Destination) {
+    func navigate(to destination: Destination, animated: Bool) {
         switch destination {
-        case .webView(let params): navigate2WebView(with: params)
-        case .addAccount: navigate2AddAccount()
+        case .webView(let params): navigate2WebView(with: params, animated: animated)
+        case .addAccount: navigate2AddAccount(animated: animated)
         }
     }
 
-    private func navigate2WebView(with params: WebViewModelParams) {
+    private func navigate2WebView(with params: WebViewModelParams, animated: Bool) {
         let vc = webViewFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navC, animated: true, completion: nil)
+        viewController?.navigationController?.present(navC, animated: animated, completion: nil)
     }
 
-    private func navigate2AddAccount() {
+    private func navigate2AddAccount(animated: Bool) {
         let vc = addAccountFactory.make(params: .init())
         let navc = vc.wrapInNavWith(presentationStyle: .automatic)
         navc.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navc, animated: true, completion: nil)
+        viewController?.navigationController?.present(navc, animated: animated, completion: nil)
     }
 }

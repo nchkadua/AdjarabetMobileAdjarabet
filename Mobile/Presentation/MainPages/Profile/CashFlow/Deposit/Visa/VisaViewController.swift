@@ -8,15 +8,24 @@
 
 import RxSwift
 
-public class VisaViewController: UIViewController {
+public class VisaViewController: ABViewController {
     var viewModel: VisaViewModel!
     private lazy var navigator = VisaNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
+
+    // MARK: Outlets
+    @IBOutlet weak private var paymentContainerView: UIView!
+    @IBOutlet weak private var amountInputView: ABInputView!
+    @IBOutlet weak private var cardNumberInputView: ABInputView!
+    @IBOutlet weak private var addCardButton: UIButton!
+    @IBOutlet weak private var continueButton: ABButton!
+    @IBOutlet weak private var limitView: VisaLimitComponentView!
+    @IBOutlet weak private var instructionView: VisaInstructionsComponentView!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
@@ -64,9 +73,58 @@ public class VisaViewController: UIViewController {
     private func didRecive(route: VisaViewModelRoute) {
         switch route {
         case .webView(let params):
-            navigator.navigate(to: .webView(params: params))
+            navigator.navigate(to: .webView(params: params), animated: true)
         case .addAccount:
-            navigator.navigate(to: .addAccount)
+            navigator.navigate(to: .addAccount, animated: true)
         }
+    }
+
+    // MARK: Setup methods
+    private func setup() {
+        setBaseBackgorundColor()
+        setupKeyboard()
+        setupInputViews()
+        setupButtons()
+    }
+
+    private func setupInputViews() {
+    }
+
+    private func setupButtons() {
+        addCardButton.setBackgorundColor(to: .tertiaryBg())
+        addCardButton.layer.cornerRadius = 4
+        addCardButton.setImage(R.image.deposit.addCard(), for: .normal)
+        addCardButton.addTarget(self, action: #selector(addCardDidTap), for: .touchUpInside)
+
+        continueButton.layer.cornerRadius = 4
+        continueButton.setStyle(to: .primary(state: .disabled, size: .large))
+        continueButton.setTitleWithoutAnimation(R.string.localization.visa_continue_button_title.localized(), for: .normal)
+        continueButton.addTarget(self, action: #selector(continueButtonDidTap), for: .touchUpInside)
+        continueButton.titleEdgeInsets.bottom = 2
+
+        amountInputView.mainTextField.rx.controlEvent([.editingChanged])
+            .asObservable().subscribe({ [weak self] _ in
+                self?.updateContinueButton()
+            }).disposed(by: disposeBag)
+    }
+
+    // MARK: Action methods
+    @objc private func addCardDidTap() {
+        navigator.navigate(to: .addAccount, animated: true)
+    }
+
+    @objc private func continueButtonDidTap() {
+    }
+
+    @objc private func updateContinueButton() {
+        var isEnabled = true
+        if !(cardNumberInputView.mainTextField.text?.isEmpty ?? false) && !(amountInputView.mainTextField.text?.isEmpty ?? false) {
+            isEnabled = true
+        } else {
+            isEnabled = false
+        }
+
+        continueButton.isUserInteractionEnabled = isEnabled
+        continueButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
 }

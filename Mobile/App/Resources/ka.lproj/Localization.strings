@@ -136,17 +136,22 @@
 /* Deposit */
 "cashflow_done_button_title" = "Done";
 
-"deposit_payment_method_title" = "გადახდის მეთოდი";
-"deposit_amount_title" = "თანხა";
-"deposit_card_title" = "ბარათი";
-"deposit_proceed_button_title" = "დადასტურება";
-"deposit_description_title" = "ლიმიტი ერთ ბარათზე";
-"deposit_description_amount" = "შეიყვანე სასურველი თანხა";
-"deposit_description_card" = "მონიშნე სასურველი დამახსოვრებული ბარათი";
-"deposit_description_proceed" = "დააჭირეთ ღილაკს გადახდა";
+"visa_amount_title" = "თანხა";
+"visa_card_title" = "ანგარიში";
+"visa_instruction_title" = "გატანის ინსტრუქცია";
+"visa_description_title" = "ლიმიტი ერთ ბარათზე";
+"visa_description_amount" = "შეიყვანე სასურველი თანხა";
+"visa_description_card" = "მონიშნე სასურველი დამახსოვრებული ბარათი";
+"visa_description_proceed" = "დააჭირეთ ღილაკს გაგრძელება";
 
 "deposit_title" = "თანხის შევსება";
 "deposit_balance_title" = "ბალანსი";
+
+"visa_continue_button_title" = "გაგრძელება";
+
+"visa_min_limit" = "მინიმალური";
+"visa_max_limit" = "ერთჯერადი";
+"visa_daily_limit" = "დღიური";
 
 "emoney_title" = "გადახდის დასასრულებლად თქვენ გადამისამართდებით პროვაიდერის ვებ-გვერდზე";
 "emoney_goto" = "გადასვლა";

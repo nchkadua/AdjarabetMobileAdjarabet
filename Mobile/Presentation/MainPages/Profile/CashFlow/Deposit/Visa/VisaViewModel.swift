@@ -20,7 +20,6 @@ protocol VisaViewModelInput {
     func viewDidLoad()
     func entered(amount: String)
     func accountSelected(at index: Int)
-    func addAccountTapped()
     func continueTapped()
 }
 
@@ -100,10 +99,6 @@ extension DefaultVisaViewModel: VisaViewModel {
             selectedAccount = index - 1
         }
         updateContinue()
-    }
-
-    func addAccountTapped() {
-        routeSubject.onNext(.addAccount)
     }
 
     func continueTapped() {
