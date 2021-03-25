@@ -20,9 +20,6 @@ public class WithdrawViewController: ABViewController {
     @IBOutlet private weak var totalAmountLabelComponentView: LabelComponentView!
     @IBOutlet private weak var proceedButton: ABButton!
 
-    // FIXME: Temporary
-    var count: Bool = true
-
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,25 +60,26 @@ public class WithdrawViewController: ABViewController {
     private func didRecive(action: WithdrawViewModelOutputAction) {
         switch action {
         case .showView(let type):
-            {}()
+            {}() // TODO: Giorgi
         case .updateAmount(let amount):
-            {}()
+            amountInputView.set(text: amount)
         case .updateAccounts(let accounts):
             {}()
         case .updateFee(let fee):
-            {}()
+            commissionLabelComponentView.change(value: fee)
         case .updateSum(let sum):
-            {}()
+            totalAmountLabelComponentView.change(value: sum)
         case .updateContinue(let isEnabled):
-            {}()
+            proceedButton.isUserInteractionEnabled = isEnabled
+            proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
         case .updateMin(let min):
-            {}()
+            {}() // TODO: Giorgi
         case .updateDisposable(let disposable):
-            {}()
+            {}() // TODO: Giorgi
         case .updateMax(let max):
-            {}()
+            {}() // TODO: Giorgi
         case .show(let error):
-            {}()
+            showAlert(title: error)
         }
     }
 
@@ -144,11 +142,7 @@ public class WithdrawViewController: ABViewController {
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
         // FIXME: Bounce time
-        if !count {
-            return
-        }
         //viewModel.handleTextDidChange(amount: amount2Double() ?? 0.0)
-        count = false
     }
 
     // MARK: Configuration
@@ -159,7 +153,6 @@ public class WithdrawViewController: ABViewController {
         } else {
             isEnabled = false
         }
-
         proceedButton.isUserInteractionEnabled = isEnabled
         proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
@@ -167,16 +160,5 @@ public class WithdrawViewController: ABViewController {
     // MARK: Action methods
     @objc private func proceedDidTap() {
         //viewModel.proceedTapped(amount: amount2Double() ?? 0.0)
-    }
-
-    // FIXME: Common with addCards
-    private func amount2Double() -> Double? {
-        guard let text   = amountInputView.mainTextField.text,
-              let number = NumberFormatter().number(from: text),
-              let result = Double(exactly: number)
-        else {
-            return nil
-        }
-        return result
     }
 }

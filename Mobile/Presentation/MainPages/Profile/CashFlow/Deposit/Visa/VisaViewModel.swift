@@ -8,8 +8,7 @@
 
 import RxSwift
 
-protocol VisaViewModel: VisaViewModelInput, VisaViewModelOutput {
-}
+protocol VisaViewModel: VisaViewModelInput, VisaViewModelOutput { }
 
 public struct VisaViewModelParams {
     let serviceType: UFCServiceType
