@@ -34,6 +34,7 @@ enum WithdrawViewModelOutputAction {
     case updateDisposable(with: String)
     case updateMax(with: String)
     case show(error: String)
+    case showMessage(message: String)
 }
 // view type enum
 enum WithdrawViewType {
@@ -156,7 +157,14 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
     }
 
     private func initSession(account: Int, amount: Double) {
-        let serviceType: UFCServiceType = .regular // FIXME: account -> serviceType
+        // assumption: sanity check on accounts already done
+        guard let serviceType = UFCServiceType(account: accounts[account - 1])
+        else {
+            reset()
+            let error =  R.string.localization.withdraw_service_type_init_error.localized()
+            notify(.show(error: error))
+            return
+        }
         withdrawUseCase.execute(serviceType: serviceType, amount: amount) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -187,14 +195,15 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
             notify(.show(error: "wrong parameters was passed - amount: \(amount); account: \(account)"))
             return
         }
-        // guard session
-        guard let session = session
+        // guard necessary parameters for transaction
+        guard let session = session,
+              let serviceType = UFCServiceType(account: accounts[account - 1])
         else {
             reset()
-            notify(.show(error: "")) // FIXME: localize
+            let error = R.string.localization.withdraw_missing_params_error.localized()
+            notify(.show(error: error))
             return
         }
-        let serviceType: UFCServiceType = .regular // FIXME: account -> serviceType
         withdrawUseCase.execute(serviceType: serviceType,
                                 amount: damount,
                                 accountId: accounts[account - 1].id!,
@@ -202,7 +211,8 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
             guard let self = self else { return }
             switch result {
             case .success:
-                self.notify(.show(error: "Transaction Successfull")) // FIXME: localize, add show(message:)
+                let success = R.string.localization.withdraw_transaction_successed.localized()
+                self.notify(.showMessage(message: success))
             case .failure(let error):
                 self.reset()
                 self.notify(.show(error: error.localizedDescription))

@@ -75,6 +75,8 @@ public class WithdrawViewController: ABViewController {
             {}() // TODO: Giorgi
         case .show(let error):
             showAlert(title: error)
+        case .showMessage(let message):
+            showAlert(title: message)
         }
     }
 
