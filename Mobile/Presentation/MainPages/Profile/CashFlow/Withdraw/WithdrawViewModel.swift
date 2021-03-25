@@ -58,7 +58,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
     var route: Observable<WithdrawViewModelRoute> { routeSubject.asObserver() }
 
     func viewDidLoad() {
-        //
+        notify(.updateAccounts(with: ["a", "b", "c"]))
     }
 
     func entered(amount: String, account: Int) {
@@ -75,5 +75,11 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
 
     func added() {
         routeSubject.onNext(.addAccount)
+    }
+
+    /* helpers */
+
+    private func notify(_ action: WithdrawViewModelOutputAction) {
+        actionSubject.onNext(action)
     }
 }

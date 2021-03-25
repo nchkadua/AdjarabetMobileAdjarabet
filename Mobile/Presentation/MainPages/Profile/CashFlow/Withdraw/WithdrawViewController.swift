@@ -51,12 +51,6 @@ public class WithdrawViewController: ABViewController {
         }).disposed(by: disposeBag)
     }
 
-    /*
-     case .setupWithLabel(let label): setupLabel(with: label)
-     case .updateTotalAmount(let totalAmount): totalAmountLabelComponentView.change(value: "\(totalAmount) ₾")
-     case .updateSumWith(let fee): commissionLabelComponentView.change(value: "\(fee) ₾")
-     case .showAlert(let message): showAlert(title: message)
-     */
     private func didRecive(action: WithdrawViewModelOutputAction) {
         switch action {
         case .showView(let type):
@@ -64,7 +58,8 @@ public class WithdrawViewController: ABViewController {
         case .updateAmount(let amount):
             amountInputView.set(text: amount)
         case .updateAccounts(let accounts):
-            {}()
+            cardNumberInputView.setupPickerView(withItems: accounts)
+            cardNumberInputView.setDefaultValue(accounts.first ?? "")
         case .updateFee(let fee):
             commissionLabelComponentView.change(value: fee)
         case .updateSum(let sum):
