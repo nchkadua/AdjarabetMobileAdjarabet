@@ -133,6 +133,11 @@ extension DefaultVisaViewModel: VisaViewModel {
     }
 
     func entered(amount: String, account: Int) {
+        // if empty amount do nothing
+        if amount.isEmpty {
+            notify(.updateContinue(with: false))
+            return
+        }
         // sanity check
         guard (0...accounts.count).contains(account) // == because of placeholder
         else {

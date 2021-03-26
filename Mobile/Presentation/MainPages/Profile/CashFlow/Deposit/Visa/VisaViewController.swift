@@ -96,7 +96,7 @@ public class VisaViewController: ABViewController {
         amountInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title.localized())
-        amountInputView.formatter = AmountFormatter()
+     // amountInputView.formatter = AmountFormatter()
 
         cardNumberInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
         cardNumberInputView.setPlaceholder(text: R.string.localization.visa_card_title.localized())
@@ -114,12 +114,12 @@ public class VisaViewController: ABViewController {
         continueButton.setTitleWithoutAnimation(R.string.localization.visa_continue_button_title.localized(), for: .normal)
         continueButton.addTarget(self, action: #selector(continueButtonDidTap), for: .touchUpInside)
         continueButton.titleEdgeInsets.bottom = 2
-
+        /*
         amountInputView.mainTextField.rx.controlEvent([.editingChanged])
             .asObservable().subscribe({ [weak self] _ in
                 self?.updateContinueButton()
             }).disposed(by: disposeBag)
-
+        */
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidEnd), for: .editingDidEnd)
     }

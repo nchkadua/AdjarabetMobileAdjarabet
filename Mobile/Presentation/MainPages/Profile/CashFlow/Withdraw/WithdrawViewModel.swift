@@ -103,7 +103,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
     func entered(amount: String, account: Int) {
         // reset session
         session = nil
-        // if empty amount do noting just clean everything
+        // if empty amount do nothing, just clean everything
         if amount.isEmpty {
             reset()
             return
