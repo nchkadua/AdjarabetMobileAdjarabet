@@ -133,7 +133,7 @@ public class WithdrawViewController: ABViewController {
      // amountInputView.formatter = AmountFormatter() // TODO: Giorgi wooow?
 
         cardNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
-     // cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())
+        cardNumberInputView.setPlaceholder(text: R.string.localization.withdraw_card_title())
         cardNumberInputView.delegate = self
 
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)

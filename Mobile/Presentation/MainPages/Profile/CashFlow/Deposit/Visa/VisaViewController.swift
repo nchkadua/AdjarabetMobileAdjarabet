@@ -51,11 +51,7 @@ public class VisaViewController: ABViewController {
 
     private func didRecive(action: VisaViewModelOutputAction) {
         switch action {
-        case .showView(let type):
-            handleShowView(of: type)
-        case .enterAmount(let amount):
-            let account = cardNumberInputView.pickerView.selectedRow(inComponent: 0)
-            viewModel.entered(amount: amount, account: account)
+        case .showView(let type): handleShowView(of: type)
         case .updateAmount(let amount): amountInputView.set(text: amount)
         case .updateAccounts(let accounts): setupPaymentCards(with: accounts)
         case .updateContinue(let isEnabled): updateContinueButton(isEnabled)
@@ -79,8 +75,6 @@ public class VisaViewController: ABViewController {
         switch route {
         case .webView(let params):
             navigator.navigate(to: .webView(params: params), animated: true)
-        case .addAccount:
-            navigator.navigate(to: .addAccount, animated: true)
         }
     }
 
@@ -96,7 +90,6 @@ public class VisaViewController: ABViewController {
         amountInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title.localized())
-     // amountInputView.formatter = AmountFormatter()
 
         cardNumberInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
         cardNumberInputView.setPlaceholder(text: R.string.localization.visa_card_title.localized())
@@ -114,12 +107,7 @@ public class VisaViewController: ABViewController {
         continueButton.setTitleWithoutAnimation(R.string.localization.visa_continue_button_title.localized(), for: .normal)
         continueButton.addTarget(self, action: #selector(continueButtonDidTap), for: .touchUpInside)
         continueButton.titleEdgeInsets.bottom = 2
-        /*
-        amountInputView.mainTextField.rx.controlEvent([.editingChanged])
-            .asObservable().subscribe({ [weak self] _ in
-                self?.updateContinueButton()
-            }).disposed(by: disposeBag)
-        */
+
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidEnd), for: .editingDidEnd)
     }
@@ -129,7 +117,7 @@ public class VisaViewController: ABViewController {
     }
 
     @objc private func amountEditingDidEnd() {
-        viewModel.entered(amount: amount, account: account)
+        viewModel.entered(amount: amount)
     }
 
     // MARK: Action methods
