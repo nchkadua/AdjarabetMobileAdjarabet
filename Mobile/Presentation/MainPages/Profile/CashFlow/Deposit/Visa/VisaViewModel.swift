@@ -114,9 +114,16 @@ extension DefaultVisaViewModel: VisaViewModel {
     private func fetchLimits() {
         // 4. fetch min, disposable, max amounts
         // TODO: Change with real data later
-        let min = amountFormatter.format(number: 1, in: .sn)
-        let disposable = amountFormatter.format(number: 10000, in: .sn)
-        let max = amountFormatter.format(number: 50000, in: .sn)
+        var min = amountFormatter.format(number: 1, in: .sn)
+        var disposable = amountFormatter.format(number: 10000, in: .sn)
+        var max = amountFormatter.format(number: 50000, in: .sn)
+
+        if params.serviceType == .vip {
+            min = amountFormatter.format(number: 1, in: .sn)
+            disposable = amountFormatter.format(number: 50000, in: .sn)
+            max = amountFormatter.format(number: 100000, in: .sn)
+        }
+
         // 5. notify view to show min, disposable, max amounts
         notify(.updateMin(with: min))
         notify(.updateDisposable(with: disposable))

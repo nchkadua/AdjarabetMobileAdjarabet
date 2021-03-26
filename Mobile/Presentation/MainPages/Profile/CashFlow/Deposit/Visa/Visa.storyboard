@@ -135,7 +135,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="Deposit/addCard" width="23" height="23"/>
+        <image name="Deposit/addCard" width="29" height="26.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

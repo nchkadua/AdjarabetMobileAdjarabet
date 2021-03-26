@@ -21,6 +21,9 @@ public class VisaViewController: ABViewController {
     @IBOutlet weak private var limitView: VisaLimitComponentView!
     @IBOutlet weak private var instructionView: VisaInstructionsComponentView!
 
+    private var amount: String { amountInputView.text ?? "" }
+    private var account: Int { cardNumberInputView.pickerView.selectedRow(inComponent: 0) }
+
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,22 +54,15 @@ public class VisaViewController: ABViewController {
         case .showView(let type):
             handleShowView(of: type)
         case .enterAmount(let amount):
-            let account = 0 // TODO: Nika specify currentcy chosen account index
+            let account = cardNumberInputView.pickerView.selectedRow(inComponent: 0)
             viewModel.entered(amount: amount, account: account)
-        case .updateAmount(let amount):
-            {}() // TODO: Nika update amount input with "amount"
-        case .updateAccounts(let accounts):
-            {}() // TODO: Nika update account picker view with "accounts"
-        case .updateContinue(let isEnabled):
-            {}() // TODO: Nika update isUserInteractionEnabled of continue button
-        case .updateMin(let min):
-            {}() // TODO: Nika update min amount text
-        case .updateDisposable(let disposable):
-            {}() // TODO: Nika update min disposable text
-        case .updateMax(let max):
-            {}() // TODO: Nika update max disposable text
-        case .show(error: let error):
-            {}() // TODO: Nika handle error
+        case .updateAmount(let amount): amountInputView.set(text: amount)
+        case .updateAccounts(let accounts): setupPaymentCards(with: accounts)
+        case .updateContinue(let isEnabled): updateContinueButton(isEnabled)
+        case .updateMin(let min): self.limitView.updateMin(min)
+        case .updateDisposable(let disposable): self.limitView.updateDaily(disposable)
+        case .updateMax(let max): self.limitView.updateMax(max)
+        case .show(error: let error): showAlert(title: error)
         }
     }
 
@@ -97,6 +93,14 @@ public class VisaViewController: ABViewController {
     }
 
     private func setupInputViews() {
+        amountInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
+        amountInputView.mainTextField.keyboardType = .decimalPad
+        amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title.localized())
+        amountInputView.formatter = AmountFormatter()
+
+        cardNumberInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
+        cardNumberInputView.setPlaceholder(text: R.string.localization.visa_card_title.localized())
+        cardNumberInputView.delegate = self
     }
 
     private func setupButtons() {
@@ -115,6 +119,17 @@ public class VisaViewController: ABViewController {
             .asObservable().subscribe({ [weak self] _ in
                 self?.updateContinueButton()
             }).disposed(by: disposeBag)
+
+        amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)
+        amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidEnd), for: .editingDidEnd)
+    }
+
+    @objc private func amountEditingDidBegin() {
+        amountInputView.set(text: "")
+    }
+
+    @objc private func amountEditingDidEnd() {
+        viewModel.entered(amount: amount, account: account)
     }
 
     // MARK: Action methods
@@ -123,17 +138,22 @@ public class VisaViewController: ABViewController {
     }
 
     @objc private func continueButtonDidTap() {
+        viewModel.continued(amount: amount, account: account)
     }
 
-    @objc private func updateContinueButton() {
-        var isEnabled = true
-        if !(cardNumberInputView.mainTextField.text?.isEmpty ?? false) && !(amountInputView.mainTextField.text?.isEmpty ?? false) {
-            isEnabled = true
-        } else {
-            isEnabled = false
-        }
-
+    @objc private func updateContinueButton(_ isEnabled: Bool = true) {
         continueButton.isUserInteractionEnabled = isEnabled
         continueButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+    }
+
+    private func setupPaymentCards(with accounts: [String]) {
+        cardNumberInputView.setupPickerView(withItems: accounts)
+        cardNumberInputView.setDefaultValue(accounts.first ?? "")
+    }
+}
+
+extension VisaViewController: ABInputViewDelegate {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.selected(account: account, amount: amount)
     }
 }

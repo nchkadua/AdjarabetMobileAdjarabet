@@ -228,7 +228,7 @@ public enum DesignSystem {
 
         public static let borderWidth: CGFloat          = 1
         public static let borderColor: Color            = .nonOpaque()
-        public static let cornerRadius: CGFloat         = 8
+        public static let cornerRadius: CGFloat         = 4
 
         public enum Size: CaseIterable {
             case small

@@ -8,15 +8,110 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VisaLimitComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="dailyLimitLabel" destination="4d8-xt-LqN" id="ZJo-9Z-iWH"/>
+                <outlet property="dailyLimitTitleLabel" destination="PCZ-x0-51R" id="pZA-SD-tvG"/>
+                <outlet property="maxLimitLabel" destination="4f1-Dm-qJA" id="RDQ-jf-kiS"/>
+                <outlet property="maxLimitTitleLabel" destination="anA-re-275" id="qHD-92-odM"/>
+                <outlet property="minLimitLabel" destination="ocI-WT-c60" id="ZOs-Ua-BDB"/>
+                <outlet property="minLimitTitleLabel" destination="0UC-pM-FGn" id="bUJ-rN-M9G"/>
+                <outlet property="sv1" destination="dKl-zL-tnM" id="cP6-CN-Fac"/>
+                <outlet property="sv2" destination="anH-To-9JA" id="8gp-gQ-AIj"/>
+                <outlet property="sv3" destination="Ebw-A1-yfI" id="uBf-i4-ppX"/>
+                <outlet property="view" destination="iN0-l3-epB" id="NpC-6M-HSm"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VisaLimitComponentView" customModule="Mobile" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3fy-7w-Mcd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dKl-zL-tnM">
+                            <rect key="frame" x="0.0" y="0.0" width="137.5" height="60"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UC-pM-FGn">
+                                    <rect key="frame" x="14" y="11" width="115.5" height="16.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16.5" id="JHo-T2-Edr"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocI-WT-c60">
+                                    <rect key="frame" x="14" y="29.5" width="115.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="11" left="14" bottom="10" right="8"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="anH-To-9JA">
+                            <rect key="frame" x="138.5" y="0.0" width="137" height="60"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCZ-x0-51R">
+                                    <rect key="frame" x="17" y="11" width="112" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="men-we-doN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d8-xt-LqN">
+                                    <rect key="frame" x="17" y="29" width="112" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="dLO-o0-Qrn"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="11" left="17" bottom="10" right="8"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ebw-A1-yfI">
+                            <rect key="frame" x="276.5" y="0.0" width="137.5" height="60"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anA-re-275">
+                                    <rect key="frame" x="17" y="11" width="112.5" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="6bv-te-Jyu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f1-Dm-qJA">
+                                    <rect key="frame" x="17" y="29" width="112.5" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="MXb-av-O8G"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="11" left="17" bottom="10" right="8"/>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3fy-7w-Mcd" secondAttribute="trailing" id="2PQ-Iq-UAx"/>
+                <constraint firstItem="3fy-7w-Mcd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6yF-a4-EBM"/>
+                <constraint firstItem="3fy-7w-Mcd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SWZ-6A-B27"/>
+                <constraint firstAttribute="bottom" secondItem="3fy-7w-Mcd" secondAttribute="bottom" id="WVh-AC-dV9"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="87" y="89"/>
+            <point key="canvasLocation" x="86.956521739130437" y="88.392857142857139"/>
         </view>
     </objects>
 </document>
