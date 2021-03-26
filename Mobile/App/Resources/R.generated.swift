@@ -3234,7 +3234,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 462 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 465 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
@@ -4732,6 +4732,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let transaction_history = Rswift.StringResource(key: "transaction_history", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Transaction Successed
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_transaction_successed = Rswift.StringResource(key: "withdraw_transaction_successed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Transaction commission
       ///
       /// Locales: en, ka, hy
@@ -4924,6 +4928,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_parameters_messages_sms_button = Rswift.StringResource(key: "account_parameters_messages_sms_button", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: service type can not be specified
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_service_type_init_error = Rswift.StringResource(key: "withdraw_service_type_init_error", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: some parameters are missing
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_missing_params_error = Rswift.StringResource(key: "withdraw_missing_params_error", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: აირჩიეთ სასურველი ბარათი
       ///
       /// Locales: en, ka, hy
@@ -10695,6 +10707,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("transaction_history", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Transaction Successed
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_transaction_successed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_transaction_successed", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_transaction_successed"
+        }
+
+        return NSLocalizedString("withdraw_transaction_successed", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Transaction commission
       ///
       /// Locales: en, ka, hy
@@ -11413,6 +11440,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_parameters_messages_sms_button", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: service type can not be specified
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_service_type_init_error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_service_type_init_error", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_service_type_init_error"
+        }
+
+        return NSLocalizedString("withdraw_service_type_init_error", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: some parameters are missing
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_missing_params_error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_missing_params_error", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_missing_params_error"
+        }
+
+        return NSLocalizedString("withdraw_missing_params_error", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: აირჩიეთ სასურველი ბარათი
@@ -12244,8 +12301,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12316,8 +12373,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12358,8 +12415,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -12628,8 +12685,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

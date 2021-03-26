@@ -10,8 +10,8 @@ public protocol WithdrawViewControllerFactory {
     func make() -> WithdrawViewController
 }
 
-public class DefaultWithdrawViewControllerFactory: WithdrawViewControllerFactory {
-    public func make() -> WithdrawViewController {
+struct DefaultWithdrawViewControllerFactory: WithdrawViewControllerFactory {
+    func make() -> WithdrawViewController {
         R.storyboard.withdraw().instantiate(controller: WithdrawViewController.self)!
     }
 }

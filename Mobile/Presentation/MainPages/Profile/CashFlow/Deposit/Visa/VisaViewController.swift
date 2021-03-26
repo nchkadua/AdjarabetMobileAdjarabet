@@ -48,25 +48,34 @@ public class VisaViewController: ABViewController {
 
     private func didRecive(action: VisaViewModelOutputAction) {
         switch action {
-        case .placeholdAmount(let placeholder):
-            {}() // TODO: Nika update amount input with "placeholder"
-        case .updateAmount(let amount):
-            {}() // TODO: Nika update amount input with "amount"
-        case .updateContinue(let isUserInteractionEnabled):
-            {}() // TODO: Nika update isUserInteractionEnabled of continue button
         case .showView(let type):
             handleShowView(of: type)
-        case .show(let error):
+        case .enterAmount(let amount):
+            let account = 0 // TODO: Nika specify currentcy chosen account index
+            viewModel.entered(amount: amount, account: account)
+        case .updateAmount(let amount):
+            {}() // TODO: Nika update amount input with "amount"
+        case .updateAccounts(let accounts):
+            {}() // TODO: Nika update account picker view with "accounts"
+        case .updateContinue(let isEnabled):
+            {}() // TODO: Nika update isUserInteractionEnabled of continue button
+        case .updateMin(let min):
+            {}() // TODO: Nika update min amount text
+        case .updateDisposable(let disposable):
+            {}() // TODO: Nika update min disposable text
+        case .updateMax(let max):
+            {}() // TODO: Nika update max disposable text
+        case .show(error: let error):
             {}() // TODO: Nika handle error
         }
     }
 
     private func handleShowView(of type: VisaViewType) {
         switch type {
-        case .accounts(let list, let selectedIndex):
-            {}() // TODO: Nika handle account list and selectedIndex
+        case .accounts:
+            {}() // TODO: Nika handle visualization of view with accounts
         case .addAccount:
-            {}() // TODO: Nika handle visualization of view without accounts
+            {}() // TODO: Nika handle visualization of add account
         }
     }
 

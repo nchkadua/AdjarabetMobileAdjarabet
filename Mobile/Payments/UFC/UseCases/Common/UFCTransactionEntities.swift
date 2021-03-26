@@ -29,6 +29,22 @@ public enum UFCServiceType {
 }
 
 /**
+ UFCServiceType Payment Account Entity Initialized
+ */
+extension UFCServiceType {
+    init?(account: PaymentAccountEntity) {
+        // FIXME: temporary logic
+        guard let providerName = account.providerName
+        else { return nil }
+        if providerName.lowercased().contains("vip") {
+            self = .vip
+        } else {
+            self = .regular
+        }
+    }
+}
+
+/**
  Parameters Factory Helper
  */
 struct UFCTransactionParamsFactory {
