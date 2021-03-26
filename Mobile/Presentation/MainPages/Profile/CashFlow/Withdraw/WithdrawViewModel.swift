@@ -74,8 +74,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
                 } else {                                        // else:
                     self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
                     // create account list for view
-                    var viewAccounts = [R.string.localization.deposit_visa_choose_account.localized()] // first element is "Choose Account" placeholder
-                    viewAccounts.append(contentsOf: self.accounts.map { $0.accountVisual! })
+                    let viewAccounts = self.accounts.map { $0.accountVisual! }
                     self.notify(.updateAccounts(with: viewAccounts)) // 4. update accounts on shown view
                     self.fetchLimits() // continue here...
                 }
@@ -103,13 +102,13 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
     func entered(amount: String, account: Int) {
         // reset session
         session = nil
-        // if empty amount do noting just clean everything
+        // if empty amount do nothing, just clean everything
         if amount.isEmpty {
             reset()
             return
         }
         // sanity check
-        guard (0...accounts.count).contains(account) // == because of placeholder
+        guard (0..<accounts.count).contains(account)
         else {
             reset()
             notify(.show(error: "wrong account index was passed: \(account)"))
@@ -130,26 +129,21 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
         // notify to update amount with formatted version
         let formattedAmount = amountFormatter.format(number: amount, in: .s_n_a)
         notify(.updateAmount(with: formattedAmount))
-
-        if account > 0 { // is not placeholder
-            initSession(account: account, amount: amount)
-        } else {
-            notify(.updateContinue(with: false))
-        }
+        initSession(account: account, amount: amount)
     }
 
     func selected(account: Int, amount: String) {
         // reset session
         session = nil
         // sanity check
-        guard (0...accounts.count).contains(account) // == because of placeholder
+        guard (0..<accounts.count).contains(account)
         else {
             reset()
             notify(.show(error: "wrong account index was passed: \(account)"))
             return
         }
         // update continue button state
-        if account > 0, let amount = amountFormatter.unformat(number: amount, from: .s_n_a) { // is not placeholder and correct amount
+        if let amount = amountFormatter.unformat(number: amount, from: .s_n_a) { // is not placeholder and correct amount
             initSession(account: account, amount: amount)
         } else {
             reset()
@@ -158,7 +152,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
 
     private func initSession(account: Int, amount: Double) {
         // assumption: sanity check on accounts already done
-        guard let serviceType = UFCServiceType(account: accounts[account - 1])
+        guard let serviceType = UFCServiceType(account: accounts[account])
         else {
             reset()
             let error =  R.string.localization.withdraw_service_type_init_error.localized()
@@ -188,7 +182,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
 
     func continued(amount: String, account: Int) {
         // sanity check
-        guard (0..<accounts.count).contains(account - 1),                          // non-placeholder is checked
+        guard (0..<accounts.count).contains(account),                              // sanity check
               let damount = amountFormatter.unformat(number: amount, from: .s_n_a) // amount is valid
         else {
             reset()
@@ -197,7 +191,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
         }
         // guard necessary parameters for transaction
         guard let session = session,
-              let serviceType = UFCServiceType(account: accounts[account - 1])
+              let serviceType = UFCServiceType(account: accounts[account])
         else {
             reset()
             let error = R.string.localization.withdraw_missing_params_error.localized()
@@ -206,7 +200,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
         }
         withdrawUseCase.execute(serviceType: serviceType,
                                 amount: damount,
-                                accountId: accounts[account - 1].id!,
+                                accountId: accounts[account].id!,
                                 session: session) { [weak self] result in
             guard let self = self else { return }
             switch result {

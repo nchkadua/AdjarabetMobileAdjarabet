@@ -1,15 +1,14 @@
 //
-//  EmoneyInstructionsView.swift
+//  VisaInstructionsComponentView.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 3/24/21.
+//  Created by Nika Chkadua on 3/25/21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import Foundation
 
-class EmoneyInstructionsView: UIView {
-    // MARK: Outlets
+class VisaInstructionsComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
@@ -39,7 +38,7 @@ class EmoneyInstructionsView: UIView {
     }
 }
 
-extension EmoneyInstructionsView: Xibable {
+extension VisaInstructionsComponentView: Xibable {
     var mainView: UIView {
         get {
             view
@@ -56,21 +55,21 @@ extension EmoneyInstructionsView: Xibable {
         iconImageView.image = R.image.deposit.rules_icon()
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .body1(fontCase: .lower, fontStyle: .semiBold))
-        titleLabel.text = R.string.localization.emoney_instruction_title.localized()
+        titleLabel.text = R.string.localization.visa_instruction_title.localized()
 
         rule1Label.setTextColor(to: .secondaryText())
         rule1Label.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
-        rule1Label.text = R.string.localization.emoney_rule1.localized()
+        rule1Label.text = R.string.localization.visa_description_amount.localized()
         rule1Label.numberOfLines = 3
 
         rule2Label.setTextColor(to: .secondaryText())
         rule2Label.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
-        rule2Label.text = R.string.localization.emoney_rule2.localized()
+        rule2Label.text = R.string.localization.visa_description_card.localized()
         rule2Label.numberOfLines = 3
 
         rule3Label.setTextColor(to: .secondaryText())
         rule3Label.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
-        rule3Label.text = R.string.localization.emoney_rule3.localized()
+        rule3Label.text = R.string.localization.visa_description_proceed.localized()
         rule3Label.numberOfLines = 3
     }
 

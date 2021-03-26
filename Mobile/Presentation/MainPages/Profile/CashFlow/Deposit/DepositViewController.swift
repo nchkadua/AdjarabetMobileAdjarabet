@@ -42,7 +42,7 @@ public class DepositViewController: UIViewController {
         switch action {
         case .set(let totalBalance): set(totalBalance)
         case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
-        case .didLoadPaymentMethods: setChildViewControllers()
+        case .didLoadPaymentMethods(let methods): setChildViewControllers(methods)
         case .showMessage(let message): showAlert(title: message)
         }
     }
@@ -103,11 +103,17 @@ public class DepositViewController: UIViewController {
     }
 
     // MARK: Action methods
-    private func setChildViewControllers() {
+    private func setChildViewControllers(_ paymentMethodList: [PaymentMethodEntity]) {
         appPageViewController.orderedViewControllers = [navigator.emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self), navigator.visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)]
+        jumpToViewController(by: PaymentMethodType(flowId: paymentMethodList[0].flowId) ?? .tbcRegular)
     }
 
     private func jumpToViewController(_ method: PaymentMethodComponentViewModel, _ indexPath: IndexPath) {
-        print("Asdadasdas ", method)
+        jumpToViewController(by: PaymentMethodType(flowId: method.params.flowId) ?? .tbcRegular)
+    }
+
+    private func jumpToViewController(by paymentMethodType: PaymentMethodType) {
+        guard let vc = navigator.viewController(by: paymentMethodType) else { return }
+        appPageViewController.jump(to: vc, animated: false)
     }
 }

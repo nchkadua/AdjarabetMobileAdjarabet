@@ -27,7 +27,7 @@ public protocol DepositViewModelOutput {
 public enum DepositViewModelOutputAction {
     case set(totalBalance: Double)
     case bindToGridViewModel(viewModel: PaymentMethodGridComponentViewModel)
-    case didLoadPaymentMethods
+    case didLoadPaymentMethods(methods: [PaymentMethodEntity])
     case showMessage(message: String)
 }
 
@@ -61,12 +61,12 @@ extension DefaultDepositViewModel: DepositViewModel {
             switch result {
             case .success(let entity):
                 let viewModels: [PaymentMethodCollectionViewCellDataProvider] = entity.filter { $0.flowId.contains("deposit") }.compactMap { payment in
-                    let vm = DefaultPaymentMethodComponentViewModel(params: .init(iconUrl: payment.iconUrl))
+                    let vm = DefaultPaymentMethodComponentViewModel(params: .init(iconUrl: payment.iconUrl, flowId: payment.flowId))
                     return vm
                 }
 
                 self?.paymentGridComponentViewModel.reloadCollectionView(with: viewModels)
-                self?.actionSubject.onNext(.didLoadPaymentMethods)
+                self?.actionSubject.onNext(.didLoadPaymentMethods(methods: entity))
             case .failure(let error): self?.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }

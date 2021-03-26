@@ -13,6 +13,7 @@ public protocol PaymentMethodComponentViewModel: PaymentMethodComponentViewModel
 
 public struct PaymentMethodComponentViewModelParams {
     public var iconUrl: String
+    public var flowId: String
 }
 
 public protocol PaymentMethodComponentViewModelInput {

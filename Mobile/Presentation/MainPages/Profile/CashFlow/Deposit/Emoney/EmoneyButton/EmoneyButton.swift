@@ -18,7 +18,7 @@ class EmoneyButton: UIButton {
 
     private func setup() {
         layer.cornerRadius = 4
-        titleEdgeInsets.left = -50
+        titleEdgeInsets.left = -40
         titleEdgeInsets.bottom = 3
         titleLabel?.alpha = 0.0
 
@@ -30,7 +30,7 @@ class EmoneyButton: UIButton {
         setImage(R.image.deposit.emoney_logo(), for: .normal)
 
         guard animation == true else { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
             self.animate()
         })
     }

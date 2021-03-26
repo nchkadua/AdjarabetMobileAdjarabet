@@ -55,4 +55,8 @@ class ABPageViewController: UIPageViewController {
             break
         }
     }
+
+    public func jump(to viewController: UIViewController, animated: Bool = true) {
+        setViewControllers([viewController], direction: .forward, animated: animated, completion: nil)
+    }
 }

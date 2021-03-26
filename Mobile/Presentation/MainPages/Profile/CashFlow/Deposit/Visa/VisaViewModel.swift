@@ -17,10 +17,9 @@ public struct VisaViewModelParams {
 protocol VisaViewModelInput {
     var params: VisaViewModelParams { get set }
     func viewDidLoad()                           // call on viewDidLoad()
-    func entered(amount: String, account: Int)   // call on entering amount
+    func entered(amount: String)                 // call on entering amount
     func selected(account: Int, amount: String)  // call on selecting account
     func continued(amount: String, account: Int) // call on tapping continue button
-    func added()                                 // call on tapping add account button
 }
 
 protocol VisaViewModelOutput {
@@ -30,7 +29,6 @@ protocol VisaViewModelOutput {
 
 enum VisaViewModelOutputAction {
     case showView(ofType: VisaViewType)
-    case enterAmount(with: String) // view should call viewModel.entered(amount:, accountIndex:)
     case updateAmount(with: String)
     case updateAccounts(with: [String])
     case updateContinue(with: Bool)
@@ -47,7 +45,6 @@ enum VisaViewType {
 
 enum VisaViewModelRoute {
     case webView(with: WebViewModelParams)
-    case addAccount
 }
 
 class DefaultVisaViewModel {
@@ -86,8 +83,7 @@ extension DefaultVisaViewModel: VisaViewModel {
                 } else {                                        // else:
                     self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
                     // create account list for view
-                    var viewAccounts = [R.string.localization.deposit_visa_choose_account.localized()] // first element is "Choose Account" placeholder
-                    viewAccounts.append(contentsOf: self.accounts.map { $0.accountVisual! })
+                    let viewAccounts = self.accounts.map { $0.accountVisual! }
                     self.notify(.updateAccounts(with: viewAccounts)) // 4. update accounts on shown view
                     self.fetchSuggested() // continue here...
                 }
@@ -114,9 +110,16 @@ extension DefaultVisaViewModel: VisaViewModel {
     private func fetchLimits() {
         // 4. fetch min, disposable, max amounts
         // TODO: Change with real data later
-        let min = amountFormatter.format(number: 1, in: .sn)
-        let disposable = amountFormatter.format(number: 10000, in: .sn)
-        let max = amountFormatter.format(number: 50000, in: .sn)
+        var min = amountFormatter.format(number: 1, in: .sn)
+        var disposable = amountFormatter.format(number: 10000, in: .sn)
+        var max = amountFormatter.format(number: 50000, in: .sn)
+
+        if params.serviceType == .vip {
+            min = amountFormatter.format(number: 1, in: .sn)
+            disposable = amountFormatter.format(number: 50000, in: .sn)
+            max = amountFormatter.format(number: 100000, in: .sn)
+        }
+
         // 5. notify view to show min, disposable, max amounts
         notify(.updateMin(with: min))
         notify(.updateDisposable(with: disposable))
@@ -125,11 +128,10 @@ extension DefaultVisaViewModel: VisaViewModel {
         notify(.updateAmount(with: ""))
     }
 
-    func entered(amount: String, account: Int) {
-        // sanity check
-        guard (0...accounts.count).contains(account) // == because of placeholder
-        else {
-            notify(.show(error: "wrong account index was passed: \(account)"))
+    func entered(amount: String) {
+        // if empty amount do nothing
+        if amount.isEmpty {
+            notify(.updateContinue(with: false))
             return
         }
         // validation
@@ -147,21 +149,18 @@ extension DefaultVisaViewModel: VisaViewModel {
         // notify to update amount with formatted version
         let formattedAmount = amountFormatter.format(number: amount, in: .s_n_a)
         notify(.updateAmount(with: formattedAmount))
-
-        if account > 0 { // is not placeholder
-            notify(.updateContinue(with: true))
-        }
+        notify(.updateContinue(with: true))
     }
 
     func selected(account: Int, amount: String) {
         // sanity check
-        guard (0...accounts.count).contains(account) // == because of placeholder
+        guard (0..<accounts.count).contains(account)
         else {
             notify(.show(error: "wrong account index was passed: \(account)"))
             return
         }
         // update continue button state
-        if account == 0 || amountFormatter.unformat(number: amount, from: .s_n_a) == nil { // is placeholder or wrong amount
+        if amountFormatter.unformat(number: amount, from: .s_n_a) == nil { // is placeholder or wrong amount
             notify(.updateContinue(with: false))
         } else {
             notify(.updateContinue(with: true))
@@ -170,7 +169,7 @@ extension DefaultVisaViewModel: VisaViewModel {
 
     func continued(amount: String, account: Int) {
         // sanity check
-        guard (0..<accounts.count).contains(account - 1),                          // non-placeholder is checked
+        guard (0..<accounts.count).contains(account),                              // sanity check
               let damount = amountFormatter.unformat(number: amount, from: .s_n_a) // amount is valid
         else {
             notify(.show(error: "wrong parameters was passed - amount: \(amount); account: \(account)"))
@@ -178,7 +177,7 @@ extension DefaultVisaViewModel: VisaViewModel {
         }
         depositUseCase.execute(serviceType: params.serviceType,
                                amount: damount,
-                               accountId: accounts[account - 1].id!) { [weak self] result in
+                               accountId: accounts[account].id!) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let request):
@@ -189,14 +188,10 @@ extension DefaultVisaViewModel: VisaViewModel {
         }
     }
 
-    func added() {
-        routeSubject.onNext(.addAccount)
-    }
-
     /* helpers */
 
     private func suggestedTapped(with amount: Double) {
-        notify(.enterAmount(with: "\(amount)"))
+        entered(amount: "\(amount)")
     }
 
     private func notify(_ action: VisaViewModelOutputAction) {

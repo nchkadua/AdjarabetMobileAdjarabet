@@ -267,6 +267,10 @@
 		CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F03D1252CD6A7006D8001 /* QuickActionTableViewCell.swift */; };
 		CE2F03D6252CD6B0006D8001 /* QuickActionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F03D5252CD6B0006D8001 /* QuickActionTableViewCellDataProvider.swift */; };
 		CE2F03DA252CD6B6006D8001 /* QuickActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2F03D9252CD6B6006D8001 /* QuickActionTableViewCell.xib */; };
+		CE454654260C89EC00B01E19 /* VisaLimitComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */; };
+		CE454658260C89F900B01E19 /* VisaLimitComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */; };
+		CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */; };
+		CE454662260C8A7500B01E19 /* VisaInstructionsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE454661260C8A7500B01E19 /* VisaInstructionsComponentView.xib */; };
 		CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */; };
 		CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF525265CDA003E168F /* ProfileNavigator.swift */; };
 		CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF625265CDA003E168F /* ProfileViewController.swift */; };
@@ -871,6 +875,10 @@
 		CE2F03D1252CD6A7006D8001 /* QuickActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionTableViewCell.swift; sourceTree = "<group>"; };
 		CE2F03D5252CD6B0006D8001 /* QuickActionTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CE2F03D9252CD6B6006D8001 /* QuickActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionTableViewCell.xib; sourceTree = "<group>"; };
+		CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaLimitComponentView.swift; sourceTree = "<group>"; };
+		CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaLimitComponentView.xib; sourceTree = "<group>"; };
+		CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaInstructionsComponentView.swift; sourceTree = "<group>"; };
+		CE454661260C8A7500B01E19 /* VisaInstructionsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaInstructionsComponentView.xib; sourceTree = "<group>"; };
 		CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentsRepository.swift; sourceTree = "<group>"; };
 		CE55ECF525265CDA003E168F /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
 		CE55ECF625265CDA003E168F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -2680,6 +2688,24 @@
 			path = QuickActionTableViewCell;
 			sourceTree = "<group>";
 		};
+		CE454651260C89C000B01E19 /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */,
+				CE454661260C8A7500B01E19 /* VisaInstructionsComponentView.xib */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
+		CE454652260C89C800B01E19 /* Limits */ = {
+			isa = PBXGroup;
+			children = (
+				CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */,
+				CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */,
+			);
+			path = Limits;
+			sourceTree = "<group>";
+		};
 		CE55ECF425265B7D003E168F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -2982,6 +3008,8 @@
 		CEBB00792609D3E300D1B510 /* Visa */ = {
 			isa = PBXGroup;
 			children = (
+				CE454652260C89C800B01E19 /* Limits */,
+				CE454651260C89C000B01E19 /* Instructions */,
 				CEBB00892609D40400D1B510 /* Visa.storyboard */,
 				CEBB008A2609D40400D1B510 /* VisaNavigator.swift */,
 				CEBB008B2609D40400D1B510 /* VisaViewController.swift */,
@@ -4039,6 +4067,7 @@
 				7644B6192563EFA4006778B2 /* DateHeaderCell.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				7698869B2571042A00FA339E /* TransactionFilterTableViewCell.xib in Resources */,
+				CE454662260C8A7500B01E19 /* VisaInstructionsComponentView.xib in Resources */,
 				CEE25089256FE3C10089F805 /* TimerComponentView.xib in Resources */,
 				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
 				CE03746E25F8D7180061F507 /* Web.storyboard in Resources */,
@@ -4141,6 +4170,7 @@
 				CEE44E882600B5C100A83BD2 /* AdjaraMont-Light.ttf in Resources */,
 				CEA7779D256D4250008A4F6C /* MailChange.storyboard in Resources */,
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
+				CE454658260C89F900B01E19 /* VisaLimitComponentView.xib in Resources */,
 				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
 				76DCF6B125B8262300150EE1 /* MyCardTableViewCell.xib in Resources */,
 				7640C85025E3994B006D7100 /* HomeBannerComponentView.xib in Resources */,
@@ -4453,6 +4483,7 @@
 				76DCF6B025B8262300150EE1 /* MyCardTableViewCellDataProvider.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
+				CE454654260C89EC00B01E19 /* VisaLimitComponentView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
 				76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */,
@@ -4532,6 +4563,7 @@
 				CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */,
+				CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */,
 				CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */,
 				CE03747225F8D7180061F507 /* WebViewModel.swift in Sources */,
 				76E43EDF25B95303007B2D97 /* VideoCardComponentView.swift in Sources */,
