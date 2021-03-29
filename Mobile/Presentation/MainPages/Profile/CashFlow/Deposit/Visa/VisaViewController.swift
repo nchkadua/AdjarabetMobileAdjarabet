@@ -158,7 +158,7 @@ public class VisaViewController: ABViewController {
         viewModel.continued(amount: amount, account: account)
     }
 
-    @objc private func updateContinueButton(_ isEnabled: Bool = true) {
+    private func updateContinueButton(_ isEnabled: Bool) {
         continueButton.isUserInteractionEnabled = isEnabled
         continueButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
@@ -169,7 +169,8 @@ public class VisaViewController: ABViewController {
     }
 
     private func updateAmountInputeView(_ amountViewModel: SuggestedAmountComponentViewModel) {
-        viewModel.entered(amount: String(amountViewModel.params.amount))
+        amountInputView.set(text: String(amountViewModel.params.amount))
+        view.endEditing(false)
     }
 }
 

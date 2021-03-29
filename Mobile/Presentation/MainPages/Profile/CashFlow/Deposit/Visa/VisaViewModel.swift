@@ -76,6 +76,8 @@ extension DefaultVisaViewModel: VisaViewModel {
     }
 
     private func refresh() {
+        // 0. update continue to non-interactive
+        notify(.updateContinue(with: false))
         // 1. fetch account/card list
         accountListUseCase.execute(params: .init()) { [weak self] result in
             guard let self = self else { return }
@@ -92,7 +94,7 @@ extension DefaultVisaViewModel: VisaViewModel {
                     self.fetchSuggested() // continue here...
                 }
             case .failure(let error):
-                self.actionSubject.onNext(.show(error: error.localizedDescription))
+                self.notify(.show(error: error.localizedDescription))
             }
         }
     }
@@ -105,7 +107,7 @@ extension DefaultVisaViewModel: VisaViewModel {
             return vm
         }
         suggestedAmountGridComponentViewModel.reloadCollectionView(with: viewModels)
-        actionSubject.onNext(.bindToGridViewModel(viewModel: suggestedAmountGridComponentViewModel))
+        notify(.bindToGridViewModel(viewModel: suggestedAmountGridComponentViewModel))
 
         fetchLimits()
     }
