@@ -882,8 +882,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 17 files.
+  /// This `R.file` struct is generated, and contains static references to 108 files.
   struct file {
+    /// Resource file `AAJSlot.zip`.
+    static let aajSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "AAJSlot", pathExtension: "zip")
+    /// Resource file `ABJSlot.zip`.
+    static let abjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "ABJSlot", pathExtension: "zip")
+    /// Resource file `ADJSlot.zip`.
+    static let adjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "ADJSlot", pathExtension: "zip")
+    /// Resource file `AGJSlot.zip`.
+    static let agjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "AGJSlot", pathExtension: "zip")
+    /// Resource file `AOTJSlot.zip`.
+    static let aotjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "AOTJSlot", pathExtension: "zip")
     /// Resource file `AdjaraMont-Bold.ttf`.
     static let adjaraMontBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMont-Bold", pathExtension: "ttf")
     /// Resource file `AdjaraMont-Heavy.ttf`.
@@ -906,10 +916,182 @@ struct R: Rswift.Validatable {
     static let adjaraMontProSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMontPro-SemiBold", pathExtension: "ttf")
     /// Resource file `BHJSlot.zip`.
     static let bhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "BHJSlot", pathExtension: "zip")
+    /// Resource file `BHSJSlot.zip`.
+    static let bhsjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "BHSJSlot", pathExtension: "zip")
+    /// Resource file `BHTJSlot.zip`.
+    static let bhtjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "BHTJSlot", pathExtension: "zip")
+    /// Resource file `BOMJSlot.zip`.
+    static let bomjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "BOMJSlot", pathExtension: "zip")
+    /// Resource file `BRDJSlot.zip`.
+    static let brdjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "BRDJSlot", pathExtension: "zip")
+    /// Resource file `CBJSlot.zip`.
+    static let cbjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "CBJSlot", pathExtension: "zip")
+    /// Resource file `CDJSlot.zip`.
+    static let cdjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "CDJSlot", pathExtension: "zip")
+    /// Resource file `CHJSlot.zip`.
+    static let chjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "CHJSlot", pathExtension: "zip")
+    /// Resource file `CMJSlot.zip`.
+    static let cmjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "CMJSlot", pathExtension: "zip")
+    /// Resource file `DARJSlot.zip`.
+    static let darjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "DARJSlot", pathExtension: "zip")
+    /// Resource file `EDJSlot.zip`.
+    static let edjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "EDJSlot", pathExtension: "zip")
+    /// Resource file `EHJSlot.zip`.
+    static let ehjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "EHJSlot", pathExtension: "zip")
+    /// Resource file `EOWJSlot.zip`.
+    static let eowjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "EOWJSlot", pathExtension: "zip")
+    /// Resource file `EPJSlot.zip`.
+    static let epjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "EPJSlot", pathExtension: "zip")
+    /// Resource file `ESJSlot.zip`.
+    static let esjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "ESJSlot", pathExtension: "zip")
+    /// Resource file `FABJSlot.zip`.
+    static let fabjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FABJSlot", pathExtension: "zip")
+    /// Resource file `FBHJSlot.zip`.
+    static let fbhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FBHJSlot", pathExtension: "zip")
+    /// Resource file `FBHSJSlot.zip`.
+    static let fbhsjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FBHSJSlot", pathExtension: "zip")
+    /// Resource file `FBHTJSlot.zip`.
+    static let fbhtjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FBHTJSlot", pathExtension: "zip")
+    /// Resource file `FBJSlot.zip`.
+    static let fbjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FBJSlot", pathExtension: "zip")
+    /// Resource file `FDHJSlot.zip`.
+    static let fdhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FDHJSlot", pathExtension: "zip")
+    /// Resource file `FGSJSlot.zip`.
+    static let fgsjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FGSJSlot", pathExtension: "zip")
+    /// Resource file `FHEJSlot.zip`.
+    static let fhejSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FHEJSlot", pathExtension: "zip")
+    /// Resource file `FHJSlot.zip`.
+    static let fhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FHJSlot", pathExtension: "zip")
+    /// Resource file `FHNCJSlot.zip`.
+    static let fhncjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FHNCJSlot", pathExtension: "zip")
+    /// Resource file `FHSJSlot.zip`.
+    static let fhsjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FHSJSlot", pathExtension: "zip")
+    /// Resource file `FLKJSlot.zip`.
+    static let flkjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FLKJSlot", pathExtension: "zip")
+    /// Resource file `FMCJSlot.zip`.
+    static let fmcjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FMCJSlot", pathExtension: "zip")
+    /// Resource file `FSDJSlot.zip`.
+    static let fsdjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FSDJSlot", pathExtension: "zip")
+    /// Resource file `FSHJSlot.zip`.
+    static let fshjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "FSHJSlot", pathExtension: "zip")
+    /// Resource file `GEJSlot.zip`.
+    static let gejSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "GEJSlot", pathExtension: "zip")
+    /// Resource file `GETJSlot.zip`.
+    static let getjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "GETJSlot", pathExtension: "zip")
+    /// Resource file `GOCJSlot.zip`.
+    static let gocjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "GOCJSlot", pathExtension: "zip")
+    /// Resource file `GOLJSlot.zip`.
+    static let goljSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "GOLJSlot", pathExtension: "zip")
+    /// Resource file `GTSJSlot.zip`.
+    static let gtsjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "GTSJSlot", pathExtension: "zip")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `HBHJSlot.zip`.
+    static let hbhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "HBHJSlot", pathExtension: "zip")
+    /// Resource file `HCJSlot.zip`.
+    static let hcjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "HCJSlot", pathExtension: "zip")
+    /// Resource file `HNCJSlot.zip`.
+    static let hncjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "HNCJSlot", pathExtension: "zip")
+    /// Resource file `HSHJSlot.zip`.
+    static let hshjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "HSHJSlot", pathExtension: "zip")
+    /// Resource file `IGTJSlot.zip`.
+    static let igtjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "IGTJSlot", pathExtension: "zip")
+    /// Resource file `IVJSlot.zip`.
+    static let ivjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "IVJSlot", pathExtension: "zip")
+    /// Resource file `KGJSlot.zip`.
+    static let kgjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "KGJSlot", pathExtension: "zip")
+    /// Resource file `KHJSlot.zip`.
+    static let khjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "KHJSlot", pathExtension: "zip")
+    /// Resource file `LAWJSlot.zip`.
+    static let lawjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "LAWJSlot", pathExtension: "zip")
+    /// Resource file `LHJSlot.zip`.
+    static let lhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "LHJSlot", pathExtension: "zip")
+    /// Resource file `MFJSlot.zip`.
+    static let mfjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "MFJSlot", pathExtension: "zip")
+    /// Resource file `MLAWJSlot.zip`.
+    static let mlawjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "MLAWJSlot", pathExtension: "zip")
+    /// Resource file `MPJSlot.zip`.
+    static let mpjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "MPJSlot", pathExtension: "zip")
+    /// Resource file `MTJSlot.zip`.
+    static let mtjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "MTJSlot", pathExtension: "zip")
+    /// Resource file `OCJSlot.zip`.
+    static let ocjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "OCJSlot", pathExtension: "zip")
+    /// Resource file `OGJSlot.zip`.
+    static let ogjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "OGJSlot", pathExtension: "zip")
+    /// Resource file `PQJSlot.zip`.
+    static let pqjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "PQJSlot", pathExtension: "zip")
+    /// Resource file `PSJSlot.zip`.
+    static let psjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "PSJSlot", pathExtension: "zip")
+    /// Resource file `QORJSlot.zip`.
+    static let qorjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "QORJSlot", pathExtension: "zip")
+    /// Resource file `RCJSlot.zip`.
+    static let rcjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RCJSlot", pathExtension: "zip")
+    /// Resource file `RGJSlot.zip`.
+    static let rgjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RGJSlot", pathExtension: "zip")
+    /// Resource file `RLJSlot.zip`.
+    static let rljSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RLJSlot", pathExtension: "zip")
     /// Resource file `RORJSlot.zip`.
     static let rorjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RORJSlot", pathExtension: "zip")
+    /// Resource file `RSJSlot.zip`.
+    static let rsjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RSJSlot", pathExtension: "zip")
+    /// Resource file `RTSJSlot.zip`.
+    static let rtsjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RTSJSlot", pathExtension: "zip")
+    /// Resource file `RWJSlot.zip`.
+    static let rwjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "RWJSlot", pathExtension: "zip")
+    /// Resource file `SBJSlot.zip`.
+    static let sbjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "SBJSlot", pathExtension: "zip")
+    /// Resource file `SCJSlot.zip`.
+    static let scjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "SCJSlot", pathExtension: "zip")
+    /// Resource file `SHJSlot.zip`.
+    static let shjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "SHJSlot", pathExtension: "zip")
+    /// Resource file `SOAJSlot.zip`.
+    static let soajSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "SOAJSlot", pathExtension: "zip")
+    /// Resource file `SPJSlot.zip`.
+    static let spjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "SPJSlot", pathExtension: "zip")
+    /// Resource file `STJSlot.zip`.
+    static let stjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "STJSlot", pathExtension: "zip")
+    /// Resource file `TBHJSlot.zip`.
+    static let tbhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TBHJSlot", pathExtension: "zip")
+    /// Resource file `TBHTJSlot.zip`.
+    static let tbhtjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TBHTJSlot", pathExtension: "zip")
+    /// Resource file `TDHJSlot.zip`.
+    static let tdhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TDHJSlot", pathExtension: "zip")
+    /// Resource file `TDJSlot.zip`.
+    static let tdjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TDJSlot", pathExtension: "zip")
+    /// Resource file `TDRJSlot.zip`.
+    static let tdrjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TDRJSlot", pathExtension: "zip")
+    /// Resource file `TGCJSlot.zip`.
+    static let tgcjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TGCJSlot", pathExtension: "zip")
+    /// Resource file `THBJSlot.zip`.
+    static let thbjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "THBJSlot", pathExtension: "zip")
+    /// Resource file `TJRJSlot.zip`.
+    static let tjrjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TJRJSlot", pathExtension: "zip")
+    /// Resource file `TSFJSlot.zip`.
+    static let tsfjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TSFJSlot", pathExtension: "zip")
+    /// Resource file `TSHJSlot.zip`.
+    static let tshjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TSHJSlot", pathExtension: "zip")
+    /// Resource file `TSOAJSlot.zip`.
+    static let tsoajSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TSOAJSlot", pathExtension: "zip")
+    /// Resource file `TSOATJSlot.zip`.
+    static let tsoatjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TSOATJSlot", pathExtension: "zip")
+    /// Resource file `TSWJSlot.zip`.
+    static let tswjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TSWJSlot", pathExtension: "zip")
+    /// Resource file `TWWJSlot.zip`.
+    static let twwjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "TWWJSlot", pathExtension: "zip")
+    /// Resource file `UHJSlot.zip`.
+    static let uhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "UHJSlot", pathExtension: "zip")
+    /// Resource file `VGJSlot.zip`.
+    static let vgjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "VGJSlot", pathExtension: "zip")
+    /// Resource file `VNJSlot.zip`.
+    static let vnjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "VNJSlot", pathExtension: "zip")
+    /// Resource file `VWJSlot.zip`.
+    static let vwjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "VWJSlot", pathExtension: "zip")
+    /// Resource file `WHJSlot.zip`.
+    static let whjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "WHJSlot", pathExtension: "zip")
+    /// Resource file `XSJSlot.zip`.
+    static let xsjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "XSJSlot", pathExtension: "zip")
+    /// Resource file `ZWJSlot.zip`.
+    static let zwjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "ZWJSlot", pathExtension: "zip")
     /// Resource file `ca.der`.
     static let caDer = Rswift.FileResource(bundle: R.hostingBundle, name: "ca", pathExtension: "der")
     /// Resource file `exitButton.png`.
@@ -918,6 +1100,36 @@ struct R: Rswift.Validatable {
     static let incognitoCardMp4 = Rswift.FileResource(bundle: R.hostingBundle, name: "incognito-card", pathExtension: "mp4")
     /// Resource file `localhost.p12`.
     static let localhostP12 = Rswift.FileResource(bundle: R.hostingBundle, name: "localhost", pathExtension: "p12")
+
+    /// `bundle.url(forResource: "AAJSlot", withExtension: "zip")`
+    static func aajSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.aajSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ABJSlot", withExtension: "zip")`
+    static func abjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.abjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ADJSlot", withExtension: "zip")`
+    static func adjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.adjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AGJSlot", withExtension: "zip")`
+    static func agjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.agjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AOTJSlot", withExtension: "zip")`
+    static func aotjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.aotjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "AdjaraMont-Bold", withExtension: "ttf")`
     static func adjaraMontBoldTtf(_: Void = ()) -> Foundation.URL? {
@@ -985,15 +1197,531 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "BHSJSlot", withExtension: "zip")`
+    static func bhsjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.bhsjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BHTJSlot", withExtension: "zip")`
+    static func bhtjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.bhtjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BOMJSlot", withExtension: "zip")`
+    static func bomjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.bomjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BRDJSlot", withExtension: "zip")`
+    static func brdjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.brdjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "CBJSlot", withExtension: "zip")`
+    static func cbjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.cbjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "CDJSlot", withExtension: "zip")`
+    static func cdjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.cdjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "CHJSlot", withExtension: "zip")`
+    static func chjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.chjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "CMJSlot", withExtension: "zip")`
+    static func cmjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.cmjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "DARJSlot", withExtension: "zip")`
+    static func darjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.darjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "EDJSlot", withExtension: "zip")`
+    static func edjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.edjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "EHJSlot", withExtension: "zip")`
+    static func ehjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.ehjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "EOWJSlot", withExtension: "zip")`
+    static func eowjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.eowjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "EPJSlot", withExtension: "zip")`
+    static func epjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.epjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ESJSlot", withExtension: "zip")`
+    static func esjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.esjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FABJSlot", withExtension: "zip")`
+    static func fabjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fabjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FBHJSlot", withExtension: "zip")`
+    static func fbhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fbhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FBHSJSlot", withExtension: "zip")`
+    static func fbhsjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fbhsjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FBHTJSlot", withExtension: "zip")`
+    static func fbhtjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fbhtjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FBJSlot", withExtension: "zip")`
+    static func fbjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fbjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FDHJSlot", withExtension: "zip")`
+    static func fdhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fdhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FGSJSlot", withExtension: "zip")`
+    static func fgsjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fgsjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FHEJSlot", withExtension: "zip")`
+    static func fhejSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fhejSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FHJSlot", withExtension: "zip")`
+    static func fhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FHNCJSlot", withExtension: "zip")`
+    static func fhncjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fhncjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FHSJSlot", withExtension: "zip")`
+    static func fhsjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fhsjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FLKJSlot", withExtension: "zip")`
+    static func flkjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.flkjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FMCJSlot", withExtension: "zip")`
+    static func fmcjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fmcjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FSDJSlot", withExtension: "zip")`
+    static func fsdjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fsdjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "FSHJSlot", withExtension: "zip")`
+    static func fshjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fshjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GEJSlot", withExtension: "zip")`
+    static func gejSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gejSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GETJSlot", withExtension: "zip")`
+    static func getjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.getjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GOCJSlot", withExtension: "zip")`
+    static func gocjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gocjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GOLJSlot", withExtension: "zip")`
+    static func goljSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.goljSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GTSJSlot", withExtension: "zip")`
+    static func gtsjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gtsjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "HBHJSlot", withExtension: "zip")`
+    static func hbhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hbhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "HCJSlot", withExtension: "zip")`
+    static func hcjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hcjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "HNCJSlot", withExtension: "zip")`
+    static func hncjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hncjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "HSHJSlot", withExtension: "zip")`
+    static func hshjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hshjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "IGTJSlot", withExtension: "zip")`
+    static func igtjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.igtjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "IVJSlot", withExtension: "zip")`
+    static func ivjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.ivjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "KGJSlot", withExtension: "zip")`
+    static func kgjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.kgjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "KHJSlot", withExtension: "zip")`
+    static func khjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.khjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "LAWJSlot", withExtension: "zip")`
+    static func lawjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.lawjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "LHJSlot", withExtension: "zip")`
+    static func lhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.lhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MFJSlot", withExtension: "zip")`
+    static func mfjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.mfjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MLAWJSlot", withExtension: "zip")`
+    static func mlawjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.mlawjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MPJSlot", withExtension: "zip")`
+    static func mpjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.mpjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "MTJSlot", withExtension: "zip")`
+    static func mtjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.mtjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OCJSlot", withExtension: "zip")`
+    static func ocjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.ocjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OGJSlot", withExtension: "zip")`
+    static func ogjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.ogjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PQJSlot", withExtension: "zip")`
+    static func pqjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pqjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "PSJSlot", withExtension: "zip")`
+    static func psjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.psjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "QORJSlot", withExtension: "zip")`
+    static func qorjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.qorjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "RCJSlot", withExtension: "zip")`
+    static func rcjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rcjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "RGJSlot", withExtension: "zip")`
+    static func rgjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rgjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "RLJSlot", withExtension: "zip")`
+    static func rljSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rljSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "RORJSlot", withExtension: "zip")`
     static func rorjSlotZip(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.rorjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "RSJSlot", withExtension: "zip")`
+    static func rsjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rsjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "RTSJSlot", withExtension: "zip")`
+    static func rtsjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rtsjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "RWJSlot", withExtension: "zip")`
+    static func rwjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rwjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SBJSlot", withExtension: "zip")`
+    static func sbjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sbjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SCJSlot", withExtension: "zip")`
+    static func scjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.scjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SHJSlot", withExtension: "zip")`
+    static func shjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.shjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SOAJSlot", withExtension: "zip")`
+    static func soajSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.soajSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SPJSlot", withExtension: "zip")`
+    static func spjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.spjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "STJSlot", withExtension: "zip")`
+    static func stjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.stjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TBHJSlot", withExtension: "zip")`
+    static func tbhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tbhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TBHTJSlot", withExtension: "zip")`
+    static func tbhtjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tbhtjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TDHJSlot", withExtension: "zip")`
+    static func tdhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tdhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TDJSlot", withExtension: "zip")`
+    static func tdjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tdjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TDRJSlot", withExtension: "zip")`
+    static func tdrjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tdrjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TGCJSlot", withExtension: "zip")`
+    static func tgcjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tgcjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "THBJSlot", withExtension: "zip")`
+    static func thbjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.thbjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TJRJSlot", withExtension: "zip")`
+    static func tjrjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tjrjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TSFJSlot", withExtension: "zip")`
+    static func tsfjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tsfjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TSHJSlot", withExtension: "zip")`
+    static func tshjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tshjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TSOAJSlot", withExtension: "zip")`
+    static func tsoajSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tsoajSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TSOATJSlot", withExtension: "zip")`
+    static func tsoatjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tsoatjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TSWJSlot", withExtension: "zip")`
+    static func tswjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.tswjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "TWWJSlot", withExtension: "zip")`
+    static func twwjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.twwjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "UHJSlot", withExtension: "zip")`
+    static func uhjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.uhjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "VGJSlot", withExtension: "zip")`
+    static func vgjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.vgjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "VNJSlot", withExtension: "zip")`
+    static func vnjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.vnjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "VWJSlot", withExtension: "zip")`
+    static func vwjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.vwjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "WHJSlot", withExtension: "zip")`
+    static func whjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.whjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "XSJSlot", withExtension: "zip")`
+    static func xsjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.xsjSlotZip
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ZWJSlot", withExtension: "zip")`
+    static func zwjSlotZip(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.zwjSlotZip
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -12415,8 +13143,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -12685,8 +13413,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

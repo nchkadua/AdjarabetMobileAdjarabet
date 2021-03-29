@@ -181,11 +181,102 @@
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
 		C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405188256FAA8200EAC904 /* AmountFormatter.swift */; };
 		C74334F12601232700945C8C /* UFCTransactionEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74334F02601232700945C8C /* UFCTransactionEntities.swift */; };
-		C744040B26000F58003E554B /* RORJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744040A26000F58003E554B /* RORJSlot.zip */; settings = {ASSET_TAGS = (RORJSlot, ); }; };
-		C744041326001138003E554B /* BHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C744041226001138003E554B /* BHJSlot.zip */; settings = {ASSET_TAGS = (BHJSlot, ); }; };
 		C747734E25B5C1030083C845 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C747734D25B5C1030083C845 /* Currency.swift */; };
 		C754317F25F5605900E485DD /* PaymentListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754317E25F5605900E485DD /* PaymentListDTO.swift */; };
 		C754318325F5606D00E485DD /* PaymentListEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754318225F5606D00E485DD /* PaymentListEntities.swift */; };
+		C75D1AC6261205F4002AF763 /* HSHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A67261205E8002AF763 /* HSHJSlot.zip */; settings = {ASSET_TAGS = (HSHJSlot, ); }; };
+		C75D1AC7261205F4002AF763 /* FLKJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6A261205E8002AF763 /* FLKJSlot.zip */; settings = {ASSET_TAGS = (FLKJSlot, ); }; };
+		C75D1AC8261205F4002AF763 /* ZWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6B261205E8002AF763 /* ZWJSlot.zip */; settings = {ASSET_TAGS = (ZWJSlot, ); }; };
+		C75D1AC9261205F4002AF763 /* EHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6C261205E9002AF763 /* EHJSlot.zip */; settings = {ASSET_TAGS = (EHJSlot, ); }; };
+		C75D1ACA261205F4002AF763 /* GOLJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6D261205E9002AF763 /* GOLJSlot.zip */; settings = {ASSET_TAGS = (GOLJSlot, ); }; };
+		C75D1ACB261205F4002AF763 /* AGJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6E261205E9002AF763 /* AGJSlot.zip */; settings = {ASSET_TAGS = (AGJSlot, ); }; };
+		C75D1ACC261205F4002AF763 /* MTJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6F261205E9002AF763 /* MTJSlot.zip */; settings = {ASSET_TAGS = (MTJSlot, ); }; };
+		C75D1ACD261205F4002AF763 /* FABJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A70261205E9002AF763 /* FABJSlot.zip */; settings = {ASSET_TAGS = (FABJSlot, ); }; };
+		C75D1ACE261205F4002AF763 /* CBJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A71261205E9002AF763 /* CBJSlot.zip */; settings = {ASSET_TAGS = (CBJSlot, ); }; };
+		C75D1ACF261205F4002AF763 /* BRDJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A72261205EA002AF763 /* BRDJSlot.zip */; settings = {ASSET_TAGS = (BRDJSlot, ); }; };
+		C75D1AD0261205F4002AF763 /* FSDJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A73261205EA002AF763 /* FSDJSlot.zip */; settings = {ASSET_TAGS = (FSDJSlot, ); }; };
+		C75D1AD1261205F4002AF763 /* ABJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A74261205EA002AF763 /* ABJSlot.zip */; settings = {ASSET_TAGS = (ABJSlot, ); }; };
+		C75D1AD2261205F4002AF763 /* GOCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A75261205EA002AF763 /* GOCJSlot.zip */; settings = {ASSET_TAGS = (GOCJSlot, ); }; };
+		C75D1AD3261205F4002AF763 /* IVJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A76261205EA002AF763 /* IVJSlot.zip */; settings = {ASSET_TAGS = (IVJSlot, ); }; };
+		C75D1AD4261205F4002AF763 /* LAWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A77261205EA002AF763 /* LAWJSlot.zip */; settings = {ASSET_TAGS = (LAWJSlot, ); }; };
+		C75D1AD5261205F4002AF763 /* PQJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A78261205EA002AF763 /* PQJSlot.zip */; settings = {ASSET_TAGS = (PQJSlot, ); }; };
+		C75D1AD6261205F4002AF763 /* RCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A79261205EB002AF763 /* RCJSlot.zip */; settings = {ASSET_TAGS = (RCJSlot, ); }; };
+		C75D1AD7261205F4002AF763 /* RWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A7A261205EB002AF763 /* RWJSlot.zip */; settings = {ASSET_TAGS = (RWJSlot, ); }; };
+		C75D1AD8261205F4002AF763 /* HCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A7B261205EB002AF763 /* HCJSlot.zip */; settings = {ASSET_TAGS = (HCJSlot, ); }; };
+		C75D1AD9261205F4002AF763 /* XSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A7C261205EB002AF763 /* XSJSlot.zip */; settings = {ASSET_TAGS = (XSJSlot, ); }; };
+		C75D1ADA261205F4002AF763 /* CDJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A7D261205EB002AF763 /* CDJSlot.zip */; settings = {ASSET_TAGS = (CDJSlot, ); }; };
+		C75D1ADB261205F4002AF763 /* MPJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A7E261205EB002AF763 /* MPJSlot.zip */; settings = {ASSET_TAGS = (MPJSlot, ); }; };
+		C75D1ADC261205F4002AF763 /* TWWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A7F261205EB002AF763 /* TWWJSlot.zip */; settings = {ASSET_TAGS = (TWWJSlot, ); }; };
+		C75D1ADD261205F4002AF763 /* TSWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A80261205EB002AF763 /* TSWJSlot.zip */; settings = {ASSET_TAGS = (TSWJSlot, ); }; };
+		C75D1ADE261205F4002AF763 /* BOMJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A81261205EB002AF763 /* BOMJSlot.zip */; settings = {ASSET_TAGS = (BOMJSlot, ); }; };
+		C75D1ADF261205F4002AF763 /* RGJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A82261205EC002AF763 /* RGJSlot.zip */; settings = {ASSET_TAGS = (RGJSlot, ); }; };
+		C75D1AE0261205F4002AF763 /* TBHTJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A83261205EC002AF763 /* TBHTJSlot.zip */; settings = {ASSET_TAGS = (TBHTJSlot, ); }; };
+		C75D1AE1261205F4002AF763 /* EOWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A84261205EC002AF763 /* EOWJSlot.zip */; settings = {ASSET_TAGS = (EOWJSlot, ); }; };
+		C75D1AE2261205F4002AF763 /* FBJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A85261205EC002AF763 /* FBJSlot.zip */; settings = {ASSET_TAGS = (FBJSlot, ); }; };
+		C75D1AE3261205F4002AF763 /* RTSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A86261205EC002AF763 /* RTSJSlot.zip */; settings = {ASSET_TAGS = (RTSJSlot, ); }; };
+		C75D1AE4261205F4002AF763 /* CMJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A87261205EC002AF763 /* CMJSlot.zip */; settings = {ASSET_TAGS = (CMJSlot, ); }; };
+		C75D1AE5261205F4002AF763 /* HBHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A88261205EC002AF763 /* HBHJSlot.zip */; settings = {ASSET_TAGS = (HBHJSlot, ); }; };
+		C75D1AE6261205F4002AF763 /* STJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A89261205EC002AF763 /* STJSlot.zip */; settings = {ASSET_TAGS = (STJSlot, ); }; };
+		C75D1AE7261205F4002AF763 /* TSOATJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A8A261205EC002AF763 /* TSOATJSlot.zip */; settings = {ASSET_TAGS = (TSOATJSlot, ); }; };
+		C75D1AE8261205F4002AF763 /* FHSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A8B261205ED002AF763 /* FHSJSlot.zip */; settings = {ASSET_TAGS = (FHSJSlot, ); }; };
+		C75D1AE9261205F4002AF763 /* HNCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A8C261205ED002AF763 /* HNCJSlot.zip */; settings = {ASSET_TAGS = (HNCJSlot, ); }; };
+		C75D1AEA261205F4002AF763 /* VGJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A8D261205ED002AF763 /* VGJSlot.zip */; settings = {ASSET_TAGS = (VGJSlot, ); }; };
+		C75D1AEB261205F4002AF763 /* KHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A8E261205ED002AF763 /* KHJSlot.zip */; settings = {ASSET_TAGS = (KHJSlot, ); }; };
+		C75D1AEC261205F4002AF763 /* VNJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A8F261205ED002AF763 /* VNJSlot.zip */; settings = {ASSET_TAGS = (VNJSlot, ); }; };
+		C75D1AED261205F4002AF763 /* FHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A90261205ED002AF763 /* FHJSlot.zip */; settings = {ASSET_TAGS = (FHJSlot, ); }; };
+		C75D1AEE261205F4002AF763 /* CHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A91261205ED002AF763 /* CHJSlot.zip */; settings = {ASSET_TAGS = (CHJSlot, ); }; };
+		C75D1AEF261205F4002AF763 /* GTSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A92261205EE002AF763 /* GTSJSlot.zip */; settings = {ASSET_TAGS = (GTSJSlot, ); }; };
+		C75D1AF0261205F4002AF763 /* AOTJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A93261205EE002AF763 /* AOTJSlot.zip */; settings = {ASSET_TAGS = (AOTJSlot, ); }; };
+		C75D1AF1261205F4002AF763 /* AAJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A94261205EE002AF763 /* AAJSlot.zip */; settings = {ASSET_TAGS = (AAJSlot, ); }; };
+		C75D1AF2261205F4002AF763 /* FGSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A95261205EE002AF763 /* FGSJSlot.zip */; settings = {ASSET_TAGS = (FGSJSlot, ); }; };
+		C75D1AF3261205F4002AF763 /* SBJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A96261205EE002AF763 /* SBJSlot.zip */; settings = {ASSET_TAGS = (SBJSlot, ); }; };
+		C75D1AF4261205F4002AF763 /* FDHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A97261205EE002AF763 /* FDHJSlot.zip */; settings = {ASSET_TAGS = (FDHJSlot, ); }; };
+		C75D1AF5261205F4002AF763 /* ESJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A98261205EE002AF763 /* ESJSlot.zip */; settings = {ASSET_TAGS = (ESJSlot, ); }; };
+		C75D1AF6261205F4002AF763 /* OGJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A99261205EE002AF763 /* OGJSlot.zip */; settings = {ASSET_TAGS = (OGJSlot, ); }; };
+		C75D1AF7261205F4002AF763 /* ADJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A9A261205EF002AF763 /* ADJSlot.zip */; settings = {ASSET_TAGS = (ADJSlot, ); }; };
+		C75D1AF8261205F4002AF763 /* WHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A9B261205EF002AF763 /* WHJSlot.zip */; settings = {ASSET_TAGS = (WHJSlot, ); }; };
+		C75D1AF9261205F4002AF763 /* TBHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A9C261205EF002AF763 /* TBHJSlot.zip */; settings = {ASSET_TAGS = (TBHJSlot, ); }; };
+		C75D1AFA261205F4002AF763 /* FBHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A9D261205EF002AF763 /* FBHJSlot.zip */; settings = {ASSET_TAGS = (FBHJSlot, ); }; };
+		C75D1AFB261205F4002AF763 /* DARJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A9E261205EF002AF763 /* DARJSlot.zip */; settings = {ASSET_TAGS = (DARJSlot, ); }; };
+		C75D1AFC261205F4002AF763 /* TSOAJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A9F261205EF002AF763 /* TSOAJSlot.zip */; settings = {ASSET_TAGS = (TSOAJSlot, ); }; };
+		C75D1AFD261205F4002AF763 /* THBJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA0261205EF002AF763 /* THBJSlot.zip */; settings = {ASSET_TAGS = (THBJSlot, ); }; };
+		C75D1AFE261205F4002AF763 /* FSHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA1261205EF002AF763 /* FSHJSlot.zip */; settings = {ASSET_TAGS = (FSHJSlot, ); }; };
+		C75D1AFF261205F4002AF763 /* FBHSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA2261205F0002AF763 /* FBHSJSlot.zip */; settings = {ASSET_TAGS = (FBHSJSlot, ); }; };
+		C75D1B00261205F4002AF763 /* SPJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA3261205F0002AF763 /* SPJSlot.zip */; settings = {ASSET_TAGS = (SPJSlot, ); }; };
+		C75D1B01261205F4002AF763 /* TDJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA4261205F0002AF763 /* TDJSlot.zip */; settings = {ASSET_TAGS = (TDJSlot, ); }; };
+		C75D1B02261205F4002AF763 /* UHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA5261205F0002AF763 /* UHJSlot.zip */; settings = {ASSET_TAGS = (UHJSlot, ); }; };
+		C75D1B03261205F4002AF763 /* FMCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA6261205F0002AF763 /* FMCJSlot.zip */; settings = {ASSET_TAGS = (FMCJSlot, ); }; };
+		C75D1B04261205F4002AF763 /* BHTJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA7261205F0002AF763 /* BHTJSlot.zip */; settings = {ASSET_TAGS = (BHTJSlot, ); }; };
+		C75D1B05261205F4002AF763 /* EPJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA8261205F0002AF763 /* EPJSlot.zip */; settings = {ASSET_TAGS = (EPJSlot, ); }; };
+		C75D1B06261205F4002AF763 /* BHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AA9261205F0002AF763 /* BHJSlot.zip */; settings = {ASSET_TAGS = (BHJSlot, ); }; };
+		C75D1B07261205F4002AF763 /* RSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AAA261205F1002AF763 /* RSJSlot.zip */; settings = {ASSET_TAGS = (RSJSlot, ); }; };
+		C75D1B08261205F4002AF763 /* SCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AAB261205F1002AF763 /* SCJSlot.zip */; settings = {ASSET_TAGS = (SCJSlot, ); }; };
+		C75D1B09261205F4002AF763 /* TDRJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AAC261205F1002AF763 /* TDRJSlot.zip */; settings = {ASSET_TAGS = (TDRJSlot, ); }; };
+		C75D1B0A261205F4002AF763 /* BHSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AAD261205F1002AF763 /* BHSJSlot.zip */; settings = {ASSET_TAGS = (BHSJSlot, ); }; };
+		C75D1B0B261205F4002AF763 /* TSFJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AAE261205F1002AF763 /* TSFJSlot.zip */; settings = {ASSET_TAGS = (TSFJSlot, ); }; };
+		C75D1B0C261205F4002AF763 /* EDJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AAF261205F1002AF763 /* EDJSlot.zip */; settings = {ASSET_TAGS = (EDJSlot, ); }; };
+		C75D1B0D261205F4002AF763 /* KGJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB0261205F1002AF763 /* KGJSlot.zip */; settings = {ASSET_TAGS = (KGJSlot, ); }; };
+		C75D1B0E261205F4002AF763 /* VWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB1261205F1002AF763 /* VWJSlot.zip */; settings = {ASSET_TAGS = (VWJSlot, ); }; };
+		C75D1B0F261205F4002AF763 /* IGTJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB2261205F2002AF763 /* IGTJSlot.zip */; settings = {ASSET_TAGS = (IGTJSlot, ); }; };
+		C75D1B10261205F4002AF763 /* RLJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB3261205F2002AF763 /* RLJSlot.zip */; settings = {ASSET_TAGS = (RLJSlot, ); }; };
+		C75D1B11261205F4002AF763 /* LHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB4261205F2002AF763 /* LHJSlot.zip */; settings = {ASSET_TAGS = (LHJSlot, ); }; };
+		C75D1B12261205F4002AF763 /* OCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB5261205F2002AF763 /* OCJSlot.zip */; settings = {ASSET_TAGS = (OCJSlot, ); }; };
+		C75D1B13261205F4002AF763 /* FHNCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB6261205F2002AF763 /* FHNCJSlot.zip */; settings = {ASSET_TAGS = (FHNCJSlot, ); }; };
+		C75D1B14261205F4002AF763 /* QORJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB7261205F2002AF763 /* QORJSlot.zip */; settings = {ASSET_TAGS = (QORJSlot, ); }; };
+		C75D1B15261205F4002AF763 /* GETJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB8261205F2002AF763 /* GETJSlot.zip */; settings = {ASSET_TAGS = (GETJSlot, ); }; };
+		C75D1B16261205F4002AF763 /* FBHTJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AB9261205F3002AF763 /* FBHTJSlot.zip */; settings = {ASSET_TAGS = (FBHTJSlot, ); }; };
+		C75D1B17261205F4002AF763 /* GEJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1ABA261205F3002AF763 /* GEJSlot.zip */; settings = {ASSET_TAGS = (GEJSlot, ); }; };
+		C75D1B18261205F4002AF763 /* SHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1ABB261205F3002AF763 /* SHJSlot.zip */; settings = {ASSET_TAGS = (SHJSlot, ); }; };
+		C75D1B19261205F4002AF763 /* MFJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1ABC261205F3002AF763 /* MFJSlot.zip */; settings = {ASSET_TAGS = (MFJSlot, ); }; };
+		C75D1B1A261205F4002AF763 /* TGCJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1ABD261205F3002AF763 /* TGCJSlot.zip */; settings = {ASSET_TAGS = (TGCJSlot, ); }; };
+		C75D1B1B261205F4002AF763 /* SOAJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1ABE261205F3002AF763 /* SOAJSlot.zip */; settings = {ASSET_TAGS = (SOAJSlot, ); }; };
+		C75D1B1C261205F4002AF763 /* TSHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1ABF261205F3002AF763 /* TSHJSlot.zip */; settings = {ASSET_TAGS = (TSHJSlot, ); }; };
+		C75D1B1D261205F4002AF763 /* PSJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC0261205F4002AF763 /* PSJSlot.zip */; settings = {ASSET_TAGS = (PSJSlot, ); }; };
+		C75D1B1E261205F4002AF763 /* RORJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC1261205F4002AF763 /* RORJSlot.zip */; settings = {ASSET_TAGS = (RORJSlot, ); }; };
+		C75D1B1F261205F4002AF763 /* MLAWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC2261205F4002AF763 /* MLAWJSlot.zip */; settings = {ASSET_TAGS = (MLAWJSlot, ); }; };
+		C75D1B20261205F4002AF763 /* TJRJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC3261205F4002AF763 /* TJRJSlot.zip */; settings = {ASSET_TAGS = (TJRJSlot, ); }; };
+		C75D1B21261205F4002AF763 /* TDHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC4261205F4002AF763 /* TDHJSlot.zip */; settings = {ASSET_TAGS = (TDHJSlot, ); }; };
+		C75D1B22261205F4002AF763 /* FHEJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC5261205F4002AF763 /* FHEJSlot.zip */; settings = {ASSET_TAGS = (FHEJSlot, ); }; };
 		C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766086325CC3FF700A59534 /* CoreApiRepository.swift */; };
 		C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C77206DA25DAAC5E0037D8A0 /* exitButton.png */; };
 		C77206E125DAB0B50037D8A0 /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = C77206E025DAB0B50037D8A0 /* ca.der */; };
@@ -789,11 +880,102 @@
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		C7405188256FAA8200EAC904 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		C74334F02601232700945C8C /* UFCTransactionEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCTransactionEntities.swift; sourceTree = "<group>"; };
-		C744040A26000F58003E554B /* RORJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RORJSlot.zip; sourceTree = "<group>"; };
-		C744041226001138003E554B /* BHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BHJSlot.zip; sourceTree = "<group>"; };
 		C747734D25B5C1030083C845 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C754317E25F5605900E485DD /* PaymentListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListDTO.swift; sourceTree = "<group>"; };
 		C754318225F5606D00E485DD /* PaymentListEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListEntities.swift; sourceTree = "<group>"; };
+		C75D1A67261205E8002AF763 /* HSHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = HSHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A6A261205E8002AF763 /* FLKJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FLKJSlot.zip; sourceTree = "<group>"; };
+		C75D1A6B261205E8002AF763 /* ZWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ZWJSlot.zip; sourceTree = "<group>"; };
+		C75D1A6C261205E9002AF763 /* EHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = EHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A6D261205E9002AF763 /* GOLJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = GOLJSlot.zip; sourceTree = "<group>"; };
+		C75D1A6E261205E9002AF763 /* AGJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = AGJSlot.zip; sourceTree = "<group>"; };
+		C75D1A6F261205E9002AF763 /* MTJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MTJSlot.zip; sourceTree = "<group>"; };
+		C75D1A70261205E9002AF763 /* FABJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FABJSlot.zip; sourceTree = "<group>"; };
+		C75D1A71261205E9002AF763 /* CBJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = CBJSlot.zip; sourceTree = "<group>"; };
+		C75D1A72261205EA002AF763 /* BRDJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BRDJSlot.zip; sourceTree = "<group>"; };
+		C75D1A73261205EA002AF763 /* FSDJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FSDJSlot.zip; sourceTree = "<group>"; };
+		C75D1A74261205EA002AF763 /* ABJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ABJSlot.zip; sourceTree = "<group>"; };
+		C75D1A75261205EA002AF763 /* GOCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = GOCJSlot.zip; sourceTree = "<group>"; };
+		C75D1A76261205EA002AF763 /* IVJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = IVJSlot.zip; sourceTree = "<group>"; };
+		C75D1A77261205EA002AF763 /* LAWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = LAWJSlot.zip; sourceTree = "<group>"; };
+		C75D1A78261205EA002AF763 /* PQJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = PQJSlot.zip; sourceTree = "<group>"; };
+		C75D1A79261205EB002AF763 /* RCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RCJSlot.zip; sourceTree = "<group>"; };
+		C75D1A7A261205EB002AF763 /* RWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RWJSlot.zip; sourceTree = "<group>"; };
+		C75D1A7B261205EB002AF763 /* HCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = HCJSlot.zip; sourceTree = "<group>"; };
+		C75D1A7C261205EB002AF763 /* XSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = XSJSlot.zip; sourceTree = "<group>"; };
+		C75D1A7D261205EB002AF763 /* CDJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = CDJSlot.zip; sourceTree = "<group>"; };
+		C75D1A7E261205EB002AF763 /* MPJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MPJSlot.zip; sourceTree = "<group>"; };
+		C75D1A7F261205EB002AF763 /* TWWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TWWJSlot.zip; sourceTree = "<group>"; };
+		C75D1A80261205EB002AF763 /* TSWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TSWJSlot.zip; sourceTree = "<group>"; };
+		C75D1A81261205EB002AF763 /* BOMJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BOMJSlot.zip; sourceTree = "<group>"; };
+		C75D1A82261205EC002AF763 /* RGJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RGJSlot.zip; sourceTree = "<group>"; };
+		C75D1A83261205EC002AF763 /* TBHTJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TBHTJSlot.zip; sourceTree = "<group>"; };
+		C75D1A84261205EC002AF763 /* EOWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = EOWJSlot.zip; sourceTree = "<group>"; };
+		C75D1A85261205EC002AF763 /* FBJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FBJSlot.zip; sourceTree = "<group>"; };
+		C75D1A86261205EC002AF763 /* RTSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RTSJSlot.zip; sourceTree = "<group>"; };
+		C75D1A87261205EC002AF763 /* CMJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = CMJSlot.zip; sourceTree = "<group>"; };
+		C75D1A88261205EC002AF763 /* HBHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = HBHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A89261205EC002AF763 /* STJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = STJSlot.zip; sourceTree = "<group>"; };
+		C75D1A8A261205EC002AF763 /* TSOATJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TSOATJSlot.zip; sourceTree = "<group>"; };
+		C75D1A8B261205ED002AF763 /* FHSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FHSJSlot.zip; sourceTree = "<group>"; };
+		C75D1A8C261205ED002AF763 /* HNCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = HNCJSlot.zip; sourceTree = "<group>"; };
+		C75D1A8D261205ED002AF763 /* VGJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = VGJSlot.zip; sourceTree = "<group>"; };
+		C75D1A8E261205ED002AF763 /* KHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = KHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A8F261205ED002AF763 /* VNJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = VNJSlot.zip; sourceTree = "<group>"; };
+		C75D1A90261205ED002AF763 /* FHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A91261205ED002AF763 /* CHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = CHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A92261205EE002AF763 /* GTSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = GTSJSlot.zip; sourceTree = "<group>"; };
+		C75D1A93261205EE002AF763 /* AOTJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = AOTJSlot.zip; sourceTree = "<group>"; };
+		C75D1A94261205EE002AF763 /* AAJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = AAJSlot.zip; sourceTree = "<group>"; };
+		C75D1A95261205EE002AF763 /* FGSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FGSJSlot.zip; sourceTree = "<group>"; };
+		C75D1A96261205EE002AF763 /* SBJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SBJSlot.zip; sourceTree = "<group>"; };
+		C75D1A97261205EE002AF763 /* FDHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FDHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A98261205EE002AF763 /* ESJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ESJSlot.zip; sourceTree = "<group>"; };
+		C75D1A99261205EE002AF763 /* OGJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = OGJSlot.zip; sourceTree = "<group>"; };
+		C75D1A9A261205EF002AF763 /* ADJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ADJSlot.zip; sourceTree = "<group>"; };
+		C75D1A9B261205EF002AF763 /* WHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = WHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A9C261205EF002AF763 /* TBHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TBHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A9D261205EF002AF763 /* FBHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FBHJSlot.zip; sourceTree = "<group>"; };
+		C75D1A9E261205EF002AF763 /* DARJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = DARJSlot.zip; sourceTree = "<group>"; };
+		C75D1A9F261205EF002AF763 /* TSOAJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TSOAJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA0261205EF002AF763 /* THBJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = THBJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA1261205EF002AF763 /* FSHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FSHJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA2261205F0002AF763 /* FBHSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FBHSJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA3261205F0002AF763 /* SPJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SPJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA4261205F0002AF763 /* TDJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TDJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA5261205F0002AF763 /* UHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = UHJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA6261205F0002AF763 /* FMCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FMCJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA7261205F0002AF763 /* BHTJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BHTJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA8261205F0002AF763 /* EPJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = EPJSlot.zip; sourceTree = "<group>"; };
+		C75D1AA9261205F0002AF763 /* BHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BHJSlot.zip; sourceTree = "<group>"; };
+		C75D1AAA261205F1002AF763 /* RSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RSJSlot.zip; sourceTree = "<group>"; };
+		C75D1AAB261205F1002AF763 /* SCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SCJSlot.zip; sourceTree = "<group>"; };
+		C75D1AAC261205F1002AF763 /* TDRJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TDRJSlot.zip; sourceTree = "<group>"; };
+		C75D1AAD261205F1002AF763 /* BHSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BHSJSlot.zip; sourceTree = "<group>"; };
+		C75D1AAE261205F1002AF763 /* TSFJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TSFJSlot.zip; sourceTree = "<group>"; };
+		C75D1AAF261205F1002AF763 /* EDJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = EDJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB0261205F1002AF763 /* KGJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = KGJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB1261205F1002AF763 /* VWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = VWJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB2261205F2002AF763 /* IGTJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = IGTJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB3261205F2002AF763 /* RLJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RLJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB4261205F2002AF763 /* LHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = LHJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB5261205F2002AF763 /* OCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = OCJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB6261205F2002AF763 /* FHNCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FHNCJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB7261205F2002AF763 /* QORJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = QORJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB8261205F2002AF763 /* GETJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = GETJSlot.zip; sourceTree = "<group>"; };
+		C75D1AB9261205F3002AF763 /* FBHTJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FBHTJSlot.zip; sourceTree = "<group>"; };
+		C75D1ABA261205F3002AF763 /* GEJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = GEJSlot.zip; sourceTree = "<group>"; };
+		C75D1ABB261205F3002AF763 /* SHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SHJSlot.zip; sourceTree = "<group>"; };
+		C75D1ABC261205F3002AF763 /* MFJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MFJSlot.zip; sourceTree = "<group>"; };
+		C75D1ABD261205F3002AF763 /* TGCJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TGCJSlot.zip; sourceTree = "<group>"; };
+		C75D1ABE261205F3002AF763 /* SOAJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SOAJSlot.zip; sourceTree = "<group>"; };
+		C75D1ABF261205F3002AF763 /* TSHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TSHJSlot.zip; sourceTree = "<group>"; };
+		C75D1AC0261205F4002AF763 /* PSJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = PSJSlot.zip; sourceTree = "<group>"; };
+		C75D1AC1261205F4002AF763 /* RORJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RORJSlot.zip; sourceTree = "<group>"; };
+		C75D1AC2261205F4002AF763 /* MLAWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MLAWJSlot.zip; sourceTree = "<group>"; };
+		C75D1AC3261205F4002AF763 /* TJRJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TJRJSlot.zip; sourceTree = "<group>"; };
+		C75D1AC4261205F4002AF763 /* TDHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TDHJSlot.zip; sourceTree = "<group>"; };
+		C75D1AC5261205F4002AF763 /* FHEJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FHEJSlot.zip; sourceTree = "<group>"; };
 		C766086325CC3FF700A59534 /* CoreApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiRepository.swift; sourceTree = "<group>"; };
 		C77206DA25DAAC5E0037D8A0 /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButton.png; sourceTree = "<group>"; };
 		C77206E025DAB0B50037D8A0 /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
@@ -3099,8 +3281,99 @@
 		CEC9A37625C1A96E00BE853D /* EGT */ = {
 			isa = PBXGroup;
 			children = (
-				C744041226001138003E554B /* BHJSlot.zip */,
-				C744040A26000F58003E554B /* RORJSlot.zip */,
+				C75D1A94261205EE002AF763 /* AAJSlot.zip */,
+				C75D1A74261205EA002AF763 /* ABJSlot.zip */,
+				C75D1A9A261205EF002AF763 /* ADJSlot.zip */,
+				C75D1A6E261205E9002AF763 /* AGJSlot.zip */,
+				C75D1A93261205EE002AF763 /* AOTJSlot.zip */,
+				C75D1AA9261205F0002AF763 /* BHJSlot.zip */,
+				C75D1AAD261205F1002AF763 /* BHSJSlot.zip */,
+				C75D1AA7261205F0002AF763 /* BHTJSlot.zip */,
+				C75D1A81261205EB002AF763 /* BOMJSlot.zip */,
+				C75D1A72261205EA002AF763 /* BRDJSlot.zip */,
+				C75D1A71261205E9002AF763 /* CBJSlot.zip */,
+				C75D1A7D261205EB002AF763 /* CDJSlot.zip */,
+				C75D1A91261205ED002AF763 /* CHJSlot.zip */,
+				C75D1A87261205EC002AF763 /* CMJSlot.zip */,
+				C75D1A9E261205EF002AF763 /* DARJSlot.zip */,
+				C75D1AAF261205F1002AF763 /* EDJSlot.zip */,
+				C75D1A6C261205E9002AF763 /* EHJSlot.zip */,
+				C75D1A84261205EC002AF763 /* EOWJSlot.zip */,
+				C75D1AA8261205F0002AF763 /* EPJSlot.zip */,
+				C75D1A98261205EE002AF763 /* ESJSlot.zip */,
+				C75D1A70261205E9002AF763 /* FABJSlot.zip */,
+				C75D1A9D261205EF002AF763 /* FBHJSlot.zip */,
+				C75D1AA2261205F0002AF763 /* FBHSJSlot.zip */,
+				C75D1AB9261205F3002AF763 /* FBHTJSlot.zip */,
+				C75D1A85261205EC002AF763 /* FBJSlot.zip */,
+				C75D1A97261205EE002AF763 /* FDHJSlot.zip */,
+				C75D1A95261205EE002AF763 /* FGSJSlot.zip */,
+				C75D1AC5261205F4002AF763 /* FHEJSlot.zip */,
+				C75D1A90261205ED002AF763 /* FHJSlot.zip */,
+				C75D1AB6261205F2002AF763 /* FHNCJSlot.zip */,
+				C75D1A8B261205ED002AF763 /* FHSJSlot.zip */,
+				C75D1A6A261205E8002AF763 /* FLKJSlot.zip */,
+				C75D1AA6261205F0002AF763 /* FMCJSlot.zip */,
+				C75D1A73261205EA002AF763 /* FSDJSlot.zip */,
+				C75D1AA1261205EF002AF763 /* FSHJSlot.zip */,
+				C75D1ABA261205F3002AF763 /* GEJSlot.zip */,
+				C75D1AB8261205F2002AF763 /* GETJSlot.zip */,
+				C75D1A75261205EA002AF763 /* GOCJSlot.zip */,
+				C75D1A6D261205E9002AF763 /* GOLJSlot.zip */,
+				C75D1A92261205EE002AF763 /* GTSJSlot.zip */,
+				C75D1A88261205EC002AF763 /* HBHJSlot.zip */,
+				C75D1A7B261205EB002AF763 /* HCJSlot.zip */,
+				C75D1A8C261205ED002AF763 /* HNCJSlot.zip */,
+				C75D1A67261205E8002AF763 /* HSHJSlot.zip */,
+				C75D1AB2261205F2002AF763 /* IGTJSlot.zip */,
+				C75D1A76261205EA002AF763 /* IVJSlot.zip */,
+				C75D1AB0261205F1002AF763 /* KGJSlot.zip */,
+				C75D1A8E261205ED002AF763 /* KHJSlot.zip */,
+				C75D1A77261205EA002AF763 /* LAWJSlot.zip */,
+				C75D1AB4261205F2002AF763 /* LHJSlot.zip */,
+				C75D1ABC261205F3002AF763 /* MFJSlot.zip */,
+				C75D1AC2261205F4002AF763 /* MLAWJSlot.zip */,
+				C75D1A7E261205EB002AF763 /* MPJSlot.zip */,
+				C75D1A6F261205E9002AF763 /* MTJSlot.zip */,
+				C75D1AB5261205F2002AF763 /* OCJSlot.zip */,
+				C75D1A99261205EE002AF763 /* OGJSlot.zip */,
+				C75D1A78261205EA002AF763 /* PQJSlot.zip */,
+				C75D1AC0261205F4002AF763 /* PSJSlot.zip */,
+				C75D1AB7261205F2002AF763 /* QORJSlot.zip */,
+				C75D1A79261205EB002AF763 /* RCJSlot.zip */,
+				C75D1A82261205EC002AF763 /* RGJSlot.zip */,
+				C75D1AB3261205F2002AF763 /* RLJSlot.zip */,
+				C75D1AC1261205F4002AF763 /* RORJSlot.zip */,
+				C75D1AAA261205F1002AF763 /* RSJSlot.zip */,
+				C75D1A86261205EC002AF763 /* RTSJSlot.zip */,
+				C75D1A7A261205EB002AF763 /* RWJSlot.zip */,
+				C75D1A96261205EE002AF763 /* SBJSlot.zip */,
+				C75D1AAB261205F1002AF763 /* SCJSlot.zip */,
+				C75D1ABB261205F3002AF763 /* SHJSlot.zip */,
+				C75D1ABE261205F3002AF763 /* SOAJSlot.zip */,
+				C75D1AA3261205F0002AF763 /* SPJSlot.zip */,
+				C75D1A89261205EC002AF763 /* STJSlot.zip */,
+				C75D1A9C261205EF002AF763 /* TBHJSlot.zip */,
+				C75D1A83261205EC002AF763 /* TBHTJSlot.zip */,
+				C75D1AC4261205F4002AF763 /* TDHJSlot.zip */,
+				C75D1AA4261205F0002AF763 /* TDJSlot.zip */,
+				C75D1AAC261205F1002AF763 /* TDRJSlot.zip */,
+				C75D1ABD261205F3002AF763 /* TGCJSlot.zip */,
+				C75D1AA0261205EF002AF763 /* THBJSlot.zip */,
+				C75D1AC3261205F4002AF763 /* TJRJSlot.zip */,
+				C75D1AAE261205F1002AF763 /* TSFJSlot.zip */,
+				C75D1ABF261205F3002AF763 /* TSHJSlot.zip */,
+				C75D1A9F261205EF002AF763 /* TSOAJSlot.zip */,
+				C75D1A8A261205EC002AF763 /* TSOATJSlot.zip */,
+				C75D1A80261205EB002AF763 /* TSWJSlot.zip */,
+				C75D1A7F261205EB002AF763 /* TWWJSlot.zip */,
+				C75D1AA5261205F0002AF763 /* UHJSlot.zip */,
+				C75D1A8D261205ED002AF763 /* VGJSlot.zip */,
+				C75D1A8F261205ED002AF763 /* VNJSlot.zip */,
+				C75D1AB1261205F1002AF763 /* VWJSlot.zip */,
+				C75D1A9B261205EF002AF763 /* WHJSlot.zip */,
+				C75D1A7C261205EB002AF763 /* XSJSlot.zip */,
+				C75D1A6B261205E8002AF763 /* ZWJSlot.zip */,
 			);
 			path = EGT;
 			sourceTree = "<group>";
@@ -4002,11 +4275,102 @@
 			isa = PBXProject;
 			attributes = {
 				KnownAssetTags = (
+					AAJSlot,
+					ABJSlot,
+					ADJSlot,
+					AGJSlot,
+					AOTJSlot,
 					BHJSlot,
+					BHSJSlot,
+					BHTJSlot,
+					BOMJSlot,
+					BRDJSlot,
+					CBJSlot,
+					CDJSlot,
+					CHJSlot,
+					CMJSlot,
+					DARJSlot,
+					EDJSlot,
 					EGT,
 					EGT/BHJSlot,
 					EGT/RORJSlot,
+					EHJSlot,
+					EOWJSlot,
+					EPJSlot,
+					ESJSlot,
+					FABJSlot,
+					FBHJSlot,
+					FBHSJSlot,
+					FBHTJSlot,
+					FBJSlot,
+					FDHJSlot,
+					FGSJSlot,
+					FHEJSlot,
+					FHJSlot,
+					FHNCJSlot,
+					FHSJSlot,
+					FLKJSlot,
+					FMCJSlot,
+					FSDJSlot,
+					FSHJSlot,
+					GEJSlot,
+					GETJSlot,
+					GOCJSlot,
+					GOLJSlot,
+					GTSJSlot,
+					HBHJSlot,
+					HCJSlot,
+					HNCJSlot,
+					HSHJSlot,
+					IGTJSlot,
+					IVJSlot,
+					KGJSlot,
+					KHJSlot,
+					LAWJSlot,
+					LHJSlot,
+					MFJSlot,
+					MLAWJSlot,
+					MPJSlot,
+					MTJSlot,
+					OCJSlot,
+					OGJSlot,
+					PQJSlot,
+					PSJSlot,
+					QORJSlot,
+					RCJSlot,
+					RGJSlot,
+					RLJSlot,
 					RORJSlot,
+					RSJSlot,
+					RTSJSlot,
+					RWJSlot,
+					SBJSlot,
+					SCJSlot,
+					SHJSlot,
+					SOAJSlot,
+					SPJSlot,
+					STJSlot,
+					TBHJSlot,
+					TBHTJSlot,
+					TDHJSlot,
+					TDJSlot,
+					TDRJSlot,
+					TGCJSlot,
+					THBJSlot,
+					TJRJSlot,
+					TSFJSlot,
+					TSHJSlot,
+					TSOAJSlot,
+					TSOATJSlot,
+					TSWJSlot,
+					TWWJSlot,
+					UHJSlot,
+					VGJSlot,
+					VNJSlot,
+					VWJSlot,
+					WHJSlot,
+					XSJSlot,
+					ZWJSlot,
 				);
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1220;
@@ -4057,50 +4421,87 @@
 			files = (
 				CEE44E8D2600B5C100A83BD2 /* AdjaraMontPro-Regular.ttf in Resources */,
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
+				C75D1B0B261205F4002AF763 /* TSFJSlot.zip in Resources */,
+				C75D1AFA261205F4002AF763 /* FBHJSlot.zip in Resources */,
 				CEBB00802609D3F900D1B510 /* Emoney.storyboard in Resources */,
+				C75D1AEF261205F4002AF763 /* GTSJSlot.zip in Resources */,
+				C75D1B1A261205F4002AF763 /* TGCJSlot.zip in Resources */,
 				CECF7F7B256D9FAB001C0E50 /* PasswordChange.storyboard in Resources */,
+				C75D1AF7261205F4002AF763 /* ADJSlot.zip in Resources */,
+				C75D1AE1261205F4002AF763 /* EOWJSlot.zip in Resources */,
+				C75D1AF9261205F4002AF763 /* TBHJSlot.zip in Resources */,
+				C75D1B07261205F4002AF763 /* RSJSlot.zip in Resources */,
 				7665D97B257F4C0E00E5B35F /* AccessHistoryComponentView.xib in Resources */,
+				C75D1AC9261205F4002AF763 /* EHJSlot.zip in Resources */,
+				C75D1AF5261205F4002AF763 /* ESJSlot.zip in Resources */,
+				C75D1ACD261205F4002AF763 /* FABJSlot.zip in Resources */,
 				C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */,
+				C75D1B0A261205F4002AF763 /* BHSJSlot.zip in Resources */,
 				76DCF67425B80FB500150EE1 /* MyCards.storyboard in Resources */,
+				C75D1AD7261205F4002AF763 /* RWJSlot.zip in Resources */,
+				C75D1AFB261205F4002AF763 /* DARJSlot.zip in Resources */,
 				CEC2F5292608B5C00000904C /* Deposit.storyboard in Resources */,
 				CEE15C4225349C450033BF93 /* NotificationComponentView.xib in Resources */,
 				7644B6192563EFA4006778B2 /* DateHeaderCell.xib in Resources */,
 				D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */,
 				7698869B2571042A00FA339E /* TransactionFilterTableViewCell.xib in Resources */,
+				C75D1AC8261205F4002AF763 /* ZWJSlot.zip in Resources */,
 				CE454662260C8A7500B01E19 /* VisaInstructionsComponentView.xib in Resources */,
 				CEE25089256FE3C10089F805 /* TimerComponentView.xib in Resources */,
+				C75D1B04261205F4002AF763 /* BHTJSlot.zip in Resources */,
 				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
 				CE03746E25F8D7180061F507 /* Web.storyboard in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
+				C75D1AEE261205F4002AF763 /* CHJSlot.zip in Resources */,
 				CEB41992260A2A71003FE4B6 /* PaymentMethodCollectionViewCell.xib in Resources */,
+				C75D1ACA261205F4002AF763 /* GOLJSlot.zip in Resources */,
+				C75D1B1B261205F4002AF763 /* SOAJSlot.zip in Resources */,
 				CEE44E872600B5C100A83BD2 /* AdjaraMontPro-SemiBold.ttf in Resources */,
 				C77206E125DAB0B50037D8A0 /* ca.der in Resources */,
+				C75D1AD2261205F4002AF763 /* GOCJSlot.zip in Resources */,
 				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
+				C75D1AE0261205F4002AF763 /* TBHTJSlot.zip in Resources */,
 				76BA7BD825E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib in Resources */,
 				CE2F03CD252CC8EE006D8001 /* QuickActionComponentView.xib in Resources */,
 				76AB37F325B95C74004E1326 /* incognito-card.mp4 in Resources */,
+				C75D1B0E261205F4002AF763 /* VWJSlot.zip in Resources */,
+				C75D1AF2261205F4002AF763 /* FGSJSlot.zip in Resources */,
+				C75D1AEC261205F4002AF763 /* VNJSlot.zip in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
 				76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */,
+				C75D1B10261205F4002AF763 /* RLJSlot.zip in Resources */,
 				CEE44E8C2600B5C100A83BD2 /* AdjaraMont-Bold.ttf in Resources */,
 				CE679FDC2578334B00F2EC1C /* AddCard.storyboard in Resources */,
-				C744041326001138003E554B /* BHJSlot.zip in Resources */,
 				CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */,
 				7676E5662562E26300234026 /* TransactionHistoryComponentView.xib in Resources */,
+				C75D1B20261205F4002AF763 /* TJRJSlot.zip in Resources */,
 				CEE44E8E2600B5C100A83BD2 /* AdjaraMont-Heavy.ttf in Resources */,
-				C744040B26000F58003E554B /* RORJSlot.zip in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
+				C75D1AF8261205F4002AF763 /* WHJSlot.zip in Resources */,
+				C75D1AFE261205F4002AF763 /* FSHJSlot.zip in Resources */,
 				CE64EA7A25D1695400438974 /* Game.storyboard in Resources */,
 				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
+				C75D1AD0261205F4002AF763 /* FSDJSlot.zip in Resources */,
 				C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */,
+				C75D1AFD261205F4002AF763 /* THBJSlot.zip in Resources */,
+				C75D1AF4261205F4002AF763 /* FDHJSlot.zip in Resources */,
 				CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */,
 				CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */,
 				CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */,
 				CE91C11825702C5700A18255 /* CalendarComponentView.xib in Resources */,
+				C75D1AD8261205F4002AF763 /* HCJSlot.zip in Resources */,
+				C75D1AE3261205F4002AF763 /* RTSJSlot.zip in Resources */,
 				C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */,
+				C75D1ACB261205F4002AF763 /* AGJSlot.zip in Resources */,
 				D8212F052485846C00B74AB9 /* LoadingCollectionViewCell.xib in Resources */,
+				C75D1B02261205F4002AF763 /* UHJSlot.zip in Resources */,
+				C75D1AD9261205F4002AF763 /* XSJSlot.zip in Resources */,
+				C75D1B03261205F4002AF763 /* FMCJSlot.zip in Resources */,
+				C75D1B14261205F4002AF763 /* QORJSlot.zip in Resources */,
 				CEE44E8A2600B5C100A83BD2 /* AdjaraMontPro-Light.ttf in Resources */,
 				7676E55425628F3900234026 /* Transactions.storyboard in Resources */,
+				C75D1ACE261205F4002AF763 /* CBJSlot.zip in Resources */,
 				C7C973AC2580EC990062C713 /* SecurityLevelTypeTableViewCell.xib in Resources */,
 				CE95FC44252DF3B6003E539B /* FooterTableViewCell.xib in Resources */,
 				CEE44E852600B5C100A83BD2 /* AdjaraMontPro-Heavy.ttf in Resources */,
@@ -4109,6 +4510,7 @@
 				76BA7BDA25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib in Resources */,
 				CEE44E862600B5C100A83BD2 /* AdjaraMontPro-Bold.ttf in Resources */,
 				CEBB008E2609D40400D1B510 /* Visa.storyboard in Resources */,
+				C75D1ADA261205F4002AF763 /* CDJSlot.zip in Resources */,
 				CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */,
 				7668C7AB2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib in Resources */,
 				CEE44E8B2600B5C100A83BD2 /* AdjaraMont-SemiBold.ttf in Resources */,
@@ -4116,70 +4518,123 @@
 				CE95FC12252DE60F003E539B /* FooterComponentView.xib in Resources */,
 				CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */,
 				D853499724D1E1C100958B0E /* GoogleService-Info.plist in Resources */,
+				C75D1B16261205F4002AF763 /* FBHTJSlot.zip in Resources */,
 				7640C85225E3994B006D7100 /* HomeBannerCollectionViewCell.xib in Resources */,
 				CEE44E892600B5C100A83BD2 /* AdjaraMont-Regular.ttf in Resources */,
 				CEF368682549C368009FD456 /* Withdraw.storyboard in Resources */,
+				C75D1B08261205F4002AF763 /* SCJSlot.zip in Resources */,
 				CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */,
 				CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */,
+				C75D1AE6261205F4002AF763 /* STJSlot.zip in Resources */,
+				C75D1AE7261205F4002AF763 /* TSOATJSlot.zip in Resources */,
+				C75D1B09261205F4002AF763 /* TDRJSlot.zip in Resources */,
+				C75D1AF3261205F4002AF763 /* SBJSlot.zip in Resources */,
 				CECCE37E254EE7D4005CC660 /* WithdrawTermsView.xib in Resources */,
 				763171AD25663E1500F6FD90 /* TransactionDetails.storyboard in Resources */,
+				C75D1AEB261205F4002AF763 /* KHJSlot.zip in Resources */,
+				C75D1AE2261205F4002AF763 /* FBJSlot.zip in Resources */,
 				CE9B7FE9257544F5006FF756 /* PhoneNumberChange.storyboard in Resources */,
+				C75D1AE5261205F4002AF763 /* HBHJSlot.zip in Resources */,
 				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
 				76BDF46E25760512007B27A7 /* AccountParametersTableViewCell.xib in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
+				C75D1B00261205F4002AF763 /* SPJSlot.zip in Resources */,
+				C75D1AE8261205F4002AF763 /* FHSJSlot.zip in Resources */,
 				C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
+				C75D1AD4261205F4002AF763 /* LAWJSlot.zip in Resources */,
 				CEBB004C2608F63B00D1B510 /* PaymentMethodGridComponentView.xib in Resources */,
+				C75D1AEA261205F4002AF763 /* VGJSlot.zip in Resources */,
 				76DCF6AF25B8262300150EE1 /* MyCardComponentView.xib in Resources */,
+				C75D1B01261205F4002AF763 /* TDJSlot.zip in Resources */,
 				CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */,
+				C75D1B11261205F4002AF763 /* LHJSlot.zip in Resources */,
 				767C7D9025E39FA9008F2CE9 /* HomeBannerContainerCollectionViewCell.xib in Resources */,
+				C75D1B06261205F4002AF763 /* BHJSlot.zip in Resources */,
 				7644B6152563ECAC006778B2 /* DateHeaderComponentView.xib in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
 				76404F0B257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib in Resources */,
 				C77206E525DAB0BF0037D8A0 /* localhost.p12 in Resources */,
+				C75D1B0F261205F4002AF763 /* IGTJSlot.zip in Resources */,
+				C75D1B15261205F4002AF763 /* GETJSlot.zip in Resources */,
 				CEB285E1256D20C300584A65 /* SelfSuspend.storyboard in Resources */,
 				769886AE2571055000FA339E /* TransactionFilterComponentView.xib in Resources */,
+				C75D1AED261205F4002AF763 /* FHJSlot.zip in Resources */,
 				76E43EDB25B95303007B2D97 /* VideoCardComponentView.xib in Resources */,
 				7682CF9225B8581600717090 /* AddMyCardTableViewCell.xib in Resources */,
 				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
+				C75D1AFF261205F4002AF763 /* FBHSJSlot.zip in Resources */,
 				CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */,
+				C75D1ADB261205F4002AF763 /* MPJSlot.zip in Resources */,
+				C75D1B1C261205F4002AF763 /* TSHJSlot.zip in Resources */,
+				C75D1B17261205F4002AF763 /* GEJSlot.zip in Resources */,
+				C75D1ADE261205F4002AF763 /* BOMJSlot.zip in Resources */,
+				C75D1AE4261205F4002AF763 /* CMJSlot.zip in Resources */,
+				C75D1AF0261205F4002AF763 /* AOTJSlot.zip in Resources */,
+				C75D1B12261205F4002AF763 /* OCJSlot.zip in Resources */,
 				76EFF7C32582383000898819 /* AccessHistoryCalendar.storyboard in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
 				767C7D8E25E39FA9008F2CE9 /* HomeBannerContainerComponentView.xib in Resources */,
 				CE91C0E7257028DC00A18255 /* TransactionsFilter.storyboard in Resources */,
+				C75D1AE9261205F4002AF763 /* HNCJSlot.zip in Resources */,
+				C75D1B22261205F4002AF763 /* FHEJSlot.zip in Resources */,
+				C75D1ACC261205F4002AF763 /* MTJSlot.zip in Resources */,
 				CE55ECFE25265CF1003E168F /* Profile.storyboard in Resources */,
+				C75D1AD5261205F4002AF763 /* PQJSlot.zip in Resources */,
 				CE5874A8260B8B4100F03AB5 /* EmoneyInstructionsView.xib in Resources */,
 				CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */,
 				7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */,
+				C75D1ADF261205F4002AF763 /* RGJSlot.zip in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */,
+				C75D1ADC261205F4002AF763 /* TWWJSlot.zip in Resources */,
+				C75D1B05261205F4002AF763 /* EPJSlot.zip in Resources */,
 				CEE356F2252C9C8100A0A25C /* BalanceComponentView.xib in Resources */,
 				76BDF46C25760512007B27A7 /* AccountParametersComponentView.xib in Resources */,
 				D8C73F812445A656004C96DB /* Home.storyboard in Resources */,
+				C75D1B18261205F4002AF763 /* SHJSlot.zip in Resources */,
 				CE58749B260B66CB00F03AB5 /* EmoneyButton.xib in Resources */,
 				76BDF45C2576043A007B27A7 /* AccountParameters.storyboard in Resources */,
+				C75D1B19261205F4002AF763 /* MFJSlot.zip in Resources */,
+				C75D1AD6261205F4002AF763 /* RCJSlot.zip in Resources */,
 				CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */,
 				7665D95F257E5CA600E5B35F /* AccessHistory.storyboard in Resources */,
 				7668C7A92576785F0024DDE4 /* AccountParametersHeaderComponentView.xib in Resources */,
 				C7C973AA2580EC990062C713 /* SecurityLevelTypeComponentView.xib in Resources */,
+				C75D1ADD261205F4002AF763 /* TSWJSlot.zip in Resources */,
 				7665D97D257F4C0E00E5B35F /* AccessHistoryTableViewCell.xib in Resources */,
+				C75D1ACF261205F4002AF763 /* BRDJSlot.zip in Resources */,
+				C75D1B1D261205F4002AF763 /* PSJSlot.zip in Resources */,
+				C75D1AD1261205F4002AF763 /* ABJSlot.zip in Resources */,
 				D8BF4043244EC949008F0BAF /* GameLauncherCollectionViewCell.xib in Resources */,
 				76404F09257625F900D14E0C /* AccountSecurityMessagesComponentView.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
 				CE660C47254C0587002667D0 /* LabelComponentView.xib in Resources */,
+				C75D1AF6261205F4002AF763 /* OGJSlot.zip in Resources */,
 				CEE44E882600B5C100A83BD2 /* AdjaraMont-Light.ttf in Resources */,
 				CEA7779D256D4250008A4F6C /* MailChange.storyboard in Resources */,
 				CE55ED82252B437F003E168F /* ProfileInfoComponentView.xib in Resources */,
 				CE454658260C89F900B01E19 /* VisaLimitComponentView.xib in Resources */,
 				7644B5FB2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib in Resources */,
 				76DCF6B125B8262300150EE1 /* MyCardTableViewCell.xib in Resources */,
+				C75D1AC7261205F4002AF763 /* FLKJSlot.zip in Resources */,
+				C75D1AC6261205F4002AF763 /* HSHJSlot.zip in Resources */,
 				7640C85025E3994B006D7100 /* HomeBannerComponentView.xib in Resources */,
+				C75D1B1F261205F4002AF763 /* MLAWJSlot.zip in Resources */,
+				C75D1B21261205F4002AF763 /* TDHJSlot.zip in Resources */,
+				C75D1B13261205F4002AF763 /* FHNCJSlot.zip in Resources */,
 				C7C973292580D9550062C713 /* SecurityLevelComponentView.xib in Resources */,
 				7682CF9025B8581600717090 /* AddMyCardComponentView.xib in Resources */,
+				C75D1B0D261205F4002AF763 /* KGJSlot.zip in Resources */,
 				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
+				C75D1AF1261205F4002AF763 /* AAJSlot.zip in Resources */,
+				C75D1AD3261205F4002AF763 /* IVJSlot.zip in Resources */,
+				C75D1B1E261205F4002AF763 /* RORJSlot.zip in Resources */,
 				CE64EA9D25D2D51A00438974 /* GameLoaderComponentView.xib in Resources */,
 				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				CEBB002A2608EC4100D1B510 /* PaymentMethodComponentView.xib in Resources */,
+				C75D1AFC261205F4002AF763 /* TSOAJSlot.zip in Resources */,
+				C75D1B0C261205F4002AF763 /* EDJSlot.zip in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
