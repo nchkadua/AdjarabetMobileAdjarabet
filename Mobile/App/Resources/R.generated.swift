@@ -5027,7 +5027,7 @@ struct R: Rswift.Validatable {
       /// en translation: დღიური
       ///
       /// Locales: en, ka, hy
-      static let visa_daily_limit = Rswift.StringResource(key: "visa_daily_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let visa_max_limit = Rswift.StringResource(key: "visa_max_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ელ.ფოსტის შეცვლა
       ///
       /// Locales: en, ka, hy
@@ -5035,7 +5035,7 @@ struct R: Rswift.Validatable {
       /// en translation: ერთჯერადი
       ///
       /// Locales: en, ka, hy
-      static let visa_max_limit = Rswift.StringResource(key: "visa_max_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let visa_daily_limit = Rswift.StringResource(key: "visa_daily_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება
       ///
       /// Locales: en, ka, hy
@@ -11805,16 +11805,16 @@ struct R: Rswift.Validatable {
       /// en translation: დღიური
       ///
       /// Locales: en, ka, hy
-      static func visa_daily_limit(preferredLanguages: [String]? = nil) -> String {
+      static func visa_max_limit(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("visa_daily_limit", tableName: "Localization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "visa_daily_limit"
+          return "visa_max_limit"
         }
 
-        return NSLocalizedString("visa_daily_limit", tableName: "Localization", bundle: bundle, comment: "")
+        return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: ელ.ფოსტის შეცვლა
@@ -11835,16 +11835,16 @@ struct R: Rswift.Validatable {
       /// en translation: ერთჯერადი
       ///
       /// Locales: en, ka, hy
-      static func visa_max_limit(preferredLanguages: [String]? = nil) -> String {
+      static func visa_daily_limit(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("visa_daily_limit", tableName: "Localization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "visa_max_limit"
+          return "visa_daily_limit"
         }
 
-        return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: bundle, comment: "")
+        return NSLocalizedString("visa_daily_limit", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება
@@ -12685,8 +12685,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13354,8 +13354,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
