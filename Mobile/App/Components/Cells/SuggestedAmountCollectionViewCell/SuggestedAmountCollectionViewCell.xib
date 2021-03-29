@@ -32,7 +32,7 @@
             <connections>
                 <outlet property="componentView" destination="Wwv-Ka-bCU" id="Nrb-t7-I8I"/>
             </connections>
-            <point key="canvasLocation" x="139" y="100"/>
+            <point key="canvasLocation" x="138.40579710144928" y="99.776785714285708"/>
         </view>
     </objects>
     <resources>

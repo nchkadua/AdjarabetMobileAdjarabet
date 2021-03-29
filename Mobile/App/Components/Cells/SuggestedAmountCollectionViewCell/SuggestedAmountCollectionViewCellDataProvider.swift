@@ -6,7 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public protocol SuggestedAmountCollectionViewCellDataProvider: SuggestedAmountComponentViewModel, AppCellDataProvider, CellHeighProvidering { }
+public protocol SuggestedAmountCollectionViewCellDataProvider: SuggestedAmountComponentViewModel, AppCellDataProvider, AppCellDelegate, CellHeighProvidering { }
 
 public extension SuggestedAmountCollectionViewCellDataProvider {
     var identifier: String { SuggestedAmountCollectionViewCell.identifierValue }

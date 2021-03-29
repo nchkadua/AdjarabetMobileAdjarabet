@@ -2190,7 +2190,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 76 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 77 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -2318,6 +2318,8 @@ struct R: Rswift.Validatable {
     static let suggestedAmountCollectionViewCell = _R.nib._SuggestedAmountCollectionViewCell()
     /// Nib `SuggestedAmountComponentView`.
     static let suggestedAmountComponentView = _R.nib._SuggestedAmountComponentView()
+    /// Nib `SuggestedAmountGridComponentView`.
+    static let suggestedAmountGridComponentView = _R.nib._SuggestedAmountGridComponentView()
     /// Nib `TimerComponentView`.
     static let timerComponentView = _R.nib._TimerComponentView()
     /// Nib `TransactionDetailsComponentView`.
@@ -2850,6 +2852,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SuggestedAmountGridComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.suggestedAmountGridComponentView) instead")
+    static func suggestedAmountGridComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.suggestedAmountGridComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TimerComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.timerComponentView) instead")
     static func timerComponentView(_: Void = ()) -> UIKit.UINib {
@@ -3203,6 +3213,10 @@ struct R: Rswift.Validatable {
 
     static func suggestedAmountComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.suggestedAmountComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func suggestedAmountGridComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.suggestedAmountGridComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func timerComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -12329,8 +12343,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12879,6 +12893,17 @@ struct _R: Rswift.Validatable {
     struct _SuggestedAmountComponentView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SuggestedAmountComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SuggestedAmountGridComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SuggestedAmountGridComponentView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

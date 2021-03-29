@@ -24,6 +24,8 @@ public class VisaViewController: ABViewController {
     private var amount: String { amountInputView.text ?? "" }
     private var account: Int { cardNumberInputView.pickerView.selectedRow(inComponent: 0) }
 
+    private var suggestedAmountGridComponentView: SuggestedAmountGridComponentView?
+
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +61,27 @@ public class VisaViewController: ABViewController {
         case .updateDisposable(let disposable): self.limitView.updateDaily(disposable)
         case .updateMax(let max): self.limitView.updateMax(max)
         case .show(error: let error): showAlert(title: error)
+        case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
+        }
+    }
+
+    /// SuggestedAmount Grid
+    private func bindToGrid(_ viewModel: SuggestedAmountGridComponentViewModel) {
+        suggestedAmountGridComponentView?.setAndBind(viewModel: viewModel)
+        bind(to: viewModel)
+    }
+
+    private func bind(to viewModel: SuggestedAmountGridComponentViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: SuggestedAmountGridComponentViewModelOutputAction) {
+        switch action {
+        case .didSelectSuggestedAmount(let viewModel, _): updateAmountInputeView(viewModel)
+        default:
+            break
         }
     }
 
@@ -84,6 +107,7 @@ public class VisaViewController: ABViewController {
         setupKeyboard()
         setupInputViews()
         setupButtons()
+        setupSuggestedAmountsGrid()
     }
 
     private func setupInputViews() {
@@ -120,6 +144,11 @@ public class VisaViewController: ABViewController {
         viewModel.entered(amount: amount)
     }
 
+    private func setupSuggestedAmountsGrid() {
+        suggestedAmountGridComponentView = SuggestedAmountGridComponentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+        amountInputView.mainTextField.inputAccessoryView = suggestedAmountGridComponentView
+    }
+
     // MARK: Action methods
     @objc private func addCardDidTap() {
         navigator.navigate(to: .addAccount, animated: true)
@@ -137,6 +166,10 @@ public class VisaViewController: ABViewController {
     private func setupPaymentCards(with accounts: [String]) {
         cardNumberInputView.setupPickerView(withItems: accounts)
         cardNumberInputView.setDefaultValue(accounts.first ?? "")
+    }
+
+    private func updateAmountInputeView(_ amountViewModel: SuggestedAmountComponentViewModel) {
+        viewModel.entered(amount: String(amountViewModel.params.amount))
     }
 }
 

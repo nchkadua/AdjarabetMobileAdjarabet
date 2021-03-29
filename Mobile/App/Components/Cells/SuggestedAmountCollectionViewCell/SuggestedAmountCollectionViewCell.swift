@@ -8,7 +8,8 @@
 
 public class SuggestedAmountCollectionViewCell: AppCollectionViewCell {
     @IBOutlet weak private var componentView: SuggestedAmountComponentView!
-    override public class var identifier: Identifierable { R.nib.suggestedAmountCollectionViewCell.name } //TODO
+
+    override public class var identifier: Identifierable { R.nib.suggestedAmountCollectionViewCell.name }
 
     public override var dataProvider: AppCellDataProvider? {
         didSet {

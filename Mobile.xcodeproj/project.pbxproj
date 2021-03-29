@@ -277,6 +277,9 @@
 		CE4A30E92611E6240039C078 /* SuggestedAmountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A30E82611E6240039C078 /* SuggestedAmountCollectionViewCell.swift */; };
 		CE4A30ED2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4A30EC2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib */; };
 		CE4A30F12611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A30F02611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift */; };
+		CE4A30F6261224E50039C078 /* SuggestedAmountGridComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A30F5261224E50039C078 /* SuggestedAmountGridComponentView.swift */; };
+		CE4A30FC261224EB0039C078 /* SuggestedAmountGridComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4A30FB261224EB0039C078 /* SuggestedAmountGridComponentView.xib */; };
+		CE4A3100261224F70039C078 /* SuggestedAmountGridComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A30FF261224F70039C078 /* SuggestedAmountGridComponentViewModel.swift */; };
 		CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */; };
 		CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF525265CDA003E168F /* ProfileNavigator.swift */; };
 		CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF625265CDA003E168F /* ProfileViewController.swift */; };
@@ -891,6 +894,9 @@
 		CE4A30E82611E6240039C078 /* SuggestedAmountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAmountCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE4A30EC2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedAmountCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE4A30F02611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAmountCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CE4A30F5261224E50039C078 /* SuggestedAmountGridComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAmountGridComponentView.swift; sourceTree = "<group>"; };
+		CE4A30FB261224EB0039C078 /* SuggestedAmountGridComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedAmountGridComponentView.xib; sourceTree = "<group>"; };
+		CE4A30FF261224F70039C078 /* SuggestedAmountGridComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAmountGridComponentViewModel.swift; sourceTree = "<group>"; };
 		CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentsRepository.swift; sourceTree = "<group>"; };
 		CE55ECF525265CDA003E168F /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
 		CE55ECF625265CDA003E168F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -2732,10 +2738,20 @@
 			isa = PBXGroup;
 			children = (
 				CE4A30E82611E6240039C078 /* SuggestedAmountCollectionViewCell.swift */,
-				CE4A30EC2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib */,
 				CE4A30F02611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift */,
+				CE4A30EC2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib */,
 			);
 			path = SuggestedAmountCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		CE4A30F4261224BF0039C078 /* SuggestedAmountGridComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A30F5261224E50039C078 /* SuggestedAmountGridComponentView.swift */,
+				CE4A30FF261224F70039C078 /* SuggestedAmountGridComponentViewModel.swift */,
+				CE4A30FB261224EB0039C078 /* SuggestedAmountGridComponentView.xib */,
+			);
+			path = SuggestedAmountGridComponentView;
 			sourceTree = "<group>";
 		};
 		CE55ECF425265B7D003E168F /* Profile */ = {
@@ -3439,6 +3455,7 @@
 		D85C9C1524336BF500F1D4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE4A30F4261224BF0039C078 /* SuggestedAmountGridComponentView */,
 				CE4A30CC2611E4EC0039C078 /* SuggestedAmountComponentView */,
 				CEBB004A2608F61800D1B510 /* PaymentMethodGridComponentView */,
 				CEBB000A2608EBC700D1B510 /* PaymentMethodComponentView */,
@@ -4214,6 +4231,7 @@
 				7682CF9025B8581600717090 /* AddMyCardComponentView.xib in Resources */,
 				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
 				CE64EA9D25D2D51A00438974 /* GameLoaderComponentView.xib in Resources */,
+				CE4A30FC261224EB0039C078 /* SuggestedAmountGridComponentView.xib in Resources */,
 				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				CEBB002A2608EC4100D1B510 /* PaymentMethodComponentView.xib in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
@@ -4477,6 +4495,7 @@
 				C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */,
 				C754317F25F5605900E485DD /* PaymentListDTO.swift in Sources */,
 				76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */,
+				CE4A3100261224F70039C078 /* SuggestedAmountGridComponentViewModel.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
 				C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */,
 				C7B0DCEE2575591100714B22 /* Country.swift in Sources */,
@@ -4485,6 +4504,7 @@
 				CE587497260B66C300F03AB5 /* EmoneyButton.swift in Sources */,
 				76BA7BDC25E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
+				CE4A30F6261224E50039C078 /* SuggestedAmountGridComponentView.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				CE9B7FEC257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
