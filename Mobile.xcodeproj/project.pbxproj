@@ -271,6 +271,12 @@
 		CE454658260C89F900B01E19 /* VisaLimitComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */; };
 		CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */; };
 		CE454662260C8A7500B01E19 /* VisaInstructionsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE454661260C8A7500B01E19 /* VisaInstructionsComponentView.xib */; };
+		CE4A30D32611E5420039C078 /* SuggestedAmountComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4A30CD2611E5410039C078 /* SuggestedAmountComponentView.xib */; };
+		CE4A30D62611E5420039C078 /* SuggestedAmountComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A30D02611E5410039C078 /* SuggestedAmountComponentViewModel.swift */; };
+		CE4A30D72611E5420039C078 /* SuggestedAmountComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A30D12611E5410039C078 /* SuggestedAmountComponentView.swift */; };
+		CE4A30E92611E6240039C078 /* SuggestedAmountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A30E82611E6240039C078 /* SuggestedAmountCollectionViewCell.swift */; };
+		CE4A30ED2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4A30EC2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib */; };
+		CE4A30F12611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A30F02611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift */; };
 		CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */; };
 		CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF525265CDA003E168F /* ProfileNavigator.swift */; };
 		CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF625265CDA003E168F /* ProfileViewController.swift */; };
@@ -879,6 +885,12 @@
 		CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaLimitComponentView.xib; sourceTree = "<group>"; };
 		CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaInstructionsComponentView.swift; sourceTree = "<group>"; };
 		CE454661260C8A7500B01E19 /* VisaInstructionsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaInstructionsComponentView.xib; sourceTree = "<group>"; };
+		CE4A30CD2611E5410039C078 /* SuggestedAmountComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedAmountComponentView.xib; sourceTree = "<group>"; };
+		CE4A30D02611E5410039C078 /* SuggestedAmountComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAmountComponentViewModel.swift; sourceTree = "<group>"; };
+		CE4A30D12611E5410039C078 /* SuggestedAmountComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAmountComponentView.swift; sourceTree = "<group>"; };
+		CE4A30E82611E6240039C078 /* SuggestedAmountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAmountCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE4A30EC2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedAmountCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE4A30F02611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAmountCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentsRepository.swift; sourceTree = "<group>"; };
 		CE55ECF525265CDA003E168F /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
 		CE55ECF625265CDA003E168F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -2706,6 +2718,26 @@
 			path = Limits;
 			sourceTree = "<group>";
 		};
+		CE4A30CC2611E4EC0039C078 /* SuggestedAmountComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A30CD2611E5410039C078 /* SuggestedAmountComponentView.xib */,
+				CE4A30D02611E5410039C078 /* SuggestedAmountComponentViewModel.swift */,
+				CE4A30D12611E5410039C078 /* SuggestedAmountComponentView.swift */,
+			);
+			path = SuggestedAmountComponentView;
+			sourceTree = "<group>";
+		};
+		CE4A30DD2611E54A0039C078 /* SuggestedAmountCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A30E82611E6240039C078 /* SuggestedAmountCollectionViewCell.swift */,
+				CE4A30EC2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib */,
+				CE4A30F02611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift */,
+			);
+			path = SuggestedAmountCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		CE55ECF425265B7D003E168F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -3407,6 +3439,7 @@
 		D85C9C1524336BF500F1D4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE4A30CC2611E4EC0039C078 /* SuggestedAmountComponentView */,
 				CEBB004A2608F61800D1B510 /* PaymentMethodGridComponentView */,
 				CEBB000A2608EBC700D1B510 /* PaymentMethodComponentView */,
 				767C7D7B25E39EE1008F2CE9 /* HomeBanner */,
@@ -3876,6 +3909,7 @@
 		D8BF403F244EC91F008F0BAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CE4A30DD2611E54A0039C078 /* SuggestedAmountCollectionViewCell */,
 				CEBB001B2608EBF500D1B510 /* PaymentMethodCollectionViewCell */,
 				767C7D9625E3A00F008F2CE9 /* HomeBanner */,
 				76DCF6B925B8267900150EE1 /* MyCardTableViewCell */,
@@ -4073,6 +4107,7 @@
 				CE03746E25F8D7180061F507 /* Web.storyboard in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
 				CEB41992260A2A71003FE4B6 /* PaymentMethodCollectionViewCell.xib in Resources */,
+				CE4A30D32611E5420039C078 /* SuggestedAmountComponentView.xib in Resources */,
 				CEE44E872600B5C100A83BD2 /* AdjaraMontPro-SemiBold.ttf in Resources */,
 				C77206E125DAB0B50037D8A0 /* ca.der in Resources */,
 				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
@@ -4146,6 +4181,7 @@
 				76EFF7C32582383000898819 /* AccessHistoryCalendar.storyboard in Resources */,
 				D85C9C3224336D0800F1D4FE /* Login.storyboard in Resources */,
 				767C7D8E25E39FA9008F2CE9 /* HomeBannerContainerComponentView.xib in Resources */,
+				CE4A30ED2611E62A0039C078 /* SuggestedAmountCollectionViewCell.xib in Resources */,
 				CE91C0E7257028DC00A18255 /* TransactionsFilter.storyboard in Resources */,
 				CE55ECFE25265CF1003E168F /* Profile.storyboard in Resources */,
 				CE5874A8260B8B4100F03AB5 /* EmoneyInstructionsView.xib in Resources */,
@@ -4407,6 +4443,7 @@
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
+				CE4A30D72611E5420039C078 /* SuggestedAmountComponentView.swift in Sources */,
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
@@ -4607,6 +4644,7 @@
 				CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */,
 				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
 				D8390E7D246C1B5D00EF8CB5 /* OTPViewModel.swift in Sources */,
+				CE4A30F12611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift in Sources */,
 				D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */,
 				CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
@@ -4756,6 +4794,7 @@
 				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
 				CE64EA7D25D1695400438974 /* GameViewControllerFactory.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
+				CE4A30D62611E5420039C078 /* SuggestedAmountComponentViewModel.swift in Sources */,
 				C7C9732E2580D9550062C713 /* SecurityLevelTableViewCell.swift in Sources */,
 				CEBB00922609D40400D1B510 /* VisaViewModel.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
@@ -4798,6 +4837,7 @@
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,
 				76BA7BD925E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCellDataProvider.swift in Sources */,
 				C7CE2D792600C7E100251FE3 /* UFCWithdrawDTO.swift in Sources */,
+				CE4A30E92611E6240039C078 /* SuggestedAmountCollectionViewCell.swift in Sources */,
 				C71B4B73257EC57000538697 /* SecurityLevelsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
