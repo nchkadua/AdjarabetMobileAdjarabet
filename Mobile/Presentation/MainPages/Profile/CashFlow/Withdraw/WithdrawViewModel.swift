@@ -63,6 +63,8 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
     var route: Observable<WithdrawViewModelRoute> { routeSubject.asObserver() }
 
     func viewDidLoad() {
+        // 0. update continue to non-interactive
+        notify(.updateContinue(with: false))
         // 1. fetch account/card list
         accountListUseCase.execute(params: .init()) { [weak self] result in
             guard let self = self else { return }
@@ -115,7 +117,10 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
             return
         }
         // validation
-        guard let amount = Double(amount), amount > 0
+        let formatter = NumberFormatter()
+        formatter.locale = .current
+        formatter.numberStyle = .decimal
+        guard let amount = formatter.number(from: amount)?.doubleValue, amount > 0
         else {
             reset()
             let message = R.string.localization.deposit_visa_wrong_format_amount.localized()
