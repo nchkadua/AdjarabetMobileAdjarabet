@@ -12,10 +12,12 @@ public protocol SuggestedAmountComponentViewModel: SuggestedAmountComponentViewM
                                                 SuggestedAmountComponentViewModelOutput {}
 
 public struct SuggestedAmountComponentViewModelParams {
+    public var amount: Double
 }
 
 public protocol SuggestedAmountComponentViewModelInput {
     func didBind()
+    func didSelect(at indexPath: IndexPath)
 }
 
 public protocol SuggestedAmountComponentViewModelOutput {
@@ -24,6 +26,8 @@ public protocol SuggestedAmountComponentViewModelOutput {
 }
 
 public enum SuggestedAmountComponentViewModelOutputAction {
+    case set(amount: Double)
+    case didSelect(indexPath: IndexPath)
 }
 
 public class DefaultSuggestedAmountComponentViewModel {
@@ -40,6 +44,10 @@ extension DefaultSuggestedAmountComponentViewModel: SuggestedAmountComponentView
     }
 
     public func didBind() {
-//        actionSubject.onNext()
+        actionSubject.onNext(.set(amount: params.amount))
+    }
+
+    public func didSelect(at indexPath: IndexPath) {
+        actionSubject.onNext(.didSelect(indexPath: indexPath))
     }
 }

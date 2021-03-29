@@ -15,7 +15,7 @@ class SuggestedAmountComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -35,12 +35,17 @@ class SuggestedAmountComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
+            case .set(let amount): self?.set(amount)
             default:
                 break
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
+    }
+
+    private func set(_ amount: Double) {
+        titleLabel.text = String(amount)
     }
 }
 
@@ -56,9 +61,9 @@ extension SuggestedAmountComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .systemGrey5())
-        
+
         roundCorners(.allCorners, radius: 20)
-        
+
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .regular))
     }
