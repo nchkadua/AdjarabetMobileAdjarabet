@@ -39,6 +39,16 @@ public class HomeNavigator: Navigator {
     }
 
     private func navigate2(game: Game, animate: Bool) {
+        // TODO: Delete after Mobile API will be fixed
+        var game = game
+        let id2id = [
+            "106": "7490" // Zodiac Wheel
+            // AStep 1: Map ID
+        ]
+        if let id = id2id[game.id] {
+            game.id = id
+        }
+        //
         let vc = gameFactory.make(params: .init(game: game))
         let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
         navC.navigationBar.styleForSecondaryPage()

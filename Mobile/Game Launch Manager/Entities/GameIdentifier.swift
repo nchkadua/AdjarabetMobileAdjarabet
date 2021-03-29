@@ -220,6 +220,8 @@ extension GameIdentifier {
             /* EGT */
             case "7400": self = .BHJSlot
             case "7463": self = .RORJSlot
+            case "7490": self = .ZWJSlot
+            // AStep 2: Add case
             default: return nil
             }
 
