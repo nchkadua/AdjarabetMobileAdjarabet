@@ -95,6 +95,7 @@ public extension DependencyContainer {
         Module { DefaultAgreementComponentViewModel() as AgreementComponentViewModel }
         Module { DefaultGameLoaderComponentViewModel() as GameLoaderComponentViewModel }
         Module { DefaultPaymentMethodGridComponentViewModel(params: .init(paymentMethods: [])) as PaymentMethodGridComponentViewModel }
+        Module { DefaultSuggestedAmountGridComponentViewModel(params: .init(suggestedAmouns: [])) as SuggestedAmountGridComponentViewModel }
     }
 
     static var repositories = DependencyContainer {

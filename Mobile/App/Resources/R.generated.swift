@@ -2918,7 +2918,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 74 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 77 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -3042,6 +3042,12 @@ struct R: Rswift.Validatable {
     static let securityLevelTypeComponentView = _R.nib._SecurityLevelTypeComponentView()
     /// Nib `SecurityLevelTypeTableViewCell`.
     static let securityLevelTypeTableViewCell = _R.nib._SecurityLevelTypeTableViewCell()
+    /// Nib `SuggestedAmountCollectionViewCell`.
+    static let suggestedAmountCollectionViewCell = _R.nib._SuggestedAmountCollectionViewCell()
+    /// Nib `SuggestedAmountComponentView`.
+    static let suggestedAmountComponentView = _R.nib._SuggestedAmountComponentView()
+    /// Nib `SuggestedAmountGridComponentView`.
+    static let suggestedAmountGridComponentView = _R.nib._SuggestedAmountGridComponentView()
     /// Nib `TimerComponentView`.
     static let timerComponentView = _R.nib._TimerComponentView()
     /// Nib `TransactionDetailsComponentView`.
@@ -3558,6 +3564,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SuggestedAmountCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.suggestedAmountCollectionViewCell) instead")
+    static func suggestedAmountCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.suggestedAmountCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SuggestedAmountComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.suggestedAmountComponentView) instead")
+    static func suggestedAmountComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.suggestedAmountComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SuggestedAmountGridComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.suggestedAmountGridComponentView) instead")
+    static func suggestedAmountGridComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.suggestedAmountGridComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TimerComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.timerComponentView) instead")
     static func timerComponentView(_: Void = ()) -> UIKit.UINib {
@@ -3903,6 +3933,18 @@ struct R: Rswift.Validatable {
 
     static func securityLevelTypeTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SecurityLevelTypeTableViewCell? {
       return R.nib.securityLevelTypeTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SecurityLevelTypeTableViewCell
+    }
+
+    static func suggestedAmountCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SuggestedAmountCollectionViewCell? {
+      return R.nib.suggestedAmountCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SuggestedAmountCollectionViewCell
+    }
+
+    static func suggestedAmountComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.suggestedAmountComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func suggestedAmountGridComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.suggestedAmountGridComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func timerComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -5755,7 +5797,7 @@ struct R: Rswift.Validatable {
       /// en translation: დღიური
       ///
       /// Locales: en, ka, hy
-      static let visa_daily_limit = Rswift.StringResource(key: "visa_daily_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let visa_max_limit = Rswift.StringResource(key: "visa_max_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ელ.ფოსტის შეცვლა
       ///
       /// Locales: en, ka, hy
@@ -5763,7 +5805,7 @@ struct R: Rswift.Validatable {
       /// en translation: ერთჯერადი
       ///
       /// Locales: en, ka, hy
-      static let visa_max_limit = Rswift.StringResource(key: "visa_max_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let visa_daily_limit = Rswift.StringResource(key: "visa_daily_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება
       ///
       /// Locales: en, ka, hy
@@ -12533,16 +12575,16 @@ struct R: Rswift.Validatable {
       /// en translation: დღიური
       ///
       /// Locales: en, ka, hy
-      static func visa_daily_limit(preferredLanguages: [String]? = nil) -> String {
+      static func visa_max_limit(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("visa_daily_limit", tableName: "Localization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "visa_daily_limit"
+          return "visa_max_limit"
         }
 
-        return NSLocalizedString("visa_daily_limit", tableName: "Localization", bundle: bundle, comment: "")
+        return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: ელ.ფოსტის შეცვლა
@@ -12563,16 +12605,16 @@ struct R: Rswift.Validatable {
       /// en translation: ერთჯერადი
       ///
       /// Locales: en, ka, hy
-      static func visa_max_limit(preferredLanguages: [String]? = nil) -> String {
+      static func visa_daily_limit(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("visa_daily_limit", tableName: "Localization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "visa_max_limit"
+          return "visa_daily_limit"
         }
 
-        return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: bundle, comment: "")
+        return NSLocalizedString("visa_daily_limit", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება
@@ -13101,8 +13143,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13143,8 +13185,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -13413,8 +13455,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13560,6 +13602,39 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SecurityLevelTypeTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SecurityLevelTypeTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SuggestedAmountCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SuggestedAmountCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SuggestedAmountCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SuggestedAmountCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SuggestedAmountComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SuggestedAmountComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SuggestedAmountGridComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SuggestedAmountGridComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

@@ -36,6 +36,7 @@ enum VisaViewModelOutputAction {
     case updateDisposable(with: String)
     case updateMax(with: String)
     case show(error: String)
+    case bindToGridViewModel(viewModel: SuggestedAmountGridComponentViewModel)
 }
 // view type enum
 enum VisaViewType {
@@ -57,6 +58,9 @@ class DefaultVisaViewModel {
     @Inject(from: .useCases) private var depositUseCase: UFCDepositUseCase
     // state
     private var accounts: [PaymentAccountEntity] = .init()
+    var suggested: [Double] = []
+
+    @Inject(from: .componentViewModels) private var suggestedAmountGridComponentViewModel: SuggestedAmountGridComponentViewModel
 
     init(params: VisaViewModelParams) {
         self.params = params
@@ -72,6 +76,8 @@ extension DefaultVisaViewModel: VisaViewModel {
     }
 
     private func refresh() {
+        // 0. update continue to non-interactive
+        notify(.updateContinue(with: false))
         // 1. fetch account/card list
         accountListUseCase.execute(params: .init()) { [weak self] result in
             guard let self = self else { return }
@@ -88,23 +94,22 @@ extension DefaultVisaViewModel: VisaViewModel {
                     self.fetchSuggested() // continue here...
                 }
             case .failure(let error):
-                self.actionSubject.onNext(.show(error: error.localizedDescription))
+                self.notify(.show(error: error.localizedDescription))
             }
         }
     }
 
     private func fetchSuggested() {
-        // 3. fetch suggested amount list
-        // TODO: Change with real data later
-        let suggested: [Double] = [1, 1.5, 2, 2.5, 3, 3.5]
-        /*
-         TODO: Nika
-         Here, create Data Providing Cell View Models using "suggested"
-         and Subsribe on Tap Action
-         Call suggestedTapped(with:) function in each cells' action
-         to update amount on view
-         */
-        fetchLimits() // continue here...
+        suggested = [1, 1.5, 2, 2.5, 3, 3.5]
+
+        let viewModels: [SuggestedAmountCollectionViewCellDataProvider] = suggested.compactMap { suggestedAmount in
+            let vm = DefaultSuggestedAmountComponentViewModel(params: .init(amount: suggestedAmount))
+            return vm
+        }
+        suggestedAmountGridComponentViewModel.reloadCollectionView(with: viewModels)
+        notify(.bindToGridViewModel(viewModel: suggestedAmountGridComponentViewModel))
+
+        fetchLimits()
     }
 
     private func fetchLimits() {

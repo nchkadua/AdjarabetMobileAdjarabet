@@ -150,8 +150,8 @@
 "visa_continue_button_title" = "გაგრძელება";
 
 "visa_min_limit" = "მინიმალური";
-"visa_max_limit" = "ერთჯერადი";
-"visa_daily_limit" = "დღიური";
+"visa_daily_limit" = "ერთჯერადი";
+"visa_max_limit" = "დღიური";
 
 "emoney_title" = "გადახდის დასასრულებლად თქვენ გადამისამართდებით პროვაიდერის ვებ-გვერდზე";
 "emoney_goto" = "გადასვლა";
