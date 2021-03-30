@@ -218,13 +218,101 @@ extension GameIdentifier {
         case "11e7b7ca-14f1-b0b0-88fc-005056adb106":
             switch gameId {
             /* EGT */
+            case "7393": self = .AAJSlot
+            case "7394": self = .ABJSlot
+            case "7395": self = .ADJSlot
+         // case "": self = .AGJSlot       // TODO: Ask for Game ID to Saba
+            case "7390": self = .AOTJSlot
             case "7400": self = .BHJSlot
+            case "7401": self = .BHSJSlot
+            case "7397": self = .BHTJSlot
+            case "7398": self = .BOMJSlot
+         // case "": self = .BRDJSlot      // TODO: Ask for Game ID to Saba
+            case "7405": self = .CBJSlot
+         // case "": self = .CDJSlot       // TODO: Ask for Game ID to Saba
+            case "7402": self = .CHJSlot
+            case "7403": self = .CMJSlot
+            case "7409": self = .DARJSlot
+         // case "": self = .EDJSlot       // TODO: Ask for Game ID to Saba
+            case "7417": self = .EHJSlot
+            case "7388": self = .EOWJSlot
+            case "9675": self = .EPJSlot
+            case "7415": self = .ESJSlot
+            case "7386": self = .FABJSlot
+            case "7375": self = .FBHJSlot
+            case "7376": self = .FBHSJSlot
+            case "7382": self = .FBHTJSlot
+            case "7421": self = .FBJSlot
+            case "7383": self = .FDHJSlot
+            case "7384": self = .FGSJSlot
+            case "7420": self = .FHEJSlot
+            case "7419": self = .FHJSlot
+            case "7377": self = .FHNCJSlot
+            case "7387": self = .FHSJSlot
+            case "7378": self = .FLKJSlot
+            case "7379": self = .FMCJSlot
+         // case "": self = .FSDJSlot      // TODO: Ask for Game ID to Saba
+            case "7380": self = .FSHJSlot
+            case "7432": self = .GEJSlot
+            case "7476": self = .GETJSlot
+            case "7429": self = .GOCJSlot
+            case "7426": self = .GOLJSlot
+            case "7430": self = .GTSJSlot
+            case "7361": self = .HBHJSlot
+            case "7362": self = .HCJSlot
+            case "7434": self = .HNCJSlot
+            case "7363": self = .HSHJSlot
+            case "7436": self = .IGTJSlot
+            case "9674": self = .IVJSlot
+            case "7441": self = .KGJSlot
+            case "9411": self = .KHJSlot
+            case "7445": self = .LAWJSlot
+            case "7447": self = .LHJSlot
+            case "7449": self = .MFJSlot
+            case "7453": self = .MLAWJSlot
+            case "7448": self = .MPJSlot
+            case "9710": self = .MTJSlot
+            case "7455": self = .OCJSlot
+            case "7456": self = .OGJSlot
+            case "9412": self = .PQJSlot
+            case "7457": self = .PSJSlot
+            case "7458": self = .QORJSlot
+            case "9643": self = .RCJSlot
+         // case "": self = .RGJSlot       // TODO: Ask for Game ID to Saba
+            case "7459": self = .RLJSlot
             case "7463": self = .RORJSlot
+            case "7465": self = .RSJSlot
+            case "7461": self = .RTSJSlot
+            case "7462": self = .RWJSlot
+         // case "": self = .SBJSlot       // TODO: Ask for EGT
+            case "7468": self = .SCJSlot
+            case "7472": self = .SHJSlot
+            case "7467": self = .SOAJSlot
+            case "7469": self = .SPJSlot
+            case "7471": self = .STJSlot
+            case "7365": self = .TBHJSlot
+            case "7360": self = .TBHTJSlot
+            case "7366": self = .TDHJSlot
+            case "7367": self = .TDJSlot
+            case "7364": self = .TDRJSlot
+         // case "": self = .TGCJSlot      // TODO: Ask for Game ID to Saba
+            case "7368": self = .THBJSlot
+            case "7369": self = .TJRJSlot
+            case "7372": self = .TSFJSlot
+         // case "": self = .TSHJSlot      // TODO: Ask for EGT
+            case "7478": self = .TSOAJSlot
+         // case "": self = .TSOATJSlot    // TODO: Ask for Game ID to Saba
+            case "7371": self = .TSWJSlot
+            case "7479": self = .TWWJSlot
+            case "7481": self = .UHJSlot
+            case "7484": self = .VGJSlot
+            case "7482": self = .VNJSlot
+            case "7486": self = .VWJSlot
+            case "7489": self = .WHJSlot
+            case "7416": self = .XSJSlot
             case "7490": self = .ZWJSlot
-            // AStep 2: Add case
             default: return nil
             }
-
         default: return nil
         }
     }
