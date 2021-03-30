@@ -140,10 +140,8 @@ extension DefaultVisaViewModel: VisaViewModel {
             return
         }
         // validation
-        let formatter = NumberFormatter()
-        formatter.locale = .current
-        formatter.numberStyle = .decimal
-        guard let amount = formatter.number(from: amount)?.doubleValue, amount > 0
+        guard let amount = Double(amount.replacingOccurrences(of: ",", with: ".")),
+              amount > 0
         else {
             notify(.updateContinue(with: false))
             let message = R.string.localization.deposit_visa_wrong_format_amount.localized()
