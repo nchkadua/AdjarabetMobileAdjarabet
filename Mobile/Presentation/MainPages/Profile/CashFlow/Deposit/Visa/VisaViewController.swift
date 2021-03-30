@@ -138,6 +138,7 @@ public class VisaViewController: ABViewController {
 
     @objc private func amountEditingDidBegin() {
         amountInputView.set(text: "")
+        updateContinueButton(false)
     }
 
     @objc private func amountEditingDidEnd() {
