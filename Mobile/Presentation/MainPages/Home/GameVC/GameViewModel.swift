@@ -39,7 +39,7 @@ class DefaultGameViewModel {
     var params: GameViewModelParams
     private let actionSubject = PublishSubject<GameViewModelOutputAction>()
     private let routeSubject = PublishSubject<GameViewModelRoute>()
-    private let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor.default
+    private let interactor: GameLaunchInteractor = DefaultGameLaunchInteractor()
     @Inject(from: .componentViewModels)
     private var gameLoaderViewModel: GameLoaderComponentViewModel
     // state
@@ -57,8 +57,7 @@ extension DefaultGameViewModel: GameViewModel {
     func viewDidLoad() {
         actionSubject.onNext(.bindToGameLoader(viewModel: gameLoaderViewModel))
         beginGameLoadingAnimation()
-        let gameId = Int(params.game.id) ?? 0 == 0 ? "7400" : "7463" // FIXME
-        interactor.launch(gameId: gameId) { [weak self] result in
+        interactor.launch(gameId: params.game.id) { [weak self] result in
             switch result {
             case .success(let result):
                 self?.result = result

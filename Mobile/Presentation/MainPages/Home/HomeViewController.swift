@@ -102,7 +102,8 @@ public class HomeViewController: UIViewController {
 
     private func didReceive(action: GamesSearchViewModelRoute) {
         switch action {
-        case .openGame(let title): showAlert(title: "Welcome to \(title)")
+        case .open(let game):
+            navigator.navigate(to: .game(game), animated: true)
         }
     }
 

@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Game {
-    public let id: String
+    public var id: String // TODO: let
     public let coverUrl: URL
     public let name: String
     public let category: String

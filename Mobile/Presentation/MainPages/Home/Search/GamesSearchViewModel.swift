@@ -36,7 +36,7 @@ public enum GamesSearchViewModelOutputAction {
 }
 
 public enum GamesSearchViewModelRoute {
-    case openGame(title: String)
+    case open(game: Game)
 }
 
 public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
@@ -90,7 +90,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
                     let vm = DefaultGameLauncherComponentViewModel(game: $0)
                     vm.action.subscribe(onNext: { action in
                         switch action {
-                        case .didSelect(let model, _): self.routeSubject.onNext(.openGame(title: model.params.game.name))
+                        case .didSelect(let model, _): self.routeSubject.onNext(.open(game: model.params.game))
                         default: break
                         }
                     }).disposed(by: self.disposeBag)
