@@ -65,8 +65,7 @@ public class WithdrawViewController: ABViewController {
         case .updateSum(let sum):
             totalAmountLabelComponentView.change(value: sum)
         case .updateContinue(let isEnabled):
-            proceedButton.isUserInteractionEnabled = isEnabled
-            proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+            updateProceedButton(isEnabled: isEnabled)
         case .updateMin(let min):
             {}() // TODO: Giorgi
         case .updateDisposable(let disposable):
@@ -142,6 +141,7 @@ public class WithdrawViewController: ABViewController {
 
     @objc private func amountEditingDidBegin() {
         amountInputView.set(text: "")
+        updateProceedButton(isEnabled: false)
     }
 
     @objc private func amountEditingDidEnd() {
@@ -166,6 +166,11 @@ public class WithdrawViewController: ABViewController {
     }
 
     /* helpers */
+
+    private func updateProceedButton(isEnabled: Bool) {
+        proceedButton.isUserInteractionEnabled = isEnabled
+        proceedButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+    }
 
     private var amount: String { amountInputView.text ?? "" }
     private var account: Int { cardNumberInputView.pickerView.selectedRow(inComponent: 0) }
