@@ -42,22 +42,22 @@ public class HomeNavigator: Navigator {
         // TODO: Delete after Mobile API will be fixed
         var game = game
         let id2id = [
-            "63": "7393", // Amazing Amazonia
-            "105": "7394", // Amazons' Battle
+            "63": "7393",   // Amazing Amazonia
+            "105": "7394",  // Amazons' Battle
             "6605": "7395", // Ancient Dynasty
-         // "": "",         // Azetec Glory  // TODO: Ask for Game ID to Saba
-            "82": "7390", // Age of Troy
-            "114": "7400", // Burning Hot
+            "107": "7396",  // Aztec Glory
+            "82": "7390",   // Age of Troy
+            "114": "7400",  // Burning Hot
             "6259": "7401", // Burning Hot 6 Reels
-            "64": "7397", // Blue Heart
-            "73": "7398", // Book of Magic
-         // "": "",         // Briliant Dice // TODO: Ask for Game ID to Saba
-            "56": "7405", // Circus Briliant
-         // "": "",         // Caramel Dice  // TODO: Ask for Game ID to Saba
-            "110": "7402", // Caramel Hot
-            "58": "7403", // Casino Mania
-            "89": "7409", // Dice And Roll
-         // "": "",         // Egypt Dice    // TODO: Ask for Game ID to Saba
+            "64": "7397",   // Blue Heart
+            "73": "7398",   // Book of Magic
+         // "": "",         // Brilliant Dice // TODO: not-in: Excel, Game List
+            "56": "7405",   // Circus Briliant
+         // "": "",         // Caramel Dice  // TODO: not-in: Excel, Game List
+            "110": "7402",  // Caramel Hot
+            "58": "7403",   // Casino Mania
+            "89": "7409",   // Dice And Roll
+         // "": "",         // Egypt Dice    // TODO: not-in: Excel, Game List
             "83": "7417",   // Extremely Hot
             "1787": "7388", // 81 Wins
             "6996": "9675", // Emperor's Palace // FIXME: 500 Server Error
@@ -75,7 +75,7 @@ public class HomeNavigator: Navigator {
             "59": "7387",   // 50 Horses
             "573": "7378",  // 40 Lucky King
             "558": "7379",  // 40 Mega Clover
-         // "": "",         // 40 Super Dice  // TODO: Ask for Game ID to Saba
+         // "": "",         // 40 Super Dice  // TODO: not-in: Excel, Game List
             "113": "7380",  // 40 Super Hot
             "61": "7432",   // Great Empire
             "96": "7476",   // The Great Egypt
@@ -102,7 +102,7 @@ public class HomeNavigator: Navigator {
             "74": "7457",   // Penguin Style
             "109": "7458",  // Queen of Rio // FIXME: 404 on localhost
             "7081": "9643", // Retro Cabaret // FIXME: 500 Server Error
-         // "": "",         // Royal Gardens // TODO: Ask for Game ID to Saba
+         // "": "",         // Royal Gardens // TODO: not-in: Excel, Game List
             "6633": "7459", // Rainbow Luck
             "65": "7463",   // Rise Of RA
             "68": "7465",   // Royal Secrets
@@ -119,13 +119,13 @@ public class HomeNavigator: Navigator {
             "580": "7366",  // 20 Dazzling Hot
             "67": "7367",   // 20 Diamonds
             "80": "7364",   // 2 Dragons
-         // "7137": "",     // 20 Golden Coins // TODO: Ask for Game ID to Saba
+         // "7137": "",     // 20 Golden Coins // TODO: not-in: Excel
             "5095": "7368", // 20 Hot Blast
             "4807": "7369", // 20 Joker Reels
             "102": "7372",  // 30 Spicy Fruits
          // "": "",         // TSHJSlot?       // TODO: Ask for EGT
             "370": "7478",  // The Story of Alexander
-         // "7117": "",     // The Story of Alexander 2  // TODO: Ask for Game ID to Saba
+         // "7117": "",     // The Story of Alexander 2  // TODO: not-in: Excel
             "5056": "7371", // 27 Wins
             "75": "7479",   // The White Wolf
             "91": "7481",   // Ultimate Hot

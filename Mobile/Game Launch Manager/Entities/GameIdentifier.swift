@@ -221,7 +221,7 @@ extension GameIdentifier {
             case "7393": self = .AAJSlot
             case "7394": self = .ABJSlot
             case "7395": self = .ADJSlot
-         // case "": self = .AGJSlot       // TODO: Ask for Game ID to Saba
+            case "7396": self = .AGJSlot
             case "7390": self = .AOTJSlot
             case "7400": self = .BHJSlot
             case "7401": self = .BHSJSlot
