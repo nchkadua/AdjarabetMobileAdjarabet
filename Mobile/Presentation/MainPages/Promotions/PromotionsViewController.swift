@@ -8,10 +8,9 @@
 
 import RxSwift
 
-public class PromotionsViewController: UIViewController {
+public class PromotionsViewController: ABViewController {
     // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: PromotionsViewModel
-    private let disposeBag = DisposeBag()
 
     public lazy var navigator = PromotionsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
@@ -26,6 +25,11 @@ public class PromotionsViewController: UIViewController {
         bind(to: viewModel)
         viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setMainContainerSwipeEnabled(false)
     }
 
     private func bind(to viewModel: PromotionsViewModel) {
@@ -67,7 +71,7 @@ public class PromotionsViewController: UIViewController {
 
     // MARK: Action methods
     @objc private func openProfile() {
-        navigator.navigate(to: .profile, animated: true)
+//        navigator.navigate(to: .profile, animated: true)
     }
 }
 

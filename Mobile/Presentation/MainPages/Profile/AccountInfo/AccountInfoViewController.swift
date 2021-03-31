@@ -51,6 +51,11 @@ public class AccountInfoViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setMainContainerSwipeEnabled(false)
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: AccountInfoViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in

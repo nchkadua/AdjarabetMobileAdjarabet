@@ -14,7 +14,6 @@ public class DefaultProfileFactory: ProfileFactory {
     public func make() -> ProfileViewController {
         let vc = R.storyboard.profile().instantiate(controller: ProfileViewController.self)!
         vc.modalPresentationStyle = .fullScreen
-
         return vc
     }
 }

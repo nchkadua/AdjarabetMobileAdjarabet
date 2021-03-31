@@ -7,7 +7,7 @@
 //
 
 public class LoginNavigator: Navigator {
-    @Inject(from: .factories) public var mainTabBarFactory: MainTabBarFactory
+    @Inject(from: .factories) public var mainContainerFactory: MainContainerViewControllerFactory
     @Inject(from: .factories) public var otpFactory: OTPFactory
 
     private weak var viewController: UIViewController?
@@ -29,7 +29,7 @@ public class LoginNavigator: Navigator {
             navC.navigationBar.styleForPrimaryPage()
             viewController?.navigationController?.present(navC, animated: animate)
         case .mainTabBar:
-            UIApplication.shared.currentWindow?.rootViewController = mainTabBarFactory.make()
+            UIApplication.shared.currentWindow?.rootViewController = mainContainerFactory.make(params: .init())
         }
     }
 }

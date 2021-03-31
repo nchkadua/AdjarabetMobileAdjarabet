@@ -7,7 +7,7 @@
 //
 
 public class OTPNavigator: Navigator {
-    @Inject(from: .factories) public var mainTabBarFactory: MainTabBarFactory
+    @Inject(from: .factories) public var mainContainerFactory: MainContainerViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -22,7 +22,7 @@ public class OTPNavigator: Navigator {
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .mainTabBar:
-            UIApplication.shared.currentWindow?.rootViewController = mainTabBarFactory.make()
+            UIApplication.shared.currentWindow?.rootViewController = mainContainerFactory.make(params: .init())
         }
     }
 }

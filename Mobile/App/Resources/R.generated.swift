@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 33 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 34 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -120,6 +120,8 @@ struct R: Rswift.Validatable {
     static let login = _R.storyboard.login()
     /// Storyboard `MailChange`.
     static let mailChange = _R.storyboard.mailChange()
+    /// Storyboard `MainContainer`.
+    static let mainContainer = _R.storyboard.mainContainer()
     /// Storyboard `MainTabBar`.
     static let mainTabBar = _R.storyboard.mainTabBar()
     /// Storyboard `MyCards`.
@@ -254,6 +256,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "MailChange", bundle: ...)`
     static func mailChange(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.mailChange)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "MainContainer", bundle: ...)`
+    static func mainContainer(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.mainContainer)
     }
     #endif
 
@@ -4004,7 +4013,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 465 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 466 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
@@ -4666,6 +4675,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_parameters_high_security = Rswift.StringResource(key: "account_parameters_high_security", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Home Page
+      ///
+      /// Locales: en, ka, hy
+      static let profile_page_back_title = Rswift.StringResource(key: "profile_page_back_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Honduras
       ///
       /// Locales: en, ka, hy
@@ -8340,6 +8353,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_parameters_high_security", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Home Page
+      ///
+      /// Locales: en, ka, hy
+      static func profile_page_back_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile_page_back_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "profile_page_back_title"
+        }
+
+        return NSLocalizedString("profile_page_back_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Honduras
@@ -13071,8 +13099,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13185,8 +13213,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -13846,6 +13874,9 @@ struct _R: Rswift.Validatable {
       try mailChange.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try mainContainer.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try mainTabBar.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -14157,8 +14188,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
@@ -14182,6 +14213,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.mailChange().mailChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mailChangeViewController' could not be loaded from storyboard 'MailChange' as 'MailChangeViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct mainContainer: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let mainContainerViewController = StoryboardViewControllerResource<MainContainerViewController>(identifier: "MainContainerViewController")
+      let name = "MainContainer"
+
+      func mainContainerViewController(_: Void = ()) -> MainContainerViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainContainerViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.mainContainer().mainContainerViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainContainerViewController' could not be loaded from storyboard 'MainContainer' as 'MainContainerViewController'.") }
       }
 
       fileprivate init() {}

@@ -87,6 +87,7 @@ public extension DependencyContainer {
         Module { DefaultMyCardsViewModel() as MyCardsViewModel }
         Module { DefaultVisaViewModel(params: .init(serviceType: .regular)) as VisaViewModel }
         Module { DefaultEmoneyViewModel() as EmoneyViewModel }
+        Module { DefaultMainContainerViewModel(params: .init()) as MainContainerViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -152,6 +153,7 @@ public extension DependencyContainer {
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }
         Module { DefaultEmoneyViewControllerFactory() as EmoneyViewControllerFactory }
+        Module { DefaultMainContainerViewControllerFactory() as MainContainerViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

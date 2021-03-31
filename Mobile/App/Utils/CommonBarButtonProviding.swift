@@ -132,6 +132,18 @@ public extension CommonBarButtonProviding {
 
         return logoImageItem
     }
+
+    @discardableResult
+    func makeBackBarButtonItem(width: CGFloat = 26) -> UIBarButtonItem.Coupled {
+        let button = UIButton()
+        button.setImage(R.image.shared.back(), for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
+        button.titleEdgeInsets = .init(top: 0, left: 8, bottom: 0, right: 0)
+        button.setTitle(R.string.localization.profile_page_back_title.localized(), for: .normal)
+
+        return (UIBarButtonItem(customView: button), button)
+    }
 }
 
 public extension UIBarButtonItem {

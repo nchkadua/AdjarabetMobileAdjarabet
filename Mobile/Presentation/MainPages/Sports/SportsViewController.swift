@@ -8,12 +8,17 @@
 
 import UIKit
 
-public class SportsViewController: UIViewController {
+public class SportsViewController: ABViewController {
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setMainContainerSwipeEnabled(false)
     }
 
     // MARK: Setup methods

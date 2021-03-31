@@ -57,6 +57,7 @@
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
+"profile_page_back_title" = "მთავარი გვერდი";
 
 "verified" = "Your Account is Verified";
 

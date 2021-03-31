@@ -8,10 +8,9 @@
 
 import RxSwift
 
-public class NotificationsViewController: UIViewController {
+public class NotificationsViewController: ABViewController {
     // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: NotificationsViewModel
-    private let disposeBag = DisposeBag()
     public lazy var navigator = NotificationsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
 
@@ -30,6 +29,7 @@ public class NotificationsViewController: UIViewController {
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         mainTabBarViewController?.showFloatingTabBar()
+        setMainContainerSwipeEnabled(false)
     }
 
     private func setup() {

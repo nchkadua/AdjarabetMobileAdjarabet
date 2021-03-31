@@ -52,6 +52,11 @@ public class ProfileNavigator: Navigator {
         }
     }
 
+    public func navigateToMainTabBar() {
+        let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController
+        vc?.jumpToMainTabBar()
+    }
+
     // MARK: Navigations
     private func navigateToDeposit(animate: Bool) {
         let vc = depositViewControllerFactory.make(params: .init())

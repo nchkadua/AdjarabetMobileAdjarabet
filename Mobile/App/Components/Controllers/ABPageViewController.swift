@@ -31,32 +31,63 @@ class ABPageViewController: UIPageViewController {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
 
     // MARK: Setup methods
     private func setup() {
         view.setBackgorundColor(to: .secondaryBg())
+        dataSource = self
     }
 
     // MARK: Public methods
-    public func jumgToViewController(at index: Int) {
-        switch index {
-        case 0:
-            if let vc = self.orderedViewControllers?.first {
-                setViewControllers([vc], direction: .reverse, animated: true, completion: nil)
-            }
-        case 1:
-            if let vc = self.orderedViewControllers?[1] {
-                setViewControllers([vc], direction: .forward, animated: true, completion: nil)
-            }
-        default:
-            break
+    public func jumgToViewController(at index: Int, direction: NavigationDirection = .forward) {
+        if let vc = self.orderedViewControllers?[index] {
+            setViewControllers([vc], direction: direction, animated: true, completion: nil)
         }
     }
 
-    public func jump(to viewController: UIViewController, animated: Bool = true) {
-        setViewControllers([viewController], direction: .forward, animated: animated, completion: nil)
+    public func jump(to viewController: UIViewController, direction: NavigationDirection = .forward, animated: Bool = true) {
+        setViewControllers([viewController], direction: direction, animated: animated, completion: nil)
+    }
+
+    public func setSwipeEnabled(_ enable: Bool) {
+        for view in self.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = enable
+            }
+        }
+    }
+}
+
+// MARK: PageViewController DataSource
+extension ABPageViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = orderedViewControllers?.firstIndex(of: viewController) else {
+            return nil
+        }
+
+        let previousIndex = viewControllerIndex - 1
+
+        guard previousIndex >= 0 else {
+            return nil
+        }
+
+        return orderedViewControllers?[previousIndex]
+    }
+
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = orderedViewControllers?.firstIndex(of: viewController) else {
+            return nil
+        }
+
+        let nextIndex = viewControllerIndex + 1
+        let orderedViewControllersCount = orderedViewControllers?.count
+
+        guard orderedViewControllersCount != nextIndex else {
+            return nil
+        }
+
+        return orderedViewControllers?[nextIndex]
     }
 }

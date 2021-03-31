@@ -55,6 +55,12 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     public func keyboardDidChangeFrame(notification: NSNotification) {
     }
 
+    public func setMainContainerSwipeEnabled(_ enabled: Bool) {
+        if let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController {
+            vc.setPageViewControllerSwipeEnabled(enabled)
+        }
+    }
+
     // MARK: UIGestureRecognizerDelegate
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         !(touch.view is UIControl)

@@ -9,9 +9,8 @@
 import RxSwift
 import CoreLocation
 
-public class HomeViewController: UIViewController {
+public class HomeViewController: ABViewController {
     // MARK: Properties
-    private let disposeBag = DisposeBag()
     @Inject(from: .viewModels) private var viewModel: HomeViewModel
     public var searchViewModel: GamesSearchViewModel { searchController.viewModel }
     public lazy var navigator = HomeNavigator(viewController: self)
@@ -59,7 +58,7 @@ public class HomeViewController: UIViewController {
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.viewDidAppear()
+        setMainContainerSwipeEnabled(true)
     }
 
     // MARK: Binding

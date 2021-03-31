@@ -8,11 +8,10 @@
 
 import RxSwift
 
-public class ProfileViewController: UIViewController {
+public class ProfileViewController: ABViewController {
     // MARK: Properties
-    @Inject(from: .viewModels) private var viewModel: ProfileViewModel
+    @Inject(from: .viewModels) public var viewModel: ProfileViewModel
     public lazy var navigator = ProfileNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
 
@@ -27,6 +26,11 @@ public class ProfileViewController: UIViewController {
         bind(to: viewModel)
         viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
+    }
+
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setMainContainerSwipeEnabled(true)
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -105,7 +109,9 @@ public class ProfileViewController: UIViewController {
     }
 
     private func setupNavigationItems() {
-        setDismissBarButtonItemIfNeeded(width: 44)
+        let backButtonGroup = makeBackBarButtonItem(width: 300)
+        navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
+        backButtonGroup.button.addTarget(self, action: #selector(navigateToMainTabBar), for: .touchUpInside)
 
         let accountParametersButtonGroup = makeAccountParametersBarButtonItem(width: 120)
         navigationItem.rightBarButtonItem = accountParametersButtonGroup.barButtonItem
@@ -115,6 +121,10 @@ public class ProfileViewController: UIViewController {
 
     @objc private func openAccountParameters() {
         navigator.navigate(to: .accountParameters, animated: true)
+    }
+
+    @objc private func navigateToMainTabBar() {
+        navigator.navigateToMainTabBar()
     }
 }
 

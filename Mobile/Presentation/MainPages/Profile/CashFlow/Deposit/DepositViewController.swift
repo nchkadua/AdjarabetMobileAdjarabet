@@ -59,6 +59,7 @@ public class DepositViewController: UIViewController {
         add(child: appPageViewController)
         appPageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appPageViewController.view.pin(to: childrenVCFrameView)
+        appPageViewController.setSwipeEnabled(false)
     }
 
     private func setupImageView() {
