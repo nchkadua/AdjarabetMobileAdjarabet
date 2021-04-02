@@ -105,7 +105,7 @@ public class HomeNavigator: Navigator {
             "68": "7465",   // Royal Secrets
             "327": "7461",  // Retro Style
             "108": "7462",  // Rich World
-         // "": "",         // SBJSlot?      // TODO: Ask for EGT
+            "117": "7470",  // Summer Bliss
             "66": "7468",   // Shining Crown
             "76": "7472",   // Supreme Hot
             "341": "7467",  // Secrets of Alchemy
@@ -120,7 +120,7 @@ public class HomeNavigator: Navigator {
             "5095": "7368", // 20 Hot Blast
             "4807": "7369", // 20 Joker Reels
             "102": "7372",  // 30 Spicy Fruits
-         // "": "",         // TSHJSlot?       // TODO: Ask for EGT
+            "104": "7370",  // 20 Super Hot
             "370": "7478",  // The Story of Alexander
          // "7117": "",     // The Story of Alexander 2  // TODO: not-in: Excel
             "5056": "7371", // 27 Wins

@@ -284,7 +284,7 @@ extension GameIdentifier {
             case "7465": self = .RSJSlot
             case "7461": self = .RTSJSlot
             case "7462": self = .RWJSlot
-         // case "": self = .SBJSlot       // TODO: Ask for EGT
+            case "7470": self = .SBJSlot
             case "7468": self = .SCJSlot
             case "7472": self = .SHJSlot
             case "7467": self = .SOAJSlot
@@ -299,7 +299,7 @@ extension GameIdentifier {
             case "7368": self = .THBJSlot
             case "7369": self = .TJRJSlot
             case "7372": self = .TSFJSlot
-         // case "": self = .TSHJSlot      // TODO: Ask for EGT
+            case "7370": self = .TSHJSlot
             case "7478": self = .TSOAJSlot
          // case "": self = .TSOATJSlot    // TODO: Ask for Game ID to Saba
             case "7371": self = .TSWJSlot
