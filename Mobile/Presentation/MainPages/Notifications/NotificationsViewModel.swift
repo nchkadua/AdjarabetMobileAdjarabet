@@ -41,23 +41,23 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     public func viewDidLoad() {
         var dataProvider: AppCellDataProviders = []
 
-        NotificationsProvider.dates().forEach {
-            let headerModel = DefaultNotificationsHeaderComponentViewModel(params: NotificationsHeaderComponentViewModelParams(title: $0.stringValue))
-            dataProvider.append(headerModel)
-
-            NotificationsProvider.notifications(ofDate: $0).forEach {
-                let model = DefaultNotificationComponentViewModel(params: NotificationComponentViewModelParams(notification: $0))
-                model.action.subscribe(onNext: { action in
-                    switch action {
-                    case .didSelect(let notification): self.routeSubject.onNext(.openNotificationContentPage(notification: notification))
-                    case .didDelete(let indexPath): self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
-                    default:
-                        break
-                    }
-                }).disposed(by: disposeBag)
-                dataProvider.append(model)
-            }
-        }
-        actionSubject.onNext(.initialize(dataProvider.makeList()))
+//        NotificationsProvider.dates().forEach {
+//            let headerModel = DefaultNotificationsHeaderComponentViewModel(params: NotificationsHeaderComponentViewModelParams(title: $0.stringValue))
+//            dataProvider.append(headerModel)
+//
+//            NotificationsProvider.notifications(ofDate: $0).forEach {
+//                let model = DefaultNotificationComponentViewModel(params: NotificationComponentViewModelParams(notification: $0))
+//                model.action.subscribe(onNext: { action in
+//                    switch action {
+//                    case .didSelect(let notification): self.routeSubject.onNext(.openNotificationContentPage(notification: notification))
+//                    case .didDelete(let indexPath): self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
+//                    default:
+//                        break
+//                    }
+//                }).disposed(by: disposeBag)
+//                dataProvider.append(model)
+//            }
+//        }
+//        actionSubject.onNext(.initialize(dataProvider.makeList()))
     }
 }

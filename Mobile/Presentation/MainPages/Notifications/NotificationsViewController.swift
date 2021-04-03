@@ -14,6 +14,9 @@ public class NotificationsViewController: ABViewController {
     public lazy var navigator = NotificationsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
 
+    // FIXME: Move to viewModel
+    @Inject(from: .useCases) private var useCase: NotificationsUseCase
+
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
@@ -30,6 +33,7 @@ public class NotificationsViewController: ABViewController {
         super.viewDidAppear(animated)
         mainTabBarViewController?.showFloatingTabBar()
         setMainContainerSwipeEnabled(false)
+        fetchData()
     }
 
     private func setup() {
@@ -46,7 +50,7 @@ public class NotificationsViewController: ABViewController {
     }
 
     private func setNotificationsBarButton() {
-        navigationItem.leftBarButtonItems = notificationsBarButtonItemGroupWith(numberOfNotifications: NotificationsProvider.unreadNotifications().count)
+//        navigationItem.leftBarButtonItems = notificationsBarButtonItemGroupWith(numberOfNotifications: NotificationsProvider.unreadNotifications().count)
     }
 
     private func setupTableView() {
@@ -83,14 +87,23 @@ public class NotificationsViewController: ABViewController {
 
     // MARK: Action methods
     private func deleteCell(at indexPath: IndexPath) {
-        NotificationsProvider.delete(at: indexPath.section)
+//        NotificationsProvider.delete(at: indexPath.section)
         appTableViewController.reloadItems(deletionIndexPathes: [indexPath])
         setNotificationsBarButton()
     }
 
     private func openNotificationContentPage(with notification: Notification) {
         mainTabBarViewController?.hideFloatingTabBar()
-        navigator.navigate(to: .notificationContentPage(params: .init(notification: notification)), animated: true)
+//        navigator.navigate(to: .notificationContentPage(params: .init(notification: notification)), animated: true)
+    }
+
+    private func fetchData() {
+        useCase.notifications(page: 1, domain: "com") { result in
+            switch result {
+            case .success(let notifications): print("notifications12 response: ", notifications)
+            case .failure(let error): print("notifiations12 error: ", error)
+            }
+        }
     }
 }
 

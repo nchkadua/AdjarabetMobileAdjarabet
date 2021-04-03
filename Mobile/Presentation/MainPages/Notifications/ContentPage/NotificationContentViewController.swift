@@ -72,7 +72,7 @@ public class NotificationContentViewController: UIViewController {
         textLabel.setTextColor(to: .primaryText())
     }
 
-    private func setup(with notification: Notification) {
+    private func setup(with notification: NotificationTest) {
         coverImageView.image = notification.image
         timeLabel.text = notification.time ?? notification.date.stringValue // Move To ViewModel
         titleLabel.text = notification.title

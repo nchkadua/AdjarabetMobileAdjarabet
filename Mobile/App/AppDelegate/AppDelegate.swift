@@ -108,6 +108,7 @@ public extension DependencyContainer {
         Module { CoreApiPaymentAccountRepository() as PaymentAccountRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
+        Module { DefaultNotificationsRepository() as NotificationsRepository }
         // Payments
         Module { DefaultPostLoginRepository() as PostLoginRepository }
         Module { DefaultPaymentListRepository() as PaymentListRepository }
@@ -157,13 +158,16 @@ public extension DependencyContainer {
     }
 
     static var useCases = DependencyContainer {
+        // Modile
+        Module { DefaultLobbyGamesUseCase() as LobbyGamesUseCase }
+        Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
+        Module { DefaultNotificationsUseCase() as NotificationsUseCase }
+        // Core
         Module { DefaultLoginUseCase() as LoginUseCase }
         Module { DefaultBiometricLoginUseCase(loginUseCase: DefaultLoginUseCase()) as BiometricLoginUseCase }
         Module { DefaultSMSCodeUseCase() as SMSCodeUseCase }
         Module { DefaultOTPUseCase() as OTPUseCase }
         Module { DefaultUserSessionUseCase() as UserSessionUseCase }
-        Module { DefaultLobbyGamesUseCase() as LobbyGamesUseCase }
-        Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
         Module { DefaultDisplayTransactionHistoriesUseCase() as DisplayTransactionHistoriesUseCase }
         Module { DefaultAccessListUseCaseUseCase() as DisplayAccessListUseCase }
         Module { DefaultPaymentAccountUseCase() as PaymentAccountUseCase }

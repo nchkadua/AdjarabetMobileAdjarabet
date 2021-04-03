@@ -50,16 +50,16 @@ class NotificationComponentView: UIView {
     }
 
     private func setupUI(with notification: Notification) {
-        iconImageView.image = notification.icon
-        titleLabel.text = notification.title
-        timeLabel.text = notification.time ?? "" // Move To ViewModel?
-        greenDot.isHidden = notification.seen
-
-        if notification.seen {
-            titleLabel.setTextColor(to: .secondaryText())
-        } else {
-            titleLabel.setTextColor(to: .primaryText())
-        }
+//        iconImageView.image = notification.icon
+//        titleLabel.text = notification.title
+//        timeLabel.text = notification.time ?? "" // Move To ViewModel?
+//        greenDot.isHidden = notification.seen
+//
+//        if notification.seen {
+//            titleLabel.setTextColor(to: .secondaryText())
+//        } else {
+//            titleLabel.setTextColor(to: .primaryText())
+//        }
     }
 }
 

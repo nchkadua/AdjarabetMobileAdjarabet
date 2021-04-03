@@ -1,5 +1,5 @@
 //
-//  NotificationsProvider.swift
+//  NotificationTestProvider.swift
 //  Mobile
 //
 //  Created by Nika Chkadua on 10/12/20.
@@ -7,43 +7,43 @@
 //
 
 // Temporary Helper Class
-class NotificationsProvider {
+class NotificationProvider {
     // swiftlint:disable line_length
-    public static var notificationArray = [
-        Notification(id: 0, date: Date.today, title: "ესტონეთი Vs.საქართველო დღეს 20:00-ზე!", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3 ", time: "2 წუთის წინ", seen: false),
-        Notification(id: 1, date: Date.today, title: "სომხეთი Vs. 32საქართველო დღეს, 20:00-ზე! დადე მინ. 1₾ ქართველების გამარჯვებაზე….", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "Prango. მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3 ", time: "2 საათის წინ", seen: false),
-        Notification(id: 2, date: Date.today, title: "მიიღე 30% FREEBET საქართველოს მატჩზე!", icon: R.image.notifications.temporary.icon2()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3", time: "3 საათის წინ", seen: false),
-        Notification(id: 3, date: Date.yesterday, title: "საქართველო Vs. ბელარუსი დღეს, 20:00-ზე! დადე მინ. 1₾ ქართველების გამარჯვებაზე….", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "Prango. მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3 ", seen: true),
-        Notification(id: 4, date: Date.yesterday, title: "არ გამოტოვო უეფას ერთა ლიგის მატჩები!", icon: R.image.notifications.temporary.icon2()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3 ", seen: true),
-        Notification(id: 5, date: Date.bYesterday, title: "მიიღე 30% FREEBET საქართველოს მატჩზე!", icon: R.image.notifications.temporary.icon2()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3", seen: true),
-        Notification(id: 6, date: Date.bYesterday, title: "ესტონეთი Vs.საქართველო დღეს 20:00-ზე!", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3", seen: true),
-        Notification(id: 7, date: Date.bYesterday, title: "ესტონეთი Vs.საქართველო დღეს 20:00-ზე!", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3", seen: true)
-    ]
+    public static var NotificationArray: [NotificationTest] = []
+//        NotificationTest(id: 0, date: Date.today, title: "ესტონეთი Vs.საქართველო დღეს 20:00-ზე!", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3 ", time: "2 წუთის წინ", seen: false),
+//        NotificationTest(id: 1, date: Date.today, title: "სომხეთი Vs. 32საქართველო დღეს, 20:00-ზე! დადე მინ. 1₾ ქართველების გამარჯვებაზე….", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "Prango. მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3 ", time: "2 საათის წინ", seen: false),
+//        NotificationTest(id: 2, date: Date.today, title: "მიიღე 30% FREEBET საქართველოს მატჩზე!", icon: R.image.notifications.temporary.icon2()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3", time: "3 საათის წინ", seen: false),
+//        NotificationTest(id: 3, date: Date.yesterday, title: "საქართველო Vs. ბელარუსი დღეს, 20:00-ზე! დადე მინ. 1₾ ქართველების გამარჯვებაზე….", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "Prango. მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3 ", seen: true),
+//        NotificationTest(id: 4, date: Date.yesterday, title: "არ გამოტოვო უეფას ერთა ლიგის მატჩები!", icon: R.image.notifications.temporary.icon2()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3 ", seen: true),
+//        NotificationTest(id: 5, date: Date.bYesterday, title: "მიიღე 30% FREEBET საქართველოს მატჩზე!", icon: R.image.notifications.temporary.icon2()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3", seen: true),
+//        NotificationTest(id: 6, date: Date.bYesterday, title: "ესტონეთი Vs.საქართველო დღეს 20:00-ზე!", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3", seen: true),
+//        NotificationTest(id: 7, date: Date.bYesterday, title: "ესტონეთი Vs.საქართველო დღეს 20:00-ზე!", icon: R.image.notifications.temporary.icon1()!, pageTitle: "აქცია სპორტში", image: R.image.notifications.temporary.cover1()!, text: "მიიღე 30% FREEBET გარანტირებულად! შეიყვანე ბილეთში მინ. 1 პოზიცია მოცემული მატჩიდან და დასაჩუქრდი ფრიბეთით. მინ. ფსონი - 1₾; მინ. კოეფიციენტი 1.3; მინ. გადაბმა - 3", seen: true)
+//    ]
 
-    public static func notifications() -> [Notification] {
-        notificationArray
-    }
-
-    public static func unreadNotifications() -> [Notification] {
-        notificationArray.filter({ $0.seen == false })
-    }
-
-    public static func delete(at index: Int) {
-        notificationArray.remove(at: index)
-    }
-
-    public static func notifications(ofDate date: Date) -> [Notification] {
-        return notifications().filter {
-            return $0.date == date
-        }
-    }
-
-    public static func dates() -> [Date] {
-        return notifications().map({ (notification: Notification) -> Date in notification.date }).uniques
-    }
+//    public static func NotificationTest() -> [NotificationTest] {
+//        NotificationArray
+//    }
+//
+//    public static func unreadNotificationTest() -> [NotificationTest] {
+//        NotificationArray.filter({ $0.seen == false })
+//    }
+//
+//    public static func delete(at index: Int) {
+//        NotificationArray.remove(at: index)
+//    }
+//
+//    public static func NotificationTest(ofDate date: Date) -> [NotificationTest] {
+//        return NotificationTest().filter {
+//            return $0.date == date
+//        }
+//    }
+//
+//    public static func dates() -> [Date] {
+//        return NotificationTest().map({ (NotificationTest: NotificationTest) -> Date in NotificationTest.date }).uniques
+//    }
 }
 
-public struct Notification {
+public struct NotificationTest {
     public var id: Int
     public var date: Date
     public var title: String
