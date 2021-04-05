@@ -45,10 +45,12 @@ public extension UIViewController {
     }
 
     func setTitle(title: String) {
-        let label = UILabel()
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
         label.text = title
-        label.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
+        label.numberOfLines = 2
+        label.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         label.setTextColor(to: .primaryText())
+        label.textAlignment = .center
         navigationItem.titleView = label
     }
 
