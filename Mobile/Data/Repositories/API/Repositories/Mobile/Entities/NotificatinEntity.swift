@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct NotificationItemsEntity {
+public struct NotificationItemsEntity {
     let elements: [NotificationEntity]
+    let totalItemsCount: Int
+    let totalUnreadItemsCount: Int
+    let pageCount: Int
+    let itemsPerPage: Int
 
-    struct NotificationEntity {
+    public struct NotificationEntity {
         let id: Int
         let userId: Int
         let createDate: String

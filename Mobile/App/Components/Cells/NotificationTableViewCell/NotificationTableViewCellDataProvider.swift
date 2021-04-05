@@ -17,7 +17,7 @@ extension DefaultNotificationComponentViewModel: NotificationTableViewCellDataPr
 public extension NotificationTableViewCellDataProvider {
     var height: CGFloat {
         get {
-            100
+            84
         }
         set {
             print(newValue)

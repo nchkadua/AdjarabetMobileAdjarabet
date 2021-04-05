@@ -2494,14 +2494,32 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.notifications` struct is generated, and contains static references to 3 images.
+    /// This `R.image.notifications` struct is generated, and contains static references to 5 images.
     struct notifications {
+      /// Image `inbox_new`.
+      static let inbox_new = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/inbox_new")
+      /// Image `inbox_read`.
+      static let inbox_read = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/inbox_read")
       /// Image `oval`.
       static let oval = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/oval")
       /// Image `settings`.
       static let settings = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/settings")
       /// Image `trash`.
       static let trash = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/trash")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "inbox_new", bundle: ..., traitCollection: ...)`
+      static func inbox_new(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.notifications.inbox_new, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "inbox_read", bundle: ..., traitCollection: ...)`
+      static func inbox_read(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.notifications.inbox_read, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "oval", bundle: ..., traitCollection: ...)`
@@ -2523,48 +2541,6 @@ struct R: Rswift.Validatable {
         return UIKit.UIImage(resource: R.image.notifications.trash, compatibleWith: traitCollection)
       }
       #endif
-
-      /// This `R.image.notifications.temporary` struct is generated, and contains static references to 4 images.
-      struct temporary {
-        /// Image `Cover1`.
-        static let cover1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/Temporary/Cover1")
-        /// Image `icon1`.
-        static let icon1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/Temporary/icon1")
-        /// Image `icon2`.
-        static let icon2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/Temporary/icon2")
-        /// Image `icon_seen`.
-        static let icon_seen = Rswift.ImageResource(bundle: R.hostingBundle, name: "Notifications/Temporary/icon_seen")
-
-        #if os(iOS) || os(tvOS)
-        /// `UIImage(named: "Cover1", bundle: ..., traitCollection: ...)`
-        static func cover1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-          return UIKit.UIImage(resource: R.image.notifications.temporary.cover1, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIImage(named: "icon1", bundle: ..., traitCollection: ...)`
-        static func icon1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-          return UIKit.UIImage(resource: R.image.notifications.temporary.icon1, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIImage(named: "icon2", bundle: ..., traitCollection: ...)`
-        static func icon2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-          return UIKit.UIImage(resource: R.image.notifications.temporary.icon2, compatibleWith: traitCollection)
-        }
-        #endif
-
-        #if os(iOS) || os(tvOS)
-        /// `UIImage(named: "icon_seen", bundle: ..., traitCollection: ...)`
-        static func icon_seen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-          return UIKit.UIImage(resource: R.image.notifications.temporary.icon_seen, compatibleWith: traitCollection)
-        }
-        #endif
-
-        fileprivate init() {}
-      }
 
       fileprivate init() {}
     }
@@ -4013,7 +3989,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 466 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 468 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
@@ -5855,6 +5831,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let visa_description_card = Rswift.StringResource(key: "visa_description_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: საათის წინ
+      ///
+      /// Locales: en, ka, hy
+      static let notifications_hours_ago = Rswift.StringResource(key: "notifications_hours_ago", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ტრანზაქციის საკომისიო
       ///
       /// Locales: en, ka, hy
@@ -5875,6 +5855,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let emoney_rule3 = Rswift.StringResource(key: "emoney_rule3", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: წუთის წინ
+      ///
+      /// Locales: en, ka, hy
+      static let notifications_minutes_ago = Rswift.StringResource(key: "notifications_minutes_ago", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ჯამური თანხა
       ///
       /// Locales: en, ka, hy
@@ -12780,6 +12764,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("visa_description_card", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: საათის წინ
+      ///
+      /// Locales: en, ka, hy
+      static func notifications_hours_ago(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications_hours_ago", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "notifications_hours_ago"
+        }
+
+        return NSLocalizedString("notifications_hours_ago", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: ტრანზაქციის საკომისიო
       ///
       /// Locales: en, ka, hy
@@ -12853,6 +12852,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("emoney_rule3", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: წუთის წინ
+      ///
+      /// Locales: en, ka, hy
+      static func notifications_minutes_ago(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications_minutes_ago", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "notifications_minutes_ago"
+        }
+
+        return NSLocalizedString("notifications_minutes_ago", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: ჯამური თანხა
@@ -13099,8 +13113,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14188,8 +14202,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

@@ -11,6 +11,10 @@ import Foundation
 struct NotificationDTO: DataTransferResponse {
     struct Body: Codable {
         let items: [NotificationItemsEntity]?
+        let totalItemsCount: Int
+        let totalUnreadItemsCount: Int
+        let pageCount: Int
+        let itemsPerPage: Int
 
         struct NotificationItemsEntity: Codable {
             public var id: Int?
@@ -34,6 +38,10 @@ struct NotificationDTO: DataTransferResponse {
 
         enum CodingKeys: String, CodingKey {
             case items
+            case totalItemsCount = "total_items_count"
+            case totalUnreadItemsCount = "total_unread_items_count"
+            case pageCount = "page_count"
+            case itemsPerPage = "items_per_page"
         }
     }
 
@@ -58,6 +66,6 @@ struct NotificationDTO: DataTransferResponse {
             }
         }
 
-        return .init(elements: elements)
+        return .init(elements: elements, totalItemsCount: body.totalItemsCount, totalUnreadItemsCount: body.totalUnreadItemsCount, pageCount: body.pageCount, itemsPerPage: body.itemsPerPage)
     }
 }

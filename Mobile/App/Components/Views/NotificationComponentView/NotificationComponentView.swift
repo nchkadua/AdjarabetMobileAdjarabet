@@ -17,7 +17,6 @@ class NotificationComponentView: UIView {
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
-    @IBOutlet weak private var greenDot: UIView!
 
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -49,17 +48,25 @@ class NotificationComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setupUI(with notification: Notification) {
-//        iconImageView.image = notification.icon
-//        titleLabel.text = notification.title
-//        timeLabel.text = notification.time ?? "" // Move To ViewModel?
-//        greenDot.isHidden = notification.seen
-//
-//        if notification.seen {
-//            titleLabel.setTextColor(to: .secondaryText())
-//        } else {
-//            titleLabel.setTextColor(to: .primaryText())
-//        }
+    private func setupUI(with notification: NotificationItemsEntity.NotificationEntity) {
+        titleLabel.text = notification.header
+
+        let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
+        if difference <= 59 { // 1 hour
+            timeLabel.text = "\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())"
+        } else if difference <= 1440 { // 24 hours
+            timeLabel.text = "\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())"
+        } else {
+            timeLabel.text = notification.createDate.toDate.formattedStringTimeValue
+        }
+
+        if notification.status == 1 {
+            titleLabel.setTextColor(to: .primaryText())
+            iconImageView.image = R.image.notifications.inbox_new()
+        } else if notification.status == 2 {
+            titleLabel.setTextColor(to: .secondaryText())
+            iconImageView.image = R.image.notifications.inbox_read()
+        }
     }
 }
 
@@ -76,13 +83,10 @@ extension NotificationComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.primaryBg().value
 
-        titleLabel.setFont(to: .subHeadline(fontCase: .lower))
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
         titleLabel.setTextColor(to: .primaryText())
 
-        timeLabel.setFont(to: .footnote(fontCase: .lower))
+        timeLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         timeLabel.setTextColor(to: .secondaryText())
-
-        greenDot.setBackgorundColor(to: .primaryGreenNeutral())
-        greenDot.layer.cornerRadius = greenDot.frame.width / 2
     }
 }

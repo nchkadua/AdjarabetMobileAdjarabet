@@ -48,7 +48,7 @@ public extension CommonBarButtonProviding {
         let titleButton = UIBarButtonItem.make(title: title, typography: .subHeadline(fontCase: .lower, fontStyle: .bold))
         titleButton.button.setTitleColor(DesignSystem.Color.primaryText().value, for: .normal)
         titleButton.barButtonItem.isEnabled = false
-        titleButton.button.setTitle(R.string.localization.notifications_page_title(), for: .normal)
+        titleButton.button.setTitle(R.string.localization.notifications_page_title.localized(), for: .normal)
 
         return [UIBarButtonItem(customView: button), titleButton.barButtonItem]
     }

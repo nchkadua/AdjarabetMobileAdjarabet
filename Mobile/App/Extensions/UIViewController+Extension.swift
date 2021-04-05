@@ -45,14 +45,16 @@ public extension UIViewController {
     }
 
     func setTitle(title: String) {
-        let label = UILabel()
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
         label.text = title
-        label.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
+        label.numberOfLines = 2
+        label.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         label.setTextColor(to: .primaryText())
+        label.textAlignment = .center
         navigationItem.titleView = label
     }
 
-    func setBackBarButtonItemIfNeeded(width: CGFloat = 26, rounded: Bool = false) {
+    func setBackBarButtonItemIfNeeded(width: CGFloat = 26, height: CGFloat = 44, rounded: Bool = false) {
         navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
 
@@ -64,7 +66,7 @@ public extension UIViewController {
 
         button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        button.heightAnchor.constraint(equalToConstant: height).isActive = true
         button.addTarget(self, action: #selector(backBarButtonItemDidTap), for: .touchUpInside)
         let backBarButtonItem = UIBarButtonItem(customView: button)
         navigationItem.leftBarButtonItem = backBarButtonItem

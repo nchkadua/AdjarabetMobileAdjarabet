@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-gB-ybX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <rect key="frame" x="0.0" y="34" width="414" height="852"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-6D-FLs" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="8" width="382" height="48"/>
@@ -31,10 +31,10 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGi-JI-hui">
-                                                <rect key="frame" x="346" y="64" width="52" height="48"/>
+                                                <rect key="frame" x="318" y="64" width="80" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="2UV-Yt-TxM"/>
-                                                    <constraint firstAttribute="width" constant="52" id="XXM-av-Dab"/>
+                                                    <constraint firstAttribute="width" constant="80" id="XXM-av-Dab"/>
                                                 </constraints>
                                                 <state key="normal" image="Deposit/addCard"/>
                                             </button>
@@ -60,7 +60,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQy-uf-Ppz" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="64" width="322" height="48"/>
+                                                <rect key="frame" x="16" y="64" width="294" height="48"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="oeZ-lz-dj8"/>
@@ -76,11 +76,11 @@
                                             <constraint firstItem="pZU-R2-Blg" firstAttribute="top" secondItem="OQy-uf-Ppz" secondAttribute="bottom" constant="20" id="KH5-do-XUg"/>
                                             <constraint firstAttribute="trailing" secondItem="5Cs-Z1-LFX" secondAttribute="trailing" constant="16" id="KT3-Ni-dcV"/>
                                             <constraint firstItem="5Cs-Z1-LFX" firstAttribute="top" secondItem="eiD-kE-4oW" secondAttribute="bottom" constant="14" id="KYt-UL-ZFG"/>
-                                            <constraint firstItem="QGi-JI-hui" firstAttribute="leading" secondItem="OQy-uf-Ppz" secondAttribute="trailing" constant="8" id="Kcm-9Z-bqb"/>
                                             <constraint firstItem="eiD-kE-4oW" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="NIe-EG-TAQ"/>
                                             <constraint firstItem="2ga-6D-FLs" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="Pis-wZ-3w0"/>
                                             <constraint firstItem="pZU-R2-Blg" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="eL4-TK-1Ai"/>
                                             <constraint firstAttribute="trailing" secondItem="pZU-R2-Blg" secondAttribute="trailing" constant="16" id="gaK-Vo-htH"/>
+                                            <constraint firstItem="QGi-JI-hui" firstAttribute="leading" secondItem="OQy-uf-Ppz" secondAttribute="trailing" constant="8" id="i5o-1r-gHm"/>
                                             <constraint firstItem="OQy-uf-Ppz" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="j1Q-bk-6qu"/>
                                             <constraint firstItem="QGi-JI-hui" firstAttribute="top" secondItem="2ga-6D-FLs" secondAttribute="bottom" constant="8" id="n9Y-CZ-TjP"/>
                                             <constraint firstItem="eiD-kE-4oW" firstAttribute="top" secondItem="pZU-R2-Blg" secondAttribute="bottom" constant="15" id="tMh-K8-gaF"/>
@@ -135,7 +135,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="Deposit/addCard" width="29" height="26.5"/>
+        <image name="Deposit/addCard" width="33" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
