@@ -288,6 +288,17 @@
 		C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */; };
 		C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */; };
 		C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */; };
+		C7C1D2FC261B9B14009F01C3 /* WithdrawVisaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D2FB261B9B14009F01C3 /* WithdrawVisaView.swift */; };
+		C7C1D302261B9B26009F01C3 /* WithdrawVisaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C1D301261B9B26009F01C3 /* WithdrawVisaView.xib */; };
+		C7C1D313261B9BBE009F01C3 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D312261B9BBE009F01C3 /* AddCardView.swift */; };
+		C7C1D317261B9BC9009F01C3 /* AddCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C1D316261B9BC9009F01C3 /* AddCardView.xib */; };
+		C7C1D31C261B9C55009F01C3 /* WithdrawInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D31B261B9C55009F01C3 /* WithdrawInfoView.swift */; };
+		C7C1D320261B9C65009F01C3 /* WithdrawInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C1D31F261B9C65009F01C3 /* WithdrawInfoView.xib */; };
+		C7C1D339261B9D48009F01C3 /* WithdrawVisa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C1D334261B9D48009F01C3 /* WithdrawVisa.storyboard */; };
+		C7C1D33A261B9D48009F01C3 /* WithdrawVisaNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D335261B9D48009F01C3 /* WithdrawVisaNavigator.swift */; };
+		C7C1D33B261B9D48009F01C3 /* WithdrawVisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D336261B9D48009F01C3 /* WithdrawVisaViewController.swift */; };
+		C7C1D33C261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D337261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift */; };
+		C7C1D33D261B9D48009F01C3 /* WithdrawVisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D338261B9D48009F01C3 /* WithdrawVisaViewModel.swift */; };
 		C7C35FD925C93C0000ADCBB6 /* GameLaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C35FD825C93C0000ADCBB6 /* GameLaunchInteractor.swift */; };
 		C7C35FE025C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C35FDF25C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift */; };
 		C7C35FE525C9B8B100ADCBB6 /* LaunchUrlRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C35FE425C9B8B100ADCBB6 /* LaunchUrlRepository.swift */; };
@@ -338,8 +349,6 @@
 		CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */; };
 		CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */; };
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
-		CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */; };
-		CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
 		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
@@ -501,8 +510,6 @@
 		CEC2F52D2608B5C00000904C /* DepositViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5282608B5C00000904C /* DepositViewModel.swift */; };
 		CEC9A34525C0970C00BE853D /* ODRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A34425C0970C00BE853D /* ODRManager.swift */; };
 		CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */; };
-		CECCE37E254EE7D4005CC660 /* WithdrawTermsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECCE37D254EE7D4005CC660 /* WithdrawTermsView.xib */; };
-		CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE381254EE7E0005CC660 /* WithdrawTermsView.swift */; };
 		CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */; };
 		CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */; };
 		CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */; };
@@ -1005,6 +1012,17 @@
 		C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewModel.swift; sourceTree = "<group>"; };
 		C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = P2PTransferView.storyboard; sourceTree = "<group>"; };
 		C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewControllerFactory.swift; sourceTree = "<group>"; };
+		C7C1D2FB261B9B14009F01C3 /* WithdrawVisaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaView.swift; sourceTree = "<group>"; };
+		C7C1D301261B9B26009F01C3 /* WithdrawVisaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawVisaView.xib; sourceTree = "<group>"; };
+		C7C1D312261B9BBE009F01C3 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		C7C1D316261B9BC9009F01C3 /* AddCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCardView.xib; sourceTree = "<group>"; };
+		C7C1D31B261B9C55009F01C3 /* WithdrawInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInfoView.swift; sourceTree = "<group>"; };
+		C7C1D31F261B9C65009F01C3 /* WithdrawInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInfoView.xib; sourceTree = "<group>"; };
+		C7C1D334261B9D48009F01C3 /* WithdrawVisa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WithdrawVisa.storyboard; sourceTree = "<group>"; };
+		C7C1D335261B9D48009F01C3 /* WithdrawVisaNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaNavigator.swift; sourceTree = "<group>"; };
+		C7C1D336261B9D48009F01C3 /* WithdrawVisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaViewController.swift; sourceTree = "<group>"; };
+		C7C1D337261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaViewControllerFactory.swift; sourceTree = "<group>"; };
+		C7C1D338261B9D48009F01C3 /* WithdrawVisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaViewModel.swift; sourceTree = "<group>"; };
 		C7C35FD825C93C0000ADCBB6 /* GameLaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLaunchInteractor.swift; sourceTree = "<group>"; };
 		C7C35FDF25C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartGameLaunchUseCase.swift; sourceTree = "<group>"; };
 		C7C35FE425C9B8B100ADCBB6 /* LaunchUrlRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUrlRepository.swift; sourceTree = "<group>"; };
@@ -1055,8 +1073,6 @@
 		CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderCellDataProvider.swift; sourceTree = "<group>"; };
 		CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsHeaderCell.xib; sourceTree = "<group>"; };
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
-		CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInstructionView.xib; sourceTree = "<group>"; };
-		CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInstructionView.swift; sourceTree = "<group>"; };
 		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
 		CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoComponentView.xib; sourceTree = "<group>"; };
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
@@ -1218,8 +1234,6 @@
 		CEC2F5282608B5C00000904C /* DepositViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewModel.swift; sourceTree = "<group>"; };
 		CEC9A34425C0970C00BE853D /* ODRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODRManager.swift; sourceTree = "<group>"; };
 		CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtractor.swift; sourceTree = "<group>"; };
-		CECCE37D254EE7D4005CC660 /* WithdrawTermsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawTermsView.xib; sourceTree = "<group>"; };
-		CECCE381254EE7E0005CC660 /* WithdrawTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawTermsView.swift; sourceTree = "<group>"; };
 		CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeNavigator.swift; sourceTree = "<group>"; };
 		CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewController.swift; sourceTree = "<group>"; };
 		CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewModel.swift; sourceTree = "<group>"; };
@@ -2565,19 +2579,62 @@
 			path = P2PTransfer;
 			sourceTree = "<group>";
 		};
-		C7C1D2EF261B284B009F01C3 /* Views */ = {
+		C7C1D2EF261B284B009F01C3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				C7C1D2F0261B285D009F01C3 /* Visa */,
 			);
-			path = Views;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		C7C1D2F0261B285D009F01C3 /* Visa */ = {
 			isa = PBXGroup;
 			children = (
+				C7C1D32D261B9CAF009F01C3 /* Views */,
+				C7C1D334261B9D48009F01C3 /* WithdrawVisa.storyboard */,
+				C7C1D335261B9D48009F01C3 /* WithdrawVisaNavigator.swift */,
+				C7C1D336261B9D48009F01C3 /* WithdrawVisaViewController.swift */,
+				C7C1D337261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift */,
+				C7C1D338261B9D48009F01C3 /* WithdrawVisaViewModel.swift */,
 			);
 			path = Visa;
+			sourceTree = "<group>";
+		};
+		C7C1D2FA261B9AB8009F01C3 /* Withdraw */ = {
+			isa = PBXGroup;
+			children = (
+				C7C1D2FB261B9B14009F01C3 /* WithdrawVisaView.swift */,
+				C7C1D301261B9B26009F01C3 /* WithdrawVisaView.xib */,
+			);
+			path = Withdraw;
+			sourceTree = "<group>";
+		};
+		C7C1D305261B9B5D009F01C3 /* Add Card */ = {
+			isa = PBXGroup;
+			children = (
+				C7C1D312261B9BBE009F01C3 /* AddCardView.swift */,
+				C7C1D316261B9BC9009F01C3 /* AddCardView.xib */,
+			);
+			path = "Add Card";
+			sourceTree = "<group>";
+		};
+		C7C1D31A261B9BFA009F01C3 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				C7C1D31B261B9C55009F01C3 /* WithdrawInfoView.swift */,
+				C7C1D31F261B9C65009F01C3 /* WithdrawInfoView.xib */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		C7C1D32D261B9CAF009F01C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7C1D2FA261B9AB8009F01C3 /* Withdraw */,
+				C7C1D305261B9B5D009F01C3 /* Add Card */,
+				C7C1D31A261B9BFA009F01C3 /* Info */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C7C35FD725C93BD100ADCBB6 /* Interactor */ = {
@@ -2831,15 +2888,6 @@
 				CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */,
 			);
 			path = Header;
-			sourceTree = "<group>";
-		};
-		CE0F14AE254EE09B00ADD999 /* Instruction */ = {
-			isa = PBXGroup;
-			children = (
-				CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */,
-				CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */,
-			);
-			path = Instruction;
 			sourceTree = "<group>";
 		};
 		CE0FF92325F109F900C18F9C /* UFC */ = {
@@ -3516,15 +3564,6 @@
 			path = EGT;
 			sourceTree = "<group>";
 		};
-		CECCE37C254EE7B9005CC660 /* Terms */ = {
-			isa = PBXGroup;
-			children = (
-				CECCE381254EE7E0005CC660 /* WithdrawTermsView.swift */,
-				CECCE37D254EE7D4005CC660 /* WithdrawTermsView.xib */,
-			);
-			path = Terms;
-			sourceTree = "<group>";
-		};
 		CECF7F3F256D5A68001C0E50 /* AddressChange */ = {
 			isa = PBXGroup;
 			children = (
@@ -3631,9 +3670,7 @@
 		CEF3684A2549C2F6009FD456 /* Withdraw */ = {
 			isa = PBXGroup;
 			children = (
-				C7C1D2EF261B284B009F01C3 /* Views */,
-				CECCE37C254EE7B9005CC660 /* Terms */,
-				CE0F14AE254EE09B00ADD999 /* Instruction */,
+				C7C1D2EF261B284B009F01C3 /* Scenes */,
 				CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */,
 				CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */,
 				CEF3685E2549C361009FD456 /* WithdrawViewController.swift */,
@@ -4586,14 +4623,17 @@
 				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
 				CE03746E25F8D7180061F507 /* Web.storyboard in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
+				C7C1D317261B9BC9009F01C3 /* AddCardView.xib in Resources */,
 				C75D1AEE261205F4002AF763 /* CHJSlot.zip in Resources */,
 				CEB41992260A2A71003FE4B6 /* PaymentMethodCollectionViewCell.xib in Resources */,
 				C75D1ACA261205F4002AF763 /* GOLJSlot.zip in Resources */,
 				C75D1B1B261205F4002AF763 /* SOAJSlot.zip in Resources */,
 				CE4A30D32611E5420039C078 /* SuggestedAmountComponentView.xib in Resources */,
 				CEE44E872600B5C100A83BD2 /* AdjaraMontPro-SemiBold.ttf in Resources */,
+				C7C1D302261B9B26009F01C3 /* WithdrawVisaView.xib in Resources */,
 				C77206E125DAB0B50037D8A0 /* ca.der in Resources */,
 				C75D1AD2261205F4002AF763 /* GOCJSlot.zip in Resources */,
+				C7C1D339261B9D48009F01C3 /* WithdrawVisa.storyboard in Resources */,
 				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
 				C75D1AE0261205F4002AF763 /* TBHTJSlot.zip in Resources */,
@@ -4605,6 +4645,7 @@
 				C75D1AEC261205F4002AF763 /* VNJSlot.zip in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
 				76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */,
+				C7C1D320261B9C65009F01C3 /* WithdrawInfoView.xib in Resources */,
 				C75D1B10261205F4002AF763 /* RLJSlot.zip in Resources */,
 				CEE44E8C2600B5C100A83BD2 /* AdjaraMont-Bold.ttf in Resources */,
 				CE679FDC2578334B00F2EC1C /* AddCard.storyboard in Resources */,
@@ -4640,7 +4681,6 @@
 				C7C973AC2580EC990062C713 /* SecurityLevelTypeTableViewCell.xib in Resources */,
 				CE95FC44252DF3B6003E539B /* FooterTableViewCell.xib in Resources */,
 				CEE44E852600B5C100A83BD2 /* AdjaraMontPro-Heavy.ttf in Resources */,
-				CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */,
 				CE2F03DA252CD6B6006D8001 /* QuickActionTableViewCell.xib in Resources */,
 				76BA7BDA25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib in Resources */,
 				CEE44E862600B5C100A83BD2 /* AdjaraMontPro-Bold.ttf in Resources */,
@@ -4664,7 +4704,6 @@
 				C75D1AE7261205F4002AF763 /* TSOATJSlot.zip in Resources */,
 				C75D1B09261205F4002AF763 /* TDRJSlot.zip in Resources */,
 				C75D1AF3261205F4002AF763 /* SBJSlot.zip in Resources */,
-				CECCE37E254EE7D4005CC660 /* WithdrawTermsView.xib in Resources */,
 				763171AD25663E1500F6FD90 /* TransactionDetails.storyboard in Resources */,
 				C75D1AEB261205F4002AF763 /* KHJSlot.zip in Resources */,
 				C75D1AE2261205F4002AF763 /* FBJSlot.zip in Resources */,
@@ -5014,7 +5053,6 @@
 				C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				CE4A314926172BF50039C078 /* NotificationsRepository.swift in Sources */,
-				CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */,
 				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
 				CE64EA7E25D1695400438974 /* GameViewModel.swift in Sources */,
 				CE679FE02578334B00F2EC1C /* AddCardViewModel.swift in Sources */,
@@ -5131,6 +5169,7 @@
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				CE4A3139261478D80039C078 /* MainContainerViewControllerFactory.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
+				C7C1D31C261B9C55009F01C3 /* WithdrawInfoView.swift in Sources */,
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
 				CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */,
 				763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */,
@@ -5236,6 +5275,7 @@
 				C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */,
+				C7C1D33C261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift in Sources */,
 				CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */,
 				C71F1894256411720026CEA2 /* BiometricSettingsViewModel.swift in Sources */,
 				CEB285BD256D20B600584A65 /* SelfSuspendViewController.swift in Sources */,
@@ -5246,6 +5286,7 @@
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */,
+				C7C1D33A261B9D48009F01C3 /* WithdrawVisaNavigator.swift in Sources */,
 				7644B6072563E516006778B2 /* DateHeaderComponentView.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
 				D815850A24B09E0100FFCA95 /* LobbyGamesUseCase.swift in Sources */,
@@ -5277,6 +5318,7 @@
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
+				C7C1D33D261B9D48009F01C3 /* WithdrawVisaViewModel.swift in Sources */,
 				C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */,
 				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
 				C7FAA3C82600C4D600265995 /* UFCInitWithdrawDTO.swift in Sources */,
@@ -5314,7 +5356,6 @@
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
 				7698869A2571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift in Sources */,
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
-				CECCE382254EE7E0005CC660 /* WithdrawTermsView.swift in Sources */,
 				76DCF67525B80FB500150EE1 /* MyCardsNavigator.swift in Sources */,
 				C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
@@ -5333,10 +5374,12 @@
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				CEBB00762608F65300D1B510 /* PaymentMethodGridComponentViewModel.swift in Sources */,
 				D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */,
+				C7C1D2FC261B9B14009F01C3 /* WithdrawVisaView.swift in Sources */,
 				CEA77791256D4237008A4F6C /* MailChangeNavigator.swift in Sources */,
 				D850940A24828D5800722040 /* LobbyGamesRepository.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
+				C7C1D313261B9BBE009F01C3 /* AddCardView.swift in Sources */,
 				CE55ED55252B3881003E168F /* ProfileInfoComponentView.swift in Sources */,
 				CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */,
 				CECF7F6F256D9F99001C0E50 /* PasswordChangeNavigator.swift in Sources */,
@@ -5377,6 +5420,7 @@
 				C7FAA3B62600C06100265995 /* UFCInitDepositDTO.swift in Sources */,
 				CEE356FA252C9C9100A0A25C /* BalanceComponentViewModel.swift in Sources */,
 				CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */,
+				C7C1D33B261B9D48009F01C3 /* WithdrawVisaViewController.swift in Sources */,
 				CE0818CF25389EEE00AD3B3B /* NotificationsHeaderCell.swift in Sources */,
 				7640C85425E3994B006D7100 /* HomeBannerComponentView.swift in Sources */,
 				CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */,
