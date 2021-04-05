@@ -1,5 +1,5 @@
 //
-//  AddCardView.swift
+//  AddAccountViewModel.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 4/5/21.
