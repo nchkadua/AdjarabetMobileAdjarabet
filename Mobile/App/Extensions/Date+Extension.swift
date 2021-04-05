@@ -44,6 +44,12 @@ extension Date {
         return formatter3.string(from: self)
     }
 
+    var formattedStringTimeValue: String {
+        let formatter3 = DateFormatter()
+        formatter3.dateFormat = "HH:MM:SS"
+        return formatter3.string(from: self)
+    }
+
     static func from(year: Int, month: Int, day: Int) -> Date? {
         let calendar = Calendar(identifier: .gregorian)
         var dateComponents = DateComponents()
@@ -51,5 +57,9 @@ extension Date {
         dateComponents.month = month
         dateComponents.day = day
         return calendar.date(from: dateComponents) ?? nil
+    }
+
+    static func minutesBetweenDates(_ date1: Date, _ date2: Date) -> CGFloat {
+        CGFloat(date2.timeIntervalSinceReferenceDate/60 - date1.timeIntervalSinceReferenceDate/60)
     }
 }

@@ -52,7 +52,7 @@ public extension UIViewController {
         navigationItem.titleView = label
     }
 
-    func setBackBarButtonItemIfNeeded(width: CGFloat = 26, rounded: Bool = false) {
+    func setBackBarButtonItemIfNeeded(width: CGFloat = 26, height: CGFloat = 44, rounded: Bool = false) {
         navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
 
@@ -64,7 +64,7 @@ public extension UIViewController {
 
         button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        button.heightAnchor.constraint(equalToConstant: height).isActive = true
         button.addTarget(self, action: #selector(backBarButtonItemDidTap), for: .touchUpInside)
         let backBarButtonItem = UIBarButtonItem(customView: button)
         navigationItem.leftBarButtonItem = backBarButtonItem

@@ -49,24 +49,32 @@ public class NotificationContentViewController: UIViewController {
     }
 
     private func setupNavigationItem() {
-        setBackBarButtonItemIfNeeded(width: 44)
+        setBackBarButtonItemIfNeeded(width: 40, height: 40, rounded: true)
         setTitle(title: viewModel.params.notification.header)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
     private func setupLabels() {
-        timeLabel.setFont(to: .footnote(fontCase: .lower))
+        timeLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         timeLabel.setTextColor(to: .primaryText())
 
-        titleLabel.setFont(to: .title3(fontCase: .lower))
+        titleLabel.setFont(to: .title3(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
 
-        textLabel.setFont(to: .footnote(fontCase: .lower))
-        textLabel.setTextColor(to: .primaryText())
+        textLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+        textLabel.setTextColor(to: .secondaryText())
     }
 
     private func setup(with notification: NotificationItemsEntity.NotificationEntity) {
-        timeLabel.text = notification.createDate.toDate.formattedStringValue
+        let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
+        if difference <= 59 { // 1 hour
+            timeLabel.text = "\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())"
+        } else if difference <= 1440 { // 24 hours
+            timeLabel.text = "\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())"
+        } else {
+            timeLabel.text = notification.createDate.toDate.formattedStringFullValue
+        }
+
         titleLabel.text = notification.header
         textLabel.text = notification.content
     }
