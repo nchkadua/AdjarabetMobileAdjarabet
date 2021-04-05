@@ -2565,6 +2565,21 @@
 			path = P2PTransfer;
 			sourceTree = "<group>";
 		};
+		C7C1D2EF261B284B009F01C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7C1D2F0261B285D009F01C3 /* Visa */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7C1D2F0261B285D009F01C3 /* Visa */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Visa;
+			sourceTree = "<group>";
+		};
 		C7C35FD725C93BD100ADCBB6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -3624,6 +3639,7 @@
 		CEF3684A2549C2F6009FD456 /* Withdraw */ = {
 			isa = PBXGroup;
 			children = (
+				C7C1D2EF261B284B009F01C3 /* Views */,
 				CECCE37C254EE7B9005CC660 /* Terms */,
 				CE0F14AE254EE09B00ADD999 /* Instruction */,
 				CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */,
