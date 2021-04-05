@@ -28,9 +28,19 @@ extension Date {
     var month: Int {
         Calendar.current.component(.month, from: self)
     }
-    var stringValue: String {
+    var minute: Int {
+        Calendar.current.component(.minute, from: self)
+    }
+
+    var formattedStringValue: String {
         let formatter3 = DateFormatter()
         formatter3.dateFormat = "d MMMM"
+        return formatter3.string(from: self)
+    }
+
+    var formattedStringFullValue: String {
+        let formatter3 = DateFormatter()
+        formatter3.dateFormat = "d MMMM HH:MM:SS"
         return formatter3.string(from: self)
     }
 

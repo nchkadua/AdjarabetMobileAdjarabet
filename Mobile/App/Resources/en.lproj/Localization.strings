@@ -179,6 +179,8 @@
 
 /* Notifications */
 "delete_button_title" = "Delete";
+"notifications_minutes_ago" = "წუთის წინ";
+"notifications_hours_ago" = "საათის წინ";
 
 /* Biometric Settings */
 "biometric_settings_activate_touch_id" = "Activate Touch ID";

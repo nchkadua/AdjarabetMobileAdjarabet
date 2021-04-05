@@ -14,9 +14,6 @@ public class NotificationsViewController: ABViewController {
     public lazy var navigator = NotificationsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
 
-    // FIXME: Move to viewModel
-    @Inject(from: .useCases) private var useCase: NotificationsUseCase
-
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
@@ -25,15 +22,15 @@ public class NotificationsViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
-        viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
     }
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
+
         mainTabBarViewController?.showFloatingTabBar()
         setMainContainerSwipeEnabled(false)
-        fetchData()
     }
 
     private func setup() {
@@ -43,14 +40,12 @@ public class NotificationsViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        setNotificationsBarButton()
-
         let settingsButton = makeSettingsBarButtonItem()
         navigationItem.rightBarButtonItem = settingsButton
     }
 
-    private func setNotificationsBarButton() {
-//        navigationItem.leftBarButtonItems = notificationsBarButtonItemGroupWith(numberOfNotifications: NotificationsProvider.unreadNotifications().count)
+    private func setTotalNumberOfUnreadNotifications(_ numberOfItems: Int) {
+        navigationItem.leftBarButtonItems = notificationsBarButtonItemGroupWith(numberOfNotifications: numberOfItems)
     }
 
     private func setupTableView() {
@@ -74,8 +69,12 @@ public class NotificationsViewController: ABViewController {
 
     private func didReceive(action: NotificationsViewModelOutputAction) {
         switch action {
-        case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
+        case .initialize(let appListDataProvider):
+            appTableViewController.dataProvider = appListDataProvider
+            appTableViewController.reloadItems()
         case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
+        case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)
+        case .showMessage(let message): showAlert(title: message)
         }
     }
 
@@ -89,21 +88,11 @@ public class NotificationsViewController: ABViewController {
     private func deleteCell(at indexPath: IndexPath) {
 //        NotificationsProvider.delete(at: indexPath.section)
         appTableViewController.reloadItems(deletionIndexPathes: [indexPath])
-        setNotificationsBarButton()
     }
 
-    private func openNotificationContentPage(with notification: Notification) {
+    private func openNotificationContentPage(with notification: NotificationItemsEntity.NotificationEntity) {
         mainTabBarViewController?.hideFloatingTabBar()
-//        navigator.navigate(to: .notificationContentPage(params: .init(notification: notification)), animated: true)
-    }
-
-    private func fetchData() {
-        useCase.notifications(page: 1, domain: "com") { result in
-            switch result {
-            case .success(let notifications): print("notifications12 response: ", notifications)
-            case .failure(let error): print("notifiations12 error: ", error)
-            }
-        }
+        navigator.navigate(to: .notificationContentPage(params: .init(notification: notification)), animated: true)
     }
 }
 

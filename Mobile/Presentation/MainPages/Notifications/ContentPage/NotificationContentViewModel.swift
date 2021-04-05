@@ -12,7 +12,7 @@ public protocol NotificationContentViewModel: NotificationContentViewModelInput,
 }
 
 public struct NotificationContentViewModelParams {
-    public let notification: NotificationTest
+    public let notification: NotificationItemsEntity.NotificationEntity
 }
 
 public protocol NotificationContentViewModelInput {
@@ -26,7 +26,7 @@ public protocol NotificationContentViewModelOutput {
 }
 
 public enum NotificationContentViewModelOutputAction {
-    case setupWith(notification: NotificationTest)
+    case setupWith(notification: NotificationItemsEntity.NotificationEntity)
 }
 
 public enum NotificationContentViewModelRoute {

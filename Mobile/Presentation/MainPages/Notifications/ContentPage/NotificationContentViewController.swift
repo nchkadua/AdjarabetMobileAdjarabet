@@ -33,19 +33,12 @@ public class NotificationContentViewController: UIViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-
-//        viewModel.route.subscribe(onNext: { [weak self] route in
-//            self?.didRecive(route: route)
-//        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: NotificationContentViewModelOutputAction) {
         switch action {
         case .setupWith(let notification): setup(with: notification)
         }
-    }
-
-    private func didRecive(route: NotificationContentViewModelRoute) {
     }
 
     // MAKR: Setup methods
@@ -57,7 +50,7 @@ public class NotificationContentViewController: UIViewController {
 
     private func setupNavigationItem() {
         setBackBarButtonItemIfNeeded(width: 44)
-        setTitle(title: viewModel.params.notification.pageTitle)
+        setTitle(title: viewModel.params.notification.header)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
@@ -72,10 +65,9 @@ public class NotificationContentViewController: UIViewController {
         textLabel.setTextColor(to: .primaryText())
     }
 
-    private func setup(with notification: NotificationTest) {
-        coverImageView.image = notification.image
-        timeLabel.text = notification.time ?? notification.date.stringValue // Move To ViewModel
-        titleLabel.text = notification.title
-        textLabel.text = notification.text
+    private func setup(with notification: NotificationItemsEntity.NotificationEntity) {
+        timeLabel.text = notification.createDate.toDate.formattedStringValue
+        titleLabel.text = notification.header
+        textLabel.text = notification.content
     }
 }

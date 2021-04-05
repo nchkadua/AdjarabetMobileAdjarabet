@@ -12,7 +12,7 @@ public protocol NotificationComponentViewModel: NotificationComponentViewModelIn
 }
 
 public struct NotificationComponentViewModelParams {
-    public var notification: Notification
+    public var notification: NotificationItemsEntity.NotificationEntity
 }
 
 public protocol NotificationComponentViewModelInput {
@@ -27,8 +27,8 @@ public protocol NotificationComponentViewModelOutput {
 }
 
 public enum NotificationComponentViewModelOutputAction {
-    case set(notifiation: Notification)
-    case didSelect(notification: Notification)
+    case set(notifiation: NotificationItemsEntity.NotificationEntity)
+    case didSelect(notification: NotificationItemsEntity.NotificationEntity)
     case didDelete(atIndex: IndexPath)
 }
 

@@ -418,6 +418,7 @@
 		CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A2414257C17A500A94E89 /* ABDatePickerView.swift */; };
 		CE7A241E257C19B200A94E89 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A241D257C19B200A94E89 /* Helper.swift */; };
 		CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */; };
+		CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786B6261B4A680060EBD1 /* Array+Extension.swift */; };
 		CE91C0D9257028C400A18255 /* TransactionsFilterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */; };
 		CE91C0DA257028C400A18255 /* TransactionsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */; };
 		CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */; };
@@ -521,7 +522,6 @@
 		CEE15C4725349EDF0033BF93 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4625349EDF0033BF93 /* NotificationTableViewCell.swift */; };
 		CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */; };
 		CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */; };
-		CEE15C582534A1720033BF93 /* NotificationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C572534A1720033BF93 /* NotificationsProvider.swift */; };
 		CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE2505F256FE3B40089F805 /* TimerComponentView.swift */; };
 		CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE25084256FE3BB0089F805 /* TimerComponentViewModel.swift */; };
 		CEE25089256FE3C10089F805 /* TimerComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE25088256FE3C10089F805 /* TimerComponentView.xib */; };
@@ -1135,6 +1135,7 @@
 		CE7A2414257C17A500A94E89 /* ABDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABDatePickerView.swift; sourceTree = "<group>"; };
 		CE7A241D257C19B200A94E89 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificatinEntity.swift; sourceTree = "<group>"; };
+		CE8786B6261B4A680060EBD1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterNavigator.swift; sourceTree = "<group>"; };
 		CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewController.swift; sourceTree = "<group>"; };
 		CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewModel.swift; sourceTree = "<group>"; };
@@ -1238,7 +1239,6 @@
 		CEE15C4625349EDF0033BF93 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
-		CEE15C572534A1720033BF93 /* NotificationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsProvider.swift; sourceTree = "<group>"; };
 		CEE2505F256FE3B40089F805 /* TimerComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponentView.swift; sourceTree = "<group>"; };
 		CEE25084256FE3BB0089F805 /* TimerComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponentViewModel.swift; sourceTree = "<group>"; };
 		CEE25088256FE3C10089F805 /* TimerComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerComponentView.xib; sourceTree = "<group>"; };
@@ -3566,14 +3566,6 @@
 			path = NotificationTableViewCell;
 			sourceTree = "<group>";
 		};
-		CEE15C542534A0B50033BF93 /* TemporaryHelper */ = {
-			isa = PBXGroup;
-			children = (
-				CEE15C572534A1720033BF93 /* NotificationsProvider.swift */,
-			);
-			path = TemporaryHelper;
-			sourceTree = "<group>";
-		};
 		CEE2505E256FE2E40089F805 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -4000,7 +3992,6 @@
 		D87E3C4E2445FDAD004A4BDF /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				CEE15C542534A0B50033BF93 /* TemporaryHelper */,
 				CEB81DFE25386886006BEDEC /* ContentPage */,
 				D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */,
 				CE55ED2425267373003E168F /* NotificationsNavigator.swift */,
@@ -4213,6 +4204,7 @@
 				CE7A241025796AD500A94E89 /* Collection+Extension.swift */,
 				76DBCE56257FAB000030E600 /* DateFormatter+Extension.swift */,
 				76B667972595F133001441BD /* Date+Extension.swift */,
+				CE8786B6261B4A680060EBD1 /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -4970,6 +4962,7 @@
 				C707548925F396130033050E /* PaymentListUseCase.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
 				C7FAA3C22600C28600265995 /* UFCDepositEntity.swift in Sources */,
+				CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */,
 				76DCF68E25B8203D00150EE1 /* AddCard.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
@@ -5278,7 +5271,6 @@
 				CE9B7FEA257544F5006FF756 /* PhoneNumberChangeNavigator.swift in Sources */,
 				CEB41994260A2A7A003FE4B6 /* PaymentMethodCollectionViewCell.swift in Sources */,
 				C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */,
-				CEE15C582534A1720033BF93 /* NotificationsProvider.swift in Sources */,
 				CE9B7FEB257544F5006FF756 /* PhoneNumberChangeViewController.swift in Sources */,
 				7698869E2571042A00FA339E /* TransactionFilterTableViewCell.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
