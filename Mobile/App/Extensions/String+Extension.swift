@@ -47,4 +47,15 @@ public extension String {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         return dateFormatter.date(from: self) ?? Date()
     }
+
+    var toDateWithoutTime: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        if let date = dateFormatter.date(from: self) {
+            print(date)
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return dateFormatter.date(from: dateFormatter.string(from: date)) ?? Date()
+        }
+        return Date()
+    }
 }
