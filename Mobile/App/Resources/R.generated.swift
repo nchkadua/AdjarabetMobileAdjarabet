@@ -3989,7 +3989,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 468 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 469 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
@@ -5151,6 +5151,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let pitcairn = Rswift.StringResource(key: "pitcairn", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Play
+      ///
+      /// Locales: en, ka, hy
+      static let notifications_play_button_title = Rswift.StringResource(key: "notifications_play_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Please, enter all required fields to make transaction
       ///
       /// Locales: en, ka, hy
@@ -10214,6 +10218,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("pitcairn", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Play
+      ///
+      /// Locales: en, ka, hy
+      static func notifications_play_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications_play_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "notifications_play_button_title"
+        }
+
+        return NSLocalizedString("notifications_play_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Please, enter all required fields to make transaction
       ///
       /// Locales: en, ka, hy
@@ -13185,8 +13204,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13227,8 +13246,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 

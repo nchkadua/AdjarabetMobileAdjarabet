@@ -17,6 +17,7 @@ public struct NotificationContentViewModelParams {
 
 public protocol NotificationContentViewModelInput {
     func viewDidLoad()
+    func openUrl(_ url: String)
 }
 
 public protocol NotificationContentViewModelOutput {
@@ -48,5 +49,10 @@ extension DefaultNotificationContentViewModel: NotificationContentViewModel {
 
     public func viewDidLoad() {
         actionSubject.onNext(.setupWith(notification: params.notification))
+    }
+
+    public func openUrl(_ url: String) {
+        guard let url = URL(string: url) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

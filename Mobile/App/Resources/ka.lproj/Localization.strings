@@ -181,6 +181,7 @@
 "delete_button_title" = "წაშლა";
 "notifications_minutes_ago" = "წუთის წინ";
 "notifications_hours_ago" = "საათის წინ";
+"notifications_play_button_title" = "ითამაშე";
 
 /* Biometric Settings */
 "biometric_settings_activate_touch_id" = "Touch ID-ის გააქტიურება";

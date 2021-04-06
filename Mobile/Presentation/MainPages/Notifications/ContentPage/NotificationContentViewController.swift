@@ -18,6 +18,9 @@ public class NotificationContentViewController: UIViewController {
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var textLabel: UILabel!
+    @IBOutlet weak private var playButton: ABButton!
+
+    private var urlString = ""
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -46,6 +49,7 @@ public class NotificationContentViewController: UIViewController {
         setBaseBackgorundColor(to: .primaryBg())
         setupNavigationItem()
         setupLabels()
+        setupButton()
     }
 
     private func setupNavigationItem() {
@@ -65,6 +69,13 @@ public class NotificationContentViewController: UIViewController {
         textLabel.setTextColor(to: .secondaryText())
     }
 
+    private func setupButton() {
+        playButton.setStyle(to: .primary(state: .active, size: .large))
+        playButton.setTitleWithoutAnimation(R.string.localization.notifications_play_button_title.localized(), for: .normal)
+        playButton.addTarget(self, action: #selector(openUrl), for: .touchUpInside)
+        playButton.isHidden = false
+    }
+
     private func setup(with notification: NotificationItemsEntity.NotificationEntity) {
         let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
         if difference <= 59 { // 1 hour
@@ -76,6 +87,22 @@ public class NotificationContentViewController: UIViewController {
         }
 
         titleLabel.text = notification.header
-        textLabel.text = notification.content
+        splitContent(notification.content)
+    }
+
+    private func splitContent(_ content: String) {
+        let array = content.components(separatedBy: "https")
+        guard !array.isEmpty else {
+            playButton.isHidden = true
+            return
+        }
+
+        textLabel.text = array[0]
+        urlString = "\("https")\(array[1])"
+    }
+
+    // MARK: Action methods
+    @objc private func openUrl() {
+        viewModel.openUrl(urlString)
     }
 }
