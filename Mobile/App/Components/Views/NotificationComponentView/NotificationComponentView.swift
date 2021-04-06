@@ -50,15 +50,15 @@ class NotificationComponentView: UIView {
     }
 
     private func setupUI(with notification: NotificationItemsEntity.NotificationEntity) {
-        titleLabel.text = notification.header
+        titleLabel.setTextWithAnimation(notification.header)
 
         let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
         if difference <= 59 { // 1 hour
-            timeLabel.text = "\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())"
+            timeLabel.setTextWithAnimation("\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())")
         } else if difference <= 1440 { // 24 hours
-            timeLabel.text = "\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())"
+            timeLabel.setTextWithAnimation("\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())")
         } else {
-            timeLabel.text = notification.createDate.toDate.formattedStringTimeValue
+            timeLabel.setTextWithAnimation(notification.createDate.toDate.formattedStringTimeValue)
         }
 
         if notification.status == 1 {
