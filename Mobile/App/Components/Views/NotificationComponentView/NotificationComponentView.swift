@@ -13,7 +13,8 @@ class NotificationComponentView: UIView {
     private var viewModel: NotificationComponentViewModel!
 
     // MARK: Outlets
-    @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var view: ABView!
+    @IBOutlet weak private var container: UIStackView!
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
@@ -76,7 +77,7 @@ extension NotificationComponentView: Xibable {
             view
         }
         set {
-            view = newValue
+            view = newValue as? ABView
         }
     }
 
@@ -88,5 +89,16 @@ extension NotificationComponentView: Xibable {
 
         timeLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         timeLabel.setTextColor(to: .secondaryText())
+    }
+
+    @objc func tapHandler(gesture: UITapGestureRecognizer) {
+        if gesture.state == .began {
+            container.backgroundColor = DesignSystem.Color.secondaryBg().value
+            return
+        }
+        if gesture.state == .ended {
+            container.backgroundColor = DesignSystem.Color.primaryBg().value
+            return
+        }
     }
 }

@@ -341,6 +341,29 @@ public enum DesignSystem {
             case loading
         }
     }
+
+    public enum View {
+        public enum Style {
+            case normal
+            case pressed
+
+            public struct Description: Equatable {
+                public var backgorundColor: Color?
+            }
+
+            public var decsription: Description {
+                switch self {
+                case .normal: return .init(backgorundColor: .primaryBg())
+                case .pressed: return .init(backgorundColor: .secondaryBg())
+                }
+            }
+        }
+
+        public enum State: CaseIterable {
+            case normal
+            case pressed
+        }
+    }
 }
 
 extension DesignSystem.Color {
@@ -357,6 +380,7 @@ extension DesignSystem.Color {
     }
 }
 
+// MARK: Button
 public protocol ButtonStyleImplementing {
     func setStyle(to style: DesignSystem.Button.Style)
 }
@@ -376,5 +400,20 @@ public extension ButtonStyleImplementing where Self: AppCircularButton {
         self.borderWidth = description.borderWidth
         self.borderColor = description.borderColor?.value ?? .clear
         self.cornerRadius = description.cornerRadius
+    }
+}
+
+// MARK: View
+public protocol ViewStyleImplementing {
+    func setStyle(to style: DesignSystem.View.Style)
+}
+
+extension ABView: ViewStyleImplementing { }
+
+public extension ViewStyleImplementing where Self: ABView {
+    func setStyle(to style: DesignSystem.View.Style) {
+        let description = style.decsription
+
+        self.backgroundColor = description.backgorundColor?.value
     }
 }

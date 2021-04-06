@@ -45,9 +45,8 @@ public extension UIViewController {
     }
 
     func setTitle(title: String) {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
+        let label = UILabel(frame: CGRect(x: 5, y: 0, width: 300, height: 50))
         label.text = title
-        label.numberOfLines = 2
         label.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         label.setTextColor(to: .primaryText())
         label.textAlignment = .center

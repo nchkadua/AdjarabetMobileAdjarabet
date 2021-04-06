@@ -69,9 +69,7 @@ public class NotificationsViewController: ABViewController {
 
     private func didReceive(action: NotificationsViewModelOutputAction) {
         switch action {
-        case .initialize(let appListDataProvider):
-            appTableViewController.dataProvider = appListDataProvider
-            appTableViewController.reloadItems()
+        case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
         case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
         case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)
         case .showMessage(let message): showAlert(title: message)

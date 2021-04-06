@@ -55,7 +55,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
                     let headerViewModel = DefaultNotificationsHeaderComponentViewModel(params: .init(title: $0.formattedStringValue))
                     dataProvider.append(headerViewModel)
 
-                    for notification in notifications.elements where notification.createDate.toDate == $0 {
+                    for notification in notifications.elements where notification.createDate.toDateWithoutTime == $0 {
                         let model = DefaultNotificationComponentViewModel(params: .init(notification: notification))
                         model.action.subscribe(onNext: { action in
                             switch action {
@@ -76,6 +76,6 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     }
 
     private func dates(from notifications: NotificationItemsEntity) -> [Date] {
-        return notifications.elements.map({ (notification: NotificationItemsEntity.NotificationEntity) -> Date in notification.createDate.toDate }).uniques
+        return notifications.elements.map({ (notification: NotificationItemsEntity.NotificationEntity) -> Date in notification.createDate.toDateWithoutTime}).uniques
     }
 }

@@ -42,7 +42,7 @@ public class LoginViewController: ABViewController {
         bind(to: viewModel)
         viewModel.viewDidLoad()
         setupAccessibilityIdentifiers()
-     // viewModel.login(username: "tekashi", password: "Paroli1") // AStep 0: - Delete me
+//        viewModel.login(username: "yvelaferime", password: "Tatraxani1234") // AStep 0: - Delete me
     }
 
     public override func viewDidAppear(_ animated: Bool) {

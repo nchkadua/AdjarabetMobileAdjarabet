@@ -431,6 +431,7 @@
 		CE7A241E257C19B200A94E89 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A241D257C19B200A94E89 /* Helper.swift */; };
 		CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */; };
 		CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786B6261B4A680060EBD1 /* Array+Extension.swift */; };
+		CE8786C2261C96830060EBD1 /* ABView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786C1261C96830060EBD1 /* ABView.swift */; };
 		CE91C0D9257028C400A18255 /* TransactionsFilterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */; };
 		CE91C0DA257028C400A18255 /* TransactionsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */; };
 		CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */; };
@@ -1158,6 +1159,7 @@
 		CE7A241D257C19B200A94E89 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificatinEntity.swift; sourceTree = "<group>"; };
 		CE8786B6261B4A680060EBD1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		CE8786C1261C96830060EBD1 /* ABView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABView.swift; sourceTree = "<group>"; };
 		CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterNavigator.swift; sourceTree = "<group>"; };
 		CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewController.swift; sourceTree = "<group>"; };
 		CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewModel.swift; sourceTree = "<group>"; };
@@ -3890,6 +3892,7 @@
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				CEF1D4F7251CAB78008E3DE0 /* Text */,
 				7676E5622562E19200234026 /* TransactionHistoryComponentView */,
+				CE8786C1261C96830060EBD1 /* ABView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -5183,6 +5186,7 @@
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
 				C7C1D31C261B9C55009F01C3 /* WithdrawInfoView.swift in Sources */,
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
+				CE8786C2261C96830060EBD1 /* ABView.swift in Sources */,
 				CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */,
 				763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */,
 				76404EED2576120800D14E0C /* AccountParametersModel.swift in Sources */,
