@@ -13,6 +13,7 @@ public class WithdrawViewController: ABViewController {
     private lazy var navigator = WithdrawNavigator(viewController: self)
 
     // MARK: Outlets
+    /*
     @IBOutlet private weak var titleLabelComponentView: LabelComponentView!
     @IBOutlet private weak var cardNumberInputView: ABInputView!
     @IBOutlet private weak var amountInputView: ABInputView!
@@ -85,11 +86,11 @@ public class WithdrawViewController: ABViewController {
             navigator.navigate(to: .addAccount)
         }
     }
-    /*
+
     private func setupLabel(with label: LabelComponentViewModel) {
         titleLabelComponentView.set(label: label)
     }
-    */
+
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .secondaryBg())
@@ -179,5 +180,5 @@ public class WithdrawViewController: ABViewController {
 extension WithdrawViewController: ABInputViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel.selected(account: account, amount: amount)
-    }
+    }*/
 }

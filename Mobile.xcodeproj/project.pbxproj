@@ -177,9 +177,7 @@
 		C721EA5A259C9D9700F7C624 /* HttpRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */; };
 		C728C274261BA038004D3F2F /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728C273261BA038004D3F2F /* AddAccountView.swift */; };
 		C728C278261BA04C004D3F2F /* AddAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C728C277261BA04C004D3F2F /* AddAccountView.xib */; };
-		C728C27C261BA1AA004D3F2F /* WithdrawVisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728C27B261BA1AA004D3F2F /* WithdrawVisaViewModel.swift */; };
 		C728C280261BA1D1004D3F2F /* AddAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728C27F261BA1D1004D3F2F /* AddAccountViewModel.swift */; };
-		C728C284261BA1FE004D3F2F /* WithdrawInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728C283261BA1FE004D3F2F /* WithdrawInfoViewModel.swift */; };
 		C72EA8E425C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */; };
 		C72FA73D2600BBE100A9C493 /* UFCDepositUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */; };
 		C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */; };
@@ -293,11 +291,7 @@
 		C7BABFCD256579A2004E733E /* P2PTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */; };
 		C7BABFD325657AC2004E733E /* P2PTransferView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */; };
 		C7BABFD725657AD5004E733E /* P2PTransferViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */; };
-		C7C1D2FC261B9B14009F01C3 /* WithdrawVisaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D2FB261B9B14009F01C3 /* WithdrawVisaView.swift */; };
-		C7C1D302261B9B26009F01C3 /* WithdrawVisaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C1D301261B9B26009F01C3 /* WithdrawVisaView.xib */; };
-		C7C1D31C261B9C55009F01C3 /* WithdrawInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D31B261B9C55009F01C3 /* WithdrawInfoView.swift */; };
-		C7C1D320261B9C65009F01C3 /* WithdrawInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C1D31F261B9C65009F01C3 /* WithdrawInfoView.xib */; };
-		C7C1D339261B9D48009F01C3 /* WithdrawVisa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C1D334261B9D48009F01C3 /* WithdrawVisa.storyboard */; };
+		C7C1D339261B9D48009F01C3 /* Withdraw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C1D334261B9D48009F01C3 /* Withdraw.storyboard */; };
 		C7C1D33A261B9D48009F01C3 /* WithdrawVisaNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D335261B9D48009F01C3 /* WithdrawVisaNavigator.swift */; };
 		C7C1D33B261B9D48009F01C3 /* WithdrawVisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D336261B9D48009F01C3 /* WithdrawVisaViewController.swift */; };
 		C7C1D33C261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C1D337261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift */; };
@@ -326,6 +320,13 @@
 		C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */; };
 		C7DE3ADB25F5293E0082D5EF /* UserLoggedInDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE3ADA25F5293E0082D5EF /* UserLoggedInDTO.swift */; };
 		C7DE3ADF25F529670082D5EF /* UserLoggedInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE3ADE25F529670082D5EF /* UserLoggedInEntity.swift */; };
+		C7E3F143261CCEFB009B6D6A /* WithdrawVisa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E3F142261CCEFB009B6D6A /* WithdrawVisa.storyboard */; };
+		C7E3F14B261CCF5E009B6D6A /* CashOutVisaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3F14A261CCF5E009B6D6A /* CashOutVisaView.swift */; };
+		C7E3F14F261CCF70009B6D6A /* CashOutVisaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E3F14E261CCF70009B6D6A /* CashOutVisaView.xib */; };
+		C7E3F153261CCF7F009B6D6A /* CashOutVisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3F152261CCF7F009B6D6A /* CashOutVisaViewModel.swift */; };
+		C7E3F159261CCFD3009B6D6A /* WithdrawVisaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3F158261CCFD3009B6D6A /* WithdrawVisaInfoView.swift */; };
+		C7E3F15D261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3F15C261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift */; };
+		C7E3F161261CCFF5009B6D6A /* WithdrawVisaInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E3F160261CCFF5009B6D6A /* WithdrawVisaInfoView.xib */; };
 		C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */; };
 		C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */; };
 		C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */; };
@@ -560,7 +561,6 @@
 		CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */; };
 		CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3685E2549C361009FD456 /* WithdrawViewController.swift */; };
 		CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */; };
-		CEF368682549C368009FD456 /* Withdraw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF368672549C368009FD456 /* Withdraw.storyboard */; };
 		CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */; };
 		CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3686F2549C39D009FD456 /* ABPageViewController.swift */; };
 		D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */; };
@@ -905,9 +905,7 @@
 		C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilderTests.swift; sourceTree = "<group>"; };
 		C728C273261BA038004D3F2F /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 		C728C277261BA04C004D3F2F /* AddAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountView.xib; sourceTree = "<group>"; };
-		C728C27B261BA1AA004D3F2F /* WithdrawVisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaViewModel.swift; sourceTree = "<group>"; };
 		C728C27F261BA1D1004D3F2F /* AddAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewModel.swift; sourceTree = "<group>"; };
-		C728C283261BA1FE004D3F2F /* WithdrawInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInfoViewModel.swift; sourceTree = "<group>"; };
 		C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCaseTests.swift; sourceTree = "<group>"; };
 		C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositUseCase.swift; sourceTree = "<group>"; };
 		C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawUseCase.swift; sourceTree = "<group>"; };
@@ -1021,11 +1019,7 @@
 		C7BABFCA256579A2004E733E /* P2PTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewModel.swift; sourceTree = "<group>"; };
 		C7BABFD225657AC2004E733E /* P2PTransferView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = P2PTransferView.storyboard; sourceTree = "<group>"; };
 		C7BABFD625657AD5004E733E /* P2PTransferViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewControllerFactory.swift; sourceTree = "<group>"; };
-		C7C1D2FB261B9B14009F01C3 /* WithdrawVisaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaView.swift; sourceTree = "<group>"; };
-		C7C1D301261B9B26009F01C3 /* WithdrawVisaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawVisaView.xib; sourceTree = "<group>"; };
-		C7C1D31B261B9C55009F01C3 /* WithdrawInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInfoView.swift; sourceTree = "<group>"; };
-		C7C1D31F261B9C65009F01C3 /* WithdrawInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInfoView.xib; sourceTree = "<group>"; };
-		C7C1D334261B9D48009F01C3 /* WithdrawVisa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WithdrawVisa.storyboard; sourceTree = "<group>"; };
+		C7C1D334261B9D48009F01C3 /* Withdraw.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Withdraw.storyboard; sourceTree = "<group>"; };
 		C7C1D335261B9D48009F01C3 /* WithdrawVisaNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaNavigator.swift; sourceTree = "<group>"; };
 		C7C1D336261B9D48009F01C3 /* WithdrawVisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaViewController.swift; sourceTree = "<group>"; };
 		C7C1D337261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -1054,6 +1048,13 @@
 		C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilder.swift; sourceTree = "<group>"; };
 		C7DE3ADA25F5293E0082D5EF /* UserLoggedInDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoggedInDTO.swift; sourceTree = "<group>"; };
 		C7DE3ADE25F529670082D5EF /* UserLoggedInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoggedInEntity.swift; sourceTree = "<group>"; };
+		C7E3F142261CCEFB009B6D6A /* WithdrawVisa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WithdrawVisa.storyboard; sourceTree = "<group>"; };
+		C7E3F14A261CCF5E009B6D6A /* CashOutVisaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashOutVisaView.swift; sourceTree = "<group>"; };
+		C7E3F14E261CCF70009B6D6A /* CashOutVisaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CashOutVisaView.xib; sourceTree = "<group>"; };
+		C7E3F152261CCF7F009B6D6A /* CashOutVisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashOutVisaViewModel.swift; sourceTree = "<group>"; };
+		C7E3F158261CCFD3009B6D6A /* WithdrawVisaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaInfoView.swift; sourceTree = "<group>"; };
+		C7E3F15C261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaInfoViewModel.swift; sourceTree = "<group>"; };
+		C7E3F160261CCFF5009B6D6A /* WithdrawVisaInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawVisaInfoView.xib; sourceTree = "<group>"; };
 		C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiUserProfileRepository.swift; sourceTree = "<group>"; };
 		C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepository.swift; sourceTree = "<group>"; };
 		C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
@@ -1288,7 +1289,6 @@
 		CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawNavigator.swift; sourceTree = "<group>"; };
 		CEF3685E2549C361009FD456 /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewModel.swift; sourceTree = "<group>"; };
-		CEF368672549C368009FD456 /* Withdraw.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Withdraw.storyboard; sourceTree = "<group>"; };
 		CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewControllerFactory.swift; sourceTree = "<group>"; };
 		CEF3686F2549C39D009FD456 /* ABPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPageViewController.swift; sourceTree = "<group>"; };
 		D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -2599,23 +2599,23 @@
 			isa = PBXGroup;
 			children = (
 				C7C1D32D261B9CAF009F01C3 /* Views */,
-				C7C1D334261B9D48009F01C3 /* WithdrawVisa.storyboard */,
 				C7C1D335261B9D48009F01C3 /* WithdrawVisaNavigator.swift */,
 				C7C1D336261B9D48009F01C3 /* WithdrawVisaViewController.swift */,
 				C7C1D337261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift */,
 				C7C1D338261B9D48009F01C3 /* WithdrawVisaViewModel.swift */,
+				C7E3F142261CCEFB009B6D6A /* WithdrawVisa.storyboard */,
 			);
 			path = Visa;
 			sourceTree = "<group>";
 		};
-		C7C1D2FA261B9AB8009F01C3 /* Withdraw */ = {
+		C7C1D2FA261B9AB8009F01C3 /* Cash Out */ = {
 			isa = PBXGroup;
 			children = (
-				C728C27B261BA1AA004D3F2F /* WithdrawVisaViewModel.swift */,
-				C7C1D2FB261B9B14009F01C3 /* WithdrawVisaView.swift */,
-				C7C1D301261B9B26009F01C3 /* WithdrawVisaView.xib */,
+				C7E3F152261CCF7F009B6D6A /* CashOutVisaViewModel.swift */,
+				C7E3F14A261CCF5E009B6D6A /* CashOutVisaView.swift */,
+				C7E3F14E261CCF70009B6D6A /* CashOutVisaView.xib */,
 			);
-			path = Withdraw;
+			path = "Cash Out";
 			sourceTree = "<group>";
 		};
 		C7C1D305261B9B5D009F01C3 /* Add Account */ = {
@@ -2631,9 +2631,9 @@
 		C7C1D31A261B9BFA009F01C3 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				C728C283261BA1FE004D3F2F /* WithdrawInfoViewModel.swift */,
-				C7C1D31B261B9C55009F01C3 /* WithdrawInfoView.swift */,
-				C7C1D31F261B9C65009F01C3 /* WithdrawInfoView.xib */,
+				C7E3F15C261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift */,
+				C7E3F158261CCFD3009B6D6A /* WithdrawVisaInfoView.swift */,
+				C7E3F160261CCFF5009B6D6A /* WithdrawVisaInfoView.xib */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -2641,8 +2641,8 @@
 		C7C1D32D261B9CAF009F01C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C7C1D2FA261B9AB8009F01C3 /* Withdraw */,
 				C7C1D305261B9B5D009F01C3 /* Add Account */,
+				C7C1D2FA261B9AB8009F01C3 /* Cash Out */,
 				C7C1D31A261B9BFA009F01C3 /* Info */,
 			);
 			path = Views;
@@ -3686,7 +3686,7 @@
 				CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */,
 				CEF3685E2549C361009FD456 /* WithdrawViewController.swift */,
 				CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */,
-				CEF368672549C368009FD456 /* Withdraw.storyboard */,
+				C7C1D334261B9D48009F01C3 /* Withdraw.storyboard */,
 			);
 			path = Withdraw;
 			sourceTree = "<group>";
@@ -4641,11 +4641,11 @@
 				C75D1B1B261205F4002AF763 /* SOAJSlot.zip in Resources */,
 				CE4A30D32611E5420039C078 /* SuggestedAmountComponentView.xib in Resources */,
 				CEE44E872600B5C100A83BD2 /* AdjaraMontPro-SemiBold.ttf in Resources */,
-				C7C1D302261B9B26009F01C3 /* WithdrawVisaView.xib in Resources */,
 				C77206E125DAB0B50037D8A0 /* ca.der in Resources */,
 				C75D1AD2261205F4002AF763 /* GOCJSlot.zip in Resources */,
-				C7C1D339261B9D48009F01C3 /* WithdrawVisa.storyboard in Resources */,
+				C7C1D339261B9D48009F01C3 /* Withdraw.storyboard in Resources */,
 				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
+				C7E3F143261CCEFB009B6D6A /* WithdrawVisa.storyboard in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
 				C75D1AE0261205F4002AF763 /* TBHTJSlot.zip in Resources */,
 				76BA7BD825E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib in Resources */,
@@ -4656,7 +4656,6 @@
 				C75D1AEC261205F4002AF763 /* VNJSlot.zip in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
 				76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */,
-				C7C1D320261B9C65009F01C3 /* WithdrawInfoView.xib in Resources */,
 				C75D1B10261205F4002AF763 /* RLJSlot.zip in Resources */,
 				CEE44E8C2600B5C100A83BD2 /* AdjaraMont-Bold.ttf in Resources */,
 				CE679FDC2578334B00F2EC1C /* AddCard.storyboard in Resources */,
@@ -4708,7 +4707,6 @@
 				C75D1B16261205F4002AF763 /* FBHTJSlot.zip in Resources */,
 				7640C85225E3994B006D7100 /* HomeBannerCollectionViewCell.xib in Resources */,
 				CEE44E892600B5C100A83BD2 /* AdjaraMont-Regular.ttf in Resources */,
-				CEF368682549C368009FD456 /* Withdraw.storyboard in Resources */,
 				C75D1B08261205F4002AF763 /* SCJSlot.zip in Resources */,
 				CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */,
 				CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */,
@@ -4771,6 +4769,7 @@
 				C75D1AD5261205F4002AF763 /* PQJSlot.zip in Resources */,
 				CE5874A8260B8B4100F03AB5 /* EmoneyInstructionsView.xib in Resources */,
 				CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */,
+				C7E3F14F261CCF70009B6D6A /* CashOutVisaView.xib in Resources */,
 				7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */,
 				C75D1ADF261205F4002AF763 /* RGJSlot.zip in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
@@ -4787,6 +4786,7 @@
 				C75D1AD6261205F4002AF763 /* RCJSlot.zip in Resources */,
 				CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */,
 				7665D95F257E5CA600E5B35F /* AccessHistory.storyboard in Resources */,
+				C7E3F161261CCFF5009B6D6A /* WithdrawVisaInfoView.xib in Resources */,
 				7668C7A92576785F0024DDE4 /* AccountParametersHeaderComponentView.xib in Resources */,
 				C7C973AA2580EC990062C713 /* SecurityLevelTypeComponentView.xib in Resources */,
 				C75D1ADD261205F4002AF763 /* TSWJSlot.zip in Resources */,
@@ -5002,7 +5002,6 @@
 				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
 				C701C72725C06C0600B059A6 /* Status.swift in Sources */,
 				CEBB00972609F93A00D1B510 /* Payments.swift in Sources */,
-				C728C27C261BA1AA004D3F2F /* WithdrawVisaViewModel.swift in Sources */,
 				76EFF7C72582383000898819 /* AccessHistoryCalendarViewModel.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */,
@@ -5028,6 +5027,7 @@
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				C707548925F396130033050E /* PaymentListUseCase.swift in Sources */,
+				C7E3F15D261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
 				C7FAA3C22600C28600265995 /* UFCDepositEntity.swift in Sources */,
 				CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */,
@@ -5141,7 +5141,6 @@
 				76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
 				CE64EA9B25D2D51A00438974 /* GameLoaderComponentView.swift in Sources */,
-				C728C284261BA1FE004D3F2F /* WithdrawInfoViewModel.swift in Sources */,
 				C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				C7C973AE2580EC990062C713 /* SecurityLevelTypeComponentView.swift in Sources */,
@@ -5152,6 +5151,7 @@
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
 				C7405182256FA99A00EAC904 /* Formatter.swift in Sources */,
 				CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */,
+				C7E3F159261CCFD3009B6D6A /* WithdrawVisaInfoView.swift in Sources */,
 				76DCF67725B80FB500150EE1 /* MyCardsViewControllerFactory.swift in Sources */,
 				7668C7AE2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.swift in Sources */,
 				C7FB267C25CD87FE00111106 /* ServiceAuthTokenDTO.swift in Sources */,
@@ -5184,7 +5184,6 @@
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				CE4A3139261478D80039C078 /* MainContainerViewControllerFactory.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
-				C7C1D31C261B9C55009F01C3 /* WithdrawInfoView.swift in Sources */,
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
 				CE8786C2261C96830060EBD1 /* ABView.swift in Sources */,
 				CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */,
@@ -5219,6 +5218,7 @@
 				CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */,
 				CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */,
 				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
+				C7E3F14B261CCF5E009B6D6A /* CashOutVisaView.swift in Sources */,
 				76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */,
 				CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */,
 				CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */,
@@ -5299,6 +5299,7 @@
 				76BDF47125760512007B27A7 /* AccountParametersTableViewCell.swift in Sources */,
 				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				7640C85525E3994B006D7100 /* HomeBannerCollectionViewCell.swift in Sources */,
+				C7E3F153261CCF7F009B6D6A /* CashOutVisaViewModel.swift in Sources */,
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */,
@@ -5391,7 +5392,6 @@
 				D8BF403E244EC8F5008F0BAF /* ABCollectionViewController.swift in Sources */,
 				CEBB00762608F65300D1B510 /* PaymentMethodGridComponentViewModel.swift in Sources */,
 				D861DA892466B3ED0054D058 /* DefaultAuthenticationRepository.swift in Sources */,
-				C7C1D2FC261B9B14009F01C3 /* WithdrawVisaView.swift in Sources */,
 				CEA77791256D4237008A4F6C /* MailChangeNavigator.swift in Sources */,
 				D850940A24828D5800722040 /* LobbyGamesRepository.swift in Sources */,
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,

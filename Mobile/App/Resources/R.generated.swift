@@ -2934,8 +2934,8 @@ struct R: Rswift.Validatable {
     static let accountSecurityMessagesComponentView = _R.nib._AccountSecurityMessagesComponentView()
     /// Nib `AccountSecurityMessagesTableViewCell`.
     static let accountSecurityMessagesTableViewCell = _R.nib._AccountSecurityMessagesTableViewCell()
-    /// Nib `AddCardView`.
-    static let addCardView = _R.nib._AddCardView()
+    /// Nib `AddAccountView`.
+    static let addAccountView = _R.nib._AddAccountView()
     /// Nib `AddMyCardComponentView`.
     static let addMyCardComponentView = _R.nib._AddMyCardComponentView()
     /// Nib `AddMyCardTableViewCell`.
@@ -2948,6 +2948,8 @@ struct R: Rswift.Validatable {
     static let balanceTableViewCell = _R.nib._BalanceTableViewCell()
     /// Nib `CalendarComponentView`.
     static let calendarComponentView = _R.nib._CalendarComponentView()
+    /// Nib `CashOutVisaView`.
+    static let cashOutVisaView = _R.nib._CashOutVisaView()
     /// Nib `DateHeaderCell`.
     static let dateHeaderCell = _R.nib._DateHeaderCell()
     /// Nib `DateHeaderComponentView`.
@@ -3066,10 +3068,8 @@ struct R: Rswift.Validatable {
     static let visaInstructionsComponentView = _R.nib._VisaInstructionsComponentView()
     /// Nib `VisaLimitComponentView`.
     static let visaLimitComponentView = _R.nib._VisaLimitComponentView()
-    /// Nib `WithdrawInfoView`.
-    static let withdrawInfoView = _R.nib._WithdrawInfoView()
-    /// Nib `WithdrawVisaView`.
-    static let withdrawVisaView = _R.nib._WithdrawVisaView()
+    /// Nib `WithdrawVisaInfoView`.
+    static let withdrawVisaInfoView = _R.nib._WithdrawVisaInfoView()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "ABInputView", in: bundle)`
@@ -3152,10 +3152,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "AddCardView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.addCardView) instead")
-    static func addCardView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.addCardView)
+    /// `UINib(name: "AddAccountView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addAccountView) instead")
+    static func addAccountView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addAccountView)
     }
     #endif
 
@@ -3204,6 +3204,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.calendarComponentView) instead")
     static func calendarComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.calendarComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CashOutVisaView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.cashOutVisaView) instead")
+    static func cashOutVisaView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.cashOutVisaView)
     }
     #endif
 
@@ -3680,18 +3688,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "WithdrawInfoView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.withdrawInfoView) instead")
-    static func withdrawInfoView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.withdrawInfoView)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "WithdrawVisaView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.withdrawVisaView) instead")
-    static func withdrawVisaView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.withdrawVisaView)
+    /// `UINib(name: "WithdrawVisaInfoView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.withdrawVisaInfoView) instead")
+    static func withdrawVisaInfoView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.withdrawVisaInfoView)
     }
     #endif
 
@@ -3735,8 +3735,8 @@ struct R: Rswift.Validatable {
       return R.nib.accountSecurityMessagesTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountSecurityMessagesTableViewCell
     }
 
-    static func addCardView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.addCardView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func addAccountView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addAccountView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func addMyCardComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -3761,6 +3761,10 @@ struct R: Rswift.Validatable {
 
     static func calendarComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.calendarComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func cashOutVisaView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.cashOutVisaView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func dateHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DateHeaderCell? {
@@ -3999,12 +4003,8 @@ struct R: Rswift.Validatable {
       return R.nib.visaLimitComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
-    static func withdrawInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.withdrawInfoView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-
-    static func withdrawVisaView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.withdrawVisaView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func withdrawVisaInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.withdrawVisaInfoView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -13065,9 +13065,9 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _AddCardView: Rswift.NibResourceType {
+    struct _AddAccountView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let name = "AddCardView"
+      let name = "AddAccountView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -13146,10 +13146,21 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CashOutVisaView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CashOutVisaView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -13260,8 +13271,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -13530,8 +13541,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13843,20 +13854,9 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _WithdrawInfoView: Rswift.NibResourceType {
+    struct _WithdrawVisaInfoView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let name = "WithdrawInfoView"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _WithdrawVisaView: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "WithdrawVisaView"
+      let name = "WithdrawVisaInfoView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -14232,8 +14232,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
@@ -14666,6 +14666,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Deposit/icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Deposit/icon' is used in storyboard 'Withdraw', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.withdraw().withdrawViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'withdrawViewController' could not be loaded from storyboard 'Withdraw' as 'WithdrawViewController'.") }
