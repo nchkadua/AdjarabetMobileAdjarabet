@@ -19,6 +19,7 @@ public protocol NotificationComponentViewModelInput {
     func didBind()
     func didSelect(at indexPath: IndexPath)
     func didDelete(at indexPath: IndexPath)
+    func calculateTimeOf(_ notification: NotificationItemsEntity.NotificationEntity)
 }
 
 public protocol NotificationComponentViewModelOutput {
@@ -30,6 +31,7 @@ public enum NotificationComponentViewModelOutputAction {
     case set(notifiation: NotificationItemsEntity.NotificationEntity)
     case didSelect(notification: NotificationItemsEntity.NotificationEntity)
     case didDelete(atIndex: IndexPath)
+    case setTime(time: String)
 }
 
 public class DefaultNotificationComponentViewModel {
@@ -54,5 +56,19 @@ extension DefaultNotificationComponentViewModel: NotificationComponentViewModel 
 
     public func didDelete(at indexPath: IndexPath) {
         actionSubject.onNext(.didDelete(atIndex: indexPath))
+    }
+
+    public func calculateTimeOf(_ notification: NotificationItemsEntity.NotificationEntity) {
+        var timeStr = ""
+        let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
+        if difference <= 59 { // 1 hour
+            timeStr = "\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())"
+        } else if difference <= 1440 { // 24 hours
+            timeStr = "\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())"
+        } else {
+            timeStr = notification.createDate.toDate.formattedStringTimeValue
+        }
+
+        actionSubject.onNext(.setTime(time: timeStr))
     }
 }

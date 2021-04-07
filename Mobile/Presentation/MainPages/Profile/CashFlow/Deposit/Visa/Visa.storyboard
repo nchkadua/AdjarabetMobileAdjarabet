@@ -21,71 +21,93 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-gB-ybX">
-                                        <rect key="frame" x="0.0" y="34" width="414" height="852"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-6D-FLs" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="8" width="382" height="48"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxL-vt-izl" customClass="AddCardComponentView" customModule="Mobile" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="8" width="382" height="226"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="qst-Lg-qbK"/>
+                                                    <constraint firstAttribute="height" constant="226" id="T4g-3Y-wmh"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGi-JI-hui">
-                                                <rect key="frame" x="318" y="64" width="80" height="48"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nia-Cs-bKa">
+                                                <rect key="frame" x="16" y="8" width="382" height="185"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-6D-FLs" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="Zhu-u9-5rq"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQy-uf-Ppz" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="56" width="294" height="48"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="z8o-PS-LAu"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGi-JI-hui">
+                                                        <rect key="frame" x="302" y="56" width="80" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="VUI-qz-qlA"/>
+                                                            <constraint firstAttribute="height" constant="48" id="sZd-ns-KZb"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Deposit/addCard"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZU-R2-Blg" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="124" width="382" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="54" id="puC-GT-1d7"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="2UV-Yt-TxM"/>
-                                                    <constraint firstAttribute="width" constant="80" id="XXM-av-Dab"/>
+                                                    <constraint firstItem="pZU-R2-Blg" firstAttribute="leading" secondItem="Nia-Cs-bKa" secondAttribute="leading" id="1Md-dT-dtz"/>
+                                                    <constraint firstItem="OQy-uf-Ppz" firstAttribute="leading" secondItem="Nia-Cs-bKa" secondAttribute="leading" id="9Cd-lZ-5np"/>
+                                                    <constraint firstItem="2ga-6D-FLs" firstAttribute="top" secondItem="Nia-Cs-bKa" secondAttribute="top" id="Cqz-ry-JzO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pZU-R2-Blg" secondAttribute="trailing" id="DDm-fb-PEA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QGi-JI-hui" secondAttribute="trailing" id="Hbx-Nc-8f7"/>
+                                                    <constraint firstItem="QGi-JI-hui" firstAttribute="leading" secondItem="OQy-uf-Ppz" secondAttribute="trailing" constant="8" id="HfU-OS-hGt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2ga-6D-FLs" secondAttribute="trailing" id="VK2-Ap-tXQ"/>
+                                                    <constraint firstItem="QGi-JI-hui" firstAttribute="top" secondItem="2ga-6D-FLs" secondAttribute="bottom" constant="8" id="diF-s8-1Ko"/>
+                                                    <constraint firstItem="pZU-R2-Blg" firstAttribute="top" secondItem="OQy-uf-Ppz" secondAttribute="bottom" constant="20" id="o2m-5Y-mJ2"/>
+                                                    <constraint firstItem="2ga-6D-FLs" firstAttribute="leading" secondItem="Nia-Cs-bKa" secondAttribute="leading" id="oL9-Ke-6Ql"/>
+                                                    <constraint firstItem="OQy-uf-Ppz" firstAttribute="top" secondItem="2ga-6D-FLs" secondAttribute="bottom" constant="8" id="oyX-9R-dHC"/>
+                                                    <constraint firstAttribute="height" constant="185" id="zSJ-TK-N7N"/>
                                                 </constraints>
-                                                <state key="normal" image="Deposit/addCard"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZU-R2-Blg" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="132" width="382" height="54"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="54" id="Iw7-bD-n3e"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                            </button>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiD-kE-4oW" customClass="VisaLimitComponentView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="201" width="382" height="60"/>
+                                                <rect key="frame" x="16" y="199" width="382" height="60"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="c2H-Pe-blH"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-Z1-LFX" customClass="VisaInstructionsComponentView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="275" width="382" height="240"/>
+                                                <rect key="frame" x="16" y="273" width="382" height="240"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="240" id="ZMT-na-HQk"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQy-uf-Ppz" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="64" width="294" height="48"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="oeZ-lz-dj8"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="QGi-JI-hui" secondAttribute="trailing" constant="16" id="5eK-Yj-uVk"/>
+                                            <constraint firstItem="eiD-kE-4oW" firstAttribute="top" secondItem="Nia-Cs-bKa" secondAttribute="bottom" constant="6" id="7Ca-fR-ZJR"/>
                                             <constraint firstAttribute="trailing" secondItem="eiD-kE-4oW" secondAttribute="trailing" constant="16" id="DMM-Ps-UXC"/>
-                                            <constraint firstItem="OQy-uf-Ppz" firstAttribute="top" secondItem="2ga-6D-FLs" secondAttribute="bottom" constant="8" id="F1j-OE-MSG"/>
                                             <constraint firstItem="5Cs-Z1-LFX" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="FIy-Cv-uCF"/>
-                                            <constraint firstItem="pZU-R2-Blg" firstAttribute="top" secondItem="OQy-uf-Ppz" secondAttribute="bottom" constant="20" id="KH5-do-XUg"/>
                                             <constraint firstAttribute="trailing" secondItem="5Cs-Z1-LFX" secondAttribute="trailing" constant="16" id="KT3-Ni-dcV"/>
                                             <constraint firstItem="5Cs-Z1-LFX" firstAttribute="top" secondItem="eiD-kE-4oW" secondAttribute="bottom" constant="14" id="KYt-UL-ZFG"/>
                                             <constraint firstItem="eiD-kE-4oW" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="NIe-EG-TAQ"/>
-                                            <constraint firstItem="2ga-6D-FLs" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="Pis-wZ-3w0"/>
-                                            <constraint firstItem="pZU-R2-Blg" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="eL4-TK-1Ai"/>
-                                            <constraint firstAttribute="trailing" secondItem="pZU-R2-Blg" secondAttribute="trailing" constant="16" id="gaK-Vo-htH"/>
-                                            <constraint firstItem="QGi-JI-hui" firstAttribute="leading" secondItem="OQy-uf-Ppz" secondAttribute="trailing" constant="8" id="i5o-1r-gHm"/>
-                                            <constraint firstItem="OQy-uf-Ppz" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="j1Q-bk-6qu"/>
-                                            <constraint firstItem="QGi-JI-hui" firstAttribute="top" secondItem="2ga-6D-FLs" secondAttribute="bottom" constant="8" id="n9Y-CZ-TjP"/>
-                                            <constraint firstItem="eiD-kE-4oW" firstAttribute="top" secondItem="pZU-R2-Blg" secondAttribute="bottom" constant="15" id="tMh-K8-gaF"/>
-                                            <constraint firstItem="2ga-6D-FLs" firstAttribute="top" secondItem="ybG-gB-ybX" secondAttribute="top" constant="8" id="vjY-8K-Iid"/>
-                                            <constraint firstAttribute="trailing" secondItem="2ga-6D-FLs" secondAttribute="trailing" constant="16" id="xUC-qZ-0NM"/>
+                                            <constraint firstItem="cxL-vt-izl" firstAttribute="top" secondItem="ybG-gB-ybX" secondAttribute="top" constant="8" id="Rdx-UQ-BWt"/>
+                                            <constraint firstItem="Nia-Cs-bKa" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="YEZ-6i-3FX"/>
+                                            <constraint firstItem="cxL-vt-izl" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="aPU-E3-6UT"/>
+                                            <constraint firstAttribute="trailing" secondItem="cxL-vt-izl" secondAttribute="trailing" constant="16" id="gON-Fl-5Cu"/>
+                                            <constraint firstItem="Nia-Cs-bKa" firstAttribute="top" secondItem="ybG-gB-ybX" secondAttribute="top" constant="8" id="hL2-f0-oPf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nia-Cs-bKa" secondAttribute="trailing" constant="16" id="iih-3p-cLF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -116,12 +138,15 @@
                     </view>
                     <connections>
                         <outlet property="addCardButton" destination="QGi-JI-hui" id="DSA-En-rmH"/>
+                        <outlet property="addCardComponentView" destination="cxL-vt-izl" id="IrF-b8-0yV"/>
                         <outlet property="amountInputView" destination="2ga-6D-FLs" id="H0g-go-LWV"/>
                         <outlet property="cardNumberInputView" destination="OQy-uf-Ppz" id="Kvo-qV-0EW"/>
                         <outlet property="continueButton" destination="pZU-R2-Blg" id="kNn-eO-WQy"/>
                         <outlet property="instructionView" destination="5Cs-Z1-LFX" id="9g6-XX-SgQ"/>
                         <outlet property="limitView" destination="eiD-kE-4oW" id="tpj-5f-k8Q"/>
+                        <outlet property="limitViewTopConstraint" destination="7Ca-fR-ZJR" id="bYq-mH-kzP"/>
                         <outlet property="paymentContainerView" destination="ybG-gB-ybX" id="vIC-yX-wo5"/>
+                        <outlet property="paymentOptionsView" destination="Nia-Cs-bKa" id="1AR-me-4FB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

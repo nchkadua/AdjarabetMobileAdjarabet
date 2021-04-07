@@ -26,6 +26,11 @@ public class VisaViewController: ABViewController {
 
     private var suggestedAmountGridComponentView: SuggestedAmountGridComponentView?
 
+    @IBOutlet weak private var paymentOptionsView: UIView!
+    @IBOutlet weak private var addCardComponentView: AddCardComponentView!
+
+    @IBOutlet weak private var limitViewTopConstraint: NSLayoutConstraint!
+
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,10 +92,8 @@ public class VisaViewController: ABViewController {
 
     private func handleShowView(of type: VisaViewType) {
         switch type {
-        case .accounts:
-            {}() // TODO: Nika handle visualization of view with accounts
-        case .addAccount:
-            {}() // TODO: Nika handle visualization of add account
+        case .accounts: showPaymentOptionsView()
+        case .addAccount: showAddCardView()
         }
     }
 
@@ -108,6 +111,7 @@ public class VisaViewController: ABViewController {
         setupInputViews()
         setupButtons()
         setupSuggestedAmountsGrid()
+        setupAddCardView()
     }
 
     private func setupInputViews() {
@@ -150,6 +154,24 @@ public class VisaViewController: ABViewController {
         amountInputView.mainTextField.inputAccessoryView = suggestedAmountGridComponentView
     }
 
+    private func setupAddCardView() {
+        addCardComponentView.button.addTarget(self, action: #selector(navigateToAddAccount), for: .touchUpInside)
+    }
+
+    private func showPaymentOptionsView() {
+        paymentOptionsView.isHidden = false
+        addCardComponentView.isHidden = true
+
+        limitViewTopConstraint.constant = 8
+    }
+
+    private func showAddCardView() {
+        addCardComponentView.isHidden = false
+        paymentOptionsView.isHidden = true
+
+        limitViewTopConstraint.constant = 70
+    }
+
     // MARK: Action methods
     @objc private func addCardDidTap() {
         navigator.navigate(to: .addAccount, animated: true)
@@ -172,6 +194,10 @@ public class VisaViewController: ABViewController {
     private func updateAmountInputeView(_ amountViewModel: SuggestedAmountComponentViewModel) {
         amountInputView.set(text: String(amountViewModel.params.amount))
         view.endEditing(false)
+    }
+
+    @objc private func navigateToAddAccount() {
+        navigator.navigate(to: .addAccount, animated: true)
     }
 }
 

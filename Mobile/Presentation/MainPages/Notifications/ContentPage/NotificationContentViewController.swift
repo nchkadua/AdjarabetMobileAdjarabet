@@ -41,6 +41,7 @@ public class NotificationContentViewController: UIViewController {
     private func didRecive(action: NotificationContentViewModelOutputAction) {
         switch action {
         case .setupWith(let notification): setup(with: notification)
+        case .setTime(let time): timeLabel.text = time
         }
     }
 
@@ -77,16 +78,7 @@ public class NotificationContentViewController: UIViewController {
     }
 
     private func setup(with notification: NotificationItemsEntity.NotificationEntity) {
-        let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
-        if difference <= 59 { // 1 hour
-            timeLabel.text = "\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())"
-        } else if difference <= 1440 { // 24 hours
-            timeLabel.text = "\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())"
-        } else {
-            timeLabel.text = notification.createDate.toDate.formattedStringFullValue
-        }
-
-        titleLabel.text = notification.header
+        viewModel.calculateTimeOf(notification)
         splitContent(notification.content)
     }
 

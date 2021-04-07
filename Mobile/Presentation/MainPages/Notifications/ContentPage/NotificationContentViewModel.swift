@@ -18,6 +18,7 @@ public struct NotificationContentViewModelParams {
 public protocol NotificationContentViewModelInput {
     func viewDidLoad()
     func openUrl(_ url: String)
+    func calculateTimeOf(_ notification: NotificationItemsEntity.NotificationEntity)
 }
 
 public protocol NotificationContentViewModelOutput {
@@ -28,6 +29,7 @@ public protocol NotificationContentViewModelOutput {
 
 public enum NotificationContentViewModelOutputAction {
     case setupWith(notification: NotificationItemsEntity.NotificationEntity)
+    case setTime(time: String)
 }
 
 public enum NotificationContentViewModelRoute {
@@ -54,5 +56,19 @@ extension DefaultNotificationContentViewModel: NotificationContentViewModel {
     public func openUrl(_ url: String) {
         guard let url = URL(string: url) else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+
+    public func calculateTimeOf(_ notification: NotificationItemsEntity.NotificationEntity) {
+        var timeStr = ""
+        let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
+        if difference <= 59 { // 1 hour
+            timeStr = "\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())"
+        } else if difference <= 1440 { // 24 hours
+            timeStr = "\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())"
+        } else {
+            timeStr = notification.createDate.toDate.formattedStringFullValue
+        }
+
+        actionSubject.onNext(.setTime(time: timeStr))
     }
 }

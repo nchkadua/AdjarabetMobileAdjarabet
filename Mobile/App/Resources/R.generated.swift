@@ -1982,39 +1982,19 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.cardManagement` struct is generated, and contains static references to 6 images.
+    /// This `R.image.cardManagement` struct is generated, and contains static references to 3 images.
     struct cardManagement {
-      /// Image `card_back`.
-      static let card_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "CardManagement/card_back")
-      /// Image `card_front`.
-      static let card_front = Rswift.ImageResource(bundle: R.hostingBundle, name: "CardManagement/card_front")
       /// Image `card`.
       static let card = Rswift.ImageResource(bundle: R.hostingBundle, name: "CardManagement/card")
       /// Image `checkmark`.
       static let checkmark = Rswift.ImageResource(bundle: R.hostingBundle, name: "CardManagement/checkmark")
       /// Image `oval`.
       static let oval = Rswift.ImageResource(bundle: R.hostingBundle, name: "CardManagement/oval")
-      /// Image `scan`.
-      static let scan = Rswift.ImageResource(bundle: R.hostingBundle, name: "CardManagement/scan")
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "card", bundle: ..., traitCollection: ...)`
       static func card(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.cardManagement.card, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "card_back", bundle: ..., traitCollection: ...)`
-      static func card_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.cardManagement.card_back, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "card_front", bundle: ..., traitCollection: ...)`
-      static func card_front(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.cardManagement.card_front, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2029,13 +2009,6 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "oval", bundle: ..., traitCollection: ...)`
       static func oval(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.cardManagement.oval, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "scan", bundle: ..., traitCollection: ...)`
-      static func scan(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.cardManagement.scan, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2266,10 +2239,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.deposit` struct is generated, and contains static references to 4 images.
+    /// This `R.image.deposit` struct is generated, and contains static references to 5 images.
     struct deposit {
       /// Image `addCard`.
       static let addCard = Rswift.ImageResource(bundle: R.hostingBundle, name: "Deposit/addCard")
+      /// Image `add_card_red`.
+      static let add_card_red = Rswift.ImageResource(bundle: R.hostingBundle, name: "Deposit/add_card_red")
       /// Image `emoney_logo`.
       static let emoney_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Deposit/emoney_logo")
       /// Image `icon`.
@@ -2281,6 +2256,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "addCard", bundle: ..., traitCollection: ...)`
       static func addCard(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.deposit.addCard, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "add_card_red", bundle: ..., traitCollection: ...)`
+      static func add_card_red(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.deposit.add_card_red, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2903,7 +2885,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 77 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 78 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -2925,6 +2907,8 @@ struct R: Rswift.Validatable {
     static let accountSecurityMessagesComponentView = _R.nib._AccountSecurityMessagesComponentView()
     /// Nib `AccountSecurityMessagesTableViewCell`.
     static let accountSecurityMessagesTableViewCell = _R.nib._AccountSecurityMessagesTableViewCell()
+    /// Nib `AddCardComponentView`.
+    static let addCardComponentView = _R.nib._AddCardComponentView()
     /// Nib `AddMyCardComponentView`.
     static let addMyCardComponentView = _R.nib._AddMyCardComponentView()
     /// Nib `AddMyCardTableViewCell`.
@@ -3137,6 +3121,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.accountSecurityMessagesTableViewCell) instead")
     static func accountSecurityMessagesTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.accountSecurityMessagesTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddCardComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addCardComponentView) instead")
+    static func addCardComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addCardComponentView)
     }
     #endif
 
@@ -3716,6 +3708,10 @@ struct R: Rswift.Validatable {
       return R.nib.accountSecurityMessagesTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountSecurityMessagesTableViewCell
     }
 
+    static func addCardComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addCardComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func addMyCardComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.addMyCardComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -3989,7 +3985,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 469 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 471 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
@@ -4039,6 +4035,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let add_card_title = Rswift.StringResource(key: "add_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Add Card
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_visa_add_card_button_title = Rswift.StringResource(key: "deposit_visa_add_card_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Add card
       ///
       /// Locales: en, ka, hy
@@ -5767,6 +5767,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let withdraw_description_title = Rswift.StringResource(key: "withdraw_description_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ დეპოზიტის გაკეთება
+      ///
+      /// Locales: en, ka, hy
+      static let deposit_visa_add_card_title = Rswift.StringResource(key: "deposit_visa_add_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: გრაფაში 'თანხა' ჩაწერეთ თვენთვის სასურველი თანხა
       ///
       /// Locales: en, ka, hy
@@ -6046,6 +6050,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("add_card_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Card
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_visa_add_card_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_visa_add_card_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_visa_add_card_button_title"
+        }
+
+        return NSLocalizedString("deposit_visa_add_card_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Add card
@@ -12528,6 +12547,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("withdraw_description_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ დეპოზიტის გაკეთება
+      ///
+      /// Locales: en, ka, hy
+      static func deposit_visa_add_card_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deposit_visa_add_card_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "deposit_visa_add_card_title"
+        }
+
+        return NSLocalizedString("deposit_visa_add_card_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: გრაფაში 'თანხა' ჩაწერეთ თვენთვის სასურველი თანხა
       ///
       /// Locales: en, ka, hy
@@ -12936,6 +12970,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _AccountParametersComponentView.validate()
+      try _AddCardComponentView.validate()
       try _BalanceComponentView.validate()
       try _CalendarComponentView.validate()
       try _EmoneyButton.validate()
@@ -13062,6 +13097,24 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _AddCardComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddCardComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Deposit/add_card_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Deposit/add_card_red' is used in nib 'AddCardComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in nib 'AddCardComponentView', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _AddMyCardComponentView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "AddMyCardComponentView"
@@ -13132,8 +13185,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13516,8 +13569,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14221,8 +14274,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

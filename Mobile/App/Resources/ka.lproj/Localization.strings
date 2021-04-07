@@ -297,6 +297,8 @@
 "deposit_visa_wrong_format_amount" = "თანხა არასწორი ფორმატით არის შეყვანილი";
 "deposit_visa_negative_amount" = "გთხოვთ, შეიყვანოთ დადებითი თანხა";
 "deposit_visa_some_field_is_not_specified" = "ტრანზაქციის შესარულებლად, გთხოვთ შეიყვანოთ ყველა საჭირო ველი";
+"deposit_visa_add_card_button_title" = "ბარათის დამატება";
+"deposit_visa_add_card_title" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ დეპოზიტის გაკეთება";
 
 /* Countries */
 "georgia" = "Georgia";
