@@ -15,6 +15,11 @@ public class SuggestedAmountGridComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var collectionView: UICollectionView!
+    @IBOutlet weak private var clearButton: UIButton!
+    @IBOutlet weak private var doneButton: UIButton!
+
+    public var leftComponent: UIButton { clearButton }
+    public var rightComponent: UIButton { doneButton }
 
     private var selectedDataProvider: SuggestedAmountCollectionViewCellDataProvider?
 
@@ -60,6 +65,14 @@ public class SuggestedAmountGridComponentView: UIView {
         self.collectionView.contentInset.right = 16
         self.collectionView.reloadData()
     }
+
+    @objc private func clearAction() {
+        viewModel.didClickClear()
+    }
+
+    @objc private func doneAction() {
+        viewModel.didClickDone()
+    }
 }
 
 extension SuggestedAmountGridComponentView: Xibable {
@@ -73,13 +86,24 @@ extension SuggestedAmountGridComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = .clear
+        view.setBackgorundColor(to: .thick(alpha: 1))
         collectionView.setBackgorundColor(to: .thick(alpha: 1.0))
 
         // CollectionView
         collectionView.register(types: SuggestedAmountCollectionViewCell.self)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.flowLayout?.scrollDirection = .horizontal
+
+        // Buttons
+        clearButton.setTitleColor(to: .primaryText(), for: .normal)
+        clearButton.setFont(to: .body2(fontCase: .lower, fontStyle: .regular))
+        clearButton.setTitle(R.string.localization.suggestions_clear.localized(), for: .normal)
+        clearButton.addTarget(self, action: #selector(clearAction), for: .touchUpInside)
+
+        doneButton.setTitleColor(to: .primaryText(), for: .normal)
+        doneButton.setFont(to: .body2(fontCase: .lower, fontStyle: .regular))
+        doneButton.setTitle(R.string.localization.suggestions_done.localized(), for: .normal)
+        doneButton.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
     }
 }
 

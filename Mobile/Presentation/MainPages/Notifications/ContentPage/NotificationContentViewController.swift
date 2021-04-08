@@ -18,6 +18,9 @@ public class NotificationContentViewController: UIViewController {
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var textLabel: UILabel!
+    @IBOutlet weak private var playButton: ABButton!
+
+    private var urlString = ""
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -38,6 +41,7 @@ public class NotificationContentViewController: UIViewController {
     private func didRecive(action: NotificationContentViewModelOutputAction) {
         switch action {
         case .setupWith(let notification): setup(with: notification)
+        case .setTime(let time): timeLabel.text = time
         }
     }
 
@@ -46,6 +50,7 @@ public class NotificationContentViewController: UIViewController {
         setBaseBackgorundColor(to: .primaryBg())
         setupNavigationItem()
         setupLabels()
+        setupButton()
     }
 
     private func setupNavigationItem() {
@@ -65,17 +70,31 @@ public class NotificationContentViewController: UIViewController {
         textLabel.setTextColor(to: .secondaryText())
     }
 
+    private func setupButton() {
+        playButton.setStyle(to: .primary(state: .active, size: .large))
+        playButton.setTitleWithoutAnimation(R.string.localization.notifications_play_button_title.localized(), for: .normal)
+        playButton.addTarget(self, action: #selector(openUrl), for: .touchUpInside)
+        playButton.isHidden = false
+    }
+
     private func setup(with notification: NotificationItemsEntity.NotificationEntity) {
-        let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
-        if difference <= 59 { // 1 hour
-            timeLabel.text = "\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())"
-        } else if difference <= 1440 { // 24 hours
-            timeLabel.text = "\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())"
-        } else {
-            timeLabel.text = notification.createDate.toDate.formattedStringFullValue
+        viewModel.calculateTimeOf(notification)
+        splitContent(notification.content)
+    }
+
+    private func splitContent(_ content: String) {
+        let array = content.components(separatedBy: "https")
+        guard !array.isEmpty else {
+            playButton.isHidden = true
+            return
         }
 
-        titleLabel.text = notification.header
-        textLabel.text = notification.content
+        textLabel.text = array[0]
+        urlString = "\("https")\(array[1])"
+    }
+
+    // MARK: Action methods
+    @objc private func openUrl() {
+        viewModel.openUrl(urlString)
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,10 +40,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-Dz-QwX" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="17" y="389.5" width="380" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="BIE-rV-PDP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0hA-GX-e9x"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0hA-GX-e9x" firstAttribute="trailing" secondItem="sa3-Dz-QwX" secondAttribute="trailing" constant="17" id="24P-wB-UsO"/>
                             <constraint firstItem="WGH-jP-osP" firstAttribute="top" secondItem="mWF-nm-I5t" secondAttribute="bottom" constant="10" id="2Aw-xg-kMq"/>
                             <constraint firstItem="0hA-GX-e9x" firstAttribute="trailing" secondItem="WGH-jP-osP" secondAttribute="trailing" constant="20" id="CcN-xG-ODy"/>
                             <constraint firstAttribute="trailing" secondItem="eLF-5N-pEU" secondAttribute="trailing" id="KBC-7v-0rC"/>
@@ -51,15 +59,18 @@
                             <constraint firstItem="eLF-5N-pEU" firstAttribute="top" secondItem="0hA-GX-e9x" secondAttribute="top" id="ST2-S5-PQO"/>
                             <constraint firstItem="WGH-jP-osP" firstAttribute="leading" secondItem="0hA-GX-e9x" secondAttribute="leading" constant="20" id="Ule-1k-iPJ"/>
                             <constraint firstItem="mWF-nm-I5t" firstAttribute="leading" secondItem="0hA-GX-e9x" secondAttribute="leading" constant="20" id="VJ1-OT-f2E"/>
+                            <constraint firstItem="sa3-Dz-QwX" firstAttribute="leading" secondItem="0hA-GX-e9x" secondAttribute="leading" constant="17" id="Zbo-ZI-0Yc"/>
                             <constraint firstItem="0hA-GX-e9x" firstAttribute="trailing" secondItem="mWF-nm-I5t" secondAttribute="trailing" constant="20" id="dXe-wO-ucY"/>
                             <constraint firstItem="mWF-nm-I5t" firstAttribute="top" secondItem="eLF-5N-pEU" secondAttribute="bottom" constant="21" id="eeW-2k-DK7"/>
                             <constraint firstItem="mwu-dg-lVd" firstAttribute="leading" secondItem="0hA-GX-e9x" secondAttribute="leading" constant="20" id="gc1-Tg-RYR"/>
+                            <constraint firstItem="sa3-Dz-QwX" firstAttribute="top" secondItem="mwu-dg-lVd" secondAttribute="bottom" constant="11" id="lUE-FY-x8P"/>
                             <constraint firstItem="mwu-dg-lVd" firstAttribute="top" secondItem="WGH-jP-osP" secondAttribute="bottom" constant="12" id="wBx-Hd-qqw"/>
                             <constraint firstItem="eLF-5N-pEU" firstAttribute="leading" secondItem="W25-fd-fJl" secondAttribute="leading" id="zzd-RY-Fa0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="coverImageView" destination="eLF-5N-pEU" id="Mob-8y-Kfh"/>
+                        <outlet property="playButton" destination="sa3-Dz-QwX" id="E7t-tg-Trt"/>
                         <outlet property="textLabel" destination="mwu-dg-lVd" id="cP7-Jv-b2W"/>
                         <outlet property="timeLabel" destination="mWF-nm-I5t" id="W8T-Dd-BaZ"/>
                         <outlet property="titleLabel" destination="WGH-jP-osP" id="vWa-pQ-FKM"/>
@@ -70,4 +81,9 @@
             <point key="canvasLocation" x="288" y="-233"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="sa3-Dz-QwX">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
 </document>

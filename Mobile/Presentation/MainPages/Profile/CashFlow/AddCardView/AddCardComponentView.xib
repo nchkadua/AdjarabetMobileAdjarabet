@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="addCardButton" destination="yvC-Ek-bqb" id="0Jz-oZ-jBa"/>
+                <outlet property="bgView" destination="baA-yT-lWc" id="XqJ-zs-9nB"/>
+                <outlet property="buttonTitleLabel" destination="gPO-af-Xhx" id="Y9A-JS-pAr"/>
+                <outlet property="view" destination="iN0-l3-epB" id="GI6-IP-S77"/>
+                <outlet property="viewTitleLabel" destination="Hma-i8-ghm" id="f1f-SX-sSI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="226"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baA-yT-lWc">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvC-Ek-bqb">
+                            <rect key="frame" x="177" y="40" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="Mbb-Ax-3FS"/>
+                                <constraint firstAttribute="height" constant="60" id="v3Y-W6-QTa"/>
+                            </constraints>
+                            <state key="normal" image="Deposit/add_card_red"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPO-af-Xhx">
+                            <rect key="frame" x="57" y="111" width="300" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="34S-DE-hjV"/>
+                                <constraint firstAttribute="height" constant="21" id="emF-66-eqH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="ColorGuide/SystemBackground/tertiary"/>
+                    <constraints>
+                        <constraint firstItem="gPO-af-Xhx" firstAttribute="centerX" secondItem="yvC-Ek-bqb" secondAttribute="centerX" id="VCw-da-uYz"/>
+                        <constraint firstItem="yvC-Ek-bqb" firstAttribute="top" secondItem="baA-yT-lWc" secondAttribute="top" constant="40" id="gAd-az-Ete"/>
+                        <constraint firstItem="yvC-Ek-bqb" firstAttribute="centerX" secondItem="baA-yT-lWc" secondAttribute="centerX" id="ndW-Xr-imv"/>
+                        <constraint firstAttribute="height" constant="170" id="pNZ-YY-VSe"/>
+                        <constraint firstItem="gPO-af-Xhx" firstAttribute="top" secondItem="yvC-Ek-bqb" secondAttribute="bottom" constant="11" id="vqp-mT-xXw"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hma-i8-ghm">
+                    <rect key="frame" x="0.0" y="190" width="414" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hma-i8-ghm" secondAttribute="trailing" id="4WI-IK-QV2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="baA-yT-lWc" secondAttribute="trailing" id="Bw7-Nh-4Ww"/>
+                <constraint firstItem="baA-yT-lWc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Hml-7d-o3s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hma-i8-ghm" secondAttribute="bottom" id="Y7H-SX-Mpn"/>
+                <constraint firstItem="Hma-i8-ghm" firstAttribute="top" secondItem="baA-yT-lWc" secondAttribute="bottom" constant="20" id="gZf-h5-sJb"/>
+                <constraint firstItem="Hma-i8-ghm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nF2-87-GeO"/>
+                <constraint firstItem="baA-yT-lWc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="q0Q-Z6-ipf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-196" y="121"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Deposit/add_card_red" width="60" height="60"/>
+        <namedColor name="ColorGuide/SystemBackground/tertiary">
+            <color red="0.17254901960784313" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

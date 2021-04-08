@@ -39,8 +39,8 @@ class NotificationComponentView: UIView {
 
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let notification):
-                self?.setupUI(with: notification)
+            case .set(let notification): self?.setupUI(with: notification)
+            case .setTime(let time): self?.timeLabel.setTextWithAnimation(time)
             default:
                 break
             }
@@ -50,16 +50,8 @@ class NotificationComponentView: UIView {
     }
 
     private func setupUI(with notification: NotificationItemsEntity.NotificationEntity) {
-        titleLabel.text = notification.header
-
-        let difference = Date.minutesBetweenDates(notification.createDate.toDate, Date())
-        if difference <= 59 { // 1 hour
-            timeLabel.text = "\(String(Int(difference))) \(R.string.localization.notifications_minutes_ago.localized())"
-        } else if difference <= 1440 { // 24 hours
-            timeLabel.text = "\(String(Int(difference/60))) \(R.string.localization.notifications_hours_ago.localized())"
-        } else {
-            timeLabel.text = notification.createDate.toDate.formattedStringTimeValue
-        }
+        titleLabel.setTextWithAnimation(notification.header)
+        viewModel.calculateTimeOf(notification)
 
         if notification.status == 1 {
             titleLabel.setTextColor(to: .primaryText())

@@ -31,6 +31,11 @@ public class DepositViewController: UIViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: DepositViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
@@ -105,7 +110,11 @@ public class DepositViewController: UIViewController {
 
     // MARK: Action methods
     private func setChildViewControllers(_ paymentMethodList: [PaymentMethodEntity]) {
-        appPageViewController.orderedViewControllers = [navigator.emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self), navigator.visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)]
+        let visaVC = navigator.visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)
+        let emoneyVC = navigator.emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self)
+        let applePayVC = navigator.applePayViewControllerFactory.make().wrap(in: ABNavigationController.self)
+        appPageViewController.orderedViewControllers = [visaVC, emoneyVC, applePayVC]
+
         jumpToViewController(by: PaymentMethodType(flowId: paymentMethodList[0].flowId) ?? .tbcRegular)
     }
 

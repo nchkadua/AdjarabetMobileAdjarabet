@@ -19,6 +19,7 @@ public class ABButton: LoadingButton {
     public func setStyle(to style: DesignSystem.Button.Style) {
         self.primaryStyle = style
         super.setStyle(to: style)
+        addStylesForActions()
     }
 
     public override func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
@@ -31,5 +32,19 @@ public class ABButton: LoadingButton {
         setTintColor(to: tintColor)
         imageEdgeInsets = .init(top: 0, left: -5, bottom: 0, right: 5)
         contentEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 0)
+    }
+
+    // MARK: Private methods
+    private func addStylesForActions() {
+        addTarget(self, action: #selector(handleTouchDown), for: .touchDown)
+        addTarget(self, action: #selector(handleTouchUp), for: .touchUpInside)
+    }
+
+    @objc private func handleTouchDown() {
+        setStyle(to: .primary(state: .pressed, size: .large))
+    }
+
+    @objc private func handleTouchUp() {
+        setStyle(to: .primary(state: .active, size: .large))
     }
 }

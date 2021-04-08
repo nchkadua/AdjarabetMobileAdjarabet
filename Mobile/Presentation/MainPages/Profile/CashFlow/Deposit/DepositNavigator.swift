@@ -10,6 +10,7 @@ public class DepositNavigator: Navigator {
     private weak var viewController: UIViewController?
     @Inject(from: .factories) public var visaViewControllerFactory: VisaViewControllerFactory
     @Inject(from: .factories) public var emoneyViewControllerFactory: EmoneyViewControllerFactory
+    @Inject(from: .factories) public var applePayViewControllerFactory: ApplePayViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -26,8 +27,7 @@ public class DepositNavigator: Navigator {
         case .tbcVip: return visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)
         case .tbcRegular: return visaViewControllerFactory.make(params: .init(serviceType: .regular)).wrap(in: ABNavigationController.self)
         case .eMoney: return emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self)
-        default:
-            return nil
+        case .aPay: return applePayViewControllerFactory.make().wrap(in: ABNavigationController.self)
         }
     }
 }

@@ -161,6 +161,14 @@
 "emoney_rule2" = "შეიყვანეთ eMoney-ს ვებ გვერდზე შესასვლელი პაროლი";
 "emoney_rule3" = "შეიყვანეთ მითითებული უსაფრთხოების კოდი და დააჭირეთ 'გადახდას'";
 
+"apay_rule1" = "შეიყვანეთ სასურველი თანხა";
+"apay_rule2" = "Apple Pay ღილაკზე დაჭერით გადადით Apple Pay-ს ელექტრონულ საფულეში";
+"apay_rule3" = "ელექტრონულ საფულეში აირჩიეთ ბარათი, რომლითაც გსურთ ბალანსის შევსება";
+"apay_rule4" = "გაიარეთ იდენტიფიკაცია (Face ID, Finger print) ან სხვა თქვენ მიერ არჩეული პარამეტრით და დაასრულეთ ბალანსის შევსების პროცესი";
+
+"suggestions_clear" = "Clear";
+"suggestions_done" = "Done";
+
 /* Withdraw */
 "withdraw_cash_out" = "cash out";
 "withdraw_balance" = "balance";
@@ -184,6 +192,7 @@
 "delete_button_title" = "Delete";
 "notifications_minutes_ago" = "წუთის წინ";
 "notifications_hours_ago" = "საათის წინ";
+"notifications_play_button_title" = "Play";
 
 /* Biometric Settings */
 "biometric_settings_activate_touch_id" = "activate touch ID";
@@ -300,6 +309,8 @@
 "deposit_visa_wrong_format_amount" = "amount specified in wrong format";
 "deposit_visa_negative_amount" = "please, enter possitive amount";
 "deposit_visa_some_field_is_not_specified" = "please, enter all required fields to make transaction";
+"deposit_visa_add_card_button_title" = "Add Card";
+"deposit_visa_add_card_title" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ დეპოზიტის გაკეთება";
 
 /* Countries */
 "georgia" = "Georgia";

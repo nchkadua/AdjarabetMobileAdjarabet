@@ -285,7 +285,7 @@ public enum DesignSystem {
                     let fontCase: Typography.FontCase = .upper
 
                     switch size {
-                    case .large:  return .init(typograhy: .subHeadline(fontCase: fontCase, fontStyle: .semiBold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
+                    case .large:  return .init(typograhy: .body1(fontCase: fontCase, fontStyle: .semiBold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
                     case .medium: return .init(typograhy: .subHeadline(fontCase: .lower), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))
                     case .small:  return .init(typograhy: .subHeadline(fontCase: .lower), contentEdgeInsets: .init(top: 9 + 2, left: 16, bottom: 7 + 2, right: 16))
                     case .xs:     return .init(typograhy: .subHeadline(fontCase: .lower), contentEdgeInsets: .init(top: 7 + 2, left: 12, bottom: 5 + 2, right: 12))
@@ -308,6 +308,7 @@ public enum DesignSystem {
                     switch state {
                     case .active:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRed())
                     case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .querternaryText(), backgorundColor: .thick(), overlayColor: .thick())
+                    case .pressed: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .tertiaryText(), backgorundColor: .systemGrey5(), overlayColor: .thick())
                     case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText(), backgorundColor: .primaryRed(), overlayColor: .primaryRed())
                     }
                 case .textLink(let state, let size):
@@ -315,6 +316,7 @@ public enum DesignSystem {
                     switch state {
                     case .active:   return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
                     case .disabled: return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
+                    case .pressed:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
                     case .loading:  return .init(typograhy: sd.typograhy, contentEdgeInsets: sd.contentEdgeInsets, textColor: .primaryText())
                     }
                 }
@@ -338,6 +340,7 @@ public enum DesignSystem {
         public enum State: CaseIterable {
             case active
             case disabled
+            case pressed
             case loading
         }
     }

@@ -17,6 +17,7 @@ public struct DepositViewModelParams {
 public protocol DepositViewModelInput: AnyObject {
     var params: DepositViewModelParams { get set }
     func viewDidLoad()
+    func viewDidAppear()
 }
 
 public protocol DepositViewModelOutput {
@@ -53,7 +54,6 @@ extension DefaultDepositViewModel: DepositViewModel {
     public var route: Observable<DepositViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        actionSubject.onNext(.set(totalBalance: userBalanceService.balance ?? 0.0))
         actionSubject.onNext(.bindToGridViewModel(viewModel: paymentGridComponentViewModel))
 
         // fetch payment list
@@ -70,5 +70,9 @@ extension DefaultDepositViewModel: DepositViewModel {
             case .failure(let error): self?.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
+    }
+
+    public func viewDidAppear() {
+        actionSubject.onNext(.set(totalBalance: userBalanceService.balance ?? 0.0))
     }
 }

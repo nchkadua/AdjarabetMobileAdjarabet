@@ -87,6 +87,7 @@ public extension DependencyContainer {
         Module { DefaultMyCardsViewModel() as MyCardsViewModel }
         Module { DefaultVisaViewModel(params: .init(serviceType: .regular)) as VisaViewModel }
         Module { DefaultEmoneyViewModel() as EmoneyViewModel }
+        Module { DefaultApplePayViewModel() as ApplePayViewModel }
         Module { DefaultMainContainerViewModel(params: .init()) as MainContainerViewModel }
     }
 
@@ -156,6 +157,7 @@ public extension DependencyContainer {
         Module { DefaultEmoneyViewControllerFactory() as EmoneyViewControllerFactory }
         Module { DefaultMainContainerViewControllerFactory() as MainContainerViewControllerFactory }
         Module { DefaultWithdrawVisaViewControllerFactory() as WithdrawVisaViewControllerFactory }
+        Module { DefaultApplePayViewControllerFactory() as ApplePayViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

@@ -26,6 +26,11 @@ public class VisaViewController: ABViewController {
 
     private var suggestedAmountGridComponentView: SuggestedAmountGridComponentView?
 
+    @IBOutlet weak private var paymentOptionsView: UIView!
+    @IBOutlet weak private var addCardComponentView: AddCardComponentView!
+
+    @IBOutlet weak private var limitViewTopConstraint: NSLayoutConstraint!
+
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +85,10 @@ public class VisaViewController: ABViewController {
     private func didRecive(action: SuggestedAmountGridComponentViewModelOutputAction) {
         switch action {
         case .didSelectSuggestedAmount(let viewModel, _): updateAmountInputeView(viewModel)
+        case .didClickClear:
+            amountInputView.set(text: "")
+            updateContinueButton(false)
+        case .didClickDone: view.endEditing(false)
         default:
             break
         }
@@ -87,10 +96,8 @@ public class VisaViewController: ABViewController {
 
     private func handleShowView(of type: VisaViewType) {
         switch type {
-        case .accounts:
-            {}() // TODO: Nika handle visualization of view with accounts
-        case .addAccount:
-            {}() // TODO: Nika handle visualization of add account
+        case .accounts: showPaymentOptionsView()
+        case .addAccount: showAddCardView()
         }
     }
 
@@ -108,6 +115,7 @@ public class VisaViewController: ABViewController {
         setupInputViews()
         setupButtons()
         setupSuggestedAmountsGrid()
+        setupAddCardView()
     }
 
     private func setupInputViews() {
@@ -146,8 +154,26 @@ public class VisaViewController: ABViewController {
     }
 
     private func setupSuggestedAmountsGrid() {
-        suggestedAmountGridComponentView = SuggestedAmountGridComponentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+        suggestedAmountGridComponentView = SuggestedAmountGridComponentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 90))
         amountInputView.mainTextField.inputAccessoryView = suggestedAmountGridComponentView
+    }
+
+    private func setupAddCardView() {
+        addCardComponentView.button.addTarget(self, action: #selector(navigateToAddAccount), for: .touchUpInside)
+    }
+
+    private func showPaymentOptionsView() {
+        paymentOptionsView.isHidden = false
+        addCardComponentView.isHidden = true
+
+        limitViewTopConstraint.constant = 8
+    }
+
+    private func showAddCardView() {
+        addCardComponentView.isHidden = false
+        paymentOptionsView.isHidden = true
+
+        limitViewTopConstraint.constant = 70
     }
 
     // MARK: Action methods
@@ -172,6 +198,10 @@ public class VisaViewController: ABViewController {
     private func updateAmountInputeView(_ amountViewModel: SuggestedAmountComponentViewModel) {
         amountInputView.set(text: String(amountViewModel.params.amount))
         view.endEditing(false)
+    }
+
+    @objc private func navigateToAddAccount() {
+        navigator.navigate(to: .addAccount, animated: true)
     }
 }
 
