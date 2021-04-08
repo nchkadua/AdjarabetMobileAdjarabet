@@ -40,8 +40,6 @@ public class WithdrawViewController: ABViewController {
             amountLabel.text = balance
         case .bind(let viewModel):
             payments.setAndBind(viewModel: viewModel)
-        case .update(let payments):
-            {}()
         case .show(let error):
             showAlert(title: error)
         }

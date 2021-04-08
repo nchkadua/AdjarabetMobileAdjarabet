@@ -22,7 +22,6 @@ protocol WithdrawViewModelOutput {
 enum WithdrawViewModelOutputAction {
     case set(balance: String)
     case bind(viewModel: PaymentMethodGridComponentViewModel)
-    case update(payments: [PaymentMethodEntity])
     case show(error: String)
 }
 

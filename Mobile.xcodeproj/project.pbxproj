@@ -4784,7 +4784,6 @@
 				C75D1B16261205F4002AF763 /* FBHTJSlot.zip in Resources */,
 				7640C85225E3994B006D7100 /* HomeBannerCollectionViewCell.xib in Resources */,
 				CEE44E892600B5C100A83BD2 /* AdjaraMont-Regular.ttf in Resources */,
-				CEF368682549C368009FD456 /* Withdraw.storyboard in Resources */,
 				CE95A3F1261DE23A0004330E /* ApplePay.storyboard in Resources */,
 				C75D1B08261205F4002AF763 /* SCJSlot.zip in Resources */,
 				CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */,
@@ -6002,7 +6001,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Mobile/Mobile StageDebug-Stage.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
