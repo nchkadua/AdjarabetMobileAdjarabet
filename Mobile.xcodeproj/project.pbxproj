@@ -430,6 +430,15 @@
 		CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C10D25702C4700A18255 /* CalendarComponentView.swift */; };
 		CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C11125702C4E00A18255 /* CalendarComponentViewModel.swift */; };
 		CE91C11825702C5700A18255 /* CalendarComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE91C11725702C5700A18255 /* CalendarComponentView.xib */; };
+		CE95A3F1261DE23A0004330E /* ApplePay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE95A3EC261DE23A0004330E /* ApplePay.storyboard */; };
+		CE95A3F2261DE23A0004330E /* ApplePayNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95A3ED261DE23A0004330E /* ApplePayNavigator.swift */; };
+		CE95A3F3261DE23A0004330E /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95A3EE261DE23A0004330E /* ApplePayViewController.swift */; };
+		CE95A3F4261DE23A0004330E /* ApplePayViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95A3EF261DE23A0004330E /* ApplePayViewControllerFactory.swift */; };
+		CE95A3F5261DE23A0004330E /* ApplePayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95A3F0261DE23A0004330E /* ApplePayViewModel.swift */; };
+		CE95A42D261DF1C40004330E /* ApplePayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95A42C261DF1C40004330E /* ApplePayButton.swift */; };
+		CE95A431261DF1D40004330E /* ApplePayButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95A430261DF1D40004330E /* ApplePayButton.xib */; };
+		CE95A438261EF8C00004330E /* APayInstructionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95A437261EF8C00004330E /* APayInstructionsComponentView.swift */; };
+		CE95A43C261EF8C60004330E /* APayInstructionsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95A43B261EF8C60004330E /* APayInstructionsComponentView.xib */; };
 		CE95FB9D252CDE86003E539B /* QuickActionsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95FB9C252CDE86003E539B /* QuickActionsHeaderView.xib */; };
 		CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FBBF252CDEF7003E539B /* QuickActionsHeaderView.swift */; };
 		CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95FBC8252DC3A7003E539B /* QuickActionItemProvider.swift */; };
@@ -1150,6 +1159,15 @@
 		CE91C10D25702C4700A18255 /* CalendarComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponentView.swift; sourceTree = "<group>"; };
 		CE91C11125702C4E00A18255 /* CalendarComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponentViewModel.swift; sourceTree = "<group>"; };
 		CE91C11725702C5700A18255 /* CalendarComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarComponentView.xib; sourceTree = "<group>"; };
+		CE95A3EC261DE23A0004330E /* ApplePay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApplePay.storyboard; sourceTree = "<group>"; };
+		CE95A3ED261DE23A0004330E /* ApplePayNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayNavigator.swift; sourceTree = "<group>"; };
+		CE95A3EE261DE23A0004330E /* ApplePayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayViewController.swift; sourceTree = "<group>"; };
+		CE95A3EF261DE23A0004330E /* ApplePayViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE95A3F0261DE23A0004330E /* ApplePayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayViewModel.swift; sourceTree = "<group>"; };
+		CE95A42C261DF1C40004330E /* ApplePayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayButton.swift; sourceTree = "<group>"; };
+		CE95A430261DF1D40004330E /* ApplePayButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplePayButton.xib; sourceTree = "<group>"; };
+		CE95A437261EF8C00004330E /* APayInstructionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APayInstructionsComponentView.swift; sourceTree = "<group>"; };
+		CE95A43B261EF8C60004330E /* APayInstructionsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APayInstructionsComponentView.xib; sourceTree = "<group>"; };
 		CE95FB9C252CDE86003E539B /* QuickActionsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionsHeaderView.xib; sourceTree = "<group>"; };
 		CE95FBBF252CDEF7003E539B /* QuickActionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsHeaderView.swift; sourceTree = "<group>"; };
 		CE95FBC8252DC3A7003E539B /* QuickActionItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionItemProvider.swift; sourceTree = "<group>"; };
@@ -3144,6 +3162,38 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		CE95A3EB261DE2250004330E /* ApplePay */ = {
+			isa = PBXGroup;
+			children = (
+				CE95A434261EF8700004330E /* Instructions */,
+				CE95A42B261DF1B30004330E /* Button */,
+				CE95A3EC261DE23A0004330E /* ApplePay.storyboard */,
+				CE95A3ED261DE23A0004330E /* ApplePayNavigator.swift */,
+				CE95A3EE261DE23A0004330E /* ApplePayViewController.swift */,
+				CE95A3EF261DE23A0004330E /* ApplePayViewControllerFactory.swift */,
+				CE95A3F0261DE23A0004330E /* ApplePayViewModel.swift */,
+			);
+			path = ApplePay;
+			sourceTree = "<group>";
+		};
+		CE95A42B261DF1B30004330E /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				CE95A42C261DF1C40004330E /* ApplePayButton.swift */,
+				CE95A430261DF1D40004330E /* ApplePayButton.xib */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
+		CE95A434261EF8700004330E /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				CE95A437261EF8C00004330E /* APayInstructionsComponentView.swift */,
+				CE95A43B261EF8C60004330E /* APayInstructionsComponentView.xib */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
 		CE95FB9B252CDE5A003E539B /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -3614,6 +3664,7 @@
 		CEE537E5254AC9D600EDE6C0 /* CashFlow */ = {
 			isa = PBXGroup;
 			children = (
+				CE95A3EB261DE2250004330E /* ApplePay */,
 				CE8786C9261DBF5D0060EBD1 /* AddCardView */,
 				CEC2F5232608B5A40000904C /* Deposit */,
 				CEF3684A2549C2F6009FD456 /* Withdraw */,
@@ -4613,6 +4664,7 @@
 				7676E5662562E26300234026 /* TransactionHistoryComponentView.xib in Resources */,
 				C75D1B20261205F4002AF763 /* TJRJSlot.zip in Resources */,
 				CEE44E8E2600B5C100A83BD2 /* AdjaraMont-Heavy.ttf in Resources */,
+				CE95A431261DF1D40004330E /* ApplePayButton.xib in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
 				C75D1AF8261205F4002AF763 /* WHJSlot.zip in Resources */,
 				C75D1AFE261205F4002AF763 /* FSHJSlot.zip in Resources */,
@@ -4658,6 +4710,7 @@
 				7640C85225E3994B006D7100 /* HomeBannerCollectionViewCell.xib in Resources */,
 				CEE44E892600B5C100A83BD2 /* AdjaraMont-Regular.ttf in Resources */,
 				CEF368682549C368009FD456 /* Withdraw.storyboard in Resources */,
+				CE95A3F1261DE23A0004330E /* ApplePay.storyboard in Resources */,
 				C75D1B08261205F4002AF763 /* SCJSlot.zip in Resources */,
 				CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */,
 				CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */,
@@ -4682,6 +4735,7 @@
 				C75D1AD4261205F4002AF763 /* LAWJSlot.zip in Resources */,
 				CEBB004C2608F63B00D1B510 /* PaymentMethodGridComponentView.xib in Resources */,
 				C75D1AEA261205F4002AF763 /* VGJSlot.zip in Resources */,
+				CE95A43C261EF8C60004330E /* APayInstructionsComponentView.xib in Resources */,
 				76DCF6AF25B8262300150EE1 /* MyCardComponentView.xib in Resources */,
 				C75D1B01261205F4002AF763 /* TDJSlot.zip in Resources */,
 				CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */,
@@ -5024,6 +5078,7 @@
 				769886B12571055000FA339E /* TransactionFilterComponentViewModel.swift in Sources */,
 				76404F0C257625F900D14E0C /* AccountSecurityMessagesComponentViewModel.swift in Sources */,
 				D85C9BFB2433678000F1D4FE /* AdjarabetCoreCodable.swift in Sources */,
+				CE95A438261EF8C00004330E /* APayInstructionsComponentView.swift in Sources */,
 				7644B5F12563A72B006778B2 /* TransactionHistoryTableViewCell.swift in Sources */,
 				76DCF68925B815AC00150EE1 /* MyCardsCreditCard.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
@@ -5087,6 +5142,7 @@
 				CEF1D4F9251CABA1008E3DE0 /* LegalTextView.swift in Sources */,
 				CE454654260C89EC00B01E19 /* VisaLimitComponentView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
+				CE95A3F2261DE23A0004330E /* ApplePayNavigator.swift in Sources */,
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
 				76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
@@ -5147,6 +5203,7 @@
 				C74334F12601232700945C8C /* UFCTransactionEntities.swift in Sources */,
 				CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */,
 				CEBB00842609D3F900D1B510 /* EmoneyViewModel.swift in Sources */,
+				CE95A3F5261DE23A0004330E /* ApplePayViewModel.swift in Sources */,
 				C7C35FE025C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift in Sources */,
 				767C7D9225E39FAA008F2CE9 /* HomeBannerContainerComponentView.swift in Sources */,
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
@@ -5277,12 +5334,14 @@
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */,
 				CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */,
+				CE95A3F4261DE23A0004330E /* ApplePayViewControllerFactory.swift in Sources */,
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
 				C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */,
 				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
 				C7FAA3C82600C4D600265995 /* UFCInitWithdrawDTO.swift in Sources */,
+				CE95A3F3261DE23A0004330E /* ApplePayViewController.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				76BA7BDB25E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift in Sources */,
@@ -5305,6 +5364,7 @@
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */,
+				CE95A42D261DF1C40004330E /* ApplePayButton.swift in Sources */,
 				769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */,
 				C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */,
 				76DCF68525B8159200150EE1 /* MyCardable.swift in Sources */,
@@ -5857,7 +5917,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Mobile/Mobile StageDebug-Stage.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";

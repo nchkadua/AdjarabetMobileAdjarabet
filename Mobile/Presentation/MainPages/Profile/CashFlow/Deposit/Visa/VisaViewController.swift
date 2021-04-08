@@ -85,6 +85,10 @@ public class VisaViewController: ABViewController {
     private func didRecive(action: SuggestedAmountGridComponentViewModelOutputAction) {
         switch action {
         case .didSelectSuggestedAmount(let viewModel, _): updateAmountInputeView(viewModel)
+        case .didClickClear:
+            amountInputView.set(text: "")
+            updateContinueButton(false)
+        case .didClickDone: view.endEditing(false)
         default:
             break
         }
@@ -150,7 +154,7 @@ public class VisaViewController: ABViewController {
     }
 
     private func setupSuggestedAmountsGrid() {
-        suggestedAmountGridComponentView = SuggestedAmountGridComponentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+        suggestedAmountGridComponentView = SuggestedAmountGridComponentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 90))
         amountInputView.mainTextField.inputAccessoryView = suggestedAmountGridComponentView
     }
 

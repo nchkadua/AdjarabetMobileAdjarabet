@@ -19,6 +19,8 @@ public protocol SuggestedAmountGridComponentViewModelInput {
     func didBind()
     func didSelect(viewModel: SuggestedAmountComponentViewModel, indexPath: IndexPath)
     func reloadCollectionView(with suggestedAmounts: [SuggestedAmountCollectionViewCellDataProvider])
+    func didClickClear()
+    func didClickDone()
 }
 
 public protocol SuggestedAmountGridComponentViewModelOutput {
@@ -31,6 +33,8 @@ public enum SuggestedAmountGridComponentViewModelOutputAction {
     case didSelect(indexPath: IndexPath)
     case didSelectSuggestedAmount(SuggestedAmountComponentViewModel, IndexPath)
     case reloadCollectionView
+    case didClickClear
+    case didClickDone
 }
 
 public class DefaultSuggestedAmountGridComponentViewModel: DefaultBaseViewModel {
@@ -58,5 +62,13 @@ extension DefaultSuggestedAmountGridComponentViewModel: SuggestedAmountGridCompo
     public func reloadCollectionView(with suggestedAmounts: [SuggestedAmountCollectionViewCellDataProvider]) {
         params.suggestedAmouns = suggestedAmounts
         actionSubject.onNext(.reloadCollectionView)
+    }
+
+    public func didClickClear() {
+        actionSubject.onNext(.didClickClear)
+    }
+
+    public func didClickDone() {
+        actionSubject.onNext(.didClickDone)
     }
 }

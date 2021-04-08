@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Apple Pay View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="ApplePayViewController" id="gAa-dD-eZu" customClass="ApplePayViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-gS-zQ5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBG-Zb-OS8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4S-yj-9sv" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="8" width="382" height="48"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="htx-Fo-Lxv"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4X-Og-Dxd" customClass="ApplePayButton" customModule="Mobile" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="72" width="382" height="48"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="3Gv-U3-eI2"/>
+                                                </constraints>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6z2-Fj-Rvx" customClass="VisaLimitComponentView" customModule="Mobile" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="140" width="382" height="60"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="rnc-Iz-6px"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcE-6M-PKK" customClass="APayInstructionsComponentView" customModule="Mobile" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="214" width="382" height="400"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="9rx-7d-j0b"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="r4S-yj-9sv" firstAttribute="leading" secondItem="GBG-Zb-OS8" secondAttribute="leading" constant="16" id="1R9-G9-o6r"/>
+                                            <constraint firstItem="r4S-yj-9sv" firstAttribute="top" secondItem="GBG-Zb-OS8" secondAttribute="top" constant="8" id="B9G-te-CuB"/>
+                                            <constraint firstItem="f4X-Og-Dxd" firstAttribute="top" secondItem="r4S-yj-9sv" secondAttribute="bottom" constant="16" id="CZg-Ht-M8o"/>
+                                            <constraint firstItem="f4X-Og-Dxd" firstAttribute="leading" secondItem="GBG-Zb-OS8" secondAttribute="leading" constant="16" id="DG6-tM-S5O"/>
+                                            <constraint firstAttribute="trailing" secondItem="f4X-Og-Dxd" secondAttribute="trailing" constant="16" id="J1f-H9-lHQ"/>
+                                            <constraint firstItem="6z2-Fj-Rvx" firstAttribute="leading" secondItem="GBG-Zb-OS8" secondAttribute="leading" constant="16" id="NQE-3l-AxD"/>
+                                            <constraint firstAttribute="trailing" secondItem="6z2-Fj-Rvx" secondAttribute="trailing" constant="16" id="Qgd-TU-hez"/>
+                                            <constraint firstItem="6z2-Fj-Rvx" firstAttribute="top" secondItem="f4X-Og-Dxd" secondAttribute="bottom" constant="20" id="Tpy-Ic-xb8"/>
+                                            <constraint firstAttribute="trailing" secondItem="BcE-6M-PKK" secondAttribute="trailing" constant="16" id="Wpo-Wv-fq7"/>
+                                            <constraint firstItem="BcE-6M-PKK" firstAttribute="top" secondItem="6z2-Fj-Rvx" secondAttribute="bottom" constant="14" id="ZHV-UX-vyo"/>
+                                            <constraint firstItem="BcE-6M-PKK" firstAttribute="leading" secondItem="GBG-Zb-OS8" secondAttribute="leading" constant="16" id="dQR-D7-yOe"/>
+                                            <constraint firstAttribute="trailing" secondItem="r4S-yj-9sv" secondAttribute="trailing" constant="16" id="h8A-qu-lsn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GBG-Zb-OS8" firstAttribute="centerY" secondItem="QE0-gS-zQ5" secondAttribute="centerY" id="Fp5-nf-nHs"/>
+                                    <constraint firstAttribute="trailing" secondItem="GBG-Zb-OS8" secondAttribute="trailing" id="Qwa-Tq-AY7"/>
+                                    <constraint firstItem="GBG-Zb-OS8" firstAttribute="centerX" secondItem="QE0-gS-zQ5" secondAttribute="centerX" id="ZHz-Jh-1Fn"/>
+                                    <constraint firstItem="GBG-Zb-OS8" firstAttribute="top" secondItem="QE0-gS-zQ5" secondAttribute="top" id="axo-sa-eGD"/>
+                                    <constraint firstAttribute="bottom" secondItem="GBG-Zb-OS8" secondAttribute="bottom" id="nFq-ak-Y2P"/>
+                                    <constraint firstItem="GBG-Zb-OS8" firstAttribute="leading" secondItem="QE0-gS-zQ5" secondAttribute="leading" id="p1n-uK-57H"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="jf0-MO-Ll3"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="J4e-2B-5mt"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QE0-gS-zQ5" secondAttribute="bottom" id="4Mi-wo-bYc"/>
+                            <constraint firstItem="QE0-gS-zQ5" firstAttribute="top" secondItem="Amw-MT-c7e" secondAttribute="top" id="cs1-lL-Z3D"/>
+                            <constraint firstItem="QE0-gS-zQ5" firstAttribute="trailing" secondItem="63T-C1-oPl" secondAttribute="trailing" id="ik4-Kn-Rzx"/>
+                            <constraint firstItem="QE0-gS-zQ5" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="yYZ-Om-A1z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountInputView" destination="r4S-yj-9sv" id="Yla-67-Rrn"/>
+                        <outlet property="applePayButton" destination="f4X-Og-Dxd" id="7ZN-eI-xYM"/>
+                        <outlet property="limitsComponentView" destination="6z2-Fj-Rvx" id="gze-tv-BJa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1252" y="19"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
