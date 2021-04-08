@@ -6,29 +6,37 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-struct WithdrawNavigator {
-    @Inject(from: .factories) private var addAccountFactory: AddCardViewControllerFactory
+import UIKit
 
-    private weak var viewController: UIViewController?
+class WithdrawNavigator {
+    private weak var superview: UIView?
+    @Inject(from: .factories) private var visaFactory: WithdrawVisaViewControllerFactory
 
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+    // MARK: View Controllers
+    private lazy var visaVipViewController: UIViewController = { visaFactory.make(with: .init(serviceType: .vip)) }()
+    private lazy var visaRegularViewController: UIViewController = { visaFactory.make(with: .init(serviceType: .regular)) }()
+
+    init(superview: UIView) {
+        self.superview = superview
     }
 
     enum Destination {
-        case addAccount
+        case visaVip
+        case visaRegular
     }
 
     func navigate(to destination: Destination) {
         switch destination {
-        case .addAccount: navigate2AddAccount()
+        case .visaVip:     navigate(to: visaVipViewController)
+        case .visaRegular: navigate(to: visaRegularViewController)
         }
     }
 
-    private func navigate2AddAccount() {
-        let vc = addAccountFactory.make(params: .init())
-        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
-        navc.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navc, animated: true, completion: nil)
+    private func navigate(to viewController: UIViewController) {
+        guard let superview = superview else { return }
+        superview.removeAllSubViews() // clean superview before navigating
+        superview.addSubview(viewController.view)
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        viewController.view.pin(to: superview)
     }
 }

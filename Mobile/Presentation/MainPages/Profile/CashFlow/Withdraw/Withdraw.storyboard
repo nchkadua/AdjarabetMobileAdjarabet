@@ -44,14 +44,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyX-SK-35W" customClass="PaymentMethodGridComponentView" customModule="Mobile" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyX-SK-35W" userLabel="Payments" customClass="PaymentMethodGridComponentView" customModule="Mobile" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="120" width="414" height="60"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ar2-oh-AWe"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAH-Bt-LdT" userLabel="Children View Controller Frame View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAH-Bt-LdT" userLabel="Child View">
                                 <rect key="frame" x="0.0" y="188" width="414" height="674"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -76,6 +76,13 @@
                             <constraint firstItem="JAH-Bt-LdT" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="tE1-JR-Kby"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="d6V-4K-ZeO" id="HRd-Vg-90z"/>
+                        <outlet property="balanceLabel" destination="X69-Qe-4k7" id="ms2-aN-4Aj"/>
+                        <outlet property="cashOutLabel" destination="eeP-zI-xRg" id="sKa-F9-MD7"/>
+                        <outlet property="childView" destination="JAH-Bt-LdT" id="qRb-px-kuS"/>
+                        <outlet property="payments" destination="cyX-SK-35W" id="qyb-Fb-t1T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

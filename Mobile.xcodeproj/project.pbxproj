@@ -157,6 +157,7 @@
 		C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */; };
 		C701C71F25C0597400B059A6 /* PaymentAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */; };
 		C701C72725C06C0600B059A6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C72625C06C0600B059A6 /* Status.swift */; };
+		C7023EE7261F772E00C0980F /* WithdrawPaymentListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7023EE6261F772E00C0980F /* WithdrawPaymentListUseCase.swift */; };
 		C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7036C33257CF42400AE7EB7 /* Gender.swift */; };
 		C707548925F396130033050E /* PaymentListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707548825F396130033050E /* PaymentListUseCase.swift */; };
 		C707549325F3963C0033050E /* PaymentListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707549225F3963C0033050E /* PaymentListRepository.swift */; };
@@ -886,6 +887,7 @@
 		C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCountDataTransferResponse.swift; sourceTree = "<group>"; };
 		C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCase.swift; sourceTree = "<group>"; };
 		C701C72625C06C0600B059A6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		C7023EE6261F772E00C0980F /* WithdrawPaymentListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawPaymentListUseCase.swift; sourceTree = "<group>"; };
 		C7036C33257CF42400AE7EB7 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		C707548825F396130033050E /* PaymentListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListUseCase.swift; sourceTree = "<group>"; };
 		C707549225F3963C0033050E /* PaymentListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListRepository.swift; sourceTree = "<group>"; };
@@ -2060,6 +2062,14 @@
 				C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */,
 			);
 			path = PaymentAccounts;
+			sourceTree = "<group>";
+		};
+		C7023EE5261F770500C0980F /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C7023EE6261F772E00C0980F /* WithdrawPaymentListUseCase.swift */,
+			);
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 		C707547D25F391480033050E /* Payments */ = {
@@ -3681,6 +3691,7 @@
 		CEF3684A2549C2F6009FD456 /* Withdraw */ = {
 			isa = PBXGroup;
 			children = (
+				C7023EE5261F770500C0980F /* Use Cases */,
 				C7C1D2EF261B284B009F01C3 /* Scenes */,
 				CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */,
 				CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */,
@@ -5235,6 +5246,7 @@
 				767C7D8F25E39FA9008F2CE9 /* HomeBannerContainerCollectionViewCellDataProvider.swift in Sources */,
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
 				CE95FC16252DED0A003E539B /* FooterComponentViewModel.swift in Sources */,
+				C7023EE7261F772E00C0980F /* WithdrawPaymentListUseCase.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
 				CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */,
 				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,

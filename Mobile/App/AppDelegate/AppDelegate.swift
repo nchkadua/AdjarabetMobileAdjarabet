@@ -155,6 +155,7 @@ public extension DependencyContainer {
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }
         Module { DefaultEmoneyViewControllerFactory() as EmoneyViewControllerFactory }
         Module { DefaultMainContainerViewControllerFactory() as MainContainerViewControllerFactory }
+        Module { DefaultWithdrawVisaViewControllerFactory() as WithdrawVisaViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

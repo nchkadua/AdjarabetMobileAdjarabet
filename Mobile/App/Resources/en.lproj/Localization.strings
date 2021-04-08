@@ -162,6 +162,9 @@
 "emoney_rule3" = "შეიყვანეთ მითითებული უსაფრთხოების კოდი და დააჭირეთ 'გადახდას'";
 
 /* Withdraw */
+"withdraw_cash_out" = "Cash Out";
+"withdraw_balance" = "Balance";
+
 "withdraw_amount_title" = "თანხა";
 "withdraw_card_title" = "ბარათი";
 "withdraw_commission_title" = "ტრანზაქციის საკომისიო";
