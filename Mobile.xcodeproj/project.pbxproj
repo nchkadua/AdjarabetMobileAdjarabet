@@ -338,6 +338,8 @@
 		CE0818D325389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */; };
 		CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */; };
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
+		CE0D8E8C2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */; };
+		CE0D8E92262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */; };
 		CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */; };
 		CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
@@ -1067,6 +1069,8 @@
 		CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHeaderCellDataProvider.swift; sourceTree = "<group>"; };
 		CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsHeaderCell.xib; sourceTree = "<group>"; };
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
+		CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStatusUpdateMessageEntity.swift; sourceTree = "<group>"; };
+		CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStatusUpdateMessageDTO.swift; sourceTree = "<group>"; };
 		CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInstructionView.xib; sourceTree = "<group>"; };
 		CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInstructionView.swift; sourceTree = "<group>"; };
 		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
@@ -2842,6 +2846,33 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		CE0D8E86262467F30056F8E7 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CE0D8E8A262468060056F8E7 /* Status */,
+				CE0D8E87262467FF0056F8E7 /* Items */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		CE0D8E87262467FF0056F8E7 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A3154261732920039C078 /* NotificationDTO.swift */,
+				CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		CE0D8E8A262468060056F8E7 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */,
+				CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
 		CE0F14AE254EE09B00ADD999 /* Instruction */ = {
 			isa = PBXGroup;
 			children = (
@@ -3029,8 +3060,7 @@
 		CE4A31532617328A0039C078 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				CE4A3154261732920039C078 /* NotificationDTO.swift */,
-				CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */,
+				CE0D8E86262467F30056F8E7 /* Notifications */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -5009,6 +5039,7 @@
 				CEBB00972609F93A00D1B510 /* Payments.swift in Sources */,
 				76EFF7C72582383000898819 /* AccessHistoryCalendarViewModel.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
+				CE0D8E8C2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift in Sources */,
 				C7C9732A2580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift in Sources */,
 				C754318325F5606D00E485DD /* PaymentListEntities.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
@@ -5404,6 +5435,7 @@
 				CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */,
 				CECF7F6F256D9F99001C0E50 /* PasswordChangeNavigator.swift in Sources */,
 				C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */,
+				CE0D8E92262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift in Sources */,
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				CE29FC3C2578F14700402D0D /* MinAmountComponentViewModel.swift in Sources */,
