@@ -13,11 +13,23 @@ class WithdrawVisaViewController: UIViewController {
     private lazy var navigator = WithdrawVisaNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 
+    @IBOutlet private weak var mainContentView: UIView!
+    @IBOutlet private weak var infoView: WithdrawVisaInfoView!
+
+    private lazy var cashOutView = CashOutVisaView()
+
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            guard let self = self else { return }
+            self.mainContentView.addSubview(self.cashOutView)
+            self.cashOutView.translatesAutoresizingMaskIntoConstraints = false
+            self.cashOutView.pin(to: self.mainContentView)
+        }
     }
 
     // MARK: Bind to viewModel's observable properties

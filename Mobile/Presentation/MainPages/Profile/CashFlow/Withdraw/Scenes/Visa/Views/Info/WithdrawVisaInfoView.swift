@@ -6,7 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class WithdrawVisaInfoView: UIView, Xibable {
     /* Main View */
