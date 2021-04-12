@@ -32,16 +32,29 @@ public class WithdrawViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: WithdrawViewModelOutputAction) {
         switch action {
+        case .loader(let show):
+            {}()
         case .set(let balance):
             amountLabel.text = balance
         case .bind(let viewModel):
             payments.setAndBind(viewModel: viewModel)
         case .show(let error):
             showAlert(title: error)
+        }
+    }
+
+    private func didRecive(route: WithdrawViewModelRoute) {
+        switch route {
+        case .navigate(let destination):
+            navigator.navigate(to: destination)
         }
     }
 

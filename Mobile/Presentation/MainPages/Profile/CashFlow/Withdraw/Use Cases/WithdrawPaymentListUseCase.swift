@@ -24,7 +24,11 @@ struct DefaultWithdrawPaymentListUseCase: WithdrawPaymentListUseCase {
         paymentListUseCase.list { result in
             switch result {
             case .success(let entity):
-                let filtered = entity.filter { $0.flowId.lowercased().contains("withdraw") }
+                let filtered = entity.filter {
+                    // TEMP: fix with correct logic
+                    let flowId = $0.flowId.lowercased()
+                    return flowId.contains("withdraw_tbc_ufc_vip") || flowId.contains("withdraw_tbc_ufc_regular")
+                }
                 handler(.success(filtered))
             case .failure(let error):
                 handler(.failure(error))

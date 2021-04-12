@@ -41,6 +41,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
     var route: Observable<WithdrawVisaViewModelRoute> { routeSubject.asObserver() }
 
     func viewDidLoad() {
+        print("WithdrawVisaViewModel:", params.serviceType)
     }
 }
 
