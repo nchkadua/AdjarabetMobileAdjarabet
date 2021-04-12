@@ -10,7 +10,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WithdrawVisaInfoView" customModule="Mobile" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="uoc-xM-bWo" id="URJ-zC-hjh"/>
+                <outlet property="dailyAmountLabel" destination="aZK-eR-LJZ" id="sxq-Eb-rwj"/>
+                <outlet property="dailyLimitView" destination="Cdp-TU-BvP" id="ZIx-ZM-f9q"/>
+                <outlet property="dailyTitleLabel" destination="AUp-Dv-0tK" id="9NY-cG-yPZ"/>
+                <outlet property="disposableAmountLabel" destination="wht-y4-ROU" id="qxs-zG-RKI"/>
+                <outlet property="disposableLimitView" destination="9Hp-O2-iJf" id="qcE-Ss-vdL"/>
+                <outlet property="disposableTitleLabel" destination="AHA-eb-fp3" id="wxo-gm-0T5"/>
+                <outlet property="instructionDescriptionLabel" destination="li6-zJ-Xtr" id="z3d-hU-y4w"/>
+                <outlet property="instructionTitleLabel" destination="Ddc-uR-jAG" id="Kyg-rl-FNd"/>
+                <outlet property="minimumAmountLabel" destination="hVH-ch-f6A" id="hlo-Cl-iY1"/>
+                <outlet property="minimumLimitView" destination="zC9-fU-boB" id="ca3-Dy-BIi"/>
+                <outlet property="minimumTitleLabel" destination="5Vi-Pv-dxd" id="yce-zD-IMk"/>
+                <outlet property="separator" destination="zMU-7G-qq6" id="bGr-DU-Vxc"/>
+                <outlet property="step1DescriptionLabel" destination="UTO-iV-zHg" id="dRs-ei-J06"/>
+                <outlet property="step1TitleLabel" destination="Cgi-yf-Sup" id="FqB-g4-LZr"/>
+                <outlet property="step2DescriptionLabel" destination="sKQ-es-RM7" id="GFt-3c-Zrk"/>
+                <outlet property="step2TitleLabel" destination="4f5-Rw-IVE" id="QWk-9I-lPT"/>
+                <outlet property="step3DescriptionLabel" destination="7UI-q3-xMT" id="o8e-cQ-xv0"/>
+                <outlet property="step3TitleLabel" destination="LBX-7P-1Y4" id="MfN-sg-wdu"/>
+                <outlet property="stepsTitleLabel" destination="uxx-03-k58" id="ePG-tC-aOT"/>
+                <outlet property="stepsView" destination="OT3-AZ-bs3" id="Wck-Dd-KRs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Cvh-2m-q2Y"/>
             </connections>
         </placeholder>
@@ -116,10 +135,10 @@
                                                 <constraint firstItem="RW6-Ja-Poq" firstAttribute="top" secondItem="9Hp-O2-iJf" secondAttribute="top" id="i7j-oB-Du3"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdp-TU-BvP" userLabel="Maximum Limit View">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdp-TU-BvP" userLabel="Daily Limit View">
                                             <rect key="frame" x="290" y="0.0" width="144" height="60"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="isI-Yo-11A" userLabel="Maximum Limit Stack View">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="isI-Yo-11A" userLabel="Daily Limit Stack View">
                                                     <rect key="frame" x="16" y="0.0" width="128" height="60"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZs-v1-De9" userLabel="Upper Placeholder View">
@@ -129,13 +148,13 @@
                                                                 <constraint firstAttribute="width" id="WZy-Ad-djn"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUp-Dv-0tK" userLabel="Maximum Title Label">
-                                                            <rect key="frame" x="0.0" y="6.3333333333333339" width="74" height="20.333333333333329"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUp-Dv-0tK" userLabel="Daily Title Label">
+                                                            <rect key="frame" x="0.0" y="6.3333333333333339" width="37.333333333333336" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-eR-LJZ" userLabel="Maximum Amount Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-eR-LJZ" userLabel="Daily Amount Label">
                                                             <rect key="frame" x="0.0" y="33.333333333333336" width="7.666666666666667" height="20.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -188,7 +207,7 @@
                                                                 <constraint firstAttribute="width" secondItem="nCy-Zg-pOc" secondAttribute="height" multiplier="1:1" id="XMp-ps-vLS"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Out Instruction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxx-03-k58" userLabel="Cash Out Instruction Title Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Out Instruction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxx-03-k58" userLabel="Title Label">
                                                             <rect key="frame" x="44" y="0.0" width="338" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -208,8 +227,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMK-fi-8hT" userLabel="Step 1 View">
                                                     <rect key="frame" x="0.0" y="44" width="382" height="40.666666666666657"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgi-yf-Sup" userLabel="Step 1 Title Label">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgi-yf-Sup" userLabel="Step 1 Title Label">
                                                             <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Cgi-yf-Sup" secondAttribute="height" multiplier="1:1" id="Hhn-Tq-oZ3"/>
                                                                 <constraint firstAttribute="height" constant="28" id="dTn-Ck-VBK"/>
@@ -217,9 +237,16 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the &quot;Amount&quot; column, enter the amount you want to cash out" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-iV-zHg" userLabel="Step 1 Description Label">
                                                             <rect key="frame" x="44" y="0.0" width="338" height="40.666666666666664"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -239,8 +266,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPk-vL-Lmk" userLabel="Step 2 View">
                                                     <rect key="frame" x="0.0" y="100.66666666666666" width="382" height="28"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f5-Rw-IVE" userLabel="Step 2 Title Label">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f5-Rw-IVE" userLabel="Step 2 Title Label">
                                                             <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="4f5-Rw-IVE" secondAttribute="height" multiplier="1:1" id="CGo-hM-qRd"/>
                                                                 <constraint firstAttribute="height" constant="28" id="IAV-l6-LK5"/>
@@ -248,6 +276,12 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the desired card" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKQ-es-RM7" userLabel="Step 2 Description Label">
                                                             <rect key="frame" x="44" y="0.0" width="338" height="28"/>
@@ -271,8 +305,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3j-Ig-AHP" userLabel="Step 3 View">
                                                     <rect key="frame" x="0.0" y="144.66666666666666" width="382" height="46.333333333333343"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBX-7P-1Y4" userLabel="Step 3 Title Label">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBX-7P-1Y4" userLabel="Step 3 Title Label">
                                                             <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="ZyW-NA-UJ5"/>
                                                                 <constraint firstAttribute="width" secondItem="LBX-7P-1Y4" secondAttribute="height" multiplier="1:1" id="lgb-aX-giQ"/>
@@ -280,6 +315,12 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the &quot;Continue&quot; button and the amount will be transferred to your card" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UI-q3-xMT" userLabel="Step 3 Description Label">
                                                             <rect key="frame" x="44" y="0.0" width="338" height="46.333333333333336"/>
@@ -328,6 +369,12 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g5-6p-Uyn" userLabel="Instruction View">
                                     <rect key="frame" x="0.0" y="369" width="434" height="227"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-uR-jAG" userLabel="Inctruction Title Label">
+                                            <rect key="frame" x="8" y="0.0" width="71" height="20.333333333333332"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li6-zJ-Xtr" userLabel="Instruction Description Label">
                                             <rect key="frame" x="8" y="36.333333333333314" width="418" height="182.66666666666666"/>
                                             <string key="text">To withdraw money on the card, it is necessary to have a colored photo of the ID card uploaded on the website.
@@ -335,12 +382,6 @@
 Note that the withdrawal fee is 1%.
 
 In case of violation of the rules of fair play, Adjarabet reserves the right to deduct 3% of the withdrawn amount in the form of a commission.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-uR-jAG" userLabel="Inctruction Title Label">
-                                            <rect key="frame" x="8" y="0.0" width="71" height="20.333333333333332"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

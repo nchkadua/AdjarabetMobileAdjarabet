@@ -172,21 +172,14 @@
 /* Withdraw */
 "withdraw_cash_out" = "თანხის გატანა";
 "withdraw_balance" = "ბალანსი";
-
-"withdraw_amount_title" = "თანხა";
-"withdraw_card_title" = "ბარათი";
-"withdraw_commission_title" = "ტრანზაქციის საკომისიო";
-"withdraw_total_amount_title" = "ჯამური თანხა";
-"withdraw_proceed_button_title" = "Proceed";
-"withdraw_description_title" = "გატანის ინსტრუქცია";
-"withdraw_description_amount" = "გრაფაში 'თანხა' ჩაწერეთ თვენთვის სასურველი თანხა";
-"withdraw_description_card" = "აირჩიეთ სასურველი ბარათი";
-"withdraw_description_proceed" = "დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე";
-"withdraw_rule1" = "ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო";
-"withdraw_rule2" = "გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს";
-"withdraw_transaction_successed" = "ტრანზაქცია წარმატებით განხორციელდა";
-"withdraw_service_type_init_error" = "service type can not be specified";
-"withdraw_missing_params_error" = "some parameters are missing";
+"withdraw_minimum" = "მინიმალური";
+"withdraw_disposable" = "ერთჯერადი";
+"withdraw_daily" = "დღიური";
+"withdraw_cash_out_instruction" = "გატანის ინსტრუქცია";
+"withdraw_step_1" = "გრაფაში \"თანხა\" ჩაწერეთ თქვენთვის სასურველი თანხა";
+"withdraw_step_2" = "აირჩიეთ სასურველი ბარათი";
+"withdraw_step_3" = "დააჭირეთ ღილაკს \"გაგრძელება\" და თანხა გადაირიცხება თქვენს ბარათზე";
+"withdraw_instruction" = "ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო.\n\nგაითვალისწინეთ, რომ გატანის საკომისიო შეადგენს 1%-ს.\n\nსამართლიანი თამაშის წესების დარღვევის შემთხვევაში, აჭარაბეთი იტოვებს უფლებას, გატანილი თანხიდან საკომისიოს სახით ჩამოაჭრას 3%.";
 
 /* Notifications */
 "delete_button_title" = "წაშლა";
