@@ -9,6 +9,6 @@
 import Foundation
 
 public struct NotificationStatusUpdateMessageEntity {
-    let success: Int
-    let statusCode: Int
+    let success: String
+    let statusCode: String
 }

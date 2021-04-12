@@ -57,6 +57,8 @@ extension DefaultNotificationContentViewModel: NotificationContentViewModel {
     }
 
     public func viewDidAppear() {
+        guard params.notification.status == NotificationStatus.unread.rawValue else { return }
+
         notificationsUseCase.read(notificationId: params.notification.id) { result in
             switch result {
             case .success(let entity): print(entity)

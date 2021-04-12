@@ -22,6 +22,7 @@ public class NotificationsViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
     }
 
@@ -31,6 +32,11 @@ public class NotificationsViewController: ABViewController {
 
         mainTabBarViewController?.showFloatingTabBar()
         setMainContainerSwipeEnabled(false)
+    }
+
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDissapear()
     }
 
     private func setup() {
@@ -55,6 +61,7 @@ public class NotificationsViewController: ABViewController {
 
         appTableViewController.isTabBarManagementEnabled = true
         appTableViewController.canEditRow = true
+//        appTableViewController.delegate = viewModel
     }
 
     private func bind(to viewModel: NotificationsViewModel) {
@@ -70,9 +77,11 @@ public class NotificationsViewController: ABViewController {
     private func didReceive(action: NotificationsViewModelOutputAction) {
         switch action {
         case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
+        case .reloadItems(let items, let insertions, let deletions): appTableViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
+        case .reloadData: appTableViewController.reloadItems()
         case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
         case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)
-        case .showMessage(let message): showAlert(title: message)
+        case .showMessage(let message): print(message)
         }
     }
 
@@ -84,8 +93,8 @@ public class NotificationsViewController: ABViewController {
 
     // MARK: Action methods
     private func deleteCell(at indexPath: IndexPath) {
-//        NotificationsProvider.delete(at: indexPath.section)
         appTableViewController.reloadItems(deletionIndexPathes: [indexPath])
+//        viewModel.viewWillAppear()
     }
 
     private func openNotificationContentPage(with notification: NotificationItemsEntity.NotificationEntity) {

@@ -10,8 +10,8 @@ import Foundation
 
 struct NotificationStatusUpdateMessageDTO: DataTransferResponse {
     struct Body: Codable {
-        let success: Int
-        let statusCode: Int
+        let success: String
+        let statusCode: String
 
         enum CodingKeys: String, CodingKey {
             case success

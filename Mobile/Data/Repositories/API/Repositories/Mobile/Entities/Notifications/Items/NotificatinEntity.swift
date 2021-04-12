@@ -25,3 +25,8 @@ public struct NotificationItemsEntity {
         let contentImg: String
     }
 }
+
+enum NotificationStatus: Int {
+    case unread = 1
+    case read = 2
+}

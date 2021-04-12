@@ -39,7 +39,7 @@ struct DefaultNotificationsUseCase: NotificationsUseCase {
     }
 
     func delete(notificationId: Int, handler: @escaping NotificationStatusUpdateHandler) {
-        repo.read(params: .init(notifiationId: notificationId)) { result in
+        repo.delete(params: .init(notifiationId: notificationId)) { result in
             switch result {
             case .success(let entity): handler(.success(entity))
             case .failure(let error): handler(.failure(error))
