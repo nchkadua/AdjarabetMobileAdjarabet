@@ -25,9 +25,9 @@ public class NotificationsViewController: ABViewController {
         generateAccessibilityIdentifiers()
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewModel.viewDidAppear()
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
 
         mainTabBarViewController?.showFloatingTabBar()
         setMainContainerSwipeEnabled(false)

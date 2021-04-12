@@ -13,7 +13,7 @@ public protocol NotificationsViewModel: NotificationsViewModelInput, Notificatio
 
 public protocol NotificationsViewModelInput {
     func viewDidLoad()
-    func viewDidAppear()
+    func viewWillAppear()
 }
 
 public protocol NotificationsViewModelOutput {
@@ -45,7 +45,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
 
     public func viewDidLoad() {}
 
-    public func viewDidAppear() {
+    public func viewWillAppear() {
         var dataProvider: AppCellDataProviders = []
 
         notificationsUseCase.notifications(page: 1, domain: "com") { result in
