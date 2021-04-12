@@ -55,6 +55,9 @@
                                 <rect key="frame" x="0.0" y="188" width="414" height="674"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tGB-mS-EvA">
+                                <rect key="frame" x="188.5" y="506.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,8 +71,10 @@
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="X69-Qe-4k7" secondAttribute="trailing" constant="21" id="F5q-14-S1F"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="cyX-SK-35W" secondAttribute="trailing" id="Kxj-RC-f6x"/>
                             <constraint firstItem="cyX-SK-35W" firstAttribute="top" secondItem="PIl-zR-c9g" secondAttribute="bottom" constant="10" id="QVc-bv-AqM"/>
+                            <constraint firstItem="tGB-mS-EvA" firstAttribute="centerX" secondItem="JAH-Bt-LdT" secondAttribute="centerX" id="T9k-1a-GBr"/>
                             <constraint firstItem="eeP-zI-xRg" firstAttribute="centerY" secondItem="PIl-zR-c9g" secondAttribute="centerY" id="Ws1-ps-UBD"/>
                             <constraint firstItem="d6V-4K-ZeO" firstAttribute="top" secondItem="X69-Qe-4k7" secondAttribute="bottom" id="b92-9Y-z0d"/>
+                            <constraint firstItem="tGB-mS-EvA" firstAttribute="centerY" secondItem="JAH-Bt-LdT" secondAttribute="centerY" id="bVB-eH-KfB"/>
                             <constraint firstItem="PIl-zR-c9g" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="21" id="cMH-Q9-tVf"/>
                             <constraint firstItem="eeP-zI-xRg" firstAttribute="leading" secondItem="PIl-zR-c9g" secondAttribute="trailing" constant="7" id="fyQ-dd-Qzj"/>
                             <constraint firstItem="PIl-zR-c9g" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="26" id="ryi-9A-kD7"/>
@@ -81,6 +86,7 @@
                         <outlet property="balanceLabel" destination="X69-Qe-4k7" id="ms2-aN-4Aj"/>
                         <outlet property="cashOutLabel" destination="eeP-zI-xRg" id="sKa-F9-MD7"/>
                         <outlet property="childView" destination="JAH-Bt-LdT" id="qRb-px-kuS"/>
+                        <outlet property="loader" destination="tGB-mS-EvA" id="bWs-JB-B2v"/>
                         <outlet property="payments" destination="cyX-SK-35W" id="qyb-Fb-t1T"/>
                     </connections>
                 </viewController>
