@@ -29,10 +29,10 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TRb-FL-mDB" secondAttribute="bottom" id="4Ma-84-Ah2"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TRb-FL-mDB" secondAttribute="trailing" id="4eL-TY-efb"/>
-                <constraint firstItem="TRb-FL-mDB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="4i4-r6-sVd"/>
-                <constraint firstItem="TRb-FL-mDB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XXs-OF-1D7"/>
+                <constraint firstAttribute="bottom" secondItem="TRb-FL-mDB" secondAttribute="bottom" id="4Ma-84-Ah2"/>
+                <constraint firstAttribute="trailing" secondItem="TRb-FL-mDB" secondAttribute="trailing" id="4eL-TY-efb"/>
+                <constraint firstItem="TRb-FL-mDB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4i4-r6-sVd"/>
+                <constraint firstItem="TRb-FL-mDB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XXs-OF-1D7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="26.811594202898554" y="-120.65217391304348"/>

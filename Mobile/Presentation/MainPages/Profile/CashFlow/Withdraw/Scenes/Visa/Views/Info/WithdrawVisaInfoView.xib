@@ -412,10 +412,10 @@ In case of violation of the rules of fair play, Adjarabet reserves the right to 
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uoc-xM-bWo" secondAttribute="bottom" id="2EI-zU-O1e"/>
-                <constraint firstItem="uoc-xM-bWo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="BCa-zD-ud9"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uoc-xM-bWo" secondAttribute="trailing" id="eOr-fX-1ZP"/>
-                <constraint firstItem="uoc-xM-bWo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hfX-WF-LQP"/>
+                <constraint firstAttribute="bottom" secondItem="uoc-xM-bWo" secondAttribute="bottom" id="2EI-zU-O1e"/>
+                <constraint firstItem="uoc-xM-bWo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BCa-zD-ud9"/>
+                <constraint firstAttribute="trailing" secondItem="uoc-xM-bWo" secondAttribute="trailing" id="eOr-fX-1ZP"/>
+                <constraint firstItem="uoc-xM-bWo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hfX-WF-LQP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="27.536231884057973" y="76.630434782608702"/>
