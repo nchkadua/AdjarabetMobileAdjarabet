@@ -15,7 +15,7 @@ protocol WithdrawVisaViewControllerFactory {
 struct DefaultWithdrawVisaViewControllerFactory: WithdrawVisaViewControllerFactory {
     func make(with params: WithdrawVisaViewModelParams) -> WithdrawVisaViewController {
         let vc = R.storyboard.withdrawVisa().instantiate(controller: WithdrawVisaViewController.self)!
-        vc.viewModel = DefaultWithdrawVisaViewModel(params: params)
+        vc.viewModel = DefaultWithdrawVisaViewModel(with: params)
         return vc
     }
 }

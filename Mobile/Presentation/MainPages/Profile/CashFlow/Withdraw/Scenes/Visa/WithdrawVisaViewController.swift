@@ -17,19 +17,13 @@ class WithdrawVisaViewController: UIViewController {
     @IBOutlet private weak var infoView: WithdrawVisaInfoView!
 
     private lazy var cashOutView = CashOutVisaView()
+    private lazy var addAccountView = AddAccountView()
 
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            guard let self = self else { return }
-            self.mainContentView.addSubview(self.cashOutView)
-            self.cashOutView.translatesAutoresizingMaskIntoConstraints = false
-            self.cashOutView.pin(to: self.mainContentView)
-        }
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -44,8 +38,38 @@ class WithdrawVisaViewController: UIViewController {
     }
 
     private func didRecive(action: WithdrawVisaViewModelOutputAction) {
+        switch action {
+        case .showView(let type):
+            handleShowView(of: type)
+        case .setAndBindCashOut(let viewModel):
+            cashOutView.setAndBind(viewModel: viewModel)
+        case .setAndBindInfo(let viewModel):
+            infoView.setAndBind(viewModel: viewModel)
+        case .show(let error):
+            showAlert(title: error)
+        case .showMessage(let message):
+            showAlert(title: message)
+        }
     }
 
     private func didRecive(route: WithdrawVisaViewModelRoute) {
+        switch route {
+        case .addAccount:
+            {}()
+        }
+    }
+
+    private func handleShowView(of type: WithdrawViewType) {
+        switch type {
+        case .accounts: show(cashOutView)
+        case .addAccount: show(addAccountView)
+        }
+    }
+
+    private func show(_ view: UIView) {
+        mainContentView.removeAllSubViews()
+        mainContentView.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.pin(to: mainContentView)
     }
 }
