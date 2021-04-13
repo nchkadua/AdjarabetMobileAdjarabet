@@ -51,6 +51,7 @@ class DefaultWithdrawVisaViewModel {
     @Inject(from: .useCases) private var accountListUseCase: PaymentAccountUseCase
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
     @Inject(from: .useCases) private var withdrawUseCase: UFCWithdrawUseCase
+    @Inject private var userBalanceService: UserBalanceService
 
     // components
     @Inject(from: .componentViewModels) private var cashOutViewModel: CashOutVisaViewModel
@@ -72,30 +73,43 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
     var route: Observable<WithdrawVisaViewModelRoute> { routeSubject.asObserver() }
 
     func viewDidLoad() {
-        // bind and setup view models
-        bind()
-        // 0. fetch limits
+        bind() // bind and setup view models
+        refresh()
+    }
+
+    private func refresh() {
+        // 0. reset state
+        reset()
+        // 1. fetch limits
         fetchLimits()
-        // 1. fetch account/card list
+        // 2. fetch account/card list
         accountListUseCase.execute(params: .init()) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let list):
-                self.accounts = list                            // 2. update accounts
+                self.accounts = list                            // 3. update accounts
                 if self.accounts.isEmpty {                      // if user has no accounts:
-                    self.notify(.showView(ofType: .addAccount)) // 3. notify view to show Add Account view
+                    self.notify(.showView(ofType: .addAccount)) // 4. notify view to show Add Account view
                 } else {                                        // else:
-                    self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
+                    self.notify(.showView(ofType: .accounts))   // 4. notify view to show Accounts view
                     // create account list for view
                     let viewAccounts = self.accounts.map { $0.accountVisual! }
-                    self.cashOutViewModel.update(accounts: viewAccounts) // 4. update accounts on shown view
-                 // self.fetchLimits() // continue here...
+                    self.cashOutViewModel.update(accounts: viewAccounts) // 5. update accounts on shown view
                 }
             case .failure(let error):
-                self.reset()
+                self.disable()
                 self.actionSubject.onNext(.show(error: error.localizedDescription))
             }
         }
+    }
+
+    private func reset() {
+        accounts = .init()
+        session = nil
+        disable()
+        infoViewModel.update(minimum: "-")
+        infoViewModel.update(disposable: "-")
+        infoViewModel.update(daily: "-")
     }
 
     private func fetchLimits() {
@@ -150,13 +164,13 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         session = nil
         // if empty amount do nothing, just clean everything
         if amount.isEmpty {
-            reset()
+            disable()
             return
         }
         // sanity check
         guard (0..<accounts.count).contains(account)
         else {
-            reset()
+            disable()
             notify(.show(error: "wrong account index was passed: \(account)"))
             return
         }
@@ -164,7 +178,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         guard let amount = Double(amount.replacingOccurrences(of: ",", with: ".")),
               amount > 0
         else {
-            reset()
+            disable()
             let message = R.string.localization.withdraw_wrong_format_amount.localized()
             notify(.show(error: message))
             return
@@ -185,7 +199,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         // sanity check
         guard (0..<accounts.count).contains(account)
         else {
-            reset()
+            disable()
             notify(.show(error: "wrong account index was passed: \(account)"))
             return
         }
@@ -193,7 +207,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         if let amount = amountFormatter.unformat(number: amount, from: .s_n_a) { // is not placeholder and correct amount
             initSession(account: account, amount: amount)
         } else {
-            reset()
+            disable()
         }
     }
 
@@ -202,7 +216,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         guard (0..<accounts.count).contains(account),                              // sanity check
               let damount = amountFormatter.unformat(number: amount, from: .s_n_a) // amount is valid
         else {
-            reset()
+            disable()
             notify(.show(error: "wrong parameters was passed - amount: \(amount); account: \(account)"))
             return
         }
@@ -210,7 +224,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         guard let session = session,
               let serviceType = UFCServiceType(account: accounts[account])
         else {
-            reset()
+            disable()
             let error = R.string.localization.withdraw_missing_params_error.localized()
             notify(.show(error: error))
             return
@@ -222,10 +236,14 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
             guard let self = self else { return }
             switch result {
             case .success:
+                self.userBalanceService.update()
                 let success = R.string.localization.withdraw_transaction_successed.localized()
                 self.notify(.showMessage(message: success))
+                // reset state for next transaction
+                self.cashOutViewModel.update(amount: "")
+                self.disable()
             case .failure(let error):
-                self.reset()
+                self.disable()
                 self.notify(.show(error: error.localizedDescription))
             }
         }
@@ -239,7 +257,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         // assumption: sanity check on accounts already done
         guard let serviceType = UFCServiceType(account: accounts[account])
         else {
-            reset()
+            disable()
             let error = R.string.localization.withdraw_service_type_init_error.localized()
             notify(.show(error: error))
             return
@@ -259,7 +277,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                 // 4. update continue button
                 self.cashOutViewModel.update(continue: true)
             case .failure(let error):
-                self.reset()
+                self.disable()
                 self.notify(.show(error: error.localizedDescription))
             }
         }
@@ -271,9 +289,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         actionSubject.onNext(action)
     }
 
-    private func reset() {
-        cashOutViewModel.update(fee: "")
-        cashOutViewModel.update(total: "")
+    private func disable() {
         cashOutViewModel.update(continue: false)
     }
 }

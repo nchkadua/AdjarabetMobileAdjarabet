@@ -47,6 +47,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
 
     func viewDidLoad() {
         bind(to: paymentsViewModel)
+        observeBalance()
         notify(.loader(isHidden: false))
         notify(.set(balance: userBalanceService.balance?.formattedBalanceWithCurrencySign ?? "-"))
         notify(.bind(viewModel: paymentsViewModel))
@@ -69,6 +70,13 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
                 self.notify(.show(error: error.localizedDescription))
             }
         }
+    }
+
+    private func observeBalance() {
+        userBalanceService.balanceObservable.subscribe(onNext: { [weak self] balance in
+            guard let self = self else { return }
+            self.notify(.set(balance: self.userBalanceService.balance?.formattedBalanceWithCurrencySign ?? "-"))
+        }).disposed(by: disposeBag)
     }
 
     private func bind(to viewModel: PaymentMethodGridComponentViewModel) {
