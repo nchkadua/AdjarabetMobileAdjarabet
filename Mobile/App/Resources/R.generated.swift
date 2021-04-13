@@ -2863,10 +2863,19 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.withdraw` struct is generated, and contains static references to 1 images.
+    /// This `R.image.withdraw` struct is generated, and contains static references to 2 images.
     struct withdraw {
+      /// Image `Add-Card`.
+      static let addCard = Rswift.ImageResource(bundle: R.hostingBundle, name: "Withdraw/Add-Card")
       /// Image `Steps-Title`.
       static let stepsTitle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Withdraw/Steps-Title")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Add-Card", bundle: ..., traitCollection: ...)`
+      static func addCard(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.withdraw.addCard, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "Steps-Title", bundle: ..., traitCollection: ...)`
@@ -13080,6 +13089,7 @@ struct _R: Rswift.Validatable {
       try _AddCardComponentView.validate()
       try _BalanceComponentView.validate()
       try _CalendarComponentView.validate()
+      try _CashOutVisaView.validate()
       try _EmoneyButton.validate()
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
@@ -13334,12 +13344,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _CashOutVisaView: Rswift.NibResourceType {
+    struct _CashOutVisaView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "CashOutVisaView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Withdraw/Add-Card", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Withdraw/Add-Card' is used in nib 'CashOutVisaView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -13408,8 +13424,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13720,8 +13736,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
