@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class CashOutVisaView: UIView, Xibable {
     @IBOutlet private weak var view: UIView!
@@ -26,6 +27,9 @@ class CashOutVisaView: UIView, Xibable {
     /* Continue */
     @IBOutlet private weak var continueButton: ABButton!
 
+    private var viewModel: CashOutVisaViewModel?
+    private var disposeBag = DisposeBag()
+
     var mainView: UIView {
         get { view }
         set { view = newValue }
@@ -39,6 +43,35 @@ class CashOutVisaView: UIView, Xibable {
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
        nibSetup()
+    }
+
+    func setAndBind(viewModel: CashOutVisaViewModel) {
+        self.viewModel = viewModel
+        bind()
+    }
+
+    private func bind() {
+        disposeBag = DisposeBag()
+        viewModel?.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: CashOutVisaViewModelOutputAction) {
+        switch action {
+        case .updateAmount(let amount):
+            amountInputView.set(text: amount)
+        case .updateAccounts(let accounts):
+            accountPickerView.setupPickerView(withItems: accounts)
+            accountPickerView.setDefaultValue(accounts.first ?? "")
+        case .updateFee(let fee):
+            feeAmountLabel.text = fee
+        case .updateTotal(let total):
+            totalAmountLabel.text = total
+        case .updateContinue(let isEnabled):
+            continueButton(isEnabled: isEnabled)
+        default: break
+        }
     }
 
     func setupUI() {
@@ -63,7 +96,7 @@ class CashOutVisaView: UIView, Xibable {
     }
 
     @objc private func amountEditingDidEnd() {
-        // event - entered(amount, account)
+        viewModel?.entered(amount: amount, account: account)
     }
 
     private func setupAccountPickerView() {
@@ -78,7 +111,7 @@ class CashOutVisaView: UIView, Xibable {
     }
 
     @objc private func addAccountDidTap() {
-        // event - added()
+        viewModel?.added()
     }
 
     private func setupSummary() {
@@ -124,7 +157,7 @@ class CashOutVisaView: UIView, Xibable {
     }
 
     @objc private func continueButtonDidTap() {
-        // event - continued(amount, account)
+        viewModel?.continued(amount: amount, account: account)
     }
 
     /* helpers */
@@ -146,6 +179,6 @@ class CashOutVisaView: UIView, Xibable {
 
 extension CashOutVisaView: ABInputViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // event - selected(account, amount)
+        viewModel?.selected(account: account, amount: amount)
     }
 }
