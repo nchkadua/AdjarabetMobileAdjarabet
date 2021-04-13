@@ -54,8 +54,8 @@ class WithdrawVisaViewController: UIViewController {
 
     private func didRecive(route: WithdrawVisaViewModelRoute) {
         switch route {
-        case .addAccount:
-            {}()
+        case .addAccount(let params):
+            navigator.navigate(to: .addAccount(params: params))
         }
     }
 

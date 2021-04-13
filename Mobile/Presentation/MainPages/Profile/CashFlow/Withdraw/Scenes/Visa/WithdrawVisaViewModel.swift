@@ -38,7 +38,7 @@ enum WithdrawViewType {
 }
 
 enum WithdrawVisaViewModelRoute {
-    case addAccount
+    case addAccount(params: AddCardViewModelParams)
 }
 
 class DefaultWithdrawVisaViewModel {
@@ -250,7 +250,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
     }
 
     func added() {
-        routeSubject.onNext(.addAccount)
+        routeSubject.onNext(.addAccount(params: .init(delegate: self)))
     }
 
     private func initSession(account: Int, amount: Double) {
@@ -291,5 +291,11 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
 
     private func disable() {
         cashOutViewModel.update(continue: false)
+    }
+}
+
+extension DefaultWithdrawVisaViewModel: AddCardViewModelDelegate {
+    func disappeared() {
+        refresh()
     }
 }

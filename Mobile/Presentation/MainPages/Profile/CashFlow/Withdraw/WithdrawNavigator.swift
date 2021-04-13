@@ -13,8 +13,8 @@ class WithdrawNavigator {
     @Inject(from: .factories) private var visaFactory: WithdrawVisaViewControllerFactory
 
     // MARK: View Controllers
-    private lazy var visaVipViewController: UIViewController = { visaFactory.make(with: .init(serviceType: .vip)) }()
-    private lazy var visaRegularViewController: UIViewController = { visaFactory.make(with: .init(serviceType: .regular)) }()
+    private lazy var visaVipViewController: UIViewController = { wrapped(visaFactory.make(with: .init(serviceType: .vip))) }()
+    private lazy var visaRegularViewController: UIViewController = { wrapped(visaFactory.make(with: .init(serviceType: .regular))) }()
 
     init(superview: UIView) {
         self.superview = superview
@@ -38,5 +38,12 @@ class WithdrawNavigator {
         superview.addSubview(viewController.view)
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
         viewController.view.pin(to: superview)
+    }
+
+    private func wrapped(_ viewController: UIViewController) -> UINavigationController {
+        let navc = viewController.wrapInNavWith(presentationStyle: .automatic)
+        navc.navigationBar.styleForPrimaryPage()
+        navc.setNavigationBarHidden(true, animated: false)
+        return navc
     }
 }
