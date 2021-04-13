@@ -25,6 +25,7 @@ protocol WithdrawVisaViewModelOutput {
 }
 
 enum WithdrawVisaViewModelOutputAction {
+    case loader(isHidden: Bool)
     case showView(ofType: WithdrawViewType)
     case setAndBindCashOut(viewModel: CashOutVisaViewModel)
     case setAndBindInfo(viewModel: WithdrawVisaInfoViewModel)
@@ -78,6 +79,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
     }
 
     private func refresh() {
+        notify(.loader(isHidden: false)) // start loader
         // 0. reset state
         reset()
         // 1. fetch limits
@@ -100,6 +102,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                 self.disable()
                 self.actionSubject.onNext(.show(error: error.localizedDescription))
             }
+            self.notify(.loader(isHidden: true))
         }
     }
 
@@ -229,11 +232,13 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
             notify(.show(error: error))
             return
         }
+        cashOutViewModel.update(isLoading: true)
         withdrawUseCase.execute(serviceType: serviceType,
                                 amount: damount,
                                 accountId: accounts[account].id!,
                                 session: session) { [weak self] result in
             guard let self = self else { return }
+            self.cashOutViewModel.update(isLoading: false)
             switch result {
             case .success:
                 self.userBalanceService.update()
@@ -275,7 +280,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                 let total = self.amountFormatter.format(number: amount + entity.fee, in: .s_n_a)
                 self.cashOutViewModel.update(total: total)
                 // 4. update continue button
-                self.cashOutViewModel.update(continue: true)
+                self.cashOutViewModel.update(isEnabled: true)
             case .failure(let error):
                 self.disable()
                 self.notify(.show(error: error.localizedDescription))
@@ -290,7 +295,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
     }
 
     private func disable() {
-        cashOutViewModel.update(continue: false)
+        cashOutViewModel.update(isEnabled: false)
     }
 }
 

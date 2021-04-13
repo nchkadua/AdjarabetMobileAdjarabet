@@ -56,18 +56,24 @@
                                     <constraint firstItem="afW-rg-XfR" firstAttribute="top" secondItem="2Tx-uV-5GC" secondAttribute="top" id="vxf-pp-XQF"/>
                                 </constraints>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="OWa-2c-ghL" userLabel="Loader">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Tx-uV-5GC" firstAttribute="leading" secondItem="Amw-MT-c7e" secondAttribute="leading" id="EPr-i6-gH6"/>
+                            <constraint firstItem="OWa-2c-ghL" firstAttribute="centerY" secondItem="Amw-MT-c7e" secondAttribute="centerY" id="OUC-FD-sTz"/>
                             <constraint firstItem="2Tx-uV-5GC" firstAttribute="bottom" secondItem="Amw-MT-c7e" secondAttribute="bottom" id="R80-Bj-Hpp"/>
                             <constraint firstItem="2Tx-uV-5GC" firstAttribute="trailing" secondItem="Amw-MT-c7e" secondAttribute="trailing" id="b2N-Jb-YQq"/>
                             <constraint firstItem="2Tx-uV-5GC" firstAttribute="top" secondItem="Amw-MT-c7e" secondAttribute="top" id="gpg-1a-xzn"/>
+                            <constraint firstItem="OWa-2c-ghL" firstAttribute="centerX" secondItem="Amw-MT-c7e" secondAttribute="centerX" id="xTm-zX-Fz2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="infoView" destination="CHB-oZ-KhA" id="5x5-4s-dSL"/>
+                        <outlet property="loader" destination="OWa-2c-ghL" id="IxT-6h-QDg"/>
                         <outlet property="mainContentView" destination="TZN-g9-wfn" id="odA-Jx-7Dc"/>
                     </connections>
                 </viewController>

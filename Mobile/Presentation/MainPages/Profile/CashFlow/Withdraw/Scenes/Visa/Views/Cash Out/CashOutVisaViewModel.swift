@@ -22,7 +22,8 @@ protocol CashOutVisaViewModelInput {
     func update(accounts: [String])
     func update(fee: String)
     func update(total: String)
-    func update(continue isEnabled: Bool)
+    func update(isEnabled: Bool)
+    func update(isLoading: Bool)
 }
 
 protocol CashOutVisaViewModelOutput {
@@ -40,7 +41,8 @@ enum CashOutVisaViewModelOutputAction {
     case updateAccounts(with: [String])
     case updateFee(with: String)
     case updateTotal(with: String)
-    case updateContinue(with: Bool)
+    case updateContinueIsEnabled(with: Bool)
+    case updateContinueIsLoading(with: Bool)
 }
 
 class DefaultCashOutVisaViewModel {
@@ -82,8 +84,12 @@ extension DefaultCashOutVisaViewModel: CashOutVisaViewModel {
         notify(.updateTotal(with: total))
     }
 
-    func update(continue isEnabled: Bool) {
-        notify(.updateContinue(with: isEnabled))
+    func update(isEnabled: Bool) {
+        notify(.updateContinueIsEnabled(with: isEnabled))
+    }
+
+    func update(isLoading: Bool) {
+        notify(.updateContinueIsLoading(with: isLoading))
     }
 
     private func notify(_ action: CashOutVisaViewModelOutputAction) {

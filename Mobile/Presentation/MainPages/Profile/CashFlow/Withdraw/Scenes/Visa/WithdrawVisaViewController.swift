@@ -15,6 +15,7 @@ class WithdrawVisaViewController: UIViewController {
 
     @IBOutlet private weak var mainContentView: UIView!
     @IBOutlet private weak var infoView: WithdrawVisaInfoView!
+    @IBOutlet private weak var loader: UIActivityIndicatorView!
 
     private lazy var cashOutView = CashOutVisaView()
     private lazy var addAccountView = AddAccountView()
@@ -39,6 +40,8 @@ class WithdrawVisaViewController: UIViewController {
 
     private func didRecive(action: WithdrawVisaViewModelOutputAction) {
         switch action {
+        case .loader(let isHidden):
+            handleLoader(isHidden: isHidden)
         case .showView(let type):
             handleShowView(of: type)
         case .setAndBindCashOut(let viewModel):
@@ -57,6 +60,13 @@ class WithdrawVisaViewController: UIViewController {
         case .addAccount(let params):
             navigator.navigate(to: .addAccount(params: params))
         }
+    }
+
+    private func handleLoader(isHidden: Bool) {
+        loader.isHidden = isHidden
+        (isHidden ? loader.stopAnimating : loader.startAnimating)()
+        mainContentView.isHidden = !isHidden
+        infoView.isHidden = !isHidden
     }
 
     private func handleShowView(of type: WithdrawViewType) {

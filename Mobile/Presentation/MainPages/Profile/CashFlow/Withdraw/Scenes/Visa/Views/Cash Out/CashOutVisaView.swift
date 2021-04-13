@@ -68,8 +68,10 @@ class CashOutVisaView: UIView, Xibable {
             feeAmountLabel.text = fee
         case .updateTotal(let total):
             totalAmountLabel.text = total
-        case .updateContinue(let isEnabled):
+        case .updateContinueIsEnabled(let isEnabled):
             continueButton(isEnabled: isEnabled)
+        case .updateContinueIsLoading(let isLoading):
+            continueButton(isLoading: isLoading)
         default: break
         }
     }
@@ -170,6 +172,12 @@ class CashOutVisaView: UIView, Xibable {
             feeAmountLabel.text = "-"
             totalAmountLabel.text = "-"
         }
+    }
+
+    private func continueButton(isLoading: Bool) {
+        continueButton.set(isLoading: isLoading)
+        let title = isLoading ? "" : R.string.localization.withdraw_continue.localized()
+        continueButton.setTitleWithoutAnimation(title, for: .normal)
     }
 
     private var amount: String {
