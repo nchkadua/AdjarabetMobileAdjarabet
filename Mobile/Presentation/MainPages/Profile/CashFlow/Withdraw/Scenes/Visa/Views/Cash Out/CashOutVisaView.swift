@@ -82,7 +82,37 @@ class CashOutVisaView: UIView, Xibable {
     }
 
     private func setupSummary() {
-        // TODO
+        setupSummaryView()
+        setupFee()
+        setupTotal()
+    }
+
+    private func setupSummaryView() {
+        summaryView.setBackgorundColor(to: .tertiaryBg())
+    }
+
+    private func setupFee() {
+        // Title Label
+        feeTitleLabel.setTextColor(to: .primaryText())
+        feeTitleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+        feeTitleLabel.text = "ტრანზაქციის საკომისიო"
+        // Amount View
+        feeAmountView.setBackgorundColor(to: .querternaryBg())
+        // Amount Label
+        feeAmountLabel.setTextColor(to: .primaryText())
+        feeAmountLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
+    }
+
+    private func setupTotal() {
+        // Title Label
+        totalTitleLabel.setTextColor(to: .primaryText())
+        totalTitleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+        totalTitleLabel.text = "ჯამური თანხა"
+        // Amount View
+        totalAmountView.setBackgorundColor(to: .secondaryBg())
+        // Amount Label
+        totalAmountLabel.setTextColor(to: .primaryText())
+        totalAmountLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
     }
 
     private func setupContinueButton() {
@@ -90,6 +120,7 @@ class CashOutVisaView: UIView, Xibable {
         continueButton.setTitleWithoutAnimation("გაგრძელება", for: .normal)
         continueButton.addTarget(self, action: #selector(continueButtonDidTap), for: .touchUpInside)
         continueButton.titleEdgeInsets.bottom = 2
+        continueButton(isEnabled: false)
     }
 
     @objc private func continueButtonDidTap() {
@@ -101,6 +132,7 @@ class CashOutVisaView: UIView, Xibable {
     private func continueButton(isEnabled: Bool) {
         continueButton.isUserInteractionEnabled = isEnabled
         continueButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+        totalAmountView.setBackgorundColor(to: isEnabled ? .primaryRed() : .secondaryBg())
     }
 
     private var amount: String {
