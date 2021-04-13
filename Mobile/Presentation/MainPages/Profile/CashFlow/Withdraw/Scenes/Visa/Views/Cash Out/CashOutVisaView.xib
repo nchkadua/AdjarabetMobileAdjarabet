@@ -212,6 +212,11 @@
             <point key="canvasLocation" x="18.115942028985508" y="-113.31521739130436"/>
         </view>
     </objects>
+    <designables>
+        <designable name="pno-Al-PjX">
+            <size key="intrinsicContentSize" width="62" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Withdraw/Add-Card" width="33.333332061767578" height="28.333333969116211"/>
     </resources>

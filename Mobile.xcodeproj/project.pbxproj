@@ -178,7 +178,6 @@
 		C721EA5A259C9D9700F7C624 /* HttpRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */; };
 		C728C274261BA038004D3F2F /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728C273261BA038004D3F2F /* AddAccountView.swift */; };
 		C728C278261BA04C004D3F2F /* AddAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C728C277261BA04C004D3F2F /* AddAccountView.xib */; };
-		C728C280261BA1D1004D3F2F /* AddAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728C27F261BA1D1004D3F2F /* AddAccountViewModel.swift */; };
 		C72EA8E425C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */; };
 		C72FA73D2600BBE100A9C493 /* UFCDepositUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */; };
 		C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */; };
@@ -918,7 +917,6 @@
 		C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilderTests.swift; sourceTree = "<group>"; };
 		C728C273261BA038004D3F2F /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 		C728C277261BA04C004D3F2F /* AddAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountView.xib; sourceTree = "<group>"; };
-		C728C27F261BA1D1004D3F2F /* AddAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewModel.swift; sourceTree = "<group>"; };
 		C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCaseTests.swift; sourceTree = "<group>"; };
 		C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositUseCase.swift; sourceTree = "<group>"; };
 		C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawUseCase.swift; sourceTree = "<group>"; };
@@ -2653,7 +2651,6 @@
 		C7C1D305261B9B5D009F01C3 /* Add Account */ = {
 			isa = PBXGroup;
 			children = (
-				C728C27F261BA1D1004D3F2F /* AddAccountViewModel.swift */,
 				C728C273261BA038004D3F2F /* AddAccountView.swift */,
 				C728C277261BA04C004D3F2F /* AddAccountView.xib */,
 			);
@@ -5461,7 +5458,6 @@
 				7698869A2571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift in Sources */,
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				76DCF67525B80FB500150EE1 /* MyCardsNavigator.swift in Sources */,
-				C728C280261BA1D1004D3F2F /* AddAccountViewModel.swift in Sources */,
 				C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */,

@@ -190,6 +190,9 @@
 "withdraw_transaction_fee" = "ტრანზაქციის საკომისიო";
 "withdraw_total_amount" = "ჯამური თანხა";
 "withdraw_continue" = "გაგრძელება";
+// Add Card
+"withdraw_add_card" = "ბარათის დამატებას";
+"withdraw_add_card_description" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ თანხის გატანა";
 
 /* Notifications */
 "delete_button_title" = "წაშლა";

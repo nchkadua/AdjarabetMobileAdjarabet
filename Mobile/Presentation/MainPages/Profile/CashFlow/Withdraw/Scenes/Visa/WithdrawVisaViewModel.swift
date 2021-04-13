@@ -17,6 +17,7 @@ struct WithdrawVisaViewModelParams {
 
 protocol WithdrawVisaViewModelInput {
     func viewDidLoad()
+    func added()
 }
 
 protocol WithdrawVisaViewModelOutput {

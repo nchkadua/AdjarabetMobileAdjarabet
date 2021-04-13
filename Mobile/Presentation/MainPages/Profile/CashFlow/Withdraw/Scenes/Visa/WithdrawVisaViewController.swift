@@ -18,7 +18,11 @@ class WithdrawVisaViewController: UIViewController {
     @IBOutlet private weak var loader: UIActivityIndicatorView!
 
     private lazy var cashOutView = CashOutVisaView()
-    private lazy var addAccountView = AddAccountView()
+    private lazy var addAccountView: AddAccountView = {
+        let view = AddAccountView()
+        view.button.addTarget(self, action: #selector(added), for: .touchUpInside)
+        return view
+    }()
 
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
@@ -74,6 +78,10 @@ class WithdrawVisaViewController: UIViewController {
         case .accounts: show(cashOutView)
         case .addAccount: show(addAccountView)
         }
+    }
+
+    @objc private func added() {
+        viewModel.added()
     }
 
     private func show(_ view: UIView) {

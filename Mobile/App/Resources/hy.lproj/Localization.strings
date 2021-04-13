@@ -190,6 +190,9 @@
 "withdraw_transaction_fee" = "transaction fee";
 "withdraw_total_amount" = "total amount";
 "withdraw_continue" = "continue";
+// Add Card
+"withdraw_add_card" = "add card";
+"withdraw_add_card_description" = "please click \"add card\" to make a withdrawal";
 
 /* Notifications */
 "delete_button_title" = "Delete";
