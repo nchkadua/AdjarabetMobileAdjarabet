@@ -170,20 +170,29 @@
 "suggestions_done" = "Done";
 
 /* Withdraw */
-"withdraw_amount_title" = "თანხა";
-"withdraw_card_title" = "ბარათი";
-"withdraw_commission_title" = "ტრანზაქციის საკომისიო";
-"withdraw_total_amount_title" = "ჯამური თანხა";
-"withdraw_proceed_button_title" = "Proceed";
-"withdraw_description_title" = "გატანის ინსტრუქცია";
-"withdraw_description_amount" = "გრაფაში 'თანხა' ჩაწერეთ თვენთვის სასურველი თანხა";
-"withdraw_description_card" = "აირჩიეთ სასურველი ბარათი";
-"withdraw_description_proceed" = "დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე";
-"withdraw_rule1" = "ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო";
-"withdraw_rule2" = "გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს";
-"withdraw_transaction_successed" = "transaction successed";
+"withdraw_cash_out" = "cash out";
+"withdraw_balance" = "balance";
+"withdraw_minimum" = "minimum";
+"withdraw_disposable" = "disposable";
+"withdraw_daily" = "daily";
+"withdraw_cash_out_instruction" = "cash out instruction";
+"withdraw_step_1" = "in the \"amount\" column, enter the amount you want to cash out";
+"withdraw_step_2" = "select the desired card";
+"withdraw_step_3" = "click the \"continue\" button and the amount will be transferred to your card";
+"withdraw_instruction" = "to withdraw money on the card, it is necessary to have a colored photo of the id card uploaded on the website.\n\nnote that the withdrawal fee is 1%.\n\nin case of violation of the rules of fair play, adjarabet reserves the right to deduct 3% of the withdrawn amount in the form of a commission.";
+"withdraw_transaction_successed" = "transaction Successed";
 "withdraw_service_type_init_error" = "service type can not be specified";
 "withdraw_missing_params_error" = "some parameters are missing";
+"withdraw_wrong_format_amount" = "amount specified in wrong format";
+// Cash Out
+"withdraw_amount" = "amount";
+"withdraw_account" = "account";
+"withdraw_transaction_fee" = "transaction fee";
+"withdraw_total_amount" = "total amount";
+"withdraw_continue" = "continue";
+// Add Card
+"withdraw_add_card" = "add card";
+"withdraw_add_card_description" = "please click \"add card\" to make a withdrawal";
 
 /* Notifications */
 "delete_button_title" = "Delete";

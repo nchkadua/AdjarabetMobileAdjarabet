@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Withdraw Visa View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="WithdrawVisaViewController" id="gAa-dD-eZu" customClass="WithdrawVisaViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tx-uV-5GC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afW-rg-XfR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZN-g9-wfn" userLabel="Main Content View">
+                                                <rect key="frame" x="16" y="8" width="382" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="250" id="e9M-gD-89u"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHB-oZ-KhA" customClass="WithdrawVisaInfoView" customModule="Mobile" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="24" width="382" height="712"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="CHB-oZ-KhA" firstAttribute="trailing" secondItem="TZN-g9-wfn" secondAttribute="trailing" id="36q-O1-jUm"/>
+                                            <constraint firstAttribute="trailing" secondItem="TZN-g9-wfn" secondAttribute="trailing" constant="16" id="ODs-ep-Vnx"/>
+                                            <constraint firstItem="TZN-g9-wfn" firstAttribute="top" secondItem="afW-rg-XfR" secondAttribute="top" constant="8" id="c6P-m2-AQu"/>
+                                            <constraint firstItem="CHB-oZ-KhA" firstAttribute="top" secondItem="TZN-g9-wfn" secondAttribute="bottom" constant="16" id="csu-Pq-Uft"/>
+                                            <constraint firstAttribute="bottom" secondItem="CHB-oZ-KhA" secondAttribute="bottom" id="fEb-9U-Du2"/>
+                                            <constraint firstItem="TZN-g9-wfn" firstAttribute="leading" secondItem="afW-rg-XfR" secondAttribute="leading" constant="16" id="nYm-1b-nyP"/>
+                                            <constraint firstItem="CHB-oZ-KhA" firstAttribute="leading" secondItem="TZN-g9-wfn" secondAttribute="leading" id="r2v-bw-OOu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="afW-rg-XfR" secondAttribute="trailing" id="Eju-hn-Ivd"/>
+                                    <constraint firstAttribute="bottom" secondItem="afW-rg-XfR" secondAttribute="bottom" id="Iho-Eg-KHH"/>
+                                    <constraint firstItem="afW-rg-XfR" firstAttribute="height" secondItem="2Tx-uV-5GC" secondAttribute="height" priority="250" id="c6C-Uc-RaW"/>
+                                    <constraint firstItem="afW-rg-XfR" firstAttribute="width" secondItem="2Tx-uV-5GC" secondAttribute="width" id="mjW-ly-NOI"/>
+                                    <constraint firstItem="afW-rg-XfR" firstAttribute="leading" secondItem="2Tx-uV-5GC" secondAttribute="leading" id="oY0-w3-FND"/>
+                                    <constraint firstItem="afW-rg-XfR" firstAttribute="top" secondItem="2Tx-uV-5GC" secondAttribute="top" id="vxf-pp-XQF"/>
+                                </constraints>
+                            </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="OWa-2c-ghL" userLabel="Loader">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Tx-uV-5GC" firstAttribute="leading" secondItem="Amw-MT-c7e" secondAttribute="leading" id="EPr-i6-gH6"/>
+                            <constraint firstItem="OWa-2c-ghL" firstAttribute="centerY" secondItem="Amw-MT-c7e" secondAttribute="centerY" id="OUC-FD-sTz"/>
+                            <constraint firstItem="2Tx-uV-5GC" firstAttribute="bottom" secondItem="Amw-MT-c7e" secondAttribute="bottom" id="R80-Bj-Hpp"/>
+                            <constraint firstItem="2Tx-uV-5GC" firstAttribute="trailing" secondItem="Amw-MT-c7e" secondAttribute="trailing" id="b2N-Jb-YQq"/>
+                            <constraint firstItem="2Tx-uV-5GC" firstAttribute="top" secondItem="Amw-MT-c7e" secondAttribute="top" id="gpg-1a-xzn"/>
+                            <constraint firstItem="OWa-2c-ghL" firstAttribute="centerX" secondItem="Amw-MT-c7e" secondAttribute="centerX" id="xTm-zX-Fz2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="infoView" destination="CHB-oZ-KhA" id="5x5-4s-dSL"/>
+                        <outlet property="loader" destination="OWa-2c-ghL" id="IxT-6h-QDg"/>
+                        <outlet property="mainContentView" destination="TZN-g9-wfn" id="odA-Jx-7Dc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43.478260869565219" y="29.464285714285712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

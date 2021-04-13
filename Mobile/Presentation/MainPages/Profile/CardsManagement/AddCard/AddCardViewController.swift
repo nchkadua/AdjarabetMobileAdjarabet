@@ -37,6 +37,11 @@ public class AddCardViewController: ABViewController {
         amountInputView.mainTextField.becomeFirstResponder()
     }
 
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear()
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: AddCardViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in

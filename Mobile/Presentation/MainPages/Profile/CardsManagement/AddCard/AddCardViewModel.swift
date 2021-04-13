@@ -11,14 +11,22 @@ import RxSwift
 public protocol AddCardViewModel: AddCardViewModelInput, AddCardViewModelOutput {
 }
 
+public protocol AddCardViewModelDelegate: class {
+    func disappeared()
+}
+
 public struct AddCardViewModelParams {
-    public init() {
+    public var delegate: AddCardViewModelDelegate?
+
+    public init(delegate: AddCardViewModelDelegate? = nil) {
+        self.delegate = delegate
     }
 }
 
 public protocol AddCardViewModelInput: AnyObject {
     var params: AddCardViewModelParams { get set }
     func viewDidLoad()
+    func viewDidDisappear()
     func continueTapped(with amount: Double, hasAgreedToTerms: Bool)
 }
 
@@ -59,6 +67,10 @@ extension DefaultAddCardViewModel: AddCardViewModel {
     public func viewDidLoad() {
         actionSubject.onNext(.bindToMinAmountComponentViewModel(minAmountComponentViewModel))
         actionSubject.onNext(.bindToAgreementComponentViewModel(agreementComponentViewModel))
+    }
+
+    public func viewDidDisappear() {
+        params.delegate?.disappeared()
     }
 
     public func continueTapped(with amount: Double, hasAgreedToTerms: Bool) {
