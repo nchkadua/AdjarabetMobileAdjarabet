@@ -53,6 +53,7 @@ class WithdrawVisaViewController: UIViewController {
         case .setAndBindInfo(let viewModel):
             infoView.setAndBind(viewModel: viewModel)
         case .show(let error):
+            loader(isHidden: true)
             showAlert(title: error)
         case .showMessage(let message):
             showAlert(title: message)
@@ -67,10 +68,14 @@ class WithdrawVisaViewController: UIViewController {
     }
 
     private func handleLoader(isHidden: Bool) {
-        loader.isHidden = isHidden
-        (isHidden ? loader.stopAnimating : loader.startAnimating)()
+        loader(isHidden: isHidden)
         mainContentView.isHidden = !isHidden
         infoView.isHidden = !isHidden
+    }
+
+    private func loader(isHidden: Bool) {
+        loader.isHidden = isHidden
+        (isHidden ? loader.stopAnimating : loader.startAnimating)()
     }
 
     private func handleShowView(of type: WithdrawViewType) {

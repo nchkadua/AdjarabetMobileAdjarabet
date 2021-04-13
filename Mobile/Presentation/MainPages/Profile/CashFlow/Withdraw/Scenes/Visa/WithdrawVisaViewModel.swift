@@ -99,11 +99,11 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                     let viewAccounts = self.accounts.map { $0.accountVisual! }
                     self.cashOutViewModel.update(accounts: viewAccounts) // 5. update accounts on shown view
                 }
+                self.notify(.loader(isHidden: true))
             case .failure(let error):
                 self.disable()
                 self.actionSubject.onNext(.show(error: error.localizedDescription))
             }
-            self.notify(.loader(isHidden: true))
         }
     }
 
