@@ -41,6 +41,7 @@ class NotificationComponentView: UIView {
             switch action {
             case .set(let notification): self?.setupUI(with: notification)
             case .setTime(let time): self?.timeLabel.setTextWithAnimation(time)
+            case .didSelect: self?.markAsRead()
             default:
                 break
             }
@@ -60,6 +61,11 @@ class NotificationComponentView: UIView {
             titleLabel.setTextColor(to: .secondaryText())
             iconImageView.image = R.image.notifications.inbox_read()
         }
+    }
+
+    private func markAsRead() {
+        titleLabel.setTextColor(to: .secondaryText())
+        iconImageView.image = R.image.notifications.inbox_read()
     }
 }
 

@@ -13,8 +13,6 @@ public protocol NotificationsViewModel: NotificationsViewModelInput, Notificatio
 
 public protocol NotificationsViewModelInput {
     func viewDidLoad()
-    func viewWillAppear()
-    func viewDidDissapear()
 }
 
 public protocol NotificationsViewModelOutput {
@@ -50,20 +48,13 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
 
     public func viewDidLoad() {
         displayEmptyNotificationList()
+        load(page: self.page.current)
     }
 
     private func displayEmptyNotificationList() {
         self.resetPaging()
         let initialEmptyDataProvider: AppCellDataProviders = []
         self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
-    }
-
-    public func viewWillAppear() {
-        load(page: self.page.current)
-    }
-
-    public func viewDidDissapear() {
-        resetPaging()
     }
 
     private func load(page: Int) {
@@ -114,10 +105,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     private func delete(notification: NotificationItemsEntity.NotificationEntity, at indexPath: IndexPath) {
         notificationsUseCase.delete(notificationId: notification.id) { result in
             switch result {
-            case .success:
-                self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
-                self.notificationsDataProvider = []
-                self.load(page: self.page.current)
+            case .success: self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
             case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
