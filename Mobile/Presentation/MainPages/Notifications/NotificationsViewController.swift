@@ -33,6 +33,11 @@ public class NotificationsViewController: ABViewController {
         setMainContainerSwipeEnabled(false)
     }
 
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.viewWillDissapear()
+    }
+
     private func setup() {
         setBaseBackgorundColor(to: .primaryBg())
         setupNavigationItems()

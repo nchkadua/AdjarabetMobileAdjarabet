@@ -8,14 +8,22 @@
 
 import Foundation
 
-public struct NotificationItemsEntity {
-    let elements: [NotificationEntity]
-    let totalItemsCount: Int
-    let totalUnreadItemsCount: Int
-    let pageCount: Int
-    let itemsPerPage: Int
+public struct NotificationItemsEntity: Equatable {
+    public static func == (lhs: NotificationItemsEntity, rhs: NotificationItemsEntity) -> Bool {
+        return lhs.elements == rhs.elements &&
+            lhs.totalItemsCount == rhs.totalItemsCount &&
+            lhs.totalUnreadItemsCount == rhs.totalUnreadItemsCount &&
+            lhs.pageCount == rhs.pageCount &&
+            lhs.itemsPerPage == rhs.itemsPerPage
+    }
 
-    public struct NotificationEntity {
+    var elements: [NotificationEntity]
+    var totalItemsCount: Int
+    var totalUnreadItemsCount: Int
+    var pageCount: Int
+    var itemsPerPage: Int
+
+    public struct NotificationEntity: Equatable {
         let id: Int
         let userId: Int
         let createDate: String
