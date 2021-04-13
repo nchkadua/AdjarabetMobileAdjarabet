@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class WithdrawVisaInfoView: UIView, Xibable {
     /* Main View */
@@ -44,6 +45,9 @@ class WithdrawVisaInfoView: UIView, Xibable {
     @IBOutlet private weak var instructionTitleLabel: UILabel!
     @IBOutlet private weak var instructionDescriptionLabel: UILabel!
 
+    private var viewModel: WithdrawVisaInfoViewModel?
+    private var disposeBag = DisposeBag()
+
     var mainView: UIView {
         get { view }
         set { view = newValue }
@@ -57,6 +61,30 @@ class WithdrawVisaInfoView: UIView, Xibable {
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
        nibSetup()
+    }
+
+    func setAndBind(viewModel: WithdrawVisaInfoViewModel) {
+        self.viewModel = viewModel
+        bind()
+    }
+
+    private func bind() {
+        disposeBag = DisposeBag()
+        viewModel?.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: WithdrawVisaInfoViewModelOutputAction) {
+        switch action {
+        case .updateMinimum(let minimum):
+            minimumAmountLabel.text = minimum
+        case .updateDisposable(let disposable):
+            disposableAmountLabel.text = disposable
+        case .updateDaily(let daily):
+            dailyAmountLabel.text = daily
+     // default: break
+        }
     }
 
     func setupUI() {
