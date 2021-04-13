@@ -180,6 +180,12 @@
 "withdraw_step_2" = "Select the desired card";
 "withdraw_step_3" = "Click the \"Continue\" button and the amount will be transferred to your card";
 "withdraw_instruction" = "To withdraw money on the card, it is necessary to have a colored photo of the ID card uploaded on the website.\n\nNote that the withdrawal fee is 1%.\n\nIn case of violation of the rules of fair play, Adjarabet reserves the right to deduct 3% of the withdrawn amount in the form of a commission.";
+// Cash Out
+"withdraw_amount" = "Amount";
+"withdraw_account" = "Account";
+"withdraw_transaction_fee" = "Transaction Fee";
+"withdraw_total_amount" = "Total Amount";
+"withdraw_continue" = "Continue";
 
 /* Notifications */
 "delete_button_title" = "Delete";

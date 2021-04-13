@@ -85,7 +85,7 @@ class CashOutVisaView: UIView, Xibable {
     private func setupAmountInputView() {
         amountInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
-        amountInputView.setPlaceholder(text: "თანხა")
+        amountInputView.setPlaceholder(text: R.string.localization.withdraw_amount.localized())
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidEnd), for: .editingDidEnd)
     }
@@ -101,7 +101,7 @@ class CashOutVisaView: UIView, Xibable {
 
     private func setupAccountPickerView() {
         accountPickerView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
-        accountPickerView.setPlaceholder(text: "ანგარიში")
+        accountPickerView.setPlaceholder(text: R.string.localization.withdraw_account.localized())
         accountPickerView.delegate = self
     }
 
@@ -128,7 +128,7 @@ class CashOutVisaView: UIView, Xibable {
         // Title Label
         feeTitleLabel.setTextColor(to: .primaryText())
         feeTitleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
-        feeTitleLabel.text = "ტრანზაქციის საკომისიო"
+        feeTitleLabel.text = R.string.localization.withdraw_transaction_fee.localized()
         // Amount View
         feeAmountView.setBackgorundColor(to: .querternaryBg())
         // Amount Label
@@ -140,7 +140,7 @@ class CashOutVisaView: UIView, Xibable {
         // Title Label
         totalTitleLabel.setTextColor(to: .primaryText())
         totalTitleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
-        totalTitleLabel.text = "ჯამური თანხა"
+        totalTitleLabel.text = R.string.localization.withdraw_total_amount.localized()
         // Amount View
         totalAmountView.setBackgorundColor(to: .secondaryBg())
         // Amount Label
@@ -150,7 +150,7 @@ class CashOutVisaView: UIView, Xibable {
 
     private func setupContinueButton() {
         continueButton.setStyle(to: .primary(state: .disabled, size: .large))
-        continueButton.setTitleWithoutAnimation("გაგრძელება", for: .normal)
+        continueButton.setTitleWithoutAnimation(R.string.localization.withdraw_continue.localized(), for: .normal)
         continueButton.addTarget(self, action: #selector(continueButtonDidTap), for: .touchUpInside)
         continueButton.titleEdgeInsets.bottom = 2
         continueButton(isEnabled: false)

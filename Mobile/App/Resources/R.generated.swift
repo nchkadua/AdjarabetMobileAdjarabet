@@ -4063,12 +4063,16 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 473 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 478 localization keys.
     struct localization {
       /// en translation: ADD CARD
       ///
       /// Locales: en, ka, hy
       static let card_add_button_title = Rswift.StringResource(key: "card_add_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Account
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_account = Rswift.StringResource(key: "withdraw_account", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Account Block
       ///
       /// Locales: en, ka, hy
@@ -4149,6 +4153,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let deposit_visa_amount = Rswift.StringResource(key: "deposit_visa_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Amount
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_amount = Rswift.StringResource(key: "withdraw_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Amount specified in wrong format
       ///
       /// Locales: en, ka, hy
@@ -4457,6 +4465,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let add_card_continue_button_title = Rswift.StringResource(key: "add_card_continue_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Continue
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_continue = Rswift.StringResource(key: "withdraw_continue", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Cook Islands
       ///
       /// Locales: en, ka, hy
@@ -5605,6 +5617,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let tonga = Rswift.StringResource(key: "tonga", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Total Amount
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_total_amount = Rswift.StringResource(key: "withdraw_total_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Total Balance
       ///
       /// Locales: en, ka, hy
@@ -5617,6 +5633,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let transactions_details_total_amount = Rswift.StringResource(key: "transactions_details_total_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Transaction Fee
+      ///
+      /// Locales: en, ka, hy
+      static let withdraw_transaction_fee = Rswift.StringResource(key: "withdraw_transaction_fee", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Transaction History
       ///
       /// Locales: en, ka, hy
@@ -5973,6 +5993,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("card_add_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Account
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_account(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_account", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_account"
+        }
+
+        return NSLocalizedString("withdraw_account", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Account Block
       ///
       /// Locales: en, ka, hy
@@ -6271,6 +6306,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deposit_visa_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Amount
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_amount"
+        }
+
+        return NSLocalizedString("withdraw_amount", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Amount specified in wrong format
@@ -7426,6 +7476,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("add_card_continue_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Continue
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_continue(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_continue", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_continue"
+        }
+
+        return NSLocalizedString("withdraw_continue", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Cook Islands
@@ -11733,6 +11798,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("tonga", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Total Amount
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_total_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_total_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_total_amount"
+        }
+
+        return NSLocalizedString("withdraw_total_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Total Balance
       ///
       /// Locales: en, ka, hy
@@ -11776,6 +11856,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("transactions_details_total_amount", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Transaction Fee
+      ///
+      /// Locales: en, ka, hy
+      static func withdraw_transaction_fee(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withdraw_transaction_fee", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "withdraw_transaction_fee"
+        }
+
+        return NSLocalizedString("withdraw_transaction_fee", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Transaction History
@@ -13736,8 +13831,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14456,8 +14551,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
