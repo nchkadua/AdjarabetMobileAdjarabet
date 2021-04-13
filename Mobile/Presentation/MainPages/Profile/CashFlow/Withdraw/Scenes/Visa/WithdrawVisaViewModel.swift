@@ -165,7 +165,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
               amount > 0
         else {
             reset()
-            let message = R.string.localization.deposit_visa_wrong_format_amount.localized()
+            let message = R.string.localization.withdraw_wrong_format_amount.localized()
             notify(.show(error: message))
             return
         }
@@ -211,7 +211,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
               let serviceType = UFCServiceType(account: accounts[account])
         else {
             reset()
-            let error = "" // R.string.localization.withdraw_missing_params_error.localized()
+            let error = R.string.localization.withdraw_missing_params_error.localized()
             notify(.show(error: error))
             return
         }
@@ -222,7 +222,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
             guard let self = self else { return }
             switch result {
             case .success:
-                let success = "" // R.string.localization.withdraw_transaction_successed.localized()
+                let success = R.string.localization.withdraw_transaction_successed.localized()
                 self.notify(.showMessage(message: success))
             case .failure(let error):
                 self.reset()
@@ -240,7 +240,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         guard let serviceType = UFCServiceType(account: accounts[account])
         else {
             reset()
-            let error = "" // R.string.localization.withdraw_service_type_init_error.localized()
+            let error = R.string.localization.withdraw_service_type_init_error.localized()
             notify(.show(error: error))
             return
         }
