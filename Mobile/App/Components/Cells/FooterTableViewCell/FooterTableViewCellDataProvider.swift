@@ -17,7 +17,7 @@ extension DefaultFooterComponentViewModel: FooterTableViewCellDataProvider { }
 public extension DefaultFooterComponentViewModel {
     var height: CGFloat {
         get {
-            169
+            130
         }
         set {
             print(newValue)

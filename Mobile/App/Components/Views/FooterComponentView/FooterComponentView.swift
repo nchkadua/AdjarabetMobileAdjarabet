@@ -20,8 +20,9 @@ public class FooterComponentView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var legalBgView: UIView!
     @IBOutlet weak private var legalImageView: UIImageView!
-    @IBOutlet weak private var legalTextView: LegalTextView!
+    @IBOutlet weak private var legalLabel: UILabel!
     @IBOutlet weak private var contactButton: ContactUsButton!
     @IBOutlet weak private var languageButton: LanguagesButton!
 
@@ -60,17 +61,16 @@ public class FooterComponentView: UIView {
     }
 
     private func setupLegalView() {
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 3
-        let attributes = [NSAttributedString.Key.paragraphStyle: style]
-        legalTextView.attributedText = NSAttributedString(string: R.string.localization.login_legal(), attributes: attributes)
+        legalBgView.setBackgorundColor(to: .tertiaryBg())
+        legalBgView.roundCorners(.allCorners, radius: 46)
+
+        legalLabel.setTextColor(to: .primaryText())
+        legalLabel.setFont(to: .caption2(fontCase: .lower, fontStyle: .regular))
+        legalLabel.numberOfLines = 3
+        legalLabel.setTextWithAnimation(R.string.localization.login_legal.localized())
 
         legalImageView.image = R.image.login.legal()
         legalImageView.setTintColor(to: .primaryText())
-
-        legalTextView.setTextColor(to: .secondaryText())
-        legalTextView.setFont(to: .caption2(fontCase: .lower))
-        legalTextView.applyImageView(legalImageView)
     }
 
     private func setDelegates() {

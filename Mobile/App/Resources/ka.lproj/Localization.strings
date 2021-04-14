@@ -31,7 +31,7 @@
 "not_member" = "წევრი არ ხარ?";
 "join_now" = "შემოგვიერთდი";
 "login_button_title" = "ავტორიზაცია";
-"contact_us_button_title" = "Contact us";
+"contact_us_button_title" = "კონტაქტი";
 "settings" = "პარამეტრები";
 
 /* Login */
@@ -44,7 +44,7 @@
 "login_password_input_title" = "პაროლი";
 "login_with_face_id_title" = "Log in with face ID";
 "login_with_touch_id_title" = "Log in with touch ID";
-"login_legal" = "Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia";
+"login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
 
 /* SMS Login */
 "sms_login_page_title" = "SMS ავტორიზაცია";
@@ -59,24 +59,24 @@
 "profile_page_title" = "Account Parameters";
 "profile_page_back_title" = "მთავარი გვერდი";
 
-"verified" = "Your Account is Verified";
+"verified" = "ანგარიში ვერიფიცირებულია";
 
 "balance_title" = "My Balance";
 "total_balance" = "Total Balance";
 "poker_balance" = "Poker Balance";
-"withdraw_button_title" = "Withdraw";
-"deposit_button_title" = "Deposit";
+"withdraw_button_title" = "გატანა";
+"deposit_button_title" = "დეპოზიტი";
 
 "quick_actions_header_title" = "Quick Actions";
-"transaction_history" = "Transaction History";
-"my_cards" = "My Cards";
-"my_bonuses" = "My Bonuses";
-"biomatry_authentication_parameters" = "Biometry Authentication Parameters";
-"transfer_to_a_friend" = "Transfer to a Friend";
-"incognito_card" = "Incognito Card";
-"account_information" = "Account Information";
-"account_parameters" = "Account Parameters";
-"log_out" = "Log Out";
+"transaction_history" = "ტრანზაქციების ისტორია";
+"my_cards" = "ჩემი ბარათები";
+"my_bonuses" = "ჩემი ბონუსები";
+"biomatry_authentication_parameters" = "ავტორიზაციის პარამეტრები";
+"transfer_to_a_friend" = "გადაურიცხე მეგობარს";
+"incognito_card" = "ინკოგნიტო ბარათი";
+"account_information" = "ანგარიშის ინფორმაცია";
+"account_parameters" = "ანგარიშის პარამეტრები";
+"log_out" = "ანგარიშიდან გასვლა";
 
 /* Account Info */
 "account_information_title" = "ანგარიშის ინფორმაცია";

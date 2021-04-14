@@ -51,7 +51,7 @@ class QuickActionComponentView: UIView {
     private func setupUI(icon: UIImage, title: String, hideSeparator: Bool, roundedCorners: UIRectCorner) {
         iconImageView.image = icon
         titleLabel.text = title
-        separatorView.isHidden = hideSeparator
+        separatorView.isHidden = true
 
         bgView.roundCorners(roundedCorners, radius: 10)
     }
@@ -93,9 +93,10 @@ extension QuickActionComponentView: Xibable {
         separatorView.setBackgorundColor(to: .nonOpaque())
 
         bgView.setBackgorundColor(to: .tertiaryBg())
+        bgView.isHidden = true
         iconImageView.setTintColor(to: .primaryText())
 
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
     }
 }

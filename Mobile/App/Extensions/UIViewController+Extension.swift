@@ -53,7 +53,7 @@ public extension UIViewController {
         navigationItem.titleView = label
     }
 
-    func setBackBarButtonItemIfNeeded(width: CGFloat = 26, height: CGFloat = 44, rounded: Bool = false) {
+    func setBackBarButtonItemIfNeeded(width: CGFloat = 35, height: CGFloat = 35, rounded: Bool = false) {
         navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
 

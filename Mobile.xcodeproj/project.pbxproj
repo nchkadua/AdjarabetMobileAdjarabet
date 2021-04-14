@@ -476,6 +476,7 @@
 		CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */; };
 		CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287812540C28F00E6590C /* AccountInfoViewController.swift */; };
 		CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */; };
+		CEA2CC7D2626E28500F27A45 /* UserIdButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2CC7C2626E28500F27A45 /* UserIdButton.swift */; };
 		CEA77791256D4237008A4F6C /* MailChangeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7778E256D4237008A4F6C /* MailChangeNavigator.swift */; };
 		CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */; };
 		CEA77793256D4237008A4F6C /* MailChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */; };
@@ -1215,6 +1216,7 @@
 		CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoNavigator.swift; sourceTree = "<group>"; };
 		CEA287812540C28F00E6590C /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewModel.swift; sourceTree = "<group>"; };
+		CEA2CC7C2626E28500F27A45 /* UserIdButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdButton.swift; sourceTree = "<group>"; };
 		CEA7778E256D4237008A4F6C /* MailChangeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailChangeNavigator.swift; sourceTree = "<group>"; };
 		CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailChangeViewController.swift; sourceTree = "<group>"; };
 		CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailChangeViewModel.swift; sourceTree = "<group>"; };
@@ -4080,6 +4082,7 @@
 				CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */,
 				CE7A23F9257956CA00A94E89 /* BarButtonWithImage.swift */,
 				76B667A02596345C001441BD /* ABDateFormatter.swift */,
+				CEA2CC7C2626E28500F27A45 /* UserIdButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -5366,6 +5369,7 @@
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
 				7668C7AD2576785F0024DDE4 /* AccountParametersHeaderComponentView.swift in Sources */,
+				CEA2CC7D2626E28500F27A45 /* UserIdButton.swift in Sources */,
 				CE03747025F8D7180061F507 /* WebViewController.swift in Sources */,
 				CEBB00832609D3F900D1B510 /* EmoneyViewControllerFactory.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,

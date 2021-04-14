@@ -54,7 +54,6 @@ extension DefaultProfileViewModel: ProfileViewModel {
 
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = [
-            DefaultQuickActionsHeaderViewModel(params: QuickActionsHeaderViewModelParams()),
             DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(backgroundColor: DesignSystem.Color.secondaryBg()))
         ]
 
@@ -88,7 +87,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
                 }
             }).disposed(by: self.disposeBag)
 
-            dataProviders.insert(quickActionViewModel, at: 3)
+            dataProviders.insert(quickActionViewModel, at: 2)
         }
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))
