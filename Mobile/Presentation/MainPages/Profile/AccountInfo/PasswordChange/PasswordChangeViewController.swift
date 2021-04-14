@@ -55,7 +55,7 @@ public class PasswordChangeViewController: ABViewController {
         setupInputViewsObservation()
         setupPasswordButton()
         setupViews()
-
+        
         setupAccessibilityIdentifiers()
     }
 
@@ -137,7 +137,7 @@ extension PasswordChangeViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [oldPasswordInputView, newPasswordInputView, repeatePasswordInputView] }
 }
 
-// MARK: Accessibility Identifiers
+// MARK: Accessibility Identifierss
 extension PasswordChangeViewController: Accessible {
     private func setupAccessibilityIdentifiers() {
         generateAccessibilityIdentifiers()
