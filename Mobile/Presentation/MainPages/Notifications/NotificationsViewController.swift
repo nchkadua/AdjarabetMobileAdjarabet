@@ -22,15 +22,20 @@ public class NotificationsViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewModel.viewDidAppear()
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         mainTabBarViewController?.showFloatingTabBar()
         setMainContainerSwipeEnabled(false)
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.viewWillDissapear()
     }
 
     private func setup() {
@@ -70,6 +75,11 @@ public class NotificationsViewController: ABViewController {
     private func didReceive(action: NotificationsViewModelOutputAction) {
         switch action {
         case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
+        case .reloadItems(let items, let insertions, let deletions):
+            UIView.performWithoutAnimation {
+                appTableViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
+            }
+        case .reloadData: appTableViewController.reloadItems()
         case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
         case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)
         case .showMessage(let message): showAlert(title: message)
@@ -84,8 +94,8 @@ public class NotificationsViewController: ABViewController {
 
     // MARK: Action methods
     private func deleteCell(at indexPath: IndexPath) {
-//        NotificationsProvider.delete(at: indexPath.section)
         appTableViewController.reloadItems(deletionIndexPathes: [indexPath])
+//        viewModel.viewWillAppear()
     }
 
     private func openNotificationContentPage(with notification: NotificationItemsEntity.NotificationEntity) {

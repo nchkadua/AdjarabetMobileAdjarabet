@@ -17,6 +17,7 @@ public struct NotificationContentViewModelParams {
 
 public protocol NotificationContentViewModelInput {
     func viewDidLoad()
+    func viewDidAppear()
     func openUrl(_ url: String)
     func calculateTimeOf(_ notification: NotificationItemsEntity.NotificationEntity)
 }
@@ -30,6 +31,7 @@ public protocol NotificationContentViewModelOutput {
 public enum NotificationContentViewModelOutputAction {
     case setupWith(notification: NotificationItemsEntity.NotificationEntity)
     case setTime(time: String)
+    case showMessage(message: String)
 }
 
 public enum NotificationContentViewModelRoute {
@@ -39,6 +41,7 @@ public class DefaultNotificationContentViewModel {
     private let actionSubject = PublishSubject<NotificationContentViewModelOutputAction>()
     private let routeSubject = PublishSubject<NotificationContentViewModelRoute>()
     public let params: NotificationContentViewModelParams
+    @Inject(from: .useCases) private var notificationsUseCase: NotificationsUseCase
 
     public init(params: NotificationContentViewModelParams) {
         self.params = params
@@ -51,6 +54,17 @@ extension DefaultNotificationContentViewModel: NotificationContentViewModel {
 
     public func viewDidLoad() {
         actionSubject.onNext(.setupWith(notification: params.notification))
+    }
+
+    public func viewDidAppear() {
+        guard params.notification.status == NotificationStatus.unread.rawValue else { return }
+
+        notificationsUseCase.read(notificationId: params.notification.id) { result in
+            switch result {
+            case .success(let entity): print(entity)
+            case .failure(let error): print(error)
+            }
+        }
     }
 
     public func openUrl(_ url: String) {

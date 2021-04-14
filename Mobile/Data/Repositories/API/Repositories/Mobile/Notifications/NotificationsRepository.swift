@@ -10,11 +10,21 @@ protocol NotificationsRepository {
     typealias NotificationsHandler = (Result<NotificationItemsEntity, Error>) -> Void
     func notifications(params: NotificationParams,
                        handler: @escaping NotificationsHandler)
+
+    typealias NotificationStatusUpdateHandler = (Result<NotificationStatusUpdateMessageEntity, Error>) -> Void
+    func read(params: NotificationStatusUpdateParams,
+              handler: @escaping NotificationStatusUpdateHandler)
+    func delete(params: NotificationStatusUpdateParams,
+                handler: @escaping NotificationStatusUpdateHandler)
 }
 
 struct NotificationParams {
     let page: Int
     let domain: String
+}
+
+struct NotificationStatusUpdateParams {
+    let notifiationId: Int
 }
 
 public class DefaultNotificationsRepository: NotificationsRepository {
@@ -36,6 +46,42 @@ public class DefaultNotificationsRepository: NotificationsRepository {
             .build()
 
         dataTransferService.performTask(expecting: NotificationDTO.self,
+                                        request: request,
+                                        respondOnQueue: .main,
+                                        completion: handler)
+    }
+
+    func read(params: NotificationStatusUpdateParams, handler: @escaping NotificationStatusUpdateHandler) {
+        guard let userId = userSession.userId
+        else {
+            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            return
+        }
+
+        let request = self.requestBuilder
+            .set(host: "https://mobileapi.adjarabet.com/users/update_notification_status?user_id=\(userId)&notification_id=\(params.notifiationId)&status=read")
+            .set(method: HttpMethodGet())
+            .build()
+
+        dataTransferService.performTask(expecting: NotificationStatusUpdateMessageDTO.self,
+                                        request: request,
+                                        respondOnQueue: .main,
+                                        completion: handler)
+    }
+
+    func delete(params: NotificationStatusUpdateParams, handler: @escaping NotificationStatusUpdateHandler) {
+        guard let userId = userSession.userId
+        else {
+            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            return
+        }
+
+        let request = self.requestBuilder
+            .set(host: "https://mobileapi.adjarabet.com/users/update_notification_status?user_id=\(userId)&notification_id=\(params.notifiationId)&status=delete")
+            .set(method: HttpMethodGet())
+            .build()
+
+        dataTransferService.performTask(expecting: NotificationStatusUpdateMessageDTO.self,
                                         request: request,
                                         respondOnQueue: .main,
                                         completion: handler)
