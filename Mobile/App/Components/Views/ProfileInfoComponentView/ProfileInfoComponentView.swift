@@ -17,9 +17,6 @@ class ProfileInfoComponentView: UIView {
     @IBOutlet weak private var logoImageView: UIImageView!
     @IBOutlet weak private var usernameLabel: UILabel!
     @IBOutlet weak private var verificationStatusLabel: UILabel!
-    @IBOutlet weak private var verificationStatusImageView: UIImageView!
-    @IBOutlet weak private var userIdLabel: UILabel!
-    @IBOutlet weak private var copyButton: UIButton!
 
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -52,15 +49,8 @@ class ProfileInfoComponentView: UIView {
 
     private func setupUI(username: String, userId: Int) {
         usernameLabel.text = username
-        userIdLabel.text = String(userId)
-
-        verificationStatusLabel.text = R.string.localization.verified()
-        verificationStatusImageView.image = R.image.components.profileCell.verified()
-    }
-
-    @objc private func copyUserId() {
-        UIPasteboard.general.string = userIdLabel.text
-        viewModel.didCopyUserId()
+        verificationStatusLabel.text = R.string.localization.verified.localized()
+        logoImageView.image = R.image.components.profileCell.avatar_verified()
     }
 }
 
@@ -77,19 +67,10 @@ extension ProfileInfoComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.secondaryBg().value
 
-        logoImageView.image = R.image.components.profileCell.adjarabet_logo()
-
         usernameLabel.setTextColor(to: .primaryText())
-        usernameLabel.setFont(to: .title3(fontCase: .lower, fontStyle: .bold))
+        usernameLabel.setFont(to: .largeTitle32(fontCase: .lower, fontStyle: .semiBold))
 
-        verificationStatusLabel.setTextColor(to: .secondaryText())
-        verificationStatusLabel.setFont(to: .footnote(fontCase: .lower))
-        verificationStatusImageView.image = R.image.components.profileCell.verified()
-
-        userIdLabel.setTextColor(to: .primaryText())
-        userIdLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
-
-        copyButton.setImage(R.image.components.profileCell.copy(), for: .normal)
-        copyButton.addTarget(self, action: #selector(copyUserId), for: .touchUpInside)
+        verificationStatusLabel.setTextColor(to: .systemBlue())
+        verificationStatusLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
     }
 }

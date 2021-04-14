@@ -18,7 +18,7 @@ extension DefaultProfileInfoComponentViewModel: ProfileInfoTableViewCellDataProv
 public extension ProfileInfoTableViewCellDataProvider {
     var height: CGFloat {
         get {
-            130
+            120
         }
         set {
             print(newValue)

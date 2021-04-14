@@ -29,18 +29,19 @@ public class ContactUsButton: UIButton {
     }
 
     private func setSettings() {
-        layer.cornerRadius = 25
         setBackgorundColor(to: .tertiaryBg())
-        titleLabel?.textAlignment = .left
         setTintColor(to: .primaryText())
-
         setTitleColor(to: .primaryText(), for: .normal)
+
+        layer.cornerRadius = 25
+        titleLabel?.textAlignment = .left
+        titleEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
     }
 
     private func setTitles() {
-        let title = R.string.localization.contact_us_button_title().makeAttributedString(with: .footnote(fontCase: .lower, fontStyle: .semiBold), lineSpasing: 0.12, foregroundColor: .primaryText())
+        let title = R.string.localization.contact_us_button_title.localized().makeAttributedString(with: .subHeadline(fontCase: .lower, fontStyle: .semiBold), lineSpasing: 0.12, foregroundColor: .primaryText())
         setAttributedTitle(title, for: .normal)
-        setImage(R.image.shared.phone(), for: .normal)
+        setImage(R.image.contact.contact(), for: .normal)
     }
 
     @objc private func call() {

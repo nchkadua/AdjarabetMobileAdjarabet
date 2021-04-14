@@ -44,7 +44,7 @@
 "login_password_input_title" = "Password";
 "login_with_face_id_title" = "Log in with face ID";
 "login_with_touch_id_title" = "Log in with touch ID";
-"login_legal" = "Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia";
+"login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
 
 /* SMS Login */
 "sms_login_page_title" = "SMS LOGIN";
@@ -59,7 +59,7 @@
 "profile_page_title" = "Account Parameters";
 "profile_page_back_title" = "Home Page";
 
-"verified" = "Your Account is Verified";
+"verified" = "Account is Verified";
 
 "balance_title" = "My Balance";
 "total_balance" = "Total Balance";
@@ -170,20 +170,29 @@
 "suggestions_done" = "Done";
 
 /* Withdraw */
-"withdraw_amount_title" = "თანხა";
-"withdraw_card_title" = "ბარათი";
-"withdraw_commission_title" = "ტრანზაქციის საკომისიო";
-"withdraw_total_amount_title" = "ჯამური თანხა";
-"withdraw_proceed_button_title" = "Proceed";
-"withdraw_description_title" = "გატანის ინსტრუქცია";
-"withdraw_description_amount" = "გრაფაში 'თანხა' ჩაწერეთ თვენთვის სასურველი თანხა";
-"withdraw_description_card" = "აირჩიეთ სასურველი ბარათი";
-"withdraw_description_proceed" = "დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე";
-"withdraw_rule1" = "ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო";
-"withdraw_rule2" = "გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს";
+"withdraw_cash_out" = "Cash Out";
+"withdraw_balance" = "Balance";
+"withdraw_minimum" = "Minimum";
+"withdraw_disposable" = "Disposable";
+"withdraw_daily" = "Daily";
+"withdraw_cash_out_instruction" = "Cash Out Instruction";
+"withdraw_step_1" = "In the \"Amount\" column, enter the amount you want to cash out";
+"withdraw_step_2" = "Select the desired card";
+"withdraw_step_3" = "Click the \"Continue\" button and the amount will be transferred to your card";
+"withdraw_instruction" = "To withdraw money on the card, it is necessary to have a colored photo of the ID card uploaded on the website.\n\nNote that the withdrawal fee is 1%.\n\nIn case of violation of the rules of fair play, Adjarabet reserves the right to deduct 3% of the withdrawn amount in the form of a commission.";
 "withdraw_transaction_successed" = "Transaction Successed";
-"withdraw_service_type_init_error" = "service type can not be specified";
-"withdraw_missing_params_error" = "some parameters are missing";
+"withdraw_service_type_init_error" = "Service Type can not be specified";
+"withdraw_missing_params_error" = "Some parameters are missing";
+"withdraw_wrong_format_amount" = "Amount specified in wrong format";
+// Cash Out
+"withdraw_amount" = "Amount";
+"withdraw_account" = "Account";
+"withdraw_transaction_fee" = "Transaction Fee";
+"withdraw_total_amount" = "Total Amount";
+"withdraw_continue" = "Continue";
+// Add Card
+"withdraw_add_card" = "Add Card";
+"withdraw_add_card_description" = "Please click \"Add Card\" to make a withdrawal";
 
 /* Notifications */
 "delete_button_title" = "Delete";

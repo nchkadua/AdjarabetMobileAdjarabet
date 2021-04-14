@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "touch-id-4@1x.png",
+      "filename" : "Biometrics.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "touch-id-4@2x.png",
+      "filename" : "Biometrics@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "touch-id-4@3x.png",
+      "filename" : "Biometrics@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

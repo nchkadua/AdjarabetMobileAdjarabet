@@ -60,7 +60,7 @@ public class NotificationContentViewController: UIViewController {
     }
 
     private func setupNavigationItem() {
-        setBackBarButtonItemIfNeeded(width: 40, height: 40, rounded: true)
+        setBackBarButtonItemIfNeeded(width: 35, height: 35, rounded: true)
         setTitle(title: viewModel.params.notification.header)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }

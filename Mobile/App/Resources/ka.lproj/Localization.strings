@@ -31,7 +31,7 @@
 "not_member" = "წევრი არ ხარ?";
 "join_now" = "შემოგვიერთდი";
 "login_button_title" = "ავტორიზაცია";
-"contact_us_button_title" = "Contact us";
+"contact_us_button_title" = "კონტაქტი";
 "settings" = "პარამეტრები";
 
 /* Login */
@@ -44,7 +44,7 @@
 "login_password_input_title" = "პაროლი";
 "login_with_face_id_title" = "Log in with face ID";
 "login_with_touch_id_title" = "Log in with touch ID";
-"login_legal" = "Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia";
+"login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
 
 /* SMS Login */
 "sms_login_page_title" = "SMS ავტორიზაცია";
@@ -59,24 +59,24 @@
 "profile_page_title" = "Account Parameters";
 "profile_page_back_title" = "მთავარი გვერდი";
 
-"verified" = "Your Account is Verified";
+"verified" = "ანგარიში ვერიფიცირებულია";
 
 "balance_title" = "My Balance";
 "total_balance" = "Total Balance";
 "poker_balance" = "Poker Balance";
-"withdraw_button_title" = "Withdraw";
-"deposit_button_title" = "Deposit";
+"withdraw_button_title" = "გატანა";
+"deposit_button_title" = "დეპოზიტი";
 
 "quick_actions_header_title" = "Quick Actions";
-"transaction_history" = "Transaction History";
-"my_cards" = "My Cards";
-"my_bonuses" = "My Bonuses";
-"biomatry_authentication_parameters" = "Biometry Authentication Parameters";
-"transfer_to_a_friend" = "Transfer to a Friend";
-"incognito_card" = "Incognito Card";
-"account_information" = "Account Information";
-"account_parameters" = "Account Parameters";
-"log_out" = "Log Out";
+"transaction_history" = "ტრანზაქციების ისტორია";
+"my_cards" = "ჩემი ბარათები";
+"my_bonuses" = "ჩემი ბონუსები";
+"biomatry_authentication_parameters" = "ავტორიზაციის პარამეტრები";
+"transfer_to_a_friend" = "გადაურიცხე მეგობარს";
+"incognito_card" = "ინკოგნიტო ბარათი";
+"account_information" = "ანგარიშის ინფორმაცია";
+"account_parameters" = "ანგარიშის პარამეტრები";
+"log_out" = "ანგარიშიდან გასვლა";
 
 /* Account Info */
 "account_information_title" = "ანგარიშის ინფორმაცია";
@@ -170,20 +170,29 @@
 "suggestions_done" = "დასრულება";
 
 /* Withdraw */
-"withdraw_amount_title" = "თანხა";
-"withdraw_card_title" = "ბარათი";
-"withdraw_commission_title" = "ტრანზაქციის საკომისიო";
-"withdraw_total_amount_title" = "ჯამური თანხა";
-"withdraw_proceed_button_title" = "Proceed";
-"withdraw_description_title" = "გატანის ინსტრუქცია";
-"withdraw_description_amount" = "გრაფაში 'თანხა' ჩაწერეთ თვენთვის სასურველი თანხა";
-"withdraw_description_card" = "აირჩიეთ სასურველი ბარათი";
-"withdraw_description_proceed" = "დააჭირეთ ღილაკს 'გაგრძელება' და თანხა გადაირიცხება თქვენს ბარათზე";
-"withdraw_rule1" = "ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო";
-"withdraw_rule2" = "გაითვალისწინეთ, რომ განაღდების საკომისიო შეადგენს თანხის 1%-ს";
+"withdraw_cash_out" = "თანხის გატანა";
+"withdraw_balance" = "ბალანსი";
+"withdraw_minimum" = "მინიმალური";
+"withdraw_disposable" = "ერთჯერადი";
+"withdraw_daily" = "დღიური";
+"withdraw_cash_out_instruction" = "გატანის ინსტრუქცია";
+"withdraw_step_1" = "გრაფაში \"თანხა\" ჩაწერეთ თქვენთვის სასურველი თანხა";
+"withdraw_step_2" = "აირჩიეთ სასურველი ბარათი";
+"withdraw_step_3" = "დააჭირეთ ღილაკს \"გაგრძელება\" და თანხა გადაირიცხება თქვენს ბარათზე";
+"withdraw_instruction" = "ბარათზე თანხის გასატანად, აუცილებელია ვებგვერდზე ატვირთული გქონდეთ პირადობის მოწმობის ფერადი ფოტო.\n\nგაითვალისწინეთ, რომ გატანის საკომისიო შეადგენს 1%-ს.\n\nსამართლიანი თამაშის წესების დარღვევის შემთხვევაში, აჭარაბეთი იტოვებს უფლებას, გატანილი თანხიდან საკომისიოს სახით ჩამოაჭრას 3%.";
 "withdraw_transaction_successed" = "ტრანზაქცია წარმატებით განხორციელდა";
-"withdraw_service_type_init_error" = "service type can not be specified";
-"withdraw_missing_params_error" = "some parameters are missing";
+"withdraw_service_type_init_error" = "Service Type can not be specified";
+"withdraw_missing_params_error" = "Some parameters are missing";
+"withdraw_wrong_format_amount" = "თანხა არასწორი ფორმატით არის შეყვანილი";
+// Cash Out
+"withdraw_amount" = "თანხა";
+"withdraw_account" = "ანგარიში";
+"withdraw_transaction_fee" = "ტრანზაქციის საკომისიო";
+"withdraw_total_amount" = "ჯამური თანხა";
+"withdraw_continue" = "გაგრძელება";
+// Add Card
+"withdraw_add_card" = "ბარათის დამატებას";
+"withdraw_add_card_description" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ თანხის გატანა";
 
 /* Notifications */
 "delete_button_title" = "წაშლა";

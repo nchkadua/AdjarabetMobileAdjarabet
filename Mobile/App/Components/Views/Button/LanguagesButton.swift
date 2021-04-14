@@ -25,14 +25,17 @@ class LanguagesButton: UIButton {
         layer.cornerRadius = 25
         clipsToBounds = true
         titleLabel?.textAlignment = .left
+        titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
 
-        setFont(to: .caption2(fontCase: .upper, fontStyle: .semiBold))
+        setFont(to: .subHeadline(fontCase: .upper, fontStyle: .semiBold))
         setTitleColor(R.color.colorGuide.textColors.primary(), for: .normal)
-        backgroundColor = R.color.colorGuide.systemBackground.tertiary()
+        setBackgorundColor(to: .tertiaryBg())
 
         let chosenLanguageIdentifier = languageStorage.currentLanguage.localizableIdentifier
 
         setTitleWithoutAnimation(getLanguage(by: chosenLanguageIdentifier), for: .normal)
+        setImage(getIcon(by: chosenLanguageIdentifier).withRenderingMode(.alwaysOriginal), for: .normal)
         addTarget(self, action: #selector(updateButton), for: .touchUpInside)
     }
 
@@ -40,7 +43,17 @@ class LanguagesButton: UIButton {
         var result = ""
 
         for language in Language.allCases where prefix == language.localizableIdentifier {
-            result = ("\(language.flag) \(language.title)")
+            result = language.title
+        }
+
+        return result
+    }
+
+    private func getIcon(by prefix: String) -> UIImage {
+        var result = UIImage()
+
+        for language in Language.allCases where prefix == language.localizableIdentifier {
+            result = language.languageIcon
         }
 
         return result
@@ -51,7 +64,7 @@ class LanguagesButton: UIButton {
 
         changeLanguage(to: nextLanguage)
         setTitleWithoutAnimation(getLanguage(by: nextLanguage.localizableIdentifier), for: .normal)
-
+        setImage(getIcon(by: nextLanguage.localizableIdentifier).withRenderingMode(.alwaysOriginal), for: .normal)
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
 

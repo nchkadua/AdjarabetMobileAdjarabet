@@ -29,7 +29,7 @@ public protocol BalanceComponentViewModelOutput {
 }
 
 public enum BalanceComponentViewModelOutputAction {
-    case set(totalBalance: Double)
+    case set(totalBalance: String)
     case didClickBalance(BalanceComponentViewModel)
     case didClickWithdraw(BalanceComponentViewModel)
     case didClickDeposit(BalanceComponentViewModel)
@@ -38,6 +38,7 @@ public enum BalanceComponentViewModelOutputAction {
 public class DefaultBalanceComponentViewModel {
     public var params: BalanceComponentViewModelParams
     private let actionSubject = PublishSubject<BalanceComponentViewModelOutputAction>()
+    @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
 
     public init (params: BalanceComponentViewModelParams) {
         self.params = params
@@ -48,7 +49,8 @@ extension DefaultBalanceComponentViewModel: BalanceComponentViewModel {
     public var action: Observable<BalanceComponentViewModelOutputAction> { actionSubject.asObserver() }
 
     public func didBind() {
-        actionSubject.onNext(.set(totalBalance: params.totalBalance))
+        let formattedAmount = amountFormatter.format(number: params.totalBalance, in: .s_n_a)
+        actionSubject.onNext(.set(totalBalance: formattedAmount))
     }
 
     public func didClickBalance() {
