@@ -60,6 +60,7 @@ public class NotificationsViewController: ABViewController {
 
         appTableViewController.isTabBarManagementEnabled = true
         appTableViewController.canEditRow = true
+        appTableViewController.delegate = viewModel
     }
 
     private func bind(to viewModel: NotificationsViewModel) {

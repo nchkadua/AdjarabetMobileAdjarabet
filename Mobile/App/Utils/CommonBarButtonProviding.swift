@@ -59,7 +59,6 @@ public extension CommonBarButtonProviding {
         button.setFont(to: .body2(fontCase: .upper, fontStyle: .regular))
         button.setTitleColor(to: .primaryText(), for: .normal)
         button.setTintColor(to: .primaryText())
-        button.semanticContentAttribute = .forceRightToLeft
 
         return UIBarButtonItem(customView: button)
     }

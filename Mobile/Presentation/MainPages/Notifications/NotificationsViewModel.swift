@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol NotificationsViewModel: NotificationsViewModelInput, NotificationsViewModelOutput {
+public protocol NotificationsViewModel: NotificationsViewModelInput, NotificationsViewModelOutput, ABTableViewControllerDelegate {
 }
 
 public protocol NotificationsViewModelInput {
@@ -40,8 +40,8 @@ public class DefaultNotificationsViewModel: DefaultBaseViewModel {
 
     @Inject(from: .useCases) private var notificationsUseCase: NotificationsUseCase
     private var notificationsDataProvider: AppCellDataProviders = []
-    private var notificationsArray: NotificationItemsEntity = NotificationItemsEntity(elements: [], totalItemsCount: 0, totalUnreadItemsCount: 0, pageCount: 0, itemsPerPage: 0)
     private var page: PageDescription = .init()
+    private var numberOfUnreadNotifications = -1
 }
 
 extension DefaultNotificationsViewModel: NotificationsViewModel {
@@ -67,10 +67,8 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         notificationsUseCase.notifications(page: page, domain: "com") { result in //TODO: dynamic domain
             switch result {
             case .success(let notifications):
-                self.notificationsArray = NotificationItemsEntity(elements: notifications.elements.map { $0 }, totalItemsCount: notifications.totalItemsCount, totalUnreadItemsCount: notifications.totalUnreadItemsCount, pageCount: notifications.pageCount, itemsPerPage: notifications.itemsPerPage)
-
                 self.page.itemsPerPage = notifications.itemsPerPage
-                self.createModelsFrom(notifications: self.notificationsArray)
+                self.createModelsFrom(notifications: notifications)
             case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
@@ -94,9 +92,31 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
                 }).disposed(by: self.disposeBag)
                 dataProvider.append(model)
             }
-            self.actionSubject.onNext(.setTotalItemsCount(count: notifications.totalUnreadItemsCount))
+
+            /// TotalNumberOfUnreadNotifications is not updated after firs page, so needs to be saved (Backend bug)
+            if numberOfUnreadNotifications == -1 {
+                numberOfUnreadNotifications = notifications.totalUnreadItemsCount
+            }
+            self.actionSubject.onNext(.setTotalItemsCount(count: numberOfUnreadNotifications))
         }
         self.appendPage(notifications: dataProvider)
+    }
+
+    private func dates(from notifications: NotificationItemsEntity) -> [Date] {
+        return notifications.elements.map({ (notification: NotificationItemsEntity.NotificationEntity) -> Date in notification.createDate.toDateWithoutTime}).uniques
+    }
+
+    private func delete(notification: NotificationItemsEntity.NotificationEntity, at indexPath: IndexPath) {
+        notificationsUseCase.delete(notificationId: notification.id) { result in
+            switch result {
+            case .success:
+                self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
+                self.actionSubject.onNext(.setTotalItemsCount(count: self.numberOfUnreadNotifications - 1))
+//                self.resetPaging()
+//                self.load(page: self.page.current)
+            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            }
+        }
     }
 
     private func appendPage(notifications: AppCellDataProviders) {
@@ -110,38 +130,16 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         actionSubject.onNext(.reloadItems(items: notifications, insertionIndexPathes: indexPathes, deletionIndexPathes: []))
     }
 
-    private func dates(from notifications: NotificationItemsEntity) -> [Date] {
-        return notifications.elements.map({ (notification: NotificationItemsEntity.NotificationEntity) -> Date in notification.createDate.toDateWithoutTime}).uniques
-    }
-
-    private func delete(notification: NotificationItemsEntity.NotificationEntity, at indexPath: IndexPath) {
-//        self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
-//        self.resetPaging()
-////                self.load(page: self.page.current)
-//        self.dates(from: self.notificationsArray).forEach {
-//            print("Asdadsads ", $0.formattedStringValue)
-//        }
-//        self.notificationsArray.elements.remove(at: indexPath.section)
-//        self.dates(from: self.notificationsArray).forEach {
-//            print("Asdadsads ", $0.formattedStringValue)
-//        }
-//        self.createModelsFrom(notifications: self.notificationsArray)
-//
-//        return
-        notificationsUseCase.delete(notificationId: notification.id) { result in
-            switch result {
-            case .success:
-                self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
-//                self.resetPaging()
-//                self.load(page: self.page.current)
-            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
-            }
-        }
-    }
-
     private func resetPaging() {
         self.notificationsDataProvider = []
         page.reset()
         page.current = 0
+    }
+
+    public func didDeleteCell(at indexPath: IndexPath) {}
+
+    public func didLoadNextPage() {
+        guard page.hasMore else { return }
+        load(page: self.page.nextPage)
     }
 }

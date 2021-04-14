@@ -21,22 +21,28 @@ public class UserIdButton: UIButton {
         setupButton()
     }
 
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        semanticContentAttribute = .forceRightToLeft
+    }
+
     private func setupButton() {
         sizeToFit()
         imageView?.contentMode = .scaleAspectFit
         titleEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 11)
         frame = CGRect(x: 0, y: 0, width: 100, height: 35)
         titleLabel?.textAlignment = .right
+        semanticContentAttribute = .forceRightToLeft
 
         setImage(R.image.components.profileCell.copy(), for: .normal)
         if let userId = userSession.userId {
             setTitle(String(userId), for: .normal)
         }
 
-        addTarget(self, action: #selector(copyUdseId), for: .touchUpInside)
+        addTarget(self, action: #selector(copyUserId), for: .touchUpInside)
     }
 
-    @objc private func copyUdseId() {
+    @objc private func copyUserId() {
         UIPasteboard.general.string = titleLabel?.text
     }
 }

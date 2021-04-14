@@ -12,7 +12,7 @@ struct NotificationDTO: DataTransferResponse {
     struct Body: Codable {
         let items: [NotificationItemsEntity]?
         let totalItemsCount: Int
-        let totalUnreadItemsCount: Int
+        let totalUnreadItemsCount: Int?
         let pageCount: Int
         let itemsPerPage: Int
 
@@ -66,6 +66,6 @@ struct NotificationDTO: DataTransferResponse {
             }
         }
 
-        return .init(elements: elements, totalItemsCount: body.totalItemsCount, totalUnreadItemsCount: body.totalUnreadItemsCount, pageCount: body.pageCount, itemsPerPage: body.itemsPerPage)
+        return .init(elements: elements, totalItemsCount: body.totalItemsCount, totalUnreadItemsCount: body.totalUnreadItemsCount ?? 0, pageCount: body.pageCount, itemsPerPage: body.itemsPerPage)
     }
 }

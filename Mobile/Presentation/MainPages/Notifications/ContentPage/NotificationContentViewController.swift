@@ -85,6 +85,7 @@ public class NotificationContentViewController: UIViewController {
 
     private func setup(with notification: NotificationItemsEntity.NotificationEntity) {
         viewModel.calculateTimeOf(notification)
+        titleLabel.text = notification.header
         splitContent(notification.content)
     }
 

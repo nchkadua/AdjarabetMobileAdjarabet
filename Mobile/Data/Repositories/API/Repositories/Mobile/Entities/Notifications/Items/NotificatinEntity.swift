@@ -8,15 +8,7 @@
 
 import Foundation
 
-public struct NotificationItemsEntity: Equatable {
-    public static func == (lhs: NotificationItemsEntity, rhs: NotificationItemsEntity) -> Bool {
-        return lhs.elements == rhs.elements &&
-            lhs.totalItemsCount == rhs.totalItemsCount &&
-            lhs.totalUnreadItemsCount == rhs.totalUnreadItemsCount &&
-            lhs.pageCount == rhs.pageCount &&
-            lhs.itemsPerPage == rhs.itemsPerPage
-    }
-
+public struct NotificationItemsEntity {
     var elements: [NotificationEntity]
     var totalItemsCount: Int
     var totalUnreadItemsCount: Int
