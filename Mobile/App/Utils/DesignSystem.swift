@@ -347,8 +347,10 @@ public enum DesignSystem {
 
     public enum View {
         public enum Style {
-            case normal
-            case pressed
+            case primaryNormal
+            case primaryPressed
+            case secondaryNormal
+            case secondaryPressed
 
             public struct Description: Equatable {
                 public var backgorundColor: Color?
@@ -356,8 +358,10 @@ public enum DesignSystem {
 
             public var decsription: Description {
                 switch self {
-                case .normal: return .init(backgorundColor: .primaryBg())
-                case .pressed: return .init(backgorundColor: .secondaryBg())
+                case .primaryNormal: return .init(backgorundColor: .primaryBg())
+                case .primaryPressed: return .init(backgorundColor: .secondaryBg())
+                case .secondaryNormal: return .init(backgorundColor: .secondaryBg())
+                case .secondaryPressed: return .init(backgorundColor: .tertiaryBg())
                 }
             }
         }

@@ -20,11 +20,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Azf-XP-iKd">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="as5-pJ-D61">
                             <rect key="frame" x="20" y="0.0" width="374" height="65"/>
@@ -40,7 +40,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6v-Li-Hdd">
-                                            <rect key="frame" x="66" y="12" width="278" height="20.5"/>
+                                            <rect key="frame" x="66" y="12" width="296" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                                         <constraint firstItem="Z6v-Li-Hdd" firstAttribute="top" secondItem="ODt-zO-Z2v" secondAttribute="top" constant="12" id="640-9b-Se9"/>
                                         <constraint firstItem="Z6v-Li-Hdd" firstAttribute="leading" secondItem="qLK-4G-gJ9" secondAttribute="trailing" constant="15" id="AiM-7W-G44"/>
                                         <constraint firstItem="qLK-4G-gJ9" firstAttribute="leading" secondItem="ODt-zO-Z2v" secondAttribute="leading" constant="17" id="PtA-mz-JBd"/>
-                                        <constraint firstAttribute="trailing" secondItem="Z6v-Li-Hdd" secondAttribute="trailing" constant="30" id="Xh7-7m-0mG"/>
+                                        <constraint firstAttribute="trailing" secondItem="Z6v-Li-Hdd" secondAttribute="trailing" constant="12" id="Xh7-7m-0mG"/>
                                         <constraint firstItem="qLK-4G-gJ9" firstAttribute="centerY" secondItem="ODt-zO-Z2v" secondAttribute="centerY" id="hP8-AJ-wa6"/>
                                         <constraint firstAttribute="height" constant="54" id="lRW-e5-nXV"/>
                                     </constraints>
@@ -60,7 +60,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <edgeInsets key="layoutMargins" top="11" left="0.0" bottom="0.0" right="0.0"/>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="obc-Nv-1VU">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="obc-Nv-1VU">
                             <rect key="frame" x="20" y="79" width="374" height="51"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bZl-fG-hRY">
@@ -84,18 +84,15 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="KyH-Fm-KE3"/>
+                                        <constraint firstAttribute="width" constant="110" id="W9L-5X-FPU"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="bJE-hW-l8p" firstAttribute="leading" secondItem="obc-Nv-1VU" secondAttribute="leading" constant="264" id="LbV-k6-C6z"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                    <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="20" right="20"/>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

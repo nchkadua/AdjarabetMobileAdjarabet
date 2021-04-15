@@ -80,6 +80,10 @@ public class NotificationsViewController: ABViewController {
             UIView.performWithoutAnimation {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
             }
+        case .reloadIndexPathes(let indexPathes):
+            UIView.performWithoutAnimation {
+                appTableViewController.tableView.reloadRows(at: indexPathes, with: .fade)
+            }
         case .reloadData: appTableViewController.reloadItems()
         case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
         case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)

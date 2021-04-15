@@ -41,6 +41,11 @@ public class FooterComponentView: UIView {
         bind()
     }
 
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        legalBgView.roundCorners(.allCorners, radius: 46)
+    }
+
     public func bind() {
         disposeBag = DisposeBag()
 
@@ -62,7 +67,6 @@ public class FooterComponentView: UIView {
 
     private func setupLegalView() {
         legalBgView.setBackgorundColor(to: .tertiaryBg())
-        legalBgView.roundCorners(.allCorners, radius: 46)
 
         legalLabel.setTextColor(to: .primaryText())
         legalLabel.setFont(to: .caption2(fontCase: .lower, fontStyle: .regular))

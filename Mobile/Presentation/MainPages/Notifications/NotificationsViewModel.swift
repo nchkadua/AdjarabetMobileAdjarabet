@@ -24,6 +24,7 @@ public protocol NotificationsViewModelOutput {
 public enum NotificationsViewModelOutputAction {
     case initialize(AppListDataProvider)
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
+    case reloadIndexPathes([IndexPath])
     case reloadData
     case didDeleteCell(atIndexPath: IndexPath)
     case setTotalItemsCount(count: Int)
@@ -42,6 +43,20 @@ public class DefaultNotificationsViewModel: DefaultBaseViewModel {
     private var notificationsDataProvider: AppCellDataProviders = []
     private var page: PageDescription = .init()
     private var numberOfUnreadNotifications = -1
+    public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .secondaryText(), height: 55))
+    private var loadingType: LoadingType = .none {
+        didSet {
+            guard loadingType != oldValue else {return}
+
+//            actionSubject.onNext(.setLoading(loadingType))
+
+            let isNextPage = loadingType == .nextPage
+            loading.set(isLoading: isNextPage)
+            let indexPath = IndexPath(item: notificationsDataProvider.count, section: 0)
+//            actionSubject.onNext(.reloadIndexPathes([indexPath]))
+        }
+    }
+    private var isLoading = false
 }
 
 extension DefaultNotificationsViewModel: NotificationsViewModel {
@@ -50,11 +65,11 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
 
     public func viewDidLoad() {
         displayEmptyNotificationList()
-        load(page: self.page.current)
+        load(loadingType: .fullScreen)
     }
 
     public func viewWillDissapear() {
-        resetPaging()
+//        resetPaging()
     }
 
     private func displayEmptyNotificationList() {
@@ -63,13 +78,18 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
     }
 
-    private func load(page: Int) {
-        notificationsUseCase.notifications(page: page, domain: "com") { result in //TODO: dynamic domain
+    private func load(loadingType: LoadingType) {
+        self.loadingType = .fullScreen
+        isLoading = true
+        notificationsUseCase.notifications(page: page.current, domain: "com") { result in //TODO: dynamic domain
             switch result {
             case .success(let notifications):
                 self.page.itemsPerPage = notifications.itemsPerPage
                 self.createModelsFrom(notifications: notifications)
-            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            case .failure(let error):
+                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+                self.resetPaging()
+                self.isLoading = false
             }
         }
     }
@@ -84,7 +104,9 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
                 let model = DefaultNotificationComponentViewModel(params: .init(notification: notification))
                 model.action.subscribe(onNext: { action in
                     switch action {
-                    case .didSelect(let notification): self.routeSubject.onNext(.openNotificationContentPage(notification: notification))
+                    case .didSelect(let notification):
+                        self.routeSubject.onNext(.openNotificationContentPage(notification: notification))
+                        self.decreaseNumberOfUnreads(notification: notification)
                     case .didDelete(let indexPath): self.delete(notification: notification, at: indexPath)
                     default:
                         break
@@ -93,13 +115,14 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
                 dataProvider.append(model)
             }
 
-            /// TotalNumberOfUnreadNotifications is not updated after firs page, so needs to be saved (Backend bug)
+            // TotalNumberOfUnreadNotifications is not updated after firs page, so needs to be saved (Backend bug)
             if numberOfUnreadNotifications == -1 {
                 numberOfUnreadNotifications = notifications.totalUnreadItemsCount
             }
             self.actionSubject.onNext(.setTotalItemsCount(count: numberOfUnreadNotifications))
         }
         self.appendPage(notifications: dataProvider)
+        self.isLoading = false
     }
 
     private func dates(from notifications: NotificationItemsEntity) -> [Date] {
@@ -111,12 +134,19 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
             switch result {
             case .success:
                 self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
-                self.actionSubject.onNext(.setTotalItemsCount(count: self.numberOfUnreadNotifications - 1))
+                self.decreaseNumberOfUnreads(notification: notification)
 //                self.resetPaging()
 //                self.load(page: self.page.current)
             case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
+    }
+
+    private func decreaseNumberOfUnreads(notification: NotificationItemsEntity.NotificationEntity) {
+        guard notification.status == NotificationStatus.unread.rawValue else { return }
+
+        self.numberOfUnreadNotifications -= 1
+        self.actionSubject.onNext(.setTotalItemsCount(count: self.numberOfUnreadNotifications))
     }
 
     private func appendPage(notifications: AppCellDataProviders) {
@@ -139,7 +169,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     public func didDeleteCell(at indexPath: IndexPath) {}
 
     public func didLoadNextPage() {
-        guard page.hasMore else { return }
-        load(page: self.page.nextPage)
+        guard page.hasMore, !isLoading else { return }
+//        load(loadingType: .nextPage)
     }
 }

@@ -55,16 +55,18 @@ class NotificationComponentView: UIView {
     private func setupUI(with notification: NotificationItemsEntity.NotificationEntity) {
         guard !statusUpdated else { return }
 
-        titleLabel.setTextWithAnimation(notification.header)
-        viewModel.calculateTimeOf(notification)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+            titleLabel.setTextWithAnimation(notification.header)
+            viewModel.calculateTimeOf(notification)
 
-        if notification.status == 1 {
-            titleLabel.setTextColor(to: .primaryText())
-            iconImageView.image = R.image.notifications.inbox_new()
-        } else if notification.status == 2 {
-            titleLabel.setTextColor(to: .secondaryText())
-            iconImageView.image = R.image.notifications.inbox_read()
-        }
+            if notification.status == 1 {
+                titleLabel.setTextColor(to: .primaryText())
+                iconImageView.image = R.image.notifications.inbox_new()
+            } else if notification.status == 2 {
+                titleLabel.setTextColor(to: .secondaryText())
+                iconImageView.image = R.image.notifications.inbox_read()
+            }
+//        }
     }
 
     private func markAsRead() {
@@ -86,6 +88,7 @@ extension NotificationComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.primaryBg().value
+        view.componentStyle = .primary
 
         titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
         titleLabel.setTextColor(to: .primaryText())

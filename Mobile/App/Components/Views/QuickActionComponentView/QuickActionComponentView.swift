@@ -13,7 +13,7 @@ class QuickActionComponentView: UIView {
     private var viewModel: QuickActionComponentViewModel!
 
     // MARK: Outlets
-    @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var view: ABView!
     @IBOutlet weak private var separatorView: UIView!
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
@@ -84,7 +84,7 @@ extension QuickActionComponentView: Xibable {
             view
         }
         set {
-            view = newValue
+            view = newValue as? ABView
         }
     }
 

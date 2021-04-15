@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuickActionComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
-                <outlet property="bgView" destination="IAK-3X-Hj8" id="wFJ-Z6-Qb4"/>
+                <outlet property="bgView" destination="IAK-3X-Hj8" id="sTc-PP-iDY"/>
                 <outlet property="iconImageView" destination="ZIK-zf-2ul" id="a8h-8S-enV"/>
                 <outlet property="separatorView" destination="h6x-sw-zmY" id="2F1-4K-dmv"/>
                 <outlet property="titleLabel" destination="lHH-ZY-Nvf" id="PeB-1J-ixu"/>
-                <outlet property="view" destination="iN0-l3-epB" id="R9B-U0-xA7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="W0e-dB-lDb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ABView" customModule="Mobile" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>

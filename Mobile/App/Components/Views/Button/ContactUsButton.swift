@@ -36,6 +36,7 @@ public class ContactUsButton: UIButton {
         layer.cornerRadius = 25
         titleLabel?.textAlignment = .left
         titleEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+        imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
     }
 
     private func setTitles() {
