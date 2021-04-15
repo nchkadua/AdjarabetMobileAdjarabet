@@ -169,8 +169,8 @@ class CashOutVisaView: UIView, Xibable {
         continueButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
         totalAmountView.setBackgorundColor(to: isEnabled ? .primaryRed() : .secondaryBg())
         if !isEnabled {
-            feeAmountLabel.text = "-"
-            totalAmountLabel.text = "-"
+            feeAmountLabel.text = viewModel?.defaultFee()
+            totalAmountLabel.text = viewModel?.defaultTotal()
         }
     }
 
