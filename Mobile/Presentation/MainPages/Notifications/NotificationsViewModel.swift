@@ -8,12 +8,13 @@
 
 import RxSwift
 
-public protocol NotificationsViewModel: NotificationsViewModelInput, NotificationsViewModelOutput, ABTableViewControllerDelegate {
+public protocol NotificationsViewModel: NotificationsViewModelInput, NotificationsViewModelOutput, ABTableViewControllerDelegate, AppRedrawableCellDelegate {
 }
 
 public protocol NotificationsViewModelInput {
     func viewDidLoad()
-    func viewWillDissapear()
+    func viewWillAppear()
+    func viewDidDissapear()
 }
 
 public protocol NotificationsViewModelOutput {
@@ -24,9 +25,9 @@ public protocol NotificationsViewModelOutput {
 public enum NotificationsViewModelOutputAction {
     case initialize(AppListDataProvider)
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
-    case reloadIndexPathes([IndexPath])
     case reloadData
     case didDeleteCell(atIndexPath: IndexPath)
+    case reload(atIndexPath: IndexPath)
     case setTotalItemsCount(count: Int)
     case showMessage(message: String)
 }
@@ -43,53 +44,34 @@ public class DefaultNotificationsViewModel: DefaultBaseViewModel {
     private var notificationsDataProvider: AppCellDataProviders = []
     private var page: PageDescription = .init()
     private var numberOfUnreadNotifications = -1
+
     public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .secondaryText(), height: 55))
     private var loadingType: LoadingType = .none {
         didSet {
             guard loadingType != oldValue else {return}
-
-//            actionSubject.onNext(.setLoading(loadingType))
-
             let isNextPage = loadingType == .nextPage
             loading.set(isLoading: isNextPage)
-            let indexPath = IndexPath(item: notificationsDataProvider.count, section: 0)
-//            actionSubject.onNext(.reloadIndexPathes([indexPath]))
+//            actionSubject.onNext(.reloadData)
         }
     }
-    private var isLoading = false
+    private var lastSelectedIndexPath: IndexPath?
 }
 
 extension DefaultNotificationsViewModel: NotificationsViewModel {
     public var action: Observable<NotificationsViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<NotificationsViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
-        displayEmptyNotificationList()
-        load(loadingType: .fullScreen)
-    }
-
-    public func viewWillDissapear() {
-//        resetPaging()
-    }
-
-    private func displayEmptyNotificationList() {
-        self.resetPaging()
-        let initialEmptyDataProvider: AppCellDataProviders = []
-        self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
-    }
-
     private func load(loadingType: LoadingType) {
-        self.loadingType = .fullScreen
-        isLoading = true
+        self.loadingType = loadingType
         notificationsUseCase.notifications(page: page.current, domain: "com") { result in //TODO: dynamic domain
+            defer { self.loadingType = .none }
+
             switch result {
             case .success(let notifications):
                 self.page.itemsPerPage = notifications.itemsPerPage
                 self.createModelsFrom(notifications: notifications)
             case .failure(let error):
                 self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
-                self.resetPaging()
-                self.isLoading = false
             }
         }
     }
@@ -102,16 +84,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
 
             for notification in notifications.elements where notification.createDate.toDateWithoutTime == $0 {
                 let model = DefaultNotificationComponentViewModel(params: .init(notification: notification))
-                model.action.subscribe(onNext: { action in
-                    switch action {
-                    case .didSelect(let notification):
-                        self.routeSubject.onNext(.openNotificationContentPage(notification: notification))
-                        self.decreaseNumberOfUnreads(notification: notification)
-                    case .didDelete(let indexPath): self.delete(notification: notification, at: indexPath)
-                    default:
-                        break
-                    }
-                }).disposed(by: self.disposeBag)
+                subscribeTo(notification: model, notification: notification)
                 dataProvider.append(model)
             }
 
@@ -122,7 +95,19 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
             self.actionSubject.onNext(.setTotalItemsCount(count: numberOfUnreadNotifications))
         }
         self.appendPage(notifications: dataProvider)
-        self.isLoading = false
+    }
+
+    private func subscribeTo(notification model: DefaultNotificationComponentViewModel, notification: NotificationItemsEntity.NotificationEntity) {
+        model.action.subscribe(onNext: { action in
+            switch action {
+            case .didSelect(let notification):
+                self.routeSubject.onNext(.openNotificationContentPage(notification: notification))
+                self.decreaseNumberOfUnreads(notification: notification)
+            case .didDelete(let indexPath): self.delete(notification: notification, at: indexPath)
+            default:
+                break
+            }
+        }).disposed(by: self.disposeBag)
     }
 
     private func dates(from notifications: NotificationItemsEntity) -> [Date] {
@@ -135,8 +120,6 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
             case .success:
                 self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
                 self.decreaseNumberOfUnreads(notification: notification)
-//                self.resetPaging()
-//                self.load(page: self.page.current)
             case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
@@ -155,21 +138,45 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         self.page.configureHasMore(forNumberOfItems: notifications.count)
 
         notificationsDataProvider.append(contentsOf: notifications)
-
         let indexPathes = notifications.enumerated().map { IndexPath(item: offset + $0.offset, section: 0) }
         actionSubject.onNext(.reloadItems(items: notifications, insertionIndexPathes: indexPathes, deletionIndexPathes: []))
+    }
+
+    public func viewDidLoad() {
+        displayEmptyNotificationList()
+        load(loadingType: .fullScreen)
+    }
+
+    public func viewWillAppear() {
+        actionSubject.onNext(.initialize(notificationsDataProvider.makeList()))
+        actionSubject.onNext(.reloadData)
+    }
+
+    public func viewDidDissapear() {
+        let initialEmptyDataProvider: AppCellDataProviders = []
+        self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
+    }
+
+    private func displayEmptyNotificationList() {
+        self.resetPaging()
+        let initialEmptyDataProvider: AppCellDataProviders = []
+        self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
     }
 
     private func resetPaging() {
         self.notificationsDataProvider = []
         page.reset()
-        page.current = 0
+        page.current = 1
     }
 
     public func didDeleteCell(at indexPath: IndexPath) {}
 
     public func didLoadNextPage() {
-        guard page.hasMore, !isLoading else { return }
-//        load(loadingType: .nextPage)
+        guard page.hasMore else { return }
+        load(loadingType: .nextPage)
+    }
+
+    public func redraw(at indexPath: IndexPath) {
+        actionSubject.onNext(.reload(atIndexPath: indexPath))
     }
 }

@@ -55,7 +55,7 @@ class NotificationComponentView: UIView {
     private func setupUI(with notification: NotificationItemsEntity.NotificationEntity) {
         guard !statusUpdated else { return }
 
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [self] in
             titleLabel.setTextWithAnimation(notification.header)
             viewModel.calculateTimeOf(notification)
 
@@ -95,16 +95,5 @@ extension NotificationComponentView: Xibable {
 
         timeLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         timeLabel.setTextColor(to: .secondaryText())
-    }
-
-    @objc func tapHandler(gesture: UITapGestureRecognizer) {
-        if gesture.state == .began {
-            container.backgroundColor = DesignSystem.Color.secondaryBg().value
-            return
-        }
-        if gesture.state == .ended {
-            container.backgroundColor = DesignSystem.Color.primaryBg().value
-            return
-        }
     }
 }

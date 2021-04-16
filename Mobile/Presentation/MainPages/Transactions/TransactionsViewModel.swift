@@ -156,8 +156,9 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     }
 
     // MARK: ABTableViewControllerDelegate
-
+    // Unused delegate methods
     public func didDeleteCell(at indexPath: IndexPath) { }
+    public func redraw(at indexPath: IndexPath) { }
 
     public func didLoadNextPage() {
         guard page.hasMore else { return }
