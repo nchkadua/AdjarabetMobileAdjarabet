@@ -55,6 +55,8 @@ class PaymentMethodComponentView: UIView {
     private func set(iconUrl: String) {
         guard let url = URL(string: iconUrl) else { return }
         iconImageView.sd_setImage(with: url)
+        
+        accessibilityIdentifier = viewModel.params.flowId
     }
 
     private func select() {

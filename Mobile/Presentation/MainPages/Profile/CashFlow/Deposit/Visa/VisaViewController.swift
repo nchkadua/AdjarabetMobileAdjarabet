@@ -38,6 +38,7 @@ public class VisaViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        setupAccessibilityIdentifiers()
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -208,5 +209,34 @@ public class VisaViewController: ABViewController {
 extension VisaViewController: ABInputViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel.selected(account: account, amount: amount)
+    }
+}
+
+
+extension VisaViewController: InputViewsProviding {
+    public var inputViews: [ABInputView] { [cardNumberInputView, amountInputView] }
+}
+
+// MARK: Accessibility Identifiers
+extension VisaViewController: Accessible {
+    private func setupAccessibilityIdentifiers() {
+        generateAccessibilityIdentifiers()
+
+        amountInputView.setAccessibilityIdTextfield(id: "VisaViewController.amountInputViewTextField")
+        cardNumberInputView.setAccessibilityIdTextfield(id: "VisaViewController.cardNumberInputViewTextField")
+        amountInputView.setAccessibilityIdsToPlaceholderLabels(id: "VisaViewController.amountInputViewTextField.placeholder")
+        cardNumberInputView.setAccessibilityIdsToPlaceholderLabels(id: "VisaViewController.cardNumberInputViewTextField.placeholder")
+        cardNumberInputView.setAccessibilityIdTextfield(id: "VisaViewController.cardNumberInputViewTextField")
+        
+        limitView.accessibilityIdentifier =
+            "VisaViewController.limitView"
+        
+        instructionView.accessibilityIdentifier =
+            "VisaViewController.instructionView"
+        
+        addCardButton.accessibilityIdentifier = "VisaViewController.addCardButton"
+        continueButton.accessibilityIdentifier = "VisaViewController.continueButton"
+        
+        
     }
 }

@@ -113,6 +113,8 @@ public extension UIViewController {
 
     func showAlert(title: String, _ handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.view.accessibilityIdentifier = "custom_alert"
+        alert.view.accessibilityValue = "\(title)"
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: handler))
         present(alert, animated: true, completion: nil)
     }

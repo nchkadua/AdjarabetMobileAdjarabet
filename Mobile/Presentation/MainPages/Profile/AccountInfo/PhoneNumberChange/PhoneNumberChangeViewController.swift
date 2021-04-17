@@ -25,6 +25,7 @@ public class PhoneNumberChangeViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        setupAccessibilityIdentifiers()
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -109,4 +110,23 @@ public class PhoneNumberChangeViewController: ABViewController {
         approveButton.isUserInteractionEnabled = isEnabled
         approveButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
+}
+
+
+extension PhoneNumberChangeViewController: InputViewsProviding {
+    public var inputViews: [ABInputView] { [phoneNumberInputView] }
+
+}
+extension PhoneNumberChangeViewController: Accessible {
+private func setupAccessibilityIdentifiers() {
+    generateAccessibilityIdentifiers()
+
+    
+    phoneNumberInputView.setAccessibilityIdTextfield(id: "PhoneNumberChangeViewController.phoneNumberInputViewTextField")
+    phoneNumberInputView.setAccessibilityIdsToPlaceholderLabels(id: "PhoneNumberChangeViewController.phoneNumberInputViewTextField.placeholder")
+    approveButton.accessibilityIdentifier = "PhoneNumberChangeViewController.approveButton"
+    phonePrefixInputView.accessibilityIdentifier = "PhoneNumberChangeViewController.phonePrefixInputView"
+    
+
+}
 }

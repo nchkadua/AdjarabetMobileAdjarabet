@@ -38,6 +38,7 @@ public class OTPViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        setupAccessibilityIdentifiers()
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -221,5 +222,23 @@ extension OTPViewController: UITextFieldDelegate {
         let result = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
 
         return viewModel.shouldChangeCharacters(for: result)
+    }
+}
+
+extension OTPViewController: InputViewsProviding {
+    public var inputViews: [ABInputView] { [] }
+}
+
+// MARK: Accessibility Identifiers
+extension OTPViewController: Accessible {
+    private func setupAccessibilityIdentifiers() {
+        generateAccessibilityIdentifiers()
+
+
+        loginButton.accessibilityIdentifier = "OTPViewController.loginButton"
+        resendSMSButton.accessibilityIdentifier = "OTPViewController.resendSMSButton"
+        otpDescriptionLabel.accessibilityIdentifier = "OTPViewController.otpDescriptionLabel"
+        smsCodeTextField.accessibilityIdentifier = "OTPViewController.smsCodeTextField"
+        smsCodeInputView.accessibilityIdentifier = "OTPViewController.smsCodeInputView"
     }
 }

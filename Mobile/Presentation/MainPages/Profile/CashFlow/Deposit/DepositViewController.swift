@@ -29,6 +29,7 @@ public class DepositViewController: UIViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        setupAccessibilityIdentifiers()
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -125,5 +126,21 @@ public class DepositViewController: UIViewController {
     private func jumpToViewController(by paymentMethodType: PaymentMethodType) {
         guard let vc = navigator.viewController(by: paymentMethodType) else { return }
         appPageViewController.jump(to: vc, animated: false)
+    }
+}
+
+
+// MARK: Accessibility Identifiers
+extension DepositViewController: Accessible {
+    private func setupAccessibilityIdentifiers() {
+        generateAccessibilityIdentifiers()
+    
+        titleLabel.accessibilityIdentifier = "DepositViewController.titleLabel"
+        balanceTitleLabel.accessibilityIdentifier = "DepositViewController.balanceTitleLabel"
+        balanceLabel.accessibilityIdentifier = "DepositViewController.balanceLabel"
+        paymentGridComponentView.accessibilityIdentifier = "DepositViewController.paymentMethod"
+        
+        
+        navigationItem.titleView?.accessibilityIdentifier = "DepositViewController.title"
     }
 }
