@@ -129,18 +129,16 @@ public class DepositViewController: UIViewController {
     }
 }
 
-
 // MARK: Accessibility Identifiers
 extension DepositViewController: Accessible {
     private func setupAccessibilityIdentifiers() {
         generateAccessibilityIdentifiers()
-    
+
         titleLabel.accessibilityIdentifier = "DepositViewController.titleLabel"
         balanceTitleLabel.accessibilityIdentifier = "DepositViewController.balanceTitleLabel"
         balanceLabel.accessibilityIdentifier = "DepositViewController.balanceLabel"
         paymentGridComponentView.accessibilityIdentifier = "DepositViewController.paymentMethod"
-        
-        
+
         navigationItem.titleView?.accessibilityIdentifier = "DepositViewController.title"
     }
 }

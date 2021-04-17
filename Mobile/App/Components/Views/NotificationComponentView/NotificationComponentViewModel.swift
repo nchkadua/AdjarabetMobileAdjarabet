@@ -19,6 +19,7 @@ public protocol NotificationComponentViewModelInput {
     func didBind()
     func didSelect(at indexPath: IndexPath)
     func didDelete(at indexPath: IndexPath)
+    func redraw(at indexPath: IndexPath)
     func calculateTimeOf(_ notification: NotificationItemsEntity.NotificationEntity)
 }
 
@@ -31,6 +32,7 @@ public enum NotificationComponentViewModelOutputAction {
     case set(notifiation: NotificationItemsEntity.NotificationEntity)
     case didSelect(notification: NotificationItemsEntity.NotificationEntity)
     case didDelete(atIndex: IndexPath)
+    case redraw(atIndexPath: IndexPath)
     case setTime(time: String)
 }
 
@@ -56,6 +58,12 @@ extension DefaultNotificationComponentViewModel: NotificationComponentViewModel 
 
     public func didDelete(at indexPath: IndexPath) {
         actionSubject.onNext(.didDelete(atIndex: indexPath))
+    }
+
+    public func redraw(at indexPath: IndexPath) {
+//        actionSubject.onNext(.redraw(atIndexPath: indexPath))
+//        print("Asdasdasdasdssssss")
+//        actionSubject.onNext(.set(notifiation: params.notification))
     }
 
     public func calculateTimeOf(_ notification: NotificationItemsEntity.NotificationEntity) {

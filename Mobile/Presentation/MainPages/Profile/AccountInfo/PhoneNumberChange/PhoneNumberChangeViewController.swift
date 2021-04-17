@@ -112,21 +112,16 @@ public class PhoneNumberChangeViewController: ABViewController {
     }
 }
 
-
 extension PhoneNumberChangeViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [phoneNumberInputView] }
-
 }
 extension PhoneNumberChangeViewController: Accessible {
 private func setupAccessibilityIdentifiers() {
     generateAccessibilityIdentifiers()
 
-    
     phoneNumberInputView.setAccessibilityIdTextfield(id: "PhoneNumberChangeViewController.phoneNumberInputViewTextField")
     phoneNumberInputView.setAccessibilityIdsToPlaceholderLabels(id: "PhoneNumberChangeViewController.phoneNumberInputViewTextField.placeholder")
     approveButton.accessibilityIdentifier = "PhoneNumberChangeViewController.approveButton"
     phonePrefixInputView.accessibilityIdentifier = "PhoneNumberChangeViewController.phonePrefixInputView"
-    
-
 }
 }

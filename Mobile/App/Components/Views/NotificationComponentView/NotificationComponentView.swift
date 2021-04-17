@@ -19,6 +19,8 @@ class NotificationComponentView: UIView {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
 
+    private var statusUpdated = false
+
     public override init(frame: CGRect) {
        super.init(frame: frame)
        nibSetup()
@@ -41,6 +43,7 @@ class NotificationComponentView: UIView {
             switch action {
             case .set(let notification): self?.setupUI(with: notification)
             case .setTime(let time): self?.timeLabel.setTextWithAnimation(time)
+            case .didSelect: self?.markAsRead()
             default:
                 break
             }
@@ -50,16 +53,26 @@ class NotificationComponentView: UIView {
     }
 
     private func setupUI(with notification: NotificationItemsEntity.NotificationEntity) {
-        titleLabel.setTextWithAnimation(notification.header)
-        viewModel.calculateTimeOf(notification)
+        guard !statusUpdated else { return }
 
-        if notification.status == 1 {
-            titleLabel.setTextColor(to: .primaryText())
-            iconImageView.image = R.image.notifications.inbox_new()
-        } else if notification.status == 2 {
-            titleLabel.setTextColor(to: .secondaryText())
-            iconImageView.image = R.image.notifications.inbox_read()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [self] in
+            titleLabel.setTextWithAnimation(notification.header)
+            viewModel.calculateTimeOf(notification)
+
+            if notification.status == 1 {
+                titleLabel.setTextColor(to: .primaryText())
+                iconImageView.image = R.image.notifications.inbox_new()
+            } else if notification.status == 2 {
+                titleLabel.setTextColor(to: .secondaryText())
+                iconImageView.image = R.image.notifications.inbox_read()
+            }
+//        }
+    }
+
+    private func markAsRead() {
+        titleLabel.setTextColor(to: .secondaryText())
+        iconImageView.image = R.image.notifications.inbox_read()
+        statusUpdated = true
     }
 }
 
@@ -75,22 +88,12 @@ extension NotificationComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.primaryBg().value
+        view.componentStyle = .primary
 
         titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
         titleLabel.setTextColor(to: .primaryText())
 
         timeLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         timeLabel.setTextColor(to: .secondaryText())
-    }
-
-    @objc func tapHandler(gesture: UITapGestureRecognizer) {
-        if gesture.state == .began {
-            container.backgroundColor = DesignSystem.Color.secondaryBg().value
-            return
-        }
-        if gesture.state == .ended {
-            container.backgroundColor = DesignSystem.Color.primaryBg().value
-            return
-        }
     }
 }

@@ -212,7 +212,6 @@ extension VisaViewController: ABInputViewDelegate {
     }
 }
 
-
 extension VisaViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [cardNumberInputView, amountInputView] }
 }
@@ -227,16 +226,14 @@ extension VisaViewController: Accessible {
         amountInputView.setAccessibilityIdsToPlaceholderLabels(id: "VisaViewController.amountInputViewTextField.placeholder")
         cardNumberInputView.setAccessibilityIdsToPlaceholderLabels(id: "VisaViewController.cardNumberInputViewTextField.placeholder")
         cardNumberInputView.setAccessibilityIdTextfield(id: "VisaViewController.cardNumberInputViewTextField")
-        
+
         limitView.accessibilityIdentifier =
             "VisaViewController.limitView"
-        
+
         instructionView.accessibilityIdentifier =
             "VisaViewController.instructionView"
-        
+
         addCardButton.accessibilityIdentifier = "VisaViewController.addCardButton"
         continueButton.accessibilityIdentifier = "VisaViewController.continueButton"
-        
-        
     }
 }

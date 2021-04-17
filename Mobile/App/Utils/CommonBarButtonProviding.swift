@@ -54,6 +54,16 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
+    func userIdBarButtonItemGroup() -> UIBarButtonItem {
+        let button = UserIdButton(type: .system)
+        button.setFont(to: .body2(fontCase: .upper, fontStyle: .regular))
+        button.setTitleColor(to: .primaryText(), for: .normal)
+        button.setTintColor(to: .primaryText())
+
+        return UIBarButtonItem(customView: button)
+    }
+
+    @discardableResult
     func makeBalanceBarButtonItem() -> UIBarButtonItem.Coupled {
         let button = BalanceProfileButton(type: .system)
         button.setFont(to: .footnote(fontCase: .upper, fontStyle: .semiBold))
@@ -141,6 +151,16 @@ public extension CommonBarButtonProviding {
         button.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         button.titleEdgeInsets = .init(top: 0, left: 8, bottom: 0, right: 0)
         button.setTitle(R.string.localization.profile_page_back_title.localized(), for: .normal)
+
+        return (UIBarButtonItem(customView: button), button)
+    }
+
+    @discardableResult
+    func makeRoundedBackButtonItem(width: CGFloat = 35, height: CGFloat = 35) -> UIBarButtonItem.Coupled {
+        let button = UIButton()
+        button.widthAnchor.constraint(equalToConstant: width).isActive = true
+        button.heightAnchor.constraint(equalToConstant: height).isActive = true
+        button.setImage(R.image.login.sms_back(), for: .normal)
 
         return (UIBarButtonItem(customView: button), button)
     }

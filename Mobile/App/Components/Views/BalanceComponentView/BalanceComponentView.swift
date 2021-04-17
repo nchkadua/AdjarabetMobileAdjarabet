@@ -17,9 +17,6 @@ class BalanceComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var bgView: UIView!
-    @IBOutlet weak private var myBalanceTitleButton: UIButton!
-    @IBOutlet weak private var myBalanceImageButton: UIButton!
-    @IBOutlet weak private var totalBalanceTitleLabel: UILabel!
     @IBOutlet weak private var totalBalanceValueLabel: UILabel!
     @IBOutlet weak private var withdrawButton: UIButton!
     @IBOutlet weak private var depositButton: UIButton!
@@ -52,8 +49,8 @@ class BalanceComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setupUI(totalBalance: Double) {
-        totalBalanceValueLabel.text = "\(totalBalance.formattedBalance ?? "0") ₾"
+    private func setupUI(totalBalance: String) {
+        totalBalanceValueLabel.text = totalBalance
     }
 
     @objc private func myBalanceAction() {
@@ -81,39 +78,18 @@ extension BalanceComponentView: Xibable {
 
     // Fonts should be changed in design system
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.secondaryBg().value
+        view.setBackgorundColor(to: .secondaryBg())
 
         bgView.setBackgorundColor(to: .tertiaryBg())
-        bgView.layer.cornerRadius = 10
-
-        myBalanceTitleButton.setTitleColor(to: .primaryText(), for: .normal)
-        myBalanceTitleButton.setFont(to: .footnote(fontCase: .lower))
-        myBalanceTitleButton.setTitleWithoutAnimation(R.string.localization.balance_title(), for: .normal)
-        myBalanceTitleButton.addTarget(self, action: #selector(myBalanceAction), for: .touchUpInside)
-
-        myBalanceImageButton.setImage(R.image.components.profileCell.arrow(), for: .normal)
-        myBalanceImageButton.setTintColor(to: .primaryText())
-        myBalanceImageButton.addTarget(self, action: #selector(myBalanceAction), for: .touchUpInside)
-
-        totalBalanceTitleLabel.setTextColor(to: .primaryText())
-        totalBalanceTitleLabel.setFont(to: .footnote(fontCase: .lower))
-        totalBalanceTitleLabel.text = R.string.localization.total_balance()
+        bgView.layer.cornerRadius = 8
 
         totalBalanceValueLabel.setTextColor(to: .primaryText())
-        totalBalanceValueLabel.setFont(to: .title3(fontCase: .upper, fontStyle: .bold))
+        totalBalanceValueLabel.setFont(to: .midline(fontCase: .upper, fontStyle: .semiBold))
 
-        withdrawButton.setBackgorundColor(to: .querternaryFill())
-        withdrawButton.setTitleColor(to: .primaryText(), for: .normal)
-        withdrawButton.setFont(to: .footnote(fontCase: .upper, fontStyle: .semiBold))
-        withdrawButton.layer.cornerRadius = 10
-        withdrawButton.setTitleWithoutAnimation(R.string.localization.withdraw_button_title.localized().uppercased(), for: .normal)
+        withdrawButton.setImage(R.image.profile.minus(), for: .normal)
         withdrawButton.addTarget(self, action: #selector(withdrawButtonAction), for: .touchUpInside)
 
-        depositButton.setBackgorundColor(to: .primaryRed())
-        depositButton.setTitleColor(to: .primaryText(), for: .normal)
-        depositButton.setFont(to: .footnote(fontCase: .upper, fontStyle: .semiBold))
-        depositButton.layer.cornerRadius = 10
-        depositButton.setTitleWithoutAnimation(R.string.localization.deposit_button_title.localized().uppercased(), for: .normal)
+        depositButton.setImage(R.image.profile.plus(), for: .normal)
         depositButton.addTarget(self, action: #selector(depositButtonAction), for: .touchUpInside)
     }
 }

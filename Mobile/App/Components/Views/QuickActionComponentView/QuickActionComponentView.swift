@@ -13,7 +13,7 @@ class QuickActionComponentView: UIView {
     private var viewModel: QuickActionComponentViewModel!
 
     // MARK: Outlets
-    @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var view: ABView!
     @IBOutlet weak private var separatorView: UIView!
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
@@ -51,7 +51,7 @@ class QuickActionComponentView: UIView {
     private func setupUI(icon: UIImage, title: String, hideSeparator: Bool, roundedCorners: UIRectCorner) {
         iconImageView.image = icon
         titleLabel.text = title
-        separatorView.isHidden = hideSeparator
+        separatorView.isHidden = true
 
         bgView.roundCorners(roundedCorners, radius: 10)
     }
@@ -84,7 +84,7 @@ extension QuickActionComponentView: Xibable {
             view
         }
         set {
-            view = newValue
+            view = newValue as? ABView
         }
     }
 
@@ -93,9 +93,10 @@ extension QuickActionComponentView: Xibable {
         separatorView.setBackgorundColor(to: .nonOpaque())
 
         bgView.setBackgorundColor(to: .tertiaryBg())
+        bgView.isHidden = true
         iconImageView.setTintColor(to: .primaryText())
 
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
     }
 }

@@ -17,6 +17,9 @@ protocol CashOutVisaViewModelInput {
     func selected(account: Int, amount: String)  // call on selecting account
     func continued(amount: String, account: Int) // call on tapping continue button
     func added()                                 // call on tapping add account button
+    // for filling view
+    func defaultFee() -> String
+    func defaultTotal() -> String
     /* for others to mutate the state */
     func update(amount: String)
     func update(accounts: [String])
@@ -47,6 +50,7 @@ enum CashOutVisaViewModelOutputAction {
 
 class DefaultCashOutVisaViewModel {
     private let actionSubject = PublishSubject<CashOutVisaViewModelOutputAction>()
+    @Inject private var userSession: UserSessionReadableServices
 }
 
 extension DefaultCashOutVisaViewModel: CashOutVisaViewModel {
@@ -90,6 +94,28 @@ extension DefaultCashOutVisaViewModel: CashOutVisaViewModel {
 
     func update(isLoading: Bool) {
         notify(.updateContinueIsLoading(with: isLoading))
+    }
+
+    func defaultFee() -> String {
+        if let description = currencyDescription() {
+            return "\(description.symbol)0"
+        }
+        return "-"
+    }
+
+    func defaultTotal() -> String {
+        if let description = currencyDescription() {
+            return "\(description.symbol) 0 \(description.abbreviation)"
+        }
+        return "-"
+    }
+
+    private func currencyDescription() -> Currency.Description? {
+        if let currencyId = userSession.currencyId,
+           let currency = Currency(currencyId: currencyId) {
+            return currency.description
+        }
+        return nil
     }
 
     private func notify(_ action: CashOutVisaViewModelOutputAction) {

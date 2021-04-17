@@ -234,7 +234,6 @@ extension OTPViewController: Accessible {
     private func setupAccessibilityIdentifiers() {
         generateAccessibilityIdentifiers()
 
-
         loginButton.accessibilityIdentifier = "OTPViewController.loginButton"
         resendSMSButton.accessibilityIdentifier = "OTPViewController.resendSMSButton"
         otpDescriptionLabel.accessibilityIdentifier = "OTPViewController.otpDescriptionLabel"

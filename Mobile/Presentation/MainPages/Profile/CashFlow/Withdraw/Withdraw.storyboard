@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Deposit/icon" translatesAutoresizingMaskIntoConstraints="NO" id="PIl-zR-c9g" userLabel="Withdraw Icon">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Withdraw/Icon" translatesAutoresizingMaskIntoConstraints="NO" id="PIl-zR-c9g" userLabel="Withdraw Icon">
                                 <rect key="frame" x="21" y="70" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="SO2-F0-LLa"/>
@@ -96,6 +96,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Deposit/icon" width="40" height="40"/>
+        <image name="Withdraw/Icon" width="40" height="40"/>
     </resources>
 </document>

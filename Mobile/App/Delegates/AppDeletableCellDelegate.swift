@@ -9,3 +9,7 @@
 public protocol AppDeletableCellDelegate: class {
     func didDelete(at indexPath: IndexPath)
 }
+
+public protocol AppRedrawableCellDelegate: class {
+    func redraw(at indexPath: IndexPath)
+}

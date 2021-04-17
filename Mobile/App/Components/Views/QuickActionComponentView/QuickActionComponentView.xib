@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuickActionComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
-                <outlet property="bgView" destination="IAK-3X-Hj8" id="wFJ-Z6-Qb4"/>
+                <outlet property="bgView" destination="IAK-3X-Hj8" id="sTc-PP-iDY"/>
                 <outlet property="iconImageView" destination="ZIK-zf-2ul" id="a8h-8S-enV"/>
                 <outlet property="separatorView" destination="h6x-sw-zmY" id="2F1-4K-dmv"/>
                 <outlet property="titleLabel" destination="lHH-ZY-Nvf" id="PeB-1J-ixu"/>
-                <outlet property="view" destination="iN0-l3-epB" id="R9B-U0-xA7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="W0e-dB-lDb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ABView" customModule="Mobile" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -28,40 +28,59 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6x-sw-zmY">
-                    <rect key="frame" x="20" y="53" width="374" height="1"/>
+                    <rect key="frame" x="24" y="53" width="367" height="1"/>
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="MQ2-Ol-AxY"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sNc-va-TUn">
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="sNc-va-TUn">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHH-ZY-Nvf">
-                            <rect key="frame" x="37" y="17" width="304" height="19"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZIK-zf-2ul">
-                            <rect key="frame" x="357" y="17" width="20" height="19"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="20" id="npt-FF-dfC"/>
-                            </constraints>
-                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-r3-RIg">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="53"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIK-zf-2ul">
+                                    <rect key="frame" x="24" y="12" width="25" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="npt-FF-dfC"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="10" right="0.0"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHH-ZY-Nvf">
+                                    <rect key="frame" x="64" y="12" width="290" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="12" left="24" bottom="12" right="0.0"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fdD-u4-Ybi">
+                            <rect key="frame" x="368" y="0.0" width="26" height="53"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/QuickAction/arrow" translatesAutoresizingMaskIntoConstraints="NO" id="O0d-Jw-hjj">
+                                    <rect key="frame" x="0.0" y="0.0" width="26" height="53"/>
+                                </imageView>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <edgeInsets key="layoutMargins" top="17" left="37" bottom="17" right="37"/>
+                    <constraints>
+                        <constraint firstItem="fdD-u4-Ybi" firstAttribute="leading" secondItem="sNc-va-TUn" secondAttribute="leading" constant="368" id="BWe-m3-Ygt"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="20"/>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="sNc-va-TUn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="01O-OE-OSq"/>
-                <constraint firstItem="h6x-sw-zmY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="5az-sA-Jvv"/>
+                <constraint firstItem="h6x-sw-zmY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="5az-sA-Jvv"/>
                 <constraint firstAttribute="bottom" secondItem="IAK-3X-Hj8" secondAttribute="bottom" id="B1o-52-tAR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="h6x-sw-zmY" secondAttribute="bottom" id="C1f-WC-27C"/>
-                <constraint firstAttribute="trailing" secondItem="h6x-sw-zmY" secondAttribute="trailing" constant="20" id="QXa-cZ-zlt"/>
+                <constraint firstAttribute="trailing" secondItem="h6x-sw-zmY" secondAttribute="trailing" constant="23" id="QXa-cZ-zlt"/>
                 <constraint firstItem="IAK-3X-Hj8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Uaj-gM-2af"/>
                 <constraint firstAttribute="trailing" secondItem="sNc-va-TUn" secondAttribute="trailing" id="jY6-kq-weM"/>
                 <constraint firstItem="h6x-sw-zmY" firstAttribute="top" secondItem="sNc-va-TUn" secondAttribute="bottom" id="p26-Uv-LFO"/>
@@ -74,6 +93,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Components/QuickAction/arrow" width="26" height="26"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

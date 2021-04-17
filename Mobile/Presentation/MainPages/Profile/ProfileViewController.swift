@@ -109,18 +109,12 @@ public class ProfileViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        let backButtonGroup = makeBackBarButtonItem(width: 300)
+        let backButtonGroup = makeRoundedBackButtonItem()
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(navigateToMainTabBar), for: .touchUpInside)
 
-        let accountParametersButtonGroup = makeAccountParametersBarButtonItem(width: 120)
-        navigationItem.rightBarButtonItem = accountParametersButtonGroup.barButtonItem
-        accountParametersButtonGroup.button.addTarget(self, action: #selector(openAccountParameters), for: .touchUpInside)
-        accountParametersButtonGroup.button.accessibilityIdentifier = "ProfileViewController.accountParametersButton"
-    }
-
-    @objc private func openAccountParameters() {
-        navigator.navigate(to: .accountParameters, animated: true)
+        let userIdButton = userIdBarButtonItemGroup()
+        navigationItem.rightBarButtonItem = userIdButton
     }
 
     @objc private func navigateToMainTabBar() {

@@ -2107,12 +2107,14 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
       }
 
-      /// This `R.image.components.profileCell` struct is generated, and contains static references to 4 images.
+      /// This `R.image.components.profileCell` struct is generated, and contains static references to 5 images.
       struct profileCell {
         /// Image `adjarabet_logo`.
         static let adjarabet_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/adjarabet_logo")
         /// Image `arrow`.
         static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/arrow")
+        /// Image `avatar_verified`.
+        static let avatar_verified = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/avatar_verified")
         /// Image `copy`.
         static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/ProfileCell/copy")
         /// Image `verified`.
@@ -2133,6 +2135,13 @@ struct R: Rswift.Validatable {
         #endif
 
         #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "avatar_verified", bundle: ..., traitCollection: ...)`
+        static func avatar_verified(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.profileCell.avatar_verified, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
         /// `UIImage(named: "copy", bundle: ..., traitCollection: ...)`
         static func copy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
           return UIKit.UIImage(resource: R.image.components.profileCell.copy, compatibleWith: traitCollection)
@@ -2149,10 +2158,14 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
       }
 
-      /// This `R.image.components.quickAction` struct is generated, and contains static references to 11 images.
+      /// This `R.image.components.quickAction` struct is generated, and contains static references to 13 images.
       struct quickAction {
+        /// Image `account_info`.
+        static let account_info = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/account_info")
         /// Image `account`.
         static let account = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/account")
+        /// Image `arrow`.
+        static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/arrow")
         /// Image `biometry`.
         static let biometry = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/biometry")
         /// Image `deposit`.
@@ -2178,6 +2191,20 @@ struct R: Rswift.Validatable {
         /// `UIImage(named: "account", bundle: ..., traitCollection: ...)`
         static func account(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
           return UIKit.UIImage(resource: R.image.components.quickAction.account, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "account_info", bundle: ..., traitCollection: ...)`
+        static func account_info(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.account_info, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "arrow", bundle: ..., traitCollection: ...)`
+        static func arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.arrow, compatibleWith: traitCollection)
         }
         #endif
 
@@ -2257,6 +2284,21 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.contact` struct is generated, and contains static references to 1 images.
+    struct contact {
+      /// Image `contact`.
+      static let contact = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/contact")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "contact", bundle: ..., traitCollection: ...)`
+      static func contact(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.contact.contact, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.deposit` struct is generated, and contains static references to 6 images.
     struct deposit {
       /// Image `addCard`.
@@ -2311,6 +2353,39 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "rules_icon", bundle: ..., traitCollection: ...)`
       static func rules_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.deposit.rules_icon, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This `R.image.flags` struct is generated, and contains static references to 3 images.
+    struct flags {
+      /// Image `en`.
+      static let en = Rswift.ImageResource(bundle: R.hostingBundle, name: "Flags/en")
+      /// Image `hy`.
+      static let hy = Rswift.ImageResource(bundle: R.hostingBundle, name: "Flags/hy")
+      /// Image `ka`.
+      static let ka = Rswift.ImageResource(bundle: R.hostingBundle, name: "Flags/ka")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "en", bundle: ..., traitCollection: ...)`
+      static func en(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.flags.en, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "hy", bundle: ..., traitCollection: ...)`
+      static func hy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.flags.hy, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "ka", bundle: ..., traitCollection: ...)`
+      static func ka(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.flags.ka, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2578,6 +2653,30 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "check", bundle: ..., traitCollection: ...)`
       static func check(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.p2P.check, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This `R.image.profile` struct is generated, and contains static references to 2 images.
+    struct profile {
+      /// Image `minus`.
+      static let minus = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile/minus")
+      /// Image `plus`.
+      static let plus = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile/plus")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "minus", bundle: ..., traitCollection: ...)`
+      static func minus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.profile.minus, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "plus", bundle: ..., traitCollection: ...)`
+      static func plus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.profile.plus, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2863,12 +2962,14 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.withdraw` struct is generated, and contains static references to 3 images.
+    /// This `R.image.withdraw` struct is generated, and contains static references to 4 images.
     struct withdraw {
       /// Image `Add-Card-Red`.
       static let addCardRed = Rswift.ImageResource(bundle: R.hostingBundle, name: "Withdraw/Add-Card-Red")
       /// Image `Add-Card`.
       static let addCard = Rswift.ImageResource(bundle: R.hostingBundle, name: "Withdraw/Add-Card")
+      /// Image `Icon`.
+      static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Withdraw/Icon")
       /// Image `Steps-Title`.
       static let stepsTitle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Withdraw/Steps-Title")
 
@@ -2883,6 +2984,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "Add-Card-Red", bundle: ..., traitCollection: ...)`
       static func addCardRed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.withdraw.addCardRed, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Icon", bundle: ..., traitCollection: ...)`
+      static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.withdraw.icon, compatibleWith: traitCollection)
       }
       #endif
 
@@ -3967,8 +4075,8 @@ struct R: Rswift.Validatable {
       return R.nib.promotionTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PromotionTableViewCell
     }
 
-    static func quickActionComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.quickActionComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func quickActionComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ABView? {
+      return R.nib.quickActionComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ABView
     }
 
     static func quickActionTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> QuickActionTableViewCell? {
@@ -4102,6 +4210,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let profile_page_title = Rswift.StringResource(key: "profile_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Account is Verified
+      ///
+      /// Locales: en, ka, hy
+      static let verified = Rswift.StringResource(key: "verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Activate
       ///
       /// Locales: en, ka, hy
@@ -5210,10 +5322,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let oman = Rswift.StringResource(key: "oman", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia
-      ///
-      /// Locales: en, ka, hy
-      static let login_legal = Rswift.StringResource(key: "login_legal", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Other
       ///
       /// Locales: en, ka, hy
@@ -5846,10 +5954,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_parameters_messages_sms_description = Rswift.StringResource(key: "account_parameters_messages_sms_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Your Account is Verified
-      ///
-      /// Locales: en, ka, hy
-      static let verified = Rswift.StringResource(key: "verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Zambia
       ///
       /// Locales: en, ka, hy
@@ -5982,6 +6086,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let visa_description_card = Rswift.StringResource(key: "visa_description_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.
+      ///
+      /// Locales: en, ka, hy
+      static let login_legal = Rswift.StringResource(key: "login_legal", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: საათის წინ
       ///
       /// Locales: en, ka, hy
@@ -6114,6 +6222,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("profile_page_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Account is Verified
+      ///
+      /// Locales: en, ka, hy
+      static func verified(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("verified", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "verified"
+        }
+
+        return NSLocalizedString("verified", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Activate
@@ -10271,21 +10394,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("oman", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: Online bookmaking is operated by Cosmos LLC, (I/according to the Permit #19-05/284. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia. Online games of chance is operated by Aviator LLC (I/N 405076304), according to the Permit #19-06/252. Legal address: E. Akhvlediani Ascent, N6, Chugureti District, Tbilisi, Georgia
-      ///
-      /// Locales: en, ka, hy
-      static func login_legal(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("login_legal", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "login_legal"
-        }
-
-        return NSLocalizedString("login_legal", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
       /// en translation: Other
       ///
       /// Locales: en, ka, hy
@@ -12656,21 +12764,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_parameters_messages_sms_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: Your Account is Verified
-      ///
-      /// Locales: en, ka, hy
-      static func verified(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("verified", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "verified"
-        }
-
-        return NSLocalizedString("verified", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
       /// en translation: Zambia
       ///
       /// Locales: en, ka, hy
@@ -13166,6 +13259,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("visa_description_card", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.
+      ///
+      /// Locales: en, ka, hy
+      static func login_legal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_legal", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_legal"
+        }
+
+        return NSLocalizedString("login_legal", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: საათის წინ
       ///
       /// Locales: en, ka, hy
@@ -13312,7 +13420,7 @@ struct _R: Rswift.Validatable {
       try _EmoneyButton.validate()
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
-      try _ProfileInfoComponentView.validate()
+      try _QuickActionComponentView.validate()
       try _TransactionHistoryComponentView.validate()
       try _WithdrawVisaInfoView.validate()
     }
@@ -13532,7 +13640,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13649,8 +13758,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Shared/phone", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/phone' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13952,19 +14060,12 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _ProfileInfoComponentView: Rswift.NibResourceType, Rswift.Validatable {
+    struct _ProfileInfoComponentView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ProfileInfoComponentView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/verified", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/verified' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Components/ProfileCell/copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/copy' is used in nib 'ProfileInfoComponentView', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
       }
 
       fileprivate init() {}
@@ -14003,12 +14104,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _QuickActionComponentView: Rswift.NibResourceType {
+    struct _QuickActionComponentView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "QuickActionComponentView"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ABView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ABView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Components/QuickAction/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/arrow' is used in nib 'QuickActionComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -15115,7 +15222,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Deposit/icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Deposit/icon' is used in storyboard 'Withdraw', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Withdraw/Icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Withdraw/Icon' is used in storyboard 'Withdraw', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.withdraw().withdrawViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'withdrawViewController' could not be loaded from storyboard 'Withdraw' as 'WithdrawViewController'.") }

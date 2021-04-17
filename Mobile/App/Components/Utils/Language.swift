@@ -27,6 +27,14 @@ public enum Language: Int, CaseIterable {
         }
     }
 
+    public var languageIcon: UIImage {
+        switch self {
+        case .english: return R.image.flags.en() ?? UIImage()
+        case .georgian: return R.image.flags.ka() ?? UIImage()
+        case .armenian: return R.image.flags.hy() ?? UIImage()
+        }
+    }
+
     public var title: String {
         switch self {
         case .english: return "ENG"

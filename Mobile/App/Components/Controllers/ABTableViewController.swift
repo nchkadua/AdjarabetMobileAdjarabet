@@ -12,6 +12,7 @@ import RxCocoa
 public protocol ABTableViewControllerDelegate: class {
     func didDeleteCell(at indexPath: IndexPath)
     func didLoadNextPage()
+    func redraw(at indexPath: IndexPath)
 }
 
 public class ABTableViewController: AppTableViewController {
@@ -67,7 +68,7 @@ public class ABTableViewController: AppTableViewController {
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 10 is max items per page
-        if tableView.numberOfRows(inSection: indexPath.section) - 10 == indexPath.item {
+        if tableView.numberOfSections - 1 == indexPath.section && tableView.numberOfRows(inSection: indexPath.section) - 10 == indexPath.item {
             delegate?.didLoadNextPage()
         }
         return super.tableView(tableView, cellForRowAt: indexPath)
@@ -112,6 +113,23 @@ public class ABTableViewController: AppTableViewController {
         let actions = UISwipeActionsConfiguration(actions: [deleteItem])
 
         return actions
+    }
+
+    public override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        (self.dataProvider?[indexPath] as? AppRedrawableCellDelegate)?.redraw(at: indexPath)
+    }
+}
+
+extension DispatchQueue {
+    static func background(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async {
+            background?()
+            if let completion = completion {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    completion()
+                })
+            }
+        }
     }
 }
 
