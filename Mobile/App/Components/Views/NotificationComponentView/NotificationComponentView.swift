@@ -44,6 +44,7 @@ class NotificationComponentView: UIView {
             case .set(let notification): self?.setupUI(with: notification)
             case .setTime(let time): self?.timeLabel.setTextWithAnimation(time)
             case .didSelect: self?.markAsRead()
+            case .redraw: self?.setupWithNotification()
             default:
                 break
             }
@@ -55,18 +56,29 @@ class NotificationComponentView: UIView {
     private func setupUI(with notification: NotificationItemsEntity.NotificationEntity) {
         guard !statusUpdated else { return }
 
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [self] in
-            titleLabel.setTextWithAnimation(notification.header)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [self] in
+            titleLabel.text = notification.header
             viewModel.calculateTimeOf(notification)
+            setupNotificationStatus(notification)
+        }
+    }
 
-            if notification.status == 1 {
-                titleLabel.setTextColor(to: .primaryText())
-                iconImageView.image = R.image.notifications.inbox_new()
-            } else if notification.status == 2 {
-                titleLabel.setTextColor(to: .secondaryText())
-                iconImageView.image = R.image.notifications.inbox_read()
-            }
-//        }
+    private func setupWithNotification() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [self] in
+            titleLabel.text = viewModel.params.notification.header
+            viewModel.calculateTimeOf(viewModel.params.notification)
+            setupNotificationStatus(viewModel.params.notification)
+        }
+    }
+
+    private func setupNotificationStatus(_ notification: NotificationItemsEntity.NotificationEntity) {
+        if notification.status == 1 {
+            titleLabel.setTextColor(to: .primaryText())
+            iconImageView.image = R.image.notifications.inbox_new()
+        } else if notification.status == 2 {
+            titleLabel.setTextColor(to: .secondaryText())
+            iconImageView.image = R.image.notifications.inbox_read()
+        }
     }
 
     private func markAsRead() {

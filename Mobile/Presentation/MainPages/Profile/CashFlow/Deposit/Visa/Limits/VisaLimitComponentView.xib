@@ -55,16 +55,16 @@
                             <rect key="frame" x="138.5" y="0.0" width="137" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCZ-x0-51R">
-                                    <rect key="frame" x="17" y="11" width="112" height="16"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="16" id="men-we-doN"/>
-                                    </constraints>
+                                    <rect key="frame" x="17" y="11" width="112" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d8-xt-LqN">
-                                    <rect key="frame" x="17" y="29" width="112" height="21"/>
+                                    <rect key="frame" x="17" y="30" width="112" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="dLO-o0-Qrn"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -82,10 +82,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f1-Dm-qJA">
-                                    <rect key="frame" x="17" y="30" width="112.5" height="20"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="MXb-av-O8G"/>
-                                    </constraints>
+                                    <rect key="frame" x="17" y="29" width="112.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>

@@ -52,7 +52,7 @@ public class PaymentMethodGridComponentView: UIView {
         guard !viewModel.params.paymentMethods.isEmpty else { return }
         collectionView.reloadData()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in /// 0.1  Needed delay after reloading collectionView
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in // 0.1  Needed delay after reloading collectionView
             selectedDataProvider = viewModel.params.paymentMethods[0]
             selectedDataProvider?.select()
         }

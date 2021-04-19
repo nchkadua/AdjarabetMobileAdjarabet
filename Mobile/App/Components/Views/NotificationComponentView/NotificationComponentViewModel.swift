@@ -61,9 +61,7 @@ extension DefaultNotificationComponentViewModel: NotificationComponentViewModel 
     }
 
     public func redraw(at indexPath: IndexPath) {
-//        actionSubject.onNext(.redraw(atIndexPath: indexPath))
-//        print("Asdasdasdasdssssss")
-//        actionSubject.onNext(.set(notifiation: params.notification))
+        actionSubject.onNext(.redraw(atIndexPath: indexPath))
     }
 
     public func calculateTimeOf(_ notification: NotificationItemsEntity.NotificationEntity) {
