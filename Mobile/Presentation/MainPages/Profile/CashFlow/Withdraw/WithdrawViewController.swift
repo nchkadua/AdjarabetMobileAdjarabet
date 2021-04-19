@@ -10,7 +10,7 @@ import RxSwift
 
 public class WithdrawViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: WithdrawViewModel
-    private lazy var navigator = WithdrawNavigator(superview: childView)
+    private lazy var navigator = WithdrawNavigator(parent: self, superview: childView)
 
     // MARK: Outlets
     @IBOutlet private weak var cashOutLabel: UILabel!
@@ -69,7 +69,7 @@ public class WithdrawViewController: ABViewController {
     private func setupLabels() {
         cashOutLabel.setTextColor(to: .primaryText())
         cashOutLabel.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
-        cashOutLabel.text = R.string.localization.withdraw_cash_out.localized()
+        cashOutLabel.text = R.string.localization.withdraw_cash_out.localized().uppercased()
 
         balanceLabel.setTextColor(to: .secondaryText())
         balanceLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))

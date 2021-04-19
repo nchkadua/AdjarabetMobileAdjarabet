@@ -34,16 +34,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="137.5" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UC-pM-FGn">
-                                    <rect key="frame" x="14" y="11" width="115.5" height="16.5"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="16.5" id="JHo-T2-Edr"/>
-                                    </constraints>
+                                    <rect key="frame" x="14" y="11" width="115.5" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocI-WT-c60">
-                                    <rect key="frame" x="14" y="29.5" width="115.5" height="20.5"/>
+                                    <rect key="frame" x="14" y="30" width="115.5" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="cKU-h5-NqS"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -65,9 +65,6 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d8-xt-LqN">
                                     <rect key="frame" x="17" y="29" width="112" height="21"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="dLO-o0-Qrn"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -79,16 +76,13 @@
                             <rect key="frame" x="276.5" y="0.0" width="137.5" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anA-re-275">
-                                    <rect key="frame" x="17" y="11" width="112.5" height="16"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="16" id="6bv-te-Jyu"/>
-                                    </constraints>
+                                    <rect key="frame" x="17" y="11" width="112.5" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f1-Dm-qJA">
-                                    <rect key="frame" x="17" y="29" width="112.5" height="21"/>
+                                    <rect key="frame" x="17" y="30" width="112.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="MXb-av-O8G"/>
                                     </constraints>

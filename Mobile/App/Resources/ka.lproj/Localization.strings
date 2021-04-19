@@ -139,7 +139,7 @@
 
 "visa_amount_title" = "თანხა";
 "visa_card_title" = "ანგარიში";
-"visa_instruction_title" = "გატანის ინსტრუქცია";
+"visa_instruction_title" = "შეტანის ინსტრუქცია";
 "visa_description_title" = "ლიმიტი ერთ ბარათზე";
 "visa_description_amount" = "შეიყვანე სასურველი თანხა";
 "visa_description_card" = "მონიშნე სასურველი დამახსოვრებული ბარათი";
@@ -191,7 +191,7 @@
 "withdraw_total_amount" = "ჯამური თანხა";
 "withdraw_continue" = "გაგრძელება";
 // Add Card
-"withdraw_add_card" = "ბარათის დამატებას";
+"withdraw_add_card" = "ბარათის დამატება";
 "withdraw_add_card_description" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ თანხის გატანა";
 
 /* Notifications */
