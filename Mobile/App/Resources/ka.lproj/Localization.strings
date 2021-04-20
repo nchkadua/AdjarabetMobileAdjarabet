@@ -30,7 +30,7 @@
 "cancel" = "გამოსვლა";
 "not_member" = "წევრი არ ხარ?";
 "join_now" = "შემოგვიერთდი";
-"login_button_title" = "ავტორიზაცია";
+"login_button_title" = "შესვლა";
 "contact_us_button_title" = "კონტაქტი";
 "settings" = "პარამეტრები";
 
@@ -38,7 +38,9 @@
 "login_page_title" = "შესვლა";
 "login_forgot_password" = "დაგავიწყდათ პაროლი?";
 "login_forgot_username" = "სახელი?";
-"login_sms_login" = "SMS LOGIN-ით";
+"login_sms_login" = "სმს ლოგინი";
+"login_registration" = "რეგისტრაცია";
+"login_remember" = "გაიხსენე მონაცემები";
 "login_sms_login_title" = "გაიარეთ ავტორიზაცია";
 "login_username_input_title" = "სახელი";
 "login_password_input_title" = "პაროლი";

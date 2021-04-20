@@ -236,6 +236,7 @@ public class ABInputView: UIView {
     private func setupRightButton() {
         rightButton.backgroundColor = nil
         rightButton.superview?.isHidden = true
+        rightButton.imageView?.contentMode = .scaleAspectFit
     }
 
     // MARK: Accessibility Identifiers

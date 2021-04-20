@@ -39,6 +39,7 @@ public enum LoginViewModelOutputAction {
     case setSmsLoginButton(isLoading: Bool)
     case setBiometryButton(isLoading: Bool)
     case configureBiometryButton(available: Bool, icon: UIImage?, title: String?)
+    case configureQaButton(image: UIImage)
 }
 
 public enum LoginViewModelRoute {
@@ -57,6 +58,7 @@ public class DefaultLoginViewModel {
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
     @Inject(from: .useCases) private var biometricLoginUseCase: BiometricLoginUseCase
     @Inject private var biometryStateStorage: BiometryReadableStorage
+    @Inject private var languageStorage: LanguageStorage
 
     public init(params: LoginViewModelParams = LoginViewModelParams(showBiometryLoginAutomatically: true)) {
         self.params = params
@@ -113,6 +115,18 @@ extension DefaultLoginViewModel: LoginViewModel {
         actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable && biometryIsOn,
                                                       icon: biometricLoginUseCase.icon,
                                                       title: biometricLoginUseCase.title))
+        getQAImageByLanguage()
+    }
+
+    private func getQAImageByLanguage() {
+        var image: UIImage?
+        switch languageStorage.currentLanguage {
+        case .georgian: image = R.image.login.qa_geo()
+        case .english: image = R.image.login.qa_eng()
+        case .armenian: image = R.image.login.qa_eng()
+        }
+
+        actionSubject.onNext(.configureQaButton(image: image ?? UIImage()))
     }
 
     public func viewDidAppear() {
@@ -125,6 +139,7 @@ extension DefaultLoginViewModel: LoginViewModel {
         actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable && biometryIsOn,
                                                       icon: biometricLoginUseCase.icon,
                                                       title: biometricLoginUseCase.title))
+        getQAImageByLanguage()
     }
 
     public func smsLogin(username: String) {
