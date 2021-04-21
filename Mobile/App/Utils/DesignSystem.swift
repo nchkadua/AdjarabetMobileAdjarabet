@@ -285,10 +285,10 @@ public enum DesignSystem {
                     let fontCase: Typography.FontCase = .upper
 
                     switch size {
-                    case .large:  return .init(typograhy: .body1(fontCase: fontCase, fontStyle: .semiBold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
-                    case .medium: return .init(typograhy: .subHeadline(fontCase: .lower), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))
-                    case .small:  return .init(typograhy: .subHeadline(fontCase: .lower), contentEdgeInsets: .init(top: 9 + 2, left: 16, bottom: 7 + 2, right: 16))
-                    case .xs:     return .init(typograhy: .subHeadline(fontCase: .lower), contentEdgeInsets: .init(top: 7 + 2, left: 12, bottom: 5 + 2, right: 12))
+                    case .large:  return .init(typograhy: .body1(fontCase: .upper, fontStyle: .semiBold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
+                    case .medium: return .init(typograhy: .subHeadline(fontCase: .upper), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))
+                    case .small:  return .init(typograhy: .subHeadline(fontCase: .upper), contentEdgeInsets: .init(top: 9 + 2, left: 16, bottom: 7 + 2, right: 16))
+                    case .xs:     return .init(typograhy: .subHeadline(fontCase: .upper), contentEdgeInsets: .init(top: 7 + 2, left: 12, bottom: 5 + 2, right: 12))
                     }
                 case .textLink:
                     switch size {

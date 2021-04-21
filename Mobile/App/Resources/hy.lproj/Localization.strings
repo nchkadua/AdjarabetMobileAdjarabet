@@ -235,6 +235,7 @@
 /* Account Parameters */
 "account_parameters_change_password" = "Change password";
 "account_parameters_high_security" = "High security mode";
+"account_parameters_biometry" = "Biometric authorization";
 "account_parameters_self_block" = "Block account";
 "account_parameters_login_history" = "Login history";
 "account_parameters_messages_header" = "Security messsages";

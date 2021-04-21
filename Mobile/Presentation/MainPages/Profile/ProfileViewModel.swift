@@ -107,8 +107,8 @@ extension DefaultProfileViewModel: ProfileViewModel {
     private func biometryQuickActionIcon() -> UIImage {
         let icon: UIImage
         switch biometryInfoService.biometryType {
-        case .touchID:  icon = R.image.biometric.touchID()!
-        case .faceID:   icon = R.image.biometric.faceID()!
+        case .touchID:  icon = R.image.components.quickAction.touch_id()!
+        case .faceID:   icon = R.image.components.quickAction.face_id()!
         default:        icon = R.image.biometric.biometry()!
         }
 

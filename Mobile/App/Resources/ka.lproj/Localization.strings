@@ -231,7 +231,8 @@
 /* Account Parameters */
 "account_parameters_change_password" = "პაროლის შეცვლა";
 "account_parameters_high_security" = "მაღალი დაცვის რეჟიმი";
-"account_parameters_self_block" = "საკუთარი თავის დაბლოკვა";
+"account_parameters_biometry" = "ბიომეტრიული ავტორიზაცია";
+"account_parameters_self_block" = "ანგარიშის დაბლოკვა";
 "account_parameters_login_history" = "შესვლის ისტორია";
 "account_parameters_messages_header" = "უსაფრთხოების შეტყობინებები";
 "account_parameters_messages_sms_title" = "SMS შეტყობინებები";

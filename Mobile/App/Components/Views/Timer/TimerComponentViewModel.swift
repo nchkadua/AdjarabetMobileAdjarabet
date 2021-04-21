@@ -39,7 +39,7 @@ extension DefaultTimerComponentViewModel: TimerComponentViewModel {
 
     public func didBind() {
         switch languageStorage.currentLanguage {
-        case .georgian: actionSubject.onNext(.setAdditionalConstraint(constraint: 32))
+        case .georgian: actionSubject.onNext(.setAdditionalConstraint(constraint: 38))
         case .english: actionSubject.onNext(.setAdditionalConstraint(constraint: -15))
         case .armenian: actionSubject.onNext(.setAdditionalConstraint(constraint: -15))
         }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Icon.png",
+      "filename" : "Touch-id.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Icon@2x.png",
+      "filename" : "Touch-id@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Icon@3x.png",
+      "filename" : "Touch-id@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

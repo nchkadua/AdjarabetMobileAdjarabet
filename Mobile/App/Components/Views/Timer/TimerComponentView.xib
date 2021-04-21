@@ -29,10 +29,10 @@
                     </constraints>
                     <state key="normal" title="Resend"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-EJ-13e">
-                    <rect key="frame" x="218" y="0.0" width="14" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-EJ-13e">
+                    <rect key="frame" x="218" y="0.0" width="20" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="14" id="MF7-NF-294"/>
+                        <constraint firstAttribute="width" constant="20" id="MF7-NF-294"/>
                         <constraint firstAttribute="height" constant="16" id="icZ-Jx-0H2"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-EA-m2p">
-                    <rect key="frame" x="234" y="0.0" width="44.5" height="16"/>
+                    <rect key="frame" x="240" y="0.0" width="44.5" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

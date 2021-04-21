@@ -106,6 +106,7 @@ extension NotificationComponentView: Xibable {
 
         titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
         titleLabel.setTextColor(to: .primaryText())
+        titleLabel.numberOfLines = 2
 
         timeLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         timeLabel.setTextColor(to: .secondaryText())
