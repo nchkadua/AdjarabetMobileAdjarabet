@@ -355,8 +355,6 @@
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
 		CE0D8E8C2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */; };
 		CE0D8E92262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */; };
-		CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */; };
-		CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
 		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
@@ -396,7 +394,6 @@
 		CE4A314926172BF50039C078 /* NotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A314826172BF50039C078 /* NotificationsRepository.swift */; };
 		CE4A31502617320F0039C078 /* NotificationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A314F2617320F0039C078 /* NotificationsUseCase.swift */; };
 		CE4A3155261732920039C078 /* NotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A3154261732920039C078 /* NotificationDTO.swift */; };
-		CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */; };
 		CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF525265CDA003E168F /* ProfileNavigator.swift */; };
 		CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF625265CDA003E168F /* ProfileViewController.swift */; };
 		CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF725265CDA003E168F /* ProfileViewModel.swift */; };
@@ -1099,8 +1096,6 @@
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
 		CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStatusUpdateMessageEntity.swift; sourceTree = "<group>"; };
 		CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStatusUpdateMessageDTO.swift; sourceTree = "<group>"; };
-		CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInstructionView.xib; sourceTree = "<group>"; };
-		CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInstructionView.swift; sourceTree = "<group>"; };
 		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
 		CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoComponentView.xib; sourceTree = "<group>"; };
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
@@ -1140,7 +1135,6 @@
 		CE4A314826172BF50039C078 /* NotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepository.swift; sourceTree = "<group>"; };
 		CE4A314F2617320F0039C078 /* NotificationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUseCase.swift; sourceTree = "<group>"; };
 		CE4A3154261732920039C078 /* NotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDTO.swift; sourceTree = "<group>"; };
-		CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentsRepository.swift; sourceTree = "<group>"; };
 		CE55ECF525265CDA003E168F /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
 		CE55ECF625265CDA003E168F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CE55ECF725265CDA003E168F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -2904,7 +2898,6 @@
 			children = (
 				C72FA74C2600BD3B00A9C493 /* Entities & DTOs */,
 				C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */,
-				CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */,
 			);
 			path = "Repository & Entities";
 			sourceTree = "<group>";
@@ -2965,15 +2958,6 @@
 				CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */,
 			);
 			path = Status;
-			sourceTree = "<group>";
-		};
-		CE0F14AE254EE09B00ADD999 /* Instruction */ = {
-			isa = PBXGroup;
-			children = (
-				CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */,
-				CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */,
-			);
-			path = Instruction;
 			sourceTree = "<group>";
 		};
 		CE0FF92325F109F900C18F9C /* UFC */ = {
@@ -5330,7 +5314,6 @@
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,
-				CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				CE64EAAB25DD466D00438974 /* LogoutUseCase.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,

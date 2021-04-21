@@ -115,7 +115,6 @@ public extension DependencyContainer {
         // Payments
         Module { DefaultPostLoginRepository() as PostLoginRepository }
         Module { DefaultPaymentListRepository() as PaymentListRepository }
-        Module { DefaultTBCRegularPaymentsRepository() as TBCRegularPaymentsRepository }
         // Payments.UFC
         Module { DefaultUFCTransactionRepository() as UFCDepositRepository }
         Module { DefaultUFCTransactionRepository() as UFCWithdrawRepository }
