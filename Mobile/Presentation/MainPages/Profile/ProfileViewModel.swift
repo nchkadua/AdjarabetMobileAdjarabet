@@ -46,6 +46,7 @@ public class DefaultProfileViewModel: DefaultBaseViewModel {
     @Inject private var userSession: UserSessionServices
     @Inject private var userBalanceService: UserBalanceService
     @Inject(from: .useCases) private var logoutUseCase: LogoutUseCase
+    @Inject private var biometryInfoService: BiometricAuthentication
 }
 
 extension DefaultProfileViewModel: ProfileViewModel {
@@ -77,7 +78,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
         }).disposed(by: self.disposeBag)
         dataProviders.insert(balanceViewModel, at: 1)
 
-        QuickActionItemProvider.items().reversed().forEach {
+        QuickActionItemProvider.items(biometryQuickActionIcon()).reversed().forEach {
             let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, hidesSeparator: $0.hidesSeparator, destination: $0.destionation, roundedCorners: $0.roundedCorners))
 
             quickActionViewModel.action.subscribe(onNext: { [weak self] action in
@@ -101,5 +102,16 @@ extension DefaultProfileViewModel: ProfileViewModel {
             case .failure(.unknown(let error)): self.actionSubject.onNext(.didLogoutWithError(error: error))
             }
         })
+    }
+
+    private func biometryQuickActionIcon() -> UIImage {
+        let icon: UIImage
+        switch biometryInfoService.biometryType {
+        case .touchID:  icon = R.image.biometric.touchID()!
+        case .faceID:   icon = R.image.biometric.faceID()!
+        default:        icon = R.image.biometric.biometry()!
+        }
+
+        return icon
     }
 }

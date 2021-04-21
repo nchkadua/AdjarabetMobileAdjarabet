@@ -26,16 +26,23 @@ public enum TimerComponentViewModelOutputAction {
     case startFrom(seconds: Int)
     case timerDidEnd
     case stopTimer
+    case setAdditionalConstraint(constraint: CGFloat)
 }
 
 public class DefaultTimerComponentViewModel {
     private let actionSubject = PublishSubject<TimerComponentViewModelOutputAction>()
+    @Inject private var languageStorage: LanguageStorage
 }
 
 extension DefaultTimerComponentViewModel: TimerComponentViewModel {
     public var action: Observable<TimerComponentViewModelOutputAction> { actionSubject.asObserver() }
 
     public func didBind() {
+        switch languageStorage.currentLanguage {
+        case .georgian: actionSubject.onNext(.setAdditionalConstraint(constraint: 32))
+        case .english: actionSubject.onNext(.setAdditionalConstraint(constraint: -15))
+        case .armenian: actionSubject.onNext(.setAdditionalConstraint(constraint: -15))
+        }
     }
 
     public func start(from seconds: Int) {
