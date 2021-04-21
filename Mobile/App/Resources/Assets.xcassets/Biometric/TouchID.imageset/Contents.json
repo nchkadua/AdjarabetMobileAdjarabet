@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "Fill 1.svg",
-      "idiom" : "universal"
+      "filename" : "Face ID.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Face ID@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Face ID@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

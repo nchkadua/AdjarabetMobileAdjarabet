@@ -16,15 +16,18 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
 
     @IBOutlet private weak var logoImageView: UIImageView!
+    @IBOutlet private weak var qaButton: UIButton!
 
     @IBOutlet private weak var usernameInputView: ABInputView!
     @IBOutlet private weak var passwordInputView: ABInputView!
     @IBOutlet private weak var separatorView: UIView!
+    @IBOutlet private weak var separatorView2: UIView!
 
-    @IBOutlet private weak var OTPTitleLabel: UILabel!
     @IBOutlet private weak var smsLoginButton: ABButton!
+    @IBOutlet private weak var rememberButton: UIButton!
 
     @IBOutlet private weak var loginButton: ABButton!
+    @IBOutlet private weak var registrationButton: UIButton!
 
     @IBOutlet private weak var biometryIconButton: UIButton!
     @IBOutlet private weak var biometryButton: ABButton!
@@ -71,6 +74,7 @@ public class LoginViewController: ABViewController {
             biometryButton.superview?.isHidden = !available
             biometryIconButton.setImage(icon, for: .normal)
             biometryButton.setTitleWithoutAnimation(title, for: .normal)
+        case .configureQaButton(let image): setupQAButton(with: image)
         }
     }
 
@@ -91,7 +95,6 @@ public class LoginViewController: ABViewController {
         setupLogoImageView()
         setupButtons()
         setupInputViews()
-        setupLabels()
         setupInputViewsObservation()
         setDelegates()
     }
@@ -109,22 +112,35 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupButtons() {
-        smsLoginButton.setStyle(to: .textLink(state: .disabled, size: .small))
-        smsLoginButton.setTitleColor(to: .primaryRed(), for: .normal)
-        smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
+        smsLoginButton.titleLabel?.setFont(to: .callout(fontCase: .upper, fontStyle: .bold))
+        smsLoginButton.setTitleColor(to: .primaryText(), for: .normal)
+        smsLoginButton.setTitleColor(to: .secondaryText(), for: .highlighted)
+        smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized().uppercased(), for: .normal)
         smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
+
+        rememberButton.titleLabel?.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+        rememberButton.setTitleColor(to: .primaryText(), for: .normal)
+        rememberButton.setTitle(R.string.localization.login_remember.localized(), for: .normal)
+        rememberButton.semanticContentAttribute = .forceRightToLeft
 
         loginButton.setStyle(to: .primary(state: .active, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
+        loginButton.roundCorners(.allCorners, radius: 41)
 //        updateLoginButton(isEnabled: false)
 
-        biometryButton.setStyle(to: .textLink(state: .active, size: .small))
+        registrationButton.titleLabel?.setFont(to: .callout(fontCase: .lower, fontStyle: .bold))
+        registrationButton.setTitleColor(to: .primaryText(), for: .normal)
+        registrationButton.setBackgorundColor(to: .tertiaryBg())
+        registrationButton.setTitleWithoutAnimation(R.string.localization.login_registration.localized(), for: .normal)
+        registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
+        registrationButton.roundCorners(.allCorners, radius: 41)
+
+        biometryButton.titleLabel?.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
+        biometryButton.underline(with: .primaryText(), thickness: 1)
         biometryButton.setTitleColor(to: .primaryText(), for: .normal)
         biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
         biometryIconButton.setTintColor(to: .primaryText())
-        biometryIconButton.layer.cornerRadius = biometryIconButton.bounds.width / 2
-        biometryIconButton.setBackgorundColor(to: .secondaryFill())
         biometryIconButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
     }
 
@@ -133,18 +149,17 @@ public class LoginViewController: ABViewController {
         usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title.localized())
         usernameInputView.setSize(to: .large)
         usernameInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
-        usernameInputView.setLeftButtonImage(R.image.login.username() ?? UIImage(), for: .normal)
 
         passwordInputView.mainTextField.textContentType = .password
         passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
         passwordInputView.setSize(to: .large)
         passwordInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
-        passwordInputView.setLeftButtonImage(R.image.login.password() ?? UIImage(), for: .normal)
         passwordInputView.becomeSecureTextEntry()
 
         passwordInputView.setRightButtonImage(R.image.shared.hideText() ?? UIImage(), for: .normal)
 
-        separatorView.setBackgorundColor(to: .primaryText(alpha: 0.15))
+        separatorView.setBackgorundColor(to: .nonOpaque())
+        separatorView2.setBackgorundColor(to: .nonOpaque())
 
         passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
             self?.updatePasswordRightButton()
@@ -157,6 +172,26 @@ public class LoginViewController: ABViewController {
                 self?.updateLoginButton(isEnabled: isValid)
             })
             .disposed(by: disposeBag)
+
+        //
+        subscribeTo(usernameInputView)
+        subscribeTo(passwordInputView)
+    }
+
+    private func subscribeTo(_ inputView: ABInputView) {
+        inputView.mainTextField.rx.controlEvent([.editingDidBegin])
+            .asObservable().subscribe({ [self] _ in
+                scrollView.isScrollEnabled = false
+            }).disposed(by: disposeBag)
+
+        inputView.mainTextField.rx.controlEvent([.editingDidEnd])
+            .asObservable().subscribe({ [self] _ in
+                scrollView.isScrollEnabled = true
+            }).disposed(by: disposeBag)
+    }
+
+    private func setupQAButton(with image: UIImage) {
+        qaButton.setImage(image, for: .normal)
     }
 
     private func setupInputViewsObservation() {
@@ -164,12 +199,6 @@ public class LoginViewController: ABViewController {
             guard self?.loginButton.isUserInteractionEnabled == true else {return}
             self?.loginDidTap()
         }
-    }
-
-    private func setupLabels() {
-        OTPTitleLabel.setTextColor(to: .primaryText())
-        OTPTitleLabel.setFont(to: .footnote(fontCase: .lower))
-        OTPTitleLabel.text = R.string.localization.login_sms_login_title.localized()
     }
 
     private func setDelegates() {
@@ -201,6 +230,10 @@ public class LoginViewController: ABViewController {
 
         closeKeyboard()
         viewModel.login(username: username, password: password)
+    }
+
+    @objc private func registrationDidTap() {
+        closeKeyboard()
     }
 
     @objc private func biometryButtonDidTap() {

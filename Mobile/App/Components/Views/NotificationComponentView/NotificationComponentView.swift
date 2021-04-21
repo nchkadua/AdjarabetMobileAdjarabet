@@ -67,6 +67,8 @@ class NotificationComponentView: UIView {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [self] in
             titleLabel.text = viewModel.params.notification.header
             viewModel.calculateTimeOf(viewModel.params.notification)
+
+            guard !statusUpdated else { return }
             setupNotificationStatus(viewModel.params.notification)
         }
     }
