@@ -256,7 +256,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
     }
 
     func added() {
-        routeSubject.onNext(.addAccount(params: .init(delegate: self)))
+        routeSubject.onNext(.addAccount(params: .init(serviceType: params.serviceType, delegate: self)))
     }
 
     private func initSession(account: Int, amount: Double) {

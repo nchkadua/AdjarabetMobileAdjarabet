@@ -20,6 +20,7 @@ protocol VisaViewModelInput {
     func entered(amount: String)                 // call on entering amount
     func selected(account: Int, amount: String)  // call on selecting account
     func continued(amount: String, account: Int) // call on tapping continue button
+    func added()
 }
 
 protocol VisaViewModelOutput {
@@ -46,6 +47,7 @@ enum VisaViewType {
 
 enum VisaViewModelRoute {
     case webView(with: WebViewModelParams)
+    case addAccount(params: AddCardViewModelParams)
 }
 
 class DefaultVisaViewModel {
@@ -192,6 +194,10 @@ extension DefaultVisaViewModel: VisaViewModel {
                 self.actionSubject.onNext(.show(error: error.localizedDescription))
             }
         }
+    }
+
+    func added() {
+        routeSubject.onNext(.addAccount(params: .init(serviceType: params.serviceType)))
     }
 
     /* helpers */
