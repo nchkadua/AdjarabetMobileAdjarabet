@@ -105,6 +105,8 @@ public class VisaViewController: ABViewController {
         switch route {
         case .webView(let params):
             navigator.navigate(to: .webView(params: params), animated: true)
+        case .addAccount(let params):
+            navigator.navigate(to: .addAccount(params: params), animated: true)
         }
     }
 
@@ -178,7 +180,7 @@ public class VisaViewController: ABViewController {
 
     // MARK: Action methods
     @objc private func addCardDidTap() {
-        navigator.navigate(to: .addAccount, animated: true)
+        viewModel.added()
     }
 
     @objc private func continueButtonDidTap() {
@@ -201,7 +203,7 @@ public class VisaViewController: ABViewController {
     }
 
     @objc private func navigateToAddAccount() {
-        navigator.navigate(to: .addAccount, animated: true)
+        viewModel.added()
     }
 }
 

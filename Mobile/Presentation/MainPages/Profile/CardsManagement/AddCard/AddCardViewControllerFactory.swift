@@ -15,7 +15,7 @@ public protocol AddCardViewControllerFactory {
 public class DefaultAddCardViewControllerFactory: AddCardViewControllerFactory {
     public func make(params: AddCardViewModelParams) -> AddCardViewController {
         let vc = R.storyboard.addCard().instantiate(controller: AddCardViewController.self)!
-        vc.viewModel.params = params
+        vc.viewModel = DefaultAddCardViewModel(params: params)
         return vc
     }
 }

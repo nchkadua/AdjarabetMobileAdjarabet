@@ -80,7 +80,6 @@ public extension DependencyContainer {
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
         Module { DefaultPhoneNumberChangeViewModel(params: .init()) as PhoneNumberChangeViewModel }
         Module { DefaultOTPViewModel(params: .init()) as OTPViewModel }
-        Module { DefaultAddCardViewModel(params: .init()) as AddCardViewModel }
         Module { DefaultSecurityLevelsViewModel() as SecurityLevelsViewModel }
         Module { DefaultAccessHistoryCalendarViewModel(params: .init()) as AccessHistoryCalendarViewModel }
         Module { DefaultAccessHistoryViewModel(params: .init()) as AccessHistoryViewModel }

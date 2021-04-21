@@ -144,7 +144,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         displayEmptyNotificationList()
         load(loadingType: .fullScreen)
     }
-    
+
     private func displayEmptyNotificationList() {
         self.resetPaging()
         let initialEmptyDataProvider: AppCellDataProviders = []
