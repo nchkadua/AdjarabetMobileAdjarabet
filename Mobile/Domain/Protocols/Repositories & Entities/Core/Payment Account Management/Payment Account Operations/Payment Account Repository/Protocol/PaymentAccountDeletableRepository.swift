@@ -16,7 +16,7 @@ protocol PaymentAccountDeletableRepository {
      */
     typealias PaymentAccountDeleteHandler = (Result<Int, Error>) -> Void
     func delete(params: PaymentAccountDeleteParams,
-                completion: @escaping PaymentAccountDeleteHandler)
+                handler: @escaping PaymentAccountDeleteHandler)
 }
 
 // for delete

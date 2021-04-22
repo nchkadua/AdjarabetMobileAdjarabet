@@ -16,7 +16,7 @@ protocol PaymentAccountFilterableRepository {
      */
     typealias ListHandler = (Result<[PaymentAccountEntity], Error>) -> Void
     func list(params: PaymentAccountFilterableListParams,
-              handler: ListHandler)
+              handler: @escaping ListHandler)
 }
 
 struct PaymentAccountFilterableListParams {

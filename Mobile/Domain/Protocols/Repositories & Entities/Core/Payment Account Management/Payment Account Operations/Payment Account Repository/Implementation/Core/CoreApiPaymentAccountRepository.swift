@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct CoreApiPaymentAccountRepository: CoreApiRepository { }
+struct CoreApiPaymentAccountRepository: CoreApiRepository { }
 
 extension CoreApiPaymentAccountRepository: PaymentAccountPagingableRepository,
                                            PaymentAccountDeletableRepository {
@@ -20,7 +20,8 @@ extension CoreApiPaymentAccountRepository: PaymentAccountPagingableRepository,
         }
     }
 
-    func page(params: PaymentAccountPagingablePageParams, handler: @escaping PageHandler) {
+    func page(params: PaymentAccountPagingablePageParams,
+              handler: @escaping PageHandler) {
         performTask(expecting: CoreApiPaymentAccountDTO.self, completion: handler) { requestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "getPaymentAccounts")
@@ -29,8 +30,9 @@ extension CoreApiPaymentAccountRepository: PaymentAccountPagingableRepository,
         }
     }
 
-    func delete(params: PaymentAccountDeleteParams, completion: @escaping PaymentAccountDeleteHandler) {
-        performTask(expecting: CoreApiPaymentAccountDeleteDTO.self, completion: completion) { requestBuilder -> CoreRequestBuilder in
+    func delete(params: PaymentAccountDeleteParams,
+                handler: @escaping PaymentAccountDeleteHandler) {
+        performTask(expecting: CoreApiPaymentAccountDeleteDTO.self, completion: handler) { requestBuilder -> CoreRequestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "deletePaymentAccount")
                 .setBody(key: "paymentAccountID", value: "\(params.id)")
