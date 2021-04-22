@@ -15,14 +15,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQn-Xh-1fX" customClass="AccountParametersComponentView" customModule="Mobile" customModuleProvider="target">
-                    <rect key="frame" x="16" y="0.0" width="433" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="465" height="70"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="rQn-Xh-1fX" secondAttribute="bottom" id="BxT-wz-s7Q"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rQn-Xh-1fX" secondAttribute="trailing" constant="16" id="DxU-PZ-c1D"/>
-                <constraint firstItem="rQn-Xh-1fX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Qn1-x1-aeW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rQn-Xh-1fX" secondAttribute="trailing" id="DxU-PZ-c1D"/>
+                <constraint firstItem="rQn-Xh-1fX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Qn1-x1-aeW"/>
                 <constraint firstItem="rQn-Xh-1fX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="m23-P2-jKe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

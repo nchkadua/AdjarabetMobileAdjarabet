@@ -31,6 +31,7 @@ public class SMSCodeDigitView: AppCircularView {
         l.textAlignment = .center
         l.setFont(to: .title2(fontCase: .upper, fontStyle: .bold))
         l.setTextColor(to: .primaryText())
+
         return l
     }()
 

@@ -109,7 +109,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
         switch biometryInfoService.biometryType {
         case .touchID:  icon = R.image.components.quickAction.touch_id()!
         case .faceID:   icon = R.image.components.quickAction.face_id()!
-        default:        icon = R.image.biometric.biometry()!
+        default:        icon = R.image.components.quickAction.touch_id()!
         }
 
         return icon

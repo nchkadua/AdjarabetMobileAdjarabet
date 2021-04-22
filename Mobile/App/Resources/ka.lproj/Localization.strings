@@ -57,6 +57,7 @@
 "sms_resend_title" = "ხელახლა გაგზავნა";
 "sms_resend_time" = "წამში";
 "sms_approve" = "დადასტურება";
+"sms_placeholder" = "6 ნიშნა კოდი";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
@@ -236,10 +237,10 @@
 "account_parameters_login_history" = "შესვლის ისტორია";
 "account_parameters_messages_header" = "უსაფრთხოების შეტყობინებები";
 "account_parameters_messages_sms_title" = "SMS შეტყობინებები";
-"account_parameters_messages_sms_description" = "თქვენ მიიღებთ SMS შეტყობინებებს თქვენს ტელეფონის ნომერზე";
+"account_parameters_messages_sms_description" = "თქვენ მიიღებთ გზავნილებს სმს შეტყობინებების მეშვეობით";
 "account_parameters_messages_sms_button" = "პარამეტრების დაყენება";
 "account_parameters_messages_email_title" = "ელ-ფოსტის შეტყობინებები";
-"account_parameters_messages_email_description" = "თქვენ მიიღებთ შეტყობინებებს თქვენს ელ-ფოსტაზე";
+"account_parameters_messages_email_description" = "თქვენ მიიღებთ გზავნილებს ელექტრონული ფოსტის მეშვეობით";
 "account_parameters_messages_email_button" = "პარამეტრების დაყენება";
 
 /* Access History */

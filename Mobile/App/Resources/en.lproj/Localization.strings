@@ -57,6 +57,7 @@
 "sms_resend_title" = "Resend";
 "sms_resend_time" = "Seconds";
 "sms_approve" = "Approve";
+"sms_placeholder" = "6 Digit Code";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
