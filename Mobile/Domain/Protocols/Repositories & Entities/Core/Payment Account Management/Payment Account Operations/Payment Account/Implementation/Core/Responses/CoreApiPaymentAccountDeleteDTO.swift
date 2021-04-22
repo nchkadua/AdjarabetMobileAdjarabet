@@ -1,5 +1,5 @@
 //
-//  PaymentAccountDeleteDataTransferResponse.swift
+//  CoreApiPaymentAccountDeleteDTO.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 2/18/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaymentAccountDeleteDataTransferResponse: DataTransferResponse {
+struct CoreApiPaymentAccountDeleteDTO: DataTransferResponse {
     struct Body: Codable {
         let statusCode: Int?
 

@@ -31,16 +31,17 @@ public protocol PaymentAccountUseCase {
 }
 
 public struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
-    @Inject(from: .repositories) private var paymentAccountRepository: PaymentAccountRepository
+    private let coreReadableRepo: PaymentAccountPagingableRepository = CoreApiPaymentAccountRepository()
+    private let coreWritableRepo: PaymentAccountDeletableRepository = CoreApiPaymentAccountRepository()
 
     public func execute(params: PaymentAccountUseCaseParams, completion: @escaping PaymentAccountUseCaseHandler) {
         // fetch count
-        paymentAccountRepository.currentUserPaymentAccountsCount(params: .init()) { result in
+        coreReadableRepo.count(params: .init()) { result in
             switch result {
             case .success(let count):
                 // fetch payment accounts
-                paymentAccountRepository.currentUserPaymentAccounts(params: .init(pageIndex: 0, pageCount: count.count ?? 0), // FIXME: ?? error
-                                                                    completion: completion)
+                coreReadableRepo.page(params: .init(index: 0, count: count.count ?? 0), // FIXME: ?? error
+                                      handler: completion)
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -50,7 +51,7 @@ public struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
     public func execute(params: PaymentAccountUseCaseDeleteParams,
                         completion: @escaping PaymentAccountUseCaseDeleteHandler) {
         // delete payment account
-        paymentAccountRepository.currentUserPaymentAccountDelete(params: .init(id: params.id)) { result in
+        coreWritableRepo.delete(params: .init(id: params.id)) { result in
             switch result {
             case .success(let statusCode):
                 if statusCode == 10 { // TODO: 10 is success status code, refactor with enum
