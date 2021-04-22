@@ -14,9 +14,12 @@ class TimerComponentView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
-    @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var secondsLabel: UILabel!
+    @IBOutlet weak private var resendButton: UIButton!
+
+    public var button: UIButton { resendButton }
+    @IBOutlet weak private var resendButtonConstraint: NSLayoutConstraint!
 
     private var initialSeconds = 0
     private var timer: Timer?
@@ -43,6 +46,7 @@ class TimerComponentView: UIView {
             switch action {
             case .startFrom(let seconds): self?.startTimer(from: seconds)
             case .stopTimer: self?.stopTimer()
+            case .setAdditionalConstraint(let constraint): self?.setAdditionalConstraint(constraint)
             default:
                 break
             }
@@ -56,6 +60,7 @@ class TimerComponentView: UIView {
         timeLabel.text = String(initialSeconds)
 
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        updateResendButton(false)
     }
 
     @objc private func updateTimer() {
@@ -66,10 +71,41 @@ class TimerComponentView: UIView {
 
         timer?.invalidate()
         viewModel.timerDidEnd()
+        updateResendButton(true)
     }
 
     private func stopTimer() {
         timer?.invalidate()
+    }
+
+    private func updateResendButton(_ activate: Bool) {
+        resendButton.isUserInteractionEnabled = activate
+
+        secondsLabel.isUserInteractionEnabled = activate
+        timeLabel.isUserInteractionEnabled = activate
+
+        if activate {
+            UIView.animate(withDuration: 0.22) { [self] in
+                resendButton.setTitleColor(to: .primaryText(), for: .normal)
+                resendButton.titleLabel?.setFont(to: .callout(fontCase: .lower, fontStyle: .bold))
+
+                secondsLabel.alpha = 0.5
+                timeLabel.alpha = 0.5
+            }
+        } else {
+            UIView.animate(withDuration: 0.22) { [self] in
+                resendButton.setTitleColor(to: .secondaryText(), for: .normal)
+                resendButton.titleLabel?.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
+
+                secondsLabel.alpha = 1
+                timeLabel.alpha = 1
+            }
+        }
+    }
+
+    private func setAdditionalConstraint(_ constraint: CGFloat) {
+        resendButtonConstraint.constant += constraint
+        layoutIfNeeded()
     }
 }
 
@@ -86,15 +122,16 @@ extension TimerComponentView: Xibable {
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
 
-        titleLabel.setTextColor(to: .secondaryText())
-        titleLabel.setFont(to: .caption2(fontCase: .lower))
-        titleLabel.text = R.string.localization.sms_resend_title.localized()
+        let title = R.string.localization.sms_resend_title.localized()
+        resendButton.setTitle(title, for: .normal)
+        resendButton.titleLabel?.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
+        updateResendButton(false)
 
         secondsLabel.setTextColor(to: .primaryText())
-        secondsLabel.setFont(to: .caption2(fontCase: .lower))
+        secondsLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .bold))
         secondsLabel.text = R.string.localization.sms_resend_time.localized()
 
         timeLabel.setTextColor(to: .primaryText())
-        timeLabel.setFont(to: .caption2(fontCase: .lower))
+        timeLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .bold))
     }
 }

@@ -13,7 +13,7 @@ public protocol AccountParametersTableViewCellDataProvider: AccountParametersCom
 public extension AccountParametersTableViewCellDataProvider {
     var identifier: String { AccountParametersTableViewCell.identifierValue }
     var height: CGFloat {
-        get { 60 + 10 } // height + padding
+        get { 60 } // height + padding
         set { print(newValue) }
     }
     var isHeightSet: Bool { true }

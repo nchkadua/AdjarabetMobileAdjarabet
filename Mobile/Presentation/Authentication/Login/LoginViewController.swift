@@ -174,19 +174,25 @@ public class LoginViewController: ABViewController {
             .disposed(by: disposeBag)
 
         //
-        subscribeTo(usernameInputView)
-        subscribeTo(passwordInputView)
+        subscribeTo(usernameInputView, indicator: separatorView)
+        subscribeTo(passwordInputView, indicator: separatorView2)
     }
 
-    private func subscribeTo(_ inputView: ABInputView) {
+    private func subscribeTo(_ inputView: ABInputView, indicator: UIView) {
         inputView.mainTextField.rx.controlEvent([.editingDidBegin])
-            .asObservable().subscribe({ [self] _ in
-                scrollView.isScrollEnabled = false
+            .asObservable().subscribe({_ in
+                self.scrollView.isScrollEnabled = false
+                UIView.animate(withDuration: 0.22) {
+                    indicator.setBackgorundColor(to: .primaryText())
+                }
             }).disposed(by: disposeBag)
 
         inputView.mainTextField.rx.controlEvent([.editingDidEnd])
-            .asObservable().subscribe({ [self] _ in
-                scrollView.isScrollEnabled = true
+            .asObservable().subscribe({_ in
+                self.scrollView.isScrollEnabled = true
+                UIView.animate(withDuration: 0.22) {
+                    indicator.setBackgorundColor(to: .nonOpaque())
+                }
             }).disposed(by: disposeBag)
     }
 

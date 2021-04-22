@@ -16,6 +16,10 @@ class AccountParametersComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var iconImageView: UIImageView!
+    @IBOutlet weak private var arrowImageView: UIImageView!
+    @IBOutlet weak private var separatorView: UIView!
+
+    private var corners: UIRectCorner = []
 
     // MARK: Lifecycle methods
 
@@ -29,10 +33,6 @@ class AccountParametersComponentView: UIView {
         nibSetup()
     }
 
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        setupViewLayers()
-    }
     public func setAndBind(viewModel: AccountParametersComponentViewModel) {
         self.viewModel = viewModel
         bind()
@@ -52,15 +52,20 @@ class AccountParametersComponentView: UIView {
         viewModel.didBind()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        roundCorners(corners, radius: 10)
+    }
+
     // MARK: Setup methods
 
     private func set(params: AccountParametersComponentViewModelParams) {
         titleLabel.text = params.title
         iconImageView.image = params.icon
-    }
+        separatorView.isHidden = params.hideSeparator
 
-    private func setupViewLayers() {
-        view.roundCorners(.allCorners, radius: 6)
+        self.corners = params.corners
     }
 }
 
@@ -76,8 +81,13 @@ extension AccountParametersComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
+
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .footnote(fontCase: .lower))
-        iconImageView.setTintColor(to: .primaryText()) // white
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
+
+        arrowImageView.setTintColor(to: .secondaryText())
+        iconImageView.setTintColor(to: .primaryText())
+
+        separatorView.setBackgorundColor(to: .tertiaryBg())
     }
 }

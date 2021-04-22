@@ -49,13 +49,14 @@
 "login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
 
 /* SMS Login */
-"sms_login_page_title" = "SMS ავტორიზაცია";
-"sms_confirmation_description" = "თქვენი კოდი გამოგზავნილია თქვენს ნომერზე";
+"sms_login_page_title" = "OTP ავტორიზაცია";
+"sms_confirmation_description" = "თქვენს ნომერზე გამოგზავნილია კოდი";
 "sms_resend" = "SMS გაგზავნა";
 "sms_did_not_receive_message" = "Did not receive message?";
 "sms_well_done" = "Well done!";
 "sms_resend_title" = "ხელახლა გაგზავნა";
 "sms_resend_time" = "წამში";
+"sms_approve" = "დადასტურება";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
@@ -230,7 +231,8 @@
 /* Account Parameters */
 "account_parameters_change_password" = "პაროლის შეცვლა";
 "account_parameters_high_security" = "მაღალი დაცვის რეჟიმი";
-"account_parameters_self_block" = "საკუთარი თავის დაბლოკვა";
+"account_parameters_biometry" = "ბიომეტრიული ავტორიზაცია";
+"account_parameters_self_block" = "ანგარიშის დაბლოკვა";
 "account_parameters_login_history" = "შესვლის ისტორია";
 "account_parameters_messages_header" = "უსაფრთხოების შეტყობინებები";
 "account_parameters_messages_sms_title" = "SMS შეტყობინებები";

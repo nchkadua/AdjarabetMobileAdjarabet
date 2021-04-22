@@ -13,7 +13,9 @@ public protocol AccountParametersComponentViewModel: AccountParametersComponentV
 
 public struct AccountParametersComponentViewModelParams {
     let title: String
-    let icon: UIImage // TODO UIimage vs Image name String
+    let icon: UIImage
+    let corners: UIRectCorner
+    let hideSeparator: Bool
 }
 
 public protocol AccountParametersComponentViewModelInput {

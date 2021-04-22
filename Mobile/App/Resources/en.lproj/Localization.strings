@@ -49,13 +49,14 @@
 "login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
 
 /* SMS Login */
-"sms_login_page_title" = "SMS LOGIN";
+"sms_login_page_title" = "OTP Authorization";
 "sms_confirmation_description" = "Code is sent to yout number";
 "sms_resend" = "Resend SMS";
 "sms_did_not_receive_message" = "Did not receive message?";
 "sms_well_done" = "Well done!";
-"sms_resend_title" = "Resend in";
+"sms_resend_title" = "Resend";
 "sms_resend_time" = "Seconds";
+"sms_approve" = "Approve";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
@@ -230,6 +231,7 @@
 /* Account Parameters */
 "account_parameters_change_password" = "Change password";
 "account_parameters_high_security" = "High security mode";
+"account_parameters_biometry" = "Biometric authorization";
 "account_parameters_self_block" = "Block account";
 "account_parameters_login_history" = "Login history";
 "account_parameters_messages_header" = "Security messsages";

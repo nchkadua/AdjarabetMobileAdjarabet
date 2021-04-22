@@ -14,6 +14,8 @@ protocol AccountParameterCell {
 struct AccountParameter: AccountParameterCell {
     let title: String
     let icon: UIImage
+    let roundedCorners: UIRectCorner
+    let hidesSeparator: Bool
     let destination: AccountParametersNavigator.Destination
 }
 
@@ -39,18 +41,33 @@ struct AccountParameterMessages: AccountParameterCell {
 }
 
 struct AccountParametersModel {
+    var biometryIcon: UIImage?
+
     lazy var dataSource: [AccountParameterCell] = [
         AccountParameter(title: R.string.localization.account_parameters_change_password.localized(),
-                         icon: (R.image.accountParameters.changePassword()!.withRenderingMode(.alwaysTemplate)),
+                         icon: (R.image.accountParameters.changePassword()!.withRenderingMode(.alwaysOriginal)),
+                         roundedCorners: [.topLeft, .topRight],
+                         hidesSeparator: false,
                          destination: .changePassword),
         AccountParameter(title: R.string.localization.account_parameters_high_security.localized(),
-                         icon: (R.image.accountParameters.highSecurity()!.withRenderingMode(.alwaysTemplate)),
+                         icon: (R.image.accountParameters.highSecurity()!.withRenderingMode(.alwaysOriginal)),
+                         roundedCorners: [],
+                         hidesSeparator: false,
                          destination: .highSecurity),
+        AccountParameter(title: R.string.localization.account_parameters_biometry.localized(),
+                         icon: (biometryIcon!.withRenderingMode(.alwaysOriginal)),
+                         roundedCorners: [],
+                         hidesSeparator: false,
+                         destination: .biometryAuthorization),
         AccountParameter(title: R.string.localization.account_parameters_self_block.localized(),
-                         icon: (R.image.accountParameters.blockSelf()!.withRenderingMode(.alwaysTemplate)),
+                         icon: (R.image.accountParameters.blockSelf()!.withRenderingMode(.alwaysOriginal)),
+                         roundedCorners: [],
+                         hidesSeparator: false,
                          destination: .blockSelf),
         AccountParameter(title: R.string.localization.account_parameters_login_history.localized(),
-                         icon: (R.image.accountParameters.loginHistory()!.withRenderingMode(.alwaysTemplate)),
+                         icon: (R.image.accountParameters.loginHistory()!.withRenderingMode(.alwaysOriginal)),
+                         roundedCorners: [.bottomLeft, .bottomRight],
+                         hidesSeparator: true,
                          destination: .loginHistory),
         AccountParameterHeader(title: R.string.localization.account_parameters_messages_header.localized()),
         AccountParameterMessages(title: R.string.localization.account_parameters_messages_sms_title.localized(),
