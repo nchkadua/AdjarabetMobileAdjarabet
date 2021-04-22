@@ -2012,29 +2012,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C701C5F825C0097600B059A6 /* Payment Account Management */ = {
-			isa = PBXGroup;
-			children = (
-				C701C5FB25C0098E00B059A6 /* Payment Account Operations */,
-			);
-			path = "Payment Account Management";
-			sourceTree = "<group>";
-		};
-		C701C5FB25C0098E00B059A6 /* Payment Account Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C701C5FC25C009C900B059A6 /* Payment Account */,
-			);
-			path = "Payment Account Operations";
-			sourceTree = "<group>";
-		};
-		C701C5FC25C009C900B059A6 /* Payment Account */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Payment Account";
-			sourceTree = "<group>";
-		};
 		C701C60125C00A7700B059A6 /* Payment Account Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -2869,7 +2846,6 @@
 				C7EF9E47256FED2600D2908C /* User Profile Management */,
 				C7991273259BA3A300F64676 /* User Activity History & Transaction Management */,
 				C709D7FF259B902D0079E942 /* Balance Management */,
-				C701C5F825C0097600B059A6 /* Payment Account Management */,
 			);
 			path = Core;
 			sourceTree = "<group>";
