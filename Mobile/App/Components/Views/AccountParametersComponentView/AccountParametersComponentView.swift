@@ -80,7 +80,7 @@ extension AccountParametersComponentView: Xibable {
     }
 
     func setupUI() {
-        view.setBackgorundColor(to: .secondaryBg())
+        view.backgroundColor = .clear
 
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))

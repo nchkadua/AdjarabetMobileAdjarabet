@@ -16,6 +16,7 @@ public class OTPViewController: ABViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var otpDescriptionLabel: UILabel!
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
+    @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private weak var loginButton: ABButton!
     @IBOutlet private weak var timerView: TimerComponentView!
 
@@ -110,6 +111,10 @@ public class OTPViewController: ABViewController {
                                   lineSpasing: 4,
                                   foregroundColor: .secondaryText())
         otpDescriptionLabel.attributedText = OTPDescription
+
+        placeholderLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
+        placeholderLabel.setTextColor(to: .secondaryText())
+        placeholderLabel.text = R.string.localization.sms_placeholder.localized()
     }
 
     private func setupButtons() {
@@ -131,6 +136,7 @@ public class OTPViewController: ABViewController {
         smsCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         smsCodeInputView.configureForNumberOfItems(6)
+        smsCodeInputView.roundCorners(.allCorners, radius: 6)
     }
 
     /// Timer
@@ -198,6 +204,12 @@ public class OTPViewController: ABViewController {
 
         loginButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
+
+    private func updatePlaceholder(_ hide: Bool) {
+        UIView.animate(withDuration: 0.22) {
+            self.placeholderLabel.isHidden = hide
+        }
+    }
 }
 
 // MAKR: UITextFieldDelegate
@@ -205,6 +217,7 @@ extension OTPViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let result = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
 
+        updatePlaceholder(result.count >= 1)
         return viewModel.shouldChangeCharacters(for: result)
     }
 }

@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="საკუთარი თავის დაბლოკვა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOz-4Y-nBh">
-                    <rect key="frame" x="56" y="21" width="279" height="16"/>
+                    <rect key="frame" x="56" y="19" width="279" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                 <constraint firstItem="gTb-cW-EZ0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="56" id="bUr-mQ-zNU"/>
                 <constraint firstItem="sOz-4Y-nBh" firstAttribute="leading" secondItem="9F4-G1-G5T" secondAttribute="trailing" constant="12" id="dSm-lM-NkQ"/>
                 <constraint firstItem="9F4-G1-G5T" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="gFe-m3-uic"/>
-                <constraint firstItem="sOz-4Y-nBh" firstAttribute="centerY" secondItem="9F4-G1-G5T" secondAttribute="centerY" constant="2" id="qmG-95-nap"/>
+                <constraint firstItem="sOz-4Y-nBh" firstAttribute="centerY" secondItem="9F4-G1-G5T" secondAttribute="centerY" id="qmG-95-nap"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="61.594202898550726" y="107.8125"/>

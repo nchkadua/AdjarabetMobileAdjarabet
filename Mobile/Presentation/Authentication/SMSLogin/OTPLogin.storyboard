@@ -40,9 +40,21 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-P3-eho" customClass="SMSCodeInputView" customModule="Mobile" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kg-ef-61y">
+                                                                <rect key="frame" x="16" y="30" width="342" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="4kg-ef-61y" firstAttribute="centerY" secondItem="sGc-P3-eho" secondAttribute="centerY" id="8N4-22-9Qp"/>
+                                                            <constraint firstItem="4kg-ef-61y" firstAttribute="leading" secondItem="sGc-P3-eho" secondAttribute="leading" constant="16" id="UVa-gj-CTG"/>
                                                             <constraint firstAttribute="height" constant="80" id="VJh-Tl-11p"/>
+                                                            <constraint firstAttribute="trailing" secondItem="4kg-ef-61y" secondAttribute="trailing" constant="16" id="e8B-me-SDW"/>
+                                                            <constraint firstItem="4kg-ef-61y" firstAttribute="centerX" secondItem="sGc-P3-eho" secondAttribute="centerX" id="mp3-qR-Zi4"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R74-wT-6DH">
@@ -103,6 +115,7 @@
                     <connections>
                         <outlet property="loginButton" destination="wEO-0R-vVl" id="U8x-kU-NTK"/>
                         <outlet property="otpDescriptionLabel" destination="e7i-eU-SGk" id="7Ls-XR-TLI"/>
+                        <outlet property="placeholderLabel" destination="4kg-ef-61y" id="C1I-TH-utB"/>
                         <outlet property="scrollView" destination="WNY-zV-0Ip" id="9Na-nV-XQj"/>
                         <outlet property="smsCodeInputView" destination="sGc-P3-eho" id="25F-7T-hmf"/>
                         <outlet property="timerView" destination="psm-i8-xbn" id="ZIJ-4g-hGT"/>
