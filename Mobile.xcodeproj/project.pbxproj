@@ -2054,14 +2054,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		C701C71425C0517000B059A6 /* Responses */ = {
+		C701C71425C0517000B059A6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				C701C71525C051AC00B059A6 /* CoreApiPaymentAccountDTO.swift */,
 				C701C71925C051C400B059A6 /* CoreApiPaymentAccountCountDTO.swift */,
 				C7F5477225DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift */,
 			);
-			path = Responses;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C701C71D25C0595000B059A6 /* Payment Accounts */ = {
@@ -2332,12 +2332,12 @@
 			path = "Amount Formatter";
 			sourceTree = "<group>";
 		};
-		C794D4232631F7A10028393A /* Responses */ = {
+		C794D4232631F7A10028393A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */,
 			);
-			path = Responses;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C794D4262631FB340028393A /* Web */ = {
@@ -2633,7 +2633,7 @@
 		C7A517A02631E53000933DF8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C701C71425C0517000B059A6 /* Responses */,
+				C701C71425C0517000B059A6 /* Entities */,
 				C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */,
 			);
 			path = Core;
@@ -2642,7 +2642,7 @@
 		C7A517A12631E53600933DF8 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				C794D4232631F7A10028393A /* Responses */,
+				C794D4232631F7A10028393A /* Entities */,
 				C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */,
 			);
 			path = Web;
