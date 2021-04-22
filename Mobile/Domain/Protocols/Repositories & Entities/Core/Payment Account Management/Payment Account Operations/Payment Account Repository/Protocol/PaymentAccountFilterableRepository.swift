@@ -11,7 +11,7 @@ import Foundation
 protocol PaymentAccountFilterableRepository {
     /**
      Returns payment accounts and their details
-     at specified 'pageIndex' and 'pageCount'
+     at specified 'providerType' and 'paymentType'
      for the currently authenticated user
      */
     typealias ListHandler = (Result<[PaymentAccountEntity], Error>) -> Void

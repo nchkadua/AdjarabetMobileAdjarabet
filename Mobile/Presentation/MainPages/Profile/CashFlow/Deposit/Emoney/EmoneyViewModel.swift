@@ -33,7 +33,9 @@ extension DefaultEmoneyViewModel: EmoneyViewModel {
 
     func navigate() {
         let request = httpRequestBuilder
-            .set(host: "https://www.emoney.ge/index.php/main/service?id=1157")
+            .set(host: "https://www.emoney.ge")
+            .set(path: "index.php/main/service")
+            .setUrlParam(key: "id", value: "1157")
             .set(method: HttpMethodGet())
             .build()
         routeSubject.onNext(.navigate(.init(request: request)))

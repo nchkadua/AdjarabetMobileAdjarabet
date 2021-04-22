@@ -60,7 +60,7 @@ class HttpRequestBuilderTests: XCTestCase {
             .build()
 
         // than
-        XCTAssertEqual(request.url?.absoluteString, "\(host)/\(path)%3F\(key)=\(value)")
+        XCTAssertEqual(request.url?.absoluteString, "\(host)/\(path)?\(key)=\(value)")
     }
 
     func testSet2UrlParam() {
@@ -82,8 +82,8 @@ class HttpRequestBuilderTests: XCTestCase {
         // than
         let actual = request.url?.absoluteString
 
-        let expected1 = "\(host)/\(path)%3F\(key1)=\(val1)&\(key2)=\(val2)"
-        let expected2 = "\(host)/\(path)%3F\(key2)=\(val2)&\(key1)=\(val1)"
+        let expected1 = "\(host)/\(path)?\(key1)=\(val1)&\(key2)=\(val2)"
+        let expected2 = "\(host)/\(path)?\(key2)=\(val2)&\(key1)=\(val1)"
 
         XCTAssert(actual == expected1 || actual == expected2)
     }
@@ -111,7 +111,7 @@ class HttpRequestBuilderTests: XCTestCase {
         let urlParamsList = urlParams.map { ($0.key, $0.value) }
 
         for permutaion in permutations(of: urlParamsList) {
-            var possibleExpected = "\(host)/\(path)%3F"
+            var possibleExpected = "\(host)/\(path)?"
             for (key, value) in permutaion {
                 possibleExpected.append("\(key)=\(value)&")
             }

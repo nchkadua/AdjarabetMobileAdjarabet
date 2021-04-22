@@ -50,7 +50,7 @@ class DefaultWithdrawVisaViewModel {
     private let routeSubject = PublishSubject<WithdrawVisaViewModelRoute>()
 
     // use cases
-    @Inject(from: .useCases) private var accountListUseCase: PaymentAccountUseCase
+    private var accountListRepository: PaymentAccountFilterableRepository = WebApiPaymentAccountRepository()
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
     @Inject(from: .useCases) private var withdrawUseCase: UFCWithdrawUseCase
     @Inject private var userBalanceService: UserBalanceService
@@ -86,7 +86,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         // 1. fetch limits
         fetchLimits()
         // 2. fetch account/card list
-        accountListUseCase.execute(params: .init()) { [weak self] result in
+        accountListRepository.list(params: .init(providerType: params.serviceType.providerType, paymentType: .withdraw)) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let list):
@@ -303,5 +303,14 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
 extension DefaultWithdrawVisaViewModel: AddCardViewModelDelegate {
     func disappeared() {
         refresh()
+    }
+}
+
+fileprivate extension UFCServiceType {
+    var providerType: PaymentAccountFilterableListParams.ProviderType {
+        switch self {
+        case .regular: return .visaRegular
+        case .vip:     return .visaVip
+        }
     }
 }

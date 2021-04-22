@@ -198,11 +198,11 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
 
     private lazy var request: URLRequest = {
         // NOTE: components.host and components.path must be set
-        var url = URL(string: components.host!)!
+        var fullUrl = components.host!
         if !components.path.isEmpty {
-            url = url.appendingPathComponent(components.path)
+            fullUrl.append("/\(components.path)")
         }
-        var urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: URL(string: fullUrl)!)
         urlRequest.httpBody = nil
         return urlRequest
     }()

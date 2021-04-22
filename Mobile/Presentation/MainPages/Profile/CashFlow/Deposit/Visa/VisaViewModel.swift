@@ -55,7 +55,7 @@ class DefaultVisaViewModel {
     private let actionSubject = PublishSubject<VisaViewModelOutputAction>()
     private let routeSubject = PublishSubject<VisaViewModelRoute>()
     // use cases
-    @Inject(from: .useCases) private var accountListUseCase: PaymentAccountUseCase
+    private var accountListRepository: PaymentAccountFilterableRepository = WebApiPaymentAccountRepository()
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
     @Inject(from: .useCases) private var depositUseCase: UFCDepositUseCase
     // state
@@ -81,7 +81,7 @@ extension DefaultVisaViewModel: VisaViewModel {
         // 0. update continue to non-interactive
         notify(.updateContinue(with: false))
         // 1. fetch account/card list
-        accountListUseCase.execute(params: .init()) { [weak self] result in
+        accountListRepository.list(params: .init(providerType: params.serviceType.providerType, paymentType: .deposit)) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let list):
@@ -208,5 +208,14 @@ extension DefaultVisaViewModel: VisaViewModel {
 
     private func notify(_ action: VisaViewModelOutputAction) {
         actionSubject.onNext(action)
+    }
+}
+
+fileprivate extension UFCServiceType {
+    var providerType: PaymentAccountFilterableListParams.ProviderType {
+        switch self {
+        case .regular: return .visaRegular
+        case .vip:     return .visaVip
+        }
     }
 }
