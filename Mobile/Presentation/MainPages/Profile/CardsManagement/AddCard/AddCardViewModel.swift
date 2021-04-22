@@ -70,7 +70,6 @@ extension DefaultAddCardViewModel: AddCardViewModel {
     public var route: Observable<AddCardViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        print("AddCard:", params.serviceType)
         actionSubject.onNext(.bindToMinAmountComponentViewModel(minAmountComponentViewModel))
         actionSubject.onNext(.bindToAgreementComponentViewModel(agreementComponentViewModel))
     }

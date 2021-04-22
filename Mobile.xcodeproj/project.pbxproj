@@ -2080,12 +2080,12 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		C701C71D25C0595000B059A6 /* PaymentAccounts */ = {
+		C701C71D25C0595000B059A6 /* Payment Accounts */ = {
 			isa = PBXGroup;
 			children = (
 				C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */,
 			);
-			path = PaymentAccounts;
+			path = "Payment Accounts";
 			sourceTree = "<group>";
 		};
 		C7023EE5261F770500C0980F /* Use Cases */ = {
@@ -4201,7 +4201,7 @@
 				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
 				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
-				C701C71D25C0595000B059A6 /* PaymentAccounts */,
+				C701C71D25C0595000B059A6 /* Payment Accounts */,
 				C78FD440260A672C004E766E /* Amount Formatter */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
