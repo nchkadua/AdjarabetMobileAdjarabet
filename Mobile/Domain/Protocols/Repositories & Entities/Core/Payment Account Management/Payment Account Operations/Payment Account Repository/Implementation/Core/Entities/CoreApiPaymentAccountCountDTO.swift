@@ -1,5 +1,5 @@
 //
-//  PaymentAccountCountDataTransferResponse.swift
+//  CoreApiPaymentAccountCountDTO.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 1/26/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaymentAccountCountDataTransferResponse: DataTransferResponse {
+struct CoreApiPaymentAccountCountDTO: DataTransferResponse {
     struct Body: Codable {
         let statusCode: Int?
         let count: Int?

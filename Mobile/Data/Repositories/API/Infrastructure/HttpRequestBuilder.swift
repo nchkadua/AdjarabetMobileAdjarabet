@@ -10,8 +10,8 @@ import Foundation
 
 /**
 
- Host --- Path --- Headers? --- Method --- GET --- Build
-                            '--- POST --- Content Type? --- Content? --- Build
+ Host --- Path --- URL Parameters? --- Headers? --- Method --- GET --- Build
+                                           '--- POST --- Content Type? --- Content? --- Build
 
  */
 
@@ -33,8 +33,19 @@ public protocol PathSetterHttpRequestBuilder {
     func set(path: String) -> PathSetterReturnType
 }
 
-public typealias PathSetterReturnType = HeaderSetterHttpRequestBuilder &
+public typealias PathSetterReturnType = UrlParameterSetterHttpRequestBuilder &
+                                        HeaderSetterHttpRequestBuilder &
                                         HttpMethodSetterHttpRequestBuilder
+
+/* URL Parameters */
+public protocol UrlParameterSetterHttpRequestBuilder {
+    func set(urlParams: [String: String]) -> UrlParameterSetterReturnType
+    func setUrlParam(key: String, value: String) -> UrlParameterSetterReturnType
+}
+
+public typealias UrlParameterSetterReturnType = UrlParameterSetterHttpRequestBuilder &
+                                                HeaderSetterHttpRequestBuilder &
+                                                HttpMethodSetterHttpRequestBuilder
 
 /* Headers */
 public protocol HeaderSetterHttpRequestBuilder {
@@ -165,6 +176,7 @@ public protocol UrlRequestBuilderHttpRequestBuilder {
 private typealias HttpRequestBuilderProtocols = HttpRequestBuilder &
                                                 HostSetterHttpRequestBuilder &
                                                 PathSetterHttpRequestBuilder &
+                                                UrlParameterSetterHttpRequestBuilder &
                                                 HeaderSetterHttpRequestBuilder &
                                                 HttpMethodSetterHttpRequestBuilder &
                                                 ContentTypeSetterHttpRequestBuilder &
@@ -186,11 +198,11 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
 
     private lazy var request: URLRequest = {
         // NOTE: components.host and components.path must be set
-        var url = URL(string: components.host!)!
+        var fullUrl = components.host!
         if !components.path.isEmpty {
-            url = url.appendingPathComponent(components.path)
+            fullUrl.append("/\(components.path)")
         }
-        var urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: URL(string: fullUrl)!)
         urlRequest.httpBody = nil
         return urlRequest
     }()
@@ -213,6 +225,24 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
         return self
     }
 
+    public func set(urlParams: [String: String]) -> UrlParameterSetterReturnType {
+        urlParams.forEach { key, value in
+            _ = setUrlParam(key: key, value: value)
+        }
+        return self
+    }
+
+    public func setUrlParam(key: String, value: String) -> UrlParameterSetterReturnType {
+        guard !key.isEmpty, !value.isEmpty
+        else { return self } // lengths must be positive
+
+        let prefix = components.path.contains("?") ? "&" : "?"
+        let param = "\(prefix)\(key)=\(value)"
+        components.path.append(param)
+
+        return self
+    }
+
     public func set(headers: [String: String]) -> HeaderSetterReturnType {
         headers.forEach { key, value in
             _ = setHeader(key: key, value: value)
@@ -221,7 +251,7 @@ public class HttpRequestBuilderImpl: HttpRequestBuilderProtocols {
     }
 
     public func setHeader(key: String, value: String) -> HeaderSetterReturnType {
-        guard key != "Content-Type"
+        guard key.lowercased() != "content-type"
         else {
             fatalError("Specify Content-Type using set(contentType:) method")
         }
