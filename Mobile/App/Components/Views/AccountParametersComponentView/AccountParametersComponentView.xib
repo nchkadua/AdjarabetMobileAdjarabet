@@ -24,20 +24,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="საკუთარი თავის დაბლოკვა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOz-4Y-nBh">
-                    <rect key="frame" x="56" y="19" width="279" height="16"/>
+                    <rect key="frame" x="68" y="19" width="260" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AccountParameters/BlockSelf" translatesAutoresizingMaskIntoConstraints="NO" id="9F4-G1-G5T">
-                    <rect key="frame" x="12" y="11" width="32" height="32"/>
+                    <rect key="frame" x="24" y="11" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="1Aa-Hf-942"/>
                         <constraint firstAttribute="width" constant="32" id="Xuy-Qm-CdM"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/ProfileCell/arrow" translatesAutoresizingMaskIntoConstraints="NO" id="IAp-LA-KhT">
-                    <rect key="frame" x="347" y="16" width="12" height="22"/>
+                    <rect key="frame" x="340" y="16" width="12" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="Stx-I2-jOy"/>
                         <constraint firstAttribute="width" constant="12" id="amw-RQ-evt"/>
@@ -56,8 +56,8 @@
                 <constraint firstItem="IAp-LA-KhT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="7fg-4Y-MFl"/>
                 <constraint firstItem="IAp-LA-KhT" firstAttribute="leading" secondItem="sOz-4Y-nBh" secondAttribute="trailing" constant="12" id="IGv-cj-tRE"/>
                 <constraint firstAttribute="bottom" secondItem="gTb-cW-EZ0" secondAttribute="bottom" id="RTE-hm-CqE"/>
-                <constraint firstItem="9F4-G1-G5T" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="SAp-ic-fen"/>
-                <constraint firstAttribute="trailing" secondItem="IAp-LA-KhT" secondAttribute="trailing" constant="16" id="Zbd-F2-ug5"/>
+                <constraint firstItem="9F4-G1-G5T" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="SAp-ic-fen"/>
+                <constraint firstAttribute="trailing" secondItem="IAp-LA-KhT" secondAttribute="trailing" constant="23" id="Zbd-F2-ug5"/>
                 <constraint firstAttribute="trailing" secondItem="gTb-cW-EZ0" secondAttribute="trailing" id="aWS-cZ-TYP"/>
                 <constraint firstItem="gTb-cW-EZ0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="56" id="bUr-mQ-zNU"/>
                 <constraint firstItem="sOz-4Y-nBh" firstAttribute="leading" secondItem="9F4-G1-G5T" secondAttribute="trailing" constant="12" id="dSm-lM-NkQ"/>
