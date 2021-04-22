@@ -286,6 +286,7 @@
 		C794D4202631F7940028393A /* WebApiPaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */; };
 		C794D4282631FB690028393A /* WebApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D4272631FB690028393A /* WebApiRepository.swift */; };
 		C794D4302631FBE50028393A /* WebApiRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D42F2631FBE50028393A /* WebApiRequestBuilder.swift */; };
+		C794D436263206830028393A /* WebApiPaymentAccountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */; };
 		C7A517B42631EB1600933DF8 /* PaymentAccountPagingableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */; };
 		C7A517BB2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */; };
 		C7A517C12631EB7800933DF8 /* PaymentAccountDeletableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */; };
@@ -1031,6 +1032,7 @@
 		C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountRepository.swift; sourceTree = "<group>"; };
 		C794D4272631FB690028393A /* WebApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiRepository.swift; sourceTree = "<group>"; };
 		C794D42F2631FBE50028393A /* WebApiRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiRequestBuilder.swift; sourceTree = "<group>"; };
+		C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountDTO.swift; sourceTree = "<group>"; };
 		C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountPagingableRepository.swift; sourceTree = "<group>"; };
 		C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountFilterableRepository.swift; sourceTree = "<group>"; };
 		C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDeletableRepository.swift; sourceTree = "<group>"; };
@@ -2333,6 +2335,7 @@
 		C794D4232631F7A10028393A /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -5585,6 +5588,7 @@
 				CE2F03C3252CC8E0006D8001 /* QuickActionComponentView.swift in Sources */,
 				76EBDB3B257E417D00C8DC6A /* GetAccessListResponse.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
+				C794D436263206830028393A /* WebApiPaymentAccountDTO.swift in Sources */,
 				76EFF7C42582383000898819 /* AccessHistoryCalendarNavigator.swift in Sources */,
 				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,
 				C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */,

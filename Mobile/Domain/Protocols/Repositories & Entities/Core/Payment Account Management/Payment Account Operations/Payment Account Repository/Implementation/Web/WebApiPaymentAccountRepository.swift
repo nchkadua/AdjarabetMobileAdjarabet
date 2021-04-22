@@ -25,6 +25,7 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
             handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
             return
         }
+
         let request = requestBuilder
             .set(host: host)
             .set(path: "getPaymentAccounts")
@@ -34,6 +35,13 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
             .setUrlParam(key: "domain", value: ".com") // FIXME: .com ...
             .set(method: HttpMethodGet())
             .build()
+
+        dataTransferService.performTask(
+            expecting: WebApiPaymentAccountDTO.self,
+            request: request,
+            respondOnQueue: .main,
+            completion: handler
+        )
     }
 
     func delete(params: PaymentAccountDeleteParams,

@@ -15,7 +15,7 @@ public struct MyCardComponentViewModelParams {
     let id: Int64
     let bankIcon: UIImage?
     let bankAlias: String
-    let dateAdded: Date
+    let dateAdded: String
     let cardNumber: String
     let issuerIcon: UIImage?
 }
@@ -32,7 +32,7 @@ public protocol MyCardComponentViewModelOutput {
 public enum MyCardComponentViewModelOutputAction {
     case set(bankIcon: UIImage?,
              bankAlias: String,
-             dateAdded: Date,
+             dateAdded: String,
              cardNumber: String,
              issuerIcon: UIImage?)
     case didDelete(atIndex: IndexPath)

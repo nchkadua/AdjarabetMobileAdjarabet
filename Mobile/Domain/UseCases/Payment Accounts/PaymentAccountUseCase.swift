@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct PaymentAccountUseCaseParams { }
+struct PaymentAccountUseCaseParams { }
 
-public struct PaymentAccountUseCaseDeleteParams {
+struct PaymentAccountUseCaseDeleteParams {
     let id: Int64
 }
 
-public protocol PaymentAccountUseCase {
+protocol PaymentAccountUseCase {
     /**
      Returns currently available ALL payment accounts and their details
      for the currently authenticated user
@@ -30,11 +30,11 @@ public protocol PaymentAccountUseCase {
     func execute(params: PaymentAccountUseCaseDeleteParams, completion: @escaping PaymentAccountUseCaseDeleteHandler)
 }
 
-public struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
+struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
     private let coreReadableRepo: PaymentAccountPagingableRepository = CoreApiPaymentAccountRepository()
     private let coreWritableRepo: PaymentAccountDeletableRepository = CoreApiPaymentAccountRepository()
 
-    public func execute(params: PaymentAccountUseCaseParams, completion: @escaping PaymentAccountUseCaseHandler) {
+    func execute(params: PaymentAccountUseCaseParams, completion: @escaping PaymentAccountUseCaseHandler) {
         // fetch count
         coreReadableRepo.count(params: .init()) { result in
             switch result {
@@ -48,7 +48,7 @@ public struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
         }
     }
 
-    public func execute(params: PaymentAccountUseCaseDeleteParams,
+    func execute(params: PaymentAccountUseCaseDeleteParams,
                         completion: @escaping PaymentAccountUseCaseDeleteHandler) {
         // delete payment account
         coreWritableRepo.delete(params: .init(id: params.id)) { result in

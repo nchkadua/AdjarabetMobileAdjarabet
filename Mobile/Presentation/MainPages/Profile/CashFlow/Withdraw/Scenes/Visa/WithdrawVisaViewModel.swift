@@ -96,7 +96,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                 } else {                                        // else:
                     self.notify(.showView(ofType: .accounts))   // 4. notify view to show Accounts view
                     // create account list for view
-                    let viewAccounts = self.accounts.map { $0.accountVisual! }
+                    let viewAccounts = self.accounts.map { $0.accountVisual }
                     self.cashOutViewModel.update(accounts: viewAccounts) // 5. update accounts on shown view
                 }
                 self.notify(.loader(isHidden: true))
@@ -236,7 +236,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         cashOutViewModel.update(isLoading: true)
         withdrawUseCase.execute(serviceType: serviceType,
                                 amount: damount,
-                                accountId: accounts[account].id!,
+                                accountId: accounts[account].id,
                                 session: session) { [weak self] result in
             guard let self = self else { return }
             self.cashOutViewModel.update(isLoading: false)

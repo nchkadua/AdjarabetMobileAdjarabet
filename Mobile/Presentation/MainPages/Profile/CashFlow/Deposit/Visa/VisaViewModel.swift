@@ -91,7 +91,7 @@ extension DefaultVisaViewModel: VisaViewModel {
                 } else {                                        // else:
                     self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
                     // create account list for view
-                    let viewAccounts = self.accounts.map { $0.accountVisual! }
+                    let viewAccounts = self.accounts.map { $0.accountVisual }
                     self.notify(.updateAccounts(with: viewAccounts)) // 4. update accounts on shown view
                     self.fetchSuggested() // continue here...
                 }
@@ -185,7 +185,7 @@ extension DefaultVisaViewModel: VisaViewModel {
         }
         depositUseCase.execute(serviceType: params.serviceType,
                                amount: damount,
-                               accountId: accounts[account].id!) { [weak self] result in
+                               accountId: accounts[account].id) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let request):
