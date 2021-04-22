@@ -2023,18 +2023,18 @@
 		C701C60225C00A8A00B059A6 /* Payment Account Operations */ = {
 			isa = PBXGroup;
 			children = (
-				C701C60325C00A9D00B059A6 /* Payment Account Repositories */,
+				C701C60325C00A9D00B059A6 /* Payment Account Repository */,
 			);
 			path = "Payment Account Operations";
 			sourceTree = "<group>";
 		};
-		C701C60325C00A9D00B059A6 /* Payment Account Repositories */ = {
+		C701C60325C00A9D00B059A6 /* Payment Account Repository */ = {
 			isa = PBXGroup;
 			children = (
 				C7A5179A2631E4F700933DF8 /* Protocol */,
 				C7A5179F2631E51600933DF8 /* Implementation */,
 			);
-			path = "Payment Account Repositories";
+			path = "Payment Account Repository";
 			sourceTree = "<group>";
 		};
 		C701C6EF25C0500700B059A6 /* Entities */ = {
