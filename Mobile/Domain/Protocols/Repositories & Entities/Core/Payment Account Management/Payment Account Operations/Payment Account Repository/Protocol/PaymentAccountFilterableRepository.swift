@@ -20,5 +20,17 @@ protocol PaymentAccountFilterableRepository {
 }
 
 struct PaymentAccountFilterableListParams {
-    // TODO: Fill
+    let providerType: ProviderType
+    let paymentType: PaymentType
+
+    /// Provider Type Enum
+    enum ProviderType {
+        case visaRegular
+        case visaVip
+    }
+    /// Payment Type Enum
+    enum PaymentType {
+        case deposit
+        case withdraw
+    }
 }

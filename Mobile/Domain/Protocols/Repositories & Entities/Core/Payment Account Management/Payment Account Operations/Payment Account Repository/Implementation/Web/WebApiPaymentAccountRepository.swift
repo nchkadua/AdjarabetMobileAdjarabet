@@ -29,9 +29,9 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
             .set(host: host)
             .set(path: "getPaymentAccounts")
             .setUrlParam(key: "user_id", value: "\(userId)")
-            .setUrlParam(key: "providerId", value: "11e76156-7c0d-7d30-a1f6-0050568d443b")
-            .setUrlParam(key: "pay_type", value: "deposit")
-            .setUrlParam(key: "domain", value: ".com")
+            .setUrlParam(key: "providerId", value: params.providerType.id)
+            .setUrlParam(key: "pay_type", value: params.paymentType.stringValue)
+            .setUrlParam(key: "domain", value: ".com") // FIXME: .com ...
             .set(method: HttpMethodGet())
             .build()
     }
@@ -47,8 +47,26 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
             .set(host: host)
             .set(path: "getPaymentAccounts")
             .setUrlParam(key: "user_id", value: "\(userId)")
-            .setUrlParam(key: "card_id", value: "9500918")
+            .setUrlParam(key: "card_id", value: "\(params.id)")
             .set(method: HttpMethodGet())
             .build()
+    }
+}
+
+fileprivate extension PaymentAccountFilterableListParams.ProviderType {
+    var id: String {
+        switch self {
+        case .visaRegular: return "0ad25ba0-c49b-11e3-894d-005056a8fc2a"
+        case .visaVip:     return "11e76156-7c0d-7d30-a1f6-0050568d443b"
+        }
+    }
+}
+
+fileprivate extension PaymentAccountFilterableListParams.PaymentType {
+    var stringValue: String {
+        switch self {
+        case .deposit:  return "deposit"
+        case .withdraw: return "withdraw"
+        }
     }
 }
