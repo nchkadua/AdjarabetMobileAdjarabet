@@ -51,13 +51,21 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
             handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
             return
         }
+
         let request = requestBuilder
             .set(host: host)
-            .set(path: "getPaymentAccounts")
+            .set(path: "deletePaymentAccount")
             .setUrlParam(key: "user_id", value: "\(userId)")
             .setUrlParam(key: "card_id", value: "\(params.id)")
             .set(method: HttpMethodGet())
             .build()
+
+        dataTransferService.performTask(
+            expecting: WebApiPaymentAccountDeleteDTO.self,
+            request: request,
+            respondOnQueue: .main,
+            completion: handler
+        )
     }
 }
 
