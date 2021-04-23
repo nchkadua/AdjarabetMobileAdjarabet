@@ -48,12 +48,13 @@ class ODRManager: NSObject {
 
 // MARK: Observe resource download progress
 extension ODRManager {
+    // swiftlint:disable block_based_kvo
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
                                change: [NSKeyValueChangeKey: Any]?,
                                context: UnsafeMutableRawPointer?) {
         if context == progressObservingContext,
-           keyPath == progressObservingKeyPath { // TODO: How to observe
+           keyPath == progressObservingKeyPath {
             // swiftlint:disable force_cast
             print("ODR.Progress:", "\(Float((object as! Progress).fractionCompleted))")
         }

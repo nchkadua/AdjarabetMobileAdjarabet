@@ -44,7 +44,7 @@ struct DefaultPaymentAccountUseCase: PaymentAccountUseCase {
             switch result {
             case .success(let count):
                 // fetch payment accounts
-                coreReadableRepo.page(params: .init(index: 0, count: count.count ?? 0), // FIXME: ?? error
+                coreReadableRepo.page(params: .init(index: 0, count: count.count),
                                       handler: completion)
             case .failure(let error):
                 completion(.failure(error))

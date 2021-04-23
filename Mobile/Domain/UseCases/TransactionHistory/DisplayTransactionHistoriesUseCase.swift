@@ -37,7 +37,7 @@ public final class DefaultDisplayTransactionHistoriesUseCase: DisplayTransaction
                 completion(.failure(error))
             }
         }
-        return nil // TODO??
+        return nil
     }
 }
 

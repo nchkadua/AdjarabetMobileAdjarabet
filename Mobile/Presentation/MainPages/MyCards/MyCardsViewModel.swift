@@ -153,9 +153,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         return icon
     }
 
-    // TODO: Irakli
     public func addCardsClicked() {
-        // TODO: delete first
         // swiftlint:disable force_cast
         let id = (dataProvider[0] as! DefaultMyCardComponentViewModel).params.id
         paymentAccountUseCase.execute(params: .init(id: id)) { result in

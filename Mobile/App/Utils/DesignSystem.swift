@@ -282,8 +282,6 @@ public enum DesignSystem {
             public func sizeDescription(for size: Size) -> Size.Description {
                 switch self {
                 case .primary:
-                    let fontCase: Typography.FontCase = .upper
-
                     switch size {
                     case .large:  return .init(typograhy: .body1(fontCase: .upper, fontStyle: .semiBold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
                     case .medium: return .init(typograhy: .subHeadline(fontCase: .upper), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))

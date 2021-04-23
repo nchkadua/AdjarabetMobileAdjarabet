@@ -71,7 +71,7 @@ class MyCardComponentView: UIView {
         bankAliasLbl.text = bankAlias
         cardNumberLbl.text = formatCardNumber(cardNumber)
         issuerImageView.image = issuerIcon
-        dateAddedLbl.text = dateAdded // FIXME: cardDateFormatter.string(from: dateAdded)
+        dateAddedLbl.text = dateAdded
     }
 
     private func formatCardNumber(_ number: String) -> String {

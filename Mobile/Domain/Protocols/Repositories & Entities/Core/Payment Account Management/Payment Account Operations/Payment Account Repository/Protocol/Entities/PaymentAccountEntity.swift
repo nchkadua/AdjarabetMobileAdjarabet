@@ -8,7 +8,6 @@
 
 import Foundation
 
-// FIXME: Make accountVisual (and all other fields) required
 struct PaymentAccountEntity: MyCardable {
     let id: Int64
     let accountVisual: String

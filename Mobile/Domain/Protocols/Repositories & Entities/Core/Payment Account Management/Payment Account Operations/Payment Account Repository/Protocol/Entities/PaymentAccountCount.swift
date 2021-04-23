@@ -9,5 +9,5 @@
 import Foundation
 
 public struct PaymentAccountCount {
-    public let count: Int?
+    public let count: Int
 }
