@@ -43,8 +43,6 @@ class GameLauncherGridComponentView: UIView {
             switch action {
             case .set(let coverUrl, let title, let category, let jackpotAmount):
                 self?.setupUI(coverUrl: coverUrl, title: title, category: category, jackpotAmount: jackpotAmount)
-            default:
-                break
             }
         }).disposed(by: disposeBag)
 

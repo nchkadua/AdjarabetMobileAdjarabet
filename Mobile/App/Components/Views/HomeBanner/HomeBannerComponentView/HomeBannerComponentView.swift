@@ -37,8 +37,6 @@ class HomeBannerComponentView: UIView {
             switch action {
             case .set(let banner):
                 self?.set(banner: banner)
-            default:
-                break
             }
         }).disposed(by: disposeBag)
 

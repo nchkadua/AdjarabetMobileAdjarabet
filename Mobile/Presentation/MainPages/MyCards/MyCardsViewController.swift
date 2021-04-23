@@ -28,10 +28,11 @@ public class MyCardsViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-
+        /*
         viewModel.route.subscribe(onNext: { [weak self] route in
             self?.didRecive(route: route)
         }).disposed(by: disposeBag)
+        */
     }
 
     private func didRecive(action: MyCardsViewModelOutputAction) {

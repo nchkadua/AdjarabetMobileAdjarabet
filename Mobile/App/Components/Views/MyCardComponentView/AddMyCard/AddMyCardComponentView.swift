@@ -38,14 +38,6 @@ class AddMyCardComponentView: UIView {
     }
 
     private func bind() {
-        disposeBag = DisposeBag()
-        viewModel?.action.subscribe(onNext: { [weak self] action in
-            switch action {
-            default:
-                break
-            }
-        }).disposed(by: disposeBag)
-
         viewModel.didBind()
     }
 }

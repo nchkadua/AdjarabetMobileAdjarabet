@@ -13,6 +13,7 @@ public protocol DisplayAccessListUseCase {
     typealias AccessListUseCaseCompletion = (Result<[AccessListEntity], Error>) -> Void
     @discardableResult
     func generateRequestParams(from useCaseParams: DisplayAccessListUseCaseParams) -> GetAccessListParams
+    @discardableResult
     func execute(params: DisplayAccessListUseCaseParams,
                  completion: @escaping AccessListUseCaseCompletion) -> Cancellable?
 }

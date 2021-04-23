@@ -79,7 +79,7 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                         default:
                             break
                         }
-                    })
+                    }).disposed(by: disposeBag)
                 }
             } else if let accountParameterMessagesModel = $0 as? AccountParameterMessages {
                 let viewModel = DefaultAccountSecurityMessagesComponentViewModel(params: .init(title: accountParameterMessagesModel.title,

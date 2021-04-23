@@ -29,9 +29,11 @@ public class MainContainerViewController: UIViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: MainContainerViewModel) {
+        /*
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+        */
     }
 
     private func didRecive(action: MainContainerViewModelOutputAction) {
