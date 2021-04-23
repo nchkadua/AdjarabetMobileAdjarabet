@@ -33,7 +33,7 @@ public class DefaultAccessListUseCaseUseCase: DisplayAccessListUseCase {
                 completion(.failure(error))
             }
         }
-        return nil // TODO??
+        return nil
     }
 
     public func generateRequestParams(from useCaseParams: DisplayAccessListUseCaseParams) -> GetAccessListParams {

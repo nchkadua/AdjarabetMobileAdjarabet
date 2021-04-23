@@ -55,7 +55,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     // MARK: TransactionsViewModelInput
 
     public func viewDidLoad() {
-        displayEmptyTransactionList() // TODO REMOVE?
+        displayEmptyTransactionList()
         displayUnfilteredTransactions()
     }
 

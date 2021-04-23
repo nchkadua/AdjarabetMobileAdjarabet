@@ -19,10 +19,8 @@ public struct TransactionTypeManager {
 
     // Refactor using high-order function: firstWhere
     var selectedTransactionType: TransactionType? {
-        for (key, value) in filterState {
-            if value == true {
-                return key
-            }
+        for (key, value) in filterState where value {
+            return key
         }
         return nil
     }

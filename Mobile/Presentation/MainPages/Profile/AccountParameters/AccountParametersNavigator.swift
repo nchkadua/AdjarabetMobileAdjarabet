@@ -53,7 +53,6 @@ public class AccountParametersNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 
-    // TODO: make private and call correctly through public 'navigate'
     public func navigateToHighSecurity(with params: OTPViewModelParams, animate: Bool) {
         let vc = otpViewControllerFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)

@@ -150,7 +150,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
                                    deviceIcon: deviceIcon))
     }
 
-    // TODO Move somewhere to utils. change strings to enums
+    // Move somewhere to utils. change strings to enums
     private func getDeviceTypeFrom(userAgent: String) -> DeviceType {
         let parser = UAParser(agent: userAgent)
         guard let userOS = parser.os?.name else { return .desktop }

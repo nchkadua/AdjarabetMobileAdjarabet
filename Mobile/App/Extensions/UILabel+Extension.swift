@@ -63,6 +63,13 @@ public extension UILabel {
 
     @IBInspectable
     var letterSpace: CGFloat {
+        get {
+            if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern, at: 0, effectiveRange: .none) as? CGFloat {
+                return currentLetterSpace
+            } else {
+                return 0
+            }
+        }
         set {
             let attributedString: NSMutableAttributedString!
             if let currentAttrString = attributedText {
@@ -73,18 +80,10 @@ public extension UILabel {
             }
 
             attributedString.addAttribute(NSAttributedString.Key.kern,
-                                           value: newValue,
-                                           range: NSRange(location: 0, length: attributedString.length))
+                                          value: newValue,
+                                          range: NSRange(location: 0, length: attributedString.length))
 
             attributedText = attributedString
-        }
-
-        get {
-            if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern, at: 0, effectiveRange: .none) as? CGFloat {
-                return currentLetterSpace
-            } else {
-                return 0
-            }
         }
     }
 }

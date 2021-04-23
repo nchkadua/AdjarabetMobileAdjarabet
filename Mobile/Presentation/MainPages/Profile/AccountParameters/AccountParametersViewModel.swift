@@ -101,7 +101,6 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
             dataProvider.append(componentViewModel!)
         }
 
-        // TODO subscribe to switch toggle
         actionSubject.onNext(.initialize(dataProvider.makeList()))
     }
 

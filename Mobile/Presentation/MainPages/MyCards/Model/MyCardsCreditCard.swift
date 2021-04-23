@@ -11,6 +11,7 @@ import Foundation
 public enum MyCard: MyCardable {
     public enum Issuer {
         case visa
+        // swiftlint:disable inclusive_language
         case masterCard
         case other
     }

@@ -8,7 +8,7 @@
 
 public class AccountParametersHeaderTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: AccountParametersHeaderComponentView!
-    override public class var identifier: Identifierable { R.nib.accountParametersHeaderTableViewCell.name } // TODO 
+    override public class var identifier: Identifierable { R.nib.accountParametersHeaderTableViewCell.name }
 
     public override var dataProvider: AppCellDataProvider? {
         didSet {

@@ -44,7 +44,6 @@ public class TransactionsViewController: ABViewController {
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
         case .languageDidChange:
-            // TODO
             print("Handle language Change")
         case .reloadItems(let items, let insertionIndexPathes, let deletionIndexPathes):
             UIView.performWithoutAnimation {

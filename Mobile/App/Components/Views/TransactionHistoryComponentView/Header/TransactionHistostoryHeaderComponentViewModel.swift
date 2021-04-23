@@ -24,6 +24,7 @@ public protocol TransactionHistostoryHeaderComponentViewModelOutput {
     var params: TransactionHistostoryHeaderComponentViewModelParams { get }
 }
 
+// swiftlint:disable type_name
 public enum TransactionHistostoryHeaderComponentViewModelOutputAction {
     case set(title: String)
 }
