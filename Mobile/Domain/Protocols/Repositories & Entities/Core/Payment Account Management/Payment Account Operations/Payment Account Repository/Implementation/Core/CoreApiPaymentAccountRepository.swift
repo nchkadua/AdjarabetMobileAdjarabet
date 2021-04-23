@@ -11,7 +11,8 @@ import Foundation
 struct CoreApiPaymentAccountRepository: CoreApiRepository { }
 
 extension CoreApiPaymentAccountRepository: PaymentAccountPagingableRepository,
-                                           PaymentAccountDeletableRepository {
+                                           PaymentAccountDeletableRepository,
+                                           PaymentAccountFilterableRepository {
     func count(params: PaymentAccountPagingableCountParams,
                handler: @escaping CountHandler) {
         performTask(expecting: CoreApiPaymentAccountCountDTO.self, completion: handler) { requestBuilder in
@@ -36,6 +37,18 @@ extension CoreApiPaymentAccountRepository: PaymentAccountPagingableRepository,
             return requestBuilder
                 .setBody(key: .req, value: "deletePaymentAccount")
                 .setBody(key: "paymentAccountID", value: "\(params.id)")
+        }
+    }
+
+    func list(params: PaymentAccountFilterableListParams,
+              handler: @escaping ListHandler) {
+        performTask(expecting: CoreApiPaymentAccountDTO.self, completion: handler) { requestBuilder in
+            return requestBuilder
+                .setBody(key: .req, value: "getPaymentAccounts")
+                .setBody(key: "pageIndex", value: "0")   // first page
+                .setBody(key: "maxResult", value: "100") // first 100 cards
+                .setBody(key: "providerID", value: params.providerType.providerId)
+                .setBody(key: "pay_type", value: params.paymentType.stringValue)
         }
     }
 }

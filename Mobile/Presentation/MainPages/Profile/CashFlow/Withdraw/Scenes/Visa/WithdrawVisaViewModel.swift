@@ -50,7 +50,7 @@ class DefaultWithdrawVisaViewModel {
     private let routeSubject = PublishSubject<WithdrawVisaViewModelRoute>()
 
     // use cases
-    private var accountListRepository: PaymentAccountFilterableRepository = WebApiPaymentAccountRepository()
+    private var accountListRepository: PaymentAccountFilterableRepository = CoreApiPaymentAccountRepository()
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
     @Inject(from: .useCases) private var withdrawUseCase: UFCWithdrawUseCase
     @Inject private var userBalanceService: UserBalanceService
