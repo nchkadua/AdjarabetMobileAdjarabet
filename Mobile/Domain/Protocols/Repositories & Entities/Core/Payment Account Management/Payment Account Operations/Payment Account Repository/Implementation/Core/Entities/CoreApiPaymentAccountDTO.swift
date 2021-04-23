@@ -36,18 +36,15 @@ struct CoreApiPaymentAccountDTO: DataTransferResponse {
     typealias Entity = [PaymentAccountEntity]
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        guard body.statusCode == AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue, // FIXME: make common
-              let paymentAccounts = body.paymentAccounts
-        else {
-            return nil
-        }
-        return paymentAccounts.map {
+        guard body.statusCode == AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue // FIXME: make common
+        else { return nil }
+        return body.paymentAccounts?.map {
             PaymentAccountEntity(
                 id: $0.id,
                 accountVisual: $0.accountVisual,
                 providerName: $0.providerName,
                 dateCreated: $0.dateCreated
             )
-        }
+        } ?? []
     }
 }
