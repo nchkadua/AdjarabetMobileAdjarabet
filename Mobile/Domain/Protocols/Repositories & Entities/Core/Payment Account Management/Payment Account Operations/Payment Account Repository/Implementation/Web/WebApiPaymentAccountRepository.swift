@@ -30,7 +30,7 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
             .set(host: host)
             .set(path: "getPaymentAccounts")
             .setUrlParam(key: "user_id", value: "\(userId)")
-            .setUrlParam(key: "providerId", value: params.providerType.id)
+            .setUrlParam(key: "providerId", value: params.providerType.providerId)
             .setUrlParam(key: "pay_type", value: params.paymentType.stringValue)
             .setUrlParam(key: "domain", value: ".com") // FIXME: .com ...
             .set(method: HttpMethodGet())
@@ -66,23 +66,5 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
             respondOnQueue: .main,
             completion: handler
         )
-    }
-}
-
-fileprivate extension PaymentAccountFilterableListParams.ProviderType {
-    var id: String {
-        switch self {
-        case .visaRegular: return "0ad25ba0-c49b-11e3-894d-005056a8fc2a"
-        case .visaVip:     return "11e76156-7c0d-7d30-a1f6-0050568d443b"
-        }
-    }
-}
-
-fileprivate extension PaymentAccountFilterableListParams.PaymentType {
-    var stringValue: String {
-        switch self {
-        case .deposit:  return "deposit"
-        case .withdraw: return "withdraw"
-        }
     }
 }

@@ -27,10 +27,27 @@ struct PaymentAccountFilterableListParams {
     enum ProviderType {
         case visaRegular
         case visaVip
+
+        /// providerId property
+        var providerId: String {
+            switch self {
+            case .visaRegular: return "0ad25ba0-c49b-11e3-894d-005056a8fc2a"
+            case .visaVip:     return "11e76156-7c0d-7d30-a1f6-0050568d443b"
+            }
+        }
     }
+
     /// Payment Type Enum
     enum PaymentType {
         case deposit
         case withdraw
+
+        /// stringValue property
+        var stringValue: String {
+            switch self {
+            case .deposit:  return "deposit"
+            case .withdraw: return "withdraw"
+            }
+        }
     }
 }
