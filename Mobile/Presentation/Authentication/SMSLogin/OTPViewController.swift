@@ -233,7 +233,7 @@ extension OTPViewController: Accessible {
         generateAccessibilityIdentifiers()
 
         loginButton.accessibilityIdentifier = "OTPViewController.loginButton"
-        resendSMSButton.accessibilityIdentifier = "OTPViewController.resendSMSButton"
+     //   resendSMSButton.accessibilityIdentifier = "OTPViewController.resendSMSButton"
         otpDescriptionLabel.accessibilityIdentifier = "OTPViewController.otpDescriptionLabel"
         smsCodeTextField.accessibilityIdentifier = "OTPViewController.smsCodeTextField"
         smsCodeInputView.accessibilityIdentifier = "OTPViewController.smsCodeInputView"
