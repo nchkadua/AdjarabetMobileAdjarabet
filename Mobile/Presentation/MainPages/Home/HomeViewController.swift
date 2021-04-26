@@ -17,6 +17,8 @@ public class HomeViewController: ABViewController {
     private lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
     private lazy var searchController = GamesSearchViewController(viewModel: DefaultGamesSearchViewModel(params: .init()))
 
+    @IBOutlet private weak var header: HomeHeaderView!
+
     // shimmer loader
     private lazy var loader: GamesListLoader = {
         let l = addDefaultGamesListLoader(isRecentlyPlayedEnabled: true)
@@ -109,8 +111,9 @@ public class HomeViewController: ABViewController {
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .primaryBg())
-        setupNavigationItems()
-        setupSearchViewController()
+        // setupNavigationItems()
+        // setupSearchViewController()
+        hideNavBar()
 
         setupCollectionViewController()
         setupWhen(mainCollectionViewIsVisible: true, animated: false)
@@ -134,6 +137,17 @@ public class HomeViewController: ABViewController {
 
         collectionViewController.isTabBarManagementEnabled = true
         add(child: collectionViewController)
+
+        guard let collectionView = collectionViewController.collectionView
+        else { return }
+
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: header.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 
     private func setupSearchViewController() {

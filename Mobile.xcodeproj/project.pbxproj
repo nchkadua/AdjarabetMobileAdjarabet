@@ -323,6 +323,8 @@
 		C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */; };
 		C7CE2D792600C7E100251FE3 /* UFCWithdrawDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CE2D782600C7E100251FE3 /* UFCWithdrawDTO.swift */; };
 		C7CE2D8D2600DCC100251FE3 /* UFCTransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */; };
+		C7D202352636E41B009710C9 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D202342636E41B009710C9 /* HomeHeaderView.swift */; };
+		C7D202392636E42A009710C9 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D202382636E42A009710C9 /* HomeHeaderView.xib */; };
 		C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */; };
 		C7DE3ADB25F5293E0082D5EF /* UserLoggedInDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE3ADA25F5293E0082D5EF /* UserLoggedInDTO.swift */; };
 		C7DE3ADF25F529670082D5EF /* UserLoggedInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE3ADE25F529670082D5EF /* UserLoggedInEntity.swift */; };
@@ -1070,6 +1072,8 @@
 		C7CA6A112563D53100A9C6AB /* ABPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPopupViewController.swift; sourceTree = "<group>"; };
 		C7CE2D782600C7E100251FE3 /* UFCWithdrawDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawDTO.swift; sourceTree = "<group>"; };
 		C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCTransactionRepository.swift; sourceTree = "<group>"; };
+		C7D202342636E41B009710C9 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		C7D202382636E42A009710C9 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		C7D29F46258EA7A4006BEFAC /* HttpRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilder.swift; sourceTree = "<group>"; };
 		C7DE3ADA25F5293E0082D5EF /* UserLoggedInDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoggedInDTO.swift; sourceTree = "<group>"; };
 		C7DE3ADE25F529670082D5EF /* UserLoggedInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoggedInEntity.swift; sourceTree = "<group>"; };
@@ -2800,6 +2804,23 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
+		C7D202322636E3F7009710C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7D202332636E404009710C9 /* Header */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7D202332636E404009710C9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				C7D202342636E41B009710C9 /* HomeHeaderView.swift */,
+				C7D202382636E42A009710C9 /* HomeHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		C7D29F42258EA784006BEFAC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -4514,6 +4535,7 @@
 		D8C73F7D2445A62D004C96DB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C7D202322636E3F7009710C9 /* Views */,
 				CE64EA7425D168EF00438974 /* GameVC */,
 				D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */,
 				D8BB242D246E7F5A00244FF4 /* HomeNavigator.swift */,
@@ -4875,6 +4897,7 @@
 				C71B4B71257EC57000538697 /* SecurityLevels.storyboard in Resources */,
 				D8442AA42469716C00F32676 /* ABInputView.xib in Resources */,
 				C75D1AD4261205F4002AF763 /* LAWJSlot.zip in Resources */,
+				C7D202392636E42A009710C9 /* HomeHeaderView.xib in Resources */,
 				CEBB004C2608F63B00D1B510 /* PaymentMethodGridComponentView.xib in Resources */,
 				C75D1AEA261205F4002AF763 /* VGJSlot.zip in Resources */,
 				CE95A43C261EF8C60004330E /* APayInstructionsComponentView.xib in Resources */,
@@ -5339,6 +5362,7 @@
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
 				CE8786C2261C96830060EBD1 /* ABView.swift in Sources */,
 				CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */,
+				C7D202352636E41B009710C9 /* HomeHeaderView.swift in Sources */,
 				763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */,
 				76404EED2576120800D14E0C /* AccountParametersModel.swift in Sources */,
 				D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */,
