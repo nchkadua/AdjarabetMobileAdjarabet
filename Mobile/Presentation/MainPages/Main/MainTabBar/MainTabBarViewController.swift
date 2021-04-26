@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public class MainTabBarViewController: UITabBarController {
+public class MainTabBarViewController: UITabBarController, PageViewControllerProtocol {
     public var viewModel: MainTabBarViewModel = DefaultMainTabBarViewModel()
     public lazy var navigator = MainTabBarNavigator(viewController: self)
     private let disposeBag = DisposeBag()

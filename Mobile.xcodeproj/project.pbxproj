@@ -546,6 +546,7 @@
 		CECF7F7B256D9FAB001C0E50 /* PasswordChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */; };
 		CECF7F80256DAD9E001C0E50 /* PasswordChangeRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F7F256DAD9E001C0E50 /* PasswordChangeRulesView.swift */; };
 		CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */; };
+		CED829122633330D00D99CAC /* TestPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED829112633330D00D99CAC /* TestPageVC.swift */; };
 		CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E09F254869F200949417 /* AppSessionProvider.swift */; };
 		CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3925349C330033BF93 /* NotificationComponentView.swift */; };
 		CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */; };
@@ -1293,6 +1294,7 @@
 		CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordChange.storyboard; sourceTree = "<group>"; };
 		CECF7F7F256DAD9E001C0E50 /* PasswordChangeRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeRulesView.swift; sourceTree = "<group>"; };
 		CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordChangeRulesView.xib; sourceTree = "<group>"; };
+		CED829112633330D00D99CAC /* TestPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPageVC.swift; sourceTree = "<group>"; };
 		CEE0E09F254869F200949417 /* AppSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionProvider.swift; sourceTree = "<group>"; };
 		CEE15C3925349C330033BF93 /* NotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentView.swift; sourceTree = "<group>"; };
 		CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentViewModel.swift; sourceTree = "<group>"; };
@@ -4233,6 +4235,7 @@
 				D815850D24B0C81800FFCA95 /* LoaderViewController.swift */,
 				D8CFDA8B2530E311002002BC /* ABTableViewController.swift */,
 				CEF3686F2549C39D009FD456 /* ABPageViewController.swift */,
+				CED829112633330D00D99CAC /* TestPageVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -5176,6 +5179,7 @@
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				C707548925F396130033050E /* PaymentListUseCase.swift in Sources */,
 				C7E3F15D261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift in Sources */,
+				CED829122633330D00D99CAC /* TestPageVC.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
 				C7FAA3C22600C28600265995 /* UFCDepositEntity.swift in Sources */,
 				CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */,
