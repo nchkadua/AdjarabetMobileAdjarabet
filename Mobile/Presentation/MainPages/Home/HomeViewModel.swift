@@ -53,6 +53,9 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     private var page: PageDescription = .init()
     private var games: AppCellDataProviders = []
     public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .secondaryText(), height: 55))
+    private let placeholderSection = AppSectionDataProvider(dataProviders: [
+        DefaultEmptyCollectionViewCellDataProvider()
+    ])
     private let bannerSection = AppSectionDataProvider(dataProviders: [
         DefaultHomeBannerContainerComponentViewModel(params: .init(banners: [
             DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.home.banner1()!)),
@@ -70,7 +73,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
             let isNextPage = loadingType == .nextPage
             loading.set(isLoading: isNextPage)
-            let indexPath = IndexPath(item: games.count, section: 1)
+            let indexPath = IndexPath(item: games.count, section: 3)
             actionSubject.onNext(.reloadIndexPathes([indexPath]))
         }
     }
@@ -160,7 +163,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
         self.games.append(contentsOf: games)
 
-        let indexPathes = games.enumerated().map { IndexPath(item: offset + $0.offset, section: 1) }
+        let indexPathes = games.enumerated().map { IndexPath(item: offset + $0.offset, section: 3) }
         actionSubject.onNext(.reloadItems(items: games, insertionIndexPathes: indexPathes, deletionIndexPathes: []))
     }
 
@@ -183,7 +186,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
                 self.recentlyPlayedComponentViewModel.params.playedGames = viewModels
                 self.recentlyPlayedComponentViewModel.params.isVisible = !viewModels.isEmpty
-                self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 0)]))
+                self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 2)]))
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -224,7 +227,7 @@ extension DefaultHomeViewModel: HomeViewModel {
         let recentryPlayedSection = AppSectionDataProvider(dataProviders: [recentlyPlayedComponentViewModel])
         let gamesSection = AppSectionDataProvider(dataProviders: [loading])
 
-        actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [bannerSection, recentryPlayedSection, gamesSection])))
+        actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [placeholderSection, bannerSection, recentryPlayedSection, gamesSection])))
     }
 
     public func viewDidAppear() {

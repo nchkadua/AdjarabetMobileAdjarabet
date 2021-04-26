@@ -14,7 +14,7 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     @Inject(from: .viewModels) private var viewModel: HomeViewModel
     public var searchViewModel: GamesSearchViewModel { searchController.viewModel }
     public lazy var navigator = HomeNavigator(viewController: self)
-    private lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var collectionViewController = HomeViewCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
     private lazy var searchController = GamesSearchViewController(viewModel: DefaultGamesSearchViewModel(params: .init()))
 
     @IBOutlet private weak var header: HomeHeaderView!
@@ -144,6 +144,8 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         collectionViewController.isTabBarManagementEnabled = true
         add(child: collectionViewController)
 
+        collectionViewController.delegate = self
+
         guard let collectionView = collectionViewController.collectionView
         else { return }
 
@@ -245,3 +247,37 @@ extension HomeViewController: UISearchControllerDelegate {
 }
 
 extension HomeViewController: Accessible {}
+
+extension HomeViewController: HomeViewCollectionViewControllerDelegate {
+    func placeholderAppeared() {
+        header.backgroundColor = .cyan
+    }
+
+    func placeholderDisappeared() {
+        header.backgroundColor = .red
+    }
+}
+
+// MARK: - HomeViewCollectionViewController
+protocol HomeViewCollectionViewControllerDelegate: class {
+    func placeholderAppeared()
+    func placeholderDisappeared()
+}
+
+class HomeViewCollectionViewController: ABCollectionViewController {
+    weak var delegate: HomeViewCollectionViewControllerDelegate?
+
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.section == 0, indexPath.row == 0 {
+            delegate?.placeholderAppeared()
+        }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didEndDisplaying cell: UICollectionViewCell,
+                                 forItemAt indexPath: IndexPath) {
+        if indexPath.section == 0, indexPath.row == 0 {
+            delegate?.placeholderDisappeared()
+        }
+    }
+}
