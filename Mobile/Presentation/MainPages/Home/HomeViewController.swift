@@ -9,7 +9,7 @@
 import RxSwift
 import CoreLocation
 
-public class HomeViewController: ABViewController {
+public class HomeViewController: ABViewController, PageViewControllerProtocol {
     // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: HomeViewModel
     public var searchViewModel: GamesSearchViewModel { searchController.viewModel }
@@ -40,6 +40,17 @@ public class HomeViewController: ABViewController {
 //        addLayoutButton()
     }
 
+//    public override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController
+//        vc?.setPageViewControllerSwipeEnabled(true)
+//    }
+
+//    public override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
+//    }
+
     // TEST BUTTON
     private func addLayoutButton() {
         let button = UIButton(type: .contactAdd)
@@ -56,11 +67,6 @@ public class HomeViewController: ABViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
-    }
-
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setMainContainerSwipeEnabled(true)
     }
 
     // MARK: Binding

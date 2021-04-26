@@ -24,6 +24,7 @@ def pods
   pod 'FSCalendar'
   pod 'UAParserSwift'
   pod 'SwiftKeychainWrapper'
+  pod 'EMPageViewController'
 end
 
 target 'Mobile' do

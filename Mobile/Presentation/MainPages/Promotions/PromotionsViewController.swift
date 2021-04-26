@@ -27,11 +27,6 @@ public class PromotionsViewController: ABViewController {
         generateAccessibilityIdentifiers()
     }
 
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setMainContainerSwipeEnabled(false)
-    }
-
     private func bind(to viewModel: PromotionsViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didReceive(action: action)

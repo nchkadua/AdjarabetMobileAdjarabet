@@ -31,6 +31,14 @@ public class ABNavigationController: UINavigationController, UIGestureRecognizer
         navigationBar.tintColor = color
     }
 
+    public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if viewController is PageViewControllerProtocol {
+            mainContainerViewController?.setPageViewControllerSwipeEnabled(true)
+        } else {
+            mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
+        }
+    }
+
     public override var childForStatusBarStyle: UIViewController? { topViewController }
 
     public override var childForStatusBarHidden: UIViewController? { topViewController }
