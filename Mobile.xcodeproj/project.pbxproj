@@ -361,6 +361,11 @@
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
 		CE0D8E8C2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */; };
 		CE0D8E92262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */; };
+		CE14202B2636EE8900E022C7 /* Bonus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1420262636EE8900E022C7 /* Bonus.storyboard */; };
+		CE14202C2636EE8900E022C7 /* BonusNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1420272636EE8900E022C7 /* BonusNavigator.swift */; };
+		CE14202D2636EE8900E022C7 /* BonusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1420282636EE8900E022C7 /* BonusViewController.swift */; };
+		CE14202E2636EE8900E022C7 /* BonusViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1420292636EE8900E022C7 /* BonusViewControllerFactory.swift */; };
+		CE14202F2636EE8900E022C7 /* BonusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14202A2636EE8900E022C7 /* BonusViewModel.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
 		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
@@ -1109,6 +1114,11 @@
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
 		CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStatusUpdateMessageEntity.swift; sourceTree = "<group>"; };
 		CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStatusUpdateMessageDTO.swift; sourceTree = "<group>"; };
+		CE1420262636EE8900E022C7 /* Bonus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bonus.storyboard; sourceTree = "<group>"; };
+		CE1420272636EE8900E022C7 /* BonusNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusNavigator.swift; sourceTree = "<group>"; };
+		CE1420282636EE8900E022C7 /* BonusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewController.swift; sourceTree = "<group>"; };
+		CE1420292636EE8900E022C7 /* BonusViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE14202A2636EE8900E022C7 /* BonusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewModel.swift; sourceTree = "<group>"; };
 		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
 		CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoComponentView.xib; sourceTree = "<group>"; };
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
@@ -3013,6 +3023,18 @@
 			path = UFC;
 			sourceTree = "<group>";
 		};
+		CE1420252636EE7E00E022C7 /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				CE1420262636EE8900E022C7 /* Bonus.storyboard */,
+				CE1420272636EE8900E022C7 /* BonusNavigator.swift */,
+				CE1420282636EE8900E022C7 /* BonusViewController.swift */,
+				CE1420292636EE8900E022C7 /* BonusViewControllerFactory.swift */,
+				CE14202A2636EE8900E022C7 /* BonusViewModel.swift */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
 		CE1693692541AB100043B1A4 /* AccountInfoComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3898,6 +3920,7 @@
 		D815850C24B0C66D00FFCA95 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
+				CE1420252636EE7E00E022C7 /* Bonus */,
 				CE4A31092614788A0039C078 /* Main */,
 				CE03746825F8D6F00061F507 /* WebViewController */,
 				76DCF66E25B80EEC00150EE1 /* MyCards */,
@@ -4964,6 +4987,7 @@
 				C75D1B21261205F4002AF763 /* TDHJSlot.zip in Resources */,
 				C75D1B13261205F4002AF763 /* FHNCJSlot.zip in Resources */,
 				C7C973292580D9550062C713 /* SecurityLevelComponentView.xib in Resources */,
+				CE14202B2636EE8900E022C7 /* Bonus.storyboard in Resources */,
 				7682CF9025B8581600717090 /* AddMyCardComponentView.xib in Resources */,
 				C75D1B0D261205F4002AF763 /* KGJSlot.zip in Resources */,
 				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
@@ -5212,6 +5236,7 @@
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
 				CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */,
 				C71B4B72257EC57000538697 /* SecurityLevelsNavigator.swift in Sources */,
+				CE14202F2636EE8900E022C7 /* BonusViewModel.swift in Sources */,
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */,
 				CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */,
@@ -5312,6 +5337,7 @@
 				7668C7AE2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.swift in Sources */,
 				C7FB267C25CD87FE00111106 /* ServiceAuthTokenDTO.swift in Sources */,
 				C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */,
+				CE14202D2636EE8900E022C7 /* BonusViewController.swift in Sources */,
 				C707549325F3963C0033050E /* PaymentListRepository.swift in Sources */,
 				C7C35FD925C93C0000ADCBB6 /* GameLaunchInteractor.swift in Sources */,
 				76404F0D257625F900D14E0C /* AccountSecurityMessagesComponentView.swift in Sources */,
@@ -5439,6 +5465,7 @@
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
 				76E43EDC25B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift in Sources */,
 				C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */,
+				CE14202E2636EE8900E022C7 /* BonusViewControllerFactory.swift in Sources */,
 				76BDF441257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift in Sources */,
 				76B667982595F133001441BD /* Date+Extension.swift in Sources */,
 				7665D980257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift in Sources */,
@@ -5508,6 +5535,7 @@
 				76BA7BDB25E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				CE9B7FEA257544F5006FF756 /* PhoneNumberChangeNavigator.swift in Sources */,
+				CE14202C2636EE8900E022C7 /* BonusNavigator.swift in Sources */,
 				CEB41994260A2A7A003FE4B6 /* PaymentMethodCollectionViewCell.swift in Sources */,
 				C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */,
 				CE9B7FEB257544F5006FF756 /* PhoneNumberChangeViewController.swift in Sources */,

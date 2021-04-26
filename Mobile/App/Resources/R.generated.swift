@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 36 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 37 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -108,6 +108,8 @@ struct R: Rswift.Validatable {
     static let applePay = _R.storyboard.applePay()
     /// Storyboard `BiometricSettingsView`.
     static let biometricSettingsView = _R.storyboard.biometricSettingsView()
+    /// Storyboard `Bonus`.
+    static let bonus = _R.storyboard.bonus()
     /// Storyboard `Deposit`.
     static let deposit = _R.storyboard.deposit()
     /// Storyboard `Emoney`.
@@ -218,6 +220,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "BiometricSettingsView", bundle: ...)`
     static func biometricSettingsView(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.biometricSettingsView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Bonus", bundle: ...)`
+    static func bonus(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.bonus)
     }
     #endif
 
@@ -2932,8 +2941,10 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.tabBar` struct is generated, and contains static references to 5 images.
+    /// This `R.image.tabBar` struct is generated, and contains static references to 6 images.
     struct tabBar {
+      /// Image `bonus`.
+      static let bonus = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/bonus")
       /// Image `home_selected`.
       static let home_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/home_selected")
       /// Image `home`.
@@ -2944,6 +2955,13 @@ struct R: Rswift.Validatable {
       static let promotions = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/promotions")
       /// Image `sports`.
       static let sports = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/sports")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "bonus", bundle: ..., traitCollection: ...)`
+      static func bonus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.tabBar.bonus, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "home", bundle: ..., traitCollection: ...)`
@@ -13837,8 +13855,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13967,8 +13985,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -14598,6 +14616,9 @@ struct _R: Rswift.Validatable {
       try biometricSettingsView.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try bonus.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try deposit.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -14845,6 +14866,26 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct bonus: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bonusViewController = StoryboardViewControllerResource<BonusViewController>(identifier: "BonusViewController")
+      let bundle = R.hostingBundle
+      let name = "Bonus"
+
+      func bonusViewController(_: Void = ()) -> BonusViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: bonusViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.bonus().bonusViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bonusViewController' could not be loaded from storyboard 'Bonus' as 'BonusViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct deposit: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let depositViewController = StoryboardViewControllerResource<DepositViewController>(identifier: "DepositViewController")
@@ -14956,11 +14997,11 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

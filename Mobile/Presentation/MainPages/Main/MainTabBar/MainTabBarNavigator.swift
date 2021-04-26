@@ -8,7 +8,7 @@
 
 public class MainTabBarNavigator: Navigator {
     public let homeVCFacotry = DefaultHomeViewControllerFactory()
-    public let sportsVCFactory = DefaultSportsViewControllerFactory()
+    public let bonusVCFactory = DefaultBonusViewControllerFactory()
     public let promotionsVCFactory = DefaultPromotionsViewControllerFactory()
     public let notificationsVCFacotry = DefaultNotificationsViewControllerFactory()
 
@@ -26,14 +26,15 @@ public class MainTabBarNavigator: Navigator {
 
     public func makePages() -> [UIViewController] {
         let home = homeVCFacotry.make()
-        let sports = sportsVCFactory.make()
+        let bonus = bonusVCFactory.make(params: .init())
         let promotions = promotionsVCFactory.make()
         let notifications = notificationsVCFacotry.make()
-        home.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: R.image.tabBar.home_selected())
-        sports.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.sports(), selectedImage: nil)
+
+        home.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: nil)
+        bonus.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.bonus(), selectedImage: nil)
         promotions.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
         notifications.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
-        return [home, sports, promotions, notifications].map { $0.wrap(in: ABNavigationController.self) }
+        return [home, bonus, promotions, notifications].map { $0.wrap(in: ABNavigationController.self) }
     }
 }
 

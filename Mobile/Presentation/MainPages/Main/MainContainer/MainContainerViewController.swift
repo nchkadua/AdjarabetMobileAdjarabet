@@ -30,6 +30,7 @@ public class MainContainerViewController: UIViewController {
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: MainContainerViewModel) {
         viewModel.action.subscribe(onNext: {_ in
+        })
     }
 
     // MARK: Setup methods
