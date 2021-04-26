@@ -1,51 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountParametersComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
+                <outlet property="arrowImageView" destination="IAp-LA-KhT" id="eFK-Y4-a0H"/>
                 <outlet property="iconImageView" destination="9F4-G1-G5T" id="MCD-hg-cZT"/>
+                <outlet property="separatorView" destination="gTb-cW-EZ0" id="3PS-J7-C1z"/>
                 <outlet property="titleLabel" destination="sOz-4Y-nBh" id="Or4-SN-2kc"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="საკუთარი თავის დაბლოკვა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOz-4Y-nBh">
-                    <rect key="frame" x="20" y="22" width="181" height="16"/>
+                    <rect key="frame" x="68" y="19" width="260" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AccountParameters/BlockSelf" translatesAutoresizingMaskIntoConstraints="NO" id="9F4-G1-G5T">
-                    <rect key="frame" x="334" y="19.5" width="21" height="21"/>
+                    <rect key="frame" x="24" y="11" width="32" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="21" id="amQ-wP-MCu"/>
-                        <constraint firstAttribute="width" secondItem="9F4-G1-G5T" secondAttribute="height" multiplier="1:1" id="emp-mJ-lZ5"/>
+                        <constraint firstAttribute="height" constant="32" id="1Aa-Hf-942"/>
+                        <constraint firstAttribute="width" constant="32" id="Xuy-Qm-CdM"/>
                     </constraints>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/ProfileCell/arrow" translatesAutoresizingMaskIntoConstraints="NO" id="IAp-LA-KhT">
+                    <rect key="frame" x="340" y="16" width="12" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Stx-I2-jOy"/>
+                        <constraint firstAttribute="width" constant="12" id="amw-RQ-evt"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTb-cW-EZ0">
+                    <rect key="frame" x="56" y="53" width="319" height="1"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="2Gw-wj-bZw"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="sOz-4Y-nBh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ENo-gV-5c9"/>
-                <constraint firstItem="9F4-G1-G5T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GCJ-Mr-GCu"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9F4-G1-G5T" secondAttribute="trailing" constant="20" id="ORa-wp-qZY"/>
-                <constraint firstItem="sOz-4Y-nBh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hKk-4o-coQ"/>
+                <constraint firstItem="IAp-LA-KhT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="7fg-4Y-MFl"/>
+                <constraint firstItem="IAp-LA-KhT" firstAttribute="leading" secondItem="sOz-4Y-nBh" secondAttribute="trailing" constant="12" id="IGv-cj-tRE"/>
+                <constraint firstAttribute="bottom" secondItem="gTb-cW-EZ0" secondAttribute="bottom" id="RTE-hm-CqE"/>
+                <constraint firstItem="9F4-G1-G5T" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="SAp-ic-fen"/>
+                <constraint firstAttribute="trailing" secondItem="IAp-LA-KhT" secondAttribute="trailing" constant="23" id="Zbd-F2-ug5"/>
+                <constraint firstAttribute="trailing" secondItem="gTb-cW-EZ0" secondAttribute="trailing" id="aWS-cZ-TYP"/>
+                <constraint firstItem="gTb-cW-EZ0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="56" id="bUr-mQ-zNU"/>
+                <constraint firstItem="sOz-4Y-nBh" firstAttribute="leading" secondItem="9F4-G1-G5T" secondAttribute="trailing" constant="12" id="dSm-lM-NkQ"/>
+                <constraint firstItem="9F4-G1-G5T" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="gFe-m3-uic"/>
+                <constraint firstItem="sOz-4Y-nBh" firstAttribute="centerY" secondItem="9F4-G1-G5T" secondAttribute="centerY" id="qmG-95-nap"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="62" y="108"/>
+            <point key="canvasLocation" x="61.594202898550726" y="107.8125"/>
         </view>
     </objects>
     <resources>
-        <image name="AccountParameters/BlockSelf" width="15" height="18"/>
+        <image name="AccountParameters/BlockSelf" width="32" height="32"/>
+        <image name="Components/ProfileCell/arrow" width="7" height="12"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

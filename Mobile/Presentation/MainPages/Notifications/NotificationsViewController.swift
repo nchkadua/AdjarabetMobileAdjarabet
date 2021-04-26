@@ -28,15 +28,7 @@ public class NotificationsViewController: ABViewController {
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        viewModel.viewWillAppear()
         mainTabBarViewController?.showFloatingTabBar()
-        setMainContainerSwipeEnabled(false)
-    }
-
-    public override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        viewModel.viewDidDissapear()
     }
 
     private func setup() {
@@ -81,12 +73,12 @@ public class NotificationsViewController: ABViewController {
             UIView.performWithoutAnimation {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
             }
-        case .reload(let indexPath):
-            appTableViewController.tableView.reloadRows(at: [indexPath], with: .fade)
         case .reloadData: appTableViewController.reloadItems()
         case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
         case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)
         case .showMessage(let message): showAlert(title: message)
+        default:
+            break
         }
     }
 

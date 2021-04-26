@@ -15,8 +15,8 @@ public class OTPViewController: ABViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var otpDescriptionLabel: UILabel!
-    @IBOutlet private weak var resendSMSButton: ABButton!
     @IBOutlet private weak var smsCodeInputView: SMSCodeInputView!
+    @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private weak var loginButton: ABButton!
     @IBOutlet private weak var timerView: TimerComponentView!
 
@@ -64,9 +64,10 @@ public class OTPViewController: ABViewController {
         case .setButtonTitle(let title): setButtonTitle(title)
         case .setSMSInputViewNumberOfItems(let count): smsCodeInputView.configureForNumberOfItems(count)
         case .setSMSCodeInputView(let text): updateSMSCodeInputView(texts: text)
-        case .setResendSMSButton(let isLoading): resendSMSButton.set(isLoading: isLoading)
         case .setLoginButton(let isLoading): loginButton.set(isLoading: isLoading)
         case .bindToTimer(let timerViewModel): bindToTimer(timerViewModel)
+        default:
+            break
         }
     }
 
@@ -89,11 +90,11 @@ public class OTPViewController: ABViewController {
     }
 
     private func setupNavigationItems(_ title: String, showDismissButton: Bool) {
-        setTitle(title: title)
+        setTitle(title: title.uppercased())
 
         guard showDismissButton else { return }
 
-        setDismissBarButtonItemIfNeeded(width: 44)
+        setDismissBarButtonItemIfNeeded()
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
 
@@ -104,23 +105,20 @@ public class OTPViewController: ABViewController {
 
     private func setupLabels() {
         otpDescriptionLabel.textAlignment = .center
-        otpDescriptionLabel.setTextColor(to: .primaryRed())
-        otpDescriptionLabel.setFont(to: .caption2(fontCase: .lower))
+        otpDescriptionLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
 
         let OTPDescription = R.string.localization.sms_confirmation_description.localized()
-            .makeAttributedString(with: .caption2(fontCase: .lower),
+            .makeAttributedString(with: .footnote(fontCase: .lower, fontStyle: .regular),
                                   lineSpasing: 4,
                                   foregroundColor: .secondaryText())
         otpDescriptionLabel.attributedText = OTPDescription
+
+        placeholderLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
+        placeholderLabel.setTextColor(to: .secondaryText())
+        placeholderLabel.text = R.string.localization.sms_placeholder.localized()
     }
 
     private func setupButtons() {
-        resendSMSButton.setImage(R.image.otP.resend() ?? UIImage(), tintColor: .primaryText())
-        resendSMSButton.setStyle(to: .textLink(state: .disabled, size: .small))
-        resendSMSButton.setTitleColor(to: .primaryText(), for: .normal)
-        resendSMSButton.setTitleWithoutAnimation(R.string.localization.sms_resend.localized(), for: .normal)
-        resendSMSButton.addTarget(self, action: #selector(resendSMSDidTap), for: .touchUpInside)
-        resendSMSButton.isUserInteractionEnabled = false
         updateLoginButtonWhen(smsCodeText: nil, animated: false)
 
         loginButton.setStyle(to: .primary(state: .disabled, size: .large))
@@ -139,6 +137,7 @@ public class OTPViewController: ABViewController {
         smsCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         smsCodeInputView.configureForNumberOfItems(6)
+        smsCodeInputView.roundCorners(.allCorners, radius: 6)
     }
 
     /// Timer
@@ -146,6 +145,7 @@ public class OTPViewController: ABViewController {
         timerView.setAndBind(viewModel: timerViewModel)
         bind(to: timerViewModel)
         viewModel.didBindToTimer()
+        timerView.button.addTarget(self, action: #selector(resendDidTap), for: .touchUpInside)
     }
 
     private func bind(to viewModel: TimerComponentViewModel) {
@@ -156,10 +156,14 @@ public class OTPViewController: ABViewController {
 
     private func didRecive(action: TimerComponentViewModelOutputAction) {
         switch action {
-        case .timerDidEnd: updateResendButton(activate: true)
         default:
             break
         }
+    }
+
+    @objc private func resendDidTap() {
+        viewModel.restartTimer()
+        viewModel.resendSMS()
     }
 
     // MARK: Actions
@@ -174,7 +178,6 @@ public class OTPViewController: ABViewController {
     @objc private func resendSMSDidTap() {
         viewModel.restartTimer()
         viewModel.resendSMS()
-        updateResendButton(activate: false)
     }
 
     @objc private func loginDidTap() {
@@ -203,15 +206,9 @@ public class OTPViewController: ABViewController {
         loginButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
 
-    private func updateResendButton(activate: Bool) {
-        if activate {
-            resendSMSButton.setStyle(to: .textLink(state: .active, size: .small))
-            resendSMSButton.setImage(R.image.otP.resend() ?? UIImage(), tintColor: .systemRed())
-            resendSMSButton.isUserInteractionEnabled = true
-        } else {
-            resendSMSButton.setStyle(to: .textLink(state: .disabled, size: .small))
-            resendSMSButton.setImage(R.image.otP.resend() ?? UIImage(), tintColor: .primaryText())
-            resendSMSButton.isUserInteractionEnabled = false
+    private func updatePlaceholder(_ hide: Bool) {
+        UIView.animate(withDuration: 0.22) {
+            self.placeholderLabel.isHidden = hide
         }
     }
 }
@@ -221,6 +218,7 @@ extension OTPViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let result = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
 
+        updatePlaceholder(result.count >= 1)
         return viewModel.shouldChangeCharacters(for: result)
     }
 }

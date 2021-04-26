@@ -30,7 +30,7 @@
 "cancel" = "გამოსვლა";
 "not_member" = "წევრი არ ხარ?";
 "join_now" = "შემოგვიერთდი";
-"login_button_title" = "ავტორიზაცია";
+"login_button_title" = "შესვლა";
 "contact_us_button_title" = "კონტაქტი";
 "settings" = "პარამეტრები";
 
@@ -38,7 +38,9 @@
 "login_page_title" = "შესვლა";
 "login_forgot_password" = "დაგავიწყდათ პაროლი?";
 "login_forgot_username" = "სახელი?";
-"login_sms_login" = "SMS LOGIN-ით";
+"login_sms_login" = "სმს ლოგინი";
+"login_registration" = "რეგისტრაცია";
+"login_remember" = "გაიხსენე მონაცემები";
 "login_sms_login_title" = "გაიარეთ ავტორიზაცია";
 "login_username_input_title" = "სახელი";
 "login_password_input_title" = "პაროლი";
@@ -47,13 +49,15 @@
 "login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
 
 /* SMS Login */
-"sms_login_page_title" = "SMS ავტორიზაცია";
-"sms_confirmation_description" = "თქვენი კოდი გამოგზავნილია თქვენს ნომერზე";
+"sms_login_page_title" = "OTP ავტორიზაცია";
+"sms_confirmation_description" = "თქვენს ნომერზე გამოგზავნილია კოდი";
 "sms_resend" = "SMS გაგზავნა";
 "sms_did_not_receive_message" = "Did not receive message?";
 "sms_well_done" = "Well done!";
 "sms_resend_title" = "ხელახლა გაგზავნა";
 "sms_resend_time" = "წამში";
+"sms_approve" = "დადასტურება";
+"sms_placeholder" = "6 ნიშნა კოდი";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
@@ -139,7 +143,7 @@
 
 "visa_amount_title" = "თანხა";
 "visa_card_title" = "ანგარიში";
-"visa_instruction_title" = "გატანის ინსტრუქცია";
+"visa_instruction_title" = "შეტანის ინსტრუქცია";
 "visa_description_title" = "ლიმიტი ერთ ბარათზე";
 "visa_description_amount" = "შეიყვანე სასურველი თანხა";
 "visa_description_card" = "მონიშნე სასურველი დამახსოვრებული ბარათი";
@@ -191,7 +195,7 @@
 "withdraw_total_amount" = "ჯამური თანხა";
 "withdraw_continue" = "გაგრძელება";
 // Add Card
-"withdraw_add_card" = "ბარათის დამატებას";
+"withdraw_add_card" = "ბარათის დამატება";
 "withdraw_add_card_description" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ თანხის გატანა";
 
 /* Notifications */
@@ -228,14 +232,15 @@
 /* Account Parameters */
 "account_parameters_change_password" = "პაროლის შეცვლა";
 "account_parameters_high_security" = "მაღალი დაცვის რეჟიმი";
-"account_parameters_self_block" = "საკუთარი თავის დაბლოკვა";
+"account_parameters_biometry" = "ბიომეტრიული ავტორიზაცია";
+"account_parameters_self_block" = "ანგარიშის დაბლოკვა";
 "account_parameters_login_history" = "შესვლის ისტორია";
 "account_parameters_messages_header" = "უსაფრთხოების შეტყობინებები";
 "account_parameters_messages_sms_title" = "SMS შეტყობინებები";
-"account_parameters_messages_sms_description" = "თქვენ მიიღებთ SMS შეტყობინებებს თქვენს ტელეფონის ნომერზე";
+"account_parameters_messages_sms_description" = "თქვენ მიიღებთ გზავნილებს სმს შეტყობინებების მეშვეობით";
 "account_parameters_messages_sms_button" = "პარამეტრების დაყენება";
 "account_parameters_messages_email_title" = "ელ-ფოსტის შეტყობინებები";
-"account_parameters_messages_email_description" = "თქვენ მიიღებთ შეტყობინებებს თქვენს ელ-ფოსტაზე";
+"account_parameters_messages_email_description" = "თქვენ მიიღებთ გზავნილებს ელექტრონული ფოსტის მეშვეობით";
 "account_parameters_messages_email_button" = "პარამეტრების დაყენება";
 
 /* Access History */

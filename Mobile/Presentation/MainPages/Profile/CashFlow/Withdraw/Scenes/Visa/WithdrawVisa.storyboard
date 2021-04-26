@@ -24,14 +24,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZN-g9-wfn" userLabel="Main Content View">
-                                                <rect key="frame" x="16" y="8" width="382" height="0.0"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" id="e9M-gD-89u"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHB-oZ-KhA" customClass="WithdrawVisaInfoView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="24" width="382" height="712"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="736"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
@@ -39,8 +39,8 @@
                                         <constraints>
                                             <constraint firstItem="CHB-oZ-KhA" firstAttribute="trailing" secondItem="TZN-g9-wfn" secondAttribute="trailing" id="36q-O1-jUm"/>
                                             <constraint firstAttribute="trailing" secondItem="TZN-g9-wfn" secondAttribute="trailing" constant="16" id="ODs-ep-Vnx"/>
-                                            <constraint firstItem="TZN-g9-wfn" firstAttribute="top" secondItem="afW-rg-XfR" secondAttribute="top" constant="8" id="c6P-m2-AQu"/>
-                                            <constraint firstItem="CHB-oZ-KhA" firstAttribute="top" secondItem="TZN-g9-wfn" secondAttribute="bottom" constant="16" id="csu-Pq-Uft"/>
+                                            <constraint firstItem="TZN-g9-wfn" firstAttribute="top" secondItem="afW-rg-XfR" secondAttribute="top" id="c6P-m2-AQu"/>
+                                            <constraint firstItem="CHB-oZ-KhA" firstAttribute="top" secondItem="TZN-g9-wfn" secondAttribute="bottom" id="csu-Pq-Uft"/>
                                             <constraint firstAttribute="bottom" secondItem="CHB-oZ-KhA" secondAttribute="bottom" id="fEb-9U-Du2"/>
                                             <constraint firstItem="TZN-g9-wfn" firstAttribute="leading" secondItem="afW-rg-XfR" secondAttribute="leading" constant="16" id="nYm-1b-nyP"/>
                                             <constraint firstItem="CHB-oZ-KhA" firstAttribute="leading" secondItem="TZN-g9-wfn" secondAttribute="leading" id="r2v-bw-OOu"/>

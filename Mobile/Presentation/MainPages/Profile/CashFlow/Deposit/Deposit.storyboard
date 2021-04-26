@@ -64,14 +64,14 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="21" bottom="0.0" right="21"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAB-Bl-XoW" customClass="PaymentMethodGridComponentView" customModule="Mobile" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="121" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="121" width="414" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="kJn-Eu-TLN"/>
+                                    <constraint firstAttribute="height" constant="40" id="kJn-Eu-TLN"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMD-z4-E3a">
-                                <rect key="frame" x="0.0" y="189" width="414" height="707"/>
+                                <rect key="frame" x="0.0" y="175" width="414" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -83,7 +83,7 @@
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="RAB-Bl-XoW" secondAttribute="trailing" id="GnV-Ry-dzQ"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="rMD-z4-E3a" secondAttribute="trailing" id="MSm-SI-qJG"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="8Kq-xd-1G6" secondAttribute="trailing" id="VvQ-Zn-N4c"/>
-                            <constraint firstItem="rMD-z4-E3a" firstAttribute="top" secondItem="RAB-Bl-XoW" secondAttribute="bottom" constant="8" id="g6H-Uj-XV7"/>
+                            <constraint firstItem="rMD-z4-E3a" firstAttribute="top" secondItem="RAB-Bl-XoW" secondAttribute="bottom" constant="14" id="g6H-Uj-XV7"/>
                             <constraint firstItem="RAB-Bl-XoW" firstAttribute="top" secondItem="8Kq-xd-1G6" secondAttribute="bottom" constant="10" id="jam-e5-1i5"/>
                             <constraint firstItem="8Kq-xd-1G6" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="26" id="mv8-M9-JaS"/>
                             <constraint firstItem="8Kq-xd-1G6" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="nIS-zb-JvT"/>

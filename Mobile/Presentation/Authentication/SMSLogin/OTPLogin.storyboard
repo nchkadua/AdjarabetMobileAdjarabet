@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d6Y-5F-gZB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d6Y-5F-gZB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="kd7-Y8-Qax">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="305.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="321.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qzc-Fn-qIQ">
                                                 <rect key="frame" x="20" y="14" width="374" height="38.5"/>
@@ -35,38 +35,45 @@
                                                 </subviews>
                                                 <edgeInsets key="layoutMargins" top="10" left="0.0" bottom="8" right="0.0"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-2d-e1a">
-                                                <rect key="frame" x="20" y="65.5" width="374" height="163"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-2d-e1a">
+                                                <rect key="frame" x="20" y="65.5" width="374" height="179"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-P3-eho" customClass="SMSCodeInputView" customModule="Mobile" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kg-ef-61y">
+                                                                <rect key="frame" x="16" y="30" width="342" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="4kg-ef-61y" firstAttribute="centerY" secondItem="sGc-P3-eho" secondAttribute="centerY" id="8N4-22-9Qp"/>
+                                                            <constraint firstItem="4kg-ef-61y" firstAttribute="leading" secondItem="sGc-P3-eho" secondAttribute="leading" constant="16" id="UVa-gj-CTG"/>
                                                             <constraint firstAttribute="height" constant="80" id="VJh-Tl-11p"/>
+                                                            <constraint firstAttribute="trailing" secondItem="4kg-ef-61y" secondAttribute="trailing" constant="16" id="e8B-me-SDW"/>
+                                                            <constraint firstItem="4kg-ef-61y" firstAttribute="centerX" secondItem="sGc-P3-eho" secondAttribute="centerX" id="mp3-qR-Zi4"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R74-wT-6DH">
-                                                        <rect key="frame" x="0.0" y="96" width="374" height="35"/>
+                                                        <rect key="frame" x="0.0" y="112" width="374" height="35"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psm-i8-xbn" customClass="TimerComponentView" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="35"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="eet-j5-SVF"/>
                                                                 </constraints>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeM-K8-8Zc" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                                                <rect key="frame" x="191" y="0.0" width="183" height="35"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                                <state key="normal" title="Resend SMS" image="OTP/resend"/>
-                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="32" right="0.0"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEN-gC-VkM">
-                                                <rect key="frame" x="20" y="241.5" width="374" height="44"/>
+                                                <rect key="frame" x="20" y="257.5" width="374" height="44"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rrt-Kc-5O0">
                                                         <rect key="frame" x="0.0" y="14" width="374" height="30"/>
@@ -108,7 +115,7 @@
                     <connections>
                         <outlet property="loginButton" destination="wEO-0R-vVl" id="U8x-kU-NTK"/>
                         <outlet property="otpDescriptionLabel" destination="e7i-eU-SGk" id="7Ls-XR-TLI"/>
-                        <outlet property="resendSMSButton" destination="qeM-K8-8Zc" id="BQa-BH-Pgd"/>
+                        <outlet property="placeholderLabel" destination="4kg-ef-61y" id="C1I-TH-utB"/>
                         <outlet property="scrollView" destination="WNY-zV-0Ip" id="9Na-nV-XQj"/>
                         <outlet property="smsCodeInputView" destination="sGc-P3-eho" id="25F-7T-hmf"/>
                         <outlet property="timerView" destination="psm-i8-xbn" id="ZIJ-4g-hGT"/>
@@ -120,9 +127,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="qeM-K8-8Zc">
-            <size key="intrinsicContentSize" width="124" height="22"/>
-        </designable>
         <designable name="sGc-P3-eho">
             <size key="intrinsicContentSize" width="394" height="48"/>
         </designable>
@@ -131,7 +135,6 @@
         </designable>
     </designables>
     <resources>
-        <image name="OTP/resend" width="12" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -13,8 +13,6 @@ public protocol NotificationsViewModel: NotificationsViewModelInput, Notificatio
 
 public protocol NotificationsViewModelInput {
     func viewDidLoad()
-    func viewWillAppear()
-    func viewDidDissapear()
 }
 
 public protocol NotificationsViewModelOutput {
@@ -145,16 +143,6 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     public func viewDidLoad() {
         displayEmptyNotificationList()
         load(loadingType: .fullScreen)
-    }
-
-    public func viewWillAppear() {
-        actionSubject.onNext(.initialize(notificationsDataProvider.makeList()))
-        actionSubject.onNext(.reloadData)
-    }
-
-    public func viewDidDissapear() {
-        let initialEmptyDataProvider: AppCellDataProviders = []
-        self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
     }
 
     private func displayEmptyNotificationList() {

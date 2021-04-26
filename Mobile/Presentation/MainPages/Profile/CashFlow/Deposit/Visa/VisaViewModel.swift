@@ -20,6 +20,7 @@ protocol VisaViewModelInput {
     func entered(amount: String)                 // call on entering amount
     func selected(account: Int, amount: String)  // call on selecting account
     func continued(amount: String, account: Int) // call on tapping continue button
+    func added()
 }
 
 protocol VisaViewModelOutput {
@@ -46,6 +47,7 @@ enum VisaViewType {
 
 enum VisaViewModelRoute {
     case webView(with: WebViewModelParams)
+    case addAccount(params: AddCardViewModelParams)
 }
 
 class DefaultVisaViewModel {
@@ -53,7 +55,7 @@ class DefaultVisaViewModel {
     private let actionSubject = PublishSubject<VisaViewModelOutputAction>()
     private let routeSubject = PublishSubject<VisaViewModelRoute>()
     // use cases
-    @Inject(from: .useCases) private var accountListUseCase: PaymentAccountUseCase
+    private var accountListRepository: PaymentAccountFilterableRepository = WebApiPaymentAccountRepository()
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
     @Inject(from: .useCases) private var depositUseCase: UFCDepositUseCase
     // state
@@ -79,7 +81,7 @@ extension DefaultVisaViewModel: VisaViewModel {
         // 0. update continue to non-interactive
         notify(.updateContinue(with: false))
         // 1. fetch account/card list
-        accountListUseCase.execute(params: .init()) { [weak self] result in
+        accountListRepository.list(params: .init(providerType: params.serviceType.providerType, paymentType: .deposit)) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let list):
@@ -89,7 +91,7 @@ extension DefaultVisaViewModel: VisaViewModel {
                 } else {                                        // else:
                     self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
                     // create account list for view
-                    let viewAccounts = self.accounts.map { $0.accountVisual! }
+                    let viewAccounts = self.accounts.map { $0.accountVisual }
                     self.notify(.updateAccounts(with: viewAccounts)) // 4. update accounts on shown view
                     self.fetchSuggested() // continue here...
                 }
@@ -183,7 +185,7 @@ extension DefaultVisaViewModel: VisaViewModel {
         }
         depositUseCase.execute(serviceType: params.serviceType,
                                amount: damount,
-                               accountId: accounts[account].id!) { [weak self] result in
+                               accountId: accounts[account].id) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let request):
@@ -194,6 +196,10 @@ extension DefaultVisaViewModel: VisaViewModel {
         }
     }
 
+    func added() {
+        routeSubject.onNext(.addAccount(params: .init(serviceType: params.serviceType)))
+    }
+
     /* helpers */
 
     private func suggestedTapped(with amount: Double) {
@@ -202,5 +208,14 @@ extension DefaultVisaViewModel: VisaViewModel {
 
     private func notify(_ action: VisaViewModelOutputAction) {
         actionSubject.onNext(action)
+    }
+}
+
+fileprivate extension UFCServiceType {
+    var providerType: PaymentAccountFilterableListParams.ProviderType {
+        switch self {
+        case .regular: return .visaRegular
+        case .vip:     return .visaVip
+        }
     }
 }

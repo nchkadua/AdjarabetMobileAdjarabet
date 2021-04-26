@@ -88,7 +88,7 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionSubject.onNext(.setButtonTitle(params.buttonTitle))
         actionSubject.onNext(.setSMSInputViewNumberOfItems(smsCodeLength))
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
-        getOTP()
+//        getOTP()
     }
 
     public func didBindToTimer() {

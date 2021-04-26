@@ -20,6 +20,7 @@ public class ABButton: LoadingButton {
         self.primaryStyle = style
         super.setStyle(to: style)
         addStylesForActions()
+        titleEdgeInsets = .init(top: -4, left: 0, bottom: 0, right: 0)
     }
 
     public override func setTitleColor(_ color: UIColor?, for state: UIControl.State) {

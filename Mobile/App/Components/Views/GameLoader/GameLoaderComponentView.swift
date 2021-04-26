@@ -13,7 +13,7 @@ class GameLoaderComponentView: UIView {
     private var viewModel: GameLoaderComponentViewModel!
 
     @IBOutlet weak private var view: UIView!
-    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak private var logoImageView: UIImageView!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)

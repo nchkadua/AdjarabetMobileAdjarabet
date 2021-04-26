@@ -21,17 +21,17 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-gB-ybX">
-                                        <rect key="frame" x="0.0" y="8" width="414" height="852"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxL-vt-izl" customClass="AddCardComponentView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="8" width="382" height="226"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="226"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="226" id="T4g-3Y-wmh"/>
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nia-Cs-bKa">
-                                                <rect key="frame" x="16" y="8" width="382" height="185"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="185"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-6D-FLs" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
@@ -80,14 +80,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiD-kE-4oW" customClass="VisaLimitComponentView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="199" width="382" height="60"/>
+                                                <rect key="frame" x="16" y="191" width="382" height="60"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="c2H-Pe-blH"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-Z1-LFX" customClass="VisaInstructionsComponentView" customModule="Mobile" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="273" width="382" height="240"/>
+                                                <rect key="frame" x="16" y="265" width="382" height="240"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="240" id="ZMT-na-HQk"/>
@@ -102,11 +102,11 @@
                                             <constraint firstAttribute="trailing" secondItem="5Cs-Z1-LFX" secondAttribute="trailing" constant="16" id="KT3-Ni-dcV"/>
                                             <constraint firstItem="5Cs-Z1-LFX" firstAttribute="top" secondItem="eiD-kE-4oW" secondAttribute="bottom" constant="14" id="KYt-UL-ZFG"/>
                                             <constraint firstItem="eiD-kE-4oW" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="NIe-EG-TAQ"/>
-                                            <constraint firstItem="cxL-vt-izl" firstAttribute="top" secondItem="ybG-gB-ybX" secondAttribute="top" constant="8" id="Rdx-UQ-BWt"/>
+                                            <constraint firstItem="cxL-vt-izl" firstAttribute="top" secondItem="ybG-gB-ybX" secondAttribute="top" id="Rdx-UQ-BWt"/>
                                             <constraint firstItem="Nia-Cs-bKa" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="YEZ-6i-3FX"/>
                                             <constraint firstItem="cxL-vt-izl" firstAttribute="leading" secondItem="ybG-gB-ybX" secondAttribute="leading" constant="16" id="aPU-E3-6UT"/>
                                             <constraint firstAttribute="trailing" secondItem="cxL-vt-izl" secondAttribute="trailing" constant="16" id="gON-Fl-5Cu"/>
-                                            <constraint firstItem="Nia-Cs-bKa" firstAttribute="top" secondItem="ybG-gB-ybX" secondAttribute="top" constant="8" id="hL2-f0-oPf"/>
+                                            <constraint firstItem="Nia-Cs-bKa" firstAttribute="top" secondItem="ybG-gB-ybX" secondAttribute="top" id="hL2-f0-oPf"/>
                                             <constraint firstAttribute="trailing" secondItem="Nia-Cs-bKa" secondAttribute="trailing" constant="16" id="iih-3p-cLF"/>
                                         </constraints>
                                     </view>
@@ -114,16 +114,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ybG-gB-ybX" firstAttribute="centerX" secondItem="QUy-Re-2tz" secondAttribute="centerX" id="CCQ-Fo-ZhA"/>
-                                    <constraint firstAttribute="bottom" secondItem="ybG-gB-ybX" secondAttribute="bottom" constant="34" id="SZN-Ya-52r"/>
-                                    <constraint firstItem="ybG-gB-ybX" firstAttribute="leading" secondItem="R90-xN-tKF" secondAttribute="leading" id="jsc-XU-8zi"/>
-                                    <constraint firstItem="ybG-gB-ybX" firstAttribute="top" secondItem="R90-xN-tKF" secondAttribute="top" id="kZz-Mf-L3g"/>
-                                    <constraint firstItem="R90-xN-tKF" firstAttribute="bottom" secondItem="ybG-gB-ybX" secondAttribute="bottom" id="p4z-bz-79z"/>
+                                    <constraint firstAttribute="bottom" secondItem="ybG-gB-ybX" secondAttribute="bottom" constant="50" id="SZN-Ya-52r"/>
+                                    <constraint firstItem="ybG-gB-ybX" firstAttribute="leading" secondItem="QUy-Re-2tz" secondAttribute="leading" id="jsc-XU-8zi"/>
+                                    <constraint firstItem="ybG-gB-ybX" firstAttribute="top" secondItem="QUy-Re-2tz" secondAttribute="top" id="kZz-Mf-L3g"/>
                                     <constraint firstItem="ybG-gB-ybX" firstAttribute="centerY" secondItem="QUy-Re-2tz" secondAttribute="centerY" id="t4Q-bc-fWf"/>
                                     <constraint firstAttribute="trailing" secondItem="ybG-gB-ybX" secondAttribute="trailing" id="v33-zJ-d8M"/>
-                                    <constraint firstItem="R90-xN-tKF" firstAttribute="trailing" secondItem="ybG-gB-ybX" secondAttribute="trailing" id="zAb-rR-qFG"/>
+                                    <constraint firstAttribute="trailing" secondItem="ybG-gB-ybX" secondAttribute="trailing" id="zAb-rR-qFG"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="ipq-8s-4aA"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="R90-xN-tKF"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>

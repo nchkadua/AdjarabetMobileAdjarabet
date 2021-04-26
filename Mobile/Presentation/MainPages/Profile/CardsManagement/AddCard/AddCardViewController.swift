@@ -9,7 +9,7 @@
 import RxSwift
 
 public class AddCardViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: AddCardViewModel
+    public var viewModel: AddCardViewModel!
     public lazy var navigator = AddCardNavigator(viewController: self)
 
     // MARK: Outlets

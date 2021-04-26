@@ -65,12 +65,12 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
             case .success(let paymentAccounts): // type - [PaymentAccountEntity]
                 var componentViewModel: AppCellDataProvider?
                 paymentAccounts.forEach { myCard in
-                    if let id = myCard.id, let providerName = myCard.providerName, let dateCreated = myCard.dateCreated, let accountVisual = myCard.accountVisual {
-                        componentViewModel = DefaultMyCardComponentViewModel(params: .init(id: id,
+                    if let providerName = myCard.providerName, let dateCreated = myCard.dateCreated {
+                        componentViewModel = DefaultMyCardComponentViewModel(params: .init(id: myCard.id,
                                                                                            bankIcon: nil,
                                                                                            bankAlias: providerName,
                                                                                            dateAdded: dateCreated,
-                                                                                           cardNumber: accountVisual,
+                                                                                           cardNumber: myCard.accountVisual,
                                                                                            issuerIcon: nil))
                         // swiftlint:disable force_cast
                         self.subscribe(to: componentViewModel as! MyCardComponentViewModel)
@@ -153,9 +153,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         return icon
     }
 
-    // TODO: Irakli
     public func addCardsClicked() {
-        // TODO: delete first
         // swiftlint:disable force_cast
         let id = (dataProvider[0] as! DefaultMyCardComponentViewModel).params.id
         paymentAccountUseCase.execute(params: .init(id: id)) { result in

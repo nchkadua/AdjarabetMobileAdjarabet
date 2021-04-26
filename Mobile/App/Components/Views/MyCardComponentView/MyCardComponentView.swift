@@ -64,14 +64,14 @@ class MyCardComponentView: UIView {
     }
     private func set(_ bankIcon: UIImage?,
                      _ bankAlias: String,
-                     _ dateAdded: Date,
+                     _ dateAdded: String,
                      _ cardNumber: String,
                      _ issuerIcon: UIImage?) {
         bankImageView.image = bankIcon
         bankAliasLbl.text = bankAlias
         cardNumberLbl.text = formatCardNumber(cardNumber)
         issuerImageView.image = issuerIcon
-        dateAddedLbl.text = cardDateFormatter.string(from: dateAdded)
+        dateAddedLbl.text = dateAdded
     }
 
     private func formatCardNumber(_ number: String) -> String {

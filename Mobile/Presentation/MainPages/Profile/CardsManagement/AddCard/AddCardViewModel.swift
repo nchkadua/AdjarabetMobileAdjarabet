@@ -16,9 +16,14 @@ public protocol AddCardViewModelDelegate: class {
 }
 
 public struct AddCardViewModelParams {
-    public var delegate: AddCardViewModelDelegate?
+    public var serviceType: UFCServiceType
+    public weak var delegate: AddCardViewModelDelegate?
 
-    public init(delegate: AddCardViewModelDelegate? = nil) {
+    public init (
+        serviceType: UFCServiceType,
+        delegate: AddCardViewModelDelegate? = nil
+    ) {
+        self.serviceType = serviceType
         self.delegate = delegate
     }
 }
@@ -74,8 +79,7 @@ extension DefaultAddCardViewModel: AddCardViewModel {
     }
 
     public func continueTapped(with amount: Double, hasAgreedToTerms: Bool) {
-        // FIXME: serviceType - .regular or .vip
-        ufcDepositUseCase.execute(serviceType: .regular, amount: amount, saveAccount: hasAgreedToTerms) { [weak self] result in
+        ufcDepositUseCase.execute(serviceType: params.serviceType, amount: amount, saveAccount: hasAgreedToTerms) { [weak self] result in
             switch result {
             case .success(let request):
                 self?.routeSubject.onNext(.webView(.init(request: request)))

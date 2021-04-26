@@ -18,13 +18,13 @@ struct VisaNavigator {
 
     enum Destination {
         case webView(params: WebViewModelParams)
-        case addAccount
+        case addAccount(params: AddCardViewModelParams)
     }
 
     func navigate(to destination: Destination, animated: Bool) {
         switch destination {
         case .webView(let params): navigate2WebView(with: params, animated: animated)
-        case .addAccount: navigate2AddAccount(animated: animated)
+        case .addAccount(let params): navigate2AddAccount(with: params, animated: animated)
         }
     }
 
@@ -35,8 +35,8 @@ struct VisaNavigator {
         viewController?.navigationController?.present(navC, animated: animated, completion: nil)
     }
 
-    private func navigate2AddAccount(animated: Bool) {
-        let vc = addAccountFactory.make(params: .init())
+    private func navigate2AddAccount(with params: AddCardViewModelParams, animated: Bool) {
+        let vc = addAccountFactory.make(params: params)
         let navc = vc.wrapInNavWith(presentationStyle: .automatic)
         navc.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navc, animated: animated, completion: nil)

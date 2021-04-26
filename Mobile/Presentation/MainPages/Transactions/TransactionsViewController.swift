@@ -23,11 +23,6 @@ public class TransactionsViewController: ABViewController {
         generateAccessibilityIdentifiers()
     }
 
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setMainContainerSwipeEnabled(false)
-    }
-
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: TransactionsViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
@@ -44,7 +39,6 @@ public class TransactionsViewController: ABViewController {
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
         case .languageDidChange:
-            // TODO
             print("Handle language Change")
         case .reloadItems(let items, let insertionIndexPathes, let deletionIndexPathes):
             UIView.performWithoutAnimation {

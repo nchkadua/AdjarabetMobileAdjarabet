@@ -10,6 +10,7 @@ public class AccountParametersNavigator: Navigator {
     @Inject(from: .factories) public var selfSuspendViewControllerFactory: SelfSuspendViewControllerFactory
     @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
     @Inject(from: .factories) public var otpViewControllerFactory: OTPFactory
+    @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
     @Inject(from: .factories) public var securityLevelsViewControllerFactory: SecurityLevelsViewControllerFactory
     @Inject(from: .factories) public var accessHistoryViewControllerFactory: AccessHistoryViewControllerFactory
 
@@ -22,6 +23,7 @@ public class AccountParametersNavigator: Navigator {
     public enum Destination {
         case changePassword
         case highSecurity
+        case biometryAuthorization
         case blockSelf
         case loginHistory
         case securityLevels
@@ -33,6 +35,8 @@ public class AccountParametersNavigator: Navigator {
             navigateToPasswordChange(animate: animate)
         case .blockSelf:
             navigateToSelfSuspend(animate: animate)
+        case .biometryAuthorization:
+            navigateToBiometryAuthorization(animate: animate)
         case .loginHistory:
             navigateToAccessHistory(animate: animate)
         case .securityLevels:
@@ -49,12 +53,16 @@ public class AccountParametersNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 
-    // TODO: make private and call correctly through public 'navigate'
     public func navigateToHighSecurity(with params: OTPViewModelParams, animate: Bool) {
         let vc = otpViewControllerFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate)
+    }
+
+    private func navigateToBiometryAuthorization(animate: Bool) {
+        let vc = biometricSettingsViewControllerFactory.make()
+        viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 
     private func navigateToSelfSuspend(animate: Bool) {

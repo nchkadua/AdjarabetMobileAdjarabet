@@ -31,7 +31,7 @@ class AccountSecurityMessagesComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(.allCorners, radius: 10)
+        roundCorners(.allCorners, radius: 8)
     }
 
     public func setAndBind(viewModel: AccountSecurityMessagesComponentViewModel) {
@@ -76,10 +76,16 @@ extension AccountSecurityMessagesComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
-        titleLabel.setFont(to: .subHeadline(fontCase: .lower))
+
+        titleLabel.setFont(to: .body2(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
-        descriptionLabel.setFont(to: .caption2(fontCase: .lower))
+
+        descriptionLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         descriptionLabel.setTextColor(to: .secondaryText())
+
+        setParametersButton.titleLabel?.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
+        setParametersButton.setTitleColor(to: .systemBlue(), for: .normal)
+
         setParametersSwitch.onTintColor = DesignSystem.Color.primaryRedDark().value
         setParametersSwitch.tintColor = DesignSystem.Color.secondaryBg().value
     }

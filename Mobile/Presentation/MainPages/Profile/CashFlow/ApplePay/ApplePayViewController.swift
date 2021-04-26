@@ -116,7 +116,7 @@ public class ApplePayViewController: ABViewController {
     }
 
     private func updateApayButton(_ isEnabled: Bool) {
-        applePayButton.isEnabled = isEnabled
+        applePayButton.isUserInteractionEnabled = isEnabled
     }
 
     private func updateAmountInputeView(_ amountViewModel: SuggestedAmountComponentViewModel) {

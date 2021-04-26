@@ -45,18 +45,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyX-SK-35W" userLabel="Payments" customClass="PaymentMethodGridComponentView" customModule="Mobile" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="120" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Ar2-oh-AWe"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ar2-oh-AWe"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAH-Bt-LdT" userLabel="Child View">
-                                <rect key="frame" x="0.0" y="188" width="414" height="674"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="688"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tGB-mS-EvA">
-                                <rect key="frame" x="188.5" y="506.5" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="499.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
@@ -67,7 +67,7 @@
                             <constraint firstItem="cyX-SK-35W" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="2kj-X3-MhJ"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="JAH-Bt-LdT" secondAttribute="trailing" id="99c-vB-fgp"/>
                             <constraint firstItem="d6V-4K-ZeO" firstAttribute="trailing" secondItem="X69-Qe-4k7" secondAttribute="trailing" id="A5a-ej-bkT"/>
-                            <constraint firstItem="JAH-Bt-LdT" firstAttribute="top" secondItem="cyX-SK-35W" secondAttribute="bottom" constant="8" id="DCk-wu-KeY"/>
+                            <constraint firstItem="JAH-Bt-LdT" firstAttribute="top" secondItem="cyX-SK-35W" secondAttribute="bottom" constant="14" id="DCk-wu-KeY"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="X69-Qe-4k7" secondAttribute="trailing" constant="21" id="F5q-14-S1F"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="cyX-SK-35W" secondAttribute="trailing" id="Kxj-RC-f6x"/>
                             <constraint firstItem="cyX-SK-35W" firstAttribute="top" secondItem="PIl-zR-c9g" secondAttribute="bottom" constant="10" id="QVc-bv-AqM"/>

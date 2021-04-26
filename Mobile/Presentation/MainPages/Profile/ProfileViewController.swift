@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public class ProfileViewController: ABViewController {
+public class ProfileViewController: ABViewController, PageViewControllerProtocol {
     // MARK: Properties
     @Inject(from: .viewModels) public var viewModel: ProfileViewModel
     public lazy var navigator = ProfileNavigator(viewController: self)
@@ -28,9 +28,15 @@ public class ProfileViewController: ABViewController {
         generateAccessibilityIdentifiers()
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setMainContainerSwipeEnabled(true)
+//    public override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController
+//        vc?.setPageViewControllerSwipeEnabled(true)
+//    }
+//
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
     }
 
     // MARK: Bind to viewModel's observable properties

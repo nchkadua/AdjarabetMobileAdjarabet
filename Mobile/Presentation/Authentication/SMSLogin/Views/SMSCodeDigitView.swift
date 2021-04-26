@@ -29,8 +29,9 @@ public class SMSCodeDigitView: AppCircularView {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
         l.textAlignment = .center
-        l.setFont(to: .title3(fontCase: .upper, fontStyle: .semiBold))
+        l.setFont(to: .title2(fontCase: .upper, fontStyle: .bold))
         l.setTextColor(to: .primaryText())
+
         return l
     }()
 
@@ -46,11 +47,12 @@ public class SMSCodeDigitView: AppCircularView {
 
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        underline = underline()
+//        underline = underline()
     }
 
     fileprivate func initialize() {
         addSubview(label)
+
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         labelTopConstraint = label.topAnchor.constraint(equalTo: topAnchor, constant: 4)
         labelTopConstraint?.isActive = true
@@ -76,7 +78,7 @@ public class SMSCodeDigitView: AppCircularView {
             if hasText {
                 label.text = text
             }
-            setUnderlineColor(to: text == nil ? .primaryText(alpha: 0.3) : .primaryText())
+//            setUnderlineColor(to: text == nil ? .primaryText(alpha: 0.3) : .primaryText())
             layoutIfNeeded()
         }
 

@@ -48,16 +48,16 @@ public class HomeNavigator: Navigator {
             "6259": "7401", // Burning Hot 6 Reels
             "64": "7397",   // Blue Heart
             "73": "7398",   // Book of Magic
-         // "": "",         // Brilliant Dice // TODO: not-in: Excel, Game List
+         // "": "",         // Brilliant Dice // not-in: Excel, Game List
             "56": "7405",   // Circus Briliant
-         // "": "",         // Caramel Dice  // TODO: not-in: Excel, Game List
+         // "": "",         // Caramel Dice  // not-in: Excel, Game List
             "110": "7402",  // Caramel Hot
             "58": "7403",   // Casino Mania
             "89": "7409",   // Dice And Roll
-         // "": "",         // Egypt Dice    // TODO: not-in: Excel, Game List
+         // "": "",         // Egypt Dice    // not-in: Excel, Game List
             "83": "7417",   // Extremely Hot
             "1787": "7388", // 81 Wins
-            "6996": "9675", // Emperor's Palace // FIXME: 500 Server Error
+            "6996": "9675", // Emperor's Palace // 500 Server Error
             "84": "7415",   // Egypt sky
             "6458": "7386", // 50 Amazon's Battle
             "157": "7375",  // 40 Burning Hot
@@ -72,7 +72,7 @@ public class HomeNavigator: Navigator {
             "59": "7387",   // 50 Horses
             "573": "7378",  // 40 Lucky King
             "558": "7379",  // 40 Mega Clover
-         // "": "",         // 40 Super Dice  // TODO: not-in: Excel, Game List
+         // "": "",         // 40 Super Dice  // not-in: Excel, Game List
             "113": "7380",  // 40 Super Hot
             "61": "7432",   // Great Empire
             "96": "7476",   // The Great Egypt
@@ -84,7 +84,7 @@ public class HomeNavigator: Navigator {
             "60": "7434",   // Hot & Cash
             "111": "7363",  // 100 Super Hot
             "71": "7436",   // Inca Gold II
-            "6694": "9674", // Ice Valley // FIXME: 500 Server Error
+            "6694": "9674", // Ice Valley // 500 Server Error
             "70": "7441",   // Kashmir Gold
             "6969": "9411", // Knight's Heart
             "81": "7445",   // Lucky & Wild
@@ -92,14 +92,14 @@ public class HomeNavigator: Navigator {
             "78": "7449",   // Majestic Forest
             "93": "7453",   // More Lucky & Wild
             "101": "7448",  // Magellan
-            "7053": "9710", // Mythical Treasure // FIXME: 500 Server Error
+            "7053": "9710", // Mythical Treasure // 500 Server Error
             "85": "7455",   // Oil Company II
             "88": "7456",   // Olympus Glory
             "7030": "9412", // Pin Up Queens
             "74": "7457",   // Penguin Style
-            "109": "7458",  // Queen of Rio // FIXME: 404 on localhost
-            "7081": "9643", // Retro Cabaret // FIXME: 500 Server Error
-         // "": "",         // Royal Gardens // TODO: not-in: Excel, Game List
+            "109": "7458",  // Queen of Rio // 404 on localhost
+            "7081": "9643", // Retro Cabaret // 500 Server Error
+         // "": "",         // Royal Gardens // not-in: Excel, Game List
             "6633": "7459", // Rainbow Luck
             "65": "7463",   // Rise Of RA
             "68": "7465",   // Royal Secrets
@@ -116,13 +116,13 @@ public class HomeNavigator: Navigator {
             "580": "7366",  // 20 Dazzling Hot
             "67": "7367",   // 20 Diamonds
             "80": "7364",   // 2 Dragons
-         // "7137": "",     // 20 Golden Coins // TODO: not-in: Excel
+         // "7137": "",     // 20 Golden Coins // not-in: Excel
             "5095": "7368", // 20 Hot Blast
             "4807": "7369", // 20 Joker Reels
             "102": "7372",  // 30 Spicy Fruits
             "104": "7370",  // 20 Super Hot
             "370": "7478",  // The Story of Alexander
-         // "7117": "",     // The Story of Alexander 2  // TODO: not-in: Excel
+         // "7117": "",     // The Story of Alexander 2  // not-in: Excel
             "5056": "7371", // 27 Wins
             "75": "7479",   // The White Wolf
             "91": "7481",   // Ultimate Hot

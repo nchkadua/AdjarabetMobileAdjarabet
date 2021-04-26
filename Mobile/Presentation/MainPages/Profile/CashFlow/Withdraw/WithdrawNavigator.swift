@@ -9,6 +9,7 @@
 import UIKit
 
 class WithdrawNavigator {
+    private weak var parent: UIViewController?
     private weak var superview: UIView?
     @Inject(from: .factories) private var visaFactory: WithdrawVisaViewControllerFactory
 
@@ -16,7 +17,8 @@ class WithdrawNavigator {
     private lazy var visaVipViewController: UIViewController = { wrapped(visaFactory.make(with: .init(serviceType: .vip))) }()
     private lazy var visaRegularViewController: UIViewController = { wrapped(visaFactory.make(with: .init(serviceType: .regular))) }()
 
-    init(superview: UIView) {
+    init(parent: UIViewController, superview: UIView) {
+        self.parent = parent
         self.superview = superview
     }
 
@@ -33,11 +35,18 @@ class WithdrawNavigator {
     }
 
     private func navigate(to viewController: UIViewController) {
-        guard let superview = superview else { return }
+        guard let parent = parent,
+              let superview = superview
+        else { return }
+
+        parent.addChild(viewController)
+
         superview.removeAllSubViews() // clean superview before navigating
         superview.addSubview(viewController.view)
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
         viewController.view.pin(to: superview)
+
+        parent.didMove(toParent: parent)
     }
 
     private func wrapped(_ viewController: UIViewController) -> UINavigationController {

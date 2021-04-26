@@ -17,7 +17,8 @@ public class SMSCodeInputView: AppCircularView {
         s.distribution = .fillEqually
         s.axis = .horizontal
         s.alignment = .fill
-        s.spacing = 4
+        s.spacing = 0
+        s.setBackgorundColor(to: .thick())
         return s
     }()
 
@@ -31,9 +32,14 @@ public class SMSCodeInputView: AppCircularView {
         initialize()
     }
 
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        stackView.roundCorners(.allCorners, radius: 6)
+    }
+
     private func initialize() {
         addSubview(stackView)
-        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: -5).isActive = true
         stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

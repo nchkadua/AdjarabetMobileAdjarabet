@@ -30,7 +30,7 @@ struct UFCInitDepositDTO: DataTransferResponse {
     typealias Entity = UFCInitDepositEntity
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        if let code = body.code, code != 10 { return nil } // FIXME: 10 == Success
+        if let code = body.code, code != 10 { return nil } // FIXME: Success == 10
         return .init(session: body.rules.session)
     }
 }

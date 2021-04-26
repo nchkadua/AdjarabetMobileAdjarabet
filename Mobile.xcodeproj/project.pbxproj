@@ -150,11 +150,10 @@
 		8950EAD5C7E0DA82418E8473 /* Pods_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */; };
 		A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D803F42724A251C700A16CB2 /* Pods_Mobile.framework */; };
 		C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */; };
-		C701C60525C00AB200B059A6 /* PaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */; };
 		C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */; };
 		C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */; };
-		C701C71625C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */; };
-		C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */; };
+		C701C71625C051AC00B059A6 /* CoreApiPaymentAccountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71525C051AC00B059A6 /* CoreApiPaymentAccountDTO.swift */; };
+		C701C71A25C051C400B059A6 /* CoreApiPaymentAccountCountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71925C051C400B059A6 /* CoreApiPaymentAccountCountDTO.swift */; };
 		C701C71F25C0597400B059A6 /* PaymentAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */; };
 		C701C72725C06C0600B059A6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701C72625C06C0600B059A6 /* Status.swift */; };
 		C7023EE7261F772E00C0980F /* WithdrawPaymentListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7023EE6261F772E00C0980F /* WithdrawPaymentListUseCase.swift */; };
@@ -178,7 +177,7 @@
 		C721EA5A259C9D9700F7C624 /* HttpRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */; };
 		C728C274261BA038004D3F2F /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728C273261BA038004D3F2F /* AddAccountView.swift */; };
 		C728C278261BA04C004D3F2F /* AddAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C728C277261BA04C004D3F2F /* AddAccountView.xib */; };
-		C72EA8E425C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */; };
+		C72E6A98263226850012DA0B /* WebApiPaymentAccountDeleteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E6A97263226850012DA0B /* WebApiPaymentAccountDeleteDTO.swift */; };
 		C72FA73D2600BBE100A9C493 /* UFCDepositUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */; };
 		C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */; };
 		C7405182256FA99A00EAC904 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7405181256FA99A00EAC904 /* Formatter.swift */; };
@@ -285,6 +284,13 @@
 		C77206E125DAB0B50037D8A0 /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = C77206E025DAB0B50037D8A0 /* ca.der */; };
 		C77206E525DAB0BF0037D8A0 /* localhost.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C77206E425DAB0BF0037D8A0 /* localhost.p12 */; };
 		C78FD442260A675D004E766E /* AmountFormatterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78FD441260A675D004E766E /* AmountFormatterUseCase.swift */; };
+		C794D4202631F7940028393A /* WebApiPaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */; };
+		C794D4282631FB690028393A /* WebApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D4272631FB690028393A /* WebApiRepository.swift */; };
+		C794D4302631FBE50028393A /* WebApiRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D42F2631FBE50028393A /* WebApiRequestBuilder.swift */; };
+		C794D436263206830028393A /* WebApiPaymentAccountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */; };
+		C7A517B42631EB1600933DF8 /* PaymentAccountPagingableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */; };
+		C7A517BB2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */; };
+		C7A517C12631EB7800933DF8 /* PaymentAccountDeletableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */; };
 		C7B0DCEE2575591100714B22 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0DCED2575591100714B22 /* Country.swift */; };
 		C7BABFCB256579A2004E733E /* P2PTransferNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */; };
 		C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */; };
@@ -332,7 +338,7 @@
 		C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */; };
 		C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */; };
 		C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */; };
-		C7F5477325DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */; };
+		C7F5477325DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F5477225DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift */; };
 		C7FAA3B22600C04A00265995 /* UFCInitDepositEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3B12600C04A00265995 /* UFCInitDepositEntity.swift */; };
 		C7FAA3B62600C06100265995 /* UFCInitDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3B52600C06100265995 /* UFCInitDepositDTO.swift */; };
 		C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3BD2600C26F00265995 /* UFCDepositDTO.swift */; };
@@ -355,8 +361,6 @@
 		CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */; };
 		CE0D8E8C2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */; };
 		CE0D8E92262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */; };
-		CE0F14B0254EE0E300ADD999 /* WithdrawInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */; };
-		CE0F14B4254EE0EA00ADD999 /* WithdrawInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
 		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
@@ -396,7 +400,6 @@
 		CE4A314926172BF50039C078 /* NotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A314826172BF50039C078 /* NotificationsRepository.swift */; };
 		CE4A31502617320F0039C078 /* NotificationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A314F2617320F0039C078 /* NotificationsUseCase.swift */; };
 		CE4A3155261732920039C078 /* NotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A3154261732920039C078 /* NotificationDTO.swift */; };
-		CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */; };
 		CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF525265CDA003E168F /* ProfileNavigator.swift */; };
 		CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF625265CDA003E168F /* ProfileViewController.swift */; };
 		CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55ECF725265CDA003E168F /* ProfileViewModel.swift */; };
@@ -543,6 +546,7 @@
 		CECF7F7B256D9FAB001C0E50 /* PasswordChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */; };
 		CECF7F80256DAD9E001C0E50 /* PasswordChangeRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F7F256DAD9E001C0E50 /* PasswordChangeRulesView.swift */; };
 		CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */; };
+		CED829122633330D00D99CAC /* TestPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED829112633330D00D99CAC /* TestPageVC.swift */; };
 		CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E09F254869F200949417 /* AppSessionProvider.swift */; };
 		CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3925349C330033BF93 /* NotificationComponentView.swift */; };
 		CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */; };
@@ -895,11 +899,10 @@
 		B6FF2CCD6599E10DC8E0401F /* Pods-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		BC382ED931DD96B48C62AD1D /* Pods-Mobile.release-stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-stage.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-stage.xcconfig"; sourceTree = "<group>"; };
 		C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPaymentAccountRepository.swift; sourceTree = "<group>"; };
-		C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountRepository.swift; sourceTree = "<group>"; };
 		C701C60825C00CAE00B059A6 /* PaymentAccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountEntity.swift; sourceTree = "<group>"; };
 		C701C6E925C04FDC00B059A6 /* PaymentAccountCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCount.swift; sourceTree = "<group>"; };
-		C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDataTransferResponse.swift; sourceTree = "<group>"; };
-		C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountCountDataTransferResponse.swift; sourceTree = "<group>"; };
+		C701C71525C051AC00B059A6 /* CoreApiPaymentAccountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPaymentAccountDTO.swift; sourceTree = "<group>"; };
+		C701C71925C051C400B059A6 /* CoreApiPaymentAccountCountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPaymentAccountCountDTO.swift; sourceTree = "<group>"; };
 		C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCase.swift; sourceTree = "<group>"; };
 		C701C72625C06C0600B059A6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C7023EE6261F772E00C0980F /* WithdrawPaymentListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawPaymentListUseCase.swift; sourceTree = "<group>"; };
@@ -922,7 +925,7 @@
 		C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilderTests.swift; sourceTree = "<group>"; };
 		C728C273261BA038004D3F2F /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 		C728C277261BA04C004D3F2F /* AddAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountView.xib; sourceTree = "<group>"; };
-		C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountUseCaseTests.swift; sourceTree = "<group>"; };
+		C72E6A97263226850012DA0B /* WebApiPaymentAccountDeleteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountDeleteDTO.swift; sourceTree = "<group>"; };
 		C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositUseCase.swift; sourceTree = "<group>"; };
 		C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawUseCase.swift; sourceTree = "<group>"; };
 		C7405181256FA99A00EAC904 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
@@ -1029,6 +1032,13 @@
 		C77206E025DAB0B50037D8A0 /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
 		C77206E425DAB0BF0037D8A0 /* localhost.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = localhost.p12; sourceTree = "<group>"; };
 		C78FD441260A675D004E766E /* AmountFormatterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatterUseCase.swift; sourceTree = "<group>"; };
+		C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountRepository.swift; sourceTree = "<group>"; };
+		C794D4272631FB690028393A /* WebApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiRepository.swift; sourceTree = "<group>"; };
+		C794D42F2631FBE50028393A /* WebApiRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiRequestBuilder.swift; sourceTree = "<group>"; };
+		C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountDTO.swift; sourceTree = "<group>"; };
+		C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountPagingableRepository.swift; sourceTree = "<group>"; };
+		C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountFilterableRepository.swift; sourceTree = "<group>"; };
+		C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDeletableRepository.swift; sourceTree = "<group>"; };
 		C7B0DCED2575591100714B22 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		C7BABFC8256579A2004E733E /* P2PTransferNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferNavigator.swift; sourceTree = "<group>"; };
 		C7BABFC9256579A2004E733E /* P2PTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PTransferViewController.swift; sourceTree = "<group>"; };
@@ -1076,7 +1086,7 @@
 		C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEntity.swift; sourceTree = "<group>"; };
 		C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDataTransferResponse.swift; sourceTree = "<group>"; };
-		C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDeleteDataTransferResponse.swift; sourceTree = "<group>"; };
+		C7F5477225DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPaymentAccountDeleteDTO.swift; sourceTree = "<group>"; };
 		C7FAA3B12600C04A00265995 /* UFCInitDepositEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCInitDepositEntity.swift; sourceTree = "<group>"; };
 		C7FAA3B52600C06100265995 /* UFCInitDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCInitDepositDTO.swift; sourceTree = "<group>"; };
 		C7FAA3BD2600C26F00265995 /* UFCDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositDTO.swift; sourceTree = "<group>"; };
@@ -1099,8 +1109,6 @@
 		CE0818DE2539A47C00AD3B3B /* NotificationsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButton.swift; sourceTree = "<group>"; };
 		CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStatusUpdateMessageEntity.swift; sourceTree = "<group>"; };
 		CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStatusUpdateMessageDTO.swift; sourceTree = "<group>"; };
-		CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawInstructionView.xib; sourceTree = "<group>"; };
-		CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInstructionView.swift; sourceTree = "<group>"; };
 		CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoComponentView.swift; sourceTree = "<group>"; };
 		CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoComponentView.xib; sourceTree = "<group>"; };
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
@@ -1140,7 +1148,6 @@
 		CE4A314826172BF50039C078 /* NotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepository.swift; sourceTree = "<group>"; };
 		CE4A314F2617320F0039C078 /* NotificationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUseCase.swift; sourceTree = "<group>"; };
 		CE4A3154261732920039C078 /* NotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDTO.swift; sourceTree = "<group>"; };
-		CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBCRegularPaymentsRepository.swift; sourceTree = "<group>"; };
 		CE55ECF525265CDA003E168F /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
 		CE55ECF625265CDA003E168F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CE55ECF725265CDA003E168F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -1287,6 +1294,7 @@
 		CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordChange.storyboard; sourceTree = "<group>"; };
 		CECF7F7F256DAD9E001C0E50 /* PasswordChangeRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeRulesView.swift; sourceTree = "<group>"; };
 		CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordChangeRulesView.xib; sourceTree = "<group>"; };
+		CED829112633330D00D99CAC /* TestPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPageVC.swift; sourceTree = "<group>"; };
 		CEE0E09F254869F200949417 /* AppSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionProvider.swift; sourceTree = "<group>"; };
 		CEE15C3925349C330033BF93 /* NotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentView.swift; sourceTree = "<group>"; };
 		CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentViewModel.swift; sourceTree = "<group>"; };
@@ -1813,7 +1821,6 @@
 			isa = PBXGroup;
 			children = (
 				7690D6B225BFFBCE002A257A /* DisplayAccessListUseCaseTests.swift */,
-				C72EA8E325C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -2017,31 +2024,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C701C5F825C0097600B059A6 /* Payment Account Management */ = {
-			isa = PBXGroup;
-			children = (
-				C701C5FB25C0098E00B059A6 /* Payment Account Operations */,
-			);
-			path = "Payment Account Management";
-			sourceTree = "<group>";
-		};
-		C701C5FB25C0098E00B059A6 /* Payment Account Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C701C5FC25C009C900B059A6 /* Payment Account */,
-			);
-			path = "Payment Account Operations";
-			sourceTree = "<group>";
-		};
-		C701C5FC25C009C900B059A6 /* Payment Account */ = {
-			isa = PBXGroup;
-			children = (
-				C701C71425C0517000B059A6 /* Responses */,
-				C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */,
-			);
-			path = "Payment Account";
-			sourceTree = "<group>";
-		};
 		C701C60125C00A7700B059A6 /* Payment Account Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -2053,18 +2035,18 @@
 		C701C60225C00A8A00B059A6 /* Payment Account Operations */ = {
 			isa = PBXGroup;
 			children = (
-				C701C60325C00A9D00B059A6 /* Payment Account */,
+				C701C60325C00A9D00B059A6 /* Payment Account Repository */,
 			);
 			path = "Payment Account Operations";
 			sourceTree = "<group>";
 		};
-		C701C60325C00A9D00B059A6 /* Payment Account */ = {
+		C701C60325C00A9D00B059A6 /* Payment Account Repository */ = {
 			isa = PBXGroup;
 			children = (
-				C701C6EF25C0500700B059A6 /* Entities */,
-				C701C60425C00AB200B059A6 /* PaymentAccountRepository.swift */,
+				C7A5179A2631E4F700933DF8 /* Protocol */,
+				C7A5179F2631E51600933DF8 /* Implementation */,
 			);
-			path = "Payment Account";
+			path = "Payment Account Repository";
 			sourceTree = "<group>";
 		};
 		C701C6EF25C0500700B059A6 /* Entities */ = {
@@ -2076,22 +2058,22 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		C701C71425C0517000B059A6 /* Responses */ = {
+		C701C71425C0517000B059A6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				C701C71525C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift */,
-				C701C71925C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift */,
-				C7F5477225DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift */,
+				C701C71525C051AC00B059A6 /* CoreApiPaymentAccountDTO.swift */,
+				C701C71925C051C400B059A6 /* CoreApiPaymentAccountCountDTO.swift */,
+				C7F5477225DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift */,
 			);
-			path = Responses;
+			path = Entities;
 			sourceTree = "<group>";
 		};
-		C701C71D25C0595000B059A6 /* PaymentAccounts */ = {
+		C701C71D25C0595000B059A6 /* Payment Accounts */ = {
 			isa = PBXGroup;
 			children = (
 				C701C71E25C0597400B059A6 /* PaymentAccountUseCase.swift */,
 			);
-			path = PaymentAccounts;
+			path = "Payment Accounts";
 			sourceTree = "<group>";
 		};
 		C7023EE5261F770500C0980F /* Use Cases */ = {
@@ -2352,6 +2334,24 @@
 				C78FD441260A675D004E766E /* AmountFormatterUseCase.swift */,
 			);
 			path = "Amount Formatter";
+			sourceTree = "<group>";
+		};
+		C794D4232631F7A10028393A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */,
+				C72E6A97263226850012DA0B /* WebApiPaymentAccountDeleteDTO.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C794D4262631FB340028393A /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				C794D42F2631FBE50028393A /* WebApiRequestBuilder.swift */,
+				C794D4272631FB690028393A /* WebApiRepository.swift */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		C7991273259BA3A300F64676 /* User Activity History & Transaction Management */ = {
@@ -2615,6 +2615,44 @@
 			path = "User Info";
 			sourceTree = "<group>";
 		};
+		C7A5179A2631E4F700933DF8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C701C6EF25C0500700B059A6 /* Entities */,
+				C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */,
+				C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */,
+				C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C7A5179F2631E51600933DF8 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				C7A517A02631E53000933DF8 /* Core */,
+				C7A517A12631E53600933DF8 /* Web */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		C7A517A02631E53000933DF8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C701C71425C0517000B059A6 /* Entities */,
+				C701C5FD25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7A517A12631E53600933DF8 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				C794D4232631F7A10028393A /* Entities */,
+				C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
 		C7BABFC725657966004E733E /* P2PTransfer */ = {
 			isa = PBXGroup;
 			children = (
@@ -2820,6 +2858,7 @@
 			children = (
 				C7EF9E46256FECDD00D2908C /* Core */,
 				C7D86F0E259A05640021CF1C /* Mobile */,
+				C794D4262631FB340028393A /* Web */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -2840,7 +2879,6 @@
 				C7EF9E47256FED2600D2908C /* User Profile Management */,
 				C7991273259BA3A300F64676 /* User Activity History & Transaction Management */,
 				C709D7FF259B902D0079E942 /* Balance Management */,
-				C701C5F825C0097600B059A6 /* Payment Account Management */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2904,7 +2942,6 @@
 			children = (
 				C72FA74C2600BD3B00A9C493 /* Entities & DTOs */,
 				C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */,
-				CE53C22E25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift */,
 			);
 			path = "Repository & Entities";
 			sourceTree = "<group>";
@@ -2965,15 +3002,6 @@
 				CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */,
 			);
 			path = Status;
-			sourceTree = "<group>";
-		};
-		CE0F14AE254EE09B00ADD999 /* Instruction */ = {
-			isa = PBXGroup;
-			children = (
-				CE0F14B3254EE0EA00ADD999 /* WithdrawInstructionView.swift */,
-				CE0F14AF254EE0E300ADD999 /* WithdrawInstructionView.xib */,
-			);
-			path = Instruction;
 			sourceTree = "<group>";
 		};
 		CE0FF92325F109F900C18F9C /* UFC */ = {
@@ -4207,6 +4235,7 @@
 				D815850D24B0C81800FFCA95 /* LoaderViewController.swift */,
 				D8CFDA8B2530E311002002BC /* ABTableViewController.swift */,
 				CEF3686F2549C39D009FD456 /* ABPageViewController.swift */,
+				CED829112633330D00D99CAC /* TestPageVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -4217,7 +4246,7 @@
 				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
 				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
-				C701C71D25C0595000B059A6 /* PaymentAccounts */,
+				C701C71D25C0595000B059A6 /* Payment Accounts */,
 				C78FD440260A672C004E766E /* Amount Formatter */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
@@ -5109,7 +5138,6 @@
 				D896E48825251E1500C02B39 /* Injectable.swift in Sources */,
 				7690D6BC25C0021F002A257A /* Seeds.swift in Sources */,
 				C721EA5A259C9D9700F7C624 /* HttpRequestBuilderTests.swift in Sources */,
-				C72EA8E425C2ACC600B013B7 /* PaymentAccountUseCaseTests.swift in Sources */,
 				D8AB806E246014EA001C4E8A /* UserSessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5132,7 +5160,6 @@
 				C754318325F5606D00E485DD /* PaymentListEntities.swift in Sources */,
 				D85C9C1B24336C7100F1D4FE /* BiometryAuthentication.swift in Sources */,
 				D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */,
-				C701C60525C00AB200B059A6 /* PaymentAccountRepository.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
 				CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */,
 				7640C85325E3994B006D7100 /* HomeBannerComponentViewModel.swift in Sources */,
@@ -5152,6 +5179,7 @@
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				C707548925F396130033050E /* PaymentListUseCase.swift in Sources */,
 				C7E3F15D261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift in Sources */,
+				CED829122633330D00D99CAC /* TestPageVC.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
 				C7FAA3C22600C28600265995 /* UFCDepositEntity.swift in Sources */,
 				CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */,
@@ -5176,7 +5204,7 @@
 				76DCF6B225B8262300150EE1 /* MyCardComponentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
-				C701C71A25C051C400B059A6 /* PaymentAccountCountDataTransferResponse.swift in Sources */,
+				C701C71A25C051C400B059A6 /* CoreApiPaymentAccountCountDTO.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
 				CE4A30D72611E5420039C078 /* SuggestedAmountComponentView.swift in Sources */,
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
@@ -5190,6 +5218,7 @@
 				C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				CE4A314926172BF50039C078 /* NotificationsRepository.swift in Sources */,
+				C7A517BB2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift in Sources */,
 				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
 				CE64EA7E25D1695400438974 /* GameViewModel.swift in Sources */,
 				CE679FE02578334B00F2EC1C /* AddCardViewModel.swift in Sources */,
@@ -5208,6 +5237,7 @@
 				7682CF9425B8581600717090 /* AddMyCardComponentView.swift in Sources */,
 				7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
+				C794D4202631F7940028393A /* WebApiPaymentAccountRepository.swift in Sources */,
 				C71B4B74257EC57000538697 /* SecurityLevelsViewControllerFactory.swift in Sources */,
 				7644B6002563E201006778B2 /* DateHeaderCell.swift in Sources */,
 				C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */,
@@ -5330,7 +5360,6 @@
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,
-				CE53C22F25F0DEA80030FB77 /* TBCRegularPaymentsRepository.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				CE64EAAB25DD466D00438974 /* LogoutUseCase.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
@@ -5350,6 +5379,7 @@
 				CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */,
 				CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */,
 				CE03747225F8D7180061F507 /* WebViewModel.swift in Sources */,
+				C72E6A98263226850012DA0B /* WebApiPaymentAccountDeleteDTO.swift in Sources */,
 				76E43EDF25B95303007B2D97 /* VideoCardComponentView.swift in Sources */,
 				76EBDB3C257E417D00C8DC6A /* AccessListRepository.swift in Sources */,
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
@@ -5401,9 +5431,11 @@
 				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				C70754E325F3B84F0033050E /* PostLoginRepository.swift in Sources */,
-				C7F5477325DE9E5B00BE04EF /* PaymentAccountDeleteDataTransferResponse.swift in Sources */,
+				C7F5477325DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */,
 				C7BABFCC256579A2004E733E /* P2PTransferViewController.swift in Sources */,
+				C7A517C12631EB7800933DF8 /* PaymentAccountDeletableRepository.swift in Sources */,
+				C794D4302631FBE50028393A /* WebApiRequestBuilder.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
 				76E43EDC25B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift in Sources */,
 				C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */,
@@ -5414,6 +5446,7 @@
 				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
 				7668C7AD2576785F0024DDE4 /* AccountParametersHeaderComponentView.swift in Sources */,
 				CEA2CC7D2626E28500F27A45 /* UserIdButton.swift in Sources */,
+				C794D4282631FB690028393A /* WebApiRepository.swift in Sources */,
 				CE03747025F8D7180061F507 /* WebViewController.swift in Sources */,
 				CEBB00832609D3F900D1B510 /* EmoneyViewControllerFactory.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
@@ -5457,7 +5490,7 @@
 				76BDF47025760512007B27A7 /* AccountParametersComponentView.swift in Sources */,
 				D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */,
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
-				C701C71625C051AC00B059A6 /* PaymentAccountDataTransferResponse.swift in Sources */,
+				C701C71625C051AC00B059A6 /* CoreApiPaymentAccountDTO.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */,
 				CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */,
@@ -5550,6 +5583,7 @@
 				7640C85125E3994B006D7100 /* HomeBannerCollectionViewCellDataProvider.swift in Sources */,
 				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
+				C7A517B42631EB1600933DF8 /* PaymentAccountPagingableRepository.swift in Sources */,
 				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
 				CE64EA7D25D1695400438974 /* GameViewControllerFactory.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
@@ -5562,6 +5596,7 @@
 				CE2F03C3252CC8E0006D8001 /* QuickActionComponentView.swift in Sources */,
 				76EBDB3B257E417D00C8DC6A /* GetAccessListResponse.swift in Sources */,
 				D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */,
+				C794D436263206830028393A /* WebApiPaymentAccountDTO.swift in Sources */,
 				76EFF7C42582383000898819 /* AccessHistoryCalendarNavigator.swift in Sources */,
 				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,
 				C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */,

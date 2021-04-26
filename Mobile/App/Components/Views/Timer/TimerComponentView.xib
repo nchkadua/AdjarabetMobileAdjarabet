@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimerComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
+                <outlet property="resendButton" destination="TZd-uA-ABD" id="nVM-bF-7CA"/>
+                <outlet property="resendButtonConstraint" destination="Bql-bG-29H" id="IZd-I0-Fzz"/>
                 <outlet property="secondsLabel" destination="lVJ-EA-m2p" id="aHV-rh-k55"/>
                 <outlet property="timeLabel" destination="ff3-EJ-13e" id="Ir2-eF-0da"/>
-                <outlet property="titleLabel" destination="JdV-01-8qA" id="QG9-SJ-kEo"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Q9x-S9-ihI"/>
             </connections>
         </placeholder>
@@ -21,23 +22,25 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="ხელახლა გაგზავნა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdV-01-8qA">
-                    <rect key="frame" x="0.0" y="0.0" width="106" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-EA-m2p">
-                    <rect key="frame" x="127" y="0.0" width="287" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-EJ-13e">
-                    <rect key="frame" x="112" y="0.0" width="15" height="16"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZd-uA-ABD">
+                    <rect key="frame" x="49" y="0.0" width="158" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="15" id="h2s-El-HLU"/>
+                        <constraint firstAttribute="width" constant="158" id="im5-xw-DDB"/>
                     </constraints>
+                    <state key="normal" title="Resend"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-EJ-13e">
+                    <rect key="frame" x="218" y="0.0" width="20" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="MF7-NF-294"/>
+                        <constraint firstAttribute="height" constant="16" id="icZ-Jx-0H2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-EA-m2p">
+                    <rect key="frame" x="240" y="0.0" width="44.5" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -46,19 +49,18 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="lVJ-EA-m2p" firstAttribute="leading" secondItem="ff3-EJ-13e" secondAttribute="trailing" id="1cU-Jb-jey"/>
-                <constraint firstItem="ff3-EJ-13e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8eV-Hf-gDv"/>
-                <constraint firstAttribute="trailing" secondItem="lVJ-EA-m2p" secondAttribute="trailing" id="FMR-FP-1lp"/>
-                <constraint firstItem="JdV-01-8qA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bl4-rf-UVJ"/>
-                <constraint firstItem="ff3-EJ-13e" firstAttribute="leading" secondItem="JdV-01-8qA" secondAttribute="trailing" constant="6" id="cKR-PQ-fre"/>
-                <constraint firstItem="lVJ-EA-m2p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dcT-0h-qQv"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ff3-EJ-13e" secondAttribute="bottom" id="o6Z-xx-SlM"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="lVJ-EA-m2p" secondAttribute="bottom" id="pPH-o1-FLy"/>
-                <constraint firstItem="JdV-01-8qA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rey-uw-Dm7"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JdV-01-8qA" secondAttribute="bottom" id="zRd-FK-dqc"/>
+                <constraint firstAttribute="bottom" secondItem="lVJ-EA-m2p" secondAttribute="bottom" id="2Dc-TP-JLK"/>
+                <constraint firstItem="TZd-uA-ABD" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="-79" id="Bql-bG-29H"/>
+                <constraint firstAttribute="bottom" secondItem="TZd-uA-ABD" secondAttribute="bottom" id="DvE-t6-nQS"/>
+                <constraint firstItem="ff3-EJ-13e" firstAttribute="leading" secondItem="TZd-uA-ABD" secondAttribute="trailing" constant="11" id="JL3-f1-cFm"/>
+                <constraint firstItem="ff3-EJ-13e" firstAttribute="centerY" secondItem="TZd-uA-ABD" secondAttribute="centerY" id="NbX-WZ-bD4"/>
+                <constraint firstItem="lVJ-EA-m2p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SYv-k0-K35"/>
+                <constraint firstItem="lVJ-EA-m2p" firstAttribute="centerY" secondItem="ff3-EJ-13e" secondAttribute="centerY" id="YoB-fa-WZs"/>
+                <constraint firstItem="lVJ-EA-m2p" firstAttribute="leading" secondItem="ff3-EJ-13e" secondAttribute="trailing" constant="2" id="bUV-9v-F3C"/>
+                <constraint firstItem="TZd-uA-ABD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xhQ-SR-woV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-196" y="100"/>
+            <point key="canvasLocation" x="-197.10144927536234" y="99.776785714285708"/>
         </view>
     </objects>
 </document>

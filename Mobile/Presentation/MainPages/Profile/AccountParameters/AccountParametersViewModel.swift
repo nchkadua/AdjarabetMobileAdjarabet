@@ -40,6 +40,7 @@ public class DefaultAccountParametersViewModel: DefaultBaseViewModel {
     public var params: AccountParametersViewModelParams
     private let actionSubject = PublishSubject<AccountParametersViewModelOutputAction>()
     private let routeSubject = PublishSubject<AccountParametersViewModelRoute>()
+    @Inject private var biometryInfoService: BiometricAuthentication
 
     public init(params: AccountParametersViewModelParams) {
         self.params = params
@@ -62,10 +63,14 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
     private func setupAccountParamters() {
         var dataProvider: AppCellDataProviders = []
         var componentViewModel: AppCellDataProvider?
+
+        params.accountParametersModel.biometryIcon = biometryQuickActionIcon()
         params.accountParametersModel.dataSource.forEach {
             if let accountParameterModel = $0 as? AccountParameter {
                 componentViewModel = DefaultAccountParametersComponentViewModel(params: .init(title: accountParameterModel.title,
-                                                                                              icon: accountParameterModel.icon))
+                                                                                              icon: accountParameterModel.icon,
+                                                                                              corners: accountParameterModel.roundedCorners,
+                                                                                              hideSeparator: accountParameterModel.hidesSeparator))
                 if let defaultViewModel = componentViewModel as? DefaultAccountParametersComponentViewModel {
                     defaultViewModel.action.subscribe(onNext: { [weak self] action in
                         switch action {
@@ -74,7 +79,7 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                         default:
                             break
                         }
-                    })
+                    }).disposed(by: disposeBag)
                 }
             } else if let accountParameterMessagesModel = $0 as? AccountParameterMessages {
                 let viewModel = DefaultAccountSecurityMessagesComponentViewModel(params: .init(title: accountParameterMessagesModel.title,
@@ -96,13 +101,14 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
             dataProvider.append(componentViewModel!)
         }
 
-        // TODO subscribe to switch toggle
         actionSubject.onNext(.initialize(dataProvider.makeList()))
     }
 
     private func createAccountParameterComponentViewModel(params: AccountParameter) -> AccountParametersComponentViewModel {
         DefaultAccountParametersComponentViewModel(params: .init(title: params.title,
-                                                                 icon: params.icon))
+                                                                 icon: params.icon,
+                                                                 corners: params.roundedCorners,
+                                                                 hideSeparator: params.hidesSeparator))
     }
 
     // MARK: Routing
@@ -145,5 +151,16 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
     }
 
     private func handleInvalidOTP() {
+    }
+
+    private func biometryQuickActionIcon() -> UIImage {
+        let icon: UIImage
+        switch biometryInfoService.biometryType {
+        case .touchID:  icon = R.image.accountParameters.touch_id()!
+        case .faceID:   icon = R.image.accountParameters.face_id()!
+        default:        icon = R.image.accountParameters.touch_id()!
+        }
+
+        return icon
     }
 }

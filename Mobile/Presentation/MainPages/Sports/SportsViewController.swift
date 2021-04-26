@@ -16,11 +16,6 @@ public class SportsViewController: ABViewController {
         setup()
     }
 
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setMainContainerSwipeEnabled(false)
-    }
-
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor()
