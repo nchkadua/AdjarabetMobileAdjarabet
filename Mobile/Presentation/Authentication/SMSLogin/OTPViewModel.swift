@@ -21,12 +21,14 @@ public struct OTPViewModelParams {
     public let buttonTitle: String
     public let showDismissButton: Bool
     public let username: String
+    public let getOtp: Bool
 
-    public init(vcTitle: String = "", buttonTitle: String = "", showDismissButton: Bool = true, username: String = "") {
+    public init(vcTitle: String = "", buttonTitle: String = "", showDismissButton: Bool = true, username: String = "", getOtp: Bool = true) {
         self.vcTitle = vcTitle
         self.buttonTitle = buttonTitle
         self.showDismissButton = showDismissButton
         self.username = username
+        self.getOtp = getOtp
     }
 }
 
@@ -88,7 +90,9 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionSubject.onNext(.setButtonTitle(params.buttonTitle))
         actionSubject.onNext(.setSMSInputViewNumberOfItems(smsCodeLength))
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
-//        getOTP()
+
+        guard params.getOtp else { return }
+        getOTP()
     }
 
     public func didBindToTimer() {

@@ -78,15 +78,8 @@ public class DefaultLoginViewModel {
     }
 
     private func openOTP(_ username: String) {
-        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username)
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username, getOtp: false)
         routeSubject.onNext(.openOTP(params: otpParams))
-        subscribeTo(otpParams)
-    }
-
-    private func subscribeTo(_ params: OTPViewModelParams) {
-        params.paramsOutputAction.subscribe(onNext: { [weak self] action in
-            self?.didRecive(action: action)
-        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: OTPViewModelParams.Action) {
