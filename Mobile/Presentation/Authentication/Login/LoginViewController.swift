@@ -133,6 +133,7 @@ public class LoginViewController: ABViewController {
         loginButton.setStyle(to: .primary(state: .active, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTouchExit), for: .touchDragExit)
         loginButton.roundCorners(.allCorners, radius: 41)
 //        updateLoginButton(isEnabled: false)
 
@@ -208,6 +209,10 @@ public class LoginViewController: ABViewController {
             guard self?.loginButton.isUserInteractionEnabled == true else {return}
             self?.loginDidTap()
         }
+    }
+
+    @objc private func loginButtonTouchExit() {
+        loginButton.setStyle(to: .primary(state: .active, size: .large))
     }
 
     private func setDelegates() {
