@@ -65,7 +65,6 @@ extension DefaultApplePayViewModel: ApplePayViewModel {
     }
 
     private func fetchLimits() {
-        // TODO: Change with real data later
         let min = amountFormatter.format(number: 1, in: .sn)
         let disposable = amountFormatter.format(number: 10000, in: .sn)
         let max = amountFormatter.format(number: 50000, in: .sn)

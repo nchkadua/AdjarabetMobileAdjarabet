@@ -15,6 +15,7 @@ public class AccountSecurityMessagesTableViewCell: AppTableViewCell {
             guard let dataProvider = dataProvider as? AccountSecurityMessagesTableViewCellDataProvider else {
                 fatalError("error")
             }
+            setBackgorundColor(to: .secondaryBg())
             componentView.setAndBind(viewModel: dataProvider)
         }
     }
