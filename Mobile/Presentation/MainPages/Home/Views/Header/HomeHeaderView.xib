@@ -24,17 +24,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="384" height="110"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urh-jy-uRc" userLabel="Balance" customClass="BalanceProfileButton" customModule="Mobile" customModuleProvider="target">
-                            <rect key="frame" x="336" y="18" width="30" height="30"/>
+                            <rect key="frame" x="336" y="15" width="30" height="30"/>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login/logo" translatesAutoresizingMaskIntoConstraints="NO" id="tAd-ZC-ajJ" userLabel="Logo">
-                            <rect key="frame" x="18" y="23.5" width="155" height="19"/>
+                            <rect key="frame" x="18" y="20.5" width="155" height="19"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="155" id="de7-Zh-1Xl"/>
                                 <constraint firstAttribute="height" constant="19" id="gMs-oR-OF7"/>
                             </constraints>
                         </imageView>
                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="mIt-Do-M88">
-                            <rect key="frame" x="0.0" y="50" width="384" height="56"/>
+                            <rect key="frame" x="4" y="48" width="376" height="56"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                     </subviews>
@@ -42,11 +42,11 @@
                     <constraints>
                         <constraint firstItem="tAd-ZC-ajJ" firstAttribute="centerY" secondItem="Urh-jy-uRc" secondAttribute="centerY" id="TBZ-OX-1FR"/>
                         <constraint firstItem="tAd-ZC-ajJ" firstAttribute="leading" secondItem="Edu-gI-faY" secondAttribute="leading" constant="18" id="VXA-b0-y4R"/>
-                        <constraint firstAttribute="trailing" secondItem="mIt-Do-M88" secondAttribute="trailing" id="W0S-ch-eA2"/>
-                        <constraint firstItem="mIt-Do-M88" firstAttribute="leading" secondItem="Edu-gI-faY" secondAttribute="leading" id="WGM-iA-wJu"/>
-                        <constraint firstAttribute="bottom" secondItem="mIt-Do-M88" secondAttribute="bottom" constant="4" id="pP5-os-3i5"/>
+                        <constraint firstAttribute="trailing" secondItem="mIt-Do-M88" secondAttribute="trailing" constant="4" id="W0S-ch-eA2"/>
+                        <constraint firstItem="mIt-Do-M88" firstAttribute="leading" secondItem="Edu-gI-faY" secondAttribute="leading" constant="4" id="WGM-iA-wJu"/>
+                        <constraint firstAttribute="bottom" secondItem="mIt-Do-M88" secondAttribute="bottom" constant="6" id="pP5-os-3i5"/>
+                        <constraint firstItem="mIt-Do-M88" firstAttribute="top" secondItem="Urh-jy-uRc" secondAttribute="bottom" constant="3" id="rzq-Rc-AIm"/>
                         <constraint firstAttribute="trailing" secondItem="Urh-jy-uRc" secondAttribute="trailing" constant="18" id="vZM-Tu-b3g"/>
-                        <constraint firstItem="Urh-jy-uRc" firstAttribute="top" secondItem="Edu-gI-faY" secondAttribute="top" constant="18" id="yUd-LX-HnG"/>
                     </constraints>
                 </view>
             </subviews>
