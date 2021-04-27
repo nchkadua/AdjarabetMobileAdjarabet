@@ -15,6 +15,13 @@ public class AccountInfoViewController: ABViewController {
 
     // MARK: Outlets
     @IBOutlet private weak var scrollView: UIScrollView!
+    /// Containers
+    @IBOutlet private weak var privateInfoHeaderSV: UIStackView!
+    @IBOutlet private weak var privateInfoSV: UIStackView!
+    @IBOutlet private weak var contactInfoHeaderSV: UIStackView!
+    @IBOutlet private weak var contactInfoSV: UIStackView!
+    @IBOutlet private weak var personalInfoHeaderSV: UIStackView!
+    @IBOutlet private weak var personalInfoSV: UIStackView!
     /// ComponentViews
     @IBOutlet private weak var userIdView: AccountInfoComponentView!
     @IBOutlet private weak var personalIdView: AccountInfoComponentView!
@@ -32,12 +39,6 @@ public class AccountInfoViewController: ABViewController {
     @IBOutlet private weak var privateInfoHeaderLabel: UILabel!
     @IBOutlet private weak var contactInfoHeaderLabel: UILabel!
     @IBOutlet private weak var personalInfoHeaderLabel: UILabel!
-    /// Buttons
-    @IBOutlet private weak var editPasswordButton: UIButton!
-    @IBOutlet private weak var editMailButton: UIButton!
-    @IBOutlet private weak var editPhoneNumberButton: UIButton!
-    @IBOutlet private weak var editAddressButton: UIButton!
-    @IBOutlet private weak var statusButton: ABButton!
 
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
@@ -78,8 +79,8 @@ public class AccountInfoViewController: ABViewController {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupScrollView()
+        setupContainers()
         setupLabels()
-        setupButtons()
         setTargets()
     }
 
@@ -93,6 +94,20 @@ public class AccountInfoViewController: ABViewController {
     private func setupScrollView() {
         scrollView.alwaysBounceVertical = true
         scrollView.showsVerticalScrollIndicator = false
+    }
+
+    private func setupContainers() {
+        privateInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
+        privateInfoSV.setBackgorundColor(to: .tertiaryBg())
+        privateInfoSV.roundCorners(.allCorners, radius: 10)
+
+        contactInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
+        contactInfoSV.setBackgorundColor(to: .tertiaryBg())
+        contactInfoSV.roundCorners(.allCorners, radius: 10)
+
+        personalInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
+        personalInfoSV.setBackgorundColor(to: .tertiaryBg())
+        personalInfoSV.roundCorners(.allCorners, radius: 10)
     }
 
     private func setupLabels() {
@@ -109,25 +124,21 @@ public class AccountInfoViewController: ABViewController {
         personalInfoHeaderLabel.text = R.string.localization.account_info_personal_info_title()
     }
 
-    private func setupButtons() {
-        statusButton.setStyle(to: .textLink(state: .active, size: .small))
-        statusButton.setTitleColor(to: .primaryRed(), for: .normal)
-        statusButton.setTitleWithoutAnimation(R.string.localization.account_info_status_button_title(), for: .normal)
-        statusButton.addTarget(self, action: #selector(selfSuspendButtonAction), for: .touchUpInside)
-    }
-
     private func setTargets() {
-        let tap1 = UITapGestureRecognizer(target: self, action: #selector(editPasswordAction))
-        passwordView.addGestureRecognizer(tap1)
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(selfSuspendButtonAction))
+        statusView.addGestureRecognizer(tap1)
 
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(editMailAction))
-        mailView.addGestureRecognizer(tap2)
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(editPasswordAction))
+        passwordView.addGestureRecognizer(tap2)
 
-        let tap3 = UITapGestureRecognizer(target: self, action: #selector(editPhoneNumberAction))
-        phoneNumberView.addGestureRecognizer(tap3)
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(editMailAction))
+        mailView.addGestureRecognizer(tap3)
 
-        let tap4 = UITapGestureRecognizer(target: self, action: #selector(editAddressAction))
-        addressView.addGestureRecognizer(tap4)
+        let tap4 = UITapGestureRecognizer(target: self, action: #selector(editPhoneNumberAction))
+        phoneNumberView.addGestureRecognizer(tap4)
+
+        let tap5 = UITapGestureRecognizer(target: self, action: #selector(editAddressAction))
+        addressView.addGestureRecognizer(tap5)
     }
 
     private func setupViewsWith(accountInfoModel: AccountInfoModel) {
@@ -139,17 +150,18 @@ public class AccountInfoViewController: ABViewController {
         personalIdView.set(placeholderText: R.string.localization.account_info_personal_id(), titleText: accountInfoModel.personalId)
         // Status
         statusView.set(placeholderText: R.string.localization.account_info_status(), titleText: accountInfoModel.status)
-        statusView.rightImage = R.image.components.profileCell.verified()
-        statusView.bringSubviewToFront(statusButton)
+        statusView.isClickable = true
         // Password
         passwordView.set(placeholderText: R.string.localization.account_info_password(), titleText: accountInfoModel.password)
-        passwordView.bringSubviewToFront(editPasswordButton)
+        passwordView.isClickable = true
+        passwordView.hidesSeparator = true
         // Mail
         mailView.set(placeholderText: R.string.localization.account_info_mail(), titleText: accountInfoModel.email)
-        mailView.bringSubviewToFront(editMailButton)
+        mailView.isClickable = true
         // Phone
         phoneNumberView.set(placeholderText: R.string.localization.account_info_phone_number(), titleText: accountInfoModel.phoneNumber.asPhoneNumber)
-        phoneNumberView.bringSubviewToFront(editPhoneNumberButton)
+        phoneNumberView.isClickable = true
+        phoneNumberView.hidesSeparator = true
         // Name
         nameView.set(placeholderText: R.string.localization.account_info_name(), titleText: accountInfoModel.name)
         // Surname
@@ -162,7 +174,8 @@ public class AccountInfoViewController: ABViewController {
         countryView.set(placeholderText: R.string.localization.account_info_country(), titleText: accountInfoModel.country)
         // Address
         addressView.set(placeholderText: R.string.localization.account_info_address(), titleText: accountInfoModel.address)
-        addressView.bringSubviewToFront(editAddressButton)
+        addressView.isClickable = true
+        addressView.hidesSeparator = true
     }
 
     // MARK: Action methods

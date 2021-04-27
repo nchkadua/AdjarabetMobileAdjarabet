@@ -12,10 +12,20 @@ public class AccountInfoComponentView: UIView {
     @IBOutlet weak private var placeholderLabel: UILabel!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var separator: UIView!
 
-    public var rightImage: UIImage? {
+    @IBOutlet weak private var titleLabelTrailingConstraint: NSLayoutConstraint!
+
+    public var isClickable: Bool = false {
         didSet {
-            imageView.image = rightImage
+            imageView.isHidden = !isClickable
+            titleLabelTrailingConstraint.constant = 8
+        }
+    }
+
+    public var hidesSeparator: Bool = false {
+        didSet {
+            separator.isHidden = hidesSeparator
         }
     }
 
@@ -50,12 +60,17 @@ extension AccountInfoComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.primaryBg().value
+        view.setBackgorundColor(to: .tertiaryBg())
 
-        placeholderLabel.setFont(to: .subHeadline(fontCase: .lower))
-        placeholderLabel.setTextColor(to: .secondaryText())
+        placeholderLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
+        placeholderLabel.setTextColor(to: .primaryText())
 
-        titleLabel.setFont(to: .body1(fontCase: .lower))
-        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setTextColor(to: .secondaryText())
+
+        imageView.isHidden = true
+        titleLabelTrailingConstraint.constant = -13
+
+        separator.setBackgorundColor(to: .nonOpaque())
     }
 }
