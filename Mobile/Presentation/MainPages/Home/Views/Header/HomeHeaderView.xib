@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeHeaderView" customModule="Mobile" customModuleProvider="target">
             <connections>
                 <outlet property="balance" destination="Urh-jy-uRc" id="8Vh-IE-eDW"/>
+                <outlet property="logo" destination="tAd-ZC-ajJ" id="AiD-Ge-E8C"/>
                 <outlet property="searchBar" destination="mIt-Do-M88" id="QMI-0Y-Kyr"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dOC-hT-mrL"/>
             </connections>

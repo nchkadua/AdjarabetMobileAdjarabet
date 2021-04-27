@@ -17,12 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOQ-tK-SMw" customClass="HomeHeaderView" customModule="Mobile" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AOQ-tK-SMw" customClass="HomeHeaderView" customModule="Mobile" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="110"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="yhb-Cs-bin"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ms2-0T-8HB"/>

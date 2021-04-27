@@ -10,8 +10,18 @@ import UIKit
 
 class HomeHeaderView: UIView, Xibable {
     @IBOutlet private weak var view: UIView!
+    @IBOutlet private weak var logo: UIImageView!
     @IBOutlet private weak var balance: BalanceProfileButton!
     @IBOutlet private weak var searchBar: UISearchBar!
+
+    static var largeHeight: CGFloat = 110
+    static var smallHeight: CGFloat = 68
+
+    private lazy var heightConstraint: NSLayoutConstraint = {
+        let lh = HomeHeaderView.largeHeight
+        let c = heightAnchor.constraint(equalToConstant: lh)
+        return c
+    }()
 
     var mainView: UIView {
         get { view }
@@ -30,6 +40,7 @@ class HomeHeaderView: UIView, Xibable {
 
     func setupUI() {
         setBackgorundColor(to: .primaryBg())
+        heightConstraint.isActive = true
         setupBalance()
         setupSearchBar()
     }
@@ -86,20 +97,45 @@ class HomeHeaderView: UIView, Xibable {
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if searchBar.isFirstResponder {
-            searchBar.resignFirstResponder()
-            searchBar.setShowsCancelButton(false, animated: true)
-        }
+        if searchBar.isFirstResponder { unfocus() }
+    }
+
+    private func focus() {
+        logoAndBalance(isHiden: true)
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    private func unfocus() {
+        logoAndBalance(isHiden: false)
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+
+    private func logoAndBalance(isHiden hiden: Bool) {
+        let sh = HomeHeaderView.smallHeight
+        let lh = HomeHeaderView.largeHeight
+        heightConstraint.constant = hiden ? sh : lh
+        UIView.animate(
+            withDuration: 0.3,
+            animations: { [weak self] in
+                self?.logo.alpha = hiden ? 0 : 1
+                self?.balance.alpha = hiden ? 0 : 1
+                self?.superview?.layoutIfNeeded()
+            },
+            completion: { [weak self] _ in
+                self?.logo.isHidden = hiden
+                self?.balance.isHidden = hiden
+            }
+        )
     }
 }
 
 extension HomeHeaderView: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(true, animated: true)
+        focus()
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(false, animated: true)
-        searchBar.resignFirstResponder()
+        unfocus()
     }
 }
