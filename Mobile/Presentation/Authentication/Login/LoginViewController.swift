@@ -42,6 +42,7 @@ public class LoginViewController: ABViewController {
         super.viewDidLoad()
 
         setup()
+        subscribeToPasswordInputView()
         bind(to: viewModel)
         viewModel.viewDidLoad()
         setupAccessibilityIdentifiers()
@@ -97,6 +98,12 @@ public class LoginViewController: ABViewController {
         setupInputViews()
         setupInputViewsObservation()
         setDelegates()
+    }
+
+    private func subscribeToPasswordInputView() {
+        passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
+            self?.updatePasswordRightButton()
+        }).disposed(by: disposeBag)
     }
 
     private func setupNavigationItem() {
@@ -160,10 +167,6 @@ public class LoginViewController: ABViewController {
 
         separatorView.setBackgorundColor(to: .nonOpaque())
         separatorView2.setBackgorundColor(to: .nonOpaque())
-
-        passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
-            self?.updatePasswordRightButton()
-        }).disposed(by: disposeBag)
 
         Observable.combineLatest([usernameInputView.rx.text.orEmpty, passwordInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }
