@@ -82,6 +82,7 @@ class CashOutVisaView: UIView, Xibable {
         setupAddAccountButton()
         setupSummary()
         setupContinueButton()
+        setupAccessibilityIdentifiers()
     }
 
     private func setupAmountInputView() {
@@ -192,5 +193,22 @@ class CashOutVisaView: UIView, Xibable {
 extension CashOutVisaView: ABInputViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel?.selected(account: account, amount: amount)
+    }
+}
+
+// MARK: Accessibility Identifiers
+extension CashOutVisaView: Accessible {
+    private func setupAccessibilityIdentifiers() {
+        generateAccessibilityIdentifiers()
+
+        amountInputView.setAccessibilityIdTextfield(id: "CashOutVisaView.amountInputViewTextField")
+        
+        amountInputView.setAccessibilityIdsToPlaceholderLabels(id: "CashOutVisaView.amountInputView.placeholder")
+       
+        totalAmountLabel.accessibilityIdentifier = "CashOutVisaView.totalAmountLabel"
+        feeAmountLabel.accessibilityIdentifier = "CashOutVisaView.feeAmountLabel"
+
+        continueButton.accessibilityIdentifier = "CashOutVisaView.continueButton"
+
     }
 }

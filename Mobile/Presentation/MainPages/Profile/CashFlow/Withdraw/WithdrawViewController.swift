@@ -26,6 +26,7 @@ public class WithdrawViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        setupAccessibilityIdentifiers()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -82,5 +83,14 @@ public class WithdrawViewController: ABViewController {
     private func handleLoader(_ isHidden: Bool) {
         loader.isHidden = isHidden
         (isHidden ? loader.stopAnimating : loader.startAnimating)()
+    }
+}
+
+// MARK: Accessibility Identifiers
+extension WithdrawViewController: Accessible {
+    private func setupAccessibilityIdentifiers() {
+        generateAccessibilityIdentifiers()
+
+        navigationItem.titleView?.accessibilityIdentifier = "WithdrawViewController.title"
     }
 }
