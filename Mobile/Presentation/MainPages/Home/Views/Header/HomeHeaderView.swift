@@ -23,6 +23,14 @@ class HomeHeaderView: UIView, Xibable {
         return c
     }()
 
+    private lazy var searchBarTop2balanceBottom: NSLayoutConstraint = {
+        searchBar.topAnchor.constraint(equalTo: balance.bottomAnchor, constant: 3)
+    }()
+
+    private lazy var searchBarTrailling2balanceLeading: NSLayoutConstraint = {
+        searchBar.trailingAnchor.constraint(equalTo: balance.leadingAnchor, constant: -32)
+    }()
+
     var mainView: UIView {
         get { view }
         set { view = newValue }
@@ -43,6 +51,31 @@ class HomeHeaderView: UIView, Xibable {
         heightConstraint.isActive = true
         setupBalance()
         setupSearchBar()
+    }
+
+    enum Style {
+        case small
+        case large
+    }
+    func set(style: Style) {
+        switch style {
+        case .small: setSmallStyle()
+        case .large: setLargeStyle()
+        }
+    }
+
+    private func setSmallStyle() {
+        searchBarTop2balanceBottom.isActive = false
+        searchBarTrailling2balanceLeading.isActive = true
+        logo.isHidden = true
+        heightConstraint.constant = HomeHeaderView.smallHeight
+    }
+
+    private func setLargeStyle() {
+        searchBarTop2balanceBottom.isActive = true
+        searchBarTrailling2balanceLeading.isActive = false
+        logo.isHidden = false
+        heightConstraint.constant = HomeHeaderView.largeHeight
     }
 
     private func setupBalance() {
