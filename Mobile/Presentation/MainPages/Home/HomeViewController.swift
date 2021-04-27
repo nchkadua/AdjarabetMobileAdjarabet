@@ -87,7 +87,10 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     private func didReceive(action: HomeViewModelOutputAction) {
         switch action {
         case .setLoading(let loadingType):
-            UIView.animate(withDuration: 0.3) { self.loader.alpha = loadingType == .fullScreen ? 1 : 0 }
+            UIView.animate(withDuration: 0.3) {
+                self.loader.alpha = loadingType == .fullScreen ? 1 : 0
+                self.loader.isHidden = loadingType != .fullScreen
+            }
         case .languageDidChange: languageDidChange()
         case .initialize(let appListDataProvider):
             collectionViewController.dataProvider = appListDataProvider
@@ -139,23 +142,18 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     }
 
     private func setupCollectionViewController() {
-        collectionViewController.viewModel = viewModel
-
-        collectionViewController.isTabBarManagementEnabled = true
-        add(child: collectionViewController)
-
-        collectionViewController.delegate = self
-
         guard let collectionView = collectionViewController.collectionView
         else { return }
 
+        collectionViewController.viewModel = viewModel
+        collectionViewController.isTabBarManagementEnabled = true
+        collectionViewController.delegate = self
+
+        view.addSubview(collectionView)
+        view.sendSubviewToBack(collectionView)
+
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: header.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        collectionView.pinSafely(to: view)
     }
 
     private func setupSearchViewController() {
@@ -250,11 +248,9 @@ extension HomeViewController: Accessible {}
 
 extension HomeViewController: HomeViewCollectionViewControllerDelegate {
     func placeholderAppeared() {
-        header.backgroundColor = .cyan
     }
 
     func placeholderDisappeared() {
-        header.backgroundColor = .red
     }
 }
 
