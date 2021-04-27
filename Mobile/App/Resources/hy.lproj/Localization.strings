@@ -234,6 +234,7 @@
 "access_history_device_mobile" = "Mobile";
 
 /* Account Parameters */
+"account_parameters_title" = "Account Parameters";
 "account_parameters_change_password" = "Change password";
 "account_parameters_high_security" = "High security mode";
 "account_parameters_biometry" = "Biometric authorization";

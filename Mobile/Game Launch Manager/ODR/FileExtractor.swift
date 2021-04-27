@@ -21,10 +21,6 @@ class FileExtractor {
                                                object: nil)
     }
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
     @objc private func applicationWillTerminate() {
         clearUnzippedResourcesFolder()
     }

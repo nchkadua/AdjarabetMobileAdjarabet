@@ -15,7 +15,6 @@ public protocol HomeViewModel: HomeViewModelInput, HomeViewModelOutput, ABCollec
 public protocol HomeViewModelInput {
     func viewDidLoad()
     func viewWillAppear()
-    func viewDidAppear()
     func didLoadNextPage()
     func layoutChangeTapped()
 }
@@ -225,11 +224,6 @@ extension DefaultHomeViewModel: HomeViewModel {
         let gamesSection = AppSectionDataProvider(dataProviders: [loading])
 
         actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [bannerSection, recentryPlayedSection, gamesSection])))
-    }
-
-    public func viewDidAppear() {
-        // TODO
-//        ABLocationManager.sharedInstance.load()
     }
 
     public func didLoadNextPage() {
