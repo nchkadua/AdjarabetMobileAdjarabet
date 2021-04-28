@@ -13,27 +13,23 @@ class HomeHeaderView: UIView, Xibable {
     @IBOutlet private weak var logo: UIImageView!
     @IBOutlet private weak var balance: BalanceProfileButton!
     @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private var smallStyleConstraints: [NSLayoutConstraint]!
+    @IBOutlet private var largeStyleConstraints: [NSLayoutConstraint]!
+    @IBOutlet private var focusStyleConstraints: [NSLayoutConstraint]!
 
-    static var largeHeight: CGFloat = 110
-    static var smallHeight: CGFloat = 68
-
-    private lazy var heightConstraint: NSLayoutConstraint = {
-        let lh = HomeHeaderView.largeHeight
-        let c = heightAnchor.constraint(equalToConstant: lh)
-        return c
-    }()
-
-    private lazy var searchBarTop2balanceBottom: NSLayoutConstraint = {
-        searchBar.topAnchor.constraint(equalTo: balance.bottomAnchor, constant: 3)
-    }()
-
-    private lazy var searchBarTrailling2balanceLeading: NSLayoutConstraint = {
-        searchBar.trailingAnchor.constraint(equalTo: balance.leadingAnchor, constant: -32)
-    }()
+    // state
+    private var prevStyle: Style = .large  // by default
+    private var currStyle: Style = .large  // large style is set
 
     var mainView: UIView {
         get { view }
         set { view = newValue }
+    }
+
+    private enum Style {
+        case small
+        case large
+        case focus
     }
 
     override init(frame: CGRect) {
@@ -48,35 +44,66 @@ class HomeHeaderView: UIView, Xibable {
 
     func setupUI() {
         setBackgorundColor(to: .primaryBg())
-        heightConstraint.isActive = true
+        set(style: .large)
         setupBalance()
         setupSearchBar()
     }
 
-    enum Style {
-        case small
-        case large
-    }
-    func set(style: Style) {
-        switch style {
-        case .small: setSmallStyle()
-        case .large: setLargeStyle()
+    func scrolledUp() {
+        if currStyle != .focus {
+            set(style: .large)
         }
     }
 
-    private func setSmallStyle() {
-        searchBarTop2balanceBottom.isActive = false
-        searchBarTrailling2balanceLeading.isActive = true
-        logo.isHidden = true
-        heightConstraint.constant = HomeHeaderView.smallHeight
+    func scrolledDown() {
+        if currStyle != .focus {
+            set(style: .small)
+        }
     }
 
-    private func setLargeStyle() {
-        searchBarTop2balanceBottom.isActive = true
-        searchBarTrailling2balanceLeading.isActive = false
-        logo.isHidden = false
-        heightConstraint.constant = HomeHeaderView.largeHeight
+    private func set(style: Style) {
+        // update state
+        prevStyle = currStyle
+        currStyle = style
+        // update constraints
+        let balanceIsHiden: Bool
+        switch style {
+        case .small:
+            focusStyleConstraints.forEach { $0.priority = .defaultLow }
+            largeStyleConstraints.forEach { $0.priority = .defaultLow }
+            smallStyleConstraints.forEach { $0.priority = .required }
+            balanceIsHiden = false
+        case .large:
+            focusStyleConstraints.forEach { $0.priority = .defaultLow }
+            smallStyleConstraints.forEach { $0.priority = .defaultLow }
+            largeStyleConstraints.forEach { $0.priority = .required }
+            balanceIsHiden = false
+        case .focus:
+            smallStyleConstraints.forEach { $0.priority = .defaultLow }
+            largeStyleConstraints.forEach { $0.priority = .defaultLow }
+            focusStyleConstraints.forEach { $0.priority = .required }
+            balanceIsHiden = true
+        }
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.balance.alpha = balanceIsHiden ? 0 : 1
+            self?.layoutIfNeeded()
+            self?.superview?.layoutIfNeeded()
+        }
     }
+
+    private func focus() {
+        set(style: .focus)
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    private func unfocus() {
+        set(style: prevStyle)
+        prevStyle = currStyle // set prevStyle to the same as currStyle (not to .focus)
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+
+    // MARK: - Initial Setup
 
     private func setupBalance() {
         balance.setFont(to: .footnote(fontCase: .upper, fontStyle: .semiBold))
@@ -131,35 +158,6 @@ class HomeHeaderView: UIView, Xibable {
 
     @objc func keyboardWillHide(notification: NSNotification) {
         if searchBar.isFirstResponder { unfocus() }
-    }
-
-    private func focus() {
-        logoAndBalance(isHiden: true)
-        searchBar.setShowsCancelButton(true, animated: true)
-    }
-
-    private func unfocus() {
-        logoAndBalance(isHiden: false)
-        searchBar.resignFirstResponder()
-        searchBar.setShowsCancelButton(false, animated: true)
-    }
-
-    private func logoAndBalance(isHiden hiden: Bool) {
-        let sh = HomeHeaderView.smallHeight
-        let lh = HomeHeaderView.largeHeight
-        heightConstraint.constant = hiden ? sh : lh
-        UIView.animate(
-            withDuration: 0.3,
-            animations: { [weak self] in
-                self?.logo.alpha = hiden ? 0 : 1
-                self?.balance.alpha = hiden ? 0 : 1
-                self?.superview?.layoutIfNeeded()
-            },
-            completion: { [weak self] _ in
-                self?.logo.isHidden = hiden
-                self?.balance.isHidden = hiden
-            }
-        )
     }
 }
 

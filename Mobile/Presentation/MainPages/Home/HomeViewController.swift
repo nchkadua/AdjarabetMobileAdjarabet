@@ -248,11 +248,11 @@ extension HomeViewController: Accessible {}
 
 extension HomeViewController: HomeViewCollectionViewControllerDelegate {
     func placeholderAppeared() {
-        header.set(style: .large)
+        header.scrolledUp()
     }
 
     func placeholderDisappeared() {
-        header.set(style: .small)
+        header.scrolledDown()
     }
 }
 
