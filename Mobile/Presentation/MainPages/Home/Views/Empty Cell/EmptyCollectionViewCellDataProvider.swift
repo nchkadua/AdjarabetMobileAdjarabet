@@ -16,7 +16,7 @@ extension EmptyCollectionViewCellDataProvider {
 
 extension EmptyCollectionViewCellDataProvider {
     func size(for rect: CGRect, safeArea: CGRect, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat) -> CGSize {
-        .init(width: rect.width, height: 110)
+        .init(width: rect.width, height: 105)
     }
 }
 
