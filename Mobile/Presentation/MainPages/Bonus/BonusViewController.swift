@@ -23,13 +23,6 @@ public class BonusViewController: UIViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: BonusViewModel) {
-        viewModel.action.subscribe(onNext: { [weak self] action in
-            self?.didRecive(action: action)
-        }).disposed(by: disposeBag)
-
-        viewModel.route.subscribe(onNext: { [weak self] route in
-            self?.didRecive(route: route)
-        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: BonusViewModelOutputAction) {

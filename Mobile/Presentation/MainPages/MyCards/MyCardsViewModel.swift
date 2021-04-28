@@ -154,15 +154,5 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
     }
 
     public func addCardsClicked() {
-        // swiftlint:disable force_cast
-        let id = (dataProvider[0] as! DefaultMyCardComponentViewModel).params.id
-        paymentAccountUseCase.execute(params: .init(id: id)) { result in
-            switch result {
-            case .success:
-                print("DeleteCard Success")
-            case .failure(let error):
-                print("DeleteCard Failure:", error)
-            }
-        }
     }
 }

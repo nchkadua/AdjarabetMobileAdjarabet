@@ -84,7 +84,7 @@ extension DefaultAddCardViewModel: AddCardViewModel {
             case .success(let request):
                 self?.routeSubject.onNext(.webView(.init(request: request)))
             case .failure(let error):
-                print("AddCard.Payments.DepositUseCase:", error) // FIXME
+                print("AddCard.Payments.DepositUseCase:", error)
             }
         }
     }

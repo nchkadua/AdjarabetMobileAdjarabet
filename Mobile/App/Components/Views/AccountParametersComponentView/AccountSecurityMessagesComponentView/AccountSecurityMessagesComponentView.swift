@@ -75,7 +75,8 @@ extension AccountSecurityMessagesComponentView: Xibable {
     }
 
     func setupUI() {
-        view.setBackgorundColor(to: .secondaryBg())
+        setBackgorundColor(to: .secondaryBg())
+        view.setBackgorundColor(to: .tertiaryBg())
 
         titleLabel.setFont(to: .body2(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())

@@ -15,6 +15,7 @@ class TestPageVC: UIViewController, EMPageViewControllerDataSource, EMPageViewCo
     var pageViewController: EMPageViewController?
     var viewControllers = [UIViewController]()
     private var currentIndex = 0
+    private var currentViewController: UIViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class TestPageVC: UIViewController, EMPageViewControllerDataSource, EMPageViewCo
 
         // Set the initially selected view controller
         // IMPORTANT: If you are using a dataSource, make sure you set it BEFORE calling selectViewController:direction:animated:completion
-        let currentViewController = self.viewControllers[0]
+        currentViewController = self.viewControllers[0]
         pageViewController.selectViewController(currentViewController, direction: .forward, animated: false, completion: nil)
         // Add EMPageViewController to the root view controller
         self.addChild(pageViewController)
@@ -64,7 +65,6 @@ class TestPageVC: UIViewController, EMPageViewControllerDataSource, EMPageViewCo
     }
 
     // MARK: - EMPageViewController Data Source
-
     func em_pageViewController(_ pageViewController: EMPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         guard let index = self.viewControllers.firstIndex(of: viewController) else {
             return nil
@@ -76,9 +76,11 @@ class TestPageVC: UIViewController, EMPageViewControllerDataSource, EMPageViewCo
             return nil
         }
 
-        return self.viewControllers[indexBefore]
+        currentViewController = self.viewControllers[indexBefore]
+        return currentViewController
     }
 
+    // MARK: - EMPageViewController Delegate
     func em_pageViewController(_ pageViewController: EMPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         guard let index = self.viewControllers.firstIndex(of: viewController) else {
             return nil
@@ -90,11 +92,13 @@ class TestPageVC: UIViewController, EMPageViewControllerDataSource, EMPageViewCo
             return nil
         }
 
-        return self.viewControllers[indexAfter]
+        currentViewController = self.viewControllers[indexAfter]
+        return currentViewController
     }
 
     func em_pageViewController(_ pageViewController: EMPageViewController, didFinishScrollingFrom startViewController: UIViewController?, destinationViewController: UIViewController, transitionSuccessful: Bool) {
-        currentIndex = viewControllers.firstIndex(of: viewControllers.first ?? UIViewController()) ?? 0
+        currentIndex = viewControllers.firstIndex(of: viewControllers.first ?? currentViewController) ?? 0
+        pageViewController.scrollView.isScrollEnabled = true
     }
 }
 

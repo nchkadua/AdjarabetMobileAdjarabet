@@ -230,6 +230,7 @@
 "transactions_details_type_withdraw" = "გატანა";
 
 /* Account Parameters */
+"account_parameters_title" = "ანგარიშის პარამეტრები";
 "account_parameters_change_password" = "პაროლის შეცვლა";
 "account_parameters_high_security" = "მაღალი დაცვის რეჟიმი";
 "account_parameters_biometry" = "ბიომეტრიული ავტორიზაცია";
