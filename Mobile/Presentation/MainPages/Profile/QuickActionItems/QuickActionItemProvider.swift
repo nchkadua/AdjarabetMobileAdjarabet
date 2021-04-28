@@ -15,7 +15,7 @@ class QuickActionItemProvider {
             QuickAction(icon: R.image.components.quickAction.my_cards()!, title: R.string.localization.my_cards.localized(), hidesSeparator: false, destionation: .myCards, roundedCorners: []),
             QuickAction(icon: biometryQuickActionIcon, title: R.string.localization.biomatry_authentication_parameters.localized(), hidesSeparator: false, destionation: .biometryParameters, roundedCorners: []),
             QuickAction(icon: R.image.components.quickAction.my_bonuses()!, title: R.string.localization.my_bonuses.localized(), hidesSeparator: false, destionation: .myBonuses, roundedCorners: []),
-            QuickAction(icon: R.image.components.quickAction.transfer()!, title: R.string.localization.transfer_to_a_friend.localized(), hidesSeparator: false, destionation: .transferToFriend, roundedCorners: []),
+//            QuickAction(icon: R.image.components.quickAction.transfer()!, title: R.string.localization.transfer_to_a_friend.localized(), hidesSeparator: false, destionation: .transferToFriend, roundedCorners: []),
             QuickAction(icon: R.image.components.quickAction.incognito()!, title: R.string.localization.incognito_card.localized(), hidesSeparator: false, destionation: .incognitoCard, roundedCorners: []),
             QuickAction(icon: R.image.components.quickAction.account_info()!, title: R.string.localization.account_information.localized(), hidesSeparator: false, destionation: .accountInformation, roundedCorners: []),
             QuickAction(icon: R.image.components.quickAction.parameters()!, title: R.string.localization.account_parameters.localized(), hidesSeparator: false, destionation: .accountParameters, roundedCorners: []),
