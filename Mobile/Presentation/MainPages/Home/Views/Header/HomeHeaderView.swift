@@ -21,6 +21,10 @@ class HomeHeaderView: UIView, Xibable {
     private var prevStyle: Style = .large  // by default
     private var currStyle: Style = .large  // large style is set
 
+    weak var delegate: HomeHeaderViewDelegate?
+    var bar: UISearchBar { searchBar }
+    var balanceButton: BalanceProfileButton { balance }
+
     var mainView: UIView {
         get { view }
         set { view = newValue }
@@ -94,6 +98,7 @@ class HomeHeaderView: UIView, Xibable {
     private func focus() {
         set(style: .focus)
         searchBar.setShowsCancelButton(true, animated: true)
+        delegate?.didFocus()
     }
 
     private func unfocus() {
@@ -101,6 +106,8 @@ class HomeHeaderView: UIView, Xibable {
         prevStyle = currStyle // set prevStyle to the same as currStyle (not to .focus)
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
+        delegate?.didUnfocus()
     }
 
     // MARK: - Initial Setup
@@ -169,4 +176,10 @@ extension HomeHeaderView: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         unfocus()
     }
+}
+
+// MARK: - Delegate
+protocol HomeHeaderViewDelegate: class {
+    func didFocus()
+    func didUnfocus()
 }
