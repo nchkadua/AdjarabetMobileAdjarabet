@@ -14,8 +14,10 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     @Inject(from: .viewModels) private var viewModel: HomeViewModel
     public var searchViewModel: GamesSearchViewModel { searchController.viewModel }
     public lazy var navigator = HomeNavigator(viewController: self)
-    private lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-    private lazy var searchController = GamesSearchViewController(viewModel: DefaultGamesSearchViewModel(params: .init()))
+    private lazy var collectionViewController = HomeViewCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var searchController = GamesSearchViewController()
+
+    @IBOutlet private weak var header: HomeHeaderView!
 
     // shimmer loader
     private lazy var loader: GamesListLoader = {
@@ -35,7 +37,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         bind(to: viewModel)
         viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
-//        addLayoutButton()
     }
 
 //    public override func viewDidAppear(_ animated: Bool) {
@@ -48,15 +49,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
 //        super.viewWillDisappear(animated)
 //        mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
 //    }
-
-    // TEST BUTTON
-    private func addLayoutButton() {
-        let button = UIButton(type: .contactAdd)
-        button.addTarget(self, action: #selector(changeLayout), for: .touchUpInside)
-        button.backgroundColor = UIColor.red
-        view.addSubview(button)
-        button.center = view.center
-    }
 
     @objc func changeLayout() {
         viewModel.layoutChangeTapped()
@@ -85,7 +77,10 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     private func didReceive(action: HomeViewModelOutputAction) {
         switch action {
         case .setLoading(let loadingType):
-            UIView.animate(withDuration: 0.3) { self.loader.alpha = loadingType == .fullScreen ? 1 : 0 }
+            UIView.animate(withDuration: 0.3) {
+                self.loader.alpha = loadingType == .fullScreen ? 1 : 0
+                self.loader.isHidden = loadingType != .fullScreen
+            }
         case .languageDidChange: languageDidChange()
         case .initialize(let appListDataProvider):
             collectionViewController.dataProvider = appListDataProvider
@@ -117,18 +112,16 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         setBaseBackgorundColor(to: .primaryBg())
         setupNavigationItems()
         setupSearchViewController()
-
+        hideNavBar()
+        header.delegate = self
         setupCollectionViewController()
         setupWhen(mainCollectionViewIsVisible: true, animated: false)
     }
 
     private func setupNavigationItems() {
-        makeAdjarabetLogo()
-
-        let profileButtonGroup = makeBalanceBarButtonItem()
-        navigationItem.rightBarButtonItem = profileButtonGroup.barButtonItem
-        profileButtonGroup.button.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
-        profileButtonGroup.button.accessibilityIdentifier = "profileButton"
+        let balanceButton = header.balanceButton
+        balanceButton.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
+        balanceButton.accessibilityIdentifier = "profileButton"
     }
 
     @objc private func openProfile() {
@@ -136,20 +129,33 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     }
 
     private func setupCollectionViewController() {
-        collectionViewController.viewModel = viewModel
+        guard let collectionView = collectionViewController.collectionView
+        else { return }
 
+        collectionViewController.viewModel = viewModel
         collectionViewController.isTabBarManagementEnabled = true
-        add(child: collectionViewController)
+        collectionViewController.delegate = self
+
+        view.addSubview(collectionView)
+        view.sendSubviewToBack(collectionView)
+
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.pinSafely(to: view)
     }
 
     private func setupSearchViewController() {
-        setupStandardSearchViewController(searchController)
-        add(child: searchController.collectionViewController)
-        setupSearchBar()
-
-        searchController.delegate = self
-
-        searchController.searchBar.rx
+        add(child: searchController)
+        guard let search = searchController.view
+        else { return }
+        view.addSubview(search)
+        search.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            search.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            search.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            search.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            search.topAnchor.constraint(equalTo: header.bottomAnchor)
+        ])
+        header.bar.rx
             .text
             .orEmpty
             .distinctUntilChanged()
@@ -158,76 +164,67 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
             }).disposed(by: disposeBag)
     }
 
-    private func setupSearchBar() {
-        let searchBar = searchController.searchBar
-
-        for item in searchBar.searchTextField.subviews where item.className == "_UISearchBarSearchFieldBackgroundView" {
-            item.removeAllSubViews()
-        }
-
-        searchBar.setPositionAdjustment(UIOffset(horizontal: 6, vertical: 0), for: .search)
-        searchBar.backgroundColor = .clear
-        searchBar.barTintColor = .clear
-        searchBar.isTranslucent = true
-        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-
-        searchBar.setImage(R.image.shared.search(), for: .search, state: .normal)
-        searchBar.searchTextField.leftView?.setTintColor(to: .secondaryText())
-        searchBar.searchTextPositionAdjustment = UIOffset(horizontal: 4, vertical: 0)
-
-        searchBar.searchTextField.setTextColor(to: .primaryText())
-        searchBar.searchTextField.setFont(to: .footnote(fontCase: .lower))
-        searchBar.searchTextField.setBackgorundColor(to: .querternaryFill())
-        searchBar.searchTextField.layer.cornerRadius = 18
-        searchBar.searchTextField.layer.masksToBounds = true
-
-        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: R.string.localization.home_search_placeholder.localized(), attributes: [
-            .foregroundColor: DesignSystem.Color.secondaryText().value,
-            .font: DesignSystem.Typography.footnote(fontCase: .lower).description.font
-        ])
-
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = R.string.localization.cancel.localized()
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([
-            .foregroundColor: DesignSystem.Color.secondaryText().value,
-            .font: DesignSystem.Typography.footnote(fontCase: .lower).description.font
-        ], for: .normal)
-    }
-
     private func setupWhen(mainCollectionViewIsVisible: Bool, animated animate: Bool) {
         let alpha: CGFloat = mainCollectionViewIsVisible ? 1 : 0
         UIView.animate(withDuration: animate ? 0.3 : 0) {
             self.collectionViewController.view.alpha = alpha
             self.searchController.collectionViewController.view.alpha = 1 - alpha
         }
-
+        searchController.view.isHidden = mainCollectionViewIsVisible
         mainCollectionViewIsVisible ? mainTabBarViewController?.showFloatingTabBar() : mainTabBarViewController?.hideFloatingTabBar()
     }
 
     private func languageDidChange() {
-        setupNavigationItems()
-        setupSearchBar()
+        // TODO: handle language change
     }
 }
 
 extension HomeViewController: CommonBarButtonProviding { }
 
-// MARK: UISearchControllerDelegate
-extension HomeViewController: UISearchControllerDelegate {
-    public func willPresentSearchController(_ searchController: UISearchController) {
+extension HomeViewController: HomeHeaderViewDelegate {
+    func didFocus() {
         setupWhen(mainCollectionViewIsVisible: false, animated: true)
         searchViewModel.willPresent()
     }
 
-    public func didPresentSearchController(_ searchController: UISearchController) {
-    }
-
-    public func willDismissSearchController(_ searchController: UISearchController) {
+    func didUnfocus() {
         setupWhen(mainCollectionViewIsVisible: true, animated: true)
-    }
-
-    public func didDismissSearchController(_ searchController: UISearchController) {
         searchViewModel.didDismiss()
     }
 }
 
 extension HomeViewController: Accessible {}
+
+extension HomeViewController: HomeViewCollectionViewControllerDelegate {
+    func placeholderAppeared() {
+        header.scrolledUp()
+    }
+
+    func placeholderDisappeared() {
+        header.scrolledDown()
+    }
+}
+
+// MARK: - HomeViewCollectionViewController
+protocol HomeViewCollectionViewControllerDelegate: class {
+    func placeholderAppeared()
+    func placeholderDisappeared()
+}
+
+class HomeViewCollectionViewController: ABCollectionViewController {
+    weak var delegate: HomeViewCollectionViewControllerDelegate?
+
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.section == 0, indexPath.row == 0 {
+            delegate?.placeholderAppeared()
+        }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didEndDisplaying cell: UICollectionViewCell,
+                                 forItemAt indexPath: IndexPath) {
+        if indexPath.section == 0, indexPath.row == 0 {
+            delegate?.placeholderDisappeared()
+        }
+    }
+}
