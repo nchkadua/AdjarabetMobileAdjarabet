@@ -27,13 +27,13 @@
                                                 <rect key="frame" x="16" y="0.0" width="382" height="53.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ6-Q2-vc6">
-                                                        <rect key="frame" x="21" y="21" width="334" height="20.5"/>
+                                                        <rect key="frame" x="8" y="21" width="347" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <edgeInsets key="layoutMargins" top="21" left="21" bottom="12" right="27"/>
+                                                <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-sO-BeJ">
                                                 <rect key="frame" x="16" y="53.5" width="382" height="330"/>
@@ -96,13 +96,13 @@
                                                 <rect key="frame" x="16" y="383.5" width="382" height="53.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-gv-y3w">
-                                                        <rect key="frame" x="21" y="21" width="334" height="20.5"/>
+                                                        <rect key="frame" x="8" y="21" width="347" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <edgeInsets key="layoutMargins" top="21" left="21" bottom="12" right="27"/>
+                                                <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qln-XN-vZs">
                                                 <rect key="frame" x="16" y="437" width="382" height="131"/>
@@ -124,13 +124,13 @@
                                                 <rect key="frame" x="16" y="568" width="382" height="53.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQL-Rx-YBQ">
-                                                        <rect key="frame" x="21" y="21" width="334" height="20.5"/>
+                                                        <rect key="frame" x="8" y="21" width="347" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <edgeInsets key="layoutMargins" top="21" left="21" bottom="12" right="27"/>
+                                                <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="YK1-hY-BOI">
                                                 <rect key="frame" x="16" y="621.5" width="382" height="395"/>

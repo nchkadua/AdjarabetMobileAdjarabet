@@ -69,7 +69,7 @@ extension AccountInfoComponentView: Xibable {
         titleLabel.setTextColor(to: .secondaryText())
 
         imageView.isHidden = true
-        titleLabelTrailingConstraint.constant = -13
+        titleLabelTrailingConstraint.constant = -10
 
         separator.setBackgorundColor(to: .nonOpaque())
     }
