@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,44 +16,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TJ-GN-xwG" userLabel="Title Label">
-                                <rect key="frame" x="185.5" y="44" width="4.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-xa-w7z" userLabel="Icon Image View">
-                                <rect key="frame" x="35" y="106" width="24" height="24"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Biometric/TouchID" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-xa-w7z" userLabel="Icon Image View">
+                                <rect key="frame" x="162" y="31" width="51" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="0mI-bW-4js"/>
-                                    <constraint firstAttribute="height" constant="24" id="fqr-sA-rdB"/>
+                                    <constraint firstAttribute="width" constant="51" id="0mI-bW-4js"/>
+                                    <constraint firstAttribute="height" constant="51" id="fqr-sA-rdB"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2o-vS-WWO" userLabel="Description Label">
-                                <rect key="frame" x="74" y="107.5" width="204" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biometry Authentication Parameters" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TJ-GN-xwG" userLabel="Title Label">
+                                <rect key="frame" x="53" y="101" width="269" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="269" id="ndp-VV-lZy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHq-Hx-jzi" userLabel="Toggle">
-                                <rect key="frame" x="293" y="102.5" width="51" height="31"/>
-                                <connections>
-                                    <action selector="biometryToggleChangedWithSender:" destination="l5e-Hz-h4c" eventType="valueChanged" id="gk0-f8-T6Q"/>
-                                </connections>
-                            </switch>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-y4-cRz">
+                                <rect key="frame" x="115.5" y="163" width="144.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" TOUCH ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2o-vS-WWO" userLabel="Description Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHq-Hx-jzi" userLabel="Toggle">
+                                        <rect key="frame" x="95.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="biometryToggleChangedWithSender:" destination="l5e-Hz-h4c" eventType="valueChanged" id="gk0-f8-T6Q"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4nd-jh-Gxv"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="F2o-vS-WWO" firstAttribute="centerY" secondItem="ygY-xa-w7z" secondAttribute="centerY" id="20l-O2-PNf"/>
-                            <constraint firstItem="wHq-Hx-jzi" firstAttribute="leading" secondItem="F2o-vS-WWO" secondAttribute="trailing" constant="15" id="4rz-yK-grD"/>
-                            <constraint firstItem="1TJ-GN-xwG" firstAttribute="top" secondItem="4nd-jh-Gxv" secondAttribute="top" constant="44" id="Mgo-Q6-0Hq"/>
-                            <constraint firstItem="ygY-xa-w7z" firstAttribute="top" secondItem="1TJ-GN-xwG" secondAttribute="bottom" constant="41" id="fef-1t-Oov"/>
-                            <constraint firstItem="F2o-vS-WWO" firstAttribute="leading" secondItem="ygY-xa-w7z" secondAttribute="trailing" constant="15" id="hWh-aC-ViE"/>
-                            <constraint firstItem="1TJ-GN-xwG" firstAttribute="centerX" secondItem="oYU-hz-RPe" secondAttribute="centerX" id="qUd-4r-iRF"/>
-                            <constraint firstItem="4nd-jh-Gxv" firstAttribute="trailing" secondItem="wHq-Hx-jzi" secondAttribute="trailing" constant="33" id="tdD-eg-nLi"/>
-                            <constraint firstItem="wHq-Hx-jzi" firstAttribute="centerY" secondItem="F2o-vS-WWO" secondAttribute="centerY" id="v1U-hM-exo"/>
-                            <constraint firstItem="ygY-xa-w7z" firstAttribute="leading" secondItem="4nd-jh-Gxv" secondAttribute="leading" constant="35" id="xpC-4X-F7r"/>
+                            <constraint firstItem="ygY-xa-w7z" firstAttribute="centerX" secondItem="oYU-hz-RPe" secondAttribute="centerX" id="24m-yC-EWI"/>
+                            <constraint firstItem="1TJ-GN-xwG" firstAttribute="centerX" secondItem="ygY-xa-w7z" secondAttribute="centerX" id="Bcp-v9-ypP"/>
+                            <constraint firstItem="yKg-y4-cRz" firstAttribute="centerX" secondItem="1TJ-GN-xwG" secondAttribute="centerX" id="IUu-aa-bcH"/>
+                            <constraint firstItem="yKg-y4-cRz" firstAttribute="top" secondItem="1TJ-GN-xwG" secondAttribute="bottom" constant="21" id="Q1Q-Uv-bwk"/>
+                            <constraint firstItem="ygY-xa-w7z" firstAttribute="top" secondItem="oYU-hz-RPe" secondAttribute="top" constant="31" id="WUG-Hu-5IS"/>
+                            <constraint firstItem="1TJ-GN-xwG" firstAttribute="top" secondItem="ygY-xa-w7z" secondAttribute="bottom" constant="19" id="z7N-GL-FlL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -68,4 +73,7 @@
             <point key="canvasLocation" x="-1709.5999999999999" y="-979.16041979010504"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Biometric/TouchID" width="44" height="43.5"/>
+    </resources>
 </document>

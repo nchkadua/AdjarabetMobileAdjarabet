@@ -75,7 +75,7 @@
 "transaction_history" = "Transaction History";
 "my_cards" = "My Cards";
 "my_bonuses" = "My Bonuses";
-"biomatry_authentication_parameters" = "Biometry Authentication Parameters";
+"biomatry_authentication_parameters" = "Authentication Parameters";
 "transfer_to_a_friend" = "Transfer to a Friend";
 "incognito_card" = "Incognito Card";
 "account_information" = "Account Information";
@@ -205,8 +205,9 @@
 "notifications_play_button_title" = "Play";
 
 /* Biometric Settings */
-"biometric_settings_activate_touch_id" = "Activate Touch ID";
-"biometric_settings_activate_face_id" = "Activate Face ID";
+"biometric_settings_title" = "Biometric Authorization Parameters";
+"biometric_settings_activate_touch_id" = "TOUCH ID";
+"biometric_settings_activate_face_id" = "FACE ID";
 "biometric_settings_activate_biometry" = "Activate Biometry";
 "biometric_settings_not_available" = "Biometry is not available";
 
