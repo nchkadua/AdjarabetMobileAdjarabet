@@ -238,12 +238,21 @@ extension DefaultSecurityLevelsViewModel {
     private var levelViewModels: AppCellDataProviders {
         var levelViewModels: AppCellDataProviders = []
 
-        for level in SecurityLevel.allCases {
-            let title = level.description.title // title
-            let selected = level == state.level // selected
+        let levels = SecurityLevel.allCases
+        for (index, level) in levels.enumerated() {
+            let title = level.description.title                                  // title
+            let selected = level == state.level                                  // selected
+            let separator = index != levels.count - 1                            // separator
+            let corners: SecurityLevelComponentViewModelParams.RoundCorners = {  // corners
+                if index == 0 { return .top }
+                if index == levels.count - 1 { return .bottom }
+                return .none
+            }()
 
             let viewModel = DefaultSecurityLevelComponentViewModel(params: .init(title: title,
-                                                                                 selected: selected))
+                                                                                 selected: selected,
+                                                                                 separator: separator,
+                                                                                 corners: corners))
 
             levelViewModels.append(viewModel)
         }
@@ -258,11 +267,9 @@ extension DefaultSecurityLevelsViewModel {
         for (index, type) in types.enumerated() {
             let title = type.description.title         // title
             let selected = state.types[index].selected // selected
-            let separator = index != types.count - 1
 
             let viewModel = DefaultSecurityLevelTypeComponentViewModel(params: .init(title: title,
-                                                                                     selected: selected,
-                                                                                     separator: separator))
+                                                                                     selected: selected))
 
             typeViewModels.append(viewModel)
         }

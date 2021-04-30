@@ -6,12 +6,12 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol SecurityLevelTableViewCellDataProvider: SecurityLevelComponentViewModel, StaticHeightDataProvider { }
+protocol SecurityLevelTableViewCellDataProvider: SecurityLevelComponentViewModel, StaticHeightDataProvider { }
 
-public extension SecurityLevelTableViewCellDataProvider {
+extension SecurityLevelTableViewCellDataProvider {
     var identifier: String { SecurityLevelTableViewCell.identifierValue }
     var height: CGFloat {
-        get { 60 }
+        get { 54 }
         set { print(newValue) }
     }
     var isHeightSet: Bool { true }

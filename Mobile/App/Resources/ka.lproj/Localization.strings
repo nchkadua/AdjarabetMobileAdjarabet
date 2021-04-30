@@ -208,7 +208,7 @@
 "biometric_settings_title" = "ბიომეტრიული ავტორიზაციის პარამეტრები";
 "biometric_settings_activate_touch_id" = "TOUCH ID";
 "biometric_settings_activate_face_id" = "FACE ID";
-"biometric_settings_activate_biometry" = "ბიომეტრიულის გააქტიურება";
+"biometric_settings_activate_biometry" = "გააქტიურება";
 "biometric_settings_not_available" = "ბიომეტრია არ არის ხელმისაწვდომი";
 
 /* P2P Transfer */
@@ -274,7 +274,7 @@
 /* Security Levels */
 "security_levels_scene_title" = "SMS შეტყობინებები";
 "security_levels_standart_packet" = "სტანდარტული პაკეტი";
-"security_levels_high_security_parameters" = "მაღალი დაცვის პარამეტრები";
+"security_levels_high_security_parameters" = "მაღალი დაცვის პაკეტი";
 "security_levels_individual" = "ინდივიდუალური";
 "security_levels_deposit" = "დეპოზიტი";
 "security_levels_withdraw" = "გატანა";

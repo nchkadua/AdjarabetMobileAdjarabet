@@ -14,9 +14,15 @@ class SecurityLevelTypeComponentView: UIView {
 
     private var isChecked = false {
         didSet {
-            let checked = R.image.components.abCheckbox.checkmark()!.withRenderingMode(.alwaysOriginal)
-            let unchecked = R.image.components.abCheckbox.unchecked()!.withRenderingMode(.alwaysOriginal)
-            checkbox.image = isChecked ? checked : unchecked
+            let image: UIImage
+            if isChecked {
+                image = R.image.securityLevels.verifyOption()!.withRenderingMode(.alwaysOriginal)
+                checkboxHeight.constant = 32
+            } else {
+                image = R.image.securityLevels.oval()!.withRenderingMode(.alwaysOriginal)
+                checkboxHeight.constant = 30
+            }
+            checkbox.image = image
         }
     }
 
@@ -24,7 +30,7 @@ class SecurityLevelTypeComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var label: UILabel!
     @IBOutlet weak private var checkbox: UIImageView!
-    @IBOutlet weak private var separator: UIView!
+    @IBOutlet private weak var checkboxHeight: NSLayoutConstraint!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,18 +51,13 @@ class SecurityLevelTypeComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title, let checked, let separator):
-                self?.set(title: title, checked: checked)
-                self?.separator.isHidden = !separator
+            case .set(let model):
+                self?.label.text = model.title
+                self?.isChecked  = model.selected
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
-    }
-
-    private func set(title: String, checked: Bool) {
-        label.text = title
-        isChecked = checked
     }
 }
 
@@ -72,8 +73,7 @@ extension SecurityLevelTypeComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = .clear
-        separator.setBackgorundColor(to: .nonOpaque())
         label.setTextColor(to: .primaryText())
-        label.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
+        label.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
     }
 }

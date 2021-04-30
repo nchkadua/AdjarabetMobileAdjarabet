@@ -208,7 +208,7 @@
 "biometric_settings_title" = "biometric authorization parameters";
 "biometric_settings_activate_touch_id" = "TOUCH ID";
 "biometric_settings_activate_face_id" = "FACE ID";
-"biometric_settings_activate_biometry" = "activate biometry";
+"biometric_settings_activate_biometry" = "activate";
 "biometric_settings_not_available" = "biometry is not available";
 
 /* P2P Transfer */
@@ -274,7 +274,7 @@
 /* Security Levels */
 "security_levels_scene_title" = "SMS messages";
 "security_levels_standart_packet" = "standart packet";
-"security_levels_high_security_parameters" = "high security parameters";
+"security_levels_high_security_parameters" = "high security packet";
 "security_levels_individual" = "individual";
 "security_levels_deposit" = "deposit";
 "security_levels_withdraw" = "withdraw";
