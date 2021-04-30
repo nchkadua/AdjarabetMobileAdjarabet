@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecurityLevelTypeComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
                 <outlet property="checkbox" destination="pb8-4F-1Yi" id="tzA-a6-42p"/>
+                <outlet property="checkboxHeight" destination="8QM-Ct-C26" id="PDK-yM-poq"/>
                 <outlet property="label" destination="61r-J7-m7i" id="gLM-Iz-nfV"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
             </connections>
@@ -27,9 +28,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pb8-4F-1Yi" userLabel="Checkbox">
-                    <rect key="frame" x="309" y="16" width="32" height="32"/>
+                    <rect key="frame" x="311" y="17" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="8QM-Ct-C26"/>
+                        <constraint firstAttribute="height" constant="30" id="8QM-Ct-C26"/>
                         <constraint firstAttribute="width" secondItem="pb8-4F-1Yi" secondAttribute="height" multiplier="1:1" id="TL4-ya-By6"/>
                     </constraints>
                 </imageView>

@@ -14,9 +14,15 @@ class SecurityLevelTypeComponentView: UIView {
 
     private var isChecked = false {
         didSet {
-            let checked = R.image.components.abCheckbox.checkmark()!.withRenderingMode(.alwaysOriginal)
-            let unchecked = R.image.components.abCheckbox.unchecked()!.withRenderingMode(.alwaysOriginal)
-            checkbox.image = isChecked ? checked : unchecked
+            let image: UIImage
+            if isChecked {
+                image = R.image.securityLevels.verifyOption()!.withRenderingMode(.alwaysOriginal)
+                checkboxHeight.constant = 32
+            } else {
+                image = R.image.securityLevels.oval()!.withRenderingMode(.alwaysOriginal)
+                checkboxHeight.constant = 30
+            }
+            checkbox.image = image
         }
     }
 
@@ -24,6 +30,7 @@ class SecurityLevelTypeComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var label: UILabel!
     @IBOutlet weak private var checkbox: UIImageView!
+    @IBOutlet private weak var checkboxHeight: NSLayoutConstraint!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)

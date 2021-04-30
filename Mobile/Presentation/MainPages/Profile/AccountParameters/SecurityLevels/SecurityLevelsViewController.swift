@@ -62,7 +62,7 @@ extension SecurityLevelsViewController {
         let button = UIButton()
         button.widthAnchor.constraint(equalToConstant: 38).isActive = true
         button.heightAnchor.constraint(equalToConstant: 38).isActive = true
-        button.setImage(R.image.shared.back(), for: .normal)
+        button.setImage(R.image.login.sms_back(), for: .normal)
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         let barButtonItem = UIBarButtonItem(customView: button)
         navigationItem.leftBarButtonItem = barButtonItem
