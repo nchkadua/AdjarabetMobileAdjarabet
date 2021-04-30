@@ -19,11 +19,15 @@ class SecurityLevelComponentView: UIView {
             checkbox.image = isChecked ? checked : unchecked
         }
     }
+    private var rectCorner: UIRectCorner = [] {
+        didSet { layoutIfNeeded() }
+    }
 
     // MARK: Outlets
-    @IBOutlet weak private var view: UIView!
-    @IBOutlet weak private var label: UILabel!
-    @IBOutlet weak private var checkbox: UIImageView!
+    @IBOutlet private weak var view: UIView!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var checkbox: UIImageView!
+    @IBOutlet private weak var separator: UIView!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +41,7 @@ class SecurityLevelComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        view.roundCorners(.allCorners, radius: 10)
+        view.roundCorners(rectCorner, radius: 10)
     }
 
     public func setAndBind(viewModel: SecurityLevelComponentViewModel) {
@@ -49,17 +53,18 @@ class SecurityLevelComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title, let checked):
-                self?.set(title: title, checked: checked)
+            case .set(let model):
+                self?.set(model: model)
             }
         }).disposed(by: disposeBag)
-
         viewModel.didBind()
     }
 
-    private func set(title: String, checked: Bool) {
-        label.text = title
-        isChecked = checked
+    private func set(model: SecurityLevelComponentViewModelParams) {
+        label.text = model.title
+        isChecked  = model.selected
+        rectCorner = model.corners.rectCorner
+        separator.isHidden = !model.separator
     }
 }
 
@@ -72,6 +77,17 @@ extension SecurityLevelComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.tertiaryBg().value
         label.setTextColor(to: .primaryText())
-        label.setFont(to: .footnote(fontCase: .lower, fontStyle: .bold))
+        label.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
+        separator.setBackgorundColor(to: .nonOpaque())
+    }
+}
+
+fileprivate extension SecurityLevelComponentViewModelParams.RoundCorners {
+    var rectCorner: UIRectCorner {
+        switch self {
+        case .none:   return []
+        case .top:    return [.topLeft, .topRight]
+        case .bottom: return [.bottomLeft, .bottomRight]
+        }
     }
 }

@@ -8,41 +8,49 @@
 
 import RxSwift
 
-public protocol SecurityLevelComponentViewModel: SecurityLevelComponentViewModelInput,
-                                                 SecurityLevelComponentViewModelOutput { }
+protocol SecurityLevelComponentViewModel: SecurityLevelComponentViewModelInput,
+                                          SecurityLevelComponentViewModelOutput { }
 
-public struct SecurityLevelComponentViewModelParams {
-    public let title: String
-    public let selected: Bool
+struct SecurityLevelComponentViewModelParams {
+    let title: String
+    let selected: Bool
+    let separator: Bool
+    let corners: RoundCorners
+
+    enum RoundCorners {
+        case none
+        case top
+        case bottom
+    }
 }
 
-public protocol SecurityLevelComponentViewModelInput {
+protocol SecurityLevelComponentViewModelInput {
     func didBind()
 }
 
-public protocol SecurityLevelComponentViewModelOutput {
+protocol SecurityLevelComponentViewModelOutput {
     var action: Observable<SecurityLevelComponentViewModelOutputAction> { get }
     var params: SecurityLevelComponentViewModelParams { get }
 }
 
-public enum SecurityLevelComponentViewModelOutputAction {
-    case set(title: String, selected: Bool)
+enum SecurityLevelComponentViewModelOutputAction {
+    case set(params: SecurityLevelComponentViewModelParams)
 }
 
-public class DefaultSecurityLevelComponentViewModel {
-    public var params: SecurityLevelComponentViewModelParams
+class DefaultSecurityLevelComponentViewModel {
+    var params: SecurityLevelComponentViewModelParams
     private let actionSubject = PublishSubject<SecurityLevelComponentViewModelOutputAction>()
-    public init(params: SecurityLevelComponentViewModelParams) {
+    init(params: SecurityLevelComponentViewModelParams) {
         self.params = params
     }
 }
 
 extension DefaultSecurityLevelComponentViewModel: SecurityLevelComponentViewModel {
-    public var action: Observable<SecurityLevelComponentViewModelOutputAction> {
+    var action: Observable<SecurityLevelComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
 
-    public func didBind() {
-        actionSubject.onNext(.set(title: params.title, selected: params.selected))
+    func didBind() {
+        actionSubject.onNext(.set(params: params))
     }
 }

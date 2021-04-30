@@ -52,9 +52,20 @@ public class SecurityLevelsViewController: ABViewController {
 extension SecurityLevelsViewController {
     private func setup() {
         appTableViewController.viewModel = viewModel
-        setTitle(title: R.string.localization.security_levels_scene_title.localized())
-        setBackDismissBarButtonItemIfNeeded(width: 44, completion: #selector(backTapped))
+        let titleLabel = setTitle(title: R.string.localization.security_levels_scene_title.localized().uppercased())
+        titleLabel.setFont(to: .body1(fontCase: .upper, fontStyle: .semiBold))
+        setupBackButton()
         setupTableView()
+    }
+
+    private func setupBackButton() {
+        let button = UIButton()
+        button.widthAnchor.constraint(equalToConstant: 38).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 38).isActive = true
+        button.setImage(R.image.shared.back(), for: .normal)
+        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: button)
+        navigationItem.leftBarButtonItem = barButtonItem
     }
 
     @objc func backTapped() {
@@ -64,13 +75,7 @@ extension SecurityLevelsViewController {
     private func setupTableView() {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        appTableViewController.isTabBarManagementEnabled = true
-        NSLayoutConstraint.activate([
-            appTableViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            appTableViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            appTableViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            appTableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        appTableViewController.view.pin(to: view)
     }
 
     private func openOkCancelAlert(_ title: String, _ completion: @escaping (Bool) -> Void) {

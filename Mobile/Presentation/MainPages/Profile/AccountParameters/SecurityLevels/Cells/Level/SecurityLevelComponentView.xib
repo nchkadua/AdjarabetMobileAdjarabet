@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,6 +13,7 @@
             <connections>
                 <outlet property="checkbox" destination="uLc-wU-dI3" id="Hkj-gG-mUU"/>
                 <outlet property="label" destination="OUA-2G-Ieq" id="FQz-Mo-QCA"/>
+                <outlet property="separator" destination="2mh-7H-yIQ" id="Uoi-pc-OVs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
             </connections>
         </placeholder>
@@ -33,17 +35,32 @@
                         <constraint firstAttribute="width" secondItem="uLc-wU-dI3" secondAttribute="height" multiplier="1:1" id="AtH-Ig-G0W"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mh-7H-yIQ" userLabel="Separator">
+                    <rect key="frame" x="13" y="65" width="362" height="1"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ueZ-rN-982"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="2mh-7H-yIQ" secondAttribute="trailing" id="ABO-0H-9Bi"/>
                 <constraint firstItem="OUA-2G-Ieq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="AGC-4t-fWO"/>
+                <constraint firstAttribute="bottom" secondItem="2mh-7H-yIQ" secondAttribute="bottom" id="E16-69-dZr"/>
                 <constraint firstAttribute="trailing" secondItem="uLc-wU-dI3" secondAttribute="trailing" constant="20" id="EpU-bc-6Ae"/>
                 <constraint firstItem="uLc-wU-dI3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JRj-mh-Ca5"/>
                 <constraint firstItem="OUA-2G-Ieq" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uLc-wU-dI3" secondAttribute="leading" constant="-20" id="NwN-r8-F39"/>
+                <constraint firstItem="2mh-7H-yIQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="13" id="PT3-6E-fAK"/>
                 <constraint firstItem="OUA-2G-Ieq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SxB-KI-sMq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="61.594202898550726" y="117.85714285714285"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
