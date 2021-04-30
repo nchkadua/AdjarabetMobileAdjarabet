@@ -37,18 +37,18 @@ public class BiometricSettingsViewController: ABPopupViewController {
     }
 
     private func setup() {
-        view.setBackgorundColor(to: .tertiaryBg())
+        view.setBackgorundColor(to: .secondaryBg())
 
         viewModel.refreshTitleText() // to update titleLabel.text
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setFont(to: .callout(fontCase: .upper, fontStyle: .regular))
 
         viewModel.refreshIconImage() // to update iconImageView.image
         iconImageView.setTintColor(to: .primaryText())
 
         viewModel.refreshDescriptionText() // to update descriptionLabel.text
         descriptionLabel.setTextColor(to: .primaryText())
-        descriptionLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
+        descriptionLabel.setFont(to: .callout(fontCase: .upper, fontStyle: .bold))
 
         toggle.onTintColor = DesignSystem.Color.primaryRedNeutral().value
     }
@@ -94,7 +94,7 @@ extension BiometricSettingsViewController: UIViewControllerTransitioningDelegate
             presentedViewController: presented,
             presenting: presenting,
             params: .init(
-                heightConstant: 177
+                heightConstant: 240
             )
         )
     }

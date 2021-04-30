@@ -205,8 +205,9 @@
 "notifications_play_button_title" = "ითამაშე";
 
 /* Biometric Settings */
-"biometric_settings_activate_touch_id" = "Touch ID-ის გააქტიურება";
-"biometric_settings_activate_face_id" = "Face ID-ის გააქტიურება";
+"biometric_settings_title" = "ბიომეტრიული ავტორიზაციის პარამეტრები";
+"biometric_settings_activate_touch_id" = "TOUCH ID";
+"biometric_settings_activate_face_id" = "FACE ID";
 "biometric_settings_activate_biometry" = "ბიომეტრიულის გააქტიურება";
 "biometric_settings_not_available" = "ბიომეტრია არ არის ხელმისაწვდომი";
 

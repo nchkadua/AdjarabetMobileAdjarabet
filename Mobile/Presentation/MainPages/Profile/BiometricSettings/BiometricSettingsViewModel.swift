@@ -83,7 +83,7 @@ extension DefaultBiometricSettingsViewModel: BiometricSettingsViewModel {
     }
 
     public func refreshTitleText() {
-        actionSubject.onNext(.updateTitleText(R.string.localization.biomatry_authentication_parameters.localized()))
+        actionSubject.onNext(.updateTitleText(R.string.localization.biometric_settings_title.localized().uppercased()))
     }
 
     public func refreshDescriptionText() {
