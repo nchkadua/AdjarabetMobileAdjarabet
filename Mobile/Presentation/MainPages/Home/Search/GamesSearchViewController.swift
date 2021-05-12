@@ -8,25 +8,15 @@
 
 import RxSwift
 
-public class GamesSearchViewController: UISearchController {
+public class GamesSearchViewController: UIViewController {
     private let disposeBag = DisposeBag()
-    public var viewModel: GamesSearchViewModel!
+    public var viewModel: GamesSearchViewModel = DefaultGamesSearchViewModel(params: .init())
     public lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
 
     // shimmer loader
     private lazy var loader: GamesListLoader = {
         collectionViewController.addDefaultGamesListLoader(isRecentlyPlayedEnabled: false)
     }()
-
-    public init(viewModel: GamesSearchViewModel, searchResultsController: UIViewController? = nil) {
-        self.viewModel = viewModel
-        super.init(searchResultsController: searchResultsController)
-    }
-
-    @available(iOS, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +55,10 @@ public class GamesSearchViewController: UISearchController {
     }
 
     private func setupCollectionViewController() {
+        view.addSubview(collectionViewController.view)
+        collectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        collectionViewController.view.pin(to: view)
+        view.setBackgorundColor(to: .primaryBg())
         collectionViewController.setBaseBackgorundColor()
         collectionViewController.collectionView.alwaysBounceVertical = true
         collectionViewController.collectionView.keyboardDismissMode = .interactive

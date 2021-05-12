@@ -63,6 +63,7 @@ public class WithdrawViewController: ABViewController {
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor()
+        setupKeyboard()
         setupLabels()
         loader.isHidden = true // initially hide loader
     }

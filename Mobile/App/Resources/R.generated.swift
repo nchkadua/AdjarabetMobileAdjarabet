@@ -2839,6 +2839,39 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.securityLevels` struct is generated, and contains static references to 3 images.
+    struct securityLevels {
+      /// Image `Oval`.
+      static let oval = Rswift.ImageResource(bundle: R.hostingBundle, name: "Security Levels/Oval")
+      /// Image `Verify-Option`.
+      static let verifyOption = Rswift.ImageResource(bundle: R.hostingBundle, name: "Security Levels/Verify-Option")
+      /// Image `Verify`.
+      static let verify = Rswift.ImageResource(bundle: R.hostingBundle, name: "Security Levels/Verify")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Oval", bundle: ..., traitCollection: ...)`
+      static func oval(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.securityLevels.oval, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Verify", bundle: ..., traitCollection: ...)`
+      static func verify(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.securityLevels.verify, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Verify-Option", bundle: ..., traitCollection: ...)`
+      static func verifyOption(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.securityLevels.verifyOption, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.shared` struct is generated, and contains static references to 9 images.
     struct shared {
       /// Image `back`.
@@ -3128,7 +3161,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 81 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 83 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -3180,6 +3213,8 @@ struct R: Rswift.Validatable {
     static let emoneyButton = _R.nib._EmoneyButton()
     /// Nib `EmoneyInstructionsView`.
     static let emoneyInstructionsView = _R.nib._EmoneyInstructionsView()
+    /// Nib `EmptyCollectionViewCell`.
+    static let emptyCollectionViewCell = _R.nib._EmptyCollectionViewCell()
     /// Nib `FooterComponentView`.
     static let footerComponentView = _R.nib._FooterComponentView()
     /// Nib `FooterTableViewCell`.
@@ -3202,6 +3237,8 @@ struct R: Rswift.Validatable {
     static let homeBannerContainerCollectionViewCell = _R.nib._HomeBannerContainerCollectionViewCell()
     /// Nib `HomeBannerContainerComponentView`.
     static let homeBannerContainerComponentView = _R.nib._HomeBannerContainerComponentView()
+    /// Nib `HomeHeaderView`.
+    static let homeHeaderView = _R.nib._HomeHeaderView()
     /// Nib `LabelComponentView`.
     static let labelComponentView = _R.nib._LabelComponentView()
     /// Nib `LoadingCollectionViewCell`.
@@ -3494,6 +3531,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "EmptyCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.emptyCollectionViewCell) instead")
+    static func emptyCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.emptyCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "FooterComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.footerComponentView) instead")
     static func footerComponentView(_: Void = ()) -> UIKit.UINib {
@@ -3578,6 +3623,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.homeBannerContainerComponentView) instead")
     static func homeBannerContainerComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.homeBannerContainerComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "HomeHeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.homeHeaderView) instead")
+    static func homeHeaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.homeHeaderView)
     }
     #endif
 
@@ -4041,6 +4094,10 @@ struct R: Rswift.Validatable {
       return R.nib.emoneyInstructionsView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func emptyCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EmptyCollectionViewCell? {
+      return R.nib.emptyCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmptyCollectionViewCell
+    }
+
     static func footerComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.footerComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -4083,6 +4140,10 @@ struct R: Rswift.Validatable {
 
     static func homeBannerContainerComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.homeBannerContainerComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func homeHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.homeHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func labelComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -4270,7 +4331,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 489 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 491 localization keys.
     struct localization {
       /// en translation: 6 Digit Code
       ///
@@ -4303,6 +4364,10 @@ struct R: Rswift.Validatable {
       /// en translation: Account Parameters
       ///
       /// Locales: en, ka, hy
+      static let account_parameters_title = Rswift.StringResource(key: "account_parameters_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Account Parameters
+      ///
+      /// Locales: en, ka, hy
       static let profile_page_title = Rswift.StringResource(key: "profile_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Account is Verified
       ///
@@ -4311,19 +4376,11 @@ struct R: Rswift.Validatable {
       /// en translation: Activate
       ///
       /// Locales: en, ka, hy
-      static let high_security_button_on = Rswift.StringResource(key: "high_security_button_on", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Activate Biometry
-      ///
-      /// Locales: en, ka, hy
       static let biometric_settings_activate_biometry = Rswift.StringResource(key: "biometric_settings_activate_biometry", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Activate Face ID
+      /// en translation: Activate
       ///
       /// Locales: en, ka, hy
-      static let biometric_settings_activate_face_id = Rswift.StringResource(key: "biometric_settings_activate_face_id", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Activate Touch ID
-      ///
-      /// Locales: en, ka, hy
-      static let biometric_settings_activate_touch_id = Rswift.StringResource(key: "biometric_settings_activate_touch_id", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      static let high_security_button_on = Rswift.StringResource(key: "high_security_button_on", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Active Till
       ///
       /// Locales: en, ka, hy
@@ -4448,6 +4505,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let austria = Rswift.StringResource(key: "austria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Authentication Parameters
+      ///
+      /// Locales: en, ka, hy
+      static let biomatry_authentication_parameters = Rswift.StringResource(key: "biomatry_authentication_parameters", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Azerbaijan
       ///
       /// Locales: en, ka, hy
@@ -4496,14 +4557,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let bhutan = Rswift.StringResource(key: "bhutan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Biometric Authorization Parameters
+      ///
+      /// Locales: en, ka, hy
+      static let biometric_settings_title = Rswift.StringResource(key: "biometric_settings_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Biometric authorization
       ///
       /// Locales: en, ka, hy
       static let account_parameters_biometry = Rswift.StringResource(key: "account_parameters_biometry", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: Biometry Authentication Parameters
-      ///
-      /// Locales: en, ka, hy
-      static let biomatry_authentication_parameters = Rswift.StringResource(key: "biomatry_authentication_parameters", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Biometry is not available
       ///
       /// Locales: en, ka, hy
@@ -4860,6 +4921,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let ethiopia = Rswift.StringResource(key: "ethiopia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: FACE ID
+      ///
+      /// Locales: en, ka, hy
+      static let biometric_settings_activate_face_id = Rswift.StringResource(key: "biometric_settings_activate_face_id", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Falkland Islands
       ///
       /// Locales: en, ka, hy
@@ -4996,7 +5061,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let security_levels_high_security_activation_deactivation = Rswift.StringResource(key: "security_levels_high_security_activation_deactivation", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: High Security Parameters
+      /// en translation: High Security Packet
       ///
       /// Locales: en, ka, hy
       static let security_levels_high_security_parameters = Rswift.StringResource(key: "security_levels_high_security_parameters", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
@@ -5824,6 +5889,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let syria = Rswift.StringResource(key: "syria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: TOUCH ID
+      ///
+      /// Locales: en, ka, hy
+      static let biometric_settings_activate_touch_id = Rswift.StringResource(key: "biometric_settings_activate_touch_id", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Taiwan
       ///
       /// Locales: en, ka, hy
@@ -6337,6 +6406,21 @@ struct R: Rswift.Validatable {
       /// en translation: Account Parameters
       ///
       /// Locales: en, ka, hy
+      static func account_parameters_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("account_parameters_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "account_parameters_title"
+        }
+
+        return NSLocalizedString("account_parameters_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Account Parameters
+      ///
+      /// Locales: en, ka, hy
       static func profile_page_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("profile_page_title", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -6367,21 +6451,6 @@ struct R: Rswift.Validatable {
       /// en translation: Activate
       ///
       /// Locales: en, ka, hy
-      static func high_security_button_on(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("high_security_button_on", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "high_security_button_on"
-        }
-
-        return NSLocalizedString("high_security_button_on", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Activate Biometry
-      ///
-      /// Locales: en, ka, hy
       static func biometric_settings_activate_biometry(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("biometric_settings_activate_biometry", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -6394,34 +6463,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("biometric_settings_activate_biometry", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: Activate Face ID
+      /// en translation: Activate
       ///
       /// Locales: en, ka, hy
-      static func biometric_settings_activate_face_id(preferredLanguages: [String]? = nil) -> String {
+      static func high_security_button_on(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("biometric_settings_activate_face_id", tableName: "Localization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("high_security_button_on", tableName: "Localization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "biometric_settings_activate_face_id"
+          return "high_security_button_on"
         }
 
-        return NSLocalizedString("biometric_settings_activate_face_id", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Activate Touch ID
-      ///
-      /// Locales: en, ka, hy
-      static func biometric_settings_activate_touch_id(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("biometric_settings_activate_touch_id", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "biometric_settings_activate_touch_id"
-        }
-
-        return NSLocalizedString("biometric_settings_activate_touch_id", tableName: "Localization", bundle: bundle, comment: "")
+        return NSLocalizedString("high_security_button_on", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Active Till
@@ -6889,6 +6943,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("austria", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Authentication Parameters
+      ///
+      /// Locales: en, ka, hy
+      static func biomatry_authentication_parameters(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("biomatry_authentication_parameters", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "biomatry_authentication_parameters"
+        }
+
+        return NSLocalizedString("biomatry_authentication_parameters", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Azerbaijan
       ///
       /// Locales: en, ka, hy
@@ -7069,6 +7138,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("bhutan", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Biometric Authorization Parameters
+      ///
+      /// Locales: en, ka, hy
+      static func biometric_settings_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("biometric_settings_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "biometric_settings_title"
+        }
+
+        return NSLocalizedString("biometric_settings_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Biometric authorization
       ///
       /// Locales: en, ka, hy
@@ -7082,21 +7166,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_parameters_biometry", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Biometry Authentication Parameters
-      ///
-      /// Locales: en, ka, hy
-      static func biomatry_authentication_parameters(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("biomatry_authentication_parameters", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "biomatry_authentication_parameters"
-        }
-
-        return NSLocalizedString("biomatry_authentication_parameters", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Biometry is not available
@@ -8434,6 +8503,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("ethiopia", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: FACE ID
+      ///
+      /// Locales: en, ka, hy
+      static func biometric_settings_activate_face_id(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("biometric_settings_activate_face_id", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "biometric_settings_activate_face_id"
+        }
+
+        return NSLocalizedString("biometric_settings_activate_face_id", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Falkland Islands
       ///
       /// Locales: en, ka, hy
@@ -8944,7 +9028,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("security_levels_high_security_activation_deactivation", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: High Security Parameters
+      /// en translation: High Security Packet
       ///
       /// Locales: en, ka, hy
       static func security_levels_high_security_parameters(preferredLanguages: [String]? = nil) -> String {
@@ -12049,6 +12133,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("syria", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: TOUCH ID
+      ///
+      /// Locales: en, ka, hy
+      static func biometric_settings_activate_touch_id(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("biometric_settings_activate_touch_id", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "biometric_settings_activate_touch_id"
+        }
+
+        return NSLocalizedString("biometric_settings_activate_touch_id", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Taiwan
       ///
       /// Locales: en, ka, hy
@@ -13596,6 +13695,7 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _AccountInfoComponentView.validate()
       try _AccountParametersComponentView.validate()
       try _AddAccountView.validate()
       try _AddCardComponentView.validate()
@@ -13605,6 +13705,7 @@ struct _R: Rswift.Validatable {
       try _EmoneyButton.validate()
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
+      try _HomeHeaderView.validate()
       try _QuickActionComponentView.validate()
       try _TransactionHistoryComponentView.validate()
       try _WithdrawVisaInfoView.validate()
@@ -13654,12 +13755,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _AccountInfoComponentView: Rswift.NibResourceType {
+    struct _AccountInfoComponentView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "AccountInfoComponentView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Components/QuickAction/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/arrow' is used in nib 'AccountInfoComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -13855,8 +13962,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -13930,6 +14037,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _EmptyCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "EmptyCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EmptyCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmptyCollectionViewCell
       }
 
       fileprivate init() {}
@@ -14065,6 +14183,23 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _HomeHeaderView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "HomeHeaderView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in nib 'HomeHeaderView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -14755,7 +14890,6 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in storyboard 'AccountInfo', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.accountInfo().accountInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'accountInfoViewController' could not be loaded from storyboard 'AccountInfo' as 'AccountInfoViewController'.") }
@@ -14856,6 +14990,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Biometric/TouchID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Biometric/TouchID' is used in storyboard 'BiometricSettingsView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.biometricSettingsView().biometricSettingsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'biometricSettingsViewController' could not be loaded from storyboard 'BiometricSettingsView' as 'BiometricSettingsViewController'.") }
@@ -14997,11 +15132,17 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+<<<<<<< HEAD
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
+=======
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
+>>>>>>> dev
         if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

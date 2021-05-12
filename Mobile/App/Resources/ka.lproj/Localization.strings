@@ -205,9 +205,10 @@
 "notifications_play_button_title" = "ითამაშე";
 
 /* Biometric Settings */
-"biometric_settings_activate_touch_id" = "Touch ID-ის გააქტიურება";
-"biometric_settings_activate_face_id" = "Face ID-ის გააქტიურება";
-"biometric_settings_activate_biometry" = "ბიომეტრიულის გააქტიურება";
+"biometric_settings_title" = "ბიომეტრიული ავტორიზაციის პარამეტრები";
+"biometric_settings_activate_touch_id" = "TOUCH ID";
+"biometric_settings_activate_face_id" = "FACE ID";
+"biometric_settings_activate_biometry" = "გააქტიურება";
 "biometric_settings_not_available" = "ბიომეტრია არ არის ხელმისაწვდომი";
 
 /* P2P Transfer */
@@ -230,6 +231,7 @@
 "transactions_details_type_withdraw" = "გატანა";
 
 /* Account Parameters */
+"account_parameters_title" = "ანგარიშის პარამეტრები";
 "account_parameters_change_password" = "პაროლის შეცვლა";
 "account_parameters_high_security" = "მაღალი დაცვის რეჟიმი";
 "account_parameters_biometry" = "ბიომეტრიული ავტორიზაცია";
@@ -272,7 +274,7 @@
 /* Security Levels */
 "security_levels_scene_title" = "SMS შეტყობინებები";
 "security_levels_standart_packet" = "სტანდარტული პაკეტი";
-"security_levels_high_security_parameters" = "მაღალი დაცვის პარამეტრები";
+"security_levels_high_security_parameters" = "მაღალი დაცვის პაკეტი";
 "security_levels_individual" = "ინდივიდუალური";
 "security_levels_deposit" = "დეპოზიტი";
 "security_levels_withdraw" = "გატანა";

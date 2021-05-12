@@ -55,14 +55,14 @@ public class AccountParametersViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .primaryBg())
+        setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTableView()
     }
 
     private func setupNavigationItems() {
         setBackBarButtonItemIfNeeded()
-        setTitle(title: "ანგარიშის პარამეტრები") // TODO Localize
+        setTitle(title: R.string.localization.account_parameters.localized())
     }
 
     private func setupTableView() {

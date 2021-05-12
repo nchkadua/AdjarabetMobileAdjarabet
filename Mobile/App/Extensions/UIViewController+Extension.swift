@@ -44,13 +44,15 @@ public extension UIViewController {
         definesPresentationContext = true
     }
 
-    func setTitle(title: String) {
+    @discardableResult
+    func setTitle(title: String) -> UILabel {
         let label = UILabel(frame: CGRect(x: 5, y: 0, width: 300, height: 50))
         label.text = title
         label.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         label.setTextColor(to: .primaryText())
         label.textAlignment = .center
         navigationItem.titleView = label
+        return label
     }
 
     func setBackBarButtonItemIfNeeded(width: CGFloat = 35, height: CGFloat = 35, rounded: Bool = false) {
