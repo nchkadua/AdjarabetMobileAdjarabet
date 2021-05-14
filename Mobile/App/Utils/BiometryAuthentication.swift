@@ -42,17 +42,18 @@ public class DefaultBiometricAuthentication: BiometricAuthentication {
             return
         }
 
-        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { success, evalPolicyError in
-            DispatchQueue.main.async {
-                if success {
-                    completion(.success(()))
-                } else {
-                    completion(.failure(evalPolicyError ?? NSError()))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            self?.context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { [weak self] success, evalPolicyError in
+                DispatchQueue.main.async {
+                    if success {
+                        completion(.success(()))
+                    } else {
+                        completion(.failure(evalPolicyError ?? NSError()))
+                    }
                 }
-            }
-
-            self.context = LAContext()
-        })
+                self?.context = LAContext()
+            })
+        }
     }
 
     public var icon: UIImage? {
