@@ -27,10 +27,10 @@ protocol PaymentAccountPagingableRepository {
               handler: @escaping PageHandler)
 }
 
-// for count
+// count params
 struct PaymentAccountPagingableCountParams { }
 
-// for list
+// page params
 struct PaymentAccountPagingablePageParams {
     let index: Int
     let count: Int

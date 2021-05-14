@@ -79,6 +79,6 @@ struct AccountParametersModel {
                                  description: R.string.localization.account_parameters_messages_email_description.localized(),
                                  buttonTitle: R.string.localization.account_parameters_messages_email_button.localized(),
                                  switchState: false,
-                                 type: .sms)
+                                 type: .email)
     ]
 }

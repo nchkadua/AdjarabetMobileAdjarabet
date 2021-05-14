@@ -12,10 +12,12 @@ public protocol SecurityLevelsViewModel: SecurityLevelsViewModelInput, SecurityL
 }
 
 public struct SecurityLevelsViewModelParams {
-}
+    public let highSecurityType: HighSecurityType
 
-public extension SecurityLevelsViewModelParams {
-    static var `default`: SecurityLevelsViewModelParams { SecurityLevelsViewModelParams() }
+    public enum HighSecurityType {
+        case sms
+        case email
+    }
 }
 
 public protocol SecurityLevelsViewModelInput: AnyObject {
@@ -33,6 +35,7 @@ public protocol SecurityLevelsViewModelOutput {
 }
 
 public enum SecurityLevelsViewModelOutputAction {
+    case setTitle(title: String)
     case dataProvider(AppListDataProvider)
     case openOkCancelAlert(title: String, completion: (Bool) -> Void)
     case close
@@ -48,7 +51,7 @@ public class DefaultSecurityLevelsViewModel: DefaultBaseViewModel {
     private var state = State() // initial state
 
     // MARK: Declare initializers
-    public init(params: SecurityLevelsViewModelParams = .default) {
+    public init(params: SecurityLevelsViewModelParams) {
         self.params = params
     }
 }
@@ -168,6 +171,8 @@ extension DefaultSecurityLevelsViewModel: SecurityLevelsViewModel {
     public var route: Observable<SecurityLevelsViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        let title = params.highSecurityType.description.title
+        actionSubject.onNext(.setTitle(title: title))
         actionSubject.onNext(.dataProvider(viewModels.makeList()))
     }
 
@@ -275,5 +280,18 @@ extension DefaultSecurityLevelsViewModel {
         }
 
         return typeViewModels
+    }
+}
+
+fileprivate extension SecurityLevelsViewModelParams.HighSecurityType {
+    struct Description {
+        let title: String
+    }
+
+    var description: Description {
+        switch self {
+        case .sms:   return .init(title: R.string.localization.security_levels_sms_scene_title.localized().uppercased())
+        case .email: return .init(title: R.string.localization.security_levels_email_scene_title.localized().uppercased())
+        }
     }
 }

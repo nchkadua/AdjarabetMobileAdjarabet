@@ -26,7 +26,7 @@ public class AccountParametersNavigator: Navigator {
         case biometryAuthorization
         case blockSelf
         case loginHistory
-        case securityLevels
+        case securityLevels(params: SecurityLevelsViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -39,8 +39,8 @@ public class AccountParametersNavigator: Navigator {
             navigateToBiometryAuthorization(animate: animate)
         case .loginHistory:
             navigateToAccessHistory(animate: animate)
-        case .securityLevels:
-            navigateToSecurityLevels(animate: animate)
+        case .securityLevels(let params):
+            navigateToSecurityLevels(with: params, animate: animate)
         default:
             break
         }
@@ -72,8 +72,8 @@ public class AccountParametersNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 
-    private func navigateToSecurityLevels(animate: Bool) {
-        let vc = securityLevelsViewControllerFactory.make(params: .default)
+    private func navigateToSecurityLevels(with params: SecurityLevelsViewModelParams, animate: Bool) {
+        let vc = securityLevelsViewControllerFactory.make(params: params)
         let nvc = vc.wrapInNavWith(presentationStyle: .automatic)
         nvc.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(nvc, animated: animate)

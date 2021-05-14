@@ -9,7 +9,7 @@
 import RxSwift
 
 public class SecurityLevelsViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: SecurityLevelsViewModel
+    public var viewModel: SecurityLevelsViewModel!
     public lazy var navigator = SecurityLevelsNavigator(viewController: self)
     private lazy var appTableViewController = SecurityLevelsTableViewController()
 
@@ -35,6 +35,9 @@ public class SecurityLevelsViewController: ABViewController {
 
     private func didRecive(action: SecurityLevelsViewModelOutputAction) {
         switch action {
+        case .setTitle(let title):
+            let titleLabel = setTitle(title: title)
+            titleLabel.setFont(to: .body1(fontCase: .upper, fontStyle: .semiBold))
         case .dataProvider(let dataProvider):
             appTableViewController.dataProvider = dataProvider
         case .openOkCancelAlert(let title, let completion):
@@ -52,8 +55,6 @@ public class SecurityLevelsViewController: ABViewController {
 extension SecurityLevelsViewController {
     private func setup() {
         appTableViewController.viewModel = viewModel
-        let titleLabel = setTitle(title: R.string.localization.security_levels_scene_title.localized().uppercased())
-        titleLabel.setFont(to: .body1(fontCase: .upper, fontStyle: .semiBold))
         setupBackButton()
         setupTableView()
     }
