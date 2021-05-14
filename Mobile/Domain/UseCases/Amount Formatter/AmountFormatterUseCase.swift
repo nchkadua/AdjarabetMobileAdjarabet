@@ -27,13 +27,25 @@ enum AmountFormatType {
     // swiftlint:enable identifier_name
 }
 
-struct DefaultAmountFormatterUseCase: AmountFormatterUseCase {
+class DefaultAmountFormatterUseCase: AmountFormatterUseCase {
     @Inject private var userSession: UserSessionReadableServices
 
+    private lazy var formatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.groupingSeparator = ","
+        f.groupingSize = 3
+        f.usesGroupingSeparator = true
+        f.decimalSeparator = "."
+        f.numberStyle = .decimal
+        f.maximumFractionDigits = 2
+        f.minimumFractionDigits = 2
+        f.locale = Locale(identifier: "en_US")
+        return f
+    }()
+
     func format(number: Double, in format: AmountFormatType) -> String {
-        // format number
-        let fnumber = String(format: "%.2f", number)
-        if let currencyId = userSession.currencyId,
+        if let fnumber = formatter.string(from: .init(value: number)),
+           let currencyId = userSession.currencyId,
            let currency = Currency(currencyId: currencyId) {
             // d = description
             let d = currency.description
@@ -44,7 +56,8 @@ struct DefaultAmountFormatterUseCase: AmountFormatterUseCase {
             case .sn:    return "\(d.symbol)\(fnumber)"
             }
         }
-        return fnumber
+        let defaultValue = String(format: "%.2f", number)
+        return defaultValue
     }
 
     func unformat(number: String, from format: AmountFormatType) -> Double? {
@@ -78,7 +91,7 @@ struct DefaultAmountFormatterUseCase: AmountFormatterUseCase {
                 let start = number.index(number.startIndex, offsetBy: d.symbol.count)
                 snumber = number[start...]
             }
-            if let unumber = Double(snumber) {
+            if let unumber = formatter.number(from: String(snumber))?.doubleValue {
                 return unumber
             }
             return nil
