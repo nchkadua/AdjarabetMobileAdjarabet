@@ -15,7 +15,7 @@ public protocol SecurityLevelsViewControllerFactory {
 public class DefaultSecurityLevelsViewControllerFactory: SecurityLevelsViewControllerFactory {
     public func make(params: SecurityLevelsViewModelParams) -> SecurityLevelsViewController {
         let vc = R.storyboard.securityLevels().instantiate(controller: SecurityLevelsViewController.self)!
-        vc.viewModel.params = params
+        vc.viewModel = DefaultSecurityLevelsViewModel(params: params)
         return vc
     }
 }

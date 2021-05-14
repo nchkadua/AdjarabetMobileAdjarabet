@@ -272,7 +272,8 @@
 "card_add_button_title" = "ADD CARD";
 
 /* Security Levels */
-"security_levels_scene_title" = "SMS messages";
+"security_levels_sms_scene_title" = "sms messages";
+"security_levels_email_scene_title" = "email Messages";
 "security_levels_standart_packet" = "standart packet";
 "security_levels_high_security_parameters" = "high security packet";
 "security_levels_individual" = "individual";

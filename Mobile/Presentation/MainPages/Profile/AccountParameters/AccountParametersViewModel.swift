@@ -89,7 +89,9 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                     switch action {
                     case .parametersSwitchToggledTo(let state):
                         if state == true {
-                            self?.goToDestination(.securityLevels)
+                            let highSecurityType = accountParameterMessagesModel.type.highSecurityType
+                            let params = SecurityLevelsViewModelParams(highSecurityType: highSecurityType)
+                            self?.goToDestination(.securityLevels(params: params))
                         }
                     default: break
                     }
@@ -162,5 +164,14 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
         }
 
         return icon
+    }
+}
+
+fileprivate extension AccountParameterMessagesType {
+    var highSecurityType: SecurityLevelsViewModelParams.HighSecurityType {
+        switch self {
+        case .sms:   return .sms
+        case .email: return .email
+        }
     }
 }

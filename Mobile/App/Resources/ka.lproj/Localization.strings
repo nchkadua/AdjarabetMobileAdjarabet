@@ -272,7 +272,8 @@
 "card_add_button_title" = "ბარათის დამატება";
 
 /* Security Levels */
-"security_levels_scene_title" = "SMS შეტყობინებები";
+"security_levels_sms_scene_title" = "SMS შეტყობინებები";
+"security_levels_email_scene_title" = "EMail შეტყობინებები";
 "security_levels_standart_packet" = "სტანდარტული პაკეტი";
 "security_levels_high_security_parameters" = "მაღალი დაცვის პაკეტი";
 "security_levels_individual" = "ინდივიდუალური";
