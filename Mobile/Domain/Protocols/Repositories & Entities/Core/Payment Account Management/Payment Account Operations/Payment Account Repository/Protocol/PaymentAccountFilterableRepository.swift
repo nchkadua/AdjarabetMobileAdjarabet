@@ -19,16 +19,15 @@ protocol PaymentAccountFilterableRepository {
               handler: @escaping ListHandler)
 }
 
+// list params
 struct PaymentAccountFilterableListParams {
     let providerType: ProviderType
     let paymentType: PaymentType
 
-    /// Provider Type Enum
     enum ProviderType {
         case visaRegular
         case visaVip
 
-        /// providerId property
         var providerId: String {
             switch self {
             case .visaRegular: return "0ad25ba0-c49b-11e3-894d-005056a8fc2a"
@@ -37,12 +36,10 @@ struct PaymentAccountFilterableListParams {
         }
     }
 
-    /// Payment Type Enum
     enum PaymentType {
         case deposit
         case withdraw
 
-        /// stringValue property
         var stringValue: String {
             switch self {
             case .deposit:  return "deposit"

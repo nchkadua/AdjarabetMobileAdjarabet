@@ -12,14 +12,13 @@ protocol PaymentAccountDeletableRepository {
     /**
      Deletes payment account specified by payment account ID
      for the currently authenticated user
-     Returns Status Code
      */
     typealias PaymentAccountDeleteHandler = (Result<Void, Error>) -> Void
     func delete(params: PaymentAccountDeleteParams,
                 handler: @escaping PaymentAccountDeleteHandler)
 }
 
-// for delete
+// delete params
 struct PaymentAccountDeleteParams {
     let id: Int64
 }
