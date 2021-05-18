@@ -97,7 +97,7 @@ extension GameLauncherComponentView: Xibable {
         categoryLabel.setTextColor(to: .secondaryText())
         categoryLabel.setFont(to: .footnote(fontCase: .lower))
 
-        inImageView.setTintColor(to: .tertiaryText())
+        inImageView.setTintColor(to: .primaryText(alpha: 0.6))
 
         separatorView.setBackgorundColor(to: .nonOpaque())
 

@@ -57,11 +57,11 @@ public class RecentlyPlayedComponentView: UIView {
     }
 
     private func setupUI(title: String, buttonTitle: String) {
-        self.titleLabel.text = title
+        self.titleLabel.text = title.uppercased()
         self.button.setTitleWithoutAnimation(buttonTitle, for: .normal)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.contentInset.left = 20
+        self.collectionView.contentInset.left = 16
         self.collectionView.contentInset.right = 20
         self.collectionView.reloadData()
     }
@@ -85,7 +85,7 @@ extension RecentlyPlayedComponentView: Xibable {
         view.backgroundColor = .clear
 
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setFont(to: .headline(fontCase: .upper, fontStyle: .semiBold))
 
         button.setTitleColor(to: .primaryText(), for: .normal)
         button.setFont(to: .footnote(fontCase: .lower))

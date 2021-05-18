@@ -16,6 +16,6 @@ extension DefaultPlayedGameLauncherComponentViewModel: PlayedGameLauncherCollect
 
 public extension PlayedGameLauncherCollectionViewCellDataProvider {
     func size(for rect: CGRect, safeArea: CGRect, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat) -> CGSize {
-        CGSize(width: 130, height: 225)
+        CGSize(width: 80, height: 88)
     }
 }
