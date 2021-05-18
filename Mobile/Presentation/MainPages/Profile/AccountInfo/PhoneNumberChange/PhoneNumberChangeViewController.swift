@@ -13,10 +13,12 @@ public class PhoneNumberChangeViewController: ABViewController {
     public lazy var navigator = PhoneNumberChangeNavigator(viewController: self)
 
     // MARK: Outlets
-    @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var phonePrefixInputView: ABInputView!
     @IBOutlet private weak var phoneNumberInputView: ABInputView!
     @IBOutlet private weak var approveButton: ABButton!
+
+    @IBOutlet private weak var verticalSeparator: UIView!
+    @IBOutlet private weak var horizontalSeparator: UIView!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -53,16 +55,25 @@ public class PhoneNumberChangeViewController: ABViewController {
         setupKeyboard()
         setupInputView()
         setupApproveButton()
-        setupLabel()
+        setupSeparators()
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.phone_number_change_title.localized())
+        setTitle(title: R.string.localization.phone_number_change_title.localized().uppercased())
+
+        let backButtonGroup = makeRoundedBackButtonItem()
+        navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
+        backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+    }
+
+    @objc private func dismissViewController() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func setupInputView() {
         phonePrefixInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         phonePrefixInputView.setPlaceholder(text: R.string.localization.phone_prefix.localized())
+        phonePrefixInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
 
         let titles = Country.allCases
             .map { $0.description }
@@ -72,6 +83,7 @@ public class PhoneNumberChangeViewController: ABViewController {
         phonePrefixInputView.setupPickerView(withItems: titles)
 
         phoneNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
+        phoneNumberInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
         phoneNumberInputView.setPlaceholder(text: R.string.localization.new_phone_number.localized())
         phoneNumberInputView.mainTextField.keyboardType = .numberPad
 
@@ -95,14 +107,13 @@ public class PhoneNumberChangeViewController: ABViewController {
         approveButton.addTarget(self, action: #selector(approveDidTap), for: .touchUpInside)
     }
 
-    @objc private func approveDidTap() {
-        closeKeyboard()
+    private func setupSeparators() {
+        verticalSeparator.setBackgorundColor(to: .nonOpaque())
+        horizontalSeparator.setBackgorundColor(to: .systemGrey5())
     }
 
-    private func setupLabel() {
-        subtitleLabel.setFont(to: .caption2(fontCase: .lower))
-        subtitleLabel.setTextColor(to: .primaryText())
-        subtitleLabel.text = R.string.localization.phone_number_subtitle.localized()
+    @objc private func approveDidTap() {
+        closeKeyboard()
     }
 
     // MARK: Configuration
@@ -112,6 +123,7 @@ public class PhoneNumberChangeViewController: ABViewController {
     }
 }
 
+<<<<<<< HEAD
 extension PhoneNumberChangeViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [phoneNumberInputView] }
 }
@@ -125,3 +137,6 @@ private func setupAccessibilityIdentifiers() {
     phonePrefixInputView.accessibilityIdentifier = "PhoneNumberChangeViewController.phonePrefixInputView"
 }
 }
+=======
+extension PhoneNumberChangeViewController: CommonBarButtonProviding { }
+>>>>>>> dev

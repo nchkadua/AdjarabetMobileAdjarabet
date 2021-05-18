@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,30 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeR-j6-SDs" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                <rect key="frame" x="20" y="60" width="374" height="54"/>
+                                <rect key="frame" x="20" y="60" width="374" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="ZZM-iP-dK3"/>
+                                    <constraint firstAttribute="height" constant="48" id="ZZM-iP-dK3"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywt-um-mBf" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                <rect key="frame" x="20" y="122" width="374" height="54"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="vMM-eP-Zp3"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGN-6C-2hU">
-                                <rect key="frame" x="31" y="193" width="353" height="16"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="yNy-K5-7ts"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-pH-QhJ" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                <rect key="frame" x="20" y="231" width="374" height="54"/>
+                                <rect key="frame" x="20" y="137" width="374" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="a8V-ha-GFW"/>
                                 </constraints>
@@ -53,23 +37,15 @@
                         <constraints>
                             <constraint firstItem="AeR-j6-SDs" firstAttribute="top" secondItem="bos-8d-JVb" secondAttribute="top" constant="16" id="8Yq-9l-6o4"/>
                             <constraint firstItem="XiW-pH-QhJ" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="20" id="BsV-cw-tBv"/>
-                            <constraint firstItem="jGN-6C-2hU" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="31" id="G9r-dL-OTr"/>
                             <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="XiW-pH-QhJ" secondAttribute="trailing" constant="20" id="Tu9-Yr-ydI"/>
-                            <constraint firstItem="ywt-um-mBf" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="20" id="W81-xV-Sah"/>
-                            <constraint firstItem="jGN-6C-2hU" firstAttribute="top" secondItem="ywt-um-mBf" secondAttribute="bottom" constant="17" id="X4v-af-DzQ"/>
                             <constraint firstItem="AeR-j6-SDs" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="20" id="cva-KV-zUy"/>
-                            <constraint firstItem="XiW-pH-QhJ" firstAttribute="top" secondItem="jGN-6C-2hU" secondAttribute="bottom" constant="22" id="e6s-1x-CBt"/>
-                            <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="ywt-um-mBf" secondAttribute="trailing" constant="20" id="hRo-bj-4nV"/>
-                            <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="jGN-6C-2hU" secondAttribute="trailing" constant="30" id="l0y-BR-69b"/>
                             <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="AeR-j6-SDs" secondAttribute="trailing" constant="20" id="oX1-ld-ZLn"/>
-                            <constraint firstItem="ywt-um-mBf" firstAttribute="top" secondItem="AeR-j6-SDs" secondAttribute="bottom" constant="8" id="sln-uP-Nku"/>
+                            <constraint firstItem="XiW-pH-QhJ" firstAttribute="top" secondItem="AeR-j6-SDs" secondAttribute="bottom" constant="29" id="q0q-jj-0wM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="changeButton" destination="XiW-pH-QhJ" id="efh-4R-aKX"/>
                         <outlet property="mailInputView" destination="AeR-j6-SDs" id="bca-Hj-DfF"/>
-                        <outlet property="passwordInputView" destination="ywt-um-mBf" id="Ad3-Ma-ixX"/>
-                        <outlet property="titleLabel" destination="jGN-6C-2hU" id="VTx-St-xSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOD-1d-rtI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -77,6 +53,11 @@
             <point key="canvasLocation" x="65" y="84"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="XiW-pH-QhJ">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

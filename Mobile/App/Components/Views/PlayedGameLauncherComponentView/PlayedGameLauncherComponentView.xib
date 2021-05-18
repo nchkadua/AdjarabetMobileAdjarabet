@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,8 +14,6 @@
                 <outlet property="contentStackView" destination="ed8-Wg-eav" id="KoE-cN-HZP"/>
                 <outlet property="coverImageView" destination="sgl-qp-TAe" id="lfB-Zk-PS7"/>
                 <outlet property="loaderView" destination="NrK-wL-1yi" id="hSa-VE-SdN"/>
-                <outlet property="subtitleLabel" destination="PBd-Wi-fw9" id="Wgp-aW-CyN"/>
-                <outlet property="titleLabel" destination="ko1-4W-2Pg" id="A3b-Uv-03r"/>
                 <outlet property="view" destination="iN0-l3-epB" id="eop-pb-5em"/>
             </connections>
         </placeholder>
@@ -24,15 +22,15 @@
             <rect key="frame" x="0.0" y="0.0" width="306" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ed8-Wg-eav">
-                    <rect key="frame" x="0.0" y="44" width="306" height="227"/>
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ed8-Wg-eav">
+                    <rect key="frame" x="0.0" y="44" width="306" height="88"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sgl-qp-TAe" customClass="CircularImageView" customModule="Mobile" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="130" height="175"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="130" id="d2q-F4-dBO"/>
-                                <constraint firstAttribute="height" constant="175" id="wqA-kr-AnO"/>
+                                <constraint firstAttribute="width" constant="80" id="d2q-F4-dBO"/>
+                                <constraint firstAttribute="height" constant="80" id="wqA-kr-AnO"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -40,37 +38,21 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DIu-O0-spY">
-                            <rect key="frame" x="0.0" y="182" width="41.5" height="45"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-4W-2Pg">
-                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBd-Wi-fw9">
-                                    <rect key="frame" x="0.0" y="24.5" width="41.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
                     </subviews>
+                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="8" right="0.0"/>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrK-wL-1yi" customClass="PlayedGameLauncherComponentLoaderView" customModule="Mobile" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="306" height="202"/>
+                    <rect key="frame" x="0.0" y="44" width="306" height="80"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="DFD-e2-gQj">
-                            <rect key="frame" x="0.0" y="0.0" width="306" height="202"/>
+                            <rect key="frame" x="0.0" y="0.0" width="306" height="80"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-6i-xBB" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="130" height="175"/>
+                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-6i-xBB" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                     <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="175" id="UAk-6e-xDd"/>
-                                        <constraint firstAttribute="width" constant="130" id="fwI-Ej-blO"/>
+                                        <constraint firstAttribute="height" constant="80" id="UAk-6e-xDd"/>
+                                        <constraint firstAttribute="width" constant="80" id="fwI-Ej-blO"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -78,47 +60,6 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HDd-zI-bTe">
-                                    <rect key="frame" x="0.0" y="182" width="120" height="20"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpX-UG-wid" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="8"/>
-                                            <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="8" id="03G-a6-NLe"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="3"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-Ut-lOR">
-                                            <rect key="frame" x="0.0" y="12" width="120" height="8"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jup-lb-rCz" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="92.5" height="8"/>
-                                                    <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="3"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="Jup-lb-rCz" firstAttribute="width" secondItem="cGT-Ut-lOR" secondAttribute="width" multiplier="0.77" id="Y4u-P7-2eg"/>
-                                                <constraint firstItem="Jup-lb-rCz" firstAttribute="leading" secondItem="cGT-Ut-lOR" secondAttribute="leading" id="YXQ-h1-3rh"/>
-                                                <constraint firstItem="Jup-lb-rCz" firstAttribute="top" secondItem="cGT-Ut-lOR" secondAttribute="top" id="azb-c6-n9e"/>
-                                                <constraint firstAttribute="bottom" secondItem="Jup-lb-rCz" secondAttribute="bottom" id="e62-xr-6Ff"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="cGT-Ut-lOR" firstAttribute="height" secondItem="vpX-UG-wid" secondAttribute="height" id="buI-Ct-0xi"/>
-                                    </constraints>
-                                </stackView>
                             </subviews>
                         </stackView>
                     </subviews>
@@ -131,8 +72,6 @@
                     </constraints>
                     <connections>
                         <outlet property="coverImageView" destination="WqB-6i-xBB" id="2zs-Eq-FcR"/>
-                        <outlet property="subtitleLabel" destination="Jup-lb-rCz" id="tLF-2s-Zo8"/>
-                        <outlet property="titleLabel" destination="vpX-UG-wid" id="6QU-PL-P7s"/>
                     </connections>
                 </view>
             </subviews>
@@ -140,11 +79,9 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ed8-Wg-eav" secondAttribute="trailing" id="2JG-zU-NQW"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NrK-wL-1yi" secondAttribute="bottom" id="DmV-QP-pG8"/>
                 <constraint firstItem="NrK-wL-1yi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="L1G-lY-Uqk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NrK-wL-1yi" secondAttribute="trailing" id="L6Z-Un-hsI"/>
                 <constraint firstItem="NrK-wL-1yi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="X8H-Xk-aSL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ed8-Wg-eav" secondAttribute="bottom" id="f2x-ie-hbC"/>
                 <constraint firstItem="ed8-Wg-eav" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="prg-Ua-x7B"/>
                 <constraint firstItem="ed8-Wg-eav" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uHx-dm-5fU"/>
             </constraints>

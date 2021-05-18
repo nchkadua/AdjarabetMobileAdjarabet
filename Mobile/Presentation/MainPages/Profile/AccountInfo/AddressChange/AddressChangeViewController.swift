@@ -13,7 +13,6 @@ public class AddressChangeViewController: ABViewController {
     public lazy var navigator = AddressChangeNavigator(viewController: self)
 
     // MARK: Outlets
-    @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var addressInputView: ABInputView!
     @IBOutlet private weak var approveButton: ABButton!
 
@@ -50,11 +49,18 @@ public class AddressChangeViewController: ABViewController {
         setupKeyboard()
         setupInputView()
         setupApproveButton()
-        setupLabel()
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.address_change_title.localized())
+        setTitle(title: R.string.localization.address_change_title.localized().uppercased())
+
+        let backButtonGroup = makeRoundedBackButtonItem()
+        navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
+        backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+    }
+
+    @objc private func dismissViewController() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func setupInputView() {
@@ -80,15 +86,11 @@ public class AddressChangeViewController: ABViewController {
         closeKeyboard()
     }
 
-    private func setupLabel() {
-        subtitleLabel.setFont(to: .caption2(fontCase: .lower))
-        subtitleLabel.setTextColor(to: .primaryText())
-        subtitleLabel.text = R.string.localization.new_address_subtitle.localized()
-    }
-
     // MARK: Configuration
     private func updateApproveButton(isEnabled: Bool) {
         approveButton.isUserInteractionEnabled = isEnabled
         approveButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }
 }
+
+extension AddressChangeViewController: CommonBarButtonProviding { }

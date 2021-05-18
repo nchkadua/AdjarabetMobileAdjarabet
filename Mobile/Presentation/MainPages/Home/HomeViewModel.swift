@@ -50,6 +50,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     @Inject private var userBalanceService: UserBalanceService
 
     private var page: PageDescription = .init()
+    private var recentlyPlayedGames: AppCellDataProviders = []
     private var games: AppCellDataProviders = []
     public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .secondaryText(), height: 55))
     private let placeholderSection = AppSectionDataProvider(dataProviders: [
@@ -180,6 +181,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
                         default: break
                         }
                     }).disposed(by: self.disposeBag)
+                    self.recentlyPlayedGames.append(vm)
                     return vm
                 }
 

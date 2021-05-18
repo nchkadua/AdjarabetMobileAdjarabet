@@ -17,8 +17,6 @@ public class PlayedGameLauncherComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var contentStackView: UIStackView!
     @IBOutlet weak private var coverImageView: UIImageView!
-    @IBOutlet weak private var titleLabel: UILabel!
-    @IBOutlet weak private var subtitleLabel: UILabel!
 
     @IBOutlet weak private var loaderView: PlayedGameLauncherComponentLoaderView!
 
@@ -35,6 +33,11 @@ public class PlayedGameLauncherComponentView: UIView {
     public func setAndBind(viewModel: PlayedGameLauncherComponentViewModel) {
         self.viewModel = viewModel
         bind()
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        coverImageView.roundCorners(.allCorners, radius: coverImageView.frame.size.width / 2)
     }
 
     public func bind() {
@@ -57,10 +60,6 @@ public class PlayedGameLauncherComponentView: UIView {
     }
 
     private func setupUI(coverUrl: URL, title: String, subtitle: String?) {
-        self.titleLabel.text = title
-        self.subtitleLabel.text = subtitle
-        self.subtitleLabel.isHidden = subtitle == nil
-
         let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
         loadImage(with: coverUrl, options: options, into: coverImageView)
     }
@@ -78,13 +77,6 @@ extension PlayedGameLauncherComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = .clear
-
-        titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
-
-        subtitleLabel.setTextColor(to: .secondaryText())
-        subtitleLabel.setFont(to: .footnote(fontCase: .lower))
-
         set(isLoading: false)
     }
 }
@@ -94,5 +86,5 @@ public class PlayedGameLauncherComponentLoaderView: UIView {
     @IBOutlet weak private var titleLabel: ShimmerView!
     @IBOutlet weak private var subtitleLabel: ShimmerView!
 
-    public var shimmerViews: [ShimmerView] { [coverImageView, titleLabel, subtitleLabel] }
+    public var shimmerViews: [ShimmerView] { [coverImageView] }
 }

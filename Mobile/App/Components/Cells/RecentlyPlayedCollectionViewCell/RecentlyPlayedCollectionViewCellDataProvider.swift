@@ -16,6 +16,6 @@ extension DefaultRecentlyPlayedComponentViewModel: RecentlyPlayedCollectionViewC
 
 public extension RecentlyPlayedCollectionViewCellDataProvider {
     func size(for rect: CGRect, safeArea: CGRect, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat) -> CGSize {
-        CGSize(width: rect.width, height: params.isVisible ? 273 : 0)
+        CGSize(width: rect.width, height: params.isVisible ? 136 : 0)
     }
 }
