@@ -123,7 +123,6 @@ public class PhoneNumberChangeViewController: ABViewController {
     }
 }
 
-<<<<<<< HEAD
 extension PhoneNumberChangeViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [phoneNumberInputView] }
 }
@@ -137,6 +136,4 @@ private func setupAccessibilityIdentifiers() {
     phonePrefixInputView.accessibilityIdentifier = "PhoneNumberChangeViewController.phonePrefixInputView"
 }
 }
-=======
 extension PhoneNumberChangeViewController: CommonBarButtonProviding { }
->>>>>>> dev
