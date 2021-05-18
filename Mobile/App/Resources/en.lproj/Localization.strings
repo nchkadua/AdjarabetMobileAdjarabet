@@ -134,7 +134,7 @@
 /* Phone Number Change */
 "phone_number_change_title" = "Change Phone Number";
 "phone_number_subtitle" = "Enter New Phone Number";
-"approve_number_button_title" = "Approve";
+"approve_number_button_title" = "Continue";
 "phone_prefix" = "Prexix";
 "new_phone_number" = "Phone Number";
 
