@@ -41,6 +41,8 @@ class DefaultABSliderViewModel: ABSliderViewModel {
     private var slides: ABSliderViewModelSlides
     private let actionSubject = PublishSubject<ABSliderViewModelAction>()
 
+    static var `default`: ABSliderViewModel { DefaultABSliderViewModel() }
+
     init(slides: ABSliderViewModelSlides = []) {
         self.slides = slides
     }

@@ -19,11 +19,21 @@ class ABSlider: UIView, Xibable {
         set { view = newValue }
     }
 
-    var viewModel: ABSliderViewModel = DefaultABSliderViewModel() {
+    var viewModel: ABSliderViewModel = DefaultABSliderViewModel.default {
         didSet { viewModelDidSet() }
     }
 
     private var disposeBag = DisposeBag()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        nibSetup()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        nibSetup()
+    }
 
     private func viewModelDidSet() {
         disposeBag = DisposeBag()
@@ -45,5 +55,6 @@ class ABSlider: UIView, Xibable {
 
     func setupUI() {
         //
+        viewModelDidSet() // for initial setting
     }
 }

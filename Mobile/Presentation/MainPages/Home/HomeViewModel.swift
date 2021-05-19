@@ -57,12 +57,12 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         DefaultEmptyCollectionViewCellDataProvider()
     ])
     private let bannerSection = AppSectionDataProvider(dataProviders: [
-        DefaultHomeBannerContainerComponentViewModel(params: .init(banners: [
-            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.home.banner1()!)),
-            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.home.banner2()!)),
-            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.home.banner1()!)),
-            DefaultHomeBannerComponentViewModel(params: .init(banner: R.image.home.banner2()!))
-        ]))
+        DefaultABSliderViewModel(slides: [
+            .init(image: R.image.home.banner1()!),
+            .init(image: R.image.home.banner2()!),
+            .init(image: R.image.home.banner1()!),
+            .init(image: R.image.home.banner2()!)
+        ])
     ])
     private var fetchedGames: [Game] = []
     private var loadingType: LoadingType = .none {
