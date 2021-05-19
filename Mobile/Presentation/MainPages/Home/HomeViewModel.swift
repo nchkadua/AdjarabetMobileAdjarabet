@@ -41,7 +41,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         case list
         case grid
     }
-    private var selectedLayout: GamesLayout = .list
+    private var selectedLayout: GamesLayout = .grid
     private let actionSubject = PublishSubject<HomeViewModelOutputAction>()
     private let routeSubject = PublishSubject<HomeViewModelRoute>()
 
@@ -73,7 +73,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
             let isNextPage = loadingType == .nextPage
             loading.set(isLoading: isNextPage)
-            let indexPath = IndexPath(item: games.count, section: 3)
+            let indexPath = IndexPath(item: max(games.count - topCapacity, 0), section: 4)
             actionSubject.onNext(.reloadIndexPathes([indexPath]))
         }
     }
@@ -163,8 +163,25 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
         self.games.append(contentsOf: games)
 
-        let indexPathes = games.enumerated().map { IndexPath(item: offset + $0.offset, section: 3) }
-        actionSubject.onNext(.reloadItems(items: games, insertionIndexPathes: indexPathes, deletionIndexPathes: []))
+        let spaceInTop = topCapacity - offset
+
+        let bottom: ArraySlice<AppCellDataProvider>
+
+        if spaceInTop > 0 {
+            bottom = games.dropFirst(spaceInTop)
+            let top = games.prefix(spaceInTop)
+
+            let indexPathes = top.enumerated().map { IndexPath(item: offset + $0.offset, section: 2) }
+            actionSubject.onNext(.reloadItems(items: Array(top), insertionIndexPathes: indexPathes, deletionIndexPathes: []))
+        } else {
+            bottom = games.dropFirst(0)
+        }
+
+        if !bottom.isEmpty {
+            let ofs = max(offset - topCapacity, 0)
+            let indexPathes = bottom.enumerated().map { IndexPath(item: ofs + $0.offset, section: 4) }
+            actionSubject.onNext(.reloadItems(items: Array(bottom), insertionIndexPathes: indexPathes, deletionIndexPathes: []))
+        }
     }
 
     private func loadRecentryPlayedGames() {
@@ -187,12 +204,14 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
                 self.recentlyPlayedComponentViewModel.params.playedGames = viewModels
                 self.recentlyPlayedComponentViewModel.params.isVisible = !viewModels.isEmpty
-                self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 2)]))
+                self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 3)]))
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
+
+    private var topCapacity: Int { selectedLayout == .list ? 4 : 6 }
 }
 
 extension DefaultHomeViewModel: HomeViewModel {
@@ -226,9 +245,10 @@ extension DefaultHomeViewModel: HomeViewModel {
 
     private func displayEmptyGames() {
         let recentryPlayedSection = AppSectionDataProvider(dataProviders: [recentlyPlayedComponentViewModel])
-        let gamesSection = AppSectionDataProvider(dataProviders: [loading])
+        let gamesSectionTop = AppSectionDataProvider(dataProviders: [])
+        let gamesSectionBottom = AppSectionDataProvider(dataProviders: [loading])
 
-        actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [placeholderSection, bannerSection, recentryPlayedSection, gamesSection])))
+        actionSubject.onNext(.initialize(AppListDataProvider(sectionDataProviders: [placeholderSection, bannerSection, gamesSectionTop, recentryPlayedSection, gamesSectionBottom])))
     }
 
     public func didLoadNextPage() {
