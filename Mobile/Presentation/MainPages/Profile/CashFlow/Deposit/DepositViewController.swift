@@ -17,6 +17,7 @@ public class DepositViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var balanceTitleLabel: UILabel!
     @IBOutlet private weak var balanceLabel: UILabel!
+    @IBOutlet private weak var loader: UIActivityIndicatorView!
 
     @IBOutlet private weak var paymentGridComponentView: PaymentMethodGridComponentView!
     @IBOutlet private weak var childrenVCFrameView: UIView!
@@ -45,10 +46,16 @@ public class DepositViewController: UIViewController {
 
     private func didRecive(action: DepositViewModelOutputAction) {
         switch action {
-        case .set(let totalBalance): set(totalBalance)
-        case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
-        case .didLoadPaymentMethods(let methods): setChildViewControllers(methods)
-        case .showMessage(let message): showAlert(title: message)
+        case .set(let totalBalance):
+            set(totalBalance)
+        case .bindToGridViewModel(let viewModel):
+            bindToGrid(viewModel)
+        case .didLoadPaymentMethods(let methods):
+            setChildViewControllers(methods)
+        case .showMessage(let message):
+            showAlert(title: message)
+        case .loader(let isHidden):
+            handleLoader(isHidden)
         }
     }
 
@@ -58,6 +65,7 @@ public class DepositViewController: UIViewController {
         setupPageViewController()
         setupLabels()
         setupImageView()
+        loader.isHidden = true
     }
 
     private func setupPageViewController() {
@@ -65,6 +73,7 @@ public class DepositViewController: UIViewController {
         appPageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appPageViewController.view.pin(to: childrenVCFrameView)
         appPageViewController.setSwipeEnabled(false)
+        appPageViewController.view.isHidden = true
     }
 
     private func setupImageView() {
@@ -106,6 +115,13 @@ public class DepositViewController: UIViewController {
         default:
             break
         }
+    }
+
+    private func handleLoader(_ isHidden: Bool) {
+        loader.isHidden = isHidden
+        (isHidden ? loader.stopAnimating : loader.startAnimating)()
+
+        appPageViewController.view.isHidden = !isHidden
     }
 
     // MARK: Action methods
