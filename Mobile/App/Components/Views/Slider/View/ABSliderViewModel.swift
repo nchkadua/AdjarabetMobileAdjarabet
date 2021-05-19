@@ -14,6 +14,8 @@ protocol ABSliderViewModel: ABSliderViewModelInput, ABSliderViewModelOutput { }
 protocol ABSliderViewModelInput {
     // for view to call
     func onBind()
+    func count() -> Int
+    func image(at index: Int) -> UIImage
     // for others to mutate the state
     func set(slides: ABSliderViewModelSlides)
 }
@@ -57,4 +59,7 @@ class DefaultABSliderViewModel: ABSliderViewModel {
         self.slides = slides
         actionSubject.onNext(.reload)
     }
+
+    func count() -> Int { slides.count }
+    func image(at index: Int) -> UIImage { slides[index].image }
 }
