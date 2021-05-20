@@ -39,6 +39,7 @@ public class ABButton: LoadingButton {
     private func addStylesForActions() {
         addTarget(self, action: #selector(handleTouchDown), for: .touchDown)
         addTarget(self, action: #selector(handleTouchUp), for: .touchUpInside)
+        addTarget(self, action: #selector(handleTouchUp1), for: .touchDragInside)
     }
 
     @objc private func handleTouchDown() {
@@ -46,6 +47,10 @@ public class ABButton: LoadingButton {
     }
 
     @objc private func handleTouchUp() {
+        setStyle(to: .primary(state: .active, size: .large))
+    }
+
+    @objc private func handleTouchUp1() {
         setStyle(to: .primary(state: .active, size: .large))
     }
 }

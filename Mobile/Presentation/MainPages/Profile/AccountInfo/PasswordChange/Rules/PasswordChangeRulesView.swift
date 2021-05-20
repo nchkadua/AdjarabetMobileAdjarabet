@@ -9,6 +9,7 @@
 class PasswordChangeRulesView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var sv: UIStackView!
     @IBOutlet weak private var rule1ImageView: UIImageView!
     @IBOutlet weak private var rule1Label: UILabel!
     @IBOutlet weak private var rule2ImageView: UIImageView!
@@ -31,6 +32,11 @@ class PasswordChangeRulesView: UIView {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         nibSetup()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        sv.layer.cornerRadius = 4
     }
 
     // MARK: Public methods
@@ -118,6 +124,8 @@ extension PasswordChangeRulesView: Xibable {
 
     func setupUI() {
         view.backgroundColor = .clear
+
+        sv.setBackgorundColor(to: .regular())
 
         rule1ImageView.image = R.image.components.accountInfo.oval()
         rule1ImageView.setTintColor(to: .secondaryText())
