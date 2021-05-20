@@ -10,7 +10,11 @@ import RxSwift
 
 protocol LayoutChooserViewModel: LayoutChooserViewModelInput, LayoutChooserViewModelOutput { }
 
-protocol LayoutChooserViewModelInput { }
+protocol LayoutChooserViewModelInput {
+    // for view to call
+    func listLayoutTapped()
+    func gridLayoutTapped()
+}
 
 protocol LayoutChooserViewModelOutput {
     var action: Observable<LayoutChooserViewModelAction> { get }
@@ -18,8 +22,8 @@ protocol LayoutChooserViewModelOutput {
 
 enum LayoutChooserViewModelAction {
     // for other listeners
-    case gridLayoutTapped
     case listLayoutTapped
+    case gridLayoutTapped
 }
 
 // MARK: - Default Implementation
@@ -29,4 +33,12 @@ class DefaultLayoutChooserViewModel: LayoutChooserViewModel {
 
     private let actionSubject = PublishSubject<LayoutChooserViewModelAction>()
     var action: Observable<LayoutChooserViewModelAction> { actionSubject.asObserver() }
+
+    func listLayoutTapped() {
+        actionSubject.onNext(.listLayoutTapped)
+    }
+
+    func gridLayoutTapped() {
+        actionSubject.onNext(.gridLayoutTapped)
+    }
 }

@@ -37,10 +37,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         bind(to: viewModel)
         viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
-
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//            self.viewModel.layoutChangeTapped()
-//        }
     }
 
 //    public override func viewDidAppear(_ animated: Bool) {
@@ -53,10 +49,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
 //        super.viewWillDisappear(animated)
 //        mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
 //    }
-
-    @objc func changeLayout() {
-        viewModel.layoutChangeTapped()
-    }
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -89,7 +81,9 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         case .initialize(let appListDataProvider):
             collectionViewController.dataProvider = appListDataProvider
         case .reloadItems(let items, let insertions, let deletions):
-            collectionViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
+            UIView.performWithoutAnimation {
+                collectionViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
+            }
         case .reloadIndexPathes(let indexPathes):
             UIView.performWithoutAnimation {
                 collectionViewController.collectionView.reloadItems(at: indexPathes)

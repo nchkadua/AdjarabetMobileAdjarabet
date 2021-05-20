@@ -2470,12 +2470,48 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.home` struct is generated, and contains static references to 2 images.
+    /// This `R.image.home` struct is generated, and contains static references to 6 images.
     struct home {
+      /// Image `Grid Layout Off`.
+      static let gridLayoutOff = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/Grid Layout Off")
+      /// Image `Grid Layout On`.
+      static let gridLayoutOn = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/Grid Layout On")
+      /// Image `List Layout Off`.
+      static let listLayoutOff = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/List Layout Off")
+      /// Image `List Layout On`.
+      static let listLayoutOn = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/List Layout On")
       /// Image `banner1`.
       static let banner1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/banner1")
       /// Image `banner2`.
       static let banner2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/banner2")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Grid Layout Off", bundle: ..., traitCollection: ...)`
+      static func gridLayoutOff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.gridLayoutOff, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Grid Layout On", bundle: ..., traitCollection: ...)`
+      static func gridLayoutOn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.gridLayoutOn, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "List Layout Off", bundle: ..., traitCollection: ...)`
+      static func listLayoutOff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.listLayoutOff, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "List Layout On", bundle: ..., traitCollection: ...)`
+      static func listLayoutOn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.listLayoutOn, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "banner1", bundle: ..., traitCollection: ...)`
@@ -4401,7 +4437,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 492 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 493 localization keys.
     struct localization {
       /// en translation: 6 Digit Code
       ///
@@ -5871,6 +5907,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sint_maarten = Rswift.StringResource(key: "sint_maarten", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Slots
+      ///
+      /// Locales: en, ka, hy
+      static let home_slots = Rswift.StringResource(key: "home_slots", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Slovakia
       ///
       /// Locales: en, ka, hy
@@ -11877,6 +11917,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sint_maarten", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Slots
+      ///
+      /// Locales: en, ka, hy
+      static func home_slots(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_slots", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "home_slots"
+        }
+
+        return NSLocalizedString("home_slots", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Slovakia
       ///
       /// Locales: en, ka, hy
@@ -13795,6 +13850,7 @@ struct _R: Rswift.Validatable {
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
       try _HomeHeaderView.validate()
+      try _LayoutChooserView.validate()
       try _QuickActionComponentView.validate()
       try _TransactionHistoryComponentView.validate()
       try _WithdrawVisaInfoView.validate()
@@ -13903,8 +13959,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14084,8 +14140,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14349,12 +14405,19 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _LayoutChooserView: Rswift.NibResourceType {
+    struct _LayoutChooserView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "LayoutChooserView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -15277,10 +15340,10 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

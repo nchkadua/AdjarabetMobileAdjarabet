@@ -15,17 +15,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qs1-n2-oHk" customClass="LayoutChooserView" customModule="Mobile" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                    <rect key="frame" x="16" y="8" width="335" height="142"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="qs1-n2-oHk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QFI-uf-JnP"/>
-                <constraint firstAttribute="trailing" secondItem="qs1-n2-oHk" secondAttribute="trailing" id="XL3-Ea-HwB"/>
-                <constraint firstItem="qs1-n2-oHk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hpr-rc-YYr"/>
-                <constraint firstAttribute="bottom" secondItem="qs1-n2-oHk" secondAttribute="bottom" id="yau-tO-vbR"/>
+                <constraint firstAttribute="trailing" secondItem="qs1-n2-oHk" secondAttribute="trailing" constant="24" id="66p-Sa-yRP"/>
+                <constraint firstItem="qs1-n2-oHk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="o1q-jA-LV5"/>
+                <constraint firstItem="qs1-n2-oHk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="pSa-eZ-WeP"/>
+                <constraint firstItem="qs1-n2-oHk" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="vea-7A-gWL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

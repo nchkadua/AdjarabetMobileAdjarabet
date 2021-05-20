@@ -16,6 +16,6 @@ extension LayoutChooserCollectionViewCellDataProvider {
 
 extension DefaultLayoutChooserViewModel: LayoutChooserCollectionViewCellDataProvider {
     func size(for rect: CGRect, safeArea: CGRect, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat) -> CGSize {
-        .init(width: rect.width, height: 150)
+        .init(width: rect.width, height: 54)
     }
 }

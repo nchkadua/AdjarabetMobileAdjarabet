@@ -16,7 +16,6 @@ public protocol HomeViewModelInput {
     func viewDidLoad()
     func viewWillAppear()
     func didLoadNextPage()
-    func layoutChangeTapped()
 }
 
 public protocol HomeViewModelOutput {
@@ -41,7 +40,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         case list
         case grid
     }
-    private var selectedLayout: GamesLayout = .grid
+    private var selectedLayout: GamesLayout = .list
     private let actionSubject = PublishSubject<HomeViewModelOutputAction>()
     private let routeSubject = PublishSubject<HomeViewModelRoute>()
 
@@ -66,6 +65,9 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         ]),
         DefaultLayoutChooserViewModel()
     ])
+    // swiftlint:disable force_cast
+    private var layoutChooserViewModel: LayoutChooserViewModel { bannerSection[1] as! LayoutChooserViewModel }
+    // swiftlint:enable force_cast
     private var fetchedGames: [Game] = []
     private var loadingType: LoadingType = .none {
         didSet {
@@ -213,15 +215,20 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         }
     }
 
-    private var topCapacity: Int { selectedLayout == .list ? 4 : 6 }
-}
+    private func observeLayoutChange() {
+        layoutChooserViewModel.action.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .listLayoutTapped: self?.layoutChangeTapped(at: .list)
+            case .gridLayoutTapped: self?.layoutChangeTapped(at: .grid)
+            }
+        }).disposed(by: disposeBag)
+    }
 
-extension DefaultHomeViewModel: HomeViewModel {
-    public func layoutChangeTapped() {
+    private func layoutChangeTapped(at layout: GamesLayout) {
         games = []
         page = .init()
         displayEmptyGames()
-        selectedLayout = selectedLayout == GamesLayout.list ? .grid : .list
+        selectedLayout = layout
         let viewModels: [AppCellDataProvider] = fetchedGames.compactMap {
             let vm = createGameComponentFrom(game: $0)
             return vm
@@ -229,6 +236,10 @@ extension DefaultHomeViewModel: HomeViewModel {
         self.appendPage(games: viewModels)
     }
 
+    private var topCapacity: Int { selectedLayout == .list ? 4 : 6 }
+}
+
+extension DefaultHomeViewModel: HomeViewModel {
     public var action: Observable<HomeViewModelOutputAction> { actionSubject.asObserver() }
 
     public var route: Observable<HomeViewModelRoute> { routeSubject.asObserver() }
@@ -239,6 +250,7 @@ extension DefaultHomeViewModel: HomeViewModel {
 
     public func viewDidLoad() {
         observeLanguageChange()
+        observeLayoutChange()
         displayEmptyGames()
 
         loadRecentryPlayedGames()
