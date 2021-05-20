@@ -42,7 +42,7 @@
                     <edgeInsets key="layoutMargins" top="8" left="16" bottom="0.0" right="0.0"/>
                 </stackView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Oxs-UG-0Xe">
-                    <rect key="frame" x="0.0" y="92" width="657" height="261"/>
+                    <rect key="frame" x="0.0" y="92" width="657" height="249"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BeK-dM-ajE">
                         <size key="itemSize" width="128" height="128"/>
@@ -52,7 +52,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-sZ-wlM" customClass="RecentlyPlayedComponentLoaderView" customModule="Mobile" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="92" width="657" height="261"/>
+                    <rect key="frame" x="0.0" y="92" width="657" height="249"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
@@ -64,7 +64,7 @@
                 <constraint firstItem="Oxs-UG-0Xe" firstAttribute="top" secondItem="4Ki-iI-8mV" secondAttribute="bottom" id="C9O-Ww-JeO"/>
                 <constraint firstItem="ENd-sZ-wlM" firstAttribute="centerX" secondItem="Oxs-UG-0Xe" secondAttribute="centerX" id="KFg-R9-807"/>
                 <constraint firstItem="ENd-sZ-wlM" firstAttribute="width" secondItem="Oxs-UG-0Xe" secondAttribute="width" id="KsD-nt-atQ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Oxs-UG-0Xe" secondAttribute="bottom" id="LB4-QI-qFj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Oxs-UG-0Xe" secondAttribute="bottom" constant="12" id="LB4-QI-qFj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Oxs-UG-0Xe" secondAttribute="trailing" id="W5H-YA-bp1"/>
                 <constraint firstItem="ENd-sZ-wlM" firstAttribute="height" secondItem="Oxs-UG-0Xe" secondAttribute="height" id="e8m-dp-tEF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4Ki-iI-8mV" secondAttribute="trailing" id="fA6-Hq-l9i"/>

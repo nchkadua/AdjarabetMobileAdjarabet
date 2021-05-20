@@ -279,6 +279,12 @@
 		C75D1B20261205F4002AF763 /* TJRJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC3261205F4002AF763 /* TJRJSlot.zip */; settings = {ASSET_TAGS = (TJRJSlot, ); }; };
 		C75D1B21261205F4002AF763 /* TDHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC4261205F4002AF763 /* TDHJSlot.zip */; settings = {ASSET_TAGS = (TDHJSlot, ); }; };
 		C75D1B22261205F4002AF763 /* FHEJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1AC5261205F4002AF763 /* FHEJSlot.zip */; settings = {ASSET_TAGS = (FHEJSlot, ); }; };
+		C75F61E22657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F61E12657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift */; };
+		C75F61E62657047D009CB6A1 /* LayoutChooserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C75F61E52657047D009CB6A1 /* LayoutChooserCollectionViewCell.xib */; };
+		C75F61EA2657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F61E92657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift */; };
+		C75F61F326570884009CB6A1 /* LayoutChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F61F226570884009CB6A1 /* LayoutChooserView.swift */; };
+		C75F61F8265708A6009CB6A1 /* LayoutChooserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C75F61F7265708A6009CB6A1 /* LayoutChooserView.xib */; };
+		C75F61FC265708CC009CB6A1 /* LayoutChooserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F61FB265708CC009CB6A1 /* LayoutChooserViewModel.swift */; };
 		C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766086325CC3FF700A59534 /* CoreApiRepository.swift */; };
 		C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C77206DA25DAAC5E0037D8A0 /* exitButton.png */; };
 		C77206E125DAB0B50037D8A0 /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = C77206E025DAB0B50037D8A0 /* ca.der */; };
@@ -1046,6 +1052,12 @@
 		C75D1AC3261205F4002AF763 /* TJRJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TJRJSlot.zip; sourceTree = "<group>"; };
 		C75D1AC4261205F4002AF763 /* TDHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TDHJSlot.zip; sourceTree = "<group>"; };
 		C75D1AC5261205F4002AF763 /* FHEJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FHEJSlot.zip; sourceTree = "<group>"; };
+		C75F61E12657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutChooserCollectionViewCell.swift; sourceTree = "<group>"; };
+		C75F61E52657047D009CB6A1 /* LayoutChooserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutChooserCollectionViewCell.xib; sourceTree = "<group>"; };
+		C75F61E92657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutChooserCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		C75F61F226570884009CB6A1 /* LayoutChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutChooserView.swift; sourceTree = "<group>"; };
+		C75F61F7265708A6009CB6A1 /* LayoutChooserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutChooserView.xib; sourceTree = "<group>"; };
+		C75F61FB265708CC009CB6A1 /* LayoutChooserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutChooserViewModel.swift; sourceTree = "<group>"; };
 		C766086325CC3FF700A59534 /* CoreApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiRepository.swift; sourceTree = "<group>"; };
 		C77206DA25DAAC5E0037D8A0 /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButton.png; sourceTree = "<group>"; };
 		C77206E025DAB0B50037D8A0 /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
@@ -2348,6 +2360,43 @@
 			path = "Payment List";
 			sourceTree = "<group>";
 		};
+		C75F61DA2656FD92009CB6A1 /* Layout Chooser */ = {
+			isa = PBXGroup;
+			children = (
+				C75F61F626570888009CB6A1 /* View */,
+				C75F61F126570866009CB6A1 /* Cell */,
+			);
+			path = "Layout Chooser";
+			sourceTree = "<group>";
+		};
+		C75F61F126570866009CB6A1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C75F6201265708EC009CB6A1 /* Collection View */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C75F61F626570888009CB6A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C75F61FB265708CC009CB6A1 /* LayoutChooserViewModel.swift */,
+				C75F61F226570884009CB6A1 /* LayoutChooserView.swift */,
+				C75F61F7265708A6009CB6A1 /* LayoutChooserView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C75F6201265708EC009CB6A1 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				C75F61E92657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift */,
+				C75F61E12657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift */,
+				C75F61E52657047D009CB6A1 /* LayoutChooserCollectionViewCell.xib */,
+			);
+			path = "Collection View";
+			sourceTree = "<group>";
+		};
 		C766086925CD842D00A59534 /* Launch Url Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -2891,6 +2940,7 @@
 		C7D202322636E3F7009710C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C75F61DA2656FD92009CB6A1 /* Layout Chooser */,
 				C7DB6ED126370F0A00EC1CB9 /* Empty Cell */,
 				C7D202332636E404009710C9 /* Header */,
 			);
@@ -4929,6 +4979,7 @@
 				CE2F03CD252CC8EE006D8001 /* QuickActionComponentView.xib in Resources */,
 				76AB37F325B95C74004E1326 /* incognito-card.mp4 in Resources */,
 				C75D1B0E261205F4002AF763 /* VWJSlot.zip in Resources */,
+				C75F61E62657047D009CB6A1 /* LayoutChooserCollectionViewCell.xib in Resources */,
 				C75D1AF2261205F4002AF763 /* FGSJSlot.zip in Resources */,
 				C75D1AEC261205F4002AF763 /* VNJSlot.zip in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
@@ -4946,6 +4997,7 @@
 				C75D1AFE261205F4002AF763 /* FSHJSlot.zip in Resources */,
 				CE64EA7A25D1695400438974 /* Game.storyboard in Resources */,
 				D8212EFB248582B200B74AB9 /* LoadingComponentView.xib in Resources */,
+				C75F61F8265708A6009CB6A1 /* LayoutChooserView.xib in Resources */,
 				C75D1AD0261205F4002AF763 /* FSDJSlot.zip in Resources */,
 				C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */,
 				C75D1AFD261205F4002AF763 /* THBJSlot.zip in Resources */,
@@ -5451,6 +5503,7 @@
 				C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */,
 				CE14202D2636EE8900E022C7 /* BonusViewController.swift in Sources */,
 				C707549325F3963C0033050E /* PaymentListRepository.swift in Sources */,
+				C75F61E22657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift in Sources */,
 				C7C35FD925C93C0000ADCBB6 /* GameLaunchInteractor.swift in Sources */,
 				76404F0D257625F900D14E0C /* AccountSecurityMessagesComponentView.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
@@ -5472,6 +5525,7 @@
 				C71487172571122E00E4A71D /* AccountInfoModel.swift in Sources */,
 				CE64EA9C25D2D51A00438974 /* GameLoaderComponentViewModel.swift in Sources */,
 				CEB4199A260A2A82003FE4B6 /* PaymentMethodCollectionViewCellDataProvider.swift in Sources */,
+				C75F61FC265708CC009CB6A1 /* LayoutChooserViewModel.swift in Sources */,
 				CE2D1DEB2530738600112A1D /* QuickActionsHeaderViewModel.swift in Sources */,
 				CEE15C4D25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift in Sources */,
 				76BDF46F25760512007B27A7 /* AccountParametersComponentViewModel.swift in Sources */,
@@ -5645,6 +5699,8 @@
 				C7C1D33D261B9D48009F01C3 /* WithdrawVisaViewModel.swift in Sources */,
 				C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */,
 				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
+				C75F61EA2657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift in Sources */,
+				C75F61F326570884009CB6A1 /* LayoutChooserView.swift in Sources */,
 				C7FAA3C82600C4D600265995 /* UFCInitWithdrawDTO.swift in Sources */,
 				CE95A3F3261DE23A0004330E /* ApplePayViewController.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,

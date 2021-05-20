@@ -63,7 +63,8 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
             .init(image: R.image.home.banner1()!),
             .init(image: R.image.home.banner2()!),
             .init(image: R.image.home.banner1()!)
-        ])
+        ]),
+        DefaultLayoutChooserViewModel()
     ])
     private var fetchedGames: [Game] = []
     private var loadingType: LoadingType = .none {

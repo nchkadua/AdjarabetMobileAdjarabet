@@ -38,9 +38,9 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         viewModel.viewDidLoad()
         generateAccessibilityIdentifiers()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.viewModel.layoutChangeTapped()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            self.viewModel.layoutChangeTapped()
+//        }
     }
 
 //    public override func viewDidAppear(_ animated: Bool) {
