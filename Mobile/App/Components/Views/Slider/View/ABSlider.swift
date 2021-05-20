@@ -24,6 +24,7 @@ class ABSlider: UIView, Xibable {
     }
 
     private var disposeBag = DisposeBag()
+    private var timer: Timer!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +43,8 @@ class ABSlider: UIView, Xibable {
             switch action {
             case .reload:
                 self.reload()
+            case .reinitPager:
+                self.pageControl.currentPage = 0
             default:
                 break
             }
@@ -53,8 +56,8 @@ class ABSlider: UIView, Xibable {
         collectionView.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
             guard let self = self else { return }
-            self.collectionView.scrollToItem(at: .init(row: 0, section: 0), at: .centeredHorizontally, animated: true)
-            self.pageControl.numberOfPages = self.viewModel.count()
+            self.collectionView.scrollToItem(at: .init(row: 0, section: 0), at: .centeredHorizontally, animated: false)
+            self.pageControl.numberOfPages = self.viewModel.pageCount()
             self.pageControl.currentPage = 0
         }
     }
@@ -62,11 +65,32 @@ class ABSlider: UIView, Xibable {
     func setupUI() {
         // setup collection view
         collectionView.register(UINib(resource: R.nib.abSliderCell), forCellWithReuseIdentifier: "ABSliderCell")
+        // auto-scrolling setup
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(scroll), userInfo: nil, repeats: true)
         viewModelDidSet() // for initial setting
     }
 
+    @objc func scroll() {
+        guard currentCell != nil else { return } // just to checkout if currentCell exists
+        let currentPage = pageControl.currentPage
+        let nextPage = viewModel.nextPage(currentPage: currentPage)
+        pageControl.currentPage = nextPage
+        onPageControlChange()
+    }
+
     @IBAction private func pageControlDidChange() {
-        collectionView.scrollToItem(at: .init(row: pageControl.currentPage, section: 0), at: .centeredHorizontally, animated: true)
+        onPageControlChange()
+    }
+
+    private func onPageControlChange() {
+        guard let currentCell = currentCell else { return }
+        let rowToScroll = viewModel.rowToScroll(currentPage: pageControl.currentPage,
+                                                currentCell: currentCell)
+        collectionView.scrollToItem(at: .init(row: rowToScroll, section: 0), at: .centeredHorizontally, animated: true)
+    }
+
+    private var currentCell: Int? {
+        collectionView.indexPath(for: collectionView.visibleCells[0])?.row
     }
 }
 
@@ -94,6 +118,6 @@ extension ABSlider: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         let page = Int(x / frame.width)
-        pageControl.currentPage = page
+        pageControl.currentPage = viewModel.index(of: page)
     }
 }
