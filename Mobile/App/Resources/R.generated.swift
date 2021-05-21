@@ -2908,7 +2908,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.shared` struct is generated, and contains static references to 9 images.
+    /// This `R.image.shared` struct is generated, and contains static references to 10 images.
     struct shared {
       /// Image `back`.
       static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/back")
@@ -2918,6 +2918,8 @@ struct R: Rswift.Validatable {
       static let dropDown = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/dropDown")
       /// Image `faceID`.
       static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/faceID")
+      /// Image `forgot_password`.
+      static let forgot_password = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/forgot_password")
       /// Image `hideText`.
       static let hideText = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/hideText")
       /// Image `phone`.
@@ -2954,6 +2956,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "faceID", bundle: ..., traitCollection: ...)`
       static func faceID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.shared.faceID, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "forgot_password", bundle: ..., traitCollection: ...)`
+      static func forgot_password(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.forgot_password, compatibleWith: traitCollection)
       }
       #endif
 
@@ -3197,7 +3206,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 88 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 89 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -3307,6 +3316,8 @@ struct R: Rswift.Validatable {
     static let notificationsHeaderComponentView = _R.nib._NotificationsHeaderComponentView()
     /// Nib `PasswordChangeRulesView`.
     static let passwordChangeRulesView = _R.nib._PasswordChangeRulesView()
+    /// Nib `PasswordReminderComponentView`.
+    static let passwordReminderComponentView = _R.nib._PasswordReminderComponentView()
     /// Nib `PaymentMethodCollectionViewCell`.
     static let paymentMethodCollectionViewCell = _R.nib._PaymentMethodCollectionViewCell()
     /// Nib `PaymentMethodComponentView`.
@@ -3809,6 +3820,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PasswordReminderComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.passwordReminderComponentView) instead")
+    static func passwordReminderComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.passwordReminderComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PaymentMethodCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.paymentMethodCollectionViewCell) instead")
     static func paymentMethodCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -4296,6 +4315,10 @@ struct R: Rswift.Validatable {
       return R.nib.passwordChangeRulesView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func passwordReminderComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.passwordReminderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func paymentMethodCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PaymentMethodCollectionViewCell? {
       return R.nib.paymentMethodCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PaymentMethodCollectionViewCell
     }
@@ -4437,7 +4460,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 493 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 495 localization keys.
     struct localization {
       /// en translation: 6 Digit Code
       ///
@@ -6295,6 +6318,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let apay_rule4 = Rswift.StringResource(key: "apay_rule4", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გაიხსენე
+      ///
+      /// Locales: en, ka, hy
+      static let remind_button_title = Rswift.StringResource(key: "remind_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: გაიხსენე მონაცემები
       ///
       /// Locales: en, ka, hy
@@ -6327,6 +6354,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let visa_description_proceed = Rswift.StringResource(key: "visa_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დაგავიწყდათ პაროლი?
+      ///
+      /// Locales: en, ka, hy
+      static let forgot_password = Rswift.StringResource(key: "forgot_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: დღეს განხორციელებული
       ///
       /// Locales: en, ka, hy
@@ -13372,6 +13403,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("apay_rule4", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: გაიხსენე
+      ///
+      /// Locales: en, ka, hy
+      static func remind_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("remind_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "remind_button_title"
+        }
+
+        return NSLocalizedString("remind_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: გაიხსენე მონაცემები
       ///
       /// Locales: en, ka, hy
@@ -13490,6 +13536,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("visa_description_proceed", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: დაგავიწყდათ პაროლი?
+      ///
+      /// Locales: en, ka, hy
+      static func forgot_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("forgot_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "forgot_password"
+        }
+
+        return NSLocalizedString("forgot_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: დღეს განხორციელებული
@@ -13851,6 +13912,7 @@ struct _R: Rswift.Validatable {
       try _GameLauncherComponentView.validate()
       try _HomeHeaderView.validate()
       try _LayoutChooserView.validate()
+      try _PasswordReminderComponentView.validate()
       try _QuickActionComponentView.validate()
       try _TransactionHistoryComponentView.validate()
       try _WithdrawVisaInfoView.validate()
@@ -13959,8 +14021,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14111,8 +14173,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14140,8 +14202,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14281,8 +14343,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -14528,6 +14590,23 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PasswordReminderComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PasswordReminderComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Shared/forgot_password", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/forgot_password' is used in nib 'PasswordReminderComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -15339,8 +15418,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }

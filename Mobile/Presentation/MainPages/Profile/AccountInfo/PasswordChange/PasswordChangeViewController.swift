@@ -19,6 +19,8 @@ public class PasswordChangeViewController: ABViewController {
     @IBOutlet private weak var updatePasswordButton: ABButton!
     @IBOutlet private weak var passwordChangeRulesView: PasswordChangeRulesView!
 
+    private var passwordReminderComponentView: PasswordReminderComponentView?
+
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +63,19 @@ public class PasswordChangeViewController: ABViewController {
 
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.password_change_title.localized())
+
+        let backButtonGroup = makeRoundedBackButtonItem()
+        navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
+        backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+    }
+
+    @objc private func dismissViewController() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func setupInputViews() {
         styleInputView(oldPasswordInputView, with: R.string.localization.old_password.localized())
+        setupPasswordReminderView()
 
         styleInputView(newPasswordInputView, with: R.string.localization.new_password.localized())
         newPasswordInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -118,6 +129,15 @@ public class PasswordChangeViewController: ABViewController {
         passwordChangeRulesView.setBackgorundColor(to: .secondaryBg())
     }
 
+    private func setupPasswordReminderView() {
+        passwordReminderComponentView = PasswordReminderComponentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 54))
+        oldPasswordInputView.mainTextField.inputAccessoryView = passwordReminderComponentView
+        passwordReminderComponentView?.button.addTarget(self, action: #selector(navigateToPasswodReminder), for: .touchUpInside)
+    }
+
+    @objc private func navigateToPasswodReminder() {
+    }
+
     // MARK: Configuration
     private func updatePasswordButton(isEnabled: Bool) {
         updatePasswordButton.isUserInteractionEnabled = isEnabled
@@ -159,3 +179,5 @@ extension PasswordChangeViewController: Accessible {
         navigationItem.titleView?.accessibilityIdentifier = "PasswordChangeViewController.title"
     }
 }
+
+extension PasswordChangeViewController: CommonBarButtonProviding { }

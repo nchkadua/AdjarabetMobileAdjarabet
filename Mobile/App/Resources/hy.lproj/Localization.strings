@@ -131,6 +131,8 @@
 "rule1" = "გამოიყენეთ მთავრული სიმბოლოები";
 "rule2" = "გამოიყენეთ ერთი ან მეტი (e.g @$&!)";
 "rule3" = "მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო";
+"forgot_password" = "დაგავიწყდათ პაროლი?";
+"remind_button_title" = "გაიხსენე";
 
 /* Phone Number Change */
 "phone_number_change_title" = "Change Phone Number";
