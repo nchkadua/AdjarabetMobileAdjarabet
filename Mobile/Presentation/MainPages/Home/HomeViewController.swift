@@ -73,9 +73,9 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     private func didReceive(action: HomeViewModelOutputAction) {
         switch action {
         case .setLoading(let loadingType):
-            UIView.animate(withDuration: 0.3) {
-                self.loader.alpha = loadingType == .fullScreen ? 1 : 0
-                self.loader.isHidden = loadingType != .fullScreen
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                self?.loader.alpha = loadingType == .fullScreen ? 1 : 0
+                self?.loader.isHidden = loadingType != .fullScreen
             }
         case .languageDidChange: languageDidChange()
         case .initialize(let appListDataProvider):

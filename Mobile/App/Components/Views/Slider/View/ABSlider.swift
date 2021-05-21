@@ -19,7 +19,7 @@ class ABSlider: UIView, Xibable {
         set { view = newValue }
     }
 
-    var viewModel: ABSliderViewModel = DefaultABSliderViewModel.default {
+    private var viewModel: ABSliderViewModel = DefaultABSliderViewModel.default {
         didSet { viewModelDidSet() }
     }
 
@@ -34,6 +34,12 @@ class ABSlider: UIView, Xibable {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         nibSetup()
+    }
+
+    func set(viewModel: ABSliderViewModel) {
+        if viewModel !== self.viewModel {
+            self.viewModel = viewModel
+        }
     }
 
     private func viewModelDidSet() {

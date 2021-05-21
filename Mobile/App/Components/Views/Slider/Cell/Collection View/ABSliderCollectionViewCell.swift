@@ -17,7 +17,7 @@ class ABSliderCollectionViewCell: AppCollectionViewCell {
             guard let dataProvider = dataProvider as? ABSliderCollectionViewCellDataProvider else {
                 fatalError("error")
             }
-            slider.viewModel = dataProvider
+            slider.set(viewModel: dataProvider)
         }
     }
 }
