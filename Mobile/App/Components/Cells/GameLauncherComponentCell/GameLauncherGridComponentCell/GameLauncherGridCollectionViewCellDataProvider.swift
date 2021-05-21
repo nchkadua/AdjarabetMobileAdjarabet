@@ -8,7 +8,7 @@
 
 public protocol GameLauncherGridCollectionViewCellDataProvider: GameLauncherGridComponentViewModel,
                                                                 AppCellDataProvider,
-//                                                                AppCellDelegate,
+                                                                AppCellDelegate,
                                                                 CellHeighProvidering { }
 
 public extension GameLauncherGridCollectionViewCellDataProvider {

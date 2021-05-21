@@ -24,7 +24,7 @@ class ABSlider: UIView, Xibable {
     }
 
     private var disposeBag = DisposeBag()
-    private var timer: Timer!
+    private var timer: Timer?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,9 +71,13 @@ class ABSlider: UIView, Xibable {
     func setupUI() {
         // setup collection view
         collectionView.register(UINib(resource: R.nib.abSliderCell), forCellWithReuseIdentifier: "ABSliderCell")
-        // auto-scrolling setup
-        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(scroll), userInfo: nil, repeats: true)
+        resetTimer() // auto-scrolling setup
         viewModelDidSet() // for initial setting
+    }
+
+    private func resetTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(scroll), userInfo: nil, repeats: true)
     }
 
     @objc func scroll() {
@@ -93,6 +97,7 @@ class ABSlider: UIView, Xibable {
         let rowToScroll = viewModel.rowToScroll(currentPage: pageControl.currentPage,
                                                 currentCell: currentCell)
         collectionView.scrollToItem(at: .init(row: rowToScroll, section: 0), at: .centeredHorizontally, animated: true)
+        resetTimer()
     }
 
     private var currentCell: Int? {
@@ -125,5 +130,6 @@ extension ABSlider: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         let x = targetContentOffset.pointee.x
         let page = Int(x / frame.width)
         pageControl.currentPage = viewModel.index(of: page)
+        resetTimer()
     }
 }
