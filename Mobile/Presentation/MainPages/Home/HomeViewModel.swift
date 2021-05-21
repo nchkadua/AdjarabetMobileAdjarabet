@@ -29,6 +29,7 @@ public enum HomeViewModelOutputAction {
     case reloadIndexPathes([IndexPath])
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
     case initialize(AppListDataProvider)
+    case replaceSection(index: Int, dataProvider: AppSectionDataProvider)
 }
 
 public enum HomeViewModelRoute {
@@ -227,12 +228,14 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     private func layoutChangeTapped(at layout: GamesLayout) {
         games = []
         page = .init()
-        displayEmptyGames()
+     // displayEmptyGames()
         selectedLayout = layout
         let viewModels: [AppCellDataProvider] = fetchedGames.compactMap {
             let vm = createGameComponentFrom(game: $0)
             return vm
         }
+        actionSubject.onNext(.replaceSection(index: 2, dataProvider: .init(dataProviders: [])))
+        actionSubject.onNext(.replaceSection(index: 4, dataProvider: .init(dataProviders: [loading])))
         self.appendPage(games: viewModels)
     }
 

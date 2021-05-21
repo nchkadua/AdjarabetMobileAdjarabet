@@ -81,13 +81,13 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         case .initialize(let appListDataProvider):
             collectionViewController.dataProvider = appListDataProvider
         case .reloadItems(let items, let insertions, let deletions):
-            UIView.performWithoutAnimation {
-                collectionViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
-            }
+            collectionViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
         case .reloadIndexPathes(let indexPathes):
             UIView.performWithoutAnimation {
                 collectionViewController.collectionView.reloadItems(at: indexPathes)
             }
+        case .replaceSection(let index, let dataProvider):
+            collectionViewController.replace(section: index, with: dataProvider)
         }
     }
 
@@ -224,5 +224,10 @@ class HomeViewCollectionViewController: ABCollectionViewController {
         if indexPath.section == 0, indexPath.row == 0 {
             delegate?.placeholderDisappeared()
         }
+    }
+
+    func replace(section index: Int, with dataProvider: AppSectionDataProvider) {
+        self.dataProvider?.remove(at: index)
+        self.dataProvider?.insert(dataProvider, at: index)
     }
 }
