@@ -142,13 +142,12 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
 
     private func setupGridGameLauncherComponentFrom(game: Game) -> DefaultGameLauncherGridComponentViewModel {
         let vm = DefaultGameLauncherGridComponentViewModel(game: game)
-        // subscribe to didSelect here
-//        vm.action.subscribe(onNext: { action in
-//            switch action {
-//            case .didSelect(let model, _): self.routeSubject.onNext(.openGame(title: model.params.game.name))
-//            default: break
-//            }
-//        }).disposed(by: self.disposeBag)
+        vm.action.subscribe(onNext: { action in
+            switch action {
+            case .didSelect(let model, _): self.routeSubject.onNext(.open(game: model.params.game))
+            default: break
+            }
+        }).disposed(by: self.disposeBag)
         return vm
     }
 
