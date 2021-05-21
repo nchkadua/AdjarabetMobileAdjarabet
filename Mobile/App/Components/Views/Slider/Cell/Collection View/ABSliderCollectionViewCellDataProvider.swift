@@ -16,6 +16,6 @@ extension ABSliderCollectionViewCellDataProvider {
 
 extension DefaultABSliderViewModel: ABSliderCollectionViewCellDataProvider {
     func size(for rect: CGRect, safeArea: CGRect, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat) -> CGSize {
-        .init(width: rect.width, height: 300)
+        .init(width: rect.width, height: 360)
     }
 }

@@ -9,13 +9,17 @@
 import RxSwift
 import UIKit
 
-protocol ABSliderViewModel: ABSliderViewModelInput, ABSliderViewModelOutput { }
+protocol ABSliderViewModel: class, ABSliderViewModelInput, ABSliderViewModelOutput { }
 
 protocol ABSliderViewModelInput {
     // for view to call
     func onBind()
     func count() -> Int
     func image(at index: Int) -> UIImage
+    func pageCount() -> Int
+    func index(of cell: Int) -> Int
+    func rowToScroll(currentPage: Int, currentCell: Int) -> Int
+    func nextPage(currentPage: Int) -> Int
     // for others to mutate the state
     func set(slides: ABSliderViewModelSlides)
 }
@@ -33,6 +37,7 @@ protocol ABSliderViewModelOutput {
 enum ABSliderViewModelAction {
     // for view
     case reload
+    case reinitPager
     // for other listeners
     case tapped(atIndex: Int)
 }
@@ -60,6 +65,25 @@ class DefaultABSliderViewModel: ABSliderViewModel {
         actionSubject.onNext(.reload)
     }
 
-    func count() -> Int { slides.count }
-    func image(at index: Int) -> UIImage { slides[index].image }
+    func count() -> Int { 64 } // 64 is big enought
+    func image(at index: Int) -> UIImage { slides[index % slides.count].image }
+    func pageCount() -> Int { slides.count }
+    func index(of cell: Int) -> Int { cell % slides.count  }
+
+    func rowToScroll(currentPage: Int, currentCell: Int) -> Int {
+        if currentCell == count() - 1 { // edge case
+            actionSubject.onNext(.reinitPager)
+            return 0
+        }
+        let pageCount = self.pageCount()
+        let remainder = currentCell % pageCount
+        if remainder == pageCount - 1, currentPage == 0 {
+            return currentCell - remainder + pageCount
+        }
+        return currentCell - remainder + currentPage
+    }
+
+    func nextPage(currentPage: Int) -> Int {
+        (currentPage + 1) % pageCount()
+    }
 }

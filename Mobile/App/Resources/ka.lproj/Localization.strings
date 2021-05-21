@@ -11,6 +11,7 @@
 /* Home */
 "home_page_title" = "თამაშები";
 "home_search_placeholder" = "მოძებნე თამაშები";
+"home_slots" = "სლოტები";
 
 /* Sports */
 "sports_page_title" = "სპორტი";

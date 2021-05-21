@@ -12,12 +12,12 @@ class ABSliderCollectionViewCell: AppCollectionViewCell {
     @IBOutlet private weak var slider: ABSlider!
     override class var identifier: Identifierable { R.nib.abSliderCollectionViewCell.name }
 
-    public override var dataProvider: AppCellDataProvider? {
+    override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? ABSliderCollectionViewCellDataProvider else {
                 fatalError("error")
             }
-            slider.viewModel = dataProvider
+            slider.set(viewModel: dataProvider)
         }
     }
 }

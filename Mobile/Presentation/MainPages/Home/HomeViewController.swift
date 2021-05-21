@@ -50,10 +50,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
 //        mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
 //    }
 
-    @objc func changeLayout() {
-        viewModel.layoutChangeTapped()
-    }
-
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
@@ -77,9 +73,9 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     private func didReceive(action: HomeViewModelOutputAction) {
         switch action {
         case .setLoading(let loadingType):
-            UIView.animate(withDuration: 0.3) {
-                self.loader.alpha = loadingType == .fullScreen ? 1 : 0
-                self.loader.isHidden = loadingType != .fullScreen
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                self?.loader.alpha = loadingType == .fullScreen ? 1 : 0
+                self?.loader.isHidden = loadingType != .fullScreen
             }
         case .languageDidChange: languageDidChange()
         case .initialize(let appListDataProvider):
@@ -90,6 +86,8 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
             UIView.performWithoutAnimation {
                 collectionViewController.collectionView.reloadItems(at: indexPathes)
             }
+        case .replaceSection(let index, let dataProvider):
+            collectionViewController.replace(section: index, with: dataProvider)
         }
     }
 
@@ -226,5 +224,10 @@ class HomeViewCollectionViewController: ABCollectionViewController {
         if indexPath.section == 0, indexPath.row == 0 {
             delegate?.placeholderDisappeared()
         }
+    }
+
+    func replace(section index: Int, with dataProvider: AppSectionDataProvider) {
+        self.dataProvider?.remove(at: index)
+        self.dataProvider?.insert(dataProvider, at: index)
     }
 }
