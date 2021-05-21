@@ -22,7 +22,7 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
         public let name: String?
         public let surname: String?
         public let middleName: String?
-        public let gender: Int?
+        public let gender: String?
         public let userName: String?
         public let countryId: Int?
         // public let address: String? // FIXME: add real address
