@@ -55,4 +55,8 @@ public class ContactUsButton: UIButton {
     public func setCornerRadius(_ radius: CGFloat = 25) {
         layer.cornerRadius = radius
     }
+
+    public func setImage(_ image: UIImage) {
+        setImage(image, for: .normal)
+    }
 }

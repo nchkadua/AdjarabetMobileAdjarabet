@@ -108,7 +108,7 @@
 "self_suspend_title" = "თავის დაბლოკვა";
 "suspend_duration" = "Suspend Duration";
 "block_accound" = "Block Account";
-"suspend_subtitle" = "თუ გსურთ ანგარიშის ბლოკირებული ვადის გახანგრძლივება დაგვიკავშირდით ცხელ ხაზზე";
+"suspend_subtitle" = "იმისათვის რომ უფრო დიდი ხნით მოხდეს თქვენი ანგარიშის დაბლოკვა, დაუკავშირდით ქოლ ცენტრს";
 
 /* Mail Change */
 "mail_change_title" = "ელ.ფოსტის შეცვლა";
