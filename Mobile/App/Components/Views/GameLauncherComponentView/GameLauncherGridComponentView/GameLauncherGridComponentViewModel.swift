@@ -23,6 +23,7 @@ public struct GameLauncherGridComponentViewModelParams {
 
 public protocol GameLauncherGridComponentViewModelInput {
     func didBind()
+    func didSelect(at indexPath: IndexPath)
 }
 
 public protocol GameLauncherGridComponentViewModelOutput {
@@ -32,6 +33,7 @@ public protocol GameLauncherGridComponentViewModelOutput {
 
 public enum GameLauncherGridComponentViewModelOutputAction {
     case set(coverUrl: URL, title: String, category: String, jackpotAmount: String?)
+    case didSelect(viewModel: GameLauncherGridComponentViewModel, indexPath: IndexPath)
 }
 
 public class DefaultGameLauncherGridComponentViewModel {
@@ -53,5 +55,9 @@ extension DefaultGameLauncherGridComponentViewModel: GameLauncherGridComponentVi
     public func didBind() {
         let game = params.game
         actionSubject.onNext(.set(coverUrl: game.coverUrl, title: game.name, category: game.category, jackpotAmount: params.jackpotAmount))
+    }
+
+    public func didSelect(at indexPath: IndexPath) {
+        actionSubject.onNext(.didSelect(viewModel: self, indexPath: indexPath))
     }
 }

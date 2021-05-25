@@ -116,6 +116,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         notificationsUseCase.delete(notificationId: notification.id) { result in
             switch result {
             case .success:
+                self.notificationsDataProvider.remove(at: indexPath.row)
                 self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
                 self.decreaseNumberOfUnreads(notification: notification)
             case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))

@@ -62,6 +62,14 @@ public class SelfSuspendViewController: ABViewController {
 
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.self_suspend_title.localized())
+
+        let backButtonGroup = makeRoundedBackButtonItem()
+        navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
+        backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+    }
+
+    @objc private func dismissViewController() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func setupInputView() {
@@ -76,6 +84,7 @@ public class SelfSuspendViewController: ABViewController {
 
         contactUsButton.setBackgorundColor(to: .tertiaryBg())
         contactUsButton.setCornerRadius(12)
+        contactUsButton.setImage(R.image.contact.contact_phone() ?? UIImage())
     }
 
     @objc private func blockButtonDidTap() {
@@ -87,3 +96,5 @@ public class SelfSuspendViewController: ABViewController {
         titleLabel.setTextColor(to: .secondaryText())
     }
 }
+
+extension SelfSuspendViewController: CommonBarButtonProviding { }

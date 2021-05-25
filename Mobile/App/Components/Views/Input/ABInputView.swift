@@ -156,6 +156,7 @@ public class ABInputView: UIView {
         rightComponent.setImage(image, for: controlState)
         rightComponent.setTintColor(to: tintColor)
         rightComponent.superview?.isHidden = false
+        rightComponent.isUserInteractionEnabled = true
 
         hasDropdownImage = false
     }
@@ -164,6 +165,7 @@ public class ABInputView: UIView {
         rightComponent.setImage(R.image.shared.dropDown(), for: .normal)
         rightComponent.setTintColor(to: tintColor)
         rightComponent.superview?.isHidden = false
+        rightComponent.isUserInteractionEnabled = false
 
         hasDropdownImage = true
     }

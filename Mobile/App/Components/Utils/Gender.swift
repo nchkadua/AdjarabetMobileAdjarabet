@@ -30,12 +30,10 @@ public enum Gender {
 
 // MARK: - gender ID Constructor -- Core API extension
 public extension Gender {
-    init?(genderId: Int) {
+    init?(genderId: String) {
         switch genderId {
-        case 0: self = .female
-        case 1: self = .male
-        case 2: self = .other
-        case 3: self = .preferNotToSay
+        case "F": self = .female
+        case "M": self = .male
         default: return nil
         }
     }

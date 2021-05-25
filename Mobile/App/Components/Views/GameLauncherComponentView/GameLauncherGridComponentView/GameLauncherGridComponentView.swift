@@ -29,7 +29,7 @@ class GameLauncherGridComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(.allCorners, radius: 10)
+        roundCorners(.allCorners, radius: 4)
     }
 
     public func setAndBind(viewModel: GameLauncherGridComponentViewModel) {
@@ -43,6 +43,8 @@ class GameLauncherGridComponentView: UIView {
             switch action {
             case .set(let coverUrl, let title, let category, let jackpotAmount):
                 self?.setupUI(coverUrl: coverUrl, title: title, category: category, jackpotAmount: jackpotAmount)
+            default:
+                break
             }
         }).disposed(by: disposeBag)
 

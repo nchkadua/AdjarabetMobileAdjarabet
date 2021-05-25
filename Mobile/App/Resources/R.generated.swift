@@ -2329,8 +2329,10 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.contact` struct is generated, and contains static references to 1 images.
+    /// This `R.image.contact` struct is generated, and contains static references to 2 images.
     struct contact {
+      /// Image `contact_phone`.
+      static let contact_phone = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/contact_phone")
       /// Image `contact`.
       static let contact = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/contact")
 
@@ -2338,6 +2340,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "contact", bundle: ..., traitCollection: ...)`
       static func contact(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.contact.contact, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "contact_phone", bundle: ..., traitCollection: ...)`
+      static func contact_phone(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.contact.contact_phone, compatibleWith: traitCollection)
       }
       #endif
 
@@ -2470,12 +2479,48 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.home` struct is generated, and contains static references to 2 images.
+    /// This `R.image.home` struct is generated, and contains static references to 6 images.
     struct home {
+      /// Image `Grid Layout Off`.
+      static let gridLayoutOff = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/Grid Layout Off")
+      /// Image `Grid Layout On`.
+      static let gridLayoutOn = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/Grid Layout On")
+      /// Image `List Layout Off`.
+      static let listLayoutOff = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/List Layout Off")
+      /// Image `List Layout On`.
+      static let listLayoutOn = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/List Layout On")
       /// Image `banner1`.
       static let banner1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/banner1")
       /// Image `banner2`.
       static let banner2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home/banner2")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Grid Layout Off", bundle: ..., traitCollection: ...)`
+      static func gridLayoutOff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.gridLayoutOff, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Grid Layout On", bundle: ..., traitCollection: ...)`
+      static func gridLayoutOn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.gridLayoutOn, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "List Layout Off", bundle: ..., traitCollection: ...)`
+      static func listLayoutOff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.listLayoutOff, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "List Layout On", bundle: ..., traitCollection: ...)`
+      static func listLayoutOn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.home.listLayoutOn, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "banner1", bundle: ..., traitCollection: ...)`
@@ -2872,7 +2917,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.shared` struct is generated, and contains static references to 9 images.
+    /// This `R.image.shared` struct is generated, and contains static references to 10 images.
     struct shared {
       /// Image `back`.
       static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/back")
@@ -2882,6 +2927,8 @@ struct R: Rswift.Validatable {
       static let dropDown = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/dropDown")
       /// Image `faceID`.
       static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/faceID")
+      /// Image `forgot_password`.
+      static let forgot_password = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/forgot_password")
       /// Image `hideText`.
       static let hideText = Rswift.ImageResource(bundle: R.hostingBundle, name: "Shared/hideText")
       /// Image `phone`.
@@ -2918,6 +2965,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "faceID", bundle: ..., traitCollection: ...)`
       static func faceID(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.shared.faceID, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "forgot_password", bundle: ..., traitCollection: ...)`
+      static func forgot_password(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.shared.forgot_password, compatibleWith: traitCollection)
       }
       #endif
 
@@ -3161,10 +3215,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 83 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 89 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
+    /// Nib `ABSliderCell`.
+    static let abSliderCell = _R.nib._ABSliderCell()
+    /// Nib `ABSliderCollectionViewCell`.
+    static let abSliderCollectionViewCell = _R.nib._ABSliderCollectionViewCell()
+    /// Nib `ABSlider`.
+    static let abSlider = _R.nib._ABSlider()
     /// Nib `APayInstructionsComponentView`.
     static let aPayInstructionsComponentView = _R.nib._APayInstructionsComponentView()
     /// Nib `AccessHistoryComponentView`.
@@ -3241,6 +3301,10 @@ struct R: Rswift.Validatable {
     static let homeHeaderView = _R.nib._HomeHeaderView()
     /// Nib `LabelComponentView`.
     static let labelComponentView = _R.nib._LabelComponentView()
+    /// Nib `LayoutChooserCollectionViewCell`.
+    static let layoutChooserCollectionViewCell = _R.nib._LayoutChooserCollectionViewCell()
+    /// Nib `LayoutChooserView`.
+    static let layoutChooserView = _R.nib._LayoutChooserView()
     /// Nib `LoadingCollectionViewCell`.
     static let loadingCollectionViewCell = _R.nib._LoadingCollectionViewCell()
     /// Nib `LoadingComponentView`.
@@ -3261,6 +3325,8 @@ struct R: Rswift.Validatable {
     static let notificationsHeaderComponentView = _R.nib._NotificationsHeaderComponentView()
     /// Nib `PasswordChangeRulesView`.
     static let passwordChangeRulesView = _R.nib._PasswordChangeRulesView()
+    /// Nib `PasswordReminderComponentView`.
+    static let passwordReminderComponentView = _R.nib._PasswordReminderComponentView()
     /// Nib `PaymentMethodCollectionViewCell`.
     static let paymentMethodCollectionViewCell = _R.nib._PaymentMethodCollectionViewCell()
     /// Nib `PaymentMethodComponentView`.
@@ -3335,6 +3401,30 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.abInputView) instead")
     static func abInputView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.abInputView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ABSlider", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.abSlider) instead")
+    static func abSlider(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.abSlider)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ABSliderCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.abSliderCell) instead")
+    static func abSliderCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.abSliderCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ABSliderCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.abSliderCollectionViewCell) instead")
+    static func abSliderCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.abSliderCollectionViewCell)
     }
     #endif
 
@@ -3643,6 +3733,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LayoutChooserCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.layoutChooserCollectionViewCell) instead")
+    static func layoutChooserCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.layoutChooserCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LayoutChooserView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.layoutChooserView) instead")
+    static func layoutChooserView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.layoutChooserView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "LoadingCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loadingCollectionViewCell) instead")
     static func loadingCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -3719,6 +3825,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.passwordChangeRulesView) instead")
     static func passwordChangeRulesView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.passwordChangeRulesView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PasswordReminderComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.passwordReminderComponentView) instead")
+    static func passwordReminderComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.passwordReminderComponentView)
     }
     #endif
 
@@ -4002,6 +4116,18 @@ struct R: Rswift.Validatable {
       return R.nib.abInputView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func abSlider(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.abSlider.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func abSliderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ABSliderCell? {
+      return R.nib.abSliderCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ABSliderCell
+    }
+
+    static func abSliderCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ABSliderCollectionViewCell? {
+      return R.nib.abSliderCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ABSliderCollectionViewCell
+    }
+
     static func accessHistoryComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.accessHistoryComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -4150,6 +4276,14 @@ struct R: Rswift.Validatable {
       return R.nib.labelComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func layoutChooserCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LayoutChooserCollectionViewCell? {
+      return R.nib.layoutChooserCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LayoutChooserCollectionViewCell
+    }
+
+    static func layoutChooserView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.layoutChooserView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func loadingCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoadingCollectionViewCell? {
       return R.nib.loadingCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadingCollectionViewCell
     }
@@ -4188,6 +4322,10 @@ struct R: Rswift.Validatable {
 
     static func passwordChangeRulesView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.passwordChangeRulesView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func passwordReminderComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.passwordReminderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func paymentMethodCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PaymentMethodCollectionViewCell? {
@@ -4331,7 +4469,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 492 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 495 localization keys.
     struct localization {
       /// en translation: 6 Digit Code
       ///
@@ -5801,6 +5939,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let sint_maarten = Rswift.StringResource(key: "sint_maarten", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Slots
+      ///
+      /// Locales: en, ka, hy
+      static let home_slots = Rswift.StringResource(key: "home_slots", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Slovakia
       ///
       /// Locales: en, ka, hy
@@ -6185,6 +6327,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let apay_rule4 = Rswift.StringResource(key: "apay_rule4", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: გაიხსენე
+      ///
+      /// Locales: en, ka, hy
+      static let remind_button_title = Rswift.StringResource(key: "remind_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: გაიხსენე მონაცემები
       ///
       /// Locales: en, ka, hy
@@ -6217,6 +6363,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let visa_description_proceed = Rswift.StringResource(key: "visa_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დაგავიწყდათ პაროლი?
+      ///
+      /// Locales: en, ka, hy
+      static let forgot_password = Rswift.StringResource(key: "forgot_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: დღეს განხორციელებული
       ///
       /// Locales: en, ka, hy
@@ -11807,6 +11957,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("sint_maarten", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Slots
+      ///
+      /// Locales: en, ka, hy
+      static func home_slots(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_slots", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "home_slots"
+        }
+
+        return NSLocalizedString("home_slots", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Slovakia
       ///
       /// Locales: en, ka, hy
@@ -13247,6 +13412,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("apay_rule4", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: გაიხსენე
+      ///
+      /// Locales: en, ka, hy
+      static func remind_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("remind_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "remind_button_title"
+        }
+
+        return NSLocalizedString("remind_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: გაიხსენე მონაცემები
       ///
       /// Locales: en, ka, hy
@@ -13365,6 +13545,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("visa_description_proceed", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: დაგავიწყდათ პაროლი?
+      ///
+      /// Locales: en, ka, hy
+      static func forgot_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("forgot_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "forgot_password"
+        }
+
+        return NSLocalizedString("forgot_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: დღეს განხორციელებული
@@ -13725,6 +13920,8 @@ struct _R: Rswift.Validatable {
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
       try _HomeHeaderView.validate()
+      try _LayoutChooserView.validate()
+      try _PasswordReminderComponentView.validate()
       try _QuickActionComponentView.validate()
       try _TransactionHistoryComponentView.validate()
       try _WithdrawVisaInfoView.validate()
@@ -13736,6 +13933,39 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ABSlider: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ABSlider"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ABSliderCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ABSliderCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ABSliderCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ABSliderCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ABSliderCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ABSliderCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ABSliderCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ABSliderCollectionViewCell
       }
 
       fileprivate init() {}
@@ -14122,8 +14352,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -14235,6 +14465,35 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _LayoutChooserCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LayoutChooserCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LayoutChooserCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LayoutChooserCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LayoutChooserView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "LayoutChooserView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _LoadingCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "LoadingCollectionViewCell"
@@ -14340,6 +14599,23 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PasswordReminderComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PasswordReminderComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Shared/forgot_password", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/forgot_password' is used in nib 'PasswordReminderComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -15151,11 +15427,20 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+<<<<<<< HEAD
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
+=======
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        
+>>>>>>> dev
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

@@ -11,6 +11,7 @@
 /* Home */
 "home_page_title" = "თამაშები";
 "home_search_placeholder" = "მოძებნე თამაშები";
+"home_slots" = "სლოტები";
 
 /* Sports */
 "sports_page_title" = "სპორტი";
@@ -107,7 +108,7 @@
 "self_suspend_title" = "თავის დაბლოკვა";
 "suspend_duration" = "Suspend Duration";
 "block_accound" = "Block Account";
-"suspend_subtitle" = "თუ გსურთ ანგარიშის ბლოკირებული ვადის გახანგრძლივება დაგვიკავშირდით ცხელ ხაზზე";
+"suspend_subtitle" = "იმისათვის რომ უფრო დიდი ხნით მოხდეს თქვენი ანგარიშის დაბლოკვა, დაუკავშირდით ქოლ ცენტრს";
 
 /* Mail Change */
 "mail_change_title" = "ელ.ფოსტის შეცვლა";
@@ -130,6 +131,8 @@
 "rule1" = "გამოიყენეთ მთავრული სიმბოლოები";
 "rule2" = "გამოიყენეთ ერთი ან მეტი (e.g @$&!)";
 "rule3" = "მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო";
+"forgot_password" = "დაგავიწყდათ პაროლი?";
+"remind_button_title" = "გაიხსენე";
 
 /* Phone Number Change */
 "phone_number_change_title" = "ნომრის ცვლილება";

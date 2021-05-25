@@ -11,6 +11,7 @@
 /* Home */
 "home_page_title" = "Games";
 "home_search_placeholder" = "Search for games";
+"home_slots" = "Slots";
 
 /* Sports */
 "sports_page_title" = "Sports";
@@ -130,6 +131,8 @@
 "rule1" = "გამოიყენეთ მთავრული სიმბოლოები";
 "rule2" = "გამოიყენეთ ერთი ან მეტი (e.g @$&!)";
 "rule3" = "მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო";
+"forgot_password" = "დაგავიწყდათ პაროლი?";
+"remind_button_title" = "გაიხსენე";
 
 /* Phone Number Change */
 "phone_number_change_title" = "Change Phone Number";
