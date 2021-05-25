@@ -548,7 +548,6 @@
 		CEBB00902609D40400D1B510 /* VisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB008B2609D40400D1B510 /* VisaViewController.swift */; };
 		CEBB00912609D40400D1B510 /* VisaViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB008C2609D40400D1B510 /* VisaViewControllerFactory.swift */; };
 		CEBB00922609D40400D1B510 /* VisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB008D2609D40400D1B510 /* VisaViewModel.swift */; };
-		CEBB00972609F93A00D1B510 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB00962609F93A00D1B510 /* Payments.swift */; };
 		CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */; };
 		CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB06F257915100024D213 /* AgreementComponentView.xib */; };
 		CEBBB0742579151A0024D213 /* AgreementComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */; };
@@ -1323,7 +1322,6 @@
 		CEBB008B2609D40400D1B510 /* VisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaViewController.swift; sourceTree = "<group>"; };
 		CEBB008C2609D40400D1B510 /* VisaViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaViewControllerFactory.swift; sourceTree = "<group>"; };
 		CEBB008D2609D40400D1B510 /* VisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaViewModel.swift; sourceTree = "<group>"; };
-		CEBB00962609F93A00D1B510 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
 		CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentView.swift; sourceTree = "<group>"; };
 		CEBBB06F257915100024D213 /* AgreementComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementComponentView.xib; sourceTree = "<group>"; };
 		CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentViewModel.swift; sourceTree = "<group>"; };
@@ -2130,30 +2128,13 @@
 			path = "Payment Accounts";
 			sourceTree = "<group>";
 		};
-		C7023EE5261F770500C0980F /* Use Cases */ = {
-			isa = PBXGroup;
-			children = (
-				C7023EE6261F772E00C0980F /* WithdrawPaymentListUseCase.swift */,
-			);
-			path = "Use Cases";
-			sourceTree = "<group>";
-		};
-		C707547D25F391480033050E /* Payments */ = {
-			isa = PBXGroup;
-			children = (
-				C707548725F391F40033050E /* List */,
-				CE0FF92325F109F900C18F9C /* UFC */,
-			);
-			path = Payments;
-			sourceTree = "<group>";
-		};
-		C707548725F391F40033050E /* List */ = {
+		C707548725F391F40033050E /* Payment List */ = {
 			isa = PBXGroup;
 			children = (
 				C707548825F396130033050E /* PaymentListUseCase.swift */,
 				C754317225F55FE100E485DD /* Repositories & Entities */,
 			);
-			path = List;
+			path = "Payment List";
 			sourceTree = "<group>";
 		};
 		C709D7FC259B8F4B0079E942 /* Authentication & Session Management */ = {
@@ -2216,6 +2197,213 @@
 				C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */,
 			);
 			path = SecurityLevels;
+			sourceTree = "<group>";
+		};
+		C71C2413265C09BA002071FF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C71C2416265C09C3002071FF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C71C241F265C0D8A002071FF /* Payments */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C71C241F265C0D8A002071FF /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				C71C2424265C10FD002071FF /* Shared */,
+				C71C242C265D036A002071FF /* Deposit */,
+				C71C2421265C0DA5002071FF /* Withdraw */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		C71C2421265C0DA5002071FF /* Withdraw */ = {
+			isa = PBXGroup;
+			children = (
+				C71C2422265C0E2A002071FF /* Presentation */,
+				C71C2423265C0F8D002071FF /* Data */,
+			);
+			path = Withdraw;
+			sourceTree = "<group>";
+		};
+		C71C2422265C0E2A002071FF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C7C1D2EF261B284B009F01C3 /* Scenes */,
+				CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */,
+				CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */,
+				CEF3685E2549C361009FD456 /* WithdrawViewController.swift */,
+				CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */,
+				C7C1D334261B9D48009F01C3 /* Withdraw.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C71C2423265C0F8D002071FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C71C2437265D078D002071FF /* Use Cases */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C71C2424265C10FD002071FF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C71C242A265D033D002071FF /* Presentation */,
+				C71C242B265D0349002071FF /* Data */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C71C2427265D02BD002071FF /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C707548725F391F40033050E /* Payment List */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		C71C2428265D02DB002071FF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C71C2431265D065A002071FF /* UFC Transaction */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C71C2429265D0332002071FF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C71C243B265D0936002071FF /* Cells */,
+				C71C243A265D0930002071FF /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C71C242A265D033D002071FF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C71C2429265D0332002071FF /* Components */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C71C242B265D0349002071FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C71C2427265D02BD002071FF /* Use Cases */,
+				C71C2428265D02DB002071FF /* Repositories */,
+				C71C2434265D073F002071FF /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C71C242C265D036A002071FF /* Deposit */ = {
+			isa = PBXGroup;
+			children = (
+				C71C242D265D03BA002071FF /* Presentation */,
+				C71C242E265D03C3002071FF /* Data */,
+			);
+			path = Deposit;
+			sourceTree = "<group>";
+		};
+		C71C242D265D03BA002071FF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C71C242F265D03EA002071FF /* Components */,
+				C71C2440265D0A72002071FF /* Scenes */,
+				CEC2F5272608B5C00000904C /* DepositViewControllerFactory.swift */,
+				CEC2F5252608B5C00000904C /* DepositNavigator.swift */,
+				CEC2F5262608B5C00000904C /* DepositViewController.swift */,
+				CEC2F5282608B5C00000904C /* DepositViewModel.swift */,
+				CEC2F5242608B5C00000904C /* Deposit.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C71C242E265D03C3002071FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C71C2436265D077F002071FF /* Use Cases */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C71C242F265D03EA002071FF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE8786C9261DBF5D0060EBD1 /* AddCardView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C71C2431265D065A002071FF /* UFC Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */,
+				C72FA74C2600BD3B00A9C493 /* Entities & DTOs */,
+			);
+			path = "UFC Transaction";
+			sourceTree = "<group>";
+		};
+		C71C2434265D073F002071FF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C74334F02601232700945C8C /* UFCTransactionEntities.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C71C2436265D077F002071FF /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		C71C2437265D078D002071FF /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C7023EE6261F772E00C0980F /* WithdrawPaymentListUseCase.swift */,
+				C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		C71C243A265D0930002071FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB004A2608F61800D1B510 /* PaymentMethodGridComponentView */,
+				CEBB000A2608EBC700D1B510 /* PaymentMethodComponentView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C71C243B265D0936002071FF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB001B2608EBF500D1B510 /* PaymentMethodCollectionViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C71C2440265D0A72002071FF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB00792609D3E300D1B510 /* Visa */,
+				CE95A3EB261DE2250004330E /* ApplePay */,
+				CEBB007A2609D3E800D1B510 /* Emoney */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		C71F188D256411720026CEA2 /* BiometricSettings */ = {
@@ -2300,16 +2488,6 @@
 			path = Init;
 			sourceTree = "<group>";
 		};
-		C72FA7542600BDE500A9C493 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				C74334EB26011B3600945C8C /* Common */,
-				C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */,
-				C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */,
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
 		C7405180256FA97700EAC904 /* Formatters */ = {
 			isa = PBXGroup;
 			children = (
@@ -2325,14 +2503,6 @@
 				C7405188256FAA8200EAC904 /* AmountFormatter.swift */,
 			);
 			path = Amount;
-			sourceTree = "<group>";
-		};
-		C74334EB26011B3600945C8C /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				C74334F02601232700945C8C /* UFCTransactionEntities.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		C754317125F55FCA00E485DD /* Post Login */ = {
@@ -3105,15 +3275,6 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		CE03740025F789600061F507 /* Repository & Entities */ = {
-			isa = PBXGroup;
-			children = (
-				C72FA74C2600BD3B00A9C493 /* Entities & DTOs */,
-				C7CE2D8C2600DCC100251FE3 /* UFCTransactionRepository.swift */,
-			);
-			path = "Repository & Entities";
-			sourceTree = "<group>";
-		};
 		CE03746825F8D6F00061F507 /* WebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3170,15 +3331,6 @@
 				CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */,
 			);
 			path = Status;
-			sourceTree = "<group>";
-		};
-		CE0FF92325F109F900C18F9C /* UFC */ = {
-			isa = PBXGroup;
-			children = (
-				C72FA7542600BDE500A9C493 /* UseCases */,
-				CE03740025F789600061F507 /* Repository & Entities */,
-			);
-			path = UFC;
 			sourceTree = "<group>";
 		};
 		CE1420252636EE7E00E022C7 /* Bonus */ = {
@@ -3372,7 +3524,6 @@
 			children = (
 				CE679FD62578332200F2EC1C /* CardsManagement */,
 				76BDF45625760425007B27A7 /* AccountParameters */,
-				CEE537E5254AC9D600EDE6C0 /* CashFlow */,
 				C71F188D256411720026CEA2 /* BiometricSettings */,
 				C7BABFC725657966004E733E /* P2PTransfer */,
 				CEA2876D2540C06800E6590C /* AccountInfo */,
@@ -3735,14 +3886,6 @@
 			path = Emoney;
 			sourceTree = "<group>";
 		};
-		CEBB00952609F92C00D1B510 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				CEBB00962609F93A00D1B510 /* Payments.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		CEBBB06A257914F60024D213 /* Agreement */ = {
 			isa = PBXGroup;
 			children = (
@@ -3751,21 +3894,6 @@
 				CEBBB06F257915100024D213 /* AgreementComponentView.xib */,
 			);
 			path = Agreement;
-			sourceTree = "<group>";
-		};
-		CEC2F5232608B5A40000904C /* Deposit */ = {
-			isa = PBXGroup;
-			children = (
-				CEBB00952609F92C00D1B510 /* ViewModels */,
-				CEBB007A2609D3E800D1B510 /* Emoney */,
-				CEBB00792609D3E300D1B510 /* Visa */,
-				CEC2F5242608B5C00000904C /* Deposit.storyboard */,
-				CEC2F5252608B5C00000904C /* DepositNavigator.swift */,
-				CEC2F5262608B5C00000904C /* DepositViewController.swift */,
-				CEC2F5272608B5C00000904C /* DepositViewControllerFactory.swift */,
-				CEC2F5282608B5C00000904C /* DepositViewModel.swift */,
-			);
-			path = Deposit;
 			sourceTree = "<group>";
 		};
 		CEC9A34225C096E800BE853D /* Game Launch Manager */ = {
@@ -3993,37 +4121,12 @@
 			path = BalanceComponentView;
 			sourceTree = "<group>";
 		};
-		CEE537E5254AC9D600EDE6C0 /* CashFlow */ = {
-			isa = PBXGroup;
-			children = (
-				CE95A3EB261DE2250004330E /* ApplePay */,
-				CE8786C9261DBF5D0060EBD1 /* AddCardView */,
-				CEC2F5232608B5A40000904C /* Deposit */,
-				CEF3684A2549C2F6009FD456 /* Withdraw */,
-			);
-			path = CashFlow;
-			sourceTree = "<group>";
-		};
 		CEF1D4F7251CAB78008E3DE0 /* Text */ = {
 			isa = PBXGroup;
 			children = (
 				CEF1D4F8251CABA1008E3DE0 /* LegalTextView.swift */,
 			);
 			path = Text;
-			sourceTree = "<group>";
-		};
-		CEF3684A2549C2F6009FD456 /* Withdraw */ = {
-			isa = PBXGroup;
-			children = (
-				C7023EE5261F770500C0980F /* Use Cases */,
-				C7C1D2EF261B284B009F01C3 /* Scenes */,
-				CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */,
-				CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */,
-				CEF3685E2549C361009FD456 /* WithdrawViewController.swift */,
-				CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */,
-				C7C1D334261B9D48009F01C3 /* Withdraw.storyboard */,
-			);
-			path = Withdraw;
 			sourceTree = "<group>";
 		};
 		D807846C2444726000003892 /* Fonts */ = {
@@ -4199,8 +4302,6 @@
 				C7CA530A26543DC8008AFDAA /* Slider */,
 				CE4A30F4261224BF0039C078 /* SuggestedAmountGridComponentView */,
 				CE4A30CC2611E4EC0039C078 /* SuggestedAmountComponentView */,
-				CEBB004A2608F61800D1B510 /* PaymentMethodGridComponentView */,
-				CEBB000A2608EBC700D1B510 /* PaymentMethodComponentView */,
 				767C7D7B25E39EE1008F2CE9 /* HomeBanner */,
 				CE64EA8325D1749B00438974 /* GameLoader */,
 				76DCF6A825B825FC00150EE1 /* MyCardComponentView */,
@@ -4518,13 +4619,14 @@
 		D8A47DCD24335B4B0077AA8E /* Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				C71C2416265C09C3002071FF /* Scenes */,
+				C71C2413265C09BA002071FF /* Shared */,
 				D85C9C1424336BA600F1D4FE /* Mobile.entitlements */,
 				D8A47DE624335DC60077AA8E /* App */,
 				D8A47DE824335DD70077AA8E /* Domain */,
 				D8A47DE924335DDE0077AA8E /* Presentation */,
 				D8A47DEA24335DE40077AA8E /* Data */,
 				CEC9A34225C096E800BE853D /* Game Launch Manager */,
-				C707547D25F391480033050E /* Payments */,
 			);
 			path = Mobile;
 			sourceTree = "<group>";
@@ -4672,7 +4774,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4A30DD2611E54A0039C078 /* SuggestedAmountCollectionViewCell */,
-				CEBB001B2608EBF500D1B510 /* PaymentMethodCollectionViewCell */,
 				767C7D9625E3A00F008F2CE9 /* HomeBanner */,
 				76DCF6B925B8267900150EE1 /* MyCardTableViewCell */,
 				761D9940257F7EF9002BCDB6 /* DateHeaderTableViewCell */,
@@ -5354,7 +5455,6 @@
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
 				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
 				C701C72725C06C0600B059A6 /* Status.swift in Sources */,
-				CEBB00972609F93A00D1B510 /* Payments.swift in Sources */,
 				76EFF7C72582383000898819 /* AccessHistoryCalendarViewModel.swift in Sources */,
 				D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */,
 				CE0D8E8C2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift in Sources */,
