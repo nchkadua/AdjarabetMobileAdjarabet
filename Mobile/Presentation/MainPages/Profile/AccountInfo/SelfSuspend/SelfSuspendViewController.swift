@@ -61,7 +61,7 @@ public class SelfSuspendViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.self_suspend_title.localized())
+        setTitle(title: R.string.localization.self_suspend_title.localized().uppercased())
 
         let backButtonGroup = makeRoundedBackButtonItem()
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
@@ -83,7 +83,7 @@ public class SelfSuspendViewController: ABViewController {
         blockButton.addTarget(self, action: #selector(blockButtonDidTap), for: .touchUpInside)
 
         contactUsButton.setBackgorundColor(to: .tertiaryBg())
-        contactUsButton.setCornerRadius(12)
+        contactUsButton.setCornerRadius(4)
         contactUsButton.setImage(R.image.contact.contact_phone() ?? UIImage())
     }
 
