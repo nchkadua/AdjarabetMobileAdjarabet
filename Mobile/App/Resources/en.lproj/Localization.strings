@@ -6,6 +6,12 @@
   Copyright © 2020 Adjarabet. All rights reserved.
 */
 
+/* Shared */
+
+// ABError
+"shared_aberror_default_description" = "Something Went Wrong";
+"shared_aberror_wrong_auth_credentials_description" = "Wrong Authentication Credentials";
+
 "login" = "Login";
 
 /* Home */

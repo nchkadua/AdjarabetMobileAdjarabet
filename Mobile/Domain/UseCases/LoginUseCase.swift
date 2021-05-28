@@ -6,9 +6,9 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol LoginUseCase {
+protocol LoginUseCase {
     @discardableResult
-    func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, LoginUseCaseError>) -> Void) -> Cancellable?
+    func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, ABError>) -> Void) -> Cancellable?
 }
 
 public enum LoginUseCaseSuccess {
@@ -47,17 +47,17 @@ public final class DefaultLoginUseCase: LoginUseCase {
         userSession.login()
     }
 
-    public func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, LoginUseCaseError>) -> Void) -> Cancellable? {
+    func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, ABError>) -> Void) -> Cancellable? {
         authenticationRepository.login(username: username, password: password, channel: .sms) { [weak self] (result: Result<AdjarabetCoreResult.Login, Error>) in
             switch result {
             case .success(let params):
                 guard params.codable.statusCode == .STATUS_SUCCESS else {
-                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode))))
+                    completion(.failure(.default))
                     return
                 }
 
                 if params.codable.errorCode == .USER_WITH_GIVEN_AUTH_CREDENTIALS_NOT_FOUND {
-                    completion(.failure(.invalidUsernameOrPassword))
+                    completion(.failure(.wrongAuthCredentials))
                     return
                 }
 
@@ -67,10 +67,10 @@ public final class DefaultLoginUseCase: LoginUseCase {
                     self?.save(params: params, password: password)
                     completion(.success(.success))
                 } else {
-                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode ?? .UNKNOWN))))
+                    completion(.failure(.default))
                 }
             case .failure(let error):
-                completion(.failure(.unknown(error: error)))
+                completion(.failure(.from(error)))
             }
         }
     }
