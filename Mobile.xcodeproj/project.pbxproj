@@ -301,6 +301,7 @@
 		C794D4282631FB690028393A /* WebApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D4272631FB690028393A /* WebApiRepository.swift */; };
 		C794D4302631FBE50028393A /* WebApiRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D42F2631FBE50028393A /* WebApiRequestBuilder.swift */; };
 		C794D436263206830028393A /* WebApiPaymentAccountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */; };
+		C79923022660EE7100FD7033 /* ABError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79923012660EE7100FD7033 /* ABError.swift */; };
 		C7A517B42631EB1600933DF8 /* PaymentAccountPagingableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */; };
 		C7A517BB2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */; };
 		C7A517C12631EB7800933DF8 /* PaymentAccountDeletableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */; };
@@ -1075,6 +1076,7 @@
 		C794D4272631FB690028393A /* WebApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiRepository.swift; sourceTree = "<group>"; };
 		C794D42F2631FBE50028393A /* WebApiRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiRequestBuilder.swift; sourceTree = "<group>"; };
 		C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountDTO.swift; sourceTree = "<group>"; };
+		C79923012660EE7100FD7033 /* ABError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABError.swift; sourceTree = "<group>"; };
 		C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountPagingableRepository.swift; sourceTree = "<group>"; };
 		C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountFilterableRepository.swift; sourceTree = "<group>"; };
 		C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDeletableRepository.swift; sourceTree = "<group>"; };
@@ -2202,6 +2204,7 @@
 		C71C2413265C09BA002071FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C79922FE2660E9CF00FD7033 /* Data */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -2913,6 +2916,30 @@
 				C7EF9F3E257078F600D2908C /* Responses */,
 			);
 			path = "User Info";
+			sourceTree = "<group>";
+		};
+		C79922FE2660E9CF00FD7033 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C79922FF2660EDF500FD7033 /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C79922FF2660EDF500FD7033 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C79923002660EE0900FD7033 /* Error */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C79923002660EE0900FD7033 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C79923012660EE7100FD7033 /* ABError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C7A5179A2631E4F700933DF8 /* Protocol */ = {
@@ -5810,6 +5837,7 @@
 				CE95A3F4261DE23A0004330E /* ApplePayViewControllerFactory.swift in Sources */,
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
+				C79923022660EE7100FD7033 /* ABError.swift in Sources */,
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
 				C7C1D33D261B9D48009F01C3 /* WithdrawVisaViewModel.swift in Sources */,
 				C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */,

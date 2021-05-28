@@ -8,9 +8,9 @@
 
 import Foundation
 
-public protocol BiometricLoginUseCase {
+protocol BiometricLoginUseCase {
     @discardableResult
-    func execute(biometricSuccess: @escaping () -> Void, completion: @escaping (Result<LoginUseCaseSuccess, LoginUseCaseError>) -> Void) -> Cancellable?
+    func execute(biometricSuccess: @escaping () -> Void, completion: @escaping (Result<LoginUseCaseSuccess, ABError>) -> Void) -> Cancellable?
     var isAvailable: Bool { get }
     var icon: UIImage? { get }
     var title: String? { get }
@@ -22,7 +22,7 @@ public final class DefaultBiometricLoginUseCase: BiometricLoginUseCase {
 
     private let loginUseCase: LoginUseCase
 
-    public init(loginUseCase: LoginUseCase) {
+    init(loginUseCase: LoginUseCase) {
         self.loginUseCase = loginUseCase
     }
 
@@ -34,7 +34,7 @@ public final class DefaultBiometricLoginUseCase: BiometricLoginUseCase {
 
     public var title: String? { biometricAuthentication.title }
 
-    public func execute(biometricSuccess: @escaping () -> Void, completion: @escaping (Result<LoginUseCaseSuccess, LoginUseCaseError>) -> Void) -> Cancellable? {
+    func execute(biometricSuccess: @escaping () -> Void, completion: @escaping (Result<LoginUseCaseSuccess, ABError>) -> Void) -> Cancellable? {
         guard let username = userSession.username, let password = userSession.password else {return nil}
 
         biometricAuthentication.authenticate { [weak self] result in
@@ -43,7 +43,7 @@ public final class DefaultBiometricLoginUseCase: BiometricLoginUseCase {
                 biometricSuccess()
                 self?.loginUseCase.execute(username: username, password: password, completion: completion)
             case .failure(let error):
-                completion(.failure(.unknown(error: error)))
+                completion(.failure(.from(error)))
             }
         }
 
