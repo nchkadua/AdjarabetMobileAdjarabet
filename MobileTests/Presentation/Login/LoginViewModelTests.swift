@@ -96,15 +96,15 @@ private enum LoginViewModelError: Error {
 
 // MARK: LoginUseCase Mocks
 private class LoginUseCaseSuccessMock: LoginUseCase {
-    func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, LoginUseCaseError>) -> Void) -> Cancellable? {
+    func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, ABError>) -> Void) -> Cancellable? {
         completion(.success(.success))
         return nil
     }
 }
 
 private class LoginUseCaseErrorMock: LoginUseCase {
-    func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, LoginUseCaseError>) -> Void) -> Cancellable? {
-        completion(.failure(.unknown(error: LoginViewModelError.unknown)))
+    func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, ABError>) -> Void) -> Cancellable? {
+        completion(.failure(.from(LoginViewModelError.unknown)))
         return nil
     }
 }
