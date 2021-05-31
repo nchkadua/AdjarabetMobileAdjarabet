@@ -64,7 +64,7 @@ public class DefaultLoginViewModel {
         self.params = params
     }
 
-    private func handleLogin(result: Result<LoginUseCaseSuccess, LoginUseCaseError>) {
+    private func handleLogin(result: Result<LoginUseCaseSuccess, ABError>) {
         defer { actionSubject.onNext(.setLoginButton(isLoading: false)) }
         switch result {
         case .success(let type):
@@ -73,7 +73,7 @@ public class DefaultLoginViewModel {
             case .otpRequried(let username): openOTP(username)
             }
         case .failure(let error):
-            routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            routeSubject.onNext(.openAlert(title: error.description.description))
         }
     }
 
