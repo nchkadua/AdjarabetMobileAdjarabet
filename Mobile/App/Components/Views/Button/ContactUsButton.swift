@@ -26,6 +26,7 @@ public class ContactUsButton: UIButton {
         setSettings()
         setTitles()
         addTarget(self, action: #selector(call), for: .touchUpInside)
+        setupAccessibilityIdentifiers()
     }
 
     private func setSettings() {
@@ -60,3 +61,16 @@ public class ContactUsButton: UIButton {
         setImage(image, for: .normal)
     }
 }
+    
+    extension ContactUsButton: Accessible {
+    private func setupAccessibilityIdentifiers() {
+        generateAccessibilityIdentifiers()
+        
+        accessibilityIdentifier = "ContactUsButton.contactUsButton"
+        
+
+    }
+            
+}
+
+

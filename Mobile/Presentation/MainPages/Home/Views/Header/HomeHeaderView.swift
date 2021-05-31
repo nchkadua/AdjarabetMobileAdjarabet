@@ -51,6 +51,7 @@ class HomeHeaderView: UIView, Xibable {
         set(style: .large)
         setupBalance()
         setupSearchBar()
+        setupAccessibilityIdentifiers()
     }
 
     func scrolledUp() {
@@ -182,4 +183,16 @@ extension HomeHeaderView: UISearchBarDelegate {
 protocol HomeHeaderViewDelegate: class {
     func didFocus()
     func didUnfocus()
+}
+
+
+
+extension HomeHeaderView: Accessible {
+private func setupAccessibilityIdentifiers() {
+    generateAccessibilityIdentifiers()
+
+    searchBar.accessibilityIdentifier = "HomeHeaderView.searchBar"
+    searchBar.searchTextField.accessibilityIdentifier = "HomeHeaderView.searchBar.placeholder"
+    balance.accessibilityIdentifier = "HomeHeaderView.balance"
+}
 }
