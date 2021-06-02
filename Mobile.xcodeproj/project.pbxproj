@@ -1981,17 +1981,13 @@
 			path = AccountParametersTableViewCell;
 			sourceTree = "<group>";
 		};
-		76DCF66E25B80EEC00150EE1 /* MyCards */ = {
+		76DCF66E25B80EEC00150EE1 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				76DCF67B25B8148300150EE1 /* Model */,
-				76DCF66F25B80FB500150EE1 /* MyCards.storyboard */,
-				76DCF67025B80FB500150EE1 /* MyCardsNavigator.swift */,
-				76DCF67125B80FB500150EE1 /* MyCardsViewController.swift */,
-				76DCF67225B80FB500150EE1 /* MyCardsViewControllerFactory.swift */,
-				76DCF67325B80FB500150EE1 /* MyCardsViewModel.swift */,
+				C7AC3FFB2665202400FAD9EE /* Presentation */,
+				C71F07882665207F0082AA6C /* Data */,
 			);
-			path = MyCards;
+			path = Cards;
 			sourceTree = "<group>";
 		};
 		76DCF67B25B8148300150EE1 /* Model */ = {
@@ -2078,29 +2074,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C701C60125C00A7700B059A6 /* Payment Account Management */ = {
-			isa = PBXGroup;
-			children = (
-				C701C60225C00A8A00B059A6 /* Payment Account Operations */,
-			);
-			path = "Payment Account Management";
-			sourceTree = "<group>";
-		};
-		C701C60225C00A8A00B059A6 /* Payment Account Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C701C60325C00A9D00B059A6 /* Payment Account Repository */,
-			);
-			path = "Payment Account Operations";
-			sourceTree = "<group>";
-		};
-		C701C60325C00A9D00B059A6 /* Payment Account Repository */ = {
+		C701C60325C00A9D00B059A6 /* Payment Accounts */ = {
 			isa = PBXGroup;
 			children = (
 				C7A5179A2631E4F700933DF8 /* Protocol */,
 				C7A5179F2631E51600933DF8 /* Implementation */,
 			);
-			path = "Payment Account Repository";
+			path = "Payment Accounts";
 			sourceTree = "<group>";
 		};
 		C701C6EF25C0500700B059A6 /* Entities */ = {
@@ -2223,6 +2203,7 @@
 				C71C2424265C10FD002071FF /* Shared */,
 				C71C242C265D036A002071FF /* Deposit */,
 				C71C2421265C0DA5002071FF /* Withdraw */,
+				76DCF66E25B80EEC00150EE1 /* Cards */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -2278,6 +2259,7 @@
 			isa = PBXGroup;
 			children = (
 				C71C2431265D065A002071FF /* UFC Transaction */,
+				C701C60325C00A9D00B059A6 /* Payment Accounts */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -2407,6 +2389,47 @@
 				CEBB007A2609D3E800D1B510 /* Emoney */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C71F07882665207F0082AA6C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C71F0789266520870082AA6C /* Use Cases */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C71F0789266520870082AA6C /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C701C71D25C0595000B059A6 /* Payment Accounts */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		C71F07902665243D0082AA6C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C71F0791266524460082AA6C /* Cells */,
+				C71F0792266524B30082AA6C /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C71F0791266524460082AA6C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				76DCF6B925B8267900150EE1 /* MyCardTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C71F0792266524B30082AA6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76DCF6A825B825FC00150EE1 /* MyCardComponentView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C71F188D256411720026CEA2 /* BiometricSettings */ = {
@@ -2980,6 +3003,20 @@
 			path = Web;
 			sourceTree = "<group>";
 		};
+		C7AC3FFB2665202400FAD9EE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C71F07902665243D0082AA6C /* Components */,
+				76DCF67B25B8148300150EE1 /* Model */,
+				76DCF67225B80FB500150EE1 /* MyCardsViewControllerFactory.swift */,
+				76DCF67025B80FB500150EE1 /* MyCardsNavigator.swift */,
+				76DCF67125B80FB500150EE1 /* MyCardsViewController.swift */,
+				76DCF67325B80FB500150EE1 /* MyCardsViewModel.swift */,
+				76DCF66F25B80FB500150EE1 /* MyCards.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		C7BABFC725657966004E733E /* P2PTransfer */ = {
 			isa = PBXGroup;
 			children = (
@@ -3272,7 +3309,6 @@
 				C7EF9E56256FF15400D2908C /* User Profile Management */,
 				C799127F259BA6A500F64676 /* User Activity History & Transaction Management */,
 				C799129B259BA8CB00F64676 /* Balance Management */,
-				C701C60125C00A7700B059A6 /* Payment Account Management */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -4220,7 +4256,6 @@
 				CE1420252636EE7E00E022C7 /* Bonus */,
 				CE4A31092614788A0039C078 /* Main */,
 				CE03746825F8D6F00061F507 /* WebViewController */,
-				76DCF66E25B80EEC00150EE1 /* MyCards */,
 				7665D959257E5C8100E5B35F /* AccessHistory */,
 				7676E54A2562852800234026 /* Transactions */,
 				D8C73F7D2445A62D004C96DB /* Home */,
@@ -4331,7 +4366,6 @@
 				CE4A30CC2611E4EC0039C078 /* SuggestedAmountComponentView */,
 				767C7D7B25E39EE1008F2CE9 /* HomeBanner */,
 				CE64EA8325D1749B00438974 /* GameLoader */,
-				76DCF6A825B825FC00150EE1 /* MyCardComponentView */,
 				761D993F257F7EDC002BCDB6 /* DateHeaderComponentView */,
 				7665D985257F4C5000E5B35F /* AccessHistoryComponentView */,
 				76BDF465257604FB007B27A7 /* AccountParametersComponentView */,
@@ -4566,7 +4600,6 @@
 				76811DC9257E4854004107E9 /* AccessList */,
 				76BADBA1257756560080AB76 /* TransactionHistory */,
 				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
-				C701C71D25C0595000B059A6 /* Payment Accounts */,
 				C78FD440260A672C004E766E /* Amount Formatter */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
@@ -4802,7 +4835,6 @@
 			children = (
 				CE4A30DD2611E54A0039C078 /* SuggestedAmountCollectionViewCell */,
 				767C7D9625E3A00F008F2CE9 /* HomeBanner */,
-				76DCF6B925B8267900150EE1 /* MyCardTableViewCell */,
 				761D9940257F7EF9002BCDB6 /* DateHeaderTableViewCell */,
 				7665D974257F4BF700E5B35F /* AccessHistoryTableViewCell */,
 				76BDF47425760519007B27A7 /* AccountParametersTableViewCell */,
