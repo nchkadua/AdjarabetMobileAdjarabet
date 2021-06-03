@@ -52,6 +52,11 @@ public class AccountInfoViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setupContainers()
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: AccountInfoViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
@@ -71,7 +76,6 @@ public class AccountInfoViewController: ABViewController {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupScrollView()
-        setupContainers()
         setupLabels()
         setTargets()
     }
@@ -91,15 +95,15 @@ public class AccountInfoViewController: ABViewController {
     private func setupContainers() {
         privateInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         privateInfoSV.setBackgorundColor(to: .tertiaryBg())
-        privateInfoSV.layer.cornerRadius = 10
+        privateInfoSV.roundCorners(.allCorners, radius: 10)
 
         contactInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         contactInfoSV.setBackgorundColor(to: .tertiaryBg())
-        contactInfoSV.layer.cornerRadius = 10
+        contactInfoSV.roundCorners(.allCorners, radius: 10)
 
         personalInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         personalInfoSV.setBackgorundColor(to: .tertiaryBg())
-        personalInfoSV.layer.cornerRadius = 10
+        personalInfoSV.roundCorners(.allCorners, radius: 10)
     }
 
     private func setupLabels() {
