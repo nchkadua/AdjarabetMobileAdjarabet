@@ -32,11 +32,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="658" height="217"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fFK-nq-ozv" customClass="CircularImageView" customModule="Mobile" customModuleProvider="target">
-                            <rect key="frame" x="20" y="98.5" width="64" height="64"/>
+                            <rect key="frame" x="16" y="88.5" width="122" height="84"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="64" id="7AC-rm-k6x"/>
-                                <constraint firstAttribute="width" constant="64" id="O0o-9y-Gho"/>
+                                <constraint firstAttribute="height" constant="84" id="7AC-rm-k6x"/>
+                                <constraint firstAttribute="width" constant="122" id="O0o-9y-Gho"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -45,24 +45,27 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGe-dH-2oi">
-                            <rect key="frame" x="101" y="98.5" width="506" height="64"/>
+                            <rect key="frame" x="155" y="88.5" width="452" height="84"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NZ-Po-oWz" customClass="AppCircularButton" customModule="SharedFramework">
-                                    <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
+                                    <rect key="frame" x="0.0" y="10" width="91" height="11"/>
                                     <color key="backgroundColor" red="0.73725490199999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="11" id="7Ji-AP-Zgo"/>
+                                    </constraints>
                                     <state key="normal" title="$ 50,2319.98"/>
                                 </button>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ygZ-Xk-31c">
-                                    <rect key="frame" x="0.0" y="22" width="506" height="47"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ygZ-Xk-31c">
+                                    <rect key="frame" x="0.0" y="32" width="452" height="41"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ave Caesar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-hG-wfA">
-                                            <rect key="frame" x="0.0" y="0.0" width="506" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="452" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Jackpot Slots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cy-OM-YsD">
-                                            <rect key="frame" x="0.0" y="26.5" width="506" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="20.5" width="452" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -75,7 +78,7 @@
                                 <constraint firstItem="ygZ-Xk-31c" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="LRd-Ne-Wxg"/>
                                 <constraint firstItem="0NZ-Po-oWz" firstAttribute="leading" secondItem="FGe-dH-2oi" secondAttribute="leading" id="LlV-hw-4Qs"/>
                                 <constraint firstAttribute="trailing" secondItem="ygZ-Xk-31c" secondAttribute="trailing" id="ZZI-2e-Vbp"/>
-                                <constraint firstItem="0NZ-Po-oWz" firstAttribute="top" secondItem="FGe-dH-2oi" secondAttribute="top" id="gOJ-74-c8C"/>
+                                <constraint firstItem="0NZ-Po-oWz" firstAttribute="top" secondItem="FGe-dH-2oi" secondAttribute="top" constant="10" id="gOJ-74-c8C"/>
                             </constraints>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/GameLauncher/in" translatesAutoresizingMaskIntoConstraints="NO" id="PNe-u6-fPH">
@@ -92,20 +95,20 @@
                         <constraint firstItem="ygZ-Xk-31c" firstAttribute="centerY" secondItem="PNe-u6-fPH" secondAttribute="centerY" priority="999" id="VnS-x5-pIy"/>
                         <constraint firstItem="FGe-dH-2oi" firstAttribute="height" secondItem="fFK-nq-ozv" secondAttribute="height" id="gcn-zf-qUK"/>
                     </constraints>
-                    <edgeInsets key="layoutMargins" top="15" left="20" bottom="15" right="26"/>
+                    <edgeInsets key="layoutMargins" top="6" left="16" bottom="6" right="26"/>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J11-AH-edd" customClass="GameLauncherComponentLoaderView" customModule="Mobile" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="658" height="251"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wFV-qr-Fg3">
-                            <rect key="frame" x="0.0" y="78.5" width="658" height="94"/>
+                            <rect key="frame" x="0.0" y="77.5" width="658" height="96"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1D0-be-NfV" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="15" width="64" height="64"/>
+                                    <rect key="frame" x="16" y="6" width="122" height="84"/>
                                     <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="64" id="7Qj-a4-hJc"/>
-                                        <constraint firstAttribute="width" constant="64" id="O0j-3F-wq9"/>
+                                        <constraint firstAttribute="height" constant="84" id="7Qj-a4-hJc"/>
+                                        <constraint firstAttribute="width" constant="122" id="O0j-3F-wq9"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -117,10 +120,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v89-Sq-Gk7">
-                                    <rect key="frame" x="96" y="31" width="516" height="32"/>
+                                    <rect key="frame" x="150" y="32" width="462" height="32"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhQ-uh-wQ2" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="486" height="12"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="432" height="12"/>
                                             <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="gGW-R4-5V5"/>
@@ -132,10 +135,10 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7re-7Z-Wn0">
-                                            <rect key="frame" x="0.0" y="20" width="486" height="12"/>
+                                            <rect key="frame" x="0.0" y="20" width="432" height="12"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQC-EU-Sxy" customClass="ShimmerView" customModule="Mobile" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="218.5" height="12"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="194.5" height="12"/>
                                                     <color key="backgroundColor" name="ColorGuide/Neutral/neutral600"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="ozO-yb-gmr"/>
@@ -165,7 +168,7 @@
                                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="30"/>
                                 </stackView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Components/GameLauncher/in" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-9O-hHn">
-                                    <rect key="frame" x="624" y="40" width="8" height="14"/>
+                                    <rect key="frame" x="624" y="41" width="8" height="14"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="Z7h-5j-h4y"/>
                                         <constraint firstAttribute="width" constant="8" id="cNt-Vb-Nby"/>
@@ -175,7 +178,7 @@
                             <constraints>
                                 <constraint firstItem="v89-Sq-Gk7" firstAttribute="centerY" secondItem="wFV-qr-Fg3" secondAttribute="centerY" id="4Yb-hc-muI"/>
                             </constraints>
-                            <edgeInsets key="layoutMargins" top="15" left="20" bottom="15" right="26"/>
+                            <edgeInsets key="layoutMargins" top="6" left="16" bottom="6" right="26"/>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

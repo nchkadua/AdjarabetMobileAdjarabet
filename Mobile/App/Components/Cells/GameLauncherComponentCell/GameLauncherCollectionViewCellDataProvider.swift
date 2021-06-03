@@ -16,6 +16,6 @@ extension DefaultGameLauncherComponentViewModel: GameLauncherCollectionViewCellD
 
 public extension GameLauncherCollectionViewCellDataProvider {
     func size(for rect: CGRect, safeArea: CGRect, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat) -> CGSize {
-        CGSize(width: rect.width, height: 94)
+        CGSize(width: rect.width, height: 96)
     }
 }

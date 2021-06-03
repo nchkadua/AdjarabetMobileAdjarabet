@@ -115,7 +115,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
     }
 
     private func setupNavigationItems() {
-        let backButtonGroup = makeRoundedBackButtonItem()
+        let backButtonGroup = makeBackBarButtonItem()
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(navigateToMainTabBar), for: .touchUpInside)
 

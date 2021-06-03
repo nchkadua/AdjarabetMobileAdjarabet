@@ -63,7 +63,7 @@ public class SelfSuspendViewController: ABViewController {
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.self_suspend_title.localized().uppercased())
 
-        let backButtonGroup = makeRoundedBackButtonItem()
+        let backButtonGroup = makeBackBarButtonItem()
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }

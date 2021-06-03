@@ -57,11 +57,6 @@ public class AccountInfoViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-/*
-        viewModel.route.subscribe(onNext: { [weak self] route in
-            self?.didRecive(route: route)
-        }).disposed(by: disposeBag)
-*/
     }
 
     private func didRecive(action: AccountInfoViewModelOutputAction) {
@@ -69,9 +64,6 @@ public class AccountInfoViewController: ABViewController {
         case .setupWithAccountInfoModel(let accountInfoModel):
             setupViewsWith(accountInfoModel: accountInfoModel)
         }
-    }
-
-    private func didRecive(route: AccountInfoViewModelRoute) {
     }
 
     // MARK: Setup methods
@@ -88,7 +80,7 @@ public class AccountInfoViewController: ABViewController {
         setTitle(title: R.string.localization.account_information_title())
         navigationItem.titleView?.accessibilityIdentifier = "AccountInfoViewController.title"
 
-        setBackBarButtonItemIfNeeded(width: 44)
+        setBackBarButtonItemIfNeeded()
     }
 
     private func setupScrollView() {
@@ -99,15 +91,15 @@ public class AccountInfoViewController: ABViewController {
     private func setupContainers() {
         privateInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         privateInfoSV.setBackgorundColor(to: .tertiaryBg())
-        privateInfoSV.roundCorners(.allCorners, radius: 10)
+        privateInfoSV.layer.cornerRadius = 10
 
         contactInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         contactInfoSV.setBackgorundColor(to: .tertiaryBg())
-        contactInfoSV.roundCorners(.allCorners, radius: 10)
+        contactInfoSV.layer.cornerRadius = 10
 
         personalInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         personalInfoSV.setBackgorundColor(to: .tertiaryBg())
-        personalInfoSV.roundCorners(.allCorners, radius: 10)
+        personalInfoSV.layer.cornerRadius = 10
     }
 
     private func setupLabels() {
