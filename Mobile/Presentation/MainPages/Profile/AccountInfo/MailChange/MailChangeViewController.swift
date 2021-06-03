@@ -56,7 +56,7 @@ public class MailChangeViewController: ABViewController {
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.mail_change_title.localized().uppercased())
 
-        let backButtonGroup = makeRoundedBackButtonItem()
+        let backButtonGroup = makeBackBarButtonItem()
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }

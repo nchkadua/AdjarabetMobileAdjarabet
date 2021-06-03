@@ -26,11 +26,6 @@ public class SecurityLevelsViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-/*
-        viewModel.route.subscribe(onNext: { [weak self] route in
-            self?.didRecive(route: route)
-        }).disposed(by: disposeBag)
-*/
     }
 
     private func didRecive(action: SecurityLevelsViewModelOutputAction) {
@@ -46,9 +41,6 @@ public class SecurityLevelsViewController: ABViewController {
             dismiss(animated: true, completion: nil)
         }
     }
-
-    private func didRecive(route: SecurityLevelsViewModelRoute) {
-    }
 }
 
 // MARK: Helpers
@@ -60,13 +52,13 @@ extension SecurityLevelsViewController {
     }
 
     private func setupBackButton() {
-        let button = UIButton()
-        button.widthAnchor.constraint(equalToConstant: 38).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 38).isActive = true
-        button.setImage(R.image.login.sms_back(), for: .normal) // FIXME: icon
-        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-        let barButtonItem = UIBarButtonItem(customView: button)
-        navigationItem.leftBarButtonItem = barButtonItem
+        let backButtonGroup = makeBackBarButtonItem()
+        navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
+        backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+    }
+
+    @objc private func dismissViewController() {
+        dismiss(animated: true, completion: nil)
     }
 
     @objc func backTapped() {
@@ -93,3 +85,5 @@ private class SecurityLevelsTableViewController: ABTableViewController {
         viewModel.didSelectRow(at: indexPath)
     }
 }
+
+extension SecurityLevelsViewController: CommonBarButtonProviding { }

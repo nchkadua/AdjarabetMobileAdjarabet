@@ -39,17 +39,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         generateAccessibilityIdentifiers()
     }
 
-//    public override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController
-//        vc?.setPageViewControllerSwipeEnabled(true)
-//    }
-
-//    public override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
-//    }
-
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()

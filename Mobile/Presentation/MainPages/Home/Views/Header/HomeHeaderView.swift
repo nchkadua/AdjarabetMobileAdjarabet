@@ -113,12 +113,12 @@ class HomeHeaderView: UIView, Xibable {
     // MARK: - Initial Setup
 
     private func setupBalance() {
-        balance.setFont(to: .footnote(fontCase: .upper, fontStyle: .semiBold))
+        balance.setFont(to: .body2(fontCase: .upper, fontStyle: .semiBold))
         balance.setTitleColor(to: .primaryText(), for: .normal)
         balance.setTintColor(to: .primaryText())
-        balance.setImage(R.image.shared.navBar.profile()?.resizeImage(newHeight: 20), for: .normal)
+        balance.setImage(R.image.shared.navBar.profile()?.resizeImage(newHeight: 24), for: .normal)
         balance.semanticContentAttribute = .forceRightToLeft
-        balance.titleEdgeInsets = UIEdgeInsets(top: 4, left: -8, bottom: 0, right: 0)
+        balance.titleEdgeInsets = UIEdgeInsets(top: 4, left: -12, bottom: 0, right: 0)
         balance.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
     }
 

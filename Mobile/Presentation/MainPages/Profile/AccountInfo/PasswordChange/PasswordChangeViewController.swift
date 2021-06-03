@@ -64,7 +64,7 @@ public class PasswordChangeViewController: ABViewController {
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.password_change_title.localized())
 
-        let backButtonGroup = makeRoundedBackButtonItem()
+        let backButtonGroup = makeBackBarButtonItem()
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }

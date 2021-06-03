@@ -56,7 +56,7 @@ public extension UIViewController {
         return label
     }
 
-    func setBackBarButtonItemIfNeeded(width: CGFloat = 35, height: CGFloat = 35, rounded: Bool = false) {
+    func setBackBarButtonItemIfNeeded(width: CGFloat = 34, height: CGFloat = 34, rounded: Bool = false) {
         navigationItem.leftBarButtonItems?.removeAll()
         let button = UIButton()
 
@@ -69,6 +69,7 @@ public extension UIViewController {
         button.setTintColor(to: .secondaryFill())
         button.widthAnchor.constraint(equalToConstant: width).isActive = true
         button.heightAnchor.constraint(equalToConstant: height).isActive = true
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
         button.addTarget(self, action: #selector(backBarButtonItemDidTap), for: .touchUpInside)
         let backBarButtonItem = UIBarButtonItem(customView: button)
         navigationItem.leftBarButtonItem = backBarButtonItem
