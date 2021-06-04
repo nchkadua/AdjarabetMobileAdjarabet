@@ -3865,6 +3865,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		CE2AB4CD266A5C2600C88262 /* SMSCode */ = {
+			isa = PBXGroup;
+			children = (
+				D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */,
+				D8863697246C485500FF061D /* SMSCodeInputView.swift */,
+			);
+			path = SMSCode;
+			sourceTree = "<group>";
+		};
 		CE2D1DF02530752A00112A1D /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -4723,7 +4732,7 @@
 				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
 				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
 				CE91C0EA25702BAA00A18255 /* Calendar */,
-				CEE2505E256FE2E40089F805 /* Timer */,
+				CEF1D4F7251CAB78008E3DE0 /* Text */,
 				CE1693692541AB100043B1A4 /* AccountInfoComponentView */,
 				D86253BA24653AA000F7DE0C /* Button */,
 				CE95FBED252DE5C7003E539B /* FooterComponentView */,
@@ -4733,7 +4742,6 @@
 				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
-				CEF1D4F7251CAB78008E3DE0 /* Text */,
 				7676E5622562E19200234026 /* TransactionHistoryComponentView */,
 				CE8786C1261C96830060EBD1 /* ABView.swift */,
 			);
@@ -4916,8 +4924,8 @@
 		D8863699246C4F4400FF061D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */,
-				D8863697246C485500FF061D /* SMSCodeInputView.swift */,
+				CEE2505E256FE2E40089F805 /* Timer */,
+				CE2AB4CD266A5C2600C88262 /* SMSCode */,
 			);
 			path = Views;
 			sourceTree = "<group>";
