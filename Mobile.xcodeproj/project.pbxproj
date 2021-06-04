@@ -396,6 +396,7 @@
 		CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE29FC372578F13E00402D0D /* MinAmountComponentView.xib */; };
 		CE29FC3C2578F14700402D0D /* MinAmountComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29FC3B2578F14700402D0D /* MinAmountComponentViewModel.swift */; };
 		CE29FC402578F14D00402D0D /* MinAmountComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29FC3F2578F14D00402D0D /* MinAmountComponentView.swift */; };
+		CE2AB4B3266A523A00C88262 /* MobileApiNotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AB4B2266A523A00C88262 /* MobileApiNotificationsRepository.swift */; };
 		CE2D1DEB2530738600112A1D /* QuickActionsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D1DEA2530738600112A1D /* QuickActionsHeaderViewModel.swift */; };
 		CE2D1DF22530753A00112A1D /* QuickActionsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D1DF12530753A00112A1D /* QuickActionsHeaderCell.swift */; };
 		CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D1DF52530754600112A1D /* QuickActionsHeaderCellDataProvider.swift */; };
@@ -1171,6 +1172,7 @@
 		CE29FC372578F13E00402D0D /* MinAmountComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MinAmountComponentView.xib; sourceTree = "<group>"; };
 		CE29FC3B2578F14700402D0D /* MinAmountComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinAmountComponentViewModel.swift; sourceTree = "<group>"; };
 		CE29FC3F2578F14D00402D0D /* MinAmountComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinAmountComponentView.swift; sourceTree = "<group>"; };
+		CE2AB4B2266A523A00C88262 /* MobileApiNotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiNotificationsRepository.swift; sourceTree = "<group>"; };
 		CE2D1DEA2530738600112A1D /* QuickActionsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsHeaderViewModel.swift; sourceTree = "<group>"; };
 		CE2D1DF12530753A00112A1D /* QuickActionsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsHeaderCell.swift; sourceTree = "<group>"; };
 		CE2D1DF52530754600112A1D /* QuickActionsHeaderCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsHeaderCellDataProvider.swift; sourceTree = "<group>"; };
@@ -2187,6 +2189,7 @@
 				C784C1C3266A3D9400D328D3 /* Authentication */,
 				CE2AB490266A440100C88262 /* Promotions */,
 				CE2AB49C266A474000C88262 /* Bonus */,
+				CE2AB4A0266A486B00C88262 /* Notifications */,
 				C71C241F265C0D8A002071FF /* Payments */,
 			);
 			path = Scenes;
@@ -3220,9 +3223,6 @@
 		C7D86F0E259A05640021CF1C /* Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				CE4A31532617328A0039C078 /* Entities */,
-				CE4A314E261731F70039C078 /* UseCases */,
-				CE4A314526172B880039C078 /* Notifications */,
 				CE4A314426172B7E0039C078 /* Lobby */,
 				C7D86F0F259A05770021CF1C /* Infrastructure */,
 			);
@@ -3359,33 +3359,6 @@
 				CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */,
 			);
 			path = Header;
-			sourceTree = "<group>";
-		};
-		CE0D8E86262467F30056F8E7 /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				CE0D8E8A262468060056F8E7 /* Status */,
-				CE0D8E87262467FF0056F8E7 /* Items */,
-			);
-			path = Notifications;
-			sourceTree = "<group>";
-		};
-		CE0D8E87262467FF0056F8E7 /* Items */ = {
-			isa = PBXGroup;
-			children = (
-				CE4A3154261732920039C078 /* NotificationDTO.swift */,
-				CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */,
-			);
-			path = Items;
-			sourceTree = "<group>";
-		};
-		CE0D8E8A262468060056F8E7 /* Status */ = {
-			isa = PBXGroup;
-			children = (
-				CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */,
-				CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */,
-			);
-			path = Status;
 			sourceTree = "<group>";
 		};
 		CE1693692541AB100043B1A4 /* AccountInfoComponentView */ = {
@@ -3660,6 +3633,162 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		CE2AB4A0266A486B00C88262 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4A1266A487E00C88262 /* Presentation */,
+				CE2AB4A8266A494000C88262 /* Data */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		CE2AB4A1266A487E00C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4A3266A488800C88262 /* Components */,
+				CE2AB4A2266A488300C88262 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE2AB4A2266A488300C88262 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4A5266A48B100C88262 /* Content Page */,
+				CE2AB4A4266A48AA00C88262 /* List Page */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE2AB4A3266A488800C88262 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4A7266A48F700C88262 /* Cells */,
+				CE2AB4A6266A48E800C88262 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE2AB4A4266A48AA00C88262 /* List Page */ = {
+			isa = PBXGroup;
+			children = (
+				D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */,
+				CE55ED2425267373003E168F /* NotificationsNavigator.swift */,
+				D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */,
+				D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */,
+				D87E3C592445FE6C004A4BDF /* Notifications.storyboard */,
+			);
+			path = "List Page";
+			sourceTree = "<group>";
+		};
+		CE2AB4A5266A48B100C88262 /* Content Page */ = {
+			isa = PBXGroup;
+			children = (
+				CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */,
+				CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */,
+				CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */,
+				CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */,
+				CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */,
+			);
+			path = "Content Page";
+			sourceTree = "<group>";
+		};
+		CE2AB4A6266A48E800C88262 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE0818BE25389B5C00AD3B3B /* Header */,
+				CEE15C3825349C130033BF93 /* NotificationComponentView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE2AB4A7266A48F700C88262 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */,
+				CE0818CD25389EDC00AD3B3B /* Header */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE2AB4A8266A494000C88262 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4AB266A495B00C88262 /* Use Cases */,
+				CE2AB4AA266A495600C88262 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE2AB4A9266A495100C88262 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */,
+				CE4A3154261732920039C078 /* NotificationDTO.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE2AB4AA266A495600C88262 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4AE266A51D400C88262 /* Notifications */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE2AB4AB266A495B00C88262 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A314F2617320F0039C078 /* NotificationsUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		CE2AB4AE266A51D400C88262 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4B0266A51E200C88262 /* Protocols */,
+				CE2AB4AF266A51DD00C88262 /* Implementation */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		CE2AB4AF266A51DD00C88262 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4B1266A521E00C88262 /* Mobile */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE2AB4B0266A51E200C88262 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4B8266A526800C88262 /* Entities */,
+				CE4A314826172BF50039C078 /* NotificationsRepository.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE2AB4B1266A521E00C88262 /* Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4A9266A495100C88262 /* Entities */,
+				CE2AB4B2266A523A00C88262 /* MobileApiNotificationsRepository.swift */,
+			);
+			path = Mobile;
+			sourceTree = "<group>";
+		};
+		CE2AB4B8266A526800C88262 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */,
+				CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		CE2D1DF02530752A00112A1D /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -3767,30 +3896,6 @@
 				D850940B24828D8900722040 /* DefaultLobbyGamesRepository.swift */,
 			);
 			path = Lobby;
-			sourceTree = "<group>";
-		};
-		CE4A314526172B880039C078 /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				CE4A314826172BF50039C078 /* NotificationsRepository.swift */,
-			);
-			path = Notifications;
-			sourceTree = "<group>";
-		};
-		CE4A314E261731F70039C078 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				CE4A314F2617320F0039C078 /* NotificationsUseCase.swift */,
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
-		CE4A31532617328A0039C078 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				CE0D8E86262467F30056F8E7 /* Notifications */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		CE55ECF425265B7D003E168F /* Profile */ = {
@@ -4090,18 +4195,6 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
-		CEB81DFE25386886006BEDEC /* ContentPage */ = {
-			isa = PBXGroup;
-			children = (
-				CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */,
-				CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */,
-				CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */,
-				CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */,
-				CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */,
-			);
-			path = ContentPage;
-			sourceTree = "<group>";
-		};
 		CEBB000A2608EBC700D1B510 /* PaymentMethodComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4346,7 +4439,6 @@
 		CEE15C3825349C130033BF93 /* NotificationComponentView */ = {
 			isa = PBXGroup;
 			children = (
-				CE0818BE25389B5C00AD3B3B /* Header */,
 				CEE15C3925349C330033BF93 /* NotificationComponentView.swift */,
 				CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */,
 				CEE15C4125349C450033BF93 /* NotificationComponentView.xib */,
@@ -4357,7 +4449,6 @@
 		CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				CE0818CD25389EDC00AD3B3B /* Header */,
 				CEE15C4625349EDF0033BF93 /* NotificationTableViewCell.swift */,
 				CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */,
 				CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */,
@@ -4461,7 +4552,6 @@
 				7676E54A2562852800234026 /* Transactions */,
 				D8C73F7D2445A62D004C96DB /* Home */,
 				D845BFBA2445FD7400419A2C /* Sports */,
-				D87E3C4E2445FDAD004A4BDF /* Notifications */,
 				CE55ECF425265B7D003E168F /* Profile */,
 			);
 			path = MainPages;
@@ -4572,7 +4662,6 @@
 				D8442A9F24696F2700F32676 /* Input */,
 				CE660C41254C0515002667D0 /* LabelComponentView */,
 				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
-				CEE15C3825349C130033BF93 /* NotificationComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
 				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
@@ -4715,19 +4804,6 @@
 				D86B596E244F167000AB7350 /* RecentlyPlayedComponentView.xib */,
 			);
 			path = RecentlyPlayedComponentView;
-			sourceTree = "<group>";
-		};
-		D87E3C4E2445FDAD004A4BDF /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				CEB81DFE25386886006BEDEC /* ContentPage */,
-				D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */,
-				CE55ED2425267373003E168F /* NotificationsNavigator.swift */,
-				D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */,
-				D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */,
-				D87E3C592445FE6C004A4BDF /* Notifications.storyboard */,
-			);
-			path = Notifications;
 			sourceTree = "<group>";
 		};
 		D87E3C5B244600B1004A4BDF /* Components */ = {
@@ -4985,7 +5061,6 @@
 				76BDF47425760519007B27A7 /* AccountParametersTableViewCell */,
 				769886A32571046100FA339E /* TransactionFilterTableViewCell */,
 				7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */,
-				CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */,
 				CE95FC1B252DF32A003E539B /* FooterTableViewCell */,
 				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
 				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
@@ -6051,6 +6126,7 @@
 				769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */,
 				C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */,
 				76DCF68525B8159200150EE1 /* MyCardable.swift in Sources */,
+				CE2AB4B3266A523A00C88262 /* MobileApiNotificationsRepository.swift in Sources */,
 				CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */,
 				CE5874A2260B8B3C00F03AB5 /* EmoneyInstructionsView.swift in Sources */,
 				D894CEB924BE2AD700FE143D /* ShimmerView.swift in Sources */,
