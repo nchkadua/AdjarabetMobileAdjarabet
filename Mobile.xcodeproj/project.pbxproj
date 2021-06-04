@@ -2191,6 +2191,7 @@
 				CE2AB49C266A474000C88262 /* Bonus */,
 				CE2AB4A0266A486B00C88262 /* Notifications */,
 				C71C241F265C0D8A002071FF /* Payments */,
+				CE2AB4C3266A542300C88262 /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -3789,6 +3790,81 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		CE2AB4C3266A542300C88262 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4C4266A543C00C88262 /* Profile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE2AB4C4266A543C00C88262 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4C6266A546A00C88262 /* Presentation */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE2AB4C6266A546A00C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4C9266A5B2300C88262 /* Components */,
+				CE2AB4C8266A5B1D00C88262 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE2AB4C8266A5B1D00C88262 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4CC266A5B5B00C88262 /* Helper */,
+				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
+				CE55ECF525265CDA003E168F /* ProfileNavigator.swift */,
+				CE55ECF625265CDA003E168F /* ProfileViewController.swift */,
+				CE55ECF725265CDA003E168F /* ProfileViewModel.swift */,
+				CE55ECFD25265CF1003E168F /* Profile.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE2AB4C9266A5B2300C88262 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4CB266A5B3400C88262 /* Cells */,
+				CE2AB4CA266A5B2F00C88262 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE2AB4CA266A5B2F00C88262 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
+				CEE356CF252C9BBE00A0A25C /* BalanceComponentView */,
+				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE2AB4CB266A5B3400C88262 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
+				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
+				CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE2AB4CC266A5B5B00C88262 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CE95FBC7252DC394003E539B /* QuickActionItems */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		CE2D1DF02530752A00112A1D /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -3906,12 +3982,6 @@
 				C71F188D256411720026CEA2 /* BiometricSettings */,
 				C7BABFC725657966004E733E /* P2PTransfer */,
 				CEA2876D2540C06800E6590C /* AccountInfo */,
-				CE95FBC7252DC394003E539B /* QuickActionItems */,
-				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
-				CE55ECF525265CDA003E168F /* ProfileNavigator.swift */,
-				CE55ECF625265CDA003E168F /* ProfileViewController.swift */,
-				CE55ECF725265CDA003E168F /* ProfileViewModel.swift */,
-				CE55ECFD25265CF1003E168F /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -4655,7 +4725,6 @@
 				CE91C0EA25702BAA00A18255 /* Calendar */,
 				CEE2505E256FE2E40089F805 /* Timer */,
 				CE1693692541AB100043B1A4 /* AccountInfoComponentView */,
-				CEE356CF252C9BBE00A0A25C /* BalanceComponentView */,
 				D86253BA24653AA000F7DE0C /* Button */,
 				CE95FBED252DE5C7003E539B /* FooterComponentView */,
 				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
@@ -4663,8 +4732,6 @@
 				CE660C41254C0515002667D0 /* LabelComponentView */,
 				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
-				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
-				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				CEF1D4F7251CAB78008E3DE0 /* Text */,
 				7676E5622562E19200234026 /* TransactionHistoryComponentView */,
@@ -5062,9 +5129,6 @@
 				769886A32571046100FA339E /* TransactionFilterTableViewCell */,
 				7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */,
 				CE95FC1B252DF32A003E539B /* FooterTableViewCell */,
-				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
-				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
-				CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */,
 				D8AC9965244F1A2100B16600 /* RecentlyPlayedCollectionViewCell */,
 				D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */,
 				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,
