@@ -3866,6 +3866,7 @@
 		CE2AB4CE266A5C9300C88262 /* Biometric Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CE5D7A59266A5DF000719120 /* Data */,
 				CE2AB4CF266A5CA500C88262 /* Presentation */,
 			);
 			path = "Biometric Settings";
@@ -4029,6 +4030,22 @@
 				CE5874A7260B8B4100F03AB5 /* EmoneyInstructionsView.xib */,
 			);
 			path = Instructions;
+			sourceTree = "<group>";
+		};
+		CE5D7A59266A5DF000719120 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A5A266A5DFD00719120 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE5D7A5A266A5DFD00719120 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C71F18A92564562D0026CEA2 /* BiometryStorage */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		CE64EA7425D168EF00438974 /* GameVC */ = {
@@ -4676,7 +4693,6 @@
 			isa = PBXGroup;
 			children = (
 				D8AB806A24601371001C4E8A /* LanguageStorage */,
-				C71F18A92564562D0026CEA2 /* BiometryStorage */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
