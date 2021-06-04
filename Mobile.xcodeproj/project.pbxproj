@@ -2122,18 +2122,9 @@
 		C709D7FC259B8F4B0079E942 /* Authentication & Session Management */ = {
 			isa = PBXGroup;
 			children = (
-				C709D7FD259B8F620079E942 /* Authentication Operations */,
 				C709D7FE259B8F880079E942 /* Session Management Operations */,
 			);
 			path = "Authentication & Session Management";
-			sourceTree = "<group>";
-		};
-		C709D7FD259B8F620079E942 /* Authentication Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C7991288259BA78D00F64676 /* Authentication */,
-			);
-			path = "Authentication Operations";
 			sourceTree = "<group>";
 		};
 		C709D7FE259B8F880079E942 /* Session Management Operations */ = {
@@ -2184,6 +2175,7 @@
 		C71C2413265C09BA002071FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CE2AB427266A2DA300C88262 /* Scenes */,
 				C79922FE2660E9CF00FD7033 /* Data */,
 			);
 			path = Shared;
@@ -2192,6 +2184,7 @@
 		C71C2416265C09C3002071FF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE2AB425266A2D6600C88262 /* Login */,
 				C71C241F265C0D8A002071FF /* Payments */,
 			);
 			path = Scenes;
@@ -2732,18 +2725,9 @@
 		C799127C259BA64500F64676 /* Authentication & Session Management */ = {
 			isa = PBXGroup;
 			children = (
-				C799127D259BA64E00F64676 /* Authentication Operations */,
 				C799127E259BA68100F64676 /* Session Management Operations */,
 			);
 			path = "Authentication & Session Management";
-			sourceTree = "<group>";
-		};
-		C799127D259BA64E00F64676 /* Authentication Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C7991284259BA71500F64676 /* Authentication */,
-			);
-			path = "Authentication Operations";
 			sourceTree = "<group>";
 		};
 		C799127E259BA68100F64676 /* Session Management Operations */ = {
@@ -2795,16 +2779,6 @@
 			path = "Transaction List & Management Operations";
 			sourceTree = "<group>";
 		};
-		C7991284259BA71500F64676 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
-				D8F26A04246837B700137252 /* LoginType.swift */,
-				D8BA5A1D249A5A0B00F88433 /* OTPDeliveryChannel.swift */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
 		C7991285259BA72500F64676 /* Session Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -2829,14 +2803,6 @@
 				76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */,
 			);
 			path = "Transaction History";
-			sourceTree = "<group>";
-		};
-		C7991288259BA78D00F64676 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
-			);
-			path = Authentication;
 			sourceTree = "<group>";
 		};
 		C7991289259BA79C00F64676 /* Session Management */ = {
@@ -3220,7 +3186,6 @@
 			children = (
 				D85C9BF02433677100F1D4FE /* CoreRequestBuilder.swift */,
 				C766086325CC3FF700A59534 /* CoreApiRepository.swift */,
-				D8A47DF7243367160077AA8E /* Entities */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -3447,6 +3412,163 @@
 				CE29FC372578F13E00402D0D /* MinAmountComponentView.xib */,
 			);
 			path = MinAmount;
+			sourceTree = "<group>";
+		};
+		CE2AB425266A2D6600C88262 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB47C266A2E5600C88262 /* Data */,
+				CE2AB44F266A2DF200C88262 /* Presentation */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CE2AB427266A2DA300C88262 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB479266A2E1700C88262 /* OTP */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE2AB44F266A2DF200C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */,
+				D8442AA72469A7A400F32676 /* LoginNavigator.swift */,
+				D8442AA82469A7A400F32676 /* LoginViewController.swift */,
+				D8442AA92469A7A400F32676 /* LoginViewModel.swift */,
+				D85C9C3124336D0800F1D4FE /* Login.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE2AB479266A2E1700C88262 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB480266A2ED200C88262 /* Data */,
+				CE2AB47A266A2E1D00C88262 /* Presentation */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
+		CE2AB47A266A2E1D00C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB47B266A2E2E00C88262 /* Components */,
+				D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */,
+				D8390E79246C1B5D00EF8CB5 /* OTPViewController.swift */,
+				D8390E7A246C1B5D00EF8CB5 /* OTPViewModel.swift */,
+				D8390E7E246C1B6400EF8CB5 /* OTPLogin.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE2AB47B266A2E2E00C88262 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D8863699246C4F4400FF061D /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE2AB47C266A2E5600C88262 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB47D266A2E6100C88262 /* Use Cases */,
+				CE2AB47E266A2E6600C88262 /* Repositories */,
+				CE2AB47F266A2E6C00C88262 /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE2AB47D266A2E6100C88262 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */,
+				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
+				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		CE2AB47E266A2E6600C88262 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB484266A316D00C88262 /* Protocols */,
+				CE2AB485266A317400C88262 /* Implementations */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE2AB47F266A2E6C00C88262 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB487266A388000C88262 /* Result */,
+				D8F26A04246837B700137252 /* LoginType.swift */,
+				D8BA5A1D249A5A0B00F88433 /* OTPDeliveryChannel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE2AB480266A2ED200C88262 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB483266A2EF600C88262 /* Use Cases */,
+				CE2AB482266A2EF200C88262 /* Repositories */,
+				CE2AB481266A2EEA00C88262 /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE2AB481266A2EEA00C88262 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE2AB482266A2EF200C88262 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE2AB483266A2EF600C88262 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
+				D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		CE2AB484266A316D00C88262 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE2AB485266A317400C88262 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		CE2AB487266A388000C88262 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */,
+				D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */,
+				D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */,
+				D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 		CE2D1DF02530752A00112A1D /* Header */ = {
@@ -4241,15 +4363,6 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		D815850B24B0C66000FFCA95 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9C2524336CD100F1D4FE /* Login */,
-				D8390E77246C1B4D00EF8CB5 /* SMSLogin */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
 		D815850C24B0C66D00FFCA95 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
@@ -4285,18 +4398,6 @@
 				D8212F032485846C00B74AB9 /* LoadingCollectionViewCell.xib */,
 			);
 			path = LoadingCollectionViewCell;
-			sourceTree = "<group>";
-		};
-		D8390E77246C1B4D00EF8CB5 /* SMSLogin */ = {
-			isa = PBXGroup;
-			children = (
-				D8390E78246C1B5D00EF8CB5 /* OTPNavigator.swift */,
-				D8390E79246C1B5D00EF8CB5 /* OTPViewController.swift */,
-				D8390E7A246C1B5D00EF8CB5 /* OTPViewModel.swift */,
-				D8390E7E246C1B6400EF8CB5 /* OTPLogin.storyboard */,
-				D8863699246C4F4400FF061D /* Views */,
-			);
-			path = SMSLogin;
 			sourceTree = "<group>";
 		};
 		D83E4227247AA7AC00E9615F /* Login */ = {
@@ -4430,18 +4531,6 @@
 				D842098424482BE80001ADC1 /* TabBarButton.swift */,
 			);
 			path = MainTabBar;
-			sourceTree = "<group>";
-		};
-		D85C9C2524336CD100F1D4FE /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */,
-				D8442AA72469A7A400F32676 /* LoginNavigator.swift */,
-				D8442AA82469A7A400F32676 /* LoginViewController.swift */,
-				D8442AA92469A7A400F32676 /* LoginViewModel.swift */,
-				D85C9C3124336D0800F1D4FE /* Login.storyboard */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		D85C9C352433749D00F1D4FE /* AppDelegate */ = {
@@ -4601,14 +4690,9 @@
 				76BADBA1257756560080AB76 /* TransactionHistory */,
 				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
 				C78FD440260A672C004E766E /* Amount Formatter */,
-				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
-				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
-				D885E7582471525D007D85D3 /* SMSCodeUseCase.swift */,
-				D885E75A24715854007D85D3 /* SMSLoginUseCase.swift */,
 				D83E4225247A92D800E9615F /* UserSessionUseCase.swift */,
 				D815850924B09E0100FFCA95 /* LobbyGamesUseCase.swift */,
 				D8BE830B24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift */,
-				CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -4717,7 +4801,6 @@
 		D8A47DE924335DDE0077AA8E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D815850B24B0C66000FFCA95 /* Authentication */,
 				D815850C24B0C66D00FFCA95 /* MainPages */,
 			);
 			path = Presentation;
@@ -4774,17 +4857,6 @@
 				CE8786B6261B4A680060EBD1 /* Array+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D8A47DF7243367160077AA8E /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				D85C9BF22433678000F1D4FE /* AdjarabetCoreClientError.swift */,
-				D85C9BF62433678000F1D4FE /* AdjarabetCoreCodable.swift */,
-				D85C9BF42433678000F1D4FE /* AdjarabetCoreResult.swift */,
-				D85C9BF52433678000F1D4FE /* AdjarabetCoreStatusCode.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		D8AB80672460132B001C4E8A /* Services */ = {
