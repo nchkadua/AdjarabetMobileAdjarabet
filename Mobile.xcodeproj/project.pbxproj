@@ -2431,18 +2431,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C71F188D256411720026CEA2 /* BiometricSettings */ = {
-			isa = PBXGroup;
-			children = (
-				C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */,
-				C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */,
-				C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */,
-				C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */,
-				C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */,
-			);
-			path = BiometricSettings;
-			sourceTree = "<group>";
-		};
 		C71F18A92564562D0026CEA2 /* BiometryStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -3793,6 +3781,7 @@
 		CE2AB4C3266A542300C88262 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CE2AB4CE266A5C9300C88262 /* Biometric Settings */,
 				CE2AB4C4266A543C00C88262 /* Profile */,
 			);
 			path = Profile;
@@ -3872,6 +3861,26 @@
 				D8863697246C485500FF061D /* SMSCodeInputView.swift */,
 			);
 			path = SMSCode;
+			sourceTree = "<group>";
+		};
+		CE2AB4CE266A5C9300C88262 /* Biometric Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4CF266A5CA500C88262 /* Presentation */,
+			);
+			path = "Biometric Settings";
+			sourceTree = "<group>";
+		};
+		CE2AB4CF266A5CA500C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */,
+				C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */,
+				C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */,
+				C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */,
+				C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		CE2D1DF02530752A00112A1D /* Header */ = {
@@ -3988,7 +3997,6 @@
 			children = (
 				CE679FD62578332200F2EC1C /* CardsManagement */,
 				76BDF45625760425007B27A7 /* AccountParameters */,
-				C71F188D256411720026CEA2 /* BiometricSettings */,
 				C7BABFC725657966004E733E /* P2PTransfer */,
 				CEA2876D2540C06800E6590C /* AccountInfo */,
 			);
