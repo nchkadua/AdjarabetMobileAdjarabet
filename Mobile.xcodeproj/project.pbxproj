@@ -2186,6 +2186,7 @@
 			children = (
 				C784C1C3266A3D9400D328D3 /* Authentication */,
 				CE2AB490266A440100C88262 /* Promotions */,
+				CE2AB49C266A474000C88262 /* Bonus */,
 				C71C241F265C0D8A002071FF /* Payments */,
 			);
 			path = Scenes;
@@ -3387,18 +3388,6 @@
 			path = Status;
 			sourceTree = "<group>";
 		};
-		CE1420252636EE7E00E022C7 /* Bonus */ = {
-			isa = PBXGroup;
-			children = (
-				CE1420262636EE8900E022C7 /* Bonus.storyboard */,
-				CE1420272636EE8900E022C7 /* BonusNavigator.swift */,
-				CE1420282636EE8900E022C7 /* BonusViewController.swift */,
-				CE1420292636EE8900E022C7 /* BonusViewControllerFactory.swift */,
-				CE14202A2636EE8900E022C7 /* BonusViewModel.swift */,
-			);
-			path = Bonus;
-			sourceTree = "<group>";
-		};
 		CE1693692541AB100043B1A4 /* AccountInfoComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3585,7 +3574,6 @@
 			children = (
 				CE2AB492266A443F00C88262 /* Shared */,
 				CE2AB491266A440F00C88262 /* Presentation */,
-				CE2AB493266A445000C88262 /* Components */,
 			);
 			path = Promotions;
 			sourceTree = "<group>";
@@ -3593,11 +3581,8 @@
 		CE2AB491266A440F00C88262 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
-				CE55ED012526732A003E168F /* PromotionsNavigator.swift */,
-				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
-				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
-				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
+				CE2AB493266A445000C88262 /* Components */,
+				CE2AB49E266A477100C88262 /* Scene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -3633,6 +3618,46 @@
 				CE95FC9F252F3691003E539B /* PromotionTableViewCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE2AB49C266A474000C88262 /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB49D266A475900C88262 /* Presentation */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
+		CE2AB49D266A475900C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB49F266A478100C88262 /* Scene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE2AB49E266A477100C88262 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
+				CE55ED012526732A003E168F /* PromotionsNavigator.swift */,
+				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
+				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
+				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		CE2AB49F266A478100C88262 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CE1420262636EE8900E022C7 /* Bonus.storyboard */,
+				CE1420272636EE8900E022C7 /* BonusNavigator.swift */,
+				CE1420282636EE8900E022C7 /* BonusViewController.swift */,
+				CE1420292636EE8900E022C7 /* BonusViewControllerFactory.swift */,
+				CE14202A2636EE8900E022C7 /* BonusViewModel.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		CE2D1DF02530752A00112A1D /* Header */ = {
@@ -4430,7 +4455,6 @@
 		D815850C24B0C66D00FFCA95 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
-				CE1420252636EE7E00E022C7 /* Bonus */,
 				CE4A31092614788A0039C078 /* Main */,
 				CE03746825F8D6F00061F507 /* WebViewController */,
 				7665D959257E5C8100E5B35F /* AccessHistory */,
