@@ -60,7 +60,7 @@ public class NotificationContentViewController: UIViewController {
     }
 
     private func setupNavigationItem() {
-        setBackBarButtonItemIfNeeded(width: 35, height: 35, rounded: true)
+        setBackBarButtonItemIfNeeded()
         setTitle(title: viewModel.params.notification.header)
         navigationController?.navigationBar.barTintColor = view.backgroundColor
     }
@@ -105,3 +105,5 @@ public class NotificationContentViewController: UIViewController {
         viewModel.openUrl(urlString)
     }
 }
+
+extension NotificationContentViewController: CommonBarButtonProviding { }
