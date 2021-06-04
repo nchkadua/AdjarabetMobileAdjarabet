@@ -51,10 +51,6 @@ public class PromotionsViewController: ABViewController {
 
     private func setupNavigationItems() {
         makeAdjarabetLogo()
-
-        let profileButtonGroup = makeBalanceBarButtonItem()
-        navigationItem.rightBarButtonItem = profileButtonGroup.barButtonItem
-        profileButtonGroup.button.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
     }
 
     private func setupTableView() {
@@ -62,11 +58,6 @@ public class PromotionsViewController: ABViewController {
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
         appTableViewController.isTabBarManagementEnabled = true
-    }
-
-    // MARK: Action methods
-    @objc private func openProfile() {
-//        navigator.navigate(to: .profile, animated: true)
     }
 }
 

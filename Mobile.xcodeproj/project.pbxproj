@@ -2185,6 +2185,7 @@
 			isa = PBXGroup;
 			children = (
 				C784C1C3266A3D9400D328D3 /* Authentication */,
+				CE2AB490266A440100C88262 /* Promotions */,
 				C71C241F265C0D8A002071FF /* Payments */,
 			);
 			path = Scenes;
@@ -3579,6 +3580,61 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
+		CE2AB490266A440100C88262 /* Promotions */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB492266A443F00C88262 /* Shared */,
+				CE2AB491266A440F00C88262 /* Presentation */,
+				CE2AB493266A445000C88262 /* Components */,
+			);
+			path = Promotions;
+			sourceTree = "<group>";
+		};
+		CE2AB491266A440F00C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
+				CE55ED012526732A003E168F /* PromotionsNavigator.swift */,
+				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
+				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
+				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE2AB492266A443F00C88262 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CE1D6ED2252F38C10091F6D9 /* TemporaryHelper */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CE2AB493266A445000C88262 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB495266A447000C88262 /* Cells */,
+				CE2AB494266A446C00C88262 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE2AB494266A446C00C88262 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE95FC8A252F2AFE003E539B /* PromotionComponentView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE2AB495266A447000C88262 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE95FC9F252F3691003E539B /* PromotionTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CE2D1DF02530752A00112A1D /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -4381,7 +4437,6 @@
 				7676E54A2562852800234026 /* Transactions */,
 				D8C73F7D2445A62D004C96DB /* Home */,
 				D845BFBA2445FD7400419A2C /* Sports */,
-				D87E3C4D2445FDA3004A4BDF /* Promotions */,
 				D87E3C4E2445FDAD004A4BDF /* Notifications */,
 				CE55ECF425265B7D003E168F /* Profile */,
 			);
@@ -4496,7 +4551,6 @@
 				CEE15C3825349C130033BF93 /* NotificationComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
 				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
-				CE95FC8A252F2AFE003E539B /* PromotionComponentView */,
 				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
 				CEF1D4F7251CAB78008E3DE0 /* Text */,
@@ -4637,19 +4691,6 @@
 				D86B596E244F167000AB7350 /* RecentlyPlayedComponentView.xib */,
 			);
 			path = RecentlyPlayedComponentView;
-			sourceTree = "<group>";
-		};
-		D87E3C4D2445FDA3004A4BDF /* Promotions */ = {
-			isa = PBXGroup;
-			children = (
-				CE1D6ED2252F38C10091F6D9 /* TemporaryHelper */,
-				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
-				CE55ED012526732A003E168F /* PromotionsNavigator.swift */,
-				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
-				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
-				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
-			);
-			path = Promotions;
 			sourceTree = "<group>";
 		};
 		D87E3C4E2445FDAD004A4BDF /* Notifications */ = {
@@ -4925,7 +4966,6 @@
 				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
 				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
 				CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */,
-				CE95FC9F252F3691003E539B /* PromotionTableViewCell */,
 				D8AC9965244F1A2100B16600 /* RecentlyPlayedCollectionViewCell */,
 				D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */,
 				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,
