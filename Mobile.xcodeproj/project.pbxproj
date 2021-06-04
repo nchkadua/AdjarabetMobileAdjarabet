@@ -2175,7 +2175,7 @@
 		C71C2413265C09BA002071FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB427266A2DA300C88262 /* Scenes */,
+				C784C1C2266A3CF900D328D3 /* Presentation */,
 				C79922FE2660E9CF00FD7033 /* Data */,
 			);
 			path = Shared;
@@ -2184,7 +2184,7 @@
 		C71C2416265C09C3002071FF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB425266A2D6600C88262 /* Login */,
+				C784C1C3266A3D9400D328D3 /* Authentication */,
 				C71C241F265C0D8A002071FF /* Payments */,
 			);
 			path = Scenes;
@@ -2645,6 +2645,31 @@
 				C782D29926553B0E00594A65 /* ABSliderCollectionViewCell.xib */,
 			);
 			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		C784C1C2266A3CF900D328D3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB427266A2DA300C88262 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C784C1C3266A3D9400D328D3 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB425266A2D6600C88262 /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C784C1C4266A3DFE00D328D3 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB484266A316D00C88262 /* Protocols */,
+				CE2AB485266A317400C88262 /* Implementations */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		C78FD440260A672C004E766E /* Amount Formatter */ = {
@@ -3417,8 +3442,8 @@
 		CE2AB425266A2D6600C88262 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB47C266A2E5600C88262 /* Data */,
 				CE2AB44F266A2DF200C88262 /* Presentation */,
+				CE2AB47C266A2E5600C88262 /* Data */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -3446,8 +3471,8 @@
 		CE2AB479266A2E1700C88262 /* OTP */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB480266A2ED200C88262 /* Data */,
 				CE2AB47A266A2E1D00C88262 /* Presentation */,
+				CE2AB480266A2ED200C88262 /* Data */,
 			);
 			path = OTP;
 			sourceTree = "<group>";
@@ -3495,8 +3520,7 @@
 		CE2AB47E266A2E6600C88262 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB484266A316D00C88262 /* Protocols */,
-				CE2AB485266A317400C88262 /* Implementations */,
+				C784C1C4266A3DFE00D328D3 /* Authentication */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -3515,24 +3539,8 @@
 			isa = PBXGroup;
 			children = (
 				CE2AB483266A2EF600C88262 /* Use Cases */,
-				CE2AB482266A2EF200C88262 /* Repositories */,
-				CE2AB481266A2EEA00C88262 /* Entities */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		CE2AB481266A2EEA00C88262 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		CE2AB482266A2EF200C88262 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		CE2AB483266A2EF600C88262 /* Use Cases */ = {
