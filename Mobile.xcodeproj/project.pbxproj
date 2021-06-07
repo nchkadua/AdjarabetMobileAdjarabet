@@ -1612,7 +1612,7 @@
 			path = DateHeaderTableViewCell;
 			sourceTree = "<group>";
 		};
-		763171A32566388400F6FD90 /* TransactionDetails */ = {
+		763171A32566388400F6FD90 /* Transaction Details */ = {
 			isa = PBXGroup;
 			children = (
 				763171A42566398F00F6FD90 /* TransactionDetailsNavigator.swift */,
@@ -1621,7 +1621,7 @@
 				763171AC25663E1500F6FD90 /* TransactionDetails.storyboard */,
 				763171B025663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift */,
 			);
-			path = TransactionDetails;
+			path = "Transaction Details";
 			sourceTree = "<group>";
 		};
 		76404EEB257611D100D14E0C /* Model */ = {
@@ -1675,7 +1675,6 @@
 		7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				7644B62D256509AE006778B2 /* Details */,
 				7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */,
 				7644B5F62563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift */,
 				7644B5FA2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib */,
@@ -1759,14 +1758,6 @@
 		7676E54A2562852800234026 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
-				CE91C0D5257028AB00A18255 /* Filter */,
-				763171A32566388400F6FD90 /* TransactionDetails */,
-				7676E55B2562D69D00234026 /* DataProvider */,
-				7676E54B2562856600234026 /* TransactionsNavigator.swift */,
-				7676E54C2562856600234026 /* TransactionsViewController.swift */,
-				7676E54D2562856600234026 /* TransactionsViewModel.swift */,
-				7676E55325628F3900234026 /* Transactions.storyboard */,
-				7676E55725628F5B00234026 /* TransactionsViewControllerFactory.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -1782,7 +1773,6 @@
 		7676E5622562E19200234026 /* TransactionHistoryComponentView */ = {
 			isa = PBXGroup;
 			children = (
-				7644B6202564F8D0006778B2 /* Details */,
 				7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */,
 				7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */,
 				7644B5EB25639786006778B2 /* TransactionHistoryComponentViewModel.swift */,
@@ -1927,22 +1917,6 @@
 				76BA7BD725E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.swift */,
 			);
 			path = GameLauncherGridComponentCell;
-			sourceTree = "<group>";
-		};
-		76BADBA1257756560080AB76 /* TransactionHistory */ = {
-			isa = PBXGroup;
-			children = (
-				76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */,
-			);
-			path = TransactionHistory;
-			sourceTree = "<group>";
-		};
-		76BDF42425752CB0007B27A7 /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */,
-			);
-			path = Responses;
 			sourceTree = "<group>";
 		};
 		76BDF45625760425007B27A7 /* AccountParameters */ = {
@@ -2153,14 +2127,6 @@
 			path = "Balance Management Operations";
 			sourceTree = "<group>";
 		};
-		C7148715257111F300E4A71D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C71487162571122E00E4A71D /* AccountInfoModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		C71B4B6B257EC4BB00538697 /* SecurityLevels */ = {
 			isa = PBXGroup;
 			children = (
@@ -2191,6 +2157,7 @@
 				CE2AB49C266A474000C88262 /* Bonus */,
 				CE2AB4A0266A486B00C88262 /* Notifications */,
 				C71C241F265C0D8A002071FF /* Payments */,
+				CE2AB4C3266A542300C88262 /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -2428,18 +2395,6 @@
 				76DCF6A825B825FC00150EE1 /* MyCardComponentView */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		C71F188D256411720026CEA2 /* BiometricSettings */ = {
-			isa = PBXGroup;
-			children = (
-				C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */,
-				C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */,
-				C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */,
-				C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */,
-				C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */,
-			);
-			path = BiometricSettings;
 			sourceTree = "<group>";
 		};
 		C71F18A92564562D0026CEA2 /* BiometryStorage */ = {
@@ -2707,7 +2662,6 @@
 			isa = PBXGroup;
 			children = (
 				C7991274259BA3C800F64676 /* Authentication Log */,
-				C7991279259BA48000F64676 /* Transactions List & Management */,
 			);
 			path = "User Activity History & Transaction Management";
 			sourceTree = "<group>";
@@ -2726,30 +2680,6 @@
 				C799128A259BA7D000F64676 /* Access List */,
 			);
 			path = "Authentication Log Operations";
-			sourceTree = "<group>";
-		};
-		C7991279259BA48000F64676 /* Transactions List & Management */ = {
-			isa = PBXGroup;
-			children = (
-				C799127A259BA49300F64676 /* Transaction List & Management Operations */,
-			);
-			path = "Transactions List & Management";
-			sourceTree = "<group>";
-		};
-		C799127A259BA49300F64676 /* Transaction List & Management Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C799128D259BA80100F64676 /* Transaction History */,
-			);
-			path = "Transaction List & Management Operations";
-			sourceTree = "<group>";
-		};
-		C799127B259BA50B00F64676 /* User Profile Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C7991298259BA88100F64676 /* User Profile */,
-			);
-			path = "User Profile Operations";
 			sourceTree = "<group>";
 		};
 		C799127C259BA64500F64676 /* Authentication & Session Management */ = {
@@ -2772,7 +2702,6 @@
 			isa = PBXGroup;
 			children = (
 				C7991280259BA6B500F64676 /* Authentication Log */,
-				C7991282259BA6DE00F64676 /* Transactions List & Management */,
 			);
 			path = "User Activity History & Transaction Management";
 			sourceTree = "<group>";
@@ -2793,22 +2722,6 @@
 			path = "Authentication Log Operations";
 			sourceTree = "<group>";
 		};
-		C7991282259BA6DE00F64676 /* Transactions List & Management */ = {
-			isa = PBXGroup;
-			children = (
-				C7991283259BA6EC00F64676 /* Transaction List & Management Operations */,
-			);
-			path = "Transactions List & Management";
-			sourceTree = "<group>";
-		};
-		C7991283259BA6EC00F64676 /* Transaction List & Management Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C7991287259BA74A00F64676 /* Transaction History */,
-			);
-			path = "Transaction List & Management Operations";
-			sourceTree = "<group>";
-		};
 		C7991285259BA72500F64676 /* Session Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -2824,15 +2737,6 @@
 				76EBDB42257E426200C8DC6A /* AccessListEntity.swift */,
 			);
 			path = "Access List";
-			sourceTree = "<group>";
-		};
-		C7991287259BA74A00F64676 /* Transaction History */ = {
-			isa = PBXGroup;
-			children = (
-				76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */,
-				76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */,
-			);
-			path = "Transaction History";
 			sourceTree = "<group>";
 		};
 		C7991289259BA79C00F64676 /* Session Management */ = {
@@ -2852,23 +2756,6 @@
 			path = "Access List";
 			sourceTree = "<group>";
 		};
-		C799128D259BA80100F64676 /* Transaction History */ = {
-			isa = PBXGroup;
-			children = (
-				76BDF42425752CB0007B27A7 /* Responses */,
-				76BDF440257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift */,
-			);
-			path = "Transaction History";
-			sourceTree = "<group>";
-		};
-		C7991294259BA84D00F64676 /* User Profile Operations */ = {
-			isa = PBXGroup;
-			children = (
-				C7991295259BA85C00F64676 /* User Profile */,
-			);
-			path = "User Profile Operations";
-			sourceTree = "<group>";
-		};
 		C7991295259BA85C00F64676 /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -2884,7 +2771,8 @@
 				C79912B0259BAC9500F64676 /* User Info */,
 				C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */,
 			);
-			path = "User Profile";
+			name = "User Profile";
+			path = "../User Profile";
 			sourceTree = "<group>";
 		};
 		C799129B259BA8CB00F64676 /* Balance Management */ = {
@@ -3270,19 +3158,10 @@
 			children = (
 				C7D86F0D259A05190021CF1C /* Infrastructure */,
 				C709D7FC259B8F4B0079E942 /* Authentication & Session Management */,
-				C7EF9E47256FED2600D2908C /* User Profile Management */,
 				C7991273259BA3A300F64676 /* User Activity History & Transaction Management */,
 				C709D7FF259B902D0079E942 /* Balance Management */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		C7EF9E47256FED2600D2908C /* User Profile Management */ = {
-			isa = PBXGroup;
-			children = (
-				C799127B259BA50B00F64676 /* User Profile Operations */,
-			);
-			path = "User Profile Management";
 			sourceTree = "<group>";
 		};
 		C7EF9E4A256FEF1400D2908C /* API */ = {
@@ -3298,19 +3177,10 @@
 			isa = PBXGroup;
 			children = (
 				C799127C259BA64500F64676 /* Authentication & Session Management */,
-				C7EF9E56256FF15400D2908C /* User Profile Management */,
 				C799127F259BA6A500F64676 /* User Activity History & Transaction Management */,
 				C799129B259BA8CB00F64676 /* Balance Management */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		C7EF9E56256FF15400D2908C /* User Profile Management */ = {
-			isa = PBXGroup;
-			children = (
-				C7991294259BA84D00F64676 /* User Profile Operations */,
-			);
-			path = "User Profile Management";
 			sourceTree = "<group>";
 		};
 		C7EF9E7025702AFA00D2908C /* User Info */ = {
@@ -3654,8 +3524,8 @@
 		CE2AB4A2266A488300C88262 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB4A5266A48B100C88262 /* Content Page */,
-				CE2AB4A4266A48AA00C88262 /* List Page */,
+				CE2AB4A5266A48B100C88262 /* Content */,
+				CE2AB4A4266A48AA00C88262 /* List */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -3669,7 +3539,7 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		CE2AB4A4266A48AA00C88262 /* List Page */ = {
+		CE2AB4A4266A48AA00C88262 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */,
@@ -3678,10 +3548,10 @@
 				D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */,
 				D87E3C592445FE6C004A4BDF /* Notifications.storyboard */,
 			);
-			path = "List Page";
+			path = List;
 			sourceTree = "<group>";
 		};
-		CE2AB4A5266A48B100C88262 /* Content Page */ = {
+		CE2AB4A5266A48B100C88262 /* Content */ = {
 			isa = PBXGroup;
 			children = (
 				CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */,
@@ -3690,7 +3560,7 @@
 				CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */,
 				CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */,
 			);
-			path = "Content Page";
+			path = Content;
 			sourceTree = "<group>";
 		};
 		CE2AB4A6266A48E800C88262 /* Views */ = {
@@ -3787,6 +3657,114 @@
 				CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE2AB4C3266A542300C88262 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A85266A61EB00719120 /* Account Information */,
+				CE5D7A5B266A5EEE00719120 /* Transaction History */,
+				CE2AB4CE266A5C9300C88262 /* Biometric Settings */,
+				CE2AB4C4266A543C00C88262 /* Profile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE2AB4C4266A543C00C88262 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4C6266A546A00C88262 /* Presentation */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE2AB4C6266A546A00C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4C9266A5B2300C88262 /* Components */,
+				CE2AB4C8266A5B1D00C88262 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE2AB4C8266A5B1D00C88262 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4CC266A5B5B00C88262 /* Helper */,
+				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
+				CE55ECF525265CDA003E168F /* ProfileNavigator.swift */,
+				CE55ECF625265CDA003E168F /* ProfileViewController.swift */,
+				CE55ECF725265CDA003E168F /* ProfileViewModel.swift */,
+				CE55ECFD25265CF1003E168F /* Profile.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE2AB4C9266A5B2300C88262 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4CB266A5B3400C88262 /* Cells */,
+				CE2AB4CA266A5B2F00C88262 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE2AB4CA266A5B2F00C88262 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
+				CEE356CF252C9BBE00A0A25C /* BalanceComponentView */,
+				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE2AB4CB266A5B3400C88262 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
+				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
+				CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE2AB4CC266A5B5B00C88262 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CE95FBC7252DC394003E539B /* QuickActionItems */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		CE2AB4CD266A5C2600C88262 /* SMSCode */ = {
+			isa = PBXGroup;
+			children = (
+				D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */,
+				D8863697246C485500FF061D /* SMSCodeInputView.swift */,
+			);
+			path = SMSCode;
+			sourceTree = "<group>";
+		};
+		CE2AB4CE266A5C9300C88262 /* Biometric Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A59266A5DF000719120 /* Data */,
+				CE2AB4CF266A5CA500C88262 /* Presentation */,
+			);
+			path = "Biometric Settings";
+			sourceTree = "<group>";
+		};
+		CE2AB4CF266A5CA500C88262 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */,
+				C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */,
+				C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */,
+				C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */,
+				C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		CE2D1DF02530752A00112A1D /* Header */ = {
@@ -3903,15 +3881,7 @@
 			children = (
 				CE679FD62578332200F2EC1C /* CardsManagement */,
 				76BDF45625760425007B27A7 /* AccountParameters */,
-				C71F188D256411720026CEA2 /* BiometricSettings */,
 				C7BABFC725657966004E733E /* P2PTransfer */,
-				CEA2876D2540C06800E6590C /* AccountInfo */,
-				CE95FBC7252DC394003E539B /* QuickActionItems */,
-				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
-				CE55ECF525265CDA003E168F /* ProfileNavigator.swift */,
-				CE55ECF625265CDA003E168F /* ProfileViewController.swift */,
-				CE55ECF725265CDA003E168F /* ProfileViewModel.swift */,
-				CE55ECFD25265CF1003E168F /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -3942,6 +3912,331 @@
 				CE5874A7260B8B4100F03AB5 /* EmoneyInstructionsView.xib */,
 			);
 			path = Instructions;
+			sourceTree = "<group>";
+		};
+		CE5D7A59266A5DF000719120 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A5A266A5DFD00719120 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE5D7A5A266A5DFD00719120 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C71F18A92564562D0026CEA2 /* BiometryStorage */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE5D7A5B266A5EEE00719120 /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A61266A5F0E00719120 /* Data */,
+				CE5D7A5C266A5EF600719120 /* Presentation */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
+		CE5D7A5C266A5EF600719120 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A5E266A5EFF00719120 /* Components */,
+				CE5D7A5D266A5EFB00719120 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE5D7A5D266A5EFB00719120 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A6F266A5F7C00719120 /* Helper */,
+				763171A32566388400F6FD90 /* Transaction Details */,
+				CE91C0D5257028AB00A18255 /* Filter */,
+				CE5D7A62266A5F2600719120 /* List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE5D7A5E266A5EFF00719120 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A60266A5F0900719120 /* Cells */,
+				CE5D7A5F266A5F0400719120 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE5D7A5F266A5F0400719120 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				769886922571041100FA339E /* TransactionFilterComponentView */,
+				7644B6202564F8D0006778B2 /* Details */,
+				7676E5622562E19200234026 /* TransactionHistoryComponentView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE5D7A60266A5F0900719120 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				769886A32571046100FA339E /* TransactionFilterTableViewCell */,
+				7644B62D256509AE006778B2 /* Details */,
+				7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE5D7A61266A5F0E00719120 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A72266A5FAD00719120 /* Use Cases */,
+				CE5D7A71266A5FA600719120 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE5D7A62266A5F2600719120 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7676E54B2562856600234026 /* TransactionsNavigator.swift */,
+				7676E54C2562856600234026 /* TransactionsViewController.swift */,
+				7676E54D2562856600234026 /* TransactionsViewModel.swift */,
+				7676E55325628F3900234026 /* Transactions.storyboard */,
+				7676E55725628F5B00234026 /* TransactionsViewControllerFactory.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		CE5D7A6F266A5F7C00719120 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7676E55B2562D69D00234026 /* DataProvider */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		CE5D7A71266A5FA600719120 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A73266A5FD300719120 /* Protocol */,
+				CE5D7A74266A5FD800719120 /* Implementation */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE5D7A72266A5FAD00719120 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				76BADBA2257756640080AB76 /* DisplayTransactionHistoriesUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		CE5D7A73266A5FD300719120 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A7D266A609A00719120 /* Entities */,
+				76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE5D7A74266A5FD800719120 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A81266A60DD00719120 /* Core */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE5D7A7D266A609A00719120 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE5D7A81266A60DD00719120 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A82266A60E800719120 /* Entities */,
+				76BDF440257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		CE5D7A82266A60E800719120 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		CE5D7A85266A61EB00719120 /* Account Information */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A87266A620200719120 /* Data */,
+				CE5D7A86266A61FC00719120 /* Presentation */,
+			);
+			path = "Account Information";
+			sourceTree = "<group>";
+		};
+		CE5D7A86266A61FC00719120 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A89266A62A000719120 /* Components */,
+				CE5D7A88266A629B00719120 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE5D7A87266A620200719120 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7AC9266A648300719120 /* Use Cases */,
+				CE5D7AC8266A647E00719120 /* Repositories */,
+				CE5D7AB4266A632F00719120 /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE5D7A88266A629B00719120 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B7FB32575431C006FF756 /* PhoneNumberChange */,
+				CECF7F6B256D9F86001C0E50 /* PasswordChange */,
+				CECF7F3F256D5A68001C0E50 /* AddressChange */,
+				CEA7778D256D41F7008A4F6C /* MailChange */,
+				CEB285B8256D20A400584A65 /* SelfSuspend */,
+				CE5D7A8C266A631600719120 /* List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE5D7A89266A62A000719120 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A8B266A62AA00719120 /* Cells */,
+				CE5D7A8A266A62A600719120 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE5D7A8A266A62A600719120 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE1693692541AB100043B1A4 /* AccountInfoComponentView */,
+				CECF7F7E256DAD17001C0E50 /* Rules */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE5D7A8B266A62AA00719120 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE5D7A8C266A631600719120 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
+				CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */,
+				CEA287812540C28F00E6590C /* AccountInfoViewController.swift */,
+				CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */,
+				CEA287762540C16700E6590C /* AccountInfo.storyboard */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		CE5D7AB4266A632F00719120 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C71487162571122E00E4A71D /* AccountInfoModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE5D7AB5266A642A00719120 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B7FE4257544F5006FF756 /* PhoneNumberChange.storyboard */,
+				CE9B7FE5257544F5006FF756 /* PhoneNumberChangeNavigator.swift */,
+				CE9B7FE6257544F5006FF756 /* PhoneNumberChangeViewController.swift */,
+				CE9B7FE7257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift */,
+				CE9B7FE8257544F5006FF756 /* PhoneNumberChangeViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE5D7ABA266A643600719120 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CECF7F76256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift */,
+				CECF7F6C256D9F99001C0E50 /* PasswordChangeNavigator.swift */,
+				CECF7F6D256D9F99001C0E50 /* PasswordChangeViewController.swift */,
+				CECF7F6E256D9F99001C0E50 /* PasswordChangeViewModel.swift */,
+				CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE5D7ABB266A643F00719120 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CECF7F48256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift */,
+				CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */,
+				CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */,
+				CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */,
+				CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE5D7AC2266A644700719120 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CEA77798256D4244008A4F6C /* MailChangeViewControllerFactory.swift */,
+				CEA7778E256D4237008A4F6C /* MailChangeNavigator.swift */,
+				CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */,
+				CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */,
+				CEA7779C256D4250008A4F6C /* MailChange.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE5D7AC5266A645000719120 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CEB2860B256D2D5300584A65 /* Provider */,
+				CEB285E4256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift */,
+				CEB285B9256D20B600584A65 /* SelfSuspendNavigator.swift */,
+				CEB285BA256D20B600584A65 /* SelfSuspendViewController.swift */,
+				CEB285BB256D20B600584A65 /* SelfSuspendViewModel.swift */,
+				CEB285E0256D20C300584A65 /* SelfSuspend.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE5D7AC8266A647E00719120 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C7991298259BA88100F64676 /* User Profile */,
+				C7991295259BA85C00F64676 /* User Profile */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE5D7AC9266A648300719120 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 		CE64EA7425D168EF00438974 /* GameVC */ = {
@@ -4125,41 +4420,15 @@
 		CE9B7FB32575431C006FF756 /* PhoneNumberChange */ = {
 			isa = PBXGroup;
 			children = (
-				CE9B7FE4257544F5006FF756 /* PhoneNumberChange.storyboard */,
-				CE9B7FE5257544F5006FF756 /* PhoneNumberChangeNavigator.swift */,
-				CE9B7FE6257544F5006FF756 /* PhoneNumberChangeViewController.swift */,
-				CE9B7FE7257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift */,
-				CE9B7FE8257544F5006FF756 /* PhoneNumberChangeViewModel.swift */,
+				CE5D7AB5266A642A00719120 /* Presentation */,
 			);
 			path = PhoneNumberChange;
-			sourceTree = "<group>";
-		};
-		CEA2876D2540C06800E6590C /* AccountInfo */ = {
-			isa = PBXGroup;
-			children = (
-				CE9B7FB32575431C006FF756 /* PhoneNumberChange */,
-				CECF7F6B256D9F86001C0E50 /* PasswordChange */,
-				CECF7F3F256D5A68001C0E50 /* AddressChange */,
-				CEA7778D256D41F7008A4F6C /* MailChange */,
-				CEB285B8256D20A400584A65 /* SelfSuspend */,
-				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
-				CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */,
-				CEA287812540C28F00E6590C /* AccountInfoViewController.swift */,
-				CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */,
-				CEA287762540C16700E6590C /* AccountInfo.storyboard */,
-				C7148715257111F300E4A71D /* Model */,
-			);
-			path = AccountInfo;
 			sourceTree = "<group>";
 		};
 		CEA7778D256D41F7008A4F6C /* MailChange */ = {
 			isa = PBXGroup;
 			children = (
-				CEA77798256D4244008A4F6C /* MailChangeViewControllerFactory.swift */,
-				CEA7778E256D4237008A4F6C /* MailChangeNavigator.swift */,
-				CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */,
-				CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */,
-				CEA7779C256D4250008A4F6C /* MailChange.storyboard */,
+				CE5D7AC2266A644700719120 /* Presentation */,
 			);
 			path = MailChange;
 			sourceTree = "<group>";
@@ -4177,12 +4446,7 @@
 		CEB285B8256D20A400584A65 /* SelfSuspend */ = {
 			isa = PBXGroup;
 			children = (
-				CEB2860B256D2D5300584A65 /* Provider */,
-				CEB285E4256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift */,
-				CEB285B9256D20B600584A65 /* SelfSuspendNavigator.swift */,
-				CEB285BA256D20B600584A65 /* SelfSuspendViewController.swift */,
-				CEB285BB256D20B600584A65 /* SelfSuspendViewModel.swift */,
-				CEB285E0256D20C300584A65 /* SelfSuspend.storyboard */,
+				CE5D7AC5266A645000719120 /* Presentation */,
 			);
 			path = SelfSuspend;
 			sourceTree = "<group>";
@@ -4396,11 +4660,7 @@
 		CECF7F3F256D5A68001C0E50 /* AddressChange */ = {
 			isa = PBXGroup;
 			children = (
-				CECF7F48256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift */,
-				CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */,
-				CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */,
-				CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */,
-				CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */,
+				CE5D7ABB266A643F00719120 /* Presentation */,
 			);
 			path = AddressChange;
 			sourceTree = "<group>";
@@ -4408,12 +4668,7 @@
 		CECF7F6B256D9F86001C0E50 /* PasswordChange */ = {
 			isa = PBXGroup;
 			children = (
-				CECF7F7E256DAD17001C0E50 /* Rules */,
-				CECF7F76256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift */,
-				CECF7F6C256D9F99001C0E50 /* PasswordChangeNavigator.swift */,
-				CECF7F6D256D9F99001C0E50 /* PasswordChangeViewController.swift */,
-				CECF7F6E256D9F99001C0E50 /* PasswordChangeViewModel.swift */,
-				CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */,
+				CE5D7ABA266A643600719120 /* Presentation */,
 			);
 			path = PasswordChange;
 			sourceTree = "<group>";
@@ -4589,7 +4844,6 @@
 			isa = PBXGroup;
 			children = (
 				D8AB806A24601371001C4E8A /* LanguageStorage */,
-				C71F18A92564562D0026CEA2 /* BiometryStorage */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
@@ -4647,15 +4901,12 @@
 				761D993F257F7EDC002BCDB6 /* DateHeaderComponentView */,
 				7665D985257F4C5000E5B35F /* AccessHistoryComponentView */,
 				76BDF465257604FB007B27A7 /* AccountParametersComponentView */,
-				769886922571041100FA339E /* TransactionFilterComponentView */,
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
 				D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */,
 				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
 				D8CFD8B4244C85AC001F4BAA /* Xibable.swift */,
 				CE91C0EA25702BAA00A18255 /* Calendar */,
-				CEE2505E256FE2E40089F805 /* Timer */,
-				CE1693692541AB100043B1A4 /* AccountInfoComponentView */,
-				CEE356CF252C9BBE00A0A25C /* BalanceComponentView */,
+				CEF1D4F7251CAB78008E3DE0 /* Text */,
 				D86253BA24653AA000F7DE0C /* Button */,
 				CE95FBED252DE5C7003E539B /* FooterComponentView */,
 				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
@@ -4663,11 +4914,7 @@
 				CE660C41254C0515002667D0 /* LabelComponentView */,
 				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
 				D86B595D244F0E2E00AB7350 /* PlayedGameLauncherComponentView */,
-				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
-				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
 				D86B596B244F164C00AB7350 /* RecentlyPlayedComponentView */,
-				CEF1D4F7251CAB78008E3DE0 /* Text */,
-				7676E5622562E19200234026 /* TransactionHistoryComponentView */,
 				CE8786C1261C96830060EBD1 /* ABView.swift */,
 			);
 			path = Views;
@@ -4836,7 +5083,6 @@
 			isa = PBXGroup;
 			children = (
 				76811DC9257E4854004107E9 /* AccessList */,
-				76BADBA1257756560080AB76 /* TransactionHistory */,
 				C7D86F3A259A5CBD0021CF1C /* UserBalance */,
 				C78FD440260A672C004E766E /* Amount Formatter */,
 				D83E4225247A92D800E9615F /* UserSessionUseCase.swift */,
@@ -4849,8 +5095,8 @@
 		D8863699246C4F4400FF061D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */,
-				D8863697246C485500FF061D /* SMSCodeInputView.swift */,
+				CEE2505E256FE2E40089F805 /* Timer */,
+				CE2AB4CD266A5C2600C88262 /* SMSCode */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -5059,12 +5305,7 @@
 				761D9940257F7EF9002BCDB6 /* DateHeaderTableViewCell */,
 				7665D974257F4BF700E5B35F /* AccessHistoryTableViewCell */,
 				76BDF47425760519007B27A7 /* AccountParametersTableViewCell */,
-				769886A32571046100FA339E /* TransactionFilterTableViewCell */,
-				7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */,
 				CE95FC1B252DF32A003E539B /* FooterTableViewCell */,
-				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
-				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
-				CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */,
 				D8AC9965244F1A2100B16600 /* RecentlyPlayedCollectionViewCell */,
 				D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */,
 				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,

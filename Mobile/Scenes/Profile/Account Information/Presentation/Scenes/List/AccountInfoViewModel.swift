@@ -49,7 +49,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
                 let accountInfoModel = AccountInfoModel.create(from: userInfo)
                 self?.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
             case .failure(let error):
-                print(error) // FIXME: error handling
+                print(error) // FIXME error handling
             }
         }
     }

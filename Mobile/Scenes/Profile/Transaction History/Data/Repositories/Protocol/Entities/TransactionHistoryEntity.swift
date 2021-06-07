@@ -13,6 +13,7 @@ public struct TransactionHistoryEntity {
     public let date: Date
     public let feeAmount: Double
     public let providerName: String
+    
     init?(totalAmount: Double?, date: Date?, feeAmount: Double?, providerName: String?) {
         guard let date = date, let providerName = providerName, let feeAmount = feeAmount, let totalAmount = totalAmount  else { return nil }
         self.totalAmount = totalAmount
