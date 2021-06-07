@@ -2340,7 +2340,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBB00792609D3E300D1B510 /* Visa */,
-				CE95A3EB261DE2250004330E /* ApplePay */,
+				CE95A3EB261DE2250004330E /* Apple Pay */,
 				CEBB007A2609D3E800D1B510 /* Emoney */,
 			);
 			path = Scenes;
@@ -4266,7 +4266,7 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		CE95A3EB261DE2250004330E /* ApplePay */ = {
+		CE95A3EB261DE2250004330E /* Apple Pay */ = {
 			isa = PBXGroup;
 			children = (
 				CE95A434261EF8700004330E /* Instructions */,
@@ -4277,7 +4277,7 @@
 				CE95A3EF261DE23A0004330E /* ApplePayViewControllerFactory.swift */,
 				CE95A3F0261DE23A0004330E /* ApplePayViewModel.swift */,
 			);
-			path = ApplePay;
+			path = "Apple Pay";
 			sourceTree = "<group>";
 		};
 		CE95A42B261DF1B30004330E /* Button */ = {
