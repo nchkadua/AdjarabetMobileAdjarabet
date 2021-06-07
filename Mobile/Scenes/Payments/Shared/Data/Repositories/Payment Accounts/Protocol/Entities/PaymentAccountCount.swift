@@ -8,6 +8,6 @@
 
 import Foundation
 
-public struct PaymentAccountCount {
-    public let count: Int
+struct PaymentAccountCount {
+    let count: Int
 }

@@ -104,7 +104,7 @@ public extension DependencyContainer {
 
     static var repositories = DependencyContainer {
         // Core
-        Module { CoreApiUserProfileRepository() as UserInfoReadableRepository }
+        Module { CoreApiUserInfoRepository() as UserInfoReadableRepository }
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
         Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }
