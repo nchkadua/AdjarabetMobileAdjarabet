@@ -1,5 +1,5 @@
 //
-//  CoreApiUserProfileRepository.swift
+//  CoreApiUserInfoRepository.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 11/26/20.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct CoreApiUserProfileRepository: CoreApiRepository { }
+public struct CoreApiUserInfoRepository: CoreApiRepository { }
 
-extension CoreApiUserProfileRepository: UserProfileRepository {
+extension CoreApiUserInfoRepository: UserInfoRepository {
     public func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler) {
         performTask(expecting: UserInfoDataTransferResponse.self, completion: completion) { requestBuilder in
             return requestBuilder

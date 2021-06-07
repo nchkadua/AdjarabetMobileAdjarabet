@@ -354,8 +354,7 @@
 		C7E3F159261CCFD3009B6D6A /* WithdrawVisaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3F158261CCFD3009B6D6A /* WithdrawVisaInfoView.swift */; };
 		C7E3F15D261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E3F15C261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift */; };
 		C7E3F161261CCFF5009B6D6A /* WithdrawVisaInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E3F160261CCFF5009B6D6A /* WithdrawVisaInfoView.xib */; };
-		C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */; };
-		C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */; };
+		C7EF9E61256FF2BC00D2908C /* CoreApiUserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */; };
 		C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */; };
 		C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */; };
 		C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */; };
@@ -1130,8 +1129,7 @@
 		C7E3F158261CCFD3009B6D6A /* WithdrawVisaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaInfoView.swift; sourceTree = "<group>"; };
 		C7E3F15C261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawVisaInfoViewModel.swift; sourceTree = "<group>"; };
 		C7E3F160261CCFF5009B6D6A /* WithdrawVisaInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawVisaInfoView.xib; sourceTree = "<group>"; };
-		C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiUserProfileRepository.swift; sourceTree = "<group>"; };
-		C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepository.swift; sourceTree = "<group>"; };
+		C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiUserInfoRepository.swift; sourceTree = "<group>"; };
 		C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEntity.swift; sourceTree = "<group>"; };
 		C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDataTransferResponse.swift; sourceTree = "<group>"; };
@@ -1612,16 +1610,16 @@
 			path = DateHeaderTableViewCell;
 			sourceTree = "<group>";
 		};
-		763171A32566388400F6FD90 /* Transaction Details */ = {
+		763171A32566388400F6FD90 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				763171A42566398F00F6FD90 /* TransactionDetailsNavigator.swift */,
-				763171A52566398F00F6FD90 /* TransactionDetailsViewController.swift */,
 				763171A62566398F00F6FD90 /* TransactionDetailsViewModel.swift */,
-				763171AC25663E1500F6FD90 /* TransactionDetails.storyboard */,
+				763171A52566398F00F6FD90 /* TransactionDetailsViewController.swift */,
 				763171B025663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift */,
+				763171A42566398F00F6FD90 /* TransactionDetailsNavigator.swift */,
+				763171AC25663E1500F6FD90 /* TransactionDetails.storyboard */,
 			);
-			path = "Transaction Details";
+			path = Details;
 			sourceTree = "<group>";
 		};
 		76404EEB257611D100D14E0C /* Model */ = {
@@ -1762,14 +1760,6 @@
 			path = Transactions;
 			sourceTree = "<group>";
 		};
-		7676E55B2562D69D00234026 /* DataProvider */ = {
-			isa = PBXGroup;
-			children = (
-				7676E55C2562D73100234026 /* TransactionHistoryProvider.swift */,
-			);
-			path = DataProvider;
-			sourceTree = "<group>";
-		};
 		7676E5622562E19200234026 /* TransactionHistoryComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1891,12 +1881,12 @@
 			path = TransactionFilterTableViewCell;
 			sourceTree = "<group>";
 		};
-		769886C025711C1100FA339E /* TransactionFilter */ = {
+		769886C025711C1100FA339E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				769886C125711C2B00FA339E /* TransactionTypeModel.swift */,
 			);
-			path = TransactionFilter;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		76BA7BD125E7A9DC00CB77A5 /* GameLauncherGridComponentView */ = {
@@ -2156,8 +2146,8 @@
 				CE2AB490266A440100C88262 /* Promotions */,
 				CE2AB49C266A474000C88262 /* Bonus */,
 				CE2AB4A0266A486B00C88262 /* Notifications */,
-				C71C241F265C0D8A002071FF /* Payments */,
 				CE2AB4C3266A542300C88262 /* Profile */,
+				C71C241F265C0D8A002071FF /* Payments */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -2165,10 +2155,10 @@
 		C71C241F265C0D8A002071FF /* Payments */ = {
 			isa = PBXGroup;
 			children = (
-				C71C2424265C10FD002071FF /* Shared */,
 				C71C242C265D036A002071FF /* Deposit */,
 				C71C2421265C0DA5002071FF /* Withdraw */,
 				76DCF66E25B80EEC00150EE1 /* Cards */,
+				C71C2424265C10FD002071FF /* Shared */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -2176,6 +2166,7 @@
 		C71C2421265C0DA5002071FF /* Withdraw */ = {
 			isa = PBXGroup;
 			children = (
+				C7C1D2EF261B284B009F01C3 /* Scenes */,
 				C71C2422265C0E2A002071FF /* Presentation */,
 				C71C2423265C0F8D002071FF /* Data */,
 			);
@@ -2185,7 +2176,6 @@
 		C71C2422265C0E2A002071FF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C7C1D2EF261B284B009F01C3 /* Scenes */,
 				CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */,
 				CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */,
 				CEF3685E2549C361009FD456 /* WithdrawViewController.swift */,
@@ -2259,6 +2249,7 @@
 		C71C242C265D036A002071FF /* Deposit */ = {
 			isa = PBXGroup;
 			children = (
+				C71C2440265D0A72002071FF /* Scenes */,
 				C71C242D265D03BA002071FF /* Presentation */,
 				C71C242E265D03C3002071FF /* Data */,
 			);
@@ -2269,7 +2260,6 @@
 			isa = PBXGroup;
 			children = (
 				C71C242F265D03EA002071FF /* Components */,
-				C71C2440265D0A72002071FF /* Scenes */,
 				CEC2F5272608B5C00000904C /* DepositViewControllerFactory.swift */,
 				CEC2F5252608B5C00000904C /* DepositNavigator.swift */,
 				CEC2F5262608B5C00000904C /* DepositViewController.swift */,
@@ -2397,12 +2387,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C71F18A92564562D0026CEA2 /* BiometryStorage */ = {
+		C71F18A92564562D0026CEA2 /* Biometry Storage */ = {
 			isa = PBXGroup;
 			children = (
 				C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */,
 			);
-			path = BiometryStorage;
+			path = "Biometry Storage";
 			sourceTree = "<group>";
 		};
 		C72FA74C2600BD3B00A9C493 /* Entities & DTOs */ = {
@@ -2626,10 +2616,127 @@
 		C784C1C4266A3DFE00D328D3 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB484266A316D00C88262 /* Protocols */,
-				CE2AB485266A317400C88262 /* Implementations */,
+				CE2AB484266A316D00C88262 /* Protocol */,
+				CE2AB485266A317400C88262 /* Implementation */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C784C22B266E4BEF00D328D3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C784C22F266E4CE800D328D3 /* Components */,
+				D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */,
+				D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */,
+				D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */,
+				CE55ED2425267373003E168F /* NotificationsNavigator.swift */,
+				D87E3C592445FE6C004A4BDF /* Notifications.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C784C22C266E4C3100D328D3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */,
+				CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */,
+				CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */,
+				CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */,
+				CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C784C22F266E4CE800D328D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C784C230266E4CF500D328D3 /* Views */,
+				C784C231266E4CFB00D328D3 /* Cells */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C784C230266E4CF500D328D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE0818BE25389B5C00AD3B3B /* Header */,
+				CEE15C3825349C130033BF93 /* NotificationComponentView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C784C231266E4CFB00D328D3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE0818CD25389EDC00AD3B3B /* Header */,
+				CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C784C234266E4E3B00D328D3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB4A8266A494000C88262 /* Data */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C784C237266E522D00D328D3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE95FBC8252DC3A7003E539B /* QuickActionItemProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C784C238266E526F00D328D3 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		C784C245266E540E00D328D3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CEB2860C256D2D6D00584A65 /* DurationProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C784C24D266E56B100D328D3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */,
+				C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C784C24E266E56C700D328D3 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				C784C24F266E56DA00D328D3 /* Core */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		C784C24F266E56DA00D328D3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9F3E257078F600D2908C /* Entities */,
+				C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C784C25E266E5B6100D328D3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7676E55C2562D73100234026 /* TransactionHistoryProvider.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C78FD440260A672C004E766E /* Amount Formatter */ = {
@@ -2756,25 +2863,6 @@
 			path = "Access List";
 			sourceTree = "<group>";
 		};
-		C7991295259BA85C00F64676 /* User Profile */ = {
-			isa = PBXGroup;
-			children = (
-				C7EF9E6A257027F500D2908C /* UserProfileRepository.swift */,
-				C7EF9E7025702AFA00D2908C /* User Info */,
-			);
-			path = "User Profile";
-			sourceTree = "<group>";
-		};
-		C7991298259BA88100F64676 /* User Profile */ = {
-			isa = PBXGroup;
-			children = (
-				C79912B0259BAC9500F64676 /* User Info */,
-				C7EF9E60256FF2BC00D2908C /* CoreApiUserProfileRepository.swift */,
-			);
-			name = "User Profile";
-			path = "../User Profile";
-			sourceTree = "<group>";
-		};
 		C799129B259BA8CB00F64676 /* Balance Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -2815,14 +2903,6 @@
 				D8BE830D24B1B5D900D7E94D /* JSONMessage.swift */,
 			);
 			path = Mobile;
-			sourceTree = "<group>";
-		};
-		C79912B0259BAC9500F64676 /* User Info */ = {
-			isa = PBXGroup;
-			children = (
-				C7EF9F3E257078F600D2908C /* Responses */,
-			);
-			path = "User Info";
 			sourceTree = "<group>";
 		};
 		C79922FE2660E9CF00FD7033 /* Data */ = {
@@ -3186,18 +3266,18 @@
 		C7EF9E7025702AFA00D2908C /* User Info */ = {
 			isa = PBXGroup;
 			children = (
-				C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */,
-				C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */,
+				C784C24D266E56B100D328D3 /* Protocol */,
+				C784C24E266E56C700D328D3 /* Implementation */,
 			);
 			path = "User Info";
 			sourceTree = "<group>";
 		};
-		C7EF9F3E257078F600D2908C /* Responses */ = {
+		C7EF9F3E257078F600D2908C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */,
 			);
-			path = Responses;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		CE03746825F8D6F00061F507 /* WebViewController */ = {
@@ -3238,14 +3318,6 @@
 				CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */,
 			);
 			path = AccountInfoComponentView;
-			sourceTree = "<group>";
-		};
-		CE1D6ED2252F38C10091F6D9 /* TemporaryHelper */ = {
-			isa = PBXGroup;
-			children = (
-				CE1D6ED3252F38CF0091F6D9 /* PromotionsProvider.swift */,
-			);
-			path = TemporaryHelper;
 			sourceTree = "<group>";
 		};
 		CE29FC302578EB7700402D0D /* AddCard */ = {
@@ -3292,10 +3364,10 @@
 		CE2AB44F266A2DF200C88262 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D8442AA92469A7A400F32676 /* LoginViewModel.swift */,
+				D8442AA82469A7A400F32676 /* LoginViewController.swift */,
 				D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */,
 				D8442AA72469A7A400F32676 /* LoginNavigator.swift */,
-				D8442AA82469A7A400F32676 /* LoginViewController.swift */,
-				D8442AA92469A7A400F32676 /* LoginViewModel.swift */,
 				D85C9C3124336D0800F1D4FE /* Login.storyboard */,
 			);
 			path = Presentation;
@@ -3343,8 +3415,8 @@
 		CE2AB47D266A2E6100C88262 /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
-				CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */,
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
+				CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
 			);
 			path = "Use Cases";
@@ -3385,20 +3457,20 @@
 			path = "Use Cases";
 			sourceTree = "<group>";
 		};
-		CE2AB484266A316D00C88262 /* Protocols */ = {
+		CE2AB484266A316D00C88262 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				D861DA8E2466BC980054D058 /* AuthenticationRepository.swift */,
 			);
-			path = Protocols;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
-		CE2AB485266A317400C88262 /* Implementations */ = {
+		CE2AB485266A317400C88262 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
 				D861DA882466B3ED0054D058 /* DefaultAuthenticationRepository.swift */,
 			);
-			path = Implementations;
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		CE2AB487266A388000C88262 /* Result */ = {
@@ -3415,8 +3487,8 @@
 		CE2AB490266A440100C88262 /* Promotions */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB492266A443F00C88262 /* Shared */,
 				CE2AB491266A440F00C88262 /* Presentation */,
+				CE2AB492266A443F00C88262 /* Data */,
 			);
 			path = Promotions;
 			sourceTree = "<group>";
@@ -3425,24 +3497,28 @@
 			isa = PBXGroup;
 			children = (
 				CE2AB493266A445000C88262 /* Components */,
-				CE2AB49E266A477100C88262 /* Scene */,
+				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
+				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
+				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
+				CE55ED012526732A003E168F /* PromotionsNavigator.swift */,
+				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		CE2AB492266A443F00C88262 /* Shared */ = {
+		CE2AB492266A443F00C88262 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D6ED2252F38C10091F6D9 /* TemporaryHelper */,
+				CE1D6ED3252F38CF0091F6D9 /* PromotionsProvider.swift */,
 			);
-			path = Shared;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		CE2AB493266A445000C88262 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB495266A447000C88262 /* Cells */,
 				CE2AB494266A446C00C88262 /* Views */,
+				CE2AB495266A447000C88262 /* Cells */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -3474,79 +3550,29 @@
 		CE2AB49D266A475900C88262 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB49F266A478100C88262 /* Scene */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		CE2AB49E266A477100C88262 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */,
-				CE55ED012526732A003E168F /* PromotionsNavigator.swift */,
-				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
-				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
-				D87E3C572445FE08004A4BDF /* Promotions.storyboard */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		CE2AB49F266A478100C88262 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				CE1420262636EE8900E022C7 /* Bonus.storyboard */,
-				CE1420272636EE8900E022C7 /* BonusNavigator.swift */,
+				CE14202A2636EE8900E022C7 /* BonusViewModel.swift */,
 				CE1420282636EE8900E022C7 /* BonusViewController.swift */,
 				CE1420292636EE8900E022C7 /* BonusViewControllerFactory.swift */,
-				CE14202A2636EE8900E022C7 /* BonusViewModel.swift */,
+				CE1420272636EE8900E022C7 /* BonusNavigator.swift */,
+				CE1420262636EE8900E022C7 /* Bonus.storyboard */,
 			);
-			path = Scene;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		CE2AB4A0266A486B00C88262 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB4A1266A487E00C88262 /* Presentation */,
-				CE2AB4A8266A494000C88262 /* Data */,
+				CE2AB4A4266A48AA00C88262 /* List */,
+				CE2AB4A5266A48B100C88262 /* Content */,
+				C784C234266E4E3B00D328D3 /* Shared */,
 			);
 			path = Notifications;
-			sourceTree = "<group>";
-		};
-		CE2AB4A1266A487E00C88262 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				CE2AB4A3266A488800C88262 /* Components */,
-				CE2AB4A2266A488300C88262 /* Scenes */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		CE2AB4A2266A488300C88262 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				CE2AB4A5266A48B100C88262 /* Content */,
-				CE2AB4A4266A48AA00C88262 /* List */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		CE2AB4A3266A488800C88262 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				CE2AB4A7266A48F700C88262 /* Cells */,
-				CE2AB4A6266A48E800C88262 /* Views */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		CE2AB4A4266A48AA00C88262 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */,
-				CE55ED2425267373003E168F /* NotificationsNavigator.swift */,
-				D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */,
-				D87F49FA2452001A004D67A2 /* NotificationsViewModel.swift */,
-				D87E3C592445FE6C004A4BDF /* Notifications.storyboard */,
+				C784C22B266E4BEF00D328D3 /* Presentation */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -3554,31 +3580,9 @@
 		CE2AB4A5266A48B100C88262 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				CE08189B2538731900AD3B3B /* NotificationContentViewControllerFactory.swift */,
-				CEB81DFF253868A9006BEDEC /* NotificationContentNavigator.swift */,
-				CEB81E00253868A9006BEDEC /* NotificationContentViewController.swift */,
-				CEB81E01253868A9006BEDEC /* NotificationContentViewModel.swift */,
-				CEB81E07253868B9006BEDEC /* NotificationContent.storyboard */,
+				C784C22C266E4C3100D328D3 /* Presentation */,
 			);
 			path = Content;
-			sourceTree = "<group>";
-		};
-		CE2AB4A6266A48E800C88262 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CE0818BE25389B5C00AD3B3B /* Header */,
-				CEE15C3825349C130033BF93 /* NotificationComponentView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CE2AB4A7266A48F700C88262 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */,
-				CE0818CD25389EDC00AD3B3B /* Header */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		CE2AB4A8266A494000C88262 /* Data */ = {
@@ -3618,7 +3622,7 @@
 		CE2AB4AE266A51D400C88262 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB4B0266A51E200C88262 /* Protocols */,
+				CE2AB4B0266A51E200C88262 /* Protocol */,
 				CE2AB4AF266A51DD00C88262 /* Implementation */,
 			);
 			path = Notifications;
@@ -3632,13 +3636,13 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
-		CE2AB4B0266A51E200C88262 /* Protocols */ = {
+		CE2AB4B0266A51E200C88262 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				CE2AB4B8266A526800C88262 /* Entities */,
 				CE4A314826172BF50039C078 /* NotificationsRepository.swift */,
 			);
-			path = Protocols;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		CE2AB4B1266A521E00C88262 /* Mobile */ = {
@@ -3662,10 +3666,11 @@
 		CE2AB4C3266A542300C88262 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CE2AB4C4266A543C00C88262 /* Profile */,
 				CE5D7A85266A61EB00719120 /* Account Information */,
 				CE5D7A5B266A5EEE00719120 /* Transaction History */,
 				CE2AB4CE266A5C9300C88262 /* Biometric Settings */,
-				CE2AB4C4266A543C00C88262 /* Profile */,
+				C784C238266E526F00D328D3 /* Parameters */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -3674,6 +3679,7 @@
 			isa = PBXGroup;
 			children = (
 				CE2AB4C6266A546A00C88262 /* Presentation */,
+				C784C237266E522D00D328D3 /* Data */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -3682,29 +3688,20 @@
 			isa = PBXGroup;
 			children = (
 				CE2AB4C9266A5B2300C88262 /* Components */,
-				CE2AB4C8266A5B1D00C88262 /* Scenes */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		CE2AB4C8266A5B1D00C88262 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				CE2AB4CC266A5B5B00C88262 /* Helper */,
+				CE55ECF725265CDA003E168F /* ProfileViewModel.swift */,
+				CE55ECF625265CDA003E168F /* ProfileViewController.swift */,
 				CE55ED2A252721A2003E168F /* ProfileViewControllerFactory.swift */,
 				CE55ECF525265CDA003E168F /* ProfileNavigator.swift */,
-				CE55ECF625265CDA003E168F /* ProfileViewController.swift */,
-				CE55ECF725265CDA003E168F /* ProfileViewModel.swift */,
 				CE55ECFD25265CF1003E168F /* Profile.storyboard */,
 			);
-			path = Scenes;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		CE2AB4C9266A5B2300C88262 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB4CB266A5B3400C88262 /* Cells */,
 				CE2AB4CA266A5B2F00C88262 /* Views */,
+				CE2AB4CB266A5B3400C88262 /* Cells */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -3729,14 +3726,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		CE2AB4CC266A5B5B00C88262 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				CE95FBC7252DC394003E539B /* QuickActionItems */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		CE2AB4CD266A5C2600C88262 /* SMSCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -3749,8 +3738,8 @@
 		CE2AB4CE266A5C9300C88262 /* Biometric Settings */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A59266A5DF000719120 /* Data */,
 				CE2AB4CF266A5CA500C88262 /* Presentation */,
+				CE5D7A59266A5DF000719120 /* Data */,
 			);
 			path = "Biometric Settings";
 			sourceTree = "<group>";
@@ -3758,9 +3747,9 @@
 		CE2AB4CF266A5CA500C88262 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */,
-				C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */,
 				C71F1890256411720026CEA2 /* BiometricSettingsViewModel.swift */,
+				C71F1891256411720026CEA2 /* BiometricSettingsViewController.swift */,
+				C71F188F256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift */,
 				C71F188E256411720026CEA2 /* BiometricSettingsNavigator.swift */,
 				C71F18A025641E3C0026CEA2 /* BiometricSettingsView.storyboard */,
 			);
@@ -3925,7 +3914,7 @@
 		CE5D7A5A266A5DFD00719120 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				C71F18A92564562D0026CEA2 /* BiometryStorage */,
+				C71F18A92564562D0026CEA2 /* Biometry Storage */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -3933,8 +3922,9 @@
 		CE5D7A5B266A5EEE00719120 /* Transaction History */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A61266A5F0E00719120 /* Data */,
+				CE5D7A5D266A5EFB00719120 /* Scenes */,
 				CE5D7A5C266A5EF600719120 /* Presentation */,
+				CE5D7A61266A5F0E00719120 /* Data */,
 			);
 			path = "Transaction History";
 			sourceTree = "<group>";
@@ -3943,7 +3933,11 @@
 			isa = PBXGroup;
 			children = (
 				CE5D7A5E266A5EFF00719120 /* Components */,
-				CE5D7A5D266A5EFB00719120 /* Scenes */,
+				7676E54D2562856600234026 /* TransactionsViewModel.swift */,
+				7676E54C2562856600234026 /* TransactionsViewController.swift */,
+				7676E55725628F5B00234026 /* TransactionsViewControllerFactory.swift */,
+				7676E54B2562856600234026 /* TransactionsNavigator.swift */,
+				7676E55325628F3900234026 /* Transactions.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -3951,10 +3945,8 @@
 		CE5D7A5D266A5EFB00719120 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A6F266A5F7C00719120 /* Helper */,
-				763171A32566388400F6FD90 /* Transaction Details */,
+				763171A32566388400F6FD90 /* Details */,
 				CE91C0D5257028AB00A18255 /* Filter */,
-				CE5D7A62266A5F2600719120 /* List */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -3962,8 +3954,8 @@
 		CE5D7A5E266A5EFF00719120 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A60266A5F0900719120 /* Cells */,
 				CE5D7A5F266A5F0400719120 /* Views */,
+				CE5D7A60266A5F0900719120 /* Cells */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -3993,28 +3985,9 @@
 			children = (
 				CE5D7A72266A5FAD00719120 /* Use Cases */,
 				CE5D7A71266A5FA600719120 /* Repositories */,
+				C784C25E266E5B6100D328D3 /* Entities */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		CE5D7A62266A5F2600719120 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				7676E54B2562856600234026 /* TransactionsNavigator.swift */,
-				7676E54C2562856600234026 /* TransactionsViewController.swift */,
-				7676E54D2562856600234026 /* TransactionsViewModel.swift */,
-				7676E55325628F3900234026 /* Transactions.storyboard */,
-				7676E55725628F5B00234026 /* TransactionsViewControllerFactory.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
-		CE5D7A6F266A5F7C00719120 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				7676E55B2562D69D00234026 /* DataProvider */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		CE5D7A71266A5FA600719120 /* Repositories */ = {
@@ -4079,8 +4052,9 @@
 		CE5D7A85266A61EB00719120 /* Account Information */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A87266A620200719120 /* Data */,
+				CE5D7A88266A629B00719120 /* Scenes */,
 				CE5D7A86266A61FC00719120 /* Presentation */,
+				CE5D7A87266A620200719120 /* Data */,
 			);
 			path = "Account Information";
 			sourceTree = "<group>";
@@ -4089,7 +4063,11 @@
 			isa = PBXGroup;
 			children = (
 				CE5D7A89266A62A000719120 /* Components */,
-				CE5D7A88266A629B00719120 /* Scenes */,
+				CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */,
+				CEA287812540C28F00E6590C /* AccountInfoViewController.swift */,
+				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
+				CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */,
+				CEA287762540C16700E6590C /* AccountInfo.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -4097,7 +4075,6 @@
 		CE5D7A87266A620200719120 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7AC9266A648300719120 /* Use Cases */,
 				CE5D7AC8266A647E00719120 /* Repositories */,
 				CE5D7AB4266A632F00719120 /* Entities */,
 			);
@@ -4107,12 +4084,11 @@
 		CE5D7A88266A629B00719120 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE9B7FB32575431C006FF756 /* PhoneNumberChange */,
-				CECF7F6B256D9F86001C0E50 /* PasswordChange */,
-				CECF7F3F256D5A68001C0E50 /* AddressChange */,
-				CEA7778D256D41F7008A4F6C /* MailChange */,
-				CEB285B8256D20A400584A65 /* SelfSuspend */,
-				CE5D7A8C266A631600719120 /* List */,
+				CECF7F6B256D9F86001C0E50 /* Password Change */,
+				CE9B7FB32575431C006FF756 /* Phone Number Change */,
+				CEA7778D256D41F7008A4F6C /* Mail Change */,
+				CEB285B8256D20A400584A65 /* Self Suspend */,
+				CECF7F3F256D5A68001C0E50 /* Address Change */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -4120,7 +4096,6 @@
 		CE5D7A89266A62A000719120 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A8B266A62AA00719120 /* Cells */,
 				CE5D7A8A266A62A600719120 /* Views */,
 			);
 			path = Components;
@@ -4135,25 +4110,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CE5D7A8B266A62AA00719120 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		CE5D7A8C266A631600719120 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				CEA2877A2540C1F900E6590C /* AccountInfoViewControllerFactory.swift */,
-				CEA287802540C28F00E6590C /* AccountInfoNavigator.swift */,
-				CEA287812540C28F00E6590C /* AccountInfoViewController.swift */,
-				CEA287822540C28F00E6590C /* AccountInfoViewModel.swift */,
-				CEA287762540C16700E6590C /* AccountInfo.storyboard */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
 		CE5D7AB4266A632F00719120 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -4165,11 +4121,11 @@
 		CE5D7AB5266A642A00719120 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CE9B7FE4257544F5006FF756 /* PhoneNumberChange.storyboard */,
-				CE9B7FE5257544F5006FF756 /* PhoneNumberChangeNavigator.swift */,
+				CE9B7FE8257544F5006FF756 /* PhoneNumberChangeViewModel.swift */,
 				CE9B7FE6257544F5006FF756 /* PhoneNumberChangeViewController.swift */,
 				CE9B7FE7257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift */,
-				CE9B7FE8257544F5006FF756 /* PhoneNumberChangeViewModel.swift */,
+				CE9B7FE5257544F5006FF756 /* PhoneNumberChangeNavigator.swift */,
+				CE9B7FE4257544F5006FF756 /* PhoneNumberChange.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -4177,10 +4133,10 @@
 		CE5D7ABA266A643600719120 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CECF7F6E256D9F99001C0E50 /* PasswordChangeViewModel.swift */,
+				CECF7F6D256D9F99001C0E50 /* PasswordChangeViewController.swift */,
 				CECF7F76256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift */,
 				CECF7F6C256D9F99001C0E50 /* PasswordChangeNavigator.swift */,
-				CECF7F6D256D9F99001C0E50 /* PasswordChangeViewController.swift */,
-				CECF7F6E256D9F99001C0E50 /* PasswordChangeViewModel.swift */,
 				CECF7F7A256D9FAB001C0E50 /* PasswordChange.storyboard */,
 			);
 			path = Presentation;
@@ -4189,10 +4145,10 @@
 		CE5D7ABB266A643F00719120 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */,
+				CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */,
 				CECF7F48256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift */,
 				CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */,
-				CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */,
-				CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */,
 				CECF7F4C256D5A93001C0E50 /* AddressChange.storyboard */,
 			);
 			path = Presentation;
@@ -4201,10 +4157,10 @@
 		CE5D7AC2266A644700719120 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */,
+				CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */,
 				CEA77798256D4244008A4F6C /* MailChangeViewControllerFactory.swift */,
 				CEA7778E256D4237008A4F6C /* MailChangeNavigator.swift */,
-				CEA7778F256D4237008A4F6C /* MailChangeViewController.swift */,
-				CEA77790256D4237008A4F6C /* MailChangeViewModel.swift */,
 				CEA7779C256D4250008A4F6C /* MailChange.storyboard */,
 			);
 			path = Presentation;
@@ -4213,11 +4169,10 @@
 		CE5D7AC5266A645000719120 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CEB2860B256D2D5300584A65 /* Provider */,
+				CEB285BB256D20B600584A65 /* SelfSuspendViewModel.swift */,
+				CEB285BA256D20B600584A65 /* SelfSuspendViewController.swift */,
 				CEB285E4256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift */,
 				CEB285B9256D20B600584A65 /* SelfSuspendNavigator.swift */,
-				CEB285BA256D20B600584A65 /* SelfSuspendViewController.swift */,
-				CEB285BB256D20B600584A65 /* SelfSuspendViewModel.swift */,
 				CEB285E0256D20C300584A65 /* SelfSuspend.storyboard */,
 			);
 			path = Presentation;
@@ -4226,17 +4181,9 @@
 		CE5D7AC8266A647E00719120 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				C7991298259BA88100F64676 /* User Profile */,
-				C7991295259BA85C00F64676 /* User Profile */,
+				C7EF9E7025702AFA00D2908C /* User Info */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		CE5D7AC9266A648300719120 /* Use Cases */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 		CE64EA7425D168EF00438974 /* GameVC */ = {
@@ -4299,11 +4246,11 @@
 		CE91C0D5257028AB00A18255 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				769886C025711C1100FA339E /* TransactionFilter */,
+				769886C025711C1100FA339E /* Model */,
+				CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */,
+				CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */,
 				CE91C0E0257028D400A18255 /* TransactionsFilterViewControllerFactory.swift */,
 				CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */,
-				CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */,
-				CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */,
 				CE91C0E6257028DC00A18255 /* TransactionsFilter.storyboard */,
 			);
 			path = Filter;
@@ -4361,14 +4308,6 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		CE95FBC7252DC394003E539B /* QuickActionItems */ = {
-			isa = PBXGroup;
-			children = (
-				CE95FBC8252DC3A7003E539B /* QuickActionItemProvider.swift */,
-			);
-			path = QuickActionItems;
-			sourceTree = "<group>";
-		};
 		CE95FBED252DE5C7003E539B /* FooterComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4417,20 +4356,20 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
-		CE9B7FB32575431C006FF756 /* PhoneNumberChange */ = {
+		CE9B7FB32575431C006FF756 /* Phone Number Change */ = {
 			isa = PBXGroup;
 			children = (
 				CE5D7AB5266A642A00719120 /* Presentation */,
 			);
-			path = PhoneNumberChange;
+			path = "Phone Number Change";
 			sourceTree = "<group>";
 		};
-		CEA7778D256D41F7008A4F6C /* MailChange */ = {
+		CEA7778D256D41F7008A4F6C /* Mail Change */ = {
 			isa = PBXGroup;
 			children = (
 				CE5D7AC2266A644700719120 /* Presentation */,
 			);
-			path = MailChange;
+			path = "Mail Change";
 			sourceTree = "<group>";
 		};
 		CEA97673252CA669003CB1AB /* BalanceTableViewCell */ = {
@@ -4443,20 +4382,13 @@
 			path = BalanceTableViewCell;
 			sourceTree = "<group>";
 		};
-		CEB285B8256D20A400584A65 /* SelfSuspend */ = {
+		CEB285B8256D20A400584A65 /* Self Suspend */ = {
 			isa = PBXGroup;
 			children = (
 				CE5D7AC5266A645000719120 /* Presentation */,
+				C784C245266E540E00D328D3 /* Data */,
 			);
-			path = SelfSuspend;
-			sourceTree = "<group>";
-		};
-		CEB2860B256D2D5300584A65 /* Provider */ = {
-			isa = PBXGroup;
-			children = (
-				CEB2860C256D2D6D00584A65 /* DurationProvider.swift */,
-			);
-			path = Provider;
+			path = "Self Suspend";
 			sourceTree = "<group>";
 		};
 		CEBB000A2608EBC700D1B510 /* PaymentMethodComponentView */ = {
@@ -4657,20 +4589,20 @@
 			path = EGT;
 			sourceTree = "<group>";
 		};
-		CECF7F3F256D5A68001C0E50 /* AddressChange */ = {
+		CECF7F3F256D5A68001C0E50 /* Address Change */ = {
 			isa = PBXGroup;
 			children = (
 				CE5D7ABB266A643F00719120 /* Presentation */,
 			);
-			path = AddressChange;
+			path = "Address Change";
 			sourceTree = "<group>";
 		};
-		CECF7F6B256D9F86001C0E50 /* PasswordChange */ = {
+		CECF7F6B256D9F86001C0E50 /* Password Change */ = {
 			isa = PBXGroup;
 			children = (
 				CE5D7ABA266A643600719120 /* Presentation */,
 			);
-			path = PasswordChange;
+			path = "Password Change";
 			sourceTree = "<group>";
 		};
 		CECF7F7E256DAD17001C0E50 /* Rules */ = {
@@ -6108,7 +6040,7 @@
 				CEBB002D2608EC4100D1B510 /* PaymentMethodComponentViewModel.swift in Sources */,
 				76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */,
 				CE2D1DF62530754600112A1D /* QuickActionsHeaderCellDataProvider.swift in Sources */,
-				C7EF9E61256FF2BC00D2908C /* CoreApiUserProfileRepository.swift in Sources */,
+				C7EF9E61256FF2BC00D2908C /* CoreApiUserInfoRepository.swift in Sources */,
 				76DCF67625B80FB500150EE1 /* MyCardsViewController.swift in Sources */,
 				76DCF6B025B8262300150EE1 /* MyCardTableViewCellDataProvider.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
@@ -6378,7 +6310,6 @@
 				7698869A2571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift in Sources */,
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				76DCF67525B80FB500150EE1 /* MyCardsNavigator.swift in Sources */,
-				C7EF9E6B257027F500D2908C /* UserProfileRepository.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
