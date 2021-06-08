@@ -2837,17 +2837,9 @@
 		C784C282266F9E0500D328D3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C784C283266F9E2800D328D3 /* Views */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		C784C283266F9E2800D328D3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				CE64EA8325D1749B00438974 /* Game Loader */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C784C284266F9EEF00D328D3 /* Recently Played */ = {
@@ -2857,6 +2849,24 @@
 				D8AC9965244F1A2100B16600 /* Cell */,
 			);
 			path = "Recently Played";
+			sourceTree = "<group>";
+		};
+		C784C299266FA17500D328D3 /* Played Game Launcher */ = {
+			isa = PBXGroup;
+			children = (
+				D86B595D244F0E2E00AB7350 /* View */,
+				D86B5964244F123800AB7350 /* Cell */,
+			);
+			path = "Played Game Launcher";
+			sourceTree = "<group>";
+		};
+		C784C29C266FA65800D328D3 /* Game Launcher */ = {
+			isa = PBXGroup;
+			children = (
+				D8CFD8AD244C84CD001F4BAA /* Views */,
+				D8BF404A244ED618008F0BAF /* Cells */,
+			);
+			path = "Game Launcher";
 			sourceTree = "<group>";
 		};
 		C78FD440260A672C004E766E /* Amount Formatter */ = {
@@ -3261,6 +3271,8 @@
 			isa = PBXGroup;
 			children = (
 				C784C284266F9EEF00D328D3 /* Recently Played */,
+				C784C299266FA17500D328D3 /* Played Game Launcher */,
+				C784C29C266FA65800D328D3 /* Game Launcher */,
 				C75F61DA2656FD92009CB6A1 /* Layout Chooser */,
 				C7DB6ED126370F0A00EC1CB9 /* Empty Cell */,
 				C7D202332636E404009710C9 /* Header View */,
@@ -4933,7 +4945,6 @@
 		D85C9C1524336BF500F1D4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D86B595D244F0E2E00AB7350 /* View */,
 				CED4D95326565D1D003F35AF /* PasswordReminder */,
 				C7CA530A26543DC8008AFDAA /* Slider */,
 				CE4A30F4261224BF0039C078 /* SuggestedAmountGridComponentView */,
@@ -4950,7 +4961,6 @@
 				CEF1D4F7251CAB78008E3DE0 /* Text */,
 				D86253BA24653AA000F7DE0C /* Button */,
 				CE95FBED252DE5C7003E539B /* FooterComponentView */,
-				D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */,
 				D8442A9F24696F2700F32676 /* Input */,
 				CE660C41254C0515002667D0 /* LabelComponentView */,
 				D8212EF72485828A00B74AB9 /* LoadingComponentView */,
@@ -5072,14 +5082,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */ = {
+		D86B5964244F123800AB7350 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				D86B5965244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift */,
 				D86B5969244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift */,
 				D86B5966244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib */,
 			);
-			path = PlayedGameLauncherCollectionViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D86B596B244F164C00AB7350 /* View */ = {
@@ -5342,15 +5352,13 @@
 				7665D974257F4BF700E5B35F /* AccessHistoryTableViewCell */,
 				76BDF47425760519007B27A7 /* AccountParametersTableViewCell */,
 				CE95FC1B252DF32A003E539B /* FooterTableViewCell */,
-				D86B5964244F123800AB7350 /* PlayedGameLauncherCollectionViewCell */,
-				D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */,
 				D8212F062485847300B74AB9 /* LoadingCollectionViewCell */,
 				765EDFD225BAE08300089B49 /* EditableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		D8BF404A244ED618008F0BAF /* GameLauncherComponentCell */ = {
+		D8BF404A244ED618008F0BAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				76BA7BE825E7AABA00CB77A5 /* GameLauncherGridComponentCell */,
@@ -5358,10 +5366,10 @@
 				D8BF4044244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift */,
 				D8BF4041244EC949008F0BAF /* GameLauncherCollectionViewCell.xib */,
 			);
-			path = GameLauncherComponentCell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
-		D8CFD8AD244C84CD001F4BAA /* GameLauncherComponentView */ = {
+		D8CFD8AD244C84CD001F4BAA /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				76BA7BD125E7A9DC00CB77A5 /* GameLauncherGridComponentView */,
@@ -5369,7 +5377,7 @@
 				D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */,
 				D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */,
 			);
-			path = GameLauncherComponentView;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D8FBA4F62449BE6E0015C03C /* Utils */ = {
