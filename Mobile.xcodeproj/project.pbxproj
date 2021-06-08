@@ -631,7 +631,6 @@
 		D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */; };
 		D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098424482BE80001ADC1 /* TabBarButton.swift */; };
 		D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */; };
-		D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098A24482D950001ADC1 /* SportsViewControllerFactory.swift */; };
 		D842098D24482DA40001ADC1 /* PromotionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */; };
 		D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */; };
 		D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */; };
@@ -683,10 +682,8 @@
 		D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B5969244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift */; };
 		D86B596D244F166B00AB7350 /* RecentlyPlayedComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B596C244F166B00AB7350 /* RecentlyPlayedComponentView.swift */; };
 		D86B596F244F167000AB7350 /* RecentlyPlayedComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B596E244F167000AB7350 /* RecentlyPlayedComponentView.xib */; };
-		D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C4F2445FDC3004A4BDF /* SportsViewController.swift */; };
 		D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */; };
 		D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */; };
-		D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C552445FDEF004A4BDF /* Sports.storyboard */; };
 		D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C572445FE08004A4BDF /* Promotions.storyboard */; };
 		D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87E3C592445FE6C004A4BDF /* Notifications.storyboard */; };
 		D87F49F92451FED9004D67A2 /* PromotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */; };
@@ -1393,7 +1390,6 @@
 		D84209822448248C0001ADC1 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		D842098424482BE80001ADC1 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		D842098824482CE60001ADC1 /* HomeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactory.swift; sourceTree = "<group>"; };
-		D842098A24482D950001ADC1 /* SportsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewControllerFactory.swift; sourceTree = "<group>"; };
 		D842098C24482DA40001ADC1 /* PromotionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewControllerFactory.swift; sourceTree = "<group>"; };
 		D842098E24482DB10001ADC1 /* NotificationsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewControllerFactory.swift; sourceTree = "<group>"; };
 		D842099024482DC80001ADC1 /* MainTabBarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarNavigator.swift; sourceTree = "<group>"; };
@@ -1447,10 +1443,8 @@
 		D86B5969244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGameLauncherCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		D86B596C244F166B00AB7350 /* RecentlyPlayedComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedComponentView.swift; sourceTree = "<group>"; };
 		D86B596E244F167000AB7350 /* RecentlyPlayedComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentlyPlayedComponentView.xib; sourceTree = "<group>"; };
-		D87E3C4F2445FDC3004A4BDF /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
 		D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		D87E3C532445FDE5004A4BDF /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		D87E3C552445FDEF004A4BDF /* Sports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sports.storyboard; sourceTree = "<group>"; };
 		D87E3C572445FE08004A4BDF /* Promotions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Promotions.storyboard; sourceTree = "<group>"; };
 		D87E3C592445FE6C004A4BDF /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
 		D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewModel.swift; sourceTree = "<group>"; };
@@ -4814,7 +4808,6 @@
 				CE4A31092614788A0039C078 /* Main */,
 				CE03746825F8D6F00061F507 /* WebViewController */,
 				7665D959257E5C8100E5B35F /* AccessHistory */,
-				D845BFBA2445FD7400419A2C /* Sports */,
 				CE55ECF425265B7D003E168F /* Profile */,
 			);
 			path = MainPages;
@@ -4885,16 +4878,6 @@
 				CE7A241A257C199B00A94E89 /* AbDatePicker */,
 			);
 			path = Input;
-			sourceTree = "<group>";
-		};
-		D845BFBA2445FD7400419A2C /* Sports */ = {
-			isa = PBXGroup;
-			children = (
-				D842098A24482D950001ADC1 /* SportsViewControllerFactory.swift */,
-				D87E3C4F2445FDC3004A4BDF /* SportsViewController.swift */,
-				D87E3C552445FDEF004A4BDF /* Sports.storyboard */,
-			);
-			path = Sports;
 			sourceTree = "<group>";
 		};
 		D85C9C1524336BF500F1D4FE /* Views */ = {
@@ -5684,7 +5667,6 @@
 				C75D1AED261205F4002AF763 /* FHJSlot.zip in Resources */,
 				76E43EDB25B95303007B2D97 /* VideoCardComponentView.xib in Resources */,
 				7682CF9225B8581600717090 /* AddMyCardTableViewCell.xib in Resources */,
-				D87E3C562445FDEF004A4BDF /* Sports.storyboard in Resources */,
 				C75D1AFF261205F4002AF763 /* FBHSJSlot.zip in Resources */,
 				CEA9769E252CA69C003CB1AB /* BalanceTableViewCell.xib in Resources */,
 				C75D1ADB261205F4002AF763 /* MPJSlot.zip in Resources */,
@@ -5953,7 +5935,6 @@
 				C7C973AF2580EC990062C713 /* SecurityLevelTypeTableViewCell.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				CE4A3155261732920039C078 /* NotificationDTO.swift in Sources */,
-				D87E3C502445FDC3004A4BDF /* SportsViewController.swift in Sources */,
 				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
 				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
@@ -6162,7 +6143,6 @@
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */,
 				CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */,
-				D842098B24482D950001ADC1 /* SportsViewControllerFactory.swift in Sources */,
 				C7E3F14B261CCF5E009B6D6A /* CashOutVisaView.swift in Sources */,
 				76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */,
 				CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */,
