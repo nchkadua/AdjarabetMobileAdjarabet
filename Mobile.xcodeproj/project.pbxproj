@@ -3364,12 +3364,12 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		C7C35FDE25C95D4F00ADCBB6 /* UseCase */ = {
+		C7C35FDE25C95D4F00ADCBB6 /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
 				C7C35FDF25C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift */,
 			);
-			path = UseCase;
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 		C7C35FE325C9B7D400ADCBB6 /* Repositories */ = {
@@ -4563,7 +4563,7 @@
 			isa = PBXGroup;
 			children = (
 				C7C35FD725C93BD100ADCBB6 /* Interactor */,
-				C7C35FDE25C95D4F00ADCBB6 /* UseCase */,
+				C7C35FDE25C95D4F00ADCBB6 /* Use Cases */,
 				C7C35FE325C9B7D400ADCBB6 /* Repositories */,
 				C7C35FFC25CA97C300ADCBB6 /* Entities */,
 				CEC9A37525C1A96800BE853D /* Resources */,
