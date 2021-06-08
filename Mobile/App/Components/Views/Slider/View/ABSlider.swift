@@ -98,6 +98,11 @@ class ABSlider: UIView, Xibable {
                                                 currentCell: currentCell)
         collectionView.scrollToItem(at: .init(row: rowToScroll, section: 0), at: .centeredHorizontally, animated: true)
         resetTimer()
+
+        //Check for correct position
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.collectionView.scrollToItem(at: .init(row: rowToScroll, section: 0), at: .centeredHorizontally, animated: true)
+        }
     }
 
     private var currentCell: Int? {
