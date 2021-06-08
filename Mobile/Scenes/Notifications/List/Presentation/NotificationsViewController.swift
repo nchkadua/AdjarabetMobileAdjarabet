@@ -28,7 +28,7 @@ public class NotificationsViewController: ABViewController {
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mainTabBarViewController?.showFloatingTabBar()
+//        mainTabBarViewController?.showFloatingTabBar() // Floating tab bar removed
     }
 
     private func setup() {

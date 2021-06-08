@@ -4469,9 +4469,9 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 497 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 501 localization keys.
     struct localization {
-      /// en translation: 6 Digit Code
+      /// en translation: 4 Digit Code
       ///
       /// Locales: en, ka, hy
       static let sms_placeholder = Rswift.StringResource(key: "sms_placeholder", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
@@ -4723,6 +4723,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let bonaire_sint_eustatius_and_saba = Rswift.StringResource(key: "bonaire_sint_eustatius_and_saba", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bonuses
+      ///
+      /// Locales: en, ka, hy
+      static let bonuses_item_title = Rswift.StringResource(key: "bonuses_item_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Bosnia And Herzegovina
       ///
       /// Locales: en, ka, hy
@@ -5575,6 +5579,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let new_zealand = Rswift.StringResource(key: "new_zealand", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: News
+      ///
+      /// Locales: en, ka, hy
+      static let news_item_title = Rswift.StringResource(key: "news_item_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Nicaragua
       ///
       /// Locales: en, ka, hy
@@ -5766,6 +5774,10 @@ struct R: Rswift.Validatable {
       /// en translation: Promotions
       ///
       /// Locales: en, ka, hy
+      static let promos_item_title = Rswift.StringResource(key: "promos_item_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Promotions
+      ///
+      /// Locales: en, ka, hy
       static let promotions_page_title = Rswift.StringResource(key: "promotions_page_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Puerto Rico
       ///
@@ -5943,6 +5955,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let home_slots = Rswift.StringResource(key: "home_slots", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Slots
+      ///
+      /// Locales: en, ka, hy
+      static let slots_item_title = Rswift.StringResource(key: "slots_item_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Slovakia
       ///
       /// Locales: en, ka, hy
@@ -6460,7 +6476,7 @@ struct R: Rswift.Validatable {
       /// Locales: en, ka, hy
       static let notifications_minutes_ago = Rswift.StringResource(key: "notifications_minutes_ago", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
 
-      /// en translation: 6 Digit Code
+      /// en translation: 4 Digit Code
       ///
       /// Locales: en, ka, hy
       static func sms_placeholder(preferredLanguages: [String]? = nil) -> String {
@@ -7403,6 +7419,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("bonaire_sint_eustatius_and_saba", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bonuses
+      ///
+      /// Locales: en, ka, hy
+      static func bonuses_item_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bonuses_item_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bonuses_item_title"
+        }
+
+        return NSLocalizedString("bonuses_item_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Bosnia And Herzegovina
@@ -10600,6 +10631,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("new_zealand", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: News
+      ///
+      /// Locales: en, ka, hy
+      static func news_item_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("news_item_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "news_item_title"
+        }
+
+        return NSLocalizedString("news_item_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Nicaragua
       ///
       /// Locales: en, ka, hy
@@ -11308,6 +11354,21 @@ struct R: Rswift.Validatable {
       /// en translation: Promotions
       ///
       /// Locales: en, ka, hy
+      static func promos_item_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("promos_item_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "promos_item_title"
+        }
+
+        return NSLocalizedString("promos_item_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Promotions
+      ///
+      /// Locales: en, ka, hy
       static func promotions_page_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("promotions_page_title", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -11978,6 +12039,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("home_slots", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Slots
+      ///
+      /// Locales: en, ka, hy
+      static func slots_item_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("slots_item_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "slots_item_title"
+        }
+
+        return NSLocalizedString("slots_item_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Slovakia
@@ -14068,8 +14144,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14249,8 +14325,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14523,8 +14599,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -15465,11 +15541,11 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
