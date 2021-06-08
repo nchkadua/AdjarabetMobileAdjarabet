@@ -210,3 +210,13 @@ extension CalendarComponentView: FSCalendarDelegate, FSCalendarDataSource {
         return array
     }
 }
+
+private class ABDateFormatter {
+    static func calendarDateFormatter(with localeIdentifier: String) -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM yyyy"
+        formatter.locale = Locale(identifier: localeIdentifier)
+
+        return formatter
+    }
+}
