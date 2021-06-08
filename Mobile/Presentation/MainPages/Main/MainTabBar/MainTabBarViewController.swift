@@ -58,14 +58,9 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
         viewModel.viewDidLoad()
     }
 
-    public override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        tabBar.isHidden = true
-    }
-
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tabBar.isHidden = true
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -75,7 +70,7 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
             switch action {
             case .setupTabBar:
                 self.setupTabBar()
-                self.setupFloatingTabBar()
+//                self.setupFloatingTabBar() // Floating Tab Bar Removed
             case .selectPage(let index):
                 self.selectPage(at: index)
             case .scrollSelectedViewControllerToTop:
@@ -124,7 +119,7 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
 
     private func setupTabBar() {
         tabBar.tintColor = DesignSystem.Color.primaryText().value
-        tabBar.unselectedItemTintColor = DesignSystem.Color.secondaryText().value
+        tabBar.unselectedItemTintColor = DesignSystem.Color.systemGrey2().value
         tabBar.barTintColor = .clear
         tabBar.isTranslucent = true
         tabBar.layer.masksToBounds = true
@@ -134,7 +129,7 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
         tabBar.shadowImage = UIImage()
         tabBar.clipsToBounds = false
         tabBar.backgroundColor = DesignSystem.Color.primaryBg().value
-        tabBar.isHidden = true
+        tabBar.isHidden = false
     }
 
     private func setupFloatingTabBar() {

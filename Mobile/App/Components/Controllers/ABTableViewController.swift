@@ -88,13 +88,15 @@ public class ABTableViewController: AppTableViewController {
     }
 
     public func hideFloatingTabBar() {
-        guard isTabBarManagementEnabled else {return}
-        mainTabBarViewController?.hideFloatingTabBar()
+        return  // Floating tab bar removed
+        // guard isTabBarManagementEnabled else {return}
+        // mainTabBarViewController?.hideFloatingTabBar()
     }
 
     public func showFloatingTabBar() {
-        guard isTabBarManagementEnabled else {return}
-        mainTabBarViewController?.showFloatingTabBar()
+        return  // Floating tab bar removed
+        // guard isTabBarManagementEnabled else {return}
+        // mainTabBarViewController?.showFloatingTabBar()
     }
 
     // MARK: Deletable Cell Management

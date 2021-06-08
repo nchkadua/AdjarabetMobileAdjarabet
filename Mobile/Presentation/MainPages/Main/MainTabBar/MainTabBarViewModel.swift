@@ -13,6 +13,7 @@ public protocol MainTabBarViewModel: MainTabBarViewModelInput, MainTabBarViewMod
 
 public protocol MainTabBarViewModelInput {
     func viewDidLoad()
+    func viewWillAppear()
     func shouldSelectPage(at index: Int, currentPageIndex: Int)
 }
 
@@ -38,8 +39,11 @@ public class DefaultMainTabBarViewModel {
 
 extension DefaultMainTabBarViewModel: MainTabBarViewModel {
     public func viewDidLoad() {
-        route.onNext(.initial)
         action.onNext(.setupTabBar)
+    }
+
+    public func viewWillAppear() {
+        route.onNext(.initial)
     }
 
     public func shouldSelectPage(at index: Int, currentPageIndex: Int) {

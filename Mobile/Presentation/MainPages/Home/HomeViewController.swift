@@ -158,7 +158,7 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
             self.searchController.collectionViewController.view.alpha = 1 - alpha
         }
         searchController.view.isHidden = mainCollectionViewIsVisible
-        mainCollectionViewIsVisible ? mainTabBarViewController?.showFloatingTabBar() : mainTabBarViewController?.hideFloatingTabBar()
+        // mainCollectionViewIsVisible ? mainTabBarViewController?.showFloatingTabBar() : mainTabBarViewController?.hideFloatingTabBar()
     }
 
     private func languageDidChange() {
