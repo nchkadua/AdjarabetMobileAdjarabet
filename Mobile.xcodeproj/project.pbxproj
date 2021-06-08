@@ -1626,34 +1626,34 @@
 			path = AccountSecurityMessagesTableViewCell;
 			sourceTree = "<group>";
 		};
-		7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */ = {
+		7644B5EF2563A6EA006778B2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */,
 				7644B5F62563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift */,
+				7644B5F02563A72B006778B2 /* TransactionHistoryTableViewCell.swift */,
 				7644B5FA2563A8BB006778B2 /* TransactionHistoryTableViewCell.xib */,
 			);
-			path = TransactionHistoryTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		7644B6202564F8D0006778B2 /* Details */ = {
+		7644B6202564F8D0006778B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7644B629256506B6006778B2 /* TransactionDetailComponentViewModel.swift */,
 				7644B6212564F8E4006778B2 /* TransactionDetailComponentView.swift */,
 				7644B6252564F910006778B2 /* TransactionDetailsComponentView.xib */,
-				7644B629256506B6006778B2 /* TransactionDetailComponentViewModel.swift */,
 			);
-			path = Details;
+			path = View;
 			sourceTree = "<group>";
 		};
-		7644B62D256509AE006778B2 /* Details */ = {
+		7644B62D256509AE006778B2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */,
 				7644B62E25650A3D006778B2 /* TransactionDetailsTableViewCell.swift */,
 				7644B63425650C0D006778B2 /* TransactionDetailsTableViewCell.xib */,
-				7644B63825650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift */,
 			);
-			path = Details;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7665D959257E5C8100E5B35F /* AccessHistory */ = {
@@ -1709,14 +1709,14 @@
 			path = AccountParametersHeader;
 			sourceTree = "<group>";
 		};
-		7676E5622562E19200234026 /* TransactionHistoryComponentView */ = {
+		7676E5622562E19200234026 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */,
-				7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */,
 				7644B5EB25639786006778B2 /* TransactionHistoryComponentViewModel.swift */,
+				7676E5692562E31F00234026 /* TransactionHistoryComponentView.swift */,
+				7676E5652562E26300234026 /* TransactionHistoryComponentView.xib */,
 			);
-			path = TransactionHistoryComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
 		76811DC5257E453B004107E9 /* Responses */ = {
@@ -1735,24 +1735,24 @@
 			path = AccessList;
 			sourceTree = "<group>";
 		};
-		7682CF8925B857F500717090 /* AddMyCard */ = {
+		7682CF8925B857F500717090 /* Add Card */ = {
 			isa = PBXGroup;
 			children = (
 				7682CF8A25B8581600717090 /* AddMyCardComponentView.xib */,
 				7682CF8D25B8581600717090 /* AddMyCardComponentViewModel.swift */,
 				7682CF8E25B8581600717090 /* AddMyCardComponentView.swift */,
 			);
-			path = AddMyCard;
+			path = "Add Card";
 			sourceTree = "<group>";
 		};
-		7682CF9825B8585300717090 /* AddMyCard */ = {
+		7682CF9825B8585300717090 /* Add My Card */ = {
 			isa = PBXGroup;
 			children = (
 				7682CF8B25B8581600717090 /* AddMyCardTableViewCellDataProvider.swift */,
 				7682CF8C25B8581600717090 /* AddMyCardTableViewCell.xib */,
 				7682CF8F25B8581600717090 /* AddMyCardTableViewCell.swift */,
 			);
-			path = AddMyCard;
+			path = "Add My Card";
 			sourceTree = "<group>";
 		};
 		7690D6B025BFFB8D002A257A /* Domain */ = {
@@ -1772,24 +1772,24 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		769886922571041100FA339E /* TransactionFilterComponentView */ = {
+		769886922571041100FA339E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				769886A82571055000FA339E /* TransactionFilterComponentView.xib */,
 				769886AB2571055000FA339E /* TransactionFilterComponentViewModel.swift */,
 				769886AC2571055000FA339E /* TransactionFilterComponentView.swift */,
+				769886A82571055000FA339E /* TransactionFilterComponentView.xib */,
 			);
-			path = TransactionFilterComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		769886A32571046100FA339E /* TransactionFilterTableViewCell */ = {
+		769886A32571046100FA339E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				769886942571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift */,
-				769886952571042A00FA339E /* TransactionFilterTableViewCell.xib */,
 				769886982571042A00FA339E /* TransactionFilterTableViewCell.swift */,
+				769886952571042A00FA339E /* TransactionFilterTableViewCell.xib */,
 			);
-			path = TransactionFilterTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		769886C025711C1100FA339E /* Model */ = {
@@ -1803,9 +1803,9 @@
 		76BA7BD125E7A9DC00CB77A5 /* GameLauncherGridComponentView */ = {
 			isa = PBXGroup;
 			children = (
-				76BA7BD225E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib */,
 				76BA7BD525E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift */,
 				76BA7BD625E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift */,
+				76BA7BD225E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib */,
 			);
 			path = GameLauncherGridComponentView;
 			sourceTree = "<group>";
@@ -1814,8 +1814,8 @@
 			isa = PBXGroup;
 			children = (
 				76BA7BD325E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCellDataProvider.swift */,
-				76BA7BD425E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib */,
 				76BA7BD725E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.swift */,
+				76BA7BD425E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib */,
 			);
 			path = GameLauncherGridComponentCell;
 			sourceTree = "<group>";
@@ -1878,48 +1878,48 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		76DCF6A825B825FC00150EE1 /* MyCardComponentView */ = {
+		76DCF6A825B825FC00150EE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76E43ED425B952B6007B2D97 /* VideoCard */,
-				7682CF8925B857F500717090 /* AddMyCard */,
-				76DCF6A925B8262300150EE1 /* MyCardComponentView.xib */,
+				76E43ED425B952B6007B2D97 /* Video Card */,
+				7682CF8925B857F500717090 /* Add Card */,
 				76DCF6AC25B8262300150EE1 /* MyCardComponentViewModel.swift */,
 				76DCF6AD25B8262300150EE1 /* MyCardComponentView.swift */,
+				76DCF6A925B8262300150EE1 /* MyCardComponentView.xib */,
 			);
-			path = MyCardComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		76DCF6B925B8267900150EE1 /* MyCardTableViewCell */ = {
+		76DCF6B925B8267900150EE1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				76E43EE325B9530F007B2D97 /* VideoCard */,
-				7682CF9825B8585300717090 /* AddMyCard */,
+				76E43EE325B9530F007B2D97 /* Video Card */,
+				7682CF9825B8585300717090 /* Add My Card */,
 				76DCF6AA25B8262300150EE1 /* MyCardTableViewCellDataProvider.swift */,
-				76DCF6AB25B8262300150EE1 /* MyCardTableViewCell.xib */,
 				76DCF6AE25B8262300150EE1 /* MyCardTableViewCell.swift */,
+				76DCF6AB25B8262300150EE1 /* MyCardTableViewCell.xib */,
 			);
-			path = MyCardTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		76E43ED425B952B6007B2D97 /* VideoCard */ = {
+		76E43ED425B952B6007B2D97 /* Video Card */ = {
 			isa = PBXGroup;
 			children = (
 				76E43ED525B95303007B2D97 /* VideoCardComponentView.xib */,
 				76E43ED825B95303007B2D97 /* VideoCardComponentViewModel.swift */,
 				76E43ED925B95303007B2D97 /* VideoCardComponentView.swift */,
 			);
-			path = VideoCard;
+			path = "Video Card";
 			sourceTree = "<group>";
 		};
-		76E43EE325B9530F007B2D97 /* VideoCard */ = {
+		76E43EE325B9530F007B2D97 /* Video Card */ = {
 			isa = PBXGroup;
 			children = (
 				76E43ED625B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift */,
 				76E43ED725B95303007B2D97 /* VideoCardTableViewCell.xib */,
 				76E43EDA25B95303007B2D97 /* VideoCardTableViewCell.swift */,
 			);
-			path = VideoCard;
+			path = "Video Card";
 			sourceTree = "<group>";
 		};
 		76EFF7BD2582380900898819 /* AccessHistoryCalendar */ = {
@@ -2045,7 +2045,6 @@
 			isa = PBXGroup;
 			children = (
 				CE2AB427266A2DA300C88262 /* Scenes */,
-				C784C1C2266A3CF900D328D3 /* Presentation */,
 				C79922FE2660E9CF00FD7033 /* Data */,
 			);
 			path = Shared;
@@ -2135,8 +2134,7 @@
 		C71C2429265D0332002071FF /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C71C243B265D0936002071FF /* Cells */,
-				C71C243A265D0930002071FF /* Views */,
+				C784C2EC266FAC6800D328D3 /* Payment Method */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2193,7 +2191,7 @@
 		C71C242F265D03EA002071FF /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE8786C9261DBF5D0060EBD1 /* AddCardView */,
+				CE8786C9261DBF5D0060EBD1 /* Add Card View */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2232,23 +2230,6 @@
 			path = "Use Cases";
 			sourceTree = "<group>";
 		};
-		C71C243A265D0930002071FF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CEBB004A2608F61800D1B510 /* PaymentMethodGridComponentView */,
-				CEBB000A2608EBC700D1B510 /* PaymentMethodComponentView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C71C243B265D0936002071FF /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CEBB001B2608EBF500D1B510 /* PaymentMethodCollectionViewCell */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		C71C2440265D0A72002071FF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -2278,26 +2259,9 @@
 		C71F07902665243D0082AA6C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C71F0791266524460082AA6C /* Cells */,
-				C71F0792266524B30082AA6C /* Views */,
+				C784C2E3266FAC1B00D328D3 /* Card */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		C71F0791266524460082AA6C /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				76DCF6B925B8267900150EE1 /* MyCardTableViewCell */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		C71F0792266524B30082AA6C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				76DCF6A825B825FC00150EE1 /* MyCardComponentView */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		C71F18A92564562D0026CEA2 /* Biometry Storage */ = {
@@ -2428,7 +2392,9 @@
 		C75F61F126570866009CB6A1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C75F6201265708EC009CB6A1 /* Collection View */,
+				C75F61E92657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift */,
+				C75F61E12657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift */,
+				C75F61E52657047D009CB6A1 /* LayoutChooserCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2441,16 +2407,6 @@
 				C75F61F7265708A6009CB6A1 /* LayoutChooserView.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C75F6201265708EC009CB6A1 /* Collection View */ = {
-			isa = PBXGroup;
-			children = (
-				C75F61E92657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift */,
-				C75F61E12657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift */,
-				C75F61E52657047D009CB6A1 /* LayoutChooserCollectionViewCell.xib */,
-			);
-			path = "Collection View";
 			sourceTree = "<group>";
 		};
 		C766086925CD842D00A59534 /* Launch Url Repository */ = {
@@ -2510,13 +2466,6 @@
 			path = "Collection View";
 			sourceTree = "<group>";
 		};
-		C784C1C2266A3CF900D328D3 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		C784C1C3266A3D9400D328D3 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -2562,28 +2511,10 @@
 		C784C22F266E4CE800D328D3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C784C230266E4CF500D328D3 /* Views */,
-				C784C231266E4CFB00D328D3 /* Cells */,
+				C784C2AC266FA8FD00D328D3 /* Header */,
+				C784C2B1266FA92300D328D3 /* Notification */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		C784C230266E4CF500D328D3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CE0818BE25389B5C00AD3B3B /* Header */,
-				CEE15C3825349C130033BF93 /* NotificationComponentView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C784C231266E4CFB00D328D3 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CE0818CD25389EDC00AD3B3B /* Header */,
-				CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		C784C234266E4E3B00D328D3 /* Shared */ = {
@@ -2785,6 +2716,141 @@
 				D8BF404A244ED618008F0BAF /* Cells */,
 			);
 			path = "Game Launcher";
+			sourceTree = "<group>";
+		};
+		C784C2A6266FA8BD00D328D3 /* Promotion */ = {
+			isa = PBXGroup;
+			children = (
+				CE95FC8A252F2AFE003E539B /* View */,
+				CE95FC9F252F3691003E539B /* Cell */,
+			);
+			path = Promotion;
+			sourceTree = "<group>";
+		};
+		C784C2AC266FA8FD00D328D3 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CE0818BE25389B5C00AD3B3B /* View */,
+				CE0818CD25389EDC00AD3B3B /* Cell */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		C784C2B1266FA92300D328D3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				CEE15C3825349C130033BF93 /* View */,
+				CEE15C4525349EAE0033BF93 /* Cell */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		C784C2B6266FA98400D328D3 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				CE55ED30252B3854003E168F /* View */,
+				CEE3566C252B5F3600A0A25C /* Cell */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		C784C2BB266FA9B100D328D3 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				CEE356CF252C9BBE00A0A25C /* View */,
+				CEA97673252CA669003CB1AB /* Cell */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		C784C2C0266FA9D400D328D3 /* Quick Action */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F03C1252CC8BD006D8001 /* View */,
+				CE2F03D0252CD692006D8001 /* Cell */,
+			);
+			path = "Quick Action";
+			sourceTree = "<group>";
+		};
+		C784C2C9266FAAC900D328D3 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				769886922571041100FA339E /* View */,
+				769886A32571046100FA339E /* Cell */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		C784C2D0266FAB0000D328D3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7644B6202564F8D0006778B2 /* View */,
+				7644B62D256509AE006778B2 /* Cell */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		C784C2D7266FAB3B00D328D3 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				7676E5622562E19200234026 /* View */,
+				7644B5EF2563A6EA006778B2 /* Cell */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		C784C2DC266FABA100D328D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE454652260C89C800B01E19 /* Limits */,
+				CE454651260C89C000B01E19 /* Instructions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C784C2DD266FABC000D328D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE95A434261EF8700004330E /* Instructions */,
+				CE95A42B261DF1B30004330E /* Button */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C784C2DE266FABE100D328D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE58749E260B815A00F03AB5 /* Instructions */,
+				CE587493260B66A200F03AB5 /* Button */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C784C2E3266FAC1B00D328D3 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				76DCF6A825B825FC00150EE1 /* View */,
+				76DCF6B925B8267900150EE1 /* Cell */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		C784C2EC266FAC6800D328D3 /* Payment Method */ = {
+			isa = PBXGroup;
+			children = (
+				C784C2ED266FAC7B00D328D3 /* Views */,
+				CEBB001B2608EBF500D1B510 /* Cell */,
+			);
+			path = "Payment Method";
+			sourceTree = "<group>";
+		};
+		C784C2ED266FAC7B00D328D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB000A2608EBC700D1B510 /* View */,
+				CEBB004A2608F61800D1B510 /* Grid View */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C78FD440260A672C004E766E /* Amount Formatter */ = {
@@ -3050,7 +3116,7 @@
 		C7C1D2F0261B285D009F01C3 /* Visa */ = {
 			isa = PBXGroup;
 			children = (
-				C7C1D32D261B9CAF009F01C3 /* Views */,
+				C7C1D32D261B9CAF009F01C3 /* Components */,
 				C7C1D335261B9D48009F01C3 /* WithdrawVisaNavigator.swift */,
 				C7C1D336261B9D48009F01C3 /* WithdrawVisaViewController.swift */,
 				C7C1D337261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift */,
@@ -3089,14 +3155,14 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
-		C7C1D32D261B9CAF009F01C3 /* Views */ = {
+		C7C1D32D261B9CAF009F01C3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				C7C1D305261B9B5D009F01C3 /* Add Account */,
 				C7C1D2FA261B9AB8009F01C3 /* Cash Out */,
 				C7C1D31A261B9BFA009F01C3 /* Info */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C7C35FD725C93BD100ADCBB6 /* Interactor */ = {
@@ -3193,18 +3259,18 @@
 				C784C29C266FA65800D328D3 /* Game Launcher */,
 				C75F61DA2656FD92009CB6A1 /* Layout Chooser */,
 				C7DB6ED126370F0A00EC1CB9 /* Empty Cell */,
-				C7D202332636E404009710C9 /* Header View */,
+				C7D202332636E404009710C9 /* Header */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		C7D202332636E404009710C9 /* Header View */ = {
+		C7D202332636E404009710C9 /* Header */ = {
 			isa = PBXGroup;
 			children = (
 				C7D202342636E41B009710C9 /* HomeHeaderView.swift */,
 				C7D202382636E42A009710C9 /* HomeHeaderView.xib */,
 			);
-			path = "Header View";
+			path = Header;
 			sourceTree = "<group>";
 		};
 		C7D29F42258EA784006BEFAC /* Infrastructure */ = {
@@ -3339,33 +3405,33 @@
 			path = WebViewController;
 			sourceTree = "<group>";
 		};
-		CE0818BE25389B5C00AD3B3B /* Header */ = {
+		CE0818BE25389B5C00AD3B3B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */,
 				CE0818C525389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift */,
+				CE0818BF25389B7E00AD3B3B /* NotificationsHeaderComponentView.swift */,
 				CE0818C925389B8D00AD3B3B /* NotificationsHeaderComponentView.xib */,
 			);
-			path = Header;
+			path = View;
 			sourceTree = "<group>";
 		};
-		CE0818CD25389EDC00AD3B3B /* Header */ = {
+		CE0818CD25389EDC00AD3B3B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CE0818CE25389EEE00AD3B3B /* NotificationsHeaderCell.swift */,
 				CE0818D225389EF800AD3B3B /* NotificationsHeaderCellDataProvider.swift */,
+				CE0818CE25389EEE00AD3B3B /* NotificationsHeaderCell.swift */,
 				CE0818D625389EFE00AD3B3B /* NotificationsHeaderCell.xib */,
 			);
-			path = Header;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		CE1693692541AB100043B1A4 /* AccountInfoComponentView */ = {
+		CE1693692541AB100043B1A4 /* Account Info */ = {
 			isa = PBXGroup;
 			children = (
 				CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */,
 				CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */,
 			);
-			path = AccountInfoComponentView;
+			path = "Account Info";
 			sourceTree = "<group>";
 		};
 		CE29FC302578EB7700402D0D /* AddCard */ = {
@@ -3445,7 +3511,8 @@
 		CE2AB47B266A2E2E00C88262 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D8863699246C4F4400FF061D /* Views */,
+				CEE2505E256FE2E40089F805 /* Timer */,
+				CE2AB4CD266A5C2600C88262 /* SMS Code */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -3565,26 +3632,9 @@
 		CE2AB493266A445000C88262 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB494266A446C00C88262 /* Views */,
-				CE2AB495266A447000C88262 /* Cells */,
+				C784C2A6266FA8BD00D328D3 /* Promotion */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		CE2AB494266A446C00C88262 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CE95FC8A252F2AFE003E539B /* PromotionComponentView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CE2AB495266A447000C88262 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CE95FC9F252F3691003E539B /* PromotionTableViewCell */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		CE2AB49C266A474000C88262 /* Bonus */ = {
@@ -3748,39 +3798,20 @@
 		CE2AB4C9266A5B2300C88262 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB4CA266A5B2F00C88262 /* Views */,
-				CE2AB4CB266A5B3400C88262 /* Cells */,
+				C784C2B6266FA98400D328D3 /* Info */,
+				C784C2BB266FA9B100D328D3 /* Balance */,
+				C784C2C0266FA9D400D328D3 /* Quick Action */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		CE2AB4CA266A5B2F00C88262 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CE55ED30252B3854003E168F /* ProfileInfoComponentView */,
-				CEE356CF252C9BBE00A0A25C /* BalanceComponentView */,
-				CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CE2AB4CB266A5B3400C88262 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */,
-				CEA97673252CA669003CB1AB /* BalanceTableViewCell */,
-				CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		CE2AB4CD266A5C2600C88262 /* SMSCode */ = {
+		CE2AB4CD266A5C2600C88262 /* SMS Code */ = {
 			isa = PBXGroup;
 			children = (
 				D8863695246C42CB00FF061D /* SMSCodeDigitView.swift */,
 				D8863697246C485500FF061D /* SMSCodeInputView.swift */,
 			);
-			path = SMSCode;
+			path = "SMS Code";
 			sourceTree = "<group>";
 		};
 		CE2AB4CE266A5C9300C88262 /* Biometric Settings */ = {
@@ -3814,26 +3845,26 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		CE2F03C1252CC8BD006D8001 /* QuickActionComponentView */ = {
+		CE2F03C1252CC8BD006D8001 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				CE95FB9B252CDE5A003E539B /* Header */,
-				CE2F03C2252CC8E0006D8001 /* QuickActionComponentView.swift */,
 				CE2F03C8252CC8E8006D8001 /* QuickActionComponentViewModel.swift */,
+				CE2F03C2252CC8E0006D8001 /* QuickActionComponentView.swift */,
 				CE2F03CC252CC8EE006D8001 /* QuickActionComponentView.xib */,
 			);
-			path = QuickActionComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		CE2F03D0252CD692006D8001 /* QuickActionTableViewCell */ = {
+		CE2F03D0252CD692006D8001 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				CE2D1DF02530752A00112A1D /* Header */,
-				CE2F03D1252CD6A7006D8001 /* QuickActionTableViewCell.swift */,
 				CE2F03D5252CD6B0006D8001 /* QuickActionTableViewCellDataProvider.swift */,
+				CE2F03D1252CD6A7006D8001 /* QuickActionTableViewCell.swift */,
 				CE2F03D9252CD6B6006D8001 /* QuickActionTableViewCell.xib */,
 			);
-			path = QuickActionTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CE454651260C89C000B01E19 /* Instructions */ = {
@@ -3915,23 +3946,23 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		CE55ED30252B3854003E168F /* ProfileInfoComponentView */ = {
+		CE55ED30252B3854003E168F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE55ED54252B3881003E168F /* ProfileInfoComponentView.swift */,
 				CE55ED58252B38BA003E168F /* ProfileInfoComponentViewModel.swift */,
+				CE55ED54252B3881003E168F /* ProfileInfoComponentView.swift */,
 				CE55ED81252B437F003E168F /* ProfileInfoComponentView.xib */,
 			);
-			path = ProfileInfoComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		CE587493260B66A200F03AB5 /* EmoneyButton */ = {
+		CE587493260B66A200F03AB5 /* Button */ = {
 			isa = PBXGroup;
 			children = (
 				CE587496260B66C300F03AB5 /* EmoneyButton.swift */,
 				CE58749A260B66CB00F03AB5 /* EmoneyButton.xib */,
 			);
-			path = EmoneyButton;
+			path = Button;
 			sourceTree = "<group>";
 		};
 		CE58749E260B815A00F03AB5 /* Instructions */ = {
@@ -3994,30 +4025,11 @@
 		CE5D7A5E266A5EFF00719120 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A5F266A5F0400719120 /* Views */,
-				CE5D7A60266A5F0900719120 /* Cells */,
+				C784C2C9266FAAC900D328D3 /* Filter */,
+				C784C2D0266FAB0000D328D3 /* Details */,
+				C784C2D7266FAB3B00D328D3 /* History */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		CE5D7A5F266A5F0400719120 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				769886922571041100FA339E /* TransactionFilterComponentView */,
-				7644B6202564F8D0006778B2 /* Details */,
-				7676E5622562E19200234026 /* TransactionHistoryComponentView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CE5D7A60266A5F0900719120 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				769886A32571046100FA339E /* TransactionFilterTableViewCell */,
-				7644B62D256509AE006778B2 /* Details */,
-				7644B5EF2563A6EA006778B2 /* TransactionHistoryTableViewCell */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		CE5D7A61266A5F0E00719120 /* Data */ = {
@@ -4136,18 +4148,10 @@
 		CE5D7A89266A62A000719120 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A8A266A62A600719120 /* Views */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		CE5D7A8A266A62A600719120 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CE1693692541AB100043B1A4 /* AccountInfoComponentView */,
+				CE1693692541AB100043B1A4 /* Account Info */,
 				CECF7F7E256DAD17001C0E50 /* Rules */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		CE5D7AB4266A632F00719120 /* Entities */ = {
@@ -4242,9 +4246,9 @@
 		CE64EA8325D1749B00438974 /* Game Loader */ = {
 			isa = PBXGroup;
 			children = (
-				CE64EA9A25D2D51A00438974 /* GameLoaderComponentView.xib */,
-				CE64EA9825D2D51A00438974 /* GameLoaderComponentView.swift */,
 				CE64EA9925D2D51A00438974 /* GameLoaderComponentViewModel.swift */,
+				CE64EA9825D2D51A00438974 /* GameLoaderComponentView.swift */,
+				CE64EA9A25D2D51A00438974 /* GameLoaderComponentView.xib */,
 			);
 			path = "Game Loader";
 			sourceTree = "<group>";
@@ -4275,13 +4279,13 @@
 			path = AbDatePicker;
 			sourceTree = "<group>";
 		};
-		CE8786C9261DBF5D0060EBD1 /* AddCardView */ = {
+		CE8786C9261DBF5D0060EBD1 /* Add Card View */ = {
 			isa = PBXGroup;
 			children = (
 				CE8786CE261DBF980060EBD1 /* AddCardComponentView.swift */,
 				CE8786CA261DBF800060EBD1 /* AddCardComponentView.xib */,
 			);
-			path = AddCardView;
+			path = "Add Card View";
 			sourceTree = "<group>";
 		};
 		CE91C0D5257028AB00A18255 /* Filter */ = {
@@ -4310,13 +4314,12 @@
 		CE95A3EB261DE2250004330E /* Apple Pay */ = {
 			isa = PBXGroup;
 			children = (
-				CE95A434261EF8700004330E /* Instructions */,
-				CE95A42B261DF1B30004330E /* Button */,
-				CE95A3EC261DE23A0004330E /* ApplePay.storyboard */,
-				CE95A3ED261DE23A0004330E /* ApplePayNavigator.swift */,
+				C784C2DD266FABC000D328D3 /* Components */,
+				CE95A3F0261DE23A0004330E /* ApplePayViewModel.swift */,
 				CE95A3EE261DE23A0004330E /* ApplePayViewController.swift */,
 				CE95A3EF261DE23A0004330E /* ApplePayViewControllerFactory.swift */,
-				CE95A3F0261DE23A0004330E /* ApplePayViewModel.swift */,
+				CE95A3ED261DE23A0004330E /* ApplePayNavigator.swift */,
+				CE95A3EC261DE23A0004330E /* ApplePay.storyboard */,
 			);
 			path = "Apple Pay";
 			sourceTree = "<group>";
@@ -4328,6 +4331,7 @@
 				CE95A430261DF1D40004330E /* ApplePayButton.xib */,
 			);
 			name = Button;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CE95A434261EF8700004330E /* Instructions */ = {
@@ -4369,24 +4373,24 @@
 			path = FooterTableViewCell;
 			sourceTree = "<group>";
 		};
-		CE95FC8A252F2AFE003E539B /* PromotionComponentView */ = {
+		CE95FC8A252F2AFE003E539B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */,
 				CE95FC91252F2B28003E539B /* PromotionComponentViewModel.swift */,
+				CE95FC8B252F2B16003E539B /* PromotionComponentView.swift */,
 				CE95FC95252F2B2F003E539B /* PromotionComponentView.xib */,
 			);
-			path = PromotionComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		CE95FC9F252F3691003E539B /* PromotionTableViewCell */ = {
+		CE95FC9F252F3691003E539B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */,
 				CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */,
+				CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */,
 				CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */,
 			);
-			path = PromotionTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CE9A175625518FA5006655AF /* Delegates */ = {
@@ -4413,14 +4417,14 @@
 			path = "Mail Change";
 			sourceTree = "<group>";
 		};
-		CEA97673252CA669003CB1AB /* BalanceTableViewCell */ = {
+		CEA97673252CA669003CB1AB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */,
 				CEA97699252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift */,
+				CEA97674252CA688003CB1AB /* BalanceTableViewCell.swift */,
 				CEA9769D252CA69C003CB1AB /* BalanceTableViewCell.xib */,
 			);
-			path = BalanceTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CEB285B8256D20A400584A65 /* Self Suspend */ = {
@@ -4432,46 +4436,45 @@
 			path = "Self Suspend";
 			sourceTree = "<group>";
 		};
-		CEBB000A2608EBC700D1B510 /* PaymentMethodComponentView */ = {
+		CEBB000A2608EBC700D1B510 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				CEBB00272608EC4100D1B510 /* PaymentMethodComponentViewModel.swift */,
 				CEBB00282608EC4100D1B510 /* PaymentMethodComponentView.swift */,
 				CEBB00242608EC4100D1B510 /* PaymentMethodComponentView.xib */,
 			);
-			path = PaymentMethodComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		CEBB001B2608EBF500D1B510 /* PaymentMethodCollectionViewCell */ = {
+		CEBB001B2608EBF500D1B510 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CEB41991260A2A71003FE4B6 /* PaymentMethodCollectionViewCell.xib */,
-				CEB41993260A2A7A003FE4B6 /* PaymentMethodCollectionViewCell.swift */,
 				CEB41999260A2A82003FE4B6 /* PaymentMethodCollectionViewCellDataProvider.swift */,
+				CEB41993260A2A7A003FE4B6 /* PaymentMethodCollectionViewCell.swift */,
+				CEB41991260A2A71003FE4B6 /* PaymentMethodCollectionViewCell.xib */,
 			);
-			path = PaymentMethodCollectionViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		CEBB004A2608F61800D1B510 /* PaymentMethodGridComponentView */ = {
+		CEBB004A2608F61800D1B510 /* Grid View */ = {
 			isa = PBXGroup;
 			children = (
-				CEBB004B2608F63B00D1B510 /* PaymentMethodGridComponentView.xib */,
-				CEBB00712608F64100D1B510 /* PaymentMethodGridComponentView.swift */,
 				CEBB00752608F65300D1B510 /* PaymentMethodGridComponentViewModel.swift */,
+				CEBB00712608F64100D1B510 /* PaymentMethodGridComponentView.swift */,
+				CEBB004B2608F63B00D1B510 /* PaymentMethodGridComponentView.xib */,
 			);
-			path = PaymentMethodGridComponentView;
+			path = "Grid View";
 			sourceTree = "<group>";
 		};
 		CEBB00792609D3E300D1B510 /* Visa */ = {
 			isa = PBXGroup;
 			children = (
-				CE454652260C89C800B01E19 /* Limits */,
-				CE454651260C89C000B01E19 /* Instructions */,
-				CEBB00892609D40400D1B510 /* Visa.storyboard */,
-				CEBB008A2609D40400D1B510 /* VisaNavigator.swift */,
+				C784C2DC266FABA100D328D3 /* Components */,
+				CEBB008D2609D40400D1B510 /* VisaViewModel.swift */,
 				CEBB008B2609D40400D1B510 /* VisaViewController.swift */,
 				CEBB008C2609D40400D1B510 /* VisaViewControllerFactory.swift */,
-				CEBB008D2609D40400D1B510 /* VisaViewModel.swift */,
+				CEBB008A2609D40400D1B510 /* VisaNavigator.swift */,
+				CEBB00892609D40400D1B510 /* Visa.storyboard */,
 			);
 			path = Visa;
 			sourceTree = "<group>";
@@ -4479,13 +4482,12 @@
 		CEBB007A2609D3E800D1B510 /* Emoney */ = {
 			isa = PBXGroup;
 			children = (
-				CE58749E260B815A00F03AB5 /* Instructions */,
-				CE587493260B66A200F03AB5 /* EmoneyButton */,
-				CEBB007B2609D3F900D1B510 /* Emoney.storyboard */,
-				CEBB007C2609D3F900D1B510 /* EmoneyNavigator.swift */,
+				C784C2DE266FABE100D328D3 /* Components */,
+				CEBB007F2609D3F900D1B510 /* EmoneyViewModel.swift */,
 				CEBB007D2609D3F900D1B510 /* EmoneyViewController.swift */,
 				CEBB007E2609D3F900D1B510 /* EmoneyViewControllerFactory.swift */,
-				CEBB007F2609D3F900D1B510 /* EmoneyViewModel.swift */,
+				CEBB007C2609D3F900D1B510 /* EmoneyNavigator.swift */,
+				CEBB007B2609D3F900D1B510 /* Emoney.storyboard */,
 			);
 			path = Emoney;
 			sourceTree = "<group>";
@@ -4664,54 +4666,54 @@
 			path = PasswordReminder;
 			sourceTree = "<group>";
 		};
-		CEE15C3825349C130033BF93 /* NotificationComponentView */ = {
+		CEE15C3825349C130033BF93 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CEE15C3925349C330033BF93 /* NotificationComponentView.swift */,
 				CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */,
+				CEE15C3925349C330033BF93 /* NotificationComponentView.swift */,
 				CEE15C4125349C450033BF93 /* NotificationComponentView.xib */,
 			);
-			path = NotificationComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		CEE15C4525349EAE0033BF93 /* NotificationTableViewCell */ = {
+		CEE15C4525349EAE0033BF93 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CEE15C4625349EDF0033BF93 /* NotificationTableViewCell.swift */,
 				CEE15C4C25349EE60033BF93 /* NotificationTableViewCellDataProvider.swift */,
+				CEE15C4625349EDF0033BF93 /* NotificationTableViewCell.swift */,
 				CEE15C5025349EEC0033BF93 /* NotificationTableViewCell.xib */,
 			);
-			path = NotificationTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CEE2505E256FE2E40089F805 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				CEE2505F256FE3B40089F805 /* TimerComponentView.swift */,
 				CEE25084256FE3BB0089F805 /* TimerComponentViewModel.swift */,
+				CEE2505F256FE3B40089F805 /* TimerComponentView.swift */,
 				CEE25088256FE3C10089F805 /* TimerComponentView.xib */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
 		};
-		CEE3566C252B5F3600A0A25C /* ProfileInfoTableViewCell */ = {
+		CEE3566C252B5F3600A0A25C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CEE356C3252B643600A0A25C /* ProfileInfoTableViewCell.swift */,
 				CEE356C9252B644300A0A25C /* ProfileInfoTableViewCellDataProvider.swift */,
+				CEE356C3252B643600A0A25C /* ProfileInfoTableViewCell.swift */,
 				CEE3566D252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib */,
 			);
-			path = ProfileInfoTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		CEE356CF252C9BBE00A0A25C /* BalanceComponentView */ = {
+		CEE356CF252C9BBE00A0A25C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CEE356F5252C9C8900A0A25C /* BalanceComponentView.swift */,
 				CEE356F9252C9C9000A0A25C /* BalanceComponentViewModel.swift */,
+				CEE356F5252C9C8900A0A25C /* BalanceComponentView.swift */,
 				CEE356F1252C9C8100A0A25C /* BalanceComponentView.xib */,
 			);
-			path = BalanceComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
 		CEF1D4F7251CAB78008E3DE0 /* Text */ = {
@@ -4992,8 +4994,8 @@
 		D86B595D244F0E2E00AB7350 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */,
 				D86B5962244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift */,
+				D86B595E244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift */,
 				D86B5960244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib */,
 			);
 			path = View;
@@ -5002,8 +5004,8 @@
 		D86B5964244F123800AB7350 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D86B5965244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift */,
 				D86B5969244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift */,
+				D86B5965244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift */,
 				D86B5966244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib */,
 			);
 			path = Cell;
@@ -5012,8 +5014,8 @@
 		D86B596B244F164C00AB7350 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D86B596C244F166B00AB7350 /* RecentlyPlayedComponentView.swift */,
 				D8AC9963244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift */,
+				D86B596C244F166B00AB7350 /* RecentlyPlayedComponentView.swift */,
 				D86B596E244F167000AB7350 /* RecentlyPlayedComponentView.xib */,
 			);
 			path = View;
@@ -5054,15 +5056,6 @@
 				D83E4225247A92D800E9615F /* UserSessionUseCase.swift */,
 			);
 			path = UseCases;
-			sourceTree = "<group>";
-		};
-		D8863699246C4F4400FF061D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CEE2505E256FE2E40089F805 /* Timer */,
-				CE2AB4CD266A5C2600C88262 /* SMSCode */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		D8880FD424C42C2F00356CD3 /* Search */ = {
@@ -5253,8 +5246,8 @@
 		D8AC9965244F1A2100B16600 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D8AC9966244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift */,
 				D8AC996A244F1A8600B16600 /* RecentlyPlayedCollectionViewCellDataProvider.swift */,
+				D8AC9966244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift */,
 				D8AC9967244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib */,
 			);
 			path = Cell;
@@ -5278,8 +5271,8 @@
 			isa = PBXGroup;
 			children = (
 				76BA7BE825E7AABA00CB77A5 /* GameLauncherGridComponentCell */,
-				D8BF4040244EC949008F0BAF /* GameLauncherCollectionViewCell.swift */,
 				D8BF4044244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift */,
+				D8BF4040244EC949008F0BAF /* GameLauncherCollectionViewCell.swift */,
 				D8BF4041244EC949008F0BAF /* GameLauncherCollectionViewCell.xib */,
 			);
 			path = Cells;
@@ -5289,8 +5282,8 @@
 			isa = PBXGroup;
 			children = (
 				76BA7BD125E7A9DC00CB77A5 /* GameLauncherGridComponentView */,
-				D8CFD8AE244C850D001F4BAA /* GameLauncherComponentView.swift */,
 				D83ED2F8244C97DE0037DDEB /* GameLauncherComponentViewModel.swift */,
+				D8CFD8AE244C850D001F4BAA /* GameLauncherComponentView.swift */,
 				D8CFD8B2244C8529001F4BAA /* GameLauncherComponentView.xib */,
 			);
 			path = Views;
