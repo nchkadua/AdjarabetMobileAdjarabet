@@ -1598,32 +1598,24 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
-		76404EEB257611D100D14E0C /* Model */ = {
+		76404EF2257624B200D14E0C /* Security Message */ = {
 			isa = PBXGroup;
 			children = (
-				76404EEC2576120800D14E0C /* AccountParametersModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		76404EF2257624B200D14E0C /* AccountSecurityMessagesComponentView */ = {
-			isa = PBXGroup;
-			children = (
-				76404F03257625F900D14E0C /* AccountSecurityMessagesComponentView.xib */,
 				76404F06257625F900D14E0C /* AccountSecurityMessagesComponentViewModel.swift */,
 				76404F07257625F900D14E0C /* AccountSecurityMessagesComponentView.swift */,
+				76404F03257625F900D14E0C /* AccountSecurityMessagesComponentView.xib */,
 			);
-			path = AccountSecurityMessagesComponentView;
+			path = "Security Message";
 			sourceTree = "<group>";
 		};
-		76404F112576260400D14E0C /* AccountSecurityMessagesTableViewCell */ = {
+		76404F112576260400D14E0C /* Security Message */ = {
 			isa = PBXGroup;
 			children = (
 				76404F04257625F900D14E0C /* AccountSecurityMessagesTableViewCellDataProvider.swift */,
-				76404F05257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib */,
 				76404F08257625F900D14E0C /* AccountSecurityMessagesTableViewCell.swift */,
+				76404F05257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib */,
 			);
-			path = AccountSecurityMessagesTableViewCell;
+			path = "Security Message";
 			sourceTree = "<group>";
 		};
 		7644B5EF2563A6EA006778B2 /* Cell */ = {
@@ -1689,24 +1681,24 @@
 			path = AccessHistoryComponentView;
 			sourceTree = "<group>";
 		};
-		7668C7A2257678480024DDE4 /* AccountParametersHeader */ = {
+		7668C7A2257678480024DDE4 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				7668C7A32576785F0024DDE4 /* AccountParametersHeaderComponentView.xib */,
 				7668C7A62576785F0024DDE4 /* AccountParametersHeaderComponentViewModel.swift */,
 				7668C7A72576785F0024DDE4 /* AccountParametersHeaderComponentView.swift */,
+				7668C7A32576785F0024DDE4 /* AccountParametersHeaderComponentView.xib */,
 			);
-			path = AccountParametersHeader;
+			path = Header;
 			sourceTree = "<group>";
 		};
-		7668C7B1257678660024DDE4 /* AccountParametersHeader */ = {
+		7668C7B1257678660024DDE4 /* Header */ = {
 			isa = PBXGroup;
 			children = (
 				7668C7A42576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift */,
-				7668C7A52576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib */,
 				7668C7A82576785F0024DDE4 /* AccountParametersHeaderTableViewCell.swift */,
+				7668C7A52576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib */,
 			);
-			path = AccountParametersHeader;
+			path = Header;
 			sourceTree = "<group>";
 		};
 		7676E5622562E19200234026 /* View */ = {
@@ -1820,42 +1812,28 @@
 			path = GameLauncherGridComponentCell;
 			sourceTree = "<group>";
 		};
-		76BDF45625760425007B27A7 /* AccountParameters */ = {
+		76BDF465257604FB007B27A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C71B4B6B257EC4BB00538697 /* SecurityLevels */,
-				76404EEB257611D100D14E0C /* Model */,
-				76BDF4572576043A007B27A7 /* AccountParameters.storyboard */,
-				76BDF4582576043A007B27A7 /* AccountParametersNavigator.swift */,
-				76BDF4592576043A007B27A7 /* AccountParametersViewController.swift */,
-				76BDF45A2576043A007B27A7 /* AccountParametersViewControllerFactory.swift */,
-				76BDF45B2576043A007B27A7 /* AccountParametersViewModel.swift */,
-			);
-			path = AccountParameters;
-			sourceTree = "<group>";
-		};
-		76BDF465257604FB007B27A7 /* AccountParametersComponentView */ = {
-			isa = PBXGroup;
-			children = (
-				7668C7A2257678480024DDE4 /* AccountParametersHeader */,
-				76404EF2257624B200D14E0C /* AccountSecurityMessagesComponentView */,
-				76BDF46625760512007B27A7 /* AccountParametersComponentView.xib */,
+				7668C7A2257678480024DDE4 /* Header */,
+				76404EF2257624B200D14E0C /* Security Message */,
 				76BDF46925760512007B27A7 /* AccountParametersComponentViewModel.swift */,
 				76BDF46A25760512007B27A7 /* AccountParametersComponentView.swift */,
+				76BDF46625760512007B27A7 /* AccountParametersComponentView.xib */,
 			);
-			path = AccountParametersComponentView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		76BDF47425760519007B27A7 /* AccountParametersTableViewCell */ = {
+		76BDF47425760519007B27A7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7668C7B1257678660024DDE4 /* AccountParametersHeader */,
-				76404F112576260400D14E0C /* AccountSecurityMessagesTableViewCell */,
+				7668C7B1257678660024DDE4 /* Header */,
+				76404F112576260400D14E0C /* Security Message */,
 				76BDF46725760512007B27A7 /* AccountParametersTableViewCellDataProvider.swift */,
-				76BDF46825760512007B27A7 /* AccountParametersTableViewCell.xib */,
 				76BDF46B25760512007B27A7 /* AccountParametersTableViewCell.swift */,
+				76BDF46825760512007B27A7 /* AccountParametersTableViewCell.xib */,
 			);
-			path = AccountParametersTableViewCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		76DCF66E25B80EEC00150EE1 /* Cards */ = {
@@ -2028,17 +2006,12 @@
 			path = "Balance Management Operations";
 			sourceTree = "<group>";
 		};
-		C71B4B6B257EC4BB00538697 /* SecurityLevels */ = {
+		C71B4B6B257EC4BB00538697 /* Security Levels */ = {
 			isa = PBXGroup;
 			children = (
-				C7C973202580D8C60062C713 /* Cells */,
-				C71B4B70257EC57000538697 /* SecurityLevelsViewModel.swift */,
-				C71B4B6E257EC57000538697 /* SecurityLevelsViewController.swift */,
-				C71B4B6D257EC57000538697 /* SecurityLevelsNavigator.swift */,
-				C71B4B6F257EC57000538697 /* SecurityLevelsViewControllerFactory.swift */,
-				C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */,
+				C784C310266FB04D00D328D3 /* Presentation */,
 			);
-			path = SecurityLevels;
+			path = "Security Levels";
 			sourceTree = "<group>";
 		};
 		C71C2413265C09BA002071FF /* Shared */ = {
@@ -2536,6 +2509,8 @@
 		C784C238266E526F00D328D3 /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
+				C784C2FD266FAEF700D328D3 /* Parameters */,
+				C71B4B6B257EC4BB00538697 /* Security Levels */,
 			);
 			path = Parameters;
 			sourceTree = "<group>";
@@ -2851,6 +2826,98 @@
 				CEBB004A2608F61800D1B510 /* Grid View */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C784C2FA266FAEBC00D328D3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C784C311266FB0F000D328D3 /* Components */,
+				76404EEC2576120800D14E0C /* AccountParametersModel.swift */,
+				76BDF45B2576043A007B27A7 /* AccountParametersViewModel.swift */,
+				76BDF4592576043A007B27A7 /* AccountParametersViewController.swift */,
+				76BDF45A2576043A007B27A7 /* AccountParametersViewControllerFactory.swift */,
+				76BDF4582576043A007B27A7 /* AccountParametersNavigator.swift */,
+				76BDF4572576043A007B27A7 /* AccountParameters.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C784C2FD266FAEF700D328D3 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				C784C2FA266FAEBC00D328D3 /* Presentation */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		C784C303266FAF2300D328D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973262580D9550062C713 /* SecurityLevelComponentViewModel.swift */,
+				C7C973272580D9550062C713 /* SecurityLevelComponentView.swift */,
+				C7C973232580D9550062C713 /* SecurityLevelComponentView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C784C305266FAF3200D328D3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973242580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift */,
+				C7C973282580D9550062C713 /* SecurityLevelTableViewCell.swift */,
+				C7C973252580D9550062C713 /* SecurityLevelTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C784C306266FAF5700D328D3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973A52580EC990062C713 /* SecurityLevelTypeTableViewCellDataProvider.swift */,
+				C7C973A92580EC990062C713 /* SecurityLevelTypeTableViewCell.swift */,
+				C7C973A62580EC990062C713 /* SecurityLevelTypeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C784C307266FAF5C00D328D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973A72580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift */,
+				C7C973A82580EC990062C713 /* SecurityLevelTypeComponentView.swift */,
+				C7C973A42580EC990062C713 /* SecurityLevelTypeComponentView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C784C310266FB04D00D328D3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C7C973202580D8C60062C713 /* Components */,
+				C71B4B70257EC57000538697 /* SecurityLevelsViewModel.swift */,
+				C71B4B6E257EC57000538697 /* SecurityLevelsViewController.swift */,
+				C71B4B6F257EC57000538697 /* SecurityLevelsViewControllerFactory.swift */,
+				C71B4B6D257EC57000538697 /* SecurityLevelsNavigator.swift */,
+				C71B4B6C257EC57000538697 /* SecurityLevels.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C784C311266FB0F000D328D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C784C312266FB0FA00D328D3 /* Account Parameter */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C784C312266FB0FA00D328D3 /* Account Parameter */ = {
+			isa = PBXGroup;
+			children = (
+				76BDF465257604FB007B27A7 /* View */,
+				76BDF47425760519007B27A7 /* Cell */,
+			);
+			path = "Account Parameter";
 			sourceTree = "<group>";
 		};
 		C78FD440260A672C004E766E /* Amount Formatter */ = {
@@ -3198,24 +3265,20 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		C7C973202580D8C60062C713 /* Cells */ = {
+		C7C973202580D8C60062C713 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				C7C973222580D8E80062C713 /* Level */,
 				C7C973212580D8CE0062C713 /* Type */,
 			);
-			path = Cells;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C7C973212580D8CE0062C713 /* Type */ = {
 			isa = PBXGroup;
 			children = (
-				C7C973A72580EC990062C713 /* SecurityLevelTypeComponentViewModel.swift */,
-				C7C973A82580EC990062C713 /* SecurityLevelTypeComponentView.swift */,
-				C7C973A42580EC990062C713 /* SecurityLevelTypeComponentView.xib */,
-				C7C973A52580EC990062C713 /* SecurityLevelTypeTableViewCellDataProvider.swift */,
-				C7C973A92580EC990062C713 /* SecurityLevelTypeTableViewCell.swift */,
-				C7C973A62580EC990062C713 /* SecurityLevelTypeTableViewCell.xib */,
+				C784C307266FAF5C00D328D3 /* View */,
+				C784C306266FAF5700D328D3 /* Cell */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -3223,12 +3286,8 @@
 		C7C973222580D8E80062C713 /* Level */ = {
 			isa = PBXGroup;
 			children = (
-				C7C973262580D9550062C713 /* SecurityLevelComponentViewModel.swift */,
-				C7C973272580D9550062C713 /* SecurityLevelComponentView.swift */,
-				C7C973232580D9550062C713 /* SecurityLevelComponentView.xib */,
-				C7C973242580D9550062C713 /* SecurityLevelTableViewCellDataProvider.swift */,
-				C7C973282580D9550062C713 /* SecurityLevelTableViewCell.swift */,
-				C7C973252580D9550062C713 /* SecurityLevelTableViewCell.xib */,
+				C784C303266FAF2300D328D3 /* View */,
+				C784C305266FAF3200D328D3 /* Cell */,
 			);
 			path = Level;
 			sourceTree = "<group>";
@@ -3940,7 +3999,6 @@
 			isa = PBXGroup;
 			children = (
 				CE679FD62578332200F2EC1C /* CardsManagement */,
-				76BDF45625760425007B27A7 /* AccountParameters */,
 				C7BABFC725657966004E733E /* P2PTransfer */,
 			);
 			path = Profile;
@@ -4871,7 +4929,6 @@
 				CE4A30CC2611E4EC0039C078 /* SuggestedAmountComponentView */,
 				761D993F257F7EDC002BCDB6 /* DateHeaderComponentView */,
 				7665D985257F4C5000E5B35F /* AccessHistoryComponentView */,
-				76BDF465257604FB007B27A7 /* AccountParametersComponentView */,
 				D83ED2F0244C8C860037DDEB /* CircularImageView.swift */,
 				D894CEBA24BE32FA00FE143D /* GamesListLoader.swift */,
 				D894CEB824BE2AD700FE143D /* ShimmerView.swift */,
@@ -5259,7 +5316,6 @@
 				CE4A30DD2611E54A0039C078 /* SuggestedAmountCollectionViewCell */,
 				761D9940257F7EF9002BCDB6 /* DateHeaderTableViewCell */,
 				7665D974257F4BF700E5B35F /* AccessHistoryTableViewCell */,
-				76BDF47425760519007B27A7 /* AccountParametersTableViewCell */,
 				CE95FC1B252DF32A003E539B /* FooterTableViewCell */,
 				D8212F062485847300B74AB9 /* LoadingCollectionViewCell */,
 				765EDFD225BAE08300089B49 /* EditableCell.swift */,
