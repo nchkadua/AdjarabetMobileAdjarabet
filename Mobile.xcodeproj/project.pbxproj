@@ -5047,9 +5047,9 @@
 		D8A47DCD24335B4B0077AA8E /* Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				D8A47DE624335DC60077AA8E /* App */,
 				C71C2416265C09C3002071FF /* Scenes */,
 				C71C2413265C09BA002071FF /* Shared */,
+				D8A47DE624335DC60077AA8E /* App */,
 				D85C9C1424336BA600F1D4FE /* Mobile.entitlements */,
 			);
 			path = Mobile;
