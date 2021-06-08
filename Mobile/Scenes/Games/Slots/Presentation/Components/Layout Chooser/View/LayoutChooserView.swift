@@ -63,6 +63,8 @@ class LayoutChooserView: UIView, Xibable {
             listLayoutButton.setImage(Layout.list.activeImage, for: .normal)
             gridLayoutButton.setImage(Layout.grid.inactiveImage, for: .normal)
             viewModel.listLayoutTapped()
+
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
         }
     }
 
@@ -72,6 +74,8 @@ class LayoutChooserView: UIView, Xibable {
             gridLayoutButton.setImage(Layout.grid.activeImage, for: .normal)
             listLayoutButton.setImage(Layout.list.inactiveImage, for: .normal)
             viewModel.gridLayoutTapped()
+
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
         }
     }
 }

@@ -52,10 +52,12 @@ public class FloatingTabBarManager: NSObject, UIScrollViewDelegate {
     }
 
     public func hideFloatingTabBar() {
-        viewController?.mainTabBarViewController?.hideFloatingTabBar()
+        return  // Floating tab bar removed
+        // viewController?.mainTabBarViewController?.hideFloatingTabBar()
     }
 
     public func showFloatingTabBar() {
-        viewController?.mainTabBarViewController?.showFloatingTabBar()
+        return  // Floating tab bar removed
+        // viewController?.mainTabBarViewController?.showFloatingTabBar()
     }
 }

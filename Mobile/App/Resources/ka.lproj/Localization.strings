@@ -8,6 +8,12 @@
 
 /* Shared */
 
+/* Main Tab Bar */
+"slots_item_title" = "სლოტები";
+"bonuses_item_title" = "ბონუსები";
+"promos_item_title" = "პრომოები";
+"news_item_title" = "სიახლეები";
+
 // ABError
 "shared_aberror_default_description" = "დაფიქსირდა შეცდომა";
 "shared_aberror_wrong_auth_credentials_description" = "არასწორი ავტორიზაციის მონაცემები";

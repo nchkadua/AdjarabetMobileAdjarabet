@@ -8,6 +8,12 @@
 
 /* Shared */
 
+/* Main Tab Bar */
+"slots_item_title" = "Slots";
+"bonuses_item_title" = "Bonuses";
+"promos_item_title" = "Promotions";
+"news_item_title" = "News";
+
 // ABError
 "shared_aberror_default_description" = "something went wrong";
 "shared_aberror_wrong_auth_credentials_description" = "wrong authentication credentials";

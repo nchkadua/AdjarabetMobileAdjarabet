@@ -30,10 +30,10 @@ public class MainTabBarNavigator: Navigator {
         let promotions = promotionsVCFactory.make()
         let notifications = notificationsVCFacotry.make()
 
-        home.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.home(), selectedImage: nil)
-        bonus.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.bonus(), selectedImage: nil)
-        promotions.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.promotions(), selectedImage: nil)
-        notifications.tabBarItem = UITabBarItem(title: nil, image: R.image.tabBar.notification(), selectedImage: nil)
+        home.tabBarItem = UITabBarItem(title: R.string.localization.slots_item_title.localized(), image: R.image.tabBar.home(), selectedImage: nil)
+        bonus.tabBarItem = UITabBarItem(title: R.string.localization.bonuses_item_title.localized(), image: R.image.tabBar.bonus(), selectedImage: nil)
+        promotions.tabBarItem = UITabBarItem(title: R.string.localization.promos_item_title.localized(), image: R.image.tabBar.promotions(), selectedImage: nil)
+        notifications.tabBarItem = UITabBarItem(title: R.string.localization.news_item_title.localized(), image: R.image.tabBar.notification(), selectedImage: nil)
         return [home, bonus, promotions, notifications].map { $0.wrap(in: ABNavigationController.self) }
     }
 }
