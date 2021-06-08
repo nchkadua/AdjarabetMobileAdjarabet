@@ -1575,19 +1575,8 @@
 		76404EF2257624B200D14E0C /* Security Message */ = {
 			isa = PBXGroup;
 			children = (
-				76404F06257625F900D14E0C /* AccountSecurityMessagesComponentViewModel.swift */,
-				76404F07257625F900D14E0C /* AccountSecurityMessagesComponentView.swift */,
-				76404F03257625F900D14E0C /* AccountSecurityMessagesComponentView.xib */,
-			);
-			path = "Security Message";
-			sourceTree = "<group>";
-		};
-		76404F112576260400D14E0C /* Security Message */ = {
-			isa = PBXGroup;
-			children = (
-				76404F04257625F900D14E0C /* AccountSecurityMessagesTableViewCellDataProvider.swift */,
-				76404F08257625F900D14E0C /* AccountSecurityMessagesTableViewCell.swift */,
-				76404F05257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib */,
+				C784C366267001B800D328D3 /* View */,
+				C784C367267001C000D328D3 /* Cell */,
 			);
 			path = "Security Message";
 			sourceTree = "<group>";
@@ -1655,19 +1644,8 @@
 		7668C7A2257678480024DDE4 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				7668C7A62576785F0024DDE4 /* AccountParametersHeaderComponentViewModel.swift */,
-				7668C7A72576785F0024DDE4 /* AccountParametersHeaderComponentView.swift */,
-				7668C7A32576785F0024DDE4 /* AccountParametersHeaderComponentView.xib */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		7668C7B1257678660024DDE4 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				7668C7A42576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift */,
-				7668C7A82576785F0024DDE4 /* AccountParametersHeaderTableViewCell.swift */,
-				7668C7A52576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib */,
+				C784C3642670019800D328D3 /* View */,
+				C784C365267001A300D328D3 /* Cell */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -1682,24 +1660,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7682CF8925B857F500717090 /* Add Card */ = {
+		7682CF8925B857F500717090 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7682CF8A25B8581600717090 /* AddMyCardComponentView.xib */,
 				7682CF8D25B8581600717090 /* AddMyCardComponentViewModel.swift */,
 				7682CF8E25B8581600717090 /* AddMyCardComponentView.swift */,
+				7682CF8A25B8581600717090 /* AddMyCardComponentView.xib */,
 			);
-			path = "Add Card";
+			path = View;
 			sourceTree = "<group>";
 		};
-		7682CF9825B8585300717090 /* Add My Card */ = {
+		7682CF9825B8585300717090 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				7682CF8B25B8581600717090 /* AddMyCardTableViewCellDataProvider.swift */,
-				7682CF8C25B8581600717090 /* AddMyCardTableViewCell.xib */,
 				7682CF8F25B8581600717090 /* AddMyCardTableViewCell.swift */,
+				7682CF8C25B8581600717090 /* AddMyCardTableViewCell.xib */,
 			);
-			path = "Add My Card";
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7690D6B025BFFB8D002A257A /* Domain */ = {
@@ -1770,8 +1748,6 @@
 		76BDF465257604FB007B27A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7668C7A2257678480024DDE4 /* Header */,
-				76404EF2257624B200D14E0C /* Security Message */,
 				76BDF46925760512007B27A7 /* AccountParametersComponentViewModel.swift */,
 				76BDF46A25760512007B27A7 /* AccountParametersComponentView.swift */,
 				76BDF46625760512007B27A7 /* AccountParametersComponentView.xib */,
@@ -1782,8 +1758,6 @@
 		76BDF47425760519007B27A7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7668C7B1257678660024DDE4 /* Header */,
-				76404F112576260400D14E0C /* Security Message */,
 				76BDF46725760512007B27A7 /* AccountParametersTableViewCellDataProvider.swift */,
 				76BDF46B25760512007B27A7 /* AccountParametersTableViewCell.swift */,
 				76BDF46825760512007B27A7 /* AccountParametersTableViewCell.xib */,
@@ -1814,8 +1788,6 @@
 		76DCF6A825B825FC00150EE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76E43ED425B952B6007B2D97 /* Video Card */,
-				7682CF8925B857F500717090 /* Add Card */,
 				76DCF6AC25B8262300150EE1 /* MyCardComponentViewModel.swift */,
 				76DCF6AD25B8262300150EE1 /* MyCardComponentView.swift */,
 				76DCF6A925B8262300150EE1 /* MyCardComponentView.xib */,
@@ -1826,8 +1798,6 @@
 		76DCF6B925B8267900150EE1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				76E43EE325B9530F007B2D97 /* Video Card */,
-				7682CF9825B8585300717090 /* Add My Card */,
 				76DCF6AA25B8262300150EE1 /* MyCardTableViewCellDataProvider.swift */,
 				76DCF6AE25B8262300150EE1 /* MyCardTableViewCell.swift */,
 				76DCF6AB25B8262300150EE1 /* MyCardTableViewCell.xib */,
@@ -1835,24 +1805,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		76E43ED425B952B6007B2D97 /* Video Card */ = {
+		76E43ED425B952B6007B2D97 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76E43ED525B95303007B2D97 /* VideoCardComponentView.xib */,
 				76E43ED825B95303007B2D97 /* VideoCardComponentViewModel.swift */,
 				76E43ED925B95303007B2D97 /* VideoCardComponentView.swift */,
+				76E43ED525B95303007B2D97 /* VideoCardComponentView.xib */,
 			);
-			path = "Video Card";
+			path = View;
 			sourceTree = "<group>";
 		};
-		76E43EE325B9530F007B2D97 /* Video Card */ = {
+		76E43EE325B9530F007B2D97 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				76E43ED625B95303007B2D97 /* VideoCardTableViewCellDataProvider.swift */,
-				76E43ED725B95303007B2D97 /* VideoCardTableViewCell.xib */,
 				76E43EDA25B95303007B2D97 /* VideoCardTableViewCell.swift */,
+				76E43ED725B95303007B2D97 /* VideoCardTableViewCell.xib */,
 			);
-			path = "Video Card";
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		76EFF7BD2582380900898819 /* Calendar */ = {
@@ -2190,6 +2160,8 @@
 			isa = PBXGroup;
 			children = (
 				C784C2E3266FAC1B00D328D3 /* Card */,
+				C784C36A2670027D00D328D3 /* Add Card */,
+				C784C36D2670029F00D328D3 /* Video Card */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2493,18 +2465,10 @@
 		C784C24E266E56C700D328D3 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				C784C24F266E56DA00D328D3 /* Core */,
-			);
-			path = Implementation;
-			sourceTree = "<group>";
-		};
-		C784C24F266E56DA00D328D3 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				C7EF9F3E257078F600D2908C /* Entities */,
+				C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */,
 				C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */,
 			);
-			path = Core;
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		C784C25E266E5B6100D328D3 /* Entities */ = {
@@ -2864,6 +2828,8 @@
 		C784C311266FB0F000D328D3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7668C7A2257678480024DDE4 /* Header */,
+				76404EF2257624B200D14E0C /* Security Message */,
 				C784C312266FB0FA00D328D3 /* Account Parameter */,
 			);
 			path = Components;
@@ -2953,7 +2919,7 @@
 		C784C342266FED8E00D328D3 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				C784C345266FEDEB00D328D3 /* Entities */,
+				76EBDB42257E426200C8DC6A /* AccessListEntity.swift */,
 				76EBDB38257E417D00C8DC6A /* AccessListRepository.swift */,
 			);
 			path = Protocol;
@@ -2962,26 +2928,10 @@
 		C784C343266FED9600D328D3 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				C784C344266FEDDC00D328D3 /* Entities */,
+				76EBDB37257E417D00C8DC6A /* GetAccessListResponse.swift */,
 				76EBDB39257E417D00C8DC6A /* CoreApiAccessListRepository.swift */,
 			);
 			path = Implementation;
-			sourceTree = "<group>";
-		};
-		C784C344266FEDDC00D328D3 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				76EBDB37257E417D00C8DC6A /* GetAccessListResponse.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		C784C345266FEDEB00D328D3 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				76EBDB42257E426200C8DC6A /* AccessListEntity.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		C784C348266FEEF200D328D3 /* Suggested Amount */ = {
@@ -3049,6 +2999,82 @@
 				CE95FC1B252DF32A003E539B /* Cell */,
 			);
 			path = Footer;
+			sourceTree = "<group>";
+		};
+		C784C3632670012700D328D3 /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D7A73266A5FD300719120 /* Protocol */,
+				CE5D7A74266A5FD800719120 /* Implementation */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
+		C784C3642670019800D328D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7668C7A62576785F0024DDE4 /* AccountParametersHeaderComponentViewModel.swift */,
+				7668C7A72576785F0024DDE4 /* AccountParametersHeaderComponentView.swift */,
+				7668C7A32576785F0024DDE4 /* AccountParametersHeaderComponentView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C784C365267001A300D328D3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7668C7A42576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift */,
+				7668C7A82576785F0024DDE4 /* AccountParametersHeaderTableViewCell.swift */,
+				7668C7A52576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C784C366267001B800D328D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76404F06257625F900D14E0C /* AccountSecurityMessagesComponentViewModel.swift */,
+				76404F07257625F900D14E0C /* AccountSecurityMessagesComponentView.swift */,
+				76404F03257625F900D14E0C /* AccountSecurityMessagesComponentView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C784C367267001C000D328D3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				76404F04257625F900D14E0C /* AccountSecurityMessagesTableViewCellDataProvider.swift */,
+				76404F08257625F900D14E0C /* AccountSecurityMessagesTableViewCell.swift */,
+				76404F05257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C784C36A2670027D00D328D3 /* Add Card */ = {
+			isa = PBXGroup;
+			children = (
+				7682CF8925B857F500717090 /* View */,
+				7682CF9825B8585300717090 /* Cell */,
+			);
+			path = "Add Card";
+			sourceTree = "<group>";
+		};
+		C784C36D2670029F00D328D3 /* Video Card */ = {
+			isa = PBXGroup;
+			children = (
+				76E43ED425B952B6007B2D97 /* View */,
+				76E43EE325B9530F007B2D97 /* Cell */,
+			);
+			path = "Video Card";
+			sourceTree = "<group>";
+		};
+		C784C3742670031300D328D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB06A257914F60024D213 /* Agreement */,
+				CE29FC362578F12800402D0D /* Min Amount */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C78FD440260A672C004E766E /* Amount Formatter */ = {
@@ -3487,14 +3513,6 @@
 			path = "User Info";
 			sourceTree = "<group>";
 		};
-		C7EF9F3E257078F600D2908C /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		CE03746825F8D6F00061F507 /* WebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3538,25 +3556,24 @@
 		CE29FC302578EB7700402D0D /* Add Card */ = {
 			isa = PBXGroup;
 			children = (
-				CEBBB06A257914F60024D213 /* Agreement */,
-				CE29FC362578F12800402D0D /* MinAmount */,
-				CE679FD72578334B00F2EC1C /* AddCard.storyboard */,
-				CE679FD82578334B00F2EC1C /* AddCardNavigator.swift */,
+				C784C3742670031300D328D3 /* Components */,
+				CE679FDB2578334B00F2EC1C /* AddCardViewModel.swift */,
 				CE679FD92578334B00F2EC1C /* AddCardViewController.swift */,
 				CE679FDA2578334B00F2EC1C /* AddCardViewControllerFactory.swift */,
-				CE679FDB2578334B00F2EC1C /* AddCardViewModel.swift */,
+				CE679FD82578334B00F2EC1C /* AddCardNavigator.swift */,
+				CE679FD72578334B00F2EC1C /* AddCard.storyboard */,
 			);
 			path = "Add Card";
 			sourceTree = "<group>";
 		};
-		CE29FC362578F12800402D0D /* MinAmount */ = {
+		CE29FC362578F12800402D0D /* Min Amount */ = {
 			isa = PBXGroup;
 			children = (
-				CE29FC3F2578F14D00402D0D /* MinAmountComponentView.swift */,
 				CE29FC3B2578F14700402D0D /* MinAmountComponentViewModel.swift */,
+				CE29FC3F2578F14D00402D0D /* MinAmountComponentView.swift */,
 				CE29FC372578F13E00402D0D /* MinAmountComponentView.xib */,
 			);
-			path = MinAmount;
+			path = "Min Amount";
 			sourceTree = "<group>";
 		};
 		CE2AB425266A2D6600C88262 /* Login */ = {
@@ -3632,8 +3649,8 @@
 			isa = PBXGroup;
 			children = (
 				D885E75624714E0D007D85D3 /* LoginUseCase.swift */,
-				CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */,
 				D821425E24C45ACE00F9895B /* BiometricLoginUseCase.swift */,
+				CE64EAAA25DD466D00438974 /* LogoutUseCase.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -3796,8 +3813,8 @@
 		CE2AB4A9266A495100C88262 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */,
 				CE4A3154261732920039C078 /* NotificationDTO.swift */,
+				CE0D8E91262469DD0056F8E7 /* NotificationStatusUpdateMessageDTO.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -3830,7 +3847,8 @@
 		CE2AB4AF266A51DD00C88262 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				CE2AB4B1266A521E00C88262 /* Mobile */,
+				CE2AB4A9266A495100C88262 /* Entities */,
+				CE2AB4B2266A523A00C88262 /* MobileApiNotificationsRepository.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -3844,20 +3862,11 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		CE2AB4B1266A521E00C88262 /* Mobile */ = {
-			isa = PBXGroup;
-			children = (
-				CE2AB4A9266A495100C88262 /* Entities */,
-				CE2AB4B2266A523A00C88262 /* MobileApiNotificationsRepository.swift */,
-			);
-			path = Mobile;
-			sourceTree = "<group>";
-		};
 		CE2AB4B8266A526800C88262 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */,
 				CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */,
+				CE0D8E8B2624686F0056F8E7 /* NotificationStatusUpdateMessageEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -4137,8 +4146,7 @@
 		CE5D7A71266A5FA600719120 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A73266A5FD300719120 /* Protocol */,
-				CE5D7A74266A5FD800719120 /* Implementation */,
+				C784C3632670012700D328D3 /* Transaction History */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -4154,7 +4162,7 @@
 		CE5D7A73266A5FD300719120 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A7D266A609A00719120 /* Entities */,
+				76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */,
 				76BDF43A257543AF007B27A7 /* TransactionHistoryRepository.swift */,
 			);
 			path = Protocol;
@@ -4163,34 +4171,10 @@
 		CE5D7A74266A5FD800719120 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D7A81266A60DD00719120 /* Core */,
-			);
-			path = Implementation;
-			sourceTree = "<group>";
-		};
-		CE5D7A7D266A609A00719120 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				76BDF44725755D0A007B27A7 /* TransactionHistoryEntity.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		CE5D7A81266A60DD00719120 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				CE5D7A82266A60E800719120 /* Entities */,
+				76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */,
 				76BDF440257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift */,
 			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		CE5D7A82266A60E800719120 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				76BDF42525752D0F007B27A7 /* GetUserTransactionsResponse.swift */,
-			);
-			name = Entities;
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		CE5D7A85266A61EB00719120 /* Account Information */ = {
@@ -4571,8 +4555,8 @@
 		CEBBB06A257914F60024D213 /* Agreement */ = {
 			isa = PBXGroup;
 			children = (
-				CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */,
 				CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */,
+				CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */,
 				CEBBB06F257915100024D213 /* AgreementComponentView.xib */,
 			);
 			path = Agreement;
