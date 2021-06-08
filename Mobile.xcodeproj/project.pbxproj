@@ -1753,13 +1753,6 @@
 			path = AccountParametersHeader;
 			sourceTree = "<group>";
 		};
-		7676E54A2562852800234026 /* Transactions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Transactions;
-			sourceTree = "<group>";
-		};
 		7676E5622562E19200234026 /* TransactionHistoryComponentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4736,7 +4729,6 @@
 				CE4A31092614788A0039C078 /* Main */,
 				CE03746825F8D6F00061F507 /* WebViewController */,
 				7665D959257E5C8100E5B35F /* AccessHistory */,
-				7676E54A2562852800234026 /* Transactions */,
 				D8C73F7D2445A62D004C96DB /* Home */,
 				D845BFBA2445FD7400419A2C /* Sports */,
 				CE55ECF425265B7D003E168F /* Profile */,
