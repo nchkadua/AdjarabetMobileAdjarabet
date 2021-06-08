@@ -135,7 +135,7 @@ public class OTPViewController: ABViewController {
         smsCodeInputView.addSubview(smsCodeTextField)
         smsCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
-        smsCodeInputView.configureForNumberOfItems(6)
+        smsCodeInputView.configureForNumberOfItems(4)
         smsCodeInputView.roundCorners(.allCorners, radius: 6)
     }
 

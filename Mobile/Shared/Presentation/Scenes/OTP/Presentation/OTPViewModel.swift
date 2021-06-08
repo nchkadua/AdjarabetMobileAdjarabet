@@ -69,7 +69,7 @@ public class DefaultOTPViewModel {
     public var params: OTPViewModelParams
     private let actionSubject = PublishSubject<OTPViewModelOutputAction>()
     private let routeSubject = PublishSubject<OTPViewModelRoute>()
-    private let smsCodeLength = 6
+    private let smsCodeLength = 4
 
     @Inject(from: .useCases) private var OTPUseCase: OTPUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
