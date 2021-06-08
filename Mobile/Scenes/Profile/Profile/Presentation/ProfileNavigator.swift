@@ -14,7 +14,6 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var withdrawViewControllerFactory: WithdrawViewControllerFactory
     @Inject(from: .factories) public var transactionHistoryViewControllerFactory: TransactionsViewControllerFactory
     @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
-    @Inject(from: .factories) public var p2pTrasferViewControllerFactory: P2PTransferViewControllerFactory
     @Inject(from: .factories) public var accountParametersViewControllerFactory: AccountParametersViewControllerFactory
     @Inject(from: .factories) public var myCardsViewControllerFactory: MyCardsViewControllerFactory
 
@@ -29,7 +28,6 @@ public class ProfileNavigator: Navigator {
         case myCards
         case myBonuses
         case biometryParameters
-        case transferToFriend
         case incognitoCard
         case accountInformation
         case accountParameters
@@ -43,7 +41,6 @@ public class ProfileNavigator: Navigator {
         case .transactionHistory: navigateToTransactionHistory(animate: animate)
         case .myCards: navigateToMyCards(animate: animate)
         case .biometryParameters: navigateToBiometricSettings(animate: animate)
-        case .transferToFriend: navigateToP2PTransfer(animate: animate)
         case .accountInformation: navigateToAccountInformation(animate: animate)
         case .accountParameters: navigateToAccountParameters(animate: animate)
         case .loginPage: navigateToLogin(animate: animate)
@@ -80,11 +77,6 @@ public class ProfileNavigator: Navigator {
 
     private func navigateToBiometricSettings(animate: Bool) {
         let vc = biometricSettingsViewControllerFactory.make()
-        viewController?.navigationController?.present(vc, animated: animate, completion: nil)
-    }
-
-    private func navigateToP2PTransfer(animate: Bool) {
-        let vc = p2pTrasferViewControllerFactory.make()
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 
