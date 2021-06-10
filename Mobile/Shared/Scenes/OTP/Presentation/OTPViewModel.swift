@@ -137,6 +137,9 @@ extension DefaultOTPViewModel: OTPViewModel {
         }
     }
 
+    private func getActionOTP() {
+    }
+
     public func login(code: String) {
         actionSubject.onNext(.setLoginButton(isLoading: true))
 
@@ -154,4 +157,9 @@ extension DefaultOTPViewModel: OTPViewModel {
             }
         }
     }
+}
+
+public enum OTPType {
+    case loginOTP
+    case actionOTP
 }

@@ -31,6 +31,7 @@ public enum PasswordChangeViewModelRoute {
 
 public class DefaultPasswordChangeViewModel {
     @Inject(from: .repositories) private var repo: IsOTPEnabledRepository
+    @Inject(from: .repositories) private var actionTOPRepo: ActionOTPRepository
     private let actionSubject = PublishSubject<PasswordChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<PasswordChangeViewModelRoute>()
 }
@@ -42,10 +43,19 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     public func viewDidLoad() {
         repo.isEnabled { result in
             switch result {
-            case .success(let isEnabled):
-                print("IsOTPEnabledRepository.Success:", isEnabled)
+            case .success:
+                self.getActionOtp()
             case .failure(let error):
                 self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            }
+        }
+    }
+
+    private func getActionOtp() {
+        actionTOPRepo.actionOTP { result in
+            switch result {
+            case .success: print("success")
+            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
     }

@@ -109,6 +109,7 @@ public extension DependencyContainer {
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }
         Module { CoreApiPaymentAccountRepository() as PaymentAccountPagingableRepository }
         Module { CoreApiIsOTPEnabledRepository() as IsOTPEnabledRepository }
+        Module { CoreApiActionOTPRepository() as ActionOTPRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
         Module { DefaultNotificationsRepository() as NotificationsRepository }
