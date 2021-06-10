@@ -40,12 +40,22 @@ public class PasswordChangeViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: PasswordChangeViewModelOutputAction) {
         switch action {
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
         case .showMessage(let message): showAlert(title: message)
+        }
+    }
+
+    private func didRecive(route: PasswordChangeViewModelRoute) {
+        switch route {
+        case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         }
     }
 

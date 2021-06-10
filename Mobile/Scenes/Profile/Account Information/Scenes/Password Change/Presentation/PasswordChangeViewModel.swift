@@ -27,9 +27,10 @@ public enum PasswordChangeViewModelOutputAction {
 }
 
 public enum PasswordChangeViewModelRoute {
+    case openOTP(params: OTPViewModelParams)
 }
 
-public class DefaultPasswordChangeViewModel {
+public class DefaultPasswordChangeViewModel: DefaultBaseViewModel {
     @Inject(from: .repositories) private var repo: IsOTPEnabledRepository
     @Inject(from: .repositories) private var actionTOPRepo: ActionOTPRepository
     private let actionSubject = PublishSubject<PasswordChangeViewModelOutputAction>()
@@ -51,16 +52,39 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
         }
     }
 
+    public func newPasswordDidChange(to newPassword: String) {
+        actionSubject.onNext(.updateRulesWithNewPassword(newPassword))
+    }
+
     private func getActionOtp() {
         actionTOPRepo.actionOTP { result in
             switch result {
-            case .success: print("success")
+            case .success: self.openOTP("")
             case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
     }
 
-    public func newPasswordDidChange(to newPassword: String) {
-        actionSubject.onNext(.updateRulesWithNewPassword(newPassword))
+    private func openOTP(_ username: String) {
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username, getOtp: false)
+        routeSubject.onNext(.openOTP(params: otpParams))
+        subscribeTo(otpParams)
+    }
+
+    private func subscribeTo(_ params: OTPViewModelParams) {
+        params.paramsOutputAction.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: OTPViewModelParams.Action) {
+        switch action {
+        case .success(let code): handleSuccessfulOTP(code)
+        case .error: self.actionSubject.onNext(.showMessage(message: "Invalid OTP"))
+        }
+    }
+
+    private func handleSuccessfulOTP(_ otp: String) {
+        print("asdasdasdasds ", otp)
     }
 }

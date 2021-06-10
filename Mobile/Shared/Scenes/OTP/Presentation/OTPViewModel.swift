@@ -13,7 +13,7 @@ public protocol OTPViewModel: OTPViewModelInput, OTPViewModelOutput {
 
 public struct OTPViewModelParams {
     public enum Action {
-        case success
+        case success(otp: String)
         case error
     }
     public let paramsOutputAction = PublishSubject<Action>()
@@ -150,7 +150,7 @@ extension DefaultOTPViewModel: OTPViewModel {
             case .success:
                 self?.routeSubject.onNext(.showSuccessMessage)
                 self?.routeSubject.onNext(.openMainTabBar)
-                self?.params.paramsOutputAction.onNext(.success)
+                self?.params.paramsOutputAction.onNext(.success(otp: code))
             case .failure(let error):
                 self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
                 self?.params.paramsOutputAction.onNext(.error)
