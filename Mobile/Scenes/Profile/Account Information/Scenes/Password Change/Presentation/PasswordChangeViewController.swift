@@ -45,6 +45,7 @@ public class PasswordChangeViewController: ABViewController {
     private func didRecive(action: PasswordChangeViewModelOutputAction) {
         switch action {
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
+        case .showMessage(let message): showAlert(title: message)
         }
     }
 

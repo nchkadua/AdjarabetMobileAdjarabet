@@ -23,6 +23,7 @@ public protocol PasswordChangeViewModelOutput {
 
 public enum PasswordChangeViewModelOutputAction {
     case updateRulesWithNewPassword(_ password: String)
+    case showMessage(message: String)
 }
 
 public enum PasswordChangeViewModelRoute {
@@ -44,7 +45,7 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
             case .success(let isEnabled):
                 print("IsOTPEnabledRepository.Success:", isEnabled)
             case .failure(let error):
-                print("IsOTPEnabledRepository.Failure:", error)
+                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
     }
