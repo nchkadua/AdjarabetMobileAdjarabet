@@ -14,5 +14,5 @@ protocol PasswordChangeRepository {
 struct PasswordChangeParams {
     let oldPassword: String
     let newPassword: String
-    let otp: Int? = nil
+    let otp: Int
 }

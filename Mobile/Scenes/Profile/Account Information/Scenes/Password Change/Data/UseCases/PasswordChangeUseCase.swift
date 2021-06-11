@@ -10,7 +10,7 @@ import Foundation
 
 protocol PasswordChangeUseCase {
     typealias PasswordChangeHandler = (Result<PasswordChangeEntity, Error>) -> Void
-    func change(oldPassword: String, newPassword: String, handler: @escaping PasswordChangeHandler)
+    func change(oldPassword: String, newPassword: String, otp: Int, handler: @escaping PasswordChangeHandler)
 }
 
 struct DefaultPasswordChangeUseCase: PasswordChangeUseCase {
@@ -18,8 +18,8 @@ struct DefaultPasswordChangeUseCase: PasswordChangeUseCase {
     @Inject private var userSession: UserSessionServices
     @Inject private var userSessionReadable: UserSessionReadableServices
 
-    func change(oldPassword: String, newPassword: String, handler: @escaping PasswordChangeHandler) {
-        repo.change(params: .init(oldPassword: oldPassword, newPassword: newPassword)) { result in
+    func change(oldPassword: String, newPassword: String, otp: Int, handler: @escaping PasswordChangeHandler) {
+        repo.change(params: .init(oldPassword: oldPassword, newPassword: newPassword, otp: otp)) { result in
             switch result {
             case .success(let entity):
                 save(password: newPassword)

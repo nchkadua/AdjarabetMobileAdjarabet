@@ -28,8 +28,8 @@ extension CoreApiPasswordChangeRepository: PasswordChangeRepository {
             .setBody(key: .oldPassword, value: params.oldPassword)
             .setBody(key: .newPassword, value: params.newPassword)
 
-        if let otp = params.otp {
-            request = request.setBody(key: .otp, value: String(otp))
+        if params.otp > -1 {
+            request = request.setBody(key: .otp, value: String(params.otp))
         }
 
         performTask(expecting: PasswordChangeDTO.self, completion: handler) { _ in

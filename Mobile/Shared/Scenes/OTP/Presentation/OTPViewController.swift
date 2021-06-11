@@ -73,8 +73,15 @@ public class OTPViewController: ABViewController {
     private func didRecive(route: OTPViewModelRoute) {
         switch route {
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
+        case .dismiss: dismiss(animated: true, completion: nil)
         default:
             break
+        }
+    }
+
+    private func dismissViewController() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
@@ -183,7 +190,7 @@ public class OTPViewController: ABViewController {
         guard let code = smsCodeTextField.text else {return}
 
         closeKeyboard()
-        viewModel.login(code: code)
+        viewModel.accept(code: code)
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {

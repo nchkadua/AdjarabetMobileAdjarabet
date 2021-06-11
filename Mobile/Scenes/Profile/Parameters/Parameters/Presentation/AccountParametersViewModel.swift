@@ -127,7 +127,7 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
     }
 
     private func goToHighSecurity() {
-        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.high_security_page_title.localized(), buttonTitle: R.string.localization.high_security_button_on(), showDismissButton: false, username: "")
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.high_security_page_title.localized(), buttonTitle: R.string.localization.high_security_button_on(), showDismissButton: false, username: "", otpType: .actionOTP)
         routeSubject.onNext(.openOTP(params: otpParams))
         subscribeTo(otpParams)
     }

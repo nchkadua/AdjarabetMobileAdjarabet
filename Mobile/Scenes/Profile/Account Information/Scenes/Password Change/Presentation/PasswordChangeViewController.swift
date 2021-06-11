@@ -142,7 +142,7 @@ public class PasswordChangeViewController: ABViewController {
         }
 
         if let oldPassword = oldPasswordInputView.text, let newPassword = newPasswordInputView.text {
-            viewModel.changePassword(oldPassword, newPassword: newPassword)
+            viewModel.changeDidTap(oldPassword, newPassword: newPassword)
         }
     }
 
