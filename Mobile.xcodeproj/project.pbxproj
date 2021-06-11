@@ -4854,7 +4854,7 @@
 		CEF52C8D26721D1300D2386C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				CEF52C8F26721D3200D2386C /* Entities */,
+				CEF52C9126721D4D00D2386C /* ActionOTPEntity.swift */,
 				CEF52C9926721D7800D2386C /* ActionOTPRepository.swift */,
 			);
 			path = Protocol;
@@ -4863,26 +4863,10 @@
 		CEF52C8E26721D1900D2386C /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				CEF52C9026721D3700D2386C /* Entities */,
+				CEF52C9526721D6100D2386C /* ActionOTPDTO.swift */,
 				CEF52C9D26721D9600D2386C /* CoreApiActionOTPRepository.swift */,
 			);
 			path = Implementation;
-			sourceTree = "<group>";
-		};
-		CEF52C8F26721D3200D2386C /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				CEF52C9126721D4D00D2386C /* ActionOTPEntity.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		CEF52C9026721D3700D2386C /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				CEF52C9526721D6100D2386C /* ActionOTPDTO.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		CEF52CBD26735F7700D2386C /* Data */ = {
@@ -4922,7 +4906,7 @@
 		CEF52CC126735FE200D2386C /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				CEF52CCA2673600500D2386C /* Entities */,
+				CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */,
 				CEF52CCB2673601300D2386C /* CoreApiPasswordChangeRepository.swift */,
 			);
 			path = Implementation;
@@ -4931,26 +4915,10 @@
 		CEF52CC226735FE800D2386C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				CEF52CC326735FEE00D2386C /* Entities */,
+				CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */,
 				CEF52CC426735FFE00D2386C /* PasswordChangeRepository.swift */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		CEF52CC326735FEE00D2386C /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		CEF52CCA2673600500D2386C /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		D807846C2444726000003892 /* Fonts */ = {
