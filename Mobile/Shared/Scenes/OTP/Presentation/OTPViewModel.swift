@@ -22,13 +22,15 @@ public struct OTPViewModelParams {
     public let showDismissButton: Bool
     public let username: String
     public let getOtp: Bool
+    public let otpType: OTPType
 
-    public init(vcTitle: String = "", buttonTitle: String = "", showDismissButton: Bool = true, username: String = "", getOtp: Bool = true) {
+    public init(vcTitle: String = "", buttonTitle: String = "", showDismissButton: Bool = true, username: String = "", getOtp: Bool = true, otpType: OTPType = .loginOTP) {
         self.vcTitle = vcTitle
         self.buttonTitle = buttonTitle
         self.showDismissButton = showDismissButton
         self.username = username
         self.getOtp = getOtp
+        self.otpType = otpType
     }
 }
 
@@ -39,7 +41,7 @@ public protocol OTPViewModelInput: AnyObject {
     func shouldChangeCharacters(for text: String) -> Bool
     func shoudEnableLoginButton(fot text: String?) -> Bool
     func resendSMS()
-    func login(code: String)
+    func accept(code: String)
     func restartTimer()
     func didBindToTimer()
 }
@@ -63,6 +65,7 @@ public enum OTPViewModelRoute {
     case openMainTabBar
     case showErrorMessage(title: String, message: String? = nil)
     case showSuccessMessage
+    case dismiss
 }
 
 public class DefaultOTPViewModel {
@@ -71,6 +74,7 @@ public class DefaultOTPViewModel {
     private let routeSubject = PublishSubject<OTPViewModelRoute>()
     private let smsCodeLength = 4
 
+    @Inject(from: .repositories) private var actionTOPRepo: ActionOTPRepository
     @Inject(from: .useCases) private var OTPUseCase: OTPUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
     @Inject(from: .viewModels) private var timerViewModel: TimerComponentViewModel
@@ -92,7 +96,11 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
 
         guard params.getOtp else { return }
-        getOTP()
+
+        switch params.otpType {
+        case .loginOTP: getOTP()
+        case .actionOTP: getActionOTP()
+        }
     }
 
     public func didBindToTimer() {
@@ -138,9 +146,24 @@ extension DefaultOTPViewModel: OTPViewModel {
     }
 
     private func getActionOTP() {
+        actionTOPRepo.actionOTP { result in
+            switch result {
+            case .success: print(result)
+            case .failure(let error): self.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
+            }
+        }
     }
 
-    public func login(code: String) {
+    public func accept(code: String) {
+        switch params.otpType {
+        case .loginOTP: login(code: code)
+        case .actionOTP:
+            params.paramsOutputAction.onNext(.success(otp: code))
+            routeSubject.onNext(.dismiss)
+        }
+    }
+
+    private func login(code: String) {
         actionSubject.onNext(.setLoginButton(isLoading: true))
 
         let username = params.username.isEmpty ? userSession.username : params.username
@@ -153,7 +176,6 @@ extension DefaultOTPViewModel: OTPViewModel {
                 self?.params.paramsOutputAction.onNext(.success(otp: code))
             case .failure(let error):
                 self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
-                self?.params.paramsOutputAction.onNext(.error)
             }
         }
     }
