@@ -81,19 +81,6 @@ public class DefaultLoginViewModel {
         let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username, getOtp: false)
         routeSubject.onNext(.openOTP(params: otpParams))
     }
-
-    private func didRecive(action: OTPViewModelParams.Action) {
-        switch action {
-        case .success: handleSuccessfulOTP()
-        case .error: handleInvalidOTP()
-        }
-    }
-
-    private func handleSuccessfulOTP() {
-    }
-
-    private func handleInvalidOTP() {
-    }
 }
 
 extension DefaultLoginViewModel: LoginViewModel {

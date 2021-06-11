@@ -40,11 +40,23 @@ public class PasswordChangeViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: PasswordChangeViewModelOutputAction) {
         switch action {
+        case .setButton(let loading): updatePasswordButton.set(isLoading: loading)
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
+        case .showMessage(let message): showAlert(title: message)
+        }
+    }
+
+    private func didRecive(route: PasswordChangeViewModelRoute) {
+        switch route {
+        case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         }
     }
 
@@ -123,6 +135,15 @@ public class PasswordChangeViewController: ABViewController {
 
     @objc private func updatePasswordButtonDidTap() {
         closeKeyboard()
+
+        guard newPasswordInputView.text == repeatePasswordInputView.text else {
+            showAlert(title: "Password does not match")
+            return
+        }
+
+        if let oldPassword = oldPasswordInputView.text, let newPassword = newPasswordInputView.text {
+            viewModel.changePassword(oldPassword, newPassword: newPassword)
+        }
     }
 
     private func setupViews() {
