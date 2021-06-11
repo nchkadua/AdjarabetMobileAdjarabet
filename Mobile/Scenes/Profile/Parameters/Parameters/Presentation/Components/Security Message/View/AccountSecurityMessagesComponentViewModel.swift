@@ -21,6 +21,7 @@ public struct AccountSecurityMessagesComponentViewModelParams {
 public protocol AccountSecurityMessagesComponentViewModelInput {
     func didBind()
     func parametersSwitchToggled(to state: Bool)
+    func setSwitchState(isOn: Bool)
 }
 
 public protocol AccountSecurityMessagesComponentViewModelOutput {
@@ -30,7 +31,9 @@ public protocol AccountSecurityMessagesComponentViewModelOutput {
 
 public enum AccountSecurityMessagesComponentViewModelOutputAction {
     case set(params: AccountSecurityMessagesComponentViewModelParams)
+    case setSwitchState(isOn: Bool)
     case parametersSwitchToggledTo(state: Bool)
+    case didSelect(indexPath: IndexPath)
 }
 
 public class DefaultAccountSecurityMessagesComponentViewModel {
@@ -55,5 +58,13 @@ extension DefaultAccountSecurityMessagesComponentViewModel: AccountSecurityMessa
                                                 description: params.description,
                                                 buttonTitle: params.buttonTitle,
                                                 switchState: params.switchState)))
+    }
+
+    public func didSelect(at indexPath: IndexPath) {
+        actionSubject.onNext(.didSelect(indexPath: indexPath))
+    }
+
+    public func setSwitchState(isOn: Bool) {
+        actionSubject.onNext(.setSwitchState(isOn: isOn))
     }
 }

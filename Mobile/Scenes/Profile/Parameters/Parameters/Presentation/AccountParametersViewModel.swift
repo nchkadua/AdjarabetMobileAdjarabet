@@ -86,13 +86,15 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                                                                                                     description: accountParameterMessagesModel.description, buttonTitle: accountParameterMessagesModel.buttonTitle,
                                                                                                     switchState: accountParameterMessagesModel.switchState))
                 viewModel.action.subscribe(onNext: { [weak self] action in
+                    guard let self = self else { return }
                     switch action {
                     case .parametersSwitchToggledTo(let state):
                         if state == true {
-                            let highSecurityType = accountParameterMessagesModel.type.highSecurityType
-                            let params = SecurityLevelsViewModelParams(highSecurityType: highSecurityType)
-                            self?.goToDestination(.securityLevels(params: params))
+                            self.go2SecurityLevels(accountParameterMessagesModel)
                         }
+                    case .didSelect:
+                        self.go2SecurityLevels(accountParameterMessagesModel)
+                        viewModel.setSwitchState(isOn: true)
                     default: break
                     }
                 }).disposed(by: disposeBag)
@@ -104,6 +106,12 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
         }
 
         actionSubject.onNext(.initialize(dataProvider.makeList()))
+    }
+
+    private func go2SecurityLevels(_ model: AccountParameterMessages) {
+        let highSecurityType = model.type.highSecurityType
+        let params = SecurityLevelsViewModelParams(highSecurityType: highSecurityType)
+        goToDestination(.securityLevels(params: params))
     }
 
     private func createAccountParameterComponentViewModel(params: AccountParameter) -> AccountParametersComponentViewModel {
