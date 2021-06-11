@@ -48,6 +48,7 @@ public class PasswordChangeViewController: ABViewController {
 
     private func didRecive(action: PasswordChangeViewModelOutputAction) {
         switch action {
+        case .setButton(let loading): updatePasswordButton.set(isLoading: loading)
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
         case .showMessage(let message): showAlert(title: message)
         }
@@ -134,6 +135,15 @@ public class PasswordChangeViewController: ABViewController {
 
     @objc private func updatePasswordButtonDidTap() {
         closeKeyboard()
+
+        guard newPasswordInputView.text == repeatePasswordInputView.text else {
+            showAlert(title: "Password does not match")
+            return
+        }
+
+        if let oldPassword = oldPasswordInputView.text, let newPassword = newPasswordInputView.text {
+            viewModel.changePassword(oldPassword, newPassword: newPassword)
+        }
     }
 
     private func setupViews() {

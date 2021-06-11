@@ -75,6 +75,8 @@ public class CoreRequestBuilder {
         case providerType
         case maxResult
         case pageIndex
+        case oldPassword
+        case newPassword
     }
 }
 

@@ -14,6 +14,7 @@ public protocol PasswordChangeViewModel: PasswordChangeViewModelInput, PasswordC
 public protocol PasswordChangeViewModelInput {
     func viewDidLoad()
     func newPasswordDidChange(to newPassword: String)
+    func changePassword(_ oldPassword: String, newPassword: String)
 }
 
 public protocol PasswordChangeViewModelOutput {
@@ -23,6 +24,7 @@ public protocol PasswordChangeViewModelOutput {
 
 public enum PasswordChangeViewModelOutputAction {
     case updateRulesWithNewPassword(_ password: String)
+    case setButton(loading: Bool)
     case showMessage(message: String)
 }
 
@@ -33,6 +35,7 @@ public enum PasswordChangeViewModelRoute {
 public class DefaultPasswordChangeViewModel: DefaultBaseViewModel {
     @Inject(from: .repositories) private var repo: IsOTPEnabledRepository
     @Inject(from: .repositories) private var actionTOPRepo: ActionOTPRepository
+    @Inject(from: .useCases) private var passwordChangeUseCase: PasswordChangeUseCase
     private let actionSubject = PublishSubject<PasswordChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<PasswordChangeViewModelRoute>()
 }
@@ -42,12 +45,24 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     public var route: Observable<PasswordChangeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        repo.isEnabled { result in
+        //Move to different place
+        /* repo.isEnabled { result in
             switch result {
             case .success:
                 self.getActionOtp()
             case .failure(let error):
                 self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            }
+        } */
+    }
+
+    public func changePassword(_ oldPassword: String, newPassword: String) {
+        self.actionSubject.onNext(.setButton(loading: true))
+        passwordChangeUseCase.change(oldPassword: oldPassword, newPassword: newPassword) { result in
+            defer { self.actionSubject.onNext(.setButton(loading: false)) }
+            switch result {
+            case .success: self.actionSubject.onNext(.showMessage(message: "Password Changed Successfully"))
+            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
     }

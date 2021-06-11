@@ -110,6 +110,7 @@ public extension DependencyContainer {
         Module { CoreApiPaymentAccountRepository() as PaymentAccountPagingableRepository }
         Module { CoreApiIsOTPEnabledRepository() as IsOTPEnabledRepository }
         Module { CoreApiActionOTPRepository() as ActionOTPRepository }
+        Module { CoreApiPasswordChangeRepository() as PasswordChangeRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
         Module { DefaultNotificationsRepository() as NotificationsRepository }
@@ -178,6 +179,7 @@ public extension DependencyContainer {
         Module { DefaultPaymentAccountUseCase() as PaymentAccountUseCase }
         Module { DefaultLogoutUseCase() as LogoutUseCase }
         Module { DefaultAmountFormatterUseCase() as AmountFormatterUseCase }
+        Module { DefaultPasswordChangeUseCase() as PasswordChangeUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }

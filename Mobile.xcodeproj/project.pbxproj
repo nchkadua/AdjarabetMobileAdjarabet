@@ -594,6 +594,11 @@
 		CEF52C9626721D6100D2386C /* ActionOTPDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52C9526721D6100D2386C /* ActionOTPDTO.swift */; };
 		CEF52C9A26721D7800D2386C /* ActionOTPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52C9926721D7800D2386C /* ActionOTPRepository.swift */; };
 		CEF52C9E26721D9600D2386C /* CoreApiActionOTPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52C9D26721D9600D2386C /* CoreApiActionOTPRepository.swift */; };
+		CEF52CC526735FFE00D2386C /* PasswordChangeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CC426735FFE00D2386C /* PasswordChangeRepository.swift */; };
+		CEF52CCC2673601300D2386C /* CoreApiPasswordChangeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CCB2673601300D2386C /* CoreApiPasswordChangeRepository.swift */; };
+		CEF52CD02673603900D2386C /* PasswordChangeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */; };
+		CEF52CD42673604400D2386C /* PasswordChangeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */; };
+		CEF52CDA2673694C00D2386C /* PasswordChangeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CD92673694C00D2386C /* PasswordChangeUseCase.swift */; };
 		D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
 		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
@@ -1350,6 +1355,11 @@
 		CEF52C9526721D6100D2386C /* ActionOTPDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionOTPDTO.swift; sourceTree = "<group>"; };
 		CEF52C9926721D7800D2386C /* ActionOTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionOTPRepository.swift; sourceTree = "<group>"; };
 		CEF52C9D26721D9600D2386C /* CoreApiActionOTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiActionOTPRepository.swift; sourceTree = "<group>"; };
+		CEF52CC426735FFE00D2386C /* PasswordChangeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeRepository.swift; sourceTree = "<group>"; };
+		CEF52CCB2673601300D2386C /* CoreApiPasswordChangeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPasswordChangeRepository.swift; sourceTree = "<group>"; };
+		CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeEntity.swift; sourceTree = "<group>"; };
+		CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeDTO.swift; sourceTree = "<group>"; };
+		CEF52CD92673694C00D2386C /* PasswordChangeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeUseCase.swift; sourceTree = "<group>"; };
 		D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFactory.swift; sourceTree = "<group>"; };
 		D803F42724A251C700A16CB2 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
@@ -4751,6 +4761,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5D7ABA266A643600719120 /* Presentation */,
+				CEF52CBD26735F7700D2386C /* Data */,
 			);
 			path = "Password Change";
 			sourceTree = "<group>";
@@ -4870,6 +4881,74 @@
 			isa = PBXGroup;
 			children = (
 				CEF52C9526721D6100D2386C /* ActionOTPDTO.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CEF52CBD26735F7700D2386C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CEF52CBE26735F9200D2386C /* UseCases */,
+				CEF52CBF26735F9700D2386C /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CEF52CBE26735F9200D2386C /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CEF52CD92673694C00D2386C /* PasswordChangeUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CEF52CBF26735F9700D2386C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CEF52CC026735FD800D2386C /* Password Change */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CEF52CC026735FD800D2386C /* Password Change */ = {
+			isa = PBXGroup;
+			children = (
+				CEF52CC226735FE800D2386C /* Protocol */,
+				CEF52CC126735FE200D2386C /* Implementation */,
+			);
+			path = "Password Change";
+			sourceTree = "<group>";
+		};
+		CEF52CC126735FE200D2386C /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CEF52CCA2673600500D2386C /* Entities */,
+				CEF52CCB2673601300D2386C /* CoreApiPasswordChangeRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CEF52CC226735FE800D2386C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CEF52CC326735FEE00D2386C /* Entities */,
+				CEF52CC426735FFE00D2386C /* PasswordChangeRepository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CEF52CC326735FEE00D2386C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CEF52CCA2673600500D2386C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -5912,6 +5991,7 @@
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */,
+				CEF52CC526735FFE00D2386C /* PasswordChangeRepository.swift in Sources */,
 				C7C3600425CAA6D600ADCBB6 /* GameIdentifier.swift in Sources */,
 				C7DE3ADB25F5293E0082D5EF /* UserLoggedInDTO.swift in Sources */,
 				CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */,
@@ -6012,6 +6092,7 @@
 				76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */,
 				CE95FC40252DF375003E539B /* FooterTableViewCellDataProvider.swift in Sources */,
 				CE64EA9B25D2D51A00438974 /* GameLoaderComponentView.swift in Sources */,
+				CEF52CD02673603900D2386C /* PasswordChangeEntity.swift in Sources */,
 				C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				C7C973AE2580EC990062C713 /* SecurityLevelTypeComponentView.swift in Sources */,
@@ -6088,6 +6169,7 @@
 				CE679FDD2578334B00F2EC1C /* AddCardNavigator.swift in Sources */,
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
+				CEF52CDA2673694C00D2386C /* PasswordChangeUseCase.swift in Sources */,
 				CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */,
 				CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */,
 				C7E3F14B261CCF5E009B6D6A /* CashOutVisaView.swift in Sources */,
@@ -6175,6 +6257,7 @@
 				76BDF47125760512007B27A7 /* AccountParametersTableViewCell.swift in Sources */,
 				CEA2877B2540C1F900E6590C /* AccountInfoViewControllerFactory.swift in Sources */,
 				C7E3F153261CCF7F009B6D6A /* CashOutVisaViewModel.swift in Sources */,
+				CEF52CCC2673601300D2386C /* CoreApiPasswordChangeRepository.swift in Sources */,
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */,
@@ -6286,6 +6369,7 @@
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				CE29FC3C2578F14700402D0D /* MinAmountComponentViewModel.swift in Sources */,
+				CEF52CD42673604400D2386C /* PasswordChangeDTO.swift in Sources */,
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
 				7676E55D2562D73100234026 /* TransactionHistoryProvider.swift in Sources */,
 				C78127C7267142080007F7E3 /* CoreApiIsOTPEnabledRepository.swift in Sources */,
