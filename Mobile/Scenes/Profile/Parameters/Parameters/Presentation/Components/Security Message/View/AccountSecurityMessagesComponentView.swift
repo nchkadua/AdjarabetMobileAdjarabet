@@ -45,7 +45,9 @@ class AccountSecurityMessagesComponentView: UIView {
             switch action {
             case .set(let params):
                 self?.set(params: params)
-            case .parametersSwitchToggledTo:
+            case .setSwitchState(let isOn):
+                self?.setParametersSwitch.isOn = isOn
+            default:
                 break
             }
         }).disposed(by: disposeBag)

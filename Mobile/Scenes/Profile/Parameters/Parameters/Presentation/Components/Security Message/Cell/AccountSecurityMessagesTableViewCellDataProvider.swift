@@ -6,7 +6,9 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol AccountSecurityMessagesTableViewCellDataProvider: AccountSecurityMessagesComponentViewModel, StaticHeightDataProvider { }
+public protocol AccountSecurityMessagesTableViewCellDataProvider: AccountSecurityMessagesComponentViewModel,
+                                                                  StaticHeightDataProvider,
+                                                                  AppCellDelegate { }
 
 public extension AccountSecurityMessagesTableViewCellDataProvider {
     var identifier: String { AccountSecurityMessagesTableViewCell.identifierValue }
