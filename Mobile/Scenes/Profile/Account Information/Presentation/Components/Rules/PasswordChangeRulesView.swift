@@ -21,8 +21,14 @@ class PasswordChangeRulesView: UIView {
     private static let animationTime = 0.15
     private static let specialRegex = ".*[!&^%$#@()/]+.*"
     private static let capitalLetterRegex = ".*[A-Z]+.*"
+    private static let numbersRegex = ".*[0-9]+.*"
     private static let passwordMinimumCount = 6
     private static let passwordMaximumCount = 30
+
+    private var rule1Done = false
+    private var rule2Done = false
+    private var rule3Done = false
+    public var allGood = false
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,6 +61,9 @@ class PasswordChangeRulesView: UIView {
             set(image: R.image.components.accountInfo.oval() ?? UIImage(), imageView: rule1ImageView)
             set(textColor: .secondaryText(), to: rule1Label)
         }
+
+        rule1Done = check
+        updateStatus()
     }
 
     private func updateRule2(check: Bool) {
@@ -65,6 +74,9 @@ class PasswordChangeRulesView: UIView {
             set(image: R.image.components.accountInfo.oval() ?? UIImage(), imageView: rule2ImageView)
             set(textColor: .secondaryText(), to: rule2Label)
         }
+
+        rule2Done = check
+        updateStatus()
     }
 
     private func updateRule3(check: Bool) {
@@ -74,6 +86,17 @@ class PasswordChangeRulesView: UIView {
         } else {
             set(image: R.image.components.accountInfo.oval() ?? UIImage(), imageView: rule3ImageView)
             set(textColor: .secondaryText(), to: rule3Label)
+        }
+
+        rule3Done = check
+        updateStatus()
+    }
+
+    private func updateStatus() {
+        if rule1Done == true && rule2Done == true && rule3Done == true {
+            allGood = true
+        } else {
+            allGood = false
         }
     }
 
@@ -101,8 +124,10 @@ class PasswordChangeRulesView: UIView {
 
     private func containsSpecialSymbol(password: String) -> Bool {
         let specialCharacterRegEx = PasswordChangeRulesView.specialRegex
-        let text = NSPredicate(format: "SELF MATCHES %@", specialCharacterRegEx)
-        let specialresult = text.evaluate(with: password)
+        let numbersCharacterRegEx = PasswordChangeRulesView.numbersRegex
+        let text1 = NSPredicate(format: "SELF MATCHES %@", specialCharacterRegEx)
+        let text2 = NSPredicate(format: "SELF MATCHES %@", numbersCharacterRegEx)
+        let specialresult = text1.evaluate(with: password) || text2.evaluate(with: password)
 
         return specialresult
     }
