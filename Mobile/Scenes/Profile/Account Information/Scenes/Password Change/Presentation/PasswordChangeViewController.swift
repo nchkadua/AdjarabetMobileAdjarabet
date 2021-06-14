@@ -164,6 +164,10 @@ public class PasswordChangeViewController: ABViewController {
 
     // MARK: Configuration
     private func updatePasswordButton(isEnabled: Bool) {
+        guard passwordChangeRulesView.allGood == true else {
+            return
+        }
+
         updatePasswordButton.isUserInteractionEnabled = isEnabled
         updatePasswordButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
     }

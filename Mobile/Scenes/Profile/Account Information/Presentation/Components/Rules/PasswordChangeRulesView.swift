@@ -25,6 +25,11 @@ class PasswordChangeRulesView: UIView {
     private static let passwordMinimumCount = 6
     private static let passwordMaximumCount = 30
 
+    private var rule1Done = false
+    private var rule2Done = false
+    private var rule3Done = false
+    public var allGood = false
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -56,6 +61,9 @@ class PasswordChangeRulesView: UIView {
             set(image: R.image.components.accountInfo.oval() ?? UIImage(), imageView: rule1ImageView)
             set(textColor: .secondaryText(), to: rule1Label)
         }
+
+        rule1Done = check
+        updateStatus()
     }
 
     private func updateRule2(check: Bool) {
@@ -66,6 +74,9 @@ class PasswordChangeRulesView: UIView {
             set(image: R.image.components.accountInfo.oval() ?? UIImage(), imageView: rule2ImageView)
             set(textColor: .secondaryText(), to: rule2Label)
         }
+
+        rule2Done = check
+        updateStatus()
     }
 
     private func updateRule3(check: Bool) {
@@ -75,6 +86,17 @@ class PasswordChangeRulesView: UIView {
         } else {
             set(image: R.image.components.accountInfo.oval() ?? UIImage(), imageView: rule3ImageView)
             set(textColor: .secondaryText(), to: rule3Label)
+        }
+
+        rule3Done = check
+        updateStatus()
+    }
+
+    private func updateStatus() {
+        if rule1Done == true && rule2Done == true && rule3Done == true {
+            allGood = true
+        } else {
+            allGood = false
         }
     }
 
