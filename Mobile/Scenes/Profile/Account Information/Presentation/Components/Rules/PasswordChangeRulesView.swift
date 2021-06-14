@@ -21,6 +21,7 @@ class PasswordChangeRulesView: UIView {
     private static let animationTime = 0.15
     private static let specialRegex = ".*[!&^%$#@()/]+.*"
     private static let capitalLetterRegex = ".*[A-Z]+.*"
+    private static let numbersRegex = ".*[0-9]+.*"
     private static let passwordMinimumCount = 6
     private static let passwordMaximumCount = 30
 
@@ -101,8 +102,10 @@ class PasswordChangeRulesView: UIView {
 
     private func containsSpecialSymbol(password: String) -> Bool {
         let specialCharacterRegEx = PasswordChangeRulesView.specialRegex
-        let text = NSPredicate(format: "SELF MATCHES %@", specialCharacterRegEx)
-        let specialresult = text.evaluate(with: password)
+        let numbersCharacterRegEx = PasswordChangeRulesView.numbersRegex
+        let text1 = NSPredicate(format: "SELF MATCHES %@", specialCharacterRegEx)
+        let text2 = NSPredicate(format: "SELF MATCHES %@", numbersCharacterRegEx)
+        let specialresult = text1.evaluate(with: password) || text2.evaluate(with: password)
 
         return specialresult
     }
