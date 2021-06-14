@@ -8,13 +8,13 @@
 
 import Foundation
 
-public enum DataTransferError: Error {
+enum DataTransferError: Error {
     case responseNotFound
     case parsingJSONFailure(Error)
     case networkFailure(NetworkError)
 }
 
-public protocol DataTransferResponse {
+protocol DataTransferResponse {
     associatedtype Header: HeaderProtocol = DataTransferResponseDefaultHeader
     associatedtype Body: Codable
     associatedtype Entity
@@ -24,20 +24,20 @@ public protocol DataTransferResponse {
      P. S.
      Also you can pre-process header and body before returning Entity.
      */
-    static func entity(header: Header, body: Body) -> Entity?
+    static func entity(header: Header, body: Body) -> Result<Entity, ABError>?
 }
 
-public struct DataTransferResponseDefaultHeader: HeaderProtocol {
-    public init(headers: [AnyHashable: Any]?) throws { }
+struct DataTransferResponseDefaultHeader: HeaderProtocol {
+    init(headers: [AnyHashable: Any]?) throws { }
 }
 
-public protocol DataTransferService {
+protocol DataTransferService {
     @discardableResult
     func performTask<Response: DataTransferResponse>(
         expecting: Response.Type,
         request: URLRequest,
         respondOnQueue: DispatchQueue,
-        completion: @escaping (Result<Response.Entity, Error>) -> Void
+        completion: @escaping (Result<Response.Entity, ABError>) -> Void
     ) -> Cancellable
     // TODO: delete lower functions
     @discardableResult
@@ -51,16 +51,17 @@ public class DefaultDataTransferService {
 }
 
 extension DefaultDataTransferService: DataTransferService {
-    public func performTask<Response: DataTransferResponse>(
+    func performTask<Response: DataTransferResponse>(
         expecting: Response.Type,
         request: URLRequest,
         respondOnQueue: DispatchQueue,
-        completion: @escaping (Result<Response.Entity, Error>) -> Void) -> Cancellable {
-        let task = self.networkService.request(request: request) { result in
+        completion: @escaping (Result<Response.Entity, ABError>) -> Void
+    ) -> Cancellable {
+        return networkService.request(request: request) { result in
             switch result {
             case .success(let response):
                 guard let data = response.data else {
-                    respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) }
+                    respondOnQueue.async { completion(.failure(.init(dataTransferError: .responseNotFound))) }
                     return
                 }
                 do {
@@ -69,18 +70,17 @@ extension DefaultDataTransferService: DataTransferService {
                     let header  = try Response.Header(headers: response.headerFields)
                     let result  = Response.entity(header: header, body: body)
                     if let result = result {
-                        respondOnQueue.async { completion(.success(result)) }
+                        respondOnQueue.async { completion(result) }
                     } else {
-                        respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) }
+                        respondOnQueue.async { completion(.failure(.init(dataTransferError: .responseNotFound))) }
                     }
                 } catch {
-                    respondOnQueue.async { completion(.failure(DataTransferError.parsingJSONFailure(error))) }
+                    respondOnQueue.async { completion(.failure(.init(dataTransferError: .parsingJSONFailure(error)))) }
                 }
             case .failure(let error):
-                respondOnQueue.async { completion(.failure(DataTransferError.networkFailure(error))) }
+                respondOnQueue.async { completion(.failure(.init(dataTransferError: .networkFailure(error)))) }
             }
         }
-        return task
     }
 
     public func performTask<T>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {

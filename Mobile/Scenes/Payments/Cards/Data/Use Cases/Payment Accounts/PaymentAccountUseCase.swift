@@ -19,7 +19,7 @@ protocol PaymentAccountUseCase {
      Returns currently available ALL payment accounts and their details
      for the currently authenticated user
      */
-    typealias PaymentAccountUseCaseHandler = (Result<[PaymentAccountEntity], Error>) -> Void
+    typealias PaymentAccountUseCaseHandler = (Result<[PaymentAccountEntity], ABError>) -> Void
     func execute(params: PaymentAccountUseCaseParams,
                  completion: @escaping PaymentAccountUseCaseHandler)
 
@@ -27,7 +27,7 @@ protocol PaymentAccountUseCase {
      Deletes payment account specified by payment account ID
      for the currently authenticated user
      */
-    typealias PaymentAccountUseCaseDeleteHandler = (Result<Void, Error>) -> Void
+    typealias PaymentAccountUseCaseDeleteHandler = (Result<Void, ABError>) -> Void
     func execute(params: PaymentAccountUseCaseDeleteParams,
                  completion: @escaping PaymentAccountUseCaseDeleteHandler)
 }

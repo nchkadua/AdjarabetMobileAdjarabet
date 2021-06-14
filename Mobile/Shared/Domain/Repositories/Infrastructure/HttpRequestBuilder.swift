@@ -11,7 +11,7 @@ import Foundation
 /**
 
  Host --- Path --- URL Parameters? --- Headers? --- Method --- GET --- Build
-                                           '--- POST --- Content Type? --- Content? --- Build
+                                                          '--- POST --- Content Type? --- Content? --- Build
 
  */
 

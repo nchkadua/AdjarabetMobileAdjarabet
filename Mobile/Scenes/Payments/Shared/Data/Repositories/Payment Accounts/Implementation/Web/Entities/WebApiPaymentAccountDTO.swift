@@ -35,13 +35,13 @@ struct WebApiPaymentAccountDTO: DataTransferResponse {
 
     typealias Entity = [PaymentAccountEntity]
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         guard body.success == 1, // FIXME: make common
               let list = body.list
         else {
             return nil
         }
-        return list.compactMap {
+        return .success(list.compactMap {
             if let id = Int64($0.id) {
                 return PaymentAccountEntity(
                     id: id,
@@ -52,6 +52,6 @@ struct WebApiPaymentAccountDTO: DataTransferResponse {
             } else {
                 return nil
             }
-        }
+        })
     }
 }

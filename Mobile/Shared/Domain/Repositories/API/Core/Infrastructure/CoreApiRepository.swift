@@ -14,10 +14,10 @@ protocol CoreApiRepository {
     var requestBuilder: CoreRequestBuilder { get }
     var dataTransferService: DataTransferService { get }
     // helpers
-    var initialRequestBuilder: Result<CoreRequestBuilder, Error> { get }
-    func performTask<Response: DataTransferResponse>(
+    var initialRequestBuilder: Result<CoreRequestBuilder, ABError> { get }
+    func performTask<Response: CoreDataTransferResponse>(
         expecting responseType: Response.Type,
-        completion: @escaping (Result<Response.Entity, Error>) -> Void,
+        completion: @escaping (Result<Response.Entity, ABError>) -> Void,
         requestFiller: (CoreRequestBuilder) -> CoreRequestBuilder
     )
 }
@@ -35,14 +35,14 @@ extension CoreApiRepository {
      Creates requestBuilder and fills with common parameters
      Implementer could use this helper on desire
      */
-    var initialRequestBuilder: Result<CoreRequestBuilder, Error> {
+    var initialRequestBuilder: Result<CoreRequestBuilder, ABError> {
         // create CoreRequestBuilder
         var requestBuilder = self.requestBuilder
 
         guard let sessionId = userSession.sessionId,
               let userId = userSession.userId
         else {
-            return .failure(AdjarabetCoreClientError.sessionUninitialzed)
+            return .failure(.sessionUninitialized)
         }
 
         requestBuilder = requestBuilder
@@ -58,7 +58,7 @@ extension CoreApiRepository {
      */
     func performTask<Response: DataTransferResponse>(
         expecting responseType: Response.Type,
-        completion: @escaping (Result<Response.Entity, Error>) -> Void,
+        completion: @escaping (Result<Response.Entity, ABError>) -> Void,
         requestFiller: (CoreRequestBuilder) -> CoreRequestBuilder
     ) {
         switch initialRequestBuilder {

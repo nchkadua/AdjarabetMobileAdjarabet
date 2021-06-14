@@ -22,7 +22,7 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
               handler: @escaping ListHandler) {
         guard let userId = userSession.userId
         else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.sessionUninitialized))
             return
         }
 
@@ -48,7 +48,7 @@ extension WebApiPaymentAccountRepository: PaymentAccountFilterableRepository,
                 handler: @escaping PaymentAccountDeleteHandler) {
         guard let userId = userSession.userId
         else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.sessionUninitialized))
             return
         }
 

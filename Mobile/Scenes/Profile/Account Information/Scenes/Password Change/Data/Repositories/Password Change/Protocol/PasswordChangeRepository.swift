@@ -7,7 +7,7 @@
 //
 
 protocol PasswordChangeRepository {
-    typealias PasswordChangeHandler = (Result<PasswordChangeEntity, Error>) -> Void
+    typealias PasswordChangeHandler = (Result<PasswordChangeEntity, ABError>) -> Void
     func change(params: PasswordChangeParams, handler: @escaping PasswordChangeHandler)
 }
 

@@ -34,9 +34,9 @@ struct UFCDepositDTO: DataTransferResponse {
 
     typealias Entity = UFCDepositEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         if let code = body.code, code != 10 { return nil } // FIXME: Success == 10
-        return .init(url: body.data.url,
-                     transactionId: body.data.parameters.transactionId)
+        return .success(.init(url: body.data.url,
+                              transactionId: body.data.parameters.transactionId))
     }
 }

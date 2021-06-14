@@ -14,7 +14,7 @@ protocol PaymentAccountFilterableRepository {
      at specified 'providerType' and 'paymentType'
      for the currently authenticated user
      */
-    typealias ListHandler = (Result<[PaymentAccountEntity], Error>) -> Void
+    typealias ListHandler = (Result<[PaymentAccountEntity], ABError>) -> Void
     func list(params: PaymentAccountFilterableListParams,
               handler: @escaping ListHandler)
 }

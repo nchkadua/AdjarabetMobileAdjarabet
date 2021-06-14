@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct ActionOTPDTO: DataTransferResponse {
-    struct Body: Codable {
+struct ActionOTPDTO: CoreDataTransferResponse {
+    struct Body: CoreStatusCodeable {
         let statusCode: Int
 
         enum CodingKeys: String, CodingKey {
@@ -19,7 +19,7 @@ struct ActionOTPDTO: DataTransferResponse {
 
     typealias Entity = ActionOTPEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        .init(statusCode: body.statusCode)
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        .success(.init(statusCode: body.statusCode))
     }
 }

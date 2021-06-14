@@ -9,8 +9,8 @@
 import Foundation
 
 // MARK: Protocol
-public protocol DisplayAccessListUseCase {
-    typealias AccessListUseCaseCompletion = (Result<[AccessListEntity], Error>) -> Void
+protocol DisplayAccessListUseCase {
+    typealias AccessListUseCaseCompletion = (Result<[AccessListEntity], ABError>) -> Void
     @discardableResult
     func generateRequestParams(from useCaseParams: DisplayAccessListUseCaseParams) -> GetAccessListParams
     @discardableResult
@@ -18,12 +18,12 @@ public protocol DisplayAccessListUseCase {
                  completion: @escaping AccessListUseCaseCompletion) -> Cancellable?
 }
 
-public class DefaultAccessListUseCaseUseCase: DisplayAccessListUseCase {
+class DefaultAccessListUseCaseUseCase: DisplayAccessListUseCase {
     @Inject(from: .repositories) var repository: AccessListRepository
     @Inject private var userSession: UserSessionReadableServices
     let dayDateFormatter = ABDateFormater(with: .day)
-    public func execute(params: DisplayAccessListUseCaseParams,
-                        completion: @escaping AccessListUseCaseCompletion) -> Cancellable? {
+    func execute(params: DisplayAccessListUseCaseParams,
+                 completion: @escaping AccessListUseCaseCompletion) -> Cancellable? {
         let requestParams = generateRequestParams(from: params)
         repository.getAccessList(params: requestParams) { result  in
             switch result {
@@ -36,7 +36,7 @@ public class DefaultAccessListUseCaseUseCase: DisplayAccessListUseCase {
         return nil
     }
 
-    public func generateRequestParams(from useCaseParams: DisplayAccessListUseCaseParams) -> GetAccessListParams {
+    func generateRequestParams(from useCaseParams: DisplayAccessListUseCaseParams) -> GetAccessListParams {
         // Date Selection in UI is unclisve. Date selection in API is exclusive. We need to add 1 day to to include desired last day
         let endDate = dayDateFormatter.date(from: useCaseParams.toDate)
         let correctEndDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate!)!
@@ -45,11 +45,11 @@ public class DefaultAccessListUseCaseUseCase: DisplayAccessListUseCase {
         return requestParams
     }
 
-    public init() {
+    init() {
     }
 }
 
-public struct DisplayAccessListUseCaseParams {
+struct DisplayAccessListUseCaseParams {
     let fromDate: String
     let toDate: String
 }

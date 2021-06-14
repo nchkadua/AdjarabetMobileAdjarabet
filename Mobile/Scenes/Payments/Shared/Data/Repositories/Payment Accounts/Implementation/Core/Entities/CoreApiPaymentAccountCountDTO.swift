@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct CoreApiPaymentAccountCountDTO: DataTransferResponse {
-    struct Body: Codable {
+struct CoreApiPaymentAccountCountDTO: CoreDataTransferResponse {
+    struct Body: CoreStatusCodeable {
         let statusCode: Int
-        let count: Int
+        let count: Int?
 
         enum CodingKeys: String, CodingKey {
             case statusCode = "StatusCode"
@@ -21,11 +21,8 @@ struct CoreApiPaymentAccountCountDTO: DataTransferResponse {
 
     typealias Entity = PaymentAccountCount
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        if body.statusCode == AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue {// FIXME: make common
-            return .init(count: body.count)
-        } else {
-            return nil
-        }
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        guard let count = body.count else { return nil }
+        return .success(.init(count: count))
     }
 }

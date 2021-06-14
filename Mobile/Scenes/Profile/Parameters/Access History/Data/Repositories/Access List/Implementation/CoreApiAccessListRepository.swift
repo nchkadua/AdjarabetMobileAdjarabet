@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct CoreApiAccessListRepository: CoreApiRepository { }
+struct CoreApiAccessListRepository: CoreApiRepository { }
 
 extension CoreApiAccessListRepository: AccessListRepository {
-    public func getAccessList(params: GetAccessListParams, completion: @escaping GetAccessListCompletion) {
+    func getAccessList(params: GetAccessListParams, completion: @escaping GetAccessListCompletion) {
         performTask(expecting: GetAccessListResponse.self, completion: completion) { requestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "getAccessList")

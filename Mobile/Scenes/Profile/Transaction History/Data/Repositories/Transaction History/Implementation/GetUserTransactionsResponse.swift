@@ -8,30 +8,30 @@
 
 import Foundation
 
-public class GetUserTransactionsResponse: DataTransferResponse {
+struct GetUserTransactionsResponse: CoreDataTransferResponse {
     struct UsersTransaction: Codable {
-        public let id: String?
-        public let userAccountId: Int?
-        public let amount: Double?
-        public let bonusAwardID: Int?
-        public let bonusLockedAmount: Double?
-        public let bonusAmount: Double?
-        public let providerName: String?
-        public let transactionStatus: Int?
-        public let providerType: Int?
-        public let feePercentage: Double?
-        public let feeAmount: Double?
-        public let totalAmount: Double?
-        public let providerUserID: String?
-        public let providerServiceID: Int?
-        public let exchangeRate: Double?
-        public let groupId: String?
-        public let dateCreated: String?
-        public let dateModified: String?
-        public let isRoot: Bool?
-        public let channelType: Int?
-        public let providerOppCode: String?
-        //        public let providerReferenceID: Int?
+        let id: String?
+        let userAccountId: Int?
+        let amount: Double?
+        let bonusAwardID: Int?
+        let bonusLockedAmount: Double?
+        let bonusAmount: Double?
+        let providerName: String?
+        let transactionStatus: Int?
+        let providerType: Int?
+        let feePercentage: Double?
+        let feeAmount: Double?
+        let totalAmount: Double?
+        let providerUserID: String?
+        let providerServiceID: Int?
+        let exchangeRate: Double?
+        let groupId: String?
+        let dateCreated: String?
+        let dateModified: String?
+        let isRoot: Bool?
+        let channelType: Int?
+        let providerOppCode: String?
+     // let providerReferenceID: Int?
 
         enum CodingKeys: String, CodingKey {
             case id = "ID"
@@ -55,11 +55,11 @@ public class GetUserTransactionsResponse: DataTransferResponse {
             case isRoot = "IsRoot"
             case channelType = "ChannelType"
             case providerOppCode = "ProviderOppCode"
-            //            case providerReferenceID = "ProviderTxReferenceID"
+         // case providerReferenceID = "ProviderTxReferenceID"
         }
     }
 
-    public struct Body: Codable {
+    struct Body: CoreStatusCodeable {
         let statusCode: Int
         let usersTransactions: [UsersTransaction]
 
@@ -69,15 +69,16 @@ public class GetUserTransactionsResponse: DataTransferResponse {
         }
     }
 
-    public typealias Entity = [TransactionHistoryEntity]
+    typealias Entity = [TransactionHistoryEntity]
 
-    public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         let dateFormatter = ABDateFormater(with: .verbose)
-        return body.usersTransactions.compactMap {
+        return .success(body.usersTransactions.compactMap {
             TransactionHistoryEntity(totalAmount: $0.amount,
                                      date: dateFormatter.date(from: $0.dateCreated ?? ""),
                                      feeAmount: $0.feeAmount,
                                      providerName: $0.providerName ?? ""
             ) }
+        )
     }
 }

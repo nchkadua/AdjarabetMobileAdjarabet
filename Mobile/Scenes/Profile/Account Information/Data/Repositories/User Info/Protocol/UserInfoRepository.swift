@@ -9,20 +9,20 @@
 import Foundation
 
 // MARK: Repository
-public protocol UserInfoRepository: UserInfoReadableRepository,
-                                    UserInfoWritableRepository { }
+protocol UserInfoRepository: UserInfoReadableRepository,
+                             UserInfoWritableRepository { }
 
 // MARK: - Readable Repository
-public protocol UserInfoReadableRepository {
+protocol UserInfoReadableRepository {
     /**
      Returns information about current loged user
      */
-    typealias CurrentUserInfoHandler = (Result<UserInfoEntity, Error>) -> Void
+    typealias CurrentUserInfoHandler = (Result<UserInfoEntity, ABError>) -> Void
     func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler)
 }
 
 // for currentUserInfo
-public struct CurrentUserInfoParams { }
+struct CurrentUserInfoParams { }
 
 // MARK: - Writable Repository
-public protocol UserInfoWritableRepository { }
+protocol UserInfoWritableRepository { }

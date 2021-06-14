@@ -21,7 +21,7 @@ struct NotificationStatusUpdateMessageDTO: DataTransferResponse {
 
     typealias Entity = NotificationStatusUpdateMessageEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> NotificationStatusUpdateMessageEntity? {
-        return .init(success: body.success, statusCode: body.statusCode)
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        return .success(.init(success: body.success, statusCode: body.statusCode))
     }
 }

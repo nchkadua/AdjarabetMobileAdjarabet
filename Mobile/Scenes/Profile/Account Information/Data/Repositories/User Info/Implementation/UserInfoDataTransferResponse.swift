@@ -8,37 +8,37 @@
 
 import Foundation
 
-public class UserInfoDataTransferResponse: DataTransferResponse {
+struct UserInfoDataTransferResponse: CoreDataTransferResponse {
     /*
-    public struct Header: HeaderProtocol {
-        public init(headers: [AnyHashable: Any]?) throws {
+    struct Header: HeaderProtocol {
+        init(headers: [AnyHashable: Any]?) throws {
             ...
         }
     }
     */
-    public struct Body: Codable {
-        public let statusCode: Int?
-        public let userId: Int64?
-        public let name: String?
-        public let surname: String?
-        public let middleName: String?
-        public let gender: String?
-        public let userName: String?
-        public let countryId: Int?
-        // public let address: String? // FIXME: add real address
-        public let birthDate: String?
-        public let email: String?
-        public let tel: String?
-        public let statusId: Int?
+    struct Body: CoreStatusCodeable {
+        let statusCode: Int
+        let userId: Int64?
+        let name: String?
+        let surname: String?
+        let middleName: String?
+        let gender: String?
+        let userName: String?
+        let countryId: Int?
+        // let address: String? // FIXME: add real address
+        let birthDate: String?
+        let email: String?
+        let tel: String?
+        let statusId: Int?
         /*
-        public let isOtpOn: Bool?
-        public let hasClubCard: Bool?
-        public let language: String?
-        public let telephoneCode: String?
-        public let dateRegistered: String?
-        public let activeNotifications: Int64?
-        public let preferredCurrencyID: Int?
-        public let verifiedContactChannel: Int?
+        let isOtpOn: Bool?
+        let hasClubCard: Bool?
+        let language: String?
+        let telephoneCode: String?
+        let dateRegistered: String?
+        let activeNotifications: Int64?
+        let preferredCurrencyID: Int?
+        let verifiedContactChannel: Int?
         */
 
         enum CodingKeys: String, CodingKey {
@@ -68,10 +68,10 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
         }
     }
 
-    public typealias Entity = UserInfoEntity
+    typealias Entity = UserInfoEntity
 
-    public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        Entity(
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        .success(.init(
             userId: body.userId,
             name: body.name,
             surname: body.surname,
@@ -84,6 +84,6 @@ public class UserInfoDataTransferResponse: DataTransferResponse {
             email: body.email,
             phone: body.tel,
             statusId: body.statusId
-        )
+        ))
     }
 }

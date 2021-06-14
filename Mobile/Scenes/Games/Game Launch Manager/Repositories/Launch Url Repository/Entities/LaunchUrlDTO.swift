@@ -27,5 +27,8 @@ struct LaunchUrlDTO: DataTransferResponse {
 
     typealias Entity = String
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? { body.data?.url }
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        guard let url = body.data?.url else { return nil }
+        return .success(url)
+    }
 }

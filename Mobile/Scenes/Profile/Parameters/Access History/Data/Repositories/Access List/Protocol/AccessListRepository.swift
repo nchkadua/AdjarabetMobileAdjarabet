@@ -9,20 +9,19 @@
 import Foundation
 
 // MARK: Repository
-public protocol AccessListRepository: AccessListRedableRepository,
-                                                      AccessListWritableRepository { }
+protocol AccessListRepository: AccessListRedableRepository,
+                               AccessListWritableRepository { }
 
 // MARK: - Readable Repository
-public protocol AccessListRedableRepository {
-    typealias GetAccessListCompletion = (Result<[AccessListEntity], Error>) -> Void
+protocol AccessListRedableRepository {
+    typealias GetAccessListCompletion = (Result<[AccessListEntity], ABError>) -> Void
     func getAccessList(params: GetAccessListParams, completion: @escaping GetAccessListCompletion)
 }
 
-public struct GetAccessListParams {
+struct GetAccessListParams {
     let fromDate: String
     let toDate: String
 }
 
 // MARK: - Writable Repository
-public protocol AccessListWritableRepository {
-}
+protocol AccessListWritableRepository { }

@@ -47,7 +47,7 @@ struct NotificationDTO: DataTransferResponse {
 
     typealias Entity = NotificationItemsEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         guard let list = body.items else { return nil }
 
         var elements: [NotificationItemsEntity.NotificationEntity] = []
@@ -66,6 +66,6 @@ struct NotificationDTO: DataTransferResponse {
             }
         }
 
-        return .init(elements: elements, totalItemsCount: body.totalItemsCount, totalUnreadItemsCount: body.totalUnreadItemsCount ?? 0, pageCount: body.pageCount, itemsPerPage: body.itemsPerPage)
+        return .success(.init(elements: elements, totalItemsCount: body.totalItemsCount, totalUnreadItemsCount: body.totalUnreadItemsCount ?? 0, pageCount: body.pageCount, itemsPerPage: body.itemsPerPage))
     }
 }

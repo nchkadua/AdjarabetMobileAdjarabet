@@ -19,9 +19,9 @@ struct WebApiPaymentAccountDeleteDTO: DataTransferResponse {
 
     typealias Entity = Void
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         if body.success == 1 { // FIXME: make common
-            return (())
+            return .success(())
         } else {
             return nil
         }

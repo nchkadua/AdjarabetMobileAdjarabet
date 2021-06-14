@@ -9,12 +9,12 @@
 import Foundation
 
 // MARK: Repository
-public protocol TransactionHistoryRepository: TransactionHistoryRedableRepository,
-                                              TransactionHistoryWritableRepository { }
+protocol TransactionHistoryRepository: TransactionHistoryRedableRepository,
+                                       TransactionHistoryWritableRepository { }
 
 // MARK: - Readable Repository
-public protocol TransactionHistoryRedableRepository {
-    typealias GetUserTransactionsCompletionHandler = (Result<[TransactionHistoryEntity], Error>) -> Void
+protocol TransactionHistoryRedableRepository {
+    typealias GetUserTransactionsCompletionHandler = (Result<[TransactionHistoryEntity], ABError>) -> Void
     func getUserTransactions(params: GetUserTransactionsParams, completion: @escaping GetUserTransactionsCompletionHandler)
 }
 
