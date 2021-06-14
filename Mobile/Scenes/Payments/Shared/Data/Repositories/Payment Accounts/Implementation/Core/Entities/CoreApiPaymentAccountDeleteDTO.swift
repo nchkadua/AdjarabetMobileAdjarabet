@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct CoreApiPaymentAccountDeleteDTO: DataTransferResponse {
-    struct Body: Codable {
+struct CoreApiPaymentAccountDeleteDTO: CoreDataTransferResponse {
+    struct Body: CoreStatusCodeable {
         let statusCode: Int
 
         enum CodingKeys: String, CodingKey {
@@ -19,11 +19,7 @@ struct CoreApiPaymentAccountDeleteDTO: DataTransferResponse {
 
     typealias Entity = Void
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        if body.statusCode == AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue { // FIXME: make common
-            return (())
-        } else {
-            return nil
-        }
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        return .success(())
     }
 }

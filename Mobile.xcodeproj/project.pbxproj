@@ -280,6 +280,7 @@
 		C78127C22671411E0007F7E3 /* IsOTPEnabledRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78127C12671411E0007F7E3 /* IsOTPEnabledRepository.swift */; };
 		C78127C7267142080007F7E3 /* CoreApiIsOTPEnabledRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78127C6267142080007F7E3 /* CoreApiIsOTPEnabledRepository.swift */; };
 		C78127CB2671426E0007F7E3 /* CoreApiIsOTPEnabledDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78127CA2671426E0007F7E3 /* CoreApiIsOTPEnabledDTO.swift */; };
+		C78127E42676A1390007F7E3 /* CoreDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78127E32676A1390007F7E3 /* CoreDataTransferResponse.swift */; };
 		C782D25D26544A6000594A65 /* ABSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C782D25C26544A6000594A65 /* ABSliderCell.swift */; };
 		C782D26726544B6100594A65 /* ABSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C782D26626544B6100594A65 /* ABSliderCell.xib */; };
 		C782D26B26544C4C00594A65 /* ABSliderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C782D26A26544C4C00594A65 /* ABSliderCellModel.swift */; };
@@ -1041,6 +1042,7 @@
 		C78127C12671411E0007F7E3 /* IsOTPEnabledRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsOTPEnabledRepository.swift; sourceTree = "<group>"; };
 		C78127C6267142080007F7E3 /* CoreApiIsOTPEnabledRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiIsOTPEnabledRepository.swift; sourceTree = "<group>"; };
 		C78127CA2671426E0007F7E3 /* CoreApiIsOTPEnabledDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiIsOTPEnabledDTO.swift; sourceTree = "<group>"; };
+		C78127E32676A1390007F7E3 /* CoreDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTransferResponse.swift; sourceTree = "<group>"; };
 		C782D25C26544A6000594A65 /* ABSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABSliderCell.swift; sourceTree = "<group>"; };
 		C782D26626544B6100594A65 /* ABSliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ABSliderCell.xib; sourceTree = "<group>"; };
 		C782D26A26544C4C00594A65 /* ABSliderCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABSliderCellModel.swift; sourceTree = "<group>"; };
@@ -3241,6 +3243,7 @@
 			children = (
 				D85C9BF02433677100F1D4FE /* CoreRequestBuilder.swift */,
 				C766086325CC3FF700A59534 /* CoreApiRepository.swift */,
+				C78127E32676A1390007F7E3 /* CoreDataTransferResponse.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -6308,6 +6311,7 @@
 				7698869A2571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift in Sources */,
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				76DCF67525B80FB500150EE1 /* MyCardsNavigator.swift in Sources */,
+				C78127E42676A1390007F7E3 /* CoreDataTransferResponse.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,

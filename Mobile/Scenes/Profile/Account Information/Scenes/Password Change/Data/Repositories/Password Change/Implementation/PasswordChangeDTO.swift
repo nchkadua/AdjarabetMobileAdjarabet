@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct PasswordChangeDTO: DataTransferResponse {
-    struct Body: Codable {
+struct PasswordChangeDTO: CoreDataTransferResponse {
+    struct Body: CoreStatusCodeable {
         let statusCode: Int
 
         enum CodingKeys: String, CodingKey {
@@ -19,7 +19,7 @@ struct PasswordChangeDTO: DataTransferResponse {
 
     typealias Entity = PasswordChangeEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        .init(statusCode: body.statusCode)
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        .success(.init(statusCode: body.statusCode))
     }
 }

@@ -13,7 +13,7 @@ protocol PaymentAccountDeletableRepository {
      Deletes payment account specified by payment account ID
      for the currently authenticated user
      */
-    typealias PaymentAccountDeleteHandler = (Result<Void, Error>) -> Void
+    typealias PaymentAccountDeleteHandler = (Result<Void, ABError>) -> Void
     func delete(params: PaymentAccountDeleteParams,
                 handler: @escaping PaymentAccountDeleteHandler)
 }

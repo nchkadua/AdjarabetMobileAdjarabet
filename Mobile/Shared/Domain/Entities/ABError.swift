@@ -8,7 +8,17 @@
 
 import Foundation
 
+/**
+ ABError is domain entity which defines any error
+ which could be displayed to user.
+
+ Each error has 'description' which defines specifications of error.
+
+ ABError entity supports mapping from any kind of error
+ to ABError errors with initializers.
+ */
 enum ABError {
+    case sessionUninitialized
     case wrongAuthCredentials
     // general errors
     case from(_ error: Error)
@@ -51,6 +61,21 @@ enum ABError {
     }
 }
 
+// MARK: - Core API Error -> ABError
+extension ABError {
+    init(coreStatusCode: AdjarabetCoreStatusCode) {
+        self = .default
+    }
+}
+
+// MARK: - Data Transfer Error -> ABError
+extension ABError {
+    init(dataTransferError: DataTransferError) {
+        self = .default
+    }
+}
+
+// MARK: - Implement Error Protocol
 extension ABError: LocalizedError {
     var errorDescription: String? { description.description }
 }

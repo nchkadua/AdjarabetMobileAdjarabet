@@ -13,7 +13,7 @@ protocol PaymentAccountPagingableRepository {
      Returns count of payment accounts
      for the currently authenticated user
      */
-    typealias CountHandler = (Result<PaymentAccountCount, Error>) -> Void
+    typealias CountHandler = (Result<PaymentAccountCount, ABError>) -> Void
     func count(params: PaymentAccountPagingableCountParams,
                handler: @escaping CountHandler)
 
@@ -22,7 +22,7 @@ protocol PaymentAccountPagingableRepository {
      at specified 'pageIndex' and 'pageCount'
      for the currently authenticated user
      */
-    typealias PageHandler = (Result<[PaymentAccountEntity], Error>) -> Void
+    typealias PageHandler = (Result<[PaymentAccountEntity], ABError>) -> Void
     func page(params: PaymentAccountPagingablePageParams,
               handler: @escaping PageHandler)
 }

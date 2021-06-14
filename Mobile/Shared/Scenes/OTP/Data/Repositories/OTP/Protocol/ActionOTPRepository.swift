@@ -7,6 +7,6 @@
 //
 
 protocol ActionOTPRepository {
-    typealias ActionOTPHandler = (Result<ActionOTPEntity, Error>) -> Void
+    typealias ActionOTPHandler = (Result<ActionOTPEntity, ABError>) -> Void
     func actionOTP(handler: @escaping ActionOTPHandler)
 }

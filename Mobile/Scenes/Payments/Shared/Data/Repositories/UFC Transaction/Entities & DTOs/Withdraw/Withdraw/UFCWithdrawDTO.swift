@@ -19,8 +19,8 @@ struct UFCWithdrawDTO: DataTransferResponse {
 
     typealias Entity = Void
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        if body.code == 10 { return () }
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        if body.code == 10 { return .success(()) }
         return nil
     }
 }

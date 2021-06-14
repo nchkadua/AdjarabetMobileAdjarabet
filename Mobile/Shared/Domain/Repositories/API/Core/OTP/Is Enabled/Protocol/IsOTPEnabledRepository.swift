@@ -14,6 +14,6 @@ protocol IsOTPEnabledRepository {
      true  - if OTP is enabled
      false - if OTP is NOT enabled
      */
-    typealias IsEnabledHandler = (Result<Bool, Error>) -> Void
+    typealias IsEnabledHandler = (Result<Bool, ABError>) -> Void
     func isEnabled(_ handler: @escaping IsEnabledHandler)
 }

@@ -17,7 +17,7 @@ public class DefaultNotificationsRepository: NotificationsRepository {
     func notifications(params: NotificationParams, handler: @escaping NotificationsHandler) {
         guard let userId = userSession.userId
         else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.sessionUninitialized))
             return
         }
 
@@ -35,7 +35,7 @@ public class DefaultNotificationsRepository: NotificationsRepository {
     func read(params: NotificationStatusUpdateParams, handler: @escaping NotificationStatusUpdateHandler) {
         guard let userId = userSession.userId
         else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.sessionUninitialized))
             return
         }
 
@@ -53,7 +53,7 @@ public class DefaultNotificationsRepository: NotificationsRepository {
     func delete(params: NotificationStatusUpdateParams, handler: @escaping NotificationStatusUpdateHandler) {
         guard let userId = userSession.userId
         else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.sessionUninitialized))
             return
         }
 

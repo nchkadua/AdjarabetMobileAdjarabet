@@ -43,7 +43,7 @@ struct PaymentListDTO: DataTransferResponse {
 
     typealias Entity = PaymentListEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         guard let list = body.list else { return nil }
 
         var elements: [PaymentListEntity.ElementEntity] = []
@@ -72,6 +72,6 @@ struct PaymentListDTO: DataTransferResponse {
             }
         }
 
-        return .init(elements: elements)
+        return .success(.init(elements: elements))
     }
 }

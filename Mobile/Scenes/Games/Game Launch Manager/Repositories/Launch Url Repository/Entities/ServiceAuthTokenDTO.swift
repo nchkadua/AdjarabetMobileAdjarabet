@@ -19,5 +19,8 @@ struct ServiceAuthTokenDTO: DataTransferResponse {
 
     typealias Entity = String
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? { body.token }
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        guard let token = body.token else { return nil }
+        return .success(token)
+    }
 }

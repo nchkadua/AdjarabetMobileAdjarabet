@@ -7,11 +7,11 @@
 //
 
 protocol NotificationsRepository {
-    typealias NotificationsHandler = (Result<NotificationItemsEntity, Error>) -> Void
+    typealias NotificationsHandler = (Result<NotificationItemsEntity, ABError>) -> Void
     func notifications(params: NotificationParams,
                        handler: @escaping NotificationsHandler)
 
-    typealias NotificationStatusUpdateHandler = (Result<NotificationStatusUpdateMessageEntity, Error>) -> Void
+    typealias NotificationStatusUpdateHandler = (Result<NotificationStatusUpdateMessageEntity, ABError>) -> Void
     func read(params: NotificationStatusUpdateParams,
               handler: @escaping NotificationStatusUpdateHandler)
     func delete(params: NotificationStatusUpdateParams,

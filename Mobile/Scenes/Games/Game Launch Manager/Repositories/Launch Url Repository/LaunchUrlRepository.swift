@@ -17,7 +17,7 @@ protocol LaunchUrlRepository {
      for later use, for fetching Web URL
      */
     // output
-    typealias TokenHandler = (Result<String, Error>) -> Void
+    typealias TokenHandler = (Result<String, ABError>) -> Void
     // input
     func token(providerId: String, handler: @escaping TokenHandler)
 
@@ -25,7 +25,7 @@ protocol LaunchUrlRepository {
      Returns Web URL
      */
     // ouput
-    typealias UrlHandler = (Result<String, Error>) -> Void
+    typealias UrlHandler = (Result<String, ABError>) -> Void
     // input
     /**
      Specified by already fetched Service Auth Token and gameId
@@ -53,7 +53,7 @@ struct DefaultLaunchUrlRepository: LaunchUrlRepository, CoreApiRepository {
 
     func url(token: String, gameId: String, handler: @escaping UrlHandler) {
         guard let sessionId = userSession.sessionId else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.sessionUninitialized))
             return
         }
 

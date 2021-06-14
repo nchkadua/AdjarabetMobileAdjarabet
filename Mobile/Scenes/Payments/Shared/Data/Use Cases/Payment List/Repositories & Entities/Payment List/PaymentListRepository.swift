@@ -12,7 +12,7 @@ protocol PaymentListRepository {
     /**
      Returns list of all payment methods
      */
-    typealias ListHandler = (Result<PaymentListEntity, Error>) -> Void
+    typealias ListHandler = (Result<PaymentListEntity, ABError>) -> Void
     func list(handler: @escaping ListHandler)
 }
 

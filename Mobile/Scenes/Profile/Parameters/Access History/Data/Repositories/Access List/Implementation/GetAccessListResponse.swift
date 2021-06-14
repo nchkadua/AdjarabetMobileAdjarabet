@@ -8,15 +8,15 @@
 
 import Foundation
 
-public final class GetAccessListResponse: DataTransferResponse {
+struct GetAccessListResponse: CoreDataTransferResponse {
     struct GetAccessListApiEntity: Codable {
-        public let authIp: String?
-        public let authTypeId: Int?
-        public let authDate: String?
-        public let userAgentString: String?
-        public let additionalDate: String?
-        public let terminationDate: String?
-        public let terminationCause: Int?
+        let authIp: String?
+        let authTypeId: Int?
+        let authDate: String?
+        let userAgentString: String?
+        let additionalDate: String?
+        let terminationDate: String?
+        let terminationCause: Int?
 
         enum CodingKeys: String, CodingKey {
             case authIp = "AuthIP"
@@ -29,7 +29,7 @@ public final class GetAccessListResponse: DataTransferResponse {
         }
     }
 
-    public struct Body: Codable {
+    struct Body: CoreStatusCodeable {
         let statusCode: Int
         let accesList: [GetAccessListApiEntity]
 
@@ -39,13 +39,15 @@ public final class GetAccessListResponse: DataTransferResponse {
         }
     }
 
-    public typealias Entity = [AccessListEntity]
+    typealias Entity = [AccessListEntity]
 
-    public static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         let dateFormatter = ABDateFormater(with: .verbose)
-        return body.accesList.compactMap {
+        return .success(body.accesList.compactMap {
             AccessListEntity(ip: $0.authIp,
                              userAgent: $0.userAgentString,
-                             date: dateFormatter.date(from: $0.authDate ?? "")) }
+                             date: dateFormatter.date(from: $0.authDate ?? ""))
+            }
+        )
     }
 }

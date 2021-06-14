@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct CoreApiTransactionHistoryRepository: CoreApiRepository { }
+struct CoreApiTransactionHistoryRepository: CoreApiRepository { }
 
 extension CoreApiTransactionHistoryRepository: TransactionHistoryRepository {
     private static let maxResult = 10
 
-    public func getUserTransactions(params: GetUserTransactionsParams, completion: @escaping GetUserTransactionsCompletionHandler) {
+    func getUserTransactions(params: GetUserTransactionsParams, completion: @escaping GetUserTransactionsCompletionHandler) {
         performTask(expecting: GetUserTransactionsResponse.self, completion: completion) { requestBuilder in
             var requestBuilder = requestBuilder
                 .setBody(key: .req, value: "getUsersTransactions")

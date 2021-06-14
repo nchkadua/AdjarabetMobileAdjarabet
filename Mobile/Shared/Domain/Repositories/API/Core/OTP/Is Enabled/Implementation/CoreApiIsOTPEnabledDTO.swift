@@ -19,7 +19,7 @@ struct CoreApiIsOTPEnabledDTO: DataTransferResponse {
 
     typealias Entity = Bool
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        body.statusCode == 134 // FIXME: 134 - OTP_IS_ENABLED
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        .success(body.statusCode == AdjarabetCoreStatusCode.OTP_IS_ENABLED.rawValue)
     }
 }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct CoreApiPaymentAccountDTO: DataTransferResponse {
-    struct Body: Codable {
+struct CoreApiPaymentAccountDTO: CoreDataTransferResponse {
+    struct Body: CoreStatusCodeable {
         let statusCode: Int
         let paymentAccounts: [BodyPaymentAccount]?
 
@@ -35,16 +35,14 @@ struct CoreApiPaymentAccountDTO: DataTransferResponse {
 
     typealias Entity = [PaymentAccountEntity]
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        guard body.statusCode == AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue // FIXME: make common
-        else { return nil }
-        return body.paymentAccounts?.map {
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        return .success(body.paymentAccounts?.map {
             PaymentAccountEntity(
                 id: $0.id,
                 accountVisual: $0.accountVisual,
                 providerName: $0.providerName,
                 dateCreated: $0.dateCreated
             )
-        } ?? []
+        } ?? [])
     }
 }

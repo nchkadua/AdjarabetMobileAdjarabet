@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct CoreApiUserInfoRepository: CoreApiRepository { }
+struct CoreApiUserInfoRepository: CoreApiRepository { }
 
 extension CoreApiUserInfoRepository: UserInfoRepository {
-    public func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler) {
+    func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler) {
         performTask(expecting: UserInfoDataTransferResponse.self, completion: completion) { requestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "getUserInfo")
