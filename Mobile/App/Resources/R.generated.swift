@@ -900,7 +900,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 108 files.
+  /// This `R.file` struct is generated, and contains static references to 109 files.
   struct file {
     /// Resource file `AAJSlot.zip`.
     static let aajSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "AAJSlot", pathExtension: "zip")
@@ -932,6 +932,8 @@ struct R: Rswift.Validatable {
     static let adjaraMontProRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMontPro-Regular", pathExtension: "ttf")
     /// Resource file `AdjaraMontPro-SemiBold.ttf`.
     static let adjaraMontProSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AdjaraMontPro-SemiBold", pathExtension: "ttf")
+    /// Resource file `ApplePayScript.js`.
+    static let applePayScriptJs = Rswift.FileResource(bundle: R.hostingBundle, name: "ApplePayScript", pathExtension: "js")
     /// Resource file `BHJSlot.zip`.
     static let bhjSlotZip = Rswift.FileResource(bundle: R.hostingBundle, name: "BHJSlot", pathExtension: "zip")
     /// Resource file `BHSJSlot.zip`.
@@ -1206,6 +1208,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "AdjaraMontPro-SemiBold", withExtension: "ttf")`
     static func adjaraMontProSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.adjaraMontProSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ApplePayScript", withExtension: "js")`
+    static func applePayScriptJs(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.applePayScriptJs
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -14378,8 +14386,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -14456,8 +14464,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -15392,10 +15400,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }

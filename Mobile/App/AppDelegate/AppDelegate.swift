@@ -117,6 +117,7 @@ public extension DependencyContainer {
         // Payments
         Module { DefaultPostLoginRepository() as PostLoginRepository }
         Module { DefaultPaymentListRepository() as PaymentListRepository }
+        Module { DefaultServiceAuthTokenRepository() as ServiceAuthTokenRepository }
         // Payments.UFC
         Module { DefaultUFCTransactionRepository() as UFCDepositRepository }
         Module { DefaultUFCTransactionRepository() as UFCWithdrawRepository }
@@ -184,5 +185,6 @@ public extension DependencyContainer {
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }
         Module { UFCWithdrawUseCase() as UFCWithdrawUseCase }
+        Module { DefaultApplePayUseCase() as ApplePayUseCase }
     }
 }

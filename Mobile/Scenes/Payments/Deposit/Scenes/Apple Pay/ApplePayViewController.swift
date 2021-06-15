@@ -125,5 +125,6 @@ public class ApplePayViewController: ABViewController {
     }
 
     @objc private func applePayButtonAction() {
+        viewModel.pay(amount: amount)
     }
 }

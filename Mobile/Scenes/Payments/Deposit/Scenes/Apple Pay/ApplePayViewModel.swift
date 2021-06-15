@@ -14,6 +14,7 @@ public protocol ApplePayViewModel: ApplePayViewModelInput, ApplePayViewModelOutp
 public protocol ApplePayViewModelInput: AnyObject {
     func viewDidLoad()
     func entered(amount: String)
+    func pay(amount: String)
 }
 
 public protocol ApplePayViewModelOutput {
@@ -39,6 +40,7 @@ public class DefaultApplePayViewModel {
     private let routeSubject = PublishSubject<ApplePayViewModelRoute>()
 
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
+    @Inject(from: .useCases) private var applePayUseCase: ApplePayUseCase
     @Inject(from: .componentViewModels) private var suggestedAmountGridComponentViewModel: SuggestedAmountGridComponentViewModel
 
     private var suggested: [Double] = []
@@ -102,5 +104,11 @@ extension DefaultApplePayViewModel: ApplePayViewModel {
 
     private func notify(_ action: ApplePayViewModelOutputAction) {
         actionSubject.onNext(action)
+    }
+
+    public func pay(amount: String) {
+        applePayUseCase.applePay(amount: amount) { result in
+            
+        }
     }
 }
