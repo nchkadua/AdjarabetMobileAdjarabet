@@ -12,7 +12,7 @@ public protocol PasswordChangeViewModel: PasswordChangeViewModelInput, PasswordC
 }
 
 public protocol PasswordChangeViewModelInput {
-    func viewDidLoad()
+    func viewDidAppear()
     func newPasswordDidChange(to newPassword: String)
     func changeDidTap(_ oldPassword: String, newPassword: String)
 }
@@ -46,7 +46,8 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     public var action: Observable<PasswordChangeViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<PasswordChangeViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    public func viewDidAppear() {
+        actionSubject.onNext(.setButton(loading: false))
     }
 
     public func changeDidTap(_ oldPassword: String, newPassword: String) {
