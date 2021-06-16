@@ -50,8 +50,7 @@ public class PasswordChangeViewController: ABViewController {
         switch action {
         case .setButton(let loading): updatePasswordButton.set(isLoading: loading)
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
-        case .showMessage(let message): showAlert(title: message)
-            showAlert(title: message) { _ in // Need to be changed after error handling system integrated
+        case .showMessage(let message): showAlert(title: message) { _ in // Need to be changed after error handling system integrated
                 self.dismiss(animated: true, completion: nil)
             }
         }
@@ -134,6 +133,7 @@ public class PasswordChangeViewController: ABViewController {
         updatePasswordButton.setStyle(to: .primary(state: .disabled, size: .large))
         updatePasswordButton.setTitleWithoutAnimation(R.string.localization.update_password_button_title.localized(), for: .normal)
         updatePasswordButton.addTarget(self, action: #selector(updatePasswordButtonDidTap), for: .touchUpInside)
+        updatePasswordButton.isUserInteractionEnabled = false
     }
 
     @objc private func updatePasswordButtonDidTap() {
