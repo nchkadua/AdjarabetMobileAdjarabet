@@ -380,6 +380,11 @@
 		CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE29FC372578F13E00402D0D /* MinAmountComponentView.xib */; };
 		CE29FC3C2578F14700402D0D /* MinAmountComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29FC3B2578F14700402D0D /* MinAmountComponentViewModel.swift */; };
 		CE29FC402578F14D00402D0D /* MinAmountComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29FC3F2578F14D00402D0D /* MinAmountComponentView.swift */; };
+		CE2AABB22679FEA300B45A0A /* ResetPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AABB12679FEA300B45A0A /* ResetPasswordUseCase.swift */; };
+		CE2AABBB2679FF7800B45A0A /* InitPasswordResetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AABBA2679FF7800B45A0A /* InitPasswordResetEntity.swift */; };
+		CE2AABC12679FF8000B45A0A /* InitPasswordResetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AABC02679FF8000B45A0A /* InitPasswordResetDTO.swift */; };
+		CE2AABC5267A014C00B45A0A /* PasswordResetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AABC4267A014C00B45A0A /* PasswordResetRepository.swift */; };
+		CE2AABC9267A015200B45A0A /* CorePasswordResetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AABC8267A015200B45A0A /* CorePasswordResetRepository.swift */; };
 		CE2AB4B3266A523A00C88262 /* MobileApiNotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AB4B2266A523A00C88262 /* MobileApiNotificationsRepository.swift */; };
 		CE2D1DEB2530738600112A1D /* QuickActionsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D1DEA2530738600112A1D /* QuickActionsHeaderViewModel.swift */; };
 		CE2D1DF22530753A00112A1D /* QuickActionsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D1DF12530753A00112A1D /* QuickActionsHeaderCell.swift */; };
@@ -1142,6 +1147,11 @@
 		CE29FC372578F13E00402D0D /* MinAmountComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MinAmountComponentView.xib; sourceTree = "<group>"; };
 		CE29FC3B2578F14700402D0D /* MinAmountComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinAmountComponentViewModel.swift; sourceTree = "<group>"; };
 		CE29FC3F2578F14D00402D0D /* MinAmountComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinAmountComponentView.swift; sourceTree = "<group>"; };
+		CE2AABB12679FEA300B45A0A /* ResetPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordUseCase.swift; sourceTree = "<group>"; };
+		CE2AABBA2679FF7800B45A0A /* InitPasswordResetEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPasswordResetEntity.swift; sourceTree = "<group>"; };
+		CE2AABC02679FF8000B45A0A /* InitPasswordResetDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPasswordResetDTO.swift; sourceTree = "<group>"; };
+		CE2AABC4267A014C00B45A0A /* PasswordResetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRepository.swift; sourceTree = "<group>"; };
+		CE2AABC8267A015200B45A0A /* CorePasswordResetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorePasswordResetRepository.swift; sourceTree = "<group>"; };
 		CE2AB4B2266A523A00C88262 /* MobileApiNotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiNotificationsRepository.swift; sourceTree = "<group>"; };
 		CE2D1DEA2530738600112A1D /* QuickActionsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsHeaderViewModel.swift; sourceTree = "<group>"; };
 		CE2D1DF12530753A00112A1D /* QuickActionsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsHeaderCell.swift; sourceTree = "<group>"; };
@@ -3630,6 +3640,49 @@
 			path = "Min Amount";
 			sourceTree = "<group>";
 		};
+		CE2AABB52679FEAD00B45A0A /* Password Reset */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AABB72679FEDF00B45A0A /* Protocol */,
+				CE2AABB62679FED900B45A0A /* Implementation */,
+			);
+			path = "Password Reset";
+			sourceTree = "<group>";
+		};
+		CE2AABB62679FED900B45A0A /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AABB92679FF6200B45A0A /* Entities */,
+				CE2AABC8267A015200B45A0A /* CorePasswordResetRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE2AABB72679FEDF00B45A0A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AABB82679FF5100B45A0A /* Entities */,
+				CE2AABC4267A014C00B45A0A /* PasswordResetRepository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE2AABB82679FF5100B45A0A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AABBA2679FF7800B45A0A /* InitPasswordResetEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE2AABB92679FF6200B45A0A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AABC02679FF8000B45A0A /* InitPasswordResetDTO.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		CE2AB425266A2D6600C88262 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -4885,6 +4938,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF52CD92673694C00D2386C /* PasswordChangeUseCase.swift */,
+				CE2AABB12679FEA300B45A0A /* ResetPasswordUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -4892,6 +4946,7 @@
 		CEF52CBF26735F9700D2386C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				CE2AABB52679FEAD00B45A0A /* Password Reset */,
 				CEF52CC026735FD800D2386C /* Password Change */,
 			);
 			path = Repositories;
@@ -6021,6 +6076,7 @@
 				CE4A30F6261224E50039C078 /* SuggestedAmountGridComponentView.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				CE9B7FEC257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift in Sources */,
+				CE2AABC9267A015200B45A0A /* CorePasswordResetRepository.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				C782D26B26544C4C00594A65 /* ABSliderCellModel.swift in Sources */,
 				CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */,
@@ -6042,6 +6098,7 @@
 				76BDF45E2576043A007B27A7 /* AccountParametersViewController.swift in Sources */,
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
 				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
+				CE2AABC12679FF8000B45A0A /* InitPasswordResetDTO.swift in Sources */,
 				CE4A3138261478D80039C078 /* MainContainerViewController.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
 				C701C6EA25C04FDC00B059A6 /* PaymentAccountCount.swift in Sources */,
@@ -6118,6 +6175,7 @@
 				76404EED2576120800D14E0C /* AccountParametersModel.swift in Sources */,
 				D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */,
 				CEA77799256D4244008A4F6C /* MailChangeViewControllerFactory.swift in Sources */,
+				CE2AABBB2679FF7800B45A0A /* InitPasswordResetEntity.swift in Sources */,
 				76BDF46D25760512007B27A7 /* AccountParametersTableViewCellDataProvider.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
@@ -6314,6 +6372,7 @@
 				C78127E42676A1390007F7E3 /* CoreDataTransferResponse.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */,
+				CE2AABB22679FEA300B45A0A /* ResetPasswordUseCase.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */,
@@ -6402,6 +6461,7 @@
 				76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */,
 				7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
+				CE2AABC5267A014C00B45A0A /* PasswordResetRepository.swift in Sources */,
 				7644B5EC25639786006778B2 /* TransactionHistoryComponentViewModel.swift in Sources */,
 				D8AC492C24CFE835000B2D80 /* AppDelegateServices.swift in Sources */,
 				76EFF7C62582383000898819 /* AccessHistoryCalendarViewControllerFactory.swift in Sources */,
