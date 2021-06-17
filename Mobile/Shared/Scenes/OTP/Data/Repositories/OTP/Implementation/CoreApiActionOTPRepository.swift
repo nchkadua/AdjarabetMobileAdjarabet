@@ -18,7 +18,7 @@ extension CoreApiActionOTPRepository: ActionOTPRepository {
     func actionOTP(handler: @escaping ActionOTPHandler) {
         guard let userId = userSession.userId
         else {
-            handler(.failure(.sessionUninitialized))
+            handler(.failure(.sessionNotFound))
             return
         }
 

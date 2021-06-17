@@ -18,7 +18,7 @@ extension CoreApiPasswordChangeRepository: PasswordChangeRepository {
     func change(params: PasswordChangeParams, handler: @escaping PasswordChangeHandler) {
         guard let userId = userSession.userId
         else {
-            handler(.failure(.sessionUninitialized))
+            handler(.failure(.sessionNotFound))
             return
         }
 
