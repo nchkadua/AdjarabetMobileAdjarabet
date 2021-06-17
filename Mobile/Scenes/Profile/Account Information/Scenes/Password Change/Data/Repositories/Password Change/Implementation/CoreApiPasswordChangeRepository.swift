@@ -22,18 +22,18 @@ extension CoreApiPasswordChangeRepository: PasswordChangeRepository {
             return
         }
 
-        var request = requestBuilder
-            .setBody(key: .req, value: "changePassword")
-            .setBody(key: .userId, value: String(userId))
-            .setBody(key: .oldPassword, value: params.oldPassword)
-            .setBody(key: .newPassword, value: params.newPassword)
+        performTask(expecting: PasswordChangeDTO.self, completion: handler) { request in
+            var request = requestBuilder
+                .setBody(key: .req, value: "changePassword")
+                .setBody(key: .userId, value: String(userId))
+                .setBody(key: .oldPassword, value: params.oldPassword)
+                .setBody(key: .newPassword, value: params.newPassword)
 
-        if params.otp > -1 {
-            request = request.setBody(key: .otp, value: String(params.otp))
-        }
+            if params.otp > -1 {
+                request = request.setBody(key: .otp, value: String(params.otp))
+            }
 
-        performTask(expecting: PasswordChangeDTO.self, completion: handler) { _ in
-            return request
+            return requestBuilder
         }
     }
 }

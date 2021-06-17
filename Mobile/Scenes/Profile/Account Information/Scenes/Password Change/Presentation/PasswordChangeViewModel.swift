@@ -12,7 +12,7 @@ public protocol PasswordChangeViewModel: PasswordChangeViewModelInput, PasswordC
 }
 
 public protocol PasswordChangeViewModelInput {
-    func viewDidAppear()
+    func viewDidLoad()
     func newPasswordDidChange(to newPassword: String)
     func changeDidTap(_ oldPassword: String, newPassword: String)
 }
@@ -35,6 +35,7 @@ public enum PasswordChangeViewModelRoute {
 public class DefaultPasswordChangeViewModel: DefaultBaseViewModel {
     @Inject(from: .repositories) private var repo: IsOTPEnabledRepository
     @Inject(from: .useCases) private var passwordChangeUseCase: PasswordChangeUseCase
+    @Inject(from: .useCases) private var resetPasswordUseCase: ResetPasswordUseCase
     private let actionSubject = PublishSubject<PasswordChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<PasswordChangeViewModelRoute>()
     //
@@ -46,12 +47,25 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     public var action: Observable<PasswordChangeViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<PasswordChangeViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidAppear() {
-        actionSubject.onNext(.setButton(loading: false))
+    public func viewDidLoad() {
+        /* resetPasswordUseCase.initPasswordReset { result in
+            switch result {
+            case .success(let entity):
+                print(entity)
+            case .failure(let error):
+                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            }
+        }
+
+        resetPasswordUseCase.getPasswordResetCode(params: .init(address: "995577131188", channelType: .sms)) { result in
+            switch result {
+            case .success(let entity): print(entity)
+            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            }
+        } Commented till UI is done */
     }
 
     public func changeDidTap(_ oldPassword: String, newPassword: String) {
-        self.actionSubject.onNext(.setButton(loading: true))
         repo.isEnabled { result in
             switch result {
             case .success(let enabled):
@@ -101,6 +115,7 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     }
 
     public func changePassword(_ oldPassword: String, newPassword: String, otp: Int) {
+        self.actionSubject.onNext(.setButton(loading: true))
         passwordChangeUseCase.change(oldPassword: oldPassword, newPassword: newPassword, otp: otp) { result in
             defer { self.actionSubject.onNext(.setButton(loading: false)) }
             switch result {
