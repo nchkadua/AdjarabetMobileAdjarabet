@@ -1,5 +1,5 @@
 //
-//  CoreApiChangeAddressDTO.swift
+//  CoreApiChangeUserLangDTO.swift
 //  Mobile
 //
 //  Created by Giorgi Kratsashvili on 6/17/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CoreApiChangeAddressDTO: CoreDataTransferResponse {
+struct CoreApiChangeUserLangDTO: CoreDataTransferResponse {
     struct Body: CoreStatusCodeable {
         let statusCode: Int
 
@@ -19,7 +19,7 @@ struct CoreApiChangeAddressDTO: CoreDataTransferResponse {
 
     typealias Entity = Void
 
-    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+    static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Void, ABError>? {
         .success(())
     }
 }

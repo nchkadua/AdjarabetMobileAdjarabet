@@ -177,6 +177,11 @@
 		C7553B29267B5B6200813FAC /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B28267B5B6200813FAC /* AddressRepository.swift */; };
 		C7553B2D267B5B7B00813FAC /* CoreApiAddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B2C267B5B7B00813FAC /* CoreApiAddressRepository.swift */; };
 		C7553B31267B5B9700813FAC /* CoreApiChangeAddressDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B30267B5B9700813FAC /* CoreApiChangeAddressDTO.swift */; };
+		C7553B3F267B727700813FAC /* CommunicationLanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B3E267B727700813FAC /* CommunicationLanguageRepository.swift */; };
+		C7553B43267B729100813FAC /* CommunicationLanguageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B42267B729100813FAC /* CommunicationLanguageEntity.swift */; };
+		C7553B47267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B46267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift */; };
+		C7553B56267B756800813FAC /* CoreApiGetUserLangDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B55267B756800813FAC /* CoreApiGetUserLangDTO.swift */; };
+		C7553B5A267B757900813FAC /* CoreApiChangeUserLangDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B59267B757900813FAC /* CoreApiChangeUserLangDTO.swift */; };
 		C75D1AC6261205F4002AF763 /* HSHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A67261205E8002AF763 /* HSHJSlot.zip */; settings = {ASSET_TAGS = (HSHJSlot, ); }; };
 		C75D1AC7261205F4002AF763 /* FLKJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6A261205E8002AF763 /* FLKJSlot.zip */; settings = {ASSET_TAGS = (FLKJSlot, ); }; };
 		C75D1AC8261205F4002AF763 /* ZWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6B261205E8002AF763 /* ZWJSlot.zip */; settings = {ASSET_TAGS = (ZWJSlot, ); }; };
@@ -951,6 +956,11 @@
 		C7553B28267B5B6200813FAC /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
 		C7553B2C267B5B7B00813FAC /* CoreApiAddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiAddressRepository.swift; sourceTree = "<group>"; };
 		C7553B30267B5B9700813FAC /* CoreApiChangeAddressDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiChangeAddressDTO.swift; sourceTree = "<group>"; };
+		C7553B3E267B727700813FAC /* CommunicationLanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationLanguageRepository.swift; sourceTree = "<group>"; };
+		C7553B42267B729100813FAC /* CommunicationLanguageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationLanguageEntity.swift; sourceTree = "<group>"; };
+		C7553B46267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiCommunicationLanguageRepository.swift; sourceTree = "<group>"; };
+		C7553B55267B756800813FAC /* CoreApiGetUserLangDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiGetUserLangDTO.swift; sourceTree = "<group>"; };
+		C7553B59267B757900813FAC /* CoreApiChangeUserLangDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiChangeUserLangDTO.swift; sourceTree = "<group>"; };
 		C75D1A67261205E8002AF763 /* HSHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = HSHJSlot.zip; sourceTree = "<group>"; };
 		C75D1A6A261205E8002AF763 /* FLKJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FLKJSlot.zip; sourceTree = "<group>"; };
 		C75D1A6B261205E8002AF763 /* ZWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ZWJSlot.zip; sourceTree = "<group>"; };
@@ -2345,6 +2355,42 @@
 				C7553B2C267B5B7B00813FAC /* CoreApiAddressRepository.swift */,
 			);
 			path = Implementation;
+			sourceTree = "<group>";
+		};
+		C7553B3A267B722500813FAC /* Communication Language */ = {
+			isa = PBXGroup;
+			children = (
+				C7553B3C267B725100813FAC /* Protocol */,
+				C7553B3B267B724500813FAC /* Implementation */,
+			);
+			path = "Communication Language";
+			sourceTree = "<group>";
+		};
+		C7553B3B267B724500813FAC /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				C7553B50267B753D00813FAC /* Entities */,
+				C7553B46267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		C7553B3C267B725100813FAC /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C7553B42267B729100813FAC /* CommunicationLanguageEntity.swift */,
+				C7553B3E267B727700813FAC /* CommunicationLanguageRepository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C7553B50267B753D00813FAC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C7553B55267B756800813FAC /* CoreApiGetUserLangDTO.swift */,
+				C7553B59267B757900813FAC /* CoreApiChangeUserLangDTO.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C75F61DA2656FD92009CB6A1 /* Layout Chooser */ = {
@@ -4480,6 +4526,7 @@
 		CE5D7AC8266A647E00719120 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C7553B3A267B722500813FAC /* Communication Language */,
 				C7EF9E7025702AFA00D2908C /* User Info */,
 			);
 			path = Repositories;
@@ -6038,6 +6085,7 @@
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
 				CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */,
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
+				C7553B5A267B757900813FAC /* CoreApiChangeUserLangDTO.swift in Sources */,
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
 				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
 				C701C72725C06C0600B059A6 /* Status.swift in Sources */,
@@ -6050,6 +6098,7 @@
 				D8BB242E246E7F5A00244FF4 /* HomeNavigator.swift in Sources */,
 				D8C73F832445BB00004C96DB /* CommonBarButtonProviding.swift in Sources */,
 				CEA97675252CA688003CB1AB /* BalanceTableViewCell.swift in Sources */,
+				C7553B3F267B727700813FAC /* CommunicationLanguageRepository.swift in Sources */,
 				CEB285E5256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift in Sources */,
 				76404F0E257625F900D14E0C /* AccountSecurityMessagesTableViewCell.swift in Sources */,
 				C7C973AF2580EC990062C713 /* SecurityLevelTypeTableViewCell.swift in Sources */,
@@ -6347,6 +6396,7 @@
 				7668C7AD2576785F0024DDE4 /* AccountParametersHeaderComponentView.swift in Sources */,
 				CEA2CC7D2626E28500F27A45 /* UserIdButton.swift in Sources */,
 				CE03747025F8D7180061F507 /* WebViewController.swift in Sources */,
+				C7553B47267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift in Sources */,
 				CEBB00832609D3F900D1B510 /* EmoneyViewControllerFactory.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */,
@@ -6426,6 +6476,7 @@
 				76E43EE025B95303007B2D97 /* VideoCardTableViewCell.swift in Sources */,
 				CEBB00912609D40400D1B510 /* VisaViewControllerFactory.swift in Sources */,
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,
+				C7553B56267B756800813FAC /* CoreApiGetUserLangDTO.swift in Sources */,
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */,
 				CE95A42D261DF1C40004330E /* ApplePayButton.swift in Sources */,
@@ -6477,6 +6528,7 @@
 				CEF52CD42673604400D2386C /* PasswordChangeDTO.swift in Sources */,
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
 				7676E55D2562D73100234026 /* TransactionHistoryProvider.swift in Sources */,
+				C7553B43267B729100813FAC /* CommunicationLanguageEntity.swift in Sources */,
 				C78127C7267142080007F7E3 /* CoreApiIsOTPEnabledRepository.swift in Sources */,
 				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,

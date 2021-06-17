@@ -37,6 +37,7 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
     public var route: Observable<AddressChangeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        /*
         repo.changeAddress(
             with: .init (
                 addressLine1: "221B Baker Street",
@@ -55,5 +56,6 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
                 print("changeAddress.Failure:", error)
             }
         }
+        */
     }
 }

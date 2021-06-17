@@ -115,6 +115,9 @@ public extension DependencyContainer {
         Module { CoreApiAddressRepository() as AddressRepository }
         Module { CoreApiAddressRepository() as AddressReadableRepository }
         Module { CoreApiAddressRepository() as AddressWritableRepository }
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageRepository }
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageReadableRepository }
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageWritableRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
         Module { DefaultNotificationsRepository() as NotificationsRepository }
