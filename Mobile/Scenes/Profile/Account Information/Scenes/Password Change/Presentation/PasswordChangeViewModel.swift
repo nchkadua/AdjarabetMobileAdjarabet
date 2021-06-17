@@ -92,7 +92,7 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     }
 
     private func openOTP(_ username: String) {
-        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username, getOtp: true, otpType: .actionOTP)
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username, otpType: .actionOTP)
         routeSubject.onNext(.openOTP(params: otpParams))
         subscribeTo(otpParams)
     }
