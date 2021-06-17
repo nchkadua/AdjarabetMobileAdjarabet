@@ -29,6 +29,7 @@ public enum AddressChangeViewModelRoute {
 public class DefaultAddressChangeViewModel {
     private let actionSubject = PublishSubject<AddressChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<AddressChangeViewModelRoute>()
+    @Inject(from: .repositories) private var repo: AddressWritableRepository
 }
 
 extension DefaultAddressChangeViewModel: AddressChangeViewModel {
@@ -36,5 +37,23 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
     public var route: Observable<AddressChangeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        repo.changeAddress(
+            with: .init (
+                addressLine1: "221B Baker Street",
+                addressLine2: "Flat #23",
+                addressLine3: "Marylebone",
+                town: "London",
+                county: "Greater London",
+                region: "Greater London",
+                postCode: "NW1 6XE"
+            )
+        ) { result in
+            switch result {
+            case .success:
+                print("changeAddress.Success")
+            case .failure(let error):
+                print("changeAddress.Failure:", error)
+            }
+        }
     }
 }
