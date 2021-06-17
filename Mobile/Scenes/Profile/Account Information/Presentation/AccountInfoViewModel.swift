@@ -32,6 +32,7 @@ public class DefaultAccountInfoViewModel {
     private let routeSubject = PublishSubject<AccountInfoViewModelRoute>()
 
     @Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository
+    @Inject(from: .repositories) private var langRepo: CommunicationLanguageRepository
 }
 
 extension DefaultAccountInfoViewModel: AccountInfoViewModel {
@@ -52,5 +53,25 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
                 print(error) // FIXME error handling
             }
         }
+        /*
+        // getUserLang
+        langRepo.getUserLang { result in
+            switch result {
+            case .success(let language):
+                print("UserLang.getUserLang.Success:", language)
+            case .failure(let error):
+                print("UserLang.getUserLang.Failure:", error)
+            }
+        }
+        // changeUserLang
+        langRepo.changeUserLang(with: .english) { result in
+            switch result {
+            case .success:
+                print("UserLang.changeUserLang.Success")
+            case .failure(let error):
+                print("UserLang.changeUserLang.Failure:", error)
+            }
+        }
+        */
     }
 }
