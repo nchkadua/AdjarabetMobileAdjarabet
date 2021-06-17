@@ -108,7 +108,7 @@ struct DefaultUFCTransactionRepository: UFCTransactionRepository {
               let currencyId = userSession.currencyId,
               let currency = Currency(currencyId: currencyId)
         else {
-            handler(.failure(.sessionUninitialized))
+            handler(.failure(.sessionNotFound))
             return
         }
 

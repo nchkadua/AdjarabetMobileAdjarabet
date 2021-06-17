@@ -17,6 +17,15 @@
 // ABError
 "shared_aberror_default_description" = "დაფიქსირდა შეცდომა";
 "shared_aberror_wrong_auth_credentials_description" = "არასწორი ავტორიზაციის მონაცემები";
+"shared_aberror_ip_is_blocked" = "IP დაბლოკილია";
+"shared_aberror_session_not_found" = "სესია ვერ მოიძებნა";
+"shared_aberror_must_be_more_than_zero" = "შეყვანილი მონაცემი უნდა იყოს მეტი ნოლზე";
+"shared_aberror_account_is_suspended" = "გააქტიურებულია Self Suspend";
+"shared_aberror_unable_to_get_balance" = "ვერ მოხერხდა ბალანსის წამოღება";
+"shared_aberror_payment_account_not_found" = "გადახდის მეთოდი ვერ მოიძებნა";
+"shared_aberror_payment_account_is_not_verified" = "გადახდის მეთოდი არ არის ვერიფიცირებული";
+"shared_aberror_unable_to_send_email_verification_email_is_missing" = "ვერ ხერხდება email ვერიფიკაციის გაგზავნა, email არ არის მითითებული";
+"shared_aberror_bonus_is_expired" = "ბონუსი ამოწურულია";
 
 "login" = "შესვლა";
 

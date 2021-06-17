@@ -17,7 +17,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
         guard let username = userSession.username,
               let sessionId = userSession.sessionId
         else {
-            handler(.failure(.sessionUninitialized))
+            handler(.failure(.sessionNotFound))
             return
         }
 
@@ -34,7 +34,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
         guard let username = userSession.username,
               let sessionId = userSession.sessionId
         else {
-            handler(.failure(.sessionUninitialized))
+            handler(.failure(.sessionNotFound))
             return
         }
 
@@ -48,12 +48,12 @@ extension CorePasswordResetRepository: PasswordResetRepository {
 
         dataTransferService.performTask(expecting: GetPasswordResetCodeDTO.self, request: request, respondOnQueue: .main, completion: handler)
     }
-    
+
     func resetPassword(params: ResetPasswordParams, handler: @escaping ResetPasswordHandler) {
         guard let username = userSession.username,
               let sessionId = userSession.sessionId
         else {
-            handler(.failure(.sessionUninitialized))
+            handler(.failure(.sessionNotFound))
             return
         }
 

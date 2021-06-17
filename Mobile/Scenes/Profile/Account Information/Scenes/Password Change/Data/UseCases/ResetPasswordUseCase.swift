@@ -14,7 +14,7 @@ protocol ResetPasswordUseCase {
 
     typealias GetPasswordResetCodeHandler = (Result<GetPasswordResetCodeEntity, ABError>) -> Void
     func getPasswordResetCode(params: PasswordResetCodeParams, handler: @escaping GetPasswordResetCodeHandler)
-    
+
     typealias ResetPasswordHandler = (Result<ResetPasswordEntity, ABError>) -> Void
     func resetPassword(params: ResetPasswordParams, handler: @escaping ResetPasswordHandler)
 }
@@ -39,8 +39,7 @@ struct DefaultResetPasswordUseCase: ResetPasswordUseCase {
     func getPasswordResetCode(params: PasswordResetCodeParams, handler: @escaping GetPasswordResetCodeHandler) {
         repo.getPasswordResetCode(params: params, handler: handler)
     }
-    
+
     func resetPassword(params: ResetPasswordParams, handler: @escaping ResetPasswordHandler) {
-        
     }
 }
