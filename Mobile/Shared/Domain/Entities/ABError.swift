@@ -64,7 +64,6 @@ enum ABError {
 // MARK: - Core API Error -> ABError
 extension ABError {
     init(coreStatusCode: AdjarabetCoreStatusCode) {
-        print("asdadasdasds 1 ", coreStatusCode)
         self = .default
     }
 }
@@ -72,7 +71,6 @@ extension ABError {
 // MARK: - Data Transfer Error -> ABError
 extension ABError {
     init(dataTransferError: DataTransferError) {
-        print("asdadasdasds ", dataTransferError)
         self = .default
     }
 }

@@ -48,7 +48,7 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     public var route: Observable<PasswordChangeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        resetPasswordUseCase.initPasswordReset { result in
+        /* resetPasswordUseCase.initPasswordReset { result in
             switch result {
             case .success(let entity):
                 print(entity)
@@ -56,10 +56,16 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
                 self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
+
+        resetPasswordUseCase.getPasswordResetCode(params: .init(address: "995577131188", channelType: .sms)) { result in
+            switch result {
+            case .success(let entity): print(entity)
+            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            }
+        } Commented till UI is done */
     }
 
     public func changeDidTap(_ oldPassword: String, newPassword: String) {
-        self.actionSubject.onNext(.setButton(loading: true))
         repo.isEnabled { result in
             switch result {
             case .success(let enabled):
@@ -109,6 +115,7 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     }
 
     public func changePassword(_ oldPassword: String, newPassword: String, otp: Int) {
+        self.actionSubject.onNext(.setButton(loading: true))
         passwordChangeUseCase.change(oldPassword: oldPassword, newPassword: newPassword, otp: otp) { result in
             defer { self.actionSubject.onNext(.setButton(loading: false)) }
             switch result {
