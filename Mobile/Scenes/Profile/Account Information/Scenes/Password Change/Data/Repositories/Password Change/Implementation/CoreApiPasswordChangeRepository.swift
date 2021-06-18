@@ -16,24 +16,26 @@ extension CoreApiPasswordChangeRepository: PasswordChangeRepository {
     private var requestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
     func change(params: PasswordChangeParams, handler: @escaping PasswordChangeHandler) {
-        guard let userId = userSession.userId
+        guard let userId = userSession.userId,
+              let sessionId = userSession.sessionId
         else {
             handler(.failure(.sessionNotFound))
             return
         }
 
-        performTask(expecting: PasswordChangeDTO.self, completion: handler) { request in
+        performTask(expecting: PasswordChangeDTO.self, completion: handler) { _ in
             var request = requestBuilder
-                .setBody(key: .req, value: "changePassword")
-                .setBody(key: .userId, value: String(userId))
-                .setBody(key: .oldPassword, value: params.oldPassword)
-                .setBody(key: .newPassword, value: params.newPassword)
+            .setHeader(key: .cookie, value: sessionId)
+            .setBody(key: .req, value: "changePassword")
+            .setBody(key: .userId, value: String(userId))
+            .setBody(key: .oldPassword, value: params.oldPassword)
+            .setBody(key: .newPassword, value: params.newPassword)
 
             if params.otp > -1 {
                 request = request.setBody(key: .otp, value: String(params.otp))
             }
 
-            return requestBuilder
+            return request
         }
     }
 }
