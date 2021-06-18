@@ -1370,6 +1370,7 @@
 		CEF52D242678E6CB00D2386C /* ServiceAuthTokenDRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDRO.swift; sourceTree = "<group>"; };
 		CEF52D282678E70200D2386C /* ServiceAuthTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenRepository.swift; sourceTree = "<group>"; };
 		CEF52D2C2678E92900D2386C /* ApplePayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayUseCase.swift; sourceTree = "<group>"; };
+		CEF9CC60267CCB4C0049E3FA /* Mobile StageDebug-Stage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mobile StageDebug-Stage.entitlements"; sourceTree = "<group>"; };
 		D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFactory.swift; sourceTree = "<group>"; };
 		D803F42724A251C700A16CB2 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
@@ -5226,6 +5227,7 @@
 		D8A47DCD24335B4B0077AA8E /* Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				CEF9CC60267CCB4C0049E3FA /* Mobile StageDebug-Stage.entitlements */,
 				C71C2416265C09C3002071FF /* Scenes */,
 				C71C2413265C09BA002071FF /* Shared */,
 				D8A47DE624335DC60077AA8E /* App */,
@@ -6890,7 +6892,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Mobile/Mobile StageDebug-Stage.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";

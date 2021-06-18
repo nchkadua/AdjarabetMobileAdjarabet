@@ -20,26 +20,9 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
     func applePay(amount: String, handler: @escaping Handler) {
         getServiceAuthToken { result in
             switch result {
-            case .success(let entity): loadJS(token: entity)
+            case .success(let entity): handler(.success(entity))
             case .failure(let error): handler(.failure(error))
             }
-        }
-    }
-
-    private func loadJS(token: String) {
-        let jsContext = JSContext()
-
-        if let jsSourcePath = Bundle.main.path(forResource: "ApplePayScript", ofType: "js") {
-            do {
-                let jsSourceContents = try String(contentsOfFile: jsSourcePath)
-
-                jsContext?.evaluateScript(jsSourceContents)
-                jsContext?.evaluateScript("makePaymentSwift(\("1.00"),\("GEL"),\("GE"),\(token));")
-            } catch {
-                print(error.localizedDescription)
-            }
-        } else {
-            print("js not found")
         }
     }
 
@@ -50,24 +33,5 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
             case .failure(let error): handler(.failure(error))
             }
         }
-    }
-}
-
-struct JSParams {
-    let total: Total
-    let currencyCode: String
-    let countryCode: String
-    let requiredShippingContctFields: [String]
-    let applicationData: ApplicationData
-
-    struct Total {
-        let label = "Merchant"
-        let type = "final"
-        let amount: Int
-    }
-
-    struct ApplicationData {
-        let token: String
-        let ip = "80.241.246.253"
     }
 }

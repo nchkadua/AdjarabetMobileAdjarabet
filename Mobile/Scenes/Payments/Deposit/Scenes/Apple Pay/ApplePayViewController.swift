@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import PassKit
 
 public class ApplePayViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: ApplePayViewModel
@@ -50,6 +51,7 @@ public class ApplePayViewController: ABViewController {
         case .updateContinue(let isEnabled): updateApayButton(isEnabled)
         case .show(error: let error): showAlert(title: error)
         case .bindToGridViewModel(viewModel: let viewModel): bindToGrid(viewModel)
+        case .paymentRequestDidInit(let request): presentApplePayVC(request: request)
         }
     }
 
@@ -116,7 +118,7 @@ public class ApplePayViewController: ABViewController {
     }
 
     private func updateApayButton(_ isEnabled: Bool) {
-        applePayButton.isUserInteractionEnabled = isEnabled
+        applePayButton.isUserInteractionEnabled = true
     }
 
     private func updateAmountInputeView(_ amountViewModel: SuggestedAmountComponentViewModel) {
@@ -126,5 +128,21 @@ public class ApplePayViewController: ABViewController {
 
     @objc private func applePayButtonAction() {
         viewModel.pay(amount: amount)
+    }
+
+    private func presentApplePayVC(request: PKPaymentRequest) {
+        let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
+        applePayController?.delegate = self
+        self.present(applePayController!, animated: true, completion: nil)
+    }
+}
+
+extension ApplePayViewController: PKPaymentAuthorizationViewControllerDelegate {
+    public func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    public func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        completion(PKPaymentAuthorizationResult(status: PKPaymentAuthorizationStatus.success, errors: []))
     }
 }

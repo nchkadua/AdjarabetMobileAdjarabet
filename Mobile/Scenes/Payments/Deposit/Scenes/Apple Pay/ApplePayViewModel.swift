@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import PassKit
 
 public protocol ApplePayViewModel: ApplePayViewModelInput, ApplePayViewModelOutput {
 }
@@ -30,6 +31,7 @@ public enum ApplePayViewModelOutputAction {
     case updateContinue(with: Bool)
     case show(error: String)
     case bindToGridViewModel(viewModel: SuggestedAmountGridComponentViewModel)
+    case paymentRequestDidInit(request: PKPaymentRequest)
 }
 
 public enum ApplePayViewModelRoute {
@@ -109,9 +111,42 @@ extension DefaultApplePayViewModel: ApplePayViewModel {
     public func pay(amount: String) {
         applePayUseCase.applePay(amount: amount) { result in
             switch result {
-            case .success(let entity): print("asdasdasds ", entity)
+            case .success(let entity): self.createPaymentRequest(entity, Double(amount) ?? 0.0)
             case .failure(let error): self.actionSubject.onNext(.show(error: error.localizedDescription))
             }
         }
+    }
+
+    private func createPaymentRequest(_ token: String, _ amount: Double) {
+        let request = PKPaymentRequest()
+        request.merchantIdentifier = "merchant.com.adjarabet.web"
+        request.supportedNetworks = [.visa, .masterCard]
+        request.merchantCapabilities = .capability3DS
+        request.countryCode = "GE"
+        request.currencyCode = "GEL"
+        request.requiredShippingContactFields = [.name]
+        
+        do {
+            let jsonData = try JSONEncoder().encode(JSParams(token: token))
+            let jsonString = String(data: jsonData, encoding: .utf8)!
+            print("asdasdasd ", jsonString)
+            request.applicationData = jsonData
+
+            request.paymentSummaryItems = [
+                PKPaymentSummaryItem(label: "Merchant", amount: NSDecimalNumber(value: 1.00), type: .final)
+            ]
+
+            actionSubject.onNext(.paymentRequestDidInit(request: request))
+        } catch { print(error) }
+    }
+}
+
+struct JSParams: Codable {
+    let token: String
+    let ip = "80.241.246.253"
+
+    enum CodingKeys: String, CodingKey {
+        case token
+        case ip
     }
 }
