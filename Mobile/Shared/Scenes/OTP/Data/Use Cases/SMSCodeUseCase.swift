@@ -23,7 +23,8 @@ public final class DefaultSMSCodeUseCase: SMSCodeUseCase {
                 } else {
                     completion(.failure(AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode)))
                 }
-            case .failure(let error): completion(.failure(error))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

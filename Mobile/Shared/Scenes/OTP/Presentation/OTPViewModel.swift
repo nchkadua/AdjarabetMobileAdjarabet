@@ -133,6 +133,7 @@ extension DefaultOTPViewModel: OTPViewModel {
 
     private func getOTP() {
         let username = params.username.isEmpty ? userSession.username : params.username
+        print("asdadasds ", username)
         smsCodeUseCase.execute(username: username ?? "") { [weak self] result in
             defer { self?.actionSubject.onNext(.setResendSMSButton(isLoading: false)) }
             switch result {
