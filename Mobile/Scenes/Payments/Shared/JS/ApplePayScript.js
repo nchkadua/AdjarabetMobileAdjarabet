@@ -72,6 +72,39 @@ function Server3dsApplePay(options) {
     }
 }
 
+function makePaymentSwift(amount, currencyCode, countryCode, token) {
+  Server3dsApplePay.prototype.getPaymentRequest = (event) => {
+    const paymentRequest = {
+        total: {
+            label: 'Merchant',
+            type: 'final',
+            amount: amount,
+        },
+        currencyCode: currencyCode,
+        countryCode: countryCode,
+        requiredShippingContactFields: ['name'],
+        applicationData: {
+            token: token,
+            ip: '80.241.246.253'
+        }
+    };
+    return Promise.resolve(paymentRequest);
+  };
+
+  Server3dsApplePay.prototype.onSuccess = (successResponse) => {
+    console.log('EGAA')
+  }
+
+  Server3dsApplePay.prototype.onFailure = (fail) => {
+    console.log('RIP')
+  }
+
+  const applePay = new Server3dsApplePay({
+    authorizationUrl: 'https://sispayments.adjarabet.com/pay-applepay/api/payment/deposit'
+  })
+    applePay.enable()
+}
+
 Server3dsApplePay.prototype = {
     onSuccess: function (response) {
         throw 'Method onSuccess must be implemented!';

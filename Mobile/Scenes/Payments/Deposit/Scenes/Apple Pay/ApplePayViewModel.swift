@@ -108,7 +108,10 @@ extension DefaultApplePayViewModel: ApplePayViewModel {
 
     public func pay(amount: String) {
         applePayUseCase.applePay(amount: amount) { result in
-            
+            switch result {
+            case .success(let entity): print("asdasdasds ", entity)
+            case .failure(let error): self.actionSubject.onNext(.show(error: error.localizedDescription))
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ protocol ApplePayUseCase {
 
 struct DefaultApplePayUseCase: ApplePayUseCase {
     @Inject(from: .repositories) private var repo: ServiceAuthTokenRepository
-    
+
     func applePay(amount: String, handler: @escaping Handler) {
         getServiceAuthToken { result in
             switch result {
@@ -25,7 +25,7 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
             }
         }
     }
-    
+
     private func loadJS(token: String) {
         let jsContext = JSContext()
 
@@ -34,7 +34,7 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
                 let jsSourceContents = try String(contentsOfFile: jsSourcePath)
 
                 jsContext?.evaluateScript(jsSourceContents)
-
+                jsContext?.evaluateScript("makePaymentSwift(\("1.00"),\("GEL"),\("GE"),\(token));")
             } catch {
                 print(error.localizedDescription)
             }
@@ -42,7 +42,7 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
             print("js not found")
         }
     }
-    
+
     func getServiceAuthToken(handler: @escaping Handler) {
         repo.token(providerId: "1db5833e-d0cf-4995-a2ad-64d6e6ffeefc") { result in
             switch result {
