@@ -52,3 +52,22 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
         }
     }
 }
+
+struct JSParams {
+    let total: Total
+    let currencyCode: String
+    let countryCode: String
+    let requiredShippingContctFields: [String]
+    let applicationData: ApplicationData
+
+    struct Total {
+        let label = "Merchant"
+        let type = "final"
+        let amount: Int
+    }
+
+    struct ApplicationData {
+        let token: String
+        let ip = "80.241.246.253"
+    }
+}
