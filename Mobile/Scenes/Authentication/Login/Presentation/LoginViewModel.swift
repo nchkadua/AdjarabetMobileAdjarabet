@@ -21,7 +21,6 @@ public struct LoginViewModelParams {
 
 public protocol LoginViewModelInput {
     func viewDidLoad()
-    func viewDidAppear()
     func smsLogin(username: String)
     func login(username: String, password: String)
     func biometricLogin()
@@ -96,6 +95,10 @@ extension DefaultLoginViewModel: LoginViewModel {
                                                       icon: biometricLoginUseCase.icon,
                                                       title: biometricLoginUseCase.title))
         getQAImageByLanguage()
+
+        if params.showBiometryLoginAutomatically && biometryIsOn {
+            biometricLogin()
+        }
     }
 
     private func getQAImageByLanguage() {
@@ -107,12 +110,6 @@ extension DefaultLoginViewModel: LoginViewModel {
         }
 
         actionSubject.onNext(.configureQaButton(image: image ?? UIImage()))
-    }
-
-    public func viewDidAppear() {
-        if params.showBiometryLoginAutomatically && biometryIsOn {
-            biometricLogin()
-        }
     }
 
     public func languageDidChange() {
