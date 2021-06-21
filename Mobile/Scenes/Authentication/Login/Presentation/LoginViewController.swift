@@ -44,7 +44,7 @@ public class LoginViewController: ABViewController {
         setup()
         subscribeToPasswordInputView()
         bind(to: viewModel)
-        viewModel.viewDidLoad()
+//        viewModel.viewDidLoad()
         setupAccessibilityIdentifiers()
     }
 
