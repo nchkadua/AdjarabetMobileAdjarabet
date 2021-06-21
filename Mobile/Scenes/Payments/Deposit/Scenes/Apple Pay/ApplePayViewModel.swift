@@ -125,16 +125,13 @@ extension DefaultApplePayViewModel: ApplePayViewModel {
         request.countryCode = "GE"
         request.currencyCode = "GEL"
         request.requiredShippingContactFields = [.name]
-        
+        request.paymentSummaryItems = [
+            PKPaymentSummaryItem(label: "Merchant", amount: NSDecimalNumber(value: 1.00), type: .final)
+        ]
+
         do {
             let jsonData = try JSONEncoder().encode(JSParams(token: token))
-            let jsonString = String(data: jsonData, encoding: .utf8)!
-            print("asdasdasd ", jsonString)
             request.applicationData = jsonData
-
-            request.paymentSummaryItems = [
-                PKPaymentSummaryItem(label: "Merchant", amount: NSDecimalNumber(value: 1.00), type: .final)
-            ]
 
             actionSubject.onNext(.paymentRequestDidInit(request: request))
         } catch { print(error) }
