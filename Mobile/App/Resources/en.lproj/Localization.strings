@@ -68,7 +68,8 @@
 "login_password_input_title" = "Password";
 "login_with_face_id_title" = "Log in with face ID";
 "login_with_touch_id_title" = "Log in with touch ID";
-"login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
+"login_legal1" = "Copyright © 2021 Adjarabet.";
+"login_legal2" = "All Rights reserved.";
 
 /* SMS Login */
 "sms_login_page_title" = "OTP Authorization";

@@ -22,9 +22,12 @@ public class FooterComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var legalBgView: UIView!
     @IBOutlet weak private var legalImageView: UIImageView!
-    @IBOutlet weak private var legalLabel: UILabel!
-    @IBOutlet weak private var contactButton: ContactUsButton!
+    @IBOutlet weak private var legalLabel1: UILabel!
+    @IBOutlet weak private var legalLabel2: UILabel!
+    @IBOutlet weak private var contactButton: UIButton!
     @IBOutlet weak private var languageButton: LanguagesButton!
+
+    public var contactUsButton: UIButton { contactButton }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,12 +69,17 @@ public class FooterComponentView: UIView {
     }
 
     private func setupLegalView() {
-        legalBgView.setBackgorundColor(to: .tertiaryBg())
+        legalBgView.backgroundColor = .clear
 
-        legalLabel.setTextColor(to: .primaryText())
-        legalLabel.setFont(to: .caption2(fontCase: .lower, fontStyle: .regular))
-        legalLabel.numberOfLines = 3
-        legalLabel.setTextWithAnimation(R.string.localization.login_legal.localized())
+        legalLabel1.setTextColor(to: .primaryText())
+        legalLabel1.setFont(to: .caption2(fontCase: .lower, fontStyle: .semiBold))
+        legalLabel1.numberOfLines = 1
+        legalLabel1.setTextWithAnimation(R.string.localization.login_legal1.localized())
+
+        legalLabel2.setTextColor(to: .secondaryText())
+        legalLabel2.setFont(to: .caption1(fontCase: .lower, fontStyle: .regular))
+        legalLabel2.numberOfLines = 1
+        legalLabel2.setTextWithAnimation(R.string.localization.login_legal2.localized())
 
         legalImageView.image = R.image.login.legal()
         legalImageView.setTintColor(to: .primaryText())
@@ -99,7 +107,7 @@ extension FooterComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.secondaryBg().value
+        view.setBackgorundColor(to: .thick())
 
         setupLegalView()
         setDelegates()

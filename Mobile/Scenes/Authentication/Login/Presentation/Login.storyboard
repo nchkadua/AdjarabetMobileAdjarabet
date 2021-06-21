@@ -18,22 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qid-s3-n2n">
-                                <rect key="frame" x="0.0" y="702" width="414" height="160"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLI-tY-Hga" customClass="FooterComponentView" customModule="Mobile" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLI-tY-Hga" customClass="FooterComponentView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="824" width="414" height="72"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="Wqb-kd-TIB"/>
+                                    <constraint firstAttribute="height" constant="72" id="SVU-oS-avd"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                            </stackView>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-Tz-yeo">
-                                <rect key="frame" x="0.0" y="44" width="414" height="658"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="780"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="owt-7I-83A">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="536"/>
@@ -221,13 +215,13 @@
                         <viewLayoutGuide key="safeArea" id="1KU-ut-siY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="qid-s3-n2n" secondAttribute="trailing" id="2ZC-AW-1we"/>
-                            <constraint firstItem="qid-s3-n2n" firstAttribute="top" secondItem="Wj6-Tz-yeo" secondAttribute="bottom" id="4Qb-hi-kLj"/>
+                            <constraint firstAttribute="bottom" secondItem="mLI-tY-Hga" secondAttribute="bottom" id="GKa-GQ-2e7"/>
+                            <constraint firstItem="mLI-tY-Hga" firstAttribute="top" secondItem="Wj6-Tz-yeo" secondAttribute="bottom" id="GhG-Xk-cUO"/>
                             <constraint firstAttribute="trailing" secondItem="Wj6-Tz-yeo" secondAttribute="trailing" id="KZ3-za-RHs"/>
-                            <constraint firstAttribute="bottom" secondItem="qid-s3-n2n" secondAttribute="bottom" constant="34" id="SIF-Rb-Yc8"/>
                             <constraint firstItem="Wj6-Tz-yeo" firstAttribute="top" secondItem="1KU-ut-siY" secondAttribute="top" id="ZzD-Gd-kVh"/>
+                            <constraint firstItem="mLI-tY-Hga" firstAttribute="trailing" secondItem="1KU-ut-siY" secondAttribute="trailing" id="jXR-qt-AGQ"/>
                             <constraint firstItem="Wj6-Tz-yeo" firstAttribute="leading" secondItem="1P4-wK-I8c" secondAttribute="leading" id="obp-zX-lGb"/>
-                            <constraint firstItem="qid-s3-n2n" firstAttribute="leading" secondItem="1P4-wK-I8c" secondAttribute="leading" id="q7g-HQ-ZXu"/>
+                            <constraint firstItem="mLI-tY-Hga" firstAttribute="leading" secondItem="1KU-ut-siY" secondAttribute="leading" id="xif-i9-mPs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oqv-Lk-1qR"/>
