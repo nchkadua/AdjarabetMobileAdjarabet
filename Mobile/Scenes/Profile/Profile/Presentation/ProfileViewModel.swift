@@ -78,6 +78,16 @@ extension DefaultProfileViewModel: ProfileViewModel {
         }).disposed(by: self.disposeBag)
         dataProviders.insert(balanceViewModel, at: 1)
 
+        let logoutViewModel = DefaultLogOutComponentViewModel(params: .init(title: R.string.localization.log_out.localized()))
+        logoutViewModel.action.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .didTapButton: self?.routeSubject.onNext(.openPage(destionation: .loginPage))
+            default:
+                break
+            }
+        }).disposed(by: self.disposeBag)
+        dataProviders.insert(logoutViewModel, at: 2)
+
         QuickActionItemProvider.items(biometryQuickActionIcon()).reversed().forEach {
             let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, hidesSeparator: $0.hidesSeparator, destination: $0.destionation, roundedCorners: $0.roundedCorners))
 

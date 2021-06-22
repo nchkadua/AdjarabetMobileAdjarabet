@@ -14,8 +14,8 @@ public class FooterTableViewCell: AppTableViewCell {
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? FooterTableViewCellDataProvider else { fatalError("error") }
-            setBackgorundColor(to: .secondaryBg())
 
+            setBackgorundColor(to: .secondaryBg())
             footerComponentView.setAndBind(viewModel: dataProvider)
         }
     }
