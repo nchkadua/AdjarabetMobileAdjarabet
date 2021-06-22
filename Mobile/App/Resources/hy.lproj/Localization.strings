@@ -100,11 +100,13 @@
 "transaction_history" = "Transaction History";
 "my_cards" = "My Cards";
 "my_bonuses" = "My Bonuses";
-"biomatry_authentication_parameters" = "authentication parameters";
+"faq" = "Frequently Asked Questions";
+"biomatry_authentication_parameters" = "Authentication Parameters";
 "transfer_to_a_friend" = "Transfer to a Friend";
 "incognito_card" = "Incognito Card";
 "account_information" = "Account Information";
 "account_parameters" = "Account Parameters";
+"terms_and_conditions" = "Terms and Conditions";
 "log_out" = "Log Out";
 
 /* Account Info */

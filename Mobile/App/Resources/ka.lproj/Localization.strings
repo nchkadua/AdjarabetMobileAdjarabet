@@ -99,11 +99,13 @@
 "transaction_history" = "ტრანზაქციების ისტორია";
 "my_cards" = "ჩემი ბარათები";
 "my_bonuses" = "ჩემი ბონუსები";
-"biomatry_authentication_parameters" = "ავტორიზაციის პარამეტრები";
-"transfer_to_a_friend" = "გადაურიცხე მეგობარს";
-"incognito_card" = "ინკოგნიტო ბარათი";
-"account_information" = "ანგარიშის ინფორმაცია";
-"account_parameters" = "ანგარიშის პარამეტრები";
+"faq" = "Frequently Asked Questions";
+"biomatry_authentication_parameters" = "Authentication Parameters";
+"transfer_to_a_friend" = "Transfer to a Friend";
+"incognito_card" = "Incognito Card";
+"account_information" = "Account Information";
+"account_parameters" = "Account Parameters";
+"terms_and_conditions" = "Terms and Conditions";
 "log_out" = "ანგარიშიდან გასვლა";
 
 /* Account Info */

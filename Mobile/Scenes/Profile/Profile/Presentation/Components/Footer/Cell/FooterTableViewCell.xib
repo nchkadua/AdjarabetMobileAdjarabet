@@ -11,11 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FooterTableViewCell" customModule="Mobile" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vR1-OM-hbF" customClass="FooterComponentView" customModule="Mobile" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                    <rect key="frame" x="0.0" y="23" width="414" height="72"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
@@ -24,7 +24,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vR1-OM-hbF" secondAttribute="bottom" id="2k4-fz-Yid"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vR1-OM-hbF" secondAttribute="trailing" id="698-Aa-TVT"/>
-                <constraint firstItem="vR1-OM-hbF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cer-q9-Wl8"/>
+                <constraint firstItem="vR1-OM-hbF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="23" id="cer-q9-Wl8"/>
                 <constraint firstItem="vR1-OM-hbF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="moi-YR-gvA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
