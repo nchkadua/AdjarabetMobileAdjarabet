@@ -24,7 +24,6 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var separatorView2: UIView!
 
     @IBOutlet private weak var smsLoginButton: ABButton!
-    @IBOutlet private weak var rememberButton: UIButton!
 
     @IBOutlet private weak var loginButton: ABButton!
     @IBOutlet private weak var registrationButton: UIButton!
@@ -112,33 +111,27 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupButtons() {
-        smsLoginButton.titleLabel?.setFont(to: .callout(fontCase: .upper, fontStyle: .bold))
+        smsLoginButton.titleLabel?.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
         smsLoginButton.setTitleColor(to: .primaryText(), for: .normal)
         smsLoginButton.setTitleColor(to: .secondaryText(), for: .highlighted)
-        smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized().uppercased(), for: .normal)
+        smsLoginButton.setTitleWithoutAnimation(R.string.localization.login_sms_login.localized(), for: .normal)
         smsLoginButton.addTarget(self, action: #selector(smsLoginDidTap), for: .touchUpInside)
-
-        rememberButton.titleLabel?.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
-        rememberButton.setTitleColor(to: .primaryText(), for: .normal)
-        rememberButton.setTitle(R.string.localization.login_remember.localized(), for: .normal)
-        rememberButton.semanticContentAttribute = .forceRightToLeft
 
         loginButton.setStyle(to: .primary(state: .active, size: .large))
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTouchExit), for: .touchDragExit)
-        loginButton.roundCorners(.allCorners, radius: 41)
+        loginButton.roundCorners(.allCorners, radius: 8)
 //        updateLoginButton(isEnabled: false)
 
         registrationButton.titleLabel?.setFont(to: .callout(fontCase: .lower, fontStyle: .bold))
         registrationButton.setTitleColor(to: .primaryText(), for: .normal)
-        registrationButton.setBackgorundColor(to: .tertiaryBg())
+        registrationButton.backgroundColor = .clear
         registrationButton.setTitleWithoutAnimation(R.string.localization.login_registration.localized(), for: .normal)
         registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
         registrationButton.roundCorners(.allCorners, radius: 41)
 
-        biometryButton.titleLabel?.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
-        biometryButton.underline(with: .primaryText(), thickness: 1)
+        biometryButton.titleLabel?.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
         biometryButton.setTitleColor(to: .primaryText(), for: .normal)
         biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
         biometryIconButton.setTintColor(to: .primaryText())
@@ -178,7 +171,6 @@ public class LoginViewController: ABViewController {
     private func subscribeTo(_ inputView: ABInputView, indicator: UIView) {
         inputView.mainTextField.rx.controlEvent([.editingDidBegin])
             .asObservable().subscribe({_ in
-                self.scrollView.isScrollEnabled = false
                 UIView.animate(withDuration: 0.22) {
                     indicator.setBackgorundColor(to: .primaryText())
                 }
@@ -186,7 +178,6 @@ public class LoginViewController: ABViewController {
 
         inputView.mainTextField.rx.controlEvent([.editingDidEnd])
             .asObservable().subscribe({_ in
-                self.scrollView.isScrollEnabled = true
                 UIView.animate(withDuration: 0.22) {
                     indicator.setBackgorundColor(to: .nonOpaque())
                 }
