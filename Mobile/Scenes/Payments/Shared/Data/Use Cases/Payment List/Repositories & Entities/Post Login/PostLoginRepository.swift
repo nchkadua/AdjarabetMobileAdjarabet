@@ -14,7 +14,7 @@ protocol PostLoginRepository {
      Returns *some* specifications of user
      For example, Payment Segments ...
      */
-    typealias UserLoggedInHandler = (Result<UserLoggedInEntity, Error>) -> Void
+    typealias UserLoggedInHandler = (Result<UserLoggedInEntity, ABError>) -> Void
     func userLoggedIn(params: PostLoginRepositoryUserLoggedInParams,
                       handler: @escaping UserLoggedInHandler)
 }
@@ -38,7 +38,7 @@ struct DefaultPostLoginRepository: PostLoginRepository {
               let userId = userSession.userId,
               let currencyId = userSession.currencyId
         else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.sessionNotFound))
             return
         }
 

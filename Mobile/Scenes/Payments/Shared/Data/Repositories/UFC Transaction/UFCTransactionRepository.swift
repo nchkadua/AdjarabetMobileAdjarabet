@@ -33,7 +33,7 @@ protocol UFCDepositRepository {
      Returns Session ID for Transaction
      */
     // output
-    typealias InitDepositHandler = (Result<UFCInitDepositEntity, Error>) -> Void
+    typealias InitDepositHandler = (Result<UFCInitDepositEntity, ABError>) -> Void
     // input
     func initDeposit(with params: UFCInitDepositParams, _ handler: @escaping InitDepositHandler)
 
@@ -41,7 +41,7 @@ protocol UFCDepositRepository {
      Performs Deposit Transaction
      */
     // output
-    typealias DepositHandler = (Result<UFCDepositEntity, Error>) -> Void
+    typealias DepositHandler = (Result<UFCDepositEntity, ABError>) -> Void
     // input
     func deposit(with params: UFCDepositParams, _ handler: @escaping DepositHandler)
 }
@@ -58,7 +58,7 @@ protocol UFCWithdrawRepository {
      Returns Session ID for Transaction
      */
     // output
-    typealias InitWithdrawHandler = (Result<UFCInitWithdrawEntity, Error>) -> Void
+    typealias InitWithdrawHandler = (Result<UFCInitWithdrawEntity, ABError>) -> Void
     // input
     func initWithdraw(with params: UFCInitWithdrawParams, _ handler: @escaping InitWithdrawHandler)
 
@@ -66,7 +66,7 @@ protocol UFCWithdrawRepository {
      Performs Withdraw Transaction
      */
     // output
-    typealias WithdrawHandler = (Result<Void, Error>) -> Void
+    typealias WithdrawHandler = (Result<Void, ABError>) -> Void
     // input
     func withdraw(with params: UFCWithdrawParams, _ handler: @escaping WithdrawHandler)
 }
@@ -101,14 +101,14 @@ struct DefaultUFCTransactionRepository: UFCTransactionRepository {
         operation: String,
         with params: UFCTransactionParams,
         expecting response: Response.Type,
-        _ handler: @escaping (Result<Response.Entity, Error>) -> Void
+        _ handler: @escaping (Result<Response.Entity, ABError>) -> Void
     ) {
         guard let sessionId = userSession.sessionId,
               let userId = userSession.userId,
               let currencyId = userSession.currencyId,
               let currency = Currency(currencyId: currencyId)
         else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.sessionNotFound))
             return
         }
 
@@ -142,7 +142,7 @@ struct DefaultUFCTransactionRepository: UFCTransactionRepository {
         guard let dataJson = try? JSONSerialization.data(withJSONObject: body, options: []),
               let dataString = String(data: dataJson, encoding: .ascii)
         else {
-            handler(.failure(AdjarabetCoreClientError.coreError(description: "Request Parsing Error")))
+            handler(.failure(.`init`(description: .init(description: "Request Parsing Error"))))
             return
         }
 

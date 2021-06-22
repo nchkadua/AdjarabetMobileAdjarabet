@@ -13,7 +13,7 @@ struct UFCWithdrawUseCase {
     @Inject(from: .factories) private var paramsFactory: UFCTransactionParamsFactory
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
-    typealias InitWithdrawHandler = (Result<UFCInitWithdrawEntity, Error>) -> Void
+    typealias InitWithdrawHandler = (Result<UFCInitWithdrawEntity, ABError>) -> Void
     func execute(serviceType: UFCServiceType,
                  amount: Double,
                  accountId: Int64? = nil,
@@ -25,7 +25,7 @@ struct UFCWithdrawUseCase {
         withdrawRepo.initWithdraw(with: parameters, handler)
     }
 
-    typealias WithdrawHandler = (Result<Void, Error>) -> Void
+    typealias WithdrawHandler = (Result<Void, ABError>) -> Void
     func execute(serviceType: UFCServiceType,
                  amount: Double,
                  accountId: Int64? = nil,

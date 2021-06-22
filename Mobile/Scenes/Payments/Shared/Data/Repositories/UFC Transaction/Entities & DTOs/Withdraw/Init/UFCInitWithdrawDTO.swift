@@ -31,9 +31,9 @@ struct UFCInitWithdrawDTO: DataTransferResponse {
 
     typealias Entity = UFCInitWithdrawEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        if let code = body.code, code != 10 { return nil } // FIXME: Success == 10
-        return .init(session: body.rules.session,
-                     fee: body.rules.fee)
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        if let code = body.code, code != 10 { return nil } // FIXME Success == 10
+        return .success(.init(session: body.rules.session,
+                              fee: body.rules.fee))
     }
 }

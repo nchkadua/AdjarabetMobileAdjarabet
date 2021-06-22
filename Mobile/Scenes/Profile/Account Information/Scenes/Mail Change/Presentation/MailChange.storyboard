@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mail Change View Controller-->
+        <scene sceneID="1YF-Eb-Gup">
+            <objects>
+                <viewController storyboardIdentifier="MailChangeViewController" id="GBQ-pl-cDI" customClass="MailChangeViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Q0-Ht-MnP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeR-j6-SDs" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="60" width="374" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="ZZM-iP-dK3"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-pH-QhJ" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="20" y="143" width="374" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="a8V-ha-GFW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bos-8d-JVb"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AeR-j6-SDs" firstAttribute="top" secondItem="bos-8d-JVb" secondAttribute="top" constant="16" id="8Yq-9l-6o4"/>
+                            <constraint firstItem="XiW-pH-QhJ" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="20" id="BsV-cw-tBv"/>
+                            <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="XiW-pH-QhJ" secondAttribute="trailing" constant="20" id="Tu9-Yr-ydI"/>
+                            <constraint firstItem="AeR-j6-SDs" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="20" id="cva-KV-zUy"/>
+                            <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="AeR-j6-SDs" secondAttribute="trailing" constant="20" id="oX1-ld-ZLn"/>
+                            <constraint firstItem="XiW-pH-QhJ" firstAttribute="top" secondItem="AeR-j6-SDs" secondAttribute="bottom" constant="29" id="q0q-jj-0wM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeButton" destination="XiW-pH-QhJ" id="efh-4R-aKX"/>
+                        <outlet property="mailInputView" destination="AeR-j6-SDs" id="bca-Hj-DfF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOD-1d-rtI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="65" y="84"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="XiW-pH-QhJ">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

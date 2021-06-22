@@ -31,11 +31,11 @@ struct UserLoggedInDTO: DataTransferResponse {
 
     typealias Entity = UserLoggedInEntity
 
-    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Entity? {
-        .init (
+    static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
+        .success(.init(
             applePay: body.data?.applePay,
             segmentList: body.data?.segmentList,
             segmentListEmoney: body.data?.segmentListEmoney
-        )
+        ))
     }
 }

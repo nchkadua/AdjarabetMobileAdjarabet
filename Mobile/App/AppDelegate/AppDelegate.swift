@@ -70,7 +70,6 @@ public extension DependencyContainer {
         Module { DefaultWithdrawViewModel() as WithdrawViewModel }
         Module { DefaultTransactionsViewModel() as TransactionsViewModel }
         Module { DefaultBiometricSettingsViewModel() as BiometricSettingsViewModel }
-        Module { DefaultP2PTransferViewModel() as P2PTransferViewModel }
         Module { DefaultSelfSuspendViewModel() as SelfSuspendViewModel }
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
@@ -104,11 +103,21 @@ public extension DependencyContainer {
 
     static var repositories = DependencyContainer {
         // Core
-        Module { CoreApiUserProfileRepository() as UserInfoReadableRepository }
+        Module { CoreApiUserInfoRepository() as UserInfoReadableRepository }
         Module { DefaultAuthenticationRepository() as AuthenticationRepository }
         Module { DefaultBalanceManagementRepository() as BalanceManagementRepository }
         Module { DefaultSessionManagementRepository() as SessionManagementRepository }
         Module { CoreApiPaymentAccountRepository() as PaymentAccountPagingableRepository }
+        Module { CoreApiIsOTPEnabledRepository() as IsOTPEnabledRepository }
+        Module { CoreApiActionOTPRepository() as ActionOTPRepository }
+        Module { CoreApiPasswordChangeRepository() as PasswordChangeRepository }
+        Module { CorePasswordResetRepository() as PasswordResetRepository }
+        Module { CoreApiAddressRepository() as AddressRepository }
+        Module { CoreApiAddressRepository() as AddressReadableRepository }
+        Module { CoreApiAddressRepository() as AddressWritableRepository }
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageRepository }
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageReadableRepository }
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageWritableRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
         Module { DefaultNotificationsRepository() as NotificationsRepository }
@@ -137,7 +146,6 @@ public extension DependencyContainer {
         Module { DefaultTransactionsViewControllerFactory() as TransactionsViewControllerFactory }
         Module { DefaultBiometricSettingsViewControllerFactory() as BiometricSettingsViewControllerFactory }
         Module { DefaultTransactionDetailsViewControllerFactory() as TransactionDetailsViewControllerFactory }
-        Module { DefaultP2PTransferViewControllerFactory() as P2PTransferViewControllerFactory }
         Module { DefaultSelfSuspendViewControllerFactory() as SelfSuspendViewControllerFactory }
         Module { DefaultMailChangeViewControllerFactory() as MailChangeViewControllerFactory }
         Module { DefaultAddressChangeViewControllerFactory() as AddressChangeViewControllerFactory }
@@ -178,6 +186,8 @@ public extension DependencyContainer {
         Module { DefaultPaymentAccountUseCase() as PaymentAccountUseCase }
         Module { DefaultLogoutUseCase() as LogoutUseCase }
         Module { DefaultAmountFormatterUseCase() as AmountFormatterUseCase }
+        Module { DefaultPasswordChangeUseCase() as PasswordChangeUseCase }
+        Module { DefaultResetPasswordUseCase() as ResetPasswordUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }

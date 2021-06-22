@@ -8,9 +8,24 @@
 
 /* Shared */
 
+/* Main Tab Bar */
+"slots_item_title" = "სლოტები";
+"bonuses_item_title" = "ბონუსები";
+"promos_item_title" = "პრომოები";
+"news_item_title" = "სიახლეები";
+
 // ABError
 "shared_aberror_default_description" = "დაფიქსირდა შეცდომა";
 "shared_aberror_wrong_auth_credentials_description" = "არასწორი ავტორიზაციის მონაცემები";
+"shared_aberror_ip_is_blocked" = "IP დაბლოკილია";
+"shared_aberror_session_not_found" = "სესია ვერ მოიძებნა";
+"shared_aberror_must_be_more_than_zero" = "შეყვანილი მონაცემი უნდა იყოს მეტი ნოლზე";
+"shared_aberror_account_is_suspended" = "გააქტიურებულია Self Suspend";
+"shared_aberror_unable_to_get_balance" = "ვერ მოხერხდა ბალანსის წამოღება";
+"shared_aberror_payment_account_not_found" = "გადახდის მეთოდი ვერ მოიძებნა";
+"shared_aberror_payment_account_is_not_verified" = "გადახდის მეთოდი არ არის ვერიფიცირებული";
+"shared_aberror_unable_to_send_email_verification_email_is_missing" = "ვერ ხერხდება email ვერიფიკაციის გაგზავნა, email არ არის მითითებული";
+"shared_aberror_bonus_is_expired" = "ბონუსი ამოწურულია";
 
 "login" = "შესვლა";
 
@@ -53,7 +68,9 @@
 "login_password_input_title" = "პაროლი";
 "login_with_face_id_title" = "Log in with face ID";
 "login_with_touch_id_title" = "Log in with touch ID";
-"login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
+"login_legal1" = "Copyright © 2021 Adjarabet.";
+"login_legal2" = "All Rights reserved.";
+"fill_username" = "შეიყვანეთ მომხმარებლის სახელი";
 
 /* SMS Login */
 "sms_login_page_title" = "OTP ავტორიზაცია";
@@ -64,7 +81,7 @@
 "sms_resend_title" = "ხელახლა გაგზავნა";
 "sms_resend_time" = "წამში";
 "sms_approve" = "დადასტურება";
-"sms_placeholder" = "6 ნიშნა კოდი";
+"sms_placeholder" = "4 ნიშნა კოდი";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
@@ -82,11 +99,13 @@
 "transaction_history" = "ტრანზაქციების ისტორია";
 "my_cards" = "ჩემი ბარათები";
 "my_bonuses" = "ჩემი ბონუსები";
-"biomatry_authentication_parameters" = "ავტორიზაციის პარამეტრები";
-"transfer_to_a_friend" = "გადაურიცხე მეგობარს";
-"incognito_card" = "ინკოგნიტო ბარათი";
-"account_information" = "ანგარიშის ინფორმაცია";
-"account_parameters" = "ანგარიშის პარამეტრები";
+"faq" = "Frequently Asked Questions";
+"biomatry_authentication_parameters" = "Authentication Parameters";
+"transfer_to_a_friend" = "Transfer to a Friend";
+"incognito_card" = "Incognito Card";
+"account_information" = "Account Information";
+"account_parameters" = "Account Parameters";
+"terms_and_conditions" = "Terms and Conditions";
 "log_out" = "ანგარიშიდან გასვლა";
 
 /* Account Info */

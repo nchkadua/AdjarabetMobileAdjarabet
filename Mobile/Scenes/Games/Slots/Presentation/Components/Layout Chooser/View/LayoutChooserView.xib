@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LayoutChooserView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="gridLayoutButton" destination="HLN-2Q-B6N" id="fqz-vt-9Rl"/>
+                <outlet property="listLayoutButton" destination="8u7-OB-nRA" id="n0f-jx-1HL"/>
+                <outlet property="titleLabel" destination="fHk-0L-Op9" id="2hI-3P-oKx"/>
+                <outlet property="view" destination="iN0-l3-epB" id="hhh-bo-IGW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5J-ax-r9V" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-0L-Op9" userLabel="Title Label">
+                            <rect key="frame" x="0.0" y="29.5" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u7-OB-nRA" userLabel="List Layout Button">
+                            <rect key="frame" x="313" y="18" width="36" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="uDK-mP-Ppk"/>
+                            </constraints>
+                            <state key="normal" image="Home/List Layout On"/>
+                            <connections>
+                                <action selector="listLayoutButtonTapped" destination="-1" eventType="touchUpInside" id="TFC-84-xZm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLN-2Q-B6N" userLabel="Grid Layout Button">
+                            <rect key="frame" x="349" y="18" width="34" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="34" id="b5D-mj-ouZ"/>
+                            </constraints>
+                            <state key="normal" image="Home/Grid Layout Off"/>
+                            <connections>
+                                <action selector="gridLayoutButtonTapped" destination="-1" eventType="touchUpInside" id="kng-h4-d2k"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="8u7-OB-nRA" firstAttribute="width" secondItem="HLN-2Q-B6N" secondAttribute="width" multiplier="1.05882" id="2iG-qZ-GcC"/>
+                        <constraint firstItem="8u7-OB-nRA" firstAttribute="height" secondItem="HLN-2Q-B6N" secondAttribute="height" id="6yx-VX-4a0"/>
+                        <constraint firstItem="HLN-2Q-B6N" firstAttribute="leading" secondItem="8u7-OB-nRA" secondAttribute="trailing" id="JEo-D8-emd"/>
+                        <constraint firstItem="fHk-0L-Op9" firstAttribute="centerY" secondItem="n5J-ax-r9V" secondAttribute="centerY" id="OJc-e5-03f"/>
+                        <constraint firstItem="fHk-0L-Op9" firstAttribute="leading" secondItem="n5J-ax-r9V" secondAttribute="leading" id="SKS-2L-mtl"/>
+                        <constraint firstItem="HLN-2Q-B6N" firstAttribute="centerY" secondItem="n5J-ax-r9V" secondAttribute="centerY" id="TEE-sp-V9S"/>
+                        <constraint firstAttribute="trailing" secondItem="HLN-2Q-B6N" secondAttribute="trailing" constant="-8" id="Vcv-bv-kiz"/>
+                        <constraint firstItem="8u7-OB-nRA" firstAttribute="centerY" secondItem="n5J-ax-r9V" secondAttribute="centerY" id="lNw-eJ-eHt"/>
+                        <constraint firstItem="HLN-2Q-B6N" firstAttribute="leading" secondItem="8u7-OB-nRA" secondAttribute="trailing" constant="15" id="zbJ-GH-glQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="n5J-ax-r9V" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UdA-UJ-i8A"/>
+                <constraint firstAttribute="bottom" secondItem="n5J-ax-r9V" secondAttribute="bottom" id="bkf-80-cCe"/>
+                <constraint firstAttribute="trailing" secondItem="n5J-ax-r9V" secondAttribute="trailing" id="cWb-j8-bJW"/>
+                <constraint firstItem="n5J-ax-r9V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="f5L-sK-XUG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="77.599999999999994" y="-138.53073463268368"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Home/Grid Layout Off" width="17" height="17"/>
+        <image name="Home/List Layout On" width="17.5" height="15.5"/>
+    </resources>
+</document>
