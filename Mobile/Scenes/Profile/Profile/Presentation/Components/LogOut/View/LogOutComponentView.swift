@@ -71,5 +71,14 @@ extension LogOutComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.secondaryBg().value
+        setupAccessibilityIdentifiers()
     }
+}
+    extension LogOutComponentView: Accessible {
+        private func setupAccessibilityIdentifiers() {
+            generateAccessibilityIdentifiers()
+           
+            button.accessibilityIdentifier = "LogOutComponentView.logout.button"
+        }
+    
 }
