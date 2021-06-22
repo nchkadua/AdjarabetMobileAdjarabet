@@ -70,6 +70,7 @@
 "login_with_touch_id_title" = "Log in with touch ID";
 "login_legal1" = "Copyright © 2021 Adjarabet.";
 "login_legal2" = "All Rights reserved.";
+"fill_username" = "Enter Username";
 
 /* SMS Login */
 "sms_login_page_title" = "OTP Authorization";

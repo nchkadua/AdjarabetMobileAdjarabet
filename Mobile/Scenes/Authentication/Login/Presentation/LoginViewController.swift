@@ -32,6 +32,7 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var biometryButton: ABButton!
 
     @IBOutlet private weak var footerComponentView: FooterComponentView!
+    private var passwordReminderComponentView: PasswordReminderComponentView?
 
     // MARK: Overrides
     public override var keyScrollView: UIScrollView? { scrollView }
@@ -166,6 +167,8 @@ public class LoginViewController: ABViewController {
         //
         subscribeTo(usernameInputView, indicator: separatorView)
         subscribeTo(passwordInputView, indicator: separatorView2)
+
+        setupPasswordReminderView()
     }
 
     private func subscribeTo(_ inputView: ABInputView, indicator: UIView) {
@@ -195,6 +198,18 @@ public class LoginViewController: ABViewController {
         }
     }
 
+    private func setupPasswordReminderView() {
+        passwordReminderComponentView = PasswordReminderComponentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 54))
+
+        usernameInputView.mainTextField.inputAccessoryView = passwordReminderComponentView
+        passwordInputView.mainTextField.inputAccessoryView = passwordReminderComponentView
+
+        passwordReminderComponentView?.button.addTarget(self, action: #selector(navigateToPasswodReminder), for: .touchUpInside)
+    }
+
+    @objc private func navigateToPasswodReminder() {
+    }
+
     @objc private func loginButtonTouchExit() {
         loginButton.setStyle(to: .primary(state: .active, size: .large))
     }
@@ -217,7 +232,10 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func smsLoginDidTap() {
-        guard let username = usernameInputView.mainTextField.text else {return}
+        guard let username = usernameInputView.mainTextField.text, !username.isEmpty else {
+            showAlert(title: R.string.localization.fill_username.localized())
+            return
+        }
 
         closeKeyboard()
         viewModel.smsLogin(username: username)
