@@ -110,6 +110,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
             BalanceTableViewCell.self,
             QuickActionsHeaderCell.self,
             QuickActionTableViewCell.self,
+            LogOutTableViewCell.self,
             FooterTableViewCell.self
         ])
     }
