@@ -15,6 +15,7 @@ class AccessHistoryComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var ipLabel: UILabel!
+    @IBOutlet weak private var ipTitleLabel: UILabel!
     @IBOutlet weak private var deviceLabel: UILabel!
     @IBOutlet weak private var dateLabel: UILabel!
     @IBOutlet weak private var deviceImageView: UIImageView!
@@ -27,11 +28,6 @@ class AccessHistoryComponentView: UIView {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         nibSetup()
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        view.roundCorners(.allCorners, radius: 10)
     }
 
     public func setAndBind(viewModel: AccessHistoryComponentViewModel) {
@@ -70,12 +66,18 @@ extension AccessHistoryComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.secondaryBg().value
-        ipLabel.setFont(to: .subHeadline(fontCase: .lower))
-        ipLabel.setTextColor(to: .primaryText())
-        deviceLabel.setFont(to: .caption2(fontCase: .lower))
-        deviceLabel.setTextColor(to: .secondaryText())
-        dateLabel.setFont(to: .caption2(fontCase: .lower))
+        view.backgroundColor = .clear
+
+        deviceLabel.setFont(to: .body2(fontCase: .lower, fontStyle: .semiBold))
+        deviceLabel.setTextColor(to: .primaryText())
+
+        dateLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         dateLabel.setTextColor(to: .secondaryText())
+
+        ipTitleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
+        ipTitleLabel.setTextColor(to: .primaryText())
+
+        ipLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+        ipLabel.setTextColor(to: .secondaryText())
     }
 }
