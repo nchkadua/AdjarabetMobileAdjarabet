@@ -25,7 +25,7 @@ protocol CommunicationLanguageReadableRepository {
 protocol CommunicationLanguageWritableRepository {
     /**
      Changes current logged users communication language
-     with specified with *params* entity
+     with specified with *language* entity
      */
     typealias ChangeUserLanguageHandler = (Result<Void, ABError>) -> Void
     func changeUserLang(with language: CommunicationLanguageEntity,

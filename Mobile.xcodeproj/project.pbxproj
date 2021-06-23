@@ -176,12 +176,10 @@
 		C754318325F5606D00E485DD /* PaymentListEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C754318225F5606D00E485DD /* PaymentListEntities.swift */; };
 		C7553B29267B5B6200813FAC /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B28267B5B6200813FAC /* AddressRepository.swift */; };
 		C7553B2D267B5B7B00813FAC /* CoreApiAddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B2C267B5B7B00813FAC /* CoreApiAddressRepository.swift */; };
-		C7553B31267B5B9700813FAC /* CoreApiChangeAddressDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B30267B5B9700813FAC /* CoreApiChangeAddressDTO.swift */; };
 		C7553B3F267B727700813FAC /* CommunicationLanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B3E267B727700813FAC /* CommunicationLanguageRepository.swift */; };
 		C7553B43267B729100813FAC /* CommunicationLanguageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B42267B729100813FAC /* CommunicationLanguageEntity.swift */; };
 		C7553B47267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B46267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift */; };
 		C7553B56267B756800813FAC /* CoreApiGetUserLangDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B55267B756800813FAC /* CoreApiGetUserLangDTO.swift */; };
-		C7553B5A267B757900813FAC /* CoreApiChangeUserLangDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7553B59267B757900813FAC /* CoreApiChangeUserLangDTO.swift */; };
 		C75D1AC6261205F4002AF763 /* HSHJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A67261205E8002AF763 /* HSHJSlot.zip */; settings = {ASSET_TAGS = (HSHJSlot, ); }; };
 		C75D1AC7261205F4002AF763 /* FLKJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6A261205E8002AF763 /* FLKJSlot.zip */; settings = {ASSET_TAGS = (FLKJSlot, ); }; };
 		C75D1AC8261205F4002AF763 /* ZWJSlot.zip in Resources */ = {isa = PBXBuildFile; fileRef = C75D1A6B261205E8002AF763 /* ZWJSlot.zip */; settings = {ASSET_TAGS = (ZWJSlot, ); }; };
@@ -296,6 +294,14 @@
 		C782D29626553AED00594A65 /* ABSliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C782D29526553AED00594A65 /* ABSliderCollectionViewCell.swift */; };
 		C782D29A26553B0E00594A65 /* ABSliderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C782D29926553B0E00594A65 /* ABSliderCollectionViewCell.xib */; };
 		C782D29E26553B2B00594A65 /* ABSliderCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C782D29D26553B2B00594A65 /* ABSliderCollectionViewCellDataProvider.swift */; };
+		C78E528F268279B000EE1C18 /* ContactInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E528E268279B000EE1C18 /* ContactInfoRepository.swift */; };
+		C78E5293268376B400EE1C18 /* CoreApiContactInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E5292268376B400EE1C18 /* CoreApiContactInfoRepository.swift */; };
+		C78E5297268377C300EE1C18 /* CoreApiStatusCodeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E5296268377C300EE1C18 /* CoreApiStatusCodeDTO.swift */; };
+		C78E52A826837D5100EE1C18 /* UpdateMailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E52A726837D5100EE1C18 /* UpdateMailUseCase.swift */; };
+		C78E52B426837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E52B326837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift */; };
+		C78E52C2268388D600EE1C18 /* PhoneVerificationCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E52C1268388D600EE1C18 /* PhoneVerificationCodeRepository.swift */; };
+		C78E52C826838B3F00EE1C18 /* CoreApiPhoneVerificationCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E52C726838B3F00EE1C18 /* CoreApiPhoneVerificationCodeRepository.swift */; };
+		C78E52CC26838CFC00EE1C18 /* CoreApiSendVerificationCodeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E52CB26838CFC00EE1C18 /* CoreApiSendVerificationCodeDTO.swift */; };
 		C78FD442260A675D004E766E /* AmountFormatterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78FD441260A675D004E766E /* AmountFormatterUseCase.swift */; };
 		C794D4202631F7940028393A /* WebApiPaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */; };
 		C794D436263206830028393A /* WebApiPaymentAccountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */; };
@@ -351,7 +357,6 @@
 		C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */; };
 		C7EF9EBF2570440300D2908C /* UserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */; };
 		C7EF9ED425706AD200D2908C /* UserInfoDataTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */; };
-		C7F5477325DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F5477225DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift */; };
 		C7FAA3B22600C04A00265995 /* UFCInitDepositEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3B12600C04A00265995 /* UFCInitDepositEntity.swift */; };
 		C7FAA3B62600C06100265995 /* UFCInitDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3B52600C06100265995 /* UFCInitDepositDTO.swift */; };
 		C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAA3BD2600C26F00265995 /* UFCDepositDTO.swift */; };
@@ -961,12 +966,10 @@
 		C754318225F5606D00E485DD /* PaymentListEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListEntities.swift; sourceTree = "<group>"; };
 		C7553B28267B5B6200813FAC /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
 		C7553B2C267B5B7B00813FAC /* CoreApiAddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiAddressRepository.swift; sourceTree = "<group>"; };
-		C7553B30267B5B9700813FAC /* CoreApiChangeAddressDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiChangeAddressDTO.swift; sourceTree = "<group>"; };
 		C7553B3E267B727700813FAC /* CommunicationLanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationLanguageRepository.swift; sourceTree = "<group>"; };
 		C7553B42267B729100813FAC /* CommunicationLanguageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationLanguageEntity.swift; sourceTree = "<group>"; };
 		C7553B46267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiCommunicationLanguageRepository.swift; sourceTree = "<group>"; };
 		C7553B55267B756800813FAC /* CoreApiGetUserLangDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiGetUserLangDTO.swift; sourceTree = "<group>"; };
-		C7553B59267B757900813FAC /* CoreApiChangeUserLangDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiChangeUserLangDTO.swift; sourceTree = "<group>"; };
 		C75D1A67261205E8002AF763 /* HSHJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = HSHJSlot.zip; sourceTree = "<group>"; };
 		C75D1A6A261205E8002AF763 /* FLKJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = FLKJSlot.zip; sourceTree = "<group>"; };
 		C75D1A6B261205E8002AF763 /* ZWJSlot.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ZWJSlot.zip; sourceTree = "<group>"; };
@@ -1081,6 +1084,14 @@
 		C782D29526553AED00594A65 /* ABSliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABSliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		C782D29926553B0E00594A65 /* ABSliderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ABSliderCollectionViewCell.xib; sourceTree = "<group>"; };
 		C782D29D26553B2B00594A65 /* ABSliderCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABSliderCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		C78E528E268279B000EE1C18 /* ContactInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoRepository.swift; sourceTree = "<group>"; };
+		C78E5292268376B400EE1C18 /* CoreApiContactInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiContactInfoRepository.swift; sourceTree = "<group>"; };
+		C78E5296268377C300EE1C18 /* CoreApiStatusCodeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiStatusCodeDTO.swift; sourceTree = "<group>"; };
+		C78E52A726837D5100EE1C18 /* UpdateMailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMailUseCase.swift; sourceTree = "<group>"; };
+		C78E52B326837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePhoneNumberUseCase.swift; sourceTree = "<group>"; };
+		C78E52C1268388D600EE1C18 /* PhoneVerificationCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCodeRepository.swift; sourceTree = "<group>"; };
+		C78E52C726838B3F00EE1C18 /* CoreApiPhoneVerificationCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPhoneVerificationCodeRepository.swift; sourceTree = "<group>"; };
+		C78E52CB26838CFC00EE1C18 /* CoreApiSendVerificationCodeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiSendVerificationCodeDTO.swift; sourceTree = "<group>"; };
 		C78FD441260A675D004E766E /* AmountFormatterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatterUseCase.swift; sourceTree = "<group>"; };
 		C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountRepository.swift; sourceTree = "<group>"; };
 		C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountDTO.swift; sourceTree = "<group>"; };
@@ -1136,7 +1147,6 @@
 		C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEntity.swift; sourceTree = "<group>"; };
 		C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDataTransferResponse.swift; sourceTree = "<group>"; };
-		C7F5477225DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiPaymentAccountDeleteDTO.swift; sourceTree = "<group>"; };
 		C7FAA3B12600C04A00265995 /* UFCInitDepositEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCInitDepositEntity.swift; sourceTree = "<group>"; };
 		C7FAA3B52600C06100265995 /* UFCInitDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCInitDepositDTO.swift; sourceTree = "<group>"; };
 		C7FAA3BD2600C26F00265995 /* UFCDepositDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositDTO.swift; sourceTree = "<group>"; };
@@ -1936,7 +1946,6 @@
 			children = (
 				C701C71525C051AC00B059A6 /* CoreApiPaymentAccountDTO.swift */,
 				C701C71925C051C400B059A6 /* CoreApiPaymentAccountCountDTO.swift */,
-				C7F5477225DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -2363,7 +2372,6 @@
 		C7553B25267B5B1B00813FAC /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				C7553B30267B5B9700813FAC /* CoreApiChangeAddressDTO.swift */,
 				C7553B2C267B5B7B00813FAC /* CoreApiAddressRepository.swift */,
 			);
 			path = Implementation;
@@ -2381,7 +2389,7 @@
 		C7553B3B267B724500813FAC /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				C7553B50267B753D00813FAC /* Entities */,
+				C7553B55267B756800813FAC /* CoreApiGetUserLangDTO.swift */,
 				C7553B46267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift */,
 			);
 			path = Implementation;
@@ -2394,15 +2402,6 @@
 				C7553B3E267B727700813FAC /* CommunicationLanguageRepository.swift */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		C7553B50267B753D00813FAC /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				C7553B55267B756800813FAC /* CoreApiGetUserLangDTO.swift */,
-				C7553B59267B757900813FAC /* CoreApiChangeUserLangDTO.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		C75F61DA2656FD92009CB6A1 /* Layout Chooser */ = {
@@ -3381,6 +3380,7 @@
 				D85C9BF02433677100F1D4FE /* CoreRequestBuilder.swift */,
 				C766086325CC3FF700A59534 /* CoreApiRepository.swift */,
 				C78127E32676A1390007F7E3 /* CoreDataTransferResponse.swift */,
+				C78E5296268377C300EE1C18 /* CoreApiStatusCodeDTO.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -3408,6 +3408,122 @@
 				D8BA5A1B24993A0000F88433 /* CookieStorageRepository.swift */,
 			);
 			path = Cookie;
+			sourceTree = "<group>";
+		};
+		C78E528B2682793800EE1C18 /* Contact Info */ = {
+			isa = PBXGroup;
+			children = (
+				C78E528C2682796500EE1C18 /* Protocol */,
+				C78E528D2682796C00EE1C18 /* Implementation */,
+			);
+			path = "Contact Info";
+			sourceTree = "<group>";
+		};
+		C78E528C2682796500EE1C18 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C78E528E268279B000EE1C18 /* ContactInfoRepository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C78E528D2682796C00EE1C18 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				C78E5292268376B400EE1C18 /* CoreApiContactInfoRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		C78E52A426837D0D00EE1C18 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52A726837D5100EE1C18 /* UpdateMailUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		C78E52AD26837D5A00EE1C18 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52AE26837D6400EE1C18 /* Data */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C78E52AE26837D6400EE1C18 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52AF26837D6900EE1C18 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C78E52AF26837D6900EE1C18 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C78E528B2682793800EE1C18 /* Contact Info */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C78E52B026837DA600EE1C18 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52A426837D0D00EE1C18 /* Use Cases */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C78E52B126837DC800EE1C18 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52B226837DCF00EE1C18 /* Use Cases */,
+				C78E52BD268387BC00EE1C18 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C78E52B226837DCF00EE1C18 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52B326837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		C78E52BD268387BC00EE1C18 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52BE2683884300EE1C18 /* Phone Verification Code */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C78E52BE2683884300EE1C18 /* Phone Verification Code */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52C02683885800EE1C18 /* Protocol */,
+				C78E52BF2683885000EE1C18 /* Implementation */,
+			);
+			path = "Phone Verification Code";
+			sourceTree = "<group>";
+		};
+		C78E52BF2683885000EE1C18 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52CB26838CFC00EE1C18 /* CoreApiSendVerificationCodeDTO.swift */,
+				C78E52C726838B3F00EE1C18 /* CoreApiPhoneVerificationCodeRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		C78E52C02683885800EE1C18 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52C1268388D600EE1C18 /* PhoneVerificationCodeRepository.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		C78FD440260A672C004E766E /* Amount Formatter */ = {
@@ -4454,6 +4570,7 @@
 				CEA7778D256D41F7008A4F6C /* Mail Change */,
 				CEB285B8256D20A400584A65 /* Self Suspend */,
 				CECF7F3F256D5A68001C0E50 /* Address Change */,
+				C78E52AD26837D5A00EE1C18 /* Shared */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -4706,6 +4823,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5D7AB5266A642A00719120 /* Presentation */,
+				C78E52B126837DC800EE1C18 /* Data */,
 			);
 			path = "Phone Number Change";
 			sourceTree = "<group>";
@@ -4714,6 +4832,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5D7AC2266A644700719120 /* Presentation */,
+				C78E52B026837DA600EE1C18 /* Data */,
 			);
 			path = "Mail Change";
 			sourceTree = "<group>";
@@ -6129,7 +6248,6 @@
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
 				CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */,
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
-				C7553B5A267B757900813FAC /* CoreApiChangeUserLangDTO.swift in Sources */,
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
 				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
 				C701C72725C06C0600B059A6 /* Status.swift in Sources */,
@@ -6198,6 +6316,7 @@
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */,
 				CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */,
+				C78E52CC26838CFC00EE1C18 /* CoreApiSendVerificationCodeDTO.swift in Sources */,
 				C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
 				CE4A314926172BF50039C078 /* NotificationsRepository.swift in Sources */,
@@ -6237,6 +6356,7 @@
 				76BA7BDC25E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
 				CE4A30F6261224E50039C078 /* SuggestedAmountGridComponentView.swift in Sources */,
+				C78E52C826838B3F00EE1C18 /* CoreApiPhoneVerificationCodeRepository.swift in Sources */,
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				CE9B7FEC257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift in Sources */,
 				CE2AABC9267A015200B45A0A /* CorePasswordResetRepository.swift in Sources */,
@@ -6338,6 +6458,7 @@
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
 				CE8786C2261C96830060EBD1 /* ABView.swift in Sources */,
 				CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */,
+				C78E52B426837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift in Sources */,
 				C7D202352636E41B009710C9 /* HomeHeaderView.swift in Sources */,
 				763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */,
 				76404EED2576120800D14E0C /* AccountParametersModel.swift in Sources */,
@@ -6362,6 +6483,7 @@
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
+				C78E528F268279B000EE1C18 /* ContactInfoRepository.swift in Sources */,
 				7682CF9325B8581600717090 /* AddMyCardComponentViewModel.swift in Sources */,
 				CE679FDD2578334B00F2EC1C /* AddCardNavigator.swift in Sources */,
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
@@ -6388,6 +6510,7 @@
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
 				CE95FC16252DED0A003E539B /* FooterComponentViewModel.swift in Sources */,
 				C7023EE7261F772E00C0980F /* WithdrawPaymentListUseCase.swift in Sources */,
+				C78E5293268376B400EE1C18 /* CoreApiContactInfoRepository.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
 				CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */,
 				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,
@@ -6402,7 +6525,6 @@
 				CE7A23FA257956CA00A94E89 /* BarButtonWithImage.swift in Sources */,
 				CECF7F70256D9F99001C0E50 /* PasswordChangeViewController.swift in Sources */,
 				CECF7F77256D9FA4001C0E50 /* PasswordChangeViewControllerFactory.swift in Sources */,
-				C7553B31267B5B9700813FAC /* CoreApiChangeAddressDTO.swift in Sources */,
 				D8A47DD124335B4B0077AA8E /* SceneDelegate.swift in Sources */,
 				CEBB00902609D40400D1B510 /* VisaViewController.swift in Sources */,
 				7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */,
@@ -6428,7 +6550,6 @@
 				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				C70754E325F3B84F0033050E /* PostLoginRepository.swift in Sources */,
-				C7F5477325DE9E5B00BE04EF /* CoreApiPaymentAccountDeleteDTO.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */,
 				C7A517C12631EB7800933DF8 /* PaymentAccountDeletableRepository.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
@@ -6438,6 +6559,7 @@
 				CE14202E2636EE8900E022C7 /* BonusViewControllerFactory.swift in Sources */,
 				76BDF441257546A7007B27A7 /* CoreApiTransactionHistoryRepository.swift in Sources */,
 				76B667982595F133001441BD /* Date+Extension.swift in Sources */,
+				C78E52C2268388D600EE1C18 /* PhoneVerificationCodeRepository.swift in Sources */,
 				7665D980257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
@@ -6520,6 +6642,7 @@
 				7665D97F257F4C0E00E5B35F /* AccessHistoryComponentView.swift in Sources */,
 				769EDC2325D294F000C18B52 /* Accessible.swift in Sources */,
 				CE9B7FED257544F5006FF756 /* PhoneNumberChangeViewModel.swift in Sources */,
+				C78E52A826837D5100EE1C18 /* UpdateMailUseCase.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
 				76E43EE025B95303007B2D97 /* VideoCardTableViewCell.swift in Sources */,
 				CEBB00912609D40400D1B510 /* VisaViewControllerFactory.swift in Sources */,
@@ -6550,6 +6673,7 @@
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
+				C78E5297268377C300EE1C18 /* CoreApiStatusCodeDTO.swift in Sources */,
 				7644B5F72563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift in Sources */,
 				CE29FC402578F14D00402D0D /* MinAmountComponentView.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,

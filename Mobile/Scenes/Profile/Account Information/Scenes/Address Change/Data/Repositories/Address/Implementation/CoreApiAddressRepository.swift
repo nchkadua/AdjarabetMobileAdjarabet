@@ -13,7 +13,7 @@ struct CoreApiAddressRepository: CoreApiRepository { }
 extension CoreApiAddressRepository: AddressRepository {
     func changeAddress(with params: ChangeAddressParams,
                        handler: @escaping ChangeAddressHandler) {
-        performTask(expecting: CoreApiChangeAddressDTO.self, completion: handler) { requestBuilder in
+        performTask(expecting: CoreApiStatusCodeDTO.self, completion: handler) { requestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "changeAddress")
                 .setBody(key: "AddressLine1", value: params.addressLine1)
