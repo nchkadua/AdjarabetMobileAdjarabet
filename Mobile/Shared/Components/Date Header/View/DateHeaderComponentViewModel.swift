@@ -13,6 +13,7 @@ public protocol DateHeaderComponentViewModel: DateHeaderComponentViewModelInput,
 
 public struct DateHeaderComponentViewModelParams {
     public let title: String
+    public let showSeparator: Bool
 }
 
 public protocol DateHeaderComponentViewModelInput {
@@ -25,7 +26,7 @@ public protocol DateHeaderComponentViewModelOutput {
 }
 
 public enum DateHeaderComponentViewModelOutputAction {
-    case set(title: String)
+    case set(title: String, shouldShowSeparator: Bool)
 }
 
 public class DefaultDateHeaderComponentViewModel {
@@ -42,6 +43,6 @@ extension DefaultDateHeaderComponentViewModel: DateHeaderComponentViewModel {
     }
 
     public func didBind() {
-        actionSubject.onNext(.set(title: params.title))
+        actionSubject.onNext(.set(title: params.title, shouldShowSeparator: params.showSeparator))
     }
 }

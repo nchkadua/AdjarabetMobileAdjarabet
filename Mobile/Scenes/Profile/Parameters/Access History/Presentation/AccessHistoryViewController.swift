@@ -70,7 +70,7 @@ public class AccessHistoryViewController: ABViewController {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            appTableViewController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            appTableViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
             appTableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             appTableViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             appTableViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)

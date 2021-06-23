@@ -202,7 +202,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
 
     private func constructTransactionHistoryHeader(from entity: TransactionHistoryEntity) -> DefaultDateHeaderComponentViewModel {
         let stringDate = dayDateFormatter.string(from: entity.date)
-        let headerModel = DefaultDateHeaderComponentViewModel(params: .init(title: stringDate))
+        let headerModel = DefaultDateHeaderComponentViewModel(params: .init(title: stringDate, showSeparator: false))
         return headerModel
     }
 

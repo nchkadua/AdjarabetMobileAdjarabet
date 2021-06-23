@@ -123,12 +123,12 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
             case .success(let accessList):
                 var datesSet: Set<String>  = []
                 self.accessHistoryDataProvider = []
-                accessList.forEach { access in
+                for (index, access) in accessList.enumerated() {
                     let componentViewModel = self.constructComponentViewModel(from: access)
                     let dayString = self.dayDateFormatter.string(from: access.date)
                     if !datesSet.contains(dayString) {
                         datesSet.insert(dayString)
-                        let headerViewModel = self.constructHeaderComponentViewModel(from: access)
+                        let headerViewModel = self.constructHeaderComponentViewModel(from: access, index: index)
                         self.accessHistoryDataProvider.append(headerViewModel)
                     }
                     self.accessHistoryDataProvider.append(componentViewModel)
@@ -190,9 +190,10 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
         }
     }
 
-    private func constructHeaderComponentViewModel(from entity: AccessListEntity) -> DefaultDateHeaderComponentViewModel {
+    private func constructHeaderComponentViewModel(from entity: AccessListEntity, index: Int) -> DefaultDateHeaderComponentViewModel {
         let stringDate = dayDateFormatter.string(from: entity.date)
-        let headerModel = DefaultDateHeaderComponentViewModel(params: .init(title: stringDate))
-        return headerModel
+
+        let shouldShowSeparator = index > 0
+        return DefaultDateHeaderComponentViewModel(params: .init(title: stringDate, showSeparator: shouldShowSeparator))
     }
 }
