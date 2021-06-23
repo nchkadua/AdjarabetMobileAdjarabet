@@ -123,6 +123,8 @@ public extension DependencyContainer {
         Module { CoreApiContactInfoRepository() as ContactInfoRepository }
         Module { CoreApiContactInfoRepository() as ContactInfoReadableRepository }
         Module { CoreApiContactInfoRepository() as ContactInfoWritableRepository }
+        // Phone Verification Code
+        Module { CoreApiPhoneVerificationCodeRepository() as PhoneVerificationCodeRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
         Module { DefaultNotificationsRepository() as NotificationsRepository }
@@ -193,6 +195,8 @@ public extension DependencyContainer {
         Module { DefaultAmountFormatterUseCase() as AmountFormatterUseCase }
         Module { DefaultPasswordChangeUseCase() as PasswordChangeUseCase }
         Module { DefaultResetPasswordUseCase() as ResetPasswordUseCase }
+        Module { DefaultUpdateMailUseCase() as UpdateMailUseCase }
+        Module { DefaultUpdatePhoneNumberUseCase() as UpdatePhoneNumberUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }

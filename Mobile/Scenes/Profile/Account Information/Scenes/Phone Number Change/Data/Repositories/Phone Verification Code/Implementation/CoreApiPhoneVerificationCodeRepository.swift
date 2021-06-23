@@ -14,13 +14,13 @@ extension CoreApiPhoneVerificationCodeRepository: PhoneVerificationCodeRepositor
     func sendVerificationCode(with params: SendVerificationCodeParams,
                               handler: @escaping SendVerificationCodeHandler) {
         let request = requestBuilder
-            .setBody(key: .req, value: "")
+            .setBody(key: .req, value: "getTelVerificationCode")
             .setBody(key: "tel", value: params.tel)
             .setBody(key: "channelType", value: "\(params.channelType.rawValue)")
             .setBody(key: "userLang", value: params.userLang)
             .build()
 
-        dataTransferService.performTask (
+        dataTransferService.performTask(
             expecting: CoreApiSendVerificationCodeDTO.self,
             request: request,
             respondOnQueue: .main,

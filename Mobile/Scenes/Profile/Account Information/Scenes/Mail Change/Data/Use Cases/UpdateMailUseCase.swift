@@ -27,8 +27,8 @@ struct DefaultUpdateMailUseCase: UpdateMailUseCase {
 
     func execute(with params: UpdateMailUseCaseParams,
                  handler: @escaping Handler) {
-        repo.updateContactInfo (
-            with: .init (
+        repo.updateContactInfo(
+            with: .init(
                 pass: params.pass,
                 otp: params.otp,
                 email: params.email,

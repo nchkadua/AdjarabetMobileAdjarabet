@@ -28,8 +28,8 @@ struct DefaultUpdatePhoneNumberUseCase: UpdatePhoneNumberUseCase {
 
     func execute(with params: UpdatePhoneNumberUseCaseParams,
                  handler: @escaping Handler) {
-        repo.updateContactInfo (
-            with: .init (
+        repo.updateContactInfo(
+            with: .init(
                 pass: params.pass,
                 otp: params.otp,
                 email: nil,
