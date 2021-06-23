@@ -297,6 +297,8 @@
 		C78E528F268279B000EE1C18 /* ContactInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E528E268279B000EE1C18 /* ContactInfoRepository.swift */; };
 		C78E5293268376B400EE1C18 /* CoreApiContactInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E5292268376B400EE1C18 /* CoreApiContactInfoRepository.swift */; };
 		C78E5297268377C300EE1C18 /* CoreApiStatusCodeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E5296268377C300EE1C18 /* CoreApiStatusCodeDTO.swift */; };
+		C78E52A826837D5100EE1C18 /* UpdateMailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E52A726837D5100EE1C18 /* UpdateMailUseCase.swift */; };
+		C78E52B426837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E52B326837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift */; };
 		C78FD442260A675D004E766E /* AmountFormatterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78FD441260A675D004E766E /* AmountFormatterUseCase.swift */; };
 		C794D4202631F7940028393A /* WebApiPaymentAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */; };
 		C794D436263206830028393A /* WebApiPaymentAccountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */; };
@@ -1082,6 +1084,8 @@
 		C78E528E268279B000EE1C18 /* ContactInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoRepository.swift; sourceTree = "<group>"; };
 		C78E5292268376B400EE1C18 /* CoreApiContactInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiContactInfoRepository.swift; sourceTree = "<group>"; };
 		C78E5296268377C300EE1C18 /* CoreApiStatusCodeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiStatusCodeDTO.swift; sourceTree = "<group>"; };
+		C78E52A726837D5100EE1C18 /* UpdateMailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMailUseCase.swift; sourceTree = "<group>"; };
+		C78E52B326837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePhoneNumberUseCase.swift; sourceTree = "<group>"; };
 		C78FD441260A675D004E766E /* AmountFormatterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatterUseCase.swift; sourceTree = "<group>"; };
 		C794D41F2631F7940028393A /* WebApiPaymentAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountRepository.swift; sourceTree = "<group>"; };
 		C794D435263206830028393A /* WebApiPaymentAccountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountDTO.swift; sourceTree = "<group>"; };
@@ -3425,6 +3429,62 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		C78E52A426837D0D00EE1C18 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52A726837D5100EE1C18 /* UpdateMailUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		C78E52AD26837D5A00EE1C18 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52AE26837D6400EE1C18 /* Data */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C78E52AE26837D6400EE1C18 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52AF26837D6900EE1C18 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C78E52AF26837D6900EE1C18 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C78E528B2682793800EE1C18 /* Contact Info */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C78E52B026837DA600EE1C18 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52A426837D0D00EE1C18 /* Use Cases */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C78E52B126837DC800EE1C18 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52B226837DCF00EE1C18 /* Use Cases */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C78E52B226837DCF00EE1C18 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C78E52B326837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
 		C78FD440260A672C004E766E /* Amount Formatter */ = {
 			isa = PBXGroup;
 			children = (
@@ -4469,6 +4529,7 @@
 				CEA7778D256D41F7008A4F6C /* Mail Change */,
 				CEB285B8256D20A400584A65 /* Self Suspend */,
 				CECF7F3F256D5A68001C0E50 /* Address Change */,
+				C78E52AD26837D5A00EE1C18 /* Shared */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -4554,7 +4615,6 @@
 		CE5D7AC8266A647E00719120 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				C78E528B2682793800EE1C18 /* Contact Info */,
 				C7553B3A267B722500813FAC /* Communication Language */,
 				C7EF9E7025702AFA00D2908C /* User Info */,
 			);
@@ -4722,6 +4782,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5D7AB5266A642A00719120 /* Presentation */,
+				C78E52B126837DC800EE1C18 /* Data */,
 			);
 			path = "Phone Number Change";
 			sourceTree = "<group>";
@@ -4730,6 +4791,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5D7AC2266A644700719120 /* Presentation */,
+				C78E52B026837DA600EE1C18 /* Data */,
 			);
 			path = "Mail Change";
 			sourceTree = "<group>";
@@ -6353,6 +6415,7 @@
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
 				CE8786C2261C96830060EBD1 /* ABView.swift in Sources */,
 				CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */,
+				C78E52B426837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift in Sources */,
 				C7D202352636E41B009710C9 /* HomeHeaderView.swift in Sources */,
 				763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */,
 				76404EED2576120800D14E0C /* AccountParametersModel.swift in Sources */,
@@ -6535,6 +6598,7 @@
 				7665D97F257F4C0E00E5B35F /* AccessHistoryComponentView.swift in Sources */,
 				769EDC2325D294F000C18B52 /* Accessible.swift in Sources */,
 				CE9B7FED257544F5006FF756 /* PhoneNumberChangeViewModel.swift in Sources */,
+				C78E52A826837D5100EE1C18 /* UpdateMailUseCase.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
 				76E43EE025B95303007B2D97 /* VideoCardTableViewCell.swift in Sources */,
 				CEBB00912609D40400D1B510 /* VisaViewControllerFactory.swift in Sources */,
