@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t51-Ln-CZz">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t51-Ln-CZz" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
                     <rect key="frame" x="16" y="0.0" width="382" height="50"/>
                     <state key="normal" title="Button"/>
                 </button>
@@ -35,4 +35,9 @@
             <point key="canvasLocation" x="-272" y="106"/>
         </view>
     </objects>
+    <designables>
+        <designable name="t51-Ln-CZz">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
 </document>
