@@ -125,6 +125,8 @@ public extension DependencyContainer {
         Module { CoreApiContactInfoRepository() as ContactInfoWritableRepository }
         // Phone Verification Code
         Module { CoreApiPhoneVerificationCodeRepository() as PhoneVerificationCodeRepository }
+        // Suspend
+        Module { CoreApiSuspendRepository() as SuspendRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
         Module { DefaultNotificationsRepository() as NotificationsRepository }
