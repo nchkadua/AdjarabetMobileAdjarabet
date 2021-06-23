@@ -20,6 +20,6 @@ struct PasswordChangeDTO: CoreDataTransferResponse {
     typealias Entity = PasswordChangeEntity
 
     static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-        .success(.init(statusCode: body.statusCode))
+        .success(.init(statusCode: body.statusCode)) // FIXME: Do not return statusCode as entity
     }
 }
