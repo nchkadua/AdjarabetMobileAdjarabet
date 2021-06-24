@@ -17,7 +17,8 @@ public class ApplePayViewController: ABViewController {
     @IBOutlet weak private var applePayButton: ApplePayButton!
     @IBOutlet weak private var limitsComponentView: VisaLimitComponentView!
 
-    private var amount: String { amountInputView.text ?? "" }
+//    private var amount: String { amountInputView.text ?? "" }
+    private var amount: String = ""
 
     private var suggestedAmountGridComponentView: SuggestedAmountGridComponentView?
 
@@ -114,6 +115,7 @@ public class ApplePayViewController: ABViewController {
     }
 
     @objc private func amountEditingDidEnd() {
+        amount = amountInputView.text ?? "0"
         viewModel.entered(amount: amount)
     }
 

@@ -600,7 +600,6 @@
 		CEF52CD02673603900D2386C /* PasswordChangeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */; };
 		CEF52CD42673604400D2386C /* PasswordChangeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */; };
 		CEF52CDA2673694C00D2386C /* PasswordChangeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CD92673694C00D2386C /* PasswordChangeUseCase.swift */; };
-		CEF52D1A2678D84A00D2386C /* ApplePayScript.js in Resources */ = {isa = PBXBuildFile; fileRef = CEF52D192678D84900D2386C /* ApplePayScript.js */; };
 		CEF52D252678E6CB00D2386C /* ServiceAuthTokenDRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52D242678E6CB00D2386C /* ServiceAuthTokenDRO.swift */; };
 		CEF52D292678E70200D2386C /* ServiceAuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52D282678E70200D2386C /* ServiceAuthTokenRepository.swift */; };
 		CEF52D2D2678E92900D2386C /* ApplePayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52D2C2678E92900D2386C /* ApplePayUseCase.swift */; };
@@ -1366,11 +1365,9 @@
 		CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeEntity.swift; sourceTree = "<group>"; };
 		CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeDTO.swift; sourceTree = "<group>"; };
 		CEF52CD92673694C00D2386C /* PasswordChangeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeUseCase.swift; sourceTree = "<group>"; };
-		CEF52D192678D84900D2386C /* ApplePayScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ApplePayScript.js; sourceTree = "<group>"; };
 		CEF52D242678E6CB00D2386C /* ServiceAuthTokenDRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDRO.swift; sourceTree = "<group>"; };
 		CEF52D282678E70200D2386C /* ServiceAuthTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenRepository.swift; sourceTree = "<group>"; };
 		CEF52D2C2678E92900D2386C /* ApplePayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayUseCase.swift; sourceTree = "<group>"; };
-		CEF9CC60267CCB4C0049E3FA /* Mobile StageDebug-Stage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mobile StageDebug-Stage.entitlements"; sourceTree = "<group>"; };
 		D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFactory.swift; sourceTree = "<group>"; };
 		D803F42724A251C700A16CB2 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
@@ -2002,7 +1999,6 @@
 		C71C2424265C10FD002071FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CEF52D132678D1FF00D2386C /* JS */,
 				C71C242A265D033D002071FF /* Presentation */,
 				C71C242B265D0349002071FF /* Data */,
 			);
@@ -4936,14 +4932,6 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		CEF52D132678D1FF00D2386C /* JS */ = {
-			isa = PBXGroup;
-			children = (
-				CEF52D192678D84900D2386C /* ApplePayScript.js */,
-			);
-			path = JS;
-			sourceTree = "<group>";
-		};
 		CEF52D232678E6A100D2386C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -5227,7 +5215,6 @@
 		D8A47DCD24335B4B0077AA8E /* Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				CEF9CC60267CCB4C0049E3FA /* Mobile StageDebug-Stage.entitlements */,
 				C71C2416265C09C3002071FF /* Scenes */,
 				C71C2413265C09BA002071FF /* Shared */,
 				D8A47DE624335DC60077AA8E /* App */,
@@ -5729,7 +5716,6 @@
 				CE58749B260B66CB00F03AB5 /* EmoneyButton.xib in Resources */,
 				76BDF45C2576043A007B27A7 /* AccountParameters.storyboard in Resources */,
 				C75D1B19261205F4002AF763 /* MFJSlot.zip in Resources */,
-				CEF52D1A2678D84A00D2386C /* ApplePayScript.js in Resources */,
 				C75D1AD6261205F4002AF763 /* RCJSlot.zip in Resources */,
 				CE0818D725389EFE00AD3B3B /* NotificationsHeaderCell.xib in Resources */,
 				7665D95F257E5CA600E5B35F /* AccessHistory.storyboard in Resources */,
