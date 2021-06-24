@@ -6,8 +6,14 @@
 	<array>
 		<string>webcredentials:adjarabet.com</string>
 	</array>
+	<key>com.apple.developer.in-app-payments</key>
+	<array>
+		<string>merchant.com.adjarabet.web</string>
+	</array>
 	<key>com.apple.security.application-groups</key>
-	<array/>
+	<array>
+		<string>group.adjarabet.mobile.coockie</string>
+	</array>
 	<key>keychain-access-groups</key>
 	<array>
 		<string>$(AppIdentifierPrefix)com.adjarabet.Mobile.credentials</string>
