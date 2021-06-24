@@ -7,9 +7,7 @@
 		<string>webcredentials:adjarabet.com</string>
 	</array>
 	<key>com.apple.security.application-groups</key>
-	<array>
-		<string>group.adjarabet.mobile.coockie</string>
-	</array>
+	<array/>
 	<key>keychain-access-groups</key>
 	<array>
 		<string>$(AppIdentifierPrefix)com.adjarabet.Mobile.credentials</string>

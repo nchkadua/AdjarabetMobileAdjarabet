@@ -137,6 +137,7 @@ public extension DependencyContainer {
         Module { DefaultUFCTransactionRepository() as UFCDepositRepository }
         Module { DefaultUFCTransactionRepository() as UFCWithdrawRepository }
         Module { DefaultUFCTransactionRepository() as UFCTransactionRepository }
+        Module { DefaultServiceAuthTokenRepository() as ServiceAuthTokenRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
@@ -203,5 +204,6 @@ public extension DependencyContainer {
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }
         Module { UFCWithdrawUseCase() as UFCWithdrawUseCase }
+        Module { DefaultApplePayUseCase() as ApplePayUseCase }
     }
 }

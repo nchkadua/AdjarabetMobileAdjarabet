@@ -487,6 +487,9 @@
 		CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C10D25702C4700A18255 /* CalendarComponentView.swift */; };
 		CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C11125702C4E00A18255 /* CalendarComponentViewModel.swift */; };
 		CE91C11825702C5700A18255 /* CalendarComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE91C11725702C5700A18255 /* CalendarComponentView.xib */; };
+		CE9205DE2684930600670AD8 /* ApplePayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9205DD2684930600670AD8 /* ApplePayUseCase.swift */; };
+		CE920609268493D600670AD8 /* ServiceAuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE920607268493D600670AD8 /* ServiceAuthTokenRepository.swift */; };
+		CE92060A268493D600670AD8 /* ServiceAuthTokenDRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE920608268493D600670AD8 /* ServiceAuthTokenDRO.swift */; };
 		CE95A3F1261DE23A0004330E /* ApplePay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE95A3EC261DE23A0004330E /* ApplePay.storyboard */; };
 		CE95A3F2261DE23A0004330E /* ApplePayNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95A3ED261DE23A0004330E /* ApplePayNavigator.swift */; };
 		CE95A3F3261DE23A0004330E /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95A3EE261DE23A0004330E /* ApplePayViewController.swift */; };
@@ -1280,6 +1283,9 @@
 		CE91C10D25702C4700A18255 /* CalendarComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponentView.swift; sourceTree = "<group>"; };
 		CE91C11125702C4E00A18255 /* CalendarComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponentViewModel.swift; sourceTree = "<group>"; };
 		CE91C11725702C5700A18255 /* CalendarComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarComponentView.xib; sourceTree = "<group>"; };
+		CE9205DD2684930600670AD8 /* ApplePayUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplePayUseCase.swift; sourceTree = "<group>"; };
+		CE920607268493D600670AD8 /* ServiceAuthTokenRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenRepository.swift; sourceTree = "<group>"; };
+		CE920608268493D600670AD8 /* ServiceAuthTokenDRO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDRO.swift; sourceTree = "<group>"; };
 		CE95A3EC261DE23A0004330E /* ApplePay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApplePay.storyboard; sourceTree = "<group>"; };
 		CE95A3ED261DE23A0004330E /* ApplePayNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayNavigator.swift; sourceTree = "<group>"; };
 		CE95A3EE261DE23A0004330E /* ApplePayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayViewController.swift; sourceTree = "<group>"; };
@@ -2129,6 +2135,7 @@
 		C71C242E265D03C3002071FF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CE920606268493C900670AD8 /* Repositories */,
 				C71C2436265D077F002071FF /* Use Cases */,
 			);
 			path = Data;
@@ -2162,6 +2169,7 @@
 		C71C2436265D077F002071FF /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
+				CE9205DD2684930600670AD8 /* ApplePayUseCase.swift */,
 				C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */,
 			);
 			path = "Use Cases";
@@ -4775,6 +4783,15 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		CE920606268493C900670AD8 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CE920608268493D600670AD8 /* ServiceAuthTokenDRO.swift */,
+				CE920607268493D600670AD8 /* ServiceAuthTokenRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		CE95A3EB261DE2250004330E /* Apple Pay */ = {
 			isa = PBXGroup;
 			children = (
@@ -6295,6 +6312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
+				CE920609268493D600670AD8 /* ServiceAuthTokenRepository.swift in Sources */,
 				CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */,
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
@@ -6359,6 +6377,7 @@
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
+				CE9205DE2684930600670AD8 /* ApplePayUseCase.swift in Sources */,
 				CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */,
 				C71B4B72257EC57000538697 /* SecurityLevelsNavigator.swift in Sources */,
 				CE14202F2636EE8900E022C7 /* BonusViewModel.swift in Sources */,
@@ -6565,6 +6584,7 @@
 				CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */,
 				D85C9C1224336B4C00F1D4FE /* R.generated.swift in Sources */,
 				D842098524482BE80001ADC1 /* TabBarButton.swift in Sources */,
+				CE92060A268493D600670AD8 /* ServiceAuthTokenDRO.swift in Sources */,
 				CE38ED852681EECF00B02A9E /* LogOutTableViewCell.swift in Sources */,
 				CE55ED59252B38BA003E168F /* ProfileInfoComponentViewModel.swift in Sources */,
 				D8AC996B244F1A8600B16600 /* RecentlyPlayedCollectionViewCellDataProvider.swift in Sources */,
