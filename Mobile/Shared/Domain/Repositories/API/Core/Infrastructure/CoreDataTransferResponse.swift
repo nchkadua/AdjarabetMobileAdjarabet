@@ -19,9 +19,9 @@ protocol CoreDataTransferResponse: DataTransferResponse where Body: CoreStatusCo
 extension CoreDataTransferResponse {
     static func entity(header: Header, body: Body) -> Result<Entity, ABError>? {
         let statusCode = body.statusCode
-        if AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue != statusCode {
+        if AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue != statusCode { // TODO: apply correct success condition
             let statusCode = AdjarabetCoreStatusCode(rawValue: statusCode) ?? .UNKNOWN
-            let error = ABError(coreStatusCode: statusCode)
+            let error: ABError = ABError(coreStatusCode: statusCode) ?? .default
             return .failure(error)
         }
         return entitySafely(header: header, body: body)

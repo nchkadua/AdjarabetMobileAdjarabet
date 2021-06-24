@@ -33,7 +33,7 @@ extension CoreApiPaymentAccountRepository: PaymentAccountPagingableRepository,
 
     func delete(params: PaymentAccountDeleteParams,
                 handler: @escaping PaymentAccountDeleteHandler) {
-        performTask(expecting: CoreApiPaymentAccountDeleteDTO.self, completion: handler) { requestBuilder -> CoreRequestBuilder in
+        performTask(expecting: CoreApiStatusCodeDTO.self, completion: handler) { requestBuilder -> CoreRequestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "deletePaymentAccount")
                 .setBody(key: "paymentAccountID", value: "\(params.id)")

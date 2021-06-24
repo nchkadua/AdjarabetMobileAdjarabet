@@ -111,6 +111,22 @@ public extension DependencyContainer {
         Module { CoreApiIsOTPEnabledRepository() as IsOTPEnabledRepository }
         Module { CoreApiActionOTPRepository() as ActionOTPRepository }
         Module { CoreApiPasswordChangeRepository() as PasswordChangeRepository }
+        Module { CorePasswordResetRepository() as PasswordResetRepository }
+        Module { CoreApiAddressRepository() as AddressRepository }
+        Module { CoreApiAddressRepository() as AddressReadableRepository }
+        Module { CoreApiAddressRepository() as AddressWritableRepository }
+        // Communication Language Repository
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageRepository }
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageReadableRepository }
+        Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageWritableRepository }
+        // Contact Info Repository
+        Module { CoreApiContactInfoRepository() as ContactInfoRepository }
+        Module { CoreApiContactInfoRepository() as ContactInfoReadableRepository }
+        Module { CoreApiContactInfoRepository() as ContactInfoWritableRepository }
+        // Phone Verification Code
+        Module { CoreApiPhoneVerificationCodeRepository() as PhoneVerificationCodeRepository }
+        // Suspend
+        Module { CoreApiSuspendRepository() as SuspendRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
         Module { DefaultNotificationsRepository() as NotificationsRepository }
@@ -181,6 +197,9 @@ public extension DependencyContainer {
         Module { DefaultLogoutUseCase() as LogoutUseCase }
         Module { DefaultAmountFormatterUseCase() as AmountFormatterUseCase }
         Module { DefaultPasswordChangeUseCase() as PasswordChangeUseCase }
+        Module { DefaultResetPasswordUseCase() as ResetPasswordUseCase }
+        Module { DefaultUpdateMailUseCase() as UpdateMailUseCase }
+        Module { DefaultUpdatePhoneNumberUseCase() as UpdatePhoneNumberUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }

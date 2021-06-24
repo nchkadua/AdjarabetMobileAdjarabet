@@ -20,6 +20,6 @@ struct ActionOTPDTO: CoreDataTransferResponse {
     typealias Entity = ActionOTPEntity
 
     static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-        .success(.init(statusCode: body.statusCode))
+        .success(.init(statusCode: body.statusCode)) // FIXME: Do not return statusCode as enitity
     }
 }

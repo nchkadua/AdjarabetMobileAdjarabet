@@ -2173,7 +2173,7 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
       }
 
-      /// This `R.image.components.quickAction` struct is generated, and contains static references to 15 images.
+      /// This `R.image.components.quickAction` struct is generated, and contains static references to 17 images.
       struct quickAction {
         /// Image `account_info`.
         static let account_info = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/account_info")
@@ -2187,6 +2187,8 @@ struct R: Rswift.Validatable {
         static let deposit = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/deposit")
         /// Image `face_id`.
         static let face_id = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/face_id")
+        /// Image `faq`.
+        static let faq = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/faq")
         /// Image `incognito`.
         static let incognito = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/incognito")
         /// Image `logout`.
@@ -2197,6 +2199,8 @@ struct R: Rswift.Validatable {
         static let my_cards = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/my_cards")
         /// Image `parameters`.
         static let parameters = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/parameters")
+        /// Image `terms`.
+        static let terms = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/terms")
         /// Image `touch_id`.
         static let touch_id = Rswift.ImageResource(bundle: R.hostingBundle, name: "Components/QuickAction/touch_id")
         /// Image `transaction_history`.
@@ -2249,6 +2253,13 @@ struct R: Rswift.Validatable {
         #endif
 
         #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "faq", bundle: ..., traitCollection: ...)`
+        static func faq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.faq, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
         /// `UIImage(named: "incognito", bundle: ..., traitCollection: ...)`
         static func incognito(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
           return UIKit.UIImage(resource: R.image.components.quickAction.incognito, compatibleWith: traitCollection)
@@ -2280,6 +2291,13 @@ struct R: Rswift.Validatable {
         /// `UIImage(named: "parameters", bundle: ..., traitCollection: ...)`
         static func parameters(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
           return UIKit.UIImage(resource: R.image.components.quickAction.parameters, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "terms", bundle: ..., traitCollection: ...)`
+        static func terms(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.components.quickAction.terms, compatibleWith: traitCollection)
         }
         #endif
 
@@ -3203,7 +3221,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 84 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 86 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -3287,6 +3305,10 @@ struct R: Rswift.Validatable {
     static let loadingCollectionViewCell = _R.nib._LoadingCollectionViewCell()
     /// Nib `LoadingComponentView`.
     static let loadingComponentView = _R.nib._LoadingComponentView()
+    /// Nib `LogOutComponentView`.
+    static let logOutComponentView = _R.nib._LogOutComponentView()
+    /// Nib `LogOutTableViewCell`.
+    static let logOutTableViewCell = _R.nib._LogOutTableViewCell()
     /// Nib `MinAmountComponentView`.
     static let minAmountComponentView = _R.nib._MinAmountComponentView()
     /// Nib `MyCardComponentView`.
@@ -3699,6 +3721,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loadingComponentView) instead")
     static func loadingComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loadingComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LogOutComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.logOutComponentView) instead")
+    static func logOutComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.logOutComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LogOutTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.logOutTableViewCell) instead")
+    static func logOutTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.logOutTableViewCell)
     }
     #endif
 
@@ -4210,6 +4248,14 @@ struct R: Rswift.Validatable {
       return R.nib.loadingComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func logOutComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.logOutComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func logOutTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LogOutTableViewCell? {
+      return R.nib.logOutTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LogOutTableViewCell
+    }
+
     static func minAmountComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.minAmountComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -4387,7 +4433,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 501 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 514 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -4413,6 +4459,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_information_title = Rswift.StringResource(key: "account_information_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Account Is Suspended
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_account_is_suspended = Rswift.StringResource(key: "shared_aberror_account_is_suspended", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Account Parameters
       ///
       /// Locales: en, ka, hy
@@ -4477,6 +4527,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let algeria = Rswift.StringResource(key: "algeria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: All Rights reserved.
+      ///
+      /// Locales: en, ka, hy
+      static let login_legal2 = Rswift.StringResource(key: "login_legal2", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: American Samoa
       ///
       /// Locales: en, ka, hy
@@ -4641,6 +4695,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let bonaire_sint_eustatius_and_saba = Rswift.StringResource(key: "bonaire_sint_eustatius_and_saba", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Bonus Is Expired
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_bonus_is_expired = Rswift.StringResource(key: "shared_aberror_bonus_is_expired", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Bonuses
       ///
       /// Locales: en, ka, hy
@@ -4825,6 +4883,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let cook_islands = Rswift.StringResource(key: "cook_islands", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Copyright © 2021 Adjarabet.
+      ///
+      /// Locales: en, ka, hy
+      static let login_legal1 = Rswift.StringResource(key: "login_legal1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Costa Rica
       ///
       /// Locales: en, ka, hy
@@ -4969,6 +5031,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let enter_card_number = Rswift.StringResource(key: "enter_card_number", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Enter Username
+      ///
+      /// Locales: en, ka, hy
+      static let fill_username = Rswift.StringResource(key: "fill_username", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Equatorial Guinea
       ///
       /// Locales: en, ka, hy
@@ -5037,6 +5103,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let french_polynesia = Rswift.StringResource(key: "french_polynesia", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Frequently Asked Questions
+      ///
+      /// Locales: en, ka, hy
+      static let faq = Rswift.StringResource(key: "faq", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Friend ID
       ///
       /// Locales: en, ka, hy
@@ -5157,6 +5227,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let security_levels_id_document_change = Rswift.StringResource(key: "security_levels_id_document_change", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: IP Is Blocked
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_ip_is_blocked = Rswift.StringResource(key: "shared_aberror_ip_is_blocked", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Iceland
       ///
       /// Locales: en, ka, hy
@@ -5449,6 +5523,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let mozambique = Rswift.StringResource(key: "mozambique", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Must Be More Than Zero
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_must_be_more_than_zero = Rswift.StringResource(key: "shared_aberror_must_be_more_than_zero", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: My Balance
       ///
       /// Locales: en, ka, hy
@@ -5613,6 +5691,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let security_levels_password_update = Rswift.StringResource(key: "security_levels_password_update", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Payment Account Is Not Verified
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_payment_account_is_not_verified = Rswift.StringResource(key: "shared_aberror_payment_account_is_not_verified", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Payment Account Not Found
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_payment_account_not_found = Rswift.StringResource(key: "shared_aberror_payment_account_not_found", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Payment provider
       ///
       /// Locales: en, ka, hy
@@ -5849,6 +5935,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let withdraw_service_type_init_error = Rswift.StringResource(key: "withdraw_service_type_init_error", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Session Not Found
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_session_not_found = Rswift.StringResource(key: "shared_aberror_session_not_found", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Settings
       ///
       /// Locales: en, ka, hy
@@ -5989,6 +6079,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let tanzania = Rswift.StringResource(key: "tanzania", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Terms and Conditions
+      ///
+      /// Locales: en, ka, hy
+      static let terms_and_conditions = Rswift.StringResource(key: "terms_and_conditions", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Thailand
       ///
       /// Locales: en, ka, hy
@@ -6093,6 +6187,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let ukraine = Rswift.StringResource(key: "ukraine", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Unable To Get Balance
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_unable_to_get_balance = Rswift.StringResource(key: "shared_aberror_unable_to_get_balance", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Unable To Send Email Verification Email Is Missing
+      ///
+      /// Locales: en, ka, hy
+      static let shared_aberror_unable_to_send_email_verification_email_is_missing = Rswift.StringResource(key: "shared_aberror_unable_to_send_email_verification_email_is_missing", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: United Arab Emirates
       ///
       /// Locales: en, ka, hy
@@ -6361,10 +6463,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let visa_description_card = Rswift.StringResource(key: "visa_description_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.
-      ///
-      /// Locales: en, ka, hy
-      static let login_legal = Rswift.StringResource(key: "login_legal", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: საათის წინ
       ///
       /// Locales: en, ka, hy
@@ -6482,6 +6580,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_information_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Account Is Suspended
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_account_is_suspended(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_account_is_suspended", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_account_is_suspended"
+        }
+
+        return NSLocalizedString("shared_aberror_account_is_suspended", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Account Parameters
@@ -6722,6 +6835,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("algeria", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: All Rights reserved.
+      ///
+      /// Locales: en, ka, hy
+      static func login_legal2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_legal2", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_legal2"
+        }
+
+        return NSLocalizedString("login_legal2", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: American Samoa
@@ -7337,6 +7465,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("bonaire_sint_eustatius_and_saba", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Bonus Is Expired
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_bonus_is_expired(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_bonus_is_expired", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_bonus_is_expired"
+        }
+
+        return NSLocalizedString("shared_aberror_bonus_is_expired", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Bonuses
@@ -8029,6 +8172,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("cook_islands", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Copyright © 2021 Adjarabet.
+      ///
+      /// Locales: en, ka, hy
+      static func login_legal1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_legal1", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "login_legal1"
+        }
+
+        return NSLocalizedString("login_legal1", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Costa Rica
       ///
       /// Locales: en, ka, hy
@@ -8569,6 +8727,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("enter_card_number", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Enter Username
+      ///
+      /// Locales: en, ka, hy
+      static func fill_username(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("fill_username", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "fill_username"
+        }
+
+        return NSLocalizedString("fill_username", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Equatorial Guinea
       ///
       /// Locales: en, ka, hy
@@ -8822,6 +8995,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("french_polynesia", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Frequently Asked Questions
+      ///
+      /// Locales: en, ka, hy
+      static func faq(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("faq", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "faq"
+        }
+
+        return NSLocalizedString("faq", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Friend ID
@@ -9272,6 +9460,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("security_levels_id_document_change", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: IP Is Blocked
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_ip_is_blocked(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_ip_is_blocked", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_ip_is_blocked"
+        }
+
+        return NSLocalizedString("shared_aberror_ip_is_blocked", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Iceland
@@ -10369,6 +10572,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("mozambique", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Must Be More Than Zero
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_must_be_more_than_zero(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_must_be_more_than_zero", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_must_be_more_than_zero"
+        }
+
+        return NSLocalizedString("shared_aberror_must_be_more_than_zero", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: My Balance
       ///
       /// Locales: en, ka, hy
@@ -10982,6 +11200,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("security_levels_password_update", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Payment Account Is Not Verified
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_payment_account_is_not_verified(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_payment_account_is_not_verified", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_payment_account_is_not_verified"
+        }
+
+        return NSLocalizedString("shared_aberror_payment_account_is_not_verified", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Payment Account Not Found
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_payment_account_not_found(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_payment_account_not_found", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_payment_account_not_found"
+        }
+
+        return NSLocalizedString("shared_aberror_payment_account_not_found", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Payment provider
@@ -11869,6 +12117,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("withdraw_service_type_init_error", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Session Not Found
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_session_not_found(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_session_not_found", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_session_not_found"
+        }
+
+        return NSLocalizedString("shared_aberror_session_not_found", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Settings
       ///
       /// Locales: en, ka, hy
@@ -12394,6 +12657,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("tanzania", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Terms and Conditions
+      ///
+      /// Locales: en, ka, hy
+      static func terms_and_conditions(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("terms_and_conditions", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "terms_and_conditions"
+        }
+
+        return NSLocalizedString("terms_and_conditions", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Thailand
       ///
       /// Locales: en, ka, hy
@@ -12782,6 +13060,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("ukraine", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Unable To Get Balance
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_unable_to_get_balance(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_unable_to_get_balance", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_unable_to_get_balance"
+        }
+
+        return NSLocalizedString("shared_aberror_unable_to_get_balance", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Unable To Send Email Verification Email Is Missing
+      ///
+      /// Locales: en, ka, hy
+      static func shared_aberror_unable_to_send_email_verification_email_is_missing(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_unable_to_send_email_verification_email_is_missing", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_unable_to_send_email_verification_email_is_missing"
+        }
+
+        return NSLocalizedString("shared_aberror_unable_to_send_email_verification_email_is_missing", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: United Arab Emirates
@@ -13789,21 +14097,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("visa_description_card", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.
-      ///
-      /// Locales: en, ka, hy
-      static func login_legal(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("login_legal", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "login_legal"
-        }
-
-        return NSLocalizedString("login_legal", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
       /// en translation: საათის წინ
       ///
       /// Locales: en, ka, hy
@@ -14488,6 +14781,28 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LogOutComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LogOutComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LogOutTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LogOutTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LogOutTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LogOutTableViewCell
       }
 
       fileprivate init() {}
@@ -15399,9 +15714,13 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+<<<<<<< HEAD
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
+=======
+>>>>>>> dev
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }

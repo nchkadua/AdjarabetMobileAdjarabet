@@ -17,6 +17,16 @@
 // ABError
 "shared_aberror_default_description" = "something went wrong";
 "shared_aberror_wrong_auth_credentials_description" = "wrong authentication credentials";
+"shared_aberror_ip_is_blocked" = "ip is blocked";
+"shared_aberror_session_not_found" = "session not found";
+"shared_aberror_must_be_more_than_zero" = "must be more than zero";
+"shared_aberror_account_is_suspended" = "account is suspended";
+"shared_aberror_unable_to_get_balance" = "unable to get balance";
+"shared_aberror_payment_account_not_found" = "payment account not found";
+"shared_aberror_payment_account_is_not_verified" = "payment account is not verified";
+"shared_aberror_unable_to_send_email_verification_email_is_missing" = "unable to send email verification email is missing";
+"shared_aberror_bonus_is_expired" = "bonus is expired";
+
 
 "login" = "մուտք";
 
@@ -59,7 +69,9 @@
 "login_password_input_title" = "password";
 "login_with_face_id_title" = "Log in with face ID";
 "login_with_touch_id_title" = "Log in with touch ID";
-"login_legal" = "ნებართვა #19-05/284, ნებართვა #19-06/252 © აჭარაბეთი. ყველა უფლება დაცულია.";
+"login_legal1" = "Copyright © 2021 Adjarabet.";
+"login_legal2" = "All Rights reserved.";
+"fill_username" = "Enter Username";
 
 /* SMS Login */
 "sms_login_page_title" = "OTP Authorization";
@@ -88,11 +100,13 @@
 "transaction_history" = "Transaction History";
 "my_cards" = "My Cards";
 "my_bonuses" = "My Bonuses";
-"biomatry_authentication_parameters" = "authentication parameters";
+"faq" = "Frequently Asked Questions";
+"biomatry_authentication_parameters" = "Authentication Parameters";
 "transfer_to_a_friend" = "Transfer to a Friend";
 "incognito_card" = "Incognito Card";
 "account_information" = "Account Information";
 "account_parameters" = "Account Parameters";
+"terms_and_conditions" = "Terms and Conditions";
 "log_out" = "Log Out";
 
 /* Account Info */

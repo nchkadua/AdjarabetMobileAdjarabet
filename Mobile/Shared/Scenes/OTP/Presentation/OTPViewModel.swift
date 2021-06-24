@@ -21,15 +21,13 @@ public struct OTPViewModelParams {
     public let buttonTitle: String
     public let showDismissButton: Bool
     public let username: String
-    public let getOtp: Bool
     public let otpType: OTPType
 
-    public init(vcTitle: String = "", buttonTitle: String = "", showDismissButton: Bool = true, username: String = "", getOtp: Bool = true, otpType: OTPType = .loginOTP) {
+    public init(vcTitle: String = "", buttonTitle: String = "", showDismissButton: Bool = true, username: String = "", otpType: OTPType = .loginOTP) {
         self.vcTitle = vcTitle
         self.buttonTitle = buttonTitle
         self.showDismissButton = showDismissButton
         self.username = username
-        self.getOtp = getOtp
         self.otpType = otpType
     }
 }
@@ -95,11 +93,10 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionSubject.onNext(.setSMSInputViewNumberOfItems(smsCodeLength))
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
 
-        guard params.getOtp else { return }
-
         switch params.otpType {
         case .loginOTP: getOTP()
         case .actionOTP: getActionOTP()
+        case .none: return
         }
     }
 
@@ -160,6 +157,8 @@ extension DefaultOTPViewModel: OTPViewModel {
         case .actionOTP:
             params.paramsOutputAction.onNext(.success(otp: code))
             routeSubject.onNext(.dismiss)
+        case .none:
+            break
         }
     }
 
@@ -173,7 +172,6 @@ extension DefaultOTPViewModel: OTPViewModel {
             case .success:
                 self?.routeSubject.onNext(.showSuccessMessage)
                 self?.routeSubject.onNext(.openMainTabBar)
-                self?.params.paramsOutputAction.onNext(.success(otp: code))
             case .failure(let error):
                 self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
             }
@@ -184,4 +182,5 @@ extension DefaultOTPViewModel: OTPViewModel {
 public enum OTPType {
     case loginOTP
     case actionOTP
+    case none
 }

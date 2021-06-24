@@ -1,14 +1,14 @@
 //
-//  CoreApiPaymentAccountDeleteDTO.swift
+//  CoreApiStatusCodeDTO.swift
 //  Mobile
 //
-//  Created by Giorgi Kratsashvili on 2/18/21.
+//  Created by Giorgi Kratsashvili on 6/23/21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import Foundation
 
-struct CoreApiPaymentAccountDeleteDTO: CoreDataTransferResponse {
+struct CoreApiStatusCodeDTO: CoreDataTransferResponse {
     struct Body: CoreStatusCodeable {
         let statusCode: Int
 
@@ -20,6 +20,6 @@ struct CoreApiPaymentAccountDeleteDTO: CoreDataTransferResponse {
     typealias Entity = Void
 
     static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-        return .success(())
+        .success(())
     }
 }

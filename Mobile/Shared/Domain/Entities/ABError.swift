@@ -18,8 +18,16 @@ import Foundation
  to ABError errors with initializers.
  */
 enum ABError {
-    case sessionUninitialized
     case wrongAuthCredentials
+    case ipIsBlocked
+    case sessionNotFound
+    case mustBeMoreThanZero
+    case accountIsSuspended
+    case unableToGetBalance
+    case paymentAccountNotFound
+    case paymentAccountIsNotVerified
+    case unableToSendEmailVerificationEmailIsMissing
+    case bonusIsExpired
     // general errors
     case from(_ error: Error)
     case `init`(description: Description = .init())
@@ -29,6 +37,24 @@ enum ABError {
         switch self {
         case .wrongAuthCredentials:
             return .init(description: R.string.localization.shared_aberror_wrong_auth_credentials_description.localized())
+        case .ipIsBlocked:
+            return .init(description: R.string.localization.shared_aberror_ip_is_blocked.localized())
+        case .sessionNotFound:
+            return .init(description: R.string.localization.shared_aberror_session_not_found.localized())
+        case .mustBeMoreThanZero:
+            return .init(description: R.string.localization.shared_aberror_must_be_more_than_zero.localized())
+        case .accountIsSuspended:
+            return .init(description: R.string.localization.shared_aberror_account_is_suspended.localized())
+        case .unableToGetBalance:
+            return .init(description: R.string.localization.shared_aberror_unable_to_get_balance.localized())
+        case .paymentAccountNotFound:
+            return .init(description: R.string.localization.shared_aberror_payment_account_not_found.localized())
+        case .paymentAccountIsNotVerified:
+            return .init(description: R.string.localization.shared_aberror_payment_account_is_not_verified.localized())
+        case .unableToSendEmailVerificationEmailIsMissing:
+            return .init(description: R.string.localization.shared_aberror_unable_to_send_email_verification_email_is_missing.localized())
+        case .bonusIsExpired:
+            return .init(description: R.string.localization.shared_aberror_bonus_is_expired.localized())
         // add more errors here!
         case .from(let error):
             return .init(description: error.localizedDescription)
@@ -63,8 +89,22 @@ enum ABError {
 
 // MARK: - Core API Error -> ABError
 extension ABError {
-    init(coreStatusCode: AdjarabetCoreStatusCode) {
-        self = .default
+    init?(coreStatusCode: AdjarabetCoreStatusCode) {
+        guard coreStatusCode != .STATUS_SUCCESS
+        else { return nil }
+        switch coreStatusCode {
+        case .USER_WITH_GIVEN_AUTH_CREDENTIALS_NOT_FOUND:          self = .wrongAuthCredentials
+        case .IP_IS_BLOCKED:                                       self = .ipIsBlocked
+        case .SESSION_NOT_FOUND:                                   self = .sessionNotFound
+        case .MUST_BE_MORE_THAN_ZERO:                              self = .mustBeMoreThanZero
+        case .ACCOUNT_IS_SUSPENDED:                                self = .accountIsSuspended
+        case .UNABLE_TO_GET_BALANCE:                               self = .unableToGetBalance
+        case .PAYMENT_ACCOUNT_NOT_FOUND:                           self = .paymentAccountNotFound
+        case .PAYMENT_ACCOUNT_IS_NOT_VERIFIED:                     self = .paymentAccountIsNotVerified
+        case .UNABLE_TO_SEND_EMAIL_VERIFICATION_EMAIL_IS_MISSING:  self = .unableToSendEmailVerificationEmailIsMissing
+        case .BONUS_IS_EXPIRED:                                    self = .bonusIsExpired
+        default: self = .default
+        }
     }
 }
 

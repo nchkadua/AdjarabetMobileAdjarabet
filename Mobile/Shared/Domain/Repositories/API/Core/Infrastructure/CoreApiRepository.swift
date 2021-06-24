@@ -42,7 +42,7 @@ extension CoreApiRepository {
         guard let sessionId = userSession.sessionId,
               let userId = userSession.userId
         else {
-            return .failure(.sessionUninitialized)
+            return .failure(.sessionNotFound)
         }
 
         requestBuilder = requestBuilder

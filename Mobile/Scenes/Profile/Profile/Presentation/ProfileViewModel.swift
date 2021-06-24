@@ -47,6 +47,8 @@ public class DefaultProfileViewModel: DefaultBaseViewModel {
     @Inject private var userBalanceService: UserBalanceService
     @Inject(from: .useCases) private var logoutUseCase: LogoutUseCase
     @Inject private var biometryInfoService: BiometricAuthentication
+
+    private var logoutViewModel = DefaultLogOutComponentViewModel(params: .init(title: ""))
 }
 
 extension DefaultProfileViewModel: ProfileViewModel {
@@ -78,6 +80,16 @@ extension DefaultProfileViewModel: ProfileViewModel {
         }).disposed(by: self.disposeBag)
         dataProviders.insert(balanceViewModel, at: 1)
 
+        logoutViewModel = DefaultLogOutComponentViewModel(params: .init(title: R.string.localization.log_out.localized()))
+        logoutViewModel.action.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .didTapButton: self?.routeSubject.onNext(.openPage(destionation: .loginPage))
+            default:
+                break
+            }
+        }).disposed(by: self.disposeBag)
+        dataProviders.insert(logoutViewModel, at: 2)
+
         QuickActionItemProvider.items(biometryQuickActionIcon()).reversed().forEach {
             let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, hidesSeparator: $0.hidesSeparator, destination: $0.destionation, roundedCorners: $0.roundedCorners))
 
@@ -98,7 +110,9 @@ extension DefaultProfileViewModel: ProfileViewModel {
         logoutUseCase.execute(userId: userSession.userId ?? -1, sessionId: userSession.sessionId ?? "", completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success: self.actionSubject.onNext(.didLogoutWithSuccess)
+            case .success:
+                self.actionSubject.onNext(.didLogoutWithSuccess)
+                self.logoutViewModel.endLoading()
             case .failure(.unknown(let error)): self.actionSubject.onNext(.didLogoutWithError(error: error))
             }
         })

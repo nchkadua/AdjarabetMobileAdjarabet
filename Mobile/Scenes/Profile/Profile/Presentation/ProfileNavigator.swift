@@ -27,10 +27,12 @@ public class ProfileNavigator: Navigator {
         case transactionHistory
         case myCards
         case myBonuses
+        case faq
         case biometryParameters
         case incognitoCard
         case accountInformation
         case accountParameters
+        case terms
         case loginPage
     }
 
@@ -40,9 +42,11 @@ public class ProfileNavigator: Navigator {
         case .withdraw: navigateToWithdraw(animate: animate)
         case .transactionHistory: navigateToTransactionHistory(animate: animate)
         case .myCards: navigateToMyCards(animate: animate)
+        case .faq: navigateToFAQ(animate: animate)
         case .biometryParameters: navigateToBiometricSettings(animate: animate)
         case .accountInformation: navigateToAccountInformation(animate: animate)
         case .accountParameters: navigateToAccountParameters(animate: animate)
+        case .terms: navigateToTerms(animate: animate)
         case .loginPage: navigateToLogin(animate: animate)
         default:
             break
@@ -75,6 +79,9 @@ public class ProfileNavigator: Navigator {
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 
+    private func navigateToFAQ(animate: Bool) {
+    }
+
     private func navigateToBiometricSettings(animate: Bool) {
         let vc = biometricSettingsViewControllerFactory.make()
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
@@ -88,6 +95,9 @@ public class ProfileNavigator: Navigator {
     private func navigateToAccountParameters(animate: Bool) {
         let vc = accountParametersViewControllerFactory.make()
         viewController?.navigationController?.pushViewController(vc, animated: animate)
+    }
+
+    private func navigateToTerms(animate: Bool) {
     }
 
     private func navigateToLogin(animate: Bool) {
