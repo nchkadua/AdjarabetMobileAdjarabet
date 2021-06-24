@@ -877,16 +877,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 4 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 3 properties.
   struct entitlements {
     struct comAppleDeveloperAssociatedDomains {
       static let webcredentialsAdjarabetCom = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "webcredentials:adjarabet.com") ?? "webcredentials:adjarabet.com"
-
-      fileprivate init() {}
-    }
-
-    struct comAppleDeveloperInAppPayments {
-      static let merchantComAdjarabetWeb = infoPlistString(path: ["com.apple.developer.in-app-payments"], key: "merchant.com.adjarabet.web") ?? "merchant.com.adjarabet.web"
 
       fileprivate init() {}
     }
@@ -15714,11 +15708,6 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
-<<<<<<< HEAD
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/reminder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/reminder' is used in storyboard 'Login', but couldn't be loaded.") }
-=======
->>>>>>> dev
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }

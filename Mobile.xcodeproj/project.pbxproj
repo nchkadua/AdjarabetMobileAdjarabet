@@ -631,9 +631,6 @@
 		CEF52CD02673603900D2386C /* PasswordChangeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */; };
 		CEF52CD42673604400D2386C /* PasswordChangeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */; };
 		CEF52CDA2673694C00D2386C /* PasswordChangeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52CD92673694C00D2386C /* PasswordChangeUseCase.swift */; };
-		CEF52D252678E6CB00D2386C /* ServiceAuthTokenDRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52D242678E6CB00D2386C /* ServiceAuthTokenDRO.swift */; };
-		CEF52D292678E70200D2386C /* ServiceAuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52D282678E70200D2386C /* ServiceAuthTokenRepository.swift */; };
-		CEF52D2D2678E92900D2386C /* ApplePayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52D2C2678E92900D2386C /* ApplePayUseCase.swift */; };
 		D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */; };
 		D80784682443968D00003892 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80784672443968D00003892 /* DesignSystem.swift */; };
 		D807846B24439E4500003892 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807846A24439E4500003892 /* String+Extension.swift */; };
@@ -1427,9 +1424,6 @@
 		CEF52CCF2673603900D2386C /* PasswordChangeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeEntity.swift; sourceTree = "<group>"; };
 		CEF52CD32673604400D2386C /* PasswordChangeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeDTO.swift; sourceTree = "<group>"; };
 		CEF52CD92673694C00D2386C /* PasswordChangeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeUseCase.swift; sourceTree = "<group>"; };
-		CEF52D242678E6CB00D2386C /* ServiceAuthTokenDRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenDRO.swift; sourceTree = "<group>"; };
-		CEF52D282678E70200D2386C /* ServiceAuthTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAuthTokenRepository.swift; sourceTree = "<group>"; };
-		CEF52D2C2678E92900D2386C /* ApplePayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayUseCase.swift; sourceTree = "<group>"; };
 		D8029CF2251A79E200ABF3D9 /* LoginViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFactory.swift; sourceTree = "<group>"; };
 		D803F42724A251C700A16CB2 /* Pods_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80784672443968D00003892 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
@@ -2136,7 +2130,6 @@
 			isa = PBXGroup;
 			children = (
 				C71C2436265D077F002071FF /* Use Cases */,
-				CEF52D232678E6A100D2386C /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -2170,7 +2163,6 @@
 			isa = PBXGroup;
 			children = (
 				C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */,
-				CEF52D2C2678E92900D2386C /* ApplePayUseCase.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -5313,15 +5305,6 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		CEF52D232678E6A100D2386C /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				CEF52D242678E6CB00D2386C /* ServiceAuthTokenDRO.swift */,
-				CEF52D282678E70200D2386C /* ServiceAuthTokenRepository.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
 		D807846C2444726000003892 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -6407,7 +6390,6 @@
 				7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */,
 				D8BF4047244ECCF5008F0BAF /* AppCellDataProvider+Extension.swift in Sources */,
 				C794D4202631F7940028393A /* WebApiPaymentAccountRepository.swift in Sources */,
-				CEF52D2D2678E92900D2386C /* ApplePayUseCase.swift in Sources */,
 				C71B4B74257EC57000538697 /* SecurityLevelsViewControllerFactory.swift in Sources */,
 				7644B6002563E201006778B2 /* DateHeaderCell.swift in Sources */,
 				C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */,
@@ -6507,11 +6489,7 @@
 				CE7A241125796AD500A94E89 /* Collection+Extension.swift in Sources */,
 				C7D29F47258EA7A4006BEFAC /* HttpRequestBuilder.swift in Sources */,
 				C7C35FF325C9E79800ADCBB6 /* ResourceRepository.swift in Sources */,
-<<<<<<< HEAD
-				CEF52D292678E70200D2386C /* ServiceAuthTokenRepository.swift in Sources */,
-=======
 				CE2AABD3267B3F2100B45A0A /* GetPasswordResetCodeEntity.swift in Sources */,
->>>>>>> dev
 				C701C71F25C0597400B059A6 /* PaymentAccountUseCase.swift in Sources */,
 				CEF52C9226721D4D00D2386C /* ActionOTPEntity.swift in Sources */,
 				7668C7AC2576785F0024DDE4 /* AccountParametersHeaderComponentViewModel.swift in Sources */,
@@ -6619,7 +6597,6 @@
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
-				CEF52D252678E6CB00D2386C /* ServiceAuthTokenDRO.swift in Sources */,
 				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				C70754E325F3B84F0033050E /* PostLoginRepository.swift in Sources */,
@@ -7293,7 +7270,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Mobile/Mobile StageDebug-Stage.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
