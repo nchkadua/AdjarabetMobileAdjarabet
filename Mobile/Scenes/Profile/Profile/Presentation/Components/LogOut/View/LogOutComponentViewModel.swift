@@ -18,6 +18,8 @@ public struct LogOutComponentViewModelParams {
 public protocol LogOutComponentViewModelInput {
     func didBind()
     func didTapButton()
+    func startLoading()
+    func endLoading()
 }
 
 public protocol LogOutComponentViewModelOutput {
@@ -28,6 +30,8 @@ public protocol LogOutComponentViewModelOutput {
 public enum LogOutComponentViewModelOutputAction {
     case set(title: String)
     case didTapButton
+    case startLoading
+    case endLoading
 }
 
 public class DefaultLogOutComponentViewModel {
@@ -49,5 +53,13 @@ extension DefaultLogOutComponentViewModel: LogOutComponentViewModel {
 
     public func didTapButton() {
         actionSubject.onNext(.didTapButton)
+    }
+
+    public func startLoading() {
+        actionSubject.onNext(.startLoading)
+    }
+
+    public func endLoading() {
+        actionSubject.onNext(.endLoading)
     }
 }

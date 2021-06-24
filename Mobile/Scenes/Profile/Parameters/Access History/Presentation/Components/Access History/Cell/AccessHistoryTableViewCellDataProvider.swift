@@ -11,10 +11,16 @@ public protocol AccessHistoryTableViewCellDataProvider: AccessHistoryComponentVi
 public extension AccessHistoryTableViewCellDataProvider {
     var identifier: String { AccessHistoryTableViewCell.identifierValue }
     var height: CGFloat {
-        get { 60 + 10 } // height + padding
-        set { print(newValue) }
+        get {
+            62
+        }
+        set {
+            print(newValue)
+        }
     }
-    var isHeightSet: Bool { true }
+    var isHeightSet: Bool {
+        true
+    }
 }
 
 extension DefaultAccessHistoryComponentViewModel: AccessHistoryTableViewCellDataProvider { }

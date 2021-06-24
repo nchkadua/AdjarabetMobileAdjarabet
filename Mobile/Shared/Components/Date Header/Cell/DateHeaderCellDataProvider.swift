@@ -11,7 +11,7 @@ public protocol DateHeaderCellDataProvider: DateHeaderComponentViewModel,
 public extension DateHeaderCellDataProvider {
     var identifier: String {DateHeaderCell.identifierValue }
     var height: CGFloat {
-        get { 36 }
+        get { 62 }
         set { print(newValue)}
     }
     var isHeightSet: Bool { true }
