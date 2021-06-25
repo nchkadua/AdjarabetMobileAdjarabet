@@ -32,7 +32,8 @@ public enum AccountParametersViewModelOutputAction {
 
 public enum AccountParametersViewModelRoute {
     case openPage(_ destination: AccountParametersNavigator.Destination)
-    case openOTP(params: OTPViewModelParams)
+ // case openOTP(params: OTPViewModelParams)
+    case openHighSecurity
     case openAccessHistory
 }
 
@@ -135,16 +136,17 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
     }
 
     private func goToHighSecurity() {
-        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.high_security_page_title.localized(), buttonTitle: R.string.localization.high_security_button_on(), showDismissButton: false, username: "", otpType: .actionOTP)
+        routeSubject.onNext(.openHighSecurity)
+        /*let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.high_security_page_title.localized(), buttonTitle: R.string.localization.high_security_button_on(), showDismissButton: false, username: "", otpType: .actionOTP)
         routeSubject.onNext(.openOTP(params: otpParams))
-        subscribeTo(otpParams)
+        subscribeTo(otpParams)*/
     }
 
     private func goToAccessHistory() {
         routeSubject.onNext(.openAccessHistory)
     }
 
-    private func subscribeTo(_ params: OTPViewModelParams) {
+    /*private func subscribeTo(_ params: OTPViewModelParams) {
         params.paramsOutputAction.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
@@ -161,7 +163,7 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
     }
 
     private func handleInvalidOTP() {
-    }
+    }*/
 
     private func biometryQuickActionIcon() -> UIImage {
         let icon: UIImage

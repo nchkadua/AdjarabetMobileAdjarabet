@@ -87,6 +87,7 @@ public extension DependencyContainer {
         Module { DefaultApplePayViewModel() as ApplePayViewModel }
         Module { DefaultMainContainerViewModel(params: .init()) as MainContainerViewModel }
         Module { DefaultBonusViewModel(params: .init()) as BonusViewModel }
+        Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -171,6 +172,7 @@ public extension DependencyContainer {
         Module { DefaultGameViewControllerFactory() as GameViewControllerFactory }
         Module { DefaultWebViewControllerFactory() as WebViewControllerFactory }
         Module { DefaultBonusViewControllerFactory() as BonusViewControllerFactory }
+        Module { DefaultHighSecurityViewControllerFactory() as HighSecurityViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }

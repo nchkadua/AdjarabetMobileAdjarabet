@@ -3597,11 +3597,11 @@
 		C78E53002685AB6A00EE1C18 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C78E530B2685B12300EE1C18 /* HighSecurity.storyboard */,
-				C78E530C2685B12300EE1C18 /* HighSecurityNavigator.swift */,
+				C78E530F2685B12300EE1C18 /* HighSecurityViewModel.swift */,
 				C78E530D2685B12300EE1C18 /* HighSecurityViewController.swift */,
 				C78E530E2685B12300EE1C18 /* HighSecurityViewControllerFactory.swift */,
-				C78E530F2685B12300EE1C18 /* HighSecurityViewModel.swift */,
+				C78E530C2685B12300EE1C18 /* HighSecurityNavigator.swift */,
+				C78E530B2685B12300EE1C18 /* HighSecurity.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
