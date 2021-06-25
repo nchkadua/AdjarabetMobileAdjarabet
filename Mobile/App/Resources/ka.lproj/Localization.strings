@@ -129,6 +129,12 @@
 "account_info_save_button_title" = "შენახვა";
 "account_info_status_button_title" = "დაბლოკვა";
 
+/* High Security */
+"high_security_title" = "მაღალი დაცვის რეჟიმი";
+"high_security_description" = "მაღალი დაცვის რეჟიმის გააქტიურებით, თქვენი აჭარაბეთის ანგარიში ბევრად უფრო დაცულია. ავტორიზაცია და პერსონალურ ინფორმაციასთან წვდომა ხდება მხოლოდ უსაფრთხოების კოდის გამოყენებით.";
+"high_security_button_activate" = "გააქტიურება";
+"high_security_button_deactivate" = "გათიშვა";
+
 /* Self Suspend */
 "self_suspend_title" = "თავის დაბლოკვა";
 "suspend_duration" = "Suspend Duration";

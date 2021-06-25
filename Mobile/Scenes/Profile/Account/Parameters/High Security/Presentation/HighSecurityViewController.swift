@@ -31,11 +31,11 @@ class HighSecurityViewController: ABPopupViewController {
 
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .body1(fontCase: .lower, fontStyle: .semiBold))
-        titleLabel.text = "მაღალი დაცვის რეჟიმი"
+        titleLabel.text = R.string.localization.high_security_title.localized()
 
         descriptionLabel.setTextColor(to: .secondaryText())
         descriptionLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
-        descriptionLabel.text = "მაღალი დაცვის რეჟიმის გააქტიურებით, თქვენი აჭარაბეთის ანგარიში ბევრად უფრო დაცულია. ავტორიზაცია და პერსონალურ ინფორმაციასთან წვდომა ხდება მხოლოდ უსაფრთხოების კოდის გამოყენებით."
+        descriptionLabel.text = R.string.localization.high_security_description.localized()
 
         onOffButton.setBackgorundColor(to: .tertiaryBg())
         onOffButton.titleLabel?.font = DesignSystem.Typography.callout(fontCase: .upper, fontStyle: .semiBold).description.font
@@ -46,10 +46,10 @@ class HighSecurityViewController: ABPopupViewController {
     private func setupOnOffButtonState() {
         if isOn {
             onOffButton.setTitleColor(.systemPink, for: .normal)
-            onOffButton.setTitle("გათიშვა".uppercased(), for: .normal)
+            onOffButton.setTitle(R.string.localization.high_security_button_deactivate.localized().uppercased(), for: .normal)
         } else {
             onOffButton.setTitleColor(.systemBlue, for: .normal)
-            onOffButton.setTitle("გააქტიურება".uppercased(), for: .normal)
+            onOffButton.setTitle(R.string.localization.high_security_button_activate.localized().uppercased(), for: .normal)
         }
     }
 
