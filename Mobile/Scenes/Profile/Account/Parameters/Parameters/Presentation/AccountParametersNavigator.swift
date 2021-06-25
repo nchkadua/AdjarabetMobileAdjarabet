@@ -7,12 +7,12 @@
 //
 
 public class AccountParametersNavigator: Navigator {
-    @Inject(from: .factories) public var selfSuspendViewControllerFactory: SelfSuspendViewControllerFactory
-    @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
-    @Inject(from: .factories) public var otpViewControllerFactory: OTPFactory
-    @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
-    @Inject(from: .factories) public var securityLevelsViewControllerFactory: SecurityLevelsViewControllerFactory
-    @Inject(from: .factories) public var accessHistoryViewControllerFactory: AccessHistoryViewControllerFactory
+    @Inject(from: .factories) private var selfSuspendViewControllerFactory: SelfSuspendViewControllerFactory
+    @Inject(from: .factories) private var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
+    @Inject(from: .factories) private var highSecurityViewControllerFactory: HighSecurityViewControllerFactory
+    @Inject(from: .factories) private var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
+    @Inject(from: .factories) private var securityLevelsViewControllerFactory: SecurityLevelsViewControllerFactory
+    @Inject(from: .factories) private var accessHistoryViewControllerFactory: AccessHistoryViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -41,8 +41,8 @@ public class AccountParametersNavigator: Navigator {
             navigateToAccessHistory(animate: animate)
         case .securityLevels(let params):
             navigateToSecurityLevels(with: params, animate: animate)
-        default:
-            break
+        case .highSecurity:
+            navigateToHighSecurity(animate: animate)
         }
     }
 
@@ -53,11 +53,9 @@ public class AccountParametersNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 
-    public func navigateToHighSecurity(with params: OTPViewModelParams, animate: Bool) {
-        let vc = otpViewControllerFactory.make(params: params)
-        let navC = vc.wrapInNavWith(presentationStyle: .automatic)
-        navC.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navC, animated: animate)
+    private func navigateToHighSecurity(animate: Bool) {
+        let vc = highSecurityViewControllerFactory.make()
+        viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 
     private func navigateToBiometryAuthorization(animate: Bool) {
