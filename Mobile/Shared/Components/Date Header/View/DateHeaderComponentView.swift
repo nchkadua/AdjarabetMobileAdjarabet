@@ -48,18 +48,18 @@ class DateHeaderComponentView: UIView {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         guard let dayDate = dateFormatter.date(from: title) else {
-            titleLabel.text = title
+            titleLabel.text = title.uppercased()
             return
         }
         guard !Calendar.current.isDateInToday(dayDate) else {
-            titleLabel.text = R.string.localization.component_date_header_today()
+            titleLabel.text = R.string.localization.component_date_header_today().uppercased()
             return
         }
         dateFormatter.dateFormat = "d MMMM"
         let formattedDateString = dateFormatter.string(from: dayDate)
-        titleLabel.text = formattedDateString
+        titleLabel.text = formattedDateString.uppercased()
 
-//        separatorView.isHidden = !showSeparator
+        separatorView.isHidden = !showSeparator
     }
 }
 
@@ -74,8 +74,8 @@ extension DateHeaderComponentView: Xibable {
     }
 
     func setupUI() {
-        view.setBackgorundColor(to: .primaryBg())
-        titleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .bold))
+        view.setBackgorundColor(to: .secondaryBg())
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
 
         separatorView.setBackgorundColor(to: .tertiaryBg())

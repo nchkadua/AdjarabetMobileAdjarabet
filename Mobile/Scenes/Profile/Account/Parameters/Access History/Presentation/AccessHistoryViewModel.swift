@@ -45,7 +45,7 @@ public class DefaultAccessHistoryViewModel: DefaultBaseViewModel {
     @Inject(from: .useCases) private var displayAccessListUseCase: DisplayAccessListUseCase
 
     private let dayDateFormatter = ABDateFormater(with: .day)
-    private let hourDateFormatter = ABDateFormater(with: .hour)
+    private let hourDateFormatter = ABDateFormater(with: .dateTime)
 
     enum DeviceType {
         case mobile
