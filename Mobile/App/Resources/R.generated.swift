@@ -4442,7 +4442,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 514 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 518 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -4492,6 +4492,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let biometric_settings_activate_biometry = Rswift.StringResource(key: "biometric_settings_activate_biometry", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Activate
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_button_activate = Rswift.StringResource(key: "high_security_button_activate", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Activate
       ///
       /// Locales: en, ka, hy
@@ -4748,6 +4752,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let burundi = Rswift.StringResource(key: "burundi", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: By activating the high security mode, your Adjarabet account is much more secure. Authorization and access to personal information is done only by using a security code.
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_description = Rswift.StringResource(key: "high_security_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: CVV
       ///
       /// Locales: en, ka, hy
@@ -4936,6 +4944,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let transactions_details_date = Rswift.StringResource(key: "transactions_details_date", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Deactivate
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_button_deactivate = Rswift.StringResource(key: "high_security_button_deactivate", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Deactivate
       ///
       /// Locales: en, ka, hy
@@ -5204,6 +5216,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let security_levels_high_security_activation_deactivation = Rswift.StringResource(key: "security_levels_high_security_activation_deactivation", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: High Security Mode
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_title = Rswift.StringResource(key: "high_security_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: High Security Packet
       ///
       /// Locales: en, ka, hy
@@ -6684,6 +6700,21 @@ struct R: Rswift.Validatable {
       /// en translation: Activate
       ///
       /// Locales: en, ka, hy
+      static func high_security_button_activate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_button_activate", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_button_activate"
+        }
+
+        return NSLocalizedString("high_security_button_activate", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Activate
+      ///
+      /// Locales: en, ka, hy
       static func high_security_button_on(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("high_security_button_on", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -7641,6 +7672,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("burundi", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: By activating the high security mode, your Adjarabet account is much more secure. Authorization and access to personal information is done only by using a security code.
+      ///
+      /// Locales: en, ka, hy
+      static func high_security_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_description"
+        }
+
+        return NSLocalizedString("high_security_description", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: CVV
       ///
       /// Locales: en, ka, hy
@@ -8344,6 +8390,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("transactions_details_date", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Deactivate
+      ///
+      /// Locales: en, ka, hy
+      static func high_security_button_deactivate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_button_deactivate", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_button_deactivate"
+        }
+
+        return NSLocalizedString("high_security_button_deactivate", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Deactivate
@@ -9349,6 +9410,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("security_levels_high_security_activation_deactivation", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: High Security Mode
+      ///
+      /// Locales: en, ka, hy
+      static func high_security_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_title"
+        }
+
+        return NSLocalizedString("high_security_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: High Security Packet
@@ -14516,8 +14592,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

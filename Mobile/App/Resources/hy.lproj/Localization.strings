@@ -130,6 +130,12 @@
 "account_info_save_button_title" = "Save";
 "account_info_status_button_title" = "SELF SUSPEND";
 
+/* High Security */
+"high_security_title" = "high security mode";
+"high_security_description" = "by activating the high security mode, your adjarabet account is much more secure. authorization and access to personal information is done only by using a security code.";
+"high_security_button_activate" = "activate";
+"high_security_button_deactivate" = "deactivate";
+
 /* Self Suspend */
 "self_suspend_title" = "Self Suspend";
 "suspend_duration" = "Suspend Duration";
