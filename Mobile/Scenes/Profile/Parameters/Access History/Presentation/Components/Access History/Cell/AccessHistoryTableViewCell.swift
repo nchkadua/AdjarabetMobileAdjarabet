@@ -15,6 +15,7 @@ public class AccessHistoryTableViewCell: AppTableViewCell {
             guard let dataProvider = dataProvider as? AccessHistoryTableViewCellDataProvider else {
                 fatalError("error")
             }
+            setBackgorundColor(to: .secondaryBg())
             componentView.setAndBind(viewModel: dataProvider)
         }
     }

@@ -13,6 +13,7 @@ class ABDateFormater: DateFormatter {
         case day
         case hour
         case verbose
+        case dateTime
     }
     public init(with formatting: Formatting) {
         super.init()
@@ -29,6 +30,8 @@ class ABDateFormater: DateFormatter {
             dateFormat = "HH:mm:ss"
         case .verbose:
             dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        case .dateTime:
+            dateFormat = "yy/MM/dd, HH:mm:ss"
         }
     }
 
