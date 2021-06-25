@@ -39,7 +39,7 @@ class HighSecurityViewController: ABPopupViewController {
 
         onOffButton.setBackgorundColor(to: .tertiaryBg())
         onOffButton.titleLabel?.font = DesignSystem.Typography.callout(fontCase: .upper, fontStyle: .semiBold).description.font
-        onOffButton.roundCorners(.allCorners, radius: 8)
+        onOffButton.layer.cornerRadius = 8
         setupOnOffButtonState()
     }
 
