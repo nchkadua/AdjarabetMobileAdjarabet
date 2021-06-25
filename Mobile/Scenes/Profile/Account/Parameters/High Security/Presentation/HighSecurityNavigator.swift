@@ -6,16 +6,16 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public class HighSecurityNavigator: Navigator {
+struct HighSecurityNavigator {
     private weak var viewController: UIViewController?
 
-    public init(viewController: UIViewController) {
+    init(viewController: UIViewController) {
         self.viewController = viewController
     }
 
-    public enum Destination {
+    enum Destination {
     }
 
-    public func navigate(to destination: Destination, animated animate: Bool) {
+    func navigate(to destination: Destination) {
     }
 }

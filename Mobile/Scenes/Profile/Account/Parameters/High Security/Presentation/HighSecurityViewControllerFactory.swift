@@ -8,14 +8,15 @@
 
 import Foundation
 
-public protocol HighSecurityViewControllerFactory {
-    func make(params: HighSecurityViewModelParams) -> HighSecurityViewController
+protocol HighSecurityViewControllerFactory {
+    func make() -> HighSecurityViewController
 }
 
-public class DefaultHighSecurityViewControllerFactory: HighSecurityViewControllerFactory {
-    public func make(params: HighSecurityViewModelParams) -> HighSecurityViewController {
+struct DefaultHighSecurityViewControllerFactory: HighSecurityViewControllerFactory {
+    func make() -> HighSecurityViewController {
         let vc = R.storyboard.highSecurity().instantiate(controller: HighSecurityViewController.self)!
-        vc.viewModel.params = params
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = vc
         return vc
     }
 }

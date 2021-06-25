@@ -8,15 +8,13 @@
 
 import RxSwift
 
-public class HighSecurityViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: HighSecurityViewModel
-    public lazy var navigator = HighSecurityNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
+class HighSecurityViewController: ABPopupViewController {
+    @Inject(from: .viewModels) private var viewModel: HighSecurityViewModel
+    private lazy var navigator = HighSecurityNavigator(viewController: self)
 
     // MARK: - Lifecycle methods
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
@@ -36,5 +34,18 @@ public class HighSecurityViewController: UIViewController {
     }
 
     private func didRecive(route: HighSecurityViewModelRoute) {
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension HighSecurityViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        ABPopupPresentationController(
+            presentedViewController: presented,
+            presenting: presenting,
+            params: .init(
+                heightConstant: 240
+            )
+        )
     }
 }

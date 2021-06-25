@@ -8,42 +8,33 @@
 
 import RxSwift
 
-public protocol HighSecurityViewModel: HighSecurityViewModelInput, HighSecurityViewModelOutput {
-}
+protocol HighSecurityViewModel: HighSecurityViewModelInput,
+                                HighSecurityViewModelOutput { }
 
-public struct HighSecurityViewModelParams {
-}
-
-public protocol HighSecurityViewModelInput: AnyObject {
-    var params: HighSecurityViewModelParams { get set }
+protocol HighSecurityViewModelInput: AnyObject {
     func viewDidLoad()
 }
 
-public protocol HighSecurityViewModelOutput {
+protocol HighSecurityViewModelOutput {
     var action: Observable<HighSecurityViewModelOutputAction> { get }
     var route: Observable<HighSecurityViewModelRoute> { get }
 }
 
-public enum HighSecurityViewModelOutputAction {
+enum HighSecurityViewModelOutputAction {
 }
 
-public enum HighSecurityViewModelRoute {
+enum HighSecurityViewModelRoute {
 }
 
-public class DefaultHighSecurityViewModel {
-    public var params: HighSecurityViewModelParams
+class DefaultHighSecurityViewModel {
     private let actionSubject = PublishSubject<HighSecurityViewModelOutputAction>()
     private let routeSubject = PublishSubject<HighSecurityViewModelRoute>()
-
-    public init(params: HighSecurityViewModelParams) {
-        self.params = params
-    }
 }
 
 extension DefaultHighSecurityViewModel: HighSecurityViewModel {
-    public var action: Observable<HighSecurityViewModelOutputAction> { actionSubject.asObserver() }
-    public var route: Observable<HighSecurityViewModelRoute> { routeSubject.asObserver() }
+    var action: Observable<HighSecurityViewModelOutputAction> { actionSubject.asObserver() }
+    var route: Observable<HighSecurityViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    func viewDidLoad() {
     }
 }
