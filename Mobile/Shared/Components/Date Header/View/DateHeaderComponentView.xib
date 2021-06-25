@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="დღეს განხორციელებლი" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRr-8W-89u">
-                    <rect key="frame" x="25" y="16" width="330" height="29.5"/>
+                    <rect key="frame" x="25" y="24" width="330" height="28"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daO-2r-fhv">
-                    <rect key="frame" x="24" y="0.0" width="351" height="1"/>
+                    <rect key="frame" x="24" y="8" width="351" height="1"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Ucc-X7-W8S"/>
@@ -40,9 +40,9 @@
                 <constraint firstItem="daO-2r-fhv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="0tA-yJ-yx3"/>
                 <constraint firstAttribute="trailing" secondItem="FRr-8W-89u" secondAttribute="trailing" constant="20" id="BtZ-JT-9Cj"/>
                 <constraint firstItem="FRr-8W-89u" firstAttribute="top" secondItem="daO-2r-fhv" secondAttribute="bottom" constant="15" id="HaB-FH-ucP"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FRr-8W-89u" secondAttribute="bottom" constant="24.5" id="MPC-k3-wRd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FRr-8W-89u" secondAttribute="bottom" constant="18" id="MPC-k3-wRd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="daO-2r-fhv" secondAttribute="trailing" id="Pbg-Ak-YqJ"/>
-                <constraint firstItem="daO-2r-fhv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="W2m-TG-XKP"/>
+                <constraint firstItem="daO-2r-fhv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="W2m-TG-XKP"/>
                 <constraint firstItem="FRr-8W-89u" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="YZG-wN-oHq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

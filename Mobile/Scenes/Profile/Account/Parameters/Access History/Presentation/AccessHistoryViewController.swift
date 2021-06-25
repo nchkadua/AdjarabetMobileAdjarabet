@@ -52,14 +52,14 @@ public class AccessHistoryViewController: ABViewController {
     // MARK: Setup methods
 
     private func setup() {
-        setBaseBackgorundColor(to: .primaryBg())
+        setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTableView()
     }
 
     private func setupNavigationItems() {
         setBackBarButtonItemIfNeeded()
-        setTitle(title: "შესვლის ისტორია")
+        setTitle(title: "შესვლის ისტორია".uppercased())
 
         let calendarButton = makeCalendarBarButtonItem()
         navigationItem.rightBarButtonItem = calendarButton.barButtonItem
