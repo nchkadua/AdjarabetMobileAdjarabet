@@ -14,6 +14,8 @@ public class MailChangeViewController: ABViewController {
 
     // MARK: Outlets
     @IBOutlet private weak var mailInputView: ABInputView!
+    @IBOutlet private weak var passwordInputView: ABInputView!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var changeButton: ABButton!
 
     // MARK: - Lifecycle methods
@@ -48,15 +50,14 @@ public class MailChangeViewController: ABViewController {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupKeyboard()
+        setupLabel()
         setupInputViews()
         setupInputViewsObservation()
         setupButtons()
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.mail_change_title.localized().uppercased())
-
-        let backButtonGroup = makeBackBarButtonItem()
+        let backButtonGroup = makeBackBarButtonItem(width: 60, title: R.string.localization.back_button_title.localized())
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }
@@ -65,12 +66,21 @@ public class MailChangeViewController: ABViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    private func setupLabel() {
+        titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.text = R.string.localization.mail_change_title.localized()
+    }
+
     private func setupInputViews() {
         mailInputView.mainTextField.keyboardType = .emailAddress
         mailInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         mailInputView.setPlaceholder(text: R.string.localization.new_mail_title.localized())
 
-        Observable.combineLatest([mailInputView.rx.text.orEmpty])
+        passwordInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
+        passwordInputView.setPlaceholder(text: R.string.localization.mail_change_password.localized())
+
+        Observable.combineLatest([mailInputView.rx.text.orEmpty, passwordInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }
             .map { $0.allSatisfy { $0 == true } }
             .subscribe(onNext: { [weak self] isValid in
