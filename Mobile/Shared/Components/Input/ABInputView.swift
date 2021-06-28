@@ -48,6 +48,7 @@ public class ABInputView: UIView {
     // MARK: Formatter
     public var formatter: Formatter = DefaultFormatter()
     public var maxLength = -1
+    public var animateSelection = true
 
     /// PickerView
     public var pickerView = UIPickerView()
@@ -354,7 +355,7 @@ extension ABInputView: UIPickerViewDataSource {
 
 extension ABInputView: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        guard defaultBackgroundColor != DesignSystem.Input.backgroundColor else { return }
+        guard defaultBackgroundColor != DesignSystem.Input.backgroundColor, animateSelection == true else { return }
         wrapperView.setBackgorundColor(to: .primaryFill())
     }
 

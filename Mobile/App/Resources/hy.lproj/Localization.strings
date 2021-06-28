@@ -14,6 +14,9 @@
 "promos_item_title" = "Promotions";
 "news_item_title" = "News";
 
+/* Navigation bar */
+"back_button_title" = "Back";
+
 // ABError
 "shared_aberror_default_description" = "something went wrong";
 "shared_aberror_wrong_auth_credentials_description" = "wrong authentication credentials";
@@ -146,7 +149,8 @@
 "mail_change_title" = "Change E-Mail";
 "new_mail_title" = "ახალი ელ.ფოსტის მისამართი";
 "approve_password" = "დაადასტურეთ პაროლი უსაფრთხოებისთვის";
-"change_mail_button_title" = "ელ.ფოსტის შეცვლა";
+"change_mail_button_title" = "დადასტურება";
+"mail_change_password" = "დაადასტურეთ პაროლით";
 
 /* Address Change */
 "address_change_title" = "Change Address";

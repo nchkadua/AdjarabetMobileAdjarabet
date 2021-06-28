@@ -13,12 +13,14 @@ public class PhoneNumberChangeViewController: ABViewController {
     public lazy var navigator = PhoneNumberChangeNavigator(viewController: self)
 
     // MARK: Outlets
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var phonePrefixInputView: ABInputView!
     @IBOutlet private weak var phoneNumberInputView: ABInputView!
     @IBOutlet private weak var approveButton: ABButton!
 
+    @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var verticalSeparator: UIView!
-    @IBOutlet private weak var horizontalSeparator: UIView!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -52,15 +54,14 @@ public class PhoneNumberChangeViewController: ABViewController {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupKeyboard()
+        setupLabel()
         setupInputView()
         setupApproveButton()
-        setupSeparators()
+        setupViews()
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.phone_number_change_title.localized().uppercased())
-
-        let backButtonGroup = makeRoundedBackButtonItem()
+        let backButtonGroup = makeBackBarButtonItem(width: 60, title: R.string.localization.back_button_title.localized())
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }
@@ -69,10 +70,21 @@ public class PhoneNumberChangeViewController: ABViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    private func setupLabel() {
+        titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.text = R.string.localization.phone_number_change_title.localized()
+
+        subtitleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+        subtitleLabel.setTextColor(to: .secondaryText())
+        subtitleLabel.text = R.string.localization.phone_number_subtitle.localized()
+    }
+
     private func setupInputView() {
         phonePrefixInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         phonePrefixInputView.setPlaceholder(text: R.string.localization.phone_prefix.localized())
-        phonePrefixInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
+        phonePrefixInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0.0)
+        phonePrefixInputView.animateSelection = false
 
         let titles = Country.allCases
             .map { $0.description }
@@ -81,10 +93,10 @@ public class PhoneNumberChangeViewController: ABViewController {
 
         phonePrefixInputView.setupPickerView(withItems: titles)
 
-        phoneNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
-        phoneNumberInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
+        phoneNumberInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
         phoneNumberInputView.setPlaceholder(text: R.string.localization.new_phone_number.localized())
         phoneNumberInputView.mainTextField.keyboardType = .numberPad
+        phoneNumberInputView.animateSelection = false
 
         Observable.combineLatest([phoneNumberInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }
@@ -106,9 +118,11 @@ public class PhoneNumberChangeViewController: ABViewController {
         approveButton.addTarget(self, action: #selector(approveDidTap), for: .touchUpInside)
     }
 
-    private func setupSeparators() {
+    private func setupViews() {
+        containerView.setBackgorundColor(to: .tertiaryBg())
+        containerView.layer.cornerRadius = 4
+
         verticalSeparator.setBackgorundColor(to: .nonOpaque())
-        horizontalSeparator.setBackgorundColor(to: .systemGrey5())
     }
 
     @objc private func approveDidTap() {
