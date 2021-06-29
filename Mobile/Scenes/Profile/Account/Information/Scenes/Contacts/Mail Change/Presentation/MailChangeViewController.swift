@@ -23,6 +23,7 @@ public class MailChangeViewController: ABViewController {
         super.viewDidLoad()
 
         setup()
+        subscribeToPasswordInputView()
         bind(to: viewModel)
         viewModel.viewDidLoad()
         setupAccessibilityIdentifiers()
@@ -35,14 +36,26 @@ public class MailChangeViewController: ABViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: MailChangeViewModel) {
-        /*
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-        */
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: MailChangeViewModelOutputAction) {
+        switch action {
+        case .setButton(let loading): changeButton.set(isLoading: loading)
+        case .showMessage(let message): showAlert(title: message)
+        }
+    }
+
+    private func didRecive(route: MailChangeViewModelRoute) {
+        switch route {
+        case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
+        }
     }
 
     // MARK: Setup methods
@@ -77,8 +90,11 @@ public class MailChangeViewController: ABViewController {
         mailInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         mailInputView.setPlaceholder(text: R.string.localization.new_mail_title.localized())
 
+        passwordInputView.mainTextField.textContentType = .password
         passwordInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         passwordInputView.setPlaceholder(text: R.string.localization.mail_change_password.localized())
+        passwordInputView.becomeSecureTextEntry()
+        passwordInputView.setRightButtonImage(R.image.shared.hideText() ?? UIImage(), for: .normal)
 
         Observable.combineLatest([mailInputView.rx.text.orEmpty, passwordInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }
@@ -87,6 +103,20 @@ public class MailChangeViewController: ABViewController {
                 self?.updateChangeButton(isEnabled: isValid)
             })
             .disposed(by: disposeBag)
+    }
+
+    private func subscribeToPasswordInputView() {
+        passwordInputView.rightComponent.rx.tap.subscribe(onNext: { [weak self] in
+            self?.updatePasswordRightButton()
+        }).disposed(by: disposeBag)
+    }
+
+    private func updatePasswordRightButton() {
+        let isSecureTextEntry = passwordInputView.mainTextField.isSecureTextEntry
+        passwordInputView.toggleSecureTextEntry()
+
+        let icon = isSecureTextEntry ? R.image.shared.viewText() : R.image.shared.hideText()
+        passwordInputView.rightComponent.setImage(icon, for: .normal)
     }
 
     private func setupInputViewsObservation() {
@@ -104,6 +134,7 @@ public class MailChangeViewController: ABViewController {
 
     @objc private func changeMailDidTap() {
         closeKeyboard()
+        viewModel.updateMail(mailInputView.text ?? "", passwordInputView.text ?? "")
     }
 
     // MARK: Configuration
