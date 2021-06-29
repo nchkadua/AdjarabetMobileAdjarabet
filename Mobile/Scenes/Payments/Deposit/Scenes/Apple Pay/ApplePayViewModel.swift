@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import PassKit
 
 public protocol ApplePayViewModel: ApplePayViewModelInput, ApplePayViewModelOutput {
 }
@@ -14,6 +15,7 @@ public protocol ApplePayViewModel: ApplePayViewModelInput, ApplePayViewModelOutp
 public protocol ApplePayViewModelInput: AnyObject {
     func viewDidLoad()
     func entered(amount: String)
+    func pay(amount: String)
 }
 
 public protocol ApplePayViewModelOutput {
@@ -29,6 +31,7 @@ public enum ApplePayViewModelOutputAction {
     case updateContinue(with: Bool)
     case show(error: String)
     case bindToGridViewModel(viewModel: SuggestedAmountGridComponentViewModel)
+    case paymentRequestDidInit(request: PKPaymentRequest)
 }
 
 public enum ApplePayViewModelRoute {
@@ -39,6 +42,7 @@ public class DefaultApplePayViewModel {
     private let routeSubject = PublishSubject<ApplePayViewModelRoute>()
 
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
+    @Inject(from: .useCases) private var applePayUseCase: ApplePayUseCase
     @Inject(from: .componentViewModels) private var suggestedAmountGridComponentViewModel: SuggestedAmountGridComponentViewModel
 
     private var suggested: [Double] = []
@@ -102,5 +106,14 @@ extension DefaultApplePayViewModel: ApplePayViewModel {
 
     private func notify(_ action: ApplePayViewModelOutputAction) {
         actionSubject.onNext(action)
+    }
+
+    public func pay(amount: String) {
+        applePayUseCase.applePay(amount: amount) { result in
+            switch result {
+            case .success(let entity): self.actionSubject.onNext(.paymentRequestDidInit(request: entity))
+            case .failure(let error): self.actionSubject.onNext(.show(error: error.localizedDescription))
+            }
+        }
     }
 }

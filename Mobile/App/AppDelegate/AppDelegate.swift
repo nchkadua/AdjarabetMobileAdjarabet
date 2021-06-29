@@ -87,6 +87,7 @@ public extension DependencyContainer {
         Module { DefaultApplePayViewModel() as ApplePayViewModel }
         Module { DefaultMainContainerViewModel(params: .init()) as MainContainerViewModel }
         Module { DefaultBonusViewModel(params: .init()) as BonusViewModel }
+        Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -115,9 +116,18 @@ public extension DependencyContainer {
         Module { CoreApiAddressRepository() as AddressRepository }
         Module { CoreApiAddressRepository() as AddressReadableRepository }
         Module { CoreApiAddressRepository() as AddressWritableRepository }
+        // Communication Language Repository
         Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageRepository }
         Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageReadableRepository }
         Module { CoreApiCommunicationLanguageRepository() as CommunicationLanguageWritableRepository }
+        // Contact Info Repository
+        Module { CoreApiContactInfoRepository() as ContactInfoRepository }
+        Module { CoreApiContactInfoRepository() as ContactInfoReadableRepository }
+        Module { CoreApiContactInfoRepository() as ContactInfoWritableRepository }
+        // Phone Verification Code
+        Module { CoreApiPhoneVerificationCodeRepository() as PhoneVerificationCodeRepository }
+        // Suspend
+        Module { CoreApiSuspendRepository() as SuspendRepository }
         // Mobile
         Module { DefaultLobbyGamesRepository() as LobbyGamesRepository }
         Module { DefaultNotificationsRepository() as NotificationsRepository }
@@ -128,6 +138,7 @@ public extension DependencyContainer {
         Module { DefaultUFCTransactionRepository() as UFCDepositRepository }
         Module { DefaultUFCTransactionRepository() as UFCWithdrawRepository }
         Module { DefaultUFCTransactionRepository() as UFCTransactionRepository }
+        Module { DefaultServiceAuthTokenRepository() as ServiceAuthTokenRepository }
 
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
@@ -161,6 +172,7 @@ public extension DependencyContainer {
         Module { DefaultGameViewControllerFactory() as GameViewControllerFactory }
         Module { DefaultWebViewControllerFactory() as WebViewControllerFactory }
         Module { DefaultBonusViewControllerFactory() as BonusViewControllerFactory }
+        Module { DefaultHighSecurityViewControllerFactory() as HighSecurityViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }
@@ -188,9 +200,12 @@ public extension DependencyContainer {
         Module { DefaultAmountFormatterUseCase() as AmountFormatterUseCase }
         Module { DefaultPasswordChangeUseCase() as PasswordChangeUseCase }
         Module { DefaultResetPasswordUseCase() as ResetPasswordUseCase }
+        Module { DefaultUpdateMailUseCase() as UpdateMailUseCase }
+        Module { DefaultUpdatePhoneNumberUseCase() as UpdatePhoneNumberUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }
         Module { UFCWithdrawUseCase() as UFCWithdrawUseCase }
+        Module { DefaultApplePayUseCase() as ApplePayUseCase }
     }
 }

@@ -252,8 +252,8 @@ public enum DesignSystem {
 
             public var textFieldFont: Typography {
                 switch self {
-                case .small:            return .subHeadline(fontCase: .lower, fontStyle: .regular)
-                case .medium, .large:   return .subHeadline(fontCase: .lower, fontStyle: .regular)
+                case .small:            return .callout(fontCase: .lower, fontStyle: .regular)
+                case .medium, .large:   return .callout(fontCase: .lower, fontStyle: .regular)
                 }
             }
         }
@@ -283,7 +283,7 @@ public enum DesignSystem {
                 switch self {
                 case .primary:
                     switch size {
-                    case .large:  return .init(typograhy: .body1(fontCase: .upper, fontStyle: .semiBold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
+                    case .large:  return .init(typograhy: .callout(fontCase: .upper, fontStyle: .bold), contentEdgeInsets: .init(top: 14 + 4, left: 20, bottom: 10 + 4, right: 20))
                     case .medium: return .init(typograhy: .subHeadline(fontCase: .upper), contentEdgeInsets: .init(top: 11 + 5, left: 20, bottom: 9 + 5, right: 20))
                     case .small:  return .init(typograhy: .subHeadline(fontCase: .upper), contentEdgeInsets: .init(top: 9 + 2, left: 16, bottom: 7 + 2, right: 16))
                     case .xs:     return .init(typograhy: .subHeadline(fontCase: .upper), contentEdgeInsets: .init(top: 7 + 2, left: 12, bottom: 5 + 2, right: 12))

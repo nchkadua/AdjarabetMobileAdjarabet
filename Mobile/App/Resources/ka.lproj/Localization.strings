@@ -14,6 +14,9 @@
 "promos_item_title" = "პრომოები";
 "news_item_title" = "სიახლეები";
 
+/* Navigation bar */
+"back_button_title" = "უკან";
+
 // ABError
 "shared_aberror_default_description" = "დაფიქსირდა შეცდომა";
 "shared_aberror_wrong_auth_credentials_description" = "არასწორი ავტორიზაციის მონაცემები";
@@ -129,6 +132,12 @@
 "account_info_save_button_title" = "შენახვა";
 "account_info_status_button_title" = "დაბლოკვა";
 
+/* High Security */
+"high_security_title" = "მაღალი დაცვის რეჟიმი";
+"high_security_description" = "მაღალი დაცვის რეჟიმის გააქტიურებით, თქვენი აჭარაბეთის ანგარიში ბევრად უფრო დაცულია. ავტორიზაცია და პერსონალურ ინფორმაციასთან წვდომა ხდება მხოლოდ უსაფრთხოების კოდის გამოყენებით.";
+"high_security_button_activate" = "გააქტიურება";
+"high_security_button_deactivate" = "გათიშვა";
+
 /* Self Suspend */
 "self_suspend_title" = "თავის დაბლოკვა";
 "suspend_duration" = "Suspend Duration";
@@ -139,7 +148,8 @@
 "mail_change_title" = "ელ.ფოსტის შეცვლა";
 "new_mail_title" = "ახალი ელ.ფოსტის მისამართი";
 "approve_password" = "დაადასტურეთ პაროლი უსაფრთხოებისთვის";
-"change_mail_button_title" = "ელ.ფოსტის შეცვლა";
+"change_mail_button_title" = "დადასტურება";
+"mail_change_password" = "დაადასტურეთ პაროლით";
 
 /* Address Change */
 "address_change_title" = "მისამართის განახლება";

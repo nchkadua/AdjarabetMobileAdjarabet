@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 35 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 36 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -116,6 +116,8 @@ struct R: Rswift.Validatable {
     static let emoney = _R.storyboard.emoney()
     /// Storyboard `Game`.
     static let game = _R.storyboard.game()
+    /// Storyboard `HighSecurity`.
+    static let highSecurity = _R.storyboard.highSecurity()
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
     /// Storyboard `LaunchScreen`.
@@ -244,6 +246,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Game", bundle: ...)`
     static func game(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.game)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "HighSecurity", bundle: ...)`
+    static func highSecurity(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.highSecurity)
     }
     #endif
 
@@ -877,10 +886,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 3 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 4 properties.
   struct entitlements {
     struct comAppleDeveloperAssociatedDomains {
       static let webcredentialsAdjarabetCom = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "webcredentials:adjarabet.com") ?? "webcredentials:adjarabet.com"
+
+      fileprivate init() {}
+    }
+
+    struct comAppleDeveloperInAppPayments {
+      static let merchantComAdjarabetWeb = infoPlistString(path: ["com.apple.developer.in-app-payments"], key: "merchant.com.adjarabet.web") ?? "merchant.com.adjarabet.web"
 
       fileprivate init() {}
     }
@@ -4427,7 +4442,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 514 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 520 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -4477,6 +4492,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let biometric_settings_activate_biometry = Rswift.StringResource(key: "biometric_settings_activate_biometry", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Activate
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_button_activate = Rswift.StringResource(key: "high_security_button_activate", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Activate
       ///
       /// Locales: en, ka, hy
@@ -4613,6 +4632,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let azerbaijan = Rswift.StringResource(key: "azerbaijan", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Back
+      ///
+      /// Locales: en, ka, hy
+      static let back_button_title = Rswift.StringResource(key: "back_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Bahamas
       ///
       /// Locales: en, ka, hy
@@ -4733,6 +4756,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let burundi = Rswift.StringResource(key: "burundi", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: By activating the high security mode, your Adjarabet account is much more secure. Authorization and access to personal information is done only by using a security code.
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_description = Rswift.StringResource(key: "high_security_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: CVV
       ///
       /// Locales: en, ka, hy
@@ -4921,6 +4948,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let transactions_details_date = Rswift.StringResource(key: "transactions_details_date", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Deactivate
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_button_deactivate = Rswift.StringResource(key: "high_security_button_deactivate", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Deactivate
       ///
       /// Locales: en, ka, hy
@@ -5189,6 +5220,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let security_levels_high_security_activation_deactivation = Rswift.StringResource(key: "security_levels_high_security_activation_deactivation", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: High Security Mode
+      ///
+      /// Locales: en, ka, hy
+      static let high_security_title = Rswift.StringResource(key: "high_security_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: High Security Packet
       ///
       /// Locales: en, ka, hy
@@ -6397,6 +6432,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let approve_password = Rswift.StringResource(key: "approve_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დაადასტურეთ პაროლით
+      ///
+      /// Locales: en, ka, hy
+      static let mail_change_password = Rswift.StringResource(key: "mail_change_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: დააჭირეთ ღილაკს გაგრძელება
       ///
       /// Locales: en, ka, hy
@@ -6405,6 +6444,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let forgot_password = Rswift.StringResource(key: "forgot_password", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: დადასტურება
+      ///
+      /// Locales: en, ka, hy
+      static let change_mail_button_title = Rswift.StringResource(key: "change_mail_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: დღეს განხორციელებული
       ///
       /// Locales: en, ka, hy
@@ -6413,10 +6456,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let visa_max_limit = Rswift.StringResource(key: "visa_max_limit", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
-      /// en translation: ელ.ფოსტის შეცვლა
-      ///
-      /// Locales: en, ka, hy
-      static let change_mail_button_title = Rswift.StringResource(key: "change_mail_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ელექტრონულ საფულეში აირჩიეთ ბარათი, რომლითაც გსურთ ბალანსის შევსება
       ///
       /// Locales: en, ka, hy
@@ -6664,6 +6703,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("biometric_settings_activate_biometry", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Activate
+      ///
+      /// Locales: en, ka, hy
+      static func high_security_button_activate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_button_activate", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_button_activate"
+        }
+
+        return NSLocalizedString("high_security_button_activate", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Activate
@@ -7176,6 +7230,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("azerbaijan", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Back
+      ///
+      /// Locales: en, ka, hy
+      static func back_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("back_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "back_button_title"
+        }
+
+        return NSLocalizedString("back_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Bahamas
       ///
       /// Locales: en, ka, hy
@@ -7624,6 +7693,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("burundi", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: By activating the high security mode, your Adjarabet account is much more secure. Authorization and access to personal information is done only by using a security code.
+      ///
+      /// Locales: en, ka, hy
+      static func high_security_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_description"
+        }
+
+        return NSLocalizedString("high_security_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: CVV
@@ -8329,6 +8413,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("transactions_details_date", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Deactivate
+      ///
+      /// Locales: en, ka, hy
+      static func high_security_button_deactivate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_button_deactivate", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_button_deactivate"
+        }
+
+        return NSLocalizedString("high_security_button_deactivate", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Deactivate
@@ -9334,6 +9433,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("security_levels_high_security_activation_deactivation", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: High Security Mode
+      ///
+      /// Locales: en, ka, hy
+      static func high_security_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("high_security_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "high_security_title"
+        }
+
+        return NSLocalizedString("high_security_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: High Security Packet
@@ -13866,6 +13980,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("approve_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: დაადასტურეთ პაროლით
+      ///
+      /// Locales: en, ka, hy
+      static func mail_change_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("mail_change_password", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "mail_change_password"
+        }
+
+        return NSLocalizedString("mail_change_password", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: დააჭირეთ ღილაკს გაგრძელება
       ///
       /// Locales: en, ka, hy
@@ -13896,6 +14025,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("forgot_password", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: დადასტურება
+      ///
+      /// Locales: en, ka, hy
+      static func change_mail_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("change_mail_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "change_mail_button_title"
+        }
+
+        return NSLocalizedString("change_mail_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: დღეს განხორციელებული
       ///
       /// Locales: en, ka, hy
@@ -13924,21 +14068,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("visa_max_limit", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: ელ.ფოსტის შეცვლა
-      ///
-      /// Locales: en, ka, hy
-      static func change_mail_button_title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("change_mail_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "change_mail_button_title"
-        }
-
-        return NSLocalizedString("change_mail_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: ელექტრონულ საფულეში აირჩიეთ ბარათი, რომლითაც გსურთ ბალანსის შევსება
@@ -14671,8 +14800,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -15344,6 +15473,9 @@ struct _R: Rswift.Validatable {
       try game.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try highSecurity.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try home.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -15657,6 +15789,26 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct highSecurity: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let highSecurityViewController = StoryboardViewControllerResource<HighSecurityViewController>(identifier: "HighSecurityViewController")
+      let name = "HighSecurity"
+
+      func highSecurityViewController(_: Void = ()) -> HighSecurityViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: highSecurityViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.highSecurity().highSecurityViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'highSecurityViewController' could not be loaded from storyboard 'HighSecurity' as 'HighSecurityViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = HomeViewController
 
@@ -15708,9 +15860,14 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
+<<<<<<< HEAD
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
+=======
+>>>>>>> dev
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

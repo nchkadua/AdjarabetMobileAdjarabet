@@ -14,6 +14,9 @@
 "promos_item_title" = "Promotions";
 "news_item_title" = "News";
 
+/* Navigation bar */
+"back_button_title" = "Back";
+
 // ABError
 "shared_aberror_default_description" = "Something Went Wrong";
 "shared_aberror_wrong_auth_credentials_description" = "Wrong Authentication Credentials";
@@ -129,6 +132,12 @@
 "account_info_save_button_title" = "Save";
 "account_info_status_button_title" = "SELF SUSPEND";
 
+/* High Security */
+"high_security_title" = "High Security Mode";
+"high_security_description" = "By activating the high security mode, your Adjarabet account is much more secure. Authorization and access to personal information is done only by using a security code.";
+"high_security_button_activate" = "Activate";
+"high_security_button_deactivate" = "Deactivate";
+
 /* Self Suspend */
 "self_suspend_title" = "Self Suspend";
 "suspend_duration" = "Suspend Duration";
@@ -139,7 +148,8 @@
 "mail_change_title" = "Change E-Mail";
 "new_mail_title" = "ახალი ელ.ფოსტის მისამართი";
 "approve_password" = "დაადასტურეთ პაროლი უსაფრთხოებისთვის";
-"change_mail_button_title" = "ელ.ფოსტის შეცვლა";
+"change_mail_button_title" = "დადასტურება";
+"mail_change_password" = "დაადასტურეთ პაროლით";
 
 /* Address Change */
 "address_change_title" = "Change Address";

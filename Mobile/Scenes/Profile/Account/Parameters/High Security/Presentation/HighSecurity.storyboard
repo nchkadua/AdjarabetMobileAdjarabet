@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--High Security View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="HighSecurityViewController" id="gAa-dD-eZu" customClass="HighSecurityViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Security Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bq-dh-S30" userLabel="Title Label">
+                                <rect key="frame" x="27" y="31" width="150.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAU-6N-TPV" userLabel="Description Label">
+                                <rect key="frame" x="27" y="67" width="321" height="101.5"/>
+                                <string key="text">By activating the high security mode, your Adjarabet account is much more secure. Authorization and access to personal information is done only by using a security code.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9b-9h-ive" userLabel="On Off Button">
+                                <rect key="frame" x="22" y="571" width="331" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="C7C-Yi-L3R"/>
+                                </constraints>
+                                <state key="normal" title="Activate"/>
+                                <connections>
+                                    <action selector="onOffButtonTapped" destination="gAa-dD-eZu" eventType="touchUpInside" id="16S-Ff-YUp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LAU-6N-TPV" firstAttribute="leading" secondItem="4Bq-dh-S30" secondAttribute="leading" id="0Re-VH-7pK"/>
+                            <constraint firstItem="t9b-9h-ive" firstAttribute="bottom" secondItem="Amw-MT-c7e" secondAttribute="bottom" constant="-40" id="MgC-Ju-Dbl"/>
+                            <constraint firstItem="t9b-9h-ive" firstAttribute="trailing" secondItem="Amw-MT-c7e" secondAttribute="trailing" constant="-22" id="Tol-pL-I0K"/>
+                            <constraint firstItem="LAU-6N-TPV" firstAttribute="top" secondItem="4Bq-dh-S30" secondAttribute="bottom" constant="15" id="ZUn-qg-uXB"/>
+                            <constraint firstItem="t9b-9h-ive" firstAttribute="leading" secondItem="Amw-MT-c7e" secondAttribute="leading" constant="22" id="tGK-PA-yTP"/>
+                            <constraint firstItem="4Bq-dh-S30" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="27" id="v7c-fj-eFy"/>
+                            <constraint firstItem="4Bq-dh-S30" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="31" id="w10-gc-P3Z"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="LAU-6N-TPV" secondAttribute="trailing" constant="27" id="z3X-7R-16O"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="LAU-6N-TPV" id="fVS-PS-x4V"/>
+                        <outlet property="onOffButton" destination="t9b-9h-ive" id="mce-zN-W1N"/>
+                        <outlet property="titleLabel" destination="4Bq-dh-S30" id="n5G-CJ-XEw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="30"/>
+        </scene>
+    </scenes>
+</document>

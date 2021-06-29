@@ -14,7 +14,7 @@ class LogOutComponentView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
-    @IBOutlet weak private var button: UIButton!
+    @IBOutlet weak private var button: ABButton!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +37,7 @@ class LogOutComponentView: UIView {
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let title): self?.setupUI(title: title)
+            case .endLoading: self?.button.set(isLoading: false)
             default:
                 break
             }
@@ -55,6 +56,7 @@ class LogOutComponentView: UIView {
     }
 
     @objc private func didTapButton() {
+        button.set(isLoading: true)
         viewModel.didTapButton()
     }
 }

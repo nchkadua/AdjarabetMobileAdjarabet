@@ -15,6 +15,7 @@ class DateHeaderComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var separatorView: UIView!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +26,7 @@ class DateHeaderComponentView: UIView {
         super.init(coder: coder)
         nibSetup()
     }
+
     public func setAndBind(viewModel: DateHeaderComponentViewModel) {
         self.viewModel = viewModel
         bind()
@@ -34,28 +36,30 @@ class DateHeaderComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title):
-                self?.set(title: title)
+            case .set(let title, let shouldShowSeparator):
+                self?.set(title: title, showSeparator: shouldShowSeparator)
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }
 
-    private func set(title: String) {
+    private func set(title: String, showSeparator: Bool) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         guard let dayDate = dateFormatter.date(from: title) else {
-            titleLabel.text = title
+            titleLabel.text = title.uppercased()
             return
         }
         guard !Calendar.current.isDateInToday(dayDate) else {
-            titleLabel.text = R.string.localization.component_date_header_today()
+            titleLabel.text = R.string.localization.component_date_header_today().uppercased()
             return
         }
         dateFormatter.dateFormat = "d MMMM"
         let formattedDateString = dateFormatter.string(from: dayDate)
-        titleLabel.text = formattedDateString
+        titleLabel.text = formattedDateString.uppercased()
+
+        separatorView.isHidden = !showSeparator
     }
 }
 
@@ -70,8 +74,11 @@ extension DateHeaderComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.primaryBg().value
-        titleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .bold))
+        view.setBackgorundColor(to: .secondaryBg())
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
+
+        separatorView.setBackgorundColor(to: .tertiaryBg())
+        separatorView.isHidden = true
     }
 }
