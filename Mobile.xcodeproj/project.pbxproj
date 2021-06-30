@@ -5009,13 +5009,13 @@
 		CEB49854268C65B100004A45 /* Password Reset */ = {
 			isa = PBXGroup;
 			children = (
-				CEB49860268C66C000004A45 /* New Password */,
-				CEB4985F268C66B900004A45 /* Reset */,
+				CEB49860268C66C000004A45 /* Reset */,
+				CEB4985F268C66B900004A45 /* Phone Verification */,
 			);
 			path = "Password Reset";
 			sourceTree = "<group>";
 		};
-		CEB4985F268C66B900004A45 /* Reset */ = {
+		CEB4985F268C66B900004A45 /* Phone Verification */ = {
 			isa = PBXGroup;
 			children = (
 				CEB49859268C65D200004A45 /* PasswordResetViewModel.swift */,
@@ -5024,19 +5024,19 @@
 				CEB49856268C65D200004A45 /* PasswordResetNavigator.swift */,
 				CEB49855268C65D200004A45 /* PasswordReset.storyboard */,
 			);
-			path = Reset;
+			path = "Phone Verification";
 			sourceTree = "<group>";
 		};
-		CEB49860268C66C000004A45 /* New Password */ = {
+		CEB49860268C66C000004A45 /* Reset */ = {
 			isa = PBXGroup;
 			children = (
-				CEB4986B268C987A00004A45 /* NewPassword.storyboard */,
-				CEB4986C268C987A00004A45 /* NewPasswordNavigator.swift */,
-				CEB4986D268C987A00004A45 /* NewPasswordViewController.swift */,
-				CEB4986E268C987A00004A45 /* NewPasswordViewControllerFactory.swift */,
 				CEB4986F268C987A00004A45 /* NewPasswordViewModel.swift */,
+				CEB4986E268C987A00004A45 /* NewPasswordViewControllerFactory.swift */,
+				CEB4986D268C987A00004A45 /* NewPasswordViewController.swift */,
+				CEB4986C268C987A00004A45 /* NewPasswordNavigator.swift */,
+				CEB4986B268C987A00004A45 /* NewPassword.storyboard */,
 			);
-			path = "New Password";
+			path = Reset;
 			sourceTree = "<group>";
 		};
 		CEB9636E2681E489002EBF4C /* LogOut */ = {
