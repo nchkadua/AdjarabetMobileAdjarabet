@@ -17,6 +17,7 @@ public struct PasswordResetViewModelParams {
 public protocol PasswordResetViewModelInput: AnyObject {
     var params: PasswordResetViewModelParams { get set }
     func viewDidLoad()
+    func actionDidTap(_ phoneNumber: String)
 }
 
 public protocol PasswordResetViewModelOutput {
@@ -30,9 +31,11 @@ public enum PasswordResetViewModelOutputAction {
 }
 
 public enum PasswordResetViewModelRoute {
+    case openOTP(params: OTPViewModelParams)
+    case navigateToNewPassword
 }
 
-public class DefaultPasswordResetViewModel {
+public class DefaultPasswordResetViewModel: DefaultBaseViewModel {
     public var params: PasswordResetViewModelParams
     private let actionSubject = PublishSubject<PasswordResetViewModelOutputAction>()
     private let routeSubject = PublishSubject<PasswordResetViewModelRoute>()
@@ -51,17 +54,36 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
         resetPasswordUseCase.initPasswordReset { result in
             switch result {
             case .success(let entity):
-                self.actionSubject.onNext(.setupPhoneNumber(entity.tel ?? "No phone number"))
+                let subString = entity.tel?.dropLast(4)
+                self.actionSubject.onNext(.setupPhoneNumber(String(subString ?? "No phone number")))
             case .failure(let error):
                 self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
             }
         }
-        /*
-            resetPasswordUseCase.getPasswordResetCode(params: .init(address: "995577131188", channelType: .sms)) { result in
-                switch result {
-                case .success(let entity): print(entity)
-                case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
-                }
-            } Commented till UI is done */
+    }
+
+    public func actionDidTap(_ phoneNumber: String) {
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.title_verification.localized(), buttonTitle: R.string.localization.sms_approve.localized(), otpType: .passwordResetCode(phoneNumber: phoneNumber))
+        routeSubject.onNext(.openOTP(params: otpParams))
+        subscribeTo(otpParams)
+    }
+
+    private func subscribeTo(_ params: OTPViewModelParams) {
+        params.paramsOutputAction.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: OTPViewModelParams.Action) {
+        switch action {
+        case .success(let code): handleSuccessfulOTP(code)
+        case .error: self.actionSubject.onNext(.showMessage(message: "Invalid OTP"))
+        }
+    }
+
+    private func handleSuccessfulOTP(_ otp: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { //Navigation to be visible
+            self.routeSubject.onNext(.navigateToNewPassword)
+        }
     }
 }

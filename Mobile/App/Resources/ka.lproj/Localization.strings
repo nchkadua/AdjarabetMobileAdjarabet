@@ -85,6 +85,7 @@
 "sms_resend_time" = "წამში";
 "sms_approve" = "დადასტურება";
 "sms_placeholder" = "4 ნიშნა კოდი";
+"title_verification" = "ვერიფიკაცია";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";

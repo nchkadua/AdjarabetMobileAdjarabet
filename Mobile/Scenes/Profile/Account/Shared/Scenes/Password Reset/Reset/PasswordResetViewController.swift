@@ -26,6 +26,11 @@ public class PasswordResetViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        phoneNumberInputView.mainTextField.becomeFirstResponder()
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: PasswordResetViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
@@ -48,6 +53,10 @@ public class PasswordResetViewController: ABViewController {
     }
 
     private func didRecive(route: PasswordResetViewModelRoute) {
+        switch route {
+        case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
+        case .navigateToNewPassword: navigator.navigate(to: .newPassword, animated: true)
+        }
     }
 
     private func setup() {
@@ -84,6 +93,7 @@ public class PasswordResetViewController: ABViewController {
         phoneNumberInputView.mainTextField.setFont(to: .title3(fontCase: .lower, fontStyle: .regular))
         phoneNumberInputView.mainTextField.textAlignment = .center
         phoneNumberInputView.mainTextField.keyboardType = .numberPad
+        phoneNumberInputView.mainTextField.delegate = self
     }
 
     private func setupButtons() {
@@ -96,6 +106,7 @@ public class PasswordResetViewController: ABViewController {
 
     @objc private func actionButtonDidTap() {
         closeKeyboard()
+        viewModel.actionDidTap(phoneNumberInputView.text ?? "")
     }
 
     // MARK: Configuration
@@ -106,3 +117,23 @@ public class PasswordResetViewController: ABViewController {
 }
 
 extension PasswordResetViewController: CommonBarButtonProviding { }
+
+//Limit characters
+extension PasswordResetViewController: UITextFieldDelegate {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+
+        if count == 12 {
+            updateActionButton(isEnabled: true)
+        } else {
+            updateActionButton(isEnabled: false)
+        }
+
+        return count <= 12 //TODO number of characters in AM
+    }
+}

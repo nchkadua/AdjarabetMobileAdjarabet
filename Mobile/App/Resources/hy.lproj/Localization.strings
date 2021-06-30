@@ -86,6 +86,7 @@
 "sms_resend_time" = "Seconds";
 "sms_approve" = "Approve";
 "sms_placeholder" = "4 Digit Code";
+"title_verification" = "Verification";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";

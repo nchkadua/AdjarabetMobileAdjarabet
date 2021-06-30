@@ -1,5 +1,5 @@
 //
-//  PhoneVerificationViewController.swift
+//  NewPasswordViewController.swift
 //  Mobile
 //
 //  Created by Nika Chkadua on 30.06.21.
@@ -8,9 +8,9 @@
 
 import RxSwift
 
-public class PhoneVerificationViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: PhoneVerificationViewModel
-    public lazy var navigator = PhoneVerificationNavigator(viewController: self)
+public class NewPasswordViewController: UIViewController {
+    @Inject(from: .viewModels) public var viewModel: NewPasswordViewModel
+    public lazy var navigator = NewPasswordNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle methods
@@ -22,7 +22,7 @@ public class PhoneVerificationViewController: UIViewController {
     }
 
     // MARK: Bind to viewModel's observable properties
-    private func bind(to viewModel: PhoneVerificationViewModel) {
+    private func bind(to viewModel: NewPasswordViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
@@ -32,9 +32,9 @@ public class PhoneVerificationViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
 
-    private func didRecive(action: PhoneVerificationViewModelOutputAction) {
+    private func didRecive(action: NewPasswordViewModelOutputAction) {
     }
 
-    private func didRecive(route: PhoneVerificationViewModelRoute) {
+    private func didRecive(route: NewPasswordViewModelRoute) {
     }
 }
