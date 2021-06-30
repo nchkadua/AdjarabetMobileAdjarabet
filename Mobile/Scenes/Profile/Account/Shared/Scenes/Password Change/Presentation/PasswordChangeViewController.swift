@@ -13,6 +13,7 @@ public class PasswordChangeViewController: ABViewController {
     public lazy var navigator = PasswordChangeNavigator(viewController: self)
 
     // MARK: Outlets
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var oldPasswordInputView: ABInputView!
     @IBOutlet private weak var newPasswordInputView: ABInputView!
     @IBOutlet private weak var repeatePasswordInputView: ABInputView!
@@ -67,6 +68,7 @@ public class PasswordChangeViewController: ABViewController {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupKeyboard()
+        setupLabel()
         setupInputViews()
         setupInputViewsObservation()
         setupPasswordButton()
@@ -76,15 +78,19 @@ public class PasswordChangeViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.password_change_title.localized())
-
-        let backButtonGroup = makeBackBarButtonItem()
+        let backButtonGroup = makeBackBarButtonItem(width: 60, title: R.string.localization.back_button_title.localized())
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }
 
     @objc private func dismissViewController() {
         dismiss(animated: true, completion: nil)
+    }
+
+    private func setupLabel() {
+        titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setTextColor(to: .primaryText())
+        titleLabel.text = R.string.localization.password_change_title.localized()
     }
 
     private func setupInputViews() {

@@ -3627,6 +3627,7 @@
 		C78E53092685ABB100EE1C18 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CEB49854268C65B100004A45 /* Password Reset */,
 				CECF7F6B256D9F86001C0E50 /* Password Change */,
 				CEB285B8256D20A400584A65 /* Self Suspend */,
 			);
@@ -4983,6 +4984,13 @@
 				C784C245266E540E00D328D3 /* Data */,
 			);
 			path = "Self Suspend";
+			sourceTree = "<group>";
+		};
+		CEB49854268C65B100004A45 /* Password Reset */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Password Reset";
 			sourceTree = "<group>";
 		};
 		CEB9636E2681E489002EBF4C /* LogOut */ = {
