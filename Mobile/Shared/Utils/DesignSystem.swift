@@ -223,7 +223,7 @@ public enum DesignSystem {
 
         public static let placeholderFont: Typography   = .footnote(fontCase: .lower, fontStyle: .regular)
 
-        public static let placeholTextColor: Color      = .secondaryText()
+        public static let placeholTextColor: Color      = .primaryText()
         public static let textFieldTextColor: Color     = .primaryText()
 
         public static let borderWidth: CGFloat          = 1
