@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 36 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 38 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -140,8 +140,12 @@ struct R: Rswift.Validatable {
     static let otpLogin = _R.storyboard.otpLogin()
     /// Storyboard `PasswordChange`.
     static let passwordChange = _R.storyboard.passwordChange()
+    /// Storyboard `PasswordReset`.
+    static let passwordReset = _R.storyboard.passwordReset()
     /// Storyboard `PhoneNumberChange`.
     static let phoneNumberChange = _R.storyboard.phoneNumberChange()
+    /// Storyboard `PhoneVerification`.
+    static let phoneVerification = _R.storyboard.phoneVerification()
     /// Storyboard `Profile`.
     static let profile = _R.storyboard.profile()
     /// Storyboard `Promotions`.
@@ -334,9 +338,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PasswordReset", bundle: ...)`
+    static func passwordReset(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.passwordReset)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "PhoneNumberChange", bundle: ...)`
     static func phoneNumberChange(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.phoneNumberChange)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PhoneVerification", bundle: ...)`
+    static func phoneVerification(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.phoneVerification)
     }
     #endif
 
@@ -4442,7 +4460,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 520 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 523 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -6368,6 +6386,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let visa_card_title = Rswift.StringResource(key: "visa_card_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: აღდგენა SMS კოდით
+      ///
+      /// Locales: en, ka, hy
+      static let reset_with_sms = Rswift.StringResource(key: "reset_with_sms", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ახალი ელ.ფოსტის მისამართი
       ///
       /// Locales: en, ka, hy
@@ -6480,6 +6502,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let suspend_subtitle = Rswift.StringResource(key: "suspend_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: კოდის გაგზავნა
+      ///
+      /// Locales: en, ka, hy
+      static let reset_password_send_code = Rswift.StringResource(key: "reset_password_send_code", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ლიმიტი ერთ ბარათზე
       ///
       /// Locales: en, ka, hy
@@ -6512,6 +6538,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let emoney_rule1 = Rswift.StringResource(key: "emoney_rule1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი
+      ///
+      /// Locales: en, ka, hy
+      static let reset_password_hint = Rswift.StringResource(key: "reset_password_hint", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: შეიყვანეთ მითითებული უსაფრთხოების კოდი და დააჭირეთ 'გადახდას'
       ///
       /// Locales: en, ka, hy
@@ -13740,6 +13770,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("visa_card_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: აღდგენა SMS კოდით
+      ///
+      /// Locales: en, ka, hy
+      static func reset_with_sms(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("reset_with_sms", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "reset_with_sms"
+        }
+
+        return NSLocalizedString("reset_with_sms", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: ახალი ელ.ფოსტის მისამართი
       ///
       /// Locales: en, ka, hy
@@ -14160,6 +14205,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("suspend_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: კოდის გაგზავნა
+      ///
+      /// Locales: en, ka, hy
+      static func reset_password_send_code(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("reset_password_send_code", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "reset_password_send_code"
+        }
+
+        return NSLocalizedString("reset_password_send_code", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: ლიმიტი ერთ ბარათზე
       ///
       /// Locales: en, ka, hy
@@ -14278,6 +14338,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("emoney_rule1", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი
+      ///
+      /// Locales: en, ka, hy
+      static func reset_password_hint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("reset_password_hint", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "reset_password_hint"
+        }
+
+        return NSLocalizedString("reset_password_hint", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: შეიყვანეთ მითითებული უსაფრთხოების კოდი და დააჭირეთ 'გადახდას'
@@ -14630,8 +14705,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14659,8 +14734,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -14878,8 +14953,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -15509,7 +15584,13 @@ struct _R: Rswift.Validatable {
       try passwordChange.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try passwordReset.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try phoneNumberChange.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try phoneVerification.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try profile.validate()
@@ -15859,10 +15940,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
@@ -16039,6 +16120,26 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct passwordReset: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PasswordReset"
+      let passwordResetViewController = StoryboardViewControllerResource<PasswordResetViewController>(identifier: "PasswordResetViewController")
+
+      func passwordResetViewController(_: Void = ()) -> PasswordResetViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: passwordResetViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.passwordReset().passwordResetViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'passwordResetViewController' could not be loaded from storyboard 'PasswordReset' as 'PasswordResetViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct phoneNumberChange: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "PhoneNumberChange"
@@ -16052,6 +16153,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.phoneNumberChange().phoneNumberChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'phoneNumberChangeViewController' could not be loaded from storyboard 'PhoneNumberChange' as 'PhoneNumberChangeViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct phoneVerification: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PhoneVerification"
+      let phoneVerificationViewController = StoryboardViewControllerResource<PhoneVerificationViewController>(identifier: "PhoneVerificationViewController")
+
+      func phoneVerificationViewController(_: Void = ()) -> PhoneVerificationViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: phoneVerificationViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.phoneVerification().phoneVerificationViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'phoneVerificationViewController' could not be loaded from storyboard 'PhoneVerification' as 'PhoneVerificationViewController'.") }
       }
 
       fileprivate init() {}

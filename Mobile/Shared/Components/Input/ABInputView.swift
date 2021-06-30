@@ -26,6 +26,7 @@ public class ABInputView: UIView {
     @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private var placeholderLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet private var placeholderLabelCenterYConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var placeholderLabelHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet private weak var leftButton: UIButton!
     @IBOutlet private weak var rightButton: UIButton!
@@ -44,6 +45,7 @@ public class ABInputView: UIView {
 
     private var defaultBackgroundColor: DesignSystem.Color = DesignSystem.Input.backgroundColor
     private var hasDropdownImage = false
+    private var textfieldBottomConstant: CGFloat = 0.0
 
     // MARK: Formatter
     public var formatter: Formatter = DefaultFormatter()
@@ -112,6 +114,7 @@ public class ABInputView: UIView {
         func set() {
             placeholderLabelCenterYConstraint.isActive  = isCenter
             textFieldCenterYConstraint.isActive         = isCenter
+            textFieldBottomConstraint.constant          = textfieldBottomConstant
             textFieldBottomConstraint.isActive          = !textFieldCenterYConstraint.isActive
             view.layoutIfNeeded()
 
@@ -130,6 +133,10 @@ public class ABInputView: UIView {
         }
     }
 
+    public func hidesPlaceholder() {
+        layoutIfNeeded()
+    }
+
     public func toggleSecureTextEntry() {
         textField.isSecureTextEntry.toggle()
     }
@@ -142,9 +149,12 @@ public class ABInputView: UIView {
         textField.isSecureTextEntry = false
     }
 
-    public func setupWith(backgroundColor color: DesignSystem.Color = DesignSystem.Input.backgroundColor, borderWidth width: CGFloat = DesignSystem.Input.borderWidth) {
+    public func setupWith(backgroundColor color: DesignSystem.Color = DesignSystem.Input.backgroundColor, borderWidth width: CGFloat = DesignSystem.Input.borderWidth, hidesPlaceholder: Bool = false) {
         defaultBackgroundColor = color
         setupWrapperView(backgroundColor: color, borderWidth: width)
+
+        guard hidesPlaceholder else {return}
+        textfieldBottomConstant = 14
     }
 
     public func setLeftButtonImage(_ image: UIImage, for controlState: UIControl.State, tintColor: DesignSystem.Color = .primaryText()) {

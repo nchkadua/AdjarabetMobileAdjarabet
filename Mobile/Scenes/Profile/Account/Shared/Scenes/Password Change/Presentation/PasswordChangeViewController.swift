@@ -166,6 +166,8 @@ public class PasswordChangeViewController: ABViewController {
     }
 
     @objc private func navigateToPasswodReminder() {
+        closeKeyboard()
+        navigator.navigate(to: .passwordReset, animated: true)
     }
 
     // MARK: Configuration
