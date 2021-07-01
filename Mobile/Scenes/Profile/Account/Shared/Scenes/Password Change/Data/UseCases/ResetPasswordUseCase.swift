@@ -41,5 +41,6 @@ struct DefaultResetPasswordUseCase: ResetPasswordUseCase {
     }
 
     func resetPassword(params: ResetPasswordParams, handler: @escaping ResetPasswordHandler) {
+        repo.resetPassword(params: params, handler: handler)
     }
 }

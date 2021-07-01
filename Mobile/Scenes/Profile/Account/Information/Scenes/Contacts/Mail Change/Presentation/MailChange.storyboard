@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -54,13 +54,16 @@
                             <constraint firstItem="F4d-u8-oJi" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="21" id="1mM-T9-3fX"/>
                             <constraint firstItem="gZJ-oL-LfH" firstAttribute="top" secondItem="AeR-j6-SDs" secondAttribute="bottom" constant="8" id="1wm-kt-PS5"/>
                             <constraint firstItem="XiW-pH-QhJ" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="16" id="BsV-cw-tBv"/>
+                            <constraint firstItem="F4d-u8-oJi" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="21" id="Fae-fc-DKw"/>
                             <constraint firstItem="F4d-u8-oJi" firstAttribute="top" secondItem="bos-8d-JVb" secondAttribute="top" constant="16" id="Fdc-xN-fBa"/>
                             <constraint firstItem="gZJ-oL-LfH" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="16" id="L1s-wc-rb6"/>
                             <constraint firstItem="AeR-j6-SDs" firstAttribute="top" secondItem="F4d-u8-oJi" secondAttribute="bottom" constant="19" id="NO1-BO-gcs"/>
                             <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="XiW-pH-QhJ" secondAttribute="trailing" constant="16" id="Tu9-Yr-ydI"/>
                             <constraint firstItem="XiW-pH-QhJ" firstAttribute="top" secondItem="gZJ-oL-LfH" secondAttribute="bottom" constant="14" id="X85-iZ-GBM"/>
+                            <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="F4d-u8-oJi" secondAttribute="trailing" constant="21" id="alV-YM-epn"/>
                             <constraint firstItem="AeR-j6-SDs" firstAttribute="leading" secondItem="bos-8d-JVb" secondAttribute="leading" constant="16" id="cva-KV-zUy"/>
                             <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="F4d-u8-oJi" secondAttribute="trailing" constant="21" id="fl8-Pq-oqf"/>
+                            <constraint firstItem="F4d-u8-oJi" firstAttribute="top" secondItem="bos-8d-JVb" secondAttribute="top" constant="16" id="n6l-gK-m5v"/>
                             <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="AeR-j6-SDs" secondAttribute="trailing" constant="16" id="oX1-ld-ZLn"/>
                             <constraint firstItem="bos-8d-JVb" firstAttribute="trailing" secondItem="gZJ-oL-LfH" secondAttribute="trailing" constant="16" id="q2B-YQ-rTK"/>
                         </constraints>

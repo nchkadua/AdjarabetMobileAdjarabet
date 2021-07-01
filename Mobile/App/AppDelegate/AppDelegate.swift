@@ -74,6 +74,8 @@ public extension DependencyContainer {
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
+        Module { DefaultPasswordResetViewModel(params: .init()) as PasswordResetViewModel }
+        Module { DefaultNewPasswordViewModel(params: .init(confirmationCode: "")) as NewPasswordViewModel }
         Module { DefaultTimerComponentViewModel() as TimerComponentViewModel }
         Module { DefaultTransactionsFilterViewModel() as TransactionsFilterViewModel }
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
@@ -161,6 +163,8 @@ public extension DependencyContainer {
         Module { DefaultMailChangeViewControllerFactory() as MailChangeViewControllerFactory }
         Module { DefaultAddressChangeViewControllerFactory() as AddressChangeViewControllerFactory }
         Module { DefaultPasswordChangeViewControllerFactory() as PasswordChangeViewControllerFactory }
+        Module { DefaultPasswordResetViewControllerFactory() as PasswordResetViewControllerFactory }
+        Module { DefaultNewPasswordViewControllerFactory() as NewPasswordViewControllerFactory }
         Module { DefaultTransactionsFilterViewControllerFactory() as TransactionsFilterViewControllerFactory }
         Module { DefaultAccountParametersViewControllerFactory() as AccountParametersViewControllerFactory }
         Module { DefaultPhoneNumberChangeViewControllerFactory() as PhoneNumberChangeViewControllerFactory }

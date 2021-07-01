@@ -1,14 +1,14 @@
 //
-//  PasswordChangeNavigator.swift
+//  PasswordResetNavigator.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 11/25/20.
-//  Copyright © 2020 Adjarabet. All rights reserved.
+//  Created by Nika Chkadua on 30.06.21.
+//  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public class PasswordChangeNavigator: Navigator {
+public class PasswordResetNavigator: Navigator {
     @Inject(from: .factories) public var otpFactory: OTPFactory
-    @Inject(from: .factories) public var passwordResetFactory: PasswordResetViewControllerFactory
+    @Inject(from: .factories) public var newPasswordFactory: NewPasswordViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -18,15 +18,15 @@ public class PasswordChangeNavigator: Navigator {
 
     public enum Destination {
         case OTP(params: OTPViewModelParams)
-        case passwordReset
+        case newPassword(confirmationCode: String)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .OTP(let params):
             navigateToOTP(params: params, animate: animate)
-        case .passwordReset:
-        navigateToPasswordReset(animate: animate)
+        case .newPassword(let confirmationCode):
+            navigateToNewPassword(confirmationCode: confirmationCode, animate: animate)
         }
     }
 
@@ -37,8 +37,8 @@ public class PasswordChangeNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate)
     }
 
-    private func navigateToPasswordReset(animate: Bool) {
-        let vc = passwordResetFactory.make(params: .init())
+    private func navigateToNewPassword(confirmationCode: String, animate: Bool) {
+        let vc = newPasswordFactory.make(params: .init(confirmationCode: confirmationCode))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

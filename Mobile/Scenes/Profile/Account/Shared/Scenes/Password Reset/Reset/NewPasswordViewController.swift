@@ -1,20 +1,18 @@
 //
-//  PasswordChangeViewController.swift
+//  NewPasswordViewController.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 11/25/20.
-//  Copyright © 2020 Adjarabet. All rights reserved.
+//  Created by Nika Chkadua on 30.06.21.
+//  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import RxSwift
 
-public class PasswordChangeViewController: ABViewController {
-    @Inject(from: .viewModels) private var viewModel: PasswordChangeViewModel
-    public lazy var navigator = PasswordChangeNavigator(viewController: self)
+public class NewPasswordViewController: ABViewController {
+    @Inject(from: .viewModels) public var viewModel: NewPasswordViewModel
+    public lazy var navigator = NewPasswordNavigator(viewController: self)
 
-    // MARK: Outlets
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var oldPasswordInputView: ABInputView!
     @IBOutlet private weak var newPasswordInputView: ABInputView!
     @IBOutlet private weak var repeatePasswordInputView: ABInputView!
     @IBOutlet private weak var updatePasswordButton: ABButton!
@@ -33,11 +31,11 @@ public class PasswordChangeViewController: ABViewController {
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        oldPasswordInputView.mainTextField.becomeFirstResponder()
+        newPasswordInputView.mainTextField.becomeFirstResponder()
     }
 
     // MARK: Bind to viewModel's observable properties
-    private func bind(to viewModel: PasswordChangeViewModel) {
+    private func bind(to viewModel: NewPasswordViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
@@ -47,7 +45,7 @@ public class PasswordChangeViewController: ABViewController {
         }).disposed(by: disposeBag)
     }
 
-    private func didRecive(action: PasswordChangeViewModelOutputAction) {
+    private func didRecive(action: NewPasswordViewModelOutputAction) {
         switch action {
         case .setButton(let loading): updatePasswordButton.set(isLoading: loading)
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
@@ -57,10 +55,7 @@ public class PasswordChangeViewController: ABViewController {
         }
     }
 
-    private func didRecive(route: PasswordChangeViewModelRoute) {
-        switch route {
-        case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
-        }
+    private func didRecive(route: NewPasswordViewModelRoute) {
     }
 
     // MARK: Setup methods
@@ -72,9 +67,6 @@ public class PasswordChangeViewController: ABViewController {
         setupInputViews()
         setupInputViewsObservation()
         setupPasswordButton()
-        setupViews()
-
-        setupAccessibilityIdentifiers()
     }
 
     private func setupNavigationItems() {
@@ -90,12 +82,11 @@ public class PasswordChangeViewController: ABViewController {
     private func setupLabel() {
         titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.text = R.string.localization.password_change_title.localized()
+        titleLabel.text = R.string.localization.new_password_title.localized()
     }
 
     private func setupInputViews() {
-        styleInputView(oldPasswordInputView, with: R.string.localization.old_password.localized())
-        setupPasswordReminderView()
+        styleInputView(repeatePasswordInputView, with: R.string.localization.old_password.localized())
 
         styleInputView(newPasswordInputView, with: R.string.localization.new_password.localized())
         newPasswordInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -115,24 +106,13 @@ public class PasswordChangeViewController: ABViewController {
             self?.updateRightButton(of: inputView)
         }).disposed(by: disposeBag)
 
-        Observable.combineLatest([oldPasswordInputView.rx.text.orEmpty, newPasswordInputView.rx.text.orEmpty, repeatePasswordInputView.rx.text.orEmpty])
+        Observable.combineLatest([repeatePasswordInputView.rx.text.orEmpty, newPasswordInputView.rx.text.orEmpty, repeatePasswordInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }
             .map { $0.allSatisfy { $0 == true } }
             .subscribe(onNext: { [weak self] isValid in
                 self?.updatePasswordButton(isEnabled: isValid)
             })
             .disposed(by: disposeBag)
-    }
-
-    private func setupInputViewsObservation() {
-        startObservingInputViewsReturn { [weak self] in
-            guard self?.updatePasswordButton.isUserInteractionEnabled == true else {return}
-            self?.updatePasswordButtonDidTap()
-        }
-    }
-
-    @objc private func textFieldDidChange(_ textField: UITextField) {
-        viewModel.newPasswordDidChange(to: textField.text ?? "")
     }
 
     private func setupPasswordButton() {
@@ -150,8 +130,8 @@ public class PasswordChangeViewController: ABViewController {
             return
         }
 
-        if let oldPassword = oldPasswordInputView.text, let newPassword = newPasswordInputView.text {
-            viewModel.changeDidTap(oldPassword, newPassword: newPassword)
+        if let newPassword = newPasswordInputView.text {
+            viewModel.changeDidTap(newPassword)
         }
     }
 
@@ -159,15 +139,15 @@ public class PasswordChangeViewController: ABViewController {
         passwordChangeRulesView.setBackgorundColor(to: .secondaryBg())
     }
 
-    private func setupPasswordReminderView() {
-        passwordReminderComponentView = PasswordReminderComponentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 54))
-        oldPasswordInputView.mainTextField.inputAccessoryView = passwordReminderComponentView
-        passwordReminderComponentView?.button.addTarget(self, action: #selector(navigateToPasswodReminder), for: .touchUpInside)
+    private func setupInputViewsObservation() {
+        startObservingInputViewsReturn { [weak self] in
+            guard self?.updatePasswordButton.isUserInteractionEnabled == true else {return}
+            self?.updatePasswordButtonDidTap()
+        }
     }
 
-    @objc private func navigateToPasswodReminder() {
-        closeKeyboard()
-        navigator.navigate(to: .passwordReset, animated: true)
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        viewModel.newPasswordDidChange(to: textField.text ?? "")
     }
 
     // MARK: Configuration
@@ -192,31 +172,8 @@ public class PasswordChangeViewController: ABViewController {
     }
 }
 
-extension PasswordChangeViewController: InputViewsProviding {
-    public var inputViews: [ABInputView] { [oldPasswordInputView, newPasswordInputView, repeatePasswordInputView] }
+extension NewPasswordViewController: InputViewsProviding {
+    public var inputViews: [ABInputView] { [newPasswordInputView, repeatePasswordInputView] }
 }
 
-// MARK: Accessibility Identifiers
-extension PasswordChangeViewController: Accessible {
-    private func setupAccessibilityIdentifiers() {
-        generateAccessibilityIdentifiers()
-
-        oldPasswordInputView.setAccessibilityIdTextfield(id: "PasswordChangeViewController.oldPasswordInputViewTextField")
-        newPasswordInputView.setAccessibilityIdTextfield(id: "PasswordChangeViewController.newPasswordInputViewTextField")
-        repeatePasswordInputView.setAccessibilityIdTextfield(id: "PasswordChangeViewController.repeatePasswordInputViewTextField")
-
-        oldPasswordInputView.setAccessibilityIdsToPlaceholderLabels(id: "PasswordChangeViewController.oldPasswordInputView.placeholder")
-        newPasswordInputView.setAccessibilityIdsToPlaceholderLabels(id: "PasswordChangeViewController.newPasswordInputView.placeholder")
-        repeatePasswordInputView.setAccessibilityIdsToPlaceholderLabels(id: "PasswordChangeViewController.repeatePasswordInputView.placeholder")
-
-        oldPasswordInputView.setAccessibilityIdsToRightImage(id: "PasswordChangeViewController.oldPasswordInputView.rightImage")
-        newPasswordInputView.setAccessibilityIdsToRightImage(id: "PasswordChangeViewController.newPasswordInputView.rightImage")
-        repeatePasswordInputView.setAccessibilityIdsToRightImage(id: "PasswordChangeViewController.repeatePasswordInputView.rightImage")
-
-        updatePasswordButton.accessibilityIdentifier = "PasswordChangeViewController.updatePasswordButton"
-
-        navigationItem.titleView?.accessibilityIdentifier = "PasswordChangeViewController.title"
-    }
-}
-
-extension PasswordChangeViewController: CommonBarButtonProviding { }
+extension NewPasswordViewController: CommonBarButtonProviding { }

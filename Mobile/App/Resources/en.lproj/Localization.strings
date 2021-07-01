@@ -85,6 +85,7 @@
 "sms_resend_time" = "Seconds";
 "sms_approve" = "Approve";
 "sms_placeholder" = "4 Digit Code";
+"title_verification" = "Verification";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
@@ -168,6 +169,10 @@
 "rule3" = "მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო";
 "forgot_password" = "დაგავიწყდათ პაროლი?";
 "remind_button_title" = "გაიხსენე";
+"reset_with_sms" = "აღდგენა SMS კოდით";
+"reset_password_hint" = "შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი";
+"reset_password_send_code" = "კოდის გაგზავნა";
+"new_password_title" = "ახალი პაროლი";
 
 /* Phone Number Change */
 "phone_number_change_title" = "Change Phone Number";

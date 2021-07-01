@@ -50,7 +50,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
     }
 
     func resetPassword(params: ResetPasswordParams, handler: @escaping ResetPasswordHandler) {
-        guard let username = userSession.username,
+        guard let userID = userSession.userId,
               let sessionId = userSession.sessionId
         else {
             handler(.failure(.sessionNotFound))
@@ -60,7 +60,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "resetPassword")
-            .setBody(key: .userIdentifier, value: username)
+            .setBody(key: .userId, value: String(userID))
             .setBody(key: "confirmCode", value: params.confirmCode)
             .setBody(key: .newPassword, value: params.newPassword)
             .build()
