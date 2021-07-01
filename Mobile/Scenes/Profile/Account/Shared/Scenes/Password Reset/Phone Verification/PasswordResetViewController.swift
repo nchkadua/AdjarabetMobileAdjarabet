@@ -55,7 +55,7 @@ public class PasswordResetViewController: ABViewController {
     private func didRecive(route: PasswordResetViewModelRoute) {
         switch route {
         case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
-        case .navigateToNewPassword: navigator.navigate(to: .newPassword, animated: true)
+        case .navigateToNewPassword(let confirmationCode): navigator.navigate(to: .newPassword(confirmationCode: confirmationCode), animated: true)
         }
     }
 

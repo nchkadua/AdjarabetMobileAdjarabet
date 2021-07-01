@@ -32,7 +32,7 @@ public enum PasswordResetViewModelOutputAction {
 
 public enum PasswordResetViewModelRoute {
     case openOTP(params: OTPViewModelParams)
-    case navigateToNewPassword
+    case navigateToNewPassword(confirmationCode: String)
 }
 
 public class DefaultPasswordResetViewModel: DefaultBaseViewModel {
@@ -83,7 +83,7 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
 
     private func handleSuccessfulOTP(_ otp: String) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { //Navigation to be visible
-            self.routeSubject.onNext(.navigateToNewPassword)
+            self.routeSubject.onNext(.navigateToNewPassword(confirmationCode: otp))
         }
     }
 }

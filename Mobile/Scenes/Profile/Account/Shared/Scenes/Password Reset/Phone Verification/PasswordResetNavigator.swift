@@ -18,15 +18,15 @@ public class PasswordResetNavigator: Navigator {
 
     public enum Destination {
         case OTP(params: OTPViewModelParams)
-        case newPassword
+        case newPassword(confirmationCode: String)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .OTP(let params):
             navigateToOTP(params: params, animate: animate)
-        case .newPassword:
-            navigateToNewPassword(animate: animate)
+        case .newPassword(let confirmationCode):
+            navigateToNewPassword(confirmationCode: confirmationCode, animate: animate)
         }
     }
 
@@ -37,8 +37,8 @@ public class PasswordResetNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate)
     }
 
-    private func navigateToNewPassword(animate: Bool) {
-        let vc = newPasswordFactory.make(params: .init())
+    private func navigateToNewPassword(confirmationCode: String, animate: Bool) {
+        let vc = newPasswordFactory.make(params: .init(confirmationCode: confirmationCode))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

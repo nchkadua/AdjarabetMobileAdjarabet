@@ -75,7 +75,7 @@ public extension DependencyContainer {
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
         Module { DefaultPasswordResetViewModel(params: .init()) as PasswordResetViewModel }
-        Module { DefaultNewPasswordViewModel(params: .init()) as NewPasswordViewModel }
+        Module { DefaultNewPasswordViewModel(params: .init(confirmationCode: "")) as NewPasswordViewModel }
         Module { DefaultTimerComponentViewModel() as TimerComponentViewModel }
         Module { DefaultTransactionsFilterViewModel() as TransactionsFilterViewModel }
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
