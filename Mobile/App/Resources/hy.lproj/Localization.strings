@@ -173,6 +173,7 @@
 "reset_with_sms" = "აღდგენა SMS კოდით";
 "reset_password_hint" = "შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი";
 "reset_password_send_code" = "კოდის გაგზავნა";
+"new_password_title" = "ახალი პაროლი";
 
 /* Phone Number Change */
 "phone_number_change_title" = "Change Phone Number";

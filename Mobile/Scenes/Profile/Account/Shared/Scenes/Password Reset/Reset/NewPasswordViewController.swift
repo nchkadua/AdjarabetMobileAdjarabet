@@ -46,6 +46,9 @@ public class NewPasswordViewController: ABViewController {
     }
 
     private func didRecive(action: NewPasswordViewModelOutputAction) {
+        switch action {
+        case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
+        }
     }
 
     private func didRecive(route: NewPasswordViewModelRoute) {
@@ -75,7 +78,7 @@ public class NewPasswordViewController: ABViewController {
     private func setupLabel() {
         titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.text = R.string.localization.password_change_title.localized()
+        titleLabel.text = R.string.localization.new_password_title.localized()
     }
 
     private func setupInputViews() {
@@ -136,7 +139,7 @@ public class NewPasswordViewController: ABViewController {
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
-//        viewModel.newPasswordDidChange(to: textField.text ?? "")
+        viewModel.newPasswordDidChange(to: textField.text ?? "")
     }
 
     // MARK: Configuration

@@ -50,6 +50,7 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
         request.countryCode = "GE" // Needs to be dynamic
         request.currencyCode = Currency(currencyId: userSession.currencyId ?? 2)?.description.abbreviation ?? "GEL"
         request.requiredShippingContactFields = [.name]
+
         request.paymentSummaryItems = [
             PKPaymentSummaryItem(label: "Merchant", amount: NSDecimalNumber(value: amount), type: .final)
         ]
@@ -67,7 +68,7 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
 
 struct JSParams: Codable {
     let token: String
-    let ip = "80.241.246.253" // Static unknown ip
+    let ip = "80.241.246.253" // Static unknown ipw
 
     enum CodingKeys: String, CodingKey {
         case token

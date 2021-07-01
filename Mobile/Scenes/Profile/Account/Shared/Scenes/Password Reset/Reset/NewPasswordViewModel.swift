@@ -17,6 +17,7 @@ public struct NewPasswordViewModelParams {
 public protocol NewPasswordViewModelInput: AnyObject {
     var params: NewPasswordViewModelParams { get set }
     func viewDidLoad()
+    func newPasswordDidChange(to newPassword: String)
 }
 
 public protocol NewPasswordViewModelOutput {
@@ -25,6 +26,7 @@ public protocol NewPasswordViewModelOutput {
 }
 
 public enum NewPasswordViewModelOutputAction {
+    case updateRulesWithNewPassword(_ password: String)
 }
 
 public enum NewPasswordViewModelRoute {
@@ -45,5 +47,9 @@ extension DefaultNewPasswordViewModel: NewPasswordViewModel {
     public var route: Observable<NewPasswordViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+    }
+
+    public func newPasswordDidChange(to newPassword: String) {
+        actionSubject.onNext(.updateRulesWithNewPassword(newPassword))
     }
 }
