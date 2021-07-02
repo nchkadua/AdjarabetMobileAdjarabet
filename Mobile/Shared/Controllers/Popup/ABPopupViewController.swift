@@ -47,4 +47,16 @@ public class ABPopupViewController: ABViewController {
             }
         }
     }
+
+    static func wrapInNav(popup: ABPopupViewController & UIViewControllerTransitioningDelegate) -> UINavigationController {
+        let navc = UINavigationController(rootViewController: popup)
+        navc.modalPresentationStyle = popup.modalPresentationStyle
+        navc.transitioningDelegate = popup
+        navc.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navc.navigationBar.shadowImage = UIImage()
+        navc.navigationBar.isTranslucent = true
+        navc.view.backgroundColor = .clear
+        navc.setNavigationBarHidden(false, animated: false)
+        return navc
+    }
 }
