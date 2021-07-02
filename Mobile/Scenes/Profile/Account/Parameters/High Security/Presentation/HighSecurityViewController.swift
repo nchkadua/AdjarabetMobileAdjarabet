@@ -9,14 +9,14 @@
 import RxSwift
 
 class HighSecurityViewController: ABPopupViewController {
-    @Inject(from: .viewModels) private var viewModel: HighSecurityViewModel
+    @Inject(from: .viewModels) var viewModel: HighSecurityViewModel
     private lazy var navigator = HighSecurityNavigator(viewController: self)
 
+    @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
-
-    private var isOn = false // FIXME: temporary button state
     @IBOutlet private weak var onOffButton: UIButton!
+    @IBOutlet private weak var loader: UIActivityIndicatorView!
 
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
@@ -40,22 +40,10 @@ class HighSecurityViewController: ABPopupViewController {
         onOffButton.setBackgorundColor(to: .tertiaryBg())
         onOffButton.titleLabel?.font = DesignSystem.Typography.callout(fontCase: .upper, fontStyle: .semiBold).description.font
         onOffButton.layer.cornerRadius = 8
-        setupOnOffButtonState()
-    }
-
-    private func setupOnOffButtonState() {
-        if isOn {
-            onOffButton.setTitleColor(.systemPink, for: .normal)
-            onOffButton.setTitle(R.string.localization.high_security_button_deactivate.localized().uppercased(), for: .normal)
-        } else {
-            onOffButton.setTitleColor(.systemBlue, for: .normal)
-            onOffButton.setTitle(R.string.localization.high_security_button_activate.localized().uppercased(), for: .normal)
-        }
     }
 
     @IBAction private func onOffButtonTapped() {
-        isOn.toggle()
-        setupOnOffButtonState()
+        viewModel.buttonTapped()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -70,9 +58,41 @@ class HighSecurityViewController: ABPopupViewController {
     }
 
     private func didRecive(action: HighSecurityViewModelOutputAction) {
+        switch action {
+        case .setupView(let loaderIsHiden):
+            setupView(loaderIsHiden: loaderIsHiden)
+        case .setButtonState(let isOn):
+            setButtonState(isOn: isOn)
+        case .showError(let error):
+            showAlert(title: error.description.description) { _ in
+                error.description.onOkAction()
+            }
+        case .close:
+            navigationController?.dismiss(animated: true, completion: nil)
+        }
     }
 
     private func didRecive(route: HighSecurityViewModelRoute) {
+        switch route {
+        case .otp(let params):
+            navigator.navigate(to: .otp(params: params))
+        }
+    }
+
+    private func setupView(loaderIsHiden: Bool) {
+        contentView.isHidden = !loaderIsHiden
+        loader.isHidden = loaderIsHiden
+        (loaderIsHiden ? loader.stopAnimating : loader.startAnimating)()
+    }
+
+    private func setButtonState(isOn: Bool) {
+        if isOn {
+            onOffButton.setTitleColor(.systemPink, for: .normal)
+            onOffButton.setTitle(R.string.localization.high_security_button_deactivate.localized().uppercased(), for: .normal)
+        } else {
+            onOffButton.setTitleColor(.systemBlue, for: .normal)
+            onOffButton.setTitle(R.string.localization.high_security_button_activate.localized().uppercased(), for: .normal)
+        }
     }
 }
 

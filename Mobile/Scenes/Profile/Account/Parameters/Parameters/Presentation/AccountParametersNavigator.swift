@@ -55,7 +55,8 @@ public class AccountParametersNavigator: Navigator {
 
     private func navigateToHighSecurity(animate: Bool) {
         let vc = highSecurityViewControllerFactory.make()
-        viewController?.navigationController?.present(vc, animated: animate, completion: nil)
+        let navc = ABPopupViewController.wrapInNav(popup: vc)
+        viewController?.navigationController?.present(navc, animated: animate, completion: nil)
     }
 
     private func navigateToBiometryAuthorization(animate: Bool) {
