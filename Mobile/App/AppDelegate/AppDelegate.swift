@@ -145,6 +145,7 @@ public extension DependencyContainer {
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
         Module { CoreApiAccessListRepository() as AccessListRepository }
+        Module { CoreApiUpdateOtpRepository() as UpdateOtpRepository }
     }
 
     static var factories = DependencyContainer {
@@ -206,6 +207,7 @@ public extension DependencyContainer {
         Module { DefaultResetPasswordUseCase() as ResetPasswordUseCase }
         Module { DefaultUpdateMailUseCase() as UpdateMailUseCase }
         Module { DefaultUpdatePhoneNumberUseCase() as UpdatePhoneNumberUseCase }
+        Module { DefaultHighSecurityUseCase() as HighSecurityUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }
