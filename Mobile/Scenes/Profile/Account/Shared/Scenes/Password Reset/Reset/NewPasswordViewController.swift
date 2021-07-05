@@ -86,8 +86,6 @@ public class NewPasswordViewController: ABViewController {
     }
 
     private func setupInputViews() {
-        styleInputView(repeatePasswordInputView, with: R.string.localization.old_password.localized())
-
         styleInputView(newPasswordInputView, with: R.string.localization.new_password.localized())
         newPasswordInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 

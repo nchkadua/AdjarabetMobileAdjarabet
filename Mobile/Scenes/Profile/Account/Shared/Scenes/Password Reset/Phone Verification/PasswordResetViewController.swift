@@ -121,6 +121,14 @@ extension PasswordResetViewController: CommonBarButtonProviding { }
 //Limit characters
 extension PasswordResetViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        let text: NSString = (textField.text ?? "") as NSString
+//
+//        if text.contains("*") {
+//            if let rangeOfReplacementChar = text.range(of: "*") as NSRange? {
+//                textField.text = text.replacingCharacters(in: rangeOfReplacementChar, with: string)
+//            }
+//        }
+
         guard let textFieldText = textField.text,
             let rangeOfTextToReplace = Range(range, in: textFieldText) else {
                 return false
@@ -128,12 +136,12 @@ extension PasswordResetViewController: UITextFieldDelegate {
         let substringToReplace = textFieldText[rangeOfTextToReplace]
         let count = textFieldText.count - substringToReplace.count + string.count
 
-        if count == 12 {
+        if count >= 12 {
             updateActionButton(isEnabled: true)
         } else {
             updateActionButton(isEnabled: false)
         }
 
-        return count <= 12 //TODO number of characters in AM
+        return (count >= 8 && count <= 12 ) //TODO number of characters in AM
     }
 }
