@@ -95,7 +95,7 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
 
         switch params.otpType {
-        case .loginOTP: getOTP()
+        case .loginOTP: return
         case .actionOTP: getActionOTP()
         case .passwordResetCode(let phoneNumber): getPasswordResetCode(phoneNumber)
         case .none: return
@@ -166,7 +166,8 @@ extension DefaultOTPViewModel: OTPViewModel {
     // MARK: - OTP Validation
     public func accept(code: String) {
         switch params.otpType {
-        case .loginOTP: login(code: code)
+        case .loginOTP:
+            login(code: code)
         case .actionOTP:
             params.paramsOutputAction.onNext(.success(otp: code))
             routeSubject.onNext(.dismiss)
