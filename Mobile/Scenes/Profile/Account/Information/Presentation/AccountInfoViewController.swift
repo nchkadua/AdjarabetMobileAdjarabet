@@ -81,7 +81,7 @@ public class AccountInfoViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.account_information_title())
+        setTitle(title: R.string.localization.account_information_title.localized())
         navigationItem.titleView?.accessibilityIdentifier = "AccountInfoViewController.title"
 
         setBackBarButtonItemIfNeeded()

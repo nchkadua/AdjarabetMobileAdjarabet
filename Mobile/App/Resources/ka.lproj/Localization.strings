@@ -103,13 +103,15 @@
 "transaction_history" = "ტრანზაქციების ისტორია";
 "my_cards" = "ჩემი ბარათები";
 "my_bonuses" = "ჩემი ბონუსები";
-"faq" = "Frequently Asked Questions";
-"biomatry_authentication_parameters" = "Authentication Parameters";
+"faq" = "ხშირად დასმული კითხვები";
+"biomatry_authentication_parameters" = "ავტორიზაციის პარამეტრები";
 "transfer_to_a_friend" = "Transfer to a Friend";
 "incognito_card" = "Incognito Card";
-"account_information" = "Account Information";
-"account_parameters" = "Account Parameters";
-"terms_and_conditions" = "Terms and Conditions";
+"account_information" = "ანგარიშის ინფორმაცია";
+"account_parameters" = "ანგარიშის პარამეტრები";
+"documentation" = "დოკუმენტაცია";
+"terms_and_conditions" = "წესები და პირობები";
+"confidential" = "კონფიდენციალურობის პოლიტიკა";
 "log_out" = "ანგარიშიდან გასვლა";
 
 /* Account Info */
@@ -287,6 +289,9 @@
 "account_parameters_messages_email_title" = "ელ-ფოსტის შეტყობინებები";
 "account_parameters_messages_email_description" = "თქვენ მიიღებთ გზავნილებს ელექტრონული ფოსტის მეშვეობით";
 "account_parameters_messages_email_button" = "პარამეტრების დაყენება";
+
+/* Documentation */
+"documentation_title" = "დოკუმენტაცია";
 
 /* Access History */
 "access_history_device_desktop" = "კომპიუტერით";
