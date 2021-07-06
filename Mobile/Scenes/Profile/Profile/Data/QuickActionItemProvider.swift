@@ -20,7 +20,7 @@ class QuickActionItemProvider {
             //QuickAction(icon: R.image.components.quickAction.incognito()!, title: R.string.localization.incognito_card.localized(), hidesSeparator: false, destionation: .incognitoCard, roundedCorners: []),
             QuickAction(icon: R.image.components.quickAction.account_info()!, title: R.string.localization.account_information.localized(), hidesSeparator: false, destionation: .accountInformation, roundedCorners: []),
             QuickAction(icon: R.image.components.quickAction.parameters()!, title: R.string.localization.account_parameters.localized(), hidesSeparator: false, destionation: .accountParameters, roundedCorners: []),
-            QuickAction(icon: R.image.components.quickAction.terms()!, title: R.string.localization.terms_and_conditions.localized(), hidesSeparator: false, destionation: .terms, roundedCorners: [])
+            QuickAction(icon: R.image.components.quickAction.terms()!, title: R.string.localization.documentation.localized(), hidesSeparator: false, destionation: .documentation, roundedCorners: [])
 //            QuickAction(icon: R.image.components.quickAction.logout()!, title: R.string.localization.log_out.localized(), hidesSeparator: true, destionation: .loginPage, roundedCorners: [.bottomLeft, .bottomRight])
         ]
     }

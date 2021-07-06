@@ -110,7 +110,9 @@
 "incognito_card" = "Incognito Card";
 "account_information" = "Account Information";
 "account_parameters" = "Account Parameters";
+"documentation" = "Documentation";
 "terms_and_conditions" = "Terms and Conditions";
+"confidential" = "Confidential";
 "log_out" = "Log Out";
 
 /* Account Info */
@@ -292,6 +294,9 @@
 "account_parameters_messages_email_title" = "Emails";
 "account_parameters_messages_email_description" = "You'll recieve emails";
 "account_parameters_messages_email_button" = "configure parameters";
+
+/* Documentation */
+"documentation_title" = "Documentation";
 
 /* High Secutiry */
 "high_security_page_title" = "High Secutiry On";
