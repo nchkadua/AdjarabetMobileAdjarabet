@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol FooterComponentViewDelegate: class {
+public protocol FooterComponentViewDelegate: AnyObject {
     func languageDidChange(language: Language)
 }
 

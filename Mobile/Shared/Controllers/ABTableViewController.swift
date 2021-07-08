@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-public protocol ABTableViewControllerDelegate: class {
+public protocol ABTableViewControllerDelegate: AnyObject {
     func didDeleteCell(at indexPath: IndexPath)
     func didLoadNextPage()
     func redraw(at indexPath: IndexPath)

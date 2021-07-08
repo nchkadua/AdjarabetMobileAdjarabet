@@ -95,7 +95,6 @@ public class NotificationsViewController: ABViewController {
     }
 
     private func openNotificationContentPage(with notification: NotificationItemsEntity.NotificationEntity) {
-        mainTabBarViewController?.hideFloatingTabBar()
         navigator.navigate(to: .notificationContentPage(params: .init(notification: notification)), animated: true)
     }
 }

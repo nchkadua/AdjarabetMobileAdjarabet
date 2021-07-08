@@ -6,10 +6,10 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol AppDeletableCellDelegate: class {
+public protocol AppDeletableCellDelegate: AnyObject {
     func didDelete(at indexPath: IndexPath)
 }
 
-public protocol AppRedrawableCellDelegate: class {
+public protocol AppRedrawableCellDelegate: AnyObject {
     func redraw(at indexPath: IndexPath)
 }

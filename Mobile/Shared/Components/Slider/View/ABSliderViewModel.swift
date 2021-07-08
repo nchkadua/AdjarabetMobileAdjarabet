@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-protocol ABSliderViewModel: class, ABSliderViewModelInput, ABSliderViewModelOutput { }
+protocol ABSliderViewModel: AnyObject, ABSliderViewModelInput, ABSliderViewModelOutput { }
 
 protocol ABSliderViewModelInput {
     // for view to call

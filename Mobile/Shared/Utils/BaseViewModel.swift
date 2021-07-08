@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol BaseViewModel: class, LanguageChangeObserving, LanguageChangeNotifing {
+public protocol BaseViewModel: AnyObject, LanguageChangeObserving, LanguageChangeNotifing {
 }
 
 public class DefaultBaseViewModel: BaseViewModel {
