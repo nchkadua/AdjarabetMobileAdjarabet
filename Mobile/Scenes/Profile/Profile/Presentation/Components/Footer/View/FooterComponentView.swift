@@ -46,7 +46,7 @@ public class FooterComponentView: UIView {
 
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        legalBgView.roundCorners(radius: 46)
+        legalBgView.roundCornersBezier(.allCorners, radius: 46)
     }
 
     public func bind() {

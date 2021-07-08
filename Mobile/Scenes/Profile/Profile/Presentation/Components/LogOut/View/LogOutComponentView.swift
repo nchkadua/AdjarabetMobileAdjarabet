@@ -16,11 +16,6 @@ class LogOutComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var button: ABButton!
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        button.roundCorners(radius: 12)
-    }
-
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -56,7 +51,7 @@ class LogOutComponentView: UIView {
         button.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         button.setTitleColor(to: .primaryText(), for: .normal)
         button.setBackgorundColor(to: .systemGrey5())
-        button.roundCorners(radius: 12)
+        button.roundCornersBezier(.allCorners, radius: 12)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
 
