@@ -56,7 +56,7 @@ extension MinAmountComponentView: Xibable {
     }
 
     func setupUI() {
-        roundCorners(.allCorners, radius: 8)
+        roundCorners(radius: 8)
         view.setBackgorundColor(to: .tertiaryFill())
         footerBgView.setBackgorundColor(to: .tertiaryBg())
 

@@ -29,7 +29,7 @@ class PaymentMethodComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(.allCorners, radius: 20)
+        roundCorners(radius: 20)
     }
 
     public func setAndBind(viewModel: PaymentMethodComponentViewModel) {

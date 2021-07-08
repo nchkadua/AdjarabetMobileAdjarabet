@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol InputViewsProviding: class {
+public protocol InputViewsProviding: AnyObject {
     var disposeBag: DisposeBag { get }
     var inputViews: [ABInputView] { get }
     func nextTextField(for textField: UITextField) -> UITextField?

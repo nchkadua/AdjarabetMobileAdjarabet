@@ -193,7 +193,7 @@ extension HomeViewController: HomeViewCollectionViewControllerDelegate {
 }
 
 // MARK: - HomeViewCollectionViewController
-protocol HomeViewCollectionViewControllerDelegate: class {
+protocol HomeViewCollectionViewControllerDelegate: AnyObject {
     func placeholderAppeared()
     func placeholderDisappeared()
 }

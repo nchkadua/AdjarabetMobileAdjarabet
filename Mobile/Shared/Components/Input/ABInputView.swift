@@ -391,6 +391,6 @@ extension ABInputView: UITextFieldDelegate {
     }
 }
 
-public protocol ABInputViewDelegate: class {
+public protocol ABInputViewDelegate: AnyObject {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
 }

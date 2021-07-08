@@ -39,10 +39,11 @@ public class UserIdButton: UIButton {
             setTitle(String(userId), for: .normal)
         }
 
-        addTarget(self, action: #selector(copyUserId), for: .touchUpInside)
+        addTarget(self, action: #selector(didClick), for: .touchUpInside)
     }
 
-    @objc private func copyUserId() {
+    @objc private func didClick() {
         UIPasteboard.general.string = titleLabel?.text
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
 }

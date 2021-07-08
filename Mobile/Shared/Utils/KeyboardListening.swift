@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-@objc public protocol KeyboardListening: class {
+@objc public protocol KeyboardListening: AnyObject {
     var keyScrollView: UIScrollView? { get }
     var isKeyboardOpen: Bool { get }
     var keyboardFrame: CGRect { get }

@@ -1,4 +1,4 @@
-protocol Xibable: class {
+protocol Xibable: AnyObject {
     var mainView: UIView { get set }
     func setupUI()
 }

@@ -51,7 +51,7 @@ class LogOutComponentView: UIView {
         button.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         button.setTitleColor(to: .primaryText(), for: .normal)
         button.setBackgorundColor(to: .systemGrey5())
-        button.roundCorners(.allCorners, radius: 12)
+        button.roundCornersBezier(.allCorners, radius: 12)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
 

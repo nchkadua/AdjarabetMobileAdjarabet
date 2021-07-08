@@ -91,7 +91,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
         dataProviders.insert(logoutViewModel, at: 2)
 
         QuickActionItemProvider.items(biometryQuickActionIcon()).reversed().forEach {
-            let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, hidesSeparator: $0.hidesSeparator, destination: $0.destionation, roundedCorners: $0.roundedCorners))
+            let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, destination: $0.destionation))
 
             quickActionViewModel.action.subscribe(onNext: { [weak self] action in
                 switch action {

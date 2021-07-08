@@ -11,7 +11,7 @@ import RxSwift
 public protocol AddCardViewModel: AddCardViewModelInput, AddCardViewModelOutput {
 }
 
-public protocol AddCardViewModelDelegate: class {
+public protocol AddCardViewModelDelegate: AnyObject {
     func disappeared()
 }
 

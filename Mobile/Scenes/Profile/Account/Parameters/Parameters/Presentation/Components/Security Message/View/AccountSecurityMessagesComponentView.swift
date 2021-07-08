@@ -31,7 +31,7 @@ class AccountSecurityMessagesComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(.allCorners, radius: 8)
+        roundCorners(radius: 8)
     }
 
     public func setAndBind(viewModel: AccountSecurityMessagesComponentViewModel) {

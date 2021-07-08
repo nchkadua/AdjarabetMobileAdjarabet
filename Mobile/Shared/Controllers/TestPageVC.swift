@@ -55,7 +55,7 @@ class TestPageVC: UIViewController, EMPageViewControllerDataSource, EMPageViewCo
 
     public func next() {
         guard !isAnimating else {return}
-        
+
         isAnimating = true
         self.pageViewController?.scrollForward(animated: true, completion: {_ in
             self.isAnimating = false
