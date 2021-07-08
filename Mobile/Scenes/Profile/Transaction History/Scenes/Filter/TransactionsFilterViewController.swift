@@ -113,9 +113,9 @@ public class TransactionsFilterViewController: ABViewController {
     }
 
     private func setupFilterLayers() {
-        filterTypeContainerView.roundCorners(.allCorners, radius: 8)
-        gamesFilterButton.roundCorners(.allCorners, radius: 8)
-        transactionsFilterButton.roundCorners(.allCorners, radius: 8)
+        filterTypeContainerView.roundCorners(radius: 8)
+        gamesFilterButton.roundCorners(radius: 8)
+        transactionsFilterButton.roundCorners(radius: 8)
     }
 
     private func setupFilterButtonFonts() {

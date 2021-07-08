@@ -32,10 +32,14 @@ class EmoneyInstructionsView: UIView {
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-
         style(label1)
         style(label2)
         style(label3)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        roundCorners(radius: 4)
     }
 }
 
@@ -51,7 +55,6 @@ extension EmoneyInstructionsView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .thin())
-        roundCorners(.allCorners, radius: 4)
 
         iconImageView.image = R.image.deposit.rules_icon()
         titleLabel.setTextColor(to: .primaryText())
@@ -78,6 +81,6 @@ extension EmoneyInstructionsView: Xibable {
         label.setBackgorundColor(to: .systemGrey5())
         label.setTextColor(to: .primaryText())
         label.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
-        label.roundCorners(.allCorners, radius: label.frame.width / 2)
+        label.roundCorners(radius: label.frame.width / 2)
     }
 }

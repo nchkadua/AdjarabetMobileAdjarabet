@@ -29,7 +29,7 @@ class AddMyCardComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(.allCorners, radius: 10)
+        roundCorners(radius: 10)
     }
 
     public func setAndBind(viewModel: AddMyCardComponentViewModel) {

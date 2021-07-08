@@ -122,7 +122,7 @@ public class LoginViewController: ABViewController {
         loginButton.setTitleWithoutAnimation(R.string.localization.login_button_title.localized(), for: .normal)
         loginButton.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTouchExit), for: .touchDragExit)
-        loginButton.roundCorners(.allCorners, radius: 8)
+        loginButton.roundCorners(radius: 8)
 //        updateLoginButton(isEnabled: false)
 
         registrationButton.titleLabel?.setFont(to: .callout(fontCase: .lower, fontStyle: .bold))
@@ -130,7 +130,7 @@ public class LoginViewController: ABViewController {
         registrationButton.backgroundColor = .clear
         registrationButton.setTitleWithoutAnimation(R.string.localization.login_registration.localized(), for: .normal)
         registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
-        registrationButton.roundCorners(.allCorners, radius: 41)
+        registrationButton.roundCorners(radius: 41)
 
         biometryButton.titleLabel?.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
         biometryButton.setTitleColor(to: .primaryText(), for: .normal)

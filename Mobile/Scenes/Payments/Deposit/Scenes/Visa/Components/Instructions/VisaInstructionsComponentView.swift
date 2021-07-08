@@ -50,7 +50,7 @@ extension VisaInstructionsComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .thin())
-        roundCorners(.allCorners, radius: 4)
+        roundCorners(radius: 4)
 
         iconImageView.image = R.image.deposit.rules_icon()
         titleLabel.setTextColor(to: .primaryText())
@@ -77,6 +77,6 @@ extension VisaInstructionsComponentView: Xibable {
         label.setBackgorundColor(to: .systemGrey5())
         label.setTextColor(to: .primaryText())
         label.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
-        label.roundCorners(.allCorners, radius: label.frame.width / 2)
+        label.roundCorners(radius: label.frame.width / 2)
     }
 }

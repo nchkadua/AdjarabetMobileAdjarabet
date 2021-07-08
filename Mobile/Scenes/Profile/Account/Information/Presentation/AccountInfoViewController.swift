@@ -95,15 +95,15 @@ public class AccountInfoViewController: ABViewController {
     private func setupContainers() {
         privateInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         privateInfoSV.setBackgorundColor(to: .tertiaryBg())
-        privateInfoSV.roundCorners(.allCorners, radius: 10)
+        privateInfoSV.roundCorners(radius: 10)
 
         contactInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         contactInfoSV.setBackgorundColor(to: .tertiaryBg())
-        contactInfoSV.roundCorners(.allCorners, radius: 10)
+        contactInfoSV.roundCorners(radius: 10)
 
         personalInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         personalInfoSV.setBackgorundColor(to: .tertiaryBg())
-        personalInfoSV.roundCorners(.allCorners, radius: 10)
+        personalInfoSV.roundCorners(radius: 10)
     }
 
     private func setupLabels() {

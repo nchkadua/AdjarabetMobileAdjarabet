@@ -58,7 +58,7 @@ class TransactionHistoryComponentView: UIView {
         iconImageView.image = transactionHistory.icon
     }
     private func setupViewLayers() {
-        iconContainerView.roundCorners(.allCorners, radius: iconContainerView.frame.height / 2)
+        iconContainerView.roundCorners(radius: iconContainerView.frame.height / 2)
     }
 }
 

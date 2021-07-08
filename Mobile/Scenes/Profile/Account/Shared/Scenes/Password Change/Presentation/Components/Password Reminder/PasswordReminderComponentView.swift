@@ -45,6 +45,6 @@ extension PasswordReminderComponentView: Xibable {
         mainButton.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
         mainButton.setTitle(R.string.localization.remind_button_title().lowercased(), for: .normal)
         mainButton.setTintColor(to: .primaryText())
-        mainButton.roundCorners(.allCorners, radius: 5)
+        mainButton.roundCorners(radius: 5)
     }
 }

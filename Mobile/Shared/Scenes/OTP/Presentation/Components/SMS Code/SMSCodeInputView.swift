@@ -34,7 +34,7 @@ public class SMSCodeInputView: AppCircularView {
 
     public override func layoutSubviews() {
         super.layoutSubviews()
-        stackView.roundCorners(.allCorners, radius: 6)
+        stackView.roundCorners(radius: 6)
     }
 
     private func initialize() {

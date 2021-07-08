@@ -59,8 +59,8 @@ public class PromotionComponentView: UIView {
     }
 
     private func setupViews() {
-        coverImageView.roundCorners([.allCorners], radius: 5)
-        titleBgView.roundCorners([.bottomLeft, .bottomRight], radius: 5)
+        coverImageView.roundCorners(radius: 5)
+        titleBgView.roundCornersBezier([.bottomLeft, .bottomRight], radius: 5)
         titleBgView.blurred()
         titleBgView.bringSubviewToFront(titleLabel)
     }
@@ -80,7 +80,7 @@ extension PromotionComponentView: Xibable {
         view.backgroundColor = DesignSystem.Color.primaryBg().value
 
         titleBgView.setBackgorundColor(to: .ultrathin())
-        titleBgView.roundCorners([.bottomLeft, .bottomRight], radius: 5)
+        titleBgView.roundCornersBezier([.bottomLeft, .bottomRight], radius: 5)
 
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .headline(fontCase: .upper, fontStyle: .bold))

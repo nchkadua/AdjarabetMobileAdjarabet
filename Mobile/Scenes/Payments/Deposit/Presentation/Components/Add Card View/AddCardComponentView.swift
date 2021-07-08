@@ -30,7 +30,7 @@ class AddCardComponentView: UIView {
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        bgView.roundCorners(.allCorners, radius: 8)
+        bgView.roundCorners(radius: 8)
     }
 }
 
