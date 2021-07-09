@@ -95,9 +95,14 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
 
         switch params.otpType {
-        case .loginOTP: return
-        case .actionOTP: getActionOTP()
-        case .passwordResetCode(let phoneNumber): getPasswordResetCode(phoneNumber)
+        case .loginOTP:
+            return
+        case .smsLogin:
+            return
+        case .actionOTP:
+            getActionOTP()
+        case .passwordResetCode(let phoneNumber):
+            getPasswordResetCode(phoneNumber)
         case .none: return
         }
     }
@@ -167,7 +172,9 @@ extension DefaultOTPViewModel: OTPViewModel {
     public func accept(code: String) {
         switch params.otpType {
         case .loginOTP:
-            login(code: code)
+            login(code: code, loginType: .otp)
+        case .smsLogin:
+            login(code: code, loginType: .sms)
         case .actionOTP:
             params.paramsOutputAction.onNext(.success(otp: code))
             routeSubject.onNext(.dismiss)
@@ -179,11 +186,11 @@ extension DefaultOTPViewModel: OTPViewModel {
         }
     }
 
-    private func login(code: String) {
+    private func login(code: String, loginType: LoginType) {
         actionSubject.onNext(.setLoginButton(isLoading: true))
 
         let username = params.username.isEmpty ? userSession.username : params.username
-        OTPUseCase.execute(username: username ?? "", code: code) { [weak self] result in
+        OTPUseCase.execute(username: username ?? "", code: code, loginType: loginType) { [weak self] result in
             defer { self?.actionSubject.onNext(.setLoginButton(isLoading: false)) }
             switch result {
             case .success:
@@ -198,6 +205,7 @@ extension DefaultOTPViewModel: OTPViewModel {
 
 public enum OTPType {
     case loginOTP
+    case smsLogin
     case actionOTP
     case passwordResetCode(phoneNumber: String)
     case none

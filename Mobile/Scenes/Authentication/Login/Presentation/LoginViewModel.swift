@@ -69,15 +69,15 @@ public class DefaultLoginViewModel {
         case .success(let type):
             switch type {
             case .success: routeSubject.onNext(.openMainTabBar)
-            case .otpRequried(let username): openOTP(username)
+            case .otpRequried(let username): openOTP(username, otpType: .loginOTP)
             }
         case .failure(let error):
             routeSubject.onNext(.openAlert(title: error.description.description))
         }
     }
 
-    private func openOTP(_ username: String) {
-        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username, otpType: .loginOTP)
+    private func openOTP(_ username: String, otpType: OTPType) {
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username, otpType: otpType)
         routeSubject.onNext(.openOTP(params: otpParams))
     }
 }
@@ -124,7 +124,7 @@ extension DefaultLoginViewModel: LoginViewModel {
         smsCodeUseCase.execute(username: username) { [weak self] result in
             defer { self?.actionSubject.onNext(.setSmsLoginButton(isLoading: false)) }
             switch result {
-            case .success: self?.openOTP(username)
+            case .success: self?.openOTP(username, otpType: .smsLogin)
             case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
             }
         }
