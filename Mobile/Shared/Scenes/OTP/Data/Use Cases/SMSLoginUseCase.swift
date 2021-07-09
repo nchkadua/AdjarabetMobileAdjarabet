@@ -8,7 +8,7 @@
 
 public protocol OTPUseCase {
     @discardableResult
-    func execute(username: String, code: String, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable?
+    func execute(username: String, code: String, loginType: LoginType, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable?
 }
 
 public enum OTPUseCaseError: Error, LocalizedError {
@@ -39,8 +39,8 @@ public final class DefaultOTPUseCase: OTPUseCase {
         userSession.login()
     }
 
-    public func execute(username: String, code: String, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable? {
-        authenticationRepository.login(username: username, code: code, loginType: .sms) { [weak self] (result: Result<AdjarabetCoreResult.Login, Error>) in
+    public func execute(username: String, code: String, loginType: LoginType, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable? {
+        authenticationRepository.login(username: username, code: code, loginType: loginType) { [weak self] (result: Result<AdjarabetCoreResult.Login, Error>) in
             switch result {
             case .success(let params):
                 guard params.codable.statusCode == .STATUS_SUCCESS else {
