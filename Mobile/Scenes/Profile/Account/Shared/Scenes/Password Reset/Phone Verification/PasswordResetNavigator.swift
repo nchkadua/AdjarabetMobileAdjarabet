@@ -38,7 +38,7 @@ public class PasswordResetNavigator: Navigator {
     }
 
     private func navigateToNewPassword(confirmationCode: String, animate: Bool) {
-        let vc = newPasswordFactory.make(params: .init(confirmationCode: confirmationCode))
+        let vc = newPasswordFactory.make(params: .init())
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

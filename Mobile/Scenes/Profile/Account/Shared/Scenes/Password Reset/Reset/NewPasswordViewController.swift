@@ -13,6 +13,9 @@ public class NewPasswordViewController: ABViewController {
     public lazy var navigator = NewPasswordNavigator(viewController: self)
 
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel1: UILabel!
+    @IBOutlet private weak var subtitleLabel2: UILabel!
+    @IBOutlet private weak var phoneNumberInputView: ABInputView!
     @IBOutlet private weak var newPasswordInputView: ABInputView!
     @IBOutlet private weak var repeatePasswordInputView: ABInputView!
     @IBOutlet private weak var updatePasswordButton: ABButton!
@@ -31,7 +34,7 @@ public class NewPasswordViewController: ABViewController {
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        newPasswordInputView.mainTextField.becomeFirstResponder()
+        phoneNumberInputView.mainTextField.becomeFirstResponder()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -52,10 +55,15 @@ public class NewPasswordViewController: ABViewController {
         case .showMessage(let message): showAlert(title: message) { _ in // Need to be changed after error handling system integrated
                 self.dismiss(animated: true, completion: nil)
             }
+        case .setupPhoneNumber(let number):
+            phoneNumberInputView.set(text: number)
         }
     }
 
     private func didRecive(route: NewPasswordViewModelRoute) {
+        switch route {
+        case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
+        }
     }
 
     // MARK: Setup methods
@@ -83,9 +91,23 @@ public class NewPasswordViewController: ABViewController {
         titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.text = R.string.localization.new_password_title.localized()
+
+        subtitleLabel1.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
+        subtitleLabel1.setTextColor(to: .secondaryText())
+        subtitleLabel1.text = R.string.localization.reset_password_hint.localized()
+
+        subtitleLabel2.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
+        subtitleLabel2.setTextColor(to: .secondaryText())
+        subtitleLabel2.text = R.string.localization.reset_password_hint2.localized()
     }
 
     private func setupInputViews() {
+        phoneNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0, hidesPlaceholder: true)
+        phoneNumberInputView.mainTextField.setFont(to: .title3(fontCase: .lower, fontStyle: .regular))
+        phoneNumberInputView.mainTextField.textAlignment = .center
+        phoneNumberInputView.mainTextField.keyboardType = .numberPad
+        phoneNumberInputView.mainTextField.delegate = self
+
         styleInputView(newPasswordInputView, with: R.string.localization.new_password.localized())
         newPasswordInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
@@ -129,7 +151,7 @@ public class NewPasswordViewController: ABViewController {
         }
 
         if let newPassword = newPasswordInputView.text {
-            viewModel.changeDidTap(newPassword)
+            viewModel.changeDidTap(phoneNumberInputView.text ?? "", newPassword)
         }
     }
 
@@ -171,7 +193,35 @@ public class NewPasswordViewController: ABViewController {
 }
 
 extension NewPasswordViewController: InputViewsProviding {
-    public var inputViews: [ABInputView] { [newPasswordInputView, repeatePasswordInputView] }
+    public var inputViews: [ABInputView] { [phoneNumberInputView, newPasswordInputView, repeatePasswordInputView] }
 }
 
 extension NewPasswordViewController: CommonBarButtonProviding { }
+
+//Limit characters
+extension NewPasswordViewController: UITextFieldDelegate {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        let text: NSString = (textField.text ?? "") as NSString
+//
+//        if text.contains("*") {
+//            if let rangeOfReplacementChar = text.range(of: "*") as NSRange? {
+//                textField.text = text.replacingCharacters(in: rangeOfReplacementChar, with: string)
+//            }
+//        }
+
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+
+        if count >= 12 {
+            updatePasswordButton(isEnabled: true)
+        } else {
+            updatePasswordButton(isEnabled: false)
+        }
+
+        return (count >= 8 && count <= 12 ) //TODO number of characters in AM
+    }
+}

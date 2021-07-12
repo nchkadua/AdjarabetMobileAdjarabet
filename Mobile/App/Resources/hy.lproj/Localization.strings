@@ -178,6 +178,7 @@
 "remind_button_title" = "გაიხსენე";
 "reset_with_sms" = "აღდგენა SMS კოდით";
 "reset_password_hint" = "შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი";
+"reset_password_hint2" = "შეიყვანეთ ახალი პაროლი";
 "reset_password_send_code" = "კოდის გაგზავნა";
 "new_password_title" = "ახალი პაროლი";
 
