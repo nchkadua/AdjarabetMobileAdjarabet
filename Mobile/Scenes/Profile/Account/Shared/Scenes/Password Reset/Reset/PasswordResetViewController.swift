@@ -1,5 +1,5 @@
 //
-//  NewPasswordViewController.swift
+//  PasswordResetViewController.swift
 //  Mobile
 //
 //  Created by Nika Chkadua on 30.06.21.
@@ -8,8 +8,8 @@
 
 import RxSwift
 
-public class NewPasswordViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: NewPasswordViewModel
+public class PasswordResetViewController: ABViewController {
+    @Inject(from: .viewModels) public var viewModel: PasswordResetViewModel
     public lazy var navigator = NewPasswordNavigator(viewController: self)
 
     @IBOutlet private weak var titleLabel: UILabel!
@@ -38,7 +38,7 @@ public class NewPasswordViewController: ABViewController {
     }
 
     // MARK: Bind to viewModel's observable properties
-    private func bind(to viewModel: NewPasswordViewModel) {
+    private func bind(to viewModel: PasswordResetViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
@@ -48,7 +48,7 @@ public class NewPasswordViewController: ABViewController {
         }).disposed(by: disposeBag)
     }
 
-    private func didRecive(action: NewPasswordViewModelOutputAction) {
+    private func didRecive(action: PasswordResetViewModelOutputAction) {
         switch action {
         case .setButton(let loading): updatePasswordButton.set(isLoading: loading)
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
@@ -60,7 +60,7 @@ public class NewPasswordViewController: ABViewController {
         }
     }
 
-    private func didRecive(route: NewPasswordViewModelRoute) {
+    private func didRecive(route: PasswordResetViewModelRoute) {
         switch route {
         case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         }
@@ -192,14 +192,14 @@ public class NewPasswordViewController: ABViewController {
     }
 }
 
-extension NewPasswordViewController: InputViewsProviding {
+extension PasswordResetViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [phoneNumberInputView, newPasswordInputView, repeatePasswordInputView] }
 }
 
-extension NewPasswordViewController: CommonBarButtonProviding { }
+extension PasswordResetViewController: CommonBarButtonProviding { }
 
 //Limit characters
-extension NewPasswordViewController: UITextFieldDelegate {
+extension PasswordResetViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //        let text: NSString = (textField.text ?? "") as NSString
 //

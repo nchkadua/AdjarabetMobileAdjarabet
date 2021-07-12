@@ -8,7 +8,7 @@
 
 public class PasswordChangeNavigator: Navigator {
     @Inject(from: .factories) public var otpFactory: OTPFactory
-    @Inject(from: .factories) public var newPasswordFactory: NewPasswordViewControllerFactory
+    @Inject(from: .factories) public var newPasswordFactory: PasswordResetViewControllerFactory
 
     private weak var viewController: UIViewController?
 

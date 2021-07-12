@@ -17,7 +17,8 @@ public struct PasswordResetViewModelParams {
 public protocol PasswordResetViewModelInput: AnyObject {
     var params: PasswordResetViewModelParams { get set }
     func viewDidLoad()
-    func actionDidTap(_ phoneNumber: String)
+    func newPasswordDidChange(to newPassword: String)
+    func changeDidTap(_ phoneNumber: String, _ newPassword: String)
 }
 
 public protocol PasswordResetViewModelOutput {
@@ -26,13 +27,14 @@ public protocol PasswordResetViewModelOutput {
 }
 
 public enum PasswordResetViewModelOutputAction {
+    case updateRulesWithNewPassword(_ password: String)
     case setupPhoneNumber(_ number: String)
+    case setButton(loading: Bool)
     case showMessage(message: String)
 }
 
 public enum PasswordResetViewModelRoute {
     case openOTP(params: OTPViewModelParams)
-    case navigateToNewPassword(confirmationCode: String)
 }
 
 public class DefaultPasswordResetViewModel: DefaultBaseViewModel {
@@ -40,6 +42,9 @@ public class DefaultPasswordResetViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<PasswordResetViewModelOutputAction>()
     private let routeSubject = PublishSubject<PasswordResetViewModelRoute>()
     @Inject(from: .useCases) private var resetPasswordUseCase: ResetPasswordUseCase
+
+    //
+    private var newPassword: String?
 
     public init(params: PasswordResetViewModelParams) {
         self.params = params
@@ -62,7 +67,12 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
         }
     }
 
-    public func actionDidTap(_ phoneNumber: String) {
+    public func newPasswordDidChange(to newPassword: String) {
+        actionSubject.onNext(.updateRulesWithNewPassword(newPassword))
+    }
+
+    public func changeDidTap(_ phoneNumber: String, _ newPassword: String) {
+        self.newPassword = newPassword
         let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.title_verification.localized(), buttonTitle: R.string.localization.sms_approve.localized(), otpType: .passwordResetCode(phoneNumber: phoneNumber))
         routeSubject.onNext(.openOTP(params: otpParams))
         subscribeTo(otpParams)
@@ -82,8 +92,13 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
     }
 
     private func handleSuccessfulOTP(_ otp: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { //Navigation to be visible
-            self.routeSubject.onNext(.navigateToNewPassword(confirmationCode: otp))
+        self.actionSubject.onNext(.setButton(loading: true))
+        resetPasswordUseCase.resetPassword(params: .init(confirmCode: otp, newPassword: self.newPassword ?? "")) { result in
+            defer { self.actionSubject.onNext(.setButton(loading: false)) }
+            switch result {
+            case .success: self.actionSubject.onNext(.showMessage(message: "Password Reseted Succesfully"))
+            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            }
         }
     }
 }
