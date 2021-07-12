@@ -16,6 +16,11 @@ class LogOutComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var button: ABButton!
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        button.roundCornersBezier(.allCorners, radius: 12)
+    }
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()

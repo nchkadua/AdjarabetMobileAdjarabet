@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,153 +21,173 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rsg-21-RKy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1016.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="963.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-qp-fNV">
-                                                <rect key="frame" x="16" y="0.0" width="382" height="53.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pvc-ne-8Jz">
+                                                <rect key="frame" x="16" y="0.0" width="382" height="338.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ6-Q2-vc6">
-                                                        <rect key="frame" x="8" y="21" width="347" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-sO-BeJ">
-                                                <rect key="frame" x="16" y="53.5" width="382" height="330"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-C1-TMY" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="65"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-qp-fNV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="53.5"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fod-gz-Udx">
-                                                                <rect key="frame" x="13" y="64" width="369" height="1"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ6-Q2-vc6">
+                                                                <rect key="frame" x="8" y="21" width="347" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-sO-BeJ">
+                                                        <rect key="frame" x="0.0" y="53.5" width="382" height="285"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-C1-TMY" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fod-gz-Udx">
+                                                                        <rect key="frame" x="13" y="55" width="369" height="1"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="LFN-UE-n0r"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="LFN-UE-n0r"/>
+                                                                    <constraint firstItem="fod-gz-Udx" firstAttribute="leading" secondItem="bdJ-C1-TMY" secondAttribute="leading" constant="13" id="6YK-Re-D2A"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="fod-gz-Udx" secondAttribute="trailing" id="FhG-PB-uAN"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="fod-gz-Udx" secondAttribute="bottom" id="VeU-60-tyJ"/>
                                                                 </constraints>
                                                             </view>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="fod-gz-Udx" firstAttribute="leading" secondItem="bdJ-C1-TMY" secondAttribute="leading" constant="13" id="6YK-Re-D2A"/>
-                                                            <constraint firstAttribute="trailing" secondItem="fod-gz-Udx" secondAttribute="trailing" id="FhG-PB-uAN"/>
-                                                            <constraint firstAttribute="bottom" secondItem="fod-gz-Udx" secondAttribute="bottom" id="VeU-60-tyJ"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpF-md-Xxg" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="66" width="382" height="65.5"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udy-0B-tVR">
-                                                                <rect key="frame" x="13" y="65.5" width="369" height="0.0"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpF-md-Xxg" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="57" width="382" height="56.5"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udy-0B-tVR">
+                                                                        <rect key="frame" x="13" y="56.5" width="369" height="0.0"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" id="CaD-l7-U9x"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" id="CaD-l7-U9x"/>
+                                                                    <constraint firstItem="Udy-0B-tVR" firstAttribute="leading" secondItem="NpF-md-Xxg" secondAttribute="leading" constant="13" id="2Ei-ok-5TF"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Udy-0B-tVR" secondAttribute="trailing" id="HtP-N0-wCh"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Udy-0B-tVR" secondAttribute="bottom" id="sel-tv-0oG"/>
                                                                 </constraints>
                                                             </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1v-eG-QKo" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="114.5" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-9C-63r" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="171.5" width="382" height="56.5"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-tc-TLe" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="229" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="AccountInfoViewController.password"/>
+                                                            </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="Udy-0B-tVR" firstAttribute="leading" secondItem="NpF-md-Xxg" secondAttribute="leading" constant="13" id="2Ei-ok-5TF"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Udy-0B-tVR" secondAttribute="trailing" id="HtP-N0-wCh"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Udy-0B-tVR" secondAttribute="bottom" id="sel-tv-0oG"/>
+                                                            <constraint firstAttribute="height" constant="285" id="GlM-Wi-kVr"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1v-eG-QKo" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="132.5" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-9C-63r" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="198.5" width="382" height="65.5"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-tc-TLe" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="265" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <accessibility key="accessibilityConfiguration" identifier="AccountInfoViewController.password"/>
-                                                    </view>
+                                                    </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="330" id="GlM-Wi-kVr"/>
-                                                </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-QB-bTv">
-                                                <rect key="frame" x="16" y="383.5" width="382" height="53.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="knW-G4-fO5">
+                                                <rect key="frame" x="16" y="338.5" width="382" height="64"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-gv-y3w">
-                                                        <rect key="frame" x="8" y="21" width="347" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qln-XN-vZs">
-                                                <rect key="frame" x="16" y="437" width="382" height="131"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-px-7pl" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYZ-fn-Kkf" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="66" width="382" height="65"/>
+                                                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk4-be-Bxu" customClass="CommunicationLanguageComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="10" width="382" height="54"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="131" id="a9H-Ug-gLg"/>
+                                                    <constraint firstAttribute="height" constant="64" id="qEi-Gn-vgz"/>
                                                 </constraints>
+                                                <edgeInsets key="layoutMargins" top="10" left="0.0" bottom="0.0" right="0.0"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-RJ-xqJ">
-                                                <rect key="frame" x="16" y="568" width="382" height="53.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dZ6-HO-eiS">
+                                                <rect key="frame" x="16" y="402.5" width="382" height="561"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQL-Rx-YBQ">
-                                                        <rect key="frame" x="8" y="21" width="347" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-QB-bTv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="53.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-gv-y3w">
+                                                                <rect key="frame" x="8" y="21" width="347" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qln-XN-vZs">
+                                                        <rect key="frame" x="0.0" y="53.5" width="382" height="113"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-px-7pl" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYZ-fn-Kkf" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="57" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="113" id="a9H-Ug-gLg"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-RJ-xqJ">
+                                                        <rect key="frame" x="0.0" y="166.5" width="382" height="53.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQL-Rx-YBQ">
+                                                                <rect key="frame" x="8" y="21" width="347" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="YK1-hY-BOI">
+                                                        <rect key="frame" x="0.0" y="220" width="382" height="341"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-sm-Rlt" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpN-7J-RdJ" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="57" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="em2-yE-wQO" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="114" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-mi-N0P" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="171" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oy-oI-gm1" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="228" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDx-hd-JcY" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="285" width="382" height="56"/>
+                                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="341" id="HhK-hF-3Zj"/>
+                                                        </constraints>
+                                                    </stackView>
                                                 </subviews>
-                                                <edgeInsets key="layoutMargins" top="21" left="8" bottom="12" right="27"/>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="YK1-hY-BOI">
-                                                <rect key="frame" x="16" y="621.5" width="382" height="395"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-sm-Rlt" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpN-7J-RdJ" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="66" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="em2-yE-wQO" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="132" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-mi-N0P" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="198" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oy-oI-gm1" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="264" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDx-hd-JcY" customClass="AccountInfoComponentView" customModule="Mobile" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="330" width="382" height="65"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="395" id="HhK-hF-3Zj"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="iD5-sO-BeJ" firstAttribute="leading" secondItem="qln-XN-vZs" secondAttribute="leading" id="ROc-ww-v37"/>
-                                        </constraints>
                                         <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
                                     </stackView>
                                 </subviews>

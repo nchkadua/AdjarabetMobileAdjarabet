@@ -75,6 +75,7 @@ public class AccountInfoViewController: ABViewController {
     private func setup() {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
+        setupKeyboard()
         setupScrollView()
         setupLabels()
         setTargets()

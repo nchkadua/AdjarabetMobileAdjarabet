@@ -134,6 +134,10 @@
 "account_info_address" = "მისამართი";
 "account_info_save_button_title" = "შენახვა";
 "account_info_status_button_title" = "დაბლოკვა";
+"account_info_communication_lang" = "საკომუნიკაციო ენა";
+"account_info_ge" = "ქართული";
+"account_info_en" = "English";
+"account_info_rus" = "Russian";
 
 /* High Security */
 "high_security_title" = "მაღალი დაცვის რეჟიმი";
