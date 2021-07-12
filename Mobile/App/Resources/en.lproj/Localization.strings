@@ -134,6 +134,10 @@
 "account_info_address" = "Address";
 "account_info_save_button_title" = "Save";
 "account_info_status_button_title" = "SELF SUSPEND";
+"account_info_communication_lang" = "Communication Language";
+"account_info_ge" = "ქართული";
+"account_info_en" = "English";
+"account_info_rus" = "Russian";
 
 /* High Security */
 "high_security_title" = "High Security Mode";

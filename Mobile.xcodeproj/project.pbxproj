@@ -438,6 +438,9 @@
 		CE38ED812681EEC800B02A9E /* LogOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38ED802681EEC800B02A9E /* LogOutTableViewCell.xib */; };
 		CE38ED852681EECF00B02A9E /* LogOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38ED842681EECF00B02A9E /* LogOutTableViewCell.swift */; };
 		CE38ED892681EEDD00B02A9E /* LogOutTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38ED882681EEDD00B02A9E /* LogOutTableViewCellDataProvider.swift */; };
+		CE3B2BDE269C574600301F6C /* CommunicationLanguageComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3B2BD8269C574600301F6C /* CommunicationLanguageComponentView.xib */; };
+		CE3B2BE1269C574600301F6C /* CommunicationLanguageComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B2BDB269C574600301F6C /* CommunicationLanguageComponentViewModel.swift */; };
+		CE3B2BE2269C574600301F6C /* CommunicationLanguageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B2BDC269C574600301F6C /* CommunicationLanguageComponentView.swift */; };
 		CE454654260C89EC00B01E19 /* VisaLimitComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */; };
 		CE454658260C89F900B01E19 /* VisaLimitComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */; };
 		CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */; };
@@ -1264,6 +1267,9 @@
 		CE38ED802681EEC800B02A9E /* LogOutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutTableViewCell.xib; sourceTree = "<group>"; };
 		CE38ED842681EECF00B02A9E /* LogOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutTableViewCell.swift; sourceTree = "<group>"; };
 		CE38ED882681EEDD00B02A9E /* LogOutTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CE3B2BD8269C574600301F6C /* CommunicationLanguageComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunicationLanguageComponentView.xib; sourceTree = "<group>"; };
+		CE3B2BDB269C574600301F6C /* CommunicationLanguageComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationLanguageComponentViewModel.swift; sourceTree = "<group>"; };
+		CE3B2BDC269C574600301F6C /* CommunicationLanguageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationLanguageComponentView.swift; sourceTree = "<group>"; };
 		CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaLimitComponentView.swift; sourceTree = "<group>"; };
 		CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaLimitComponentView.xib; sourceTree = "<group>"; };
 		CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaInstructionsComponentView.swift; sourceTree = "<group>"; };
@@ -4625,6 +4631,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		CE3B2BD7269C573E00301F6C /* Communication Language */ = {
+			isa = PBXGroup;
+			children = (
+				CE3B2BDC269C574600301F6C /* CommunicationLanguageComponentView.swift */,
+				CE3B2BDB269C574600301F6C /* CommunicationLanguageComponentViewModel.swift */,
+				CE3B2BD8269C574600301F6C /* CommunicationLanguageComponentView.xib */,
+			);
+			path = "Communication Language";
+			sourceTree = "<group>";
+		};
 		CE454651260C89C000B01E19 /* Instructions */ = {
 			isa = PBXGroup;
 			children = (
@@ -4868,6 +4884,7 @@
 		CE5D7A89266A62A000719120 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CE3B2BD7269C573E00301F6C /* Communication Language */,
 				CE1693692541AB100043B1A4 /* Account Info */,
 				CECF7F7E256DAD17001C0E50 /* Rules */,
 			);
@@ -6220,6 +6237,7 @@
 				C7C1D339261B9D48009F01C3 /* Withdraw.storyboard in Resources */,
 				CEB81E08253868B9006BEDEC /* NotificationContent.storyboard in Resources */,
 				C7E3F143261CCEFB009B6D6A /* WithdrawVisa.storyboard in Resources */,
+				CE3B2BDE269C574600301F6C /* CommunicationLanguageComponentView.xib in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
 				C75D1AE0261205F4002AF763 /* TBHTJSlot.zip in Resources */,
 				76BA7BD825E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib in Resources */,
@@ -6688,6 +6706,7 @@
 				76BDF4602576043A007B27A7 /* AccountParametersViewModel.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
 				7665D963257E5CA600E5B35F /* AccessHistoryViewModel.swift in Sources */,
+				CE3B2BE1269C574600301F6C /* CommunicationLanguageComponentViewModel.swift in Sources */,
 				C7C9732D2580D9550062C713 /* SecurityLevelComponentView.swift in Sources */,
 				7682CF9425B8581600717090 /* AddMyCardComponentView.swift in Sources */,
 				7644B62F25650A3D006778B2 /* TransactionDetailsTableViewCell.swift in Sources */,
@@ -6974,6 +6993,7 @@
 				CE95A3F4261DE23A0004330E /* ApplePayViewControllerFactory.swift in Sources */,
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				C78E52EA2683A20E00EE1C18 /* SuspendDuration.swift in Sources */,
+				CE3B2BE2269C574600301F6C /* CommunicationLanguageComponentView.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
 				CE2AABD7267B3F5100B45A0A /* GetPasswordResetCodeDTO.swift in Sources */,
 				C79923022660EE7100FD7033 /* ABError.swift in Sources */,
