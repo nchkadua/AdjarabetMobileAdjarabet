@@ -18,6 +18,7 @@ public class PasswordResetOptionsViewController: ABViewController {
     @IBOutlet private weak var usernameInputView: ABInputView!
     @IBOutlet private weak var continueButton: ABButton!
     @IBOutlet private weak var containerView2: UIView!
+    @IBOutlet private weak var container1HeighConstraint: NSLayoutConstraint!
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
 
@@ -51,8 +52,11 @@ public class PasswordResetOptionsViewController: ABViewController {
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
             appTableViewController.reloadWithAnimation()
+            changeContinueButtonTitle()
+        case .clearTableview: clearTableView()
         case .showMessage(let message): showAlert(title: message)
-        case .didClick(resetType: let resetType): print("")
+        case .hideUsernameInput: container1HeighConstraint.constant = 0
+        case .didClick(let resetType): print("")
         }
     }
 
@@ -82,6 +86,16 @@ public class PasswordResetOptionsViewController: ABViewController {
         ])
     }
 
+    private func clearTableView() {
+        var indexPathes = [IndexPath]()
+        for section in 0..<appTableViewController.tableView.numberOfSections {
+            for row in 0..<appTableViewController.tableView.numberOfRows(inSection: section) {
+                indexPathes.append(IndexPath(row: row, section: section))
+            }
+        }
+        appTableViewController.reloadItems(items: [], insertionIndexPathes: [], deletionIndexPathes: indexPathes)
+    }
+
     private func setupNavigationItems() {
         let backButtonGroup = makeBackBarButtonItem(width: 60, title: R.string.localization.back_button_title.localized())
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
@@ -101,6 +115,7 @@ public class PasswordResetOptionsViewController: ABViewController {
     private func setupInputView() {
         usernameInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         usernameInputView.setPlaceholder(text: R.string.localization.reset_username_placeholder.localized())
+        usernameInputView.mainTextField.delegate = self
 
         Observable.combineLatest([usernameInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }
@@ -120,7 +135,7 @@ public class PasswordResetOptionsViewController: ABViewController {
 
     @objc private func continueButtonDidTap() {
         closeKeyboard()
-        viewModel.getResetOptions()
+        viewModel.buttonDidClick(usernameInputView.text ?? "")
     }
 
     // MARK: Configuration
@@ -135,3 +150,12 @@ public class PasswordResetOptionsViewController: ABViewController {
 }
 
 extension PasswordResetOptionsViewController: CommonBarButtonProviding { }
+
+extension PasswordResetOptionsViewController: UITextFieldDelegate {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty && range.length > 0 {
+            viewModel.clearOptions()
+        }
+        return true
+    }
+}

@@ -58,10 +58,8 @@ class ResetOptionComponentView: UIView {
             titleLabel.text = title
         }
         separator.isHidden = hidesSeparator
-
-        guard isDisabled else {return}
-        titleLabel.setTextColor(to: .tertiaryText())
-        isUserInteractionEnabled = false
+        isDisabled ? titleLabel.setTextColor(to: .tertiaryText()) : titleLabel.setTextColor(to: .primaryText())
+        isUserInteractionEnabled = !isDisabled
     }
 
     // MARK: Touch events

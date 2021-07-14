@@ -9,6 +9,7 @@
 public class PasswordChangeNavigator: Navigator {
     @Inject(from: .factories) public var otpFactory: OTPFactory
     @Inject(from: .factories) public var passwordResetFactory: PasswordResetViewControllerFactory
+    @Inject(from: .factories) public var passworResetOptionsFactory: PasswordResetOptionsViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -38,7 +39,7 @@ public class PasswordChangeNavigator: Navigator {
     }
 
     private func navigateToPasswordReset(type: PasswordResetType, animate: Bool) {
-        let vc = passwordResetFactory.make(params: .init(phone: "", mail: ""))
+        let vc = passworResetOptionsFactory.make(params: .init(showUsernameInput: true))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

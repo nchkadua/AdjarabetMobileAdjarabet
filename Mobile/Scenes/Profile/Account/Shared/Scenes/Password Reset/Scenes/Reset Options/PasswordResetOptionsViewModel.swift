@@ -12,12 +12,14 @@ public protocol ResetOptionsViewModel: ResetOptionsViewModelInput, ResetOptionsV
 }
 
 public struct ResetOptionsViewModelParams {
+    let showUsernameInput: Bool
 }
 
 public protocol ResetOptionsViewModelInput: AnyObject {
     var params: ResetOptionsViewModelParams { get set }
     func viewDidLoad()
-    func getResetOptions()
+    func buttonDidClick(_ username: String)
+    func clearOptions()
 }
 
 public protocol ResetOptionsViewModelOutput {
@@ -26,7 +28,9 @@ public protocol ResetOptionsViewModelOutput {
 }
 
 public enum ResetOptionsViewModelOutputAction {
+    case hideUsernameInput
     case initialize(AppListDataProvider)
+    case clearTableview
     case didClick(resetType: PasswordResetType)
     case showMessage(message: String)
 }
@@ -53,10 +57,18 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
     public var route: Observable<ResetOptionsViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        guard params.showUsernameInput else {return}
+
+        actionSubject.onNext(.hideUsernameInput)
+        getResetOptions(nil)
     }
 
-    public func getResetOptions() {
-        resetPasswordUseCase.initPasswordReset(username: nil) { result in
+    public func buttonDidClick(_ username: String) {
+        getResetOptions(username)
+    }
+
+    private func getResetOptions(_ username: String?) {
+        resetPasswordUseCase.initPasswordReset(username: username) { result in
             switch result {
             case .success(let entity):
 //                let subString = entity.tel?.dropLast(4)
@@ -95,6 +107,10 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
         dataProviders.append(emailViewModel)
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))
+    }
+
+    public func clearOptions() {
+        actionSubject.onNext(.clearTableview)
     }
 }
 

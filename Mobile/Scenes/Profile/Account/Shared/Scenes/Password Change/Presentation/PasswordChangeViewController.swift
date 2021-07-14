@@ -167,7 +167,7 @@ public class PasswordChangeViewController: ABViewController {
 
     @objc private func navigateToPasswodReminder() {
         closeKeyboard()
-//        navigator.navigate(to: .passwordReset, animated: true)
+        navigator.navigate(to: .passwordReset(.sms), animated: true)
     }
 
     // MARK: Configuration
@@ -175,7 +175,6 @@ public class PasswordChangeViewController: ABViewController {
         guard passwordChangeRulesView.allGood == true else {
             updatePasswordButton.isUserInteractionEnabled = false
             updatePasswordButton.setStyle(to: .primary(state: .disabled, size: .large))
-
             return
         }
 
