@@ -7,6 +7,8 @@
 //
 
 public class ResetOptionsNavigator: Navigator {
+    @Inject(from: .factories) public var passwordResetFactory: PasswordResetViewControllerFactory
+    
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {
@@ -14,8 +16,18 @@ public class ResetOptionsNavigator: Navigator {
     }
 
     public enum Destination {
+        case passwordReset(_ resetType: PasswordResetType)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
+        switch destination {
+            case .passwordReset(let type):
+                navigateToPasswordReset(type: type, animate: animate)
+        }
+    }
+    
+    private func navigateToPasswordReset(type: PasswordResetType, animate: Bool) {
+        let vc = passwordResetFactory.make(params: .init(phone: "", mail: ""))
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

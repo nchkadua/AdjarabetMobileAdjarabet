@@ -15,6 +15,7 @@ class ResetOptionComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var separator: UIView!
     @IBOutlet weak private var bgView: UIView!
 
@@ -42,10 +43,8 @@ class ResetOptionComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .setupUI(let title, let roundCorners, let hidesSeparator):
-                self?.setupUI(title: title ?? "", roundCorners: roundCorners, hidesSeparator: hidesSeparator)
-            case .disable:
-                self?.diasble()
+            case .setupUI(let title, let roundCorners, let hidesSeparator, let isDisabled):
+                self?.setupUI(title: title ?? "", roundCorners: roundCorners, hidesSeparator: hidesSeparator, isDisabled: isDisabled)
             default:
                 break
             }
@@ -54,15 +53,14 @@ class ResetOptionComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setupUI(title: String, roundCorners: UIRectCorner, hidesSeparator: Bool) {
+    private func setupUI(title: String, roundCorners: UIRectCorner, hidesSeparator: Bool, isDisabled: Bool) {
         if !title.isEmpty {
             titleLabel.text = title
         }
         separator.isHidden = hidesSeparator
-    }
 
-    private func diasble() {
-        titleLabel.setTextColor(to: .secondaryText())
+        guard isDisabled else {return}
+        titleLabel.setTextColor(to: .tertiaryText())
         isUserInteractionEnabled = false
     }
 

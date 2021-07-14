@@ -73,7 +73,7 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
         var dataProviders: AppCellDataProviders = []
 
         //Phone
-        let phoneViewModel = DefaultResetOptionComponentViewModel(params: .init(title: R.string.localization.reset_with_sms.localized(), roundCorners: [.topLeft, .topRight], hidesSeparator: false))
+        let phoneViewModel = DefaultResetOptionComponentViewModel(params: .init(title: R.string.localization.reset_with_sms.localized(), roundCorners: [.topLeft, .topRight], hidesSeparator: false, isDisabled: phone.isEmpty))
         phoneViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .didSelect: self?.actionSubject.onNext(.didClick(resetType: .sms))
@@ -81,14 +81,10 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
                 break
             }
         }).disposed(by: self.disposeBag)
-
-        if phone.isEmpty {
-            phoneViewModel.disable()
-        }
         dataProviders.append(phoneViewModel)
 
         //Email
-        let emailViewModel = DefaultResetOptionComponentViewModel(params: .init(title: R.string.localization.reset_with_mail.localized(), roundCorners: [.bottomLeft, .bottomRight], hidesSeparator: true))
+        let emailViewModel = DefaultResetOptionComponentViewModel(params: .init(title: R.string.localization.reset_with_mail.localized(), roundCorners: [.bottomLeft, .bottomRight], hidesSeparator: true, isDisabled: email.isEmpty))
         emailViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .didSelect: self?.actionSubject.onNext(.didClick(resetType: .email))
@@ -96,10 +92,6 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
                 break
             }
         }).disposed(by: self.disposeBag)
-
-        if email.isEmpty {
-            emailViewModel.disable()
-        }
         dataProviders.append(emailViewModel)
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))

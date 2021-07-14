@@ -6,7 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public protocol ResetOptionTableViewCellDataProvider: ResetOptionComponentViewModel, StaticHeightDataProvider { }
+public protocol ResetOptionTableViewCellDataProvider: AppCellDelegate, ResetOptionComponentViewModel, StaticHeightDataProvider { }
 
 public extension ResetOptionTableViewCellDataProvider {
     var identifier: String { ResetOptionTableViewCell.identifierValue }

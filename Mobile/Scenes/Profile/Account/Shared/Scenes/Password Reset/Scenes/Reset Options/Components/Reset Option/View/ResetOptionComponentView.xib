@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResetOptionComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
                 <outlet property="bgView" destination="GUc-XI-6Do" id="NKi-tv-cYZ"/>
+                <outlet property="imageView" destination="YRP-Js-BOw" id="gg0-kQ-7yH"/>
                 <outlet property="separator" destination="W6y-HW-iT9" id="d6N-6V-78p"/>
                 <outlet property="titleLabel" destination="bO2-rN-0IZ" id="oTe-KZ-Zm5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>

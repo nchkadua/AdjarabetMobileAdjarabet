@@ -8,7 +8,7 @@
 
 public class PasswordChangeNavigator: Navigator {
     @Inject(from: .factories) public var otpFactory: OTPFactory
-    @Inject(from: .factories) public var newPasswordFactory: PasswordResetViewControllerFactory
+    @Inject(from: .factories) public var passwordResetFactory: PasswordResetViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -18,15 +18,15 @@ public class PasswordChangeNavigator: Navigator {
 
     public enum Destination {
         case OTP(params: OTPViewModelParams)
-        case passwordReset
+        case passwordReset(_ resetType: PasswordResetType)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .OTP(let params):
             navigateToOTP(params: params, animate: animate)
-        case .passwordReset:
-        navigateToPasswordReset(animate: animate)
+        case .passwordReset(let type):
+            navigateToPasswordReset(type: type, animate: animate)
         }
     }
 
@@ -37,8 +37,8 @@ public class PasswordChangeNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate)
     }
 
-    private func navigateToPasswordReset(animate: Bool) {
-        let vc = newPasswordFactory.make(params: .init(phone: "", mail: ""))
+    private func navigateToPasswordReset(type: PasswordResetType, animate: Bool) {
+        let vc = passwordResetFactory.make(params: .init(phone: "", mail: ""))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

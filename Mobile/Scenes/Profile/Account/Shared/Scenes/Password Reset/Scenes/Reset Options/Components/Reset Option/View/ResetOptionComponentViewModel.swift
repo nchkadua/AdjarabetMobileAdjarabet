@@ -15,11 +15,11 @@ public struct ResetOptionComponentViewModelParams {
     let title: String
     let roundCorners: UIRectCorner
     let hidesSeparator: Bool
+    let isDisabled: Bool
 }
 
 public protocol ResetOptionComponentViewModelInput {
     func didBind()
-    func disable()
     func didSelect(at indexPath: IndexPath)
 }
 
@@ -29,8 +29,7 @@ public protocol ResetOptionComponentViewModelOutput {
 }
 
 public enum ResetOptionComponentViewModelOutputAction {
-    case setupUI(title: String?, roundCorners: UIRectCorner, hidesSeparator: Bool)
-    case disable
+    case setupUI(title: String?, roundCorners: UIRectCorner, hidesSeparator: Bool, isDisabled: Bool)
     case didSelect(indexPath: IndexPath)
 }
 
@@ -48,11 +47,7 @@ extension DefaultResetOptionComponentViewModel: ResetOptionComponentViewModel {
     }
 
     public func didBind() {
-        actionSubject.onNext(.setupUI(title: params.title, roundCorners: params.roundCorners, hidesSeparator: params.hidesSeparator))
-    }
-
-    public func disable() {
-        actionSubject.onNext(.disable)
+        actionSubject.onNext(.setupUI(title: params.title, roundCorners: params.roundCorners, hidesSeparator: params.hidesSeparator, isDisabled: params.isDisabled))
     }
 
     public func didSelect(at indexPath: IndexPath) {
