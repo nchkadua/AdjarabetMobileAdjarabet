@@ -151,4 +151,10 @@ public extension AppTableViewController {
             }
         }, completion: nil)
     }
+
+    func reloadWithAnimation(_ animation: UITableView.RowAnimation = .bottom) {
+        let range = NSRange(location: 0, length: tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        tableView.reloadSections(sections as IndexSet, with: animation)
+    }
 }

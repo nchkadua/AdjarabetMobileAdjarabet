@@ -12,6 +12,8 @@ public protocol PasswordResetViewModel: PasswordResetViewModelInput, PasswordRes
 }
 
 public struct PasswordResetViewModelParams {
+    let phone: String?
+    let mail: String?
 }
 
 public protocol PasswordResetViewModelInput: AnyObject {
@@ -56,16 +58,6 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
     public var route: Observable<PasswordResetViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        resetPasswordUseCase.initPasswordReset(username: nil) { result in
-            switch result {
-            case .success(let entity):
-                print("sdadas ", entity)
-                let subString = entity.tel?.dropLast(4)
-                self.actionSubject.onNext(.setupPhoneNumber(String(subString ?? "No phone number")))
-            case .failure(let error):
-                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
-            }
-        }
     }
 
     public func newPasswordDidChange(to newPassword: String) {

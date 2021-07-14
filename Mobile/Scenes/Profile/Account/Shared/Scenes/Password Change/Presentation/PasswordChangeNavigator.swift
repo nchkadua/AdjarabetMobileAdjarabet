@@ -38,7 +38,7 @@ public class PasswordChangeNavigator: Navigator {
     }
 
     private func navigateToPasswordReset(animate: Bool) {
-        let vc = newPasswordFactory.make(params: .init())
+        let vc = newPasswordFactory.make(params: .init(phone: "", mail: ""))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

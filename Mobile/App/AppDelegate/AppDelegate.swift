@@ -74,8 +74,8 @@ public extension DependencyContainer {
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
-        Module { DefaultPasswordResetViewModel(params: .init()) as PasswordResetViewModel }
-        Module { DefaultPasswordResetViewModel(params: .init()) as PasswordResetViewModel }
+        Module { DefaultPasswordResetViewModel(params: .init(phone: "", mail: "")) as PasswordResetViewModel }
+        Module { DefaultResetOptionsViewModel(params: .init()) as ResetOptionsViewModel }
         Module { DefaultTimerComponentViewModel() as TimerComponentViewModel }
         Module { DefaultTransactionsFilterViewModel() as TransactionsFilterViewModel }
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
@@ -91,7 +91,6 @@ public extension DependencyContainer {
         Module { DefaultBonusViewModel(params: .init()) as BonusViewModel }
         Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
         Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }
-        Module { DefaultResetOptionsViewModel(params: .init()) as ResetOptionsViewModel }
     }
 
     static var componentViewModels = DependencyContainer {

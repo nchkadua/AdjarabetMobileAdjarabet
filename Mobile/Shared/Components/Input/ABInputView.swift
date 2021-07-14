@@ -45,7 +45,7 @@ public class ABInputView: UIView {
 
     private var defaultBackgroundColor: DesignSystem.Color = DesignSystem.Input.backgroundColor
     private var hasDropdownImage = false
-    private var textfieldBottomConstant: CGFloat = 0.0
+    private var textfieldBottomConstant: CGFloat = 5.0
 
     // MARK: Formatter
     public var formatter: Formatter = DefaultFormatter()
@@ -131,10 +131,6 @@ public class ABInputView: UIView {
         UIView.animate(withDuration: 0.2) {
             set()
         }
-    }
-
-    public func hidesPlaceholder() {
-        layoutIfNeeded()
     }
 
     public func toggleSecureTextEntry() {

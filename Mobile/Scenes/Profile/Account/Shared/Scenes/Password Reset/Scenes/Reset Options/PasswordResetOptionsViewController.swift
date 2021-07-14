@@ -19,6 +19,8 @@ public class PasswordResetOptionsViewController: ABViewController {
     @IBOutlet private weak var continueButton: ABButton!
     @IBOutlet private weak var containerView2: UIView!
 
+    private lazy var appTableViewController: AppTableViewController = AppTableViewController()
+
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,13 @@ public class PasswordResetOptionsViewController: ABViewController {
     }
 
     private func didRecive(action: ResetOptionsViewModelOutputAction) {
+        switch action {
+        case .initialize(let appListDataProvider):
+            appTableViewController.dataProvider = appListDataProvider
+            appTableViewController.reloadWithAnimation()
+        case .showMessage(let message): showAlert(title: message)
+        case .didClick(resetType: let resetType): print("")
+        }
     }
 
     private func didRecive(route: ResetOptionsViewModelRoute) {
@@ -58,6 +67,19 @@ public class PasswordResetOptionsViewController: ABViewController {
         setupLabel()
         setupInputView()
         setupContinueButton()
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        add(child: appTableViewController)
+        appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        appTableViewController.view.pin(to: containerView2)
+        appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
+        appTableViewController.tableView.isScrollEnabled = false
+
+        appTableViewController.tableView?.register(types: [
+            ResetOptionTableViewCell.self
+        ])
     }
 
     private func setupNavigationItems() {
@@ -91,19 +113,24 @@ public class PasswordResetOptionsViewController: ABViewController {
 
     private func setupContinueButton() {
         continueButton.setStyle(to: .primary(state: .disabled, size: .large))
-        continueButton.setTitleWithoutAnimation(R.string.localization.update_password_button_title.localized(), for: .normal)
+        continueButton.setTitleWithoutAnimation(R.string.localization.reset_options_button_continue.localized(), for: .normal)
         continueButton.addTarget(self, action: #selector(continueButtonDidTap), for: .touchUpInside)
         continueButton.isUserInteractionEnabled = false
     }
 
     @objc private func continueButtonDidTap() {
         closeKeyboard()
+        viewModel.getResetOptions()
     }
 
     // MARK: Configuration
     private func updateContinueButton(isEnabled: Bool) {
         continueButton.isUserInteractionEnabled = isEnabled
         continueButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+    }
+
+    private func changeContinueButtonTitle() {
+        continueButton.setTitle(R.string.localization.reset_options_button_change.localized(), for: .normal)
     }
 }
 
