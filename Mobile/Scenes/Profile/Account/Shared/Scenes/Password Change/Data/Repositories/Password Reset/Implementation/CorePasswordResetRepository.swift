@@ -13,8 +13,8 @@ struct CorePasswordResetRepository: CoreApiRepository {
 }
 
 extension CorePasswordResetRepository: PasswordResetRepository {
-    func initPasswordReset(handler: @escaping InitPasswordResetHandler) {
-        guard let username = userSession.username,
+    func initPasswordReset(username: String?, handler: @escaping InitPasswordResetHandler) {
+        guard let userName = userSession.username,
               let sessionId = userSession.sessionId
         else {
             handler(.failure(.sessionNotFound))
@@ -24,7 +24,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "initPasswordReset")
-            .setBody(key: .userIdentifier, value: username)
+            .setBody(key: .userIdentifier, value: username ?? userName)
             .build()
 
         dataTransferService.performTask(expecting: InitPasswordResetDTO.self, request: request, respondOnQueue: .main, completion: handler)

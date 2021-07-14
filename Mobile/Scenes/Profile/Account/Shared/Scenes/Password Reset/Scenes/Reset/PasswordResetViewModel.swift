@@ -56,9 +56,10 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
     public var route: Observable<PasswordResetViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        resetPasswordUseCase.initPasswordReset { result in
+        resetPasswordUseCase.initPasswordReset(username: nil) { result in
             switch result {
             case .success(let entity):
+                print("sdadas ", entity)
                 let subString = entity.tel?.dropLast(4)
                 self.actionSubject.onNext(.setupPhoneNumber(String(subString ?? "No phone number")))
             case .failure(let error):

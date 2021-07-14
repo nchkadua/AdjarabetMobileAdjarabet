@@ -91,6 +91,7 @@ public extension DependencyContainer {
         Module { DefaultBonusViewModel(params: .init()) as BonusViewModel }
         Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
         Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }
+        Module { DefaultResetOptionsViewModel(params: .init()) as ResetOptionsViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -180,6 +181,7 @@ public extension DependencyContainer {
         Module { DefaultBonusViewControllerFactory() as BonusViewControllerFactory }
         Module { DefaultHighSecurityViewControllerFactory() as HighSecurityViewControllerFactory }
         Module { DefaultDocumentationViewControllerFactory() as DocumentationViewControllerFactory }
+        Module { DefaultPasswordResetOptionsViewControllerFactory() as PasswordResetOptionsViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }

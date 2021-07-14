@@ -176,11 +176,19 @@
 "rule3" = "მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო";
 "forgot_password" = "დაგავიწყდათ პაროლი?";
 "remind_button_title" = "გაიხსენე";
+//
+"password_reset_title" = "პაროლის აღდგენა";
 "reset_with_sms" = "აღდგენა SMS კოდით";
+"reset_with_mail" = "აღდგენა ელ-ფოსტით";
 "reset_password_hint" = "შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი";
 "reset_password_hint2" = "შეიყვანეთ ახალი პაროლი";
 "reset_password_send_code" = "კოდის გაგზავნა";
 "new_password_title" = "ახალი პაროლი";
+"reset_username_placeholder" = "მომხმარებლის სახელი";
+"reset_options_button_continue" = "გაგრძელება";
+"reset_options_button_change" = "შეცვლა";
+"reset_options_close" = "გათიშე";
+"email_placeholder" = "ელ-ფოსტის მისამართი";
 
 /* Phone Number Change */
 "phone_number_change_title" = "Change Phone Number";
