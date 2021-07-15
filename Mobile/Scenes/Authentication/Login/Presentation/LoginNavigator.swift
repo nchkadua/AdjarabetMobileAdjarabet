@@ -46,7 +46,7 @@ public class LoginNavigator: Navigator {
     }
 
     private func navigateToPasswordReset(animate: Bool) {
-        let vc = passworResetOptionsFactory.make(params: .init(showUsernameInput: false))
+        let vc = passworResetOptionsFactory.make(params: .init(showUsernameInput: false, shouldShowDismissButton: true))
         let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate)

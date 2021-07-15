@@ -179,7 +179,8 @@
 "password_reset_title" = "პაროლის აღდგენა";
 "reset_with_sms" = "აღდგენა SMS კოდით";
 "reset_with_mail" = "აღდგენა ელ-ფოსტით";
-"reset_password_hint" = "შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი";
+"reset_password_hint_phone" = "შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი";
+"reset_password_hint_mail" = "შეიყვანეთ თვენი ელ-ფოსტა";
 "reset_password_hint2" = "შეიყვანეთ ახალი პაროლი";
 "reset_password_send_code" = "კოდის გაგზავნა";
 "new_password_title" = "ახალი პაროლი";
@@ -188,6 +189,7 @@
 "reset_options_button_change" = "შეცვლა";
 "reset_options_close" = "გათიშე";
 "email_placeholder" = "ელ-ფოსტის მისამართი";
+"reset_password_dismiss_button_title" = "Close";
 
 /* Phone Number Change */
 "phone_number_change_title" = "Change Phone Number";

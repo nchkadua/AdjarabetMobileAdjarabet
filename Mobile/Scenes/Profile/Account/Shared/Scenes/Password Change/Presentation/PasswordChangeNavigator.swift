@@ -39,7 +39,7 @@ public class PasswordChangeNavigator: Navigator {
     }
 
     private func navigateToPasswordReset(type: PasswordResetType, animate: Bool) {
-        let vc = passworResetOptionsFactory.make(params: .init(showUsernameInput: true))
+        let vc = passworResetOptionsFactory.make(params: .init(showUsernameInput: true, shouldShowDismissButton: false))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

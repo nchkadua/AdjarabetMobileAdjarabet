@@ -16,18 +16,18 @@ public class ResetOptionsNavigator: Navigator {
     }
 
     public enum Destination {
-        case passwordReset(_ resetType: PasswordResetType)
+        case passwordReset(_ resetType: PasswordResetType, _ contact: String, _ showDismissButton: Bool)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
-        case .passwordReset(let type):
-            navigateToPasswordReset(type: type, animate: animate)
+        case .passwordReset(let type, let contact, let show):
+            navigateToPasswordReset(type: type, contact: contact, showDismissButton: show, animate: animate)
         }
     }
 
-    private func navigateToPasswordReset(type: PasswordResetType, animate: Bool) {
-        let vc = passwordResetFactory.make(params: .init(phone: "", mail: ""))
+    private func navigateToPasswordReset(type: PasswordResetType, contact: String, showDismissButton: Bool, animate: Bool) {
+        let vc = passwordResetFactory.make(params: .init(resetType: type, contact: contact, showDismissButton: showDismissButton))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

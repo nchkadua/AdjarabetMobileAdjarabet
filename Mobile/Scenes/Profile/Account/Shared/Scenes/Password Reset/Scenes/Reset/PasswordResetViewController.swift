@@ -15,7 +15,7 @@ public class PasswordResetViewController: ABViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel1: UILabel!
     @IBOutlet private weak var subtitleLabel2: UILabel!
-    @IBOutlet private weak var phoneNumberInputView: ABInputView!
+    @IBOutlet private weak var contactInputView: ABInputView!
     @IBOutlet private weak var newPasswordInputView: ABInputView!
     @IBOutlet private weak var repeatePasswordInputView: ABInputView!
     @IBOutlet private weak var updatePasswordButton: ABButton!
@@ -34,7 +34,7 @@ public class PasswordResetViewController: ABViewController {
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        phoneNumberInputView.mainTextField.becomeFirstResponder()
+        contactInputView.mainTextField.becomeFirstResponder()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -56,7 +56,8 @@ public class PasswordResetViewController: ABViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         case .setupPhoneNumber(let number):
-            phoneNumberInputView.set(text: number)
+            contactInputView.set(text: number)
+        case .setupWith(let resetType, let contact): setupTitles(resetType: resetType, contact: contact)
         }
     }
 
@@ -64,6 +65,26 @@ public class PasswordResetViewController: ABViewController {
         switch route {
         case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         }
+    }
+
+    //
+    private func setupTitles(resetType: PasswordResetType, contact: String) {
+        switch resetType {
+        case .sms: setupAsSms(contact)
+        case .email: setupAsEmail(contact)
+        }
+    }
+
+    private func setupAsSms(_ contact: String) {
+        let phone = ""
+        contactInputView.setTextAndConfigure(text: phone.appending(contact.dropLast(4)))
+        subtitleLabel1.text = R.string.localization.reset_password_hint_phone.localized()
+        contactInputView.mainTextField.keyboardType = .numberPad
+    }
+
+    private func setupAsEmail(_ contact: String) {
+        subtitleLabel1.text = "\(R.string.localization.reset_password_hint_mail.localized()) \("(")\(contact)\(")")"
+        contactInputView.mainTextField.keyboardType = .emailAddress
     }
 
     // MARK: Setup methods
@@ -80,21 +101,34 @@ public class PasswordResetViewController: ABViewController {
     private func setupNavigationItems() {
         let backButtonGroup = makeBackBarButtonItem(width: 60, title: R.string.localization.back_button_title.localized())
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
-        backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+        backButtonGroup.button.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
+
+        guard viewModel.params.showDismissButton else {return}
+
+        let dismissButtonGroup = makeBarrButtonWith(title: R.string.localization.reset_password_dismiss_button_title.localized())
+        navigationItem.rightBarButtonItem = dismissButtonGroup.barButtonItem
+        dismissButtonGroup.button.addTarget(self, action: #selector(dismissButtonClick), for: .touchUpInside)
     }
 
-    @objc private func dismissViewController() {
+    @objc private func backButtonClick() {
+        if viewModel.params.showDismissButton {
+            navigationController?.popToRootViewController(animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+
+    @objc private func dismissButtonClick() {
         dismiss(animated: true, completion: nil)
     }
 
     private func setupLabel() {
         titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.text = R.string.localization.new_password_title.localized()
+        titleLabel.text = R.string.localization.password_reset_title.localized()
 
         subtitleLabel1.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
         subtitleLabel1.setTextColor(to: .secondaryText())
-        subtitleLabel1.text = R.string.localization.reset_password_hint.localized()
 
         subtitleLabel2.setFont(to: .footnote(fontCase: .lower, fontStyle: .semiBold))
         subtitleLabel2.setTextColor(to: .secondaryText())
@@ -102,11 +136,10 @@ public class PasswordResetViewController: ABViewController {
     }
 
     private func setupInputViews() {
-        phoneNumberInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0, hidesPlaceholder: true)
-        phoneNumberInputView.mainTextField.setFont(to: .title3(fontCase: .lower, fontStyle: .regular))
-        phoneNumberInputView.mainTextField.textAlignment = .center
-        phoneNumberInputView.mainTextField.keyboardType = .numberPad
-        phoneNumberInputView.mainTextField.delegate = self
+        contactInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0, hidesPlaceholder: true)
+        contactInputView.mainTextField.setFont(to: .title3(fontCase: .lower, fontStyle: .regular))
+        contactInputView.mainTextField.textAlignment = .center
+        contactInputView.mainTextField.delegate = self
 
         styleInputView(newPasswordInputView, with: R.string.localization.new_password.localized())
         newPasswordInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -151,7 +184,7 @@ public class PasswordResetViewController: ABViewController {
         }
 
         if let newPassword = newPasswordInputView.text {
-            viewModel.changeDidTap(phoneNumberInputView.text ?? "", newPassword)
+            viewModel.changeDidTap(contactInputView.text ?? "", newPassword)
         }
     }
 
@@ -193,7 +226,7 @@ public class PasswordResetViewController: ABViewController {
 }
 
 extension PasswordResetViewController: InputViewsProviding {
-    public var inputViews: [ABInputView] { [phoneNumberInputView, newPasswordInputView, repeatePasswordInputView] }
+    public var inputViews: [ABInputView] { [contactInputView, newPasswordInputView, repeatePasswordInputView] }
 }
 
 extension PasswordResetViewController: CommonBarButtonProviding { }
@@ -201,13 +234,7 @@ extension PasswordResetViewController: CommonBarButtonProviding { }
 //Limit characters
 extension PasswordResetViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        let text: NSString = (textField.text ?? "") as NSString
-//
-//        if text.contains("*") {
-//            if let rangeOfReplacementChar = text.range(of: "*") as NSRange? {
-//                textField.text = text.replacingCharacters(in: rangeOfReplacementChar, with: string)
-//            }
-//        }
+        guard viewModel.params.resetType == .sms else {return true}
 
         guard let textFieldText = textField.text,
             let rangeOfTextToReplace = Range(range, in: textFieldText) else {

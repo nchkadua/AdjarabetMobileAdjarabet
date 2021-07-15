@@ -12,8 +12,9 @@ public protocol PasswordResetViewModel: PasswordResetViewModelInput, PasswordRes
 }
 
 public struct PasswordResetViewModelParams {
-    let phone: String?
-    let mail: String?
+    let resetType: PasswordResetType
+    let contact: String
+    let showDismissButton: Bool
 }
 
 public protocol PasswordResetViewModelInput: AnyObject {
@@ -32,6 +33,7 @@ public enum PasswordResetViewModelOutputAction {
     case updateRulesWithNewPassword(_ password: String)
     case setupPhoneNumber(_ number: String)
     case setButton(loading: Bool)
+    case setupWith(_ resetType: PasswordResetType, _ contact: String)
     case showMessage(message: String)
 }
 
@@ -58,6 +60,7 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
     public var route: Observable<PasswordResetViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        actionSubject.onNext(.setupWith(params.resetType, params.contact))
     }
 
     public func newPasswordDidChange(to newPassword: String) {

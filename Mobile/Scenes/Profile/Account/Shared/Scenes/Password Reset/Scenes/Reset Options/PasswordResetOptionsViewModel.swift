@@ -13,6 +13,7 @@ public protocol ResetOptionsViewModel: ResetOptionsViewModelInput, ResetOptionsV
 
 public struct ResetOptionsViewModelParams {
     let showUsernameInput: Bool
+    let shouldShowDismissButton: Bool
 }
 
 public protocol ResetOptionsViewModelInput: AnyObject {
@@ -31,11 +32,11 @@ public enum ResetOptionsViewModelOutputAction {
     case hideUsernameInput
     case initialize(AppListDataProvider)
     case clearTableview
-    case didClick(resetType: PasswordResetType)
     case showMessage(message: String)
 }
 
 public enum ResetOptionsViewModelRoute {
+    case navigateToPasswordReset(resetType: PasswordResetType, contact: String, showDismissButton: Bool)
 }
 
 public class DefaultResetOptionsViewModel: DefaultBaseViewModel {
@@ -71,7 +72,6 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
         resetPasswordUseCase.initPasswordReset(username: username) { result in
             switch result {
             case .success(let entity):
-//                let subString = entity.tel?.dropLast(4)
                 self.phone = entity.tel
                 self.email = entity.email
                 self.setupResetOptions(entity.tel ?? "", entity.email ?? "")
@@ -88,7 +88,7 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
         let phoneViewModel = DefaultResetOptionComponentViewModel(params: .init(title: R.string.localization.reset_with_sms.localized(), roundCorners: [.topLeft, .topRight], hidesSeparator: false, isDisabled: phone.isEmpty))
         phoneViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .didSelect: self?.actionSubject.onNext(.didClick(resetType: .sms))
+            case .didSelect: self?.routeSubject.onNext(.navigateToPasswordReset(resetType: .sms, contact: self?.phone ?? "", showDismissButton: self?.params.shouldShowDismissButton ?? true))
             default:
                 break
             }
@@ -99,7 +99,7 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
         let emailViewModel = DefaultResetOptionComponentViewModel(params: .init(title: R.string.localization.reset_with_mail.localized(), roundCorners: [.bottomLeft, .bottomRight], hidesSeparator: true, isDisabled: email.isEmpty))
         emailViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .didSelect: self?.actionSubject.onNext(.didClick(resetType: .email))
+            case .didSelect: self?.routeSubject.onNext(.navigateToPasswordReset(resetType: .email, contact: self?.email ?? "", showDismissButton: self?.params.shouldShowDismissButton ?? true))
             default:
                 break
             }

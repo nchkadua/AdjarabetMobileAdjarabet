@@ -56,11 +56,14 @@ public class PasswordResetOptionsViewController: ABViewController {
         case .clearTableview: clearTableView()
         case .showMessage(let message): showAlert(title: message)
         case .hideUsernameInput: container1HeighConstraint.constant = 0
-        case .didClick(let resetType): print("")
         }
     }
 
     private func didRecive(route: ResetOptionsViewModelRoute) {
+        switch route {
+        case .navigateToPasswordReset(let resetType, let contact, let show):
+            navigator.navigate(to: .passwordReset(resetType, contact, show), animated: true)
+        }
     }
 
     // MARK: Setup methods
