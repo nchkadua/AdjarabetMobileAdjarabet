@@ -41,7 +41,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "getPasswordResetCode")
-            .setBody(key: .userIdentifier, value: username)
+            .setBody(key: .userIdentifier, value: params.username ?? username)
             .setBody(key: "address", value: params.address)
             .setBody(key: .channelType, value: String(params.channelType.rawValue))
             .build()

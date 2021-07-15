@@ -20,6 +20,7 @@ protocol ResetPasswordUseCase {
 }
 
 public struct PasswordResetCodeParams {
+    let username: String?
     let address: String
     let channelType: OTPDeliveryChannel
 }

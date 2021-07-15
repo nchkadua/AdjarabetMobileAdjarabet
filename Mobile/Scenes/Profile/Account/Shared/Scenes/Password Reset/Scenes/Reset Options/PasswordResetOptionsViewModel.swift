@@ -114,7 +114,7 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
     }
 }
 
-public enum PasswordResetType {
-    case sms
-    case email
+public enum PasswordResetType: Int {
+    case email = 1
+    case sms = 2
 }

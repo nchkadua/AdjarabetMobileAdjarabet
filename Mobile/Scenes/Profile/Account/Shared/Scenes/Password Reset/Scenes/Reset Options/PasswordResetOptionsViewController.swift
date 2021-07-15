@@ -62,7 +62,8 @@ public class PasswordResetOptionsViewController: ABViewController {
     private func didRecive(route: ResetOptionsViewModelRoute) {
         switch route {
         case .navigateToPasswordReset(let resetType, let contact, let show):
-            navigator.navigate(to: .passwordReset(resetType, contact, show), animated: true)
+            let text = usernameInputView.text?.isEmpty ?? true ? nil : usernameInputView.text
+            navigator.navigate(to: .passwordReset(text, resetType, contact, show), animated: true)
         }
     }
 
