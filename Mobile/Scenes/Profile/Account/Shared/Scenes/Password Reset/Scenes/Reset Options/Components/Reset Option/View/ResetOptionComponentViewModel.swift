@@ -36,6 +36,7 @@ public enum ResetOptionComponentViewModelOutputAction {
 public class DefaultResetOptionComponentViewModel {
     public var params: ResetOptionComponentViewModelParams
     private let actionSubject = PublishSubject<ResetOptionComponentViewModelOutputAction>()
+
     public init(params: ResetOptionComponentViewModelParams) {
         self.params = params
     }
@@ -51,6 +52,7 @@ extension DefaultResetOptionComponentViewModel: ResetOptionComponentViewModel {
     }
 
     public func didSelect(at indexPath: IndexPath) {
+        guard !params.isDisabled else {return}
         actionSubject.onNext(.didSelect(indexPath: indexPath))
     }
 }
