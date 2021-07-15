@@ -61,6 +61,9 @@ class ResetOptionComponentView: UIView {
         isDisabled ? titleLabel.setTextColor(to: .tertiaryText()) : titleLabel.setTextColor(to: .primaryText())
         isUserInteractionEnabled = !isDisabled
 
+        imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
+        isDisabled ? imageView.setTintColor(to: .querternaryText()) : imageView.setTintColor(to: .tertiaryText())
+
         setNeedsLayout()
     }
 
@@ -99,6 +102,8 @@ extension ResetOptionComponentView: Xibable {
     func setupUI() {
         view.setBackgorundColor(to: .tertiaryBg())
         separator.setBackgorundColor(to: .systemGrey3())
+
+        imageView.setTintColor(to: .tertiaryText())
 
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
