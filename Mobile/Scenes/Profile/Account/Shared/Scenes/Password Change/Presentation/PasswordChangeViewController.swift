@@ -175,7 +175,6 @@ public class PasswordChangeViewController: ABViewController {
         guard passwordChangeRulesView.allGood == true else {
             updatePasswordButton.isUserInteractionEnabled = false
             updatePasswordButton.setStyle(to: .primary(state: .disabled, size: .large))
-
             return
         }
 

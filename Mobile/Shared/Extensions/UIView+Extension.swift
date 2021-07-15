@@ -56,9 +56,6 @@ public extension UIView {
         shape.path = maskPath.cgPath
         clipsToBounds = true
         layer.mask = shape
-
-//        layer.cornerRadius = radius
-//        layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMinXMaxYCorner]
     }
 
     func blurred() {

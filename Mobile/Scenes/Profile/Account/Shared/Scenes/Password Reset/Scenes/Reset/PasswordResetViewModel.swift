@@ -12,13 +12,17 @@ public protocol PasswordResetViewModel: PasswordResetViewModelInput, PasswordRes
 }
 
 public struct PasswordResetViewModelParams {
+    let username: String?
+    let resetType: PasswordResetType
+    let contact: String
+    let showDismissButton: Bool
 }
 
 public protocol PasswordResetViewModelInput: AnyObject {
     var params: PasswordResetViewModelParams { get set }
     func viewDidLoad()
     func newPasswordDidChange(to newPassword: String)
-    func changeDidTap(_ phoneNumber: String, _ newPassword: String)
+    func changeDidTap(_ contact: String, _ newPassword: String)
 }
 
 public protocol PasswordResetViewModelOutput {
@@ -30,6 +34,7 @@ public enum PasswordResetViewModelOutputAction {
     case updateRulesWithNewPassword(_ password: String)
     case setupPhoneNumber(_ number: String)
     case setButton(loading: Bool)
+    case setupWith(_ resetType: PasswordResetType, _ contact: String)
     case showMessage(message: String)
 }
 
@@ -56,24 +61,17 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
     public var route: Observable<PasswordResetViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        resetPasswordUseCase.initPasswordReset { result in
-            switch result {
-            case .success(let entity):
-                let subString = entity.tel?.dropLast(4)
-                self.actionSubject.onNext(.setupPhoneNumber(String(subString ?? "No phone number")))
-            case .failure(let error):
-                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
-            }
-        }
+        actionSubject.onNext(.setupWith(params.resetType, params.contact))
     }
 
     public func newPasswordDidChange(to newPassword: String) {
         actionSubject.onNext(.updateRulesWithNewPassword(newPassword))
     }
 
-    public func changeDidTap(_ phoneNumber: String, _ newPassword: String) {
+    public func changeDidTap(_ contact: String, _ newPassword: String) {
         self.newPassword = newPassword
-        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.title_verification.localized(), buttonTitle: R.string.localization.sms_approve.localized(), otpType: .passwordResetCode(phoneNumber: phoneNumber))
+        let deliveryChannel = OTPDeliveryChannel(rawValue: params.resetType.rawValue) ?? .sms
+        let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.title_verification.localized(), buttonTitle: R.string.localization.sms_approve.localized(), otpType: .passwordResetCode(username: params.username, channelType: deliveryChannel, contact: contact))
         routeSubject.onNext(.openOTP(params: otpParams))
         subscribeTo(otpParams)
     }

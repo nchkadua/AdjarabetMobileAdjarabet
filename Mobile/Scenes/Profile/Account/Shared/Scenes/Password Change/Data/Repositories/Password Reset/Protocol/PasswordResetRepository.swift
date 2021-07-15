@@ -9,7 +9,7 @@
 protocol PasswordResetRepository {
     /* Init Password - First step for getting verified list of communications */
     typealias InitPasswordResetHandler = (Result<InitPasswordResetEntity, ABError>) -> Void
-    func initPasswordReset(handler: @escaping InitPasswordResetHandler)
+    func initPasswordReset(username: String?, handler: @escaping InitPasswordResetHandler)
 
     /* Get password reset code */
     typealias GetPasswordResetCodeHandler = (Result<GetPasswordResetCodeEntity, ABError>) -> Void

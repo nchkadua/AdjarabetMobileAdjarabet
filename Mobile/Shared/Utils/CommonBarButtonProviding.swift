@@ -127,7 +127,7 @@ public extension CommonBarButtonProviding {
     func makeBarrButtonWith(title: String) -> UIBarButtonItem.Coupled {
         let button = UIButton()
         button.setTitle(title, for: .normal)
-        button.setTitleColor(DesignSystem.Color.primaryRed().value, for: .normal)
+        button.setTitleColor(DesignSystem.Color.primaryText().value, for: .normal)
         button.setFont(to: .subHeadline(fontCase: .lower))
         return (UIBarButtonItem(customView: button), button)
     }

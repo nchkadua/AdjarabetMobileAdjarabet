@@ -207,6 +207,7 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func navigateToPasswodReminder() {
+        navigator.navigate(to: .passwordReset, animated: true)
     }
 
     @objc private func loginButtonTouchExit() {

@@ -10,7 +10,7 @@ import Foundation
 
 protocol ResetPasswordUseCase {
     typealias InitPasswordResetHandler = (Result<InitPasswordResetEntity, ABError>) -> Void
-    func initPasswordReset(handler: @escaping InitPasswordResetHandler)
+    func initPasswordReset(username: String?, handler: @escaping InitPasswordResetHandler)
 
     typealias GetPasswordResetCodeHandler = (Result<GetPasswordResetCodeEntity, ABError>) -> Void
     func getPasswordResetCode(params: PasswordResetCodeParams, handler: @escaping GetPasswordResetCodeHandler)
@@ -20,6 +20,7 @@ protocol ResetPasswordUseCase {
 }
 
 public struct PasswordResetCodeParams {
+    let username: String?
     let address: String
     let channelType: OTPDeliveryChannel
 }
@@ -34,8 +35,8 @@ struct DefaultResetPasswordUseCase: ResetPasswordUseCase {
     @Inject private var userSession: UserSessionServices
     @Inject private var userSessionReadable: UserSessionReadableServices
 
-    func initPasswordReset(handler: @escaping InitPasswordResetHandler) {
-        repo.initPasswordReset(handler: handler)
+    func initPasswordReset(username: String?, handler: @escaping InitPasswordResetHandler) {
+        repo.initPasswordReset(username: username, handler: handler)
     }
 
     func getPasswordResetCode(params: PasswordResetCodeParams, handler: @escaping GetPasswordResetCodeHandler) {

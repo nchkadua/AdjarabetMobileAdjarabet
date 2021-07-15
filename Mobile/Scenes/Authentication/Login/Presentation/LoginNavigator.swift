@@ -9,6 +9,7 @@
 public class LoginNavigator: Navigator {
     @Inject(from: .factories) public var mainContainerFactory: MainContainerViewControllerFactory
     @Inject(from: .factories) public var otpFactory: OTPFactory
+    @Inject(from: .factories) public var passworResetOptionsFactory: PasswordResetOptionsViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -19,17 +20,35 @@ public class LoginNavigator: Navigator {
     public enum Destination {
         case OTP(params: OTPViewModelParams)
         case mainTabBar
+        case passwordReset
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .OTP(let params):
-            let vc = otpFactory.make(params: params)
-            let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
-            navC.navigationBar.styleForPrimaryPage()
-            viewController?.navigationController?.present(navC, animated: animate)
+            navigateToOTP(params: params, animate: animate)
         case .mainTabBar:
-            UIApplication.shared.currentWindow?.rootViewController = mainContainerFactory.make(params: .init())
+            openMainTabBar()
+        case .passwordReset:
+            navigateToPasswordReset(animate: animate)
         }
+    }
+
+    private func navigateToOTP(params: OTPViewModelParams, animate: Bool) {
+        let vc = otpFactory.make(params: params)
+        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate)
+    }
+
+    private func openMainTabBar() {
+        UIApplication.shared.currentWindow?.rootViewController = mainContainerFactory.make(params: .init())
+    }
+
+    private func navigateToPasswordReset(animate: Bool) {
+        let vc = passworResetOptionsFactory.make(params: .init(showUsernameInput: false, shouldShowDismissButton: true))
+        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate)
     }
 }

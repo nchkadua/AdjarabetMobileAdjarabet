@@ -101,8 +101,8 @@ extension DefaultOTPViewModel: OTPViewModel {
             return
         case .actionOTP:
             getActionOTP()
-        case .passwordResetCode(let phoneNumber):
-            getPasswordResetCode(phoneNumber)
+        case .passwordResetCode(let username, let deliveryType, let contact):
+            getPasswordResetCode(username, deliveryType, contact)
         case .none: return
         }
     }
@@ -159,10 +159,10 @@ extension DefaultOTPViewModel: OTPViewModel {
         }
     }
 
-    public func getPasswordResetCode(_ phoneNumber: String) {
-        resetPasswordUseCase.getPasswordResetCode(params: .init(address: phoneNumber, channelType: .sms)) { result in
+    public func getPasswordResetCode(_ username: String?, _ deliveryType: OTPDeliveryChannel, _ contact: String) {
+        resetPasswordUseCase.getPasswordResetCode(params: .init(username: username, address: contact, channelType: deliveryType)) { result in
             switch result {
-            case .success(let entity): print(entity)
+            case .success(let entity): print("asdadasds ", entity)
             case .failure(let error): self.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
             }
         }
@@ -207,6 +207,6 @@ public enum OTPType {
     case loginOTP
     case smsLogin
     case actionOTP
-    case passwordResetCode(phoneNumber: String)
+    case passwordResetCode(username: String?, channelType: OTPDeliveryChannel, contact: String)
     case none
 }

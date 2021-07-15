@@ -74,8 +74,8 @@ public extension DependencyContainer {
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
-        Module { DefaultPasswordResetViewModel(params: .init()) as PasswordResetViewModel }
-        Module { DefaultPasswordResetViewModel(params: .init()) as PasswordResetViewModel }
+        Module { DefaultPasswordResetViewModel(params: .init(username: nil, resetType: .sms, contact: "", showDismissButton: true)) as PasswordResetViewModel }
+        Module { DefaultResetOptionsViewModel(params: .init(showUsernameInput: true, shouldShowDismissButton: true)) as ResetOptionsViewModel }
         Module { DefaultTimerComponentViewModel() as TimerComponentViewModel }
         Module { DefaultTransactionsFilterViewModel() as TransactionsFilterViewModel }
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
@@ -180,6 +180,7 @@ public extension DependencyContainer {
         Module { DefaultBonusViewControllerFactory() as BonusViewControllerFactory }
         Module { DefaultHighSecurityViewControllerFactory() as HighSecurityViewControllerFactory }
         Module { DefaultDocumentationViewControllerFactory() as DocumentationViewControllerFactory }
+        Module { DefaultPasswordResetOptionsViewControllerFactory() as PasswordResetOptionsViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }
