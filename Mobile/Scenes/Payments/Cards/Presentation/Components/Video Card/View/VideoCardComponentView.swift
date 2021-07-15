@@ -30,7 +30,7 @@ class VideoCardComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(.allCorners, radius: 10)
+        roundCorners(radius: 10)
         playerLayer.frame = self.view.bounds
     }
 

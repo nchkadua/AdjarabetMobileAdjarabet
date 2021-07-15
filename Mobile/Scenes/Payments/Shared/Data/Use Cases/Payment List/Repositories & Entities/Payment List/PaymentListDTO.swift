@@ -59,7 +59,7 @@ struct PaymentListDTO: DataTransferResponse {
                     applePay: $0.applePay,
                     segmentList: $0.segmentList,
                     segmentListEmoney: $0.segmentListEmoney,
-                    method: .init (
+                    method: .init(
                         methodType: methodType,
                         flowId: flowId,
                         iconUrl: iconUrl,

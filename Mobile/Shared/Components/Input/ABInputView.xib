@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +19,7 @@
                 <outlet property="leftButton" destination="fEH-bH-fEe" id="Wiz-bZ-hmO"/>
                 <outlet property="placeholderLabel" destination="0LX-Ki-AXf" id="TT2-ig-xob"/>
                 <outlet property="placeholderLabelCenterYConstraint" destination="sgJ-SX-M8m" id="20v-dU-RpO"/>
+                <outlet property="placeholderLabelHeightConstraint" destination="SUf-Xm-iLb" id="1up-xk-3y1"/>
                 <outlet property="placeholderLabelTopConstraint" destination="ejd-3a-2OJ" id="Q34-hO-qyr"/>
                 <outlet property="rightButton" destination="abj-Du-7nR" id="k64-RN-KLJ"/>
                 <outlet property="textField" destination="crb-bz-FWs" id="AZJ-QA-NdZ"/>

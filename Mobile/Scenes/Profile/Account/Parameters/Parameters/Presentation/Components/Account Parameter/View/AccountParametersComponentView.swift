@@ -52,12 +52,6 @@ class AccountParametersComponentView: UIView {
         viewModel.didBind()
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        roundCorners(corners, radius: 10)
-    }
-
     // MARK: Setup methods
 
     private func set(params: AccountParametersComponentViewModelParams) {

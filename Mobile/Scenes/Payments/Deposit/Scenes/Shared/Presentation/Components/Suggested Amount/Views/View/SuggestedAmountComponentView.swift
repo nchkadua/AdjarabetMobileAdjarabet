@@ -62,7 +62,7 @@ extension SuggestedAmountComponentView: Xibable {
     func setupUI() {
         view.setBackgorundColor(to: .systemGrey5())
 
-        roundCorners(.allCorners, radius: 20)
+        roundCorners(radius: 20)
 
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .regular))

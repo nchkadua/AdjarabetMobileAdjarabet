@@ -74,6 +74,8 @@ public extension DependencyContainer {
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
         Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
+        Module { DefaultPasswordResetViewModel(params: .init(username: nil, resetType: .sms, contact: "", showDismissButton: true)) as PasswordResetViewModel }
+        Module { DefaultResetOptionsViewModel(params: .init(showUsernameInput: true, shouldShowDismissButton: true)) as ResetOptionsViewModel }
         Module { DefaultTimerComponentViewModel() as TimerComponentViewModel }
         Module { DefaultTransactionsFilterViewModel() as TransactionsFilterViewModel }
         Module { DefaultAccountParametersViewModel(params: .init(accountParametersModel: .init())) as AccountParametersViewModel }
@@ -88,6 +90,7 @@ public extension DependencyContainer {
         Module { DefaultMainContainerViewModel(params: .init()) as MainContainerViewModel }
         Module { DefaultBonusViewModel(params: .init()) as BonusViewModel }
         Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
+        Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -143,6 +146,7 @@ public extension DependencyContainer {
         Module { DefaultCookieStorageRepository() as CookieStorageRepository }
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
         Module { CoreApiAccessListRepository() as AccessListRepository }
+        Module { CoreApiUpdateOtpRepository() as UpdateOtpRepository }
     }
 
     static var factories = DependencyContainer {
@@ -161,6 +165,8 @@ public extension DependencyContainer {
         Module { DefaultMailChangeViewControllerFactory() as MailChangeViewControllerFactory }
         Module { DefaultAddressChangeViewControllerFactory() as AddressChangeViewControllerFactory }
         Module { DefaultPasswordChangeViewControllerFactory() as PasswordChangeViewControllerFactory }
+        Module { DefaultPasswordResetViewControllerFactory() as PasswordResetViewControllerFactory }
+        Module { DefaultPasswordResetViewControllerFactory() as PasswordResetViewControllerFactory }
         Module { DefaultTransactionsFilterViewControllerFactory() as TransactionsFilterViewControllerFactory }
         Module { DefaultAccountParametersViewControllerFactory() as AccountParametersViewControllerFactory }
         Module { DefaultPhoneNumberChangeViewControllerFactory() as PhoneNumberChangeViewControllerFactory }
@@ -173,6 +179,8 @@ public extension DependencyContainer {
         Module { DefaultWebViewControllerFactory() as WebViewControllerFactory }
         Module { DefaultBonusViewControllerFactory() as BonusViewControllerFactory }
         Module { DefaultHighSecurityViewControllerFactory() as HighSecurityViewControllerFactory }
+        Module { DefaultDocumentationViewControllerFactory() as DocumentationViewControllerFactory }
+        Module { DefaultPasswordResetOptionsViewControllerFactory() as PasswordResetOptionsViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }
@@ -202,6 +210,7 @@ public extension DependencyContainer {
         Module { DefaultResetPasswordUseCase() as ResetPasswordUseCase }
         Module { DefaultUpdateMailUseCase() as UpdateMailUseCase }
         Module { DefaultUpdatePhoneNumberUseCase() as UpdatePhoneNumberUseCase }
+        Module { DefaultHighSecurityUseCase() as HighSecurityUseCase }
         // Payments
         Module { DefaultPaymentListUseCase() as PaymentListUseCase }
         Module { UFCDepositUseCase() as UFCDepositUseCase }

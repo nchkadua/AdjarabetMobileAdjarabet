@@ -29,7 +29,7 @@ class GameLauncherGridComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(.allCorners, radius: 4)
+        roundCorners(radius: 4)
     }
 
     public func setAndBind(viewModel: GameLauncherGridComponentViewModel) {

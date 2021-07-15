@@ -37,7 +37,7 @@ public class PlayedGameLauncherComponentView: UIView {
 
     public override func layoutSubviews() {
         super.layoutSubviews()
-        coverImageView.roundCorners(.allCorners, radius: coverImageView.frame.size.width / 2)
+        coverImageView.roundCorners(radius: coverImageView.frame.size.width / 2)
     }
 
     public func bind() {

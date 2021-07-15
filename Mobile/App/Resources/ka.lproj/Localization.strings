@@ -85,6 +85,7 @@
 "sms_resend_time" = "წამში";
 "sms_approve" = "დადასტურება";
 "sms_placeholder" = "4 ნიშნა კოდი";
+"title_verification" = "ვერიფიკაცია";
 
 /* Profile */
 "profile_page_title" = "Account Parameters";
@@ -102,13 +103,15 @@
 "transaction_history" = "ტრანზაქციების ისტორია";
 "my_cards" = "ჩემი ბარათები";
 "my_bonuses" = "ჩემი ბონუსები";
-"faq" = "Frequently Asked Questions";
-"biomatry_authentication_parameters" = "Authentication Parameters";
+"faq" = "ხშირად დასმული კითხვები";
+"biomatry_authentication_parameters" = "ავტორიზაციის პარამეტრები";
 "transfer_to_a_friend" = "Transfer to a Friend";
 "incognito_card" = "Incognito Card";
-"account_information" = "Account Information";
-"account_parameters" = "Account Parameters";
-"terms_and_conditions" = "Terms and Conditions";
+"account_information" = "ანგარიშის ინფორმაცია";
+"account_parameters" = "ანგარიშის პარამეტრები";
+"documentation" = "დოკუმენტაცია";
+"terms_and_conditions" = "წესები და პირობები";
+"confidential" = "კონფიდენციალურობის პოლიტიკა";
 "log_out" = "ანგარიშიდან გასვლა";
 
 /* Account Info */
@@ -131,6 +134,10 @@
 "account_info_address" = "მისამართი";
 "account_info_save_button_title" = "შენახვა";
 "account_info_status_button_title" = "დაბლოკვა";
+"account_info_communication_lang" = "საკომუნიკაციო ენა";
+"account_info_ge" = "ქართული";
+"account_info_en" = "English";
+"account_info_rus" = "Russian";
 
 /* High Security */
 "high_security_title" = "მაღალი დაცვის რეჟიმი";
@@ -168,6 +175,21 @@
 "rule3" = "მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო";
 "forgot_password" = "დაგავიწყდათ პაროლი?";
 "remind_button_title" = "გაიხსენე";
+//
+"password_reset_title" = "პაროლის აღდგენა";
+"reset_with_sms" = "აღდგენა SMS კოდით";
+"reset_with_mail" = "აღდგენა ელ-ფოსტით";
+"reset_password_hint_phone" = "შეიყვანეთ თვენი ნომრის ბოლო 4 ციფრი";
+"reset_password_hint_mail" = "შეიყვანეთ თვენი ელ-ფოსტა";
+"reset_password_hint2" = "შეიყვანეთ ახალი პაროლი";
+"reset_password_send_code" = "კოდის გაგზავნა";
+"new_password_title" = "ახალი პაროლი";
+"reset_username_placeholder" = "მომხმარებლის სახელი";
+"reset_options_button_continue" = "გაგრძელება";
+"reset_options_button_change" = "შეცვლა";
+"reset_options_close" = "გათიშე";
+"email_placeholder" = "ელ-ფოსტის მისამართი";
+"reset_password_dismiss_button_title" = "გათიშვა";
 
 /* Phone Number Change */
 "phone_number_change_title" = "ნომრის ცვლილება";
@@ -282,6 +304,9 @@
 "account_parameters_messages_email_title" = "ელ-ფოსტის შეტყობინებები";
 "account_parameters_messages_email_description" = "თქვენ მიიღებთ გზავნილებს ელექტრონული ფოსტის მეშვეობით";
 "account_parameters_messages_email_button" = "პარამეტრების დაყენება";
+
+/* Documentation */
+"documentation_title" = "დოკუმენტაცია";
 
 /* Access History */
 "access_history_device_desktop" = "კომპიუტერით";

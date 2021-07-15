@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LanguagesButtonDelegate: class {
+protocol LanguagesButtonDelegate: AnyObject {
     func languageDidChange(language: Language)
 }
 

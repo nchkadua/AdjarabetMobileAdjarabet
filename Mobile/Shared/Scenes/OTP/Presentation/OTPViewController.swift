@@ -144,7 +144,7 @@ public class OTPViewController: ABViewController {
         smsCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         smsCodeInputView.configureForNumberOfItems(4)
-        smsCodeInputView.roundCorners(.allCorners, radius: 6)
+        smsCodeInputView.roundCorners(radius: 6)
     }
 
     /// Timer

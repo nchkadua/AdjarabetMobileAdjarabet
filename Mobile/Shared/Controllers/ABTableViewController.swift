@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-public protocol ABTableViewControllerDelegate: class {
+public protocol ABTableViewControllerDelegate: AnyObject {
     func didDeleteCell(at indexPath: IndexPath)
     func didLoadNextPage()
     func redraw(at indexPath: IndexPath)
@@ -150,5 +150,11 @@ public extension AppTableViewController {
                 tableView?.insertRows(at: insertionIndexPathes, with: .automatic)
             }
         }, completion: nil)
+    }
+
+    func reloadWithAnimation(_ animation: UITableView.RowAnimation = .bottom) {
+        let range = NSRange(location: 0, length: tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        tableView.reloadSections(sections as IndexSet, with: animation)
     }
 }

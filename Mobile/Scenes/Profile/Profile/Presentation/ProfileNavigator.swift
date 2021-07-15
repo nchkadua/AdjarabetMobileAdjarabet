@@ -16,6 +16,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
     @Inject(from: .factories) public var accountParametersViewControllerFactory: AccountParametersViewControllerFactory
     @Inject(from: .factories) public var myCardsViewControllerFactory: MyCardsViewControllerFactory
+    @Inject(from: .factories) public var documentationViewControllerFactory: DocumentationViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -32,7 +33,7 @@ public class ProfileNavigator: Navigator {
         case incognitoCard
         case accountInformation
         case accountParameters
-        case terms
+        case documentation
         case loginPage
     }
 
@@ -46,7 +47,7 @@ public class ProfileNavigator: Navigator {
         case .biometryParameters: navigateToBiometricSettings(animate: animate)
         case .accountInformation: navigateToAccountInformation(animate: animate)
         case .accountParameters: navigateToAccountParameters(animate: animate)
-        case .terms: navigateToTerms(animate: animate)
+        case .documentation: navigateDocumentation(animate: animate)
         case .loginPage: navigateToLogin(animate: animate)
         default:
             break
@@ -97,7 +98,9 @@ public class ProfileNavigator: Navigator {
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 
-    private func navigateToTerms(animate: Bool) {
+    private func navigateDocumentation(animate: Bool) {
+        let vc = documentationViewControllerFactory.make(params: .init())
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 
     private func navigateToLogin(animate: Bool) {

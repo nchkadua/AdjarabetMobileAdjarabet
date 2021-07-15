@@ -56,7 +56,7 @@ extension VisaLimitComponentView: Xibable {
 
     func setupUI() {
         backgroundColor = .clear
-        roundCorners(.allCorners, radius: 4)
+        roundCorners(radius: 4)
 
         minLimitTitleLabel.setTextColor(to: .secondaryText())
         minLimitTitleLabel.setFont(to: .caption2(fontCase: .lower, fontStyle: .regular))

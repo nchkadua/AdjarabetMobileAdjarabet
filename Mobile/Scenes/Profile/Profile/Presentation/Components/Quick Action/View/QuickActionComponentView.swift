@@ -39,8 +39,8 @@ class QuickActionComponentView: UIView {
 
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let icon, let title, let hide, let roundedCorners):
-                self?.setupUI(icon: icon, title: title, hideSeparator: hide, roundedCorners: roundedCorners)
+            case .set(let icon, let title):
+                self?.setupUI(icon: icon, title: title)
             default: break
             }
         }).disposed(by: disposeBag)
@@ -48,12 +48,12 @@ class QuickActionComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setupUI(icon: UIImage, title: String, hideSeparator: Bool, roundedCorners: UIRectCorner) {
+    private func setupUI(icon: UIImage, title: String) {
         iconImageView.image = icon
         titleLabel.text = title
         separatorView.isHidden = true
 
-        bgView.roundCorners(roundedCorners, radius: 10)
+        bgView.roundCorners(radius: 10)
     }
 
     // MARK: Touch events

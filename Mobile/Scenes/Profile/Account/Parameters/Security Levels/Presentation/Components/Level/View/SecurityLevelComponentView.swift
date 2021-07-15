@@ -48,7 +48,7 @@ class SecurityLevelComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        view.roundCorners(rectCorner, radius: 10)
+        view.roundCorners(radius: 10)
     }
 
     public func setAndBind(viewModel: SecurityLevelComponentViewModel) {

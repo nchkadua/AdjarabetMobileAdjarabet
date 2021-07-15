@@ -45,10 +45,16 @@ public extension UIView {
         self.tintColor = color.value
     }
 
-    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+    func roundCorners(radius: CGFloat) {
+        layer.cornerRadius = radius
+        layer.masksToBounds = true
+    }
+
+    func roundCornersBezier(_ corners: UIRectCorner, radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
+        clipsToBounds = true
         layer.mask = shape
     }
 

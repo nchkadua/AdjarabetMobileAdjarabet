@@ -16,7 +16,7 @@ class ApplePayButton: UIButton {
 
     private func setup() {
         setBackgorundColor(to: .primaryText())
-        roundCorners(.allCorners, radius: 4)
+        roundCorners(radius: 4)
         setTintColor(to: .primaryBg())
 
         setImage(R.image.deposit.apayIcon(), for: .normal)

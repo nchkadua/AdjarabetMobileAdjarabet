@@ -16,6 +16,7 @@ class TestPageVC: UIViewController, EMPageViewControllerDataSource, EMPageViewCo
     var viewControllers = [UIViewController]()
     private var currentIndex = 0
     private var currentViewController: UIViewController!
+    private var isAnimating = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +54,21 @@ class TestPageVC: UIViewController, EMPageViewControllerDataSource, EMPageViewCo
     }
 
     public func next() {
-        self.pageViewController?.scrollForward(animated: true, completion: nil)
+        guard !isAnimating else {return}
+
+        isAnimating = true
+        self.pageViewController?.scrollForward(animated: true, completion: {_ in
+            self.isAnimating = false
+        })
     }
 
     public func previous() {
-        self.pageViewController?.scrollReverse(animated: true, completion: nil)
+        guard !isAnimating else {return}
+
+        isAnimating = true
+        self.pageViewController?.scrollReverse(animated: true, completion: {_ in
+            self.isAnimating = false
+        })
     }
 
     public func setSwipeEnabled(_ enable: Bool) {

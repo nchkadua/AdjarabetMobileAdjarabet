@@ -35,7 +35,6 @@ public enum PasswordChangeViewModelRoute {
 public class DefaultPasswordChangeViewModel: DefaultBaseViewModel {
     @Inject(from: .repositories) private var repo: IsOTPEnabledRepository
     @Inject(from: .useCases) private var passwordChangeUseCase: PasswordChangeUseCase
-    @Inject(from: .useCases) private var resetPasswordUseCase: ResetPasswordUseCase
     private let actionSubject = PublishSubject<PasswordChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<PasswordChangeViewModelRoute>()
     //
@@ -48,21 +47,6 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
     public var route: Observable<PasswordChangeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        /* resetPasswordUseCase.initPasswordReset { result in
-            switch result {
-            case .success(let entity):
-                print(entity)
-            case .failure(let error):
-                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
-            }
-        }
-
-        resetPasswordUseCase.getPasswordResetCode(params: .init(address: "995577131188", channelType: .sms)) { result in
-            switch result {
-            case .success(let entity): print(entity)
-            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
-            }
-        } Commented till UI is done */
     }
 
     public func changeDidTap(_ oldPassword: String, newPassword: String) {

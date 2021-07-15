@@ -27,7 +27,7 @@ class CalendarComponentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(.allCorners, radius: 13)
+        roundCorners(radius: 13)
     }
 
     public override init(frame: CGRect) {

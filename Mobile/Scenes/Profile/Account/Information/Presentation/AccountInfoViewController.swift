@@ -75,13 +75,14 @@ public class AccountInfoViewController: ABViewController {
     private func setup() {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
+        setupKeyboard()
         setupScrollView()
         setupLabels()
         setTargets()
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.account_information_title())
+        setTitle(title: R.string.localization.account_information_title.localized())
         navigationItem.titleView?.accessibilityIdentifier = "AccountInfoViewController.title"
 
         setBackBarButtonItemIfNeeded()
@@ -95,15 +96,15 @@ public class AccountInfoViewController: ABViewController {
     private func setupContainers() {
         privateInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         privateInfoSV.setBackgorundColor(to: .tertiaryBg())
-        privateInfoSV.roundCorners(.allCorners, radius: 10)
+        privateInfoSV.roundCorners(radius: 10)
 
         contactInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         contactInfoSV.setBackgorundColor(to: .tertiaryBg())
-        contactInfoSV.roundCorners(.allCorners, radius: 10)
+        contactInfoSV.roundCorners(radius: 10)
 
         personalInfoHeaderSV.setBackgorundColor(to: .secondaryBg())
         personalInfoSV.setBackgorundColor(to: .tertiaryBg())
-        personalInfoSV.roundCorners(.allCorners, radius: 10)
+        personalInfoSV.roundCorners(radius: 10)
     }
 
     private func setupLabels() {

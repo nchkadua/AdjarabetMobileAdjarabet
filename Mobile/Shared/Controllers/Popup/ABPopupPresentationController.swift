@@ -81,7 +81,7 @@ class ABPopupPresentationController: UIPresentationController {
 
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
-        presentedView?.roundCorners([.topLeft, .topRight], radius: params.cornerRadius)
+        presentedView?.roundCornersBezier([.topLeft, .topRight], radius: params.cornerRadius)
     }
 
     override func containerViewDidLayoutSubviews() {

@@ -62,8 +62,8 @@ public class ShimmerView: AppCircularView {
         public var trailingColor: DesignSystem.Color
 
         public static var defaultAnimationParams: AnimationParams {
-            return .init(leadingColor:  .secondaryText(alpha: 0.05),
-                         middleColor:   .secondaryText(alpha: 0.2),
+            return .init(leadingColor: .secondaryText(alpha: 0.05),
+                         middleColor: .secondaryText(alpha: 0.2),
                          trailingColor: .secondaryText(alpha: 0.05))
         }
     }

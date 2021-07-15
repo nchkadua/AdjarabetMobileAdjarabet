@@ -10,7 +10,7 @@ import Foundation
 
 protocol ResetPasswordUseCase {
     typealias InitPasswordResetHandler = (Result<InitPasswordResetEntity, ABError>) -> Void
-    func initPasswordReset(handler: @escaping InitPasswordResetHandler)
+    func initPasswordReset(username: String?, handler: @escaping InitPasswordResetHandler)
 
     typealias GetPasswordResetCodeHandler = (Result<GetPasswordResetCodeEntity, ABError>) -> Void
     func getPasswordResetCode(params: PasswordResetCodeParams, handler: @escaping GetPasswordResetCodeHandler)
@@ -20,6 +20,7 @@ protocol ResetPasswordUseCase {
 }
 
 public struct PasswordResetCodeParams {
+    let username: String?
     let address: String
     let channelType: OTPDeliveryChannel
 }
@@ -31,9 +32,11 @@ public struct ResetPasswordParams {
 
 struct DefaultResetPasswordUseCase: ResetPasswordUseCase {
     @Inject(from: .repositories) private var repo: PasswordResetRepository
+    @Inject private var userSession: UserSessionServices
+    @Inject private var userSessionReadable: UserSessionReadableServices
 
-    func initPasswordReset(handler: @escaping InitPasswordResetHandler) {
-        repo.initPasswordReset(handler: handler)
+    func initPasswordReset(username: String?, handler: @escaping InitPasswordResetHandler) {
+        repo.initPasswordReset(username: username, handler: handler)
     }
 
     func getPasswordResetCode(params: PasswordResetCodeParams, handler: @escaping GetPasswordResetCodeHandler) {
@@ -41,5 +44,21 @@ struct DefaultResetPasswordUseCase: ResetPasswordUseCase {
     }
 
     func resetPassword(params: ResetPasswordParams, handler: @escaping ResetPasswordHandler) {
+        repo.resetPassword(params: params) { result in
+            switch result {
+            case .success(let entity):
+                save(password: params.newPassword)
+                handler(.success(entity))
+            case .failure(let error): handler(.failure(error))
+            }
+        }
+    }
+
+    private func save(password: String) {
+        userSession.set(userId: userSessionReadable.userId ?? -1,
+                        username: userSessionReadable.username ?? "",
+                        sessionId: userSessionReadable.sessionId ?? "",
+                        currencyId: userSessionReadable.currencyId,
+                        password: password)
     }
 }

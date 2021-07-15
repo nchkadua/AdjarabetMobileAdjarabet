@@ -75,6 +75,7 @@ public class DefaultOTPViewModel {
     @Inject(from: .repositories) private var actionTOPRepo: ActionOTPRepository
     @Inject(from: .useCases) private var OTPUseCase: OTPUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
+    @Inject(from: .useCases) private var resetPasswordUseCase: ResetPasswordUseCase
     @Inject(from: .viewModels) private var timerViewModel: TimerComponentViewModel
     @Inject private var userSession: UserSessionServices
 
@@ -94,8 +95,14 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
 
         switch params.otpType {
-        case .loginOTP: getOTP()
-        case .actionOTP: getActionOTP()
+        case .loginOTP:
+            return
+        case .smsLogin:
+            return
+        case .actionOTP:
+            getActionOTP()
+        case .passwordResetCode(let username, let deliveryType, let contact):
+            getPasswordResetCode(username, deliveryType, contact)
         case .none: return
         }
     }
@@ -131,6 +138,7 @@ extension DefaultOTPViewModel: OTPViewModel {
         getOTP()
     }
 
+    // MARK: - OTP Methods
     private func getOTP() {
         let username = params.username.isEmpty ? userSession.username : params.username
         smsCodeUseCase.execute(username: username ?? "") { [weak self] result in
@@ -151,10 +159,26 @@ extension DefaultOTPViewModel: OTPViewModel {
         }
     }
 
+    public func getPasswordResetCode(_ username: String?, _ deliveryType: OTPDeliveryChannel, _ contact: String) {
+        resetPasswordUseCase.getPasswordResetCode(params: .init(username: username, address: contact, channelType: deliveryType)) { result in
+            switch result {
+            case .success(let entity): print("asdadasds ", entity)
+            case .failure(let error): self.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
+            }
+        }
+    }
+
+    // MARK: - OTP Validation
     public func accept(code: String) {
         switch params.otpType {
-        case .loginOTP: login(code: code)
+        case .loginOTP:
+            login(code: code, loginType: .otp)
+        case .smsLogin:
+            login(code: code, loginType: .sms)
         case .actionOTP:
+            params.paramsOutputAction.onNext(.success(otp: code))
+            routeSubject.onNext(.dismiss)
+        case .passwordResetCode:
             params.paramsOutputAction.onNext(.success(otp: code))
             routeSubject.onNext(.dismiss)
         case .none:
@@ -162,11 +186,11 @@ extension DefaultOTPViewModel: OTPViewModel {
         }
     }
 
-    private func login(code: String) {
+    private func login(code: String, loginType: LoginType) {
         actionSubject.onNext(.setLoginButton(isLoading: true))
 
         let username = params.username.isEmpty ? userSession.username : params.username
-        OTPUseCase.execute(username: username ?? "", code: code) { [weak self] result in
+        OTPUseCase.execute(username: username ?? "", code: code, loginType: loginType) { [weak self] result in
             defer { self?.actionSubject.onNext(.setLoginButton(isLoading: false)) }
             switch result {
             case .success:
@@ -181,6 +205,8 @@ extension DefaultOTPViewModel: OTPViewModel {
 
 public enum OTPType {
     case loginOTP
+    case smsLogin
     case actionOTP
+    case passwordResetCode(username: String?, channelType: OTPDeliveryChannel, contact: String)
     case none
 }

@@ -180,7 +180,7 @@ extension HomeHeaderView: UISearchBarDelegate {
 }
 
 // MARK: - Delegate
-protocol HomeHeaderViewDelegate: class {
+protocol HomeHeaderViewDelegate: AnyObject {
     func didFocus()
     func didUnfocus()
 }
