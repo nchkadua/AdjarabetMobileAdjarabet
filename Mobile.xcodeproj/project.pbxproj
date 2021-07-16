@@ -4475,10 +4475,7 @@
 		CE2AB4C3266A542300C88262 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-=======
 				CE3AC9C926A17931000BF338 /* Documentation */,
->>>>>>> dev
 				CE2AB4C4266A543C00C88262 /* Profile */,
 				CE5D7A5B266A5EEE00719120 /* Transaction History */,
 				CE2AB4CE266A5C9300C88262 /* Biometric Settings */,
@@ -6695,10 +6692,7 @@
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				CE4A3155261732920039C078 /* NotificationDTO.swift in Sources */,
 				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
-<<<<<<< HEAD
-=======
 				CE3AC9E126A17931000BF338 /* DocumentationActionTableViewCellDataProvider.swift in Sources */,
->>>>>>> dev
 				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
