@@ -397,18 +397,7 @@
 		CE14202F2636EE8900E022C7 /* BonusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14202A2636EE8900E022C7 /* BonusViewModel.swift */; };
 		CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16936A2541AB240043B1A4 /* AccountInfoComponentView.swift */; };
 		CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1693722541AB300043B1A4 /* AccountInfoComponentView.xib */; };
-		CE1A19F126946BCF00A444B7 /* Documentation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1A19EC26946BCF00A444B7 /* Documentation.storyboard */; };
-		CE1A19F226946BCF00A444B7 /* DocumentationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19ED26946BCF00A444B7 /* DocumentationNavigator.swift */; };
-		CE1A19F326946BCF00A444B7 /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19EE26946BCF00A444B7 /* DocumentationViewController.swift */; };
-		CE1A19F426946BCF00A444B7 /* DocumentationViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19EF26946BCF00A444B7 /* DocumentationViewControllerFactory.swift */; };
-		CE1A19F526946BCF00A444B7 /* DocumentationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19F026946BCF00A444B7 /* DocumentationViewModel.swift */; };
 		CE1A19FD2694710300A444B7 /* ActionItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19FC2694710300A444B7 /* ActionItemsProvider.swift */; };
-		CE1A1A04269471A200A444B7 /* DocumentationActionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1A19FE269471A200A444B7 /* DocumentationActionComponentView.xib */; };
-		CE1A1A05269471A200A444B7 /* DocumentationActionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19FF269471A200A444B7 /* DocumentationActionTableViewCellDataProvider.swift */; };
-		CE1A1A06269471A200A444B7 /* DocumentationActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1A1A00269471A200A444B7 /* DocumentationActionTableViewCell.xib */; };
-		CE1A1A07269471A200A444B7 /* DocumentationActionComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A1A01269471A200A444B7 /* DocumentationActionComponentViewModel.swift */; };
-		CE1A1A08269471A200A444B7 /* DocumentationActionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A1A02269471A200A444B7 /* DocumentationActionComponentView.swift */; };
-		CE1A1A09269471A200A444B7 /* DocumentationActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A1A03269471A200A444B7 /* DocumentationActionTableViewCell.swift */; };
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
 		CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */; };
 		CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */; };
@@ -438,6 +427,17 @@
 		CE38ED812681EEC800B02A9E /* LogOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38ED802681EEC800B02A9E /* LogOutTableViewCell.xib */; };
 		CE38ED852681EECF00B02A9E /* LogOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38ED842681EECF00B02A9E /* LogOutTableViewCell.swift */; };
 		CE38ED892681EEDD00B02A9E /* LogOutTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38ED882681EEDD00B02A9E /* LogOutTableViewCellDataProvider.swift */; };
+		CE3AC99F26A174B6000BF338 /* DocumentationActionComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A1A01269471A200A444B7 /* DocumentationActionComponentViewModel.swift */; };
+		CE3AC9A026A174B6000BF338 /* DocumentationActionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A1A02269471A200A444B7 /* DocumentationActionComponentView.swift */; };
+		CE3AC9A126A174B6000BF338 /* DocumentationActionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19FF269471A200A444B7 /* DocumentationActionTableViewCellDataProvider.swift */; };
+		CE3AC9A226A174B6000BF338 /* DocumentationActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A1A03269471A200A444B7 /* DocumentationActionTableViewCell.swift */; };
+		CE3AC9A326A174B6000BF338 /* DocumentationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19F026946BCF00A444B7 /* DocumentationViewModel.swift */; };
+		CE3AC9A426A174B6000BF338 /* DocumentationViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19EF26946BCF00A444B7 /* DocumentationViewControllerFactory.swift */; };
+		CE3AC9A526A174B6000BF338 /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19EE26946BCF00A444B7 /* DocumentationViewController.swift */; };
+		CE3AC9A626A174B6000BF338 /* DocumentationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A19ED26946BCF00A444B7 /* DocumentationNavigator.swift */; };
+		CE3AC9A726A174E7000BF338 /* DocumentationActionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1A19FE269471A200A444B7 /* DocumentationActionComponentView.xib */; };
+		CE3AC9A826A174E7000BF338 /* DocumentationActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1A1A00269471A200A444B7 /* DocumentationActionTableViewCell.xib */; };
+		CE3AC9A926A174E7000BF338 /* Documentation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1A19EC26946BCF00A444B7 /* Documentation.storyboard */; };
 		CE3B2BDE269C574600301F6C /* CommunicationLanguageComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3B2BD8269C574600301F6C /* CommunicationLanguageComponentView.xib */; };
 		CE3B2BE1269C574600301F6C /* CommunicationLanguageComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B2BDB269C574600301F6C /* CommunicationLanguageComponentViewModel.swift */; };
 		CE3B2BE2269C574600301F6C /* CommunicationLanguageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B2BDC269C574600301F6C /* CommunicationLanguageComponentView.swift */; };
@@ -6252,6 +6252,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3AC9A726A174E7000BF338 /* DocumentationActionComponentView.xib in Resources */,
+				CE3AC9A826A174E7000BF338 /* DocumentationActionTableViewCell.xib in Resources */,
+				CE3AC9A926A174E7000BF338 /* Documentation.storyboard in Resources */,
 				CEE44E8D2600B5C100A83BD2 /* AdjaraMontPro-Regular.ttf in Resources */,
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
 				C75D1B0B261205F4002AF763 /* TSFJSlot.zip in Resources */,
@@ -6405,7 +6408,6 @@
 				CEB285E1256D20C300584A65 /* SelfSuspend.storyboard in Resources */,
 				769886AE2571055000FA339E /* TransactionFilterComponentView.xib in Resources */,
 				C75D1AED261205F4002AF763 /* FHJSlot.zip in Resources */,
-				CE1A19F126946BCF00A444B7 /* Documentation.storyboard in Resources */,
 				76E43EDB25B95303007B2D97 /* VideoCardComponentView.xib in Resources */,
 				7682CF9225B8581600717090 /* AddMyCardTableViewCell.xib in Resources */,
 				CE7698A8269F02F6009972B2 /* ResetOptionTableViewCell.xib in Resources */,
@@ -6462,7 +6464,6 @@
 				76404F09257625F900D14E0C /* AccountSecurityMessagesComponentView.xib in Resources */,
 				CE7698A6269F02F6009972B2 /* ResetOptionComponentView.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
-				CE1A1A06269471A200A444B7 /* DocumentationActionTableViewCell.xib in Resources */,
 				C75D1AF6261205F4002AF763 /* OGJSlot.zip in Resources */,
 				CEE44E882600B5C100A83BD2 /* AdjaraMont-Light.ttf in Resources */,
 				CEA7779D256D4250008A4F6C /* MailChange.storyboard in Resources */,
@@ -6475,7 +6476,6 @@
 				C75D1B1F261205F4002AF763 /* MLAWJSlot.zip in Resources */,
 				C75D1B21261205F4002AF763 /* TDHJSlot.zip in Resources */,
 				C75D1B13261205F4002AF763 /* FHNCJSlot.zip in Resources */,
-				CE1A1A04269471A200A444B7 /* DocumentationActionComponentView.xib in Resources */,
 				C7C973292580D9550062C713 /* SecurityLevelComponentView.xib in Resources */,
 				CE14202B2636EE8900E022C7 /* Bonus.storyboard in Resources */,
 				7682CF9025B8581600717090 /* AddMyCardComponentView.xib in Resources */,
@@ -6661,6 +6661,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3AC99F26A174B6000BF338 /* DocumentationActionComponentViewModel.swift in Sources */,
+				CE3AC9A026A174B6000BF338 /* DocumentationActionComponentView.swift in Sources */,
+				CE3AC9A126A174B6000BF338 /* DocumentationActionTableViewCellDataProvider.swift in Sources */,
+				CE3AC9A226A174B6000BF338 /* DocumentationActionTableViewCell.swift in Sources */,
+				CE3AC9A326A174B6000BF338 /* DocumentationViewModel.swift in Sources */,
+				CE3AC9A426A174B6000BF338 /* DocumentationViewControllerFactory.swift in Sources */,
+				CE3AC9A526A174B6000BF338 /* DocumentationViewController.swift in Sources */,
+				CE3AC9A626A174B6000BF338 /* DocumentationNavigator.swift in Sources */,
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
 				CEB49871268C987A00004A45 /* PasswordResetNavigator.swift in Sources */,
 				CE920609268493D600670AD8 /* ServiceAuthTokenRepository.swift in Sources */,
@@ -6685,11 +6693,9 @@
 				CEB285E5256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift in Sources */,
 				76404F0E257625F900D14E0C /* AccountSecurityMessagesTableViewCell.swift in Sources */,
 				C7C973AF2580EC990062C713 /* SecurityLevelTypeTableViewCell.swift in Sources */,
-				CE1A19F326946BCF00A444B7 /* DocumentationViewController.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				CE4A3155261732920039C078 /* NotificationDTO.swift in Sources */,
 				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
-				CE1A1A09269471A200A444B7 /* DocumentationActionTableViewCell.swift in Sources */,
 				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
@@ -6726,7 +6732,6 @@
 				C7C3600425CAA6D600ADCBB6 /* GameIdentifier.swift in Sources */,
 				C7DE3ADB25F5293E0082D5EF /* UserLoggedInDTO.swift in Sources */,
 				CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */,
-				CE1A1A07269471A200A444B7 /* DocumentationActionComponentViewModel.swift in Sources */,
 				76DCF6B225B8262300150EE1 /* MyCardComponentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
@@ -6793,7 +6798,6 @@
 				CE2AABC9267A015200B45A0A /* CorePasswordResetRepository.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				C782D26B26544C4C00594A65 /* ABSliderCellModel.swift in Sources */,
-				CE1A1A05269471A200A444B7 /* DocumentationActionTableViewCellDataProvider.swift in Sources */,
 				CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */,
 				CE7A241E257C19B200A94E89 /* Helper.swift in Sources */,
 				769886B92571091D00FA339E /* ABCheckbox.swift in Sources */,
@@ -6803,7 +6807,6 @@
 				C728C274261BA038004D3F2F /* AddAccountView.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
 				7644B61D2563F08B006778B2 /* DateHeaderCellDataProvider.swift in Sources */,
-				CE1A1A08269471A200A444B7 /* DocumentationActionComponentView.swift in Sources */,
 				C78E52F72683A31900EE1C18 /* CoreApiSuspendRepository.swift in Sources */,
 				CE0818C025389B7E00AD3B3B /* NotificationsHeaderComponentView.swift in Sources */,
 				769886C225711C2B00FA339E /* TransactionTypeModel.swift in Sources */,
@@ -6921,7 +6924,6 @@
 				C78E53142685B12300EE1C18 /* HighSecurityViewModel.swift in Sources */,
 				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
 				C78E528F268279B000EE1C18 /* ContactInfoRepository.swift in Sources */,
-				CE1A19F226946BCF00A444B7 /* DocumentationNavigator.swift in Sources */,
 				7682CF9325B8581600717090 /* AddMyCardComponentViewModel.swift in Sources */,
 				CE679FDD2578334B00F2EC1C /* AddCardNavigator.swift in Sources */,
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
@@ -7066,7 +7068,6 @@
 				C75F61EA2657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift in Sources */,
 				C75F61F326570884009CB6A1 /* LayoutChooserView.swift in Sources */,
 				C7FAA3C82600C4D600265995 /* UFCInitWithdrawDTO.swift in Sources */,
-				CE1A19F426946BCF00A444B7 /* DocumentationViewControllerFactory.swift in Sources */,
 				CE76989B269EF341009972B2 /* PasswordResetOptionsViewModel.swift in Sources */,
 				CE95A3F3261DE23A0004330E /* ApplePayViewController.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
@@ -7140,7 +7141,6 @@
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				CE55ED55252B3881003E168F /* ProfileInfoComponentView.swift in Sources */,
-				CE1A19F526946BCF00A444B7 /* DocumentationViewModel.swift in Sources */,
 				CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */,
 				CECF7F6F256D9F99001C0E50 /* PasswordChangeNavigator.swift in Sources */,
 				C7CA6A0C2563B2F900A9C6AB /* ABPopupPresentationController.swift in Sources */,
