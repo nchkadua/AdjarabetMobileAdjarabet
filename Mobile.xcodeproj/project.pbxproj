@@ -825,6 +825,7 @@
 		D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */; };
 		D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FD2449C50B0015C03C /* Rswift+Extension.swift */; };
 		D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FF2449C7090015C03C /* LanguageTests.swift */; };
+		E2824DAA26A0F26E009619E5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2824DA926A0F26E009619E5 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1673,6 +1674,7 @@
 		D8FBA4FF2449C7090015C03C /* LanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTests.swift; sourceTree = "<group>"; };
 		D8FBA5012449C8DA0015C03C /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/Localization.strings; sourceTree = "<group>"; };
 		D8FBA5022449C90A0015C03C /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = hy.lproj/Localization.strings; sourceTree = "<group>"; };
+		E2824DA926A0F26E009619E5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-production.xcconfig"; sourceTree = "<group>"; };
@@ -1692,6 +1694,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2824DAA26A0F26E009619E5 /* CloudKit.framework in Frameworks */,
 				CE76FD8B257666E200D8AB04 /* CoreLocation.framework in Frameworks */,
 				A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */,
 			);
@@ -1703,6 +1706,7 @@
 		31170CB969BE9F4E039A5237 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2824DA926A0F26E009619E5 /* CloudKit.framework */,
 				CE76FD8A257666E200D8AB04 /* CoreLocation.framework */,
 				D803F42724A251C700A16CB2 /* Pods_Mobile.framework */,
 				F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */,

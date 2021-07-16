@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 39 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 38 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -112,8 +112,6 @@ struct R: Rswift.Validatable {
     static let bonus = _R.storyboard.bonus()
     /// Storyboard `Deposit`.
     static let deposit = _R.storyboard.deposit()
-    /// Storyboard `Documentation`.
-    static let documentation = _R.storyboard.documentation()
     /// Storyboard `Emoney`.
     static let emoney = _R.storyboard.emoney()
     /// Storyboard `Game`.
@@ -238,13 +236,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Deposit", bundle: ...)`
     static func deposit(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.deposit)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Documentation", bundle: ...)`
-    static func documentation(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.documentation)
     }
     #endif
 
@@ -913,17 +904,19 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 4 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 6 properties.
   struct entitlements {
-    struct comAppleDeveloperAssociatedDomains {
-      static let webcredentialsAdjarabetCom = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "webcredentials:adjarabet.com") ?? "webcredentials:adjarabet.com"
+    static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
 
+    struct comAppleDeveloperIcloudContainerIdentifiers {
+      fileprivate init() {}
+    }
+
+    struct comAppleDeveloperIcloudServices {
       fileprivate init() {}
     }
 
     struct comAppleDeveloperInAppPayments {
-      static let merchantComAdjarabetWeb = infoPlistString(path: ["com.apple.developer.in-app-payments"], key: "merchant.com.adjarabet.web") ?? "merchant.com.adjarabet.web"
-
       fileprivate init() {}
     }
 
@@ -934,6 +927,7 @@ struct R: Rswift.Validatable {
     }
 
     struct keychainAccessGroups {
+      static let appIdentifierPrefixComAdjarabetMobile = infoPlistString(path: ["keychain-access-groups"], key: "$(AppIdentifierPrefix)com.adjarabet.Mobile") ?? "$(AppIdentifierPrefix)com.adjarabet.Mobile"
       static let appIdentifierPrefixComAdjarabetMobileCredentials = infoPlistString(path: ["keychain-access-groups"], key: "$(AppIdentifierPrefix)com.adjarabet.Mobile.credentials") ?? "$(AppIdentifierPrefix)com.adjarabet.Mobile.credentials"
 
       fileprivate init() {}
@@ -3257,7 +3251,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 91 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 89 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -3313,10 +3307,6 @@ struct R: Rswift.Validatable {
     static let dateHeaderCell = _R.nib._DateHeaderCell()
     /// Nib `DateHeaderComponentView`.
     static let dateHeaderComponentView = _R.nib._DateHeaderComponentView()
-    /// Nib `DocumentationActionComponentView`.
-    static let documentationActionComponentView = _R.nib._DocumentationActionComponentView()
-    /// Nib `DocumentationActionTableViewCell`.
-    static let documentationActionTableViewCell = _R.nib._DocumentationActionTableViewCell()
     /// Nib `EmoneyButton`.
     static let emoneyButton = _R.nib._EmoneyButton()
     /// Nib `EmoneyInstructionsView`.
@@ -3655,22 +3645,6 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.dateHeaderComponentView) instead")
     static func dateHeaderComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.dateHeaderComponentView)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "DocumentationActionComponentView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.documentationActionComponentView) instead")
-    static func documentationActionComponentView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.documentationActionComponentView)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "DocumentationActionTableViewCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.documentationActionTableViewCell) instead")
-    static func documentationActionTableViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.documentationActionTableViewCell)
     }
     #endif
 
@@ -4276,14 +4250,6 @@ struct R: Rswift.Validatable {
 
     static func dateHeaderComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.dateHeaderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-
-    static func documentationActionComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.documentationActionComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-
-    static func documentationActionTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DocumentationActionTableViewCell? {
-      return R.nib.documentationActionTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DocumentationActionTableViewCell
     }
 
     static func emoneyButton(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -14880,7 +14846,6 @@ struct _R: Rswift.Validatable {
       try _CalendarComponentView.validate()
       try _CashOutVisaView.validate()
       try _CommunicationLanguageComponentView.validate()
-      try _DocumentationActionComponentView.validate()
       try _EmoneyButton.validate()
       try _FooterComponentView.validate()
       try _GameLauncherComponentView.validate()
@@ -15177,8 +15142,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -15242,34 +15207,6 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _DocumentationActionComponentView: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "DocumentationActionComponentView"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "Components/QuickAction/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/arrow' is used in nib 'DocumentationActionComponentView', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _DocumentationActionTableViewCell: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "DocumentationActionTableViewCell"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DocumentationActionTableViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DocumentationActionTableViewCell
-      }
-
-      fileprivate init() {}
-    }
-
     struct _EmoneyButton: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "EmoneyButton"
@@ -15322,8 +15259,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -15364,8 +15301,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -16059,9 +15996,6 @@ struct _R: Rswift.Validatable {
       try deposit.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try documentation.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
       try emoney.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -16350,26 +16284,6 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct documentation: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let documentationViewController = StoryboardViewControllerResource<DocumentationViewController>(identifier: "DocumentationViewController")
-      let name = "Documentation"
-
-      func documentationViewController(_: Void = ()) -> DocumentationViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: documentationViewController)
-      }
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-        if _R.storyboard.documentation().documentationViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'documentationViewController' could not be loaded from storyboard 'Documentation' as 'DocumentationViewController'.") }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     struct emoney: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let emoneyViewController = StoryboardViewControllerResource<EmoneyViewController>(identifier: "EmoneyViewController")
@@ -16480,17 +16394,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-<<<<<<< HEAD
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
-=======
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
->>>>>>> dev
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
