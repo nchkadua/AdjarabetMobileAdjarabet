@@ -94,11 +94,16 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionSubject.onNext(.setSMSInputViewNumberOfItems(smsCodeLength))
         actionSubject.onNext(.bindToTimer(timerViewModel: timerViewModel))
 
+        getOTPCode(getOtp: false)
+    }
+
+    private func getOTPCode(getOtp: Bool) {
         switch params.otpType {
         case .loginOTP:
             return
         case .smsLogin:
-            return
+            guard getOtp else {return}
+            getOTP()
         case .actionOTP:
             getActionOTP()
         case .passwordResetCode(let username, let deliveryType, let contact):
@@ -135,7 +140,7 @@ extension DefaultOTPViewModel: OTPViewModel {
 
     public func resendSMS() {
         actionSubject.onNext(.setResendSMSButton(isLoading: true))
-        getOTP()
+        getOTPCode(getOtp: true)
     }
 
     // MARK: - OTP Methods
