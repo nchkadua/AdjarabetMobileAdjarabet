@@ -159,7 +159,11 @@ public class PasswordResetViewController: ABViewController {
             self?.updateRightButton(of: inputView)
         }).disposed(by: disposeBag)
 
-        Observable.combineLatest([repeatePasswordInputView.rx.text.orEmpty, newPasswordInputView.rx.text.orEmpty, repeatePasswordInputView.rx.text.orEmpty])
+        var inputArray = [repeatePasswordInputView.rx.text.orEmpty, newPasswordInputView.rx.text.orEmpty]
+        if viewModel.params.resetType == .email {
+            inputArray.append(contactInputView.rx.text.orEmpty)
+        }
+        Observable.combineLatest(inputArray)
             .map { $0.map { !$0.isEmpty } }
             .map { $0.allSatisfy { $0 == true } }
             .subscribe(onNext: { [weak self] isValid in
