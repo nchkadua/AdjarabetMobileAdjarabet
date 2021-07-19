@@ -13,7 +13,7 @@ public protocol OTPViewModel: OTPViewModelInput, OTPViewModelOutput {
 
 public struct OTPViewModelParams {
     public enum Action {
-        case success(otp: String)
+        case success(otp: String?, userID: String?)
         case error
     }
     public let paramsOutputAction = PublishSubject<Action>()
@@ -78,6 +78,8 @@ public class DefaultOTPViewModel {
     @Inject(from: .useCases) private var resetPasswordUseCase: ResetPasswordUseCase
     @Inject(from: .viewModels) private var timerViewModel: TimerComponentViewModel
     @Inject private var userSession: UserSessionServices
+    //
+    private var userId: String?
 
     public init(params: OTPViewModelParams) {
         self.params = params
@@ -167,7 +169,7 @@ extension DefaultOTPViewModel: OTPViewModel {
     public func getPasswordResetCode(_ username: String?, _ deliveryType: OTPDeliveryChannel, _ contact: String) {
         resetPasswordUseCase.getPasswordResetCode(params: .init(username: username, address: contact, channelType: deliveryType)) { result in
             switch result {
-            case .success(let entity): print("asdadasds ", entity)
+            case .success(let entity): self.userId = String(entity.userId)
             case .failure(let error): self.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
             }
         }
@@ -181,10 +183,10 @@ extension DefaultOTPViewModel: OTPViewModel {
         case .smsLogin:
             login(code: code, loginType: .sms)
         case .actionOTP:
-            params.paramsOutputAction.onNext(.success(otp: code))
+            params.paramsOutputAction.onNext(.success(otp: code, userID: nil))
             routeSubject.onNext(.dismiss)
         case .passwordResetCode:
-            params.paramsOutputAction.onNext(.success(otp: code))
+            params.paramsOutputAction.onNext(.success(otp: code, userID: userId))
             routeSubject.onNext(.dismiss)
         case .none:
             break

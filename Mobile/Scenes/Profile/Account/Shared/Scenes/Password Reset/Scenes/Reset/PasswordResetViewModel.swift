@@ -84,14 +84,14 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
 
     private func didRecive(action: OTPViewModelParams.Action) {
         switch action {
-        case .success(let code): handleSuccessfulOTP(code)
+        case .success(let code, let userId): handleSuccessfulOTP(code, userId)
         case .error: self.actionSubject.onNext(.showMessage(message: "Invalid OTP"))
         }
     }
 
-    private func handleSuccessfulOTP(_ otp: String) {
+    private func handleSuccessfulOTP(_ otp: String?, _ userId: String?) {
         self.actionSubject.onNext(.setButton(loading: true))
-        resetPasswordUseCase.resetPassword(params: .init(confirmCode: otp, newPassword: self.newPassword ?? "")) { result in
+        resetPasswordUseCase.resetPassword(params: .init(confirmCode: otp, newPassword: self.newPassword ?? "", userId: userId)) { result in
             defer { self.actionSubject.onNext(.setButton(loading: false)) }
             switch result {
             case .success: self.actionSubject.onNext(.showMessage(message: "Password Reseted Succesfully"))

@@ -159,11 +159,7 @@ public class PasswordResetViewController: ABViewController {
             self?.updateRightButton(of: inputView)
         }).disposed(by: disposeBag)
 
-        var inputArray = [repeatePasswordInputView.rx.text.orEmpty, newPasswordInputView.rx.text.orEmpty]
-        if viewModel.params.resetType == .email {
-            inputArray.append(contactInputView.rx.text.orEmpty)
-        }
-        Observable.combineLatest(inputArray)
+        Observable.combineLatest([repeatePasswordInputView.rx.text.orEmpty, newPasswordInputView.rx.text.orEmpty, contactInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }
             .map { $0.allSatisfy { $0 == true } }
             .subscribe(onNext: { [weak self] isValid in
@@ -209,7 +205,7 @@ public class PasswordResetViewController: ABViewController {
 
     // MARK: Configuration
     private func updatePasswordButton(isEnabled: Bool) {
-        guard passwordChangeRulesView.allGood == true else {
+        guard passwordChangeRulesView.allGood == true, isContactInputFilledCorrectly() else {
             updatePasswordButton.isUserInteractionEnabled = false
             updatePasswordButton.setStyle(to: .primary(state: .disabled, size: .large))
 
@@ -218,6 +214,16 @@ public class PasswordResetViewController: ABViewController {
 
         updatePasswordButton.isUserInteractionEnabled = isEnabled
         updatePasswordButton.setStyle(to: .primary(state: isEnabled ? .active : .disabled, size: .large))
+    }
+
+    private func isContactInputFilledCorrectly() -> Bool {
+        if viewModel.params.resetType == .email {
+            return !(contactInputView.text?.isEmpty ?? false)
+        } else if viewModel.params.resetType == .sms {
+            return (contactInputView.text?.count ?? "".count) >= 12
+        }
+
+        return false
     }
 
     private func updateRightButton(of passwordView: ABInputView) {
