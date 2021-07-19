@@ -56,7 +56,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
             handler(.failure(.sessionNotFound))
             return
         }
-        
+
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "resetPassword")

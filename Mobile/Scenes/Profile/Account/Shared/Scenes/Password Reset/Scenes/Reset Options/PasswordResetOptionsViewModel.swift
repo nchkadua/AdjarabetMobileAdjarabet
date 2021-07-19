@@ -32,6 +32,7 @@ public enum ResetOptionsViewModelOutputAction {
     case hideUsernameInput
     case initialize(AppListDataProvider)
     case clearTableview
+    case setButton(loading: Bool)
     case showMessage(message: String)
 }
 
@@ -69,7 +70,9 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
     }
 
     private func getResetOptions(_ username: String?) {
+        self.actionSubject.onNext(.setButton(loading: true))
         resetPasswordUseCase.initPasswordReset(username: username) { result in
+            defer { self.actionSubject.onNext(.setButton(loading: false)) }
             switch result {
             case .success(let entity):
                 self.phone = entity.tel

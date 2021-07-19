@@ -56,6 +56,7 @@ public class PasswordResetOptionsViewController: ABViewController {
         case .clearTableview: clearTableView()
         case .showMessage(let message): showAlert(title: message)
         case .hideUsernameInput: container1HeighConstraint.constant = 0
+        case .setButton(let loading): continueButton.set(isLoading: loading)
         }
     }
 
