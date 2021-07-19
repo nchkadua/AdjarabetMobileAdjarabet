@@ -83,7 +83,7 @@ extension DefaultMailChangeViewModel: MailChangeViewModel {
 
     private func didRecive(action: OTPViewModelParams.Action) {
         switch action {
-        case .success(let code): handleSuccessfulOTP(code)
+        case .success(let code, _): handleSuccessfulOTP(code ?? "")
         case .error: self.actionSubject.onNext(.showMessage(message: "Invalid OTP"))
         }
     }

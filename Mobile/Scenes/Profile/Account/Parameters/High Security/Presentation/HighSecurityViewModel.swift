@@ -85,8 +85,8 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
 
     private func didRecive(action: OTPViewModelParams.Action) {
         switch action {
-        case .success(let code):
-            handleSuccessOTP(with: code)
+        case .success(let code, _):
+            handleSuccessOTP(with: code ?? "")
         case .error:
             let error: ABError = .default
             let description = error.description

@@ -56,12 +56,12 @@ extension CorePasswordResetRepository: PasswordResetRepository {
             handler(.failure(.sessionNotFound))
             return
         }
-
+        
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "resetPassword")
-            .setBody(key: .userId, value: String(userID))
-            .setBody(key: "confirmCode", value: params.confirmCode)
+            .setBody(key: .userId, value: params.userId ?? String(userID))
+            .setBody(key: "confirmCode", value: params.confirmCode ?? "")
             .setBody(key: .newPassword, value: params.newPassword)
             .build()
 
