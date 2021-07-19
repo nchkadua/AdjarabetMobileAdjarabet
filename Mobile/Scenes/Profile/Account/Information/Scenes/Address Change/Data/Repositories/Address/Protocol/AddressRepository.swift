@@ -29,6 +29,8 @@ protocol AddressWritableRepository {
 
 // for changeAddress
 struct ChangeAddressParams {
+    let address: String
+    /*
     let addressLine1: String
     let addressLine2: String
     let addressLine3: String
@@ -36,4 +38,5 @@ struct ChangeAddressParams {
     let county: String
     let region: String
     let postCode: String
+    */
 }

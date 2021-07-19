@@ -16,6 +16,8 @@ extension CoreApiAddressRepository: AddressRepository {
         performTask(expecting: CoreApiStatusCodeDTO.self, completion: handler) { requestBuilder in
             return requestBuilder
                 .setBody(key: .req, value: "changeAddress")
+                .setBody(key: "address", value: params.address)
+                /*
                 .setBody(key: "AddressLine1", value: params.addressLine1)
                 .setBody(key: "AddressLine2", value: params.addressLine2)
                 .setBody(key: "AddressLine3", value: params.addressLine3)
@@ -23,6 +25,7 @@ extension CoreApiAddressRepository: AddressRepository {
                 .setBody(key: "County", value: params.county)
                 .setBody(key: "Region", value: params.region)
                 .setBody(key: "PostCode", value: params.postCode)
+                */
         }
     }
 }

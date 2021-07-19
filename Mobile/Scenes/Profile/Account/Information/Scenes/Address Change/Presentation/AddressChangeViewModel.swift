@@ -39,6 +39,20 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
     public func viewDidLoad() {
         /*
         repo.changeAddress(
+            with: .init(
+                address: "New Address"
+            )
+        ) { result in
+            switch result {
+            case .success:
+                print("changeAddress.Success")
+            case .failure(let error):
+                print("changeAddress.Failure:", error)
+            }
+        }
+        */
+        /*
+        repo.changeAddress(
             with: .init (
                 addressLine1: "221B Baker Street",
                 addressLine2: "Flat #23",

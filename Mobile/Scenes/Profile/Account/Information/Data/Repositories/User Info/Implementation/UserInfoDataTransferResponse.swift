@@ -25,7 +25,7 @@ struct UserInfoDataTransferResponse: CoreDataTransferResponse {
         let gender: String?
         let userName: String?
         let countryId: Int?
-        // let address: String? // FIXME: add real address
+        let address: String?
         let birthDate: String?
         let email: String?
         let tel: String?
@@ -50,7 +50,7 @@ struct UserInfoDataTransferResponse: CoreDataTransferResponse {
             case gender = "Gender"
             case userName = "UserName"
             case countryId = "CountryID"
-            // case address = "Address" // FIXME: add real address
+            case address = "Address"
             case birthDate = "BirthDate"
             case email = "Email"
             case tel = "Tel"
@@ -79,7 +79,7 @@ struct UserInfoDataTransferResponse: CoreDataTransferResponse {
             gender: body.gender != nil ? Gender(genderId: body.gender!) : nil,
             userName: body.userName,
             country: body.countryId != nil ? Country(countryId: body.countryId!) : nil,
-            address: "", // body.address, // FIXME: add real address
+            address: body.address,
             birthDate: body.birthDate,
             email: body.email,
             phone: body.tel,
