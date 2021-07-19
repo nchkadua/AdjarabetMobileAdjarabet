@@ -111,7 +111,7 @@
 "account_parameters" = "ანგარიშის პარამეტრები";
 "documentation" = "დოკუმენტაცია";
 "terms_and_conditions" = "წესები და პირობები";
-"confidential" = "კონფიდენციალურობის პოლიტიკა";
+"privacy_policy" = "კონფიდენციალურობის პოლიტიკა";
 "log_out" = "ანგარიშიდან გასვლა";
 
 /* Account Info */
