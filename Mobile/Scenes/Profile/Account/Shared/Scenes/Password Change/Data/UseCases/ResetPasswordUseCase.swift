@@ -26,8 +26,9 @@ public struct PasswordResetCodeParams {
 }
 
 public struct ResetPasswordParams {
-    let confirmCode: String
+    let confirmCode: String?
     let newPassword: String
+    let userId: String?
 }
 
 struct DefaultResetPasswordUseCase: ResetPasswordUseCase {
@@ -40,11 +41,17 @@ struct DefaultResetPasswordUseCase: ResetPasswordUseCase {
     }
 
     func getPasswordResetCode(params: PasswordResetCodeParams, handler: @escaping GetPasswordResetCodeHandler) {
-        repo.getPasswordResetCode(params: params, handler: handler)
+        repo.getPasswordResetCode(params: params) { result in
+            switch result {
+            case .success(let entity):
+                handler(.success(entity))
+            case .failure(let error): handler(.failure(error))
+            }
+        }
     }
 
     func resetPassword(params: ResetPasswordParams, handler: @escaping ResetPasswordHandler) {
-        repo.resetPassword(params: params) { result in
+        repo.resetPassword(params: .init(confirmCode: params.confirmCode, newPassword: params.newPassword, userId: params.userId)) { result in
             switch result {
             case .success(let entity):
                 save(password: params.newPassword)
