@@ -4596,9 +4596,9 @@
 		CE3AC9CC26A17931000BF338 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CE3AC9CF26A17931000BF338 /* Components */,
 				CE3AC9CD26A17931000BF338 /* DocumentationViewController.swift */,
 				CE3AC9CE26A17931000BF338 /* DocumentationNavigator.swift */,
-				CE3AC9CF26A17931000BF338 /* Components */,
 				CE3AC9D926A17931000BF338 /* DocumentationViewModel.swift */,
 				CE3AC9DA26A17931000BF338 /* DocumentationViewControllerFactory.swift */,
 				CE3AC9DB26A17931000BF338 /* Documentation.storyboard */,
@@ -4627,8 +4627,8 @@
 			isa = PBXGroup;
 			children = (
 				CE3AC9D226A17931000BF338 /* DocumentationActionTableViewCell.swift */,
-				CE3AC9D326A17931000BF338 /* DocumentationActionTableViewCell.xib */,
 				CE3AC9D426A17931000BF338 /* DocumentationActionTableViewCellDataProvider.swift */,
+				CE3AC9D326A17931000BF338 /* DocumentationActionTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -5056,9 +5056,9 @@
 		CE76989F269F02E9009972B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE7698A0269F02F6009972B2 /* ResetOptionComponentView.xib */,
 				CE7698A3269F02F6009972B2 /* ResetOptionComponentViewModel.swift */,
 				CE7698A4269F02F6009972B2 /* ResetOptionComponentView.swift */,
+				CE7698A0269F02F6009972B2 /* ResetOptionComponentView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

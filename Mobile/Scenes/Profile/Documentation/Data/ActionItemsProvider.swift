@@ -10,12 +10,17 @@ class ActionItemsProvider {
     public static func items() -> [Action] {
         [
             Action(title: R.string.localization.terms_and_conditions.localized(), destination: .termsAndConditions),
-            Action(title: R.string.localization.confidential.localized(), destination: .confidential)
+            Action(title: R.string.localization.privacy_policy.localized(), destination: .privacyPolicy)
         ]
     }
 }
 
 public struct Action {
     public var title: String
-    public var destination: DocumentationNavigator.Destination
+    public var destination: DocumentationDestination
+}
+
+public enum DocumentationDestination {
+    case termsAndConditions
+    case privacyPolicy
 }

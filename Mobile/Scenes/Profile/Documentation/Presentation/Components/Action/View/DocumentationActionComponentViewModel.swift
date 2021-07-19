@@ -13,7 +13,7 @@ public protocol DocumentationActionComponentViewModel: DocumentationActionCompon
 
 public struct DocumentationActionComponentViewModelParams {
     public var title: String
-    public var destination: DocumentationNavigator.Destination
+    public var destination: DocumentationDestination
 }
 
 public protocol DocumentationActionComponentViewModelInput {
