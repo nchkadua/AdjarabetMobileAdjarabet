@@ -11,7 +11,7 @@ public protocol FAQCategoryTableViewCellDataProvider: AppCellDelegate, FAQCatego
 public extension FAQCategoryTableViewCellDataProvider {
     var identifier: String { FAQCategoryTableViewCell.identifierValue }
     var height: CGFloat {
-        get { 90 }
+        get { 100 }
         set { print(newValue) }
     }
     var isHeightSet: Bool { true }
