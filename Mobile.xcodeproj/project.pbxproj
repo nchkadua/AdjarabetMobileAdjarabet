@@ -490,6 +490,18 @@
 		CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE679FD92578334B00F2EC1C /* AddCardViewController.swift */; };
 		CE679FDF2578334B00F2EC1C /* AddCardViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE679FDA2578334B00F2EC1C /* AddCardViewControllerFactory.swift */; };
 		CE679FE02578334B00F2EC1C /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE679FDB2578334B00F2EC1C /* AddCardViewModel.swift */; };
+		CE693AE726A6C8920049D665 /* FAQCategories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE693AE226A6C8920049D665 /* FAQCategories.storyboard */; };
+		CE693AE826A6C8920049D665 /* FAQCategoriesNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AE326A6C8920049D665 /* FAQCategoriesNavigator.swift */; };
+		CE693AE926A6C8920049D665 /* FAQCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AE426A6C8920049D665 /* FAQCategoriesViewController.swift */; };
+		CE693AEA26A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AE526A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift */; };
+		CE693AEB26A6C8920049D665 /* FAQCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AE626A6C8920049D665 /* FAQCategoriesViewModel.swift */; };
+		CE693AED26A6C9F70049D665 /* FAQCategoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AEC26A6C9F70049D665 /* FAQCategoriesProvider.swift */; };
+		CE693AF626A6D80F0049D665 /* FAQCategoryComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE693AF026A6D80F0049D665 /* FAQCategoryComponentView.xib */; };
+		CE693AF726A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AF126A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift */; };
+		CE693AF826A6D80F0049D665 /* FAQCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE693AF226A6D80F0049D665 /* FAQCategoryTableViewCell.xib */; };
+		CE693AF926A6D80F0049D665 /* FAQCategoryComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AF326A6D80F0049D665 /* FAQCategoryComponentViewModel.swift */; };
+		CE693AFA26A6D80F0049D665 /* FAQCategoryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AF426A6D80F0049D665 /* FAQCategoryComponentView.swift */; };
+		CE693AFB26A6D80F0049D665 /* FAQCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AF526A6D80F0049D665 /* FAQCategoryTableViewCell.swift */; };
 		CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E294C256E8F1F001FE225 /* Double+Extension.swift */; };
 		CE769897269EF341009972B2 /* PasswordResetOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */; };
 		CE769898269EF341009972B2 /* PasswordResetOptionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */; };
@@ -1325,6 +1337,18 @@
 		CE679FD92578334B00F2EC1C /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		CE679FDA2578334B00F2EC1C /* AddCardViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE679FDB2578334B00F2EC1C /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		CE693AE226A6C8920049D665 /* FAQCategories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FAQCategories.storyboard; sourceTree = "<group>"; };
+		CE693AE326A6C8920049D665 /* FAQCategoriesNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesNavigator.swift; sourceTree = "<group>"; };
+		CE693AE426A6C8920049D665 /* FAQCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesViewController.swift; sourceTree = "<group>"; };
+		CE693AE526A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE693AE626A6C8920049D665 /* FAQCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesViewModel.swift; sourceTree = "<group>"; };
+		CE693AEC26A6C9F70049D665 /* FAQCategoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesProvider.swift; sourceTree = "<group>"; };
+		CE693AF026A6D80F0049D665 /* FAQCategoryComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQCategoryComponentView.xib; sourceTree = "<group>"; };
+		CE693AF126A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoryTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CE693AF226A6D80F0049D665 /* FAQCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		CE693AF326A6D80F0049D665 /* FAQCategoryComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoryComponentViewModel.swift; sourceTree = "<group>"; };
+		CE693AF426A6D80F0049D665 /* FAQCategoryComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoryComponentView.swift; sourceTree = "<group>"; };
+		CE693AF526A6D80F0049D665 /* FAQCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		CE6E294C256E8F1F001FE225 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordResetOptions.storyboard; sourceTree = "<group>"; };
 		CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetOptionsNavigator.swift; sourceTree = "<group>"; };
@@ -4471,6 +4495,7 @@
 		CE2AB4C3266A542300C88262 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CE693AD926A6C71A0049D665 /* FAQ */,
 				CE3AC9C926A17931000BF338 /* Documentation */,
 				CE2AB4C4266A543C00C88262 /* Profile */,
 				CE5D7A5B266A5EEE00719120 /* Transaction History */,
@@ -5002,6 +5027,105 @@
 				CE64EA9A25D2D51A00438974 /* GameLoaderComponentView.xib */,
 			);
 			path = "Game Loader";
+			sourceTree = "<group>";
+		};
+		CE693AD926A6C71A0049D665 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				CE693ADA26A6C7840049D665 /* Scenes */,
+				CE693ADB26A6C78C0049D665 /* Data */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		CE693ADA26A6C7840049D665 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE693ADE26A6C8240049D665 /* Answers */,
+				CE693ADD26A6C80D0049D665 /* Questions */,
+				CE693ADC26A6C7AE0049D665 /* Categories */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE693ADB26A6C78C0049D665 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE693ADC26A6C7AE0049D665 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CE693ADF26A6C84E0049D665 /* Presentation */,
+				CE693AE026A6C8560049D665 /* Data */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		CE693ADD26A6C80D0049D665 /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
+		CE693ADE26A6C8240049D665 /* Answers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Answers;
+			sourceTree = "<group>";
+		};
+		CE693ADF26A6C84E0049D665 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE693AE126A6C87D0049D665 /* Components */,
+				CE693AE626A6C8920049D665 /* FAQCategoriesViewModel.swift */,
+				CE693AE526A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift */,
+				CE693AE426A6C8920049D665 /* FAQCategoriesViewController.swift */,
+				CE693AE326A6C8920049D665 /* FAQCategoriesNavigator.swift */,
+				CE693AE226A6C8920049D665 /* FAQCategories.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE693AE026A6C8560049D665 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE693AEC26A6C9F70049D665 /* FAQCategoriesProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE693AE126A6C87D0049D665 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE693AEF26A6D7F70049D665 /* View */,
+				CE693AEE26A6D7EF0049D665 /* Cell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE693AEE26A6D7EF0049D665 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE693AF526A6D80F0049D665 /* FAQCategoryTableViewCell.swift */,
+				CE693AF126A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift */,
+				CE693AF226A6D80F0049D665 /* FAQCategoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE693AEF26A6D7F70049D665 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE693AF426A6D80F0049D665 /* FAQCategoryComponentView.swift */,
+				CE693AF326A6D80F0049D665 /* FAQCategoryComponentViewModel.swift */,
+				CE693AF026A6D80F0049D665 /* FAQCategoryComponentView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CE769890269EF326009972B2 /* Scenes */ = {
@@ -6401,6 +6525,7 @@
 				7644B6152563ECAC006778B2 /* DateHeaderComponentView.xib in Resources */,
 				CEE3003A2530787600577CDF /* QuickActionsHeaderCell.xib in Resources */,
 				76404F0B257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib in Resources */,
+				CE693AE726A6C8920049D665 /* FAQCategories.storyboard in Resources */,
 				C7CA531626543E42008AFDAA /* ABSlider.xib in Resources */,
 				C77206E525DAB0BF0037D8A0 /* localhost.p12 in Resources */,
 				C75D1B0F261205F4002AF763 /* IGTJSlot.zip in Resources */,
@@ -6430,6 +6555,7 @@
 				C75D1ACC261205F4002AF763 /* MTJSlot.zip in Resources */,
 				CE55ECFE25265CF1003E168F /* Profile.storyboard in Resources */,
 				C75D1AD5261205F4002AF763 /* PQJSlot.zip in Resources */,
+				CE693AF626A6D80F0049D665 /* FAQCategoryComponentView.xib in Resources */,
 				CE5874A8260B8B4100F03AB5 /* EmoneyInstructionsView.xib in Resources */,
 				CE1693732541AB300043B1A4 /* AccountInfoComponentView.xib in Resources */,
 				C7E3F14F261CCF70009B6D6A /* CashOutVisaView.xib in Resources */,
@@ -6438,6 +6564,7 @@
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */,
 				C75D1ADC261205F4002AF763 /* TWWJSlot.zip in Resources */,
+				CE693AF826A6D80F0049D665 /* FAQCategoryTableViewCell.xib in Resources */,
 				C75D1B05261205F4002AF763 /* EPJSlot.zip in Resources */,
 				CEE356F2252C9C8100A0A25C /* BalanceComponentView.xib in Resources */,
 				76BDF46C25760512007B27A7 /* AccountParametersComponentView.xib in Resources */,
@@ -6661,6 +6788,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE693AEA26A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift in Sources */,
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
 				CEB49871268C987A00004A45 /* PasswordResetNavigator.swift in Sources */,
 				CE920609268493D600670AD8 /* ServiceAuthTokenRepository.swift in Sources */,
@@ -6693,6 +6821,7 @@
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
 				7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */,
+				CE693AED26A6C9F70049D665 /* FAQCategoriesProvider.swift in Sources */,
 				CEB49874268C987A00004A45 /* PasswordResetViewModel.swift in Sources */,
 				D8509407248260E900722040 /* MobileRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
@@ -6715,6 +6844,7 @@
 				C7C35FE525C9B8B100ADCBB6 /* LaunchUrlRepository.swift in Sources */,
 				CE16936B2541AB240043B1A4 /* AccountInfoComponentView.swift in Sources */,
 				CEC2F52D2608B5C00000904C /* DepositViewModel.swift in Sources */,
+				CE693AFB26A6D80F0049D665 /* FAQCategoryTableViewCell.swift in Sources */,
 				C747734E25B5C1030083C845 /* Currency.swift in Sources */,
 				76DCF69A25B823F000150EE1 /* VideoCard.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
@@ -6776,6 +6906,7 @@
 				76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */,
 				CE4A3100261224F70039C078 /* SuggestedAmountGridComponentViewModel.swift in Sources */,
 				D885E7592471525D007D85D3 /* SMSCodeUseCase.swift in Sources */,
+				CE693AE826A6C8920049D665 /* FAQCategoriesNavigator.swift in Sources */,
 				C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */,
 				C7B0DCEE2575591100714B22 /* Country.swift in Sources */,
 				CECF7F49256D5A8E001C0E50 /* AddressChangeViewControllerFactory.swift in Sources */,
@@ -6909,6 +7040,7 @@
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,
+				CE693AF726A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				CE64EAAB25DD466D00438974 /* LogoutUseCase.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
@@ -6938,6 +7070,7 @@
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
 				C7DB6EF626370F9600EC1CB9 /* EmptyCollectionViewCell.swift in Sources */,
 				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
+				CE693AF926A6D80F0049D665 /* FAQCategoryComponentViewModel.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
 				7682CF9525B8581600717090 /* AddMyCardTableViewCell.swift in Sources */,
 				D8390E7B246C1B5D00EF8CB5 /* OTPNavigator.swift in Sources */,
@@ -6975,6 +7108,7 @@
 				CE55ED022526732A003E168F /* PromotionsNavigator.swift in Sources */,
 				CEE356CA252B644300A0A25C /* ProfileInfoTableViewCellDataProvider.swift in Sources */,
 				CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */,
+				CE693AFA26A6D80F0049D665 /* FAQCategoryComponentView.swift in Sources */,
 				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
 				D8390E7D246C1B5D00EF8CB5 /* OTPViewModel.swift in Sources */,
 				CE4A30F12611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift in Sources */,
@@ -7035,6 +7169,7 @@
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,
 				D8442AA22469716600F32676 /* ABInputView.swift in Sources */,
 				CECF7F80256DAD9E001C0E50 /* PasswordChangeRulesView.swift in Sources */,
+				CE693AE926A6C8920049D665 /* FAQCategoriesViewController.swift in Sources */,
 				D810FC3524856EAD00F81499 /* LoadingType.swift in Sources */,
 				C7DE3ADF25F529670082D5EF /* UserLoggedInEntity.swift in Sources */,
 				D8BE830C24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift in Sources */,
@@ -7159,6 +7294,7 @@
 				7676E54E2562856600234026 /* TransactionsNavigator.swift in Sources */,
 				CE4A313A261478D80039C078 /* MainContainerViewModel.swift in Sources */,
 				CE64EA7B25D1695400438974 /* GameNavigator.swift in Sources */,
+				CE693AEB26A6C8920049D665 /* FAQCategoriesViewModel.swift in Sources */,
 				CE4A3137261478D80039C078 /* MainContainerNavigator.swift in Sources */,
 				76EFF7C52582383000898819 /* AccessHistoryCalendarViewController.swift in Sources */,
 				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
@@ -7674,7 +7810,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 569;
+				CURRENT_PROJECT_VERSION = 571;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -7704,9 +7840,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 569;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -7719,6 +7856,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
 				PRODUCT_MODULE_NAME = Mobile;
 				PRODUCT_NAME = "Mobile Stage";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -7795,9 +7933,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 569;
+				CURRENT_PROJECT_VERSION = 571;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -7811,6 +7950,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
 				PRODUCT_MODULE_NAME = Mobile;
 				PRODUCT_NAME = Mobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -7882,9 +8022,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Mobile/Mobile.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 569;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -7897,6 +8038,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adjarabet.Mobile;
 				PRODUCT_MODULE_NAME = Mobile;
 				PRODUCT_NAME = Mobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mobile/App/Resources/Mobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

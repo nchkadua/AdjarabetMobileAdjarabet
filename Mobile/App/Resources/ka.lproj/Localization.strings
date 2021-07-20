@@ -388,6 +388,20 @@
 "deposit_visa_add_card_button_title" = "ბარათის დამატება";
 "deposit_visa_add_card_title" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ დეპოზიტის გაკეთება";
 
+/* FAQ */
+"faq_title" = "ხშირად დასმული კითხვები";
+"faq_subtitle" = "ყველაფერი რაც გაინტერესებს";
+"faq_transactions_title" = "ტრანზაქციები";
+"faq_transactions_subtitle" = "აჭარაბეთზე დეპოზიტის გაკეთება";
+"faq_verification_title" = "ვერიფიკაცია";
+"faq_verification_subtitle" = "ისარგებლე ყველა სერვისით!";
+"faq_incognito_card_title" = "ინკოგნიტო ბარათი";
+"faq_incognito_card_subtitle" = "უსაზღვრო შესაძლებლობები!";
+"faq_faq_title" = "ხშირად დასმული კითხვები";
+"faq_faq_subtitle" = "კითხვები მომხმარებლებისგან";
+"faq_social_platforms_title" = "სოციალური ქსელები";
+"faq_social_platforms_subtitle" = "გაიგე რა ხდება აჭარაბეთის გარშემო!";
+
 /* Countries */
 "georgia" = "Georgia";
 "armenia" = "Armenia";

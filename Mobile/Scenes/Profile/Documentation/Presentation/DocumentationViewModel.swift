@@ -56,7 +56,7 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
     private func setupActions() {
         var dataProviders: AppCellDataProviders = []
 
-        ActionItemsProvider.items().reversed().forEach {
+        ActionItemsProvider.items().forEach {
             let actionViewModel = DefaultDocumentationActionComponentViewModel(params: .init(title: $0.title, destination: $0.destination))
 
             actionViewModel.action.subscribe(onNext: { [weak self] action in
@@ -68,7 +68,6 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
 
             dataProviders.append(actionViewModel)
         }
-
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
 
