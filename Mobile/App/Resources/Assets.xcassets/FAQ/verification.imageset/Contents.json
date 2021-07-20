@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Incognito.png",
+      "filename" : "Verification.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Incognito@2x.png",
+      "filename" : "Verification@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Incognito@3x.png",
+      "filename" : "Verification@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
