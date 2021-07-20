@@ -18,10 +18,28 @@ class FAQCategoriesProvider {
             FAQCategory(icon: R.image.faQ.soc()!, title: R.string.localization.faq_social_platforms_title.localized(), subtitle: R.string.localization.faq_social_platforms_subtitle.localized())
         ]
     }
+
+    public static func questions() -> [Question] {
+        [
+            Question(question: "როგორ გავაკეთო დეპოზიტი?"),
+            Question(question: "როგორ გავანაღდო მოგება?"),
+            Question(question: "როგორ აღვადგინო პაროლი/მომხმარებლის სახელი?"),
+            Question(question: "როგორ შევცვალო პაროლი?"),
+            Question(question: "როგორ გავიარო ვერიფიკაცია?"),
+            Question(question: "როგორ მივიღო მონაწილეობა აქციაში?"),
+            Question(question: "მაღალი დაცვის რეჟიმი"),
+            Question(question: "როგორ მივიღო ამონაწერი? "),
+            Question(question: "როგორ შევცვალო საკონტაქტო ინფორმაცია?")
+        ]
+    }
 }
 
 struct FAQCategory {
     let icon: UIImage
     let title: String
     let subtitle: String
+}
+
+struct Question {
+    let question: String
 }

@@ -7,6 +7,8 @@
 //
 
 public class FAQCategoriesNavigator: Navigator {
+    @Inject(from: .factories) public var questionsViewControllerFactory: FAQQuestionsViewControllerFactory
+
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {
@@ -14,8 +16,17 @@ public class FAQCategoriesNavigator: Navigator {
     }
 
     public enum Destination {
+        case questions
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
+        switch destination {
+        case .questions: navigateToQuestions(animate: animate)
+        }
+    }
+
+    public func navigateToQuestions(animate: Bool) {
+        let vc = questionsViewControllerFactory.make(params: .init())
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

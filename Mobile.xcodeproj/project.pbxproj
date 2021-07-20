@@ -502,6 +502,17 @@
 		CE693AF926A6D80F0049D665 /* FAQCategoryComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AF326A6D80F0049D665 /* FAQCategoryComponentViewModel.swift */; };
 		CE693AFA26A6D80F0049D665 /* FAQCategoryComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AF426A6D80F0049D665 /* FAQCategoryComponentView.swift */; };
 		CE693AFB26A6D80F0049D665 /* FAQCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AF526A6D80F0049D665 /* FAQCategoryTableViewCell.swift */; };
+		CE693B0126A7071E0049D665 /* FAQQuestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE693AFC26A7071E0049D665 /* FAQQuestions.storyboard */; };
+		CE693B0226A7071E0049D665 /* FAQQuestionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AFD26A7071E0049D665 /* FAQQuestionsNavigator.swift */; };
+		CE693B0326A7071E0049D665 /* FAQQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AFE26A7071E0049D665 /* FAQQuestionsViewController.swift */; };
+		CE693B0426A7071E0049D665 /* FAQQuestionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AFF26A7071E0049D665 /* FAQQuestionsViewControllerFactory.swift */; };
+		CE693B0526A7071E0049D665 /* FAQQuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0026A7071E0049D665 /* FAQQuestionsViewModel.swift */; };
+		CE693B0F26A70C340049D665 /* FAQQuestionComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE693B0926A70C340049D665 /* FAQQuestionComponentView.xib */; };
+		CE693B1026A70C340049D665 /* FAQQuestionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0A26A70C340049D665 /* FAQQuestionTableViewCellDataProvider.swift */; };
+		CE693B1126A70C340049D665 /* FAQQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE693B0B26A70C340049D665 /* FAQQuestionTableViewCell.xib */; };
+		CE693B1226A70C340049D665 /* FAQQuestionComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0C26A70C340049D665 /* FAQQuestionComponentViewModel.swift */; };
+		CE693B1326A70C340049D665 /* FAQQuestionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0D26A70C340049D665 /* FAQQuestionComponentView.swift */; };
+		CE693B1426A70C340049D665 /* FAQQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0E26A70C340049D665 /* FAQQuestionTableViewCell.swift */; };
 		CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E294C256E8F1F001FE225 /* Double+Extension.swift */; };
 		CE769897269EF341009972B2 /* PasswordResetOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */; };
 		CE769898269EF341009972B2 /* PasswordResetOptionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */; };
@@ -1349,6 +1360,17 @@
 		CE693AF326A6D80F0049D665 /* FAQCategoryComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoryComponentViewModel.swift; sourceTree = "<group>"; };
 		CE693AF426A6D80F0049D665 /* FAQCategoryComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoryComponentView.swift; sourceTree = "<group>"; };
 		CE693AF526A6D80F0049D665 /* FAQCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		CE693AFC26A7071E0049D665 /* FAQQuestions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FAQQuestions.storyboard; sourceTree = "<group>"; };
+		CE693AFD26A7071E0049D665 /* FAQQuestionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionsNavigator.swift; sourceTree = "<group>"; };
+		CE693AFE26A7071E0049D665 /* FAQQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionsViewController.swift; sourceTree = "<group>"; };
+		CE693AFF26A7071E0049D665 /* FAQQuestionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionsViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE693B0026A7071E0049D665 /* FAQQuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionsViewModel.swift; sourceTree = "<group>"; };
+		CE693B0926A70C340049D665 /* FAQQuestionComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQQuestionComponentView.xib; sourceTree = "<group>"; };
+		CE693B0A26A70C340049D665 /* FAQQuestionTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CE693B0B26A70C340049D665 /* FAQQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQQuestionTableViewCell.xib; sourceTree = "<group>"; };
+		CE693B0C26A70C340049D665 /* FAQQuestionComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionComponentViewModel.swift; sourceTree = "<group>"; };
+		CE693B0D26A70C340049D665 /* FAQQuestionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionComponentView.swift; sourceTree = "<group>"; };
+		CE693B0E26A70C340049D665 /* FAQQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		CE6E294C256E8F1F001FE225 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordResetOptions.storyboard; sourceTree = "<group>"; };
 		CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetOptionsNavigator.swift; sourceTree = "<group>"; };
@@ -5067,6 +5089,12 @@
 		CE693ADD26A6C80D0049D665 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				CE693B0626A70BEA0049D665 /* Components */,
+				CE693B0026A7071E0049D665 /* FAQQuestionsViewModel.swift */,
+				CE693AFF26A7071E0049D665 /* FAQQuestionsViewControllerFactory.swift */,
+				CE693AFE26A7071E0049D665 /* FAQQuestionsViewController.swift */,
+				CE693AFD26A7071E0049D665 /* FAQQuestionsNavigator.swift */,
+				CE693AFC26A7071E0049D665 /* FAQQuestions.storyboard */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -5124,6 +5152,35 @@
 				CE693AF426A6D80F0049D665 /* FAQCategoryComponentView.swift */,
 				CE693AF326A6D80F0049D665 /* FAQCategoryComponentViewModel.swift */,
 				CE693AF026A6D80F0049D665 /* FAQCategoryComponentView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE693B0626A70BEA0049D665 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE693B0826A70C000049D665 /* View */,
+				CE693B0726A70BFB0049D665 /* Cell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE693B0726A70BFB0049D665 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE693B0A26A70C340049D665 /* FAQQuestionTableViewCellDataProvider.swift */,
+				CE693B0E26A70C340049D665 /* FAQQuestionTableViewCell.swift */,
+				CE693B0B26A70C340049D665 /* FAQQuestionTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE693B0826A70C000049D665 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE693B0D26A70C340049D665 /* FAQQuestionComponentView.swift */,
+				CE693B0C26A70C340049D665 /* FAQQuestionComponentViewModel.swift */,
+				CE693B0926A70C340049D665 /* FAQQuestionComponentView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6448,7 +6505,9 @@
 				C75F61F8265708A6009CB6A1 /* LayoutChooserView.xib in Resources */,
 				C75D1AD0261205F4002AF763 /* FSDJSlot.zip in Resources */,
 				C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */,
+				CE693B1126A70C340049D665 /* FAQQuestionTableViewCell.xib in Resources */,
 				C75D1AFD261205F4002AF763 /* THBJSlot.zip in Resources */,
+				CE693B0126A7071E0049D665 /* FAQQuestions.storyboard in Resources */,
 				C75D1AF4261205F4002AF763 /* FDHJSlot.zip in Resources */,
 				CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */,
 				CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */,
@@ -6610,6 +6669,7 @@
 				D8390E7F246C1B6400EF8CB5 /* OTPLogin.storyboard in Resources */,
 				C75D1AF1261205F4002AF763 /* AAJSlot.zip in Resources */,
 				C75D1AD3261205F4002AF763 /* IVJSlot.zip in Resources */,
+				CE693B0F26A70C340049D665 /* FAQQuestionComponentView.xib in Resources */,
 				C75D1B1E261205F4002AF763 /* RORJSlot.zip in Resources */,
 				CE64EA9D25D2D51A00438974 /* GameLoaderComponentView.xib in Resources */,
 				CE4A30FC261224EB0039C078 /* SuggestedAmountGridComponentView.xib in Resources */,
@@ -6962,6 +7022,7 @@
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CE454654260C89EC00B01E19 /* VisaLimitComponentView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
+				CE693B1226A70C340049D665 /* FAQQuestionComponentViewModel.swift in Sources */,
 				CE95A3F2261DE23A0004330E /* ApplePayNavigator.swift in Sources */,
 				CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */,
 				76E43EDE25B95303007B2D97 /* VideoCardComponentViewModel.swift in Sources */,
@@ -6977,6 +7038,7 @@
 				D8AC492724CFE3E0000B2D80 /* AppDelegateServiceProvider.swift in Sources */,
 				7665D960257E5CA600E5B35F /* AccessHistoryNavigator.swift in Sources */,
 				C7FAA3CC2600C4F000265995 /* UFCInitWithdrawEntity.swift in Sources */,
+				CE693B1026A70C340049D665 /* FAQQuestionTableViewCellDataProvider.swift in Sources */,
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
 				C7405182256FA99A00EAC904 /* Formatter.swift in Sources */,
 				CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */,
@@ -7034,6 +7096,7 @@
 				C74334F12601232700945C8C /* UFCTransactionEntities.swift in Sources */,
 				CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */,
 				CE76989A269EF341009972B2 /* PasswordResetOptionsViewControllerFactory.swift in Sources */,
+				CE693B0426A7071E0049D665 /* FAQQuestionsViewControllerFactory.swift in Sources */,
 				CEBB00842609D3F900D1B510 /* EmoneyViewModel.swift in Sources */,
 				CE95A3F5261DE23A0004330E /* ApplePayViewModel.swift in Sources */,
 				C7C35FE025C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift in Sources */,
@@ -7077,6 +7140,7 @@
 				CE55ED2525267373003E168F /* NotificationsNavigator.swift in Sources */,
 				CE95FC16252DED0A003E539B /* FooterComponentViewModel.swift in Sources */,
 				C7023EE7261F772E00C0980F /* WithdrawPaymentListUseCase.swift in Sources */,
+				CE693B1426A70C340049D665 /* FAQQuestionTableViewCell.swift in Sources */,
 				C78E5293268376B400EE1C18 /* CoreApiContactInfoRepository.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
 				CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */,
@@ -7120,6 +7184,7 @@
 				D8390E7C246C1B5D00EF8CB5 /* OTPViewController.swift in Sources */,
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				C70754E325F3B84F0033050E /* PostLoginRepository.swift in Sources */,
+				CE693B0326A7071E0049D665 /* FAQQuestionsViewController.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */,
 				C7A517C12631EB7800933DF8 /* PaymentAccountDeletableRepository.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
@@ -7177,6 +7242,7 @@
 				76404F0A257625F900D14E0C /* AccountSecurityMessagesTableViewCellDataProvider.swift in Sources */,
 				C71B4B75257EC57000538697 /* SecurityLevelsViewModel.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
+				CE693B1326A70C340049D665 /* FAQQuestionComponentView.swift in Sources */,
 				76BDF47025760512007B27A7 /* AccountParametersComponentView.swift in Sources */,
 				D8880FD624C42C6500356CD3 /* GamesSearchViewController.swift in Sources */,
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
@@ -7184,6 +7250,7 @@
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */,
 				CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */,
+				CE693B0226A7071E0049D665 /* FAQQuestionsNavigator.swift in Sources */,
 				CE95A3F4261DE23A0004330E /* ApplePayViewControllerFactory.swift in Sources */,
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				C78E52EA2683A20E00EE1C18 /* SuspendDuration.swift in Sources */,
@@ -7232,6 +7299,7 @@
 				CE95A42D261DF1C40004330E /* ApplePayButton.swift in Sources */,
 				769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */,
 				C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */,
+				CE693B0526A7071E0049D665 /* FAQQuestionsViewModel.swift in Sources */,
 				76DCF68525B8159200150EE1 /* MyCardable.swift in Sources */,
 				CE2AB4B3266A523A00C88262 /* MobileApiNotificationsRepository.swift in Sources */,
 				CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */,

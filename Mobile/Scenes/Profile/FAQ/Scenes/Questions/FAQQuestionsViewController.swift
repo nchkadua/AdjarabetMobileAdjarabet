@@ -1,5 +1,5 @@
 //
-//  FAQCategoriesViewController.swift
+//  FAQQuestionsViewController.swift
 //  Mobile
 //
 //  Created by Nika Chkadua on 20.07.21.
@@ -8,16 +8,12 @@
 
 import RxSwift
 
-public class FAQCategoriesViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: FAQCategoriesViewModel
-    public lazy var navigator = FAQCategoriesNavigator(viewController: self)
+public class FAQQuestionsViewController: UIViewController {
+    @Inject(from: .viewModels) public var viewModel: FAQQuestionsViewModel
+    public lazy var navigator = FAQQuestionsNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
-
-    @IBOutlet weak private var bannerImageView: UIImageView!
-    @IBOutlet weak private var titleLabel: UILabel!
-    @IBOutlet weak private var containerView: UIView!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -29,7 +25,7 @@ public class FAQCategoriesViewController: UIViewController {
     }
 
     // MARK: Bind to viewModel's observable properties
-    private func bind(to viewModel: FAQCategoriesViewModel) {
+    private func bind(to viewModel: FAQQuestionsViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
@@ -39,16 +35,13 @@ public class FAQCategoriesViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
 
-    private func didRecive(action: FAQCategoriesViewModelOutputAction) {
+    private func didRecive(action: FAQQuestionsViewModelOutputAction) {
         switch action {
         case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
         }
     }
 
-    private func didRecive(route: FAQCategoriesViewModelRoute) {
-        switch route {
-        case .navigateToQuestions: navigator.navigate(to: .questions, animated: true)
-        }
+    private func didRecive(route: FAQQuestionsViewModelRoute) {
     }
 
     // MARK: Setup methods
@@ -56,8 +49,6 @@ public class FAQCategoriesViewController: UIViewController {
         setBaseBackgorundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTableView()
-        setupTitleLabel()
-        setupImageView()
     }
 
     private func setupNavigationItems() {
@@ -68,22 +59,11 @@ public class FAQCategoriesViewController: UIViewController {
     private func setupTableView() {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        appTableViewController.view.pin(to: containerView)
+        appTableViewController.view.pin(to: view)
         appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
 
         appTableViewController.tableView?.register(types: [
-            FAQCategoryTableViewCell.self
+            FAQQuestionTableViewCell.self
         ])
-    }
-
-    private func setupTitleLabel() {
-        titleLabel.setFont(to: .headline(fontCase: .lower, fontStyle: .semiBold))
-        titleLabel.setTintColor(to: .primaryText())
-        titleLabel.text = R.string.localization.faq_subtitle.localized()
-    }
-
-    private func setupImageView() {
-        bannerImageView.contentMode = .scaleAspectFill
-        bannerImageView.image = R.image.faQ.banner()!
     }
 }
