@@ -47,7 +47,7 @@ public class FAQCategoriesViewController: UIViewController {
 
     private func didRecive(route: FAQCategoriesViewModelRoute) {
         switch route {
-        case .navigateToQuestions: navigator.navigate(to: .questions, animated: true)
+        case .navigateToQuestions: navigator.navigate(to: .questions(shouldShowDismissButton: viewModel.params.showDismissButton), animated: true)
         }
     }
 
@@ -62,7 +62,15 @@ public class FAQCategoriesViewController: UIViewController {
 
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.faq_title.localized())
-        setBackBarButtonItemIfNeeded()
+        setBackDismissBarButtonItemIfNeeded(completion: #selector(backButtonClick))
+    }
+
+    @objc private func backButtonClick() {
+        if viewModel.params.showDismissButton {
+            navigationController?.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
 
     private func setupTableView() {
@@ -87,3 +95,5 @@ public class FAQCategoriesViewController: UIViewController {
         bannerImageView.image = R.image.faQ.banner()!
     }
 }
+
+extension FAQCategoriesViewController: CommonBarButtonProviding { }

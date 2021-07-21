@@ -12,6 +12,7 @@ public protocol FAQQuestionsViewModel: FAQQuestionsViewModelInput, FAQQuestionsV
 }
 
 public struct FAQQuestionsViewModelParams {
+    let showDismissButton: Bool
 }
 
 public protocol FAQQuestionsViewModelInput: AnyObject {

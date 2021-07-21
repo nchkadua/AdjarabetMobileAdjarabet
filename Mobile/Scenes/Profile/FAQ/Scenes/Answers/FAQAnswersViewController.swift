@@ -56,6 +56,16 @@ public class FAQAnswersViewController: UIViewController {
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.faq_title.localized())
         setBackBarButtonItemIfNeeded()
+
+        guard viewModel.params.showDismissButton else {return}
+
+        let dismissButtonGroup = makeBarrButtonWith(title: R.string.localization.reset_password_dismiss_button_title.localized())
+        navigationItem.rightBarButtonItem = dismissButtonGroup.barButtonItem
+        dismissButtonGroup.button.addTarget(self, action: #selector(dismissButtonClick), for: .touchUpInside)
+    }
+
+    @objc private func dismissButtonClick() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func setupTitle() {
@@ -70,3 +80,5 @@ public class FAQAnswersViewController: UIViewController {
         textView.isSelectable = false
     }
 }
+
+extension FAQAnswersViewController: CommonBarButtonProviding { }

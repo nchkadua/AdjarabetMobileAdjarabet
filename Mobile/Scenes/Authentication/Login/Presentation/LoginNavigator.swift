@@ -10,6 +10,7 @@ public class LoginNavigator: Navigator {
     @Inject(from: .factories) public var mainContainerFactory: MainContainerViewControllerFactory
     @Inject(from: .factories) public var otpFactory: OTPFactory
     @Inject(from: .factories) public var passworResetOptionsFactory: PasswordResetOptionsViewControllerFactory
+    @Inject(from: .factories) public var faqViewControllerFactory: FAQCategoriesViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -19,6 +20,7 @@ public class LoginNavigator: Navigator {
 
     public enum Destination {
         case OTP(params: OTPViewModelParams)
+        case faq
         case mainTabBar
         case passwordReset
     }
@@ -27,6 +29,7 @@ public class LoginNavigator: Navigator {
         switch destination {
         case .OTP(let params):
             navigateToOTP(params: params, animate: animate)
+        case .faq: navigateToFAQ(animate: animate)
         case .mainTabBar:
             openMainTabBar()
         case .passwordReset:
@@ -36,6 +39,13 @@ public class LoginNavigator: Navigator {
 
     private func navigateToOTP(params: OTPViewModelParams, animate: Bool) {
         let vc = otpFactory.make(params: params)
+        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate)
+    }
+
+    private func navigateToFAQ(animate: Bool) {
+        let vc = faqViewControllerFactory.make(params: .init(showDismissButton: true))
         let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate)
