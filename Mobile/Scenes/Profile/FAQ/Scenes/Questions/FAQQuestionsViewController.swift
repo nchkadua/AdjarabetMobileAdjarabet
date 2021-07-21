@@ -43,7 +43,7 @@ public class FAQQuestionsViewController: UIViewController {
 
     private func didRecive(route: FAQQuestionsViewModelRoute) {
         switch route {
-        case .navigateToAnswers(let questionTitle): navigator.navigate(to: .answers(question: questionTitle), animated: true)
+        case .navigateToAnswers(let questionTitle): navigator.navigate(to: .answers(shouldShowDismissButton: viewModel.params.showDismissButton, question: questionTitle), animated: true)
         }
     }
 
@@ -57,6 +57,24 @@ public class FAQQuestionsViewController: UIViewController {
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.faq_title.localized())
         setBackBarButtonItemIfNeeded()
+
+        guard viewModel.params.showDismissButton else {return}
+
+        let dismissButtonGroup = makeBarrButtonWith(title: R.string.localization.reset_password_dismiss_button_title.localized())
+        navigationItem.rightBarButtonItem = dismissButtonGroup.barButtonItem
+        dismissButtonGroup.button.addTarget(self, action: #selector(dismissButtonClick), for: .touchUpInside)
+    }
+
+    @objc private func backButtonClick() {
+        if viewModel.params.showDismissButton {
+            navigationController?.popToRootViewController(animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+
+    @objc private func dismissButtonClick() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func setupTableView() {
@@ -70,3 +88,5 @@ public class FAQQuestionsViewController: UIViewController {
         ])
     }
 }
+
+extension FAQQuestionsViewController: CommonBarButtonProviding { }

@@ -91,9 +91,9 @@ public extension DependencyContainer {
         Module { DefaultBonusViewModel(params: .init()) as BonusViewModel }
         Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
         Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }
-        Module { DefaultFAQCategoriesViewModel(params: .init()) as FAQCategoriesViewModel }
-        Module { DefaultFAQQuestionsViewModel(params: .init()) as FAQQuestionsViewModel }
-        Module { DefaultFAQAnswersViewModel(params: .init(questionTitle: "")) as FAQAnswersViewModel }
+        Module { DefaultFAQCategoriesViewModel(params: .init(showDismissButton: true)) as FAQCategoriesViewModel }
+        Module { DefaultFAQQuestionsViewModel(params: .init(showDismissButton: true)) as FAQQuestionsViewModel }
+        Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
     }
 
     static var componentViewModels = DependencyContainer {

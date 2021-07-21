@@ -82,7 +82,7 @@ public class ProfileNavigator: Navigator {
     }
 
     private func navigateToFAQ(animate: Bool) {
-        let vc = faqViewControllerFactory.make(params: .init())
+        let vc = faqViewControllerFactory.make(params: .init(showDismissButton: false))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 
