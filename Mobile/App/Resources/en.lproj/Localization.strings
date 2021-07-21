@@ -388,6 +388,9 @@
 "deposit_visa_add_card_button_title" = "Add Card";
 "deposit_visa_add_card_title" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ დეპოზიტის გაკეთება";
 
+/* Close Account */
+"close_account_button_title" = "Close Account";
+
 /* Countries */
 "georgia" = "Georgia";
 "armenia" = "Armenia";

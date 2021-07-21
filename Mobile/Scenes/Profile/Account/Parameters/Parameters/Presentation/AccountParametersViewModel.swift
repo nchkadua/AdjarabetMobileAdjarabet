@@ -102,6 +102,16 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                 componentViewModel = viewModel
             } else if let accountParameterHeaderModel = $0 as? AccountParameterHeader {
                 componentViewModel = DefaultAccountParametersHeaderComponentViewModel(params: .init(title: accountParameterHeaderModel.title))
+            } else if $0 as? AccountParameterCloseAccount != nil {
+                let viewModel = DefaultCloseAccountButtonComponentViewModel(params: .init())
+                viewModel.action.subscribe(onNext: { [weak self] action in
+                    guard let self = self else { return }
+                    switch action {
+                    case .didSelect:
+                        print("asd")
+                    }
+                })
+                componentViewModel = viewModel
             }
             dataProvider.append(componentViewModel!)
         }

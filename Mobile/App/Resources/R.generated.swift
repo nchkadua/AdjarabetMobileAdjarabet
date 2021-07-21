@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 39 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 40 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -110,6 +110,8 @@ struct R: Rswift.Validatable {
     static let biometricSettingsView = _R.storyboard.biometricSettingsView()
     /// Storyboard `Bonus`.
     static let bonus = _R.storyboard.bonus()
+    /// Storyboard `CloseAccount`.
+    static let closeAccount = _R.storyboard.closeAccount()
     /// Storyboard `Deposit`.
     static let deposit = _R.storyboard.deposit()
     /// Storyboard `Documentation`.
@@ -231,6 +233,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Bonus", bundle: ...)`
     static func bonus(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.bonus)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CloseAccount", bundle: ...)`
+    static func closeAccount(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.closeAccount)
     }
     #endif
 
@@ -2084,6 +2093,21 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.closeAccount` struct is generated, and contains static references to 1 images.
+    struct closeAccount {
+      /// Image `CloseAccount`.
+      static let closeAccount = Rswift.ImageResource(bundle: R.hostingBundle, name: "CloseAccount/CloseAccount")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "CloseAccount", bundle: ..., traitCollection: ...)`
+      static func closeAccount(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.closeAccount.closeAccount, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.components` struct is generated, and contains static references to 0 images.
     struct components {
       /// This `R.image.components.abCheckbox` struct is generated, and contains static references to 3 images.
@@ -3257,7 +3281,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 91 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 93 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -3307,6 +3331,10 @@ struct R: Rswift.Validatable {
     static let calendarComponentView = _R.nib._CalendarComponentView()
     /// Nib `CashOutVisaView`.
     static let cashOutVisaView = _R.nib._CashOutVisaView()
+    /// Nib `CloseAccountButtonComponentView`.
+    static let closeAccountButtonComponentView = _R.nib._CloseAccountButtonComponentView()
+    /// Nib `CloseAccountButtonTableViewCell`.
+    static let closeAccountButtonTableViewCell = _R.nib._CloseAccountButtonTableViewCell()
     /// Nib `CommunicationLanguageComponentView`.
     static let communicationLanguageComponentView = _R.nib._CommunicationLanguageComponentView()
     /// Nib `DateHeaderCell`.
@@ -3631,6 +3659,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.cashOutVisaView) instead")
     static func cashOutVisaView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.cashOutVisaView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CloseAccountButtonComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.closeAccountButtonComponentView) instead")
+    static func closeAccountButtonComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.closeAccountButtonComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CloseAccountButtonTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.closeAccountButtonTableViewCell) instead")
+    static func closeAccountButtonTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.closeAccountButtonTableViewCell)
     }
     #endif
 
@@ -4266,6 +4310,14 @@ struct R: Rswift.Validatable {
       return R.nib.cashOutVisaView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func closeAccountButtonComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.closeAccountButtonComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func closeAccountButtonTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CloseAccountButtonTableViewCell? {
+      return R.nib.closeAccountButtonTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CloseAccountButtonTableViewCell
+    }
+
     static func communicationLanguageComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.communicationLanguageComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -4539,7 +4591,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 542 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 543 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -4953,6 +5005,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let reset_password_dismiss_button_title = Rswift.StringResource(key: "reset_password_dismiss_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Close Account
+      ///
+      /// Locales: en, ka, hy
+      static let close_account_button_title = Rswift.StringResource(key: "close_account_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Cocos Islands
       ///
       /// Locales: en, ka, hy
@@ -8253,6 +8309,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("reset_password_dismiss_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Close Account
+      ///
+      /// Locales: en, ka, hy
+      static func close_account_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("close_account_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "close_account_button_title"
+        }
+
+        return NSLocalizedString("close_account_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Cocos Islands
@@ -14879,6 +14950,7 @@ struct _R: Rswift.Validatable {
       try _BalanceComponentView.validate()
       try _CalendarComponentView.validate()
       try _CashOutVisaView.validate()
+      try _CloseAccountButtonComponentView.validate()
       try _CommunicationLanguageComponentView.validate()
       try _DocumentationActionComponentView.validate()
       try _EmoneyButton.validate()
@@ -14996,8 +15068,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -15203,6 +15275,34 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _CloseAccountButtonComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CloseAccountButtonComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "CloseAccount/CloseAccount", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccount' is used in nib 'CloseAccountButtonComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CloseAccountButtonTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CloseAccountButtonTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CloseAccountButtonTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CloseAccountButtonTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _CommunicationLanguageComponentView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "CommunicationLanguageComponentView"
@@ -15322,8 +15422,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -16056,6 +16156,9 @@ struct _R: Rswift.Validatable {
       try bonus.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try closeAccount.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try deposit.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -16329,6 +16432,26 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct closeAccount: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let closeAccountViewController = StoryboardViewControllerResource<CloseAccountViewController>(identifier: "CloseAccountViewController")
+      let name = "CloseAccount"
+
+      func closeAccountViewController(_: Void = ()) -> CloseAccountViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: closeAccountViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct deposit: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let depositViewController = StoryboardViewControllerResource<DepositViewController>(identifier: "DepositViewController")
@@ -16480,10 +16603,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
