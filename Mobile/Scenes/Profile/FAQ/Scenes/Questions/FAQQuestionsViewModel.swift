@@ -29,7 +29,7 @@ public enum FAQQuestionsViewModelOutputAction {
 }
 
 public enum FAQQuestionsViewModelRoute {
-    case navigateToAnswers
+    case navigateToAnswers(questionTitle: String)
 }
 
 public class DefaultFAQQuestionsViewModel: DefaultBaseViewModel {
@@ -58,7 +58,7 @@ extension DefaultFAQQuestionsViewModel: FAQQuestionsViewModel {
 
             viewModel.action.subscribe(onNext: { [weak self] action in
                 switch action {
-                case .didSelect: self?.routeSubject.onNext(.navigateToAnswers)
+                case .didSelect(let indexPath): self?.routeSubject.onNext(.navigateToAnswers(questionTitle: FAQCategoriesProvider.questions()[indexPath.row].question))
                 default: break
                 }
             }).disposed(by: self.disposeBag)

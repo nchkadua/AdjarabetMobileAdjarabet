@@ -25,7 +25,7 @@ public class FAQCategoriesNavigator: Navigator {
         }
     }
 
-    public func navigateToQuestions(animate: Bool) {
+    private func navigateToQuestions(animate: Bool) {
         let vc = questionsViewControllerFactory.make(params: .init())
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }

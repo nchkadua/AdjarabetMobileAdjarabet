@@ -93,6 +93,7 @@ public extension DependencyContainer {
         Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }
         Module { DefaultFAQCategoriesViewModel(params: .init()) as FAQCategoriesViewModel }
         Module { DefaultFAQQuestionsViewModel(params: .init()) as FAQQuestionsViewModel }
+        Module { DefaultFAQAnswersViewModel(params: .init(questionTitle: "")) as FAQAnswersViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -185,6 +186,7 @@ public extension DependencyContainer {
         Module { DefaultPasswordResetOptionsViewControllerFactory() as PasswordResetOptionsViewControllerFactory }
         Module { DefaultFAQCategoriesViewControllerFactory() as FAQCategoriesViewControllerFactory }
         Module { DefaultFAQQuestionsViewControllerFactory() as FAQQuestionsViewControllerFactory }
+        Module { DefaultFAQAnswersViewControllerFactory() as FAQAnswersViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }

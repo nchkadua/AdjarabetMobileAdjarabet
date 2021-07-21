@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Answers View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="FAQAnswersViewController" id="gAa-dD-eZu" customClass="FAQAnswersViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrc-FS-vGW">
+                                <rect key="frame" x="21" y="66" width="372" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U9g-l7-5NP">
+                                <rect key="frame" x="18" y="74" width="375" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">1. ნებისმიერი საბანკო ბარათით მიუთითე თანხა, მიუთითე ბარათის მონაცემები, ჩარიცვხვა.  2. სწრაფი გადახდის აპარატებით აირჩიე აჭარაბეთზე ჩარიცხვა, მიუთითე ანგარიშის ნომერი, User ID და მიუთითე სასურველი თანხა.  3. ქეშ დესკები ნახე სალაროების რუკა  4. ელექტრონული გადახდის მეთოდები  5. ელ.საფულე  დეტალური ინფორმაციისთვის მიყევით ბმულს</mutableString>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vrc-FS-vGW" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="22" id="3bw-K7-KUL"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="U9g-l7-5NP" secondAttribute="trailing" constant="21" id="FAW-JD-ep8"/>
+                            <constraint firstItem="U9g-l7-5NP" firstAttribute="top" secondItem="vrc-FS-vGW" secondAttribute="bottom" constant="8" id="Qcy-Gr-Gla"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="vrc-FS-vGW" secondAttribute="trailing" constant="21" id="biC-kH-hJT"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="bottom" secondItem="U9g-l7-5NP" secondAttribute="bottom" constant="20" id="fPW-uv-onU"/>
+                            <constraint firstItem="U9g-l7-5NP" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="18" id="gOY-5f-xkA"/>
+                            <constraint firstItem="vrc-FS-vGW" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="21" id="hLJ-YA-9oP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="U9g-l7-5NP" id="gz2-Gx-yN9"/>
+                        <outlet property="titleLabel" destination="vrc-FS-vGW" id="CMb-Ef-9cg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="30"/>
+        </scene>
+    </scenes>
+</document>

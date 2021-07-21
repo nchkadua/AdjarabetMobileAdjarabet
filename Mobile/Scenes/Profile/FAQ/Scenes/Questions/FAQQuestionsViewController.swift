@@ -42,6 +42,9 @@ public class FAQQuestionsViewController: UIViewController {
     }
 
     private func didRecive(route: FAQQuestionsViewModelRoute) {
+        switch route {
+        case .navigateToAnswers(let questionTitle): navigator.navigate(to: .answers(question: questionTitle), animated: true)
+        }
     }
 
     // MARK: Setup methods
