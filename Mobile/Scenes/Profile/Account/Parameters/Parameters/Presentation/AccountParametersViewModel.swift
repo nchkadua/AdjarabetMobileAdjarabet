@@ -35,6 +35,7 @@ public enum AccountParametersViewModelRoute {
  // case openOTP(params: OTPViewModelParams)
     case openHighSecurity
     case openAccessHistory
+    case openCloseAccount
 }
 
 public class DefaultAccountParametersViewModel: DefaultBaseViewModel {
@@ -108,7 +109,7 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                     guard let self = self else { return }
                     switch action {
                     case .didSelect:
-                        print("asd")
+                        self.routeSubject.onNext(.openCloseAccount)
                     }
                 })
                 componentViewModel = viewModel
