@@ -137,6 +137,8 @@ public class LoginViewController: ABViewController {
         biometryButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
         biometryIconButton.setTintColor(to: .primaryText())
         biometryIconButton.addTarget(self, action: #selector(biometryButtonDidTap), for: .touchUpInside)
+
+        qaButton.addTarget(self, action: #selector(qaButtonDidTap), for: .touchUpInside)
     }
 
     private func setupInputViews() {
@@ -253,7 +255,13 @@ public class LoginViewController: ABViewController {
     }
 
     @objc private func biometryButtonDidTap() {
+        closeKeyboard()
         viewModel.biometricLogin()
+    }
+
+    @objc private func qaButtonDidTap() {
+        closeKeyboard()
+        navigator.navigate(to: .faq, animated: true)
     }
 
     // MARK: Configuration

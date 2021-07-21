@@ -92,6 +92,9 @@ public extension DependencyContainer {
         Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
         Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }
         Module { DefaultCloseAccountViewModel(params: .init()) as CloseAccountViewModel }
+        Module { DefaultFAQCategoriesViewModel(params: .init(showDismissButton: true)) as FAQCategoriesViewModel }
+        Module { DefaultFAQQuestionsViewModel(params: .init(showDismissButton: true)) as FAQQuestionsViewModel }
+        Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -182,6 +185,9 @@ public extension DependencyContainer {
         Module { DefaultHighSecurityViewControllerFactory() as HighSecurityViewControllerFactory }
         Module { DefaultDocumentationViewControllerFactory() as DocumentationViewControllerFactory }
         Module { DefaultPasswordResetOptionsViewControllerFactory() as PasswordResetOptionsViewControllerFactory }
+        Module { DefaultFAQCategoriesViewControllerFactory() as FAQCategoriesViewControllerFactory }
+        Module { DefaultFAQQuestionsViewControllerFactory() as FAQQuestionsViewControllerFactory }
+        Module { DefaultFAQAnswersViewControllerFactory() as FAQAnswersViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }

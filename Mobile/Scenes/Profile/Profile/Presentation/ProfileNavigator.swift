@@ -17,6 +17,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var accountParametersViewControllerFactory: AccountParametersViewControllerFactory
     @Inject(from: .factories) public var myCardsViewControllerFactory: MyCardsViewControllerFactory
     @Inject(from: .factories) public var documentationViewControllerFactory: DocumentationViewControllerFactory
+    @Inject(from: .factories) public var faqViewControllerFactory: FAQCategoriesViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -81,6 +82,8 @@ public class ProfileNavigator: Navigator {
     }
 
     private func navigateToFAQ(animate: Bool) {
+        let vc = faqViewControllerFactory.make(params: .init(showDismissButton: false))
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 
     private func navigateToBiometricSettings(animate: Bool) {

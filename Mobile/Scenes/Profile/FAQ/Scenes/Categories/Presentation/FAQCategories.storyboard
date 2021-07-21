@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Categories View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="FAQCategoriesViewController" id="gAa-dD-eZu" customClass="FAQCategoriesViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wN5-Lk-13N">
+                                <rect key="frame" x="0.0" y="44" width="414" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Smi-8u-pkf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c59-J0-d0V">
+                                <rect key="frame" x="18" y="239" width="378" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Mja-84-sZW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhx-Qy-l3A">
+                                <rect key="frame" x="0.0" y="291" width="414" height="571"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="bottom" secondItem="mhx-Qy-l3A" secondAttribute="bottom" id="3nr-YI-WfN"/>
+                            <constraint firstItem="c59-J0-d0V" firstAttribute="top" secondItem="wN5-Lk-13N" secondAttribute="bottom" constant="15" id="BAO-gR-sS6"/>
+                            <constraint firstItem="mhx-Qy-l3A" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="DU2-vu-hPM"/>
+                            <constraint firstItem="mhx-Qy-l3A" firstAttribute="top" secondItem="c59-J0-d0V" secondAttribute="bottom" constant="11" id="JzG-T0-t4v"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="c59-J0-d0V" secondAttribute="trailing" constant="18" id="ULj-kC-dSN"/>
+                            <constraint firstItem="wN5-Lk-13N" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" id="VgO-o4-Ltr"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="wN5-Lk-13N" secondAttribute="trailing" id="WoY-aT-LTj"/>
+                            <constraint firstItem="c59-J0-d0V" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="18" id="xWt-0h-op6"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="mhx-Qy-l3A" secondAttribute="trailing" id="zIu-u6-4W9"/>
+                            <constraint firstItem="wN5-Lk-13N" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="zTW-MF-DfK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerImageView" destination="wN5-Lk-13N" id="Fbj-8e-jBc"/>
+                        <outlet property="containerView" destination="mhx-Qy-l3A" id="joo-ry-Bhq"/>
+                        <outlet property="titleLabel" destination="c59-J0-d0V" id="ewI-2a-SUH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="30"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
