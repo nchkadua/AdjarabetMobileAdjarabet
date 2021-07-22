@@ -91,6 +91,7 @@ public extension DependencyContainer {
         Module { DefaultBonusViewModel(params: .init()) as BonusViewModel }
         Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
         Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }
+        Module { DefaultCloseAccountViewModel(params: .init()) as CloseAccountViewModel }
         Module { DefaultFAQCategoriesViewModel(params: .init(showDismissButton: true)) as FAQCategoriesViewModel }
         Module { DefaultFAQQuestionsViewModel(params: .init(showDismissButton: true)) as FAQQuestionsViewModel }
         Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
@@ -194,6 +195,7 @@ public extension DependencyContainer {
         Module { DefaultMainContainerViewControllerFactory() as MainContainerViewControllerFactory }
         Module { DefaultWithdrawVisaViewControllerFactory() as WithdrawVisaViewControllerFactory }
         Module { DefaultApplePayViewControllerFactory() as ApplePayViewControllerFactory }
+        Module { DefaultCloseAccountViewControllerFactory() as CloseAccountViewControllerFactory }
     }
 
     static var useCases = DependencyContainer {

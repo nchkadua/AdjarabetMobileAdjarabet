@@ -390,6 +390,12 @@
 "deposit_visa_add_card_button_title" = "Add Card";
 "deposit_visa_add_card_title" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ დეპოზიტის გაკეთება";
 
+/* Close Account */
+"close_account_button_title" = "close account";
+"close_account_title" = "close account";
+"close_account_description" = "to close the account, contact us via the information center or online chat (+995 32 2 71 10 10; +995 32 2 97 10 10). note that the amount should not be fixed on the balance sheet to close the account.";
+"close_account_close_button_title" = "close";
+
 /* FAQ */
 "faq_title" = "Questions & Answers";
 "faq_subtitle" = "ყველაფერი რაც გაინტერესებს";

@@ -280,6 +280,17 @@
 		C75F61F8265708A6009CB6A1 /* LayoutChooserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C75F61F7265708A6009CB6A1 /* LayoutChooserView.xib */; };
 		C75F61FC265708CC009CB6A1 /* LayoutChooserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75F61FB265708CC009CB6A1 /* LayoutChooserViewModel.swift */; };
 		C766086425CC3FF700A59534 /* CoreApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766086325CC3FF700A59534 /* CoreApiRepository.swift */; };
+		C7667FFC26A815C4005EB6E8 /* CloseAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7667FF726A815C4005EB6E8 /* CloseAccount.storyboard */; };
+		C7667FFD26A815C4005EB6E8 /* CloseAccountNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667FF826A815C4005EB6E8 /* CloseAccountNavigator.swift */; };
+		C7667FFE26A815C4005EB6E8 /* CloseAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667FF926A815C4005EB6E8 /* CloseAccountViewController.swift */; };
+		C7667FFF26A815C4005EB6E8 /* CloseAccountViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667FFA26A815C4005EB6E8 /* CloseAccountViewControllerFactory.swift */; };
+		C766800026A815C4005EB6E8 /* CloseAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667FFB26A815C4005EB6E8 /* CloseAccountViewModel.swift */; };
+		C766804826A86D83005EB6E8 /* CloseAccountButtonComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C766804226A86D83005EB6E8 /* CloseAccountButtonComponentView.xib */; };
+		C766804926A86D83005EB6E8 /* CloseAccountButtonTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766804326A86D83005EB6E8 /* CloseAccountButtonTableViewCellDataProvider.swift */; };
+		C766804A26A86D83005EB6E8 /* CloseAccountButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C766804426A86D83005EB6E8 /* CloseAccountButtonTableViewCell.xib */; };
+		C766804B26A86D83005EB6E8 /* CloseAccountButtonComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766804526A86D83005EB6E8 /* CloseAccountButtonComponentViewModel.swift */; };
+		C766804C26A86D83005EB6E8 /* CloseAccountButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766804626A86D83005EB6E8 /* CloseAccountButtonComponentView.swift */; };
+		C766804D26A86D83005EB6E8 /* CloseAccountButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766804726A86D83005EB6E8 /* CloseAccountButtonTableViewCell.swift */; };
 		C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C77206DA25DAAC5E0037D8A0 /* exitButton.png */; };
 		C77206E125DAB0B50037D8A0 /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = C77206E025DAB0B50037D8A0 /* ca.der */; };
 		C77206E525DAB0BF0037D8A0 /* localhost.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C77206E425DAB0BF0037D8A0 /* localhost.p12 */; };
@@ -1143,6 +1154,17 @@
 		C75F61F7265708A6009CB6A1 /* LayoutChooserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutChooserView.xib; sourceTree = "<group>"; };
 		C75F61FB265708CC009CB6A1 /* LayoutChooserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutChooserViewModel.swift; sourceTree = "<group>"; };
 		C766086325CC3FF700A59534 /* CoreApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApiRepository.swift; sourceTree = "<group>"; };
+		C7667FF726A815C4005EB6E8 /* CloseAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CloseAccount.storyboard; sourceTree = "<group>"; };
+		C7667FF826A815C4005EB6E8 /* CloseAccountNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAccountNavigator.swift; sourceTree = "<group>"; };
+		C7667FF926A815C4005EB6E8 /* CloseAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAccountViewController.swift; sourceTree = "<group>"; };
+		C7667FFA26A815C4005EB6E8 /* CloseAccountViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAccountViewControllerFactory.swift; sourceTree = "<group>"; };
+		C7667FFB26A815C4005EB6E8 /* CloseAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAccountViewModel.swift; sourceTree = "<group>"; };
+		C766804226A86D83005EB6E8 /* CloseAccountButtonComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseAccountButtonComponentView.xib; sourceTree = "<group>"; };
+		C766804326A86D83005EB6E8 /* CloseAccountButtonTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAccountButtonTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		C766804426A86D83005EB6E8 /* CloseAccountButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseAccountButtonTableViewCell.xib; sourceTree = "<group>"; };
+		C766804526A86D83005EB6E8 /* CloseAccountButtonComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAccountButtonComponentViewModel.swift; sourceTree = "<group>"; };
+		C766804626A86D83005EB6E8 /* CloseAccountButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAccountButtonComponentView.swift; sourceTree = "<group>"; };
+		C766804726A86D83005EB6E8 /* CloseAccountButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAccountButtonTableViewCell.swift; sourceTree = "<group>"; };
 		C77206DA25DAAC5E0037D8A0 /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButton.png; sourceTree = "<group>"; };
 		C77206E025DAB0B50037D8A0 /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
 		C77206E425DAB0BF0037D8A0 /* localhost.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = localhost.p12; sourceTree = "<group>"; };
@@ -2599,6 +2621,64 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		C7667FF526A81557005EB6E8 /* Close Account */ = {
+			isa = PBXGroup;
+			children = (
+				C7667FF626A81583005EB6E8 /* Presentation */,
+			);
+			path = "Close Account";
+			sourceTree = "<group>";
+		};
+		C7667FF626A81583005EB6E8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C766802C26A83BE3005EB6E8 /* Components */,
+				C7667FFB26A815C4005EB6E8 /* CloseAccountViewModel.swift */,
+				C7667FF926A815C4005EB6E8 /* CloseAccountViewController.swift */,
+				C7667FFA26A815C4005EB6E8 /* CloseAccountViewControllerFactory.swift */,
+				C7667FF826A815C4005EB6E8 /* CloseAccountNavigator.swift */,
+				C7667FF726A815C4005EB6E8 /* CloseAccount.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C766802C26A83BE3005EB6E8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C766802D26A83BF2005EB6E8 /* Button */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C766802D26A83BF2005EB6E8 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				C766802F26A83C3A005EB6E8 /* View */,
+				C766802E26A83C29005EB6E8 /* Cell */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		C766802E26A83C29005EB6E8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C766804326A86D83005EB6E8 /* CloseAccountButtonTableViewCellDataProvider.swift */,
+				C766804726A86D83005EB6E8 /* CloseAccountButtonTableViewCell.swift */,
+				C766804426A86D83005EB6E8 /* CloseAccountButtonTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C766802F26A83C3A005EB6E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C766804526A86D83005EB6E8 /* CloseAccountButtonComponentViewModel.swift */,
+				C766804626A86D83005EB6E8 /* CloseAccountButtonComponentView.swift */,
+				C766804226A86D83005EB6E8 /* CloseAccountButtonComponentView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C78127BD267140490007F7E3 /* OTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -3754,6 +3834,7 @@
 				CEB49854268C65B100004A45 /* Password Reset */,
 				CECF7F6B256D9F86001C0E50 /* Password Change */,
 				CEB285B8256D20A400584A65 /* Self Suspend */,
+				C7667FF526A81557005EB6E8 /* Close Account */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -6549,6 +6630,7 @@
 				7668C7AB2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib in Resources */,
 				CEE44E8B2600B5C100A83BD2 /* AdjaraMont-SemiBold.ttf in Resources */,
 				CEB49870268C987A00004A45 /* PasswordReset.storyboard in Resources */,
+				C766804A26A86D83005EB6E8 /* CloseAccountButtonTableViewCell.xib in Resources */,
 				C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */,
 				CE95FC12252DE60F003E539B /* FooterComponentView.xib in Resources */,
 				CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */,
@@ -6563,6 +6645,7 @@
 				C75D1AE6261205F4002AF763 /* STJSlot.zip in Resources */,
 				C75D1AE7261205F4002AF763 /* TSOATJSlot.zip in Resources */,
 				C75D1B09261205F4002AF763 /* TDRJSlot.zip in Resources */,
+				C766804826A86D83005EB6E8 /* CloseAccountButtonComponentView.xib in Resources */,
 				C75D1AF3261205F4002AF763 /* SBJSlot.zip in Resources */,
 				763171AD25663E1500F6FD90 /* TransactionDetails.storyboard in Resources */,
 				C75D1AEB261205F4002AF763 /* KHJSlot.zip in Resources */,
@@ -6627,6 +6710,7 @@
 				C7E3F14F261CCF70009B6D6A /* CashOutVisaView.xib in Resources */,
 				7644B63525650C0D006778B2 /* TransactionDetailsTableViewCell.xib in Resources */,
 				C75D1ADF261205F4002AF763 /* RGJSlot.zip in Resources */,
+				C7667FFC26A815C4005EB6E8 /* CloseAccount.storyboard in Resources */,
 				D8FBA4F12449BD560015C03C /* Localization.strings in Resources */,
 				CEA287772540C16700E6590C /* AccountInfo.storyboard in Resources */,
 				C75D1ADC261205F4002AF763 /* TWWJSlot.zip in Resources */,
@@ -6947,6 +7031,7 @@
 				C7A517BB2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift in Sources */,
 				CEA287852540C28F00E6590C /* AccountInfoViewModel.swift in Sources */,
 				CE64EA7E25D1695400438974 /* GameViewModel.swift in Sources */,
+				C766804C26A86D83005EB6E8 /* CloseAccountButtonComponentView.swift in Sources */,
 				CE679FE02578334B00F2EC1C /* AddCardViewModel.swift in Sources */,
 				CEB9637A2681E4D8002EBF4C /* LogOutComponentViewModel.swift in Sources */,
 				C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */,
@@ -7008,6 +7093,7 @@
 				CE76FD7F25764FB500D8AB04 /* ABLocationManager.swift in Sources */,
 				76DCF67825B80FB500150EE1 /* MyCardsViewModel.swift in Sources */,
 				CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */,
+				C766804926A86D83005EB6E8 /* CloseAccountButtonTableViewCellDataProvider.swift in Sources */,
 				76BDF45E2576043A007B27A7 /* AccountParametersViewController.swift in Sources */,
 				C78E53112685B12300EE1C18 /* HighSecurityNavigator.swift in Sources */,
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
@@ -7114,6 +7200,7 @@
 				CE693AF726A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
 				CE64EAAB25DD466D00438974 /* LogoutUseCase.swift in Sources */,
+				C766804B26A86D83005EB6E8 /* CloseAccountButtonComponentViewModel.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
@@ -7187,6 +7274,7 @@
 				CE4A30F12611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift in Sources */,
 				D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */,
 				CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */,
+				C766800026A815C4005EB6E8 /* CloseAccountViewModel.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
 				D842098924482CE60001ADC1 /* HomeViewControllerFactory.swift in Sources */,
@@ -7260,6 +7348,7 @@
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
 				CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */,
 				CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */,
+				C7667FFD26A815C4005EB6E8 /* CloseAccountNavigator.swift in Sources */,
 				CE341BC026A83DFC0040A83B /* FAQAnswersNavigator.swift in Sources */,
 				CE693B0226A7071E0049D665 /* FAQQuestionsNavigator.swift in Sources */,
 				CE95A3F4261DE23A0004330E /* ApplePayViewControllerFactory.swift in Sources */,
@@ -7271,6 +7360,7 @@
 				CE2AABD7267B3F5100B45A0A /* GetPasswordResetCodeDTO.swift in Sources */,
 				C79923022660EE7100FD7033 /* ABError.swift in Sources */,
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
+				C7667FFF26A815C4005EB6E8 /* CloseAccountViewControllerFactory.swift in Sources */,
 				C7C1D33D261B9D48009F01C3 /* WithdrawVisaViewModel.swift in Sources */,
 				C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */,
 				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
@@ -7280,6 +7370,7 @@
 				CE76989B269EF341009972B2 /* PasswordResetOptionsViewModel.swift in Sources */,
 				CE95A3F3261DE23A0004330E /* ApplePayViewController.swift in Sources */,
 				CEA287832540C28F00E6590C /* AccountInfoNavigator.swift in Sources */,
+				C766804D26A86D83005EB6E8 /* CloseAccountButtonTableViewCell.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				76BA7BDB25E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
@@ -7307,6 +7398,7 @@
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */,
 				CE769899269EF341009972B2 /* PasswordResetOptionsViewController.swift in Sources */,
+				C7667FFE26A815C4005EB6E8 /* CloseAccountViewController.swift in Sources */,
 				CE95A42D261DF1C40004330E /* ApplePayButton.swift in Sources */,
 				769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */,
 				C7036C34257CF42400AE7EB7 /* Gender.swift in Sources */,
@@ -7890,7 +7982,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 573;
+				CURRENT_PROJECT_VERSION = 574;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -7923,7 +8015,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 573;
+				CURRENT_PROJECT_VERSION = 574;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -8016,7 +8108,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 573;
+				CURRENT_PROJECT_VERSION = 574;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8105,7 +8197,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 573;
+				CURRENT_PROJECT_VERSION = 574;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

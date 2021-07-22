@@ -50,6 +50,8 @@ public class AccountParametersViewController: ABViewController {
             navigator.navigate(to: .highSecurity, animated: true)
         case .openAccessHistory:
             navigator.navigate(to: .loginHistory, animated: true)
+        case .openCloseAccount:
+            navigator.navigate(to: .closeAccount, animated: true)
         }
     }
 

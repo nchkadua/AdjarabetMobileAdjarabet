@@ -22,6 +22,10 @@
 	<string>${CORE_API_URL}</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tel</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MOBILE_API_URL</key>

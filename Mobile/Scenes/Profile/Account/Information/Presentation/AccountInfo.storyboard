@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rsg-21-RKy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="963.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1066.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pvc-ne-8Jz">
                                                 <rect key="frame" x="16" y="0.0" width="382" height="338.5"/>
@@ -187,6 +187,19 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xxW-yh-kIT">
+                                                <rect key="frame" x="16" y="963.5" width="382" height="103"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-90-8xd" customClass="CloseAccountButtonComponentView" customModule="Mobile" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="15" width="382" height="54"/>
+                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="103" id="ftb-PE-PWB"/>
+                                                </constraints>
+                                                <edgeInsets key="layoutMargins" top="15" left="0.0" bottom="34" right="0.0"/>
+                                            </stackView>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
                                     </stackView>
@@ -214,6 +227,7 @@
                     <connections>
                         <outlet property="addressView" destination="qDx-hd-JcY" id="SNA-Uk-pR3"/>
                         <outlet property="birthDateView" destination="em2-yE-wQO" id="1IV-fm-BAQ"/>
+                        <outlet property="closeAccountView" destination="9Sd-90-8xd" id="bQ5-nQ-pwX"/>
                         <outlet property="contactInfoHeaderLabel" destination="bfG-gv-y3w" id="5oJ-cl-NOm"/>
                         <outlet property="contactInfoHeaderSV" destination="Lmc-QB-bTv" id="EqL-AX-a9h"/>
                         <outlet property="contactInfoSV" destination="qln-XN-vZs" id="MAE-TT-DTf"/>
