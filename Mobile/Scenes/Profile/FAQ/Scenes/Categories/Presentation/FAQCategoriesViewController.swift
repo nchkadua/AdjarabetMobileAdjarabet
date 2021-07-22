@@ -87,7 +87,7 @@ public class FAQCategoriesViewController: UIViewController {
     private func setupTitleLabel() {
         titleLabel.setFont(to: .headline(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTintColor(to: .primaryText())
-        titleLabel.text = R.string.localization.faq_subtitle.localized()
+        titleLabel.text = R.string.localization.faq_subtitle.localized().uppercased()
     }
 
     private func setupImageView() {
