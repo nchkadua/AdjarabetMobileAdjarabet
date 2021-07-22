@@ -52,7 +52,7 @@ class FAQCategoryComponentView: UIView {
     }
 
     private func setupUI(title: String, subTitle: String, image: UIImage) {
-        titleLabel.text = title
+        titleLabel.text = title.uppercased()
         subtitleLabel.text = title
         imageView.image = image
     }
