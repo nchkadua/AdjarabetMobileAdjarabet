@@ -39,6 +39,7 @@ public class AccountInfoViewController: ABViewController {
     @IBOutlet private weak var privateInfoHeaderLabel: UILabel!
     @IBOutlet private weak var contactInfoHeaderLabel: UILabel!
     @IBOutlet private weak var personalInfoHeaderLabel: UILabel!
+    @IBOutlet private weak var closeAccountView: CloseAccountButtonComponentView!
 
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
@@ -136,6 +137,9 @@ public class AccountInfoViewController: ABViewController {
 
         let tap5 = UITapGestureRecognizer(target: self, action: #selector(editAddressAction))
         addressView.addGestureRecognizer(tap5)
+
+        let tap6 = UITapGestureRecognizer(target: self, action: #selector(closeAccountAction))
+        closeAccountView.addGestureRecognizer(tap6)
     }
 
     private func setupViewsWith(accountInfoModel: AccountInfoModel) {
@@ -194,6 +198,10 @@ public class AccountInfoViewController: ABViewController {
 
     @objc private func editAddressAction() {
         navigator.navigate(to: .addressChange, animated: true)
+    }
+
+    @objc private func closeAccountAction() {
+        navigator.navigate(to: .closeAccount, animated: true)
     }
 }
 

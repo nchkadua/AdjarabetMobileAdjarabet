@@ -40,6 +40,8 @@ struct AccountParameterMessages: AccountParameterCell {
     }
 }
 
+struct AccountParameterCloseAccount: AccountParameterCell {}
+
 struct AccountParametersModel {
     var biometryIcon: UIImage?
 
@@ -79,6 +81,7 @@ struct AccountParametersModel {
                                  description: R.string.localization.account_parameters_messages_email_description.localized(),
                                  buttonTitle: R.string.localization.account_parameters_messages_email_button.localized(),
                                  switchState: false,
-                                 type: .email)
+                                 type: .email),
+        AccountParameterCloseAccount()
     ]
 }

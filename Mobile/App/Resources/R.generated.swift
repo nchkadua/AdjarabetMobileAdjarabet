@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 42 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 43 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -110,6 +110,8 @@ struct R: Rswift.Validatable {
     static let biometricSettingsView = _R.storyboard.biometricSettingsView()
     /// Storyboard `Bonus`.
     static let bonus = _R.storyboard.bonus()
+    /// Storyboard `CloseAccount`.
+    static let closeAccount = _R.storyboard.closeAccount()
     /// Storyboard `Deposit`.
     static let deposit = _R.storyboard.deposit()
     /// Storyboard `Documentation`.
@@ -237,6 +239,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Bonus", bundle: ...)`
     static func bonus(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.bonus)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CloseAccount", bundle: ...)`
+    static func closeAccount(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.closeAccount)
     }
     #endif
 
@@ -2111,6 +2120,48 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.closeAccount` struct is generated, and contains static references to 4 images.
+    struct closeAccount {
+      /// Image `CloseAccountCover`.
+      static let closeAccountCover = Rswift.ImageResource(bundle: R.hostingBundle, name: "CloseAccount/CloseAccountCover")
+      /// Image `CloseAccount`.
+      static let closeAccount = Rswift.ImageResource(bundle: R.hostingBundle, name: "CloseAccount/CloseAccount")
+      /// Image `Phone1`.
+      static let phone1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "CloseAccount/Phone1")
+      /// Image `Phone2`.
+      static let phone2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "CloseAccount/Phone2")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "CloseAccount", bundle: ..., traitCollection: ...)`
+      static func closeAccount(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.closeAccount.closeAccount, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "CloseAccountCover", bundle: ..., traitCollection: ...)`
+      static func closeAccountCover(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.closeAccount.closeAccountCover, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Phone1", bundle: ..., traitCollection: ...)`
+      static func phone1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.closeAccount.phone1, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Phone2", bundle: ..., traitCollection: ...)`
+      static func phone2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.closeAccount.phone2, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.components` struct is generated, and contains static references to 0 images.
     struct components {
       /// This `R.image.components.abCheckbox` struct is generated, and contains static references to 3 images.
@@ -3344,7 +3395,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 95 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 97 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -3394,6 +3445,10 @@ struct R: Rswift.Validatable {
     static let calendarComponentView = _R.nib._CalendarComponentView()
     /// Nib `CashOutVisaView`.
     static let cashOutVisaView = _R.nib._CashOutVisaView()
+    /// Nib `CloseAccountButtonComponentView`.
+    static let closeAccountButtonComponentView = _R.nib._CloseAccountButtonComponentView()
+    /// Nib `CloseAccountButtonTableViewCell`.
+    static let closeAccountButtonTableViewCell = _R.nib._CloseAccountButtonTableViewCell()
     /// Nib `CommunicationLanguageComponentView`.
     static let communicationLanguageComponentView = _R.nib._CommunicationLanguageComponentView()
     /// Nib `DateHeaderCell`.
@@ -3726,6 +3781,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.cashOutVisaView) instead")
     static func cashOutVisaView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.cashOutVisaView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CloseAccountButtonComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.closeAccountButtonComponentView) instead")
+    static func closeAccountButtonComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.closeAccountButtonComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CloseAccountButtonTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.closeAccountButtonTableViewCell) instead")
+    static func closeAccountButtonTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.closeAccountButtonTableViewCell)
     }
     #endif
 
@@ -4393,6 +4464,14 @@ struct R: Rswift.Validatable {
       return R.nib.cashOutVisaView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func closeAccountButtonComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.closeAccountButtonComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func closeAccountButtonTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CloseAccountButtonTableViewCell? {
+      return R.nib.closeAccountButtonTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CloseAccountButtonTableViewCell
+    }
+
     static func communicationLanguageComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.communicationLanguageComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -4682,7 +4761,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 554 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 558 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -5095,7 +5174,19 @@ struct R: Rswift.Validatable {
       /// en translation: Close
       ///
       /// Locales: en, ka, hy
+      static let close_account_close_button_title = Rswift.StringResource(key: "close_account_close_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Close
+      ///
+      /// Locales: en, ka, hy
       static let reset_password_dismiss_button_title = Rswift.StringResource(key: "reset_password_dismiss_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Close Account
+      ///
+      /// Locales: en, ka, hy
+      static let close_account_button_title = Rswift.StringResource(key: "close_account_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Close Account
+      ///
+      /// Locales: en, ka, hy
+      static let close_account_title = Rswift.StringResource(key: "close_account_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Cocos Islands
       ///
       /// Locales: en, ka, hy
@@ -6392,6 +6483,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let timor_leste = Rswift.StringResource(key: "timor_leste", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: To close the account, contact us via the Information Center or online chat (+995 32 2 71 10 10; +995 32 2 97 10 10). Note that the amount should not be fixed on the balance sheet to close the account.
+      ///
+      /// Locales: en, ka, hy
+      static let close_account_description = Rswift.StringResource(key: "close_account_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: To withdraw money on the card, it is necessary to have a colored photo of the ID card uploaded on the website.  Note that the withdrawal fee is 1%.  In case of violation of the rules of fair play, Adjarabet reserves the right to deduct 3% of the withdrawn amount in the form of a commission.
       ///
       /// Locales: en, ka, hy
@@ -8434,6 +8529,21 @@ struct R: Rswift.Validatable {
       /// en translation: Close
       ///
       /// Locales: en, ka, hy
+      static func close_account_close_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("close_account_close_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "close_account_close_button_title"
+        }
+
+        return NSLocalizedString("close_account_close_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Close
+      ///
+      /// Locales: en, ka, hy
       static func reset_password_dismiss_button_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("reset_password_dismiss_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -8444,6 +8554,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("reset_password_dismiss_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Close Account
+      ///
+      /// Locales: en, ka, hy
+      static func close_account_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("close_account_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "close_account_button_title"
+        }
+
+        return NSLocalizedString("close_account_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Close Account
+      ///
+      /// Locales: en, ka, hy
+      static func close_account_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("close_account_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "close_account_title"
+        }
+
+        return NSLocalizedString("close_account_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Cocos Islands
@@ -13306,6 +13446,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("timor_leste", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: To close the account, contact us via the Information Center or online chat (+995 32 2 71 10 10; +995 32 2 97 10 10). Note that the amount should not be fixed on the balance sheet to close the account.
+      ///
+      /// Locales: en, ka, hy
+      static func close_account_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("close_account_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "close_account_description"
+        }
+
+        return NSLocalizedString("close_account_description", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: To withdraw money on the card, it is necessary to have a colored photo of the ID card uploaded on the website.  Note that the withdrawal fee is 1%.  In case of violation of the rules of fair play, Adjarabet reserves the right to deduct 3% of the withdrawn amount in the form of a commission.
       ///
       /// Locales: en, ka, hy
@@ -15250,6 +15405,7 @@ struct _R: Rswift.Validatable {
       try _BalanceComponentView.validate()
       try _CalendarComponentView.validate()
       try _CashOutVisaView.validate()
+      try _CloseAccountButtonComponentView.validate()
       try _CommunicationLanguageComponentView.validate()
       try _DocumentationActionComponentView.validate()
       try _EmoneyButton.validate()
@@ -15574,6 +15730,34 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _CloseAccountButtonComponentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CloseAccountButtonComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "CloseAccount/CloseAccount", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccount' is used in nib 'CloseAccountButtonComponentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CloseAccountButtonTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CloseAccountButtonTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CloseAccountButtonTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CloseAccountButtonTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _CommunicationLanguageComponentView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "CommunicationLanguageComponentView"
@@ -15857,8 +16041,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -16471,6 +16655,9 @@ struct _R: Rswift.Validatable {
       try bonus.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try closeAccount.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try deposit.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -16753,6 +16940,33 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct closeAccount: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let closeAccountViewController = StoryboardViewControllerResource<CloseAccountViewController>(identifier: "CloseAccountViewController")
+      let name = "CloseAccount"
+
+      func closeAccountViewController(_: Void = ()) -> CloseAccountViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: closeAccountViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        }
+        if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct deposit: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let depositViewController = StoryboardViewControllerResource<DepositViewController>(identifier: "DepositViewController")
@@ -16965,6 +17179,10 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+<<<<<<< HEAD
+=======
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
+>>>>>>> dev
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }

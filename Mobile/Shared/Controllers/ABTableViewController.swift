@@ -39,7 +39,8 @@ public class ABTableViewController: AppTableViewController {
             SecurityLevelTypeTableViewCell.self,
             MyCardTableViewCell.self,
             AddMyCardTableViewCell.self,
-            VideoCardTableViewCell.self
+            VideoCardTableViewCell.self,
+            CloseAccountButtonTableViewCell.self
         ])
 
         setupTableView()

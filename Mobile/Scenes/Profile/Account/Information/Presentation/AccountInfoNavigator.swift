@@ -13,6 +13,7 @@ public class AccountInfoNavigator: Navigator {
     @Inject(from: .factories) public var addressChangeViewControllerFactory: AddressChangeViewControllerFactory
     @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
     @Inject(from: .factories) public var phoneNumberChangeViewControllerFactory: PhoneNumberChangeViewControllerFactory
+    @Inject(from: .factories) private var closeAccountFactory: CloseAccountViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -24,6 +25,7 @@ public class AccountInfoNavigator: Navigator {
         case mailChange
         case phoneNumberChange
         case addressChange
+        case closeAccount
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -33,6 +35,7 @@ public class AccountInfoNavigator: Navigator {
         case .addressChange: navigateToAddressChange(animate: animate)
         case .passwordChange: navigateToPasswordChange(animate: animate)
         case .phoneNumberChange: navigateToPhoneNumberChange(animate: animate)
+        case .closeAccount: navigateToCloseAccount()
         }
     }
 
@@ -69,5 +72,12 @@ public class AccountInfoNavigator: Navigator {
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+    }
+
+    private func navigateToCloseAccount() {
+        let vc = closeAccountFactory.make(params: .init())
+        let navc = vc.wrapInNavWith(presentationStyle: .overFullScreen)
+        vc.hideNavBar()
+        viewController?.navigationController?.present(navc, animated: false, completion: nil)
     }
 }

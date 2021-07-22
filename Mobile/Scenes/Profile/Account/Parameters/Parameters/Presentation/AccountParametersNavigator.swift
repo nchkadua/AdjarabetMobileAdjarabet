@@ -13,6 +13,7 @@ public class AccountParametersNavigator: Navigator {
     @Inject(from: .factories) private var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
     @Inject(from: .factories) private var securityLevelsViewControllerFactory: SecurityLevelsViewControllerFactory
     @Inject(from: .factories) private var accessHistoryViewControllerFactory: AccessHistoryViewControllerFactory
+    @Inject(from: .factories) private var closeAccountFactory: CloseAccountViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -27,6 +28,7 @@ public class AccountParametersNavigator: Navigator {
         case blockSelf
         case loginHistory
         case securityLevels(params: SecurityLevelsViewModelParams)
+        case closeAccount
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -43,6 +45,8 @@ public class AccountParametersNavigator: Navigator {
             navigateToSecurityLevels(with: params, animate: animate)
         case .highSecurity:
             navigateToHighSecurity(animate: animate)
+        case .closeAccount:
+            navigateToCloseAccount()
         }
     }
 
@@ -81,5 +85,12 @@ public class AccountParametersNavigator: Navigator {
     private func navigateToAccessHistory(animate: Bool) {
         let vc = accessHistoryViewControllerFactory.make(params: .init())
         viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func navigateToCloseAccount() {
+        let vc = closeAccountFactory.make(params: .init())
+        let navc = vc.wrapInNavWith(presentationStyle: .overFullScreen)
+        vc.hideNavBar()
+        viewController?.navigationController?.present(navc, animated: false, completion: nil)
     }
 }
