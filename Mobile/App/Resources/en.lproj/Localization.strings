@@ -390,6 +390,9 @@
 
 /* Close Account */
 "close_account_button_title" = "Close Account";
+"close_account_title" = "Close Account";
+"close_account_description" = "To close the account, contact us via the Information Center or online chat (+995 32 2 71 10 10; +995 32 2 97 10 10). Note that the amount should not be fixed on the balance sheet to close the account.";
+"close_account_close_button_title" = "Close";
 
 /* FAQ */
 "faq_title" = "Questions & Answers";

@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,24 +17,140 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1k-HY-y3Z" userLabel="Background View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95t-Vg-5a8" userLabel="Popup">
-                                <rect key="frame" x="79" y="320" width="256" height="256"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <rect key="frame" x="16" y="896" width="382" height="421.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CloseAccount/CloseAccountCover" translatesAutoresizingMaskIntoConstraints="NO" id="UIc-1v-2Ah" userLabel="Cover Image View">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="wcD-u9-U1f"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ha-j2-vZ2" userLabel="Title Label">
+                                        <rect key="frame" x="21" y="203" width="110.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ColorGuide/TextColors/primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdI-3N-j8J" userLabel="Description Label">
+                                        <rect key="frame" x="21" y="230" width="340" height="101.5"/>
+                                        <string key="text">To close the account, contact us via the Information Center or online chat (+995 32 2 71 10 10; +995 32 2 97 10 10). Note that the amount should not be fixed on the balance sheet to close the account.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0h-4d-zUr" userLabel="Phone 1 Button">
+                                        <rect key="frame" x="21" y="348.5" width="52" height="52"/>
+                                        <color key="backgroundColor" name="ColorGuide/SystemBackground/tertiary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="SHc-bu-CBh"/>
+                                            <constraint firstAttribute="height" constant="52" id="mMi-eM-LXA"/>
+                                        </constraints>
+                                        <state key="normal" image="CloseAccount/Phone1"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="26"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="phone1Tapped" destination="gAa-dD-eZu" eventType="touchUpInside" id="dtE-x8-ddS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7X-0R-D78" userLabel="Phone 2 Button">
+                                        <rect key="frame" x="86" y="348.5" width="52" height="52"/>
+                                        <color key="backgroundColor" name="ColorGuide/SystemBackground/tertiary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="0WF-4V-Edg"/>
+                                            <constraint firstAttribute="width" constant="52" id="Cg0-fT-hxL"/>
+                                        </constraints>
+                                        <state key="normal" image="CloseAccount/Phone2"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="26"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="phone2Tapped" destination="gAa-dD-eZu" eventType="touchUpInside" id="aj8-4A-XfN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9m-Zo-QNU" userLabel="Close Button">
+                                        <rect key="frame" x="233" y="352.5" width="128" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="uEi-vh-i7A"/>
+                                            <constraint firstAttribute="width" constant="128" id="xkg-Q2-RO9"/>
+                                        </constraints>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" name="ColorGuide/TextColors/primary"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closeTapped" destination="gAa-dD-eZu" eventType="touchUpInside" id="BWj-mF-wQa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="ColorGuide/SystemBackground/secondary"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="Hul-7v-Maq"/>
-                                    <constraint firstAttribute="width" constant="256" id="vNN-cP-plf"/>
+                                    <constraint firstItem="1Ha-j2-vZ2" firstAttribute="leading" secondItem="95t-Vg-5a8" secondAttribute="leading" constant="21" id="A5o-Ih-SsH"/>
+                                    <constraint firstItem="GdI-3N-j8J" firstAttribute="leading" secondItem="1Ha-j2-vZ2" secondAttribute="leading" id="Gce-PT-sbD"/>
+                                    <constraint firstItem="r9m-Zo-QNU" firstAttribute="trailing" secondItem="GdI-3N-j8J" secondAttribute="trailing" id="Gd5-CZ-SQr"/>
+                                    <constraint firstItem="r9m-Zo-QNU" firstAttribute="centerY" secondItem="n7X-0R-D78" secondAttribute="centerY" id="LBP-Kh-Vnk"/>
+                                    <constraint firstItem="n7X-0R-D78" firstAttribute="centerY" secondItem="k0h-4d-zUr" secondAttribute="centerY" id="MiL-vZ-HbQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="GdI-3N-j8J" secondAttribute="trailing" constant="21" id="Nqp-49-gMM"/>
+                                    <constraint firstItem="GdI-3N-j8J" firstAttribute="top" secondItem="1Ha-j2-vZ2" secondAttribute="bottom" constant="6" id="Ofp-wl-qg9"/>
+                                    <constraint firstAttribute="bottom" secondItem="k0h-4d-zUr" secondAttribute="bottom" constant="21" id="Z3U-ff-K2P"/>
+                                    <constraint firstItem="1Ha-j2-vZ2" firstAttribute="top" secondItem="UIc-1v-2Ah" secondAttribute="bottom" constant="23" id="ZDv-1A-3V4"/>
+                                    <constraint firstItem="n7X-0R-D78" firstAttribute="leading" secondItem="k0h-4d-zUr" secondAttribute="trailing" constant="13" id="c5G-u7-bQU"/>
+                                    <constraint firstAttribute="trailing" secondItem="UIc-1v-2Ah" secondAttribute="trailing" id="hOw-p7-mrh"/>
+                                    <constraint firstItem="UIc-1v-2Ah" firstAttribute="leading" secondItem="95t-Vg-5a8" secondAttribute="leading" id="iSQ-kU-efs"/>
+                                    <constraint firstItem="UIc-1v-2Ah" firstAttribute="top" secondItem="95t-Vg-5a8" secondAttribute="top" id="poq-gm-feL"/>
+                                    <constraint firstItem="k0h-4d-zUr" firstAttribute="top" secondItem="GdI-3N-j8J" secondAttribute="bottom" constant="17" id="rar-HA-TIY"/>
+                                    <constraint firstItem="k0h-4d-zUr" firstAttribute="leading" secondItem="GdI-3N-j8J" secondAttribute="leading" id="xfs-8y-05j"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="95t-Vg-5a8" firstAttribute="centerY" secondItem="Amw-MT-c7e" secondAttribute="centerY" id="WWo-Zx-dhj"/>
+                            <constraint firstItem="95t-Vg-5a8" firstAttribute="top" secondItem="Amw-MT-c7e" secondAttribute="bottom" priority="750" id="4zd-FA-HZo"/>
+                            <constraint firstItem="c1k-HY-y3Z" firstAttribute="top" secondItem="Amw-MT-c7e" secondAttribute="top" id="9yk-0y-S29"/>
+                            <constraint firstItem="c1k-HY-y3Z" firstAttribute="leading" secondItem="Amw-MT-c7e" secondAttribute="leading" id="H8y-uu-5Lm"/>
+                            <constraint firstAttribute="bottom" secondItem="c1k-HY-y3Z" secondAttribute="bottom" id="NeK-ws-b1w"/>
+                            <constraint firstItem="95t-Vg-5a8" firstAttribute="centerY" secondItem="Amw-MT-c7e" secondAttribute="centerY" priority="250" id="WWo-Zx-dhj"/>
+                            <constraint firstAttribute="trailing" secondItem="95t-Vg-5a8" secondAttribute="trailing" constant="16" id="Yu9-ST-KtL"/>
                             <constraint firstItem="95t-Vg-5a8" firstAttribute="centerX" secondItem="Amw-MT-c7e" secondAttribute="centerX" id="cSS-kk-dEp"/>
+                            <constraint firstAttribute="trailing" secondItem="c1k-HY-y3Z" secondAttribute="trailing" id="qRb-b5-aLV"/>
+                            <constraint firstItem="95t-Vg-5a8" firstAttribute="leading" secondItem="Amw-MT-c7e" secondAttribute="leading" constant="16" id="xu1-lo-fdt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="c1k-HY-y3Z" id="ClI-KN-Unc"/>
+                        <outlet property="hideConstraint" destination="4zd-FA-HZo" id="uKN-ho-2IA"/>
                         <outlet property="popup" destination="95t-Vg-5a8" id="yRQ-Rb-vYO"/>
+                        <outlet property="popupCloseButton" destination="r9m-Zo-QNU" id="wXm-pr-KCP"/>
+                        <outlet property="popupDescriptionLabel" destination="GdI-3N-j8J" id="SH6-t3-GRS"/>
+                        <outlet property="popupTitleLabel" destination="1Ha-j2-vZ2" id="3ao-C3-aHM"/>
+                        <outlet property="showConstraint" destination="WWo-Zx-dhj" id="Q3f-9y-ZK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -43,8 +159,20 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="CloseAccount/CloseAccountCover" width="343" height="180"/>
+        <image name="CloseAccount/Phone1" width="52" height="52"/>
+        <image name="CloseAccount/Phone2" width="52" height="52"/>
+        <namedColor name="ColorGuide/SystemBackground/secondary">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/SystemBackground/tertiary">
+            <color red="0.17254901960784313" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/primary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/secondary">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.96078431372549022" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
