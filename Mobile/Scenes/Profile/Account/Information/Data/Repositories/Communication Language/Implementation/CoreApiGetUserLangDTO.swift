@@ -32,9 +32,9 @@ struct CoreApiGetUserLangDTO: CoreDataTransferResponse {
 fileprivate extension CommunicationLanguageEntity {
     init?(coreLanguage: String) {
         switch coreLanguage {
-        case "ge":  self = .georgian
-        case "en":  self = .english
-        case "ru":  self = .russian
+        case "ge", "ka": self = .georgian
+        case "en":       self = .english
+        case "ru":       self = .russian
         default: return nil
         }
     }
