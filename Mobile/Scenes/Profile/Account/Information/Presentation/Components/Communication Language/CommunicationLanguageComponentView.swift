@@ -18,8 +18,14 @@ class CommunicationLanguageComponentView: UIView {
     @IBOutlet weak private var placeholderLabel: UILabel!
     @IBOutlet weak private var fakeTextField: UITextField!
 
+    private var selectedIndex = 0
+
     public var pickerView = UIPickerView()
-    private let communicationLanguages = [CommunicationLanguage(title: R.string.localization.account_info_ge.localized(), prefix: "GEO"), CommunicationLanguage(title: R.string.localization.account_info_en.localized(), prefix: "ENG"), CommunicationLanguage(title: R.string.localization.account_info_rus.localized(), prefix: "RUS")]
+    private let communicationLanguages = [
+        CommunicationLanguage(title: R.string.localization.account_info_ge.localized(), prefix: "GEO", language: .georgian),
+        CommunicationLanguage(title: R.string.localization.account_info_en.localized(), prefix: "ENG", language: .english),
+        CommunicationLanguage(title: R.string.localization.account_info_rus.localized(), prefix: "RUS", language: .russian)
+    ]
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,7 +51,13 @@ class CommunicationLanguageComponentView: UIView {
     private func bind() {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
+            guard let self = self else { return }
             switch action {
+            case .setLanguage(let language):
+                let index = self.communicationLanguage(from: language)
+                self.selectedIndex = index
+                self.placeholderLabel.text = self.communicationLanguages[index].title
+                self.pickerView.selectRow(index, inComponent: 0, animated: false)
             default:
                 break
             }
@@ -77,6 +89,12 @@ class CommunicationLanguageComponentView: UIView {
 
     @objc private func doneDidTap() {
         fakeTextField.resignFirstResponder()
+        let language = communicationLanguages[selectedIndex].language
+        viewModel?.doneTapped(selectedLanguage: language)
+    }
+
+    private func communicationLanguage(from language: CommunicationLanguageEntity) -> Int {
+        return communicationLanguages.firstIndex(where: { cl in cl.language == language })!
     }
 }
 
@@ -99,7 +117,7 @@ extension CommunicationLanguageComponentView: Xibable {
 
         placeholderLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         placeholderLabel.setTextColor(to: .secondaryText())
-        placeholderLabel.text = communicationLanguages.first?.title
+     // placeholderLabel.text = communicationLanguages.first?.title
 
         fakeTextField.borderStyle = .none
         fakeTextField.tintColor = .clear
@@ -122,10 +140,12 @@ extension CommunicationLanguageComponentView: UIPickerViewDelegate, UIPickerView
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placeholderLabel.text = communicationLanguages[row].title
+        selectedIndex = row
     }
 }
 
 struct CommunicationLanguage {
     let title: String
     let prefix: String
+    let language: CommunicationLanguageEntity
 }

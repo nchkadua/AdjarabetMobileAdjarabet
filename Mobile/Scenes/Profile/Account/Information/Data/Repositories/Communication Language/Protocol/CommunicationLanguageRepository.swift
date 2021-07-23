@@ -29,5 +29,6 @@ protocol CommunicationLanguageWritableRepository {
      */
     typealias ChangeUserLanguageHandler = (Result<Void, ABError>) -> Void
     func changeUserLang(with language: CommunicationLanguageEntity,
+                        code: String?, // = nil
                         handler: @escaping ChangeUserLanguageHandler)
 }

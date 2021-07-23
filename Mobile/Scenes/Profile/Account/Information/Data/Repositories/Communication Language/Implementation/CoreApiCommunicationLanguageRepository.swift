@@ -19,8 +19,16 @@ extension CoreApiCommunicationLanguageRepository: CommunicationLanguageRepositor
     }
 
     func changeUserLang(with language: CommunicationLanguageEntity,
+                        code: String?,
                         handler: @escaping ChangeUserLanguageHandler) {
         performTask(expecting: CoreApiStatusCodeDTO.self, completion: handler) { requestBuilder in
+            var requestBuilder = requestBuilder
+
+            if let code = code {
+                requestBuilder = requestBuilder
+                    .setBody(key: .otp, value: code)
+            }
+
             return requestBuilder
                 .setBody(key: .req, value: "changeLang")
                 .setBody(key: "langCode", value: language.coreLanguage)

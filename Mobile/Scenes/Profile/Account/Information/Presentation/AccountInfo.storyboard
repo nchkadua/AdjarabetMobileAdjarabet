@@ -228,6 +228,7 @@
                         <outlet property="addressView" destination="qDx-hd-JcY" id="SNA-Uk-pR3"/>
                         <outlet property="birthDateView" destination="em2-yE-wQO" id="1IV-fm-BAQ"/>
                         <outlet property="closeAccountView" destination="9Sd-90-8xd" id="bQ5-nQ-pwX"/>
+                        <outlet property="communicationLanguageComponent" destination="jk4-be-Bxu" id="tcV-oM-jak"/>
                         <outlet property="contactInfoHeaderLabel" destination="bfG-gv-y3w" id="5oJ-cl-NOm"/>
                         <outlet property="contactInfoHeaderSV" destination="Lmc-QB-bTv" id="EqL-AX-a9h"/>
                         <outlet property="contactInfoSV" destination="qln-XN-vZs" id="MAE-TT-DTf"/>
