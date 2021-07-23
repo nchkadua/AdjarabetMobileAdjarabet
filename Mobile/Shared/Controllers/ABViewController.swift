@@ -14,7 +14,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     public var keyScrollView: UIScrollView? { nil }
     public private(set) var isKeyboardOpen: Bool = false
     public private(set) var keyboardFrame: CGRect = .zero
-    public var additionalBottomContentInset: CGFloat { 20 }
+    public var additionalBottomContentInset: CGFloat { 0 }
     public var defaultBottomContentInset: CGFloat { 0 }
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
