@@ -7,17 +7,12 @@
 //
 
 import UIKit
-import SDWebImageSVGCoder
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let services: AppDelegateServices
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //SVG
-        let SVGCoder = SDImageSVGCoder.shared
-        SDImageCodersManager.shared.addCoder(SVGCoder)
-
         return services.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

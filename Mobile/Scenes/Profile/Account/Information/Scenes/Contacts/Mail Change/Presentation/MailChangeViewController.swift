@@ -145,7 +145,7 @@ public class MailChangeViewController: ABViewController {
 }
 
 extension MailChangeViewController: InputViewsProviding {
-    public var inputViews: [ABInputView] { [mailInputView] }
+    public var inputViews: [ABInputView] { [mailInputView, passwordInputView] }
 }
 
 // MARK: Accessibility Identifiers
