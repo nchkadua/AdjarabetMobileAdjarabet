@@ -214,11 +214,22 @@
             <point key="canvasLocation" x="-415.94202898550731" y="137.27678571428569"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="GbW-aK-Pmt">
+            <size key="intrinsicContentSize" width="69" height="30"/>
+        </designable>
+        <designable name="JKT-UG-DAh">
+            <size key="intrinsicContentSize" width="49" height="30"/>
+        </designable>
+        <designable name="ZCq-Gy-Mg6">
+            <size key="intrinsicContentSize" width="129" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Login/logo" width="160" height="20"/>
         <image name="Login/logo_red" width="38" height="38"/>
         <image name="Login/qa_geo" width="36" height="36"/>
-        <image name="Shared/faceID" width="39" height="39.5"/>
+        <image name="Shared/faceID" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

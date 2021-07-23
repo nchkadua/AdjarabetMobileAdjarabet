@@ -99,6 +99,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
   - HTTPParserC (2.9.2)
+  - IQKeyboardManagerSwift (6.5.6)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -135,6 +136,7 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - Firebase/Performance
   - FSCalendar
+  - IQKeyboardManagerSwift
   - Nuke (= 8.4.1)
   - R.swift
   - RxCocoa
@@ -167,6 +169,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - HTTPParserC
+    - IQKeyboardManagerSwift
     - nanopb
     - Nuke
     - PromisesObjC
@@ -204,6 +207,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: ffb2f4159f2c897c6e8992bd7fbcdef8a300589c
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   HTTPParserC: 1ed389f80bb57a5b967d87d5358b8a94418394ee
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
@@ -222,6 +226,6 @@ SPEC CHECKSUMS:
   UAParserSwift: dc5e2717debc6e78a40487148d29649a0b311caf
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: c0cbf491c911a047b3a47d4e2eff5f8c7226cfc3
+PODFILE CHECKSUM: d473329cf685fe5b07bafabb00f77f348c8ef376
 
 COCOAPODS: 1.10.1

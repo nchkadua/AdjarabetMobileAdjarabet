@@ -25,6 +25,7 @@ def pods
   pod 'UAParserSwift'
   pod 'SwiftKeychainWrapper'
   pod 'EMPageViewController'
+  pod 'IQKeyboardManagerSwift'
 end
 
 target 'Mobile' do
