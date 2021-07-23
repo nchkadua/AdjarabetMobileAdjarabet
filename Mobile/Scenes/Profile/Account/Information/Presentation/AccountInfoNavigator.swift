@@ -14,6 +14,7 @@ public class AccountInfoNavigator: Navigator {
     @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
     @Inject(from: .factories) public var phoneNumberChangeViewControllerFactory: PhoneNumberChangeViewControllerFactory
     @Inject(from: .factories) private var closeAccountFactory: CloseAccountViewControllerFactory
+    @Inject(from: .factories) private var otpFactory: OTPFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -26,6 +27,7 @@ public class AccountInfoNavigator: Navigator {
         case phoneNumberChange
         case addressChange
         case closeAccount
+        case otp(params: OTPViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -36,6 +38,7 @@ public class AccountInfoNavigator: Navigator {
         case .passwordChange: navigateToPasswordChange(animate: animate)
         case .phoneNumberChange: navigateToPhoneNumberChange(animate: animate)
         case .closeAccount: navigateToCloseAccount()
+        case .otp(let params): navigateToOtp(with: params, animate: animate)
         }
     }
 
@@ -79,5 +82,12 @@ public class AccountInfoNavigator: Navigator {
         let navc = vc.wrapInNavWith(presentationStyle: .overFullScreen)
         vc.hideNavBar()
         viewController?.navigationController?.present(navc, animated: false, completion: nil)
+    }
+
+    private func navigateToOtp(with params: OTPViewModelParams, animate: Bool) {
+        let vc = otpFactory.make(params: params)
+        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
+        navc.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navc, animated: animate)
     }
 }
