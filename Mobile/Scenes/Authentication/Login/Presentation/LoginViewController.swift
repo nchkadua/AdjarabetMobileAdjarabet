@@ -82,6 +82,7 @@ public class LoginViewController: ABViewController {
 
     // MAKR: Setup methods
     private func setup() {
+//        keyScrollView = scrollView
         setBaseBackgorundColor(to: .secondaryBg())
         setupKeyboard()
         setupNavigationItem()
