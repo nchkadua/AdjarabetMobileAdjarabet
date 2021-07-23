@@ -48,6 +48,8 @@ extension DefaultCommunicationLanguageComponentViewModel: CommunicationLanguageC
     }
 
     func doneTapped(selectedLanguage: CommunicationLanguageEntity) {
-        actionSubject.onNext(.doneTapped(selectedLanguage))
+        if selectedLanguage != params.language {
+            actionSubject.onNext(.doneTapped(selectedLanguage))
+        }
     }
 }

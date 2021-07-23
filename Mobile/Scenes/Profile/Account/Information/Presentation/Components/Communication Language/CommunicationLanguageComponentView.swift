@@ -89,8 +89,9 @@ class CommunicationLanguageComponentView: UIView {
 
     @objc private func doneDidTap() {
         fakeTextField.resignFirstResponder()
-        let language = communicationLanguages[selectedIndex].language
-        viewModel?.doneTapped(selectedLanguage: language)
+        let language = communicationLanguages[selectedIndex]
+        placeholderLabel.text = language.title
+        viewModel?.doneTapped(selectedLanguage: language.language)
     }
 
     private func communicationLanguage(from language: CommunicationLanguageEntity) -> Int {
@@ -139,7 +140,7 @@ extension CommunicationLanguageComponentView: UIPickerViewDelegate, UIPickerView
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        placeholderLabel.text = communicationLanguages[row].title
+     // placeholderLabel.text = communicationLanguages[row].title
         selectedIndex = row
     }
 }
