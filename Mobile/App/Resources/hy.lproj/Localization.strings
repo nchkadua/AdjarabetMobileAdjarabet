@@ -410,6 +410,11 @@
 "faq_social_platforms_title" = "სოციალური ქსელები";
 "faq_social_platforms_subtitle" = "გაიგე რა ხდება აჭარაბეთის გარშემო!";
 
+/* Contact Us */
+"contact_use_title" = "Contact";
+"contact_call_us" = "Call Us";
+"contact_addresses" = "Addresses";
+
 /* Countries */
 "georgia" = "Georgia";
 "armenia" = "Armenia";

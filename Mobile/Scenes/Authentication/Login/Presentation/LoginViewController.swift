@@ -91,7 +91,7 @@ public class LoginViewController: ABViewController {
         setupButtons()
         setupInputViews()
         setupInputViewsObservation()
-        setDelegates()
+        setupFooter()
     }
 
     private func subscribeToPasswordInputView() {
@@ -217,8 +217,9 @@ public class LoginViewController: ABViewController {
         loginButton.setStyle(to: .primary(state: .active, size: .large))
     }
 
-    private func setDelegates() {
+    private func setupFooter() {
         footerComponentView.delegate = self
+        footerComponentView.contactUsButton.addTarget(self, action: #selector(navigateToContactUs), for: .touchUpInside)
     }
 
     // MARK: Actions
@@ -263,6 +264,11 @@ public class LoginViewController: ABViewController {
     @objc private func qaButtonDidTap() {
         closeKeyboard()
         navigator.navigate(to: .faq, animated: true)
+    }
+
+    @objc private func navigateToContactUs() {
+        closeKeyboard()
+        navigator.navigate(to: .contactUs, animated: true)
     }
 
     // MARK: Configuration

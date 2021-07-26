@@ -90,6 +90,7 @@ public extension DependencyContainer {
         Module { DefaultFAQCategoriesViewModel(params: .init(showDismissButton: true)) as FAQCategoriesViewModel }
         Module { DefaultFAQQuestionsViewModel(params: .init(showDismissButton: true)) as FAQQuestionsViewModel }
         Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
+        Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -183,6 +184,7 @@ public extension DependencyContainer {
         Module { DefaultFAQCategoriesViewControllerFactory() as FAQCategoriesViewControllerFactory }
         Module { DefaultFAQQuestionsViewControllerFactory() as FAQQuestionsViewControllerFactory }
         Module { DefaultFAQAnswersViewControllerFactory() as FAQAnswersViewControllerFactory }
+        Module { DefaultContactUsViewControllerFactory() as ContactUsViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }

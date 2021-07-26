@@ -653,6 +653,29 @@
 		CEC2F52D2608B5C00000904C /* DepositViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5282608B5C00000904C /* DepositViewModel.swift */; };
 		CEC9A34525C0970C00BE853D /* ODRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A34425C0970C00BE853D /* ODRManager.swift */; };
 		CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */; };
+		CECA7EBD26AED0A700BCF04A /* ContactUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECA7EB826AED0A700BCF04A /* ContactUs.storyboard */; };
+		CECA7EBE26AED0A700BCF04A /* ContactUsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EB926AED0A700BCF04A /* ContactUsNavigator.swift */; };
+		CECA7EBF26AED0A700BCF04A /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EBA26AED0A700BCF04A /* ContactUsViewController.swift */; };
+		CECA7EC026AED0A700BCF04A /* ContactUsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EBB26AED0A700BCF04A /* ContactUsViewControllerFactory.swift */; };
+		CECA7EC126AED0A700BCF04A /* ContactUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EBC26AED0A700BCF04A /* ContactUsViewModel.swift */; };
+		CECA7ED126AEEA8700BCF04A /* ContactPhoneComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA7ECB26AEEA8700BCF04A /* ContactPhoneComponentView.xib */; };
+		CECA7ED226AEEA8700BCF04A /* ContactPhoneTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7ECC26AEEA8700BCF04A /* ContactPhoneTableViewCellDataProvider.swift */; };
+		CECA7ED326AEEA8700BCF04A /* ContactPhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA7ECD26AEEA8700BCF04A /* ContactPhoneTableViewCell.xib */; };
+		CECA7ED426AEEA8700BCF04A /* ContactPhoneComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7ECE26AEEA8700BCF04A /* ContactPhoneComponentViewModel.swift */; };
+		CECA7ED526AEEA8700BCF04A /* ContactPhoneComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7ECF26AEEA8700BCF04A /* ContactPhoneComponentView.swift */; };
+		CECA7ED626AEEA8700BCF04A /* ContactPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7ED026AEEA8700BCF04A /* ContactPhoneTableViewCell.swift */; };
+		CECA7EDD26AEEAC500BCF04A /* ContactMailComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA7ED726AEEAC500BCF04A /* ContactMailComponentView.xib */; };
+		CECA7EDE26AEEAC500BCF04A /* ContactMailTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7ED826AEEAC500BCF04A /* ContactMailTableViewCellDataProvider.swift */; };
+		CECA7EDF26AEEAC500BCF04A /* ContactMailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA7ED926AEEAC500BCF04A /* ContactMailTableViewCell.xib */; };
+		CECA7EE026AEEAC500BCF04A /* ContactMailComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EDA26AEEAC500BCF04A /* ContactMailComponentViewModel.swift */; };
+		CECA7EE126AEEAC500BCF04A /* ContactMailComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EDB26AEEAC500BCF04A /* ContactMailComponentView.swift */; };
+		CECA7EE226AEEAC500BCF04A /* ContactMailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EDC26AEEAC500BCF04A /* ContactMailTableViewCell.swift */; };
+		CECA7EE926AEEADD00BCF04A /* ContactAddressComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA7EE326AEEADD00BCF04A /* ContactAddressComponentView.xib */; };
+		CECA7EEA26AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EE426AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift */; };
+		CECA7EEB26AEEADD00BCF04A /* ContactAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA7EE526AEEADD00BCF04A /* ContactAddressTableViewCell.xib */; };
+		CECA7EEC26AEEADD00BCF04A /* ContactAddressComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EE626AEEADD00BCF04A /* ContactAddressComponentViewModel.swift */; };
+		CECA7EED26AEEADD00BCF04A /* ContactAddressComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EE726AEEADD00BCF04A /* ContactAddressComponentView.swift */; };
+		CECA7EEE26AEEADD00BCF04A /* ContactAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EE826AEEADD00BCF04A /* ContactAddressTableViewCell.swift */; };
 		CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */; };
 		CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */; };
 		CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */; };
@@ -1527,6 +1550,29 @@
 		CEC2F5282608B5C00000904C /* DepositViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewModel.swift; sourceTree = "<group>"; };
 		CEC9A34425C0970C00BE853D /* ODRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODRManager.swift; sourceTree = "<group>"; };
 		CEC9A36D25C1A47C00BE853D /* FileExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtractor.swift; sourceTree = "<group>"; };
+		CECA7EB826AED0A700BCF04A /* ContactUs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactUs.storyboard; sourceTree = "<group>"; };
+		CECA7EB926AED0A700BCF04A /* ContactUsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsNavigator.swift; sourceTree = "<group>"; };
+		CECA7EBA26AED0A700BCF04A /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		CECA7EBB26AED0A700BCF04A /* ContactUsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewControllerFactory.swift; sourceTree = "<group>"; };
+		CECA7EBC26AED0A700BCF04A /* ContactUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewModel.swift; sourceTree = "<group>"; };
+		CECA7ECB26AEEA8700BCF04A /* ContactPhoneComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactPhoneComponentView.xib; sourceTree = "<group>"; };
+		CECA7ECC26AEEA8700BCF04A /* ContactPhoneTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhoneTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CECA7ECD26AEEA8700BCF04A /* ContactPhoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactPhoneTableViewCell.xib; sourceTree = "<group>"; };
+		CECA7ECE26AEEA8700BCF04A /* ContactPhoneComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhoneComponentViewModel.swift; sourceTree = "<group>"; };
+		CECA7ECF26AEEA8700BCF04A /* ContactPhoneComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhoneComponentView.swift; sourceTree = "<group>"; };
+		CECA7ED026AEEA8700BCF04A /* ContactPhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhoneTableViewCell.swift; sourceTree = "<group>"; };
+		CECA7ED726AEEAC500BCF04A /* ContactMailComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactMailComponentView.xib; sourceTree = "<group>"; };
+		CECA7ED826AEEAC500BCF04A /* ContactMailTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMailTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CECA7ED926AEEAC500BCF04A /* ContactMailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactMailTableViewCell.xib; sourceTree = "<group>"; };
+		CECA7EDA26AEEAC500BCF04A /* ContactMailComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMailComponentViewModel.swift; sourceTree = "<group>"; };
+		CECA7EDB26AEEAC500BCF04A /* ContactMailComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMailComponentView.swift; sourceTree = "<group>"; };
+		CECA7EDC26AEEAC500BCF04A /* ContactMailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMailTableViewCell.swift; sourceTree = "<group>"; };
+		CECA7EE326AEEADD00BCF04A /* ContactAddressComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactAddressComponentView.xib; sourceTree = "<group>"; };
+		CECA7EE426AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CECA7EE526AEEADD00BCF04A /* ContactAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactAddressTableViewCell.xib; sourceTree = "<group>"; };
+		CECA7EE626AEEADD00BCF04A /* ContactAddressComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressComponentViewModel.swift; sourceTree = "<group>"; };
+		CECA7EE726AEEADD00BCF04A /* ContactAddressComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressComponentView.swift; sourceTree = "<group>"; };
+		CECA7EE826AEEADD00BCF04A /* ContactAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressTableViewCell.swift; sourceTree = "<group>"; };
 		CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeNavigator.swift; sourceTree = "<group>"; };
 		CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewController.swift; sourceTree = "<group>"; };
 		CECF7F42256D5A77001C0E50 /* AddressChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewModel.swift; sourceTree = "<group>"; };
@@ -4608,6 +4654,7 @@
 		CE2AB4C3266A542300C88262 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CECA7EB426AED01A00BCF04A /* Contact */,
 				CE693AD926A6C71A0049D665 /* FAQ */,
 				CE3AC9C926A17931000BF338 /* Documentation */,
 				CE2AB4C4266A543C00C88262 /* Profile */,
@@ -5757,6 +5804,132 @@
 			path = EGT;
 			sourceTree = "<group>";
 		};
+		CECA7EB426AED01A00BCF04A /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7EB626AED04100BCF04A /* Presentation */,
+				CECA7EB526AED03C00BCF04A /* Data */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		CECA7EB526AED03C00BCF04A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CECA7EB626AED04100BCF04A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7EB726AED04800BCF04A /* Components */,
+				CECA7EBC26AED0A700BCF04A /* ContactUsViewModel.swift */,
+				CECA7EBB26AED0A700BCF04A /* ContactUsViewControllerFactory.swift */,
+				CECA7EBA26AED0A700BCF04A /* ContactUsViewController.swift */,
+				CECA7EB926AED0A700BCF04A /* ContactUsNavigator.swift */,
+				CECA7EB826AED0A700BCF04A /* ContactUs.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CECA7EB726AED04800BCF04A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7EC426AEEA2F00BCF04A /* Address */,
+				CECA7EC326AEEA2700BCF04A /* Mail */,
+				CECA7EC226AEEA0B00BCF04A /* Phone */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CECA7EC226AEEA0B00BCF04A /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7ECA26AEEA6500BCF04A /* View */,
+				CECA7EC926AEEA6100BCF04A /* Cell */,
+			);
+			path = Phone;
+			sourceTree = "<group>";
+		};
+		CECA7EC326AEEA2700BCF04A /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7EC826AEEA5C00BCF04A /* View */,
+				CECA7EC726AEEA5700BCF04A /* Cell */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
+		CECA7EC426AEEA2F00BCF04A /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7EC626AEEA4E00BCF04A /* View */,
+				CECA7EC526AEEA4900BCF04A /* Cell */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		CECA7EC526AEEA4900BCF04A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7EE426AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift */,
+				CECA7EE826AEEADD00BCF04A /* ContactAddressTableViewCell.swift */,
+				CECA7EE526AEEADD00BCF04A /* ContactAddressTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CECA7EC626AEEA4E00BCF04A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7EE326AEEADD00BCF04A /* ContactAddressComponentView.xib */,
+				CECA7EE626AEEADD00BCF04A /* ContactAddressComponentViewModel.swift */,
+				CECA7EE726AEEADD00BCF04A /* ContactAddressComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CECA7EC726AEEA5700BCF04A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7ED826AEEAC500BCF04A /* ContactMailTableViewCellDataProvider.swift */,
+				CECA7EDC26AEEAC500BCF04A /* ContactMailTableViewCell.swift */,
+				CECA7ED926AEEAC500BCF04A /* ContactMailTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		CECA7EC826AEEA5C00BCF04A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7ED726AEEAC500BCF04A /* ContactMailComponentView.xib */,
+				CECA7EDA26AEEAC500BCF04A /* ContactMailComponentViewModel.swift */,
+				CECA7EDB26AEEAC500BCF04A /* ContactMailComponentView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CECA7EC926AEEA6100BCF04A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7ECC26AEEA8700BCF04A /* ContactPhoneTableViewCellDataProvider.swift */,
+				CECA7ED026AEEA8700BCF04A /* ContactPhoneTableViewCell.swift */,
+				CECA7ECD26AEEA8700BCF04A /* ContactPhoneTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CECA7ECA26AEEA6500BCF04A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7ECB26AEEA8700BCF04A /* ContactPhoneComponentView.xib */,
+				CECA7ECE26AEEA8700BCF04A /* ContactPhoneComponentViewModel.swift */,
+				CECA7ECF26AEEA8700BCF04A /* ContactPhoneComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CECF7F3F256D5A68001C0E50 /* Address Change */ = {
 			isa = PBXGroup;
 			children = (
@@ -6577,6 +6750,7 @@
 				C75D1AEC261205F4002AF763 /* VNJSlot.zip in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
 				76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */,
+				CECA7EDF26AEEAC500BCF04A /* ContactMailTableViewCell.xib in Resources */,
 				C75D1B10261205F4002AF763 /* RLJSlot.zip in Resources */,
 				CEE44E8C2600B5C100A83BD2 /* AdjaraMont-Bold.ttf in Resources */,
 				CE679FDC2578334B00F2EC1C /* AddCard.storyboard in Resources */,
@@ -6615,6 +6789,7 @@
 				C75D1B14261205F4002AF763 /* QORJSlot.zip in Resources */,
 				CEE44E8A2600B5C100A83BD2 /* AdjaraMontPro-Light.ttf in Resources */,
 				7676E55425628F3900234026 /* Transactions.storyboard in Resources */,
+				CECA7EEB26AEEADD00BCF04A /* ContactAddressTableViewCell.xib in Resources */,
 				C728C278261BA04C004D3F2F /* AddAccountView.xib in Resources */,
 				C75D1ACE261205F4002AF763 /* CBJSlot.zip in Resources */,
 				C7C973AC2580EC990062C713 /* SecurityLevelTypeTableViewCell.xib in Resources */,
@@ -6624,6 +6799,7 @@
 				76BA7BDA25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.xib in Resources */,
 				CE3AC9E026A17931000BF338 /* DocumentationActionTableViewCell.xib in Resources */,
 				CEE44E862600B5C100A83BD2 /* AdjaraMontPro-Bold.ttf in Resources */,
+				CECA7EBD26AED0A700BCF04A /* ContactUs.storyboard in Resources */,
 				CEBB008E2609D40400D1B510 /* Visa.storyboard in Resources */,
 				C75D1ADA261205F4002AF763 /* CDJSlot.zip in Resources */,
 				CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */,
@@ -6631,6 +6807,7 @@
 				CEE44E8B2600B5C100A83BD2 /* AdjaraMont-SemiBold.ttf in Resources */,
 				CEB49870268C987A00004A45 /* PasswordReset.storyboard in Resources */,
 				C766804A26A86D83005EB6E8 /* CloseAccountButtonTableViewCell.xib in Resources */,
+				CECA7EE926AEEADD00BCF04A /* ContactAddressComponentView.xib in Resources */,
 				C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */,
 				CE95FC12252DE60F003E539B /* FooterComponentView.xib in Resources */,
 				CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */,
@@ -6722,6 +6899,7 @@
 				C75D1B18261205F4002AF763 /* SHJSlot.zip in Resources */,
 				CE58749B260B66CB00F03AB5 /* EmoneyButton.xib in Resources */,
 				CE38ED812681EEC800B02A9E /* LogOutTableViewCell.xib in Resources */,
+				CECA7ED126AEEA8700BCF04A /* ContactPhoneComponentView.xib in Resources */,
 				CEB963772681E4D8002EBF4C /* LogOutComponentView.xib in Resources */,
 				76BDF45C2576043A007B27A7 /* AccountParameters.storyboard in Resources */,
 				C75D1B19261205F4002AF763 /* MFJSlot.zip in Resources */,
@@ -6737,8 +6915,10 @@
 				C75D1ACF261205F4002AF763 /* BRDJSlot.zip in Resources */,
 				C75D1B1D261205F4002AF763 /* PSJSlot.zip in Resources */,
 				C75D1AD1261205F4002AF763 /* ABJSlot.zip in Resources */,
+				CECA7EDD26AEEAC500BCF04A /* ContactMailComponentView.xib in Resources */,
 				C782D26726544B6100594A65 /* ABSliderCell.xib in Resources */,
 				D8BF4043244EC949008F0BAF /* GameLauncherCollectionViewCell.xib in Resources */,
+				CECA7ED326AEEA8700BCF04A /* ContactPhoneTableViewCell.xib in Resources */,
 				76404F09257625F900D14E0C /* AccountSecurityMessagesComponentView.xib in Resources */,
 				CE7698A6269F02F6009972B2 /* ResetOptionComponentView.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
@@ -6984,12 +7164,14 @@
 				C7E3F15D261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift in Sources */,
 				CED829122633330D00D99CAC /* TestPageVC.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
+				CECA7EDE26AEEAC500BCF04A /* ContactMailTableViewCellDataProvider.swift in Sources */,
 				C7FAA3C22600C28600265995 /* UFCDepositEntity.swift in Sources */,
 				CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */,
 				76DCF68E25B8203D00150EE1 /* AddCard.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
 				CEBBB0742579151A0024D213 /* AgreementComponentViewModel.swift in Sources */,
+				CECA7EBE26AED0A700BCF04A /* ContactUsNavigator.swift in Sources */,
 				7644B63925650D72006778B2 /* TransactionDetailsTableViewCellDataProvider.swift in Sources */,
 				CEA9769A252CA694003CB1AB /* BalanceTableViewCellDataProvider.swift in Sources */,
 				CEA77793256D4237008A4F6C /* MailChangeViewModel.swift in Sources */,
@@ -7080,6 +7262,7 @@
 				C7553B29267B5B6200813FAC /* AddressRepository.swift in Sources */,
 				D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */,
 				CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */,
+				CECA7EEA26AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift in Sources */,
 				C728C274261BA038004D3F2F /* AddAccountView.swift in Sources */,
 				D84202D02451930A00F0F056 /* ABUserDefaults.swift in Sources */,
 				7644B61D2563F08B006778B2 /* DateHeaderCellDataProvider.swift in Sources */,
@@ -7106,6 +7289,8 @@
 				CEBB00812609D3F900D1B510 /* EmoneyNavigator.swift in Sources */,
 				CEC9A34525C0970C00BE853D /* ODRManager.swift in Sources */,
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
+				CECA7EBF26AED0A700BCF04A /* ContactUsViewController.swift in Sources */,
+				CECA7EC026AED0A700BCF04A /* ContactUsViewControllerFactory.swift in Sources */,
 				CEBB00722608F64100D1B510 /* PaymentMethodGridComponentView.swift in Sources */,
 				CEBB002D2608EC4100D1B510 /* PaymentMethodComponentViewModel.swift in Sources */,
 				76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */,
@@ -7113,6 +7298,7 @@
 				C7EF9E61256FF2BC00D2908C /* CoreApiUserInfoRepository.swift in Sources */,
 				76DCF67625B80FB500150EE1 /* MyCardsViewController.swift in Sources */,
 				76DCF6B025B8262300150EE1 /* MyCardTableViewCellDataProvider.swift in Sources */,
+				CECA7EC126AED0A700BCF04A /* ContactUsViewModel.swift in Sources */,
 				D807846B24439E4500003892 /* String+Extension.swift in Sources */,
 				CE454654260C89EC00B01E19 /* VisaLimitComponentView.swift in Sources */,
 				CE9A175825519001006655AF /* AppDeletableCellDelegate.swift in Sources */,
@@ -7143,6 +7329,7 @@
 				C7CA6A122563D53100A9C6AB /* ABPopupViewController.swift in Sources */,
 				CE14202D2636EE8900E022C7 /* BonusViewController.swift in Sources */,
 				C707549325F3963C0033050E /* PaymentListRepository.swift in Sources */,
+				CECA7EEC26AEEADD00BCF04A /* ContactAddressComponentViewModel.swift in Sources */,
 				C75F61E22657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift in Sources */,
 				C7C35FD925C93C0000ADCBB6 /* GameLaunchInteractor.swift in Sources */,
 				76404F0D257625F900D14E0C /* AccountSecurityMessagesComponentView.swift in Sources */,
@@ -7185,6 +7372,7 @@
 				CE2AABBB2679FF7800B45A0A /* InitPasswordResetEntity.swift in Sources */,
 				76BDF46D25760512007B27A7 /* AccountParametersTableViewCellDataProvider.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
+				CECA7ED626AEEA8700BCF04A /* ContactPhoneTableViewCell.swift in Sources */,
 				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
 				C74334F12601232700945C8C /* UFCTransactionEntities.swift in Sources */,
@@ -7194,6 +7382,7 @@
 				CEBB00842609D3F900D1B510 /* EmoneyViewModel.swift in Sources */,
 				CE95A3F5261DE23A0004330E /* ApplePayViewModel.swift in Sources */,
 				C7C35FE025C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift in Sources */,
+				CECA7EE226AEEAC500BCF04A /* ContactMailTableViewCell.swift in Sources */,
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,
@@ -7304,6 +7493,7 @@
 				CEBB00832609D3F900D1B510 /* EmoneyViewControllerFactory.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */,
+				CECA7ED526AEEA8700BCF04A /* ContactPhoneComponentView.swift in Sources */,
 				C7CBFDCD268FB0DB009A8365 /* UpdateOtpRepository.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
 				C7C1D33C261B9D48009F01C3 /* WithdrawVisaViewControllerFactory.swift in Sources */,
@@ -7349,6 +7539,7 @@
 				CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */,
 				CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */,
 				C7667FFD26A815C4005EB6E8 /* CloseAccountNavigator.swift in Sources */,
+				CECA7EE126AEEAC500BCF04A /* ContactMailComponentView.swift in Sources */,
 				CE341BC026A83DFC0040A83B /* FAQAnswersNavigator.swift in Sources */,
 				CE693B0226A7071E0049D665 /* FAQQuestionsNavigator.swift in Sources */,
 				CE95A3F4261DE23A0004330E /* ApplePayViewControllerFactory.swift in Sources */,
@@ -7383,6 +7574,7 @@
 				C7DB6EFA26370FC000EC1CB9 /* EmptyCollectionViewCellDataProvider.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				CEBB008F2609D40400D1B510 /* VisaNavigator.swift in Sources */,
+				CECA7EED26AEEADD00BCF04A /* ContactAddressComponentView.swift in Sources */,
 				CED4D95E26565D38003F35AF /* PasswordReminderComponentView.swift in Sources */,
 				CE91C0E1257028D400A18255 /* TransactionsFilterViewControllerFactory.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
@@ -7412,6 +7604,7 @@
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */,
 				D83ED2F5244C91BD0037DDEB /* UIButton+Extension.swift in Sources */,
+				CECA7ED226AEEA8700BCF04A /* ContactPhoneTableViewCellDataProvider.swift in Sources */,
 				7698869A2571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift in Sources */,
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				C78E52F12683A2F100EE1C18 /* SuspendRepository.swift in Sources */,
@@ -7429,6 +7622,7 @@
 				CE29FC402578F14D00402D0D /* MinAmountComponentView.swift in Sources */,
 				D842099124482DC80001ADC1 /* MainTabBarNavigator.swift in Sources */,
 				D8442AAB2469A7A400F32676 /* LoginViewController.swift in Sources */,
+				CECA7EEE26AEEADD00BCF04A /* ContactAddressTableViewCell.swift in Sources */,
 				D8AC9964244F184C00B16600 /* RecentlyPlayedComponentViewModel.swift in Sources */,
 				D8D11B442498E63D0010F4C8 /* UserAgentProvider.swift in Sources */,
 				CEC2F52C2608B5C00000904C /* DepositViewControllerFactory.swift in Sources */,
@@ -7460,6 +7654,7 @@
 				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
 				CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */,
+				CECA7EE026AEEAC500BCF04A /* ContactMailComponentViewModel.swift in Sources */,
 				CE8786CF261DBF980060EBD1 /* AddCardComponentView.swift in Sources */,
 				76DBCE57257FAB000030E600 /* DateFormatter+Extension.swift in Sources */,
 				7676E54E2562856600234026 /* TransactionsNavigator.swift in Sources */,
@@ -7477,6 +7672,7 @@
 				CE4A30D62611E5420039C078 /* SuggestedAmountComponentViewModel.swift in Sources */,
 				C7C9732E2580D9550062C713 /* SecurityLevelTableViewCell.swift in Sources */,
 				CEBB00922609D40400D1B510 /* VisaViewModel.swift in Sources */,
+				CECA7ED426AEEA8700BCF04A /* ContactPhoneComponentViewModel.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
 				C78127CB2671426E0007F7E3 /* CoreApiIsOTPEnabledDTO.swift in Sources */,
 				7665D97E257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift in Sources */,
@@ -8199,6 +8395,7 @@
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
 				CURRENT_PROJECT_VERSION = 576;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

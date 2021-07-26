@@ -18,6 +18,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var myCardsViewControllerFactory: MyCardsViewControllerFactory
     @Inject(from: .factories) public var documentationViewControllerFactory: DocumentationViewControllerFactory
     @Inject(from: .factories) public var faqViewControllerFactory: FAQCategoriesViewControllerFactory
+    @Inject(from: .factories) public var contactUsViewControllerFactory: ContactUsViewControllerFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -35,6 +36,7 @@ public class ProfileNavigator: Navigator {
         case accountInformation
         case accountParameters
         case documentation
+        case contactUs
         case loginPage
     }
 
@@ -49,6 +51,7 @@ public class ProfileNavigator: Navigator {
         case .accountInformation: navigateToAccountInformation(animate: animate)
         case .accountParameters: navigateToAccountParameters(animate: animate)
         case .documentation: navigateDocumentation(animate: animate)
+        case .contactUs: navigateToContactUs(animate: animate)
         case .loginPage: navigateToLogin(animate: animate)
         default:
             break
@@ -103,6 +106,11 @@ public class ProfileNavigator: Navigator {
 
     private func navigateDocumentation(animate: Bool) {
         let vc = documentationViewControllerFactory.make(params: .init())
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
+    }
+
+    private func navigateToContactUs(animate: Bool) {
+        let vc = contactUsViewControllerFactory.make(params: .init(showDismiss: false))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 
