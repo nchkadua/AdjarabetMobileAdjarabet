@@ -26,6 +26,7 @@ public protocol ContactUsViewModelOutput {
 }
 
 public enum ContactUsViewModelOutputAction {
+    case initialize(AppListDataProvider)
 }
 
 public enum ContactUsViewModelRoute {
@@ -46,5 +47,11 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
     public var route: Observable<ContactUsViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        var dataProviders: AppCellDataProviders = []
+
+        let contactPhoneViewModel = DefaultContactPhoneComponentViewModel(params: .init())
+        dataProviders.append(contactPhoneViewModel)
+
+        actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
 }

@@ -35,6 +35,9 @@ public class ContactUsViewController: ABViewController {
     }
 
     private func didRecive(action: ContactUsViewModelOutputAction) {
+        switch action {
+        case .initialize(let dataProvider): appTableViewController.dataProvider = dataProvider
+        }
     }
 
     private func didRecive(route: ContactUsViewModelRoute) {
@@ -57,9 +60,9 @@ public class ContactUsViewController: ABViewController {
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
         appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
-        appTableViewController.tableView.isScrollEnabled = false
 
         appTableViewController.tableView?.register(types: [
+            ContactPhoneTableViewCell.self
         ])
     }
 
