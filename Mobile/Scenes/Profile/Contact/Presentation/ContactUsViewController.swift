@@ -8,6 +8,7 @@
 
 import RxSwift
 import MessageUI
+import MapKit
 
 public class ContactUsViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: ContactUsViewModel
@@ -38,7 +39,10 @@ public class ContactUsViewController: ABViewController {
     private func didRecive(action: ContactUsViewModelOutputAction) {
         switch action {
         case .initialize(let dataProvider): appTableViewController.dataProvider = dataProvider
+        case .openUrl(let url): openUrl(url)
         case .sendMail(let mail): sendMail(mail)
+        case .openMapItem(let mapItem, let options): openMapItem(mapItem, with: options)
+        case .showMessage(let message): showAlert(title: message)
         }
     }
 
@@ -78,6 +82,15 @@ public class ContactUsViewController: ABViewController {
         } else {
             navigationController?.popViewController(animated: true)
         }
+    }
+
+    private func openUrl(_ url: URL) {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+
+    //Apple Maps
+    private func openMapItem(_ mapItem: MKMapItem, with options: [String: Any]) {
+        mapItem.openInMaps(launchOptions: options)
     }
 }
 

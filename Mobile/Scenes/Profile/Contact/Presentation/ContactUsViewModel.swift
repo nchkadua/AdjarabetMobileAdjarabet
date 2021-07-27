@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import MapKit
 
 public protocol ContactUsViewModel: ContactUsViewModelInput, ContactUsViewModelOutput {
 }
@@ -27,7 +28,10 @@ public protocol ContactUsViewModelOutput {
 
 public enum ContactUsViewModelOutputAction {
     case initialize(AppListDataProvider)
+    case openUrl(_ url: URL)
     case sendMail(_ mail: String)
+    case openMapItem(_ mapItem: MKMapItem, options: [String: Any])
+    case showMessage(message: String)
 }
 
 public enum ContactUsViewModelRoute {
@@ -85,9 +89,46 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
     }
 
     private func didSelectMail(_ mail: String) {
-        actionSubject.onNext(.sendMail(mail))
+        if UIApplication.shared.canOpenURL(URL(string: "googlegmail://")!) {
+            guard let url = URL(string: "googlegmail:///co?to=\(mail)") else {
+                actionSubject.onNext(.sendMail(mail))
+                return }
+            actionSubject.onNext(.openUrl(url))
+        } else {
+            actionSubject.onNext(.sendMail(mail))
+        }
     }
 
     private func didSelectAddress(_ address: Address) {
+        if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
+            guard let url = URL(string: "comgooglemaps://?center=\(address.coordinates.latitude),\(address.coordinates.longitude)&directionsmode=driving&zoom=14&views=traffic") else {
+                createAppleMapsOptions(from: address)
+                return
+            }
+            actionSubject.onNext(.openUrl(url))
+        } else {
+            createAppleMapsOptions(from: address)
+        }
+    }
+
+    private func createAppleMapsOptions(from address: Address) {
+        if UIApplication.shared.canOpenURL(URL(string: "maps://")!) {
+            let latitude = address.coordinates.latitude
+            let longitude = address.coordinates.longitude
+            let regionDistance: CLLocationDistance = 10000
+            let coordinates = CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longitude))
+            let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+            let options = [
+                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+            ]
+            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = "Adjarabet"
+
+            actionSubject.onNext(.openMapItem(mapItem, options: options))
+        } else {
+            actionSubject.onNext(.showMessage(message: "No Map Application is installed"))
+        }
     }
 }
