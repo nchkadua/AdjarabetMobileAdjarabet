@@ -13,6 +13,7 @@ public protocol AddressChangeViewModel: AddressChangeViewModelInput, AddressChan
 
 public protocol AddressChangeViewModelInput {
     func viewDidLoad()
+    func approved(address: String)
 }
 
 public protocol AddressChangeViewModelOutput {
@@ -21,6 +22,8 @@ public protocol AddressChangeViewModelOutput {
 }
 
 public enum AddressChangeViewModelOutputAction {
+    case dismiss
+    case showError(error: String)
 }
 
 public enum AddressChangeViewModelRoute {
@@ -37,20 +40,6 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
     public var route: Observable<AddressChangeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        /*
-        repo.changeAddress(
-            with: .init(
-                address: "New Address"
-            )
-        ) { result in
-            switch result {
-            case .success:
-                print("changeAddress.Success")
-            case .failure(let error):
-                print("changeAddress.Failure:", error)
-            }
-        }
-        */
         /*
         repo.changeAddress(
             with: .init (
@@ -71,5 +60,20 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
             }
         }
         */
+    }
+
+    public func approved(address: String) {
+        repo.changeAddress(
+            with: .init(
+                address: address
+            )
+        ) { [weak self] result in
+            switch result {
+            case .success:
+                self?.actionSubject.onNext(.dismiss)
+            case .failure(let error):
+                self?.actionSubject.onNext(.showError(error: error.description.description))
+            }
+        }
     }
 }

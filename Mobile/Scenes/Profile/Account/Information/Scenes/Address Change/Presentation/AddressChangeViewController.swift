@@ -32,14 +32,18 @@ public class AddressChangeViewController: ABViewController {
 
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: AddressChangeViewModel) {
-        /*
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
-        */
     }
 
     private func didRecive(action: AddressChangeViewModelOutputAction) {
+        switch action {
+        case .dismiss:
+            dismiss(animated: true, completion: nil)
+        case .showError(let error):
+            showAlert(title: error)
+        }
     }
 
     // MARK: Setup methods
@@ -83,6 +87,7 @@ public class AddressChangeViewController: ABViewController {
     }
 
     @objc private func approveDidTap() {
+        viewModel.approved(address: addressInputView.text ?? "")
         closeKeyboard()
     }
 
