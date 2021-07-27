@@ -27,6 +27,7 @@ public protocol ContactUsViewModelOutput {
 
 public enum ContactUsViewModelOutputAction {
     case initialize(AppListDataProvider)
+    case sendMail(_ mail: String)
 }
 
 public enum ContactUsViewModelRoute {
@@ -68,9 +69,25 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
         let headerViewModel = DefaultAddressHeaderComponentViewModel(params: .init(title: R.string.localization.contact_addresses.localized().uppercased()))
         dataProviders.append(headerViewModel)
 
+        AddressListProvider.list().forEach {
+            let addressViewModel = DefaultContactAddressComponentViewModel(params: .init(address: $0))
+            addressViewModel.action.subscribe(onNext: { [weak self] action in
+                switch action {
+                case .didSelect(let address, _): self?.didSelectAddress(address)
+                default:
+                    break
+                }
+            }).disposed(by: disposeBag)
+            dataProviders.append(addressViewModel)
+        }
+
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
 
     private func didSelectMail(_ mail: String) {
+        actionSubject.onNext(.sendMail(mail))
+    }
+
+    private func didSelectAddress(_ address: Address) {
     }
 }

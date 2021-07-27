@@ -12,10 +12,12 @@ public protocol ContactAddressComponentViewModel: ContactAddressComponentViewMod
                                                 ContactAddressComponentViewModelOutput {}
 
 public struct ContactAddressComponentViewModelParams {
+    let address: Address
 }
 
 public protocol ContactAddressComponentViewModelInput {
     func didBind()
+    func didSelect(at indexPath: IndexPath)
 }
 
 public protocol ContactAddressComponentViewModelOutput {
@@ -24,6 +26,8 @@ public protocol ContactAddressComponentViewModelOutput {
 }
 
 public enum ContactAddressComponentViewModelOutputAction {
+    case setupWith(address: Address)
+    case didSelect(address: Address, indexPath: IndexPath)
 }
 
 public class DefaultContactAddressComponentViewModel {
@@ -40,6 +44,10 @@ extension DefaultContactAddressComponentViewModel: ContactAddressComponentViewMo
     }
 
     public func didBind() {
-//        actionSubject.onNext()
+        actionSubject.onNext(.setupWith(address: params.address))
+    }
+
+    public func didSelect(at indexPath: IndexPath) {
+        actionSubject.onNext(.didSelect(address: params.address, indexPath: indexPath))
     }
 }

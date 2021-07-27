@@ -11,7 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactAddressComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
+                <outlet property="addressLabel" destination="MYK-g6-6rH" id="7D7-jm-ghL"/>
+                <outlet property="cityLabel" destination="9vA-wP-LIp" id="vpQ-in-VqM"/>
+                <outlet property="imageView" destination="A4q-Kz-S5c" id="MZj-bb-pao"/>
+                <outlet property="separator" destination="Blq-Tr-iIg" id="AuF-Oa-lBh"/>
+                <outlet property="view" destination="iN0-l3-epB" id="fXw-PP-E0d"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -60,7 +64,7 @@
                 <constraint firstItem="9vA-wP-LIp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="21" id="wmR-Z6-gNs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="62" y="108"/>
+            <point key="canvasLocation" x="61.594202898550726" y="107.8125"/>
         </view>
     </objects>
     <resources>

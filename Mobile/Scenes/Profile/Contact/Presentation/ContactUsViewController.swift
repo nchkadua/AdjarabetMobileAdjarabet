@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import MessageUI
 
 public class ContactUsViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: ContactUsViewModel
@@ -37,6 +38,7 @@ public class ContactUsViewController: ABViewController {
     private func didRecive(action: ContactUsViewModelOutputAction) {
         switch action {
         case .initialize(let dataProvider): appTableViewController.dataProvider = dataProvider
+        case .sendMail(let mail): sendMail(mail)
         }
     }
 
@@ -64,7 +66,8 @@ public class ContactUsViewController: ABViewController {
         appTableViewController.tableView?.register(types: [
             ContactPhoneTableViewCell.self,
             ContactMailTableViewCell.self,
-            AddressHeaderTableViewCell.self
+            AddressHeaderTableViewCell.self,
+            ContactAddressTableViewCell.self
         ])
     }
 
@@ -75,5 +78,23 @@ public class ContactUsViewController: ABViewController {
         } else {
             navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+extension ContactUsViewController: MFMailComposeViewControllerDelegate {
+    private func sendMail(_ mail: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mailVC = MFMailComposeViewController()
+            mailVC.mailComposeDelegate = self
+            mailVC.setToRecipients([mail])
+
+            present(mailVC, animated: true)
+        } else {
+            showAlert(title: "Can not send email")
+        }
+    }
+
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }

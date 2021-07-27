@@ -14,7 +14,11 @@ class ContactAddressComponentView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
+    @IBOutlet weak private var addressLabel: UILabel!
+    @IBOutlet weak private var cityLabel: UILabel!
+    @IBOutlet weak private var imageView: UIImageView!
 
+    @IBOutlet weak var separator: UIView!
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -34,12 +38,18 @@ class ContactAddressComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
+            case .setupWith(let address): self?.setup(with: address)
             default:
                 break
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
+    }
+
+    private func setup(with address: Address) {
+        addressLabel.text = address.title
+        cityLabel.text = address.city
     }
 }
 
@@ -54,6 +64,15 @@ extension ContactAddressComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.secondaryBg().value
+        view.setBackgorundColor(to: .secondaryBg())
+        separator.setBackgorundColor(to: .opaque())
+
+        addressLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
+        addressLabel.setTextColor(to: .primaryText())
+
+        cityLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
+        cityLabel.setTextColor(to: .secondaryText())
+
+        imageView.image = R.image.contact.location()?.withRenderingMode(.alwaysOriginal)
     }
 }

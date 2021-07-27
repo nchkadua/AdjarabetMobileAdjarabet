@@ -530,6 +530,9 @@
 		CE693B1326A70C340049D665 /* FAQQuestionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0D26A70C340049D665 /* FAQQuestionComponentView.swift */; };
 		CE693B1426A70C340049D665 /* FAQQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0E26A70C340049D665 /* FAQQuestionTableViewCell.swift */; };
 		CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E294C256E8F1F001FE225 /* Double+Extension.swift */; };
+		CE752DF126B02B08000FB8A4 /* ContactAddressComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */; };
+		CE752DF326B02C75000FB8A4 /* AddressListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */; };
+		CE752DF526B0389E000FB8A4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE752DF426B0389E000FB8A4 /* MessageUI.framework */; };
 		CE769897269EF341009972B2 /* PasswordResetOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */; };
 		CE769898269EF341009972B2 /* PasswordResetOptionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */; };
 		CE769899269EF341009972B2 /* PasswordResetOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769894269EF341009972B2 /* PasswordResetOptionsViewController.swift */; };
@@ -681,7 +684,6 @@
 		CECA7EEA26AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EE426AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift */; };
 		CECA7EEB26AEEADD00BCF04A /* ContactAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA7EE526AEEADD00BCF04A /* ContactAddressTableViewCell.xib */; };
 		CECA7EEC26AEEADD00BCF04A /* ContactAddressComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EE626AEEADD00BCF04A /* ContactAddressComponentViewModel.swift */; };
-		CECA7EED26AEEADD00BCF04A /* ContactAddressComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EE726AEEADD00BCF04A /* ContactAddressComponentView.swift */; };
 		CECA7EEE26AEEADD00BCF04A /* ContactAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA7EE826AEEADD00BCF04A /* ContactAddressTableViewCell.swift */; };
 		CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */; };
 		CECF7F44256D5A77001C0E50 /* AddressChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */; };
@@ -1434,6 +1436,9 @@
 		CE693B0D26A70C340049D665 /* FAQQuestionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionComponentView.swift; sourceTree = "<group>"; };
 		CE693B0E26A70C340049D665 /* FAQQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		CE6E294C256E8F1F001FE225 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressComponentView.swift; sourceTree = "<group>"; };
+		CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListProvider.swift; sourceTree = "<group>"; };
+		CE752DF426B0389E000FB8A4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordResetOptions.storyboard; sourceTree = "<group>"; };
 		CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetOptionsNavigator.swift; sourceTree = "<group>"; };
 		CE769894269EF341009972B2 /* PasswordResetOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetOptionsViewController.swift; sourceTree = "<group>"; };
@@ -1585,7 +1590,6 @@
 		CECA7EE426AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CECA7EE526AEEADD00BCF04A /* ContactAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactAddressTableViewCell.xib; sourceTree = "<group>"; };
 		CECA7EE626AEEADD00BCF04A /* ContactAddressComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressComponentViewModel.swift; sourceTree = "<group>"; };
-		CECA7EE726AEEADD00BCF04A /* ContactAddressComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressComponentView.swift; sourceTree = "<group>"; };
 		CECA7EE826AEEADD00BCF04A /* ContactAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressTableViewCell.swift; sourceTree = "<group>"; };
 		CECF7F40256D5A77001C0E50 /* AddressChangeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeNavigator.swift; sourceTree = "<group>"; };
 		CECF7F41256D5A77001C0E50 /* AddressChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressChangeViewController.swift; sourceTree = "<group>"; };
@@ -1830,6 +1834,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE752DF526B0389E000FB8A4 /* MessageUI.framework in Frameworks */,
 				CE76FD8B257666E200D8AB04 /* CoreLocation.framework in Frameworks */,
 				A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */,
 			);
@@ -1841,6 +1846,7 @@
 		31170CB969BE9F4E039A5237 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE752DF426B0389E000FB8A4 /* MessageUI.framework */,
 				CE76FD8A257666E200D8AB04 /* CoreLocation.framework */,
 				D803F42724A251C700A16CB2 /* Pods_Mobile.framework */,
 				F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */,
@@ -5869,6 +5875,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBC95D526B01FFA00A5DD73 /* MailListProvider.swift */,
+				CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -5938,7 +5945,7 @@
 			children = (
 				CECA7EE326AEEADD00BCF04A /* ContactAddressComponentView.xib */,
 				CECA7EE626AEEADD00BCF04A /* ContactAddressComponentViewModel.swift */,
-				CECA7EE726AEEADD00BCF04A /* ContactAddressComponentView.swift */,
+				CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -7623,6 +7630,7 @@
 				C766804D26A86D83005EB6E8 /* CloseAccountButtonTableViewCell.swift in Sources */,
 				D8212F012485831000B74AB9 /* LoadingComponentViewModel.swift in Sources */,
 				76BA7BDB25E7AA1A00CB77A5 /* GameLauncherGridComponentViewModel.swift in Sources */,
+				CE752DF126B02B08000FB8A4 /* ContactAddressComponentView.swift in Sources */,
 				D861DA932466BD060054D058 /* BalanceManagementRepository.swift in Sources */,
 				CE9B7FEA257544F5006FF756 /* PhoneNumberChangeNavigator.swift in Sources */,
 				CE14202C2636EE8900E022C7 /* BonusNavigator.swift in Sources */,
@@ -7634,7 +7642,6 @@
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				CEBB008F2609D40400D1B510 /* VisaNavigator.swift in Sources */,
 				CEBC95E426B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift in Sources */,
-				CECA7EED26AEEADD00BCF04A /* ContactAddressComponentView.swift in Sources */,
 				CED4D95E26565D38003F35AF /* PasswordReminderComponentView.swift in Sources */,
 				CE91C0E1257028D400A18255 /* TransactionsFilterViewControllerFactory.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
@@ -7773,6 +7780,7 @@
 				C78127C22671411E0007F7E3 /* IsOTPEnabledRepository.swift in Sources */,
 				CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
+				CE752DF326B02C75000FB8A4 /* AddressListProvider.swift in Sources */,
 				76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */,
 				7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,

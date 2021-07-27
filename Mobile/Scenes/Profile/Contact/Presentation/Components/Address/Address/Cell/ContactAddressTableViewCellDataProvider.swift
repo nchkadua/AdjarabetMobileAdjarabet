@@ -6,7 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public protocol ContactAddressTableViewCellDataProvider: ContactAddressComponentViewModel, StaticHeightDataProvider { }
+public protocol ContactAddressTableViewCellDataProvider: AppCellDelegate, ContactAddressComponentViewModel, StaticHeightDataProvider { }
 
 public extension ContactAddressTableViewCellDataProvider {
     var identifier: String { ContactAddressTableViewCell.identifierValue }
