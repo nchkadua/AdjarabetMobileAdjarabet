@@ -1,22 +1,21 @@
 //
-//  ContactMailComponentView.swift
+//  AddressHeaderComponentView.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 26.07.21.
+//  Created by Nika Chkadua on 27.07.21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import RxSwift
 
-class ContactMailComponentView: UIView {
+class AddressHeaderComponentView: UIView {
     private var disposeBag = DisposeBag()
-    private var viewModel: ContactMailComponentViewModel!
+    private var viewModel: AddressHeaderComponentViewModel!
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
-    @IBOutlet weak private var mailLabel: UILabel!
-    @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var separator: UIView!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +27,7 @@ class ContactMailComponentView: UIView {
         nibSetup()
     }
 
-    public func setAndBind(viewModel: ContactMailComponentViewModel) {
+    public func setAndBind(viewModel: AddressHeaderComponentViewModel) {
         self.viewModel = viewModel
         bind()
     }
@@ -37,7 +36,7 @@ class ContactMailComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .setup(let title, let mail): self?.setup(title, mail)
+            case .set(let title): self?.set(title)
             default:
                 break
             }
@@ -46,13 +45,12 @@ class ContactMailComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setup(_ title: String, _ mail: String) {
-        titleLabel.text = title
-        mailLabel.text = mail
+    private func set(_ title: String) {
+        titleLabel.text = title.uppercased()
     }
 }
 
-extension ContactMailComponentView: Xibable {
+extension AddressHeaderComponentView: Xibable {
     var mainView: UIView {
         get {
             view
@@ -64,13 +62,9 @@ extension ContactMailComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
+        separator.setBackgorundColor(to: .opaque())
 
-        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
+        titleLabel.setFont(to: .body1(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
-
-        mailLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
-        mailLabel.setTextColor(to: .secondaryText())
-
-        imageView.image = R.image.contact.mail()?.withRenderingMode(.alwaysOriginal)
     }
 }

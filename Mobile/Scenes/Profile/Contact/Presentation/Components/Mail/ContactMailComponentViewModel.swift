@@ -12,10 +12,13 @@ public protocol ContactMailComponentViewModel: ContactMailComponentViewModelInpu
                                                 ContactMailComponentViewModelOutput {}
 
 public struct ContactMailComponentViewModelParams {
+    let title: String
+    let mail: String
 }
 
 public protocol ContactMailComponentViewModelInput {
     func didBind()
+    func didSelect(at indexPath: IndexPath)
 }
 
 public protocol ContactMailComponentViewModelOutput {
@@ -24,6 +27,8 @@ public protocol ContactMailComponentViewModelOutput {
 }
 
 public enum ContactMailComponentViewModelOutputAction {
+    case setup(title: String, mail: String)
+    case didSelect(mail: String, indexPath: IndexPath)
 }
 
 public class DefaultContactMailComponentViewModel {
@@ -40,6 +45,10 @@ extension DefaultContactMailComponentViewModel: ContactMailComponentViewModel {
     }
 
     public func didBind() {
-//        actionSubject.onNext()
+        actionSubject.onNext(.setup(title: params.title, mail: params.mail))
+    }
+
+    public func didSelect(at indexPath: IndexPath) {
+        actionSubject.onNext(.didSelect(mail: params.mail, indexPath: indexPath))
     }
 }

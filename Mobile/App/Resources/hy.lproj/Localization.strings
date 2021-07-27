@@ -414,6 +414,8 @@
 "contact_use_title" = "Contact";
 "contact_call_us" = "Call Us";
 "contact_addresses" = "Addresses";
+"contact_mail_title1" = "კლიენტთა მომსახურების ცენტრთან დასაკავშირებლად მოგვწერეთ ამ მისამართზე";
+"contact_mail_title2" = "თქვენი დოკუმენტის გამოგზავნა შეგიძლიათ ამ მისამართზე";
 
 /* Countries */
 "georgia" = "Georgia";

@@ -646,6 +646,13 @@
 		CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */; };
 		CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB06F257915100024D213 /* AgreementComponentView.xib */; };
 		CEBBB0742579151A0024D213 /* AgreementComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */; };
+		CEBC95D626B01FFA00A5DD73 /* MailListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95D526B01FFA00A5DD73 /* MailListProvider.swift */; };
+		CEBC95E126B0257F00A5DD73 /* AddressHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBC95DB26B0257F00A5DD73 /* AddressHeaderComponentView.xib */; };
+		CEBC95E226B0257F00A5DD73 /* AddressHeaderTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95DC26B0257F00A5DD73 /* AddressHeaderTableViewCellDataProvider.swift */; };
+		CEBC95E326B0257F00A5DD73 /* AddressHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBC95DD26B0257F00A5DD73 /* AddressHeaderTableViewCell.xib */; };
+		CEBC95E426B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95DE26B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift */; };
+		CEBC95E526B0257F00A5DD73 /* AddressHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95DF26B0257F00A5DD73 /* AddressHeaderComponentView.swift */; };
+		CEBC95E626B0257F00A5DD73 /* AddressHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95E026B0257F00A5DD73 /* AddressHeaderTableViewCell.swift */; };
 		CEC2F5292608B5C00000904C /* Deposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC2F5242608B5C00000904C /* Deposit.storyboard */; };
 		CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5252608B5C00000904C /* DepositNavigator.swift */; };
 		CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5262608B5C00000904C /* DepositViewController.swift */; };
@@ -1543,6 +1550,13 @@
 		CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentView.swift; sourceTree = "<group>"; };
 		CEBBB06F257915100024D213 /* AgreementComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementComponentView.xib; sourceTree = "<group>"; };
 		CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentViewModel.swift; sourceTree = "<group>"; };
+		CEBC95D526B01FFA00A5DD73 /* MailListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailListProvider.swift; sourceTree = "<group>"; };
+		CEBC95DB26B0257F00A5DD73 /* AddressHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressHeaderComponentView.xib; sourceTree = "<group>"; };
+		CEBC95DC26B0257F00A5DD73 /* AddressHeaderTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		CEBC95DD26B0257F00A5DD73 /* AddressHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		CEBC95DE26B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderComponentViewModel.swift; sourceTree = "<group>"; };
+		CEBC95DF26B0257F00A5DD73 /* AddressHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderComponentView.swift; sourceTree = "<group>"; };
+		CEBC95E026B0257F00A5DD73 /* AddressHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		CEC2F5242608B5C00000904C /* Deposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Deposit.storyboard; sourceTree = "<group>"; };
 		CEC2F5252608B5C00000904C /* DepositNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositNavigator.swift; sourceTree = "<group>"; };
 		CEC2F5262608B5C00000904C /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
@@ -5674,6 +5688,44 @@
 			path = Agreement;
 			sourceTree = "<group>";
 		};
+		CEBC95D726B0255700A5DD73 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC95D926B0256900A5DD73 /* View */,
+				CEBC95D826B0256200A5DD73 /* Cell */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		CEBC95D826B0256200A5DD73 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC95DC26B0257F00A5DD73 /* AddressHeaderTableViewCellDataProvider.swift */,
+				CEBC95E026B0257F00A5DD73 /* AddressHeaderTableViewCell.swift */,
+				CEBC95DD26B0257F00A5DD73 /* AddressHeaderTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CEBC95D926B0256900A5DD73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC95DB26B0257F00A5DD73 /* AddressHeaderComponentView.xib */,
+				CEBC95DE26B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift */,
+				CEBC95DF26B0257F00A5DD73 /* AddressHeaderComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEBC95DA26B0256E00A5DD73 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				CECA7EC626AEEA4E00BCF04A /* View */,
+				CECA7EC526AEEA4900BCF04A /* Cell */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
 		CEC9A34225C096E800BE853D /* Game Launch Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -5816,6 +5868,7 @@
 		CECA7EB526AED03C00BCF04A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CEBC95D526B01FFA00A5DD73 /* MailListProvider.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -5864,8 +5917,8 @@
 		CECA7EC426AEEA2F00BCF04A /* Address */ = {
 			isa = PBXGroup;
 			children = (
-				CECA7EC626AEEA4E00BCF04A /* View */,
-				CECA7EC526AEEA4900BCF04A /* Cell */,
+				CEBC95D726B0255700A5DD73 /* Header */,
+				CEBC95DA26B0256E00A5DD73 /* Address */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -6740,6 +6793,7 @@
 				C7E3F143261CCEFB009B6D6A /* WithdrawVisa.storyboard in Resources */,
 				CE3B2BDE269C574600301F6C /* CommunicationLanguageComponentView.xib in Resources */,
 				D8AC9969244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.xib in Resources */,
+				CEBC95E126B0257F00A5DD73 /* AddressHeaderComponentView.xib in Resources */,
 				C75D1AE0261205F4002AF763 /* TBHTJSlot.zip in Resources */,
 				76BA7BD825E7AA1A00CB77A5 /* GameLauncherGridComponentView.xib in Resources */,
 				CE2F03CD252CC8EE006D8001 /* QuickActionComponentView.xib in Resources */,
@@ -6815,6 +6869,7 @@
 				C75D1B16261205F4002AF763 /* FBHTJSlot.zip in Resources */,
 				CEE44E892600B5C100A83BD2 /* AdjaraMont-Regular.ttf in Resources */,
 				CE95A3F1261DE23A0004330E /* ApplePay.storyboard in Resources */,
+				CEBC95E326B0257F00A5DD73 /* AddressHeaderTableViewCell.xib in Resources */,
 				C75D1B08261205F4002AF763 /* SCJSlot.zip in Resources */,
 				CE95FC96252F2B2F003E539B /* PromotionComponentView.xib in Resources */,
 				CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */,
@@ -7144,9 +7199,11 @@
 				C7553B3F267B727700813FAC /* CommunicationLanguageRepository.swift in Sources */,
 				CEB285E5256D20EB00584A65 /* SelfSuspendViewControllerFactory.swift in Sources */,
 				76404F0E257625F900D14E0C /* AccountSecurityMessagesTableViewCell.swift in Sources */,
+				CEBC95E226B0257F00A5DD73 /* AddressHeaderTableViewCellDataProvider.swift in Sources */,
 				C7C973AF2580EC990062C713 /* SecurityLevelTypeTableViewCell.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				CE4A3155261732920039C078 /* NotificationDTO.swift in Sources */,
+				CEBC95D626B01FFA00A5DD73 /* MailListProvider.swift in Sources */,
 				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
 				CE3AC9E126A17931000BF338 /* DocumentationActionTableViewCellDataProvider.swift in Sources */,
 				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
@@ -7463,6 +7520,7 @@
 				CE4A30F12611E6320039C078 /* SuggestedAmountCollectionViewCellDataProvider.swift in Sources */,
 				D8212F082485849500B74AB9 /* LoadingCollectionViewCellDataProvider.swift in Sources */,
 				CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */,
+				CEBC95E526B0257F00A5DD73 /* AddressHeaderComponentView.swift in Sources */,
 				C766800026A815C4005EB6E8 /* CloseAccountViewModel.swift in Sources */,
 				D885E75724714E0D007D85D3 /* LoginUseCase.swift in Sources */,
 				D85C9C3424336D1F00F1D4FE /* ABNavigationController.swift in Sources */,
@@ -7483,6 +7541,7 @@
 				CE769898269EF341009972B2 /* PasswordResetOptionsNavigator.swift in Sources */,
 				C78E52C2268388D600EE1C18 /* PhoneVerificationCodeRepository.swift in Sources */,
 				7665D980257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift in Sources */,
+				CEBC95E626B0257F00A5DD73 /* AddressHeaderTableViewCell.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				C78E53132685B12300EE1C18 /* HighSecurityViewControllerFactory.swift in Sources */,
 				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
@@ -7574,6 +7633,7 @@
 				C7DB6EFA26370FC000EC1CB9 /* EmptyCollectionViewCellDataProvider.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
 				CEBB008F2609D40400D1B510 /* VisaNavigator.swift in Sources */,
+				CEBC95E426B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift in Sources */,
 				CECA7EED26AEEADD00BCF04A /* ContactAddressComponentView.swift in Sources */,
 				CED4D95E26565D38003F35AF /* PasswordReminderComponentView.swift in Sources */,
 				CE91C0E1257028D400A18255 /* TransactionsFilterViewControllerFactory.swift in Sources */,

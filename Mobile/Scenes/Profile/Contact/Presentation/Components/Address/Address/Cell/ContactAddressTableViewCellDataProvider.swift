@@ -11,7 +11,7 @@ public protocol ContactAddressTableViewCellDataProvider: ContactAddressComponent
 public extension ContactAddressTableViewCellDataProvider {
     var identifier: String { ContactAddressTableViewCell.identifierValue }
     var height: CGFloat {
-        get { 36 }
+        get { 100 }
         set { print(newValue) }
     }
     var isHeightSet: Bool { true }

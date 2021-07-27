@@ -32,7 +32,7 @@ public enum ContactUsViewModelOutputAction {
 public enum ContactUsViewModelRoute {
 }
 
-public class DefaultContactUsViewModel {
+public class DefaultContactUsViewModel: DefaultBaseViewModel {
     public var params: ContactUsViewModelParams
     private let actionSubject = PublishSubject<ContactUsViewModelOutputAction>()
     private let routeSubject = PublishSubject<ContactUsViewModelRoute>()
@@ -49,9 +49,28 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = []
 
+        //Phone
         let contactPhoneViewModel = DefaultContactPhoneComponentViewModel(params: .init())
         dataProviders.append(contactPhoneViewModel)
+        //Mail
+        MailListProvider.items().forEach {
+            let mailViewModel = DefaultContactMailComponentViewModel(params: .init(title: $0.title, mail: $0.mail))
+            mailViewModel.action.subscribe(onNext: { [weak self] action in
+                switch action {
+                case .didSelect(let mail, _): self?.didSelectMail(mail)
+                default:
+                    break
+                }
+            }).disposed(by: disposeBag)
+            dataProviders.append(mailViewModel)
+        }
+        //Address
+        let headerViewModel = DefaultAddressHeaderComponentViewModel(params: .init(title: R.string.localization.contact_addresses.localized().uppercased()))
+        dataProviders.append(headerViewModel)
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))
+    }
+
+    private func didSelectMail(_ mail: String) {
     }
 }

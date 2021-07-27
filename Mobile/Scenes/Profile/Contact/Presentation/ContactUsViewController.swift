@@ -62,7 +62,9 @@ public class ContactUsViewController: ABViewController {
         appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
 
         appTableViewController.tableView?.register(types: [
-            ContactPhoneTableViewCell.self
+            ContactPhoneTableViewCell.self,
+            ContactMailTableViewCell.self,
+            AddressHeaderTableViewCell.self
         ])
     }
 
