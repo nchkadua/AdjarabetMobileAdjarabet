@@ -34,9 +34,9 @@ public enum ProfileViewModelOutputAction {
 
 public enum ProfileViewModelRoute {
     case openPage(destionation: ProfileNavigator.Destination)
-    case openBalance
     case openDeposit
     case openWithdraw
+    case openContactUs
 }
 
 public class DefaultProfileViewModel: DefaultBaseViewModel {
@@ -56,9 +56,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
     public var route: Observable<ProfileViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        var dataProviders: AppCellDataProviders = [
-            DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(backgroundColor: DesignSystem.Color.secondaryBg()))
-        ]
+        var dataProviders: AppCellDataProviders = []
 
         let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
         profileViewModel.action.subscribe(onNext: { [weak self] action in
@@ -72,7 +70,6 @@ extension DefaultProfileViewModel: ProfileViewModel {
         let balanceViewModel = DefaultBalanceComponentViewModel(params: BalanceComponentViewModelParams(totalBalance: userBalanceService.balance ?? 0, pokerBalance: 0))
         balanceViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .didClickBalance: self?.routeSubject.onNext(.openBalance)
             case .didClickDeposit: self?.routeSubject.onNext(.openDeposit)
             case .didClickWithdraw: self?.routeSubject.onNext(.openWithdraw)
             default: break
@@ -102,6 +99,16 @@ extension DefaultProfileViewModel: ProfileViewModel {
 
             dataProviders.insert(quickActionViewModel, at: 2)
         }
+
+        let footerViewModel = DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(backgroundColor: DesignSystem.Color.secondaryBg()))
+        footerViewModel.action.subscribe(onNext: {[weak self] action in
+            switch action {
+            case .contactUsDidClick: self?.routeSubject.onNext(.openContactUs)
+            default:
+                break
+            }
+        }).disposed(by: self.disposeBag)
+        dataProviders.append(footerViewModel)
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }

@@ -24,7 +24,9 @@
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>tel</string>
+		<string>comgooglemaps</string>
+		<string>comgooglemaps-x-callback</string>
+		<string>googlegmail</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

@@ -11,6 +11,7 @@ public class LoginNavigator: Navigator {
     @Inject(from: .factories) public var otpFactory: OTPFactory
     @Inject(from: .factories) public var passworResetOptionsFactory: PasswordResetOptionsViewControllerFactory
     @Inject(from: .factories) public var faqViewControllerFactory: FAQCategoriesViewControllerFactory
+    @Inject(from: .factories) public var contactUsViewControllerFactory: ContactUsViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -23,6 +24,7 @@ public class LoginNavigator: Navigator {
         case faq
         case mainTabBar
         case passwordReset
+        case contactUs
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -34,6 +36,7 @@ public class LoginNavigator: Navigator {
             openMainTabBar()
         case .passwordReset:
             navigateToPasswordReset(animate: animate)
+        case .contactUs: navigateToContactUs(animate: animate)
         }
     }
 
@@ -60,5 +63,12 @@ public class LoginNavigator: Navigator {
         let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate)
+    }
+
+    private func navigateToContactUs(animate: Bool) {
+        let vc = contactUsViewControllerFactory.make(params: .init(showDismiss: true))
+        let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 }

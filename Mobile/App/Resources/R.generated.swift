@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 43 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 44 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -112,6 +112,8 @@ struct R: Rswift.Validatable {
     static let bonus = _R.storyboard.bonus()
     /// Storyboard `CloseAccount`.
     static let closeAccount = _R.storyboard.closeAccount()
+    /// Storyboard `ContactUs`.
+    static let contactUs = _R.storyboard.contactUs()
     /// Storyboard `Deposit`.
     static let deposit = _R.storyboard.deposit()
     /// Storyboard `Documentation`.
@@ -246,6 +248,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "CloseAccount", bundle: ...)`
     static func closeAccount(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.closeAccount)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ContactUs", bundle: ...)`
+    static func contactUs(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.contactUs)
     }
     #endif
 
@@ -2449,12 +2458,34 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.contact` struct is generated, and contains static references to 2 images.
+    /// This `R.image.contact` struct is generated, and contains static references to 6 images.
     struct contact {
+      /// Image `call1`.
+      static let call1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/call1")
+      /// Image `call2`.
+      static let call2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/call2")
       /// Image `contact_phone`.
       static let contact_phone = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/contact_phone")
       /// Image `contact`.
       static let contact = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/contact")
+      /// Image `location`.
+      static let location = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/location")
+      /// Image `mail`.
+      static let mail = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contact/mail")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "call1", bundle: ..., traitCollection: ...)`
+      static func call1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.contact.call1, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "call2", bundle: ..., traitCollection: ...)`
+      static func call2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.contact.call2, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "contact", bundle: ..., traitCollection: ...)`
@@ -2467,6 +2498,20 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "contact_phone", bundle: ..., traitCollection: ...)`
       static func contact_phone(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.contact.contact_phone, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "location", bundle: ..., traitCollection: ...)`
+      static func location(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.contact.location, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "mail", bundle: ..., traitCollection: ...)`
+      static func mail(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.contact.mail, compatibleWith: traitCollection)
       }
       #endif
 
@@ -3395,7 +3440,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 97 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 105 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -3433,6 +3478,10 @@ struct R: Rswift.Validatable {
     static let addMyCardComponentView = _R.nib._AddMyCardComponentView()
     /// Nib `AddMyCardTableViewCell`.
     static let addMyCardTableViewCell = _R.nib._AddMyCardTableViewCell()
+    /// Nib `AddressHeaderComponentView`.
+    static let addressHeaderComponentView = _R.nib._AddressHeaderComponentView()
+    /// Nib `AddressHeaderTableViewCell`.
+    static let addressHeaderTableViewCell = _R.nib._AddressHeaderTableViewCell()
     /// Nib `AgreementComponentView`.
     static let agreementComponentView = _R.nib._AgreementComponentView()
     /// Nib `ApplePayButton`.
@@ -3451,6 +3500,18 @@ struct R: Rswift.Validatable {
     static let closeAccountButtonTableViewCell = _R.nib._CloseAccountButtonTableViewCell()
     /// Nib `CommunicationLanguageComponentView`.
     static let communicationLanguageComponentView = _R.nib._CommunicationLanguageComponentView()
+    /// Nib `ContactAddressComponentView`.
+    static let contactAddressComponentView = _R.nib._ContactAddressComponentView()
+    /// Nib `ContactAddressTableViewCell`.
+    static let contactAddressTableViewCell = _R.nib._ContactAddressTableViewCell()
+    /// Nib `ContactMailComponentView`.
+    static let contactMailComponentView = _R.nib._ContactMailComponentView()
+    /// Nib `ContactMailTableViewCell`.
+    static let contactMailTableViewCell = _R.nib._ContactMailTableViewCell()
+    /// Nib `ContactPhoneComponentView`.
+    static let contactPhoneComponentView = _R.nib._ContactPhoneComponentView()
+    /// Nib `ContactPhoneTableViewCell`.
+    static let contactPhoneTableViewCell = _R.nib._ContactPhoneTableViewCell()
     /// Nib `DateHeaderCell`.
     static let dateHeaderCell = _R.nib._DateHeaderCell()
     /// Nib `DateHeaderComponentView`.
@@ -3737,6 +3798,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddressHeaderComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addressHeaderComponentView) instead")
+    static func addressHeaderComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addressHeaderComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddressHeaderTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addressHeaderTableViewCell) instead")
+    static func addressHeaderTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addressHeaderTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "AgreementComponentView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.agreementComponentView) instead")
     static func agreementComponentView(_: Void = ()) -> UIKit.UINib {
@@ -3805,6 +3882,54 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.communicationLanguageComponentView) instead")
     static func communicationLanguageComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.communicationLanguageComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ContactAddressComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.contactAddressComponentView) instead")
+    static func contactAddressComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.contactAddressComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ContactAddressTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.contactAddressTableViewCell) instead")
+    static func contactAddressTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.contactAddressTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ContactMailComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.contactMailComponentView) instead")
+    static func contactMailComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.contactMailComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ContactMailTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.contactMailTableViewCell) instead")
+    static func contactMailTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.contactMailTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ContactPhoneComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.contactPhoneComponentView) instead")
+    static func contactPhoneComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.contactPhoneComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ContactPhoneTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.contactPhoneTableViewCell) instead")
+    static func contactPhoneTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.contactPhoneTableViewCell)
     }
     #endif
 
@@ -4440,6 +4565,14 @@ struct R: Rswift.Validatable {
       return R.nib.addMyCardTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddMyCardTableViewCell
     }
 
+    static func addressHeaderComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addressHeaderComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func addressHeaderTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddressHeaderTableViewCell? {
+      return R.nib.addressHeaderTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddressHeaderTableViewCell
+    }
+
     static func agreementComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.agreementComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -4474,6 +4607,30 @@ struct R: Rswift.Validatable {
 
     static func communicationLanguageComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.communicationLanguageComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func contactAddressComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.contactAddressComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func contactAddressTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ContactAddressTableViewCell? {
+      return R.nib.contactAddressTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ContactAddressTableViewCell
+    }
+
+    static func contactMailComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.contactMailComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func contactMailTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ContactMailTableViewCell? {
+      return R.nib.contactMailTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ContactMailTableViewCell
+    }
+
+    static func contactPhoneComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.contactPhoneComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func contactPhoneTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ContactPhoneTableViewCell? {
+      return R.nib.contactPhoneTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ContactPhoneTableViewCell
     }
 
     static func dateHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DateHeaderCell? {
@@ -4761,7 +4918,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 558 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 563 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -4843,6 +5000,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let account_info_address = Rswift.StringResource(key: "account_info_address", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Addresses
+      ///
+      /// Locales: en, ka, hy
+      static let contact_addresses = Rswift.StringResource(key: "contact_addresses", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Afghanistan
       ///
       /// Locales: en, ka, hy
@@ -5083,6 +5244,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let card_cvv = Rswift.StringResource(key: "card_cvv", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Call Us
+      ///
+      /// Locales: en, ka, hy
+      static let contact_call_us = Rswift.StringResource(key: "contact_call_us", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Cambodia
       ///
       /// Locales: en, ka, hy
@@ -5215,6 +5380,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let congo = Rswift.StringResource(key: "congo", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: Contact
+      ///
+      /// Locales: en, ka, hy
+      static let contact_use_title = Rswift.StringResource(key: "contact_use_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Contact Information
       ///
       /// Locales: en, ka, hy
@@ -6887,6 +7056,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let suspend_subtitle = Rswift.StringResource(key: "suspend_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: თქვენი დოკუმენტის გამოგზავნა შეგიძლიათ ამ მისამართზე
+      ///
+      /// Locales: en, ka, hy
+      static let contact_mail_title2 = Rswift.StringResource(key: "contact_mail_title2", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: ინკოგნიტო ბარათი
       ///
       /// Locales: en, ka, hy
@@ -6899,6 +7072,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy
       static let faq_faq_subtitle = Rswift.StringResource(key: "faq_faq_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: კლიენტთა მომსახურების ცენტრთან დასაკავშირებლად მოგვწერეთ ამ მისამართზე
+      ///
+      /// Locales: en, ka, hy
+      static let contact_mail_title1 = Rswift.StringResource(key: "contact_mail_title1", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: კოდის გაგზავნა
       ///
       /// Locales: en, ka, hy
@@ -7294,6 +7471,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("account_info_address", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Addresses
+      ///
+      /// Locales: en, ka, hy
+      static func contact_addresses(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("contact_addresses", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "contact_addresses"
+        }
+
+        return NSLocalizedString("contact_addresses", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Afghanistan
@@ -8196,6 +8388,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("card_cvv", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Call Us
+      ///
+      /// Locales: en, ka, hy
+      static func contact_call_us(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("contact_call_us", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "contact_call_us"
+        }
+
+        return NSLocalizedString("contact_call_us", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Cambodia
       ///
       /// Locales: en, ka, hy
@@ -8689,6 +8896,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("congo", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Contact
+      ///
+      /// Locales: en, ka, hy
+      static func contact_use_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("contact_use_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "contact_use_title"
+        }
+
+        return NSLocalizedString("contact_use_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Contact Information
@@ -14961,6 +15183,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("suspend_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: თქვენი დოკუმენტის გამოგზავნა შეგიძლიათ ამ მისამართზე
+      ///
+      /// Locales: en, ka, hy
+      static func contact_mail_title2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("contact_mail_title2", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "contact_mail_title2"
+        }
+
+        return NSLocalizedString("contact_mail_title2", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: ინკოგნიტო ბარათი
       ///
       /// Locales: en, ka, hy
@@ -15004,6 +15241,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("faq_faq_subtitle", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: კლიენტთა მომსახურების ცენტრთან დასაკავშირებლად მოგვწერეთ ამ მისამართზე
+      ///
+      /// Locales: en, ka, hy
+      static func contact_mail_title1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("contact_mail_title1", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "contact_mail_title1"
+        }
+
+        return NSLocalizedString("contact_mail_title1", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: კოდის გაგზავნა
@@ -15523,8 +15775,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -15644,6 +15896,28 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _AddressHeaderComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AddressHeaderComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddressHeaderTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AddressHeaderTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddressHeaderTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddressHeaderTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _AgreementComponentView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "AgreementComponentView"
@@ -15675,8 +15949,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -15770,6 +16044,72 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "Components/QuickAction/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/QuickAction/arrow' is used in nib 'CommunicationLanguageComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ContactAddressComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ContactAddressComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ContactAddressTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ContactAddressTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ContactAddressTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ContactAddressTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ContactMailComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ContactMailComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ContactMailTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ContactMailTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ContactMailTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ContactMailTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ContactPhoneComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ContactPhoneComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ContactPhoneTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ContactPhoneTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ContactPhoneTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ContactPhoneTableViewCell
       }
 
       fileprivate init() {}
@@ -15921,8 +16261,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -16041,8 +16381,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -16658,6 +16998,9 @@ struct _R: Rswift.Validatable {
       try closeAccount.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try contactUs.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try deposit.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -16950,16 +17293,36 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         }
         if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct contactUs: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let contactUsViewController = StoryboardViewControllerResource<ContactUsViewController>(identifier: "ContactUsViewController")
+      let name = "ContactUs"
+
+      func contactUsViewController(_: Void = ()) -> ContactUsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: contactUsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.contactUs().contactUsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'contactUsViewController' could not be loaded from storyboard 'ContactUs' as 'ContactUsViewController'.") }
       }
 
       fileprivate init() {}
@@ -17178,10 +17541,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

@@ -28,12 +28,6 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         generateAccessibilityIdentifiers()
     }
 
-//    public override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController
-//        vc?.setPageViewControllerSwipeEnabled(true)
-//    }
-//
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
@@ -61,7 +55,6 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 
     private func didRecive(route: ProfileViewModelRoute) {
         switch route {
-        case .openBalance: openBalance()
         case .openDeposit: openDeposit()
         case .openWithdraw: openWithdraw()
         case .openPage(let destination):
@@ -70,14 +63,12 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
             default:
                 openPage(destination: destination)
             }
+        case.openContactUs: navigator.navigate(to: .contactUs, animated: true)
         }
     }
 
     // MARK: Navigation methods
     private func didCopyUserId(userId: String) {
-    }
-
-    private func openBalance() {
     }
 
     private func openDeposit() {

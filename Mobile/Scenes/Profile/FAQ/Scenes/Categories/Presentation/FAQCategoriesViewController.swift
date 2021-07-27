@@ -8,10 +8,9 @@
 
 import RxSwift
 
-public class FAQCategoriesViewController: UIViewController {
+public class FAQCategoriesViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: FAQCategoriesViewModel
     public lazy var navigator = FAQCategoriesNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
 

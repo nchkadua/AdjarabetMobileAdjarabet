@@ -58,6 +58,8 @@ public class FooterComponentView: UIView {
                 self?.setupUI()
             case .setBackgroundColor(let color):
                 self?.set(backgroundColor: color)
+            default:
+                break
             }
         }).disposed(by: disposeBag)
 
@@ -88,6 +90,15 @@ public class FooterComponentView: UIView {
     private func setDelegates() {
         languageButton.delegate = self
     }
+
+    private func setupButton() {
+        contactButton.addTarget(self, action: #selector(contactUsDidClick), for: .touchUpInside)
+    }
+
+    @objc private func contactUsDidClick() {
+        guard viewModel != nil else {return}
+        viewModel.contactUsDidClick()
+    }
 }
 
 extension FooterComponentView: LanguagesButtonDelegate {
@@ -111,6 +122,7 @@ extension FooterComponentView: Xibable {
 
         setupLegalView()
         setDelegates()
+        setupButton()
     }
 }
 

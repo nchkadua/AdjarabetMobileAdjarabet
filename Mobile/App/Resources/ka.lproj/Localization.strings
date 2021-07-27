@@ -408,6 +408,13 @@
 "faq_social_platforms_title" = "სოციალური ქსელები";
 "faq_social_platforms_subtitle" = "გაიგე რა ხდება აჭარაბეთის გარშემო!";
 
+/* Contact Us */
+"contact_use_title" = "კონტაქტი";
+"contact_call_us" = "დაგვირეკეთ";
+"contact_addresses" = "მისამართები";
+"contact_mail_title1" = "კლიენტთა მომსახურების ცენტრთან დასაკავშირებლად მოგვწერეთ ამ მისამართზე";
+"contact_mail_title2" = "თქვენი დოკუმენტის გამოგზავნა შეგიძლიათ ამ მისამართზე";
+
 /* Countries */
 "georgia" = "Georgia";
 "armenia" = "Armenia";
