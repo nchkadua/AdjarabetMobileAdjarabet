@@ -50,6 +50,14 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
     private func refreshUserInfo() {
         fetchUserInfo()
         fetchUserLang()
+
+        userInfoRepo.getIDDocuments { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let entity): print("Asdasda ", entity.idDocuments)
+            case .failure(let error): self.actionSubject.onNext(.showError(error))
+            }
+        }
     }
 
     private func fetchUserInfo() {

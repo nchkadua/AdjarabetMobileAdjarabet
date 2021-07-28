@@ -730,6 +730,8 @@
 		CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBDFE4253095C1000C62D0 /* UINavigationBar+Extension.swift */; };
 		CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D4F3251C9D7D008E3DE0 /* UITextView+Extension.swift */; };
 		CEF1D4FD251CAED5008E3DE0 /* ContactUsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D4FC251CAED5008E3DE0 /* ContactUsButton.swift */; };
+		CEF29DAA26B17D3D00F32EC2 /* IDDocumentsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF29DA926B17D3D00F32EC2 /* IDDocumentsEntity.swift */; };
+		CEF29DAC26B17D5100F32EC2 /* IDDocumentsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF29DAB26B17D5100F32EC2 /* IDDocumentsDTO.swift */; };
 		CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */; };
 		CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3685E2549C361009FD456 /* WithdrawViewController.swift */; };
 		CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */; };
@@ -1636,6 +1638,8 @@
 		CEEBDFE4253095C1000C62D0 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		CEF1D4F3251C9D7D008E3DE0 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		CEF1D4FC251CAED5008E3DE0 /* ContactUsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsButton.swift; sourceTree = "<group>"; };
+		CEF29DA926B17D3D00F32EC2 /* IDDocumentsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDDocumentsEntity.swift; sourceTree = "<group>"; };
+		CEF29DAB26B17D5100F32EC2 /* IDDocumentsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDDocumentsDTO.swift; sourceTree = "<group>"; };
 		CEF3685D2549C361009FD456 /* WithdrawNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawNavigator.swift; sourceTree = "<group>"; };
 		CEF3685E2549C361009FD456 /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewModel.swift; sourceTree = "<group>"; };
@@ -2909,8 +2913,8 @@
 		C784C24D266E56B100D328D3 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */,
-				C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */,
+				CEF29DA726B17C6600F32EC2 /* IDDocuments */,
+				CEF29DA526B17C4700F32EC2 /* UserInfo */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2918,8 +2922,8 @@
 		C784C24E266E56C700D328D3 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */,
-				C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */,
+				CEF29DA826B17C7300F32EC2 /* IDDocuments */,
+				CEF29DA626B17C5D00F32EC2 /* UserInfo */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -6076,6 +6080,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CEF29DA526B17C4700F32EC2 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */,
+				C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		CEF29DA626B17C5D00F32EC2 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF9ED325706AD200D2908C /* UserInfoDataTransferResponse.swift */,
+				C7EF9E60256FF2BC00D2908C /* CoreApiUserInfoRepository.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		CEF29DA726B17C6600F32EC2 /* IDDocuments */ = {
+			isa = PBXGroup;
+			children = (
+				CEF29DA926B17D3D00F32EC2 /* IDDocumentsEntity.swift */,
+			);
+			path = IDDocuments;
+			sourceTree = "<group>";
+		};
+		CEF29DA826B17C7300F32EC2 /* IDDocuments */ = {
+			isa = PBXGroup;
+			children = (
+				CEF29DAB26B17D5100F32EC2 /* IDDocumentsDTO.swift */,
+			);
+			path = IDDocuments;
+			sourceTree = "<group>";
+		};
 		CEF52C8B26721CE700D2386C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -7592,6 +7630,7 @@
 				C7DE3ADF25F529670082D5EF /* UserLoggedInEntity.swift in Sources */,
 				D8BE830C24B1B49500D7E94D /* RecentlyPlayedGamesUseCase.swift in Sources */,
 				76DCF6B425B8262300150EE1 /* MyCardTableViewCell.swift in Sources */,
+				CEF29DAC26B17D5100F32EC2 /* IDDocumentsDTO.swift in Sources */,
 				76404F0A257625F900D14E0C /* AccountSecurityMessagesTableViewCellDataProvider.swift in Sources */,
 				C71B4B75257EC57000538697 /* SecurityLevelsViewModel.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
@@ -7684,6 +7723,7 @@
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
+				CEF29DAA26B17D3D00F32EC2 /* IDDocumentsEntity.swift in Sources */,
 				C78E5297268377C300EE1C18 /* CoreApiStatusCodeDTO.swift in Sources */,
 				7644B5F72563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift in Sources */,
 				CE29FC402578F14D00402D0D /* MinAmountComponentView.swift in Sources */,
