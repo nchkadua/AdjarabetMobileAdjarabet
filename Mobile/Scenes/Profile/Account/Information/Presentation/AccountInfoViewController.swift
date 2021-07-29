@@ -214,7 +214,21 @@ public class AccountInfoViewController: ABViewController {
     }
 
     @objc private func editAddressAction() {
-        navigator.navigate(to: .addressChange, animated: true)
+        let params: AddressChangeViewModelParams = .init()
+        subscribeTo(params)
+        navigator.navigate(to: .addressChange(params: params), animated: true)
+    }
+
+    private func subscribeTo(_ params: AddressChangeViewModelParams) {
+        params.paramsOutputAction.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: AddressChangeViewModelParams.Action) {
+        switch action {
+        case .success(let newAddress): addressView.set(titleText: newAddress)
+        }
     }
 
     @objc private func closeAccountAction() {

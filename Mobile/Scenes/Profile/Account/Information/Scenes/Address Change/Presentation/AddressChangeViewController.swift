@@ -9,7 +9,7 @@
 import RxSwift
 
 public class AddressChangeViewController: ABViewController {
-    @Inject(from: .viewModels) private var viewModel: AddressChangeViewModel
+    @Inject(from: .viewModels) public var viewModel: AddressChangeViewModel
     public lazy var navigator = AddressChangeNavigator(viewController: self)
 
     // MARK: Outlets

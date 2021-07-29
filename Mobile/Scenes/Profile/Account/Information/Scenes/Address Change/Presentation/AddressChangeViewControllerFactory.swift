@@ -7,11 +7,13 @@
 //
 
 public protocol AddressChangeViewControllerFactory {
-    func make() -> AddressChangeViewController
+    func make(params: AddressChangeViewModelParams) -> AddressChangeViewController
 }
 
 public class DefaultAddressChangeViewControllerFactory: AddressChangeViewControllerFactory {
-    public func make() -> AddressChangeViewController {
-        R.storyboard.addressChange().instantiate(controller: AddressChangeViewController.self)!
+    public func make(params: AddressChangeViewModelParams) -> AddressChangeViewController {
+        let vc = R.storyboard.addressChange().instantiate(controller: AddressChangeViewController.self)!
+        vc.viewModel.params = params
+        return vc
     }
 }

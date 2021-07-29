@@ -67,7 +67,7 @@ public extension DependencyContainer {
         Module { DefaultBiometricSettingsViewModel() as BiometricSettingsViewModel }
         Module { DefaultSelfSuspendViewModel() as SelfSuspendViewModel }
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
-        Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
+        Module { DefaultAddressChangeViewModel(params: .init()) as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
         Module { DefaultPasswordResetViewModel(params: .init(username: nil, resetType: .sms, contact: "", showDismissButton: true)) as PasswordResetViewModel }
         Module { DefaultResetOptionsViewModel(params: .init(showUsernameInput: true, shouldShowDismissButton: true)) as ResetOptionsViewModel }

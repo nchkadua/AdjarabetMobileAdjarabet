@@ -11,7 +11,15 @@ import RxSwift
 public protocol AddressChangeViewModel: AddressChangeViewModelInput, AddressChangeViewModelOutput {
 }
 
-public protocol AddressChangeViewModelInput {
+public struct AddressChangeViewModelParams {
+    public let paramsOutputAction = PublishSubject<Action>()
+    public enum Action {
+        case success(newAddress: String)
+    }
+}
+
+public protocol AddressChangeViewModelInput: AnyObject {
+    var params: AddressChangeViewModelParams { get set }
     func viewDidLoad()
     func approved(address: String)
 }
@@ -30,9 +38,14 @@ public enum AddressChangeViewModelRoute {
 }
 
 public class DefaultAddressChangeViewModel {
+    public var params: AddressChangeViewModelParams
     private let actionSubject = PublishSubject<AddressChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<AddressChangeViewModelRoute>()
     @Inject(from: .repositories) private var repo: AddressWritableRepository
+
+    public init(params: AddressChangeViewModelParams) {
+        self.params = params
+    }
 }
 
 extension DefaultAddressChangeViewModel: AddressChangeViewModel {
@@ -70,6 +83,7 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
         ) { [weak self] result in
             switch result {
             case .success:
+                self?.params.paramsOutputAction.onNext(.success(newAddress: address))
                 self?.actionSubject.onNext(.dismiss)
             case .failure(let error):
                 self?.actionSubject.onNext(.showError(error: error.description.description))
