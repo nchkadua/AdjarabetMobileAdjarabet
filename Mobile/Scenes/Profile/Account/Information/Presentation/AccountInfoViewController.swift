@@ -76,6 +76,7 @@ public class AccountInfoViewController: ABViewController {
             setupViewsWith(accountInfoModel: accountInfoModel)
         case .setAndBindCommunicationLanguage(let viewModel):
             communicationLanguageComponent.setAndBind(viewModel: viewModel)
+        case .setPersonalID(let id): personalIdView.set(titleText: id)
         case .showError(let error):
             showAlert(title: error.description.description)
         }

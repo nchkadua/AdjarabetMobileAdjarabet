@@ -29,7 +29,7 @@ public extension AccountInfoModel {
         AccountInfoModel(
             userName: e.userName ?? "",
             userId: e.userId == nil ? "" : String(e.userId!),
-            personalId: "123***789", // TODO: add in entity
+            personalId: "---------", // Placeholder
             status: e.statusId == nil ? "" : String(e.statusId!), // TODO: e.statusId -> String
             password: String.passwordRepresentation,
             email: e.email ?? "",

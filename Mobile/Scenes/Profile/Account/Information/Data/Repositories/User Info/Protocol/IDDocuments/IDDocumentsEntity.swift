@@ -9,19 +9,19 @@
 import Foundation
 
 public struct IDDocumentsEntity {
-    let statusCode: String
+    let statusCode: Int
     let idDocuments: [IDDocument]
-}
 
-struct IDDocument {
-    let id: Int
-    let documentTypeID: String
-    let documentNumber: String
-    let personalID: String
-    let countryID: String
-    let dataModified: String
-    let documentStatus: String
-    let documentFrontImageUrl: String?
-    let documentBackImageUrl: String?
-    let documentExpirationDate: String?
+    struct IDDocument {
+        let id: Int
+        let documentTypeID: Int
+        let documentNumber: String
+        let personalID: String
+//        let documentCountryID: String
+        let dataModified: String
+        let documentStatus: Int
+//        let documentFrontImageUrl: String?
+//        let documentBackImageUrl: String?
+//        let documentExpirationDate: String?
+    }
 }

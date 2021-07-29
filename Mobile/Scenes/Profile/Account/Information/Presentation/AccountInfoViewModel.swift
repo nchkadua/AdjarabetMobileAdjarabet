@@ -23,6 +23,7 @@ protocol AccountInfoViewModelOutput {
 enum AccountInfoViewModelOutputAction {
     case setupWithAccountInfoModel(_ accountInfoModel: AccountInfoModel)
     case setAndBindCommunicationLanguage(_ viewModel: CommunicationLanguageComponentViewModel)
+    case setPersonalID(id: String)
     case showError(_ error: ABError)
 }
 
@@ -54,7 +55,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
         userInfoRepo.getIDDocuments { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let entity): print("Asdasda ", entity.idDocuments)
+            case .success(let entity): self.actionSubject.onNext(.setPersonalID(id: entity.idDocuments.first?.personalID ?? "-----------"))
             case .failure(let error): self.actionSubject.onNext(.showError(error))
             }
         }
