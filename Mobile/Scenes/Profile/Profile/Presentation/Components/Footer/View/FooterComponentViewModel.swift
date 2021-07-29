@@ -26,7 +26,7 @@ public protocol FooterComponentViewModelOutput {
 }
 
 public enum FooterComponentViewModelOutputAction {
-    case didChangeLanguage(FooterComponentViewModel)
+    case didChangeLanguage
     case setBackgroundColor(_ color: DesignSystem.Color)
     case contactUsDidClick
 }
@@ -51,7 +51,7 @@ extension DefaultFooterComponentViewModel: FooterComponentViewModel {
     }
 
     public func didChangeLanguage() {
-        actionSubject.onNext(.didChangeLanguage(self))
+        actionSubject.onNext(.didChangeLanguage)
     }
 
     public func contactUsDidClick() {
