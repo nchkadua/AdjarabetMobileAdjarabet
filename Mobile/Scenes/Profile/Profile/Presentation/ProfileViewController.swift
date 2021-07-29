@@ -121,7 +121,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
     }
 
     private func handleLanguageChange() {
-        viewModel.viewDidLoad()
+        viewModel.setupDataProviders()
     }
 }
 

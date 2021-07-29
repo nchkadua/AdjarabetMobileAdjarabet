@@ -18,6 +18,7 @@ public struct ProfileViewModelParams {
 public protocol ProfileViewModelInput {
     func viewDidLoad()
     func logout()
+    func setupDataProviders()
 }
 
 public protocol ProfileViewModelOutput {
@@ -57,6 +58,14 @@ extension DefaultProfileViewModel: ProfileViewModel {
     public var route: Observable<ProfileViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        setupDataProviders()
+    }
+
+    public func setupDataProviders() {
+        setupAppCellDataProviders()
+    }
+
+    private func setupAppCellDataProviders() {
         var dataProviders: AppCellDataProviders = []
 
         let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
