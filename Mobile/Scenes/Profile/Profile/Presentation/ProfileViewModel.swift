@@ -30,6 +30,7 @@ public enum ProfileViewModelOutputAction {
     case didCopyUserId(userId: String)
     case didLogoutWithSuccess
     case didLogoutWithError(error: Error)
+    case languageDidChange
 }
 
 public enum ProfileViewModelRoute {
@@ -104,6 +105,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
         footerViewModel.action.subscribe(onNext: {[weak self] action in
             switch action {
             case .contactUsDidClick: self?.routeSubject.onNext(.openContactUs)
+            case .didChangeLanguage: self?.actionSubject.onNext(.languageDidChange)
             default:
                 break
             }

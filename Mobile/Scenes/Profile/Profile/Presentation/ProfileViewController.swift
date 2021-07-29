@@ -50,6 +50,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         case .didCopyUserId(let userId): didCopyUserId(userId: userId)
         case .didLogoutWithSuccess: navigator.navigate(to: .loginPage, animated: true)
         case .didLogoutWithError(let error): print("Logout with error , \(error)")
+        case .languageDidChange: handleLanguageChange()
         }
     }
 
@@ -117,6 +118,10 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 
     @objc private func navigateToMainTabBar() {
         navigator.navigateToMainTabBar()
+    }
+
+    private func handleLanguageChange() {
+        viewModel.viewDidLoad()
     }
 }
 
