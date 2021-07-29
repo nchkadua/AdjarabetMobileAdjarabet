@@ -213,6 +213,7 @@ public class AccountInfoViewController: ABViewController {
         navigator.navigate(to: .phoneNumberChange, animated: true)
     }
 
+    //TODO refactor
     @objc private func editAddressAction() {
         let params: AddressChangeViewModelParams = .init()
         subscribeTo(params)
