@@ -53,7 +53,7 @@ public class NotificationContentViewController: UIViewController {
 
     // MAKR: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .primaryBg())
+        setBaseBackgroundColor(to: .primaryBg())
         setupNavigationItem()
         setupLabels()
         setupButton()

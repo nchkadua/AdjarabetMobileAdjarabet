@@ -112,7 +112,7 @@ public class VisaViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor()
+        setBaseBackgroundColor()
         setupKeyboard()
         setupInputViews()
         setupButtons()

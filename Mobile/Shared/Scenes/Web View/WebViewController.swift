@@ -38,7 +38,7 @@ public class WebViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .primaryBg())
+        setBaseBackgroundColor(to: .primaryBg())
         setupNavigationItems()
         setupWebView()
     }

@@ -53,7 +53,7 @@ public class FAQCategoriesViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .secondaryBg())
+        setBaseBackgroundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTableView()
         setupTitleLabel()
@@ -77,7 +77,7 @@ public class FAQCategoriesViewController: UIViewController {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: containerView)
-        appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
+        appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
 
         appTableViewController.tableView?.register(types: [
             FAQCategoryTableViewCell.self

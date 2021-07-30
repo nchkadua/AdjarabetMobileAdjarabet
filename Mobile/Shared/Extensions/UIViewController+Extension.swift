@@ -30,7 +30,7 @@ public extension UIViewController {
         scrollToTop(view: view)
     }
 
-    func setBaseBackgorundColor(to color: DesignSystem.Color = .secondaryBg()) {
+    func setBaseBackgroundColor(to color: DesignSystem.Color = .secondaryBg()) {
         view.setBackgorundColor(to: color)
     }
 

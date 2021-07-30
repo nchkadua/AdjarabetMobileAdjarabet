@@ -87,7 +87,7 @@ public class OTPViewController: ABViewController {
 
     // MAKR: Setup methods
     private func setup() {
-        setBaseBackgorundColor()
+        setBaseBackgroundColor()
         setupKeyboard()
         setupScrollView()
         setupLabels()

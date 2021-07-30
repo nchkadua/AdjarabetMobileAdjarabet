@@ -47,7 +47,7 @@ public class FAQAnswersViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .secondaryBg())
+        setBaseBackgroundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTitle()
         setupTextView()

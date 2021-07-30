@@ -58,7 +58,7 @@ public class ApplePayViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor()
+        setBaseBackgroundColor()
         setupKeyboard()
         setupInputView()
         setupButton()

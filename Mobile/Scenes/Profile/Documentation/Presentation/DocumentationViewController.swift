@@ -49,14 +49,16 @@ public class DocumentationViewController: ABViewController {
 
     private func navigateTo(_ destination: DocumentationDestination) {
         switch destination {
-        case .termsAndConditions: navigator.navigate(to: .termsAndConditions, animated: true)
-        case .privacyPolicy: viewModel.createPrivacyPolicyRequest()
+        case .termsAndConditions:
+            navigator.navigate(to: .termsAndConditions(with: .init()), animated: true)
+        case .privacyPolicy:
+            viewModel.createPrivacyPolicyRequest()
         }
     }
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .secondaryBg())
+        setBaseBackgroundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTableView()
     }
@@ -70,7 +72,7 @@ public class DocumentationViewController: ABViewController {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
-        appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
+        appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
         appTableViewController.tableView.isScrollEnabled = false
 
         appTableViewController.tableView?.register(types: [

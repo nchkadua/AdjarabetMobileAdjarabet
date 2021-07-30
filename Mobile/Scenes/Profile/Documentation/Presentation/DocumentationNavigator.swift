@@ -8,6 +8,7 @@
 
 public class DocumentationNavigator: Navigator {
     @Inject(from: .factories) private var webViewControllerFactory: WebViewControllerFactory
+    @Inject(from: .factories) private var termsAndConditionsControllerFactory: TermsAndConditionsViewControllerFactory
     private weak var viewController: UIViewController?
 
     public init(viewController: UIViewController) {
@@ -15,7 +16,7 @@ public class DocumentationNavigator: Navigator {
     }
 
     public enum Destination {
-        case termsAndConditions
+        case termsAndConditions(with: TermsAndConditionsViewModelParams)
         case privacyPolicy(with: WebViewModelParams)
     }
 
@@ -23,9 +24,17 @@ public class DocumentationNavigator: Navigator {
         switch destination {
         case .privacyPolicy(let params):
             navigateToWebView(with: params, animate: animate)
-        case .termsAndConditions:
-            break
+        case .termsAndConditions(let params):
+            navigateToTermsAndConditions(with: params, animate: animate)
         }
+    }
+    
+    private func navigateToTermsAndConditions(with params: TermsAndConditionsViewModelParams, animate: Bool) {
+        print("Terms and Conditions")
+        let vc = termsAndConditionsControllerFactory.make(params: params)
+        let navC = vc.wrapInNavWith(presentationStyle: .automatic)
+        navC.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navC, animated: animate)
     }
 
     private func navigateToWebView(with params: WebViewModelParams, animate: Bool) {

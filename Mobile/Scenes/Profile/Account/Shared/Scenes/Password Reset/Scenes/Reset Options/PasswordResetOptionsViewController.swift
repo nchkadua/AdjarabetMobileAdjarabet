@@ -70,7 +70,7 @@ public class PasswordResetOptionsViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .secondaryBg())
+        setBaseBackgroundColor(to: .secondaryBg())
         setupNavigationItems()
         setupKeyboard()
         setupLabel()
@@ -83,7 +83,7 @@ public class PasswordResetOptionsViewController: ABViewController {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: containerView2)
-        appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
+        appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
         appTableViewController.tableView.isScrollEnabled = false
 
         appTableViewController.tableView?.register(types: [

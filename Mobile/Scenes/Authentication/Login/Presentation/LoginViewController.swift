@@ -82,7 +82,7 @@ public class LoginViewController: ABViewController {
 
     // MAKR: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .secondaryBg())
+        setBaseBackgroundColor(to: .secondaryBg())
         setupKeyboard()
         setupNavigationItem()
         setupScrollView()

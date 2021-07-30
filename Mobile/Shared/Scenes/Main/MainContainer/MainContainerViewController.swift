@@ -33,7 +33,7 @@ public class MainContainerViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor()
+        setBaseBackgroundColor()
         setupPageViewController()
     }
 

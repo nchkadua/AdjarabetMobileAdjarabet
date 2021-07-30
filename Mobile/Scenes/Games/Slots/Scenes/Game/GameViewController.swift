@@ -67,7 +67,7 @@ class GameViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .primaryBg())
+        setBaseBackgroundColor(to: .primaryBg())
         setupNavigationItems()
         setupWebView()
     }
