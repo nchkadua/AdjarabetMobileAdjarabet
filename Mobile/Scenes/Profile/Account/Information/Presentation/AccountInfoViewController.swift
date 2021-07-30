@@ -77,6 +77,7 @@ public class AccountInfoViewController: ABViewController {
         case .setAndBindCommunicationLanguage(let viewModel):
             communicationLanguageComponent.setAndBind(viewModel: viewModel)
         case .setPersonalID(let id): personalIdView.set(titleText: id)
+        case .setAddress(let address): addressView.set(titleText: address)
         case .showError(let error):
             showAlert(title: error.description.description)
         }
@@ -86,6 +87,8 @@ public class AccountInfoViewController: ABViewController {
         switch route {
         case .otp(let params):
             navigator.navigate(to: .otp(params: params), animated: true)
+        case .addressChange(let params):
+            navigator.navigate(to: .addressChange(params: params), animated: true)
         }
     }
 
@@ -214,7 +217,7 @@ public class AccountInfoViewController: ABViewController {
     }
 
     @objc private func editAddressAction() {
-        navigator.navigate(to: .addressChange, animated: true)
+        viewModel.changeAddressTapped()
     }
 
     @objc private func closeAccountAction() {

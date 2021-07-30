@@ -163,6 +163,8 @@
 "new_address_subtitle" = "შეიყვანეთ თქვენი ახალი მისამართი";
 "new_address_placeholder" = "შეიყვანეთ ახალი მისამართი";
 "approve_address_button_title" = "დადასტურება";
+"address_change_rule_1" = "გამოიყენეთ მხოლოდ ლათინური სიმბოლოები";
+"address_change_rule_2" = "ჩაწერეთ გამოტოვების გარეშე";
 
 /* Password Change */
 "password_change_title" = "პაროლის ცვლილება";

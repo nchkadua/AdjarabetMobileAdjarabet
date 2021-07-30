@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,15 +18,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd4-8o-0Ul" userLabel="Title Label">
+                                <rect key="frame" x="16" y="44" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ColorGuide/TextColors/primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwW-KB-T5L" customClass="ABInputView" customModule="Mobile" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="374" height="48"/>
+                                <rect key="frame" x="16" y="84" width="382" height="54"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Ybb-x2-Vzo"/>
+                                    <constraint firstAttribute="height" constant="54" id="Ybb-x2-Vzo"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJD-qQ-sFh" userLabel="Rules View">
+                                <rect key="frame" x="16" y="157" width="382" height="105"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOt-Pf-c23" userLabel="Rule 1 Bullet View">
+                                        <rect key="frame" x="18" y="16" width="22" height="22"/>
+                                        <color key="backgroundColor" name="ColorGuide/SystemBackground/querternary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="Gzm-pn-LcJ"/>
+                                            <constraint firstAttribute="height" constant="22" id="h64-I9-uw7"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use only Latin characters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyG-WI-uNI" userLabel="Rule 1 Label">
+                                        <rect key="frame" x="52" y="16" width="312" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unr-f8-RSE" userLabel="Rule 2 Bullet View">
+                                        <rect key="frame" x="18" y="63" width="22" height="22"/>
+                                        <color key="backgroundColor" name="ColorGuide/SystemBackground/querternary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="CzO-Bs-0PZ"/>
+                                            <constraint firstAttribute="width" constant="22" id="bzr-ED-GKG"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write without spaces" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ht-fB-C0y" userLabel="Rule 2 Label">
+                                        <rect key="frame" x="52" y="63" width="312" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="ColorGuide/Materials/regular"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2ht-fB-C0y" secondAttribute="trailing" constant="18" id="59w-57-hHj"/>
+                                    <constraint firstItem="PyG-WI-uNI" firstAttribute="top" secondItem="BOt-Pf-c23" secondAttribute="top" id="5Jo-Us-PSu"/>
+                                    <constraint firstItem="2ht-fB-C0y" firstAttribute="top" secondItem="unr-f8-RSE" secondAttribute="top" id="5Nz-lZ-PyZ"/>
+                                    <constraint firstItem="2ht-fB-C0y" firstAttribute="leading" secondItem="unr-f8-RSE" secondAttribute="trailing" constant="12" id="FmG-Wt-jDK"/>
+                                    <constraint firstItem="PyG-WI-uNI" firstAttribute="leading" secondItem="BOt-Pf-c23" secondAttribute="trailing" constant="12" id="SqU-Rc-h3A"/>
+                                    <constraint firstItem="BOt-Pf-c23" firstAttribute="top" secondItem="wJD-qQ-sFh" secondAttribute="top" constant="16" id="mxl-sa-VDO"/>
+                                    <constraint firstAttribute="bottom" secondItem="unr-f8-RSE" secondAttribute="bottom" constant="20" id="oAF-NB-HpU"/>
+                                    <constraint firstItem="BOt-Pf-c23" firstAttribute="leading" secondItem="wJD-qQ-sFh" secondAttribute="leading" constant="18" id="uXy-VH-AOU"/>
+                                    <constraint firstItem="unr-f8-RSE" firstAttribute="leading" secondItem="wJD-qQ-sFh" secondAttribute="leading" constant="18" id="viA-ss-di3"/>
+                                    <constraint firstAttribute="height" constant="105" id="vl8-QC-CTP"/>
+                                    <constraint firstAttribute="trailing" secondItem="PyG-WI-uNI" secondAttribute="trailing" constant="18" id="x5s-JR-ox0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcf-AL-I4W" customClass="ABButton" customModule="Mobile" customModuleProvider="target">
-                                <rect key="frame" x="20" y="141" width="374" height="54"/>
+                                <rect key="frame" x="16" y="281" width="382" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="xo1-vv-3m6"/>
                                 </constraints>
@@ -35,17 +107,26 @@
                         <viewLayoutGuide key="safeArea" id="bTk-Gj-cDH"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bTk-Gj-cDH" firstAttribute="trailing" secondItem="BwW-KB-T5L" secondAttribute="trailing" constant="20" id="0uD-Ll-TW0"/>
-                            <constraint firstItem="bTk-Gj-cDH" firstAttribute="trailing" secondItem="zcf-AL-I4W" secondAttribute="trailing" constant="20" id="2ow-PR-fl4"/>
-                            <constraint firstItem="BwW-KB-T5L" firstAttribute="top" secondItem="bTk-Gj-cDH" secondAttribute="top" constant="20" id="A3m-pa-pug"/>
-                            <constraint firstItem="zcf-AL-I4W" firstAttribute="top" secondItem="BwW-KB-T5L" secondAttribute="bottom" constant="29" id="D1Z-4n-xjl"/>
-                            <constraint firstItem="BwW-KB-T5L" firstAttribute="leading" secondItem="bTk-Gj-cDH" secondAttribute="leading" constant="20" id="iiN-Wk-A3g"/>
-                            <constraint firstItem="zcf-AL-I4W" firstAttribute="leading" secondItem="bTk-Gj-cDH" secondAttribute="leading" constant="20" id="u6E-bt-5Ol"/>
+                            <constraint firstItem="wJD-qQ-sFh" firstAttribute="trailing" secondItem="BwW-KB-T5L" secondAttribute="trailing" id="6zm-qT-Uas"/>
+                            <constraint firstItem="BwW-KB-T5L" firstAttribute="top" secondItem="rd4-8o-0Ul" secondAttribute="bottom" constant="19" id="A3m-pa-pug"/>
+                            <constraint firstItem="zcf-AL-I4W" firstAttribute="top" secondItem="wJD-qQ-sFh" secondAttribute="bottom" constant="19" id="D1Z-4n-xjl"/>
+                            <constraint firstItem="zcf-AL-I4W" firstAttribute="leading" secondItem="wJD-qQ-sFh" secondAttribute="leading" id="Dg6-iZ-VtQ"/>
+                            <constraint firstItem="BwW-KB-T5L" firstAttribute="leading" secondItem="rd4-8o-0Ul" secondAttribute="leading" id="JTc-Q2-58d"/>
+                            <constraint firstItem="rd4-8o-0Ul" firstAttribute="top" secondItem="bTk-Gj-cDH" secondAttribute="top" id="Lky-Ev-buJ"/>
+                            <constraint firstItem="zcf-AL-I4W" firstAttribute="trailing" secondItem="wJD-qQ-sFh" secondAttribute="trailing" id="TRN-uJ-AUM"/>
+                            <constraint firstItem="bTk-Gj-cDH" firstAttribute="trailing" secondItem="rd4-8o-0Ul" secondAttribute="trailing" constant="16" id="bbb-pF-aYk"/>
+                            <constraint firstItem="BwW-KB-T5L" firstAttribute="trailing" secondItem="rd4-8o-0Ul" secondAttribute="trailing" id="cps-3g-t1G"/>
+                            <constraint firstItem="wJD-qQ-sFh" firstAttribute="leading" secondItem="BwW-KB-T5L" secondAttribute="leading" id="gE0-zW-Qq9"/>
+                            <constraint firstItem="rd4-8o-0Ul" firstAttribute="leading" secondItem="bTk-Gj-cDH" secondAttribute="leading" constant="16" id="hn3-bT-zmT"/>
+                            <constraint firstItem="wJD-qQ-sFh" firstAttribute="top" secondItem="BwW-KB-T5L" secondAttribute="bottom" constant="19" id="uSh-jK-JE6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressInputView" destination="BwW-KB-T5L" id="X5q-xR-eUs"/>
                         <outlet property="approveButton" destination="zcf-AL-I4W" id="qwM-6n-Jdd"/>
+                        <outlet property="rule1Label" destination="PyG-WI-uNI" id="7Pv-Kj-kXR"/>
+                        <outlet property="rule2Label" destination="2ht-fB-C0y" id="5az-fq-Xi1"/>
+                        <outlet property="titleLabel" destination="rd4-8o-0Ul" id="qpn-1x-HI2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNB-c5-VhB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -59,6 +140,18 @@
         </designable>
     </designables>
     <resources>
+        <namedColor name="ColorGuide/Materials/regular">
+            <color red="0.14509803921568629" green="0.14509803921568629" blue="0.14509803921568629" alpha="0.77999997138977051" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/SystemBackground/querternary">
+            <color red="0.22745098039215686" green="0.22745098039215686" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/primary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/secondary">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.96078431372549022" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

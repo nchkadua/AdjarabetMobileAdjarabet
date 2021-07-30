@@ -25,7 +25,7 @@ public class AccountInfoNavigator: Navigator {
         case passwordChange
         case mailChange
         case phoneNumberChange
-        case addressChange
+        case addressChange(params: AddressChangeViewModelParams)
         case closeAccount
         case otp(params: OTPViewModelParams)
     }
@@ -34,7 +34,7 @@ public class AccountInfoNavigator: Navigator {
         switch destination {
         case .selfSuspend: navigateToSelfSuspend(animate: animate)
         case .mailChange: navigateToMailChange(animate: animate)
-        case .addressChange: navigateToAddressChange(animate: animate)
+        case .addressChange(let params): navigateToAddressChange(params: params, animate: animate)
         case .passwordChange: navigateToPasswordChange(animate: animate)
         case .phoneNumberChange: navigateToPhoneNumberChange(animate: animate)
         case .closeAccount: navigateToCloseAccount()
@@ -56,8 +56,8 @@ public class AccountInfoNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 
-    private func navigateToAddressChange(animate: Bool) {
-        let vc = addressChangeViewControllerFactory.make()
+    private func navigateToAddressChange(params: AddressChangeViewModelParams, animate: Bool) {
+        let vc = addressChangeViewControllerFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)

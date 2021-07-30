@@ -13,6 +13,7 @@ protocol AccountInfoViewModel: AccountInfoViewModelInput,
 
 protocol AccountInfoViewModelInput {
     func viewDidLoad()
+    func changeAddressTapped()
 }
 
 protocol AccountInfoViewModelOutput {
@@ -24,11 +25,13 @@ enum AccountInfoViewModelOutputAction {
     case setupWithAccountInfoModel(_ accountInfoModel: AccountInfoModel)
     case setAndBindCommunicationLanguage(_ viewModel: CommunicationLanguageComponentViewModel)
     case setPersonalID(id: String)
+    case setAddress(address: String)
     case showError(_ error: ABError)
 }
 
 enum AccountInfoViewModelRoute {
     case otp(params: OTPViewModelParams)
+    case addressChange(params: AddressChangeViewModelParams)
 }
 
 class DefaultAccountInfoViewModel: DefaultBaseViewModel {
@@ -46,6 +49,25 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
 
     func viewDidLoad() {
         refreshUserInfo()
+    }
+
+    func changeAddressTapped() {
+        let params: AddressChangeViewModelParams = .init()
+        subscribeTo(params)
+        routeSubject.onNext(.addressChange(params: params))
+    }
+
+    private func subscribeTo(_ params: AddressChangeViewModelParams) {
+        params.paramsOutputAction.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: AddressChangeViewModelParams.Action) {
+        switch action {
+        case .success(let newAddress):
+            actionSubject.onNext(.setAddress(address: newAddress))
+        }
     }
 
     private func refreshUserInfo() {
