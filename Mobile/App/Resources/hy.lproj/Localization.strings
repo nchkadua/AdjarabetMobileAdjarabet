@@ -160,10 +160,12 @@
 "mail_change_password" = "დაადასტურეთ პაროლით";
 
 /* Address Change */
-"address_change_title" = "Change Address";
-"new_address_subtitle" = "Enter New Address";
-"new_address_placeholder" = "Enter New Address";
-"approve_address_button_title" = "Approve";
+"address_change_title" = "change address";
+"new_address_subtitle" = "enter new address";
+"new_address_placeholder" = "enter new address";
+"approve_address_button_title" = "approve";
+"address_change_rule_1" = "use only latin characters";
+"address_change_rule_2" = "write without spaces";
 
 /* Password Change */
 "password_change_title" = "Change Password";

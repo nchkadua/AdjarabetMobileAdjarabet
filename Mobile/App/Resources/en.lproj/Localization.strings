@@ -163,6 +163,8 @@
 "new_address_subtitle" = "Enter New Address";
 "new_address_placeholder" = "Enter New Address";
 "approve_address_button_title" = "Approve";
+"address_change_rule_1" = "Use only Latin characters";
+"address_change_rule_2" = "Write without spaces";
 
 /* Password Change */
 "password_change_title" = "Change Password";

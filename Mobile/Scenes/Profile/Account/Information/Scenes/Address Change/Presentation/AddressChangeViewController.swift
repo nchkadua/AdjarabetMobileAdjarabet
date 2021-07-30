@@ -15,6 +15,9 @@ public class AddressChangeViewController: ABViewController {
     // MARK: Outlets
     @IBOutlet private weak var addressInputView: ABInputView!
     @IBOutlet private weak var approveButton: ABButton!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var rule1Label: UILabel!
+    @IBOutlet private weak var rule2Label: UILabel!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -49,16 +52,25 @@ public class AddressChangeViewController: ABViewController {
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor(to: .secondaryBg())
+        setupTexts()
         setupNavigationItems()
         setupKeyboard()
         setupInputView()
         setupApproveButton()
     }
 
-    private func setupNavigationItems() {
-        setTitle(title: R.string.localization.address_change_title.localized().uppercased())
+    private func setupTexts() {
+        titleLabel.text = R.string.localization.address_change_title.localized()
+        rule1Label.text = R.string.localization.address_change_rule_1.localized()
+        rule2Label.text = R.string.localization.address_change_rule_2.localized()
 
-        let backButtonGroup = makeBackBarButtonItem()
+        titleLabel.setFont(to: .title2(fontCase: .lower, fontStyle: .semiBold))
+        rule1Label.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+        rule2Label.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
+    }
+
+    private func setupNavigationItems() {
+        let backButtonGroup = makeBackBarButtonItem(width: 60, title: R.string.localization.back_button_title.localized())
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }

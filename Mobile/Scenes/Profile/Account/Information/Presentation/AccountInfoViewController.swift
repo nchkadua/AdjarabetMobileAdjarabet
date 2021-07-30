@@ -77,6 +77,7 @@ public class AccountInfoViewController: ABViewController {
         case .setAndBindCommunicationLanguage(let viewModel):
             communicationLanguageComponent.setAndBind(viewModel: viewModel)
         case .setPersonalID(let id): personalIdView.set(titleText: id)
+        case .setAddress(let address): addressView.set(titleText: address)
         case .showError(let error):
             showAlert(title: error.description.description)
         }
@@ -86,6 +87,8 @@ public class AccountInfoViewController: ABViewController {
         switch route {
         case .otp(let params):
             navigator.navigate(to: .otp(params: params), animated: true)
+        case .addressChange(let params):
+            navigator.navigate(to: .addressChange(params: params), animated: true)
         }
     }
 
@@ -213,23 +216,8 @@ public class AccountInfoViewController: ABViewController {
         navigator.navigate(to: .phoneNumberChange, animated: true)
     }
 
-    //TODO refactor
     @objc private func editAddressAction() {
-        let params: AddressChangeViewModelParams = .init()
-        subscribeTo(params)
-        navigator.navigate(to: .addressChange(params: params), animated: true)
-    }
-
-    private func subscribeTo(_ params: AddressChangeViewModelParams) {
-        params.paramsOutputAction.subscribe(onNext: { [weak self] action in
-            self?.didRecive(action: action)
-        }).disposed(by: disposeBag)
-    }
-
-    private func didRecive(action: AddressChangeViewModelParams.Action) {
-        switch action {
-        case .success(let newAddress): addressView.set(titleText: newAddress)
-        }
+        viewModel.changeAddressTapped()
     }
 
     @objc private func closeAccountAction() {
