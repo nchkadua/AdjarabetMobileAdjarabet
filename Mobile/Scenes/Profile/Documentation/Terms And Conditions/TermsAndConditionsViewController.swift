@@ -8,15 +8,17 @@
 
 import RxSwift
 
-public class TermsAndConditionsViewController: UIViewController {
+public class TermsAndConditionsViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: TermsAndConditionsViewModel
     public lazy var navigator = TermsAndConditionsNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
+    
+    private lazy var appTableViewController: AppTableViewController = AppTableViewController()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
@@ -36,5 +38,29 @@ public class TermsAndConditionsViewController: UIViewController {
     }
     
     private func didRecive(route: TermsAndConditionsViewModelRoute) {
+    }
+    
+    // MARK: Setup methods
+    private func setup() {
+        setBaseBackgroundColor(to: .secondaryBg())
+        setupNavigationItems()
+        setupTableView()
+    }
+    
+    private func setupNavigationItems() {
+        setTitle(title: R.string.localization.terms_and_conditions.localized())
+        setBackBarButtonItemIfNeeded()
+    }
+
+    private func setupTableView() {
+        add(child: appTableViewController)
+        appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        appTableViewController.view.pin(to: view)
+        appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
+        appTableViewController.tableView.isScrollEnabled = false
+
+        appTableViewController.tableView?.register(types: [
+            DocumentationActionTableViewCell.self
+        ])
     }
 }

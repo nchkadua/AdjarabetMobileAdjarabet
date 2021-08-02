@@ -30,11 +30,9 @@ public class DocumentationNavigator: Navigator {
     }
     
     private func navigateToTermsAndConditions(with params: TermsAndConditionsViewModelParams, animate: Bool) {
-        print("Terms and Conditions")
+        print("Terms and Conditions") // TODO: remove this (used for debug)
         let vc = termsAndConditionsControllerFactory.make(params: params)
-        let navC = vc.wrapInNavWith(presentationStyle: .automatic)
-        navC.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navC, animated: animate)
+        viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 
     private func navigateToWebView(with params: WebViewModelParams, animate: Bool) {

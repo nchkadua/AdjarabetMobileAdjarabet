@@ -864,6 +864,12 @@
 		D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */; };
 		D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FD2449C50B0015C03C /* Rswift+Extension.swift */; };
 		D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FF2449C7090015C03C /* LanguageTests.swift */; };
+		FB584B4126B7C1E800FA25DB /* TermsAndConditionsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */; };
+		FB584B4226B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */; };
+		FB584B4326B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB584B3D26B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib */; };
+		FB584B4426B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3E26B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift */; };
+		FB584B4526B7C1E800FA25DB /* TermsAndConditionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3F26B7C1E800FA25DB /* TermsAndConditionsComponentView.swift */; };
+		FB584B4626B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B4026B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift */; };
 		FBAE9C4126B3D0C1002E9D72 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */; };
 		FBAE9C4226B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */; };
 		FBAE9C4326B3D0C1002E9D72 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */; };
@@ -1758,6 +1764,12 @@
 		D8FBA5022449C90A0015C03C /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = hy.lproj/Localization.strings; sourceTree = "<group>"; };
 		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsComponentView.xib; sourceTree = "<group>"; };
+		FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		FB584B3D26B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsTableViewCell.xib; sourceTree = "<group>"; };
+		FB584B3E26B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsComponentViewModel.swift; sourceTree = "<group>"; };
+		FB584B3F26B7C1E800FA25DB /* TermsAndConditionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsComponentView.swift; sourceTree = "<group>"; };
+		FB584B4026B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsTableViewCell.swift; sourceTree = "<group>"; };
 		FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
 		FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsNavigator.swift; sourceTree = "<group>"; };
 		FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
@@ -6336,9 +6348,39 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FB584B3826B7C1AF00FA25DB /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				FB584B3A26B7C1BB00FA25DB /* Cell */,
+				FB584B3926B7C1B700FA25DB /* View */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		FB584B3926B7C1B700FA25DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */,
+				FB584B3E26B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift */,
+				FB584B3F26B7C1E800FA25DB /* TermsAndConditionsComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB584B3A26B7C1BB00FA25DB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */,
+				FB584B3D26B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib */,
+				FB584B4026B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FBAE9C3B26B3D0A3002E9D72 /* Terms And Conditions */ = {
 			isa = PBXGroup;
 			children = (
+				FB584B3826B7C1AF00FA25DB /* Action */,
 				FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */,
 				FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */,
 				FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */,
@@ -6618,6 +6660,7 @@
 				C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */,
 				CE693B1126A70C340049D665 /* FAQQuestionTableViewCell.xib in Resources */,
 				C75D1AFD261205F4002AF763 /* THBJSlot.zip in Resources */,
+				FB584B4126B7C1E800FA25DB /* TermsAndConditionsComponentView.xib in Resources */,
 				CE693B0126A7071E0049D665 /* FAQQuestions.storyboard in Resources */,
 				C75D1AF4261205F4002AF763 /* FDHJSlot.zip in Resources */,
 				CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */,
@@ -6689,6 +6732,7 @@
 				CEBB004C2608F63B00D1B510 /* PaymentMethodGridComponentView.xib in Resources */,
 				C75D1AEA261205F4002AF763 /* VGJSlot.zip in Resources */,
 				CE95A43C261EF8C60004330E /* APayInstructionsComponentView.xib in Resources */,
+				FB584B4326B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib in Resources */,
 				76DCF6AF25B8262300150EE1 /* MyCardComponentView.xib in Resources */,
 				C75D1B01261205F4002AF763 /* TDJSlot.zip in Resources */,
 				CECF7F4D256D5A93001C0E50 /* AddressChange.storyboard in Resources */,
@@ -7221,6 +7265,7 @@
 				C7C35FE025C96B2300ADCBB6 /* StandartGameLaunchUseCase.swift in Sources */,
 				CEE25085256FE3BB0089F805 /* TimerComponentViewModel.swift in Sources */,
 				D84202D62451ABAB00F0F056 /* HomeViewModel.swift in Sources */,
+				FB584B4426B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift in Sources */,
 				D8442AAA2469A7A400F32676 /* LoginNavigator.swift in Sources */,
 				CE693AF726A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift in Sources */,
 				D842098F24482DB10001ADC1 /* NotificationsViewControllerFactory.swift in Sources */,
@@ -7251,6 +7296,7 @@
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
+				FB584B4526B7C1E800FA25DB /* TermsAndConditionsComponentView.swift in Sources */,
 				C7DB6EF626370F9600EC1CB9 /* EmptyCollectionViewCell.swift in Sources */,
 				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
 				CE693AF926A6D80F0049D665 /* FAQCategoryComponentViewModel.swift in Sources */,
@@ -7426,6 +7472,7 @@
 				D84202CA245191B100F0F056 /* LanguageStorage.swift in Sources */,
 				CE55ECF925265CDA003E168F /* ProfileViewController.swift in Sources */,
 				CE769899269EF341009972B2 /* PasswordResetOptionsViewController.swift in Sources */,
+				FB584B4626B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift in Sources */,
 				C7667FFE26A815C4005EB6E8 /* CloseAccountViewController.swift in Sources */,
 				CE95A42D261DF1C40004330E /* ApplePayButton.swift in Sources */,
 				769886B22571055000FA339E /* TransactionFilterComponentView.swift in Sources */,
@@ -7448,6 +7495,7 @@
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */,
 				CE2AABB22679FEA300B45A0A /* ResetPasswordUseCase.swift in Sources */,
+				FB584B4226B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift in Sources */,
 				C71F18AB2564564D0026CEA2 /* BiometryStorage.swift in Sources */,
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */,

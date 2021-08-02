@@ -25,9 +25,12 @@ public protocol TermsAndConditionsViewModelOutput {
 }
 
 public enum TermsAndConditionsViewModelOutputAction {
+    case set(title: String)
+    case didSelect(indexPath: IndexPath)
 }
 
 public enum TermsAndConditionsViewModelRoute {
+    case initialize(AppListDataProvider)
 }
 
 public class DefaultTermsAndConditionsViewModel {
