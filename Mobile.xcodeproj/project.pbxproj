@@ -532,7 +532,6 @@
 		CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E294C256E8F1F001FE225 /* Double+Extension.swift */; };
 		CE752DF126B02B08000FB8A4 /* ContactAddressComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */; };
 		CE752DF326B02C75000FB8A4 /* AddressListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */; };
-		CE752DF526B0389E000FB8A4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE752DF426B0389E000FB8A4 /* MessageUI.framework */; };
 		CE769897269EF341009972B2 /* PasswordResetOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */; };
 		CE769898269EF341009972B2 /* PasswordResetOptionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */; };
 		CE769899269EF341009972B2 /* PasswordResetOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769894269EF341009972B2 /* PasswordResetOptionsViewController.swift */; };
@@ -699,7 +698,7 @@
 		CECF7F86256DADA4001C0E50 /* PasswordChangeRulesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */; };
 		CED4D95A26565D38003F35AF /* PasswordReminderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED4D95426565D38003F35AF /* PasswordReminderComponentView.xib */; };
 		CED4D95E26565D38003F35AF /* PasswordReminderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4D95826565D38003F35AF /* PasswordReminderComponentView.swift */; };
-		CED829122633330D00D99CAC /* TestPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED829112633330D00D99CAC /* TestPageVC.swift */; };
+		CED829122633330D00D99CAC /* ABPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED829112633330D00D99CAC /* ABPageViewController.swift */; };
 		CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E09F254869F200949417 /* AppSessionProvider.swift */; };
 		CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3925349C330033BF93 /* NotificationComponentView.swift */; };
 		CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */; };
@@ -736,7 +735,6 @@
 		CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3685E2549C361009FD456 /* WithdrawViewController.swift */; };
 		CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */; };
 		CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */; };
-		CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3686F2549C39D009FD456 /* ABPageViewController.swift */; };
 		CEF52C9226721D4D00D2386C /* ActionOTPEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52C9126721D4D00D2386C /* ActionOTPEntity.swift */; };
 		CEF52C9626721D6100D2386C /* ActionOTPDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52C9526721D6100D2386C /* ActionOTPDTO.swift */; };
 		CEF52C9A26721D7800D2386C /* ActionOTPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF52C9926721D7800D2386C /* ActionOTPRepository.swift */; };
@@ -1607,7 +1605,7 @@
 		CECF7F85256DADA4001C0E50 /* PasswordChangeRulesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordChangeRulesView.xib; sourceTree = "<group>"; };
 		CED4D95426565D38003F35AF /* PasswordReminderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordReminderComponentView.xib; sourceTree = "<group>"; };
 		CED4D95826565D38003F35AF /* PasswordReminderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReminderComponentView.swift; sourceTree = "<group>"; };
-		CED829112633330D00D99CAC /* TestPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPageVC.swift; sourceTree = "<group>"; };
+		CED829112633330D00D99CAC /* ABPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPageViewController.swift; sourceTree = "<group>"; };
 		CEE0E09F254869F200949417 /* AppSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionProvider.swift; sourceTree = "<group>"; };
 		CEE15C3925349C330033BF93 /* NotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentView.swift; sourceTree = "<group>"; };
 		CEE15C3D25349C3E0033BF93 /* NotificationComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentViewModel.swift; sourceTree = "<group>"; };
@@ -1644,7 +1642,6 @@
 		CEF3685E2549C361009FD456 /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		CEF3685F2549C361009FD456 /* WithdrawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewModel.swift; sourceTree = "<group>"; };
 		CEF3686B2549C373009FD456 /* WithdrawViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewControllerFactory.swift; sourceTree = "<group>"; };
-		CEF3686F2549C39D009FD456 /* ABPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABPageViewController.swift; sourceTree = "<group>"; };
 		CEF52C9126721D4D00D2386C /* ActionOTPEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionOTPEntity.swift; sourceTree = "<group>"; };
 		CEF52C9526721D6100D2386C /* ActionOTPDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionOTPDTO.swift; sourceTree = "<group>"; };
 		CEF52C9926721D7800D2386C /* ActionOTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionOTPRepository.swift; sourceTree = "<group>"; };
@@ -1838,7 +1835,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE752DF526B0389E000FB8A4 /* MessageUI.framework in Frameworks */,
 				CE76FD8B257666E200D8AB04 /* CoreLocation.framework in Frameworks */,
 				A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */,
 			);
@@ -6414,8 +6410,7 @@
 				D8390E75246B14F600EF8CB5 /* ABViewController.swift */,
 				D815850D24B0C81800FFCA95 /* LoaderViewController.swift */,
 				D8CFDA8B2530E311002002BC /* ABTableViewController.swift */,
-				CEF3686F2549C39D009FD456 /* ABPageViewController.swift */,
-				CED829112633330D00D99CAC /* TestPageVC.swift */,
+				CED829112633330D00D99CAC /* ABPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -7264,7 +7259,7 @@
 				CEF52C9A26721D7800D2386C /* ActionOTPRepository.swift in Sources */,
 				CEF52C9E26721D9600D2386C /* CoreApiActionOTPRepository.swift in Sources */,
 				C7E3F15D261CCFE3009B6D6A /* WithdrawVisaInfoViewModel.swift in Sources */,
-				CED829122633330D00D99CAC /* TestPageVC.swift in Sources */,
+				CED829122633330D00D99CAC /* ABPageViewController.swift in Sources */,
 				CEB285BC256D20B600584A65 /* SelfSuspendNavigator.swift in Sources */,
 				CECA7EDE26AEEAC500BCF04A /* ContactMailTableViewCellDataProvider.swift in Sources */,
 				C7FAA3C22600C28600265995 /* UFCDepositEntity.swift in Sources */,
@@ -7307,7 +7302,6 @@
 				CE14202F2636EE8900E022C7 /* BonusViewModel.swift in Sources */,
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */,
-				CEF368702549C39D009FD456 /* ABPageViewController.swift in Sources */,
 				C78E52CC26838CFC00EE1C18 /* CoreApiSendVerificationCodeDTO.swift in Sources */,
 				C7EF9E7225702B8C00D2908C /* UserInfoRepository.swift in Sources */,
 				D86253B32464214B00F7DE0C /* NetworkService.swift in Sources */,
@@ -8286,7 +8280,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 580;
+				CURRENT_PROJECT_VERSION = 581;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8319,7 +8313,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 580;
+				CURRENT_PROJECT_VERSION = 581;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -8412,7 +8406,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 580;
+				CURRENT_PROJECT_VERSION = 581;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8501,7 +8495,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 580;
+				CURRENT_PROJECT_VERSION = 581;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;

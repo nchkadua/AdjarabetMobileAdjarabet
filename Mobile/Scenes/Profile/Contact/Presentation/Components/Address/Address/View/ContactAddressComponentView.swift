@@ -18,7 +18,8 @@ class ContactAddressComponentView: UIView {
     @IBOutlet weak private var cityLabel: UILabel!
     @IBOutlet weak private var imageView: UIImageView!
 
-    @IBOutlet weak var separator: UIView!
+    @IBOutlet weak private var separator: UIView!
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -65,7 +66,7 @@ extension ContactAddressComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
-        separator.setBackgorundColor(to: .opaque())
+        separator.setBackgorundColor(to: .nonOpaque())
 
         addressLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
         addressLabel.setTextColor(to: .primaryText())

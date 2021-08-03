@@ -21,7 +21,7 @@ public class DepositViewController: UIViewController {
 
     @IBOutlet private weak var paymentGridComponentView: PaymentMethodGridComponentView!
     @IBOutlet private weak var childrenVCFrameView: UIView!
-    private lazy var appPageViewController: ABPageViewController = ABPageViewController(transitionStyle: .scroll)
+    private var appPageViewController: ABPageViewController?
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -62,18 +62,18 @@ public class DepositViewController: UIViewController {
     // MARK: Setup methods
     private func setup() {
         setBaseBackgorundColor()
-        setupPageViewController()
         setupLabels()
         setupImageView()
         loader.isHidden = true
     }
 
-    private func setupPageViewController() {
-        add(child: appPageViewController)
-        appPageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        appPageViewController.view.pin(to: childrenVCFrameView)
-        appPageViewController.setSwipeEnabled(false)
-        appPageViewController.view.isHidden = true
+    private func setupPageViewController(with viewControllers: [UIViewController]) {
+        appPageViewController = ABPageViewController(viewControllers: viewControllers)
+
+        add(child: appPageViewController ?? ABPageViewController(viewControllers: []))
+        appPageViewController?.view.translatesAutoresizingMaskIntoConstraints = false
+        appPageViewController?.view.pin(to: childrenVCFrameView)
+        appPageViewController?.setSwipeEnabled(false)
     }
 
     private func setupImageView() {
@@ -121,7 +121,7 @@ public class DepositViewController: UIViewController {
         loader.isHidden = isHidden
         (isHidden ? loader.stopAnimating : loader.startAnimating)()
 
-        appPageViewController.view.isHidden = !isHidden
+        appPageViewController?.view.isHidden = !isHidden
     }
 
     // MARK: Action methods
@@ -129,8 +129,8 @@ public class DepositViewController: UIViewController {
         let visaVC = navigator.visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)
         let emoneyVC = navigator.emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self)
         let applePayVC = navigator.applePayViewControllerFactory.make().wrap(in: ABNavigationController.self)
-        appPageViewController.orderedViewControllers = [visaVC, emoneyVC, applePayVC]
 
+        setupPageViewController(with: [visaVC, emoneyVC, applePayVC])
         jumpToViewController(by: PaymentMethodType(flowId: paymentMethodList[0].flowId) ?? .tbcRegular)
     }
 
@@ -140,6 +140,6 @@ public class DepositViewController: UIViewController {
 
     private func jumpToViewController(by paymentMethodType: PaymentMethodType) {
         guard let vc = navigator.viewController(by: paymentMethodType) else { return }
-        appPageViewController.jump(to: vc, animated: false)
+        appPageViewController?.jump(to: vc, direction: .forward, animated: false)
     }
 }

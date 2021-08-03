@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,7 +63,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="21" bottom="0.0" right="21"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMD-z4-E3a">
-                                <rect key="frame" x="0.0" y="175" width="414" height="721"/>
+                                <rect key="frame" x="0.0" y="175" width="414" height="687"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAB-Bl-XoW" customClass="PaymentMethodGridComponentView" customModule="Mobile" customModuleProvider="target">
@@ -74,15 +74,15 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kvr-Nv-YBS">
-                                <rect key="frame" x="188.5" y="517" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="500" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="rMD-z4-E3a" secondAttribute="bottom" id="50j-OY-ue6"/>
                             <constraint firstItem="rMD-z4-E3a" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="59B-9F-T4Q"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="RAB-Bl-XoW" secondAttribute="trailing" id="GnV-Ry-dzQ"/>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="bottom" secondItem="rMD-z4-E3a" secondAttribute="bottom" id="K9Y-hO-ubf"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="rMD-z4-E3a" secondAttribute="trailing" id="MSm-SI-qJG"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="8Kq-xd-1G6" secondAttribute="trailing" id="VvQ-Zn-N4c"/>
                             <constraint firstItem="rMD-z4-E3a" firstAttribute="top" secondItem="RAB-Bl-XoW" secondAttribute="bottom" constant="14" id="g6H-Uj-XV7"/>
