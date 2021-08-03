@@ -283,6 +283,7 @@
 "p2p_transfer_confirm" = "დადასტურება";
 
 /* Transactions History */
+"transactions_title" = "ტრანზაქციები";
 "transactions_filter_title" = "ფილტრი";
 "transactions_details_total_amount" = "ჯამური თანხა";
 "transactions_details_fee_amount" = "ტრანზაქციის საკომისიო";
@@ -291,6 +292,9 @@
 "transactions_details_payment_provider_name" = "გადახდის პროვაიდერი";
 "transactions_details_type_deposit" = "შემოტანა";
 "transactions_details_type_withdraw" = "გატანა";
+"transactions_all" = "ყველა ტრანზაქცია";
+"transactions_deposit" = "შევსება";
+"transactions_withdraw" = "გადარიცხვა";
 
 /* Account Parameters */
 "account_parameters_title" = "ანგარიშის პარამეტრები";

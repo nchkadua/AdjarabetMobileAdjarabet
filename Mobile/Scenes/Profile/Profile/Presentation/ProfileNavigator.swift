@@ -12,7 +12,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var accountInfoViewControllerFactory: AccountInfoViewControllerFactory
     @Inject(from: .factories) public var depositViewControllerFactory: DepositViewControllerFactory
     @Inject(from: .factories) public var withdrawViewControllerFactory: WithdrawViewControllerFactory
-    @Inject(from: .factories) public var transactionHistoryViewControllerFactory: TransactionsViewControllerFactory
+    @Inject(from: .factories) private var transactionHistoryViewControllerFactory: TransactionsViewControllerFactory
     @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
     @Inject(from: .factories) public var accountParametersViewControllerFactory: AccountParametersViewControllerFactory
     @Inject(from: .factories) public var myCardsViewControllerFactory: MyCardsViewControllerFactory
