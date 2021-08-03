@@ -41,18 +41,14 @@ public class MainContainerViewController: UIViewController {
         add(child: pageViewController)
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         pageViewController.view.pin(to: view)
-
-//        appPageViewController.orderedViewControllers = [navigator.mainTabBarFactory.make().wrap(in: ABNavigationController.self), navigator.profileFactory.make().wrap(in: ABNavigationController.self)]
     }
 
     // MARK: Public methods
     public func jumpToMainTabBar() {
-//        pageViewController.jumgToViewController(at: 0, direction: .reverse)
         pageViewController.previous()
     }
 
     public func jumpToProfile() {
-//        pageViewController.jumgToViewController(at: 1, direction: .forward)
         pageViewController.next()
     }
 

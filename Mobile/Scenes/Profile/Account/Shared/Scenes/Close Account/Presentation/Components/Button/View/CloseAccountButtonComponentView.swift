@@ -32,11 +32,7 @@ class CloseAccountButtonComponentView: UIView {
     }
 
     private func bind() {
-        viewModel?.action.subscribe(onNext: { [weak self] action in
-            switch action {
-            default:
-                break
-            }
+        viewModel?.action.subscribe(onNext: {_ in
         }).disposed(by: diposeBag)
 
         viewModel.didBind()
