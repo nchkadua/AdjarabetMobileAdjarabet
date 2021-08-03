@@ -19,6 +19,7 @@ class MainTabBarViewModelTests: XCTestCase {
     }
 
     func testMainTabBarViewModelViewDidLoad() {
+        /* Tab bar removed
         // given
         let initialExpectation = self.expectation(description: "Setup Tab Bar")
         let setupTabBarExpectation = self.expectation(description: "Initial")
@@ -36,6 +37,7 @@ class MainTabBarViewModelTests: XCTestCase {
         
         // then
         waitForExpectations(timeout: 0.3, handler: nil)
+         */
     }
     
     func testMainTabBarViewModelViewDidLoadSelectSamePage() {
