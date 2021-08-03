@@ -85,7 +85,7 @@ extension ContactPhoneComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
-        separator.setBackgorundColor(to: .opaque())
+        separator.setBackgorundColor(to: .nonOpaque())
 
         titleLabel.setFont(to: .body1(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
