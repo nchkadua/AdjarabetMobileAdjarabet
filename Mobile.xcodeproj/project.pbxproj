@@ -532,7 +532,6 @@
 		CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E294C256E8F1F001FE225 /* Double+Extension.swift */; };
 		CE752DF126B02B08000FB8A4 /* ContactAddressComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */; };
 		CE752DF326B02C75000FB8A4 /* AddressListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */; };
-		CE752DF526B0389E000FB8A4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE752DF426B0389E000FB8A4 /* MessageUI.framework */; };
 		CE769897269EF341009972B2 /* PasswordResetOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */; };
 		CE769898269EF341009972B2 /* PasswordResetOptionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */; };
 		CE769899269EF341009972B2 /* PasswordResetOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769894269EF341009972B2 /* PasswordResetOptionsViewController.swift */; };
@@ -1838,7 +1837,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE752DF526B0389E000FB8A4 /* MessageUI.framework in Frameworks */,
 				CE76FD8B257666E200D8AB04 /* CoreLocation.framework in Frameworks */,
 				A72C63B603E92CF41AB99753 /* Pods_Mobile.framework in Frameworks */,
 			);

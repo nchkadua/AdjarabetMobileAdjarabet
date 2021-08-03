@@ -48,6 +48,11 @@ public class LoginViewController: ABViewController {
         setupAccessibilityIdentifiers()
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: LoginViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
