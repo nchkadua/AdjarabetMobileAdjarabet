@@ -111,7 +111,7 @@ extension DefaultAccountParametersViewModel: AccountParametersViewModel {
                     case .didSelect:
                         self.routeSubject.onNext(.openCloseAccount)
                     }
-                })
+                }).disposed(by: disposeBag)
                 componentViewModel = viewModel
             }
             dataProvider.append(componentViewModel!)

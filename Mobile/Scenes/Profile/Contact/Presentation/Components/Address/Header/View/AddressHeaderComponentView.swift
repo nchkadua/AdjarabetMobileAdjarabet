@@ -37,8 +37,6 @@ class AddressHeaderComponentView: UIView {
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let title): self?.set(title)
-            default:
-                break
             }
         }).disposed(by: disposeBag)
 
