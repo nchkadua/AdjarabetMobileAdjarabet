@@ -284,14 +284,18 @@
 "p2p_transfer_confirm" = "confirm";
 
 /* Transactions History */
-"transactions_filter_title" = "Filter";
-"transactions_details_total_amount" = "Total amount";
-"transactions_details_fee_amount" = "Transaction fee";
-"transactions_details_date" = "Date";
-"transactions_details_type" = "Transaction type";
-"transactions_details_payment_provider_name" = "Payment provider";
-"transactions_details_type_deposit" = "DEPOSIT";
-"transactions_details_type_withdraw" = "WITHDRAW";
+"transactions_title" = "transactions";
+"transactions_filter_title" = "filter";
+"transactions_details_total_amount" = "total amount";
+"transactions_details_fee_amount" = "transaction fee";
+"transactions_details_date" = "date";
+"transactions_details_type" = "transaction type";
+"transactions_details_payment_provider_name" = "payment provider";
+"transactions_details_type_deposit" = "deposit";
+"transactions_details_type_withdraw" = "withdraw";
+"transactions_all" = "all transactions";
+"transactions_deposit" = "deposit";
+"transactions_withdraw" = "withdraw";
 
 /* Access History */
 "access_history_device_desktop" = "Desktop";

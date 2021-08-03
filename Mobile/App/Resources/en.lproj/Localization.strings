@@ -283,6 +283,7 @@
 "p2p_transfer_confirm" = "Confirm";
 
 /* Transactions History */
+"transactions_title" = "Transactions";
 "transactions_filter_title" = "Filter";
 "transactions_details_total_amount" = "Total amount";
 "transactions_details_fee_amount" = "Transaction fee";
@@ -291,6 +292,9 @@
 "transactions_details_payment_provider_name" = "Payment provider";
 "transactions_details_type_deposit" = "DEPOSIT";
 "transactions_details_type_withdraw" = "WITHDRAW";
+"transactions_all" = "All Transactions";
+"transactions_deposit" = "Deposit";
+"transactions_withdraw" = "Withdraw";
 
 /* Account Parameters */
 "account_parameters_title" = "Account Parameters";

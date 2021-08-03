@@ -26,9 +26,9 @@ public struct TransactionTypeManager {
     }
 
     public init() {
-        dataSource.append(TransactionTypeModel(title: "ყველა ტრანზაქცია", checked: filterState[.all]!, transactionType: .all))
-        dataSource.append(TransactionTypeModel(title: "შევსება", checked: filterState[.deposit]!, transactionType: .deposit))
-        dataSource.append(TransactionTypeModel(title: "გადარიცხვა", checked: filterState[.withdraw]!, transactionType: .withdraw))
+        dataSource.append(TransactionTypeModel(title: R.string.localization.transactions_all.localized(), checked: filterState[.all]!, transactionType: .all))
+        dataSource.append(TransactionTypeModel(title: R.string.localization.transactions_deposit.localized(), checked: filterState[.deposit]!, transactionType: .deposit))
+        dataSource.append(TransactionTypeModel(title: R.string.localization.transactions_withdraw.localized(), checked: filterState[.withdraw]!, transactionType: .withdraw))
     }
 
     public mutating func setTransaction(type: TransactionType, to isChecked: Bool) {
