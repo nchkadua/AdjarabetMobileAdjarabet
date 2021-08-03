@@ -22,7 +22,8 @@ public class AppDelegateServices: NSObject, UIApplicationDelegate {
         //Keyboard
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
-        IQKeyboardManager.shared.keyboardDistanceFromTextField = UIScreen.main.nativeBounds.height / 7.7
+
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = UIScreen.main.nativeBounds.height / 8.2
     }
 
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {

@@ -40,14 +40,6 @@ class ContactPhoneComponentView: UIView {
     }
 
     private func bind() {
-        disposeBag = DisposeBag()
-        viewModel?.action.subscribe(onNext: { [weak self] action in
-            switch action {
-            default:
-                break
-            }
-        }).disposed(by: disposeBag)
-
         viewModel.didBind()
     }
 
@@ -85,7 +77,7 @@ extension ContactPhoneComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
-        separator.setBackgorundColor(to: .opaque())
+        separator.setBackgorundColor(to: .nonOpaque())
 
         titleLabel.setFont(to: .body1(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())

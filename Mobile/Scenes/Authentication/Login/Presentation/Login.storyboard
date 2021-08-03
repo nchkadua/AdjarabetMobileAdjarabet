@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="770"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="owt-7I-83A">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="394"/>
+                                        <rect key="frame" x="0.0" y="40" width="414" height="394"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="87" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-yu-5lM">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="33"/>
@@ -176,7 +176,7 @@
                                     <constraint firstAttribute="trailing" secondItem="owt-7I-83A" secondAttribute="trailing" id="L2H-wr-uOo"/>
                                     <constraint firstItem="owt-7I-83A" firstAttribute="leading" secondItem="Wj6-Tz-yeo" secondAttribute="leading" id="RxF-Yp-8w8"/>
                                     <constraint firstItem="owt-7I-83A" firstAttribute="centerX" secondItem="Wj6-Tz-yeo" secondAttribute="centerX" id="d24-1q-nhr"/>
-                                    <constraint firstItem="owt-7I-83A" firstAttribute="top" secondItem="Wj6-Tz-yeo" secondAttribute="top" id="wxA-dI-xOl"/>
+                                    <constraint firstItem="owt-7I-83A" firstAttribute="top" secondItem="Wj6-Tz-yeo" secondAttribute="top" constant="40" id="wxA-dI-xOl"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -214,17 +214,6 @@
             <point key="canvasLocation" x="-415.94202898550731" y="137.27678571428569"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="GbW-aK-Pmt">
-            <size key="intrinsicContentSize" width="69" height="30"/>
-        </designable>
-        <designable name="JKT-UG-DAh">
-            <size key="intrinsicContentSize" width="49" height="30"/>
-        </designable>
-        <designable name="ZCq-Gy-Mg6">
-            <size key="intrinsicContentSize" width="129" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Login/logo" width="160" height="20"/>
         <image name="Login/logo_red" width="38" height="38"/>

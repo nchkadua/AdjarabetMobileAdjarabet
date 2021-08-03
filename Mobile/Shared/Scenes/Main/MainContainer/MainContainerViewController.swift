@@ -13,9 +13,9 @@ public class MainContainerViewController: UIViewController {
     public lazy var navigator = MainContainerNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 
-    private lazy var appPageViewController: ABPageViewController = ABPageViewController(transitionStyle: .scroll)
-    private lazy var pageViewController: TestPageVC = {
-        return TestPageVC(viewControllers: [navigator.mainTabBarFactory.make().wrap(in: ABNavigationController.self), navigator.profileFactory.make().wrap(in: ABNavigationController.self)])
+    private lazy var appPageViewController: ABPageViewController = ABPageViewController(viewControllers: [])
+    private lazy var pageViewController: ABPageViewController = {
+        return ABPageViewController(viewControllers: [navigator.mainTabBarFactory.make().wrap(in: ABNavigationController.self), navigator.profileFactory.make().wrap(in: ABNavigationController.self)])
     }()
 
     // MARK: - Lifecycle methods
@@ -41,18 +41,14 @@ public class MainContainerViewController: UIViewController {
         add(child: pageViewController)
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         pageViewController.view.pin(to: view)
-
-//        appPageViewController.orderedViewControllers = [navigator.mainTabBarFactory.make().wrap(in: ABNavigationController.self), navigator.profileFactory.make().wrap(in: ABNavigationController.self)]
     }
 
     // MARK: Public methods
     public func jumpToMainTabBar() {
-//        pageViewController.jumgToViewController(at: 0, direction: .reverse)
         pageViewController.previous()
     }
 
     public func jumpToProfile() {
-//        pageViewController.jumgToViewController(at: 1, direction: .forward)
         pageViewController.next()
     }
 

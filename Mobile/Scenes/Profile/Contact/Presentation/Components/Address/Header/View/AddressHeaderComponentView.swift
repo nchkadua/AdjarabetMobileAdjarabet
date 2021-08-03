@@ -37,8 +37,6 @@ class AddressHeaderComponentView: UIView {
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .set(let title): self?.set(title)
-            default:
-                break
             }
         }).disposed(by: disposeBag)
 
@@ -62,7 +60,7 @@ extension AddressHeaderComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
-        separator.setBackgorundColor(to: .opaque())
+        separator.setBackgorundColor(to: .nonOpaque())
 
         titleLabel.setFont(to: .body1(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
