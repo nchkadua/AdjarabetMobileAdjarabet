@@ -195,27 +195,4 @@ extension PasswordChangeViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [oldPasswordInputView, newPasswordInputView, repeatePasswordInputView] }
 }
 
-// MARK: Accessibility Identifiers
-extension PasswordChangeViewController: Accessible {
-    private func setupAccessibilityIdentifiers() {
-        generateAccessibilityIdentifiers()
-
-        oldPasswordInputView.setAccessibilityIdTextfield(id: "PasswordChangeViewController.oldPasswordInputViewTextField")
-        newPasswordInputView.setAccessibilityIdTextfield(id: "PasswordChangeViewController.newPasswordInputViewTextField")
-        repeatePasswordInputView.setAccessibilityIdTextfield(id: "PasswordChangeViewController.repeatePasswordInputViewTextField")
-
-        oldPasswordInputView.setAccessibilityIdsToPlaceholderLabels(id: "PasswordChangeViewController.oldPasswordInputView.placeholder")
-        newPasswordInputView.setAccessibilityIdsToPlaceholderLabels(id: "PasswordChangeViewController.newPasswordInputView.placeholder")
-        repeatePasswordInputView.setAccessibilityIdsToPlaceholderLabels(id: "PasswordChangeViewController.repeatePasswordInputView.placeholder")
-
-        oldPasswordInputView.setAccessibilityIdsToRightImage(id: "PasswordChangeViewController.oldPasswordInputView.rightImage")
-        newPasswordInputView.setAccessibilityIdsToRightImage(id: "PasswordChangeViewController.newPasswordInputView.rightImage")
-        repeatePasswordInputView.setAccessibilityIdsToRightImage(id: "PasswordChangeViewController.repeatePasswordInputView.rightImage")
-
-        updatePasswordButton.accessibilityIdentifier = "PasswordChangeViewController.updatePasswordButton"
-
-        navigationItem.titleView?.accessibilityIdentifier = "PasswordChangeViewController.title"
-    }
-}
-
 extension PasswordChangeViewController: CommonBarButtonProviding { }

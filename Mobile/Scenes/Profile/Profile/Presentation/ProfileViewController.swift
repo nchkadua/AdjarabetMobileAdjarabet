@@ -25,7 +25,6 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
@@ -127,4 +126,3 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 
 extension ProfileViewController: CommonBarButtonProviding { }
 
-extension ProfileViewController: Accessible {}
