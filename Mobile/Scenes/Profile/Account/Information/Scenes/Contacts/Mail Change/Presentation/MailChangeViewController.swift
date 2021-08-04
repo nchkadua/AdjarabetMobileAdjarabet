@@ -148,14 +148,4 @@ extension MailChangeViewController: InputViewsProviding {
     public var inputViews: [ABInputView] { [mailInputView, passwordInputView] }
 }
 
-// MARK: Accessibility Identifiers
-extension MailChangeViewController: Accessible {
-    private func setupAccessibilityIdentifiers() {
-        generateAccessibilityIdentifiers()
-
-        changeButton.accessibilityIdentifier = "MailChangeViewController.changeButton"
-        navigationItem.titleView?.accessibilityIdentifier = "MailChangeViewController.title"
-    }
-}
-
 extension MailChangeViewController: CommonBarButtonProviding { }

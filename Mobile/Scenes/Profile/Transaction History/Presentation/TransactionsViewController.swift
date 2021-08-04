@@ -20,7 +20,6 @@ class TransactionsViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -101,5 +100,3 @@ class TransactionsViewController: ABViewController {
 }
 
 extension TransactionsViewController: CommonBarButtonProviding { }
-
-extension TransactionsViewController: Accessible {}

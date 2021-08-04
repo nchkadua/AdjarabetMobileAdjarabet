@@ -45,7 +45,6 @@ public class LoginViewController: ABViewController {
         subscribeToPasswordInputView()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        setupAccessibilityIdentifiers()
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -306,21 +305,5 @@ extension LoginViewController: FooterComponentViewDelegate {
     public func languageDidChange(language: Language) {
         setup()
         viewModel.languageDidChange()
-    }
-}
-
-// MARK: Appium
-//extension LoginViewController: Accessible { }
-
-extension LoginViewController: Accessible {
-    private func setupAccessibilityIdentifiers() {
-        generateAccessibilityIdentifiers()
-        usernameInputView.setAccessibilityIdTextfield(id: "LoginViewController.usernameInputTextField")
-        passwordInputView.setAccessibilityIdTextfield(id: "LoginViewController.passwordInputTextField")
-
-        usernameInputView.setAccessibilityIdsToPlaceholderLabels(id: "LoginViewController.usernameInputTextField.placeholder")
-        passwordInputView.setAccessibilityIdsToPlaceholderLabels(id: "LoginViewController.passwordInputTextField.placeholder")
-
-        footerComponentView.setAccessibilityIdToLAnguageButton("LoginViewController.languageButton")
     }
 }

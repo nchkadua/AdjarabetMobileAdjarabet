@@ -36,7 +36,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -179,8 +178,6 @@ extension HomeViewController: HomeHeaderViewDelegate {
         searchViewModel.didDismiss()
     }
 }
-
-extension HomeViewController: Accessible {}
 
 extension HomeViewController: HomeViewCollectionViewControllerDelegate {
     func placeholderAppeared() {

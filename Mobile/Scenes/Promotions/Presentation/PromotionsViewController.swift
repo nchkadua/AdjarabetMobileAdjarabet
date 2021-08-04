@@ -24,7 +24,6 @@ public class PromotionsViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
     }
 
     private func bind(to viewModel: PromotionsViewModel) {
@@ -62,5 +61,3 @@ public class PromotionsViewController: ABViewController {
 }
 
 extension PromotionsViewController: CommonBarButtonProviding { }
-
-extension PromotionsViewController: Accessible {}
