@@ -15,7 +15,6 @@ public class TermsAndConditionsTableViewCell: AppTableViewCell {
             guard let dataProvider = dataProvider as? TermsAndConditionsTableViewCellDataProvider else {
                 fatalError("error")
             }
-            dataProvider.height = 19
             componentView.setAndBind(viewModel: dataProvider)
         }
     }
