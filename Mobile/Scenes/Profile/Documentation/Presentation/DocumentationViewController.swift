@@ -42,8 +42,10 @@ public class DocumentationViewController: ABViewController {
 
     private func didRecive(route: DocumentationViewModelRoute) {
         switch route {
-        case .openPage(let destination): navigateTo(destination)
-        case .navigateToPrivacyPolicy(let params): navigator.navigate(to: .privacyPolicy(with: params), animated: true)
+        case .openPage(let destination):
+            navigateTo(destination)
+        case .navigateToPrivacyPolicy(let params):
+            navigator.navigate(to: .privacyPolicy(with: params), animated: true)
         }
     }
 

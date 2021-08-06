@@ -37,14 +37,19 @@ class TermsAndConditionsComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title):
-                self?.setupUI(title: title)
+            case .set(let number, let title):
+                self?.setupUI(number: number, title: title)
             default:
                 break
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
+    }
+    
+    private func setupUI(number: Int, title: String) {
+        numberLabel.text = "\(number)"
+        titleLabel.text = title
     }
 }
 
@@ -60,6 +65,10 @@ extension TermsAndConditionsComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.secondaryBg().value
-        numberView.layer.cornerRadius = numberView.layer.bounds.width
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        numberView.rounded()
     }
 }

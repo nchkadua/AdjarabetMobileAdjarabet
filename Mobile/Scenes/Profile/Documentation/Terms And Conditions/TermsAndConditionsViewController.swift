@@ -35,9 +35,17 @@ public class TermsAndConditionsViewController: ABViewController {
     }
 
     private func didRecive(action: TermsAndConditionsViewModelOutputAction) {
+        switch action {
+        case .initialize(let dataprovider):
+            appTableViewController.dataProvider = dataprovider
+        }
     }
     
     private func didRecive(route: TermsAndConditionsViewModelRoute) {
+        switch route {
+        case .openPage(let destination):
+            showAlert(title: destination)
+        }
     }
     
     // MARK: Setup methods
@@ -57,10 +65,9 @@ public class TermsAndConditionsViewController: ABViewController {
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
         appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
-        appTableViewController.tableView.isScrollEnabled = false
 
         appTableViewController.tableView?.register(types: [
-            DocumentationActionTableViewCell.self
+            TermsAndConditionsTableViewCell.self
         ])
     }
 }

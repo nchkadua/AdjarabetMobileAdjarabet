@@ -9,14 +9,17 @@
 import RxSwift
 
 public protocol TermsAndConditionsComponentViewModel: TermsAndConditionsComponentViewModelInput,
-                                                TermsAndConditionsComponentViewModelOutput {}
+                                                      TermsAndConditionsComponentViewModelOutput {}
 
 public struct TermsAndConditionsComponentViewModelParams {
-    
+    public var number: Int
+    public var title: String
+//    public var destination: TermsAndConditionsDest
 }
 
 public protocol TermsAndConditionsComponentViewModelInput {
     func didBind()
+    func didSelect(at indexPath: IndexPath)
 }
 
 public protocol TermsAndConditionsComponentViewModelOutput {
@@ -25,7 +28,8 @@ public protocol TermsAndConditionsComponentViewModelOutput {
 }
 
 public enum TermsAndConditionsComponentViewModelOutputAction {
-    
+    case set(number: Int, title: String)
+    case didSelect(indexPath: IndexPath)
 }
 
 public class DefaultTermsAndConditionsComponentViewModel {
@@ -37,11 +41,16 @@ public class DefaultTermsAndConditionsComponentViewModel {
 }
 
 extension DefaultTermsAndConditionsComponentViewModel: TermsAndConditionsComponentViewModel {
+    
     public var action: Observable<TermsAndConditionsComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
 
     public func didBind() {
-//        actionSubject.onNext()
+        actionSubject.onNext(.set(number: params.number, title: params.title))
+    }
+    
+    public func didSelect(at indexPath: IndexPath) {
+        actionSubject.onNext(.didSelect(indexPath: indexPath))
     }
 }

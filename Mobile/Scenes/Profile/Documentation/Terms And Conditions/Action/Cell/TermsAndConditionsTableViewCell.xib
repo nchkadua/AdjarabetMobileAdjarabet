@@ -26,6 +26,9 @@
                 <constraint firstItem="rQn-Xh-1fX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="m23-P2-jKe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="componentView" destination="rQn-Xh-1fX" id="Qd0-Jo-5yx"/>
+            </connections>
             <point key="canvasLocation" x="-154.34782608695653" y="-322.76785714285711"/>
         </view>
     </objects>

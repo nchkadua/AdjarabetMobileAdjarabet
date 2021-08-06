@@ -6,7 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public protocol TermsAndConditionsTableViewCellDataProvider: TermsAndConditionsComponentViewModel, StaticHeightDataProvider { }
+public protocol TermsAndConditionsTableViewCellDataProvider: TermsAndConditionsComponentViewModel, StaticHeightDataProvider, AppCellDelegate { }
 
 public extension TermsAndConditionsTableViewCellDataProvider {
     var identifier: String { TermsAndConditionsTableViewCell.identifierValue }

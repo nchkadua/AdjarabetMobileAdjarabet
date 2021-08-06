@@ -25,15 +25,14 @@ public protocol TermsAndConditionsViewModelOutput {
 }
 
 public enum TermsAndConditionsViewModelOutputAction {
-    case set(title: String)
-    case didSelect(indexPath: IndexPath)
-}
-
-public enum TermsAndConditionsViewModelRoute {
     case initialize(AppListDataProvider)
 }
 
-public class DefaultTermsAndConditionsViewModel {
+public enum TermsAndConditionsViewModelRoute {
+    case openPage(destionation: String) // TODO change
+}
+
+public class DefaultTermsAndConditionsViewModel: DefaultBaseViewModel {
     public var params: TermsAndConditionsViewModelParams
     private let actionSubject = PublishSubject<TermsAndConditionsViewModelOutputAction>()
     private let routeSubject = PublishSubject<TermsAndConditionsViewModelRoute>()
@@ -44,9 +43,25 @@ public class DefaultTermsAndConditionsViewModel {
 }
 
 extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
+    
     public var action: Observable<TermsAndConditionsViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<TermsAndConditionsViewModelRoute> { routeSubject.asObserver() }
     
     public func viewDidLoad() {
+        var dataProviders: AppCellDataProviders = []
+        for (i, item) in TermsAndConditionsActionItemsProvider.items().enumerated() {
+            let viewModel = DefaultTermsAndConditionsComponentViewModel(params: .init(number: i+1, title: item.title))
+            
+            viewModel.action.subscribe(onNext: { [weak self] action in
+                switch action {
+                case .didSelect: self?.routeSubject.onNext(.openPage(destionation: viewModel.params.title))
+                default: break
+                }
+            }).disposed(by: self.disposeBag)
+            
+            dataProviders.append(viewModel)
+        }
+        
+        actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
 }
