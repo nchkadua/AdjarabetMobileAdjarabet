@@ -58,11 +58,14 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
                     self?.notify(.setupView(loaderIsHiden: true))
                 }
             case .failure(let error):
+                {}() // TODO
+                /*
                 let description = error.description
                 description.onOkAction = { [weak self] in
                     self?.notify(.close)
                 }
                 self.notify(.showError(error: .`init`(description: description)))
+                */
             }
         }
     }
@@ -88,12 +91,15 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
         case .success(let code, _):
             handleSuccessOTP(with: code ?? "")
         case .error:
+            {}() // TODO
+            /*
             let error: ABError = .default
             let description = error.description
             description.onOkAction = { [weak self] in
                 self?.notify(.close)
             }
             self.notify(.showError(error: .`init`(description: description)))
+            */
         }
     }
 
@@ -109,11 +115,14 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
                     self?.notify(.setupView(loaderIsHiden: true))
                 }
             case .failure(let error):
+                {}() // TODO
+                /*
                 let description = error.description
                 description.onOkAction = { [weak self] in
                     self?.notify(.close)
                 }
                 self.notify(.showError(error: .`init`(description: description)))
+                */
             }
         }
     }

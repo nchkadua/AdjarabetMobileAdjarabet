@@ -26,7 +26,8 @@ public class MailChangeViewController: ABViewController {
         subscribeToPasswordInputView()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        setupAccessibilityIdentifiers()
+        // {}() // TODO
+        // setupAccessibilityIdentifiers()
     }
 
     public override func viewDidAppear(_ animated: Bool) {

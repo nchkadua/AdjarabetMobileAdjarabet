@@ -19,7 +19,7 @@ extension CoreApiPasswordChangeRepository: PasswordChangeRepository {
         guard let userId = userSession.userId,
               let sessionId = userSession.sessionId
         else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 

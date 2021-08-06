@@ -20,8 +20,8 @@ public struct ResetPasswordDTO: DataTransferResponse {
     typealias Entity = ResetPasswordEntity
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-        guard body.statusCode == AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue else {
-            return .failure(.default)
+        guard body.statusCode == AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue else { // TODO: apply correct success condition
+            return .failure(.init())
         }
 
         return .success(.init(statusCode: body.statusCode))

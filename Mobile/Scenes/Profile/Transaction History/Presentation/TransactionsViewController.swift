@@ -45,7 +45,8 @@ class TransactionsViewController: ABViewController {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertionIndexPathes, deletionIndexPathes: deletionIndexPathes)
             }
         case .showError(let error):
-            showAlert(title: error.description.description)
+            {}() // TODO
+            // showAlert(title: error.description.description)
         }
     }
 
