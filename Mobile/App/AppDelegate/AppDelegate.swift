@@ -90,6 +90,8 @@ public extension DependencyContainer {
         Module { DefaultFAQCategoriesViewModel(params: .init(showDismissButton: true)) as FAQCategoriesViewModel }
         Module { DefaultFAQQuestionsViewModel(params: .init(showDismissButton: true)) as FAQQuestionsViewModel }
         Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
+        Module { DefaultTermsAndConditionsViewModel(params: .init()) as TermsAndConditionsViewModel }
+        Module { DefaultTermsAndConditionsViewModel(params: .init()) as DefaultTermsAndConditionsViewModel }
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
     }
 
@@ -166,7 +168,6 @@ public extension DependencyContainer {
         Module { DefaultAddressChangeViewControllerFactory() as AddressChangeViewControllerFactory }
         Module { DefaultPasswordChangeViewControllerFactory() as PasswordChangeViewControllerFactory }
         Module { DefaultPasswordResetViewControllerFactory() as PasswordResetViewControllerFactory }
-        Module { DefaultPasswordResetViewControllerFactory() as PasswordResetViewControllerFactory }
         Module { DefaultTransactionsFilterViewControllerFactory() as TransactionsFilterViewControllerFactory }
         Module { DefaultAccountParametersViewControllerFactory() as AccountParametersViewControllerFactory }
         Module { DefaultPhoneNumberChangeViewControllerFactory() as PhoneNumberChangeViewControllerFactory }
@@ -180,10 +181,12 @@ public extension DependencyContainer {
         Module { DefaultBonusViewControllerFactory() as BonusViewControllerFactory }
         Module { DefaultHighSecurityViewControllerFactory() as HighSecurityViewControllerFactory }
         Module { DefaultDocumentationViewControllerFactory() as DocumentationViewControllerFactory }
+        Module { DefaultTermsAndConditionsViewControllerFactory() as TermsAndConditionsViewControllerFactory }
         Module { DefaultPasswordResetOptionsViewControllerFactory() as PasswordResetOptionsViewControllerFactory }
         Module { DefaultFAQCategoriesViewControllerFactory() as FAQCategoriesViewControllerFactory }
         Module { DefaultFAQQuestionsViewControllerFactory() as FAQQuestionsViewControllerFactory }
         Module { DefaultFAQAnswersViewControllerFactory() as FAQAnswersViewControllerFactory }
+        Module { DefaultTermsAndConditionsViewControllerFactory() as TermsAndConditionsViewControllerFactory }
         Module { DefaultContactUsViewControllerFactory() as ContactUsViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }

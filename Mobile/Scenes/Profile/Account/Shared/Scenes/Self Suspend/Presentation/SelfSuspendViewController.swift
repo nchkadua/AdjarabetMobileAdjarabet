@@ -52,7 +52,7 @@ public class SelfSuspendViewController: ABViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .secondaryBg())
+        setBaseBackgroundColor(to: .secondaryBg())
         setupNavigationItems()
         setupKeyboard()
         setupInputView()

@@ -114,6 +114,17 @@
 "privacy_policy" = "კონფიდენციალურობის პოლიტიკა";
 "log_out" = "ანგარიშიდან გასვლა";
 
+/* Terms And Conditions*/
+"fair_game_agreement" = "სამართლიანი თამაშის შეთანხმება";
+"responsible_gaming_policy" = "თამაშის პასუხისმგებლობის პოლიტიკა";
+"sport" = "სპორტი";
+"gambling" = "აზარტული თამაშები";
+"slots" = "სლოტები";
+"live_casino" = "ლაივ კაზინო";
+"bura" = "ბურა";
+"seka" = "სეკა";
+"domino" = "დომინო";
+
 /* Account Info */
 "account_information_title" = "ანგარიშის ინფორმაცია";
 "account_info_private_info_title" = "პირადი ინფორმაცია";

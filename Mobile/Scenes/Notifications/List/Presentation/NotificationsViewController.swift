@@ -31,7 +31,7 @@ public class NotificationsViewController: ABViewController {
     }
 
     private func setup() {
-        setBaseBackgorundColor(to: .primaryBg())
+        setBaseBackgroundColor(to: .primaryBg())
         setupNavigationItems()
         setupTableView()
     }

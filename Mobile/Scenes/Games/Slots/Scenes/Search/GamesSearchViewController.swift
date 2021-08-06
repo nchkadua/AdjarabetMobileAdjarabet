@@ -59,7 +59,7 @@ public class GamesSearchViewController: UIViewController {
         collectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
         collectionViewController.view.pin(to: view)
         view.setBackgorundColor(to: .primaryBg())
-        collectionViewController.setBaseBackgorundColor()
+        collectionViewController.setBaseBackgroundColor()
         collectionViewController.collectionView.alwaysBounceVertical = true
         collectionViewController.collectionView.keyboardDismissMode = .interactive
         collectionViewController.view.backgroundColor = view.backgroundColor

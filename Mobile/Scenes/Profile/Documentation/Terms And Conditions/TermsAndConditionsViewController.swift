@@ -1,16 +1,16 @@
 //
-//  DocumentationViewController.swift
+//  TermsAndConditionsViewController.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 06.07.21.
+//  Created by Giga Khizanishvili on 30.07.21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import RxSwift
 
-public class DocumentationViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: DocumentationViewModel
-    public lazy var navigator = DocumentationNavigator(viewController: self)
+public class TermsAndConditionsViewController: ABViewController {
+    @Inject(from: .viewModels) public var viewModel: TermsAndConditionsViewModel
+    public lazy var navigator = TermsAndConditionsNavigator(viewController: self)
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
 
@@ -24,7 +24,7 @@ public class DocumentationViewController: ABViewController {
     }
 
     // MARK: Bind to viewModel's observable properties
-    private func bind(to viewModel: DocumentationViewModel) {
+    private func bind(to viewModel: TermsAndConditionsViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
@@ -34,27 +34,17 @@ public class DocumentationViewController: ABViewController {
         }).disposed(by: disposeBag)
     }
 
-    private func didRecive(action: DocumentationViewModelOutputAction) {
+    private func didRecive(action: TermsAndConditionsViewModelOutputAction) {
         switch action {
-        case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
+        case .initialize(let dataprovider):
+            appTableViewController.dataProvider = dataprovider
         }
     }
 
-    private func didRecive(route: DocumentationViewModelRoute) {
+    private func didRecive(route: TermsAndConditionsViewModelRoute) {
         switch route {
         case .openPage(let destination):
-            navigateTo(destination)
-        case .navigateToPrivacyPolicy(let params):
-            navigator.navigate(to: .privacyPolicy(with: params), animated: true)
-        }
-    }
-
-    private func navigateTo(_ destination: DocumentationDestination) {
-        switch destination {
-        case .termsAndConditions:
-            navigator.navigate(to: .termsAndConditions(with: .init()), animated: true)
-        case .privacyPolicy:
-            viewModel.createPrivacyPolicyRequest()
+            showAlert(title: destination)
         }
     }
 
@@ -66,7 +56,7 @@ public class DocumentationViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        setTitle(title: R.string.localization.documentation_title.localized())
+        setTitle(title: R.string.localization.terms_and_conditions.localized())
         setBackBarButtonItemIfNeeded()
     }
 
@@ -75,10 +65,9 @@ public class DocumentationViewController: ABViewController {
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
         appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
-        appTableViewController.tableView.isScrollEnabled = false
 
         appTableViewController.tableView?.register(types: [
-            DocumentationActionTableViewCell.self
+            TermsAndConditionsTableViewCell.self
         ])
     }
 }

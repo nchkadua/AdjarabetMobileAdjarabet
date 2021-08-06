@@ -115,6 +115,17 @@
 "privacy_policy" = "Privacy Policy";
 "log_out" = "Log Out";
 
+/* Terms And Conditions*/
+"fair_game_agreement" = "Fair Game Agreement";
+"responsible_gaming_policy" = "Responsible Gaming Policy";
+"sport" = "Sport";
+"gambling" = "Gambling";
+"slots" = "Slots";
+"live_casino" = "Live Casino";
+"bura" = "Bura";
+"seka" = "Seka";
+"domino" = "Domino";
+
 /* Account Info */
 "account_information_title" = "Account Information";
 "account_info_private_info_title" = "Private Information";

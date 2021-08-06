@@ -85,7 +85,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .secondaryBg())
+        setBaseBackgroundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTableView()
     }
@@ -94,7 +94,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         appTableViewController.view.pin(to: view)
-        appTableViewController.setBaseBackgorundColor(to: .secondaryBg())
+        appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
 
         appTableViewController.tableView?.register(types: [
             ProfileInfoTableViewCell.self,

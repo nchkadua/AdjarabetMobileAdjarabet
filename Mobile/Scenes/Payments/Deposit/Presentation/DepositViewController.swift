@@ -61,7 +61,8 @@ public class DepositViewController: UIViewController {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor()
+        setBaseBackgroundColor()
+        // setupPageViewController()
         setupLabels()
         setupImageView()
         loader.isHidden = true

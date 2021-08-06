@@ -95,7 +95,7 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
 
     // MARK: Setup methods
     private func setup() {
-        setBaseBackgorundColor(to: .primaryBg())
+        setBaseBackgroundColor(to: .primaryBg())
         setupNavigationItems()
         setupSearchViewController()
         hideNavBar()
