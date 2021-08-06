@@ -17,7 +17,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
         guard let userName = userSession.username,
               let sessionId = userSession.sessionId
         else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 
@@ -34,7 +34,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
         guard let username = userSession.username,
               let sessionId = userSession.sessionId
         else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 
@@ -53,7 +53,7 @@ extension CorePasswordResetRepository: PasswordResetRepository {
         guard let userID = userSession.userId,
               let sessionId = userSession.sessionId
         else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 

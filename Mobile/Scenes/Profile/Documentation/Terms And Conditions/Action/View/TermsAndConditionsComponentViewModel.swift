@@ -41,7 +41,6 @@ public class DefaultTermsAndConditionsComponentViewModel {
 }
 
 extension DefaultTermsAndConditionsComponentViewModel: TermsAndConditionsComponentViewModel {
-    
     public var action: Observable<TermsAndConditionsComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
@@ -49,7 +48,7 @@ extension DefaultTermsAndConditionsComponentViewModel: TermsAndConditionsCompone
     public func didBind() {
         actionSubject.onNext(.set(number: params.number, title: params.title))
     }
-    
+
     public func didSelect(at indexPath: IndexPath) {
         actionSubject.onNext(.didSelect(indexPath: indexPath))
     }

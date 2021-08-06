@@ -40,6 +40,7 @@ public class AccountInfoViewController: ABViewController {
     @IBOutlet private weak var contactInfoHeaderLabel: UILabel!
     @IBOutlet private weak var personalInfoHeaderLabel: UILabel!
     @IBOutlet private weak var closeAccountView: CloseAccountButtonComponentView!
+    @IBOutlet private weak var communicationLanguageComponent: CommunicationLanguageComponentView!
 
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
@@ -63,12 +64,32 @@ public class AccountInfoViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didReceive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: AccountInfoViewModelOutputAction) {
         switch action {
         case .setupWithAccountInfoModel(let accountInfoModel):
             setupViewsWith(accountInfoModel: accountInfoModel)
+        case .setAndBindCommunicationLanguage(let viewModel):
+            communicationLanguageComponent.setAndBind(viewModel: viewModel)
+        case .setPersonalID(let id): personalIdView.set(titleText: id)
+        case .setAddress(let address): addressView.set(titleText: address)
+        case .showError(let error):
+            {}() // TODO
+            // showAlert(title: error.description.description)
+        }
+    }
+
+    private func didReceive(route: AccountInfoViewModelRoute) {
+        switch route {
+        case .otp(let params):
+            navigator.navigate(to: .otp(params: params), animated: true)
+        case .addressChange(let params):
+            navigator.navigate(to: .addressChange(params: params), animated: true)
         }
     }
 
@@ -197,7 +218,7 @@ public class AccountInfoViewController: ABViewController {
     }
 
     @objc private func editAddressAction() {
-        navigator.navigate(to: .addressChange, animated: true)
+        viewModel.changeAddressTapped()
     }
 
     @objc private func closeAccountAction() {

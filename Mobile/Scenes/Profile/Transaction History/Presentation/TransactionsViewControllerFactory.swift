@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol TransactionsViewControllerFactory {
+protocol TransactionsViewControllerFactory {
     func make() -> TransactionsViewController
 }
 
-public class DefaultTransactionsViewControllerFactory: TransactionsViewControllerFactory {
-    public func make() -> TransactionsViewController {
+class DefaultTransactionsViewControllerFactory: TransactionsViewControllerFactory {
+    func make() -> TransactionsViewController {
         R.storyboard.transactions().instantiate(controller: TransactionsViewController.self)!
     }
 }

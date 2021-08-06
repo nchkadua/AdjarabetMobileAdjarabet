@@ -8,58 +8,65 @@
 
 import RxSwift
 
-public protocol TransactionsViewModel: TransactionsViewModelInput, TransactionsViewModelOutput, ABTableViewControllerDelegate {
-}
+protocol TransactionsViewModel: TransactionsViewModelInput,
+                                TransactionsViewModelOutput,
+                                ABTableViewControllerDelegate {}
 
-public protocol TransactionsViewModelInput {
+protocol TransactionsViewModelInput {
     func viewDidLoad()
     func calendarTabItemClicked()
 }
 
-public protocol TransactionsViewModelOutput {
+protocol TransactionsViewModelOutput {
     var action: Observable<TransactionsViewModelOutputAction> { get }
     var route: Observable<TransactionsViewModelRoute> { get }
 }
 
-public enum TransactionsViewModelOutputAction {
+enum TransactionsViewModelOutputAction {
     case languageDidChange
     case initialize(AppListDataProvider)
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
+    case showError(error: ABError)
 }
 
-public enum TransactionsViewModelRoute {
+enum TransactionsViewModelRoute {
     case openTransactionDetails(transactionHistory: TransactionHistory)
     case openTransactionFilter(params: TransactionsFilterViewModelParams)
 }
 
-public class DefaultTransactionsViewModel: DefaultBaseViewModel {
+class DefaultTransactionsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<TransactionsViewModelOutputAction>()
     private let routeSubject = PublishSubject<TransactionsViewModelRoute>()
+
     @Inject(from: .useCases) private var displayTransactionsUseCase: DisplayTransactionHistoriesUseCase
+    @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
+
+    // State
     private var page: PageDescription = .init()
-    private var transactionsDataProvider: AppCellDataProviders = []
     private var filteredParams: DisplayTransactionHistoriesUseCaseParams?
+    private var transactionsDataProvider: AppCellDataProviders = []
+
     private let dayDateFormatter = ABDateFormater(with: .day)
     private let hourDateFormatter = ABDateFormater(with: .hour)
 
     private var uniqueHeaderDatesSet: Set<String>  = []
-    public override func languageDidChange() {
+    override func languageDidChange() {
         actionSubject.onNext(.languageDidChange)
     }
 }
 
 extension DefaultTransactionsViewModel: TransactionsViewModel {
-    public var action: Observable<TransactionsViewModelOutputAction> { actionSubject.asObserver() }
-    public var route: Observable<TransactionsViewModelRoute> { routeSubject.asObserver() }
+    var action: Observable<TransactionsViewModelOutputAction> { actionSubject.asObserver() }
+    var route: Observable<TransactionsViewModelRoute> { routeSubject.asObserver() }
 
     // MARK: TransactionsViewModelInput
 
-    public func viewDidLoad() {
+    func viewDidLoad() {
         displayEmptyTransactionList()
         displayUnfilteredTransactions()
     }
 
-    public func calendarTabItemClicked() {
+    func calendarTabItemClicked() {
         var params = TransactionsFilterViewModelParams()
         if let filteredParams = filteredParams {
             params.fromDate = dayDateFormatter.date(from: filteredParams.fromDate)
@@ -74,10 +81,10 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     // MARK: Display transctions methods
 
     private func displayEmptyTransactionList() {
-        self.resetPaging()
-        let initialEmptyDataProvider: AppCellDataProviders = []
+        resetPaging()
         uniqueHeaderDatesSet.removeAll()
-        self.actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
+        let initialEmptyDataProvider: AppCellDataProviders = []
+        actionSubject.onNext(.initialize(initialEmptyDataProvider.makeList()))
     }
 
     private func displayUnfilteredTransactions() {
@@ -130,7 +137,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
                 self.appendPage(transactions: viewModels)
             case .failure(let error):
                 self.displayEmptyTransactionList()
-                print(error)
+                self.actionSubject.onNext(.showError(error: error))
             }
         }
     }
@@ -269,8 +276,6 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
 
     private func prettyFeeAmount(from rawAmount: Double) -> String {
         let flooredAmount = Double(rawAmount) / 100
-        let amountString = String(format: "%.2f", flooredAmount)
-        let finalString = "₾ \(amountString)"
-        return finalString
+        return amountFormatter.format(number: flooredAmount, in: .sn)
     }
 }

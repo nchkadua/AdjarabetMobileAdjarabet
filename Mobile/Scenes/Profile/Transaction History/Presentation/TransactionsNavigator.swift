@@ -6,22 +6,22 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public class TransactionsNavigator: Navigator {
-    @Inject(from: .factories) public var transactionDetailsFactory: TransactionDetailsViewControllerFactory
-    @Inject(from: .factories) public var transactionsFilterViewControllerFactory: TransactionsFilterViewControllerFactory
+class TransactionsNavigator: Navigator {
+    @Inject(from: .factories) private var transactionDetailsFactory: TransactionDetailsViewControllerFactory
+    @Inject(from: .factories) private var transactionsFilterViewControllerFactory: TransactionsFilterViewControllerFactory
 
     private weak var viewController: UIViewController?
 
-    public init(viewController: UIViewController) {
+    init(viewController: UIViewController) {
         self.viewController = viewController
     }
 
-    public enum Destination {
+    enum Destination {
         case transactionDetails(params: TransactionDetailsViewModelParams)
         case filter(params: TransactionsFilterViewModelParams)
     }
 
-    public func navigate(to destination: Destination, animated animate: Bool) {
+    func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .transactionDetails(let params):
             navigateToTransactionDetails(params: params, animate: animate)

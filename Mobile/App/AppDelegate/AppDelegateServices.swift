@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SDWebImageSVGCoder
+import IQKeyboardManagerSwift
 
 public class AppDelegateServices: NSObject, UIApplicationDelegate {
     private var services: [AppDelegateServiceProvider]
@@ -14,6 +16,14 @@ public class AppDelegateServices: NSObject, UIApplicationDelegate {
     public init(services: [AppDelegateServiceProvider]) {
         self.services = services
         super.init()
+        //SVG
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+        //Keyboard
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = UIScreen.main.nativeBounds.height / 8.2
     }
 
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {

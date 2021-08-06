@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CommunicationLanguageEntity {
+public enum CommunicationLanguageEntity {
     case georgian
     case english
     case russian

@@ -19,6 +19,11 @@ protocol UserInfoReadableRepository {
      */
     typealias CurrentUserInfoHandler = (Result<UserInfoEntity, ABError>) -> Void
     func currentUserInfo(params: CurrentUserInfoParams, completion: @escaping CurrentUserInfoHandler)
+    /**
+     Returns user id document
+     */
+    typealias IDDocumentsHandler = (Result<IDDocumentsEntity, ABError>) -> Void
+    func getIDDocuments(handler: @escaping IDDocumentsHandler)
 }
 
 // for currentUserInfo

@@ -18,6 +18,7 @@ public struct FooterComponentViewModelParams {
 public protocol FooterComponentViewModelInput {
     func didBind()
     func didChangeLanguage()
+    func contactUsDidClick()
 }
 
 public protocol FooterComponentViewModelOutput {
@@ -25,8 +26,9 @@ public protocol FooterComponentViewModelOutput {
 }
 
 public enum FooterComponentViewModelOutputAction {
-    case didChangeLanguage(FooterComponentViewModel)
+    case didChangeLanguage
     case setBackgroundColor(_ color: DesignSystem.Color)
+    case contactUsDidClick
 }
 
 public class DefaultFooterComponentViewModel: DefaultBaseViewModel {
@@ -49,6 +51,10 @@ extension DefaultFooterComponentViewModel: FooterComponentViewModel {
     }
 
     public func didChangeLanguage() {
-        actionSubject.onNext(.didChangeLanguage(self))
+        actionSubject.onNext(.didChangeLanguage)
+    }
+
+    public func contactUsDidClick() {
+        actionSubject.onNext(.contactUsDidClick)
     }
 }

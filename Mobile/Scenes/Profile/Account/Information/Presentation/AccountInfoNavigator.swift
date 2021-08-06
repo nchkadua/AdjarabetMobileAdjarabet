@@ -14,6 +14,7 @@ public class AccountInfoNavigator: Navigator {
     @Inject(from: .factories) public var passwordChangeViewControllerFactory: PasswordChangeViewControllerFactory
     @Inject(from: .factories) public var phoneNumberChangeViewControllerFactory: PhoneNumberChangeViewControllerFactory
     @Inject(from: .factories) private var closeAccountFactory: CloseAccountViewControllerFactory
+    @Inject(from: .factories) private var otpFactory: OTPFactory
 
     public init(viewController: UIViewController) {
         self.viewController = viewController
@@ -24,18 +25,20 @@ public class AccountInfoNavigator: Navigator {
         case passwordChange
         case mailChange
         case phoneNumberChange
-        case addressChange
+        case addressChange(params: AddressChangeViewModelParams)
         case closeAccount
+        case otp(params: OTPViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
         case .selfSuspend: navigateToSelfSuspend(animate: animate)
         case .mailChange: navigateToMailChange(animate: animate)
-        case .addressChange: navigateToAddressChange(animate: animate)
+        case .addressChange(let params): navigateToAddressChange(params: params, animate: animate)
         case .passwordChange: navigateToPasswordChange(animate: animate)
         case .phoneNumberChange: navigateToPhoneNumberChange(animate: animate)
         case .closeAccount: navigateToCloseAccount()
+        case .otp(let params): navigateToOtp(with: params, animate: animate)
         }
     }
 
@@ -53,8 +56,8 @@ public class AccountInfoNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
     }
 
-    private func navigateToAddressChange(animate: Bool) {
-        let vc = addressChangeViewControllerFactory.make()
+    private func navigateToAddressChange(params: AddressChangeViewModelParams, animate: Bool) {
+        let vc = addressChangeViewControllerFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navC, animated: animate, completion: nil)
@@ -79,5 +82,12 @@ public class AccountInfoNavigator: Navigator {
         let navc = vc.wrapInNavWith(presentationStyle: .overFullScreen)
         vc.hideNavBar()
         viewController?.navigationController?.present(navc, animated: false, completion: nil)
+    }
+
+    private func navigateToOtp(with params: OTPViewModelParams, animate: Bool) {
+        let vc = otpFactory.make(params: params)
+        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
+        navc.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navc, animated: animate)
     }
 }

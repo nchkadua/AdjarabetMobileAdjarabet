@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public class TransactionsViewController: ABViewController {
+class TransactionsViewController: ABViewController {
     // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: TransactionsViewModel
     public lazy var navigator = TransactionsNavigator(viewController: self)
@@ -20,7 +20,6 @@ public class TransactionsViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -38,12 +37,16 @@ public class TransactionsViewController: ABViewController {
         switch action {
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
+            if appListDataProvider.IsEmpty { showEmptyPage() }
         case .languageDidChange:
             print("Handle language Change")
         case .reloadItems(let items, let insertionIndexPathes, let deletionIndexPathes):
             UIView.performWithoutAnimation {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertionIndexPathes, deletionIndexPathes: deletionIndexPathes)
             }
+        case .showError(let error):
+            {}() // TODO
+            // showAlert(title: error.description.description)
         }
     }
 
@@ -69,7 +72,7 @@ public class TransactionsViewController: ABViewController {
 
     private func setupNavigationItems() {
         setBackBarButtonItemIfNeeded()
-        setTitle(title: "ტრანზაქციები")
+        setTitle(title: R.string.localization.transactions_title.localized())
 
         let calendarButton = makeCalendarBarButtonItem()
         navigationItem.rightBarButtonItem = calendarButton.barButtonItem
@@ -91,8 +94,10 @@ public class TransactionsViewController: ABViewController {
         appTableViewController.isTabBarManagementEnabled = true
         appTableViewController.delegate = viewModel
     }
+
+    private func showEmptyPage() {
+        // TODO: Nika
+    }
 }
 
 extension TransactionsViewController: CommonBarButtonProviding { }
-
-extension TransactionsViewController: Accessible {}

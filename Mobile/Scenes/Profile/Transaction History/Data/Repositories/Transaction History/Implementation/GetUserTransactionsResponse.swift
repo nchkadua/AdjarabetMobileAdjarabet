@@ -10,51 +10,51 @@ import Foundation
 
 struct GetUserTransactionsResponse: CoreDataTransferResponse {
     struct UsersTransaction: Codable {
-        let id: String?
-        let userAccountId: Int?
         let amount: Double?
-        let bonusAwardID: Int?
-        let bonusLockedAmount: Double?
-        let bonusAmount: Double?
         let providerName: String?
-        let transactionStatus: Int?
-        let providerType: Int?
-        let feePercentage: Double?
         let feeAmount: Double?
-        let totalAmount: Double?
-        let providerUserID: String?
-        let providerServiceID: Int?
-        let exchangeRate: Double?
-        let groupId: String?
         let dateCreated: String?
-        let dateModified: String?
-        let isRoot: Bool?
-        let channelType: Int?
-        let providerOppCode: String?
+     // let id: String?
+     // let userAccountId: Int?
+     // let bonusAwardID: Int?
+     // let bonusLockedAmount: Double?
+     // let bonusAmount: Double?
+     // let transactionStatus: Int?
+     // let providerType: Int?
+     // let feePercentage: Double?
+     // let totalAmount: Double?
+     // let providerUserID: String?
+     // let providerServiceID: Int?
+     // let exchangeRate: Double?
+     // let groupId: String?
+     // let dateModified: String?
+     // let isRoot: Bool?
+     // let channelType: Int?
+     // let providerOppCode: String?
      // let providerReferenceID: Int?
 
         enum CodingKeys: String, CodingKey {
-            case id = "ID"
-            case userAccountId = "UserAccountId"
             case amount = "Amount"
-            case bonusAwardID = "BonusAwardID"
-            case bonusLockedAmount = "BonusLockedAmount"
-            case bonusAmount = "BonusAmount"
             case providerName = "ProviderName"
-            case transactionStatus = "TransactionStatus"
-            case providerType = "ProviderType"
-            case feePercentage = "TxFeePercentage"
             case feeAmount = "TxFeeAmount"
-            case totalAmount = "TotalAmount"
-            case providerUserID = "ProviderUserID"
-            case providerServiceID = "ProviderServiceID"
-            case exchangeRate = "ExchangeRate"
-            case groupId = "GroupID"
             case dateCreated = "DateCreated"
-            case dateModified = "DateModified"
-            case isRoot = "IsRoot"
-            case channelType = "ChannelType"
-            case providerOppCode = "ProviderOppCode"
+         // case id = "ID"
+         // case userAccountId = "UserAccountId"
+         // case bonusAwardID = "BonusAwardID"
+         // case bonusLockedAmount = "BonusLockedAmount"
+         // case bonusAmount = "BonusAmount"
+         // case transactionStatus = "TransactionStatus"
+         // case providerType = "ProviderType"
+         // case feePercentage = "TxFeePercentage"
+         // case totalAmount = "TotalAmount"
+         // case providerUserID = "ProviderUserID"
+         // case providerServiceID = "ProviderServiceID"
+         // case exchangeRate = "ExchangeRate"
+         // case groupId = "GroupID"
+         // case dateModified = "DateModified"
+         // case isRoot = "IsRoot"
+         // case channelType = "ChannelType"
+         // case providerOppCode = "ProviderOppCode"
          // case providerReferenceID = "ProviderTxReferenceID"
         }
     }
@@ -77,7 +77,7 @@ struct GetUserTransactionsResponse: CoreDataTransferResponse {
             TransactionHistoryEntity(totalAmount: $0.amount,
                                      date: dateFormatter.date(from: $0.dateCreated ?? ""),
                                      feeAmount: $0.feeAmount,
-                                     providerName: $0.providerName ?? ""
+                                     providerName: $0.providerName
             ) }
         )
     }

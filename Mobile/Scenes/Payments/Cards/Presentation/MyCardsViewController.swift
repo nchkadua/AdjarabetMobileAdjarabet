@@ -20,7 +20,6 @@ public class MyCardsViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -87,5 +86,3 @@ public class MyCardsViewController: ABViewController {
 }
 
 extension MyCardsViewController: CommonBarButtonProviding { }
-
-extension MyCardsViewController: Accessible {}

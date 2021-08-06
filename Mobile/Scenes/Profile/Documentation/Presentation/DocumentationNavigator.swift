@@ -28,7 +28,7 @@ public class DocumentationNavigator: Navigator {
             navigateToTermsAndConditions(with: params, animate: animate)
         }
     }
-    
+
     private func navigateToTermsAndConditions(with params: TermsAndConditionsViewModelParams, animate: Bool) {
         print("Terms and Conditions") // TODO: remove this (used for debug)
         let vc = termsAndConditionsControllerFactory.make(params: params)

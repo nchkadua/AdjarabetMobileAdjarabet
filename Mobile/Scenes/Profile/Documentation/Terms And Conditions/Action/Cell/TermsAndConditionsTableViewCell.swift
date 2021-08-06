@@ -9,7 +9,7 @@
 public class TermsAndConditionsTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: TermsAndConditionsComponentView!
     override public class var identifier: Identifierable { R.nib.termsAndConditionsTableViewCell.name }
-    
+
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? TermsAndConditionsTableViewCellDataProvider else {

@@ -18,7 +18,6 @@ public struct BalanceComponentViewModelParams {
 
 public protocol BalanceComponentViewModelInput {
     func didBind()
-    func didClickBalance()
     func didClickWithdraw()
     func didClickDeposit()
 }
@@ -30,7 +29,6 @@ public protocol BalanceComponentViewModelOutput {
 
 public enum BalanceComponentViewModelOutputAction {
     case set(totalBalance: String)
-    case didClickBalance(BalanceComponentViewModel)
     case didClickWithdraw(BalanceComponentViewModel)
     case didClickDeposit(BalanceComponentViewModel)
 }
@@ -51,10 +49,6 @@ extension DefaultBalanceComponentViewModel: BalanceComponentViewModel {
     public func didBind() {
         let formattedAmount = amountFormatter.format(number: params.totalBalance, in: .s_n_a)
         actionSubject.onNext(.set(totalBalance: formattedAmount))
-    }
-
-    public func didClickBalance() {
-        actionSubject.onNext(.didClickBalance(self))
     }
 
     public func didClickWithdraw() {

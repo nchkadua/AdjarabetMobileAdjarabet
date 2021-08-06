@@ -43,25 +43,24 @@ public class DefaultTermsAndConditionsViewModel: DefaultBaseViewModel {
 }
 
 extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
-    
     public var action: Observable<TermsAndConditionsViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<TermsAndConditionsViewModelRoute> { routeSubject.asObserver() }
-    
+
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = []
         for (i, item) in TermsAndConditionsActionItemsProvider.items().enumerated() {
             let viewModel = DefaultTermsAndConditionsComponentViewModel(params: .init(number: i+1, title: item.title))
-            
+
             viewModel.action.subscribe(onNext: { [weak self] action in
                 switch action {
                 case .didSelect: self?.routeSubject.onNext(.openPage(destionation: viewModel.params.title))
                 default: break
                 }
             }).disposed(by: self.disposeBag)
-            
+
             dataProviders.append(viewModel)
         }
-        
+
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
 }

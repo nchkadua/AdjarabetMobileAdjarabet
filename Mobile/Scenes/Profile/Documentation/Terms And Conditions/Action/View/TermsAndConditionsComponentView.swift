@@ -17,7 +17,7 @@ class TermsAndConditionsComponentView: UIView {
     @IBOutlet weak var numberView: UIView!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -46,7 +46,7 @@ class TermsAndConditionsComponentView: UIView {
 
         viewModel.didBind()
     }
-    
+
     private func setupUI(number: Int, title: String) {
         numberLabel.text = "\(number)"
         titleLabel.text = title
@@ -66,7 +66,7 @@ extension TermsAndConditionsComponentView: Xibable {
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.secondaryBg().value
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         numberView.rounded()

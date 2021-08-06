@@ -21,7 +21,7 @@ extension CoreDataTransferResponse {
         let statusCode = body.statusCode
         if AdjarabetCoreStatusCode.STATUS_SUCCESS.rawValue != statusCode { // TODO: apply correct success condition
             let statusCode = AdjarabetCoreStatusCode(rawValue: statusCode) ?? .UNKNOWN
-            let error: ABError = ABError(coreStatusCode: statusCode) ?? .default
+            let error: ABError = ABError(coreStatusCode: statusCode) ?? .init()
             return .failure(error)
         }
         return entitySafely(header: header, body: body)

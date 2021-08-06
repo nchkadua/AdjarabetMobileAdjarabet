@@ -17,4 +17,17 @@ extension CoreApiUserInfoRepository: UserInfoRepository {
                 .setBody(key: .req, value: "getUserInfo")
         }
     }
+
+    func getIDDocuments(handler: @escaping IDDocumentsHandler) {
+        guard let userId = userSession.userId else {
+            handler(.failure(.init(type: .sessionNotFound)))
+            return
+        }
+
+        performTask(expecting: IDDocumentsDTO.self, completion: handler) { requestBuilder in
+            return requestBuilder
+                .setBody(key: .req, value: "getIDDocuments")
+                .setBody(key: .userId, value: String(userId))
+        }
+    }
 }

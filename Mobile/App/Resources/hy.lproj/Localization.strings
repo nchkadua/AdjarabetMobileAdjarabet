@@ -171,10 +171,12 @@
 "mail_change_password" = "დაადასტურეთ პაროლით";
 
 /* Address Change */
-"address_change_title" = "Change Address";
-"new_address_subtitle" = "Enter New Address";
-"new_address_placeholder" = "Enter New Address";
-"approve_address_button_title" = "Approve";
+"address_change_title" = "change address";
+"new_address_subtitle" = "enter new address";
+"new_address_placeholder" = "enter new address";
+"approve_address_button_title" = "approve";
+"address_change_rule_1" = "use only latin characters";
+"address_change_rule_2" = "write without spaces";
 
 /* Password Change */
 "password_change_title" = "Change Password";
@@ -293,14 +295,18 @@
 "p2p_transfer_confirm" = "confirm";
 
 /* Transactions History */
-"transactions_filter_title" = "Filter";
-"transactions_details_total_amount" = "Total amount";
-"transactions_details_fee_amount" = "Transaction fee";
-"transactions_details_date" = "Date";
-"transactions_details_type" = "Transaction type";
-"transactions_details_payment_provider_name" = "Payment provider";
-"transactions_details_type_deposit" = "DEPOSIT";
-"transactions_details_type_withdraw" = "WITHDRAW";
+"transactions_title" = "transactions";
+"transactions_filter_title" = "filter";
+"transactions_details_total_amount" = "total amount";
+"transactions_details_fee_amount" = "transaction fee";
+"transactions_details_date" = "date";
+"transactions_details_type" = "transaction type";
+"transactions_details_payment_provider_name" = "payment provider";
+"transactions_details_type_deposit" = "deposit";
+"transactions_details_type_withdraw" = "withdraw";
+"transactions_all" = "all transactions";
+"transactions_deposit" = "deposit";
+"transactions_withdraw" = "withdraw";
 
 /* Access History */
 "access_history_device_desktop" = "Desktop";
@@ -420,6 +426,13 @@
 "faq_faq_subtitle" = "კითხვები მომხმარებლებისგან";
 "faq_social_platforms_title" = "სოციალური ქსელები";
 "faq_social_platforms_subtitle" = "გაიგე რა ხდება აჭარაბეთის გარშემო!";
+
+/* Contact Us */
+"contact_use_title" = "Contact";
+"contact_call_us" = "Call Us";
+"contact_addresses" = "Addresses";
+"contact_mail_title1" = "კლიენტთა მომსახურების ცენტრთან დასაკავშირებლად მოგვწერეთ ამ მისამართზე";
+"contact_mail_title2" = "თქვენი დოკუმენტის გამოგზავნა შეგიძლიათ ამ მისამართზე";
 
 /* Countries */
 "georgia" = "Georgia";

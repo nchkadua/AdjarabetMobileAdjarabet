@@ -221,9 +221,7 @@ open class EMPageViewController: UIViewController, UIScrollViewDelegate {
      */
     @objc(scrollForwardAnimated:completion:)
     open func scrollForward(animated: Bool, completion: ((_ transitionSuccessful: Bool) -> Void)?) {
-        
         if (self.afterViewController != nil) {
-            
             // Cancel current animation and move
             if self.scrolling {
                 if self.isOrientationHorizontal {
@@ -231,7 +229,6 @@ open class EMPageViewController: UIViewController, UIScrollViewDelegate {
                 } else {
                     self.scrollView.setContentOffset(CGPoint(x: 0, y: self.view.bounds.height * 2), animated: false)
                 }
-                
             }
             
             self.didFinishScrollingCompletionHandler = completion
@@ -254,7 +251,6 @@ open class EMPageViewController: UIViewController, UIScrollViewDelegate {
     @objc(scrollReverseAnimated:completion:)
     open func scrollReverse(animated: Bool, completion: ((_ transitionSuccessful: Bool) -> Void)?) {
         if (self.beforeViewController != nil) {
-            
             // Cancel current animation and move
             if self.scrolling {
                 self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)

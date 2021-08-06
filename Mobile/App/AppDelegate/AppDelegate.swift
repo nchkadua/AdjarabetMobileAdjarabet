@@ -7,17 +7,12 @@
 //
 
 import UIKit
-import SDWebImageSVGCoder
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let services: AppDelegateServices
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //SVG
-        let SVGCoder = SDImageSVGCoder.shared
-        SDImageCodersManager.shared.addCoder(SVGCoder)
-
         return services.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -72,7 +67,7 @@ public extension DependencyContainer {
         Module { DefaultBiometricSettingsViewModel() as BiometricSettingsViewModel }
         Module { DefaultSelfSuspendViewModel() as SelfSuspendViewModel }
         Module { DefaultMailChangeViewModel() as MailChangeViewModel }
-        Module { DefaultAddressChangeViewModel() as AddressChangeViewModel }
+        Module { DefaultAddressChangeViewModel(params: .init()) as AddressChangeViewModel }
         Module { DefaultPasswordChangeViewModel() as PasswordChangeViewModel }
         Module { DefaultPasswordResetViewModel(params: .init(username: nil, resetType: .sms, contact: "", showDismissButton: true)) as PasswordResetViewModel }
         Module { DefaultResetOptionsViewModel(params: .init(showUsernameInput: true, shouldShowDismissButton: true)) as ResetOptionsViewModel }
@@ -97,6 +92,7 @@ public extension DependencyContainer {
         Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as TermsAndConditionsViewModel }
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as DefaultTermsAndConditionsViewModel }
+        Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -191,6 +187,7 @@ public extension DependencyContainer {
         Module { DefaultFAQQuestionsViewControllerFactory() as FAQQuestionsViewControllerFactory }
         Module { DefaultFAQAnswersViewControllerFactory() as FAQAnswersViewControllerFactory }
         Module { DefaultTermsAndConditionsViewControllerFactory() as TermsAndConditionsViewControllerFactory }
+        Module { DefaultContactUsViewControllerFactory() as ContactUsViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }

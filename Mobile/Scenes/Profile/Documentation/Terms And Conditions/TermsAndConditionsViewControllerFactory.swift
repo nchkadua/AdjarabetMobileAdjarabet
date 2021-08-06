@@ -6,10 +6,8 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-
 import Foundation
 import Rswift
-
 
 public protocol TermsAndConditionsViewControllerFactory {
     func make(params: TermsAndConditionsViewModelParams) -> TermsAndConditionsViewController

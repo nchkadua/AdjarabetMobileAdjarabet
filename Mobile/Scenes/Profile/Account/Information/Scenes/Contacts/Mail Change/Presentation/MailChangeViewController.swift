@@ -26,7 +26,8 @@ public class MailChangeViewController: ABViewController {
         subscribeToPasswordInputView()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        setupAccessibilityIdentifiers()
+        // {}() // TODO
+        // setupAccessibilityIdentifiers()
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -145,17 +146,7 @@ public class MailChangeViewController: ABViewController {
 }
 
 extension MailChangeViewController: InputViewsProviding {
-    public var inputViews: [ABInputView] { [mailInputView] }
-}
-
-// MARK: Accessibility Identifiers
-extension MailChangeViewController: Accessible {
-    private func setupAccessibilityIdentifiers() {
-        generateAccessibilityIdentifiers()
-
-        changeButton.accessibilityIdentifier = "MailChangeViewController.changeButton"
-        navigationItem.titleView?.accessibilityIdentifier = "MailChangeViewController.title"
-    }
+    public var inputViews: [ABInputView] { [mailInputView, passwordInputView] }
 }
 
 extension MailChangeViewController: CommonBarButtonProviding { }

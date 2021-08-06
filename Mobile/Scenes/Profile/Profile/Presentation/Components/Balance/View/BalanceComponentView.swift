@@ -53,10 +53,6 @@ class BalanceComponentView: UIView {
         totalBalanceValueLabel.text = totalBalance
     }
 
-    @objc private func myBalanceAction() {
-        viewModel.didClickBalance()
-    }
-
     @objc private func withdrawButtonAction() {
         viewModel.didClickWithdraw()
     }

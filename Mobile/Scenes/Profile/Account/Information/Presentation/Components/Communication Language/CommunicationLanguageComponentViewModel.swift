@@ -9,13 +9,15 @@
 import RxSwift
 
 public protocol CommunicationLanguageComponentViewModel: CommunicationLanguageComponentViewModelInput,
-                                                CommunicationLanguageComponentViewModelOutput {}
+                                                         CommunicationLanguageComponentViewModelOutput {}
 
 public struct CommunicationLanguageComponentViewModelParams {
+    let language: CommunicationLanguageEntity
 }
 
 public protocol CommunicationLanguageComponentViewModelInput {
     func didBind()
+    func doneTapped(selectedLanguage: CommunicationLanguageEntity)
 }
 
 public protocol CommunicationLanguageComponentViewModelOutput {
@@ -24,22 +26,30 @@ public protocol CommunicationLanguageComponentViewModelOutput {
 }
 
 public enum CommunicationLanguageComponentViewModelOutputAction {
+    case setLanguage(_ language: CommunicationLanguageEntity)
+    case doneTapped(_ selectedLanguage: CommunicationLanguageEntity)
 }
 
-public class DefaultCommunicationLanguageComponentViewModel {
-    public var params: CommunicationLanguageComponentViewModelParams
+class DefaultCommunicationLanguageComponentViewModel {
+    let params: CommunicationLanguageComponentViewModelParams
     private let actionSubject = PublishSubject<CommunicationLanguageComponentViewModelOutputAction>()
-    public init(params: CommunicationLanguageComponentViewModelParams) {
+    init(params: CommunicationLanguageComponentViewModelParams) {
         self.params = params
     }
 }
 
 extension DefaultCommunicationLanguageComponentViewModel: CommunicationLanguageComponentViewModel {
-    public var action: Observable<CommunicationLanguageComponentViewModelOutputAction> {
+    var action: Observable<CommunicationLanguageComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
 
-    public func didBind() {
-//        actionSubject.onNext()
+    func didBind() {
+        actionSubject.onNext(.setLanguage(params.language))
+    }
+
+    func doneTapped(selectedLanguage: CommunicationLanguageEntity) {
+        if selectedLanguage != params.language {
+            actionSubject.onNext(.doneTapped(selectedLanguage))
+        }
     }
 }

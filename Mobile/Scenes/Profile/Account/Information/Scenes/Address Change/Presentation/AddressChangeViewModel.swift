@@ -11,8 +11,17 @@ import RxSwift
 public protocol AddressChangeViewModel: AddressChangeViewModelInput, AddressChangeViewModelOutput {
 }
 
-public protocol AddressChangeViewModelInput {
+public struct AddressChangeViewModelParams {
+    public let paramsOutputAction = PublishSubject<Action>()
+    public enum Action {
+        case success(newAddress: String)
+    }
+}
+
+public protocol AddressChangeViewModelInput: AnyObject {
+    var params: AddressChangeViewModelParams { get set }
     func viewDidLoad()
+    func approved(address: String)
 }
 
 public protocol AddressChangeViewModelOutput {
@@ -21,15 +30,22 @@ public protocol AddressChangeViewModelOutput {
 }
 
 public enum AddressChangeViewModelOutputAction {
+    case dismiss
+    case showError(error: String)
 }
 
 public enum AddressChangeViewModelRoute {
 }
 
 public class DefaultAddressChangeViewModel {
+    public var params: AddressChangeViewModelParams
     private let actionSubject = PublishSubject<AddressChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<AddressChangeViewModelRoute>()
     @Inject(from: .repositories) private var repo: AddressWritableRepository
+
+    public init(params: AddressChangeViewModelParams) {
+        self.params = params
+    }
 }
 
 extension DefaultAddressChangeViewModel: AddressChangeViewModel {
@@ -37,20 +53,6 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
     public var route: Observable<AddressChangeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        /*
-        repo.changeAddress(
-            with: .init(
-                address: "New Address"
-            )
-        ) { result in
-            switch result {
-            case .success:
-                print("changeAddress.Success")
-            case .failure(let error):
-                print("changeAddress.Failure:", error)
-            }
-        }
-        */
         /*
         repo.changeAddress(
             with: .init (
@@ -71,5 +73,22 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
             }
         }
         */
+    }
+
+    public func approved(address: String) {
+        repo.changeAddress(
+            with: .init(
+                address: address
+            )
+        ) { [weak self] result in
+            switch result {
+            case .success:
+                self?.params.paramsOutputAction.onNext(.success(newAddress: address))
+                self?.actionSubject.onNext(.dismiss)
+            case .failure(let error):
+                {}() // TODO
+                // self?.actionSubject.onNext(.showError(error: error.description.description))
+            }
+        }
     }
 }

@@ -19,7 +19,6 @@ public class AccountParametersViewController: ABViewController {
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -81,5 +80,3 @@ public class AccountParametersViewController: ABViewController {
 }
 
 extension AccountParametersViewController: CommonBarButtonProviding { }
-
-extension AccountParametersViewController: Accessible {}

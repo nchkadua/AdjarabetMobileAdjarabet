@@ -38,7 +38,7 @@ struct DefaultPostLoginRepository: PostLoginRepository {
               let userId = userSession.userId,
               let currencyId = userSession.currencyId
         else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 

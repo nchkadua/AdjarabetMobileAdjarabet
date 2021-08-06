@@ -47,7 +47,6 @@ public class ContactUsButton: UIButton {
 
     @objc private func call() {
         guard let number = URL(string: "tel://" + phoneNumber) else { return }
-
         UIApplication.shared.open(number)
     }
 

@@ -25,15 +25,8 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         setup()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        generateAccessibilityIdentifiers()
     }
 
-//    public override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController
-//        vc?.setPageViewControllerSwipeEnabled(true)
-//    }
-//
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
@@ -56,12 +49,12 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         case .didCopyUserId(let userId): didCopyUserId(userId: userId)
         case .didLogoutWithSuccess: navigator.navigate(to: .loginPage, animated: true)
         case .didLogoutWithError(let error): print("Logout with error , \(error)")
+        case .languageDidChange: handleLanguageChange()
         }
     }
 
     private func didRecive(route: ProfileViewModelRoute) {
         switch route {
-        case .openBalance: openBalance()
         case .openDeposit: openDeposit()
         case .openWithdraw: openWithdraw()
         case .openPage(let destination):
@@ -70,14 +63,12 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
             default:
                 openPage(destination: destination)
             }
+        case.openContactUs: navigator.navigate(to: .contactUs, animated: true)
         }
     }
 
     // MARK: Navigation methods
     private func didCopyUserId(userId: String) {
-    }
-
-    private func openBalance() {
     }
 
     private func openDeposit() {
@@ -127,8 +118,10 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
     @objc private func navigateToMainTabBar() {
         navigator.navigateToMainTabBar()
     }
+
+    private func handleLanguageChange() {
+        viewModel.setupDataProviders()
+    }
 }
 
 extension ProfileViewController: CommonBarButtonProviding { }
-
-extension ProfileViewController: Accessible {}

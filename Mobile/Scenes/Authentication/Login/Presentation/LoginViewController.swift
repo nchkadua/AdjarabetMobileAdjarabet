@@ -45,7 +45,11 @@ public class LoginViewController: ABViewController {
         subscribeToPasswordInputView()
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        setupAccessibilityIdentifiers()
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -82,6 +86,7 @@ public class LoginViewController: ABViewController {
 
     // MAKR: Setup methods
     private func setup() {
+//        keyScrollView = scrollView
         setBaseBackgroundColor(to: .secondaryBg())
         setupKeyboard()
         setupNavigationItem()
@@ -90,7 +95,7 @@ public class LoginViewController: ABViewController {
         setupButtons()
         setupInputViews()
         setupInputViewsObservation()
-        setDelegates()
+        setupFooter()
     }
 
     private func subscribeToPasswordInputView() {
@@ -216,8 +221,9 @@ public class LoginViewController: ABViewController {
         loginButton.setStyle(to: .primary(state: .active, size: .large))
     }
 
-    private func setDelegates() {
+    private func setupFooter() {
         footerComponentView.delegate = self
+        footerComponentView.contactUsButton.addTarget(self, action: #selector(navigateToContactUs), for: .touchUpInside)
     }
 
     // MARK: Actions
@@ -264,6 +270,11 @@ public class LoginViewController: ABViewController {
         navigator.navigate(to: .faq, animated: true)
     }
 
+    @objc private func navigateToContactUs() {
+        closeKeyboard()
+        navigator.navigate(to: .contactUs, animated: true)
+    }
+
     // MARK: Configuration
     private func updateLoginButton(isEnabled: Bool) {
         loginButton.isUserInteractionEnabled = isEnabled
@@ -294,21 +305,5 @@ extension LoginViewController: FooterComponentViewDelegate {
     public func languageDidChange(language: Language) {
         setup()
         viewModel.languageDidChange()
-    }
-}
-
-// MARK: Appium
-//extension LoginViewController: Accessible { }
-
-extension LoginViewController: Accessible {
-    private func setupAccessibilityIdentifiers() {
-        generateAccessibilityIdentifiers()
-        usernameInputView.setAccessibilityIdTextfield(id: "LoginViewController.usernameInputTextField")
-        passwordInputView.setAccessibilityIdTextfield(id: "LoginViewController.passwordInputTextField")
-
-        usernameInputView.setAccessibilityIdsToPlaceholderLabels(id: "LoginViewController.usernameInputTextField.placeholder")
-        passwordInputView.setAccessibilityIdsToPlaceholderLabels(id: "LoginViewController.passwordInputTextField.placeholder")
-
-        footerComponentView.setAccessibilityIdToLAnguageButton("LoginViewController.languageButton")
     }
 }

@@ -40,7 +40,7 @@ class TermsAndConditionsActionItemsProvider {
                 destination: .seka),
             TermsAndConditionsAction(
                 title: R.string.localization.domino.localized(),
-                destination: .domino),
+                destination: .domino)
         ]
     }
 }

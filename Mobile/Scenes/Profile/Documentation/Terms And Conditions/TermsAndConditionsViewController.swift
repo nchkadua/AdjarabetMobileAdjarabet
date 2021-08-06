@@ -11,7 +11,7 @@ import RxSwift
 public class TermsAndConditionsViewController: ABViewController {
     @Inject(from: .viewModels) public var viewModel: TermsAndConditionsViewModel
     public lazy var navigator = TermsAndConditionsNavigator(viewController: self)
-    
+
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
 
     // MARK: - Lifecycle methods
@@ -40,21 +40,21 @@ public class TermsAndConditionsViewController: ABViewController {
             appTableViewController.dataProvider = dataprovider
         }
     }
-    
+
     private func didRecive(route: TermsAndConditionsViewModelRoute) {
         switch route {
         case .openPage(let destination):
             showAlert(title: destination)
         }
     }
-    
+
     // MARK: Setup methods
     private func setup() {
         setBaseBackgroundColor(to: .secondaryBg())
         setupNavigationItems()
         setupTableView()
     }
-    
+
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.terms_and_conditions.localized())
         setBackBarButtonItemIfNeeded()
