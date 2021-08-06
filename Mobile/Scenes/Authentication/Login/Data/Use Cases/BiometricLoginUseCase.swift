@@ -43,7 +43,7 @@ public final class DefaultBiometricLoginUseCase: BiometricLoginUseCase {
                 biometricSuccess()
                 self?.loginUseCase.execute(username: username, password: password, completion: completion)
             case .failure(let error):
-                completion(.failure(.from(error)))
+                completion(.failure(.init(type: .from(error))))
             }
         }
 

@@ -53,7 +53,7 @@ struct DefaultLaunchUrlRepository: LaunchUrlRepository, CoreApiRepository {
 
     func url(token: String, gameId: String, handler: @escaping UrlHandler) {
         guard let sessionId = userSession.sessionId else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 

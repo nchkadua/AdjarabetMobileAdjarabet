@@ -125,4 +125,3 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 }
 
 extension ProfileViewController: CommonBarButtonProviding { }
-

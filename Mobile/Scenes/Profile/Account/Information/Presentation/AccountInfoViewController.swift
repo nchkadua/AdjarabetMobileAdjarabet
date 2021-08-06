@@ -79,7 +79,8 @@ public class AccountInfoViewController: ABViewController {
         case .setPersonalID(let id): personalIdView.set(titleText: id)
         case .setAddress(let address): addressView.set(titleText: address)
         case .showError(let error):
-            showAlert(title: error.description.description)
+            {}() // TODO
+            // showAlert(title: error.description.description)
         }
     }
 

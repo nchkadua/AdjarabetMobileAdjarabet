@@ -74,7 +74,8 @@ public class PasswordChangeViewController: ABViewController {
         setupPasswordButton()
         setupViews()
 
-        setupAccessibilityIdentifiers()
+        // {}() // TODO
+        // setupAccessibilityIdentifiers()
     }
 
     private func setupNavigationItems() {

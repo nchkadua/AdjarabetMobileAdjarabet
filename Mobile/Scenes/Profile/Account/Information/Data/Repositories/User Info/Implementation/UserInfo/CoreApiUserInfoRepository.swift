@@ -20,7 +20,7 @@ extension CoreApiUserInfoRepository: UserInfoRepository {
 
     func getIDDocuments(handler: @escaping IDDocumentsHandler) {
         guard let userId = userSession.userId else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 

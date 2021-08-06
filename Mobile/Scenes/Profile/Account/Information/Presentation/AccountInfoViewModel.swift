@@ -148,7 +148,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             case .success(let code, _):
                 self.changeLanguage(language: language, otpCode: code)
             case .error:
-                self.actionSubject.onNext(.showError(.default))
+                self.actionSubject.onNext(.showError(.init()))
             }
         }).disposed(by: disposeBag)
 

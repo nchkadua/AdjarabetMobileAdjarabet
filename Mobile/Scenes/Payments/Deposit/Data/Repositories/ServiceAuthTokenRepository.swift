@@ -22,7 +22,7 @@ struct DefaultServiceAuthTokenRepository: ServiceAuthTokenRepository, CoreApiRep
     func token(providerId: String, handler: @escaping TokenHandler) {
         guard let userId = userSession.userId
         else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 

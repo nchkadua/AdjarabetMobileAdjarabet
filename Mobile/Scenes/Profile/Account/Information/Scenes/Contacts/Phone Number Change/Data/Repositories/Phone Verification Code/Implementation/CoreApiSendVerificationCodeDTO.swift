@@ -21,8 +21,8 @@ struct CoreApiSendVerificationCodeDTO: DataTransferResponse {
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         guard let statusCode = AdjarabetCoreStatusCode(rawValue: body.statusCode),
-              statusCode == .OTP_IS_SENT
-        else { return .failure(.default) }
+              statusCode == .OTP_IS_SENT // TODO: apply correct success condition
+        else { return .failure(.init()) }
         return .success(())
     }
 }

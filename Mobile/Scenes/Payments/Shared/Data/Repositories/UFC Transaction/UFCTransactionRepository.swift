@@ -108,7 +108,7 @@ struct DefaultUFCTransactionRepository: UFCTransactionRepository {
               let currencyId = userSession.currencyId,
               let currency = Currency(currencyId: currencyId)
         else {
-            handler(.failure(.sessionNotFound))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 
@@ -142,7 +142,8 @@ struct DefaultUFCTransactionRepository: UFCTransactionRepository {
         guard let dataJson = try? JSONSerialization.data(withJSONObject: body, options: []),
               let dataString = String(data: dataJson, encoding: .ascii)
         else {
-            handler(.failure(.`init`(description: .init(description: "Request Parsing Error"))))
+            {}() // TODO
+            handler(.failure(.init(type: .`init`(description: .popup(description: .init(description: "Request parsing error"))))))
             return
         }
 

@@ -86,7 +86,8 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
                 self?.params.paramsOutputAction.onNext(.success(newAddress: address))
                 self?.actionSubject.onNext(.dismiss)
             case .failure(let error):
-                self?.actionSubject.onNext(.showError(error: error.description.description))
+                {}() // TODO
+                // self?.actionSubject.onNext(.showError(error: error.description.description))
             }
         }
     }

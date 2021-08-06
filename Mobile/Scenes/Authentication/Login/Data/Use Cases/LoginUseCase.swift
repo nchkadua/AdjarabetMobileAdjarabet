@@ -52,12 +52,12 @@ public final class DefaultLoginUseCase: LoginUseCase {
             switch result {
             case .success(let params):
                 guard params.codable.statusCode == .STATUS_SUCCESS else {
-                    completion(.failure(.default))
+                    completion(.failure(.init()))
                     return
                 }
 
                 if params.codable.errorCode == .USER_WITH_GIVEN_AUTH_CREDENTIALS_NOT_FOUND {
-                    completion(.failure(.wrongAuthCredentials))
+                    completion(.failure(.init(type: .wrongAuthCredentials)))
                     return
                 }
 
@@ -67,10 +67,10 @@ public final class DefaultLoginUseCase: LoginUseCase {
                     self?.save(params: params, password: password)
                     completion(.success(.success))
                 } else {
-                    completion(.failure(.default))
+                    completion(.failure(.init()))
                 }
             case .failure(let error):
-                completion(.failure(.from(error)))
+                completion(.failure(.init(type: .from(error))))
             }
         }
     }

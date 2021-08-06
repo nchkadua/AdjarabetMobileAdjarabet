@@ -72,7 +72,8 @@ public class DefaultLoginViewModel {
             case .otpRequried(let username): openOTP(username, otpType: .loginOTP)
             }
         case .failure(let error):
-            routeSubject.onNext(.openAlert(title: error.description.description))
+            {}() // TODO
+            // routeSubject.onNext(.openAlert(title: error.description.description))
         }
     }
 

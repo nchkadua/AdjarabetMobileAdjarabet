@@ -6,7 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-import Foundation
+import UIKit // only for UIImage
 
 /**
  ABError is domain entity which defines any error
@@ -17,105 +17,141 @@ import Foundation
  ABError entity supports mapping from any kind of error
  to ABError errors with initializers.
  */
-enum ABError {
-    case wrongAuthCredentials
-    case ipIsBlocked
-    case sessionNotFound
-    case mustBeMoreThanZero
-    case accountIsSuspended
-    case unableToGetBalance
-    case paymentAccountNotFound
-    case paymentAccountIsNotVerified
-    case unableToSendEmailVerificationEmailIsMissing
-    case bonusIsExpired
-    // general errors
-    case from(_ error: Error)
-    case `init`(description: Description = .init())
-    case `default`
 
-    var description: Description {
-        switch self {
-        case .wrongAuthCredentials:
-            return .init(description: R.string.localization.shared_aberror_wrong_auth_credentials_description.localized())
+class ABError {
+    let type: Type
+    lazy var description: Description = {
+        switch type {
         case .ipIsBlocked:
-            return .init(description: R.string.localization.shared_aberror_ip_is_blocked.localized())
-        case .sessionNotFound:
-            return .init(description: R.string.localization.shared_aberror_session_not_found.localized())
-        case .mustBeMoreThanZero:
-            return .init(description: R.string.localization.shared_aberror_must_be_more_than_zero.localized())
-        case .accountIsSuspended:
-            return .init(description: R.string.localization.shared_aberror_account_is_suspended.localized())
-        case .unableToGetBalance:
-            return .init(description: R.string.localization.shared_aberror_unable_to_get_balance.localized())
-        case .paymentAccountNotFound:
-            return .init(description: R.string.localization.shared_aberror_payment_account_not_found.localized())
-        case .paymentAccountIsNotVerified:
-            return .init(description: R.string.localization.shared_aberror_payment_account_is_not_verified.localized())
-        case .unableToSendEmailVerificationEmailIsMissing:
-            return .init(description: R.string.localization.shared_aberror_unable_to_send_email_verification_email_is_missing.localized())
-        case .bonusIsExpired:
-            return .init(description: R.string.localization.shared_aberror_bonus_is_expired.localized())
-        // add more errors here!
-        case .from(let error):
-            return .init(description: error.localizedDescription)
+            return .popup(description: .init(icon: .init(), description: "")) // TODO: add correct icon and description
+        case .wrongAuthCredentials:
+            return .notification(description: .init(icon: .init(), description: "")) // TODO: add correct icon and description
+        case .notConnected:
+            return .status(description: .init(description: "")) // TODO: add description
         case .`init`(let description):
             return description
-        default:
-            return .init()
+        case .from(let error):
+            return .popup(description: .init(description: error.localizedDescription))
+        default: // also case .default
+            return .popup()
+        }
+    }()
+
+    enum `Type` {
+        case ipIsBlocked
+        case wrongAuthCredentials
+        case notConnected
+        case sessionNotFound
+        // general errors
+        case `init`(description: Description = ABError().description)
+        case from(_ error: Error)
+        case `default`
+    }
+
+    enum Description {
+        case popup(description: Popup = .init())
+        case notification(description: Notification)
+        case status(description: Status)
+
+        class Popup {
+            private static let minButtonCount = 1
+            private static let maxButtonCount = 2
+
+            var icon: UIImage
+            var description: String
+            var buttons: [ButtonType]
+
+            enum ButtonType {
+                case gotIt
+                case tryAgain
+            }
+
+            init(
+                icon: UIImage = .init(), // TODO: add correct default icon
+                description: String = R.string.localization.shared_aberror_default_description.localized(),
+                buttons: [ButtonType] = [.gotIt]
+            ) {
+                guard buttons.count >= Popup.minButtonCount,
+                      buttons.count <= Popup.maxButtonCount,
+                      Set(buttons).count == buttons.count
+                else {
+                    fatalError("Button count must be more than or equal to \(Popup.minButtonCount) and less than or equal to \(Popup.maxButtonCount) and all elements must be unique")
+                }
+                self.icon = icon
+                self.description = description
+                self.buttons = buttons
+            }
+        }
+
+        class Notification {
+            var icon: UIImage
+            var description: String
+
+            init(
+                icon: UIImage = .init(), // TODO: add correct default icon
+                description: String = R.string.localization.shared_aberror_default_description.localized()
+            ) {
+                self.icon = icon
+                self.description = description
+            }
+        }
+
+        class Status {
+            var description: String
+            var type: Type
+
+            enum `Type` {
+                case negative
+                case positive
+            }
+
+            init(
+                description: String = R.string.localization.shared_aberror_default_description.localized(),
+                type: Type = .negative
+            ) {
+                self.description = description
+                self.type = type
+            }
         }
     }
 
-    class Description {
-        typealias DescriptionType = String
-        var description: DescriptionType
-
-        typealias OnOkActionType = () -> Void
-        var onOkAction: OnOkActionType
-
-        typealias OnCancelActionType = () -> Void
-        var onCancelAction: OnCancelActionType
-
-        init (
-            description: DescriptionType = R.string.localization.shared_aberror_default_description.localized(),
-            onOkAction: @escaping OnOkActionType = { },
-            onCancelAction: @escaping OnCancelActionType = { }
-        ) {
-            self.description = description
-            self.onOkAction = onOkAction
-            self.onCancelAction = onCancelAction
-        }
+    init(type: Type = .default) {
+        self.type = type
     }
 }
 
-// MARK: - Core API Error -> ABError
 extension ABError {
-    init?(coreStatusCode: AdjarabetCoreStatusCode) {
-        guard coreStatusCode != .STATUS_SUCCESS
+    convenience init?(coreStatusCode: AdjarabetCoreStatusCode) {
+        guard coreStatusCode != .STATUS_SUCCESS // TODO: apply correct success condition
         else { return nil }
+        let type: Type
         switch coreStatusCode {
-        case .USER_WITH_GIVEN_AUTH_CREDENTIALS_NOT_FOUND:          self = .wrongAuthCredentials
-        case .IP_IS_BLOCKED:                                       self = .ipIsBlocked
-        case .SESSION_NOT_FOUND:                                   self = .sessionNotFound
-        case .MUST_BE_MORE_THAN_ZERO:                              self = .mustBeMoreThanZero
-        case .ACCOUNT_IS_SUSPENDED:                                self = .accountIsSuspended
-        case .UNABLE_TO_GET_BALANCE:                               self = .unableToGetBalance
-        case .PAYMENT_ACCOUNT_NOT_FOUND:                           self = .paymentAccountNotFound
-        case .PAYMENT_ACCOUNT_IS_NOT_VERIFIED:                     self = .paymentAccountIsNotVerified
-        case .UNABLE_TO_SEND_EMAIL_VERIFICATION_EMAIL_IS_MISSING:  self = .unableToSendEmailVerificationEmailIsMissing
-        case .BONUS_IS_EXPIRED:                                    self = .bonusIsExpired
-        default: self = .default
+        case .USER_WITH_GIVEN_AUTH_CREDENTIALS_NOT_FOUND: type = .wrongAuthCredentials
+        case .IP_IS_BLOCKED:                              type = .ipIsBlocked
+        default:                                          type = .default
+        }
+        self.init(type: type)
+    }
+}
+
+extension ABError {
+    convenience init(dataTransferError: DataTransferError) {
+        // FIXME: refactor to all cases
+        if case .networkFailure(let networkError) = dataTransferError,
+           case .notConnected = networkError {
+            self.init(type: .notConnected)
+        } else {
+            self.init(type: .default)
         }
     }
 }
 
-// MARK: - Data Transfer Error -> ABError
-extension ABError {
-    init(dataTransferError: DataTransferError) {
-        self = .default
-    }
-}
-
-// MARK: - Implement Error Protocol
 extension ABError: LocalizedError {
-    var errorDescription: String? { description.description }
+    var errorDescription: String? {
+        switch description {
+        case .popup(let description):        return description.description
+        case .notification(let description): return description.description
+        case .status(let description):       return description.description
+        }
+    }
 }
