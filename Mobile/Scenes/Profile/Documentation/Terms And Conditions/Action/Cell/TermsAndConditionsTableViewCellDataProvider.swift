@@ -14,7 +14,7 @@ public extension TermsAndConditionsTableViewCellDataProvider {
         get { 64 }
         set { print(newValue) }
     }
-    var isHeightSet: Bool { true }
+    var isHeightSet: Bool { false }
 }
 
 extension DefaultTermsAndConditionsComponentViewModel: TermsAndConditionsTableViewCellDataProvider { }
