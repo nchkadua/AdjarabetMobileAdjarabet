@@ -23,6 +23,7 @@ class HighSecurityViewController: ABPopupViewController {
         super.viewDidLoad()
         bind(to: viewModel)
         setup()
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

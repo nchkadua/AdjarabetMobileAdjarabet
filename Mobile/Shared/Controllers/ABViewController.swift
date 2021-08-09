@@ -10,6 +10,13 @@ import RxSwift
 
 public class ABViewController: UIViewController, KeyboardListening, UIGestureRecognizerDelegate {
     public var disposeBag = DisposeBag()
+    var errorThrowing: ErrorThrowing? {
+        willSet {
+            newValue?.errorObservable.subscribe(onNext: { [weak self] error in
+                self?.show(error: error)
+            }).disposed(by: disposeBag)
+        }
+    }
 
     public var keyScrollView: UIScrollView? { nil }
     public private(set) var isKeyboardOpen: Bool = false
@@ -22,6 +29,10 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     public override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
+
+    func show(error: ABError) {
+        print("ABViewController.show(error:)", error.description) // {}()
     }
 
     public func addKeyboardDismissOnTap() {
