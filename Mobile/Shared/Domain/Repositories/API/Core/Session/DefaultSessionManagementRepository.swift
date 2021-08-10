@@ -14,7 +14,7 @@ public class DefaultSessionManagementRepository {
 }
 
 extension DefaultSessionManagementRepository: SessionManagementRepository {
-    public func aliveSession<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
+    func aliveSession<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "isSessionActive")

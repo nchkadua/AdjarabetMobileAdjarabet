@@ -8,10 +8,9 @@
 
 import RxSwift
 
-public class FAQQuestionsViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: FAQQuestionsViewModel
+public class FAQQuestionsViewController: ABViewController {
+    @Inject(from: .viewModels) var viewModel: FAQQuestionsViewModel
     public lazy var navigator = FAQQuestionsNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
 
@@ -21,6 +20,7 @@ public class FAQQuestionsViewController: UIViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

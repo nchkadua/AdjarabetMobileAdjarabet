@@ -10,7 +10,7 @@ import RxSwift
 import PassKit
 
 public class ApplePayViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: ApplePayViewModel
+    @Inject(from: .viewModels) var viewModel: ApplePayViewModel
     public lazy var navigator = ApplePayNavigator(viewController: self)
 
     @IBOutlet weak private var amountInputView: ABInputView!
@@ -28,6 +28,7 @@ public class ApplePayViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -50,7 +51,6 @@ public class ApplePayViewController: ABViewController {
         case .updateMax(let max): self.limitsComponentView.updateMax(max)
         case .updateAmount(let amount): amountInputView.set(text: amount)
         case .updateContinue(let isEnabled): updateApayButton(isEnabled)
-        case .show(error: let error): showAlert(title: error)
         case .bindToGridViewModel(viewModel: let viewModel): bindToGrid(viewModel)
         case .paymentRequestDidInit(let request): presentApplePayVC(request: request)
         }

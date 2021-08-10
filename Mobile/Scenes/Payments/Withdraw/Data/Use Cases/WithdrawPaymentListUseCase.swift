@@ -12,7 +12,7 @@ protocol WithdrawPaymentListUseCase {
     /**
      Returns list of available withdraw payment methods
      */
-    typealias ListHandler = (Result<[PaymentMethodEntity], Error>) -> Void
+    typealias ListHandler = (Result<[PaymentMethodEntity], ABError>) -> Void
     func list(handler: @escaping ListHandler)
 }
 

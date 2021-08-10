@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol OTPViewModel: OTPViewModelInput, OTPViewModelOutput {
+protocol OTPViewModel: BaseViewModel, OTPViewModelInput, OTPViewModelOutput {
 }
 
 public struct OTPViewModelParams {
@@ -66,7 +66,7 @@ public enum OTPViewModelRoute {
     case dismiss
 }
 
-public class DefaultOTPViewModel {
+public class DefaultOTPViewModel: DefaultBaseViewModel {
     public var params: OTPViewModelParams
     private let actionSubject = PublishSubject<OTPViewModelOutputAction>()
     private let routeSubject = PublishSubject<OTPViewModelRoute>()

@@ -23,6 +23,7 @@ public class PromotionsViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

@@ -24,6 +24,7 @@ public class SelfSuspendViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

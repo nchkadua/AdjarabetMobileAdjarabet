@@ -6,16 +6,16 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol OTPUseCase {
+protocol OTPUseCase {
     @discardableResult
     func execute(username: String, code: String, loginType: LoginType, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable?
 }
 
-public enum OTPUseCaseError: Error, LocalizedError {
+enum OTPUseCaseError: Error, LocalizedError {
     case invalidSMSCode
-    case unknown(error: Error)
+    case unknown(error: ABError)
 
-    public var errorDescription: String? {
+    var errorDescription: String? {
         switch self {
         case .invalidSMSCode:
             return "Failed because invalid code was specified"
@@ -25,7 +25,7 @@ public enum OTPUseCaseError: Error, LocalizedError {
     }
 }
 
-public final class DefaultOTPUseCase: OTPUseCase {
+final class DefaultOTPUseCase: OTPUseCase {
     @Inject(from: .repositories) private var authenticationRepository: AuthenticationRepository
     @Inject private var userSession: UserSessionServices
 
@@ -39,12 +39,13 @@ public final class DefaultOTPUseCase: OTPUseCase {
         userSession.login()
     }
 
-    public func execute(username: String, code: String, loginType: LoginType, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable? {
-        authenticationRepository.login(username: username, code: code, loginType: loginType) { [weak self] (result: Result<AdjarabetCoreResult.Login, Error>) in
+    func execute(username: String, code: String, loginType: LoginType, completion: @escaping (Result<Void, OTPUseCaseError>) -> Void) -> Cancellable? {
+        authenticationRepository.login(username: username, code: code, loginType: loginType) { [weak self] (result: Result<AdjarabetCoreResult.Login, ABError>) in
             switch result {
             case .success(let params):
                 guard params.codable.statusCode == .STATUS_SUCCESS else {
-                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode))))
+                    let error = ABError(coreStatusCode: params.codable.statusCode) ?? ABError(type: .default)
+                    completion(.failure(.unknown(error: error)))
                     return
                 }
 
@@ -57,7 +58,8 @@ public final class DefaultOTPUseCase: OTPUseCase {
                     self?.save(params: params)
                     completion(.success(()))
                 } else {
-                    completion(.failure(.unknown(error: AdjarabetCoreClientError.invalidStatusCode(code: params.codable.errorCode ?? .UNKNOWN))))
+                    let error = ABError(coreStatusCode: params.codable.statusCode) ?? ABError(type: .default)
+                    completion(.failure(.unknown(error: error)))
                 }
             case .failure(let error):
                 completion(.failure(.unknown(error: error)))

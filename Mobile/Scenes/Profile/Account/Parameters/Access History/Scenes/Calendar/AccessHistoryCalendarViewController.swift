@@ -8,14 +8,13 @@
 
 import RxSwift
 
-public class AccessHistoryCalendarViewController: UIViewController {
+public class AccessHistoryCalendarViewController: ABViewController {
     // MARK: Outlets
     @IBOutlet private weak var calendarComponentView: CalendarComponentView!
     // MARK: Properties
-    @Inject(from: .viewModels) public var viewModel: AccessHistoryCalendarViewModel
+    @Inject(from: .viewModels) var viewModel: AccessHistoryCalendarViewModel
     @Inject(from: .componentViewModels) private var calendarComponentViewModel: CalendarComponentViewModel
     public lazy var navigator = AccessHistoryCalendarNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -23,6 +22,7 @@ public class AccessHistoryCalendarViewController: UIViewController {
         setup()
         bind(to: viewModel)
         bindToCalendar(to: calendarComponentViewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

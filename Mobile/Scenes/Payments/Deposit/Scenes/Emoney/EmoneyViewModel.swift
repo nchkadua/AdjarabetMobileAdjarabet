@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol EmoneyViewModel: EmoneyViewModelInput, EmoneyViewModelOutput {
+protocol EmoneyViewModel: BaseViewModel, EmoneyViewModelInput, EmoneyViewModelOutput {
 }
 
 protocol EmoneyViewModelInput {
@@ -23,7 +23,7 @@ enum EmoneyViewModelRoute {
     case navigate(WebViewModelParams)
 }
 
-struct DefaultEmoneyViewModel {
+class DefaultEmoneyViewModel: DefaultBaseViewModel {
     private let routeSubject = PublishSubject<EmoneyViewModelRoute>()
 }
 

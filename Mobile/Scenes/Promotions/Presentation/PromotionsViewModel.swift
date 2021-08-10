@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol PromotionsViewModel: PromotionsViewModelInput, PromotionsViewModelOutput {
+protocol PromotionsViewModel: BaseViewModel, PromotionsViewModelInput, PromotionsViewModelOutput {
 }
 
 public protocol PromotionsViewModelInput {

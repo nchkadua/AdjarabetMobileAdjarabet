@@ -8,16 +8,15 @@
 
 import RxSwift
 
-public class BonusViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: BonusViewModel
-    public lazy var navigator = BonusNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
+public class BonusViewController: ABViewController {
+    @Inject(from: .viewModels) var viewModel: BonusViewModel
+    private lazy var navigator = BonusNavigator(viewController: self)
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
-
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

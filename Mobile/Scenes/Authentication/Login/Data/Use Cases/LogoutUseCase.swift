@@ -6,19 +6,19 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public protocol LogoutUseCase {
+protocol LogoutUseCase {
     @discardableResult
     func execute(userId: Int, sessionId: String, completion: @escaping (Result<LogoutUseCaseSuccess, LogoutUseCaseError>) -> Void) -> Cancellable?
 }
 
-public enum LogoutUseCaseSuccess {
+enum LogoutUseCaseSuccess {
     case success
 }
 
-public enum LogoutUseCaseError: Error, LocalizedError {
-    case unknown(error: Error)
+enum LogoutUseCaseError: Error, LocalizedError {
+    case unknown(error: ABError)
 
-    public var errorDescription: String? {
+    var errorDescription: String? {
         switch self {
         case .unknown(let error):
             return error.localizedDescription
@@ -26,11 +26,11 @@ public enum LogoutUseCaseError: Error, LocalizedError {
     }
 }
 
-public final class DefaultLogoutUseCase: LogoutUseCase {
+final class DefaultLogoutUseCase: LogoutUseCase {
     @Inject(from: .repositories) private var authenticationRepository: AuthenticationRepository
 
-    public func execute(userId: Int, sessionId: String, completion: @escaping (Result<LogoutUseCaseSuccess, LogoutUseCaseError>) -> Void) -> Cancellable? {
-        authenticationRepository.logout(userId: userId, sessionId: sessionId) {(result: Result<AdjarabetCoreResult.Logout, Error>) in
+    func execute(userId: Int, sessionId: String, completion: @escaping (Result<LogoutUseCaseSuccess, LogoutUseCaseError>) -> Void) -> Cancellable? {
+        authenticationRepository.logout(userId: userId, sessionId: sessionId) {(result: Result<AdjarabetCoreResult.Logout, ABError>) in
             switch result {
             case .success:
                 completion(.success(.success))

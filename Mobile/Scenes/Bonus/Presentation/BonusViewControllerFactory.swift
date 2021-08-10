@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol BonusViewControllerFactory {
+protocol BonusViewControllerFactory {
     func make(params: BonusViewModelParams) -> BonusViewController
 }
 
-public class DefaultBonusViewControllerFactory: BonusViewControllerFactory {
-    public func make(params: BonusViewModelParams) -> BonusViewController {
+class DefaultBonusViewControllerFactory: BonusViewControllerFactory {
+    func make(params: BonusViewModelParams) -> BonusViewController {
         let vc = R.storyboard.bonus().instantiate(controller: BonusViewController.self)!
         vc.viewModel.params = params
         return vc

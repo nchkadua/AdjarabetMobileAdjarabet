@@ -8,7 +8,8 @@
 
 import RxSwift
 
-protocol HighSecurityViewModel: HighSecurityViewModelInput,
+protocol HighSecurityViewModel: BaseViewModel,
+                                HighSecurityViewModelInput,
                                 HighSecurityViewModelOutput { }
 
 protocol HighSecurityViewModelInput: AnyObject {
@@ -24,7 +25,6 @@ protocol HighSecurityViewModelOutput {
 enum HighSecurityViewModelOutputAction {
     case setupView(loaderIsHiden: Bool)
     case setButtonState(isOn: Bool)
-    case showError(error: ABError)
     case close
 }
 
@@ -48,26 +48,13 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
 
     func viewDidLoad() {
         notify(.setupView(loaderIsHiden: false))
-        useCase.isEnabled { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let isEnabled):
-                self.isEnabled = isEnabled // update state
-                self.notify(.setButtonState(isOn: isEnabled))
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-                    self?.notify(.setupView(loaderIsHiden: true))
-                }
-            case .failure(let error):
-                {}() // TODO
-                /*
-                let description = error.description
-                description.onOkAction = { [weak self] in
-                    self?.notify(.close)
-                }
-                self.notify(.showError(error: .`init`(description: description)))
-                */
+        useCase.isEnabled(handler(onSuccessHandler: { isEnabled in
+            self.isEnabled = isEnabled // update state
+            self.notify(.setButtonState(isOn: isEnabled))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                self?.notify(.setupView(loaderIsHiden: true))
             }
-        }
+        }))
     }
 
     func buttonTapped() {
@@ -91,40 +78,19 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
         case .success(let code, _):
             handleSuccessOTP(with: code ?? "")
         case .error:
-            {}() // TODO
-            /*
-            let error: ABError = .default
-            let description = error.description
-            description.onOkAction = { [weak self] in
-                self?.notify(.close)
-            }
-            self.notify(.showError(error: .`init`(description: description)))
-            */
+            show(error: .init()) // TODO: show appropriate error
         }
     }
 
     private func handleSuccessOTP(with code: String) {
         notify(.setupView(loaderIsHiden: false))
-        useCase.set(isEnabled: !isEnabled, otp: code) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success:
-                self.isEnabled.toggle() // update state
-                self.notify(.setButtonState(isOn: self.isEnabled))
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-                    self?.notify(.setupView(loaderIsHiden: true))
-                }
-            case .failure(let error):
-                {}() // TODO
-                /*
-                let description = error.description
-                description.onOkAction = { [weak self] in
-                    self?.notify(.close)
-                }
-                self.notify(.showError(error: .`init`(description: description)))
-                */
+        useCase.set(isEnabled: !isEnabled, otp: code, handler(onSuccessHandler: { _ in
+            self.isEnabled.toggle() // update state
+            self.notify(.setButtonState(isOn: self.isEnabled))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                self?.notify(.setupView(loaderIsHiden: true))
             }
-        }
+        }))
     }
 
     private func notify(_ action: HighSecurityViewModelOutputAction) {

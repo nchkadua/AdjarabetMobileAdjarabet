@@ -8,7 +8,8 @@
 
 import RxSwift
 
-protocol TransactionsViewModel: TransactionsViewModelInput,
+protocol TransactionsViewModel: BaseViewModel,
+                                TransactionsViewModelInput,
                                 TransactionsViewModelOutput,
                                 ABTableViewControllerDelegate {}
 
@@ -26,7 +27,6 @@ enum TransactionsViewModelOutputAction {
     case languageDidChange
     case initialize(AppListDataProvider)
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
-    case showError(error: ABError)
 }
 
 enum TransactionsViewModelRoute {
@@ -137,7 +137,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
                 self.appendPage(transactions: viewModels)
             case .failure(let error):
                 self.displayEmptyTransactionList()
-                self.actionSubject.onNext(.showError(error: error))
+                self.show(error: error)
             }
         }
     }

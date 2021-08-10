@@ -23,11 +23,11 @@ class ABError {
     lazy var description: Description = {
         switch type {
         case .ipIsBlocked:
-            return .popup(description: .init(icon: .init(), description: "")) // TODO: add correct icon and description
+            return .popup(description: .init(icon: .init(), description: "IP Is Blocked")) // TODO: add correct icon and description
         case .wrongAuthCredentials:
-            return .notification(description: .init(icon: .init(), description: "")) // TODO: add correct icon and description
+            return .notification(description: .init(icon: .init(), description: "Wrong Credentials")) // TODO: add correct icon and description
         case .notConnected:
-            return .status(description: .init(description: "")) // TODO: add description
+            return .status(description: .init(description: "Not Connected")) // TODO: add description
         case .`init`(let description):
             return description
         case .from(let error):

@@ -19,6 +19,7 @@ class TransactionsViewController: ABViewController {
         super.viewDidLoad()
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -44,9 +45,6 @@ class TransactionsViewController: ABViewController {
             UIView.performWithoutAnimation {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertionIndexPathes, deletionIndexPathes: deletionIndexPathes)
             }
-        case .showError(let error):
-            {}() // TODO
-            // showAlert(title: error.description.description)
         }
     }
 

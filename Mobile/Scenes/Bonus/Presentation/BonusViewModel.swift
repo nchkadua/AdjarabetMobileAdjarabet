@@ -8,42 +8,42 @@
 
 import RxSwift
 
-public protocol BonusViewModel: BonusViewModelInput, BonusViewModelOutput {
+protocol BonusViewModel: BaseViewModel, BonusViewModelInput, BonusViewModelOutput {
 }
 
-public struct BonusViewModelParams {
+struct BonusViewModelParams {
 }
 
-public protocol BonusViewModelInput: AnyObject {
+protocol BonusViewModelInput: AnyObject {
     var params: BonusViewModelParams { get set }
     func viewDidLoad()
 }
 
-public protocol BonusViewModelOutput {
+protocol BonusViewModelOutput {
     var action: Observable<BonusViewModelOutputAction> { get }
     var route: Observable<BonusViewModelRoute> { get }
 }
 
-public enum BonusViewModelOutputAction {
+enum BonusViewModelOutputAction {
 }
 
-public enum BonusViewModelRoute {
+enum BonusViewModelRoute {
 }
 
-public class DefaultBonusViewModel {
-    public var params: BonusViewModelParams
+class DefaultBonusViewModel: DefaultBaseViewModel {
+    var params: BonusViewModelParams
     private let actionSubject = PublishSubject<BonusViewModelOutputAction>()
     private let routeSubject = PublishSubject<BonusViewModelRoute>()
 
-    public init(params: BonusViewModelParams) {
+    init(params: BonusViewModelParams) {
         self.params = params
     }
 }
 
 extension DefaultBonusViewModel: BonusViewModel {
-    public var action: Observable<BonusViewModelOutputAction> { actionSubject.asObserver() }
-    public var route: Observable<BonusViewModelRoute> { routeSubject.asObserver() }
+    var action: Observable<BonusViewModelOutputAction> { actionSubject.asObserver() }
+    var route: Observable<BonusViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    func viewDidLoad() {
     }
 }

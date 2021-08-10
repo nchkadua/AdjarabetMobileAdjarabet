@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PasswordChangeUseCase {
-    typealias PasswordChangeHandler = (Result<PasswordChangeEntity, Error>) -> Void
+    typealias PasswordChangeHandler = (Result<PasswordChangeEntity, ABError>) -> Void
     func change(oldPassword: String, newPassword: String, otp: Int, handler: @escaping PasswordChangeHandler)
 }
 

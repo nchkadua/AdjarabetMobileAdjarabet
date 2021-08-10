@@ -19,6 +19,7 @@ public class MyCardsViewController: ABViewController {
         super.viewDidLoad()
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

@@ -25,6 +25,7 @@ public class WithdrawViewController: ABViewController {
         super.viewDidLoad()
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -47,8 +48,6 @@ public class WithdrawViewController: ABViewController {
             amountLabel.text = balance
         case .bind(let viewModel):
             payments.setAndBind(viewModel: viewModel)
-        case .show(let error):
-            showAlert(title: error)
         }
     }
 

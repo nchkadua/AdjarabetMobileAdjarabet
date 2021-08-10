@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol TransactionDetailsViewModel: TransactionDetailsViewModelInput, TransactionDetailsViewModelOutput {
+protocol TransactionDetailsViewModel: BaseViewModel, TransactionDetailsViewModelInput, TransactionDetailsViewModelOutput {
 }
 
 public struct TransactionDetailsViewModelParams {

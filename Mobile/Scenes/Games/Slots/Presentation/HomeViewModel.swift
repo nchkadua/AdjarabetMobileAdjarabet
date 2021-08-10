@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-public protocol HomeViewModel: HomeViewModelInput, HomeViewModelOutput, ABCollectionViewModel {
+protocol HomeViewModel: BaseViewModel, HomeViewModelInput, HomeViewModelOutput, ABCollectionViewModel {
 }
 
 public protocol HomeViewModelInput {
@@ -124,7 +124,7 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
                 }
                 self.appendPage(games: viewModels)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.show(error: error)
             }
         }
     }
@@ -189,30 +189,25 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     }
 
     private func loadRecentryPlayedGames() {
-        recentlyPlayedGamesUseCase.execute(request: .init(page: 1, itemsPerPage: 20)) { result in
-            switch result {
-            case .success(let params):
-                let viewModels: [PlayedGameLauncherCollectionViewCellDataProvider] = params.games.compactMap { [weak self] in
-                    guard let self = self else {return nil}
+        recentlyPlayedGamesUseCase.execute(request: .init(page: 1, itemsPerPage: 20), completion: handler(onSuccessHandler: { params in
+            let viewModels: [PlayedGameLauncherCollectionViewCellDataProvider] = params.games.compactMap { [weak self] in
+                guard let self = self else {return nil}
 
-                    let vm = DefaultPlayedGameLauncherComponentViewModel(params: .init(game: $0, lastWon: nil))
-                    vm.action.subscribe(onNext: { action in
-                        switch action {
-                        case .didSelect(let model, _): self.routeSubject.onNext(.open(game: model.params.game))
-                        default: break
-                        }
-                    }).disposed(by: self.disposeBag)
-                    self.recentlyPlayedGames.append(vm)
-                    return vm
-                }
-
-                self.recentlyPlayedComponentViewModel.params.playedGames = viewModels
-                self.recentlyPlayedComponentViewModel.params.isVisible = !viewModels.isEmpty
-                self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 3)]))
-            case .failure(let error):
-                print(error.localizedDescription)
+                let vm = DefaultPlayedGameLauncherComponentViewModel(params: .init(game: $0, lastWon: nil))
+                vm.action.subscribe(onNext: { action in
+                    switch action {
+                    case .didSelect(let model, _): self.routeSubject.onNext(.open(game: model.params.game))
+                    default: break
+                    }
+                }).disposed(by: self.disposeBag)
+                self.recentlyPlayedGames.append(vm)
+                return vm
             }
-        }
+
+            self.recentlyPlayedComponentViewModel.params.playedGames = viewModels
+            self.recentlyPlayedComponentViewModel.params.isVisible = !viewModels.isEmpty
+            self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 3)]))
+        }))
     }
 
     private func observeLayoutChange() {

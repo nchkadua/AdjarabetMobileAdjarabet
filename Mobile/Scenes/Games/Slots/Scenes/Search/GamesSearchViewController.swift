@@ -8,9 +8,8 @@
 
 import RxSwift
 
-public class GamesSearchViewController: UIViewController {
-    private let disposeBag = DisposeBag()
-    public var viewModel: GamesSearchViewModel = DefaultGamesSearchViewModel(params: .init())
+public class GamesSearchViewController: ABViewController {
+    var viewModel: GamesSearchViewModel = DefaultGamesSearchViewModel(params: .init())
     public lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
 
     // shimmer loader
@@ -23,6 +22,7 @@ public class GamesSearchViewController: UIViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

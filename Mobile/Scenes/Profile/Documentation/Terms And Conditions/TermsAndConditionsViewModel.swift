@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol TermsAndConditionsViewModel: TermsAndConditionsViewModelInput, TermsAndConditionsViewModelOutput {
+protocol TermsAndConditionsViewModel: BaseViewModel, TermsAndConditionsViewModelInput, TermsAndConditionsViewModelOutput {
 }
 
 public struct TermsAndConditionsViewModelParams {

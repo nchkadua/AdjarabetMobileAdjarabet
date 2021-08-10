@@ -9,7 +9,7 @@
 import RxSwift
 
 public class AddressChangeViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: AddressChangeViewModel
+    @Inject(from: .viewModels) var viewModel: AddressChangeViewModel
     public lazy var navigator = AddressChangeNavigator(viewController: self)
 
     // MARK: Outlets
@@ -25,6 +25,7 @@ public class AddressChangeViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -44,8 +45,6 @@ public class AddressChangeViewController: ABViewController {
         switch action {
         case .dismiss:
             dismiss(animated: true, completion: nil)
-        case .showError(let error):
-            showAlert(title: error)
         }
     }
 

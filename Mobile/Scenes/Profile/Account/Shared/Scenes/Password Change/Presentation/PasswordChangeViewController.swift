@@ -28,6 +28,7 @@ public class PasswordChangeViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -51,9 +52,6 @@ public class PasswordChangeViewController: ABViewController {
         switch action {
         case .setButton(let loading): updatePasswordButton.set(isLoading: loading)
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
-        case .showMessage(let message): showAlert(title: message) { _ in // Need to be changed after error handling system integrated
-                self.dismiss(animated: true, completion: nil)
-            }
         }
     }
 

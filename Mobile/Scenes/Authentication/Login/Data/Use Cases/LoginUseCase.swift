@@ -48,7 +48,7 @@ public final class DefaultLoginUseCase: LoginUseCase {
     }
 
     func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, ABError>) -> Void) -> Cancellable? {
-        authenticationRepository.login(username: username, password: password, channel: .sms) { [weak self] (result: Result<AdjarabetCoreResult.Login, Error>) in
+        authenticationRepository.login(username: username, password: password, channel: .sms) { [weak self] (result: Result<AdjarabetCoreResult.Login, ABError>) in
             switch result {
             case .success(let params):
                 guard params.codable.statusCode == .STATUS_SUCCESS else {
@@ -70,7 +70,7 @@ public final class DefaultLoginUseCase: LoginUseCase {
                     completion(.failure(.init()))
                 }
             case .failure(let error):
-                completion(.failure(.init(type: .from(error))))
+                completion(.failure(error))
             }
         }
     }

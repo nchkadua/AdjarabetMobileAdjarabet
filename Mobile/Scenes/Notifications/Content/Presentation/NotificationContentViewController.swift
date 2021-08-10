@@ -8,10 +8,9 @@
 
 import RxSwift
 
-public class NotificationContentViewController: UIViewController {
-    public var viewModel: NotificationContentViewModel!
+public class NotificationContentViewController: ABViewController {
+    var viewModel: NotificationContentViewModel!
     public lazy var navigator = NotificationContentNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     // MARK: IBOutlets
     @IBOutlet weak private var coverImageView: UIImageView!
@@ -28,6 +27,7 @@ public class NotificationContentViewController: UIViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -47,7 +47,6 @@ public class NotificationContentViewController: UIViewController {
         switch action {
         case .setupWith(let notification): setup(with: notification)
         case .setTime(let time): timeLabel.text = time
-        case .showMessage(let message): showAlert(title: message)
         }
     }
 

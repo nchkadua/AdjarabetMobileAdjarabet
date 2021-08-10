@@ -10,7 +10,7 @@ import RxSwift
 
 public class ProfileViewController: ABViewController, PageViewControllerProtocol {
     // MARK: Properties
-    @Inject(from: .viewModels) public var viewModel: ProfileViewModel
+    @Inject(from: .viewModels) var viewModel: ProfileViewModel
     public lazy var navigator = ProfileNavigator(viewController: self)
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
@@ -24,6 +24,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

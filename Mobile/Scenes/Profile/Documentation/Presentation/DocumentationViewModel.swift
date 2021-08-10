@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol DocumentationViewModel: DocumentationViewModelInput, DocumentationViewModelOutput {
+protocol DocumentationViewModel: BaseViewModel, DocumentationViewModelInput, DocumentationViewModelOutput {
 }
 
 public struct DocumentationViewModelParams {

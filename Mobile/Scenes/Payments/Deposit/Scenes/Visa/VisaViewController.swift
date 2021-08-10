@@ -37,6 +37,7 @@ public class VisaViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -65,7 +66,6 @@ public class VisaViewController: ABViewController {
         case .updateMin(let min): self.limitView.updateMin(min)
         case .updateDisposable(let disposable): self.limitView.updateDaily(disposable)
         case .updateMax(let max): self.limitView.updateMax(max)
-        case .show(error: let error): showAlert(title: error)
         case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
         }
     }

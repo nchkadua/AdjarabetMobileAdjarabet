@@ -8,10 +8,9 @@
 
 import RxSwift
 
-public class DepositViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: DepositViewModel
+public class DepositViewController: ABViewController {
+    @Inject(from: .viewModels) var viewModel: DepositViewModel
     public lazy var navigator = DepositNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -29,6 +28,7 @@ public class DepositViewController: UIViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -52,8 +52,6 @@ public class DepositViewController: UIViewController {
             bindToGrid(viewModel)
         case .didLoadPaymentMethods(let methods):
             setChildViewControllers(methods)
-        case .showMessage(let message):
-            showAlert(title: message)
         case .loader(let isHidden):
             handleLoader(isHidden)
         }

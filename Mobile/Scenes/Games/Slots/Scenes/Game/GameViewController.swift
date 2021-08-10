@@ -21,6 +21,7 @@ class GameViewController: ABViewController {
         super.viewDidLoad()
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -40,7 +41,6 @@ class GameViewController: ABViewController {
         switch action {
         case .bindToGameLoader(let viewModel): bindToGameLoader(viewModel)
         case .load(let url): webView.load(URLRequest(url: url))
-        case .show(let error): showAlert(title: error) { [weak self] _ in self?.dismissGameView() }
         }
     }
 

@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol DepositViewModel: DepositViewModelInput, DepositViewModelOutput {
+protocol DepositViewModel: BaseViewModel, DepositViewModelInput, DepositViewModelOutput {
 }
 
 public struct DepositViewModelParams {
@@ -29,7 +29,6 @@ public enum DepositViewModelOutputAction {
     case set(totalBalance: Double)
     case bindToGridViewModel(viewModel: PaymentMethodGridComponentViewModel)
     case didLoadPaymentMethods(methods: [PaymentMethodEntity])
-    case showMessage(message: String)
     case loader(isHidden: Bool)
 }
 
@@ -71,7 +70,7 @@ extension DefaultDepositViewModel: DepositViewModel {
                 self?.paymentGridComponentViewModel.reloadCollectionView(with: viewModels)
                 self?.actionSubject.onNext(.didLoadPaymentMethods(methods: entity))
             case .failure(let error):
-                self?.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+                self?.show(error: error)
             }
         }
     }

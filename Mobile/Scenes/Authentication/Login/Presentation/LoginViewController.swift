@@ -9,7 +9,7 @@
 import RxSwift
 
 public class LoginViewController: ABViewController {
-    public var viewModel: LoginViewModel!
+    var viewModel: LoginViewModel!
     public lazy var navigator = LoginNavigator(viewController: self)
 
     // MARK: IBOutlets
@@ -44,6 +44,7 @@ public class LoginViewController: ABViewController {
         setup()
         subscribeToPasswordInputView()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

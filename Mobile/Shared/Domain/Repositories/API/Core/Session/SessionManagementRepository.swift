@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol SessionManagementRepository {
+protocol SessionManagementRepository {
     @discardableResult
-    func aliveSession<T: HeaderProvidingCodableType>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func aliveSession<T: HeaderProvidingCodableType>(userId: Int, sessionId: String, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable
 }

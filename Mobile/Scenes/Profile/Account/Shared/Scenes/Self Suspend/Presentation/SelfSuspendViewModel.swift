@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol SelfSuspendViewModel: SelfSuspendViewModelInput, SelfSuspendViewModelOutput {
+protocol SelfSuspendViewModel: BaseViewModel, SelfSuspendViewModelInput, SelfSuspendViewModelOutput {
 }
 
 public protocol SelfSuspendViewModelInput {
@@ -27,7 +27,7 @@ public enum SelfSuspendViewModelOutputAction {
 public enum SelfSuspendViewModelRoute {
 }
 
-public class DefaultSelfSuspendViewModel {
+public class DefaultSelfSuspendViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<SelfSuspendViewModelOutputAction>()
     private let routeSubject = PublishSubject<SelfSuspendViewModelRoute>()
 }

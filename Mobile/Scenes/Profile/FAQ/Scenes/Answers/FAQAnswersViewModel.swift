@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol FAQAnswersViewModel: FAQAnswersViewModelInput, FAQAnswersViewModelOutput {
+protocol FAQAnswersViewModel: BaseViewModel, FAQAnswersViewModelInput, FAQAnswersViewModelOutput {
 }
 
 public struct FAQAnswersViewModelParams {
@@ -33,7 +33,7 @@ public enum FAQAnswersViewModelOutputAction {
 public enum FAQAnswersViewModelRoute {
 }
 
-public class DefaultFAQAnswersViewModel {
+public class DefaultFAQAnswersViewModel: DefaultBaseViewModel {
     public var params: FAQAnswersViewModelParams
     private let actionSubject = PublishSubject<FAQAnswersViewModelOutputAction>()
     private let routeSubject = PublishSubject<FAQAnswersViewModelRoute>()

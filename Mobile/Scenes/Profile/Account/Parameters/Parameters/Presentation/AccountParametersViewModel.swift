@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol AccountParametersViewModel: AccountParametersViewModelInput, AccountParametersViewModelOutput {
+protocol AccountParametersViewModel: BaseViewModel, AccountParametersViewModelInput, AccountParametersViewModelOutput {
 }
 
 public struct AccountParametersViewModelParams {

@@ -51,6 +51,7 @@ public class AccountInfoViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -78,9 +79,6 @@ public class AccountInfoViewController: ABViewController {
             communicationLanguageComponent.setAndBind(viewModel: viewModel)
         case .setPersonalID(let id): personalIdView.set(titleText: id)
         case .setAddress(let address): addressView.set(titleText: address)
-        case .showError(let error):
-            {}() // TODO
-            // showAlert(title: error.description.description)
         }
     }
 

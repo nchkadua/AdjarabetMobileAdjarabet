@@ -9,7 +9,7 @@
 import RxSwift
 
 public class TransactionDetailsViewController: ABPopupViewController {
-    public var viewModel: TransactionDetailsViewModel!
+    var viewModel: TransactionDetailsViewModel!
     public lazy var navigator = TransactionDetailsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
     // MARK: Outlets
@@ -22,6 +22,7 @@ public class TransactionDetailsViewController: ABPopupViewController {
         setupFonts()
         setupTableView()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol TransactionsFilterViewModel: TransactionsFilterViewModelInput, TransactionsFilterViewModelOutput {}
+protocol TransactionsFilterViewModel: BaseViewModel, TransactionsFilterViewModelInput, TransactionsFilterViewModelOutput {}
 
 // Move somewhere logical
 public enum ProviderType: Int {

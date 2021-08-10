@@ -13,12 +13,12 @@ struct UFCDepositUseCase {
     @Inject(from: .factories) private var paramsFactory: UFCTransactionParamsFactory
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
-    typealias Handler = (Result<URLRequest, Error>) -> Void
+    typealias Handler = (Result<URLRequest, ABError>) -> Void
     func execute(serviceType: UFCServiceType,
                  amount: Double,
                  accountId: Int64? = nil,   // card ID
                  saveAccount: Bool = false, // add to cards or not
-                 _ handler: @escaping Handler) {
+                 handler: @escaping Handler) {
         // create parameters for Repository call
         var parameters = paramsFactory.make(serviceType: serviceType,
                                             amount: amount,

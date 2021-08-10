@@ -9,7 +9,7 @@
 import RxSwift
 
 public class PhoneNumberChangeViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: PhoneNumberChangeViewModel
+    @Inject(from: .viewModels) var viewModel: PhoneNumberChangeViewModel
     public lazy var navigator = PhoneNumberChangeNavigator(viewController: self)
 
     // MARK: Outlets
@@ -28,6 +28,7 @@ public class PhoneNumberChangeViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

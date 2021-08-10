@@ -9,7 +9,7 @@
 import RxSwift
 
 public class TermsAndConditionsViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: TermsAndConditionsViewModel
+    @Inject(from: .viewModels) var viewModel: TermsAndConditionsViewModel
     public lazy var navigator = TermsAndConditionsNavigator(viewController: self)
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
@@ -20,6 +20,7 @@ public class TermsAndConditionsViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

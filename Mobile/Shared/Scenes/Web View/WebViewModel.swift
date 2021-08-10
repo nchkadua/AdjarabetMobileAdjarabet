@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol WebViewModel: WebViewModelInput, WebViewModelOutput {
+protocol WebViewModel: BaseViewModel, WebViewModelInput, WebViewModelOutput {
 }
 
 public struct WebViewModelParams {
@@ -36,7 +36,7 @@ public enum WebViewModelOutputAction {
 public enum WebViewModelRoute {
 }
 
-public class DefaultWebViewModel {
+public class DefaultWebViewModel: DefaultBaseViewModel {
     public var params: WebViewModelParams
     private let actionSubject = PublishSubject<WebViewModelOutputAction>()
     private let routeSubject = PublishSubject<WebViewModelRoute>()

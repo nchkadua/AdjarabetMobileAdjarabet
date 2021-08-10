@@ -14,7 +14,7 @@ public class DefaultBalanceManagementRepository {
 }
 
 extension DefaultBalanceManagementRepository: BalanceManagementRepository {
-    public func balance<T: HeaderProvidingCodableType>(userId: Int, currencyId: Int, isSingle: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable {
+    func balance<T: HeaderProvidingCodableType>(userId: Int, currencyId: Int, isSingle: Int, sessionId: String, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable {
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "getBalance")

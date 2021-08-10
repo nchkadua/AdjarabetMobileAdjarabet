@@ -17,7 +17,7 @@ struct UFCWithdrawUseCase {
     func execute(serviceType: UFCServiceType,
                  amount: Double,
                  accountId: Int64? = nil,
-                 _ handler: @escaping InitWithdrawHandler) {
+                 handler: @escaping InitWithdrawHandler) {
         let parameters = paramsFactory.make(serviceType: serviceType,
                                             amount: amount,
                                             accountId: accountId)
@@ -30,7 +30,7 @@ struct UFCWithdrawUseCase {
                  amount: Double,
                  accountId: Int64? = nil,
                  session: String,
-                 _ handler: @escaping WithdrawHandler) {
+                 handler: @escaping WithdrawHandler) {
         let parameters = paramsFactory.make(serviceType: serviceType,
                                             amount: amount,
                                             accountId: accountId,

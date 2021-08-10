@@ -6,22 +6,23 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol UserSessionUseCase {
+protocol UserSessionUseCase {
     @discardableResult
-    func execute(userId: Int, sessionId: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable?
+    func execute(userId: Int, sessionId: String, completion: @escaping (Result<Void, ABError>) -> Void) -> Cancellable?
 }
 
-public final class DefaultUserSessionUseCase: UserSessionUseCase {
+final class DefaultUserSessionUseCase: UserSessionUseCase {
     @Inject(from: .repositories) private var sessionManagementRepository: SessionManagementRepository
 
-    public func execute(userId: Int, sessionId: String, completion: @escaping (Result<Void, Error>) -> Void) -> Cancellable? {
-        sessionManagementRepository.aliveSession(userId: userId, sessionId: sessionId) { (result: Result<AdjarabetCoreResult.AliveSession, Error>) in
+    func execute(userId: Int, sessionId: String, completion: @escaping (Result<Void, ABError>) -> Void) -> Cancellable? {
+        sessionManagementRepository.aliveSession(userId: userId, sessionId: sessionId) { (result: Result<AdjarabetCoreResult.AliveSession, ABError>) in
             switch result {
             case .success(let params):
-                if params.codable.statusCode == .STATUS_SUCCESS {
+                if params.codable.statusCode == .STATUS_SUCCESS { // TODO: apply correct success condition
                     completion(.success(()))
                 } else {
-                    completion(.failure(AdjarabetCoreClientError.invalidStatusCode(code: params.codable.statusCode)))
+                    let error = ABError(coreStatusCode: params.codable.statusCode) ?? ABError(type: .default)
+                    completion(.failure(error))
                 }
             case .failure(let error): completion(.failure(error))
             }

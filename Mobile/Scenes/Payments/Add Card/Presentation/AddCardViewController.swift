@@ -9,7 +9,7 @@
 import RxSwift
 
 public class AddCardViewController: ABViewController {
-    public var viewModel: AddCardViewModel!
+    var viewModel: AddCardViewModel!
     public lazy var navigator = AddCardNavigator(viewController: self)
 
     // MARK: Outlets
@@ -29,6 +29,7 @@ public class AddCardViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

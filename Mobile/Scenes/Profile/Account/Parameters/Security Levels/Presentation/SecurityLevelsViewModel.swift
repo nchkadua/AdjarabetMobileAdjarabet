@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol SecurityLevelsViewModel: SecurityLevelsViewModelInput, SecurityLevelsViewModelOutput {
+protocol SecurityLevelsViewModel: BaseViewModel, SecurityLevelsViewModelInput, SecurityLevelsViewModelOutput {
 }
 
 public struct SecurityLevelsViewModelParams {

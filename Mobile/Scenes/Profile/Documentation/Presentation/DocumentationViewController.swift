@@ -9,7 +9,7 @@
 import RxSwift
 
 public class DocumentationViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: DocumentationViewModel
+    @Inject(from: .viewModels) var viewModel: DocumentationViewModel
     public lazy var navigator = DocumentationNavigator(viewController: self)
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
@@ -20,6 +20,7 @@ public class DocumentationViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

@@ -9,9 +9,8 @@
 import RxSwift
 import WebKit
 
-public class WebViewController: UIViewController {
-    public var viewModel: WebViewModel!
-    private let disposeBag = DisposeBag()
+public class WebViewController: ABViewController {
+    var viewModel: WebViewModel!
     private let webView = WKWebView()
 
     // MARK: - Lifecycle methods
@@ -20,6 +19,7 @@ public class WebViewController: UIViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

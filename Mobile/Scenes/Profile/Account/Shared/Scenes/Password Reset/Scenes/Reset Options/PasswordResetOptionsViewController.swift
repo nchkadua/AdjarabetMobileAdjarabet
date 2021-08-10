@@ -9,7 +9,7 @@
 import RxSwift
 
 public class PasswordResetOptionsViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: ResetOptionsViewModel
+    @Inject(from: .viewModels) var viewModel: ResetOptionsViewModel
     public lazy var navigator = ResetOptionsNavigator(viewController: self)
 
     // MARK: - Outlets
@@ -28,6 +28,7 @@ public class PasswordResetOptionsViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -54,7 +55,6 @@ public class PasswordResetOptionsViewController: ABViewController {
             appTableViewController.reloadWithAnimation()
             changeContinueButtonTitle()
         case .clearTableview: clearTableView()
-        case .showMessage(let message): showAlert(title: message)
         case .hideUsernameInput: container1HeighConstraint.constant = 0
         case .setButton(let loading): continueButton.set(isLoading: loading)
         }

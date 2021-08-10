@@ -9,7 +9,7 @@
 import RxSwift
 import PassKit
 
-public protocol ApplePayViewModel: ApplePayViewModelInput, ApplePayViewModelOutput {
+protocol ApplePayViewModel: BaseViewModel, ApplePayViewModelInput, ApplePayViewModelOutput {
 }
 
 public protocol ApplePayViewModelInput: AnyObject {
@@ -29,7 +29,6 @@ public enum ApplePayViewModelOutputAction {
     case updateMax(with: String)
     case updateAmount(with: String)
     case updateContinue(with: Bool)
-    case show(error: String)
     case bindToGridViewModel(viewModel: SuggestedAmountGridComponentViewModel)
     case paymentRequestDidInit(request: PKPaymentRequest)
 }
@@ -37,7 +36,7 @@ public enum ApplePayViewModelOutputAction {
 public enum ApplePayViewModelRoute {
 }
 
-public class DefaultApplePayViewModel {
+public class DefaultApplePayViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<ApplePayViewModelOutputAction>()
     private let routeSubject = PublishSubject<ApplePayViewModelRoute>()
 
@@ -91,7 +90,7 @@ extension DefaultApplePayViewModel: ApplePayViewModel {
         else {
             notify(.updateContinue(with: false))
             let message = R.string.localization.deposit_visa_wrong_format_amount.localized()
-            notify(.show(error: message))
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         /*
@@ -112,7 +111,7 @@ extension DefaultApplePayViewModel: ApplePayViewModel {
         applePayUseCase.applePay(amount: amount) { result in
             switch result {
             case .success(let entity): self.actionSubject.onNext(.paymentRequestDidInit(request: entity))
-            case .failure(let error): self.actionSubject.onNext(.show(error: error.localizedDescription))
+            case .failure(let error): self.show(error: error)
             }
         }
     }
