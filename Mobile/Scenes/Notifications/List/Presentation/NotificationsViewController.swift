@@ -22,6 +22,7 @@ public class NotificationsViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -75,7 +76,6 @@ public class NotificationsViewController: ABViewController {
         case .reloadData: appTableViewController.reloadItems()
         case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
         case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)
-        case .showMessage(let message): showAlert(title: message)
         default:
             break
         }

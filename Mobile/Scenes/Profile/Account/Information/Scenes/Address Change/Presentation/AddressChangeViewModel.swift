@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol AddressChangeViewModel: AddressChangeViewModelInput, AddressChangeViewModelOutput {
+protocol AddressChangeViewModel: BaseViewModel, AddressChangeViewModelInput, AddressChangeViewModelOutput {
 }
 
 public struct AddressChangeViewModelParams {
@@ -31,13 +31,12 @@ public protocol AddressChangeViewModelOutput {
 
 public enum AddressChangeViewModelOutputAction {
     case dismiss
-    case showError(error: String)
 }
 
 public enum AddressChangeViewModelRoute {
 }
 
-public class DefaultAddressChangeViewModel {
+public class DefaultAddressChangeViewModel: DefaultBaseViewModel {
     public var params: AddressChangeViewModelParams
     private let actionSubject = PublishSubject<AddressChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<AddressChangeViewModelRoute>()
@@ -86,8 +85,7 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
                 self?.params.paramsOutputAction.onNext(.success(newAddress: address))
                 self?.actionSubject.onNext(.dismiss)
             case .failure(let error):
-                {}() // TODO
-                // self?.actionSubject.onNext(.showError(error: error.description.description))
+                self?.show(error: error)
             }
         }
     }

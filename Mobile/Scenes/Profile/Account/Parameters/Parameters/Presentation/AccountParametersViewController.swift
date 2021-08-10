@@ -9,7 +9,7 @@
 import RxSwift
 
 public class AccountParametersViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: AccountParametersViewModel
+    @Inject(from: .viewModels) var viewModel: AccountParametersViewModel
     public lazy var navigator = AccountParametersNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
 
@@ -18,6 +18,7 @@ public class AccountParametersViewController: ABViewController {
         super.viewDidLoad()
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

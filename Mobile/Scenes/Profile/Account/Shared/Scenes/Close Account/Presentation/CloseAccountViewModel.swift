@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol CloseAccountViewModel: CloseAccountViewModelInput, CloseAccountViewModelOutput {
+protocol CloseAccountViewModel: BaseViewModel, CloseAccountViewModelInput, CloseAccountViewModelOutput {
 }
 
 public struct CloseAccountViewModelParams {
@@ -30,7 +30,7 @@ public enum CloseAccountViewModelOutputAction {
 public enum CloseAccountViewModelRoute {
 }
 
-public class DefaultCloseAccountViewModel {
+public class DefaultCloseAccountViewModel: DefaultBaseViewModel {
     public var params: CloseAccountViewModelParams
     private let actionSubject = PublishSubject<CloseAccountViewModelOutputAction>()
     private let routeSubject = PublishSubject<CloseAccountViewModelRoute>()

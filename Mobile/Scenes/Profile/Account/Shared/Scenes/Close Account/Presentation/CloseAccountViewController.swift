@@ -8,10 +8,9 @@
 
 import RxSwift
 
-public class CloseAccountViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: CloseAccountViewModel
+public class CloseAccountViewController: ABViewController {
+    @Inject(from: .viewModels) var viewModel: CloseAccountViewModel
     public lazy var navigator = CloseAccountNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     @IBOutlet private weak var popup: UIView!
     @IBOutlet private weak var popupTitleLabel: UILabel!
@@ -29,6 +28,7 @@ public class CloseAccountViewController: UIViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

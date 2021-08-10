@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol NotificationsViewModel: NotificationsViewModelInput, NotificationsViewModelOutput, ABTableViewControllerDelegate, AppRedrawableCellDelegate {
+protocol NotificationsViewModel: BaseViewModel, NotificationsViewModelInput, NotificationsViewModelOutput, ABTableViewControllerDelegate, AppRedrawableCellDelegate {
 }
 
 public protocol NotificationsViewModelInput {
@@ -27,7 +27,6 @@ public enum NotificationsViewModelOutputAction {
     case didDeleteCell(atIndexPath: IndexPath)
     case reload(atIndexPath: IndexPath)
     case setTotalItemsCount(count: Int)
-    case showMessage(message: String)
 }
 
 public enum NotificationsViewModelRoute {
@@ -69,7 +68,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
                 self.page.itemsPerPage = notifications.itemsPerPage
                 self.createModelsFrom(notifications: notifications)
             case .failure(let error):
-                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+                self.show(error: error)
             }
         }
     }
@@ -113,15 +112,11 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     }
 
     private func delete(notification: NotificationItemsEntity.NotificationEntity, at indexPath: IndexPath) {
-        notificationsUseCase.delete(notificationId: notification.id) { result in
-            switch result {
-            case .success:
-                self.notificationsDataProvider.remove(at: indexPath.row)
-                self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
-                self.decreaseNumberOfUnreads(notification: notification)
-            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
-            }
-        }
+        notificationsUseCase.delete(notificationId: notification.id, handler: handler(onSuccessHandler: { _ in
+            self.notificationsDataProvider.remove(at: indexPath.row)
+            self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
+            self.decreaseNumberOfUnreads(notification: notification)
+        }))
     }
 
     private func decreaseNumberOfUnreads(notification: NotificationItemsEntity.NotificationEntity) {

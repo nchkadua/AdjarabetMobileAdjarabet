@@ -37,11 +37,12 @@ public class DefaultBaseViewModel: BaseViewModel {
 
     func handler<Data>(onSuccessHandler: @escaping (Data) -> Void) -> (Result<Data, ABError>) -> Void {
         return { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let data):
                 onSuccessHandler(data)
             case .failure(let error):
-                self?.show(error: error)
+                self.show(error: error)
             }
         }
     }

@@ -9,7 +9,7 @@
 import RxSwift
 
 public class BiometricSettingsViewController: ABPopupViewController {
-    @Inject(from: .viewModels) public var viewModel: BiometricSettingsViewModel
+    @Inject(from: .viewModels) var viewModel: BiometricSettingsViewModel
     public lazy var navigator = BiometricSettingsNavigator(viewController: self)
 
     private lazy var settingsAllert: UIAlertController = {
@@ -33,6 +33,7 @@ public class BiometricSettingsViewController: ABPopupViewController {
         super.viewDidLoad()
         bind(to: viewModel)
         setup()
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

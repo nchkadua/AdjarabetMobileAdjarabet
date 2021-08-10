@@ -12,7 +12,7 @@ public class DefaultLobbyGamesRepository {
 }
 
 extension DefaultLobbyGamesRepository: LobbyGamesRepository {
-    public func games<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, searchTerm: String?, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
+    func games<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, searchTerm: String?, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
         var requestBuilder = self.requestBuilder
             .set(method: .games)
             .setBody(key: .sessionId, value: sessionId)
@@ -31,7 +31,7 @@ extension DefaultLobbyGamesRepository: LobbyGamesRepository {
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func recentlyPlayedGames<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
+    func recentlyPlayedGames<T>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: Decodable, T: Encodable {
         let request = requestBuilder
             .set(method: .recentlyPlayed)
             .setBody(key: .sessionId, value: sessionId)

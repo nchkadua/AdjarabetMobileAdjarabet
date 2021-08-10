@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol ResetOptionsViewModel: ResetOptionsViewModelInput, ResetOptionsViewModelOutput {
+protocol ResetOptionsViewModel: BaseViewModel, ResetOptionsViewModelInput, ResetOptionsViewModelOutput {
 }
 
 public struct ResetOptionsViewModelParams {
@@ -33,7 +33,6 @@ public enum ResetOptionsViewModelOutputAction {
     case initialize(AppListDataProvider)
     case clearTableview
     case setButton(loading: Bool)
-    case showMessage(message: String)
 }
 
 public enum ResetOptionsViewModelRoute {
@@ -79,7 +78,7 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
                 self.email = entity.email
                 self.setupResetOptions(entity.tel ?? "", entity.email ?? "")
             case .failure(let error):
-                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+                self.show(error: error)
             }
         }
     }

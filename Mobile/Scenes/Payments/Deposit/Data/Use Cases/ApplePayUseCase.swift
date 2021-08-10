@@ -10,8 +10,8 @@ import Foundation
 import PassKit
 
 protocol ApplePayUseCase {
-    typealias ServiceAuthTokenHandler = (Result<String, Error>) -> Void
-    typealias Handler = (Result<PKPaymentRequest, Error>) -> Void
+    typealias ServiceAuthTokenHandler = (Result<String, ABError>) -> Void
+    typealias Handler = (Result<PKPaymentRequest, ABError>) -> Void
     func applePay(amount: String, handler: @escaping Handler)
 }
 
@@ -34,12 +34,7 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
     }
 
     func getServiceAuthToken(handler: @escaping ServiceAuthTokenHandler) {
-        repo.token(providerId: "1db5833e-d0cf-4995-a2ad-64d6e6ffeefc") { result in
-            switch result {
-            case .success(let entity): handler(.success(entity))
-            case .failure(let error): handler(.failure(error))
-            }
-        }
+        repo.token(providerId: "1db5833e-d0cf-4995-a2ad-64d6e6ffeefc", handler: handler)
     }
 
     private func createPaymentRequest(_ token: String, _ amount: Double) -> PaymentRequestResponse {
@@ -60,8 +55,7 @@ struct DefaultApplePayUseCase: ApplePayUseCase {
             request.applicationData = jsonData
             return .success(request)
         } catch {
-            print(error)
-            return .error(error)
+            return .error(.init(dataTransferError: .parsingJSONFailure(error)))
         }
     }
 }
@@ -78,5 +72,5 @@ struct JSParams: Codable {
 
 enum PaymentRequestResponse {
     case success(PKPaymentRequest)
-    case error(Error)
+    case error(ABError)
 }

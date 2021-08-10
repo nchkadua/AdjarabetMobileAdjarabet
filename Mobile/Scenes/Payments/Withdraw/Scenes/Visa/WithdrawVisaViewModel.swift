@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol WithdrawVisaViewModel: WithdrawVisaViewModelInput, WithdrawVisaViewModelOutput {
+protocol WithdrawVisaViewModel: BaseViewModel, WithdrawVisaViewModelInput, WithdrawVisaViewModelOutput {
 }
 
 struct WithdrawVisaViewModelParams {
@@ -30,8 +30,6 @@ enum WithdrawVisaViewModelOutputAction {
     case showView(ofType: WithdrawViewType)
     case setAndBindCashOut(viewModel: CashOutVisaViewModel)
     case setAndBindInfo(viewModel: WithdrawVisaInfoViewModel)
-    case show(error: String)
-    case showMessage(message: String)
 }
 // view type enum
 enum WithdrawViewType {
@@ -43,7 +41,7 @@ enum WithdrawVisaViewModelRoute {
     case addAccount(params: AddCardViewModelParams)
 }
 
-class DefaultWithdrawVisaViewModel {
+class DefaultWithdrawVisaViewModel: DefaultBaseViewModel {
     let params: WithdrawVisaViewModelParams
 
     private let actionSubject = PublishSubject<WithdrawVisaViewModelOutputAction>()
@@ -62,8 +60,6 @@ class DefaultWithdrawVisaViewModel {
     // state
     private var accounts: [PaymentAccountEntity] = .init()
     private var session: String?
-
-    private var disposeBag = DisposeBag()
 
     init(with params: WithdrawVisaViewModelParams) {
         self.params = params
@@ -102,7 +98,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                 self.notify(.loader(isHidden: true))
             case .failure(let error):
                 self.disable()
-                self.actionSubject.onNext(.show(error: error.localizedDescription))
+                self.show(error: error)
             }
         }
     }
@@ -175,7 +171,8 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         guard (0..<accounts.count).contains(account)
         else {
             disable()
-            notify(.show(error: "wrong account index was passed: \(account)"))
+            let message = "wrong account index was passed: \(account)"
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         // validation
@@ -184,7 +181,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         else {
             disable()
             let message = R.string.localization.withdraw_wrong_format_amount.localized()
-            notify(.show(error: message))
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         /*
@@ -204,7 +201,8 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         guard (0..<accounts.count).contains(account)
         else {
             disable()
-            notify(.show(error: "wrong account index was passed: \(account)"))
+            let message = "wrong account index was passed: \(account)"
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         // update continue button state
@@ -221,7 +219,8 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
               let damount = amountFormatter.unformat(number: amount, from: .s_n_a) // amount is valid
         else {
             disable()
-            notify(.show(error: "wrong parameters was passed - amount: \(amount); account: \(account)"))
+            let message = "wrong parameters was passed - amount: \(amount); account: \(account)"
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         // guard necessary parameters for transaction
@@ -229,8 +228,8 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
               let serviceType = UFCServiceType(account: accounts[account])
         else {
             disable()
-            let error = R.string.localization.withdraw_missing_params_error.localized()
-            notify(.show(error: error))
+            let message = R.string.localization.withdraw_missing_params_error.localized()
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         cashOutViewModel.update(isLoading: true)
@@ -244,13 +243,13 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
             case .success:
                 self.userBalanceService.update()
                 let success = R.string.localization.withdraw_transaction_successed.localized()
-                self.notify(.showMessage(message: success))
+                self.show(error: .init(type: .`init`(description: .popup(description: .init(description: success))))) // TODO: add correct icon
                 // reset state for next transaction
                 self.cashOutViewModel.update(amount: "")
                 self.disable()
             case .failure(let error):
                 self.disable()
-                self.notify(.show(error: error.localizedDescription))
+                self.show(error: error)
             }
         }
     }
@@ -264,8 +263,8 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         guard let serviceType = UFCServiceType(account: accounts[account])
         else {
             disable()
-            let error = R.string.localization.withdraw_service_type_init_error.localized()
-            notify(.show(error: error))
+            let message = R.string.localization.withdraw_service_type_init_error.localized()
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         withdrawUseCase.execute(serviceType: serviceType, amount: amount) { [weak self] result in
@@ -284,7 +283,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                 self.cashOutViewModel.update(isEnabled: true)
             case .failure(let error):
                 self.disable()
-                self.notify(.show(error: error.localizedDescription))
+                self.show(error: error)
             }
         }
     }

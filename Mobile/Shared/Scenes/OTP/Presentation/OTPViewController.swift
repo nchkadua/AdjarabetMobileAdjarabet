@@ -9,7 +9,7 @@
 import RxSwift
 
 public class OTPViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: OTPViewModel
+    @Inject(from: .viewModels) var viewModel: OTPViewModel
     public lazy var navigator = OTPNavigator(viewController: self)
 
     // MARK: IBOutlets
@@ -37,6 +37,7 @@ public class OTPViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

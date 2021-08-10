@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol GameViewModel: GameViewModelInput, GameViewModelOutput { }
+protocol GameViewModel: BaseViewModel, GameViewModelInput, GameViewModelOutput { }
 
 struct GameViewModelParams {
     let game: Game
@@ -30,12 +30,11 @@ protocol GameViewModelOutput {
 enum GameViewModelOutputAction {
     case bindToGameLoader(viewModel: GameLoaderComponentViewModel)
     case load(url: URL)
-    case show(error: String)
 }
 
 enum GameViewModelRoute { }
 
-class DefaultGameViewModel {
+class DefaultGameViewModel: DefaultBaseViewModel {
     var params: GameViewModelParams
     private let actionSubject = PublishSubject<GameViewModelOutputAction>()
     private let routeSubject = PublishSubject<GameViewModelRoute>()
@@ -63,7 +62,7 @@ extension DefaultGameViewModel: GameViewModel {
                 self?.result = result
                 self?.actionSubject.onNext(.load(url: result.url))
             case .failure(let error):
-                self?.actionSubject.onNext(.show(error: error.localizedDescription))
+                self?.show(error: .init(type: .from(error)))
             }
             self?.finishGameLoadingAnimation()
         }

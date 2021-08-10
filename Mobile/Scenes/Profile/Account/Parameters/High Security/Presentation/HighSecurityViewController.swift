@@ -64,13 +64,6 @@ class HighSecurityViewController: ABPopupViewController {
             setupView(loaderIsHiden: loaderIsHiden)
         case .setButtonState(let isOn):
             setButtonState(isOn: isOn)
-        case .showError(let error):
-            {}() // TODO
-            /*
-            showAlert(title: error.description.description) { _ in
-                error.description.onOkAction()
-            }
-            */
         case .close:
             navigationController?.dismiss(animated: true, completion: nil)
         }

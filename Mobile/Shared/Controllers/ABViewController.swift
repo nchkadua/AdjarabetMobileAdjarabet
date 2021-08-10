@@ -32,7 +32,26 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     }
 
     func show(error: ABError) {
-        print("ABViewController.show(error:)", error.description) // {}()
+        switch error.description {
+        case .popup(let description):
+            showPopupError(with: description)
+        case .notification(let description):
+            showNotificationError(with: description)
+        case .status(let description):
+            showStatusError(with: description)
+        }
+    }
+
+    func showPopupError(with description: ABError.Description.Popup) {
+        showAlert(title: "Popup: \(description.description)")
+    }
+
+    func showNotificationError(with description: ABError.Description.Notification) {
+        showAlert(title: "Notification: \(description.description)")
+    }
+
+    func showStatusError(with description: ABError.Description.Status) {
+        showAlert(title: "Status: \(description.description)")
     }
 
     public func addKeyboardDismissOnTap() {

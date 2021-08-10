@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol BiometricSettingsViewModel: BiometricSettingsViewModelInput, BiometricSettingsViewModelOutput {
+protocol BiometricSettingsViewModel: BaseViewModel, BiometricSettingsViewModelInput, BiometricSettingsViewModelOutput {
 }
 
 public protocol BiometricSettingsViewModelInput {
@@ -35,11 +35,10 @@ public enum BiometricSettingsViewModelRoute {
     case openSettingsAlert(title: String, message: String? = nil)
 }
 
-public class DefaultBiometricSettingsViewModel {
+public class DefaultBiometricSettingsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<BiometricSettingsViewModelOutputAction>()
     private let routeSubject = PublishSubject<BiometricSettingsViewModelRoute>()
 
-    private let disposeBag = DisposeBag()
     @Inject private var biometryInfoService: BiometricAuthentication
     @Inject private var biometryStateStorage: BiometryStorage
 

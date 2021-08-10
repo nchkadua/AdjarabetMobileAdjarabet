@@ -8,7 +8,8 @@
 
 import RxSwift
 
-protocol AccountInfoViewModel: AccountInfoViewModelInput,
+protocol AccountInfoViewModel: BaseViewModel,
+                               AccountInfoViewModelInput,
                                AccountInfoViewModelOutput { }
 
 protocol AccountInfoViewModelInput {
@@ -26,7 +27,6 @@ enum AccountInfoViewModelOutputAction {
     case setAndBindCommunicationLanguage(_ viewModel: CommunicationLanguageComponentViewModel)
     case setPersonalID(id: String)
     case setAddress(address: String)
-    case showError(_ error: ABError)
 }
 
 enum AccountInfoViewModelRoute {
@@ -78,7 +78,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let entity): self.actionSubject.onNext(.setPersonalID(id: entity.idDocuments.first?.personalID ?? "-----------"))
-            case .failure(let error): self.actionSubject.onNext(.showError(error))
+            case .failure(let error): self.show(error: error)
             }
         }
     }
@@ -91,7 +91,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
                 let accountInfoModel = AccountInfoModel.create(from: userInfo)
                 self.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
             case .failure(let error):
-                self.actionSubject.onNext(.showError(error))
+                self.show(error: error)
             }
         }
     }
@@ -113,7 +113,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
                 }).disposed(by: self.disposeBag)
                 self.actionSubject.onNext(.setAndBindCommunicationLanguage(viewModel))
             case .failure(let error):
-                self.actionSubject.onNext(.showError(error))
+                self.show(error: error)
             }
         }
     }
@@ -129,7 +129,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
                     self.changeLanguage(language: language)
                 }
             case .failure(let error):
-                self.actionSubject.onNext(.showError(error))
+                self.show(error: error)
             }
         }
     }
@@ -148,7 +148,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             case .success(let code, _):
                 self.changeLanguage(language: language, otpCode: code)
             case .error:
-                self.actionSubject.onNext(.showError(.init()))
+                self.show(error: .init()) // TODO: show appropriate error
             }
         }).disposed(by: disposeBag)
 
@@ -162,7 +162,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             case .success:
                 {}() // do nothing
             case .failure(let error):
-                self.actionSubject.onNext(.showError(error))
+                self.show(error: error)
             }
         }
     }

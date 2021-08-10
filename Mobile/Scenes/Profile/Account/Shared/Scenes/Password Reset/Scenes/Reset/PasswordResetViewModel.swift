@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol PasswordResetViewModel: PasswordResetViewModelInput, PasswordResetViewModelOutput {
+protocol PasswordResetViewModel: BaseViewModel, PasswordResetViewModelInput, PasswordResetViewModelOutput {
 }
 
 public struct PasswordResetViewModelParams {
@@ -35,7 +35,6 @@ public enum PasswordResetViewModelOutputAction {
     case setupPhoneNumber(_ number: String)
     case setButton(loading: Bool)
     case setupWith(_ resetType: PasswordResetType, _ contact: String)
-    case showMessage(message: String)
 }
 
 public enum PasswordResetViewModelRoute {
@@ -85,7 +84,7 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
     private func didRecive(action: OTPViewModelParams.Action) {
         switch action {
         case .success(let code, let userId): handleSuccessfulOTP(code, userId)
-        case .error: self.actionSubject.onNext(.showMessage(message: "Invalid OTP"))
+        case .error: show(error: .init()) // TODO: show appropriate error
         }
     }
 
@@ -94,8 +93,11 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
         resetPasswordUseCase.resetPassword(params: .init(confirmCode: otp, newPassword: self.newPassword ?? "", userId: userId)) { result in
             defer { self.actionSubject.onNext(.setButton(loading: false)) }
             switch result {
-            case .success: self.actionSubject.onNext(.showMessage(message: "Password Reseted Succesfully"))
-            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            case .success:
+                // TODO: add correct icon
+                self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: .init(), description: "Password Reseted Succesfully")))))
+            case .failure(let error):
+                self.show(error: error)
             }
         }
     }

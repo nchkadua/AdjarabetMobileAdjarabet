@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol MyCardsViewModel: MyCardsViewModelInput, MyCardsViewModelOutput {
+protocol MyCardsViewModel: BaseViewModel, MyCardsViewModelInput, MyCardsViewModelOutput {
 }
 
 public struct MyCardsViewModelParams {
@@ -83,7 +83,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
                 completion(.success(true))
             case .failure(let error):
                 self.setupStaticCards()
-                print(error)
+                self.show(error: error)
             }
         }
     }

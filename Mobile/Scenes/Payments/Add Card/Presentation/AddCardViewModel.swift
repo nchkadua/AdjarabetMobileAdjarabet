@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol AddCardViewModel: AddCardViewModelInput, AddCardViewModelOutput {
+protocol AddCardViewModel: BaseViewModel, AddCardViewModelInput, AddCardViewModelOutput {
 }
 
 public protocol AddCardViewModelDelegate: AnyObject {
@@ -49,7 +49,7 @@ public enum AddCardViewModelRoute {
     case webView(_ params: WebViewModelParams)
 }
 
-public class DefaultAddCardViewModel {
+public class DefaultAddCardViewModel: DefaultBaseViewModel {
     public var params: AddCardViewModelParams
     private let actionSubject = PublishSubject<AddCardViewModelOutputAction>()
     private let routeSubject = PublishSubject<AddCardViewModelRoute>()
@@ -79,13 +79,11 @@ extension DefaultAddCardViewModel: AddCardViewModel {
     }
 
     public func continueTapped(with amount: Double, hasAgreedToTerms: Bool) {
-        ufcDepositUseCase.execute(serviceType: params.serviceType, amount: amount, saveAccount: hasAgreedToTerms) { [weak self] result in
-            switch result {
-            case .success(let request):
-                self?.routeSubject.onNext(.webView(.init(request: request)))
-            case .failure(let error):
-                print("AddCard.Payments.DepositUseCase:", error)
-            }
-        }
+        ufcDepositUseCase.execute(serviceType: params.serviceType,
+                                  amount: amount,
+                                  saveAccount: hasAgreedToTerms,
+                                  handler: handler(onSuccessHandler: { request in
+                                      self.routeSubject.onNext(.webView(.init(request: request)))
+                                  }))
     }
 }

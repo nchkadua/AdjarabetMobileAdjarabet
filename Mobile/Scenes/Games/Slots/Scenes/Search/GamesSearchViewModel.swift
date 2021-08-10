@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol GamesSearchViewModel: GamesSearchViewModelInput, GamesSearchViewModelOutput, ABCollectionViewModel {
+protocol GamesSearchViewModel: BaseViewModel, GamesSearchViewModelInput, GamesSearchViewModelOutput, ABCollectionViewModel {
 }
 
 public struct GamesSearchViewModelParams {
@@ -99,7 +99,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
 
                 self.appendPage(games: viewModels)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.show(error: error)
             }
         }
     }

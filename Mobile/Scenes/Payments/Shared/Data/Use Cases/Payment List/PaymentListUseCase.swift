@@ -12,7 +12,7 @@ protocol PaymentListUseCase {
     /**
      Returns list of available payment methods
      */
-    typealias ListHandler = (Result<[PaymentMethodEntity], Error>) -> Void
+    typealias ListHandler = (Result<[PaymentMethodEntity], ABError>) -> Void
     func list(handler: @escaping ListHandler)
 }
 
@@ -26,7 +26,7 @@ struct DefaultPaymentListUseCase: PaymentListUseCase {
         guard let currencyId = userSession.currencyId,
               let currency = Currency(currencyId: currencyId)
         else {
-            handler(.failure(AdjarabetCoreClientError.sessionUninitialzed))
+            handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 

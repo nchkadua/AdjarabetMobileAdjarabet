@@ -9,7 +9,7 @@
 import RxSwift
 import UAParserSwift
 
-public protocol AccessHistoryViewModel: AccessHistoryViewModelInput, AccessHistoryViewModelOutput {
+protocol AccessHistoryViewModel: BaseViewModel, AccessHistoryViewModelInput, AccessHistoryViewModelOutput {
 }
 
 public struct AccessHistoryViewModelParams {
@@ -136,7 +136,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
                 self.actionSubject.onNext(.initialize(self.accessHistoryDataProvider.makeList()))
             case .failure(let error):
                 self.displayEmptyList()
-                print(error)
+                self.show(error: error)
             }
         }
     }

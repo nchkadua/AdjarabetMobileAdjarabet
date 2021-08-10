@@ -9,7 +9,7 @@
 import RxSwift
 import  CoreLocation
 
-public protocol PhoneNumberChangeViewModel: PhoneNumberChangeViewModelInput, PhoneNumberChangeViewModelOutput {
+protocol PhoneNumberChangeViewModel: BaseViewModel, PhoneNumberChangeViewModelInput, PhoneNumberChangeViewModelOutput {
 }
 
 public struct PhoneNumberChangeViewModelParams {
@@ -34,7 +34,7 @@ public enum PhoneNumberChangeViewModelOutputAction {
 public enum PhoneNumberChangeViewModelRoute {
 }
 
-public class DefaultPhoneNumberChangeViewModel {
+public class DefaultPhoneNumberChangeViewModel: DefaultBaseViewModel {
     public var params: PhoneNumberChangeViewModelParams
     private let actionSubject = PublishSubject<PhoneNumberChangeViewModelOutputAction>()
     private let routeSubject = PublishSubject<PhoneNumberChangeViewModelRoute>()

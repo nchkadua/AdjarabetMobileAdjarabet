@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol WithdrawViewModel: WithdrawViewModelInput, WithdrawViewModelOutput { }
+protocol WithdrawViewModel: BaseViewModel, WithdrawViewModelInput, WithdrawViewModelOutput { }
 
 protocol WithdrawViewModelInput {
     func viewDidLoad()
@@ -23,14 +23,13 @@ enum WithdrawViewModelOutputAction {
     case loader(isHidden: Bool)
     case set(balance: String)
     case bind(viewModel: PaymentMethodGridComponentViewModel)
-    case show(error: String)
 }
 
 enum WithdrawViewModelRoute {
     case navigate(to: WithdrawNavigator.Destination)
 }
 
-class DefaultWithdrawViewModel {
+class DefaultWithdrawViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<WithdrawViewModelOutputAction>()
     private let routeSubject = PublishSubject<WithdrawViewModelRoute>()
 
@@ -38,7 +37,6 @@ class DefaultWithdrawViewModel {
     private let paymentListUseCase: WithdrawPaymentListUseCase = DefaultWithdrawPaymentListUseCase()
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase
     @Inject(from: .componentViewModels) private var paymentsViewModel: PaymentMethodGridComponentViewModel
-    private let disposeBag = DisposeBag()
 }
 
 extension DefaultWithdrawViewModel: WithdrawViewModel {
@@ -58,7 +56,8 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
             switch result {
             case .success(let entity):
                 if entity.isEmpty {
-                    self.notify(.show(error: "No withdraw payment methods was specified"))
+                    let message = "No withdraw payment methods was specified"
+                    self.show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
                 } else {
                     let viewModels = entity.map { DefaultPaymentMethodComponentViewModel(params: .init(iconUrl: $0.iconUrl, flowId: $0.flowId)) }
                     self.paymentsViewModel.reloadCollectionView(with: viewModels)
@@ -67,7 +66,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
                     self.didRecive(action: .didSelectPaymentMethod(viewModels[0], .init(row: 0, section: 0)))
                 }
             case .failure(let error):
-                self.notify(.show(error: error.localizedDescription))
+                self.show(error: error)
             }
         }
     }
@@ -90,7 +89,8 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
         case .didSelectPaymentMethod(let viewModel, _):
             guard let destination = WithdrawNavigator.Destination(flowId: viewModel.params.flowId)
             else {
-                notify(.show(error: "Unknown withdraw method"))
+                let message = "Unknown withdraw method"
+                self.show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
                 return
             }
             routeSubject.onNext(.navigate(to: destination))

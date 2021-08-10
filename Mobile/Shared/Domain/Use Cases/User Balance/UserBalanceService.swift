@@ -71,7 +71,7 @@ extension DefaultUserBalanceService: UserBalanceService {
         balanceManagementRepository.balance(userId: userId,
                                             currencyId: userSession.currencyId ?? -1,
                                             isSingle: 0,
-                                            sessionId: sessionId) { [weak self] (result: Result<AdjarabetCoreResult.Balance, Error>) in
+                                            sessionId: sessionId) { [weak self] (result: Result<AdjarabetCoreResult.Balance, ABError>) in
                 switch result {
                 case .success(let value):
                     self?.balance = value.codable.balanceAmount / 100

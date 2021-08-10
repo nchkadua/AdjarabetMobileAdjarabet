@@ -9,7 +9,7 @@
 import RxSwift
 
 public class PasswordResetViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: PasswordResetViewModel
+    @Inject(from: .viewModels) var viewModel: PasswordResetViewModel
     public lazy var navigator = NewPasswordNavigator(viewController: self)
 
     @IBOutlet private weak var titleLabel: UILabel!
@@ -29,6 +29,7 @@ public class PasswordResetViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -52,9 +53,6 @@ public class PasswordResetViewController: ABViewController {
         switch action {
         case .setButton(let loading): updatePasswordButton.set(isLoading: loading)
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
-        case .showMessage(let message): showAlert(title: message) { _ in // Need to be changed after error handling system integrated
-                self.dismiss(animated: true, completion: nil)
-            }
         case .setupPhoneNumber(let number):
             contactInputView.set(text: number)
         case .setupWith(let resetType, let contact): setupTitles(resetType: resetType, contact: contact)

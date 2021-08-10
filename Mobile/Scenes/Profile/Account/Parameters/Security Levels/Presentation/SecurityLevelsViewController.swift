@@ -9,7 +9,7 @@
 import RxSwift
 
 public class SecurityLevelsViewController: ABViewController {
-    public var viewModel: SecurityLevelsViewModel!
+    var viewModel: SecurityLevelsViewModel!
     public lazy var navigator = SecurityLevelsNavigator(viewController: self)
     private lazy var appTableViewController = SecurityLevelsTableViewController()
 
@@ -18,6 +18,7 @@ public class SecurityLevelsViewController: ABViewController {
         super.viewDidLoad()
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

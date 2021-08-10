@@ -8,17 +8,17 @@
 
 import Foundation
 
-public protocol RecentlyPlayedGamesUseCase {
+protocol RecentlyPlayedGamesUseCase {
     @discardableResult
-    func execute(request: RecentlyPlayedGamesUseCaseRequst, completion: @escaping (Result<Games, Error>) -> Void) -> Cancellable?
+    func execute(request: RecentlyPlayedGamesUseCaseRequst, completion: @escaping (Result<Games, ABError>) -> Void) -> Cancellable?
 }
 
-public final class DefaultRecentlyPlayedGamesUseCase: RecentlyPlayedGamesUseCase {
+final class DefaultRecentlyPlayedGamesUseCase: RecentlyPlayedGamesUseCase {
     @Inject(from: .repositories) private var lobbyGamesRepository: LobbyGamesRepository
     @Inject private var userSession: UserSessionReadableServices
 
-    public func execute(request: RecentlyPlayedGamesUseCaseRequst, completion: @escaping (Result<Games, Error>) -> Void) -> Cancellable? {
-        lobbyGamesRepository.recentlyPlayedGames(sessionId: userSession.sessionId ?? "", userId: userSession.userId ?? -1, page: request.page, itemsPerPage: request.itemsPerPage) { (result: Result<JSONMessage<Games>, Error>) in
+    func execute(request: RecentlyPlayedGamesUseCaseRequst, completion: @escaping (Result<Games, ABError>) -> Void) -> Cancellable? {
+        lobbyGamesRepository.recentlyPlayedGames(sessionId: userSession.sessionId ?? "", userId: userSession.userId ?? -1, page: request.page, itemsPerPage: request.itemsPerPage) { (result: Result<JSONMessage<Games>, ABError>) in
             switch result {
             case .success(let params):
                 completion(.success(params.params))
@@ -29,7 +29,7 @@ public final class DefaultRecentlyPlayedGamesUseCase: RecentlyPlayedGamesUseCase
     }
 }
 
-public struct RecentlyPlayedGamesUseCaseRequst {
-    public var page: Int
-    public var itemsPerPage: Int
+struct RecentlyPlayedGamesUseCaseRequst {
+    var page: Int
+    var itemsPerPage: Int
 }

@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol ProfileViewModel: ProfileViewModelInput, ProfileViewModelOutput {
+protocol ProfileViewModel: BaseViewModel, ProfileViewModelInput, ProfileViewModelOutput {
 }
 
 public struct ProfileViewModelParams {

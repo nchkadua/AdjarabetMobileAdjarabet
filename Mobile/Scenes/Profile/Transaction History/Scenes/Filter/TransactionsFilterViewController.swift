@@ -16,7 +16,7 @@ public class TransactionsFilterViewController: ABViewController {
     @IBOutlet private weak var gamesFilterButton: UIButton!
 
     // MARK: - Properties
-    @Inject(from: .viewModels) public var viewModel: TransactionsFilterViewModel
+    @Inject(from: .viewModels) var viewModel: TransactionsFilterViewModel
     @Inject(from: .componentViewModels) private var calendarComponentViewModel: CalendarComponentViewModel
     public lazy var navigator = TransactionsFilterNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
@@ -28,6 +28,7 @@ public class TransactionsFilterViewController: ABViewController {
         setup()
         bind(to: viewModel)
         bindToCalendar(calendarComponentViewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
         viewModel.setupTransactionTypeList()
     }

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol LobbyGamesRepository {
+protocol LobbyGamesRepository {
     @discardableResult
-    func games<T: Codable>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, searchTerm: String?, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
-    func recentlyPlayedGames<T: Codable>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func games<T: Codable>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, searchTerm: String?, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable
+    func recentlyPlayedGames<T: Codable>(sessionId: String, userId: Int, page: Int, itemsPerPage: Int, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable
 }

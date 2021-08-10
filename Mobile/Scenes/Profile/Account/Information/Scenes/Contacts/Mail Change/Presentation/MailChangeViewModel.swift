@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol MailChangeViewModel: MailChangeViewModelInput, MailChangeViewModelOutput {
+protocol MailChangeViewModel: BaseViewModel, MailChangeViewModelInput, MailChangeViewModelOutput {
 }
 
 public protocol MailChangeViewModelInput {
@@ -23,7 +23,6 @@ public protocol MailChangeViewModelOutput {
 
 public enum MailChangeViewModelOutputAction {
     case setButton(loading: Bool)
-    case showMessage(message: String)
 }
 
 public enum MailChangeViewModelRoute {
@@ -48,21 +47,16 @@ extension DefaultMailChangeViewModel: MailChangeViewModel {
     }
 
     public func updateMail(_ newMail: String, _ password: String) {
-        actionOTPRepo.isEnabled { result in
-            switch result {
-            case .success(let enabled):
-                switch  enabled {
-                case true:
-                    self.newMail = newMail
-                    self.password = password
-                    self.getActionOtp()
-                case false:
-                    self.changeMail(newMail, password, otp: "")
-                }
-            case .failure(let error):
-                self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+        actionOTPRepo.isEnabled(handler(onSuccessHandler: { enabled in
+            switch enabled {
+            case true:
+                self.newMail = newMail
+                self.password = password
+                self.getActionOtp()
+            case false:
+                self.changeMail(newMail, password, otp: "")
             }
-        }
+        }))
     }
 
     private func getActionOtp() {
@@ -84,7 +78,7 @@ extension DefaultMailChangeViewModel: MailChangeViewModel {
     private func didRecive(action: OTPViewModelParams.Action) {
         switch action {
         case .success(let code, _): handleSuccessfulOTP(code ?? "")
-        case .error: self.actionSubject.onNext(.showMessage(message: "Invalid OTP"))
+        case .error: self.show(error: .init()) // TODO: show appropriate error
         }
     }
 
@@ -97,8 +91,11 @@ extension DefaultMailChangeViewModel: MailChangeViewModel {
         updateMailUseCase.execute(with: .init(pass: password, email: newMail, otp: otp)) { result in
             defer { self.actionSubject.onNext(.setButton(loading: false)) }
             switch result {
-            case .success: self.actionSubject.onNext(.showMessage(message: "Mail Changed Successfully"))
-            case .failure(let error): self.actionSubject.onNext(.showMessage(message: error.localizedDescription))
+            case .success:
+                // TODO: add correct icon
+                self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: .init(), description: "Mail Changed Successfully")))))
+            case .failure(let error):
+                self.show(error: error)
             }
         }
     }

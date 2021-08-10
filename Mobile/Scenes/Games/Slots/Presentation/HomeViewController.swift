@@ -12,7 +12,7 @@ import CoreLocation
 public class HomeViewController: ABViewController, PageViewControllerProtocol {
     // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: HomeViewModel
-    public var searchViewModel: GamesSearchViewModel { searchController.viewModel }
+    var searchViewModel: GamesSearchViewModel { searchController.viewModel }
     public lazy var navigator = HomeNavigator(viewController: self)
     private lazy var collectionViewController = HomeViewCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
     private lazy var searchController = GamesSearchViewController()
@@ -35,6 +35,7 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

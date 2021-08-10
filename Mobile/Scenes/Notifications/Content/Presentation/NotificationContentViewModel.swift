@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol NotificationContentViewModel: NotificationContentViewModelInput, NotificationContentViewModelOutput {
+protocol NotificationContentViewModel: BaseViewModel, NotificationContentViewModelInput, NotificationContentViewModelOutput {
 }
 
 public struct NotificationContentViewModelParams {
@@ -31,13 +31,12 @@ public protocol NotificationContentViewModelOutput {
 public enum NotificationContentViewModelOutputAction {
     case setupWith(notification: NotificationItemsEntity.NotificationEntity)
     case setTime(time: String)
-    case showMessage(message: String)
 }
 
 public enum NotificationContentViewModelRoute {
 }
 
-public class DefaultNotificationContentViewModel {
+public class DefaultNotificationContentViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<NotificationContentViewModelOutputAction>()
     private let routeSubject = PublishSubject<NotificationContentViewModelRoute>()
     public let params: NotificationContentViewModelParams
@@ -62,7 +61,7 @@ extension DefaultNotificationContentViewModel: NotificationContentViewModel {
         notificationsUseCase.read(notificationId: params.notification.id) { result in
             switch result {
             case .success(let entity): print(entity)
-            case .failure(let error): print(error)
+            case .failure(let error): self.show(error: error)
             }
         }
     }

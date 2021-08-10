@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol VisaViewModel: VisaViewModelInput, VisaViewModelOutput { }
+protocol VisaViewModel: BaseViewModel, VisaViewModelInput, VisaViewModelOutput { }
 
 public struct VisaViewModelParams {
     let serviceType: UFCServiceType
@@ -36,7 +36,6 @@ enum VisaViewModelOutputAction {
     case updateMin(with: String)
     case updateDisposable(with: String)
     case updateMax(with: String)
-    case show(error: String)
     case bindToGridViewModel(viewModel: SuggestedAmountGridComponentViewModel)
 }
 // view type enum
@@ -50,7 +49,7 @@ enum VisaViewModelRoute {
     case addAccount(params: AddCardViewModelParams)
 }
 
-class DefaultVisaViewModel {
+class DefaultVisaViewModel: DefaultBaseViewModel {
     var params: VisaViewModelParams
     private let actionSubject = PublishSubject<VisaViewModelOutputAction>()
     private let routeSubject = PublishSubject<VisaViewModelRoute>()
@@ -81,24 +80,18 @@ extension DefaultVisaViewModel: VisaViewModel {
         // 0. update continue to non-interactive
         notify(.updateContinue(with: false))
         // 1. fetch account/card list
-        accountListRepository.list(params: .init(providerType: params.serviceType.providerType, paymentType: .deposit)) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let list):
-                self.accounts = list                            // 2. update accounts
-                if self.accounts.isEmpty {                      // if user has no accounts:
-                    self.notify(.showView(ofType: .addAccount)) // 3. notify view to show Add Account view
-                } else {                                        // else:
-                    self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
-                    // create account list for view
-                    let viewAccounts = self.accounts.map { $0.accountVisual }
-                    self.notify(.updateAccounts(with: viewAccounts)) // 4. update accounts on shown view
-                    self.fetchSuggested() // continue here...
-                }
-            case .failure(let error):
-                self.notify(.show(error: error.localizedDescription))
+        accountListRepository.list(params: .init(providerType: params.serviceType.providerType, paymentType: .deposit), handler: handler(onSuccessHandler: { list in
+            self.accounts = list                            // 2. update accounts
+            if self.accounts.isEmpty {                      // if user has no accounts:
+                self.notify(.showView(ofType: .addAccount)) // 3. notify view to show Add Account view
+            } else {                                        // else:
+                self.notify(.showView(ofType: .accounts))   // 3. notify view to show Accounts view
+                // create account list for view
+                let viewAccounts = self.accounts.map { $0.accountVisual }
+                self.notify(.updateAccounts(with: viewAccounts)) // 4. update accounts on shown view
+                self.fetchSuggested() // continue here...
             }
-        }
+        }))
     }
 
     private func fetchSuggested() {
@@ -147,7 +140,7 @@ extension DefaultVisaViewModel: VisaViewModel {
         else {
             notify(.updateContinue(with: false))
             let message = R.string.localization.deposit_visa_wrong_format_amount.localized()
-            notify(.show(error: message))
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         /*
@@ -164,7 +157,8 @@ extension DefaultVisaViewModel: VisaViewModel {
         // sanity check
         guard (0..<accounts.count).contains(account)
         else {
-            notify(.show(error: "wrong account index was passed: \(account)"))
+            let message = "wrong account index was passed: \(account)"
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         // update continue button state
@@ -180,20 +174,16 @@ extension DefaultVisaViewModel: VisaViewModel {
         guard (0..<accounts.count).contains(account),                              // sanity check
               let damount = amountFormatter.unformat(number: amount, from: .s_n_a) // amount is valid
         else {
-            notify(.show(error: "wrong parameters was passed - amount: \(amount); account: \(account)"))
+            let message = "wrong parameters was passed - amount: \(amount); account: \(account)"
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
             return
         }
         depositUseCase.execute(serviceType: params.serviceType,
                                amount: damount,
-                               accountId: accounts[account].id) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let request):
-                self.routeSubject.onNext(.webView(with: .init(request: request)))
-            case .failure(let error):
-                self.actionSubject.onNext(.show(error: error.localizedDescription))
-            }
-        }
+                               accountId: accounts[account].id,
+                               handler: handler(onSuccessHandler: { request in
+                                   self.routeSubject.onNext(.webView(with: .init(request: request)))
+                               }))
     }
 
     func added() {

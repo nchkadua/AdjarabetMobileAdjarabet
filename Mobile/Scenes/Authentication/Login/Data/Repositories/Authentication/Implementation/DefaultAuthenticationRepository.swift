@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class DefaultAuthenticationRepository {
+class DefaultAuthenticationRepository {
     @Inject private var dataTransferService: DataTransferService
     private var requestBuilder: CoreRequestBuilder { CoreRequestBuilder() }
 }
 
 extension DefaultAuthenticationRepository: AuthenticationRepository {
-    public func login<T>(username: String, password: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
+    func login<T>(username: String, password: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .setBody(key: .req, value: "login")
             .setBody(key: .userIdentifier, value: username)
@@ -25,7 +25,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func smsCode<T>(username: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
+    func smsCode<T>(username: String, channel: OTPDeliveryChannel, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .setBody(key: .req, value: "getSmsCode")
             .setBody(key: .userIdentifier, value: username)
@@ -35,7 +35,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func logout<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
+    func logout<T>(userId: Int, sessionId: String, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .setHeader(key: .cookie, value: sessionId)
             .setBody(key: .req, value: "logout")
@@ -45,7 +45,7 @@ extension DefaultAuthenticationRepository: AuthenticationRepository {
         return dataTransferService.performTask(request: request, respondOnQueue: .main, completion: completion)
     }
 
-    public func login<T>(username: String, code: String, loginType: LoginType, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
+    func login<T>(username: String, code: String, loginType: LoginType, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let request = requestBuilder
             .setBody(key: .req, value: "loginOtp")
             .setBody(key: .userIdentifier, value: username)

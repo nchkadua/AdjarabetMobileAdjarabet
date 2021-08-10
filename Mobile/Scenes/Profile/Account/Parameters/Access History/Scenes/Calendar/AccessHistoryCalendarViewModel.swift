@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol AccessHistoryCalendarViewModel: AccessHistoryCalendarViewModelInput, AccessHistoryCalendarViewModelOutput {
+protocol AccessHistoryCalendarViewModel: BaseViewModel, AccessHistoryCalendarViewModelInput, AccessHistoryCalendarViewModelOutput {
 }
 
 public struct AccessHistoryCalendarViewModelParams {
@@ -40,7 +40,7 @@ public enum AccessHistoryCalendarViewModelOutputAction {
 public enum AccessHistoryCalendarViewModelRoute {
 }
 
-public class DefaultAccessHistoryCalendarViewModel {
+public class DefaultAccessHistoryCalendarViewModel: DefaultBaseViewModel {
     public var params: AccessHistoryCalendarViewModelParams!
     private let actionSubject = PublishSubject<AccessHistoryCalendarViewModelOutputAction>()
     private let routeSubject = PublishSubject<AccessHistoryCalendarViewModelRoute>()

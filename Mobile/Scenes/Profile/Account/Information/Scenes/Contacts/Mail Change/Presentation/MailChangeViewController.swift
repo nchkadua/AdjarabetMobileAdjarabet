@@ -25,6 +25,7 @@ public class MailChangeViewController: ABViewController {
         setup()
         subscribeToPasswordInputView()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
         // {}() // TODO
         // setupAccessibilityIdentifiers()
@@ -49,7 +50,6 @@ public class MailChangeViewController: ABViewController {
     private func didRecive(action: MailChangeViewModelOutputAction) {
         switch action {
         case .setButton(let loading): changeButton.set(isLoading: loading)
-        case .showMessage(let message): showAlert(title: message)
         }
     }
 

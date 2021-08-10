@@ -8,10 +8,9 @@
 
 import RxSwift
 
-public class EmoneyViewController: UIViewController {
+public class EmoneyViewController: ABViewController {
     @Inject(from: .viewModels) var viewModel: EmoneyViewModel
     private lazy var navigator = EmoneyNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     // MARK: Outlets
     @IBOutlet weak private var titleStackView: UIStackView!
@@ -25,6 +24,7 @@ public class EmoneyViewController: UIViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
     }
 
     public override func viewWillAppear(_ animated: Bool) {

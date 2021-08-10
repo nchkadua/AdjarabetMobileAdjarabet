@@ -41,9 +41,9 @@ protocol DataTransferService {
     ) -> Cancellable
     // TODO: delete lower functions
     @discardableResult
-    func performTask<T: HeaderProvidingCodableType>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func performTask<T: HeaderProvidingCodableType>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable
     @discardableResult
-    func performTask<T: Decodable>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable
+    func performTask<T: Decodable>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable
 }
 
 public class DefaultDataTransferService {
@@ -83,12 +83,12 @@ extension DefaultDataTransferService: DataTransferService {
         }
     }
 
-    public func performTask<T>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
+    func performTask<T>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: HeaderProvidingCodableType {
         let task = self.networkService.request(request: request) { result in
             switch result {
             case .success(let response):
                 guard let data = response.data else {
-                    respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) }
+                    respondOnQueue.async { completion(.failure(.init(dataTransferError: .responseNotFound))) }
                     return
                 }
                 do {
@@ -99,22 +99,22 @@ extension DefaultDataTransferService: DataTransferService {
                     let result = T(codable: decoded, header: decodedHeader)
                     respondOnQueue.async { completion(.success(result)) }
                 } catch {
-                    respondOnQueue.async { completion(.failure(DataTransferError.parsingJSONFailure(error))) }
+                    respondOnQueue.async { completion(.failure(.init(dataTransferError: .parsingJSONFailure(error)))) }
                 }
             case .failure(let error):
-                respondOnQueue.async { completion(.failure(DataTransferError.networkFailure(error))) }
+                respondOnQueue.async { completion(.failure(.init(dataTransferError: .networkFailure(error)))) }
             }
         }
 
         return task
     }
 
-    public func performTask<T>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T: Decodable {
+    func performTask<T>(request: URLRequest, respondOnQueue: DispatchQueue, completion: @escaping (Result<T, ABError>) -> Void) -> Cancellable where T: Decodable {
         let task = self.networkService.request(request: request) { result in
             switch result {
             case .success(let response):
                 guard let data = response.data else {
-                    respondOnQueue.async { completion(.failure(DataTransferError.responseNotFound)) }
+                    respondOnQueue.async { completion(.failure(.init(dataTransferError: .responseNotFound))) }
                     return
                 }
                 do {
@@ -122,10 +122,10 @@ extension DefaultDataTransferService: DataTransferService {
                     let result = try decoder.decode(T.self, from: data)
                     respondOnQueue.async { completion(.success(result)) }
                 } catch {
-                    respondOnQueue.async { completion(.failure(DataTransferError.parsingJSONFailure(error))) }
+                    respondOnQueue.async { completion(.failure(.init(dataTransferError: .parsingJSONFailure(error)))) }
                 }
             case .failure(let error):
-                respondOnQueue.async { completion(.failure(DataTransferError.networkFailure(error))) }
+                respondOnQueue.async { completion(.failure(.init(dataTransferError: .networkFailure(error)))) }
             }
         }
 

@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol LoginViewModel: LoginViewModelInput, LoginViewModelOutput {
+protocol LoginViewModel: BaseViewModel, LoginViewModelInput, LoginViewModelOutput {
 }
 
 public struct LoginViewModelParams {
@@ -47,17 +47,15 @@ public enum LoginViewModelRoute {
     case openAlert(title: String, message: String? = nil)
 }
 
-public class DefaultLoginViewModel {
+public class DefaultLoginViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<LoginViewModelOutputAction>()
     private let routeSubject = PublishSubject<LoginViewModelRoute>()
     public let params: LoginViewModelParams
-    private let disposeBag = DisposeBag()
 
     @Inject(from: .useCases) private var loginUseCase: LoginUseCase
     @Inject(from: .useCases) private var smsCodeUseCase: SMSCodeUseCase
     @Inject(from: .useCases) private var biometricLoginUseCase: BiometricLoginUseCase
     @Inject private var biometryStateStorage: BiometryReadableStorage
-    @Inject private var languageStorage: LanguageStorage
 
     public init(params: LoginViewModelParams = LoginViewModelParams(showBiometryLoginAutomatically: true)) {
         self.params = params
@@ -72,14 +70,20 @@ public class DefaultLoginViewModel {
             case .otpRequried(let username): openOTP(username, otpType: .loginOTP)
             }
         case .failure(let error):
-            {}() // TODO
-            // routeSubject.onNext(.openAlert(title: error.description.description))
+            show(error: error)
         }
     }
 
     private func openOTP(_ username: String, otpType: OTPType) {
         let otpParams: OTPViewModelParams = .init(vcTitle: R.string.localization.sms_login_page_title.localized(), buttonTitle: R.string.localization.sms_approve.localized(), username: username, otpType: otpType)
         routeSubject.onNext(.openOTP(params: otpParams))
+    }
+
+    public override func languageDidChange() {
+        actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable && biometryIsOn,
+                                                      icon: biometricLoginUseCase.icon,
+                                                      title: biometricLoginUseCase.title))
+        getQAImageByLanguage()
     }
 }
 
@@ -113,20 +117,13 @@ extension DefaultLoginViewModel: LoginViewModel {
         actionSubject.onNext(.configureQaButton(image: image ?? UIImage()))
     }
 
-    public func languageDidChange() {
-        actionSubject.onNext(.configureBiometryButton(available: biometricLoginUseCase.isAvailable && biometryIsOn,
-                                                      icon: biometricLoginUseCase.icon,
-                                                      title: biometricLoginUseCase.title))
-        getQAImageByLanguage()
-    }
-
     public func smsLogin(username: String) {
         actionSubject.onNext(.setSmsLoginButton(isLoading: true))
         smsCodeUseCase.execute(username: username) { [weak self] result in
             defer { self?.actionSubject.onNext(.setSmsLoginButton(isLoading: false)) }
             switch result {
             case .success: self?.openOTP(username, otpType: .smsLogin)
-            case .failure(let error): self?.routeSubject.onNext(.openAlert(title: error.localizedDescription))
+            case .failure(let error): self?.show(error: error)
             }
         }
     }

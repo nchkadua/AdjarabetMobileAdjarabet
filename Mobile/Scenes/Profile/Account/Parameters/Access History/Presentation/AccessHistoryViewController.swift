@@ -9,7 +9,7 @@
 import RxSwift
 
 public class AccessHistoryViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: AccessHistoryViewModel
+    @Inject(from: .viewModels) var viewModel: AccessHistoryViewModel
     public lazy var navigator = AccessHistoryNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
     // MARK: - Lifecycle methods
@@ -18,6 +18,7 @@ public class AccessHistoryViewController: ABViewController {
 
         bind(to: viewModel)
         setup()
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 

@@ -8,10 +8,9 @@
 
 import RxSwift
 
-class WithdrawVisaViewController: UIViewController {
+class WithdrawVisaViewController: ABViewController {
     var viewModel: WithdrawVisaViewModel!
     private lazy var navigator = WithdrawVisaNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 
     @IBOutlet private weak var mainContentView: UIView!
     @IBOutlet private weak var infoView: WithdrawVisaInfoView!
@@ -28,6 +27,7 @@ class WithdrawVisaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -52,11 +52,6 @@ class WithdrawVisaViewController: UIViewController {
             cashOutView.setAndBind(viewModel: viewModel)
         case .setAndBindInfo(let viewModel):
             infoView.setAndBind(viewModel: viewModel)
-        case .show(let error):
-            loader(isHidden: true)
-            showAlert(title: error)
-        case .showMessage(let message):
-            showAlert(title: message)
         }
     }
 

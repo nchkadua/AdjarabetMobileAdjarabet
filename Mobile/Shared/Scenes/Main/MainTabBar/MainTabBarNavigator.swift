@@ -8,7 +8,7 @@
 
 public class MainTabBarNavigator: Navigator {
     public let homeVCFacotry = DefaultHomeViewControllerFactory()
-    public let bonusVCFactory = DefaultBonusViewControllerFactory()
+    private let bonusVCFactory = DefaultBonusViewControllerFactory()
     public let promotionsVCFactory = DefaultPromotionsViewControllerFactory()
     public let notificationsVCFacotry = DefaultNotificationsViewControllerFactory()
 

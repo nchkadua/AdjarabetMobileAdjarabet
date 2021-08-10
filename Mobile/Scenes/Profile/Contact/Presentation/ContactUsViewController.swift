@@ -11,7 +11,7 @@ import MessageUI
 import MapKit
 
 public class ContactUsViewController: ABViewController {
-    @Inject(from: .viewModels) public var viewModel: ContactUsViewModel
+    @Inject(from: .viewModels) var viewModel: ContactUsViewModel
     public lazy var navigator = ContactUsNavigator(viewController: self)
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
@@ -22,6 +22,7 @@ public class ContactUsViewController: ABViewController {
 
         setup()
         bind(to: viewModel)
+        errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
 
@@ -42,7 +43,6 @@ public class ContactUsViewController: ABViewController {
         case .openUrl(let url): openUrl(url)
         case .sendMail(let mail): sendMail(mail)
         case .openMapItem(let mapItem, let options): openMapItem(mapItem, with: options)
-        case .showMessage(let message): showAlert(title: message)
         }
     }
 

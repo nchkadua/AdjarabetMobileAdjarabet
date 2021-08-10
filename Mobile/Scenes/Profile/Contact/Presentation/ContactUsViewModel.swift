@@ -9,7 +9,7 @@
 import RxSwift
 import MapKit
 
-public protocol ContactUsViewModel: ContactUsViewModelInput, ContactUsViewModelOutput {
+protocol ContactUsViewModel: BaseViewModel, ContactUsViewModelInput, ContactUsViewModelOutput {
 }
 
 public struct ContactUsViewModelParams {
@@ -31,7 +31,6 @@ public enum ContactUsViewModelOutputAction {
     case openUrl(_ url: URL)
     case sendMail(_ mail: String)
     case openMapItem(_ mapItem: MKMapItem, options: [String: Any])
-    case showMessage(message: String)
 }
 
 public enum ContactUsViewModelRoute {
@@ -128,7 +127,8 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
 
             actionSubject.onNext(.openMapItem(mapItem, options: options))
         } else {
-            actionSubject.onNext(.showMessage(message: "No Map Application is installed"))
+            let message = "No Map Application is installed"
+            show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
         }
     }
 }

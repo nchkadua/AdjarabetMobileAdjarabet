@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public protocol FAQQuestionsViewModel: FAQQuestionsViewModelInput, FAQQuestionsViewModelOutput {
+protocol FAQQuestionsViewModel: BaseViewModel, FAQQuestionsViewModelInput, FAQQuestionsViewModelOutput {
 }
 
 public struct FAQQuestionsViewModelParams {
