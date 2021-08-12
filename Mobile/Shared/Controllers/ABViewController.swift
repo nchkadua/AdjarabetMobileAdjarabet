@@ -18,6 +18,27 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         }
     }
 
+ // private lazy var popupError: PopupErrorView = .init()
+
+    private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint)  = {
+        let error: NotificationErrorView = .init()
+
+        view.addSubview(error)
+        error.translatesAutoresizingMaskIntoConstraints = false
+
+        let constraint = error.topAnchor.constraint(equalTo: view.bottomAnchor)
+        NSLayoutConstraint.activate([
+            constraint,
+            error.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 23),
+            error.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -23),
+            error.heightAnchor.constraint(equalToConstant: 84)
+        ])
+
+        return (error, constraint)
+    }()
+
+ // private lazy var statusError: StatusErrorView = .init()
+
     public var keyScrollView: UIScrollView? { nil }
     public private(set) var isKeyboardOpen: Bool = false
     public private(set) var keyboardFrame: CGRect = .zero
@@ -47,7 +68,19 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     }
 
     func showNotificationError(with description: ABError.Description.Notification) {
-        showAlert(title: "Notification: \(description.description)")
+        notificationError.view.configure(from: description)
+        DispatchQueue.main.async {
+            self.notificationError.constraint.constant -= 114
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.notificationError.constraint.constant += 114
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
     }
 
     func showStatusError(with description: ABError.Description.Status) {
