@@ -10,7 +10,8 @@ class ActionItemsProvider {
     public static func items() -> [Action] {
         [
             Action(title: R.string.localization.terms_and_conditions.localized(), destination: .termsAndConditions),
-            Action(title: R.string.localization.privacy_policy.localized(), destination: .privacyPolicy)
+            Action(title: R.string.localization.privacy_policy.localized(), destination: .privacyPolicy),
+//            Action(title: R.string.)
         ]
     }
 }

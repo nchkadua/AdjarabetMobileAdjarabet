@@ -110,9 +110,12 @@
 "incognito_card" = "Incognito Card";
 "account_information" = "Account Information";
 "account_parameters" = "Account Parameters";
+
+/* Documentation */
 "documentation" = "Documentation";
 "terms_and_conditions" = "Terms and Conditions";
 "privacy_policy" = "Privacy Policy";
+"about_us" = "About Us";
 "log_out" = "Log Out";
 
 /* Terms And Conditions*/
