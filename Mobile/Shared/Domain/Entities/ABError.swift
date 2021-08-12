@@ -25,7 +25,7 @@ class ABError {
         case .ipIsBlocked:
             return .popup(description: .init(icon: .init(), description: "IP Is Blocked")) // TODO: add correct icon and description
         case .wrongAuthCredentials:
-            return .notification(description: .init(icon: .init(), description: "Wrong Credentials")) // TODO: add correct icon and description
+            return .notification(description: .init(icon: R.image.deposit.add_card_red()!, description: "Incorrect username or password was specified")) // TODO: add correct icon and description
         case .notConnected:
             return .status(description: .init(description: "Not Connected")) // TODO: add description
         case .`init`(let description):
