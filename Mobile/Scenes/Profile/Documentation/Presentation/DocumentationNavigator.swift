@@ -16,12 +16,15 @@ public class DocumentationNavigator: Navigator {
     }
 
     public enum Destination {
+        case aboutUs(with: WebViewModelParams)
         case termsAndConditions(with: TermsAndConditionsViewModelParams)
         case privacyPolicy(with: WebViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
+        case .aboutUs(let params):
+            navigateToWebView(with: params, animate: animate)
         case .privacyPolicy(let params):
             navigateToWebView(with: params, animate: animate)
         case .termsAndConditions(let params):
@@ -30,7 +33,6 @@ public class DocumentationNavigator: Navigator {
     }
 
     private func navigateToTermsAndConditions(with params: TermsAndConditionsViewModelParams, animate: Bool) {
-        print("Terms and Conditions") // TODO: remove this (used for debug)
         let vc = termsAndConditionsControllerFactory.make(params: params)
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }

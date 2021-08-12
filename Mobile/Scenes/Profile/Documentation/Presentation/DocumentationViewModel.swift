@@ -17,6 +17,7 @@ public struct DocumentationViewModelParams {
 public protocol DocumentationViewModelInput: AnyObject {
     var params: DocumentationViewModelParams { get set }
     func viewDidLoad()
+    func createAboutUsRequest()
     func createPrivacyPolicyRequest()
 }
 
@@ -32,6 +33,7 @@ public enum DocumentationViewModelOutputAction {
 public enum DocumentationViewModelRoute {
     case openPage(destionation: DocumentationDestination)
     case navigateToPrivacyPolicy(params: WebViewModelParams)
+    case navigateToAboutUs(params: WebViewModelParams)
 }
 
 public class DefaultDocumentationViewModel: DefaultBaseViewModel {
@@ -72,10 +74,16 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
     }
 
     public func createPrivacyPolicyRequest() {
-        //TODO change url
         let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/Privacy")
             .set(method: HttpMethodGet())
             .build()
         routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(request: request)))
+    }
+    
+    public func createAboutUsRequest() {
+        let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/About")
+            .set(method: HttpMethodGet())
+            .build()
+        routeSubject.onNext(.navigateToAboutUs(params: .init(request: request)))
     }
 }

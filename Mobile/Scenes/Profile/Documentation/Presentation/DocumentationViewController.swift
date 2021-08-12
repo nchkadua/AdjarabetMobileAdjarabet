@@ -45,6 +45,8 @@ public class DocumentationViewController: ABViewController {
         switch route {
         case .openPage(let destination):
             navigateTo(destination)
+        case .navigateToAboutUs(let params):
+            navigator.navigate(to: .aboutUs(with: params), animated: true)
         case .navigateToPrivacyPolicy(let params):
             navigator.navigate(to: .privacyPolicy(with: params), animated: true)
         }
@@ -52,6 +54,8 @@ public class DocumentationViewController: ABViewController {
 
     private func navigateTo(_ destination: DocumentationDestination) {
         switch destination {
+        case .aboutUs:
+            viewModel.createAboutUsRequest()
         case .termsAndConditions:
             navigator.navigate(to: .termsAndConditions(with: .init()), animated: true)
         case .privacyPolicy:
