@@ -905,6 +905,12 @@
 		FB584B4426B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3E26B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift */; };
 		FB584B4526B7C1E800FA25DB /* TermsAndConditionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3F26B7C1E800FA25DB /* TermsAndConditionsComponentView.swift */; };
 		FB584B4626B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B4026B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift */; };
+		FB612A0126C5FBEC00022F24 /* EmptyPageComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6129FB26C5FBEC00022F24 /* EmptyPageComponentView.xib */; };
+		FB612A0226C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6129FC26C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift */; };
+		FB612A0326C5FBEC00022F24 /* EmptyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6129FD26C5FBEC00022F24 /* EmptyPageTableViewCell.xib */; };
+		FB612A0426C5FBEC00022F24 /* EmptyPageComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6129FE26C5FBEC00022F24 /* EmptyPageComponentViewModel.swift */; };
+		FB612A0526C5FBEC00022F24 /* EmptyPageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6129FF26C5FBEC00022F24 /* EmptyPageComponentView.swift */; };
+		FB612A0626C5FBEC00022F24 /* EmptyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612A0026C5FBEC00022F24 /* EmptyPageTableViewCell.swift */; };
 		FBAE9C4126B3D0C1002E9D72 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */; };
 		FBAE9C4226B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */; };
 		FBAE9C4326B3D0C1002E9D72 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */; };
@@ -1842,6 +1848,12 @@
 		FB584B3E26B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsComponentViewModel.swift; sourceTree = "<group>"; };
 		FB584B3F26B7C1E800FA25DB /* TermsAndConditionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsComponentView.swift; sourceTree = "<group>"; };
 		FB584B4026B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsTableViewCell.swift; sourceTree = "<group>"; };
+		FB6129FB26C5FBEC00022F24 /* EmptyPageComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPageComponentView.xib; sourceTree = "<group>"; };
+		FB6129FC26C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		FB6129FD26C5FBEC00022F24 /* EmptyPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPageTableViewCell.xib; sourceTree = "<group>"; };
+		FB6129FE26C5FBEC00022F24 /* EmptyPageComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageComponentViewModel.swift; sourceTree = "<group>"; };
+		FB6129FF26C5FBEC00022F24 /* EmptyPageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageComponentView.swift; sourceTree = "<group>"; };
+		FB612A0026C5FBEC00022F24 /* EmptyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageTableViewCell.swift; sourceTree = "<group>"; };
 		FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
 		FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsNavigator.swift; sourceTree = "<group>"; };
 		FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
@@ -3563,6 +3575,7 @@
 		C784C37E2670042A00D328D3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FB6129FA26C5FBDE00022F24 /* EmptyPage */,
 				C7A047FC26C3F9360035D93D /* Error */,
 				C7CA530A26543DC8008AFDAA /* Slider */,
 				761D993F257F7EDC002BCDB6 /* Date Header */,
@@ -6670,6 +6683,35 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		FB6129FA26C5FBDE00022F24 /* EmptyPage */ = {
+			isa = PBXGroup;
+			children = (
+				FB612A0826C5FBF700022F24 /* Cell */,
+				FB612A0726C5FBF100022F24 /* View */,
+			);
+			path = EmptyPage;
+			sourceTree = "<group>";
+		};
+		FB612A0726C5FBF100022F24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB6129FB26C5FBEC00022F24 /* EmptyPageComponentView.xib */,
+				FB6129FE26C5FBEC00022F24 /* EmptyPageComponentViewModel.swift */,
+				FB6129FF26C5FBEC00022F24 /* EmptyPageComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB612A0826C5FBF700022F24 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB6129FC26C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift */,
+				FB6129FD26C5FBEC00022F24 /* EmptyPageTableViewCell.xib */,
+				FB612A0026C5FBEC00022F24 /* EmptyPageTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FBAE9C3B26B3D0A3002E9D72 /* Terms And Conditions */ = {
 			isa = PBXGroup;
 			children = (
@@ -6987,6 +7029,7 @@
 				7676E55425628F3900234026 /* Transactions.storyboard in Resources */,
 				CECA7EEB26AEEADD00BCF04A /* ContactAddressTableViewCell.xib in Resources */,
 				C728C278261BA04C004D3F2F /* AddAccountView.xib in Resources */,
+				FB612A0326C5FBEC00022F24 /* EmptyPageTableViewCell.xib in Resources */,
 				C75D1ACE261205F4002AF763 /* CBJSlot.zip in Resources */,
 				C7C973AC2580EC990062C713 /* SecurityLevelTypeTableViewCell.xib in Resources */,
 				CE95FC44252DF3B6003E539B /* FooterTableViewCell.xib in Resources */,
@@ -6997,6 +7040,7 @@
 				CEE44E862600B5C100A83BD2 /* AdjaraMontPro-Bold.ttf in Resources */,
 				CECA7EBD26AED0A700BCF04A /* ContactUs.storyboard in Resources */,
 				CEBB008E2609D40400D1B510 /* Visa.storyboard in Resources */,
+				FB612A0126C5FBEC00022F24 /* EmptyPageComponentView.xib in Resources */,
 				C75D1ADA261205F4002AF763 /* CDJSlot.zip in Resources */,
 				CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */,
 				7668C7AB2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib in Resources */,
@@ -7322,6 +7366,7 @@
 			files = (
 				CE693AEA26A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift in Sources */,
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
+				FB612A0426C5FBEC00022F24 /* EmptyPageComponentViewModel.swift in Sources */,
 				CEB49871268C987A00004A45 /* PasswordResetNavigator.swift in Sources */,
 				CE920609268493D600670AD8 /* ServiceAuthTokenRepository.swift in Sources */,
 				C78E53122685B12300EE1C18 /* HighSecurityViewController.swift in Sources */,
@@ -7573,6 +7618,7 @@
 				CEA77799256D4244008A4F6C /* MailChangeViewControllerFactory.swift in Sources */,
 				CE2AABBB2679FF7800B45A0A /* InitPasswordResetEntity.swift in Sources */,
 				76BDF46D25760512007B27A7 /* AccountParametersTableViewCellDataProvider.swift in Sources */,
+				FB612A0226C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				CECA7ED626AEEA8700BCF04A /* ContactPhoneTableViewCell.swift in Sources */,
 				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
@@ -7599,6 +7645,7 @@
 				C78E53142685B12300EE1C18 /* HighSecurityViewModel.swift in Sources */,
 				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
 				C78E528F268279B000EE1C18 /* ContactInfoRepository.swift in Sources */,
+				FB612A0626C5FBEC00022F24 /* EmptyPageTableViewCell.swift in Sources */,
 				7682CF9325B8581600717090 /* AddMyCardComponentViewModel.swift in Sources */,
 				CE679FDD2578334B00F2EC1C /* AddCardNavigator.swift in Sources */,
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
@@ -7619,6 +7666,7 @@
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
 				FB584B4526B7C1E800FA25DB /* TermsAndConditionsComponentView.swift in Sources */,
+				FB612A0526C5FBEC00022F24 /* EmptyPageComponentView.swift in Sources */,
 				C7DB6EF626370F9600EC1CB9 /* EmptyCollectionViewCell.swift in Sources */,
 				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
 				CE693AF926A6D80F0049D665 /* FAQCategoryComponentViewModel.swift in Sources */,
@@ -8396,7 +8444,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 584;
+				CURRENT_PROJECT_VERSION = 585;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8429,7 +8477,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 584;
+				CURRENT_PROJECT_VERSION = 585;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -8522,7 +8570,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 584;
+				CURRENT_PROJECT_VERSION = 585;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8611,7 +8659,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 584;
+				CURRENT_PROJECT_VERSION = 585;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
