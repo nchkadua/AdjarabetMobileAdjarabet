@@ -40,8 +40,8 @@
                     <color key="textColor" name="ColorGuide/TextColors/primary"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-tx-DBK" userLabel="description">
-                    <rect key="frame" x="196.5" y="151" width="36" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-tx-DBK" userLabel="description">
+                    <rect key="frame" x="196" y="149" width="36" height="18"/>
                     <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="13"/>
                     <color key="textColor" name="ColorGuide/TextColors/secondary"/>
                     <nil key="highlightedColor"/>

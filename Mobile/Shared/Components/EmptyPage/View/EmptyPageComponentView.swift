@@ -8,7 +8,7 @@
 
 import RxSwift
 
-class EmptyPageComponentView: UIView {
+public class EmptyPageComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: EmptyPageComponentViewModel!
 

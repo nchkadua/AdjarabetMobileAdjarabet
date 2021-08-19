@@ -899,6 +899,7 @@
 		D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */; };
 		D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FD2449C50B0015C03C /* Rswift+Extension.swift */; };
 		D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FF2449C7090015C03C /* LanguageTests.swift */; };
+		FB0E5D9E26CED8D1007B9CE9 /* AppTableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E5D9D26CED8D1007B9CE9 /* AppTableViewController+Extension.swift */; };
 		FB584B4126B7C1E800FA25DB /* TermsAndConditionsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */; };
 		FB584B4226B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */; };
 		FB584B4326B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB584B3D26B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib */; };
@@ -1842,6 +1843,7 @@
 		D8FBA5022449C90A0015C03C /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = hy.lproj/Localization.strings; sourceTree = "<group>"; };
 		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0E5D9D26CED8D1007B9CE9 /* AppTableViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTableViewController+Extension.swift"; sourceTree = "<group>"; };
 		FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsComponentView.xib; sourceTree = "<group>"; };
 		FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		FB584B3D26B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsTableViewCell.xib; sourceTree = "<group>"; };
@@ -6594,6 +6596,7 @@
 				76DBCE56257FAB000030E600 /* DateFormatter+Extension.swift */,
 				76B667972595F133001441BD /* Date+Extension.swift */,
 				CE8786B6261B4A680060EBD1 /* Array+Extension.swift */,
+				FB0E5D9D26CED8D1007B9CE9 /* AppTableViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -7961,6 +7964,7 @@
 				CEE0E0A0254869F200949417 /* AppSessionProvider.swift in Sources */,
 				CE7698A7269F02F6009972B2 /* ResetOptionTableViewCellDataProvider.swift in Sources */,
 				CEE15C4725349EDF0033BF93 /* NotificationTableViewCell.swift in Sources */,
+				FB0E5D9E26CED8D1007B9CE9 /* AppTableViewController+Extension.swift in Sources */,
 				D8C73F852445C63D004C96DB /* UIImage+Extension.swift in Sources */,
 				CEF52C9626721D6100D2386C /* ActionOTPDTO.swift in Sources */,
 				C78FD442260A675D004E766E /* AmountFormatterUseCase.swift in Sources */,
