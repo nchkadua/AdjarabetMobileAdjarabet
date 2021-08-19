@@ -11,8 +11,8 @@ protocol LoginUseCase {
     func execute(username: String, password: String, completion: @escaping (Result<LoginUseCaseSuccess, ABError>) -> Void) -> Cancellable?
 }
 
-public enum LoginUseCaseSuccess {
-    case success
+enum LoginUseCaseSuccess {
+    case success(params: MainContainerViewModelParams)
     case otpRequried(username: String)
 }
 
@@ -61,11 +61,22 @@ public final class DefaultLoginUseCase: LoginUseCase {
                     return
                 }
 
+                if params.codable.errorCode == .IP_IS_BLOCKED {
+                    completion(.failure(.init(type: .ipIsBlocked)))
+                    return
+                }
+
                 if params.codable.isOTPRequired && params.codable.errorCode == .OTP_IS_REQUIRED {
                     completion(.success(.otpRequried(username: username)))
                 } else if params.codable.isLoggedOn && params.codable.userID != nil {
                     self?.save(params: params, password: password)
-                    completion(.success(.success))
+                    let pageParams = { () -> MainContainerViewModelParams in
+                        if params.codable.errorCode == .LAST_ACCESS_FROM_DIFFERENT_IP {
+                            return .init(homeParams: .init(error: .init(type: .lastAccessFromDifferentIP)))
+                        }
+                        return .init()
+                    }()
+                    completion(.success(.success(params: pageParams)))
                 } else {
                     completion(.failure(.init()))
                 }

@@ -18,9 +18,22 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         }
     }
 
- // private lazy var popupError: PopupErrorView = .init()
+    private lazy var popupError: PopupErrorView = {
+        let error: PopupErrorView = .init()
+        error.viewModel.action.subscribe(onNext: { [weak self] action in
+            guard let self = self else { return }
+            switch action {
+            case .tapped(let buttonType, let error):
+                self.errorThrowing?.errorActionHandler(buttonType: buttonType, error: error)
+                self.hidePopupError()
+            default: break
+            }
+        }).disposed(by: disposeBag)
+        error.translatesAutoresizingMaskIntoConstraints = false
+        return error
+    }()
 
-    private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint)  = {
+    private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint) = {
         let error: NotificationErrorView = .init()
 
         view.addSubview(error)
@@ -55,7 +68,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     func show(error: ABError) {
         switch error.description {
         case .popup(let description):
-            showPopupError(with: description)
+            showPopupError(error: error, description: description)
         case .notification(let description):
             showNotificationError(with: description)
         case .status(let description):
@@ -63,28 +76,59 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         }
     }
 
-    func showPopupError(with description: ABError.Description.Popup) {
-        showAlert(title: "Popup: \(description.description)")
+    func showPopupError(error: ABError, description: ABError.Description.Popup) {
+        popupError.viewModel.set(error: error, description: description)
+        DispatchQueue.main.async { self.showPopupError() }
     }
 
     func showNotificationError(with description: ABError.Description.Notification) {
         notificationError.view.configure(from: description)
-        DispatchQueue.main.async {
-            self.notificationError.constraint.constant -= 114
-            UIView.animate(withDuration: 0.5) {
-                self.view.layoutIfNeeded()
-            }
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.notificationError.constraint.constant += 114
-            UIView.animate(withDuration: 0.5) {
-                self.view.layoutIfNeeded()
-            }
-        }
+        DispatchQueue.main.async { self.showNotificationError() }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { self.hideNotificationError() }
     }
 
     func showStatusError(with description: ABError.Description.Status) {
         showAlert(title: "Status: \(description.description)")
+    }
+
+    private func showPopupError() {
+        view.addSubview(popupError)
+        popupError.pin(to: view)
+        UIView.animate(
+            withDuration: 0.25,
+            animations: { self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) },
+            completion: { _ in
+                UIView.animate(withDuration: 0.25) { self.popupError.transform = CGAffineTransform.identity }
+            }
+        )
+    }
+
+    func hidePopupError() {
+        UIView.animate(
+            withDuration: 0.25,
+            animations: { self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) },
+            completion: { _ in
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: { self.popupError.transform = CGAffineTransform.identity },
+                    completion: { _ in self.popupError.removeFromSuperview() }
+                )
+            }
+        )
+    }
+
+    private func showNotificationError() {
+        notificationError.constraint.constant -= 114
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    private func hideNotificationError() {
+        notificationError.constraint.constant += 114
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
 
     public func addKeyboardDismissOnTap() {

@@ -23,11 +23,17 @@ class ABError {
     lazy var description: Description = {
         switch type {
         case .ipIsBlocked:
-            return .popup(description: .init(icon: .init(), description: "IP Is Blocked")) // TODO: add correct icon and description
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_ip_is_blocked.localized(), buttons: [.call, .gotIt]))
         case .wrongAuthCredentials:
-            return .notification(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_wrong_credentials.localized())) // TODO: add correct icon and description
+            return .notification(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_wrong_credentials.localized()))
+        case .lastAccessFromDifferentIP:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_last_access_from_different_ip.localized(), buttons: [.lastAccesses, .gotIt]))
+        case .wrongRequest, .genericError, .missingParameters, .originDomainNotAllowed:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_technical_issue.localized(), buttons: [.gotIt]))
+        case .otpNotFound:
+            return .notification(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_otp_not_found.localized()))
         case .notConnected:
-            return .status(description: .init(description: "Not Connected")) // TODO: add description
+            return .status(description: .init(description: R.string.localization.shared_aberror_not_connected.localized()))
         case .`init`(let description):
             return description
         case .from(let error):
@@ -40,6 +46,12 @@ class ABError {
     enum `Type` {
         case ipIsBlocked
         case wrongAuthCredentials
+        case lastAccessFromDifferentIP
+        case wrongRequest
+        case genericError
+        case missingParameters
+        case originDomainNotAllowed
+        case otpNotFound
         case notConnected
         case sessionNotFound
         // general errors
@@ -64,10 +76,21 @@ class ABError {
             enum ButtonType {
                 case gotIt
                 case tryAgain
+                case lastAccesses
+                case call
+
+                var value: String {
+                    switch self {
+                    case .gotIt:        return R.string.localization.shared_aberror_got_it.localized()
+                    case .tryAgain:     return R.string.localization.shared_aberror_try_again.localized()
+                    case .lastAccesses: return R.string.localization.shared_aberror_last_accesses.localized()
+                    case .call:         return R.string.localization.shared_aberror_call.localized()
+                    }
+                }
             }
 
             init(
-                icon: UIImage = .init(), // TODO: add correct default icon
+                icon: UIImage = R.image.deposit.add_card_red()!,
                 description: String = R.string.localization.shared_aberror_default_description.localized(),
                 buttons: [ButtonType] = [.gotIt]
             ) {
@@ -88,7 +111,7 @@ class ABError {
             var description: String
 
             init(
-                icon: UIImage = .init(), // TODO: add correct default icon
+                icon: UIImage = R.image.deposit.add_card_red()!,
                 description: String = R.string.localization.shared_aberror_default_description.localized()
             ) {
                 self.icon = icon
@@ -128,6 +151,12 @@ extension ABError {
         switch coreStatusCode {
         case .USER_WITH_GIVEN_AUTH_CREDENTIALS_NOT_FOUND: type = .wrongAuthCredentials
         case .IP_IS_BLOCKED:                              type = .ipIsBlocked
+        case .LAST_ACCESS_FROM_DIFFERENT_IP:              type = .lastAccessFromDifferentIP
+        case .WRONG_REQUEST:                              type = .wrongRequest
+        case .GENERIC_FAILED_ERROR:                       type = .genericError
+        case .MISSING_PARAMETERS:                         type = .missingParameters
+        case .ORIGIN_DOMAIN_NOT_ALLOWED:                  type = .originDomainNotAllowed
+        case .OTP_NOT_FOUND:                              type = .otpNotFound
         default:                                          type = .default
         }
         self.init(type: type)

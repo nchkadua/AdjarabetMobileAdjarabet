@@ -7,15 +7,17 @@
 //
 
 public class MainTabBarNavigator: Navigator {
-    public let homeVCFacotry = DefaultHomeViewControllerFactory()
+    private let homeVCFacotry = DefaultHomeViewControllerFactory()
     private let bonusVCFactory = DefaultBonusViewControllerFactory()
     public let promotionsVCFactory = DefaultPromotionsViewControllerFactory()
     public let notificationsVCFacotry = DefaultNotificationsViewControllerFactory()
 
+    private let homeParams: HomeViewModelParams
     private weak var viewController: UIViewController?
 
-    public init(viewController: UIViewController) {
+    init(viewController: UIViewController, homeParams: HomeViewModelParams = .init()) {
         self.viewController = viewController
+        self.homeParams = homeParams
     }
 
     public enum Destination {
@@ -25,7 +27,7 @@ public class MainTabBarNavigator: Navigator {
     }
 
     public func makePages() -> [UIViewController] {
-        let home = homeVCFacotry.make()
+        let home = homeVCFacotry.make(with: homeParams)
         let bonus = bonusVCFactory.make(params: .init())
         let promotions = promotionsVCFactory.make()
         let notifications = notificationsVCFacotry.make()
@@ -38,12 +40,14 @@ public class MainTabBarNavigator: Navigator {
     }
 }
 
-public protocol MainTabBarFactory {
-    func make() -> MainTabBarViewController
+protocol MainTabBarFactory {
+    func make(with params: MainTabBarViewModelParams) -> MainTabBarViewController
 }
 
-public class DefaultMainTabBarFactory: MainTabBarFactory {
-    public func make() -> MainTabBarViewController {
-        R.storyboard.mainTabBar().instantiate(controller: MainTabBarViewController.self)!
+class DefaultMainTabBarFactory: MainTabBarFactory {
+    func make(with params: MainTabBarViewModelParams) -> MainTabBarViewController {
+        let vc = R.storyboard.mainTabBar().instantiate(controller: MainTabBarViewController.self)!
+        vc.viewModel.params = params
+        return vc
     }
 }

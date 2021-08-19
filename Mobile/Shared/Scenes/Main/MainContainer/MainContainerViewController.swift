@@ -9,13 +9,13 @@
 import RxSwift
 
 public class MainContainerViewController: UIViewController {
-    @Inject(from: .viewModels) public var viewModel: MainContainerViewModel
-    public lazy var navigator = MainContainerNavigator(viewController: self)
+    @Inject(from: .viewModels) var viewModel: MainContainerViewModel
+    lazy var navigator = MainContainerNavigator(viewController: self)
     private let disposeBag = DisposeBag()
 
     private lazy var appPageViewController: ABPageViewController = ABPageViewController(viewControllers: [])
     private lazy var pageViewController: ABPageViewController = {
-        return ABPageViewController(viewControllers: [navigator.mainTabBarFactory.make().wrap(in: ABNavigationController.self), navigator.profileFactory.make().wrap(in: ABNavigationController.self)])
+        return ABPageViewController(viewControllers: [navigator.mainTabBarFactory.make(with: .init(homeParams: viewModel.params.homeParams)).wrap(in: ABNavigationController.self), navigator.profileFactory.make().wrap(in: ABNavigationController.self)])
     }()
 
     // MARK: - Lifecycle methods

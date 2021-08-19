@@ -11,7 +11,7 @@ import CoreLocation
 
 public class HomeViewController: ABViewController, PageViewControllerProtocol {
     // MARK: Properties
-    @Inject(from: .viewModels) private var viewModel: HomeViewModel
+    @Inject(from: .viewModels) var viewModel: HomeViewModel
     var searchViewModel: GamesSearchViewModel { searchController.viewModel }
     public lazy var navigator = HomeNavigator(viewController: self)
     private lazy var collectionViewController = HomeViewCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
@@ -84,6 +84,8 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         switch action {
         case .open(let game):
             navigator.navigate(to: .game(game), animated: true)
+        case .accessHistory:
+            navigator.navigate(to: .accessHistory, animated: true)
         }
     }
 

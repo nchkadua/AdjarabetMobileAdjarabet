@@ -20,7 +20,15 @@
 // ABError
 "shared_aberror_default_description" = "Something Went Wrong";
 "shared_aberror_wrong_auth_credentials_description" = "Wrong Authentication Credentials";
-"shared_aberror_ip_is_blocked" = "IP Is Blocked";
+"shared_aberror_ip_is_blocked" = "IP address is blocked, please try again in 5 minutes";
+"shared_aberror_last_access_from_different_ip" = "The last visit was recorded from another IP address";
+"shared_aberror_technical_issue" = "There is a technical issue in the system, please try again later";
+"shared_aberror_otp_not_found" = "Enter the correct SMS code";
+"shared_aberror_not_connected" = "Not Connected";
+"shared_aberror_got_it" = "Got It";
+"shared_aberror_try_again" = "Try Again";
+"shared_aberror_last_accesses" = "Last Accesses";
+"shared_aberror_call" = "Call";
 "shared_aberror_session_not_found" = "Session Not Found";
 "shared_aberror_must_be_more_than_zero" = "Must Be More Than Zero";
 "shared_aberror_account_is_suspended" = "Account Is Suspended";

@@ -6,19 +6,17 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public class MainContainerNavigator: Navigator {
-    @Inject(from: .factories) public var mainTabBarFactory: MainTabBarFactory
-    @Inject(from: .factories) public var profileFactory: ProfileFactory
+class MainContainerNavigator: Navigator {
+    @Inject(from: .factories) var mainTabBarFactory: MainTabBarFactory
+    @Inject(from: .factories) var profileFactory: ProfileFactory
 
     private weak var viewController: UIViewController?
 
-    public init(viewController: UIViewController) {
+    init(viewController: UIViewController) {
         self.viewController = viewController
     }
 
-    public enum Destination {
-    }
+    enum Destination {}
 
-    public func navigate(to destination: Destination, animated animate: Bool) {
-    }
+    func navigate(to destination: Destination, animated animate: Bool) {}
 }

@@ -8,12 +8,14 @@
 
 import Foundation
 
-public protocol HomeViewControllerFactory {
-    func make() -> HomeViewController
+protocol HomeViewControllerFactory {
+    func make(with params: HomeViewModelParams) -> HomeViewController
 }
 
-public class DefaultHomeViewControllerFactory: HomeViewControllerFactory {
-    public func make() -> HomeViewController {
-        R.storyboard.home().instantiate(controller: HomeViewController.self)!
+class DefaultHomeViewControllerFactory: HomeViewControllerFactory {
+    func make(with params: HomeViewModelParams) -> HomeViewController {
+        let vc = R.storyboard.home().instantiate(controller: HomeViewController.self)!
+        vc.viewModel.params = params
+        return vc
     }
 }
