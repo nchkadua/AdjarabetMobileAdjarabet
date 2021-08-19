@@ -50,7 +50,7 @@ final class DefaultOTPUseCase: OTPUseCase {
                 }
 
                 if params.codable.errorCode == .OTP_NOT_FOUND {
-                    completion(.failure(.invalidSMSCode))
+                    completion(.failure(.unknown(error: .init(type: .otpNotFound))))
                     return
                 }
 

@@ -79,7 +79,7 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
             .build()
         routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(request: request)))
     }
-    
+
     public func createAboutUsRequest() {
         let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/About")
             .set(method: HttpMethodGet())

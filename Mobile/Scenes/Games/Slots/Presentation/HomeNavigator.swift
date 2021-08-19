@@ -9,6 +9,7 @@
 public class HomeNavigator: Navigator {
     @Inject(from: .factories) public var profileFactory: ProfileFactory
     @Inject(from: .factories) private var gameFactory: GameViewControllerFactory
+    @Inject(from: .factories) private var accessHistoryViewControllerFactory: AccessHistoryViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -19,6 +20,7 @@ public class HomeNavigator: Navigator {
     public enum Destination {
         case profile
         case game(Game)
+        case accessHistory
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -27,12 +29,19 @@ public class HomeNavigator: Navigator {
             navigateToProfile(animate: animate)
         case .game(let game):
             navigate2(game: game, animate: animate)
+        case .accessHistory:
+            navigate2AccessHistory()
         }
     }
 
     private func navigateToProfile(animate: Bool) {
         let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController
         vc?.jumpToProfile()
+    }
+
+    private func navigate2AccessHistory() {
+        let vc = accessHistoryViewControllerFactory.make(params: .init())
+        viewController?.navigationController?.present(vc, animated: true, completion: nil)
     }
 
     private func navigate2(game: Game, animate: Bool) {

@@ -27,7 +27,6 @@ public protocol EmptyPageComponentViewModelOutput {
 }
 
 public enum EmptyPageComponentViewModelOutputAction {
-    
 }
 
 public class DefaultEmptyPageComponentViewModel {

@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol MainContainerViewControllerFactory {
-    func make(params: MainContainerViewModelParams) -> MainContainerViewController
+protocol MainContainerViewControllerFactory {
+    func make(with params: MainContainerViewModelParams) -> MainContainerViewController
 }
 
-public class DefaultMainContainerViewControllerFactory: MainContainerViewControllerFactory {
-    public func make(params: MainContainerViewModelParams) -> MainContainerViewController {
+class DefaultMainContainerViewControllerFactory: MainContainerViewControllerFactory {
+    func make(with params: MainContainerViewModelParams) -> MainContainerViewController {
         let vc = R.storyboard.mainContainer().instantiate(controller: MainContainerViewController.self)!
         vc.viewModel.params = params
         return vc
