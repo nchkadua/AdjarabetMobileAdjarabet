@@ -102,12 +102,12 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
 
                 self.appendPage(games: viewModels)
                 if viewModels.isEmpty, let query = query {
-                    self.emptyStateViewModel.set(title: query)
+                    self.emptyStateViewModel.set(title: "\"\(query)\"")
                 }
             case .failure(let error):
                 self.show(error: error)
                 if let query = query {
-                    self.emptyStateViewModel.set(title: query)
+                    self.emptyStateViewModel.set(title: "\"\(query)\"")
                 }
             }
         }

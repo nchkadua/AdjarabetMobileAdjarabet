@@ -17,6 +17,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
     public var viewModel: ABCollectionViewModel?
 
     private let disposeBag = DisposeBag()
+    private var numItemsInEmptyCollection = 0
     public var isTabBarManagementEnabled: Bool = false
 
     private lazy var emptyStateView: EmptyPageComponentView = {
@@ -62,14 +63,15 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         flowLayout?.sectionInset = .zero
     }
 
-    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> Self {
+    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
+        self.numItemsInEmptyCollection = numItemsInEmptyCollection
         emptyStateView.setAndBind(viewModel: viewModel)
         return self
     }
 
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
-        emptyStateView.isHidden = numberOfItemsInSection > 0
+        emptyStateView.isHidden = numberOfItemsInSection > numItemsInEmptyCollection
         return numberOfItemsInSection
     }
 

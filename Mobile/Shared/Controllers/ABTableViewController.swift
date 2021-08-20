@@ -26,6 +26,7 @@ public class ABTableViewController: AppTableViewController {
         emptyStateView.hide()
         return emptyStateView
     }()
+    private var numItemsInEmptyCollection = 0
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,14 +75,15 @@ public class ABTableViewController: AppTableViewController {
         }
     }
 
-    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> Self {
+    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
+        self.numItemsInEmptyCollection = numItemsInEmptyCollection
         emptyStateView.setAndBind(viewModel: viewModel)
         return self
     }
 
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
-        emptyStateView.isHidden = numberOfRowsInSection > 0
+        emptyStateView.isHidden = numberOfRowsInSection > numItemsInEmptyCollection
         return numberOfRowsInSection
     }
 
