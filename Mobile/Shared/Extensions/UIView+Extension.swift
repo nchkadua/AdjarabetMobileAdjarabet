@@ -86,7 +86,7 @@ public extension UIView {
         layer.cornerRadius = bounds.width / 2
     }
 
-  func animateBorderColor(toColor: UIColor, duration: Double) {
+    func animateBorderColor(toColor: UIColor, duration: Double) {
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "borderColor")
         animation.fromValue = layer.borderColor
         animation.toValue = toColor.cgColor
@@ -94,6 +94,15 @@ public extension UIView {
         layer.add(animation, forKey: "borderColor")
         layer.borderColor = toColor.cgColor
     }
+    
+    func show() {
+        isHidden = false
+    }
+    
+    func hide() {
+        isHidden = true
+    }
+    
 }
 
 public extension AppCircularView {

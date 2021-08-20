@@ -278,4 +278,5 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
         let flooredAmount = Double(rawAmount) / 100
         return amountFormatter.format(number: flooredAmount, in: .sn)
     }
+    
 }

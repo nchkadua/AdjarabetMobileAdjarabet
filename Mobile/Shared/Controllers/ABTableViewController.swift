@@ -20,6 +20,13 @@ public class ABTableViewController: AppTableViewController {
     private let disposeBag = DisposeBag()
     public var isTabBarManagementEnabled: Bool = false
     public var canEditRow: Bool = false
+    private lazy var emptyStateView: EmptyPageComponentView = {
+        let emptyStateView = EmptyPageComponentView()
+        self.tableView.backgroundView = emptyStateView
+        emptyStateView.hide()
+        return emptyStateView
+    }()
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,6 +72,23 @@ public class ABTableViewController: AppTableViewController {
         } else {
             showFloatingTabBar()
         }
+    }
+    
+    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> ABTableViewController {
+        emptyStateView.setAndBind(viewModel: viewModel)
+        return self
+    }
+    
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
+        
+        if numberOfRowsInSection == 0 {
+            emptyStateView.show()
+        } else {
+            emptyStateView.hide()
+        }
+
+        return numberOfRowsInSection
     }
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
