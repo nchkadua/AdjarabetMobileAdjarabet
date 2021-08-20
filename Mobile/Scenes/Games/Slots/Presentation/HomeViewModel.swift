@@ -12,18 +12,26 @@ import RxCocoa
 protocol HomeViewModel: BaseViewModel, HomeViewModelInput, HomeViewModelOutput, ABCollectionViewModel {
 }
 
-public protocol HomeViewModelInput {
+struct HomeViewModelParams {
+    let error: ABError?
+    init(error: ABError? = nil) {
+        self.error = error
+    }
+}
+
+protocol HomeViewModelInput {
     func viewDidLoad()
     func viewWillAppear()
     func didLoadNextPage()
 }
 
-public protocol HomeViewModelOutput {
+protocol HomeViewModelOutput: AnyObject {
+    var params: HomeViewModelParams { get set }
     var action: Observable<HomeViewModelOutputAction> { get }
     var route: Observable<HomeViewModelRoute> { get }
 }
 
-public enum HomeViewModelOutputAction {
+enum HomeViewModelOutputAction {
     case setLoading(LoadingType)
     case languageDidChange
     case reloadIndexPathes([IndexPath])
@@ -32,11 +40,13 @@ public enum HomeViewModelOutputAction {
     case replaceSection(index: Int, dataProvider: AppSectionDataProvider)
 }
 
-public enum HomeViewModelRoute {
+enum HomeViewModelRoute {
     case open(game: Game)
+    case accessHistory
 }
 
-public class DefaultHomeViewModel: DefaultBaseViewModel {
+class DefaultHomeViewModel: DefaultBaseViewModel {
+    var params: HomeViewModelParams = .init()
     private enum GamesLayout {
         case list
         case grid
@@ -189,25 +199,31 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
     }
 
     private func loadRecentryPlayedGames() {
-        recentlyPlayedGamesUseCase.execute(request: .init(page: 1, itemsPerPage: 20), completion: handler(onSuccessHandler: { params in
-            let viewModels: [PlayedGameLauncherCollectionViewCellDataProvider] = params.games.compactMap { [weak self] in
-                guard let self = self else {return nil}
+        recentlyPlayedGamesUseCase.execute(request: .init(page: 1, itemsPerPage: 20)) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let params):
+                let viewModels: [PlayedGameLauncherCollectionViewCellDataProvider] = params.games.compactMap { [weak self] in
+                    guard let self = self else {return nil}
 
-                let vm = DefaultPlayedGameLauncherComponentViewModel(params: .init(game: $0, lastWon: nil))
-                vm.action.subscribe(onNext: { action in
-                    switch action {
-                    case .didSelect(let model, _): self.routeSubject.onNext(.open(game: model.params.game))
-                    default: break
-                    }
-                }).disposed(by: self.disposeBag)
-                self.recentlyPlayedGames.append(vm)
-                return vm
+                    let vm = DefaultPlayedGameLauncherComponentViewModel(params: .init(game: $0, lastWon: nil))
+                    vm.action.subscribe(onNext: { action in
+                        switch action {
+                        case .didSelect(let model, _): self.routeSubject.onNext(.open(game: model.params.game))
+                        default: break
+                        }
+                    }).disposed(by: self.disposeBag)
+                    self.recentlyPlayedGames.append(vm)
+                    return vm
+                }
+
+                self.recentlyPlayedComponentViewModel.params.playedGames = viewModels
+                self.recentlyPlayedComponentViewModel.params.isVisible = !viewModels.isEmpty
+                self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 3)]))
+            case .failure(let error):
+                {}() // self.show(error: error) // TODO: Uncomment after testing last access
             }
-
-            self.recentlyPlayedComponentViewModel.params.playedGames = viewModels
-            self.recentlyPlayedComponentViewModel.params.isVisible = !viewModels.isEmpty
-            self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 3)]))
-        }))
+        }
     }
 
     private func observeLayoutChange() {
@@ -233,6 +249,13 @@ public class DefaultHomeViewModel: DefaultBaseViewModel {
         self.appendPage(games: viewModels)
     }
 
+    override func errorActionHandler(buttonType: ABError.Description.Popup.ButtonType, error: ABError) {
+        if case .lastAccessFromDifferentIP = error.type,
+           case .lastAccesses = buttonType {
+            routeSubject.onNext(.accessHistory)
+        }
+    }
+
     private var topCapacity: Int { selectedLayout == .list ? 4 : 6 }
 }
 
@@ -246,12 +269,21 @@ extension DefaultHomeViewModel: HomeViewModel {
     }
 
     public func viewDidLoad() {
+        showErrorIfNeeded()
         observeLanguageChange()
         observeLayoutChange()
         displayEmptyGames()
 
         loadRecentryPlayedGames()
         load(loadingType: .fullScreen)
+    }
+
+    private func showErrorIfNeeded() {
+        if let error = params.error {
+            DispatchQueue.main.async { [weak self] in
+                self?.show(error: error)
+            }
+        }
     }
 
     private func displayEmptyGames() {

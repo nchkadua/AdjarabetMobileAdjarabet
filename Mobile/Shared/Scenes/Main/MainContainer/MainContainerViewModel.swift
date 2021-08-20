@@ -8,42 +8,38 @@
 
 import RxSwift
 
-public protocol MainContainerViewModel: MainContainerViewModelInput, MainContainerViewModelOutput {
+protocol MainContainerViewModel: MainContainerViewModelInput, MainContainerViewModelOutput {}
+
+struct MainContainerViewModelParams {
+    let homeParams: HomeViewModelParams
+    init(homeParams: HomeViewModelParams = .init()) {
+        self.homeParams = homeParams
+    }
 }
 
-public struct MainContainerViewModelParams {
-}
-
-public protocol MainContainerViewModelInput: AnyObject {
+protocol MainContainerViewModelInput: AnyObject {
     var params: MainContainerViewModelParams { get set }
     func viewDidLoad()
 }
 
-public protocol MainContainerViewModelOutput {
+protocol MainContainerViewModelOutput {
     var action: Observable<MainContainerViewModelOutputAction> { get }
     var route: Observable<MainContainerViewModelRoute> { get }
 }
 
-public enum MainContainerViewModelOutputAction {
-}
+enum MainContainerViewModelOutputAction {}
 
-public enum MainContainerViewModelRoute {
-}
+enum MainContainerViewModelRoute {}
 
-public class DefaultMainContainerViewModel {
-    public var params: MainContainerViewModelParams
+class DefaultMainContainerViewModel {
+    var params: MainContainerViewModelParams = .init()
     private let actionSubject = PublishSubject<MainContainerViewModelOutputAction>()
     private let routeSubject = PublishSubject<MainContainerViewModelRoute>()
-
-    public init(params: MainContainerViewModelParams) {
-        self.params = params
-    }
 }
 
 extension DefaultMainContainerViewModel: MainContainerViewModel {
-    public var action: Observable<MainContainerViewModelOutputAction> { actionSubject.asObserver() }
-    public var route: Observable<MainContainerViewModelRoute> { routeSubject.asObserver() }
+    var action: Observable<MainContainerViewModelOutputAction> { actionSubject.asObserver() }
+    var route: Observable<MainContainerViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
-    }
+    func viewDidLoad() {}
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public class LoginNavigator: Navigator {
-    @Inject(from: .factories) public var mainContainerFactory: MainContainerViewControllerFactory
+class LoginNavigator: Navigator {
+    @Inject(from: .factories) private var mainContainerFactory: MainContainerViewControllerFactory
     @Inject(from: .factories) public var otpFactory: OTPFactory
     @Inject(from: .factories) public var passworResetOptionsFactory: PasswordResetOptionsViewControllerFactory
     @Inject(from: .factories) public var faqViewControllerFactory: FAQCategoriesViewControllerFactory
@@ -19,10 +19,10 @@ public class LoginNavigator: Navigator {
         self.viewController = viewController
     }
 
-    public enum Destination {
+    enum Destination {
         case OTP(params: OTPViewModelParams)
         case faq
-        case mainTabBar
+        case mainTabBar(params: MainContainerViewModelParams)
         case passwordReset
         case contactUs
     }
@@ -32,8 +32,8 @@ public class LoginNavigator: Navigator {
         case .OTP(let params):
             navigateToOTP(params: params, animate: animate)
         case .faq: navigateToFAQ(animate: animate)
-        case .mainTabBar:
-            openMainTabBar()
+        case .mainTabBar(let params):
+            openMainTabBar(with: params)
         case .passwordReset:
             navigateToPasswordReset(animate: animate)
         case .contactUs: navigateToContactUs(animate: animate)
@@ -54,8 +54,8 @@ public class LoginNavigator: Navigator {
         viewController?.navigationController?.present(navC, animated: animate)
     }
 
-    private func openMainTabBar() {
-        UIApplication.shared.currentWindow?.rootViewController = mainContainerFactory.make(params: .init())
+    private func openMainTabBar(with params: MainContainerViewModelParams) {
+        UIApplication.shared.currentWindow?.rootViewController = mainContainerFactory.make(with: params)
     }
 
     private func navigateToPasswordReset(animate: Bool) {

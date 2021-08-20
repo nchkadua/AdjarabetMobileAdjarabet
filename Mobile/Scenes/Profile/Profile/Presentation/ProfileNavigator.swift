@@ -8,7 +8,7 @@
 
 public class ProfileNavigator: Navigator {
     private weak var viewController: UIViewController?
-    @Inject(from: .factories) public var loginViewControllerFactory: LoginViewControllerFactory
+    @Inject(from: .factories) private var loginViewControllerFactory: LoginViewControllerFactory
     @Inject(from: .factories) public var accountInfoViewControllerFactory: AccountInfoViewControllerFactory
     @Inject(from: .factories) public var depositViewControllerFactory: DepositViewControllerFactory
     @Inject(from: .factories) public var withdrawViewControllerFactory: WithdrawViewControllerFactory

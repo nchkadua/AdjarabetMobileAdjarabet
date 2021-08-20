@@ -204,7 +204,11 @@ extension DefaultOTPViewModel: OTPViewModel {
                 self?.routeSubject.onNext(.showSuccessMessage)
                 self?.routeSubject.onNext(.openMainTabBar)
             case .failure(let error):
-                self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
+                if case .unknown(let error) = error {
+                    self?.show(error: error)
+                } else {
+                    self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
+                }
             }
         }
     }

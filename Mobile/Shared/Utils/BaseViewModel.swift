@@ -31,6 +31,9 @@ public class DefaultBaseViewModel: BaseViewModel {
     func languageDidChange() {
     }
 
+    // Override this function to handle errors customly
+    func errorActionHandler(buttonType: ABError.Description.Popup.ButtonType, error: ABError) {}
+
     func show(error: ABError) {
         errorSubject.onNext(error)
     }
@@ -58,4 +61,5 @@ protocol LanguageChangeObserving {
 
 protocol ErrorThrowing {
     var errorObservable: Observable<ABError> { get }
+    func errorActionHandler(buttonType: ABError.Description.Popup.ButtonType, error: ABError)
 }

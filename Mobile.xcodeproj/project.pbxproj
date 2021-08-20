@@ -165,6 +165,9 @@
 		C721EA5A259C9D9700F7C624 /* HttpRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */; };
 		C728C274261BA038004D3F2F /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728C273261BA038004D3F2F /* AddAccountView.swift */; };
 		C728C278261BA04C004D3F2F /* AddAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C728C277261BA04C004D3F2F /* AddAccountView.xib */; };
+		C72C87A226CD7EEB0000BDA8 /* PopupErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C87A126CD7EEB0000BDA8 /* PopupErrorView.swift */; };
+		C72C87A626CD7EFB0000BDA8 /* PopupErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72C87A526CD7EFB0000BDA8 /* PopupErrorView.xib */; };
+		C72C87AC26CE74230000BDA8 /* PopupErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C87AB26CE74230000BDA8 /* PopupErrorViewModel.swift */; };
 		C72E6A98263226850012DA0B /* WebApiPaymentAccountDeleteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E6A97263226850012DA0B /* WebApiPaymentAccountDeleteDTO.swift */; };
 		C72FA73D2600BBE100A9C493 /* UFCDepositUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */; };
 		C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */; };
@@ -327,7 +330,6 @@
 		C79923022660EE7100FD7033 /* ABError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79923012660EE7100FD7033 /* ABError.swift */; };
 		C7A047FF26C3FD300035D93D /* NotificationErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A047FE26C3FD300035D93D /* NotificationErrorView.swift */; };
 		C7A0480326C3FD440035D93D /* NotificationErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7A0480226C3FD430035D93D /* NotificationErrorView.xib */; };
-		C7A0480726C3FD5A0035D93D /* NotificationErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0480626C3FD5A0035D93D /* NotificationErrorViewModel.swift */; };
 		C7A517B42631EB1600933DF8 /* PaymentAccountPagingableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */; };
 		C7A517BB2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */; };
 		C7A517C12631EB7800933DF8 /* PaymentAccountDeletableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */; };
@@ -1092,6 +1094,9 @@
 		C721EA59259C9D9700F7C624 /* HttpRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilderTests.swift; sourceTree = "<group>"; };
 		C728C273261BA038004D3F2F /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 		C728C277261BA04C004D3F2F /* AddAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountView.xib; sourceTree = "<group>"; };
+		C72C87A126CD7EEB0000BDA8 /* PopupErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupErrorView.swift; sourceTree = "<group>"; };
+		C72C87A526CD7EFB0000BDA8 /* PopupErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupErrorView.xib; sourceTree = "<group>"; };
+		C72C87AB26CE74230000BDA8 /* PopupErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupErrorViewModel.swift; sourceTree = "<group>"; };
 		C72E6A97263226850012DA0B /* WebApiPaymentAccountDeleteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApiPaymentAccountDeleteDTO.swift; sourceTree = "<group>"; };
 		C72FA73C2600BBE100A9C493 /* UFCDepositUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCDepositUseCase.swift; sourceTree = "<group>"; };
 		C72FA7422600BC0400A9C493 /* UFCWithdrawUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCWithdrawUseCase.swift; sourceTree = "<group>"; };
@@ -1254,7 +1259,6 @@
 		C79923012660EE7100FD7033 /* ABError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABError.swift; sourceTree = "<group>"; };
 		C7A047FE26C3FD300035D93D /* NotificationErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationErrorView.swift; sourceTree = "<group>"; };
 		C7A0480226C3FD430035D93D /* NotificationErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationErrorView.xib; sourceTree = "<group>"; };
-		C7A0480626C3FD5A0035D93D /* NotificationErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationErrorViewModel.swift; sourceTree = "<group>"; };
 		C7A517B32631EB1600933DF8 /* PaymentAccountPagingableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountPagingableRepository.swift; sourceTree = "<group>"; };
 		C7A517BA2631EB3B00933DF8 /* PaymentAccountFilterableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountFilterableRepository.swift; sourceTree = "<group>"; };
 		C7A517C02631EB7800933DF8 /* PaymentAccountDeletableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountDeletableRepository.swift; sourceTree = "<group>"; };
@@ -2491,6 +2495,16 @@
 				C71F18AA2564564D0026CEA2 /* BiometryStorage.swift */,
 			);
 			path = "Biometry Storage";
+			sourceTree = "<group>";
+		};
+		C72C879E26CD7D490000BDA8 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				C72C87AB26CE74230000BDA8 /* PopupErrorViewModel.swift */,
+				C72C87A126CD7EEB0000BDA8 /* PopupErrorView.swift */,
+				C72C87A526CD7EFB0000BDA8 /* PopupErrorView.xib */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		C72FA74C2600BD3B00A9C493 /* Entities & DTOs */ = {
@@ -4004,6 +4018,7 @@
 		C7A047FC26C3F9360035D93D /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				C72C879E26CD7D490000BDA8 /* Popup */,
 				C7A047FD26C3F93D0035D93D /* Notification */,
 			);
 			path = Error;
@@ -4012,7 +4027,6 @@
 		C7A047FD26C3F93D0035D93D /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				C7A0480626C3FD5A0035D93D /* NotificationErrorViewModel.swift */,
 				C7A047FE26C3FD300035D93D /* NotificationErrorView.swift */,
 				C7A0480226C3FD430035D93D /* NotificationErrorView.xib */,
 			);
@@ -7192,6 +7206,7 @@
 				7644B6262564F910006778B2 /* TransactionDetailsComponentView.xib in Resources */,
 				C782D29A26553B0E00594A65 /* ABSliderCollectionViewCell.xib in Resources */,
 				CEBB002A2608EC4100D1B510 /* PaymentMethodComponentView.xib in Resources */,
+				C72C87A626CD7EFB0000BDA8 /* PopupErrorView.xib in Resources */,
 				C75D1AFC261205F4002AF763 /* TSOAJSlot.zip in Resources */,
 				C75D1B0C261205F4002AF763 /* EDJSlot.zip in Resources */,
 				D87E3C5A2445FE6C004A4BDF /* Notifications.storyboard in Resources */,
@@ -7372,6 +7387,7 @@
 				C78E53122685B12300EE1C18 /* HighSecurityViewController.swift in Sources */,
 				CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */,
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
+				C72C87A226CD7EEB0000BDA8 /* PopupErrorView.swift in Sources */,
 				7668C7AA2576785F0024DDE4 /* AccountParametersHeaderTableViewCellDataProvider.swift in Sources */,
 				7665D961257E5CA600E5B35F /* AccessHistoryViewController.swift in Sources */,
 				C701C72725C06C0600B059A6 /* Status.swift in Sources */,
@@ -7469,6 +7485,7 @@
 				CE95A438261EF8C00004330E /* APayInstructionsComponentView.swift in Sources */,
 				7644B5F12563A72B006778B2 /* TransactionHistoryTableViewCell.swift in Sources */,
 				76DCF68925B815AC00150EE1 /* MyCardsCreditCard.swift in Sources */,
+				C72C87AC26CE74230000BDA8 /* PopupErrorViewModel.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
 				76BDF4602576043A007B27A7 /* AccountParametersViewModel.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
@@ -7710,7 +7727,6 @@
 				CEE356CA252B644300A0A25C /* ProfileInfoTableViewCellDataProvider.swift in Sources */,
 				CE55ECFA25265CDA003E168F /* ProfileViewModel.swift in Sources */,
 				CE693AFA26A6D80F0049D665 /* FAQCategoryComponentView.swift in Sources */,
-				C7A0480726C3FD5A0035D93D /* NotificationErrorViewModel.swift in Sources */,
 				D85094022482570200722040 /* UICollectionView+Extension.swift in Sources */,
 				CE341BC226A83DFC0040A83B /* FAQAnswersViewControllerFactory.swift in Sources */,
 				D8390E7D246C1B5D00EF8CB5 /* OTPViewModel.swift in Sources */,

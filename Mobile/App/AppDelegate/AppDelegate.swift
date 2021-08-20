@@ -82,7 +82,7 @@ public extension DependencyContainer {
         Module { DefaultVisaViewModel(params: .init(serviceType: .regular)) as VisaViewModel }
         Module { DefaultEmoneyViewModel() as EmoneyViewModel }
         Module { DefaultApplePayViewModel() as ApplePayViewModel }
-        Module { DefaultMainContainerViewModel(params: .init()) as MainContainerViewModel }
+        Module { DefaultMainContainerViewModel() as MainContainerViewModel }
         Module { DefaultBonusViewModel(params: .init()) as BonusViewModel }
         Module { DefaultHighSecurityViewModel() as HighSecurityViewModel }
         Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }

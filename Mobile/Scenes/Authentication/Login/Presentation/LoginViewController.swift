@@ -10,7 +10,7 @@ import RxSwift
 
 public class LoginViewController: ABViewController {
     var viewModel: LoginViewModel!
-    public lazy var navigator = LoginNavigator(viewController: self)
+    lazy var navigator = LoginNavigator(viewController: self)
 
     // MARK: IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -79,7 +79,8 @@ public class LoginViewController: ABViewController {
 
     private func didRecive(route: LoginViewModelRoute) {
         switch route {
-        case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
+        case .openMainTabBar(let params):
+            navigator.navigate(to: .mainTabBar(params: params), animated: true)
         case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         case .openAlert(let title, _): showAlert(title: title)
         }

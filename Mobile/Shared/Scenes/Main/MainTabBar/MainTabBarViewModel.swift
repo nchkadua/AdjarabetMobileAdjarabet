@@ -8,33 +8,42 @@
 
 import RxSwift
 
-public protocol MainTabBarViewModel: MainTabBarViewModelInput, MainTabBarViewModelOutput {
+protocol MainTabBarViewModel: MainTabBarViewModelInput, MainTabBarViewModelOutput {
 }
 
-public protocol MainTabBarViewModelInput {
+struct MainTabBarViewModelParams {
+    let homeParams: HomeViewModelParams
+    init(homeParams: HomeViewModelParams = .init()) {
+        self.homeParams = homeParams
+    }
+}
+
+protocol MainTabBarViewModelInput {
     func viewDidLoad()
     func viewWillAppear()
     func shouldSelectPage(at index: Int, currentPageIndex: Int)
 }
 
-public protocol MainTabBarViewModelOutput {
+protocol MainTabBarViewModelOutput {
+    var params: MainTabBarViewModelParams { get set }
     var action: PublishSubject<MainTabBarViewModelOutputAction> { get }
     var route: PublishSubject<MainTabBarViewModelRoute> { get }
 }
 
-public enum MainTabBarViewModelOutputAction {
+enum MainTabBarViewModelOutputAction {
     case setupTabBar
     case scrollSelectedViewControllerToTop
     case selectPage(index: Int)
 }
 
-public enum MainTabBarViewModelRoute {
+enum MainTabBarViewModelRoute {
     case initial
 }
 
-public class DefaultMainTabBarViewModel {
-    public let action = PublishSubject<MainTabBarViewModelOutputAction>()
-    public let route = PublishSubject<MainTabBarViewModelRoute>()
+class DefaultMainTabBarViewModel {
+    var params: MainTabBarViewModelParams = .init()
+    let action = PublishSubject<MainTabBarViewModelOutputAction>()
+    let route = PublishSubject<MainTabBarViewModelRoute>()
 }
 
 extension DefaultMainTabBarViewModel: MainTabBarViewModel {
