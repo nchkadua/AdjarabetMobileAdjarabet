@@ -49,8 +49,8 @@ final class DefaultOTPUseCase: OTPUseCase {
                     return
                 }
 
-                if params.codable.errorCode == .OTP_NOT_FOUND {
-                    completion(.failure(.invalidSMSCode))
+                if let error = ABError(coreStatusCode: params.codable.errorCode ?? .STATUS_SUCCESS) {
+                    completion(.failure(.unknown(error: error)))
                     return
                 }
 

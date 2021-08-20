@@ -94,15 +94,14 @@ public extension UIView {
         layer.add(animation, forKey: "borderColor")
         layer.borderColor = toColor.cgColor
     }
-    
+
     func show() {
         isHidden = false
     }
-    
+
     func hide() {
         isHidden = true
     }
-    
 }
 
 public extension AppCircularView {

@@ -13,7 +13,7 @@ protocol NotificationsViewModel: BaseViewModel, NotificationsViewModelInput, Not
 
 public protocol NotificationsViewModelInput {
     func viewDidLoad()
-    
+
     var emptyStateViewModel: EmptyPageComponentViewModel { get }
 }
 
@@ -60,11 +60,9 @@ public class DefaultNotificationsViewModel: DefaultBaseViewModel {
         }
     }
     private var lastSelectedIndexPath: IndexPath?
-
 }
 
 extension DefaultNotificationsViewModel: NotificationsViewModel {
-    
     public var action: Observable<NotificationsViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<NotificationsViewModelRoute> { routeSubject.asObserver() }
 

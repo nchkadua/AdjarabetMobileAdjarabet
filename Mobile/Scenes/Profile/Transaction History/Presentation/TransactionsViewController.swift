@@ -14,7 +14,6 @@ class TransactionsViewController: ABViewController {
     public lazy var navigator = TransactionsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController().configureEmptyState(with: viewModel.emptyStateViewModel)
 
-
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()

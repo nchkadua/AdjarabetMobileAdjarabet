@@ -16,7 +16,7 @@ protocol TransactionsViewModel: BaseViewModel,
 protocol TransactionsViewModelInput: AnyObject {
     func viewDidLoad()
     func calendarTabItemClicked()
-    
+
     var emptyStateViewModel: EmptyPageComponentViewModel { get }
 }
 
@@ -64,7 +64,6 @@ class DefaultTransactionsViewModel: DefaultBaseViewModel {
 }
 
 extension DefaultTransactionsViewModel: TransactionsViewModel {
-    
     var action: Observable<TransactionsViewModelOutputAction> { actionSubject.asObserver() }
     var route: Observable<TransactionsViewModelRoute> { routeSubject.asObserver() }
 
@@ -287,5 +286,4 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
         let flooredAmount = Double(rawAmount) / 100
         return amountFormatter.format(number: flooredAmount, in: .sn)
     }
-    
 }

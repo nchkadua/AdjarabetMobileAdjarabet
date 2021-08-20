@@ -17,7 +17,7 @@ public class EmptyPageComponentView: UIView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -30,11 +30,11 @@ public class EmptyPageComponentView: UIView {
 
     public func setAndBind(viewModel: EmptyPageComponentViewModel) {
         self.viewModel = viewModel
-        
+
         iconImageView.image = viewModel.params.icon
         titleLabel.text = viewModel.params.title
         descriptionLabel.text = viewModel.params.description
-        
+
         bind()
     }
 
@@ -64,6 +64,5 @@ extension EmptyPageComponentView: Xibable {
     }
 
     func setupUI() {
-        
     }
 }

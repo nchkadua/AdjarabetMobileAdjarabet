@@ -26,7 +26,7 @@ public class ABTableViewController: AppTableViewController {
         emptyStateView.hide()
         return emptyStateView
     }()
-    
+
     public override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,12 +73,12 @@ public class ABTableViewController: AppTableViewController {
             showFloatingTabBar()
         }
     }
-    
+
     public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> Self {
         emptyStateView.setAndBind(viewModel: viewModel)
         return self
     }
-    
+
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
         emptyStateView.isHidden = numberOfRowsInSection > 0
