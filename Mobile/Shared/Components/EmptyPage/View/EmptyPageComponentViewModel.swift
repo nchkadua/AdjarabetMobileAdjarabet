@@ -15,6 +15,12 @@ public struct EmptyPageComponentViewModelParams {
     public let icon: UIImage
     public let title: String
     public let description: String
+    
+    init(icon: UIImage = R.image.promotions.casino_icon()!, title: String = "", description: String = "") {
+        self.icon = icon
+        self.title = title
+        self.description = description
+    }
 }
 
 public protocol EmptyPageComponentViewModelInput {

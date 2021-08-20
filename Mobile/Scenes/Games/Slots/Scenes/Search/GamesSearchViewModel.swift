@@ -15,13 +15,13 @@ public struct GamesSearchViewModelParams {
 }
 
 public protocol GamesSearchViewModelInput {
+    var emptyStateViewModel: EmptyPageComponentViewModel { get }
+    
     func viewDidLoad()
     func willPresent()
     func didDismiss()
     func didUpdateQuary(text: String?)
     func didSearch(query: String?)
-    
-    var emptyStateViewModel: EmptyPageComponentViewModel { get }
 }
 
 public protocol GamesSearchViewModelOutput {
@@ -125,15 +125,16 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
 
         load(query: query, loadingType: .fullScreen)
     }
-}
-
-extension DefaultGamesSearchViewModel: GamesSearchViewModel {
-    public var emptyStateViewModel: EmptyPageComponentViewModel {
+    
+    public var emptyStateViewModel: EmptyPageComponentViewModel = {
         DefaultEmptyPageComponentViewModel.init(params: .init(
                                                     icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon,
                                                     title: "",
                                                     description: R.string.localization.search_empty_state_description()))
-    }
+    }()
+}
+
+extension DefaultGamesSearchViewModel: GamesSearchViewModel {
     
     public var action: Observable<GamesSearchViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<GamesSearchViewModelRoute> { routeSubject.asObserver() }

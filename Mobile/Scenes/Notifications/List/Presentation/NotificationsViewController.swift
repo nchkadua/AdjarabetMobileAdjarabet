@@ -12,8 +12,7 @@ public class NotificationsViewController: ABViewController {
     // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: NotificationsViewModel
     public lazy var navigator = NotificationsNavigator(viewController: self)
-    private lazy var appTableViewController = ABTableViewController()
-.configureEmptyState(with: viewModel.emptyStateViewModel)
+    private lazy var appTableViewController = ABTableViewController().configureEmptyState(with: viewModel.emptyStateViewModel)
 
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }

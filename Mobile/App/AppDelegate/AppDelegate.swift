@@ -93,7 +93,7 @@ public extension DependencyContainer {
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as TermsAndConditionsViewModel }
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as DefaultTermsAndConditionsViewModel }
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
-        Module { DefaultEmptyPageComponentViewModel(params: .init(icon: R.image.promotions.casino_icon()!, title: "title", description: "description")) as EmptyPageComponentViewModel }
+        Module { DefaultEmptyPageComponentViewModel(params: .init()) as EmptyPageComponentViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
