@@ -78,6 +78,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
     }
 
     private func load(query: String?, loadingType: LoadingType) {
+//        print("*** Search: load with: \(query ?? "")")
         self.loadingType = loadingType
         self.query = query ?? ""
 
@@ -100,8 +101,14 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
                 }
 
                 self.appendPage(games: viewModels)
+                if viewModels.isEmpty, let query = query {
+                    self.emptyStateViewModel.set(title: query)
+                }
             case .failure(let error):
                 self.show(error: error)
+                if let query = query {
+                    self.emptyStateViewModel.set(title: query)
+                }
             }
         }
     }

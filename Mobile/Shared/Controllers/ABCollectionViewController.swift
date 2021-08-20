@@ -62,7 +62,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         flowLayout?.sectionInset = .zero
     }
 
-    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> ABCollectionViewController {
+    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> Self {
         emptyStateView.setAndBind(viewModel: viewModel)
         return self
     }
