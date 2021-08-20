@@ -42,6 +42,8 @@ public class EmptyPageComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
+            case .titleUpdate(let title):
+                self?.titleLabel.text = title
             default:
                 break
             }

@@ -13,10 +13,7 @@ public class NotificationsViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: NotificationsViewModel
     public lazy var navigator = NotificationsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
-        .configureEmptyState(with: DefaultEmptyPageComponentViewModel(params: .init(
-                                icon: R.image.promotions.casino_icon()!, // TODO change
-                                title: R.string.localization.notifications_empty_state_title(),
-                                description: R.string.localization.notifications_empty_state_description())))
+.configureEmptyState(with: viewModel.emptyStateViewModel)
 
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }

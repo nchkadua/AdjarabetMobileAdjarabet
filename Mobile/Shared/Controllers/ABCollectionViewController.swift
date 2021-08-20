@@ -18,6 +18,13 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 
     private let disposeBag = DisposeBag()
     public var isTabBarManagementEnabled: Bool = false
+    
+    private lazy var emptyStateView: EmptyPageComponentView = {
+        let emptyStateView = EmptyPageComponentView()
+        self.collectionView.backgroundView = emptyStateView
+        emptyStateView.hide()
+        return emptyStateView
+    }()
 
     public var safeAreaRect: CGRect {
         collectionView.bounds
@@ -53,6 +60,17 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         flowLayout?.minimumInteritemSpacing = 0
         flowLayout?.minimumLineSpacing = 0
         flowLayout?.sectionInset = .zero
+    }
+    
+    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> ABCollectionViewController {
+        emptyStateView.setAndBind(viewModel: viewModel)
+        return self
+    }
+    
+    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
+        emptyStateView.isHidden = numberOfItemsInSection > 0
+        return numberOfItemsInSection
     }
 
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

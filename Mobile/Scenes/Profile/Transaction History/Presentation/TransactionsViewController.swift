@@ -12,11 +12,7 @@ class TransactionsViewController: ABViewController {
     // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: TransactionsViewModel
     public lazy var navigator = TransactionsNavigator(viewController: self)
-    private lazy var appTableViewController = ABTableViewController()
-        .configureEmptyState(with: DefaultEmptyPageComponentViewModel(params: .init(
-                                icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon
-                                title: R.string.localization.transactions_empty_state_title(),
-                                description: R.string.localization.transactions_empty_state_description())))
+    private lazy var appTableViewController = ABTableViewController().configureEmptyState(with: viewModel.emptyStateViewModel)
 
 
     // MARK: - Lifecycle methods

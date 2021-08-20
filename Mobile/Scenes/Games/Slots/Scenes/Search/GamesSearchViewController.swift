@@ -11,6 +11,7 @@ import RxSwift
 public class GamesSearchViewController: ABViewController {
     var viewModel: GamesSearchViewModel = DefaultGamesSearchViewModel(params: .init())
     public lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+                                                .configureEmptyState(with: viewModel.emptyStateViewModel)
 
     // shimmer loader
     private lazy var loader: GamesListLoader = {

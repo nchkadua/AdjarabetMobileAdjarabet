@@ -19,6 +19,7 @@ public struct EmptyPageComponentViewModelParams {
 
 public protocol EmptyPageComponentViewModelInput {
     func didBind()
+    func set(title: String)
 }
 
 public protocol EmptyPageComponentViewModelOutput {
@@ -27,7 +28,7 @@ public protocol EmptyPageComponentViewModelOutput {
 }
 
 public enum EmptyPageComponentViewModelOutputAction {
-    
+    case titleUpdate(title: String)
 }
 
 public class DefaultEmptyPageComponentViewModel {
@@ -39,6 +40,10 @@ public class DefaultEmptyPageComponentViewModel {
 }
 
 extension DefaultEmptyPageComponentViewModel: EmptyPageComponentViewModel {
+    public func set(title: String) {
+        actionSubject.onNext(.titleUpdate(title: title))
+    }
+    
     public var action: Observable<EmptyPageComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }

@@ -16,6 +16,8 @@ protocol TransactionsViewModel: BaseViewModel,
 protocol TransactionsViewModelInput {
     func viewDidLoad()
     func calendarTabItemClicked()
+    
+    var emptyStateViewModel: EmptyPageComponentViewModel { get }
 }
 
 protocol TransactionsViewModelOutput {
@@ -56,6 +58,13 @@ class DefaultTransactionsViewModel: DefaultBaseViewModel {
 }
 
 extension DefaultTransactionsViewModel: TransactionsViewModel {
+    var emptyStateViewModel: EmptyPageComponentViewModel {
+        return DefaultEmptyPageComponentViewModel(params: .init(
+                                icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon
+                                title: R.string.localization.transactions_empty_state_title(),
+                                description: R.string.localization.transactions_empty_state_description()))
+    }
+    
     var action: Observable<TransactionsViewModelOutputAction> { actionSubject.asObserver() }
     var route: Observable<TransactionsViewModelRoute> { routeSubject.asObserver() }
 

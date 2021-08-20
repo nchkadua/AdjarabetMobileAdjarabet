@@ -74,20 +74,14 @@ public class ABTableViewController: AppTableViewController {
         }
     }
     
-    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> ABTableViewController {
+    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel) -> Self {
         emptyStateView.setAndBind(viewModel: viewModel)
         return self
     }
     
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
-        
-        if numberOfRowsInSection == 0 {
-            emptyStateView.show()
-        } else {
-            emptyStateView.hide()
-        }
-
+        emptyStateView.isHidden = numberOfRowsInSection > 0
         return numberOfRowsInSection
     }
 
