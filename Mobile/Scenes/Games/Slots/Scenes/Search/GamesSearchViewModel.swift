@@ -126,7 +126,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
         load(query: query, loadingType: .fullScreen)
     }
     
-    public var emptyStateViewModel: EmptyPageComponentViewModel = {
+    public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
         DefaultEmptyPageComponentViewModel.init(params: .init(
                                                     icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon,
                                                     title: "",
