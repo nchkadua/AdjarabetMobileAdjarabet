@@ -1846,6 +1846,8 @@
 		D8FBA5022449C90A0015C03C /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = hy.lproj/Localization.strings; sourceTree = "<group>"; };
 		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB2DD1E126D4BAAE002B0AFF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB2DD1E226D4BAAE002B0AFF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localization.strings; sourceTree = "<group>"; };
 		FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsComponentView.xib; sourceTree = "<group>"; };
 		FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		FB584B3D26B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsTableViewCell.xib; sourceTree = "<group>"; };
@@ -6920,6 +6922,7 @@
 				Base,
 				ka,
 				hy,
+				ru,
 			);
 			mainGroup = D8A47DC224335B4B0077AA8E;
 			productRefGroup = D8A47DCC24335B4B0077AA8E /* Products */;
@@ -8027,6 +8030,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D8A47DDA24335B4C0077AA8E /* Base */,
+				FB2DD1E126D4BAAE002B0AFF /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -8037,6 +8041,7 @@
 				D8FBA4F22449BD560015C03C /* en */,
 				D8FBA5012449C8DA0015C03C /* ka */,
 				D8FBA5022449C90A0015C03C /* hy */,
+				FB2DD1E226D4BAAE002B0AFF /* ru */,
 			);
 			name = Localization.strings;
 			sourceTree = "<group>";

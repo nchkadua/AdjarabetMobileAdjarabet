@@ -13,7 +13,7 @@ public class DepositViewController: ABViewController {
     public lazy var navigator = DepositNavigator(viewController: self)
 
     @IBOutlet private weak var iconImageView: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var depositLabel: UILabel!
     @IBOutlet private weak var balanceTitleLabel: UILabel!
     @IBOutlet private weak var balanceLabel: UILabel!
     @IBOutlet private weak var loader: UIActivityIndicatorView!
@@ -80,14 +80,24 @@ public class DepositViewController: ABViewController {
     }
 
     private func setupLabels() {
-        titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
-        titleLabel.text = R.string.localization.deposit_title.localized().uppercased()
-
+        setupDepositLabel()
+        setupBalanceTitleLabel()
+        setupBalanceLabel()
+    }
+    
+    private func setupDepositLabel() {
+        depositLabel.setTextColor(to: .primaryText())
+        depositLabel.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
+        depositLabel.text = R.string.localization.deposit_deposit_title.localized().uppercased()
+    }
+    
+    private func setupBalanceTitleLabel() {
         balanceTitleLabel.setTextColor(to: .secondaryText())
         balanceTitleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         balanceTitleLabel.text = R.string.localization.deposit_balance_title.localized()
-
+    }
+    
+    private func setupBalanceLabel() {
         balanceLabel.setTextColor(to: .primaryText())
         balanceLabel.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))
     }

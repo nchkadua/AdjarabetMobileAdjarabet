@@ -2,8 +2,8 @@
   Localization.strings
   Mobile
 
-  Created by Shota Ioramashvili on 4/17/20.
-  Copyright © 2020 Adjarabet. All rights reserved.
+  Created by Giga Khizanisvhili on 08/24/21.
+  Copyright © 2021 Adjarabet. All rights reserved.
 */
 
 /* Shared */
@@ -18,55 +18,55 @@
 "back_button_title" = "Back";
 
 // ABError
-"shared_aberror_default_description" = "something went wrong";
-"shared_aberror_wrong_auth_credentials_description" = "wrong authentication credentials";
-"shared_aberror_ip_is_blocked" = "ip address is blocked, please try again in 5 minutes";
-"shared_aberror_last_access_from_different_ip" = "the last visit was recorded from another ip address";
-"shared_aberror_technical_issue" = "there is a technical issue in the system, please try again later";
-"shared_aberror_otp_not_found" = "enter the correct sms code";
-"shared_aberror_not_connected" = "not connected";
-"shared_aberror_got_it" = "got it";
-"shared_aberror_try_again" = "try again";
-"shared_aberror_last_accesses" = "last accesses";
-"shared_aberror_call" = "call";
-"shared_aberror_session_not_found" = "session not found";
-"shared_aberror_must_be_more_than_zero" = "must be more than zero";
-"shared_aberror_account_is_suspended" = "account is suspended";
-"shared_aberror_unable_to_get_balance" = "unable to get balance";
-"shared_aberror_payment_account_not_found" = "payment account not found";
-"shared_aberror_payment_account_is_not_verified" = "payment account is not verified";
-"shared_aberror_unable_to_send_email_verification_email_is_missing" = "unable to send email verification email is missing";
-"shared_aberror_bonus_is_expired" = "bonus is expired";
-"shared_aberror_wrong_credentials" = "enter the username or password correctly";
+"shared_aberror_default_description" = "Something Went Wrong";
+"shared_aberror_wrong_auth_credentials_description" = "Wrong Authentication Credentials";
+"shared_aberror_ip_is_blocked" = "IP address is blocked, please try again in 5 minutes";
+"shared_aberror_last_access_from_different_ip" = "The last visit was recorded from another IP address";
+"shared_aberror_technical_issue" = "There is a technical issue in the system, please try again later";
+"shared_aberror_otp_not_found" = "Enter the correct SMS code";
+"shared_aberror_not_connected" = "Not Connected";
+"shared_aberror_got_it" = "Got It";
+"shared_aberror_try_again" = "Try Again";
+"shared_aberror_last_accesses" = "Last Accesses";
+"shared_aberror_call" = "Call";
+"shared_aberror_session_not_found" = "Session Not Found";
+"shared_aberror_must_be_more_than_zero" = "Must Be More Than Zero";
+"shared_aberror_account_is_suspended" = "Account Is Suspended";
+"shared_aberror_unable_to_get_balance" = "Unable To Get Balance";
+"shared_aberror_payment_account_not_found" = "Payment Account Not Found";
+"shared_aberror_payment_account_is_not_verified" = "Payment Account Is Not Verified";
+"shared_aberror_unable_to_send_email_verification_email_is_missing" = "Unable To Send Email Verification Email Is Missing";
+"shared_aberror_bonus_is_expired" = "Bonus Is Expired";
+"shared_aberror_wrong_credentials" = "Enter the username or password correctly";
 
-"login" = "մուտք";
+"login" = "Login";
 
 /* Home */
-"home_page_title" = "Խաղեր";
-"home_search_placeholder" = "Շարժեբნე խաղեր";
-"home_slots" = "slots";
+"home_page_title" = "Games";
+"home_search_placeholder" = "Search for games";
+"home_slots" = "Slots";
 
 /* Sports */
-"sports_page_title" = "Սպորտ";
+"sports_page_title" = "Sports";
 
 /* Promotions */
-"promotions_page_title" = "Ակցիաներ";
+"promotions_page_title" = "Promotions";
 
 /* Notifications */
-"notifications_page_title" = "Ծանուցումներ";
+"notifications_page_title" = "Notifications";
 "notifications_page_delete_title" = "Delete";
 
 /* Recently Played Games */
-"recently_played" = "Վերջերս խաղարկված";
+"recently_played" = "Recently Played";
 
 /* General */
-"view_all" = "Դիտեք բոլորը";
-"cancel" = "չեղարկել";
+"view_all" = "View All";
+"cancel" = "Cancel";
 "not_member" = "Not a member?";
 "join_now" = "Join now";
-"login_button_title" = "LOG IN";
+"login_button_title" = "Log In";
 "contact_us_button_title" = "Contact us";
-"settings" = "settings";
+"settings" = "Settings";
 
 /* Login */
 "login_page_title" = "Log in to";
@@ -76,8 +76,8 @@
 "login_registration" = "Registration";
 "login_remember" = "გაიხსენე მონაცემები";
 "login_sms_login_title" = "გაიარეთ ავტორიზაცია";
-"login_username_input_title" = "username";
-"login_password_input_title" = "password";
+"login_username_input_title" = "Username";
+"login_password_input_title" = "Password";
 "login_with_face_id_title" = "Log in with face ID";
 "login_with_touch_id_title" = "Log in with touch ID";
 "login_legal1" = "Copyright © 2021 Adjarabet.";
@@ -100,7 +100,7 @@
 "profile_page_title" = "Account Parameters";
 "profile_page_back_title" = "Home Page";
 
-"verified" = "Your Account is Verified";
+"verified" = "Account is Verified";
 
 "balance_title" = "My Balance";
 "total_balance" = "Total Balance";
@@ -163,10 +163,10 @@
 "account_info_rus" = "Russian";
 
 /* High Security */
-"high_security_title" = "high security mode";
-"high_security_description" = "by activating the high security mode, your adjarabet account is much more secure. authorization and access to personal information is done only by using a security code.";
-"high_security_button_activate" = "activate";
-"high_security_button_deactivate" = "deactivate";
+"high_security_title" = "High Security Mode";
+"high_security_description" = "By activating the high security mode, your Adjarabet account is much more secure. Authorization and access to personal information is done only by using a security code.";
+"high_security_button_activate" = "Activate";
+"high_security_button_deactivate" = "Deactivate";
 
 /* Self Suspend */
 "self_suspend_title" = "Self Suspend";
@@ -182,12 +182,12 @@
 "mail_change_password" = "დაადასტურეთ პაროლით";
 
 /* Address Change */
-"address_change_title" = "change address";
-"new_address_subtitle" = "enter new address";
-"new_address_placeholder" = "enter new address";
-"approve_address_button_title" = "approve";
-"address_change_rule_1" = "use only latin characters";
-"address_change_rule_2" = "write without spaces";
+"address_change_title" = "Change Address";
+"new_address_subtitle" = "Enter New Address";
+"new_address_placeholder" = "Enter New Address";
+"approve_address_button_title" = "Approve";
+"address_change_rule_1" = "Use only Latin characters";
+"address_change_rule_2" = "Write without spaces";
 
 /* Password Change */
 "password_change_title" = "Change Password";
@@ -219,31 +219,31 @@
 /* Phone Number Change */
 "phone_number_change_title" = "Change Phone Number";
 "phone_number_subtitle" = "Enter New Phone Number";
-"approve_number_button_title" = "Continueმა";
+"approve_number_button_title" = "Continue";
 "phone_prefix" = "Prexix";
 "new_phone_number" = "Phone Number";
 
 /* Deposit */
-"deposit_page_title" = "Լիցքավորում";
-"deposit_deposit_title" = "Լիցքավորում";
-"deposit_balance_title" = "Մնացորդ";
+"deposit_page_title" = "Депозит";
+"deposit_deposit_title" = "Депозит";
+"deposit_balance_title" = "Баланс";
 
-"visa_amount_title" = "Գումար";
-"visa_card_title" = "Հաշիվ";
+"visa_amount_title" = "Сумма";
+"visa_card_title" = "Счет";
 
-"visa_instruction_title" = "Ինչպե՞ս կանխիկացնել";
+"visa_instruction_title" = "Как обналичить сумму?";
 "visa_description_title" = "ლიმიტი ერთ ბარათზე";
-"visa_description_amount" = "Նշի՛ր գումարի նախընտրելի չափը";
-"visa_description_card" = "Ընտրի՛ր քարտը";
-"visa_description_proceed" = "Սեղմի՛ր ”Կանխիկացնել”";
+"visa_description_amount" = "Укажи желаемую сумму";
+"visa_description_card" = "Выбери карту";
+"visa_description_proceed" = "Нажми ”Обналичить”";
 
-"visa_continue_button_title" = "Շարունակել";
+"visa_continue_button_title" = "Продолжить";
 
-"visa_description_video_instruction" = "Տեսաուղեցույց";
+"visa_description_video_instruction" = "Видеоинструкция";
 
-"visa_min_limit" = "Մին․";
-"visa_daily_limit" = "Մեկ անգամ";
-"visa_max_limit" = "Օրական";
+"visa_min_limit" = "Мин.";
+"visa_daily_limit" = "За раз";
+"visa_max_limit" = "Ежедневно";
 
 "emoney_title" = "გადახდის დასასრულებლად თქვენ გადამისამართდებით პროვაიდერის ვებ-გვერდზე";
 "emoney_goto" = "გადასვლა";
@@ -257,34 +257,34 @@
 "apay_rule3" = "ელექტრონულ საფულეში აირჩიეთ ბარათი, რომლითაც გსურთ ბალანსის შევსება";
 "apay_rule4" = "გაიარეთ იდენტიფიკაცია (Face ID, Finger print) ან სხვა თქვენ მიერ არჩეული პარამეტრით და დაასრულეთ ბალანსის შევსების პროცესი";
 
-"cashflow_done_button_title" = "Ավարտել";
-"suggestions_clear" = "Չեղարկել";
-"suggestions_done" = "Ավարտել";
+"cashflow_done_button_title" = "Готово";
+"suggestions_clear" = "Удалить";
+"suggestions_done" = "Готово";
 
 /* Withdraw */
-"withdraw_cash_out" = "cash out";
-"withdraw_balance" = "balance";
-"withdraw_minimum" = "minimum";
-"withdraw_disposable" = "disposable";
-"withdraw_daily" = "daily";
-"withdraw_cash_out_instruction" = "cash out instruction";
-"withdraw_step_1" = "in the \"amount\" column, enter the amount you want to cash out";
-"withdraw_step_2" = "select the desired card";
-"withdraw_step_3" = "click the \"continue\" button and the amount will be transferred to your card";
-"withdraw_instruction" = "to withdraw money on the card, it is necessary to have a colored photo of the id card uploaded on the website.\n\nnote that the withdrawal fee is 1%.\n\nin case of violation of the rules of fair play, adjarabet reserves the right to deduct 3% of the withdrawn amount in the form of a commission.";
-"withdraw_transaction_successed" = "transaction Successed";
-"withdraw_service_type_init_error" = "service type can not be specified";
-"withdraw_missing_params_error" = "some parameters are missing";
-"withdraw_wrong_format_amount" = "amount specified in wrong format";
+"withdraw_cash_out" = "Cash Out";
+"withdraw_balance" = "Balance";
+"withdraw_minimum" = "Minimum";
+"withdraw_disposable" = "Disposable";
+"withdraw_daily" = "Daily";
+"withdraw_cash_out_instruction" = "Cash Out Instruction";
+"withdraw_step_1" = "In the \"Amount\" column, enter the amount you want to cash out";
+"withdraw_step_2" = "Select the desired card";
+"withdraw_step_3" = "Click the \"Continue\" button and the amount will be transferred to your card";
+"withdraw_instruction" = "To withdraw money on the card, it is necessary to have a colored photo of the ID card uploaded on the website.\n\nNote that the withdrawal fee is 1%.\n\nIn case of violation of the rules of fair play, Adjarabet reserves the right to deduct 3% of the withdrawn amount in the form of a commission.";
+"withdraw_transaction_successed" = "Transaction Successed";
+"withdraw_service_type_init_error" = "Service Type can not be specified";
+"withdraw_missing_params_error" = "Some parameters are missing";
+"withdraw_wrong_format_amount" = "Amount specified in wrong format";
 // Cash Out
-"withdraw_amount" = "amount";
-"withdraw_account" = "account";
-"withdraw_transaction_fee" = "transaction fee";
-"withdraw_total_amount" = "total amount";
-"withdraw_continue" = "continue";
+"withdraw_amount" = "Amount";
+"withdraw_account" = "Account";
+"withdraw_transaction_fee" = "Transaction Fee";
+"withdraw_total_amount" = "Total Amount";
+"withdraw_continue" = "Continue";
 // Add Card
-"withdraw_add_card" = "add card";
-"withdraw_add_card_description" = "please click \"add card\" to make a withdrawal";
+"withdraw_add_card" = "Add Card";
+"withdraw_add_card_description" = "Please click \"Add Card\" to make a withdrawal";
 
 /* Notifications */
 "delete_button_title" = "Delete";
@@ -293,44 +293,40 @@
 "notifications_play_button_title" = "Play";
 
 /* Biometric Settings */
-"biometric_settings_title" = "biometric authorization parameters";
+"biometric_settings_title" = "Biometric Authorization Parameters";
 "biometric_settings_activate_touch_id" = "TOUCH ID";
 "biometric_settings_activate_face_id" = "FACE ID";
-"biometric_settings_activate_biometry" = "activate";
-"biometric_settings_not_available" = "biometry is not available";
+"biometric_settings_activate_biometry" = "Activate";
+"biometric_settings_not_available" = "Biometry is not available";
 
 /* P2P Transfer */
-"p2p_transfer_p2p_transfer" = "P2P transfer";
-"p2p_transfer_friend_id" = "friend id";
-"p2p_transfer_tranfer_amount" = "transfer amount";
-"p2p_transfer_transaction_commission" = "transaction commission";
-"p2p_transfer_total_amount" = "total amount";
+"p2p_transfer_p2p_transfer" = "P2P Transfer";
+"p2p_transfer_friend_id" = "Friend ID";
+"p2p_transfer_tranfer_amount" = "Transfer amount";
+"p2p_transfer_transaction_commission" = "Transaction commission";
+"p2p_transfer_total_amount" = "Total amount";
 "p2p_transfer_you_are_transfering_to" = "You are transfering to";
-"p2p_transfer_confirm" = "confirm";
+"p2p_transfer_confirm" = "Confirm";
 
 /* Transactions History */
-"transactions_title" = "transactions";
-"transactions_filter_title" = "filter";
-"transactions_details_total_amount" = "total amount";
-"transactions_details_fee_amount" = "transaction fee";
-"transactions_details_date" = "date";
-"transactions_details_type" = "transaction type";
-"transactions_details_payment_provider_name" = "payment provider";
-"transactions_details_type_deposit" = "deposit";
-"transactions_details_type_withdraw" = "withdraw";
-"transactions_all" = "all transactions";
-"transactions_deposit" = "deposit";
-"transactions_withdraw" = "withdraw";
-
-/* Access History */
-"access_history_device_desktop" = "Desktop";
-"access_history_device_mobile" = "Mobile";
+"transactions_title" = "Transactions";
+"transactions_filter_title" = "Filter";
+"transactions_details_total_amount" = "Total amount";
+"transactions_details_fee_amount" = "Transaction fee";
+"transactions_details_date" = "Date";
+"transactions_details_type" = "Transaction type";
+"transactions_details_payment_provider_name" = "Payment provider";
+"transactions_details_type_deposit" = "DEPOSIT";
+"transactions_details_type_withdraw" = "WITHDRAW";
+"transactions_all" = "All Transactions";
+"transactions_deposit" = "Deposit";
+"transactions_withdraw" = "Withdraw";
 
 /* Account Parameters */
 "account_parameters_title" = "Account Parameters";
 "account_parameters_change_password" = "Change password";
 "account_parameters_high_security" = "High security mode";
-"account_parameters_biometry" = "biometric authorization";
+"account_parameters_biometry" = "Biometric authorization";
 "account_parameters_self_block" = "Block account";
 "account_parameters_login_history" = "Login history";
 "account_parameters_messages_header" = "Security messsages";
@@ -343,6 +339,10 @@
 
 /* Documentation */
 "documentation_title" = "Documentation";
+
+/* Access History */
+"access_history_device_desktop" = "Desktop";
+"access_history_device_mobile" = "Mobile";
 
 /* High Secutiry */
 "high_security_page_title" = "High Secutiry On";
@@ -367,28 +367,27 @@
 "card_add_button_title" = "ADD CARD";
 
 /* Security Levels */
-"security_levels_sms_scene_title" = "sms messages";
-"security_levels_email_scene_title" = "email Messages";
-"security_levels_standart_packet" = "standart packet";
-"security_levels_high_security_parameters" = "high security packet";
-"security_levels_individual" = "individual";
-"security_levels_deposit" = "deposit";
-"security_levels_withdraw" = "withdraw";
-"security_levels_password_change" = "password change";
-"security_levels_password_update" = "password update";
-"security_levels_other_ip_login" = "other ip login";
-"security_levels_contacts_change" = "contacts change";
-"security_levels_personal_info_change" = "personal info change";
-"security_levels_id_document_change" = "id document change";
-"security_levels_account_block" = "account block";
-"security_levels_high_security_activation_deactivation" = "high security activation / deactivation";
-"security_levels_switched_to_individual" = "do you want to activate an individual package?";
-"security_levels_individual_is_empty" = "you must select at least one type of sms notification, when you choose individual package, or standart packet will be chosen";
+"security_levels_sms_scene_title" = "SMS Messages";
+"security_levels_email_scene_title" = "EMail Messages";
+"security_levels_standart_packet" = "Standart Packet";
+"security_levels_high_security_parameters" = "High Security Packet";
+"security_levels_individual" = "Individual";
+"security_levels_deposit" = "Deposit";
+"security_levels_withdraw" = "Withdraw";
+"security_levels_password_change" = "Password Change";
+"security_levels_password_update" = "Password Update";
+"security_levels_other_ip_login" = "Other IP Login";
+"security_levels_contacts_change" = "Contacts Change";
+"security_levels_personal_info_change" = "Personal Info Change";
+"security_levels_id_document_change" = "ID Document Change";
+"security_levels_account_block" = "Account Block";
+"security_levels_high_security_activation_deactivation" = "High Security Activation / Deactivation";
+"security_levels_switched_to_individual" = "Do you want to activate an individual package?";
+"security_levels_individual_is_empty" = "You must select at least one type of sms notification, when you choose individual package, or standart packet will be chosen";
 
 /* MyCards */
 "my_cards_add_card" = "Add card";
 "my_cards_manage" = "Manage my cards";
-
 /* Dates */
 "january" = "January";
 "february" = "February";
@@ -403,29 +402,29 @@
 "november" = "November";
 "december" = "December";
 
-/* Gender */
-"gender_female" = "female";
-"gender_male" = "male";
-"gender_other" = "other";
-"gender_prefer_not_to_say" = "prefer not to say";
+/* Genders */
+"gender_female" = "Female";
+"gender_male" = "Male";
+"gender_other" = "Other";
+"gender_prefer_not_to_say" = "Prefer Not To Say";
 
 /* Components */
-"component_date_header_today" = "Today";
+"component_date_header_today" = "დღეს განხორციელებული";
 
 /* Deposit.Visa */
-"deposit_visa_choose_account" = "choose account";
-"deposit_visa_amount" = "amount";
-"deposit_visa_wrong_format_amount" = "amount specified in wrong format";
-"deposit_visa_negative_amount" = "please, enter possitive amount";
-"deposit_visa_some_field_is_not_specified" = "please, enter all required fields to make transaction";
+"deposit_visa_choose_account" = "Choose Account";
+"deposit_visa_amount" = "Amount";
+"deposit_visa_wrong_format_amount" = "Amount specified in wrong format";
+"deposit_visa_negative_amount" = "Please, enter possitive amount";
+"deposit_visa_some_field_is_not_specified" = "Please, enter all required fields to make transaction";
 "deposit_visa_add_card_button_title" = "Add Card";
 "deposit_visa_add_card_title" = "გთხოვთ დააჭიროთ “ბარათის დამატებას” იმისათვის რომ შეძლოთ დეპოზიტის გაკეთება";
 
 /* Close Account */
-"close_account_button_title" = "close account";
-"close_account_title" = "close account";
-"close_account_description" = "to close the account, contact us via the information center or online chat (+995 32 2 71 10 10; +995 32 2 97 10 10). note that the amount should not be fixed on the balance sheet to close the account.";
-"close_account_close_button_title" = "close";
+"close_account_button_title" = "Close Account";
+"close_account_title" = "Close Account";
+"close_account_description" = "To close the account, contact us via the Information Center or online chat (+995 32 2 71 10 10; +995 32 2 97 10 10). Note that the amount should not be fixed on the balance sheet to close the account.";
+"close_account_close_button_title" = "Close";
 
 /* FAQ */
 "faq_title" = "Questions & Answers";

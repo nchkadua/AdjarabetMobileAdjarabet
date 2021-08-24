@@ -224,24 +224,26 @@
 "new_phone_number" = "Phone Number";
 
 /* Deposit */
-"cashflow_done_button_title" = "Done";
+"deposit_page_title" = "Deposit";
+"deposit_deposit_title" = "Deposit";
+"deposit_balance_title" = "Balance";
 
-"visa_amount_title" = "თანხა";
-"visa_card_title" = "ანგარიში";
-"visa_instruction_title" = "გატანის ინსტრუქცია";
+"visa_amount_title" = "Amount";
+"visa_card_title" = "Account";
+
+"visa_instruction_title" = "How to withdraw?";
 "visa_description_title" = "ლიმიტი ერთ ბარათზე";
-"visa_description_amount" = "შეიყვანე სასურველი თანხა";
-"visa_description_card" = "მონიშნე სასურველი დამახსოვრებული ბარათი";
-"visa_description_proceed" = "დააჭირეთ ღილაკს გაგრძელება";
+"visa_description_amount" = "Indicate the desired amount";
+"visa_description_card" = "Select the card";
+"visa_description_proceed" = "Click ”Withdraw”";
 
-"deposit_title" = "თანხის შევსება";
-"deposit_balance_title" = "ბალანსი";
+"visa_continue_button_title" = "Continue";
 
-"visa_continue_button_title" = "გაგრძელება";
+"visa_description_video_instruction" = "Video Instruction";
 
-"visa_min_limit" = "მინიმალური";
-"visa_daily_limit" = "ერთჯერადი";
-"visa_max_limit" = "დღიური";
+"visa_min_limit" = "Min.";
+"visa_daily_limit" = "One-time";
+"visa_max_limit" = "Daily";
 
 "emoney_title" = "გადახდის დასასრულებლად თქვენ გადამისამართდებით პროვაიდერის ვებ-გვერდზე";
 "emoney_goto" = "გადასვლა";
@@ -255,8 +257,9 @@
 "apay_rule3" = "ელექტრონულ საფულეში აირჩიეთ ბარათი, რომლითაც გსურთ ბალანსის შევსება";
 "apay_rule4" = "გაიარეთ იდენტიფიკაცია (Face ID, Finger print) ან სხვა თქვენ მიერ არჩეული პარამეტრით და დაასრულეთ ბალანსის შევსების პროცესი";
 
-"suggestions_clear" = "Clear";
-"suggestions_done" = "Done";
+"cashflow_done_button_title" = "Finish";
+"suggestions_clear" = "Delete";
+"suggestions_done" = "Finish";
 
 /* Withdraw */
 "withdraw_cash_out" = "Cash Out";
