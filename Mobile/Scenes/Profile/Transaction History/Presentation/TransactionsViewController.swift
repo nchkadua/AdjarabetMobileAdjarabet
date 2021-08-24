@@ -12,7 +12,7 @@ class TransactionsViewController: ABViewController {
     // MARK: Properties
     @Inject(from: .viewModels) private var viewModel: TransactionsViewModel
     public lazy var navigator = TransactionsNavigator(viewController: self)
-    private lazy var appTableViewController = ABTableViewController()
+    private lazy var appTableViewController = ABTableViewController().configureEmptyState(with: viewModel.emptyStateViewModel)
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {

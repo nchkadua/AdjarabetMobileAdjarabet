@@ -44,8 +44,11 @@
 
 /* Home */
 "home_page_title" = "Խաղեր";
-"home_search_placeholder" = "Շարժեբნე խաղեր";
 "home_slots" = "slots";
+
+/* Search */
+"home_search_placeholder" = "Շարժեբნე խաղեր";
+"search_empty_state_description" = "Does not exist";
 
 /* Sports */
 "sports_page_title" = "Սպորտ";
@@ -55,6 +58,8 @@
 
 /* Notifications */
 "notifications_page_title" = "Ծանուցումներ";
+"notifications_empty_state_title" = "News";
+"notifications_empty_state_description" = "News are empty";
 "notifications_page_delete_title" = "Delete";
 
 /* Recently Played Games */
@@ -308,6 +313,8 @@
 
 /* Transactions History */
 "transactions_title" = "transactions";
+"transactions_empty_state_title" = "There are no records yet";
+"transactions_empty_state_description" = "For this time you have not done any transactions yet";
 "transactions_filter_title" = "filter";
 "transactions_details_total_amount" = "total amount";
 "transactions_details_fee_amount" = "transaction fee";

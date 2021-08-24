@@ -43,8 +43,11 @@
 
 /* Home */
 "home_page_title" = "Games";
-"home_search_placeholder" = "Search for games";
 "home_slots" = "Slots";
+
+/* Search */
+"home_search_placeholder" = "Search for games";
+"search_empty_state_description" = "Does not exist";
 
 /* Sports */
 "sports_page_title" = "Sports";
@@ -54,6 +57,8 @@
 
 /* Notifications */
 "notifications_page_title" = "Notifications";
+"notifications_empty_state_title" = "News";
+"notifications_empty_state_description" = "News are empty";
 "notifications_page_delete_title" = "Delete";
 
 /* Recently Played Games */
@@ -307,6 +312,8 @@
 
 /* Transactions History */
 "transactions_title" = "Transactions";
+"transactions_empty_state_title" = "There are no records yet";
+"transactions_empty_state_description" = "For this time you have not done any transactions yet";
 "transactions_filter_title" = "Filter";
 "transactions_details_total_amount" = "Total amount";
 "transactions_details_fee_amount" = "Transaction fee";

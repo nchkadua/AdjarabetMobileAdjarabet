@@ -15,10 +15,17 @@ public struct EmptyPageComponentViewModelParams {
     public let icon: UIImage
     public let title: String
     public let description: String
+
+    init(icon: UIImage = R.image.promotions.casino_icon()!, title: String = "", description: String = "") {
+        self.icon = icon
+        self.title = title
+        self.description = description
+    }
 }
 
 public protocol EmptyPageComponentViewModelInput {
     func didBind()
+    func set(title: String)
 }
 
 public protocol EmptyPageComponentViewModelOutput {
@@ -27,6 +34,7 @@ public protocol EmptyPageComponentViewModelOutput {
 }
 
 public enum EmptyPageComponentViewModelOutputAction {
+    case titleUpdate(title: String)
 }
 
 public class DefaultEmptyPageComponentViewModel {
@@ -38,6 +46,10 @@ public class DefaultEmptyPageComponentViewModel {
 }
 
 extension DefaultEmptyPageComponentViewModel: EmptyPageComponentViewModel {
+    public func set(title: String) {
+        actionSubject.onNext(.titleUpdate(title: title))
+    }
+
     public var action: Observable<EmptyPageComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }

@@ -15,6 +15,8 @@ public struct GamesSearchViewModelParams {
 }
 
 public protocol GamesSearchViewModelInput {
+    var emptyStateViewModel: EmptyPageComponentViewModel { get }
+
     func viewDidLoad()
     func willPresent()
     func didDismiss()
@@ -76,6 +78,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
     }
 
     private func load(query: String?, loadingType: LoadingType) {
+//        print("*** Search: load with: \(query ?? "")")
         self.loadingType = loadingType
         self.query = query ?? ""
 
@@ -98,8 +101,14 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
                 }
 
                 self.appendPage(games: viewModels)
+                if viewModels.isEmpty, let query = query {
+                    self.emptyStateViewModel.set(title: "\"\(query)\"")
+                }
             case .failure(let error):
                 self.show(error: error)
+                if let query = query {
+                    self.emptyStateViewModel.set(title: "\"\(query)\"")
+                }
             }
         }
     }
@@ -123,6 +132,13 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
 
         load(query: query, loadingType: .fullScreen)
     }
+
+    public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
+        DefaultEmptyPageComponentViewModel(params: .init(
+                                                    icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon,
+                                                    title: "",
+                                                    description: R.string.localization.search_empty_state_description()))
+    }()
 }
 
 extension DefaultGamesSearchViewModel: GamesSearchViewModel {
