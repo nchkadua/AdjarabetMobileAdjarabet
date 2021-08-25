@@ -349,12 +349,19 @@
 "high_security_button_on" = "Activate";
 "high_security_button_off" = "Deactivate";
 
-/* Card Management */
-"add_card_title" = "Add Card";
+/* Add Card */
+"add_card_title" = "Ավելացնել քարտ";
 "add_card_minimum_amount_title" = "ბარათის დასამატებლად გთხოვთ მიუთითო მინიმალური თანხის ოდენობა";
-"add_card_minimum_amount" = "Minimum Amount";
-"add_card_terms" = "თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება";
-"add_card_continue_button_title" = "Continue";
+"add_card_minimum_amount" = "Նշել գումարի նվազագույն չափը՝";
+"add_card_minimum_amount_value" = "₾1,00 G";
+"add_card_terms" = "Համաձայն եմ, որ իմ քարտի տվյալները պահպանվեն հետագա վճարումների համար";
+"add_card_continue_button_title" = "Շարունակել";
+    // add card instructions
+"add_card_instructions_title" = "Ավելացնել քարտ";
+"add_card_instructions_desired_amount" = "Մուտքագրել գումարի ցանկալի չափը";
+"add_card_instructions_save_card" = "Եթե ուզում ես, որ քարտիդ տվյալները պահպանվեն, խնդրում ենք նշել՝ \"Համաձայն եմ, որ իմ քարտի տվյալները պահպանվեն հետագա վճարումների համար\"";
+"add_card_instructions_continue" = "Սեղմի՛ր \"Շարունակել\"";
+
 "scan_card_title" = "Scan Card";
 
 "card_usage_date_title" = "Usage Date";

@@ -349,12 +349,19 @@
 "high_security_button_on" = "Activate";
 "high_security_button_off" = "Deactivate";
 
-/* Card Management */
+/* Add Card */
 "add_card_title" = "Add Card";
 "add_card_minimum_amount_title" = "ბარათის დასამატებლად გთხოვთ მიუთითო მინიმალური თანხის ოდენობა";
-"add_card_minimum_amount" = "Minimum Amount";
-"add_card_terms" = "თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება";
+"add_card_minimum_amount" = "Indicate minimal amount";
+"add_card_minimum_amount_value" = "₾1,00 GEL";
+"add_card_terms" = "I agree my card data to be saved for the next payments";
 "add_card_continue_button_title" = "Continue";
+    // add card instructions
+"add_card_instructions_title" = "Add Card";
+"add_card_instructions_desired_amount" = "Enter desired amount";
+"add_card_instructions_save_card" = "If you want your card data to be saved, specify - \"I agree my card data to be saved for the next payments\"";
+"add_card_instructions_continue" = "Click \"Continue\"";
+
 "scan_card_title" = "Scan Card";
 
 "card_usage_date_title" = "Usage Date";

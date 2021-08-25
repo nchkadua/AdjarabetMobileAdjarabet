@@ -71,7 +71,7 @@ extension MinAmountComponentView: Xibable {
         minAmountTitleLabel.text = R.string.localization.add_card_minimum_amount.localized()
 
         minAmountButton.setStyle(to: .primary(state: .active, size: .xs))
-        minAmountButton.setTitleWithoutAnimation("1.00 ₾", for: .normal)
+        minAmountButton.setTitleWithoutAnimation(R.string.localization.add_card_minimum_amount_value.localized(), for: .normal)
         minAmountButton.setTintColor(to: .primaryText())
         minAmountButton.setButtonImage(R.image.components.profileCell.copy() ?? UIImage(), alignment: .right)
         minAmountButton.addTarget(self, action: #selector(minAmountButtonDidTap), for: .touchUpInside)
