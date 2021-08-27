@@ -225,17 +225,17 @@
 
 /* Deposit */
 "deposit_page_title" = "დეპოზიტი";
-"deposit_deposit_title" = "ჩარიცხვა";
+"deposit_deposit_title" = "დეპოზიტი";
 "deposit_balance_title" = "ბალანსი";
 
 "visa_amount_title" = "თანხა";
 "visa_card_title" = "ანგარიში";
 
-"visa_instruction_title" = "განაღდების პირობები";
+"visa_instruction_title" = "დეპოზიტის ინსტრუქცია";
 "visa_description_title" = "ლიმიტი ერთ ბარათზე";
 "visa_description_amount" = "მიუთითე სასურველი თანხა";
 "visa_description_card" = "მიუთითე დამახსოვრებული ბარათი";
-"visa_description_proceed" = "დააჭირე ღილაკს “გადახდა”";
+"visa_description_proceed" = "დააჭირე ღილაკს “გაგრძელება”";
 
 "visa_continue_button_title" = "გაგრძელება";
 
@@ -257,9 +257,9 @@
 "apay_rule3" = "ელექტრონულ საფულეში აირჩიეთ ბარათი, რომლითაც გსურთ ბალანსის შევსება";
 "apay_rule4" = "გაიარეთ იდენტიფიკაცია (Face ID, Finger print) ან სხვა თქვენ მიერ არჩეული პარამეტრით და დაასრულეთ ბალანსის შევსების პროცესი";
 
-"cashflow_done_button_title" = "Ավարտել";
-"suggestions_clear" = "Չեղարկել";
-"suggestions_done" = "Ավարտել";
+"cashflow_done_button_title" = "დასრულება";
+"suggestions_clear" = "წაშლა";
+"suggestions_done" = "დასრულება";
 
 /* Withdraw */
 "withdraw_cash_out" = "თანხის გატანა";

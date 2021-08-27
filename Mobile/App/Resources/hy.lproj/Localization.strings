@@ -231,11 +231,11 @@
 "visa_amount_title" = "Գումար";
 "visa_card_title" = "Հաշիվ";
 
-"visa_instruction_title" = "Ինչպե՞ս կանխիկացնել";
+"visa_instruction_title" = "Ինչպե՞ս լիցքավորել";
 "visa_description_title" = "ლიმიტი ერთ ბარათზე";
 "visa_description_amount" = "Նշի՛ր գումարի նախընտրելի չափը";
 "visa_description_card" = "Ընտրի՛ր քարտը";
-"visa_description_proceed" = "Սեղմի՛ր ”Կանխիկացնել”";
+"visa_description_proceed" = "Սեղմի՛ր \"Շարունակել\"";
 
 "visa_continue_button_title" = "Շարունակել";
 

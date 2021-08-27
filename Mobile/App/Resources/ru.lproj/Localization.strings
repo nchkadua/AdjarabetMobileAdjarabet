@@ -231,11 +231,11 @@
 "visa_amount_title" = "Сумма";
 "visa_card_title" = "Счет";
 
-"visa_instruction_title" = "Как обналичить сумму?";
+"visa_instruction_title" = "Инструкция по депозиту";
 "visa_description_title" = "ლიმიტი ერთ ბარათზე";
 "visa_description_amount" = "Укажи желаемую сумму";
 "visa_description_card" = "Выбери карту";
-"visa_description_proceed" = "Нажми ”Обналичить”";
+"visa_description_proceed" = "Нажми \"Продолжить\"";
 
 "visa_continue_button_title" = "Продолжить";
 

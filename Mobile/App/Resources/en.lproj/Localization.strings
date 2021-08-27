@@ -231,11 +231,11 @@
 "visa_amount_title" = "Amount";
 "visa_card_title" = "Account";
 
-"visa_instruction_title" = "How to withdraw?";
+"visa_instruction_title" = "How to deposit?";
 "visa_description_title" = "ლიმიტი ერთ ბარათზე";
 "visa_description_amount" = "Indicate the desired amount";
 "visa_description_card" = "Select the card";
-"visa_description_proceed" = "Click ”Withdraw”";
+"visa_description_proceed" = "Click \"Continue\"";
 
 "visa_continue_button_title" = "Continue";
 
