@@ -1,6 +1,6 @@
 import UIKit
 
-open class AppTableViewController: UITableViewController {
+open class AppTableViewController: UITableViewController { 
 
     open var dataProvider: AppListDataProvider? {
         didSet {
