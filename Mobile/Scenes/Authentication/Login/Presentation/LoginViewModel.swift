@@ -70,7 +70,7 @@ class DefaultLoginViewModel: DefaultBaseViewModel {
                 routeSubject.onNext(.openMainTabBar(params: params))
             case .otpRequried(let username): openOTP(username, otpType: .loginOTP)
             }
-        case .failure(let error): break
+        case .failure(_): break
         }
     }
 
