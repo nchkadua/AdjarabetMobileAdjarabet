@@ -17,6 +17,7 @@ public class FAQAnswersViewController: ABViewController {
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
+        setInteractivePopGestureRecognizer = false
         super.viewDidLoad()
 
         setup()
