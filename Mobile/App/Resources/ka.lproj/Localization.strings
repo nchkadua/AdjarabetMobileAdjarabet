@@ -43,8 +43,11 @@
 
 /* Home */
 "home_page_title" = "თამაშები";
-"home_search_placeholder" = "მოძებნე თამაშები";
 "home_slots" = "სლოტები";
+
+/* Search */
+"home_search_placeholder" = "მოძებნე თამაშები";
+"search_empty_state_description" = "არ არსებობს";
 
 /* Sports */
 "sports_page_title" = "სპორტი";
@@ -54,6 +57,8 @@
 
 /* Notifications */
 "notifications_page_title" = "შეტყობინებები";
+"notifications_empty_state_title" = "სიახლეები";
+"notifications_empty_state_description" = "სიახლეები ცარიელია";
 "notifications_page_delete_title" = "წაშლა";
 
 /* Recently Played Games */
@@ -310,6 +315,8 @@
 
 /* Transactions History */
 "transactions_title" = "ტრანზაქციები";
+"transactions_empty_state_title" = "ჩანაწერი არ არის";
+"transactions_empty_state_description" = "ამ დროისთვის თქვენ ჯერ არ გაგიკეთებიათ ტრანზაქცია";
 "transactions_filter_title" = "ფილტრი";
 "transactions_details_total_amount" = "ჯამური თანხა";
 "transactions_details_fee_amount" = "ტრანზაქციის საკომისიო";
@@ -349,12 +356,19 @@
 "high_security_button_on" = "აქტივაცია";
 "high_security_button_off" = "დეაქტივაცია";
 
-/* Card Management */
-"add_card_title" = "Add Card";
+/* Add Card */
+"add_card_title" = "დაამატე ბარათი";
 "add_card_minimum_amount_title" = "ბარათის დასამატებლად გთხოვთ მიუთითო მინიმალური თანხის ოდენობა";
-"add_card_minimum_amount" = "მინიმალური თანხა";
-"add_card_terms" = "თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება";
+"add_card_minimum_amount" = "შეიყვანე მინიმალური თანხა";
+"add_card_minimum_amount_value" = "₾1,00 GEL";
+"add_card_terms" = "თანახმა ვარ, შემდეგ გადახდებზე, ბარათის მონაცემები იყოს დამახსოვრებული";
 "add_card_continue_button_title" = "გაგრძელება";
+    // Add card instructions
+"add_card_instructions_title" = "დაამატე ბარათი";
+"add_card_instructions_desired_amount" = "შეიყვანე სასურველი თანხა";
+"add_card_instructions_save_card" = "თუ გსურს ბარათის მონაცემები დამახსოვრებული იყოს, მიუთითე - \"თანახმა ვარ, შემდეგ გადახდებზე, ბარათის მონაცემები იყოს დამახსოვრებული\"";
+"add_card_instructions_continue" = "დააჭირე \"გაგრძელება\"-ს";
+
 "scan_card_title" = "დაასკანირე ბარათი";
 
 "card_usage_date_title" = "გამოყენების ვადა";
@@ -445,7 +459,7 @@
 "contact_call_us" = "დაგვირეკეთ";
 "contact_addresses" = "მისამართები";
 "contact_mail_title1" = "კლიენტთა მომსახურების ცენტრთან დასაკავშირებლად მოგვწერეთ ამ მისამართზე";
-"contact_mail_title2" = "თქვენი დოკუმენტის გამოგზავნა შეგიძლიათ ამ მისამართზე";
+"contact_mail_title2" = "თქვენი დოკუმენტის გოგზავნა შეგიძლიათ ამ მისამართზე";
 
 /* Countries */
 "georgia" = "Georgia";

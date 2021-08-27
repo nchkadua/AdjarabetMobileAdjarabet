@@ -13,6 +13,8 @@ protocol NotificationsViewModel: BaseViewModel, NotificationsViewModelInput, Not
 
 public protocol NotificationsViewModelInput {
     func viewDidLoad()
+
+    var emptyStateViewModel: EmptyPageComponentViewModel { get }
 }
 
 public protocol NotificationsViewModelOutput {
@@ -36,6 +38,12 @@ public enum NotificationsViewModelRoute {
 public class DefaultNotificationsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<NotificationsViewModelOutputAction>()
     private let routeSubject = PublishSubject<NotificationsViewModelRoute>()
+    public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
+        DefaultEmptyPageComponentViewModel(params: .init(
+                                icon: R.image.promotions.casino_icon()!, // TODO change
+                                title: R.string.localization.notifications_empty_state_title(),
+                                description: R.string.localization.notifications_empty_state_description()))
+    }()
 
     @Inject(from: .useCases) private var notificationsUseCase: NotificationsUseCase
     private var notificationsDataProvider: AppCellDataProviders = []

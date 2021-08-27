@@ -119,7 +119,7 @@ public class AddCardViewController: ABViewController {
     private func setupAmountInputView() {
         amountInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
-        amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title())
+        amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title.localized())
         amountInputView.formatter = AmountFormatter()
 
         amountInputView.mainTextField.rx.controlEvent([.editingChanged]).subscribe(onNext: { [weak self] in
