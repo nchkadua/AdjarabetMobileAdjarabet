@@ -57,11 +57,13 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     public private(set) var keyboardFrame: CGRect = .zero
     public var additionalBottomContentInset: CGFloat { 0 }
     public var defaultBottomContentInset: CGFloat { 0 }
+    public var setInteractivePopGestureRecognizer = true
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        guard setInteractivePopGestureRecognizer else {return}
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
