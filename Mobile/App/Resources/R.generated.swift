@@ -5016,7 +5016,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localization` struct is generated, and contains static references to 590 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 600 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -5086,6 +5086,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let active_till = Rswift.StringResource(key: "active_till", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Add Card
+      ///
+      /// Locales: en, ka, hy, ru
+      static let add_card_instructions_title = Rswift.StringResource(key: "add_card_instructions_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Add Card
       ///
       /// Locales: en, ka, hy, ru
@@ -5457,6 +5461,10 @@ struct R: Rswift.Validatable {
       /// en translation: Click "Continue"
       ///
       /// Locales: en, ka, hy, ru
+      static let add_card_instructions_continue = Rswift.StringResource(key: "add_card_instructions_continue", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Click "Continue"
+      ///
+      /// Locales: en, ka, hy, ru
       static let visa_description_proceed = Rswift.StringResource(key: "visa_description_proceed", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Click the "Continue" button and the amount will be transferred to your card
       ///
@@ -5670,6 +5678,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let documentation_title = Rswift.StringResource(key: "documentation_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Does not exist
+      ///
+      /// Locales: en, ka, hy
+      static let search_empty_state_description = Rswift.StringResource(key: "search_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Dominica
       ///
       /// Locales: en, ka, hy, ru
@@ -5726,6 +5738,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let fill_username = Rswift.StringResource(key: "fill_username", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Enter desired amount
+      ///
+      /// Locales: en, ka, hy, ru
+      static let add_card_instructions_desired_amount = Rswift.StringResource(key: "add_card_instructions_desired_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Enter the correct SMS code
       ///
       /// Locales: en, ka, hy, ru
@@ -5794,6 +5810,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let finland = Rswift.StringResource(key: "finland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: For this time you have not done any transactions yet
+      ///
+      /// Locales: en, ka, hy
+      static let transactions_empty_state_description = Rswift.StringResource(key: "transactions_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Forgot Password?
       ///
       /// Locales: en, ka, hy, ru
@@ -5950,6 +5970,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let hungary = Rswift.StringResource(key: "hungary", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: I agree my card data to be saved for the next payments
+      ///
+      /// Locales: en, ka, hy, ru
+      static let add_card_terms = Rswift.StringResource(key: "add_card_terms", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: ID Document Change
       ///
       /// Locales: en, ka, hy, ru
@@ -5962,6 +5986,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let iceland = Rswift.StringResource(key: "iceland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: If you want your card data to be saved, specify - "I agree my card data to be saved for the next payments"
+      ///
+      /// Locales: en, ka, hy, ru
+      static let add_card_instructions_save_card = Rswift.StringResource(key: "add_card_instructions_save_card", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: In the "Amount" column, enter the amount you want to cash out
       ///
       /// Locales: en, ka, hy, ru
@@ -5974,6 +6002,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let india = Rswift.StringResource(key: "india", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Indicate minimal amount
+      ///
+      /// Locales: en, ka, hy, ru
+      static let add_card_minimum_amount = Rswift.StringResource(key: "add_card_minimum_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Indicate the desired amount
       ///
       /// Locales: en, ka, hy, ru
@@ -6226,10 +6258,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let withdraw_minimum = Rswift.StringResource(key: "withdraw_minimum", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
-      /// en translation: Minimum Amount
-      ///
-      /// Locales: en, ka, hy, ru
-      static let add_card_minimum_amount = Rswift.StringResource(key: "add_card_minimum_amount", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Mobile
       ///
       /// Locales: en, ka, hy, ru
@@ -6320,8 +6348,16 @@ struct R: Rswift.Validatable {
       static let new_zealand = Rswift.StringResource(key: "new_zealand", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: News
       ///
+      /// Locales: en, ka, hy
+      static let notifications_empty_state_title = Rswift.StringResource(key: "notifications_empty_state_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// en translation: News
+      ///
       /// Locales: en, ka, hy, ru
       static let news_item_title = Rswift.StringResource(key: "news_item_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: News are empty
+      ///
+      /// Locales: en, ka, hy
+      static let notifications_empty_state_description = Rswift.StringResource(key: "notifications_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: Nicaragua
       ///
       /// Locales: en, ka, hy, ru
@@ -6874,6 +6910,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let shared_aberror_last_access_from_different_ip = Rswift.StringResource(key: "shared_aberror_last_access_from_different_ip", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: There are no records yet
+      ///
+      /// Locales: en, ka, hy
+      static let transactions_empty_state_title = Rswift.StringResource(key: "transactions_empty_state_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
       /// en translation: There is a technical issue in the system, please try again later
       ///
       /// Locales: en, ka, hy, ru
@@ -7266,10 +7306,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let faq_verification_title = Rswift.StringResource(key: "faq_verification_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
-      /// en translation: თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება
-      ///
-      /// Locales: en, ka, hy, ru
-      static let add_card_terms = Rswift.StringResource(key: "add_card_terms", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: თუ გსურთ ანგარიშის ბლოკირებული ვადის გახანგრძლივება დაგვიკავშირდით ცხელ ხაზზე
       ///
       /// Locales: en, ka, hy, ru
@@ -7378,6 +7414,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let faq_faq_title = Rswift.StringResource(key: "faq_faq_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: ₾1,00 GEL
+      ///
+      /// Locales: en, ka, hy, ru
+      static let add_card_minimum_amount_value = Rswift.StringResource(key: "add_card_minimum_amount_value", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
 
       /// en translation: 4 Digit Code
       ///
@@ -7632,6 +7672,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("active_till", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Card
+      ///
+      /// Locales: en, ka, hy, ru
+      static func add_card_instructions_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_card_instructions_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "add_card_instructions_title"
+        }
+
+        return NSLocalizedString("add_card_instructions_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Add Card
@@ -9017,6 +9072,21 @@ struct R: Rswift.Validatable {
       /// en translation: Click "Continue"
       ///
       /// Locales: en, ka, hy, ru
+      static func add_card_instructions_continue(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_card_instructions_continue", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "add_card_instructions_continue"
+        }
+
+        return NSLocalizedString("add_card_instructions_continue", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Click "Continue"
+      ///
+      /// Locales: en, ka, hy, ru
       static func visa_description_proceed(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("visa_description_proceed", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -9824,6 +9894,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("documentation_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Does not exist
+      ///
+      /// Locales: en, ka, hy
+      static func search_empty_state_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("search_empty_state_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "search_empty_state_description"
+        }
+
+        return NSLocalizedString("search_empty_state_description", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Dominica
       ///
       /// Locales: en, ka, hy, ru
@@ -10032,6 +10117,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("fill_username", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Enter desired amount
+      ///
+      /// Locales: en, ka, hy, ru
+      static func add_card_instructions_desired_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_card_instructions_desired_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "add_card_instructions_desired_amount"
+        }
+
+        return NSLocalizedString("add_card_instructions_desired_amount", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Enter the correct SMS code
@@ -10287,6 +10387,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("finland", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: For this time you have not done any transactions yet
+      ///
+      /// Locales: en, ka, hy
+      static func transactions_empty_state_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_empty_state_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_empty_state_description"
+        }
+
+        return NSLocalizedString("transactions_empty_state_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Forgot Password?
@@ -10874,6 +10989,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("hungary", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: I agree my card data to be saved for the next payments
+      ///
+      /// Locales: en, ka, hy, ru
+      static func add_card_terms(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_card_terms", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "add_card_terms"
+        }
+
+        return NSLocalizedString("add_card_terms", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: ID Document Change
       ///
       /// Locales: en, ka, hy, ru
@@ -10919,6 +11049,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("iceland", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: If you want your card data to be saved, specify - "I agree my card data to be saved for the next payments"
+      ///
+      /// Locales: en, ka, hy, ru
+      static func add_card_instructions_save_card(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_card_instructions_save_card", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "add_card_instructions_save_card"
+        }
+
+        return NSLocalizedString("add_card_instructions_save_card", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: In the "Amount" column, enter the amount you want to cash out
       ///
       /// Locales: en, ka, hy, ru
@@ -10962,6 +11107,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("india", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Indicate minimal amount
+      ///
+      /// Locales: en, ka, hy, ru
+      static func add_card_minimum_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_card_minimum_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "add_card_minimum_amount"
+        }
+
+        return NSLocalizedString("add_card_minimum_amount", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Indicate the desired amount
@@ -11909,21 +12069,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("withdraw_minimum", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: Minimum Amount
-      ///
-      /// Locales: en, ka, hy, ru
-      static func add_card_minimum_amount(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("add_card_minimum_amount", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "add_card_minimum_amount"
-        }
-
-        return NSLocalizedString("add_card_minimum_amount", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
       /// en translation: Mobile
       ///
       /// Locales: en, ka, hy, ru
@@ -12256,6 +12401,21 @@ struct R: Rswift.Validatable {
 
       /// en translation: News
       ///
+      /// Locales: en, ka, hy
+      static func notifications_empty_state_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications_empty_state_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "notifications_empty_state_title"
+        }
+
+        return NSLocalizedString("notifications_empty_state_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: News
+      ///
       /// Locales: en, ka, hy, ru
       static func news_item_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -12267,6 +12427,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("news_item_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: News are empty
+      ///
+      /// Locales: en, ka, hy
+      static func notifications_empty_state_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications_empty_state_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "notifications_empty_state_description"
+        }
+
+        return NSLocalizedString("notifications_empty_state_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Nicaragua
@@ -14339,6 +14514,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("shared_aberror_last_access_from_different_ip", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: There are no records yet
+      ///
+      /// Locales: en, ka, hy
+      static func transactions_empty_state_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("transactions_empty_state_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "transactions_empty_state_title"
+        }
+
+        return NSLocalizedString("transactions_empty_state_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: There is a technical issue in the system, please try again later
       ///
       /// Locales: en, ka, hy, ru
@@ -15809,21 +15999,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("faq_verification_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: თანახმა ვარ, შემდგომი გადახდებისთვის მოხდეს ბარათის მონაცემების დამახსოვრება
-      ///
-      /// Locales: en, ka, hy, ru
-      static func add_card_terms(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("add_card_terms", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "add_card_terms"
-        }
-
-        return NSLocalizedString("add_card_terms", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
       /// en translation: თუ გსურთ ანგარიშის ბლოკირებული ვადის გახანგრძლივება დაგვიკავშირდით ცხელ ხაზზე
       ///
       /// Locales: en, ka, hy, ru
@@ -16227,6 +16402,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("faq_faq_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ₾1,00 GEL
+      ///
+      /// Locales: en, ka, hy, ru
+      static func add_card_minimum_amount_value(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_card_minimum_amount_value", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "add_card_minimum_amount_value"
+        }
+
+        return NSLocalizedString("add_card_minimum_amount_value", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -16936,8 +17126,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -17895,8 +18085,8 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/querternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/querternary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
         }
         if _R.storyboard.addressChange().addressChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addressChangeViewController' could not be loaded from storyboard 'AddressChange' as 'AddressChangeViewController'.") }
       }
@@ -17981,10 +18171,10 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         }
         if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
       }
@@ -18226,8 +18416,8 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
