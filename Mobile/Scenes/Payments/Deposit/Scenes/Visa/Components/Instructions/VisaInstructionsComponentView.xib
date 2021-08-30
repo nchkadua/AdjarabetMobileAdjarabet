@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,7 +69,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrJ-jh-YGP">
-                    <rect key="frame" x="71" y="124" width="323" height="20.5"/>
+                    <rect key="frame" x="71" y="129" width="323" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -106,6 +106,7 @@
                 <constraint firstItem="yXz-aH-WAF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="26" id="eYp-Fl-SGo"/>
                 <constraint firstItem="CW9-Ir-0vi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="26" id="el0-SE-5BR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CrJ-jh-YGP" secondAttribute="trailing" constant="20" id="fOd-JZ-kLU"/>
+                <constraint firstItem="CrJ-jh-YGP" firstAttribute="centerY" secondItem="yXz-aH-WAF" secondAttribute="centerY" id="fRR-le-4Va"/>
                 <constraint firstItem="CrJ-jh-YGP" firstAttribute="leading" secondItem="yXz-aH-WAF" secondAttribute="trailing" constant="17" id="gQl-54-OMz"/>
                 <constraint firstItem="bD2-kL-RYt" firstAttribute="top" secondItem="CW9-Ir-0vi" secondAttribute="top" constant="-1" id="gUh-P7-Obh"/>
                 <constraint firstItem="C34-yH-Tji" firstAttribute="top" secondItem="CW9-Ir-0vi" secondAttribute="bottom" constant="19" id="hJn-Yd-8Pb"/>
@@ -117,7 +118,6 @@
                 <constraint firstItem="XT3-Ex-h0w" firstAttribute="leading" secondItem="5yl-8d-ldZ" secondAttribute="trailing" constant="17" id="vgc-4e-Lyg"/>
                 <constraint firstItem="XT3-Ex-h0w" firstAttribute="leading" secondItem="5yl-8d-ldZ" secondAttribute="trailing" constant="17" id="xde-dG-tGm"/>
                 <constraint firstItem="CrJ-jh-YGP" firstAttribute="leading" secondItem="yXz-aH-WAF" secondAttribute="trailing" constant="17" id="zu7-zJ-l8v"/>
-                <constraint firstItem="CrJ-jh-YGP" firstAttribute="top" secondItem="yXz-aH-WAF" secondAttribute="top" constant="-1" id="zzz-sg-bcb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="87" y="89"/>
