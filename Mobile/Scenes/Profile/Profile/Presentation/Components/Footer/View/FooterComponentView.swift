@@ -103,7 +103,9 @@ public class FooterComponentView: UIView {
 
 extension FooterComponentView: LanguagesButtonDelegate {
     func languageDidChange(language: Language) {
-        viewModel.didChangeLanguage()
+        if let vm = viewModel {
+            vm.didChangeLanguage()
+        }
         delegate?.languageDidChange(language: language)
     }
 }
