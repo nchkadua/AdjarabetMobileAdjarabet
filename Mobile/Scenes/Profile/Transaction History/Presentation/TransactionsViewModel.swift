@@ -41,9 +41,9 @@ class DefaultTransactionsViewModel: DefaultBaseViewModel {
     private let routeSubject = PublishSubject<TransactionsViewModelRoute>()
     public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
         DefaultEmptyPageComponentViewModel(params: .init(
-                                icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon
-                                title: R.string.localization.transactions_empty_state_title(),
-                                description: R.string.localization.transactions_empty_state_description()))
+                                            icon: R.image.transactionsHistory.empty_state_icon()!,
+                                            title: R.string.localization.transactions_empty_state_title(),
+                                            description: R.string.localization.transactions_empty_state_description()))
     }()
 
     @Inject(from: .useCases) private var displayTransactionsUseCase: DisplayTransactionHistoriesUseCase

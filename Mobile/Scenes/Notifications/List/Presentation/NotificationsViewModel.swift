@@ -40,9 +40,9 @@ public class DefaultNotificationsViewModel: DefaultBaseViewModel {
     private let routeSubject = PublishSubject<NotificationsViewModelRoute>()
     public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
         DefaultEmptyPageComponentViewModel(params: .init(
-                                icon: R.image.promotions.casino_icon()!, // TODO change
-                                title: R.string.localization.notifications_empty_state_title(),
-                                description: R.string.localization.notifications_empty_state_description()))
+                                            icon: R.image.notifications.empty_state_icon()!,
+                                            title: R.string.localization.notifications_empty_state_title(),
+                                            description: R.string.localization.notifications_empty_state_description()))
     }()
 
     @Inject(from: .useCases) private var notificationsUseCase: NotificationsUseCase
