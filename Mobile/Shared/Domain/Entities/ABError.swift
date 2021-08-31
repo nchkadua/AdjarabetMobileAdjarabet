@@ -22,6 +22,14 @@ class ABError {
     let type: Type
     lazy var description: Description = {
         switch type {
+        case .otpRequestLimitReached:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_otp_request_limit_reached.localized(), buttons: [.gotIt]))
+        case .unableToSendOTPTelIsMissing:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_unable_to_send_otp_tel_is_missing.localized(), buttons: [.gotIt]))
+        case .failedToSendOTP:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_failed_to_send_otp.localized(), buttons: [.gotIt]))
+        case .unableToGenerateOTP:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_unable_to_generate_otp.localized(), buttons: [.gotIt]))
         case .ipIsBlocked:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_ip_is_blocked.localized(), buttons: [.call, .gotIt]))
         case .wrongAuthCredentials:
@@ -44,6 +52,10 @@ class ABError {
     }()
 
     enum `Type` {
+        case unableToGenerateOTP
+        case failedToSendOTP
+        case unableToSendOTPTelIsMissing
+        case otpRequestLimitReached
         case ipIsBlocked
         case wrongAuthCredentials
         case lastAccessFromDifferentIP
@@ -149,6 +161,10 @@ extension ABError {
         else { return nil }
         let type: Type
         switch coreStatusCode {
+        case .OTP_REQUEST_LIMIT_REACHED:                  type = .otpRequestLimitReached
+        case .UNABLE_TO_SEND_OTP_TEL_IS_MISSING:          type = .unableToSendOTPTelIsMissing
+        case .FAILED_TO_SEND_OTP:                         type = .failedToSendOTP
+        case .UNABLE_TO_GENERATE_OTP:                     type = .unableToGenerateOTP
         case .USER_WITH_GIVEN_AUTH_CREDENTIALS_NOT_FOUND: type = .wrongAuthCredentials
         case .IP_IS_BLOCKED:                              type = .ipIsBlocked
         case .LAST_ACCESS_FROM_DIFFERENT_IP:              type = .lastAccessFromDifferentIP

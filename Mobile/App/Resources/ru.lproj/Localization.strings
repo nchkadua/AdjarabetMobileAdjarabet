@@ -38,6 +38,10 @@
 "shared_aberror_unable_to_send_email_verification_email_is_missing" = "Unable To Send Email Verification Email Is Missing";
 "shared_aberror_bonus_is_expired" = "Bonus Is Expired";
 "shared_aberror_wrong_credentials" = "Enter the username or password correctly";
+"shared_aberror_unable_to_generate_otp" = "Ошибка в системе, пожалуйста, попробуй позже";
+"shared_aberror_failed_to_send_otp" = "Ошибка в системе, пожалуйста, попробуй позже";
+"shared_aberror_unable_to_send_otp_tel_is_missing" = "ანგარიშზე SMS-ით შესვლისთვის, დაამატე მობილურის ნომერი";
+"shared_aberror_otp_request_limit_reached" = "SMS კოდის გამოგზავნის ლიმიტი ამოწურულია. სცადე ხელახლა 5 წთ-ში";
 
 "login" = "Login";
 
