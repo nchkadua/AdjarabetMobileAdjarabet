@@ -41,7 +41,10 @@
 "shared_aberror_unable_to_generate_otp" = "Համակարգի սխալ, խնդրում ենք փորձել ավելի ուշ";
 "shared_aberror_failed_to_send_otp" = "Համակարգի սխալ, խնդրում ենք փորձել ավելի ուշ";
 "shared_aberror_unable_to_send_otp_tel_is_missing" = "ანგარიშზე SMS-ით შესვლისთვის, დაამატე მობილურის ნომერი";
-"shared_aberror_otp_request_limit_reached" = "";
+"shared_aberror_access_denied" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
+"shared_aberror_wrong_hash" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
+"shared_aberror_users_document_not_found" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
+"shared_insufficient_funds" = "დეპოზიტის შევსებისთვის დაამატე თანხა ანგარიშზე";
 
 "login" = "մուտք";
 

@@ -22,6 +22,14 @@ class ABError {
     let type: Type
     lazy var description: Description = {
         switch type {
+        case .accessDenied:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_access_denied.localized(), buttons: [.gotIt]))
+        case .wrongHash:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_wrong_hash.localized(), buttons: [.gotIt]))
+        case .usersDocumentNotFound:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_users_document_not_found.localized(), buttons: [.gotIt]))
+        case .insufficientFunds:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_insufficient_funds.localized(), buttons: [.gotIt]))
         case .otpRequestLimitReached:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_otp_request_limit_reached.localized(), buttons: [.gotIt]))
         case .unableToSendOTPTelIsMissing:
@@ -52,6 +60,11 @@ class ABError {
     }()
 
     enum `Type` {
+        case accessDenied
+        case wrongHash
+        case notFound
+        case usersDocumentNotFound
+        case insufficientFunds
         case unableToGenerateOTP
         case failedToSendOTP
         case unableToSendOTPTelIsMissing

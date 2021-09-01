@@ -42,6 +42,10 @@
 "shared_aberror_failed_to_send_otp" = "System error, please try again later";
 "shared_aberror_unable_to_send_otp_tel_is_missing" = "ანგარიშზე SMS-ით შესვლისთვის, დაამატე მობილურის ნომერი";
 "shared_aberror_otp_request_limit_reached" = "SMS კოდის გამოგზავნის ლიმიტი ამოწურულია. სცადე ხელახლა 5 წთ-ში";
+"shared_aberror_access_denied" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
+"shared_aberror_wrong_hash" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
+"shared_aberror_users_document_not_found" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
+"shared_insufficient_funds" = "დეპოზიტის შევსებისთვის დაამატე თანხა ანგარიშზე";
 
 "login" = "Login";
 
