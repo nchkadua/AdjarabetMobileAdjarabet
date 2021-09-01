@@ -2788,6 +2788,1101 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.loader` struct is generated, and contains static references to 121 images.
+    struct loader {
+      /// Image `loader_0`.
+      static let loader_0 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_0")
+      /// Image `loader_100`.
+      static let loader_100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_100")
+      /// Image `loader_101`.
+      static let loader_101 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_101")
+      /// Image `loader_102`.
+      static let loader_102 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_102")
+      /// Image `loader_103`.
+      static let loader_103 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_103")
+      /// Image `loader_104`.
+      static let loader_104 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_104")
+      /// Image `loader_105`.
+      static let loader_105 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_105")
+      /// Image `loader_106`.
+      static let loader_106 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_106")
+      /// Image `loader_107`.
+      static let loader_107 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_107")
+      /// Image `loader_108`.
+      static let loader_108 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_108")
+      /// Image `loader_109`.
+      static let loader_109 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_109")
+      /// Image `loader_10`.
+      static let loader_10 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_10")
+      /// Image `loader_110`.
+      static let loader_110 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_110")
+      /// Image `loader_111`.
+      static let loader_111 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_111")
+      /// Image `loader_112`.
+      static let loader_112 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_112")
+      /// Image `loader_113`.
+      static let loader_113 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_113")
+      /// Image `loader_114`.
+      static let loader_114 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_114")
+      /// Image `loader_115`.
+      static let loader_115 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_115")
+      /// Image `loader_116`.
+      static let loader_116 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_116")
+      /// Image `loader_117`.
+      static let loader_117 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_117")
+      /// Image `loader_118`.
+      static let loader_118 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_118")
+      /// Image `loader_119`.
+      static let loader_119 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_119")
+      /// Image `loader_11`.
+      static let loader_11 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_11")
+      /// Image `loader_120`.
+      static let loader_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_120")
+      /// Image `loader_12`.
+      static let loader_12 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_12")
+      /// Image `loader_13`.
+      static let loader_13 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_13")
+      /// Image `loader_14`.
+      static let loader_14 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_14")
+      /// Image `loader_15`.
+      static let loader_15 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_15")
+      /// Image `loader_16`.
+      static let loader_16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_16")
+      /// Image `loader_17`.
+      static let loader_17 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_17")
+      /// Image `loader_18`.
+      static let loader_18 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_18")
+      /// Image `loader_19`.
+      static let loader_19 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_19")
+      /// Image `loader_1`.
+      static let loader_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_1")
+      /// Image `loader_20`.
+      static let loader_20 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_20")
+      /// Image `loader_21`.
+      static let loader_21 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_21")
+      /// Image `loader_22`.
+      static let loader_22 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_22")
+      /// Image `loader_23`.
+      static let loader_23 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_23")
+      /// Image `loader_24`.
+      static let loader_24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_24")
+      /// Image `loader_25`.
+      static let loader_25 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_25")
+      /// Image `loader_26`.
+      static let loader_26 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_26")
+      /// Image `loader_27`.
+      static let loader_27 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_27")
+      /// Image `loader_28`.
+      static let loader_28 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_28")
+      /// Image `loader_29`.
+      static let loader_29 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_29")
+      /// Image `loader_2`.
+      static let loader_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_2")
+      /// Image `loader_30`.
+      static let loader_30 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_30")
+      /// Image `loader_31`.
+      static let loader_31 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_31")
+      /// Image `loader_32`.
+      static let loader_32 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_32")
+      /// Image `loader_33`.
+      static let loader_33 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_33")
+      /// Image `loader_34`.
+      static let loader_34 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_34")
+      /// Image `loader_35`.
+      static let loader_35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_35")
+      /// Image `loader_36`.
+      static let loader_36 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_36")
+      /// Image `loader_37`.
+      static let loader_37 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_37")
+      /// Image `loader_38`.
+      static let loader_38 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_38")
+      /// Image `loader_39`.
+      static let loader_39 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_39")
+      /// Image `loader_3`.
+      static let loader_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_3")
+      /// Image `loader_40`.
+      static let loader_40 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_40")
+      /// Image `loader_41`.
+      static let loader_41 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_41")
+      /// Image `loader_42`.
+      static let loader_42 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_42")
+      /// Image `loader_43`.
+      static let loader_43 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_43")
+      /// Image `loader_44`.
+      static let loader_44 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_44")
+      /// Image `loader_45`.
+      static let loader_45 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_45")
+      /// Image `loader_46`.
+      static let loader_46 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_46")
+      /// Image `loader_47`.
+      static let loader_47 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_47")
+      /// Image `loader_48`.
+      static let loader_48 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_48")
+      /// Image `loader_49`.
+      static let loader_49 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_49")
+      /// Image `loader_4`.
+      static let loader_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_4")
+      /// Image `loader_50`.
+      static let loader_50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_50")
+      /// Image `loader_51`.
+      static let loader_51 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_51")
+      /// Image `loader_52`.
+      static let loader_52 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_52")
+      /// Image `loader_53`.
+      static let loader_53 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_53")
+      /// Image `loader_54`.
+      static let loader_54 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_54")
+      /// Image `loader_55`.
+      static let loader_55 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_55")
+      /// Image `loader_56`.
+      static let loader_56 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_56")
+      /// Image `loader_57`.
+      static let loader_57 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_57")
+      /// Image `loader_58`.
+      static let loader_58 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_58")
+      /// Image `loader_59`.
+      static let loader_59 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_59")
+      /// Image `loader_5`.
+      static let loader_5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_5")
+      /// Image `loader_60`.
+      static let loader_60 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_60")
+      /// Image `loader_61`.
+      static let loader_61 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_61")
+      /// Image `loader_62`.
+      static let loader_62 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_62")
+      /// Image `loader_63`.
+      static let loader_63 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_63")
+      /// Image `loader_64`.
+      static let loader_64 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_64")
+      /// Image `loader_65`.
+      static let loader_65 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_65")
+      /// Image `loader_66`.
+      static let loader_66 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_66")
+      /// Image `loader_67`.
+      static let loader_67 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_67")
+      /// Image `loader_68`.
+      static let loader_68 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_68")
+      /// Image `loader_69`.
+      static let loader_69 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_69")
+      /// Image `loader_6`.
+      static let loader_6 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_6")
+      /// Image `loader_70`.
+      static let loader_70 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_70")
+      /// Image `loader_71`.
+      static let loader_71 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_71")
+      /// Image `loader_72`.
+      static let loader_72 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_72")
+      /// Image `loader_73`.
+      static let loader_73 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_73")
+      /// Image `loader_74`.
+      static let loader_74 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_74")
+      /// Image `loader_75`.
+      static let loader_75 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_75")
+      /// Image `loader_76`.
+      static let loader_76 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_76")
+      /// Image `loader_77`.
+      static let loader_77 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_77")
+      /// Image `loader_78`.
+      static let loader_78 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_78")
+      /// Image `loader_79`.
+      static let loader_79 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_79")
+      /// Image `loader_7`.
+      static let loader_7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_7")
+      /// Image `loader_80`.
+      static let loader_80 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_80")
+      /// Image `loader_81`.
+      static let loader_81 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_81")
+      /// Image `loader_82`.
+      static let loader_82 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_82")
+      /// Image `loader_83`.
+      static let loader_83 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_83")
+      /// Image `loader_84`.
+      static let loader_84 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_84")
+      /// Image `loader_85`.
+      static let loader_85 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_85")
+      /// Image `loader_86`.
+      static let loader_86 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_86")
+      /// Image `loader_87`.
+      static let loader_87 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_87")
+      /// Image `loader_88`.
+      static let loader_88 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_88")
+      /// Image `loader_89`.
+      static let loader_89 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_89")
+      /// Image `loader_8`.
+      static let loader_8 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_8")
+      /// Image `loader_90`.
+      static let loader_90 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_90")
+      /// Image `loader_91`.
+      static let loader_91 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_91")
+      /// Image `loader_92`.
+      static let loader_92 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_92")
+      /// Image `loader_93`.
+      static let loader_93 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_93")
+      /// Image `loader_94`.
+      static let loader_94 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_94")
+      /// Image `loader_95`.
+      static let loader_95 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_95")
+      /// Image `loader_96`.
+      static let loader_96 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_96")
+      /// Image `loader_97`.
+      static let loader_97 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_97")
+      /// Image `loader_98`.
+      static let loader_98 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_98")
+      /// Image `loader_99`.
+      static let loader_99 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_99")
+      /// Image `loader_9`.
+      static let loader_9 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loader/loader_9")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_0", bundle: ..., traitCollection: ...)`
+      static func loader_0(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_0, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_1", bundle: ..., traitCollection: ...)`
+      static func loader_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_1, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_10", bundle: ..., traitCollection: ...)`
+      static func loader_10(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_10, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_100", bundle: ..., traitCollection: ...)`
+      static func loader_100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_100, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_101", bundle: ..., traitCollection: ...)`
+      static func loader_101(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_101, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_102", bundle: ..., traitCollection: ...)`
+      static func loader_102(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_102, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_103", bundle: ..., traitCollection: ...)`
+      static func loader_103(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_103, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_104", bundle: ..., traitCollection: ...)`
+      static func loader_104(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_104, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_105", bundle: ..., traitCollection: ...)`
+      static func loader_105(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_105, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_106", bundle: ..., traitCollection: ...)`
+      static func loader_106(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_106, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_107", bundle: ..., traitCollection: ...)`
+      static func loader_107(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_107, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_108", bundle: ..., traitCollection: ...)`
+      static func loader_108(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_108, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_109", bundle: ..., traitCollection: ...)`
+      static func loader_109(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_109, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_11", bundle: ..., traitCollection: ...)`
+      static func loader_11(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_11, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_110", bundle: ..., traitCollection: ...)`
+      static func loader_110(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_110, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_111", bundle: ..., traitCollection: ...)`
+      static func loader_111(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_111, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_112", bundle: ..., traitCollection: ...)`
+      static func loader_112(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_112, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_113", bundle: ..., traitCollection: ...)`
+      static func loader_113(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_113, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_114", bundle: ..., traitCollection: ...)`
+      static func loader_114(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_114, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_115", bundle: ..., traitCollection: ...)`
+      static func loader_115(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_115, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_116", bundle: ..., traitCollection: ...)`
+      static func loader_116(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_116, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_117", bundle: ..., traitCollection: ...)`
+      static func loader_117(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_117, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_118", bundle: ..., traitCollection: ...)`
+      static func loader_118(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_118, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_119", bundle: ..., traitCollection: ...)`
+      static func loader_119(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_119, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_12", bundle: ..., traitCollection: ...)`
+      static func loader_12(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_12, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_120", bundle: ..., traitCollection: ...)`
+      static func loader_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_120, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_13", bundle: ..., traitCollection: ...)`
+      static func loader_13(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_13, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_14", bundle: ..., traitCollection: ...)`
+      static func loader_14(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_14, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_15", bundle: ..., traitCollection: ...)`
+      static func loader_15(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_15, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_16", bundle: ..., traitCollection: ...)`
+      static func loader_16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_16, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_17", bundle: ..., traitCollection: ...)`
+      static func loader_17(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_17, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_18", bundle: ..., traitCollection: ...)`
+      static func loader_18(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_18, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_19", bundle: ..., traitCollection: ...)`
+      static func loader_19(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_19, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_2", bundle: ..., traitCollection: ...)`
+      static func loader_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_2, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_20", bundle: ..., traitCollection: ...)`
+      static func loader_20(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_20, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_21", bundle: ..., traitCollection: ...)`
+      static func loader_21(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_21, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_22", bundle: ..., traitCollection: ...)`
+      static func loader_22(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_22, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_23", bundle: ..., traitCollection: ...)`
+      static func loader_23(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_23, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_24", bundle: ..., traitCollection: ...)`
+      static func loader_24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_24, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_25", bundle: ..., traitCollection: ...)`
+      static func loader_25(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_25, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_26", bundle: ..., traitCollection: ...)`
+      static func loader_26(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_26, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_27", bundle: ..., traitCollection: ...)`
+      static func loader_27(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_27, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_28", bundle: ..., traitCollection: ...)`
+      static func loader_28(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_28, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_29", bundle: ..., traitCollection: ...)`
+      static func loader_29(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_29, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_3", bundle: ..., traitCollection: ...)`
+      static func loader_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_3, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_30", bundle: ..., traitCollection: ...)`
+      static func loader_30(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_30, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_31", bundle: ..., traitCollection: ...)`
+      static func loader_31(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_31, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_32", bundle: ..., traitCollection: ...)`
+      static func loader_32(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_32, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_33", bundle: ..., traitCollection: ...)`
+      static func loader_33(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_33, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_34", bundle: ..., traitCollection: ...)`
+      static func loader_34(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_34, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_35", bundle: ..., traitCollection: ...)`
+      static func loader_35(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_35, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_36", bundle: ..., traitCollection: ...)`
+      static func loader_36(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_36, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_37", bundle: ..., traitCollection: ...)`
+      static func loader_37(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_37, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_38", bundle: ..., traitCollection: ...)`
+      static func loader_38(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_38, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_39", bundle: ..., traitCollection: ...)`
+      static func loader_39(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_39, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_4", bundle: ..., traitCollection: ...)`
+      static func loader_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_4, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_40", bundle: ..., traitCollection: ...)`
+      static func loader_40(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_40, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_41", bundle: ..., traitCollection: ...)`
+      static func loader_41(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_41, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_42", bundle: ..., traitCollection: ...)`
+      static func loader_42(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_42, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_43", bundle: ..., traitCollection: ...)`
+      static func loader_43(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_43, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_44", bundle: ..., traitCollection: ...)`
+      static func loader_44(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_44, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_45", bundle: ..., traitCollection: ...)`
+      static func loader_45(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_45, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_46", bundle: ..., traitCollection: ...)`
+      static func loader_46(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_46, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_47", bundle: ..., traitCollection: ...)`
+      static func loader_47(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_47, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_48", bundle: ..., traitCollection: ...)`
+      static func loader_48(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_48, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_49", bundle: ..., traitCollection: ...)`
+      static func loader_49(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_49, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_5", bundle: ..., traitCollection: ...)`
+      static func loader_5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_5, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_50", bundle: ..., traitCollection: ...)`
+      static func loader_50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_50, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_51", bundle: ..., traitCollection: ...)`
+      static func loader_51(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_51, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_52", bundle: ..., traitCollection: ...)`
+      static func loader_52(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_52, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_53", bundle: ..., traitCollection: ...)`
+      static func loader_53(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_53, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_54", bundle: ..., traitCollection: ...)`
+      static func loader_54(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_54, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_55", bundle: ..., traitCollection: ...)`
+      static func loader_55(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_55, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_56", bundle: ..., traitCollection: ...)`
+      static func loader_56(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_56, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_57", bundle: ..., traitCollection: ...)`
+      static func loader_57(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_57, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_58", bundle: ..., traitCollection: ...)`
+      static func loader_58(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_58, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_59", bundle: ..., traitCollection: ...)`
+      static func loader_59(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_59, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_6", bundle: ..., traitCollection: ...)`
+      static func loader_6(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_6, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_60", bundle: ..., traitCollection: ...)`
+      static func loader_60(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_60, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_61", bundle: ..., traitCollection: ...)`
+      static func loader_61(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_61, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_62", bundle: ..., traitCollection: ...)`
+      static func loader_62(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_62, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_63", bundle: ..., traitCollection: ...)`
+      static func loader_63(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_63, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_64", bundle: ..., traitCollection: ...)`
+      static func loader_64(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_64, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_65", bundle: ..., traitCollection: ...)`
+      static func loader_65(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_65, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_66", bundle: ..., traitCollection: ...)`
+      static func loader_66(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_66, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_67", bundle: ..., traitCollection: ...)`
+      static func loader_67(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_67, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_68", bundle: ..., traitCollection: ...)`
+      static func loader_68(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_68, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_69", bundle: ..., traitCollection: ...)`
+      static func loader_69(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_69, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_7", bundle: ..., traitCollection: ...)`
+      static func loader_7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_7, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_70", bundle: ..., traitCollection: ...)`
+      static func loader_70(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_70, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_71", bundle: ..., traitCollection: ...)`
+      static func loader_71(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_71, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_72", bundle: ..., traitCollection: ...)`
+      static func loader_72(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_72, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_73", bundle: ..., traitCollection: ...)`
+      static func loader_73(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_73, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_74", bundle: ..., traitCollection: ...)`
+      static func loader_74(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_74, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_75", bundle: ..., traitCollection: ...)`
+      static func loader_75(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_75, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_76", bundle: ..., traitCollection: ...)`
+      static func loader_76(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_76, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_77", bundle: ..., traitCollection: ...)`
+      static func loader_77(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_77, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_78", bundle: ..., traitCollection: ...)`
+      static func loader_78(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_78, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_79", bundle: ..., traitCollection: ...)`
+      static func loader_79(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_79, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_8", bundle: ..., traitCollection: ...)`
+      static func loader_8(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_8, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_80", bundle: ..., traitCollection: ...)`
+      static func loader_80(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_80, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_81", bundle: ..., traitCollection: ...)`
+      static func loader_81(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_81, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_82", bundle: ..., traitCollection: ...)`
+      static func loader_82(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_82, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_83", bundle: ..., traitCollection: ...)`
+      static func loader_83(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_83, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_84", bundle: ..., traitCollection: ...)`
+      static func loader_84(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_84, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_85", bundle: ..., traitCollection: ...)`
+      static func loader_85(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_85, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_86", bundle: ..., traitCollection: ...)`
+      static func loader_86(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_86, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_87", bundle: ..., traitCollection: ...)`
+      static func loader_87(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_87, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_88", bundle: ..., traitCollection: ...)`
+      static func loader_88(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_88, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_89", bundle: ..., traitCollection: ...)`
+      static func loader_89(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_89, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_9", bundle: ..., traitCollection: ...)`
+      static func loader_9(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_9, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_90", bundle: ..., traitCollection: ...)`
+      static func loader_90(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_90, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_91", bundle: ..., traitCollection: ...)`
+      static func loader_91(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_91, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_92", bundle: ..., traitCollection: ...)`
+      static func loader_92(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_92, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_93", bundle: ..., traitCollection: ...)`
+      static func loader_93(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_93, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_94", bundle: ..., traitCollection: ...)`
+      static func loader_94(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_94, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_95", bundle: ..., traitCollection: ...)`
+      static func loader_95(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_95, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_96", bundle: ..., traitCollection: ...)`
+      static func loader_96(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_96, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_97", bundle: ..., traitCollection: ...)`
+      static func loader_97(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_97, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_98", bundle: ..., traitCollection: ...)`
+      static func loader_98(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_98, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "loader_99", bundle: ..., traitCollection: ...)`
+      static func loader_99(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.loader.loader_99, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.login` struct is generated, and contains static references to 12 images.
     struct login {
       /// Image `legal`.
@@ -5067,7 +6162,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localization` struct is generated, and contains static references to 602 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 608 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -6705,6 +7800,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let security_levels_sms_scene_title = Rswift.StringResource(key: "security_levels_sms_scene_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: SMS კოდის გამოგზავნის ლიმიტი ამოწურულია. სცადე ხელახლა 5 წთ-ში
+      ///
+      /// Locales: en, ka, ru
+      static let shared_aberror_otp_request_limit_reached = Rswift.StringResource(key: "shared_aberror_otp_request_limit_reached", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "ru"], comment: nil)
       /// en translation: Saint Barthelemy
       ///
       /// Locales: en, ka, hy, ru
@@ -6937,6 +8036,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let syria = Rswift.StringResource(key: "syria", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: System error, please try again later
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_failed_to_send_otp = Rswift.StringResource(key: "shared_aberror_failed_to_send_otp", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: System error, please try again later
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_unable_to_generate_otp = Rswift.StringResource(key: "shared_aberror_unable_to_generate_otp", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: TOUCH ID
       ///
       /// Locales: en, ka, hy, ru
@@ -7257,6 +8364,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let account_parameters_messages_sms_button = Rswift.StringResource(key: "account_parameters_messages_sms_button", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: ანგარიშზე SMS-ით შესვლისთვის, დაამატე მობილურის ნომერი
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_unable_to_send_otp_tel_is_missing = Rswift.StringResource(key: "shared_aberror_unable_to_send_otp_tel_is_missing", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: აღდგენა SMS კოდით
       ///
       /// Locales: en, ka, hy, ru
@@ -7349,6 +8460,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let change_mail_button_title = Rswift.StringResource(key: "change_mail_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: დეპოზიტის შევსებისთვის დაამატე თანხა ანგარიშზე
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_insufficient_funds = Rswift.StringResource(key: "shared_insufficient_funds", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: დღეს განხორციელებული
       ///
       /// Locales: en, ka, hy, ru
@@ -7413,6 +8528,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let notifications_hours_ago = Rswift.StringResource(key: "notifications_hours_ago", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_access_denied = Rswift.StringResource(key: "shared_aberror_access_denied", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_users_document_not_found = Rswift.StringResource(key: "shared_aberror_users_document_not_found", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_wrong_hash = Rswift.StringResource(key: "shared_aberror_wrong_hash", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: სოციალური ქსელები
       ///
       /// Locales: en, ka, hy, ru
@@ -13613,6 +14740,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("security_levels_sms_scene_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: SMS კოდის გამოგზავნის ლიმიტი ამოწურულია. სცადე ხელახლა 5 წთ-ში
+      ///
+      /// Locales: en, ka, ru
+      static func shared_aberror_otp_request_limit_reached(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_otp_request_limit_reached", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_otp_request_limit_reached"
+        }
+
+        return NSLocalizedString("shared_aberror_otp_request_limit_reached", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Saint Barthelemy
       ///
       /// Locales: en, ka, hy, ru
@@ -14481,6 +15623,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("syria", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: System error, please try again later
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_failed_to_send_otp(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_failed_to_send_otp", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_failed_to_send_otp"
+        }
+
+        return NSLocalizedString("shared_aberror_failed_to_send_otp", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: System error, please try again later
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_unable_to_generate_otp(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_unable_to_generate_otp", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_unable_to_generate_otp"
+        }
+
+        return NSLocalizedString("shared_aberror_unable_to_generate_otp", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: TOUCH ID
@@ -15683,6 +16855,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account_parameters_messages_sms_button", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: ანგარიშზე SMS-ით შესვლისთვის, დაამატე მობილურის ნომერი
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_unable_to_send_otp_tel_is_missing(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_unable_to_send_otp_tel_is_missing", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_unable_to_send_otp_tel_is_missing"
+        }
+
+        return NSLocalizedString("shared_aberror_unable_to_send_otp_tel_is_missing", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: აღდგენა SMS კოდით
       ///
       /// Locales: en, ka, hy, ru
@@ -16028,6 +17215,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("change_mail_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: დეპოზიტის შევსებისთვის დაამატე თანხა ანგარიშზე
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_insufficient_funds(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_insufficient_funds", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_insufficient_funds"
+        }
+
+        return NSLocalizedString("shared_insufficient_funds", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: დღეს განხორციელებული
       ///
       /// Locales: en, ka, hy, ru
@@ -16266,6 +17468,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("notifications_hours_ago", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_access_denied(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_access_denied", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_access_denied"
+        }
+
+        return NSLocalizedString("shared_aberror_access_denied", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_users_document_not_found(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_users_document_not_found", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_users_document_not_found"
+        }
+
+        return NSLocalizedString("shared_aberror_users_document_not_found", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_wrong_hash(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_wrong_hash", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_wrong_hash"
+        }
+
+        return NSLocalizedString("shared_aberror_wrong_hash", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: სოციალური ქსელები
@@ -16665,8 +17912,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -16868,8 +18115,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -17173,8 +18420,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -18172,9 +19419,9 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/querternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/querternary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
         }
         if _R.storyboard.addressChange().addressChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addressChangeViewController' could not be loaded from storyboard 'AddressChange' as 'AddressChangeViewController'.") }
@@ -18256,10 +19503,12 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }

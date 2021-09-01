@@ -71,6 +71,6 @@ extension ProfileInfoComponentView: Xibable {
         usernameLabel.setFont(to: .largeTitle32(fontCase: .lower, fontStyle: .semiBold))
 
         verificationStatusLabel.setTextColor(to: .systemBlue())
-        verificationStatusLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
+        verificationStatusLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .regular))
     }
 }
