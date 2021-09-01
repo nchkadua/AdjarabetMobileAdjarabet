@@ -304,6 +304,10 @@
 "biometric_settings_activate_biometry" = "გააქტიურება";
 "biometric_settings_not_available" = "ბიომეტრია არ არის ხელმისაწვდომი";
 
+/* Bonus */
+"bonus_empty_state_title" = "Bonuses are empty";
+"bonus_empty_state_description" = "You have not finished any transaction yet";
+
 /* P2P Transfer */
 "p2p_transfer_p2p_transfer" = "P2P ტრანსფერი";
 "p2p_transfer_friend_id" = "მეგობრის ID";

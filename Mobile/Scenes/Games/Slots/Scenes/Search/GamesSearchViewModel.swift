@@ -78,7 +78,6 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
     }
 
     private func load(query: String?, loadingType: LoadingType) {
-//        print("*** Search: load with: \(query ?? "")")
         self.loadingType = loadingType
         self.query = query ?? ""
 

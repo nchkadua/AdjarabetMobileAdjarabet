@@ -20,6 +20,8 @@ public class ABTableViewController: AppTableViewController {
     private let disposeBag = DisposeBag()
     public var isTabBarManagementEnabled: Bool = false
     public var canEditRow: Bool = false
+    
+    private lazy var isEmptyStateEnabled = false
     private lazy var emptyStateView: EmptyPageComponentView = {
         let emptyStateView = EmptyPageComponentView()
         self.tableView.backgroundView = emptyStateView
@@ -75,15 +77,28 @@ public class ABTableViewController: AppTableViewController {
         }
     }
 
+    // MARK: Empty state
     public func configureEmptyState(with viewModel: EmptyPageComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
         self.numItemsInEmptyCollection = numItemsInEmptyCollection
         emptyStateView.setAndBind(viewModel: viewModel)
         return self
     }
+    
+    public func enableEmptyState() -> Self {
+        emptyStateView.show()
+        isEmptyStateEnabled = true
+        return self
+    }
+    
+    public func disableEmptyState() -> Self {
+        emptyStateView.hide()
+        isEmptyStateEnabled = false
+        return self
+    }
 
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
-        emptyStateView.isHidden = numberOfRowsInSection > numItemsInEmptyCollection
+        emptyStateView.isHidden = !isEmptyStateEnabled || (numberOfRowsInSection > numItemsInEmptyCollection)
         return numberOfRowsInSection
     }
 

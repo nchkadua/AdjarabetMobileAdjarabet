@@ -304,6 +304,10 @@
 "biometric_settings_activate_biometry" = "Activate";
 "biometric_settings_not_available" = "Biometry is not available";
 
+/* Bonus */
+"bonus_empty_state_title" = "Bonuses are empty";
+"bonus_empty_state_description" = "You have not finished any transaction yet";
+
 /* P2P Transfer */
 "p2p_transfer_p2p_transfer" = "P2P Transfer";
 "p2p_transfer_friend_id" = "Friend ID";
