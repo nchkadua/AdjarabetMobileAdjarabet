@@ -20,6 +20,13 @@ public class BonusViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        startLoading()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { self.stopLoading() }
+    }
+
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: BonusViewModel) {
     }

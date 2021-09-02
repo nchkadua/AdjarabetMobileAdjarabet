@@ -84,19 +84,19 @@ public class DepositViewController: ABViewController {
         setupBalanceTitleLabel()
         setupBalanceLabel()
     }
-    
+
     private func setupDepositLabel() {
         depositLabel.setTextColor(to: .primaryText())
         depositLabel.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
         depositLabel.text = R.string.localization.deposit_deposit_title.localized().uppercased()
     }
-    
+
     private func setupBalanceTitleLabel() {
         balanceTitleLabel.setTextColor(to: .secondaryText())
         balanceTitleLabel.setFont(to: .footnote(fontCase: .lower, fontStyle: .regular))
         balanceTitleLabel.text = R.string.localization.deposit_balance_title.localized()
     }
-    
+
     private func setupBalanceLabel() {
         balanceLabel.setTextColor(to: .primaryText())
         balanceLabel.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))

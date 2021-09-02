@@ -142,7 +142,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
 
     public lazy var emptyStateViewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(
             params: .init(
-                icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon,
+                icon: R.image.shared.searchEmptyStateIcon()!,
                 title: "",
                 description: R.string.localization.search_empty_state_description(),
                 position: .centeredWithBottomSpace(space: keyboardHeight)))

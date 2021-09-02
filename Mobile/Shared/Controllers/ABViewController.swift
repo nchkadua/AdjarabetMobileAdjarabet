@@ -50,6 +50,28 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         return (error, constraint)
     }()
 
+    private lazy var loader: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        imageView.animationImages = animatedImages(for: "Loader/loader_")
+        imageView.animationDuration = 1.2
+        imageView.animationRepeatCount = .max
+        imageView.image = imageView.animationImages?.first
+
+        return imageView
+    }()
+
+    func animatedImages(for name: String) -> [UIImage] {
+        var i = 0
+        var images = [UIImage]()
+        while let image = UIImage(named: "\(name)\(i)") {
+            images.append(image)
+            i += 1
+        }
+        return images
+    }
+
  // private lazy var statusError: StatusErrorView = .init()
 
     public var keyScrollView: UIScrollView? { nil }
@@ -57,12 +79,35 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     public private(set) var keyboardFrame: CGRect = .zero
     public var additionalBottomContentInset: CGFloat { 0 }
     public var defaultBottomContentInset: CGFloat { 0 }
+    public var setInteractivePopGestureRecognizer = true
 
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        guard setInteractivePopGestureRecognizer else {return}
         navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopLoading()
+    }
+
+    public func startLoading() {
+        view.addSubview(loader)
+        NSLayoutConstraint.activate([
+            loader.widthAnchor.constraint(equalToConstant: 80),
+            loader.heightAnchor.constraint(equalToConstant: 80),
+            loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loader.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        loader.startAnimating()
+    }
+
+    public func stopLoading() {
+        loader.stopAnimating()
+        loader.removeFromSuperview()
     }
 
     func show(error: ABError) {
