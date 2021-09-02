@@ -43,8 +43,12 @@
 "shared_aberror_unable_to_send_otp_tel_is_missing" = "ანგარიშზე SMS-ით შესვლისთვის, დაამატე მობილურის ნომერი";
 "shared_aberror_access_denied" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
 "shared_aberror_wrong_hash" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
-"shared_aberror_users_document_not_found" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
-"shared_insufficient_funds" = "დეპოზიტის შევსებისთვის დაამატე თანხა ანგარიშზე";
+"shared_aberror_users_document_not_found" = "ტრანზაქციის გასაკეთებელად აუცილებელია ვერიფიკაცია";
+"shared_aberror_insufficient_funds" = "ანგარიშზე საკმარისი თანხა არ არის";
+"shared_aberror_account_not_found" = "სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით";
+"shared_aberror_old_and_new_values_match_error" = "მიმდინარე და ახალი პაროლი ემთხვევა ერთმანეთს";
+"shared_aberror_account_is_blocked" = "მიმდინარე და ახალი პაროლი ემთხვევა ერთმანეთს";
+"shared_aberror_otp_is_required" = "მიუთითე SMS კოდი";
 
 "login" = "մուտք";
 
