@@ -22,6 +22,14 @@ class ABError {
     let type: Type
     lazy var description: Description = {
         switch type {
+        case .otpIsRequired:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_otp_is_required.localized(), buttons: [.gotIt]))
+        case .accountIsBlocked:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_account_is_blocked.localized(), buttons: [.gotIt, .call]))
+        case .oldAndNewValuesMatchError:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_old_and_new_values_match_error.localized(), buttons: [.gotIt]))
+        case .accountNotFound:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_account_not_found.localized(), buttons: [.gotIt]))
         case .accessDenied:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_access_denied.localized(), buttons: [.gotIt]))
         case .wrongHash:
@@ -29,7 +37,7 @@ class ABError {
         case .usersDocumentNotFound:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_users_document_not_found.localized(), buttons: [.gotIt]))
         case .insufficientFunds:
-            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_insufficient_funds.localized(), buttons: [.gotIt]))
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_insufficient_funds.localized(), buttons: [.gotIt]))
         case .otpRequestLimitReached:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_otp_request_limit_reached.localized(), buttons: [.gotIt]))
         case .unableToSendOTPTelIsMissing:
@@ -60,6 +68,10 @@ class ABError {
     }()
 
     enum `Type` {
+        case otpIsRequired
+        case accountIsBlocked
+        case oldAndNewValuesMatchError
+        case accountNotFound
         case accessDenied
         case wrongHash
         case notFound
@@ -174,6 +186,10 @@ extension ABError {
         else { return nil }
         let type: Type
         switch coreStatusCode {
+        case .OTP_IS_REQUIRED:                            type = .otpIsRequired
+        case .ACCOUNT_IS_BLOCKED:                         type = .accountIsBlocked
+        case .OLD_AND_NEW_VALUES_MATCH_ERROR:             type = .oldAndNewValuesMatchError
+        case .ACCOUNT_NOT_FOUND:                          type = .accountNotFound
         case .OTP_REQUEST_LIMIT_REACHED:                  type = .otpRequestLimitReached
         case .UNABLE_TO_SEND_OTP_TEL_IS_MISSING:          type = .unableToSendOTPTelIsMissing
         case .FAILED_TO_SEND_OTP:                         type = .failedToSendOTP
