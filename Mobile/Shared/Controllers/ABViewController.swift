@@ -55,7 +55,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         imageView.animationImages = animatedImages(for: "Loader/loader_")
-        imageView.animationDuration = 1.2
+        imageView.animationDuration = 1.5
         imageView.animationRepeatCount = .max
         imageView.image = imageView.animationImages?.first
 
