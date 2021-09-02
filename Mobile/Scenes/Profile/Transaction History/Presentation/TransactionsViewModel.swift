@@ -17,7 +17,7 @@ protocol TransactionsViewModelInput: AnyObject {
     func viewDidLoad()
     func calendarTabItemClicked()
 
-    var emptyStateViewModel: EmptyPageComponentViewModel { get }
+    var emptyStateViewModel: EmptyStateComponentViewModel { get }
 }
 
 protocol TransactionsViewModelOutput {
@@ -39,8 +39,8 @@ enum TransactionsViewModelRoute {
 class DefaultTransactionsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<TransactionsViewModelOutputAction>()
     private let routeSubject = PublishSubject<TransactionsViewModelRoute>()
-    public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
-        DefaultEmptyPageComponentViewModel(params: .init(
+    public lazy var emptyStateViewModel: EmptyStateComponentViewModel = {
+        DefaultEmptyStateComponentViewModel(params: .init(
                                 icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon
                                 title: R.string.localization.transactions_empty_state_title(),
                                 description: R.string.localization.transactions_empty_state_description()))

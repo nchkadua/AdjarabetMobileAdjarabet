@@ -20,8 +20,8 @@ public class ABTableViewController: AppTableViewController {
     private let disposeBag = DisposeBag()
     public var isTabBarManagementEnabled: Bool = false
     public var canEditRow: Bool = false
-    private lazy var emptyStateView: EmptyPageComponentView = {
-        let emptyStateView = EmptyPageComponentView()
+    private lazy var emptyStateView: EmptyStateComponentView = {
+        let emptyStateView = EmptyStateComponentView()
         self.tableView.backgroundView = emptyStateView
         emptyStateView.hide()
         return emptyStateView
@@ -75,7 +75,7 @@ public class ABTableViewController: AppTableViewController {
         }
     }
 
-    public func configureEmptyState(with viewModel: EmptyPageComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
+    public func configureEmptyState(with viewModel: EmptyStateComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
         self.numItemsInEmptyCollection = numItemsInEmptyCollection
         emptyStateView.setAndBind(viewModel: viewModel)
         return self

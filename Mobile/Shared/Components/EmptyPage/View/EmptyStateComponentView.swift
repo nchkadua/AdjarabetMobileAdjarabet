@@ -8,16 +8,18 @@
 
 import RxSwift
 
-public class EmptyPageComponentView: UIView {
+public class EmptyStateComponentView: UIView {
+    // MARK: Properties
     private var disposeBag = DisposeBag()
-    private var viewModel: EmptyPageComponentViewModel!
+    private var viewModel: EmptyStateComponentViewModel!
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-
+    @IBOutlet weak var contentViewCenterYConstraint: NSLayoutConstraint!
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -28,14 +30,22 @@ public class EmptyPageComponentView: UIView {
         nibSetup()
     }
 
-    public func setAndBind(viewModel: EmptyPageComponentViewModel) {
+    public func setAndBind(viewModel: EmptyStateComponentViewModel) {
         self.viewModel = viewModel
 
         iconImageView.image = viewModel.params.icon
         titleLabel.text = viewModel.params.title
         descriptionLabel.text = viewModel.params.description
+        setPosition(viewModel.params.position)
 
         bind()
+    }
+    
+    private func setPosition(_ position: EmptyStatePosition) {
+        switch viewModel.params.position {
+        case .centered: break
+        case .centeredWithBottomSpace(let space): contentViewCenterYConstraint.constant -= space / 2
+        }
     }
 
     private func bind() {
@@ -44,8 +54,6 @@ public class EmptyPageComponentView: UIView {
             switch action {
             case .titleUpdate(let title):
                 self?.titleLabel.text = title
-            default:
-                break
             }
         }).disposed(by: disposeBag)
 
@@ -53,7 +61,7 @@ public class EmptyPageComponentView: UIView {
     }
 }
 
-extension EmptyPageComponentView: Xibable {
+extension EmptyStateComponentView: Xibable {
     var mainView: UIView {
         get {
             view

@@ -7,7 +7,7 @@
 //
 
 public class EmptyPageTableViewCell: AppTableViewCell {
-    @IBOutlet weak private var componentView: EmptyPageComponentView!
+    @IBOutlet weak private var componentView: EmptyStateComponentView!
 //    override public class var identifier: Identifierable { R.nib.EmptyPageTableViewCell.name } //TODO 
 
     public override var dataProvider: AppCellDataProvider? {

@@ -907,11 +907,11 @@
 		FB584B4426B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3E26B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift */; };
 		FB584B4526B7C1E800FA25DB /* TermsAndConditionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3F26B7C1E800FA25DB /* TermsAndConditionsComponentView.swift */; };
 		FB584B4626B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B4026B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift */; };
-		FB612A0126C5FBEC00022F24 /* EmptyPageComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6129FB26C5FBEC00022F24 /* EmptyPageComponentView.xib */; };
+		FB612A0126C5FBEC00022F24 /* EmptyStateComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6129FB26C5FBEC00022F24 /* EmptyStateComponentView.xib */; };
 		FB612A0226C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6129FC26C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift */; };
 		FB612A0326C5FBEC00022F24 /* EmptyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6129FD26C5FBEC00022F24 /* EmptyPageTableViewCell.xib */; };
-		FB612A0426C5FBEC00022F24 /* EmptyPageComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6129FE26C5FBEC00022F24 /* EmptyPageComponentViewModel.swift */; };
-		FB612A0526C5FBEC00022F24 /* EmptyPageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6129FF26C5FBEC00022F24 /* EmptyPageComponentView.swift */; };
+		FB612A0426C5FBEC00022F24 /* EmptyStateComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6129FE26C5FBEC00022F24 /* EmptyStateComponentViewModel.swift */; };
+		FB612A0526C5FBEC00022F24 /* EmptyStateComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6129FF26C5FBEC00022F24 /* EmptyStateComponentView.swift */; };
 		FB612A0626C5FBEC00022F24 /* EmptyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612A0026C5FBEC00022F24 /* EmptyPageTableViewCell.swift */; };
 		FBAE9C4126B3D0C1002E9D72 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */; };
 		FBAE9C4226B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */; };
@@ -1854,11 +1854,11 @@
 		FB584B3E26B7C1E800FA25DB /* TermsAndConditionsComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsComponentViewModel.swift; sourceTree = "<group>"; };
 		FB584B3F26B7C1E800FA25DB /* TermsAndConditionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsComponentView.swift; sourceTree = "<group>"; };
 		FB584B4026B7C1E800FA25DB /* TermsAndConditionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsTableViewCell.swift; sourceTree = "<group>"; };
-		FB6129FB26C5FBEC00022F24 /* EmptyPageComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPageComponentView.xib; sourceTree = "<group>"; };
+		FB6129FB26C5FBEC00022F24 /* EmptyStateComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateComponentView.xib; sourceTree = "<group>"; };
 		FB6129FC26C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		FB6129FD26C5FBEC00022F24 /* EmptyPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPageTableViewCell.xib; sourceTree = "<group>"; };
-		FB6129FE26C5FBEC00022F24 /* EmptyPageComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageComponentViewModel.swift; sourceTree = "<group>"; };
-		FB6129FF26C5FBEC00022F24 /* EmptyPageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageComponentView.swift; sourceTree = "<group>"; };
+		FB6129FE26C5FBEC00022F24 /* EmptyStateComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateComponentViewModel.swift; sourceTree = "<group>"; };
+		FB6129FF26C5FBEC00022F24 /* EmptyStateComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateComponentView.swift; sourceTree = "<group>"; };
 		FB612A0026C5FBEC00022F24 /* EmptyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageTableViewCell.swift; sourceTree = "<group>"; };
 		FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
 		FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsNavigator.swift; sourceTree = "<group>"; };
@@ -6711,9 +6711,9 @@
 		FB612A0726C5FBF100022F24 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FB6129FB26C5FBEC00022F24 /* EmptyPageComponentView.xib */,
-				FB6129FE26C5FBEC00022F24 /* EmptyPageComponentViewModel.swift */,
-				FB6129FF26C5FBEC00022F24 /* EmptyPageComponentView.swift */,
+				FB6129FB26C5FBEC00022F24 /* EmptyStateComponentView.xib */,
+				FB6129FE26C5FBEC00022F24 /* EmptyStateComponentViewModel.swift */,
+				FB6129FF26C5FBEC00022F24 /* EmptyStateComponentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -7057,7 +7057,7 @@
 				CEE44E862600B5C100A83BD2 /* AdjaraMontPro-Bold.ttf in Resources */,
 				CECA7EBD26AED0A700BCF04A /* ContactUs.storyboard in Resources */,
 				CEBB008E2609D40400D1B510 /* Visa.storyboard in Resources */,
-				FB612A0126C5FBEC00022F24 /* EmptyPageComponentView.xib in Resources */,
+				FB612A0126C5FBEC00022F24 /* EmptyStateComponentView.xib in Resources */,
 				C75D1ADA261205F4002AF763 /* CDJSlot.zip in Resources */,
 				CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */,
 				7668C7AB2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib in Resources */,
@@ -7384,7 +7384,7 @@
 			files = (
 				CE693AEA26A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift in Sources */,
 				D8D96C912446FE5500EFC0B1 /* FloatingTabBarManager.swift in Sources */,
-				FB612A0426C5FBEC00022F24 /* EmptyPageComponentViewModel.swift in Sources */,
+				FB612A0426C5FBEC00022F24 /* EmptyStateComponentViewModel.swift in Sources */,
 				CEB49871268C987A00004A45 /* PasswordResetNavigator.swift in Sources */,
 				CE920609268493D600670AD8 /* ServiceAuthTokenRepository.swift in Sources */,
 				C78E53122685B12300EE1C18 /* HighSecurityViewController.swift in Sources */,
@@ -7686,7 +7686,7 @@
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
 				FB584B4526B7C1E800FA25DB /* TermsAndConditionsComponentView.swift in Sources */,
-				FB612A0526C5FBEC00022F24 /* EmptyPageComponentView.swift in Sources */,
+				FB612A0526C5FBEC00022F24 /* EmptyStateComponentView.swift in Sources */,
 				C7DB6EF626370F9600EC1CB9 /* EmptyCollectionViewCell.swift in Sources */,
 				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
 				CE693AF926A6D80F0049D665 /* FAQCategoryComponentViewModel.swift in Sources */,

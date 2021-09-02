@@ -11,7 +11,6 @@ import RxSwift
 public class GamesSearchViewController: ABViewController {
     var viewModel: GamesSearchViewModel = DefaultGamesSearchViewModel(params: .init())
     public lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-                                                .configureEmptyState(with: viewModel.emptyStateViewModel, numItemsInEmptyCollection: 1)
 
     // shimmer loader
     private lazy var loader: GamesListLoader = {
@@ -25,6 +24,25 @@ public class GamesSearchViewController: ABViewController {
         bind(to: viewModel)
         errorThrowing = viewModel
         viewModel.viewDidLoad()
+        addNotificationCenterObservers()
+    }
+    
+    private func addNotificationCenterObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+    }
+    
+    @objc public override func keyboardWillShow(notification: NSNotification) {
+        super.keyboardWillShow(notification: notification)
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            viewModel.keyboardHeight = keyboardHeight
+        }
     }
 
     // MARK: Binding
@@ -36,6 +54,8 @@ public class GamesSearchViewController: ABViewController {
 
     private func didReceive(action: GamesSearchViewModelOutputAction) {
         switch action {
+        case .configureEmptyState(let emptyStateViewModel):
+            collectionViewController.configureEmptyState(with: emptyStateViewModel, numItemsInEmptyCollection: 1)
         case .setLoading(let loadingType):
             UIView.animate(withDuration: 0.3) { self.loader.alpha = loadingType == .fullScreen ? 1 : 0 }
         case .initialize(let appListDataProvider):
@@ -66,4 +86,5 @@ public class GamesSearchViewController: ABViewController {
         collectionViewController.view.backgroundColor = view.backgroundColor
         collectionViewController.viewModel = viewModel
     }
+    
 }

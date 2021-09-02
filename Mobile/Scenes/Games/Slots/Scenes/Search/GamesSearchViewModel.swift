@@ -15,7 +15,8 @@ public struct GamesSearchViewModelParams {
 }
 
 public protocol GamesSearchViewModelInput {
-    var emptyStateViewModel: EmptyPageComponentViewModel { get }
+    var keyboardHeight: CGFloat { get set }
+    var emptyStateViewModel: EmptyStateComponentViewModel { get }
 
     func viewDidLoad()
     func willPresent()
@@ -35,6 +36,7 @@ public enum GamesSearchViewModelOutputAction {
     case reloadIndexPathes([IndexPath])
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
     case initialize(AppListDataProvider)
+    case configureEmptyState(viewModel: EmptyStateComponentViewModel)
 }
 
 public enum GamesSearchViewModelRoute {
@@ -78,7 +80,6 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
     }
 
     private func load(query: String?, loadingType: LoadingType) {
-//        print("*** Search: load with: \(query ?? "")")
         self.loadingType = loadingType
         self.query = query ?? ""
 
@@ -132,13 +133,19 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
 
         load(query: query, loadingType: .fullScreen)
     }
+    
+    public var keyboardHeight = Constants.estimatedKeyboardHeight {
+        didSet {
+            actionSubject.onNext(.configureEmptyState(viewModel: emptyStateViewModel))
+        }
+    }
 
-    public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
-        DefaultEmptyPageComponentViewModel(params: .init(
-                                                    icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon,
-                                                    title: "",
-                                                    description: R.string.localization.search_empty_state_description()))
-    }()
+    public lazy var emptyStateViewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(
+            params: .init(
+                icon: R.image.promotions.casino_icon()!, // TODO: EmptyState: change with original icon,
+                title: "",
+                description: R.string.localization.search_empty_state_description(),
+                position: .centeredWithBottomSpace(space: keyboardHeight)))
 }
 
 extension DefaultGamesSearchViewModel: GamesSearchViewModel {
@@ -181,5 +188,11 @@ extension DefaultGamesSearchViewModel: GamesSearchViewModel {
     public func didLoadNextPage() {
         guard page.hasMore, loadingType == .none else {return}
         load(query: query, loadingType: .nextPage)
+    }
+}
+
+extension DefaultGamesSearchViewModel {
+    struct Constants {
+        static let estimatedKeyboardHeight: CGFloat = 216
     }
 }
