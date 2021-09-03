@@ -40,7 +40,7 @@ class DefaultTransactionsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<TransactionsViewModelOutputAction>()
     private let routeSubject = PublishSubject<TransactionsViewModelRoute>()
     public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
-        DefaultEmptyPageComponentViewModel(params: .init(
+        DefaultEmptyPageComponentViewModel(params: .init(x`
                                             icon: R.image.transactionsHistory.empty_state_icon()!,
                                             title: R.string.localization.transactions_empty_state_title(),
                                             description: R.string.localization.transactions_empty_state_description()))

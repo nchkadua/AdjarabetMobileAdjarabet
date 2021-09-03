@@ -6162,7 +6162,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localization` struct is generated, and contains static references to 608 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 614 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -8368,6 +8368,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let shared_aberror_unable_to_send_otp_tel_is_missing = Rswift.StringResource(key: "shared_aberror_unable_to_send_otp_tel_is_missing", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: ანგარიშზე საკმარისი თანხა არ არის
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_insufficient_funds = Rswift.StringResource(key: "shared_aberror_insufficient_funds", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: აღდგენა SMS კოდით
       ///
       /// Locales: en, ka, hy, ru
@@ -8460,10 +8464,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let change_mail_button_title = Rswift.StringResource(key: "change_mail_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
-      /// en translation: დეპოზიტის შევსებისთვის დაამატე თანხა ანგარიშზე
-      ///
-      /// Locales: en, ka, hy, ru
-      static let shared_insufficient_funds = Rswift.StringResource(key: "shared_insufficient_funds", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: დღეს განხორციელებული
       ///
       /// Locales: en, ka, hy, ru
@@ -8512,10 +8512,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let visa_description_title = Rswift.StringResource(key: "visa_description_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: მიმდინარე და ახალი პაროლი ემთხვევა ერთმანეთს
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_account_is_blocked = Rswift.StringResource(key: "shared_aberror_account_is_blocked", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: მიმდინარე და ახალი პაროლი ემთხვევა ერთმანეთს
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_old_and_new_values_match_error = Rswift.StringResource(key: "shared_aberror_old_and_new_values_match_error", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო
       ///
       /// Locales: en, ka, hy, ru
       static let rule3 = Rswift.StringResource(key: "rule3", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: მიუთითე SMS კოდი
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_otp_is_required = Rswift.StringResource(key: "shared_aberror_otp_is_required", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: მომხმარებლის სახელი
       ///
       /// Locales: en, ka, hy, ru
@@ -8535,7 +8547,7 @@ struct R: Rswift.Validatable {
       /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
       ///
       /// Locales: en, ka, hy, ru
-      static let shared_aberror_users_document_not_found = Rswift.StringResource(key: "shared_aberror_users_document_not_found", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      static let shared_aberror_account_not_found = Rswift.StringResource(key: "shared_aberror_account_not_found", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
       ///
       /// Locales: en, ka, hy, ru
@@ -8548,6 +8560,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let faq_transactions_title = Rswift.StringResource(key: "faq_transactions_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: ტრანზაქციის გასაკეთებელად აუცილებელია ვერიფიკაცია
+      ///
+      /// Locales: en, ka, hy, ru
+      static let shared_aberror_users_document_not_found = Rswift.StringResource(key: "shared_aberror_users_document_not_found", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: უსაზღვრო შესაძლებლობები!
       ///
       /// Locales: en, ka, hy, ru
@@ -16870,6 +16886,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("shared_aberror_unable_to_send_otp_tel_is_missing", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: ანგარიშზე საკმარისი თანხა არ არის
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_insufficient_funds(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_insufficient_funds", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_insufficient_funds"
+        }
+
+        return NSLocalizedString("shared_aberror_insufficient_funds", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: აღდგენა SMS კოდით
       ///
       /// Locales: en, ka, hy, ru
@@ -17215,21 +17246,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("change_mail_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
-      /// en translation: დეპოზიტის შევსებისთვის დაამატე თანხა ანგარიშზე
-      ///
-      /// Locales: en, ka, hy, ru
-      static func shared_insufficient_funds(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("shared_insufficient_funds", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "shared_insufficient_funds"
-        }
-
-        return NSLocalizedString("shared_insufficient_funds", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
       /// en translation: დღეს განხორციელებული
       ///
       /// Locales: en, ka, hy, ru
@@ -17410,6 +17426,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("visa_description_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: მიმდინარე და ახალი პაროლი ემთხვევა ერთმანეთს
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_account_is_blocked(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_account_is_blocked", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_account_is_blocked"
+        }
+
+        return NSLocalizedString("shared_aberror_account_is_blocked", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: მიმდინარე და ახალი პაროლი ემთხვევა ერთმანეთს
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_old_and_new_values_match_error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_old_and_new_values_match_error", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_old_and_new_values_match_error"
+        }
+
+        return NSLocalizedString("shared_aberror_old_and_new_values_match_error", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: მინიმუმ 6 და მაქსიმუმ 30 სიმბოლო
       ///
       /// Locales: en, ka, hy, ru
@@ -17423,6 +17469,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("rule3", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: მიუთითე SMS კოდი
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_otp_is_required(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_otp_is_required", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_otp_is_required"
+        }
+
+        return NSLocalizedString("shared_aberror_otp_is_required", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: მომხმარებლის სახელი
@@ -17488,16 +17549,16 @@ struct R: Rswift.Validatable {
       /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
       ///
       /// Locales: en, ka, hy, ru
-      static func shared_aberror_users_document_not_found(preferredLanguages: [String]? = nil) -> String {
+      static func shared_aberror_account_not_found(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("shared_aberror_users_document_not_found", tableName: "Localization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("shared_aberror_account_not_found", tableName: "Localization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "shared_aberror_users_document_not_found"
+          return "shared_aberror_account_not_found"
         }
 
-        return NSLocalizedString("shared_aberror_users_document_not_found", tableName: "Localization", bundle: bundle, comment: "")
+        return NSLocalizedString("shared_aberror_account_not_found", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: სისტემაში ტექნიკური ხარვეზია, სცადე მოგვიანებით
@@ -17543,6 +17604,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("faq_transactions_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ტრანზაქციის გასაკეთებელად აუცილებელია ვერიფიკაცია
+      ///
+      /// Locales: en, ka, hy, ru
+      static func shared_aberror_users_document_not_found(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("shared_aberror_users_document_not_found", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "shared_aberror_users_document_not_found"
+        }
+
+        return NSLocalizedString("shared_aberror_users_document_not_found", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: უსაზღვრო შესაძლებლობები!
@@ -18086,8 +18162,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -18115,8 +18191,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -19419,10 +19495,10 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/querternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/querternary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
         }
         if _R.storyboard.addressChange().addressChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addressChangeViewController' could not be loaded from storyboard 'AddressChange' as 'AddressChangeViewController'.") }
       }
@@ -19504,15 +19580,13 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         }
         if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
       }
@@ -19753,10 +19827,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
