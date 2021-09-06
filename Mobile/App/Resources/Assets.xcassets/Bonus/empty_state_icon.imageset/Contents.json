@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bonus_empty_state_icon.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -20,9 +20,10 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
     private var numItemsInEmptyCollection = 0
     public var isTabBarManagementEnabled: Bool = false
 
+    private lazy var isEmptyStateEnabled = false
     private lazy var emptyStateView: EmptyStateComponentView = {
         let emptyStateView = EmptyStateComponentView()
-        self.collectionView.backgroundView = emptyStateView
+        collectionView.backgroundView = emptyStateView
         emptyStateView.hide()
         return emptyStateView
     }()
@@ -63,6 +64,8 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         flowLayout?.sectionInset = .zero
     }
 
+    // MARK: Empty state
+    @discardableResult
     public func configureEmptyState(with viewModel: EmptyStateComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
         self.numItemsInEmptyCollection = numItemsInEmptyCollection
         emptyStateView.setAndBind(viewModel: viewModel)
@@ -71,8 +74,20 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
-        emptyStateView.isHidden = numberOfItemsInSection > numItemsInEmptyCollection
+        emptyStateView.isHidden = !isEmptyStateEnabled || (numberOfItemsInSection > numItemsInEmptyCollection)
         return numberOfItemsInSection
+    }
+    
+    public func enableEmptyState() -> Self {
+        emptyStateView.show()
+        isEmptyStateEnabled = true
+        return self
+    }
+    
+    public func disableEmptyState() -> Self {
+        emptyStateView.hide()
+        isEmptyStateEnabled = false
+        return self
     }
 
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

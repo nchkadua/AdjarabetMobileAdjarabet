@@ -44,7 +44,7 @@ public class EmptyStateComponentView: UIView {
     private func setPosition(_ position: EmptyStatePosition) {
         switch viewModel.params.position {
         case .centered: break
-        case .centeredWithBottomSpace(let space): contentViewCenterYConstraint.constant -= space / 2
+        case .centeredWithBottomSpace(let space): contentViewCenterYConstraint.constant = space/(-2.0)
         }
     }
 
