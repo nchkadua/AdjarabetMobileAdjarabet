@@ -18,7 +18,6 @@ public class WithdrawViewController: ABViewController {
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var payments: PaymentMethodGridComponentView!
     @IBOutlet private weak var childView: UIView!
-    @IBOutlet private weak var loader: UIActivityIndicatorView!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -48,6 +47,10 @@ public class WithdrawViewController: ABViewController {
             amountLabel.text = balance
         case .bind(let viewModel):
             payments.setAndBind(viewModel: viewModel)
+//        case .isLoading(let loading):
+//            loading ? startLoading() : stopLoading()
+        default:
+            break
         }
     }
 
@@ -63,7 +66,6 @@ public class WithdrawViewController: ABViewController {
         setBaseBackgroundColor()
         setupKeyboard()
         setupLabels()
-        loader.isHidden = true // initially hide loader
     }
 
     private func setupLabels() {
@@ -80,7 +82,6 @@ public class WithdrawViewController: ABViewController {
     }
 
     private func handleLoader(_ isHidden: Bool) {
-        loader.isHidden = isHidden
-        (isHidden ? loader.stopAnimating : loader.startAnimating)()
+//        isHidden ? startLoading() : stopLoading()
     }
 }

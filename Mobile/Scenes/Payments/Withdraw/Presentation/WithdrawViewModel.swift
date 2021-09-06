@@ -23,6 +23,7 @@ enum WithdrawViewModelOutputAction {
     case loader(isHidden: Bool)
     case set(balance: String)
     case bind(viewModel: PaymentMethodGridComponentViewModel)
+    case isLoading(loading: Bool)
 }
 
 enum WithdrawViewModelRoute {
@@ -46,6 +47,8 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
     func viewDidLoad() {
         bind(to: paymentsViewModel)
         observeBalance()
+
+        notify(.isLoading(loading: true))
         notify(.loader(isHidden: false))
         notify(.set(balance: userBalanceService.balance?.formattedBalanceWithCurrencySign ?? "-"))
         notify(.bind(viewModel: paymentsViewModel))
@@ -53,6 +56,7 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
         paymentListUseCase.list { [weak self] result in
             guard let self = self else { return }
             self.notify(.loader(isHidden: true))
+            self.notify(.isLoading(loading: false))
             switch result {
             case .success(let entity):
                 if entity.isEmpty {

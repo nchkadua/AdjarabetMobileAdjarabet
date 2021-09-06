@@ -16,7 +16,6 @@ public class DepositViewController: ABViewController {
     @IBOutlet private weak var depositLabel: UILabel!
     @IBOutlet private weak var balanceTitleLabel: UILabel!
     @IBOutlet private weak var balanceLabel: UILabel!
-    @IBOutlet private weak var loader: UIActivityIndicatorView!
 
     @IBOutlet private weak var paymentGridComponentView: PaymentMethodGridComponentView!
     @IBOutlet private weak var childrenVCFrameView: UIView!
@@ -54,6 +53,7 @@ public class DepositViewController: ABViewController {
             setChildViewControllers(methods)
         case .loader(let isHidden):
             handleLoader(isHidden)
+        case .isLoading(let loading): loading ? startLoading() : startLoading()
         }
     }
 
@@ -63,7 +63,6 @@ public class DepositViewController: ABViewController {
         // setupPageViewController()
         setupLabels()
         setupImageView()
-        loader.isHidden = true
     }
 
     private func setupPageViewController(with viewControllers: [UIViewController]) {
@@ -127,8 +126,9 @@ public class DepositViewController: ABViewController {
     }
 
     private func handleLoader(_ isHidden: Bool) {
-        loader.isHidden = isHidden
-        (isHidden ? loader.stopAnimating : loader.startAnimating)()
+//        loader.isHidden = isHidden
+//        (isHidden ? loader.stopAnimating : loader.startAnimating)()
+//        isHidden ? stopLoading() : startLoading()
 
         appPageViewController?.view.isHidden = !isHidden
     }

@@ -30,6 +30,7 @@ public enum DepositViewModelOutputAction {
     case bindToGridViewModel(viewModel: PaymentMethodGridComponentViewModel)
     case didLoadPaymentMethods(methods: [PaymentMethodEntity])
     case loader(isHidden: Bool)
+    case isLoading(loading: Bool)
 }
 
 public enum DepositViewModelRoute {
@@ -54,12 +55,17 @@ extension DefaultDepositViewModel: DepositViewModel {
     public var route: Observable<DepositViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        notify(.loader(isHidden: false))
+        actionSubject.onNext(.set(totalBalance: userBalanceService.balance ?? 0.0))
+    }
+
+    public func viewDidAppear() {
+        notify(.isLoading(loading: true))
         actionSubject.onNext(.bindToGridViewModel(viewModel: paymentGridComponentViewModel))
 
         // fetch payment list
         paymentListUseCase.list { [weak self] result in
             self?.notify(.loader(isHidden: true))
+            self?.notify(.isLoading(loading: false))
             switch result {
             case .success(let entity):
                 let viewModels: [PaymentMethodCollectionViewCellDataProvider] = entity.filter { $0.flowId.contains("deposit") }.compactMap { payment in
@@ -73,10 +79,6 @@ extension DefaultDepositViewModel: DepositViewModel {
                 self?.show(error: error)
             }
         }
-    }
-
-    public func viewDidAppear() {
-        actionSubject.onNext(.set(totalBalance: userBalanceService.balance ?? 0.0))
     }
 
     private func notify(_ action: DepositViewModelOutputAction) {

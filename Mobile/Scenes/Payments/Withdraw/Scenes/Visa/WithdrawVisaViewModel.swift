@@ -30,6 +30,7 @@ enum WithdrawVisaViewModelOutputAction {
     case showView(ofType: WithdrawViewType)
     case setAndBindCashOut(viewModel: CashOutVisaViewModel)
     case setAndBindInfo(viewModel: WithdrawVisaInfoViewModel)
+    case isLoading(loading: Bool)
 }
 // view type enum
 enum WithdrawViewType {
@@ -77,6 +78,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
 
     private func refresh() {
         notify(.loader(isHidden: false)) // start loader
+        notify(.isLoading(loading: true))
         // 0. reset state
         reset()
         // 1. fetch limits
@@ -96,6 +98,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                     self.cashOutViewModel.update(accounts: viewAccounts) // 5. update accounts on shown view
                 }
                 self.notify(.loader(isHidden: true))
+                self.notify(.isLoading(loading: false))
             case .failure(let error):
                 self.disable()
                 self.show(error: error)
