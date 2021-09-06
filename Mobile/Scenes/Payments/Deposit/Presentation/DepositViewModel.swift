@@ -29,7 +29,6 @@ public enum DepositViewModelOutputAction {
     case set(totalBalance: Double)
     case bindToGridViewModel(viewModel: PaymentMethodGridComponentViewModel)
     case didLoadPaymentMethods(methods: [PaymentMethodEntity])
-    case loader(isHidden: Bool)
     case isLoading(loading: Bool)
 }
 
@@ -64,7 +63,6 @@ extension DefaultDepositViewModel: DepositViewModel {
 
         // fetch payment list
         paymentListUseCase.list { [weak self] result in
-            self?.notify(.loader(isHidden: true))
             self?.notify(.isLoading(loading: false))
             switch result {
             case .success(let entity):

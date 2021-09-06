@@ -20,7 +20,6 @@ protocol WithdrawViewModelOutput {
 }
 
 enum WithdrawViewModelOutputAction {
-    case loader(isHidden: Bool)
     case set(balance: String)
     case bind(viewModel: PaymentMethodGridComponentViewModel)
     case isLoading(loading: Bool)
@@ -49,13 +48,11 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
         observeBalance()
 
         notify(.isLoading(loading: true))
-        notify(.loader(isHidden: false))
         notify(.set(balance: userBalanceService.balance?.formattedBalanceWithCurrencySign ?? "-"))
         notify(.bind(viewModel: paymentsViewModel))
         // fetch payment list
         paymentListUseCase.list { [weak self] result in
             guard let self = self else { return }
-            self.notify(.loader(isHidden: true))
             self.notify(.isLoading(loading: false))
             switch result {
             case .success(let entity):

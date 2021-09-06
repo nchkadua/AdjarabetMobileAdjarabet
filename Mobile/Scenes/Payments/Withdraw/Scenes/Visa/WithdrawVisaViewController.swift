@@ -43,8 +43,6 @@ class WithdrawVisaViewController: ABViewController {
 
     private func didRecive(action: WithdrawVisaViewModelOutputAction) {
         switch action {
-        case .loader(let isHidden):
-            handleLoader(isHidden: isHidden)
         case .showView(let type):
             handleShowView(of: type)
         case .setAndBindCashOut(let viewModel):
@@ -64,12 +62,8 @@ class WithdrawVisaViewController: ABViewController {
     }
 
     private func handleLoader(isHidden: Bool) {
-        loader(isHidden: isHidden)
         mainContentView.isHidden = !isHidden
         infoView.isHidden = !isHidden
-    }
-
-    private func loader(isHidden: Bool) {
     }
 
     private func handleShowView(of type: WithdrawViewType) {

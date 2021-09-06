@@ -51,9 +51,9 @@ public class DepositViewController: ABViewController {
             bindToGrid(viewModel)
         case .didLoadPaymentMethods(let methods):
             setChildViewControllers(methods)
-        case .loader(let isHidden):
-            handleLoader(isHidden)
-        case .isLoading(let loading): loading ? startLoading() : startLoading()
+        case .isLoading(let loading):
+            loading ? startLoading() : startLoading()
+            appPageViewController?.view.isHidden = loading
         }
     }
 
@@ -123,14 +123,6 @@ public class DepositViewController: ABViewController {
         default:
             break
         }
-    }
-
-    private func handleLoader(_ isHidden: Bool) {
-//        loader.isHidden = isHidden
-//        (isHidden ? loader.stopAnimating : loader.startAnimating)()
-//        isHidden ? stopLoading() : startLoading()
-
-        appPageViewController?.view.isHidden = !isHidden
     }
 
     // MARK: Action methods

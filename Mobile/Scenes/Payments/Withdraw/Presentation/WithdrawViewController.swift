@@ -41,14 +41,10 @@ public class WithdrawViewController: ABViewController {
 
     private func didRecive(action: WithdrawViewModelOutputAction) {
         switch action {
-        case .loader(let isHidden):
-            handleLoader(isHidden)
         case .set(let balance):
             amountLabel.text = balance
         case .bind(let viewModel):
             payments.setAndBind(viewModel: viewModel)
-//        case .isLoading(let loading):
-//            loading ? startLoading() : stopLoading()
         default:
             break
         }
@@ -79,9 +75,5 @@ public class WithdrawViewController: ABViewController {
 
         amountLabel.setTextColor(to: .primaryText())
         amountLabel.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))
-    }
-
-    private func handleLoader(_ isHidden: Bool) {
-//        isHidden ? startLoading() : stopLoading()
     }
 }
