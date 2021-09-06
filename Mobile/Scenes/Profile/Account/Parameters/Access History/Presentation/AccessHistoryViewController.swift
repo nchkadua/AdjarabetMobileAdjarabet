@@ -37,6 +37,8 @@ public class AccessHistoryViewController: ABViewController {
         switch action {
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
+        case .isLoading(let loading):
+            loading ? startLoading() : stopLoading()
         default:
             break
         }
