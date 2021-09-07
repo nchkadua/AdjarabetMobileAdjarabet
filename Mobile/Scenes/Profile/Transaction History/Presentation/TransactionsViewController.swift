@@ -45,6 +45,8 @@ class TransactionsViewController: ABViewController {
             UIView.performWithoutAnimation {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertionIndexPathes, deletionIndexPathes: deletionIndexPathes)
             }
+        case .isLoading(let loading):
+            loading ? startLoading() : stopLoading()
         }
     }
 
