@@ -9,7 +9,7 @@
 public class StatusMessageTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: StatusMessageComponentView!
 //    override public class var identifier: Identifierable { R.nib.StatusMessageTableViewCell.name } //TODO 
-    
+
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? StatusMessageTableViewCellDataProvider else {

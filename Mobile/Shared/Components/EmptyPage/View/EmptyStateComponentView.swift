@@ -19,7 +19,7 @@ public class EmptyStateComponentView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var contentViewCenterYConstraint: NSLayoutConstraint!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -40,7 +40,7 @@ public class EmptyStateComponentView: UIView {
 
         bind()
     }
-    
+
     private func setPosition(_ position: EmptyStatePosition) {
         switch viewModel.params.position {
         case .centered: break

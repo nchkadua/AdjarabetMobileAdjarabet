@@ -15,7 +15,7 @@ class StatusMessageComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak var statusLabel: UILabel!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()

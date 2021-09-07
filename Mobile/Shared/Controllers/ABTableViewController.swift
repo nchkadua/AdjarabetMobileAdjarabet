@@ -20,7 +20,7 @@ public class ABTableViewController: AppTableViewController {
     private let disposeBag = DisposeBag()
     public var isTabBarManagementEnabled: Bool = false
     public var canEditRow: Bool = false
-    
+
     private lazy var isEmptyStateEnabled = false
     private lazy var emptyStateView: EmptyStateComponentView = {
         let emptyStateView = EmptyStateComponentView()
@@ -84,13 +84,13 @@ public class ABTableViewController: AppTableViewController {
         emptyStateView.setAndBind(viewModel: viewModel)
         return self
     }
-    
+
     public func enableEmptyState() -> Self {
         emptyStateView.show()
         isEmptyStateEnabled = true
         return self
     }
-    
+
     public func disableEmptyState() -> Self {
         emptyStateView.hide()
         isEmptyStateEnabled = false

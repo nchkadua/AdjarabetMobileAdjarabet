@@ -9,7 +9,6 @@
 import RxSwift
 
 public class BonusViewController: ABViewController {
-    
     // MARK: Properties
     @Inject(from: .viewModels) var viewModel: BonusViewModel
     private lazy var navigator = BonusNavigator(viewController: self)
@@ -20,18 +19,18 @@ public class BonusViewController: ABViewController {
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setup()
         bind(to: viewModel)
         errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
-    
+
     private func setup() {
         setBaseBackgroundColor(to: .primaryBg())
         setupTableView()
     }
-    
+
     private func setupTableView() {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +80,7 @@ public class BonusViewController: ABViewController {
 
     private func didReceive(route: BonusViewModelRoute) {
     }
-    
+
     // MARK: Action methods
     private func deleteCell(at indexPath: IndexPath) {
         appTableViewController.reloadItems(deletionIndexPathes: [indexPath])

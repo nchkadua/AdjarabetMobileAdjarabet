@@ -27,6 +27,7 @@ enum AccountInfoViewModelOutputAction {
     case setAndBindCommunicationLanguage(_ viewModel: CommunicationLanguageComponentViewModel)
     case setPersonalID(id: String)
     case setAddress(address: String)
+    case isLoading(loading: Bool)
 }
 
 enum AccountInfoViewModelRoute {
@@ -84,6 +85,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
     }
 
     private func fetchUserInfo() {
+        actionSubject.onNext(.isLoading(loading: true))
         userInfoRepo.currentUserInfo(params: .init()) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -93,6 +95,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             case .failure(let error):
                 self.show(error: error)
             }
+            self.actionSubject.onNext(.isLoading(loading: false))
         }
     }
 

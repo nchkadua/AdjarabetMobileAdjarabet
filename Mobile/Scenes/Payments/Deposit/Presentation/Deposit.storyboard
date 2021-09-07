@@ -73,9 +73,6 @@
                                     <constraint firstAttribute="height" constant="40" id="kJn-Eu-TLN"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kvr-Nv-YBS">
-                                <rect key="frame" x="188.5" y="500" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,12 +83,10 @@
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="rMD-z4-E3a" secondAttribute="trailing" id="MSm-SI-qJG"/>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="8Kq-xd-1G6" secondAttribute="trailing" id="VvQ-Zn-N4c"/>
                             <constraint firstItem="rMD-z4-E3a" firstAttribute="top" secondItem="RAB-Bl-XoW" secondAttribute="bottom" constant="14" id="g6H-Uj-XV7"/>
-                            <constraint firstItem="kvr-Nv-YBS" firstAttribute="centerX" secondItem="rMD-z4-E3a" secondAttribute="centerX" id="iZ8-x8-Il8"/>
                             <constraint firstItem="RAB-Bl-XoW" firstAttribute="top" secondItem="8Kq-xd-1G6" secondAttribute="bottom" constant="10" id="jam-e5-1i5"/>
                             <constraint firstItem="8Kq-xd-1G6" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="26" id="mv8-M9-JaS"/>
                             <constraint firstItem="8Kq-xd-1G6" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="nIS-zb-JvT"/>
                             <constraint firstItem="RAB-Bl-XoW" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" id="qLh-WL-Qzp"/>
-                            <constraint firstItem="kvr-Nv-YBS" firstAttribute="centerY" secondItem="rMD-z4-E3a" secondAttribute="centerY" id="v3f-7L-adT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -100,7 +95,6 @@
                         <outlet property="childrenVCFrameView" destination="rMD-z4-E3a" id="5ca-hl-E7i"/>
                         <outlet property="depositLabel" destination="5s5-nu-ONb" id="HW0-gK-PGx"/>
                         <outlet property="iconImageView" destination="rPH-NG-A2i" id="WYC-3E-vvn"/>
-                        <outlet property="loader" destination="kvr-Nv-YBS" id="yPJ-fv-Vem"/>
                         <outlet property="paymentGridComponentView" destination="RAB-Bl-XoW" id="nbe-aY-md8"/>
                     </connections>
                 </viewController>

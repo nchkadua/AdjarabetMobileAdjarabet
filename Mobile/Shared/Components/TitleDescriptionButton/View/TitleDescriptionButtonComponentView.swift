@@ -17,7 +17,7 @@ class TitleDescriptionButtonComponentView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var button: UIButton!
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()

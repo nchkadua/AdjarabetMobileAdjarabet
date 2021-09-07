@@ -77,13 +77,13 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         emptyStateView.isHidden = !isEmptyStateEnabled || (numberOfItemsInSection > numItemsInEmptyCollection)
         return numberOfItemsInSection
     }
-    
+
     public func enableEmptyState() -> Self {
         emptyStateView.show()
         isEmptyStateEnabled = true
         return self
     }
-    
+
     public func disableEmptyState() -> Self {
         emptyStateView.hide()
         isEmptyStateEnabled = false

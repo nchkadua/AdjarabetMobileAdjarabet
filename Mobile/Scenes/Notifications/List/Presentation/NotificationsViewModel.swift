@@ -28,6 +28,7 @@ public enum NotificationsViewModelOutputAction {
     case reload(atIndexPath: IndexPath)
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
     case setTotalItemsCount(count: Int)
+    case isLoading(loading: Bool)
 }
 
 public enum NotificationsViewModelRoute {
@@ -63,9 +64,10 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     public var route: Observable<NotificationsViewModelRoute> { routeSubject.asObserver() }
 
     private func load(loadingType: LoadingType) {
+        actionSubject.onNext(.isLoading(loading: true))
         self.loadingType = loadingType
         notificationsUseCase.notifications(page: page.current, domain: "com") { result in //TODO: dynamic domain
-            defer { 
+            defer {
                 self.loadingType = .none
                 self.actionSubject.onNext(.didLoadingFinished)
             }
@@ -138,6 +140,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         self.page.setNextPage()
         self.page.configureHasMore(forNumberOfItems: notifications.count)
 
+        actionSubject.onNext(.isLoading(loading: false))
         notificationsDataProvider.append(contentsOf: notifications)
         let indexPathes = notifications.enumerated().map { IndexPath(item: offset + $0.offset, section: 0) }
         actionSubject.onNext(.reloadItems(items: notifications, insertionIndexPathes: indexPathes, deletionIndexPathes: []))

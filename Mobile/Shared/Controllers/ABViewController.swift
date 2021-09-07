@@ -95,6 +95,8 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     }
 
     public func startLoading() {
+        guard !loader.isAnimating else {return}
+
         view.addSubview(loader)
         NSLayoutConstraint.activate([
             loader.widthAnchor.constraint(equalToConstant: 80),
@@ -106,6 +108,8 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     }
 
     public func stopLoading() {
+        guard loader.isAnimating else {return}
+
         loader.stopAnimating()
         loader.removeFromSuperview()
     }

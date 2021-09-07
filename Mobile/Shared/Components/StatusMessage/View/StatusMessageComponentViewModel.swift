@@ -25,7 +25,6 @@ public protocol StatusMessageComponentViewModelOutput {
 }
 
 public enum StatusMessageComponentViewModelOutputAction {
-    
 }
 
 public class DefaultStatusMessageComponentViewModel {
