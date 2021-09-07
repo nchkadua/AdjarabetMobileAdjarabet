@@ -6,7 +6,7 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public protocol EmptyPageTableViewCellDataProvider: EmptyPageComponentViewModel, StaticHeightDataProvider { }
+public protocol EmptyPageTableViewCellDataProvider: EmptyStateComponentViewModel, StaticHeightDataProvider { }
 
 public extension EmptyPageTableViewCellDataProvider {
     var identifier: String { EmptyPageTableViewCell.identifierValue }
@@ -17,4 +17,4 @@ public extension EmptyPageTableViewCellDataProvider {
     var isHeightSet: Bool { true }
 }
 
-extension DefaultEmptyPageComponentViewModel: EmptyPageTableViewCellDataProvider { }
+extension DefaultEmptyStateComponentViewModel: EmptyPageTableViewCellDataProvider { }

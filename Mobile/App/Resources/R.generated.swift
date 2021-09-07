@@ -2105,6 +2105,21 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.bonus` struct is generated, and contains static references to 1 images.
+    struct bonus {
+      /// Image `empty_state_icon`.
+      static let empty_state_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Bonus/empty_state_icon")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "empty_state_icon", bundle: ..., traitCollection: ...)`
+      static func empty_state_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.bonus.empty_state_icon, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.cardManagement` struct is generated, and contains static references to 3 images.
     struct cardManagement {
       /// Image `card`.
@@ -4580,7 +4595,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 111 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 115 nibs.
   struct nib {
     /// Nib `ABInputView`.
     static let abInputView = _R.nib._ABInputView()
@@ -4666,10 +4681,10 @@ struct R: Rswift.Validatable {
     static let emoneyInstructionsView = _R.nib._EmoneyInstructionsView()
     /// Nib `EmptyCollectionViewCell`.
     static let emptyCollectionViewCell = _R.nib._EmptyCollectionViewCell()
-    /// Nib `EmptyPageComponentView`.
-    static let emptyPageComponentView = _R.nib._EmptyPageComponentView()
     /// Nib `EmptyPageTableViewCell`.
     static let emptyPageTableViewCell = _R.nib._EmptyPageTableViewCell()
+    /// Nib `EmptyStateComponentView`.
+    static let emptyStateComponentView = _R.nib._EmptyStateComponentView()
     /// Nib `FAQCategoryComponentView`.
     static let faqCategoryComponentView = _R.nib._FAQCategoryComponentView()
     /// Nib `FAQCategoryTableViewCell`.
@@ -4770,6 +4785,10 @@ struct R: Rswift.Validatable {
     static let securityLevelTypeComponentView = _R.nib._SecurityLevelTypeComponentView()
     /// Nib `SecurityLevelTypeTableViewCell`.
     static let securityLevelTypeTableViewCell = _R.nib._SecurityLevelTypeTableViewCell()
+    /// Nib `StatusMessageComponentView`.
+    static let statusMessageComponentView = _R.nib._StatusMessageComponentView()
+    /// Nib `StatusMessageTableViewCell`.
+    static let statusMessageTableViewCell = _R.nib._StatusMessageTableViewCell()
     /// Nib `SuggestedAmountCollectionViewCell`.
     static let suggestedAmountCollectionViewCell = _R.nib._SuggestedAmountCollectionViewCell()
     /// Nib `SuggestedAmountComponentView`.
@@ -4782,6 +4801,10 @@ struct R: Rswift.Validatable {
     static let termsAndConditionsTableViewCell = _R.nib._TermsAndConditionsTableViewCell()
     /// Nib `TimerComponentView`.
     static let timerComponentView = _R.nib._TimerComponentView()
+    /// Nib `TitleDescriptionButtonComponentView`.
+    static let titleDescriptionButtonComponentView = _R.nib._TitleDescriptionButtonComponentView()
+    /// Nib `TitleDescriptionButtonTableViewCell`.
+    static let titleDescriptionButtonTableViewCell = _R.nib._TitleDescriptionButtonTableViewCell()
     /// Nib `TransactionDetailsComponentView`.
     static let transactionDetailsComponentView = _R.nib._TransactionDetailsComponentView()
     /// Nib `TransactionDetailsTableViewCell`.
@@ -5142,18 +5165,18 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "EmptyPageComponentView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.emptyPageComponentView) instead")
-    static func emptyPageComponentView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.emptyPageComponentView)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UINib(name: "EmptyPageTableViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.emptyPageTableViewCell) instead")
     static func emptyPageTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.emptyPageTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "EmptyStateComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.emptyStateComponentView) instead")
+    static func emptyStateComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.emptyStateComponentView)
     }
     #endif
 
@@ -5558,6 +5581,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "StatusMessageComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.statusMessageComponentView) instead")
+    static func statusMessageComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.statusMessageComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "StatusMessageTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.statusMessageTableViewCell) instead")
+    static func statusMessageTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.statusMessageTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SuggestedAmountCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.suggestedAmountCollectionViewCell) instead")
     static func suggestedAmountCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -5602,6 +5641,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.timerComponentView) instead")
     static func timerComponentView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.timerComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TitleDescriptionButtonComponentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.titleDescriptionButtonComponentView) instead")
+    static func titleDescriptionButtonComponentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.titleDescriptionButtonComponentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TitleDescriptionButtonTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.titleDescriptionButtonTableViewCell) instead")
+    static func titleDescriptionButtonTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.titleDescriptionButtonTableViewCell)
     }
     #endif
 
@@ -5861,12 +5916,12 @@ struct R: Rswift.Validatable {
       return R.nib.emptyCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmptyCollectionViewCell
     }
 
-    static func emptyPageComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.emptyPageComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-
     static func emptyPageTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EmptyPageTableViewCell? {
       return R.nib.emptyPageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmptyPageTableViewCell
+    }
+
+    static func emptyStateComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.emptyStateComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func faqCategoryComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -6069,6 +6124,14 @@ struct R: Rswift.Validatable {
       return R.nib.securityLevelTypeTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SecurityLevelTypeTableViewCell
     }
 
+    static func statusMessageComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.statusMessageComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func statusMessageTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StatusMessageTableViewCell? {
+      return R.nib.statusMessageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StatusMessageTableViewCell
+    }
+
     static func suggestedAmountCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SuggestedAmountCollectionViewCell? {
       return R.nib.suggestedAmountCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SuggestedAmountCollectionViewCell
     }
@@ -6091,6 +6154,14 @@ struct R: Rswift.Validatable {
 
     static func timerComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.timerComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func titleDescriptionButtonComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.titleDescriptionButtonComponentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func titleDescriptionButtonTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TitleDescriptionButtonTableViewCell? {
+      return R.nib.titleDescriptionButtonTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TitleDescriptionButtonTableViewCell
     }
 
     static func transactionDetailsComponentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -6147,7 +6218,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localization` struct is generated, and contains static references to 612 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 614 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -6453,6 +6524,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let bonuses_item_title = Rswift.StringResource(key: "bonuses_item_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Bonuses are empty
+      ///
+      /// Locales: en, ka, hy, ru
+      static let bonus_empty_state_title = Rswift.StringResource(key: "bonus_empty_state_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Bosnia And Herzegovina
       ///
       /// Locales: en, ka, hy, ru
@@ -6811,8 +6886,8 @@ struct R: Rswift.Validatable {
       static let documentation_title = Rswift.StringResource(key: "documentation_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Does not exist
       ///
-      /// Locales: en, ka, hy
-      static let search_empty_state_description = Rswift.StringResource(key: "search_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// Locales: en, ka, hy, ru
+      static let search_empty_state_description = Rswift.StringResource(key: "search_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Dominica
       ///
       /// Locales: en, ka, hy, ru
@@ -6943,8 +7018,8 @@ struct R: Rswift.Validatable {
       static let finland = Rswift.StringResource(key: "finland", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: For this time you have not done any transactions yet
       ///
-      /// Locales: en, ka, hy
-      static let transactions_empty_state_description = Rswift.StringResource(key: "transactions_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// Locales: en, ka, hy, ru
+      static let transactions_empty_state_description = Rswift.StringResource(key: "transactions_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Forgot Password?
       ///
       /// Locales: en, ka, hy, ru
@@ -7479,16 +7554,16 @@ struct R: Rswift.Validatable {
       static let new_zealand = Rswift.StringResource(key: "new_zealand", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: News
       ///
-      /// Locales: en, ka, hy
-      static let notifications_empty_state_title = Rswift.StringResource(key: "notifications_empty_state_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// Locales: en, ka, hy, ru
+      static let news_item_title = Rswift.StringResource(key: "news_item_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: News
       ///
       /// Locales: en, ka, hy, ru
-      static let news_item_title = Rswift.StringResource(key: "news_item_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      static let notifications_empty_state_title = Rswift.StringResource(key: "notifications_empty_state_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: News are empty
       ///
-      /// Locales: en, ka, hy
-      static let notifications_empty_state_description = Rswift.StringResource(key: "notifications_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// Locales: en, ka, hy, ru
+      static let notifications_empty_state_description = Rswift.StringResource(key: "notifications_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Nicaragua
       ///
       /// Locales: en, ka, hy, ru
@@ -8055,8 +8130,8 @@ struct R: Rswift.Validatable {
       static let shared_aberror_last_access_from_different_ip = Rswift.StringResource(key: "shared_aberror_last_access_from_different_ip", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: There are no records yet
       ///
-      /// Locales: en, ka, hy
-      static let transactions_empty_state_title = Rswift.StringResource(key: "transactions_empty_state_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy"], comment: nil)
+      /// Locales: en, ka, hy, ru
+      static let transactions_empty_state_title = Rswift.StringResource(key: "transactions_empty_state_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: There is a technical issue in the system, please try again later
       ///
       /// Locales: en, ka, hy, ru
@@ -8313,6 +8388,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let p2p_transfer_you_are_transfering_to = Rswift.StringResource(key: "p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: You have not finished any transaction yet
+      ///
+      /// Locales: en, ka, hy, ru
+      static let bonus_empty_state_description = Rswift.StringResource(key: "bonus_empty_state_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: You must select at least one type of sms notification, when you choose individual package, or standart packet will be chosen
       ///
       /// Locales: en, ka, hy, ru
@@ -9738,6 +9817,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("bonuses_item_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Bonuses are empty
+      ///
+      /// Locales: en, ka, hy, ru
+      static func bonus_empty_state_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bonus_empty_state_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bonus_empty_state_title"
+        }
+
+        return NSLocalizedString("bonus_empty_state_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Bosnia And Herzegovina
       ///
       /// Locales: en, ka, hy, ru
@@ -11075,7 +11169,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Does not exist
       ///
-      /// Locales: en, ka, hy
+      /// Locales: en, ka, hy, ru
       static func search_empty_state_description(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("search_empty_state_description", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -11570,7 +11664,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: For this time you have not done any transactions yet
       ///
-      /// Locales: en, ka, hy
+      /// Locales: en, ka, hy, ru
       static func transactions_empty_state_description(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("transactions_empty_state_description", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -13580,21 +13674,6 @@ struct R: Rswift.Validatable {
 
       /// en translation: News
       ///
-      /// Locales: en, ka, hy
-      static func notifications_empty_state_title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("notifications_empty_state_title", tableName: "Localization", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
-          return "notifications_empty_state_title"
-        }
-
-        return NSLocalizedString("notifications_empty_state_title", tableName: "Localization", bundle: bundle, comment: "")
-      }
-
-      /// en translation: News
-      ///
       /// Locales: en, ka, hy, ru
       static func news_item_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -13608,9 +13687,24 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("news_item_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: News
+      ///
+      /// Locales: en, ka, hy, ru
+      static func notifications_empty_state_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notifications_empty_state_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "notifications_empty_state_title"
+        }
+
+        return NSLocalizedString("notifications_empty_state_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: News are empty
       ///
-      /// Locales: en, ka, hy
+      /// Locales: en, ka, hy, ru
       static func notifications_empty_state_description(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("notifications_empty_state_description", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -15740,7 +15834,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: There are no records yet
       ///
-      /// Locales: en, ka, hy
+      /// Locales: en, ka, hy, ru
       static func transactions_empty_state_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("transactions_empty_state_title", tableName: "Localization", bundle: hostingBundle, comment: "")
@@ -16711,6 +16805,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You have not finished any transaction yet
+      ///
+      /// Locales: en, ka, hy, ru
+      static func bonus_empty_state_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bonus_empty_state_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "bonus_empty_state_description"
+        }
+
+        return NSLocalizedString("bonus_empty_state_description", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: You must select at least one type of sms notification, when you choose individual package, or standart packet will be chosen
@@ -18109,8 +18218,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -18138,8 +18247,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -18368,23 +18477,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _EmptyPageComponentView: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "EmptyPageComponentView"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      fileprivate init() {}
-    }
-
     struct _EmptyPageTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "EmptyPageTableViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EmptyPageTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmptyPageTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _EmptyStateComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "EmptyStateComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -18485,8 +18594,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -18986,6 +19095,28 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _StatusMessageComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "StatusMessageComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _StatusMessageTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "StatusMessageTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StatusMessageTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StatusMessageTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _SuggestedAmountCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SuggestedAmountCollectionViewCell"
@@ -19047,6 +19178,28 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TitleDescriptionButtonComponentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TitleDescriptionButtonComponentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TitleDescriptionButtonTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TitleDescriptionButtonTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TitleDescriptionButtonTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TitleDescriptionButtonTableViewCell
       }
 
       fileprivate init() {}
@@ -19444,8 +19597,8 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/querternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/querternary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
         }
         if _R.storyboard.addressChange().addressChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addressChangeViewController' could not be loaded from storyboard 'AddressChange' as 'AddressChangeViewController'.") }
       }
@@ -19526,14 +19679,14 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         }
         if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
       }
@@ -19774,10 +19927,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }

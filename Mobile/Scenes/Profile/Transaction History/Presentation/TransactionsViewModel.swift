@@ -17,7 +17,7 @@ protocol TransactionsViewModelInput: AnyObject {
     func viewDidLoad()
     func calendarTabItemClicked()
 
-    var emptyStateViewModel: EmptyPageComponentViewModel { get }
+    var emptyStateViewModel: EmptyStateComponentViewModel { get }
 }
 
 protocol TransactionsViewModelOutput {
@@ -40,12 +40,10 @@ enum TransactionsViewModelRoute {
 class DefaultTransactionsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<TransactionsViewModelOutputAction>()
     private let routeSubject = PublishSubject<TransactionsViewModelRoute>()
-    public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
-        DefaultEmptyPageComponentViewModel(params: .init(
-                                            icon: R.image.transactionsHistory.empty_state_icon()!,
-                                            title: R.string.localization.transactions_empty_state_title(),
-                                            description: R.string.localization.transactions_empty_state_description()))
-    }()
+    public lazy var emptyStateViewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init(
+                                                                                                                icon: R.image.transactionsHistory.empty_state_icon()!,
+                                                                                                                title: R.string.localization.transactions_empty_state_title(),
+                                                                                                                description: R.string.localization.transactions_empty_state_description()))
 
     @Inject(from: .useCases) private var displayTransactionsUseCase: DisplayTransactionHistoriesUseCase
     @Inject(from: .useCases) private var amountFormatter: AmountFormatterUseCase

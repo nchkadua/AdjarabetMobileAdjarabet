@@ -8,13 +8,18 @@
 
 import RxSwift
 
-protocol BonusViewModel: BaseViewModel, BonusViewModelInput, BonusViewModelOutput {
+protocol BonusViewModel: BaseViewModel,
+                         BonusViewModelInput,
+                         BonusViewModelOutput,
+                         ABTableViewControllerDelegate,
+                         AppRedrawableCellDelegate {
 }
 
 struct BonusViewModelParams {
 }
 
 protocol BonusViewModelInput: AnyObject {
+    var emptyStateViewModel: EmptyStateComponentViewModel { get }
     var params: BonusViewModelParams { get set }
     func viewDidLoad()
 }
@@ -25,6 +30,12 @@ protocol BonusViewModelOutput {
 }
 
 enum BonusViewModelOutputAction {
+    case initialize(AppListDataProvider)
+    case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
+    case reloadData
+    case didDeleteCell(atIndexPath: IndexPath)
+    case reload(atIndexPath: IndexPath)
+    case setTotalItemsCount(count: Int)
 }
 
 enum BonusViewModelRoute {
@@ -32,6 +43,10 @@ enum BonusViewModelRoute {
 
 class DefaultBonusViewModel: DefaultBaseViewModel {
     var params: BonusViewModelParams
+    public lazy var emptyStateViewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init(
+                                                                                                            icon: R.image.bonus.empty_state_icon()!,
+                                                                                                            title: R.string.localization.bonus_empty_state_title(),
+                                                                                                            description: R.string.localization.bonus_empty_state_description()))
     private let actionSubject = PublishSubject<BonusViewModelOutputAction>()
     private let routeSubject = PublishSubject<BonusViewModelRoute>()
 
@@ -44,6 +59,19 @@ extension DefaultBonusViewModel: BonusViewModel {
     var action: Observable<BonusViewModelOutputAction> { actionSubject.asObserver() }
     var route: Observable<BonusViewModelRoute> { routeSubject.asObserver() }
 
-    func viewDidLoad() {
+    func viewDidLoad() {}
+
+    // MARK: - ABTableViewControllerDelegate
+
+    func didDeleteCell(at indexPath: IndexPath) {
+        // TODO
+    }
+
+    func didLoadNextPage() {
+        // TODO
+    }
+
+    func redraw(at indexPath: IndexPath) {
+        actionSubject.onNext(.reload(atIndexPath: indexPath))
     }
 }

@@ -1,22 +1,20 @@
 //
-//  EmptyPageComponentView.swift
+//  StatusMessageComponentView.swift
 //  Mobile
 //
-//  Created by Giga Khizanishvili on 13.08.21.
+//  Created by Giga Khizanishvili on 06.09.21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import RxSwift
 
-public class EmptyPageComponentView: UIView {
+class StatusMessageComponentView: UIView {
     private var disposeBag = DisposeBag()
-    private var viewModel: EmptyPageComponentViewModel!
+    private var viewModel: StatusMessageComponentViewModel!
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,13 +26,9 @@ public class EmptyPageComponentView: UIView {
         nibSetup()
     }
 
-    public func setAndBind(viewModel: EmptyPageComponentViewModel) {
+    public func setAndBind(viewModel: StatusMessageComponentViewModel) {
         self.viewModel = viewModel
-
-        iconImageView.image = viewModel.params.icon
-        titleLabel.text = viewModel.params.title
-        descriptionLabel.text = viewModel.params.description
-
+        statusLabel.text = viewModel.params.status
         bind()
     }
 
@@ -42,8 +36,6 @@ public class EmptyPageComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .titleUpdate(let title):
-                self?.titleLabel.text = title
             default:
                 break
             }
@@ -53,7 +45,7 @@ public class EmptyPageComponentView: UIView {
     }
 }
 
-extension EmptyPageComponentView: Xibable {
+extension StatusMessageComponentView: Xibable {
     var mainView: UIView {
         get {
             view
@@ -64,5 +56,6 @@ extension EmptyPageComponentView: Xibable {
     }
 
     func setupUI() {
+        view.backgroundColor = DesignSystem.Color.secondaryBg().value
     }
 }

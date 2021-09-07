@@ -220,7 +220,7 @@ class DefaultHomeViewModel: DefaultBaseViewModel {
                 self.recentlyPlayedComponentViewModel.params.playedGames = viewModels
                 self.recentlyPlayedComponentViewModel.params.isVisible = !viewModels.isEmpty
                 self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 3)]))
-            case .failure(let error):
+            case .failure(_):
                 {}() // self.show(error: error) // TODO: Uncomment after testing last access
             }
         }

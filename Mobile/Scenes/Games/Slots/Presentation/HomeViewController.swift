@@ -118,8 +118,7 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
     }
 
     private func setupCollectionViewController() {
-        guard let collectionView = collectionViewController.collectionView
-        else { return }
+        guard let collectionView = collectionViewController.collectionView else { return }
 
         collectionViewController.viewModel = viewModel
         collectionViewController.isTabBarManagementEnabled = true

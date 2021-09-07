@@ -13,7 +13,7 @@ protocol NotificationsViewModel: BaseViewModel, NotificationsViewModelInput, Not
 
 public protocol NotificationsViewModelInput {
     func viewDidLoad()
-    var emptyStateViewModel: EmptyPageComponentViewModel { get }
+    var emptyStateViewModel: EmptyStateComponentViewModel { get }
 }
 
 public protocol NotificationsViewModelOutput {
@@ -22,11 +22,11 @@ public protocol NotificationsViewModelOutput {
 }
 
 public enum NotificationsViewModelOutputAction {
-    case initialize(AppListDataProvider)
-    case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
-    case reloadData
     case didDeleteCell(atIndexPath: IndexPath)
+    case didLoadingFinished
+    case initialize(AppListDataProvider)
     case reload(atIndexPath: IndexPath)
+    case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
     case setTotalItemsCount(count: Int)
     case isLoading(loading: Bool)
 }
@@ -38,12 +38,10 @@ public enum NotificationsViewModelRoute {
 public class DefaultNotificationsViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<NotificationsViewModelOutputAction>()
     private let routeSubject = PublishSubject<NotificationsViewModelRoute>()
-    public lazy var emptyStateViewModel: EmptyPageComponentViewModel = {
-        DefaultEmptyPageComponentViewModel(params: .init(
+    public lazy var emptyStateViewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init(
                                             icon: R.image.notifications.empty_state_icon()!,
                                             title: R.string.localization.notifications_empty_state_title(),
                                             description: R.string.localization.notifications_empty_state_description()))
-    }()
 
     @Inject(from: .useCases) private var notificationsUseCase: NotificationsUseCase
     private var notificationsDataProvider: AppCellDataProviders = []
@@ -53,10 +51,9 @@ public class DefaultNotificationsViewModel: DefaultBaseViewModel {
     public let loading = DefaultLoadingComponentViewModel(params: .init(tintColor: .secondaryText(), height: 55))
     private var loadingType: LoadingType = .none {
         didSet {
-            guard loadingType != oldValue else {return}
+            guard loadingType != oldValue else { return }
             let isNextPage = loadingType == .nextPage
             loading.set(isLoading: isNextPage)
-//            actionSubject.onNext(.reloadData)
         }
     }
     private var lastSelectedIndexPath: IndexPath?
@@ -70,7 +67,10 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         actionSubject.onNext(.isLoading(loading: true))
         self.loadingType = loadingType
         notificationsUseCase.notifications(page: page.current, domain: "com") { result in //TODO: dynamic domain
-            defer { self.loadingType = .none }
+            defer {
+                self.loadingType = .none
+                self.actionSubject.onNext(.didLoadingFinished)
+            }
 
             switch result {
             case .success(let notifications):

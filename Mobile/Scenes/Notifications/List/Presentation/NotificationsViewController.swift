@@ -26,11 +26,6 @@ public class NotificationsViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        mainTabBarViewController?.showFloatingTabBar() // Floating tab bar removed
-    }
-
     private func setup() {
         setBaseBackgroundColor(to: .primaryBg())
         setupNavigationItems()
@@ -68,13 +63,13 @@ public class NotificationsViewController: ABViewController {
 
     private func didReceive(action: NotificationsViewModelOutputAction) {
         switch action {
+        case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
+        case .didLoadingFinished: appTableViewController.enableEmptyState()
         case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
         case .reloadItems(let items, let insertions, let deletions):
             UIView.performWithoutAnimation {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
             }
-        case .reloadData: appTableViewController.reloadItems()
-        case .didDeleteCell(let indexPath): deleteCell(at: indexPath)
         case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)
         case .isLoading(let loading): loading ? startLoading() : stopLoading()
         default:
