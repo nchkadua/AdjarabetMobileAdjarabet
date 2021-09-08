@@ -47,13 +47,13 @@ extension DefaultWithdrawViewModel: WithdrawViewModel {
         bind(to: paymentsViewModel)
         observeBalance()
 
-        notify(.isLoading(loading: true))
+//        notify(.isLoading(loading: true))
         notify(.set(balance: userBalanceService.balance?.formattedBalanceWithCurrencySign ?? "-"))
         notify(.bind(viewModel: paymentsViewModel))
         // fetch payment list
         paymentListUseCase.list { [weak self] result in
             guard let self = self else { return }
-            self.notify(.isLoading(loading: false))
+//            defer { self.notify(.isLoading(loading: false)) }
             switch result {
             case .success(let entity):
                 if entity.isEmpty {

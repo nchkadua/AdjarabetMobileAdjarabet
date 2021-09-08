@@ -84,6 +84,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         // 2. fetch account/card list
         accountListRepository.list(params: .init(providerType: params.serviceType.providerType, paymentType: .withdraw)) { [weak self] result in
             guard let self = self else { return }
+            defer { self.notify(.isLoading(loading: false)) }
             switch result {
             case .success(let list):
                 self.accounts = list                            // 3. update accounts
@@ -95,7 +96,6 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                     let viewAccounts = self.accounts.map { $0.accountVisual }
                     self.cashOutViewModel.update(accounts: viewAccounts) // 5. update accounts on shown view
                 }
-                self.notify(.isLoading(loading: false))
             case .failure(let error):
                 self.disable()
                 self.show(error: error)
