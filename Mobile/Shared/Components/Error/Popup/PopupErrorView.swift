@@ -14,7 +14,6 @@ class PopupErrorView: UIView, Xibable {
     @IBOutlet private weak var oneButtonConstraint: NSLayoutConstraint!
     @IBOutlet private weak var twoButtonConstraint: NSLayoutConstraint!
     @IBOutlet private weak var popupBackgroundContentView: UIView!
-    @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var button1: UIButton!
     @IBOutlet private weak var button2: UIButton!
@@ -42,8 +41,12 @@ class PopupErrorView: UIView, Xibable {
     func setupUI() {
         popupBackgroundContentView.setBackgorundColor(to: .ultrathin())
         descriptionLabel.setFont(to: .body2(fontCase: .lower, fontStyle: .semiBold))
-        button1.setFont(to: .callout(fontCase: .upper, fontStyle: .bold))
-        button2.setFont(to: .callout(fontCase: .upper, fontStyle: .bold))
+        button1.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
+        button2.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
+
+        descriptionLabel.setTextColor(to: .primaryText())
+        button1.setTitleColor(to: .systemBlue(), for: .normal)
+        button2.setTitleColor(to: .systemBlue(), for: .normal)
     }
 
     func setAndBind(viewModel: PopupErrorViewModel) {
@@ -80,7 +83,6 @@ class PopupErrorView: UIView, Xibable {
         default:
             fatalError("Invalid number of buttons")
         }
-        iconImageView.image = model.icon
         descriptionLabel.text = model.description
     }
 

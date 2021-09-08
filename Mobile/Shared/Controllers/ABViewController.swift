@@ -18,6 +18,18 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         }
     }
 
+    private lazy var v: UIView = {
+        return UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+    }() ?? view
+
+    private lazy var popupBgView: UIView = {
+        let bg = UIView(frame: CGRect(x: 0, y: 0, width: v.frame.width, height: v.frame.height))
+        bg.setBackgorundColor(to: .primaryBg(alpha: 0.5))
+        bg.alpha = 0.0
+
+        return bg
+    }()
+
     private lazy var popupError: PopupErrorView = {
         let error: PopupErrorView = .init()
         error.viewModel.action.subscribe(onNext: { [weak self] action in
@@ -141,27 +153,33 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     }
 
     private func showPopupError() {
-        view.addSubview(popupError)
-        popupError.pin(to: view)
+        v.addSubview(popupBgView)
+        v.addSubview(popupError)
+        popupError.pin(to: v)
+        self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+
         UIView.animate(
-            withDuration: 0.25,
-            animations: { self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) },
-            completion: { _ in
+            withDuration: 0.2,
+            animations: {
+                self.popupBgView.alpha = 1.0
                 UIView.animate(withDuration: 0.25) { self.popupError.transform = CGAffineTransform.identity }
             }
         )
+
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
     }
 
     func hidePopupError() {
         UIView.animate(
-            withDuration: 0.25,
-            animations: { self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9) },
+            withDuration: 0.15,
+            animations: {
+                self.popupBgView.alpha = 0.0
+                self.popupError.alpha = 0.0
+                self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            },
             completion: { _ in
-                UIView.animate(
-                    withDuration: 0.25,
-                    animations: { self.popupError.transform = CGAffineTransform.identity },
-                    completion: { _ in self.popupError.removeFromSuperview() }
-                )
+                self.v.addSubview(self.popupBgView)
+                self.popupError.removeFromSuperview()
             }
         )
     }
