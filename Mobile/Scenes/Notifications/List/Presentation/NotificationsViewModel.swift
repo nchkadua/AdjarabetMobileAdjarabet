@@ -70,6 +70,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
             defer {
                 self.loadingType = .none
                 self.actionSubject.onNext(.didLoadingFinished)
+                self.actionSubject.onNext(.isLoading(loading: false))
             }
 
             switch result {
@@ -140,7 +141,6 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
         self.page.setNextPage()
         self.page.configureHasMore(forNumberOfItems: notifications.count)
 
-        actionSubject.onNext(.isLoading(loading: false))
         notificationsDataProvider.append(contentsOf: notifications)
         let indexPathes = notifications.enumerated().map { IndexPath(item: offset + $0.offset, section: 0) }
         actionSubject.onNext(.reloadItems(items: notifications, insertionIndexPathes: indexPathes, deletionIndexPathes: []))
