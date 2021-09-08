@@ -33,7 +33,6 @@ protocol HomeViewModelOutput: AnyObject {
 
 enum HomeViewModelOutputAction {
     case setLoading(LoadingType)
-    case languageDidChange
     case reloadIndexPathes([IndexPath])
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
     case initialize(AppListDataProvider)
@@ -115,10 +114,6 @@ class DefaultHomeViewModel: DefaultBaseViewModel {
 
         return recentryPlayed
     }()
-
-    public override func languageDidChange() {
-        actionSubject.onNext(.languageDidChange)
-    }
 
     public func load(loadingType: LoadingType) {
         self.loadingType = loadingType
