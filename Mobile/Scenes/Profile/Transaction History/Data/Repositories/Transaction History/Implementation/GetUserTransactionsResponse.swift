@@ -61,7 +61,7 @@ struct GetUserTransactionsResponse: CoreDataTransferResponse {
 
     struct Body: CoreStatusCodeable {
         let statusCode: Int
-        let usersTransactions: [UsersTransaction]
+        let usersTransactions: [UsersTransaction]?
 
         enum CodingKeys: String, CodingKey {
             case statusCode = "StatusCode"
@@ -73,12 +73,12 @@ struct GetUserTransactionsResponse: CoreDataTransferResponse {
 
     static func entitySafely(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         let dateFormatter = ABDateFormater(with: .verbose)
-        return .success(body.usersTransactions.compactMap {
+        return .success(body.usersTransactions?.compactMap {
             TransactionHistoryEntity(totalAmount: $0.amount,
                                      date: dateFormatter.date(from: $0.dateCreated ?? ""),
                                      feeAmount: $0.feeAmount,
                                      providerName: $0.providerName
-            ) }
+            ) } ?? []
         )
     }
 }
