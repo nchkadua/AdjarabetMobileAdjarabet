@@ -18,6 +18,7 @@
 "back_button_title" = "Back";
 
 // ABError
+"shared_aberror_default_title" = "Something went wrong";
 "shared_aberror_default_description" = "Something Went Wrong";
 "shared_aberror_wrong_auth_credentials_description" = "Wrong Authentication Credentials";
 "shared_aberror_ip_is_blocked" = "IP address is blocked, please try again in 5 minutes";

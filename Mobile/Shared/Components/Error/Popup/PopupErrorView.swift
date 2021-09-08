@@ -14,7 +14,7 @@ class PopupErrorView: UIView, Xibable {
     @IBOutlet private weak var oneButtonConstraint: NSLayoutConstraint!
     @IBOutlet private weak var twoButtonConstraint: NSLayoutConstraint!
     @IBOutlet private weak var popupBackgroundContentView: UIView!
-    @IBOutlet private weak var iconImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var button1: UIButton!
     @IBOutlet private weak var button2: UIButton!
@@ -40,10 +40,19 @@ class PopupErrorView: UIView, Xibable {
     }
 
     func setupUI() {
-        popupBackgroundContentView.setBackgorundColor(to: .ultrathin())
-        descriptionLabel.setFont(to: .body2(fontCase: .lower, fontStyle: .semiBold))
-        button1.setFont(to: .callout(fontCase: .upper, fontStyle: .bold))
-        button2.setFont(to: .callout(fontCase: .upper, fontStyle: .bold))
+        titleLabel.setFont(to: .headline(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setTextColor(to: .primaryBg())
+        titleLabel.text = R.string.localization.shared_aberror_default_title.localized()
+
+        descriptionLabel.setFont(to: .caption2(fontCase: .lower, fontStyle: .semiBold))
+        descriptionLabel.setTextColor(to: .primaryBg())
+
+        popupBackgroundContentView.setBackgorundColor(to: .primaryText())
+
+        button1.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
+        button2.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
+        button1.setTitleColor(to: .primaryBg(), for: .normal)
+        button2.setTitleColor(to: .primaryBg(), for: .normal)
     }
 
     func setAndBind(viewModel: PopupErrorViewModel) {
@@ -80,7 +89,6 @@ class PopupErrorView: UIView, Xibable {
         default:
             fatalError("Invalid number of buttons")
         }
-        iconImageView.image = model.icon
         descriptionLabel.text = model.description
     }
 
