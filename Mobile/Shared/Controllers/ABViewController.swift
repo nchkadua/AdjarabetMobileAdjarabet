@@ -62,6 +62,28 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         return (error, constraint)
     }()
 
+    //Success
+    private lazy var successBg: UIView = {
+        let bg = UIImageView(frame: CGRect(x: view.bounds.origin.x / 2, y: view.bounds.origin.y / 2, width: 72, height: 72))
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        bg.setBackgorundColor(to: .primaryText())
+        bg.layer.cornerRadius = 13
+
+        return bg
+    }()
+
+    private lazy var success: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        imageView.animationImages = animatedImages(for: "Success/Success_")
+        imageView.animationDuration = 0.9
+        imageView.animationRepeatCount = 1
+        imageView.image = imageView.animationImages?.first
+
+        return imageView
+    }()
+
     private lazy var loader: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,6 +128,43 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         stopLoading()
     }
 
+    public func showSuccess() {
+        guard !success.isAnimating else {return}
+
+        view.addSubview(successBg)
+        successBg.alpha = 0.0
+        NSLayoutConstraint.activate([
+            successBg.widthAnchor.constraint(equalToConstant: 72),
+            successBg.heightAnchor.constraint(equalToConstant: 72),
+            successBg.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            successBg.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+
+        successBg.addSubview(success)
+        NSLayoutConstraint.activate([
+            success.widthAnchor.constraint(equalToConstant: 62),
+            success.heightAnchor.constraint(equalToConstant: 62),
+            success.centerXAnchor.constraint(equalTo: successBg.centerXAnchor),
+            success.centerYAnchor.constraint(equalTo: successBg.centerYAnchor)
+        ])
+        //
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) { [self] in
+            UIView.animate(withDuration: 0.1, animations: {
+                self.successBg.alpha = 0.0
+            }, completion: { _ in
+                self.success.stopAnimating()
+                self.successBg.removeFromSuperview()
+                self.success.removeFromSuperview()
+            })
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.145) { SoundPlayer.shared.playSound("success") }
+        UIView.animate(withDuration: 0.3, delay: 0.05, animations: {
+            self.successBg.alpha = 1.0
+        })
+        self.success.startAnimating()
+    }
+
     public func startLoading() {
         guard !loader.isAnimating else {return}
 
@@ -116,6 +175,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
             loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loader.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+
         loader.startAnimating()
     }
 
