@@ -50,7 +50,7 @@ class WithdrawVisaViewController: ABViewController {
         case .setAndBindInfo(let viewModel):
             infoView.setAndBind(viewModel: viewModel)
         case .isLoading(let loading):
-            loading ? startLoading() : stopLoading()
+            handle(loading: loading)
         }
     }
 
@@ -61,9 +61,10 @@ class WithdrawVisaViewController: ABViewController {
         }
     }
 
-    private func handleLoader(isHidden: Bool) {
-        mainContentView.isHidden = !isHidden
-        infoView.isHidden = !isHidden
+    private func handle(loading: Bool) {
+        loading ? startLoading() : stopLoading()
+        mainContentView.isHidden = loading
+        infoView.isHidden = loading
     }
 
     private func handleShowView(of type: WithdrawViewType) {
