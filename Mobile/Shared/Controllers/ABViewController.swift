@@ -128,7 +128,8 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         stopLoading()
     }
 
-    public func showSuccess() {
+//    public typealias Handler = (_ completed: Bool) -> Void
+    public func showSuccess(completed: @escaping () -> Void) {
         guard !success.isAnimating else {return}
 
         view.addSubview(successBg)
@@ -155,6 +156,8 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
                 self.success.stopAnimating()
                 self.successBg.removeFromSuperview()
                 self.success.removeFromSuperview()
+
+                completed()
             })
         }
 
