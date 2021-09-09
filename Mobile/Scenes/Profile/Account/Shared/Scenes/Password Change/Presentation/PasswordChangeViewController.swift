@@ -53,7 +53,7 @@ public class PasswordChangeViewController: ABViewController {
         case .setButton(let loading): updatePasswordButton.set(isLoading: loading)
         case .updateRulesWithNewPassword(let newPassword): passwordChangeRulesView.updateRules(newPassword: newPassword)
         case .showSuccess:
-            showSuccess(completed: {
+            showSuccess(completion: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { self.dismissViewController() }
             })
         }

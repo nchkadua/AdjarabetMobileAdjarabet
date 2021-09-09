@@ -77,7 +77,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         imageView.animationImages = animatedImages(for: "Success/Success_")
-        imageView.animationDuration = 0.9
+        imageView.animationDuration = 2.38
         imageView.animationRepeatCount = 1
         imageView.image = imageView.animationImages?.first
 
@@ -129,40 +129,40 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     }
 
 //    public typealias Handler = (_ completed: Bool) -> Void
-    public func showSuccess(completed: @escaping () -> Void) {
+    public func showSuccess(completion: @escaping () -> Void) {
         guard !success.isAnimating else {return}
 
         view.addSubview(successBg)
         successBg.alpha = 0.0
         NSLayoutConstraint.activate([
-            successBg.widthAnchor.constraint(equalToConstant: 72),
-            successBg.heightAnchor.constraint(equalToConstant: 72),
+            successBg.widthAnchor.constraint(equalToConstant: 96),
+            successBg.heightAnchor.constraint(equalToConstant: 96),
             successBg.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             successBg.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
 
         successBg.addSubview(success)
         NSLayoutConstraint.activate([
-            success.widthAnchor.constraint(equalToConstant: 62),
-            success.heightAnchor.constraint(equalToConstant: 62),
+            success.widthAnchor.constraint(equalToConstant: 86),
+            success.heightAnchor.constraint(equalToConstant: 86),
             success.centerXAnchor.constraint(equalTo: successBg.centerXAnchor),
             success.centerYAnchor.constraint(equalTo: successBg.centerYAnchor)
         ])
         //
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) { [self] in
-            UIView.animate(withDuration: 0.1, animations: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.19) { [self] in
+            UIView.animate(withDuration: 0.4, animations: {
                 self.successBg.alpha = 0.0
             }, completion: { _ in
                 self.success.stopAnimating()
                 self.successBg.removeFromSuperview()
                 self.success.removeFromSuperview()
 
-                completed()
+                completion()
             })
         }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.145) { SoundPlayer.shared.playSound("success") }
-        UIView.animate(withDuration: 0.3, delay: 0.05, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.successBg.alpha = 1.0
         })
         self.success.startAnimating()

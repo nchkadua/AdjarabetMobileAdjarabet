@@ -4398,20 +4398,134 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.image.success` struct is generated, and contains static references to 90 images.
+    /// This `R.image.success` struct is generated, and contains static references to 157 images.
     struct success {
       /// Image `Success_0`.
       static let success_0 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_0")
+      /// Image `Success_100`.
+      static let success_100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_100")
+      /// Image `Success_101`.
+      static let success_101 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_101")
+      /// Image `Success_102`.
+      static let success_102 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_102")
+      /// Image `Success_103`.
+      static let success_103 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_103")
+      /// Image `Success_104`.
+      static let success_104 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_104")
+      /// Image `Success_105`.
+      static let success_105 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_105")
+      /// Image `Success_106`.
+      static let success_106 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_106")
+      /// Image `Success_107`.
+      static let success_107 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_107")
+      /// Image `Success_108`.
+      static let success_108 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_108")
+      /// Image `Success_109`.
+      static let success_109 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_109")
       /// Image `Success_10`.
       static let success_10 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_10")
+      /// Image `Success_110`.
+      static let success_110 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_110")
+      /// Image `Success_111`.
+      static let success_111 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_111")
+      /// Image `Success_112`.
+      static let success_112 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_112")
+      /// Image `Success_113`.
+      static let success_113 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_113")
+      /// Image `Success_114`.
+      static let success_114 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_114")
+      /// Image `Success_115`.
+      static let success_115 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_115")
+      /// Image `Success_116`.
+      static let success_116 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_116")
+      /// Image `Success_117`.
+      static let success_117 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_117")
+      /// Image `Success_118`.
+      static let success_118 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_118")
+      /// Image `Success_119`.
+      static let success_119 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_119")
       /// Image `Success_11`.
       static let success_11 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_11")
+      /// Image `Success_120`.
+      static let success_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_120")
+      /// Image `Success_121`.
+      static let success_121 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_121")
+      /// Image `Success_122`.
+      static let success_122 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_122")
+      /// Image `Success_123`.
+      static let success_123 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_123")
+      /// Image `Success_124`.
+      static let success_124 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_124")
+      /// Image `Success_125`.
+      static let success_125 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_125")
+      /// Image `Success_126`.
+      static let success_126 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_126")
+      /// Image `Success_127`.
+      static let success_127 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_127")
+      /// Image `Success_128`.
+      static let success_128 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_128")
+      /// Image `Success_129`.
+      static let success_129 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_129")
       /// Image `Success_12`.
       static let success_12 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_12")
+      /// Image `Success_130`.
+      static let success_130 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_130")
+      /// Image `Success_131`.
+      static let success_131 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_131")
+      /// Image `Success_132`.
+      static let success_132 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_132")
+      /// Image `Success_133`.
+      static let success_133 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_133")
+      /// Image `Success_134`.
+      static let success_134 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_134")
+      /// Image `Success_135`.
+      static let success_135 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_135")
+      /// Image `Success_136`.
+      static let success_136 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_136")
+      /// Image `Success_137`.
+      static let success_137 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_137")
+      /// Image `Success_138`.
+      static let success_138 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_138")
+      /// Image `Success_139`.
+      static let success_139 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_139")
       /// Image `Success_13`.
       static let success_13 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_13")
+      /// Image `Success_140`.
+      static let success_140 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_140")
+      /// Image `Success_141`.
+      static let success_141 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_141")
+      /// Image `Success_142`.
+      static let success_142 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_142")
+      /// Image `Success_143`.
+      static let success_143 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_143")
+      /// Image `Success_144`.
+      static let success_144 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_144")
+      /// Image `Success_145`.
+      static let success_145 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_145")
+      /// Image `Success_146`.
+      static let success_146 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_146")
+      /// Image `Success_147`.
+      static let success_147 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_147")
+      /// Image `Success_148`.
+      static let success_148 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_148")
+      /// Image `Success_149`.
+      static let success_149 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_149")
       /// Image `Success_14`.
       static let success_14 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_14")
+      /// Image `Success_150`.
+      static let success_150 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_150")
+      /// Image `Success_151`.
+      static let success_151 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_151")
+      /// Image `Success_152`.
+      static let success_152 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_152")
+      /// Image `Success_153`.
+      static let success_153 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_153")
+      /// Image `Success_154`.
+      static let success_154 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_154")
+      /// Image `Success_155`.
+      static let success_155 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_155")
+      /// Image `Success_156`.
+      static let success_156 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_156")
       /// Image `Success_15`.
       static let success_15 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_15")
       /// Image `Success_16`.
@@ -4578,6 +4692,26 @@ struct R: Rswift.Validatable {
       static let success_89 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_89")
       /// Image `Success_8`.
       static let success_8 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_8")
+      /// Image `Success_90`.
+      static let success_90 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_90")
+      /// Image `Success_91`.
+      static let success_91 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_91")
+      /// Image `Success_92`.
+      static let success_92 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_92")
+      /// Image `Success_93`.
+      static let success_93 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_93")
+      /// Image `Success_94`.
+      static let success_94 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_94")
+      /// Image `Success_95`.
+      static let success_95 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_95")
+      /// Image `Success_96`.
+      static let success_96 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_96")
+      /// Image `Success_97`.
+      static let success_97 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_97")
+      /// Image `Success_98`.
+      static let success_98 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_98")
+      /// Image `Success_99`.
+      static let success_99 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_99")
       /// Image `Success_9`.
       static let success_9 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Success/Success_9")
 
@@ -4603,9 +4737,149 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_100", bundle: ..., traitCollection: ...)`
+      static func success_100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_100, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_101", bundle: ..., traitCollection: ...)`
+      static func success_101(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_101, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_102", bundle: ..., traitCollection: ...)`
+      static func success_102(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_102, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_103", bundle: ..., traitCollection: ...)`
+      static func success_103(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_103, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_104", bundle: ..., traitCollection: ...)`
+      static func success_104(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_104, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_105", bundle: ..., traitCollection: ...)`
+      static func success_105(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_105, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_106", bundle: ..., traitCollection: ...)`
+      static func success_106(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_106, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_107", bundle: ..., traitCollection: ...)`
+      static func success_107(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_107, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_108", bundle: ..., traitCollection: ...)`
+      static func success_108(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_108, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_109", bundle: ..., traitCollection: ...)`
+      static func success_109(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_109, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "Success_11", bundle: ..., traitCollection: ...)`
       static func success_11(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.success.success_11, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_110", bundle: ..., traitCollection: ...)`
+      static func success_110(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_110, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_111", bundle: ..., traitCollection: ...)`
+      static func success_111(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_111, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_112", bundle: ..., traitCollection: ...)`
+      static func success_112(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_112, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_113", bundle: ..., traitCollection: ...)`
+      static func success_113(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_113, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_114", bundle: ..., traitCollection: ...)`
+      static func success_114(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_114, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_115", bundle: ..., traitCollection: ...)`
+      static func success_115(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_115, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_116", bundle: ..., traitCollection: ...)`
+      static func success_116(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_116, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_117", bundle: ..., traitCollection: ...)`
+      static func success_117(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_117, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_118", bundle: ..., traitCollection: ...)`
+      static func success_118(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_118, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_119", bundle: ..., traitCollection: ...)`
+      static func success_119(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_119, compatibleWith: traitCollection)
       }
       #endif
 
@@ -4617,9 +4891,149 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_120", bundle: ..., traitCollection: ...)`
+      static func success_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_120, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_121", bundle: ..., traitCollection: ...)`
+      static func success_121(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_121, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_122", bundle: ..., traitCollection: ...)`
+      static func success_122(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_122, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_123", bundle: ..., traitCollection: ...)`
+      static func success_123(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_123, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_124", bundle: ..., traitCollection: ...)`
+      static func success_124(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_124, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_125", bundle: ..., traitCollection: ...)`
+      static func success_125(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_125, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_126", bundle: ..., traitCollection: ...)`
+      static func success_126(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_126, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_127", bundle: ..., traitCollection: ...)`
+      static func success_127(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_127, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_128", bundle: ..., traitCollection: ...)`
+      static func success_128(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_128, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_129", bundle: ..., traitCollection: ...)`
+      static func success_129(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_129, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "Success_13", bundle: ..., traitCollection: ...)`
       static func success_13(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.success.success_13, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_130", bundle: ..., traitCollection: ...)`
+      static func success_130(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_130, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_131", bundle: ..., traitCollection: ...)`
+      static func success_131(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_131, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_132", bundle: ..., traitCollection: ...)`
+      static func success_132(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_132, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_133", bundle: ..., traitCollection: ...)`
+      static func success_133(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_133, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_134", bundle: ..., traitCollection: ...)`
+      static func success_134(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_134, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_135", bundle: ..., traitCollection: ...)`
+      static func success_135(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_135, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_136", bundle: ..., traitCollection: ...)`
+      static func success_136(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_136, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_137", bundle: ..., traitCollection: ...)`
+      static func success_137(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_137, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_138", bundle: ..., traitCollection: ...)`
+      static func success_138(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_138, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_139", bundle: ..., traitCollection: ...)`
+      static func success_139(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_139, compatibleWith: traitCollection)
       }
       #endif
 
@@ -4631,9 +5045,128 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_140", bundle: ..., traitCollection: ...)`
+      static func success_140(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_140, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_141", bundle: ..., traitCollection: ...)`
+      static func success_141(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_141, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_142", bundle: ..., traitCollection: ...)`
+      static func success_142(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_142, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_143", bundle: ..., traitCollection: ...)`
+      static func success_143(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_143, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_144", bundle: ..., traitCollection: ...)`
+      static func success_144(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_144, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_145", bundle: ..., traitCollection: ...)`
+      static func success_145(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_145, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_146", bundle: ..., traitCollection: ...)`
+      static func success_146(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_146, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_147", bundle: ..., traitCollection: ...)`
+      static func success_147(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_147, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_148", bundle: ..., traitCollection: ...)`
+      static func success_148(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_148, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_149", bundle: ..., traitCollection: ...)`
+      static func success_149(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_149, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "Success_15", bundle: ..., traitCollection: ...)`
       static func success_15(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.success.success_15, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_150", bundle: ..., traitCollection: ...)`
+      static func success_150(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_150, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_151", bundle: ..., traitCollection: ...)`
+      static func success_151(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_151, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_152", bundle: ..., traitCollection: ...)`
+      static func success_152(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_152, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_153", bundle: ..., traitCollection: ...)`
+      static func success_153(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_153, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_154", bundle: ..., traitCollection: ...)`
+      static func success_154(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_154, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_155", bundle: ..., traitCollection: ...)`
+      static func success_155(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_155, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_156", bundle: ..., traitCollection: ...)`
+      static func success_156(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_156, compatibleWith: traitCollection)
       }
       #endif
 
@@ -5208,6 +5741,76 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "Success_9", bundle: ..., traitCollection: ...)`
       static func success_9(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.success.success_9, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_90", bundle: ..., traitCollection: ...)`
+      static func success_90(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_90, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_91", bundle: ..., traitCollection: ...)`
+      static func success_91(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_91, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_92", bundle: ..., traitCollection: ...)`
+      static func success_92(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_92, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_93", bundle: ..., traitCollection: ...)`
+      static func success_93(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_93, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_94", bundle: ..., traitCollection: ...)`
+      static func success_94(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_94, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_95", bundle: ..., traitCollection: ...)`
+      static func success_95(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_95, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_96", bundle: ..., traitCollection: ...)`
+      static func success_96(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_96, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_97", bundle: ..., traitCollection: ...)`
+      static func success_97(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_97, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_98", bundle: ..., traitCollection: ...)`
+      static func success_98(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_98, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Success_99", bundle: ..., traitCollection: ...)`
+      static func success_99(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.success.success_99, compatibleWith: traitCollection)
       }
       #endif
 
@@ -19061,8 +19664,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -19090,8 +19693,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -19395,8 +19998,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -19437,8 +20040,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Components/GameLauncher/in", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/GameLauncher/in' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Neutral/neutral600", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral600' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Neutral/neutral700", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Neutral/neutral700' is used in nib 'GameLauncherComponentView', but couldn't be loaded.") }
         }
       }
 
@@ -19515,8 +20118,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Home/List Layout On", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/List Layout On' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Home/Grid Layout Off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Home/Grid Layout Off' is used in nib 'LayoutChooserView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -20438,10 +21041,10 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/querternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/querternary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/querternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/querternary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
         }
         if _R.storyboard.addressChange().addressChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addressChangeViewController' could not be loaded from storyboard 'AddressChange' as 'AddressChangeViewController'.") }
       }
@@ -20522,14 +21125,14 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         }
         if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
       }
@@ -20770,10 +21373,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
