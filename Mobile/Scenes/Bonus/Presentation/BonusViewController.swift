@@ -43,9 +43,9 @@ public class BonusViewController: ABViewController {
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        startLoading()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { self.stopLoading() }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.showSuccess(completion: {})
+        }
     }
 
     // MARK: Bind to viewModel's observable properties

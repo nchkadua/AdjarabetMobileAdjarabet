@@ -25,6 +25,7 @@ public protocol PasswordChangeViewModelOutput {
 public enum PasswordChangeViewModelOutputAction {
     case updateRulesWithNewPassword(_ password: String)
     case setButton(loading: Bool)
+    case showSuccess
 }
 
 public enum PasswordChangeViewModelRoute {
@@ -99,7 +100,8 @@ extension DefaultPasswordChangeViewModel: PasswordChangeViewModel {
             switch result {
             case .success:
                 // TODO: add correct icon
-                self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: .init(), description: "Password Changed Succesfully")))))
+//                self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: .init(), description: "Password Changed Succesfully")))))
+                self.actionSubject.onNext(.showSuccess)
             case .failure(let error):
                 self.show(error: error)
             }
