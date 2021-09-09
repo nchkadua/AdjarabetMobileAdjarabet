@@ -128,7 +128,6 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         stopLoading()
     }
 
-//    public typealias Handler = (_ completed: Bool) -> Void
     public func showSuccess(completion: @escaping () -> Void) {
         guard !success.isAnimating else {return}
 

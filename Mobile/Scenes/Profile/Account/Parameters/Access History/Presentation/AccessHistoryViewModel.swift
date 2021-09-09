@@ -18,7 +18,7 @@ public struct AccessHistoryViewModelParams {
 public protocol AccessHistoryViewModelInput: AnyObject {
     var params: AccessHistoryViewModelParams { get set }
     func calendarTabItemClicked()
-    func viewDidLoad()
+    func viewDidAppear()
 }
 
 public protocol AccessHistoryViewModelOutput {
@@ -62,7 +62,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
     public var action: Observable<AccessHistoryViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<AccessHistoryViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    public func viewDidAppear() {
         displayUnfilteredAccessHistory()
     }
 

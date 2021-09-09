@@ -44,7 +44,7 @@ class PopupErrorView: UIView, Xibable {
         titleLabel.setTextColor(to: .primaryBg())
         titleLabel.text = R.string.localization.shared_aberror_default_title.localized()
 
-        descriptionLabel.setFont(to: .caption2(fontCase: .lower, fontStyle: .semiBold))
+        descriptionLabel.setFont(to: .caption1(fontCase: .lower, fontStyle: .semiBold))
         descriptionLabel.setTextColor(to: .primaryBg())
 
         popupBackgroundContentView.setBackgorundColor(to: .primaryText())
@@ -79,6 +79,7 @@ class PopupErrorView: UIView, Xibable {
                 twoButtonConstraint.priority = .defaultLow
             }
             button1.setTitle(model.buttons[0].value.uppercased(), for: .normal)
+            button1.titleEdgeInsets.left = 0
         case 2:
             UIView.performWithoutAnimation {
                 oneButtonConstraint.priority = .defaultLow
@@ -86,6 +87,9 @@ class PopupErrorView: UIView, Xibable {
             }
             button1.setTitle(model.buttons[0].value.uppercased(), for: .normal)
             button2.setTitle(model.buttons[1].value.uppercased(), for: .normal)
+
+            button1.titleEdgeInsets.left = 20
+            button2.titleEdgeInsets.right = 20
         default:
             fatalError("Invalid number of buttons")
         }
