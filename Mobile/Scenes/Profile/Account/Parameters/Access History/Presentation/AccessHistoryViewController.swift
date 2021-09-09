@@ -14,12 +14,17 @@ public class AccessHistoryViewController: ABViewController {
     private lazy var appTableViewController = ABTableViewController()
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
+        setInteractivePopGestureRecognizer = false
         super.viewDidLoad()
 
         bind(to: viewModel)
         setup()
         errorThrowing = viewModel
-        viewModel.viewDidLoad()
+    }
+
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
     }
 
     // MARK: Bind to viewModel's observable properties

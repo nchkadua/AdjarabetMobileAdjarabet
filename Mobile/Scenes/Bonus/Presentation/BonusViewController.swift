@@ -41,13 +41,6 @@ public class BonusViewController: ABViewController {
         appTableViewController.delegate = viewModel
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.showSuccess(completion: {})
-        }
-    }
-
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: BonusViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
