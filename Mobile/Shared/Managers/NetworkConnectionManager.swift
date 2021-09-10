@@ -27,50 +27,31 @@ class NetworkConnectionManager: NetworkConnectionObservable {
     
     static let shared = NetworkConnectionManager()
     
+    public var isConnected = false
+    
     let reachability = Reachability()!
     
     private init() {
         reachability.whenReachable = { _ in
-            print("*** reachable from reachability.whenReachable")
             self.notifyNetworkConnectionEstablish()
+            self.isConnected = true
         }
         
         reachability.whenUnreachable = { _ in
-            print("*** unreachanbe from reachability.whenReachable")
             self.notifyNetworkConnectionLose()
+            self.isConnected = false
         }
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(networkConnectionChanged), name: ReachabilityChangedNotification, object: reachability)
-        
     }
-    
-//    @objc func networkConnectionChanged(note: Notification) {
-//        let reachability = note.object as! Reachability
-//        if reachability.isReachable {
-//            print("*** reachable from networkConnectionChanged")
-//        } else {
-//            print("*** unreachable from networkConnectionChanged")
-//        }
-//    }
     
     func startMonitoringConnectivity() {
         do {
             try reachability.startNotifier()
-        } catch {}
-//        let monitor = NWPathMonitor()
-//        monitor.pathUpdateHandler = { path in
-//            if path.status == .satisfied {
-//                self.notifyNetworkConnectionEstablish()
-//            } else {
-//                self.notifyNetworkConnectionLose()
-//            }
-//        }
-//
-//        let q = DispatchQueue(label: Constants.title)
-//        monitor.start(queue: q)
+        } catch {
+			print("NetworkConnectionManager: Could not start monitoring of the connectivity")
+		}
     }
     
-    // MARK: - NetworkConnectionObservable
+	// MARK: - NetworkConnectionObservable
     var observers: [NetworkConnectionObserver] = []
     
     private var currentObserverId: Int = 0
@@ -78,14 +59,12 @@ class NetworkConnectionManager: NetworkConnectionObservable {
     var newObserverId: Int {
         get {
             currentObserverId += 1
-            print("NetworkConnectionManager: newId is \(currentObserverId)")
             return currentObserverId
         }
     }
     
     func addObserver(_ observer: NetworkConnectionObserver) {
         guard !observers.contains(where: {$0.networkConnectionObserverId == observer.networkConnectionObserverId}) else { return }
-        print("NetworkConnectionManager: observer with id: \(observer.networkConnectionObserverId) added")
         observers.append(observer)
     }
     
@@ -95,22 +74,14 @@ class NetworkConnectionManager: NetworkConnectionObservable {
     }
     
     func notifyNetworkConnectionEstablish() {
-        print("*** Manager.notifyNetworkConnectionEstablish")
         observers.forEach({ $0.networkConnectionEstablished()})
     }
     
     func notifyNetworkConnectionLose() {
-        print("*** Manager.notifyNetworkConnectionLose")
         observers.forEach({ $0.networkConnectionLost()})
     }
     
     deinit {
         observers.removeAll()
-    }
-}
-
-extension NetworkConnectionManager {
-    struct Constants {
-        static let title = "NetworkManager"
     }
 }

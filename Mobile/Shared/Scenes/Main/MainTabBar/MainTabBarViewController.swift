@@ -203,44 +203,39 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
     
     // MARK: - Network connection status message -
     
-    private let tabBarMovementSemaphore = DispatchSemaphore.init(value: 1)
+    private let tabBarMovementLock = DispatchSemaphore.init(value: 1)
 
     private enum TabBarPosition {
         case movedUp
         case normal
     }
+    
     private var tabBarPosition: TabBarPosition = .normal
-    
-    
-    public func tryMoveUpTabBarSafely(by height: CGFloat, isAnimated: Bool) {
-        guard height > 0 else { return }
-        tabBarMovementSemaphore.wait()
-        print("*** ----- crossed waiting in move up ----- ")
         
+    public func tryMoveUpTabBarSafely(by height: CGFloat, isAnimated: Bool = true, animationDuration: Double = 0.5) {
+        guard height > 0 else { return }
+		
+        tabBarMovementLock.wait()
         if tabBarPosition == .normal {
             tabBarPosition = .movedUp
-            print("---------------------- MOVED UP")
-            moveTabBarVertically(by: -height, isAnimated: isAnimated)
+            moveTabBarVertically(by: -height, isAnimated: isAnimated, animationDuration: animationDuration)
         }
-
-        tabBarMovementSemaphore.signal()
-        print("*** ----- crossed signal in move up ----- ")
+        tabBarMovementLock.signal()
     }
     
-    public func tryMoveDownTabBarSafely(by height: CGFloat, isAnimated: Bool) {
+    public func tryMoveDownTabBarSafely(by height: CGFloat, isAnimated: Bool = true, animationDuration: Double = 0.5) {
         guard height > 0 else { return }
 
-        tabBarMovementSemaphore.wait()
+        tabBarMovementLock.wait()
         if tabBarPosition == .movedUp {
             tabBarPosition = .normal
-            moveTabBarVertically(by: height, isAnimated: isAnimated)
+            moveTabBarVertically(by: height, isAnimated: isAnimated, animationDuration: animationDuration)
         }
-        tabBarMovementSemaphore.signal()
+        tabBarMovementLock.signal()
     }
     
-    private func moveTabBarVertically(by height: CGFloat, isAnimated: Bool) {
-        print("*** moveTabBarVertically(by \(height), isAnimated: Bool) {")
-        let animationDuration: Double = isAnimated ? 0.5 : 0
+    private func moveTabBarVertically(by height: CGFloat, isAnimated: Bool = true, animationDuration: Double = 0.5) {
+        let animationDuration: Double = isAnimated ? animationDuration : 0
         UIView.animate(withDuration: animationDuration, animations: {
             self.tabBar.frame.origin.y += height
         })

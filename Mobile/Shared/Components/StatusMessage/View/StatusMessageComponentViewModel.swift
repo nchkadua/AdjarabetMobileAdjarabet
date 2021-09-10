@@ -36,16 +36,16 @@ public enum StatusMessageComponentType {
     var color: UIColor {
         switch self {
         case .initial: return .clear
-        case .connectionEstablished: return .green
-        case .connectionFailed: return .red
+		case .connectionEstablished: return StatusMessageComponentConstants.Colors.green
+		case .connectionFailed: return StatusMessageComponentConstants.Colors.red
         }
     }
     
     var description: String {
         switch self {
         case .initial: return ""
-        case .connectionEstablished: return R.string.localization.status_message_interter_connection_established()
-        case .connectionFailed: return R.string.localization.status_message_interter_connection_lost()
+		case .connectionEstablished: return R.string.localization.status_message_interter_connection_established.localized()
+		case .connectionFailed: return R.string.localization.status_message_interter_connection_lost.localized()
         }
     }
 }
@@ -55,7 +55,6 @@ public class DefaultStatusMessageComponentViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<StatusMessageComponentViewModelOutputAction>()
     public var type: StatusMessageComponentType = NetworkConnectionManager.shared.reachability.isReachable ? .initial : .connectionFailed {
         didSet {
-            print("*** networkConnection type changed in DefaultStatusMessageComponentViewModel")
             actionSubject.onNext(.configure(with: self))
         }
     }

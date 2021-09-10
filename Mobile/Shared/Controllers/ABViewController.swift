@@ -51,12 +51,12 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         return (error, constraint)
     }()
     
-    private lazy var statusMessage: (view: StatusMessageComponentView, viewModel: StatusMessageComponentViewModel) = {
+    lazy var statusMessage: (view: StatusMessageComponentView, viewModel: StatusMessageComponentViewModel) = {
         let view = StatusMessageComponentView()
         view.translatesAutoresizingMaskIntoConstraints = false
         let viewModel: StatusMessageComponentViewModel = DefaultStatusMessageComponentViewModel(params: .init())
-        view.setAndBind(viewModel: viewModel)
-        view.hide()
+		view.setAndBind(viewModel: viewModel)
+		view.hide()
         return (view, viewModel)
     }()
 
@@ -101,21 +101,26 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         setupStatusMessage()
     }
     
-    private func setupAsNetworkConnectionObserver() {
-        NetworkConnectionManager.shared.addObserver(self)
-    }
+     private func setupAsNetworkConnectionObserver() {
+          NetworkConnectionManager.shared.addObserver(self)
+     }
     
-    private func setupStatusMessage() {
-        view.addSubview(statusMessage.view)
-        view.bringSubviewToFront(statusMessage.view)
-        
-        NSLayoutConstraint.activate([
-            statusMessage.view.heightAnchor.constraint(equalToConstant: Constants.statusMessageViewHeight),
-            statusMessage.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            statusMessage.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            statusMessage.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        ])
-    }
+     private func setupStatusMessage() {
+		view.addSubview(statusMessage.view)
+		view.bringSubviewToFront(statusMessage.view)
+     
+		let heightConstraint = statusMessage.view.heightAnchor.constraint(equalToConstant: StatusMessageComponentConstants.preferredHeight)
+		heightConstraint.identifier = StatusMessageComponentConstants.heightConstraintIdentifier
+		
+		NSLayoutConstraint.activate([
+			heightConstraint,
+			statusMessage.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+			statusMessage.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			statusMessage.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+		])
+		
+		setupNetworkConnectionState()
+	}
 
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -253,26 +258,39 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     
     // MARK: - NetworkConnectionObserver -
     
-    var networkConnectionObserverId: Int = NetworkConnectionManager.shared.newObserverId
+	internal var networkConnectionObserverId: Int = NetworkConnectionManager.shared.newObserverId
     
-    func networkConnectionEstablished() {
-        print("*** networkConnectionEstablished in \(Self.description()))")
-        statusMessage.viewModel.type = .connectionEstablished
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-          self.mainTabBarViewController?.tryMoveDownTabBarSafely(by: Constants.statusMessageViewHeight, isAnimated: true)
-        }
-    }
+	public func networkConnectionEstablished() {
+		statusMessage.viewModel.type = .connectionEstablished
+		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.connectionEstablishedViewDuration) {
+			self.mainTabBarViewController?.tryMoveDownTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
+			DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.animationDuration) {
+				self.statusMessage.view.hide()
+			}
+		}
+	}
     
-     func networkConnectionLost() {
-          print("*** networkConnectionLost in \(Self.description())")
-          mainTabBarViewController?.tryMoveUpTabBarSafely(by: Constants.statusMessageViewHeight, isAnimated: true)
-          statusMessage.viewModel.type = .connectionFailed
-    }
+	public func networkConnectionLost() {
+		mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
+		statusMessage.viewModel.type = .connectionFailed
+		statusMessage.view.show()
+	}
+	
+	private func setupNetworkConnectionState() {
+		if !NetworkConnectionManager.shared.isConnected {
+			mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
+			statusMessage.viewModel.type = .connectionFailed
+			statusMessage.view.show()
+		}
+	}
 
 }
 
 extension ABViewController {
-    struct Constants {
-        static let statusMessageViewHeight: CGFloat = 30
-    }
+	struct Constants {
+		struct StatusMessage {
+			static let animationDuration = 0.5
+			static let connectionEstablishedViewDuration = 2.5
+		}
+	}
 }

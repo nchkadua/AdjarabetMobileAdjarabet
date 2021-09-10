@@ -901,6 +901,7 @@
 		D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */; };
 		D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FD2449C50B0015C03C /* Rswift+Extension.swift */; };
 		D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FF2449C7090015C03C /* LanguageTests.swift */; };
+		FB15A64726EBCD3F00E5F985 /* StatusMessageComponentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */; };
 		FB25307E26E7349900F09490 /* NetworkConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB25307D26E7349900F09490 /* NetworkConnectionManager.swift */; };
 		FB584B4126B7C1E800FA25DB /* TermsAndConditionsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */; };
 		FB584B4226B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */; };
@@ -1859,6 +1860,7 @@
 		D8FBA5022449C90A0015C03C /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = hy.lproj/Localization.strings; sourceTree = "<group>"; };
 		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessageComponentConstants.swift; sourceTree = "<group>"; };
 		FB25307D26E7349900F09490 /* NetworkConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionManager.swift; sourceTree = "<group>"; };
 		FB2DD1E126D4BAAE002B0AFF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB2DD1E226D4BAAE002B0AFF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localization.strings; sourceTree = "<group>"; };
@@ -6790,6 +6792,7 @@
 				FB8116A926E5B173009D9AE5 /* StatusMessageComponentView.xib */,
 				FB8116AC26E5B173009D9AE5 /* StatusMessageComponentViewModel.swift */,
 				FB8116AD26E5B173009D9AE5 /* StatusMessageComponentView.swift */,
+				FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -8041,6 +8044,7 @@
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
 				7676E55D2562D73100234026 /* TransactionHistoryProvider.swift in Sources */,
 				C7553B43267B729100813FAC /* CommunicationLanguageEntity.swift in Sources */,
+				FB15A64726EBCD3F00E5F985 /* StatusMessageComponentConstants.swift in Sources */,
 				C78127C7267142080007F7E3 /* CoreApiIsOTPEnabledRepository.swift in Sources */,
 				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,

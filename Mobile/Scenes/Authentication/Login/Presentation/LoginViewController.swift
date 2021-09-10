@@ -32,7 +32,8 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var biometryButton: ABButton!
 
     @IBOutlet private weak var footerComponentView: FooterComponentView!
-    private var passwordReminderComponentView: PasswordReminderComponentView?
+	@IBOutlet weak var footerHeightConstraint: NSLayoutConstraint!
+	private var passwordReminderComponentView: PasswordReminderComponentView?
 
     // MARK: Overrides
     public override var keyScrollView: UIScrollView? { scrollView }
@@ -98,6 +99,7 @@ public class LoginViewController: ABViewController {
         setupInputViews()
         setupInputViewsObservation()
         setupFooter()
+		setupStatusMessage()
     }
 
     private func subscribeToPasswordInputView() {
@@ -227,6 +229,16 @@ public class LoginViewController: ABViewController {
         footerComponentView.delegate = self
         footerComponentView.contactUsButton.addTarget(self, action: #selector(navigateToContactUs), for: .touchUpInside)
     }
+	
+	private func setupStatusMessage() {
+		guard  let heightConstraint = self.statusMessage.view.constraints.first(where: {$0.identifier == StatusMessageComponentConstants.heightConstraintIdentifier}) else { return }
+		if NetworkConnectionManager.shared.isConnected {
+			heightConstraint.constant = 0
+		} else {
+			footerHeightConstraint?.constant += StatusMessageComponentConstants.preferredHeight
+			heightConstraint.constant = StatusMessageComponentConstants.preferredHeight
+		}
+	}
 
     // MARK: Actions
     @objc private func joinNowDidTap() {
@@ -296,6 +308,30 @@ public class LoginViewController: ABViewController {
 
         let title = loading ? "" : R.string.localization.login_button_title.localized()
         loginButton.setTitleWithoutAnimation(title, for: .normal)
+    }
+    
+    // MARK: - Network connection status message
+    
+    public override func networkConnectionEstablished() {
+        super.networkConnectionEstablished()
+		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.connectionEstablishedViewDuration) {
+			UIView.animate(withDuration: Constants.StatusMessage.animationDuration, animations: {
+				self.footerHeightConstraint?.constant -= StatusMessageComponentConstants.preferredHeight
+				if let heightConstraint = self.statusMessage.view.constraints.first(where: {$0.identifier == StatusMessageComponentConstants.heightConstraintIdentifier}) {
+					heightConstraint.constant = 0
+				}
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    public override func networkConnectionLost() {
+        super.networkConnectionLost()
+		UIView.animate(withDuration: Constants.StatusMessage.animationDuration, animations: {
+			self.footerHeightConstraint?.constant += StatusMessageComponentConstants.preferredHeight
+			self.statusMessage.view.constraints.first(where: {$0.identifier == StatusMessageComponentConstants.heightConstraintIdentifier})?.constant =  StatusMessageComponentConstants.preferredHeight
+			self.view.layoutIfNeeded()
+        })
     }
 }
 
