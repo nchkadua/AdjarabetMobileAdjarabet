@@ -85,6 +85,7 @@ public class ABTableViewController: AppTableViewController {
         return self
     }
 
+	@discardableResult
     public func enableEmptyState() -> Self {
         emptyStateView.show()
         isEmptyStateEnabled = true

@@ -6421,13 +6421,8 @@
 		D85C9C1C24336C9500F1D4FE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CEB6643E255027E1003D7D6D /* ABConstant.swift */,
 				D8C6379F2471BA7B00B9A50E /* ABFormatter.swift */,
-				CE76FD7E25764FB500D8AB04 /* ABLocationManager.swift */,
 				D84202CF2451930A00F0F056 /* ABUserDefaults.swift */,
-				769EDC2225D294F000C18B52 /* Accessible.swift */,
-				D8BA5A192499391C00F88433 /* AppConstant.swift */,
-				CEE0E09F254869F200949417 /* AppSessionProvider.swift */,
 				D84202D72451AD8400F0F056 /* BaseViewModel.swift */,
 				D85C9C1924336C7100F1D4FE /* BiometryAuthentication.swift */,
 				D86253AC2464197500F7DE0C /* Cancelable.swift */,
@@ -8598,7 +8593,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 598;
+				CURRENT_PROJECT_VERSION = 599;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8631,7 +8626,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 598;
+				CURRENT_PROJECT_VERSION = 599;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -8724,7 +8719,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 598;
+				CURRENT_PROJECT_VERSION = 599;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8813,7 +8808,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 598;
+				CURRENT_PROJECT_VERSION = 599;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
