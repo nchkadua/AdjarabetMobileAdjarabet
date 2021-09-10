@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.3)
   - CocoaAsyncSocket (7.6.5)
   - EMPageViewController (4.0.0)
   - Firebase/Analytics (7.0.0):
@@ -111,6 +112,7 @@ PODS:
   - R.swift (5.3.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - ReachabilitySwift (5.0.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -130,6 +132,7 @@ PODS:
   - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - EMPageViewController
   - Firebase/Analytics
   - Firebase/Core
@@ -139,6 +142,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Nuke (= 8.4.1)
   - R.swift
+  - ReachabilitySwift
   - RxCocoa
   - RxSwift
   - SDWebImageSVGCoder
@@ -151,6 +155,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - CocoaAsyncSocket
     - EMPageViewController
     - Firebase
@@ -176,6 +181,7 @@ SPEC REPOS:
     - Protobuf
     - R.swift
     - R.swift.Library
+    - ReachabilitySwift
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -189,6 +195,7 @@ SPEC REPOS:
     - ZIPFoundation
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   EMPageViewController: de8c8d6ea44c77bc2463f2cb9b4128390d2391f2
   Firebase: 50be68416f50eb4eb2ecb0e78acab9a051ef95df
@@ -214,6 +221,7 @@ SPEC CHECKSUMS:
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   R.swift: 4170fb7161c67be3bc1a847040b79367d69c419f
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
@@ -226,6 +234,6 @@ SPEC CHECKSUMS:
   UAParserSwift: dc5e2717debc6e78a40487148d29649a0b311caf
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: d473329cf685fe5b07bafabb00f77f348c8ef376
+PODFILE CHECKSUM: a2e1a8b959087dab8912d123eed3e6f79e4b69aa
 
 COCOAPODS: 1.10.2

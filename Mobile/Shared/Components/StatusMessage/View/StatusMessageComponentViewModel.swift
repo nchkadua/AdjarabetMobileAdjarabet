@@ -12,10 +12,10 @@ public protocol StatusMessageComponentViewModel: StatusMessageComponentViewModel
                                                 StatusMessageComponentViewModelOutput {}
 
 public struct StatusMessageComponentViewModelParams {
-    var status: String
 }
 
 public protocol StatusMessageComponentViewModelInput {
+    var type: StatusMessageComponentType { get set }
     func didBind()
 }
 
@@ -25,12 +25,40 @@ public protocol StatusMessageComponentViewModelOutput {
 }
 
 public enum StatusMessageComponentViewModelOutputAction {
-    
+    case configure(with: StatusMessageComponentViewModel)
 }
 
-public class DefaultStatusMessageComponentViewModel {
+public enum StatusMessageComponentType {
+    case initial
+    case connectionEstablished
+    case connectionFailed
+    
+    var color: UIColor {
+        switch self {
+        case .initial: return .clear
+        case .connectionEstablished: return .green
+        case .connectionFailed: return .red
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .initial: return ""
+        case .connectionEstablished: return R.string.localization.status_message_interter_connection_established()
+        case .connectionFailed: return R.string.localization.status_message_interter_connection_lost()
+        }
+    }
+}
+
+public class DefaultStatusMessageComponentViewModel: DefaultBaseViewModel {
     public var params: StatusMessageComponentViewModelParams
     private let actionSubject = PublishSubject<StatusMessageComponentViewModelOutputAction>()
+    public var type: StatusMessageComponentType = NetworkConnectionManager.shared.reachability.isReachable ? .initial : .connectionFailed {
+        didSet {
+            print("*** networkConnection type changed in DefaultStatusMessageComponentViewModel")
+            actionSubject.onNext(.configure(with: self))
+        }
+    }
     public init(params: StatusMessageComponentViewModelParams) {
         self.params = params
     }

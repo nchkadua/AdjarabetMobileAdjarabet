@@ -21,25 +21,36 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="431" height="77"/>
+            <rect key="frame" x="0.0" y="0.0" width="471" height="142"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36q-Ud-53D">
-                    <rect key="frame" x="16" y="11" width="399" height="19.5"/>
-                    <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uvu-LY-4RU">
+                    <rect key="frame" x="0.0" y="0.0" width="471" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36q-Ud-53D">
+                            <rect key="frame" x="16" y="5.5" width="439" height="19.5"/>
+                            <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="36q-Ud-53D" secondAttribute="trailing" constant="16" id="Ddx-0l-70k"/>
+                        <constraint firstItem="36q-Ud-53D" firstAttribute="leading" secondItem="Uvu-LY-4RU" secondAttribute="leading" constant="16" id="TmU-iE-ns7"/>
+                        <constraint firstAttribute="height" constant="30" id="cNg-BQ-7k1"/>
+                        <constraint firstItem="36q-Ud-53D" firstAttribute="centerY" secondItem="Uvu-LY-4RU" secondAttribute="centerY" id="d6U-NQ-OLA"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="36q-Ud-53D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="4uk-bG-tVX"/>
-                <constraint firstAttribute="trailing" secondItem="36q-Ud-53D" secondAttribute="trailing" constant="16" id="Gvn-GR-AZw"/>
-                <constraint firstItem="36q-Ud-53D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="asc-ms-ZJJ"/>
-                <constraint firstItem="36q-Ud-53D" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oVo-lA-SST"/>
+                <constraint firstItem="Uvu-LY-4RU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Igz-7c-Lg8"/>
+                <constraint firstAttribute="trailing" secondItem="Uvu-LY-4RU" secondAttribute="trailing" id="OR4-aw-zvK"/>
+                <constraint firstItem="Uvu-LY-4RU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dnK-1B-6Ih"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="102.17391304347827" y="121.54017857142857"/>
+            <point key="canvasLocation" x="131.15942028985509" y="143.30357142857142"/>
         </view>
     </objects>
 </document>

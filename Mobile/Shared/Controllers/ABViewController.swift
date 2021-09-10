@@ -8,7 +8,8 @@
 
 import RxSwift
 
-public class ABViewController: UIViewController, KeyboardListening, UIGestureRecognizerDelegate {
+public class ABViewController: UIViewController, KeyboardListening, UIGestureRecognizerDelegate, NetworkConnectionObserver {
+    
     public var disposeBag = DisposeBag()
     var errorThrowing: ErrorThrowing? {
         willSet {
@@ -49,6 +50,15 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
         return (error, constraint)
     }()
+    
+    private lazy var statusMessage: (view: StatusMessageComponentView, viewModel: StatusMessageComponentViewModel) = {
+        let view = StatusMessageComponentView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let viewModel: StatusMessageComponentViewModel = DefaultStatusMessageComponentViewModel(params: .init())
+        view.setAndBind(viewModel: viewModel)
+        view.hide()
+        return (view, viewModel)
+    }()
 
     private lazy var loader: UIImageView = {
         let imageView = UIImageView()
@@ -87,6 +97,24 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         super.viewDidLoad()
         guard setInteractivePopGestureRecognizer else {return}
         navigationController?.interactivePopGestureRecognizer?.delegate = self
+        setupAsNetworkConnectionObserver()
+        setupStatusMessage()
+    }
+    
+    private func setupAsNetworkConnectionObserver() {
+        NetworkConnectionManager.shared.addObserver(self)
+    }
+    
+    private func setupStatusMessage() {
+        view.addSubview(statusMessage.view)
+        view.bringSubviewToFront(statusMessage.view)
+        
+        NSLayoutConstraint.activate([
+            statusMessage.view.heightAnchor.constraint(equalToConstant: Constants.statusMessageViewHeight),
+            statusMessage.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            statusMessage.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            statusMessage.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
@@ -221,5 +249,66 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     // MARK: Actions
     @objc public func closeKeyboard() {
         view.endEditing(true)
+    }
+    
+    // MARK: - NetworkConnectionObserver -
+    
+    var networkConnectionObserverId: Int = NetworkConnectionManager.shared.newObserverId
+    
+    func networkConnectionEstablished() {
+        print("*** networkConnectionEstablished in \(Self.description()))")
+        statusMessage.viewModel.type = .connectionEstablished
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.tryMoveDownTabBar(by: Constants.statusMessageViewHeight, isAnimated: true)
+        }
+    }
+    
+    func networkConnectionLost() {
+        print("*** networkConnectionLost in \(Self.description())")
+        tryMoveUpTabBar(by: Constants.statusMessageViewHeight, isAnimated: true)
+        statusMessage.viewModel.type = .connectionFailed
+    }
+    
+    public func tryMoveUpTabBar(by height: CGFloat, isAnimated: Bool) {
+        guard height > 0 else { return }
+        guard let tabBarViewController = mainTabBarViewController else { return }
+        tabBarViewController.tabBarMovementSemaphore.wait()
+        print("*** ----- crossed waiting in move up ----- ")
+        
+        if tabBarViewController.tabBarPosition == .normal {
+            tabBarViewController.tabBarPosition = .movedUp
+            print("---------------------- MOVED UP")
+            moveTabBarVertically(by: -height, isAnimated: isAnimated)
+        }
+
+        tabBarViewController.tabBarMovementSemaphore.signal()
+        print("*** ----- crossed signal in move up ----- ")
+    }
+    
+    public func tryMoveDownTabBar(by height: CGFloat, isAnimated: Bool) {
+        guard height > 0 else { return }
+        guard let tabBarViewController = mainTabBarViewController else { return }
+
+        tabBarViewController.tabBarMovementSemaphore.wait()
+        if tabBarViewController.tabBarPosition == .movedUp {
+            tabBarViewController.tabBarPosition = .normal
+            moveTabBarVertically(by: height, isAnimated: isAnimated)
+        }
+        tabBarViewController.tabBarMovementSemaphore.signal()
+    }
+    
+    private func moveTabBarVertically(by height: CGFloat, isAnimated: Bool) {
+        print("*** moveTabBarVertically(by \(height), isAnimated: Bool) {")
+        guard let tabBar = mainTabBarViewController?.tabBar else { return }
+        let animationDuration: Double = isAnimated ? 0.5 : 0
+        UIView.animate(withDuration: animationDuration, animations: {
+            tabBar.frame.origin.y += height
+        })
+    }
+}
+
+extension ABViewController {
+    struct Constants {
+        static let statusMessageViewHeight: CGFloat = 30
     }
 }

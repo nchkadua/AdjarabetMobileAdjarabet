@@ -58,9 +58,12 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
         viewModel.viewDidLoad()
     }
 
+    public var tabBarOriginY: CGFloat = 0
+    
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
+        tabBarOriginY = mainTabBarViewController?.tabBar.frame.origin.y ?? 0
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -196,9 +199,21 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
 
         self.selectedIndex = index
     }
+    
+    
+    // MARK: - Network connection status message -
+    
+    let tabBarMovementSemaphore = DispatchSemaphore.init(value: 1)
+
+    enum TabBarPosition {
+        case movedUp
+        case normal
+    }
+    var tabBarPosition: TabBarPosition = .normal
 }
 
-// MARK: - UITabBarControllerDelegate
+// MARK: - UITabBarControllerDelegate -
+
 extension MainTabBarViewController: UITabBarControllerDelegate {
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let tabViewControllers = tabBarController.viewControllers!

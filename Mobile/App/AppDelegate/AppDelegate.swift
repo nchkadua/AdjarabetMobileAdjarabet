@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let services: AppDelegateServices
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        NetworkConnectionManager.shared.startMonitoringConnectivity()
         return services.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -94,6 +95,7 @@ public extension DependencyContainer {
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as DefaultTermsAndConditionsViewModel }
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
         Module { DefaultEmptyStateComponentViewModel(params: .init()) as EmptyStateComponentViewModel }
+        Module { DefaultStatusMessageComponentViewModel(params: .init()) as StatusMessageComponentViewModel }
     }
 
     static var componentViewModels = DependencyContainer {

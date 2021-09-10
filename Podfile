@@ -3,29 +3,26 @@ use_frameworks!
 inhibit_all_warnings!
 
 def pods
-  pod 'R.swift'
-
-  pod 'SharedFramework'
-  
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  
-  pod 'Nuke', '8.4.1'
-  pod 'SDWebImageSVGCoder'
-
-  pod 'SwiftLint', '0.39.1'
-  pod 'Telegraph'
-  pod 'ZIPFoundation'
-  
-  pod 'Firebase/Core'
-  pod 'Firebase/Crashlytics'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Performance'
-  pod 'FSCalendar'
-  pod 'UAParserSwift'
-  pod 'SwiftKeychainWrapper'
-  pod 'EMPageViewController'
-  pod 'IQKeyboardManagerSwift'
+	pod 'Alamofire', '~> 5.2'
+	pod 'EMPageViewController'
+	pod 'Firebase/Analytics'  
+	pod 'Firebase/Core'
+	pod 'Firebase/Crashlytics'
+	pod 'Firebase/Performance'
+	pod 'FSCalendar'
+	pod 'IQKeyboardManagerSwift'
+	pod 'Nuke', '8.4.1'
+	pod 'R.swift'
+	pod 'ReachabilitySwift'
+	pod 'RxCocoa'
+	pod 'RxSwift'
+	pod 'SDWebImageSVGCoder'
+	pod 'SharedFramework'
+	pod 'SwiftKeychainWrapper'
+	pod 'SwiftLint', '0.39.1'
+	pod 'Telegraph'
+	pod 'UAParserSwift'
+	pod 'ZIPFoundation'
 end
 
 target 'Mobile' do

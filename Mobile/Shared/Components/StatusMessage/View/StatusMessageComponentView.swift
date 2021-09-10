@@ -9,8 +9,11 @@
 import RxSwift
 
 class StatusMessageComponentView: UIView {
+    
+    typealias ViewModel = StatusMessageComponentViewModel
+    
     private var disposeBag = DisposeBag()
-    private var viewModel: StatusMessageComponentViewModel!
+    private var viewModel: ViewModel!
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
@@ -26,18 +29,41 @@ class StatusMessageComponentView: UIView {
         nibSetup()
     }
 
-    public func setAndBind(viewModel: StatusMessageComponentViewModel) {
+    public func setAndBind(viewModel: ViewModel) {
         self.viewModel = viewModel
-        statusLabel.text = viewModel.params.status
+        configure(with: viewModel)
         bind()
+    }
+    
+    public func configure(with viewModel: ViewModel) {
+        DispatchQueue.main.async {
+            self.statusLabel.text = viewModel.type.description
+            self.view.backgroundColor = viewModel.type.color
+            self.configureViewAppearance(with: viewModel)
+        }
+    }
+    
+    private func configureViewAppearance(with viewModel: ViewModel) {
+        switch viewModel.type {
+        case .initial:
+            self.hide()
+        case .connectionEstablished:
+            self.show()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.hide()
+            }
+        case .connectionFailed:
+            print("*** connectionFailed in View.configure")
+            self.show()
+        }
     }
 
     private func bind() {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            default:
-                break
+            case .configure(let viewModel):
+                self?.configure(with: viewModel)
             }
         }).disposed(by: disposeBag)
 
@@ -56,6 +82,5 @@ extension StatusMessageComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.secondaryBg().value
     }
 }

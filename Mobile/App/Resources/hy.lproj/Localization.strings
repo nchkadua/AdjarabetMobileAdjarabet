@@ -7,6 +7,8 @@
 */
 
 /* Shared */
+"status_message_interter_connection_established" = "Internet connection has established";
+"status_message_interter_connection_lost" = "No internet connection";
 
 /* Main Tab Bar */
 "slots_item_title" = "Slots";
