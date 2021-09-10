@@ -203,13 +203,48 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
     
     // MARK: - Network connection status message -
     
-    let tabBarMovementSemaphore = DispatchSemaphore.init(value: 1)
+    private let tabBarMovementSemaphore = DispatchSemaphore.init(value: 1)
 
-    enum TabBarPosition {
+    private enum TabBarPosition {
         case movedUp
         case normal
     }
-    var tabBarPosition: TabBarPosition = .normal
+    private var tabBarPosition: TabBarPosition = .normal
+    
+    
+    public func tryMoveUpTabBarSafely(by height: CGFloat, isAnimated: Bool) {
+        guard height > 0 else { return }
+        tabBarMovementSemaphore.wait()
+        print("*** ----- crossed waiting in move up ----- ")
+        
+        if tabBarPosition == .normal {
+            tabBarPosition = .movedUp
+            print("---------------------- MOVED UP")
+            moveTabBarVertically(by: -height, isAnimated: isAnimated)
+        }
+
+        tabBarMovementSemaphore.signal()
+        print("*** ----- crossed signal in move up ----- ")
+    }
+    
+    public func tryMoveDownTabBarSafely(by height: CGFloat, isAnimated: Bool) {
+        guard height > 0 else { return }
+
+        tabBarMovementSemaphore.wait()
+        if tabBarPosition == .movedUp {
+            tabBarPosition = .normal
+            moveTabBarVertically(by: height, isAnimated: isAnimated)
+        }
+        tabBarMovementSemaphore.signal()
+    }
+    
+    private func moveTabBarVertically(by height: CGFloat, isAnimated: Bool) {
+        print("*** moveTabBarVertically(by \(height), isAnimated: Bool) {")
+        let animationDuration: Double = isAnimated ? 0.5 : 0
+        UIView.animate(withDuration: animationDuration, animations: {
+            self.tabBar.frame.origin.y += height
+        })
+    }
 }
 
 // MARK: - UITabBarControllerDelegate -

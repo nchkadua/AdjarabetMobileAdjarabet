@@ -49,12 +49,16 @@ class StatusMessageComponentView: UIView {
             self.hide()
         case .connectionEstablished:
             self.show()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.hide()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.hide()
+                })
             }
         case .connectionFailed:
             print("*** connectionFailed in View.configure")
-            self.show()
+            UIView.animate(withDuration: 0.5, animations: {
+                self.show()
+            })
         }
     }
 

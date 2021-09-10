@@ -259,52 +259,16 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         print("*** networkConnectionEstablished in \(Self.description()))")
         statusMessage.viewModel.type = .connectionEstablished
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.tryMoveDownTabBar(by: Constants.statusMessageViewHeight, isAnimated: true)
+          self.mainTabBarViewController?.tryMoveDownTabBarSafely(by: Constants.statusMessageViewHeight, isAnimated: true)
         }
     }
     
-    func networkConnectionLost() {
-        print("*** networkConnectionLost in \(Self.description())")
-        tryMoveUpTabBar(by: Constants.statusMessageViewHeight, isAnimated: true)
-        statusMessage.viewModel.type = .connectionFailed
+     func networkConnectionLost() {
+          print("*** networkConnectionLost in \(Self.description())")
+          mainTabBarViewController?.tryMoveUpTabBarSafely(by: Constants.statusMessageViewHeight, isAnimated: true)
+          statusMessage.viewModel.type = .connectionFailed
     }
-    
-    public func tryMoveUpTabBar(by height: CGFloat, isAnimated: Bool) {
-        guard height > 0 else { return }
-        guard let tabBarViewController = mainTabBarViewController else { return }
-        tabBarViewController.tabBarMovementSemaphore.wait()
-        print("*** ----- crossed waiting in move up ----- ")
-        
-        if tabBarViewController.tabBarPosition == .normal {
-            tabBarViewController.tabBarPosition = .movedUp
-            print("---------------------- MOVED UP")
-            moveTabBarVertically(by: -height, isAnimated: isAnimated)
-        }
 
-        tabBarViewController.tabBarMovementSemaphore.signal()
-        print("*** ----- crossed signal in move up ----- ")
-    }
-    
-    public func tryMoveDownTabBar(by height: CGFloat, isAnimated: Bool) {
-        guard height > 0 else { return }
-        guard let tabBarViewController = mainTabBarViewController else { return }
-
-        tabBarViewController.tabBarMovementSemaphore.wait()
-        if tabBarViewController.tabBarPosition == .movedUp {
-            tabBarViewController.tabBarPosition = .normal
-            moveTabBarVertically(by: height, isAnimated: isAnimated)
-        }
-        tabBarViewController.tabBarMovementSemaphore.signal()
-    }
-    
-    private func moveTabBarVertically(by height: CGFloat, isAnimated: Bool) {
-        print("*** moveTabBarVertically(by \(height), isAnimated: Bool) {")
-        guard let tabBar = mainTabBarViewController?.tabBar else { return }
-        let animationDuration: Double = isAnimated ? 0.5 : 0
-        UIView.animate(withDuration: animationDuration, animations: {
-            tabBar.frame.origin.y += height
-        })
-    }
 }
 
 extension ABViewController {
