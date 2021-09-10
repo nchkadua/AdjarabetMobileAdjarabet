@@ -29,6 +29,7 @@ enum TransactionsViewModelOutputAction {
     case languageDidChange
     case initialize(AppListDataProvider)
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
+    case isLoading(loading: Bool)
 }
 
 enum TransactionsViewModelRoute {
@@ -123,6 +124,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     }
 
     private func displayTransactions(params: DisplayTransactionHistoriesUseCaseParams) {
+        actionSubject.onNext(.isLoading(loading: true))
         displayTransactionsUseCase.execute(params: params) { [weak self] result in
             guard let self = self else {return}
             switch result {
@@ -145,6 +147,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
                 self.displayEmptyTransactionList()
                 self.show(error: error)
             }
+            self.actionSubject.onNext(.isLoading(loading: false))
         }
     }
 

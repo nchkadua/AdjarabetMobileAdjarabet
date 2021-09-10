@@ -66,7 +66,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
                 self?.loader.alpha = loadingType == .fullScreen ? 1 : 0
                 self?.loader.isHidden = loadingType != .fullScreen
             }
-        case .languageDidChange: languageDidChange()
         case .initialize(let appListDataProvider):
             collectionViewController.dataProvider = appListDataProvider
         case .reloadItems(let items, let insertions, let deletions):
@@ -160,10 +159,6 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         }
         searchController.view.isHidden = mainCollectionViewIsVisible
         // mainCollectionViewIsVisible ? mainTabBarViewController?.showFloatingTabBar() : mainTabBarViewController?.hideFloatingTabBar()
-    }
-
-    private func languageDidChange() {
-        // TODO: handle language change
     }
 }
 

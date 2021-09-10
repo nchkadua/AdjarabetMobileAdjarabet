@@ -535,6 +535,8 @@
 		CE693B1326A70C340049D665 /* FAQQuestionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0D26A70C340049D665 /* FAQQuestionComponentView.swift */; };
 		CE693B1426A70C340049D665 /* FAQQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693B0E26A70C340049D665 /* FAQQuestionTableViewCell.swift */; };
 		CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E294C256E8F1F001FE225 /* Double+Extension.swift */; };
+		CE726EE426EA21B3004C3D16 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE726EE326EA21B3004C3D16 /* success.mp3 */; };
+		CE726EE626EA21C9004C3D16 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE726EE526EA21C9004C3D16 /* SoundPlayer.swift */; };
 		CE752DF126B02B08000FB8A4 /* ContactAddressComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */; };
 		CE752DF326B02C75000FB8A4 /* AddressListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */; };
 		CE769897269EF341009972B2 /* PasswordResetOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */; };
@@ -1478,6 +1480,8 @@
 		CE693B0D26A70C340049D665 /* FAQQuestionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionComponentView.swift; sourceTree = "<group>"; };
 		CE693B0E26A70C340049D665 /* FAQQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		CE6E294C256E8F1F001FE225 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		CE726EE326EA21B3004C3D16 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
+		CE726EE526EA21C9004C3D16 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressComponentView.swift; sourceTree = "<group>"; };
 		CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListProvider.swift; sourceTree = "<group>"; };
 		CE752DF426B0389E000FB8A4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -5450,6 +5454,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CE726EE226EA219F004C3D16 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CE726EE326EA21B3004C3D16 /* success.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		CE769890269EF326009972B2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -6425,6 +6437,12 @@
 				D8390E73246B14AA00EF8CB5 /* KeyboardListening.swift */,
 				D85C9C1824336C7100F1D4FE /* KeychainContainer.swift */,
 				D8D11B432498E63D0010F4C8 /* UserAgentProvider.swift */,
+				D8BA5A192499391C00F88433 /* AppConstant.swift */,
+				CEE0E09F254869F200949417 /* AppSessionProvider.swift */,
+				CEB6643E255027E1003D7D6D /* ABConstant.swift */,
+				CE76FD7E25764FB500D8AB04 /* ABLocationManager.swift */,
+				769EDC2225D294F000C18B52 /* Accessible.swift */,
+				CE726EE526EA21C9004C3D16 /* SoundPlayer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -6603,6 +6621,7 @@
 		D8A47DEB24335E070077AA8E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE726EE226EA219F004C3D16 /* Sounds */,
 				C77206E025DAB0B50037D8A0 /* ca.der */,
 				C77206E425DAB0BF0037D8A0 /* localhost.p12 */,
 				C77206DA25DAAC5E0037D8A0 /* exitButton.png */,
@@ -7122,6 +7141,7 @@
 				C7C9732B2580D9550062C713 /* SecurityLevelTableViewCell.xib in Resources */,
 				CE693B1126A70C340049D665 /* FAQQuestionTableViewCell.xib in Resources */,
 				C75D1AFD261205F4002AF763 /* THBJSlot.zip in Resources */,
+				CE726EE426EA21B3004C3D16 /* success.mp3 in Resources */,
 				FB584B4126B7C1E800FA25DB /* TermsAndConditionsComponentView.xib in Resources */,
 				CE693B0126A7071E0049D665 /* FAQQuestions.storyboard in Resources */,
 				C75D1AF4261205F4002AF763 /* FDHJSlot.zip in Resources */,
@@ -8066,6 +8086,7 @@
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				CE4A30D62611E5420039C078 /* SuggestedAmountComponentViewModel.swift in Sources */,
 				C7C9732E2580D9550062C713 /* SecurityLevelTableViewCell.swift in Sources */,
+				CE726EE626EA21C9004C3D16 /* SoundPlayer.swift in Sources */,
 				CEBB00922609D40400D1B510 /* VisaViewModel.swift in Sources */,
 				CECA7ED426AEEA8700BCF04A /* ContactPhoneComponentViewModel.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
@@ -8577,7 +8598,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 594;
+				CURRENT_PROJECT_VERSION = 598;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8610,7 +8631,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 594;
+				CURRENT_PROJECT_VERSION = 598;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -8703,7 +8724,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 594;
+				CURRENT_PROJECT_VERSION = 598;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8792,7 +8813,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 594;
+				CURRENT_PROJECT_VERSION = 598;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;

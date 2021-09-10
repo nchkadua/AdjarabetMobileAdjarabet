@@ -12,8 +12,8 @@ import RxCocoa
 protocol HomeViewModel: BaseViewModel, HomeViewModelInput, HomeViewModelOutput, ABCollectionViewModel {
 }
 
-struct HomeViewModelParams {
-    let error: ABError?
+class HomeViewModelParams {
+    var error: ABError?
     init(error: ABError? = nil) {
         self.error = error
     }
@@ -33,7 +33,6 @@ protocol HomeViewModelOutput: AnyObject {
 
 enum HomeViewModelOutputAction {
     case setLoading(LoadingType)
-    case languageDidChange
     case reloadIndexPathes([IndexPath])
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
     case initialize(AppListDataProvider)
@@ -115,10 +114,6 @@ class DefaultHomeViewModel: DefaultBaseViewModel {
 
         return recentryPlayed
     }()
-
-    public override func languageDidChange() {
-        actionSubject.onNext(.languageDidChange)
-    }
 
     public func load(loadingType: LoadingType) {
         self.loadingType = loadingType
@@ -220,8 +215,8 @@ class DefaultHomeViewModel: DefaultBaseViewModel {
                 self.recentlyPlayedComponentViewModel.params.playedGames = viewModels
                 self.recentlyPlayedComponentViewModel.params.isVisible = !viewModels.isEmpty
                 self.actionSubject.onNext(.reloadIndexPathes([IndexPath(item: 0, section: 3)]))
-            case .failure(_):
-                {}() // self.show(error: error) // TODO: Uncomment after testing last access
+            case .failure(let error):
+                self.show(error: error)
             }
         }
     }
@@ -280,6 +275,7 @@ extension DefaultHomeViewModel: HomeViewModel {
 
     private func showErrorIfNeeded() {
         if let error = params.error {
+            params.error = nil
             DispatchQueue.main.async { [weak self] in
                 self?.show(error: error)
             }

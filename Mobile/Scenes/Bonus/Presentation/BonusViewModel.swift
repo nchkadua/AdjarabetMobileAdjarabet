@@ -56,24 +56,22 @@ class DefaultBonusViewModel: DefaultBaseViewModel {
 }
 
 extension DefaultBonusViewModel: BonusViewModel {
-    
     var action: Observable<BonusViewModelOutputAction> { actionSubject.asObserver() }
     var route: Observable<BonusViewModelRoute> { routeSubject.asObserver() }
-    
+
     func viewDidLoad() {}
-    
+
     // MARK: - ABTableViewControllerDelegate
-    
+
     func didDeleteCell(at indexPath: IndexPath) {
         // TODO
     }
-    
+
     func didLoadNextPage() {
         // TODO
     }
-    
+
     func redraw(at indexPath: IndexPath) {
         actionSubject.onNext(.reload(atIndexPath: indexPath))
     }
-    
 }

@@ -28,6 +28,7 @@ public protocol MyCardsViewModelOutput {
 public enum MyCardsViewModelOutputAction {
     case initialize(AppListDataProvider)
     case didDeleteCell(atIndexPath: IndexPath)
+    case isLoading(loading: Bool)
 }
 
 public enum MyCardsViewModelRoute {
@@ -46,6 +47,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
     public var route: Observable<MyCardsViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        actionSubject.onNext(.isLoading(loading: true))
         fetchMyCards { result in
             switch result {
             case .success:
@@ -55,6 +57,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
                 self.setupStaticCards()
                 self.actionSubject.onNext(.initialize(self.dataProvider.makeList()))
             }
+            self.actionSubject.onNext(.isLoading(loading: false))
         }
     }
 

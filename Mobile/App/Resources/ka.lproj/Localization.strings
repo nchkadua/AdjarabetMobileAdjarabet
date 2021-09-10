@@ -20,6 +20,7 @@
 "back_button_title" = "უკან";
 
 // ABError
+"shared_aberror_default_title" = "აპაპაპაპაპ!";
 "shared_aberror_default_description" = "დაფიქსირდა შეცდომა";
 "shared_aberror_wrong_auth_credentials_description" = "არასწორი ავტორიზაციის მონაცემები";
 "shared_aberror_ip_is_blocked" = "IP მისამართი დაბლოკილია, სცადე ხელახლა 5 წთ-ში";

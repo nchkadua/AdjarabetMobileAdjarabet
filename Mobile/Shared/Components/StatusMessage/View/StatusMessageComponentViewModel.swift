@@ -48,6 +48,7 @@ public enum StatusMessageComponentType {
 		case .connectionFailed: return R.string.localization.status_message_interter_connection_lost.localized()
         }
     }
+
 }
 
 public class DefaultStatusMessageComponentViewModel: DefaultBaseViewModel {

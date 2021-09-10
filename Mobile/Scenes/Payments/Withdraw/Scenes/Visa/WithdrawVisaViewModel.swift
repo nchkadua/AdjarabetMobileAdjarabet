@@ -26,10 +26,10 @@ protocol WithdrawVisaViewModelOutput {
 }
 
 enum WithdrawVisaViewModelOutputAction {
-    case loader(isHidden: Bool)
     case showView(ofType: WithdrawViewType)
     case setAndBindCashOut(viewModel: CashOutVisaViewModel)
     case setAndBindInfo(viewModel: WithdrawVisaInfoViewModel)
+    case isLoading(loading: Bool)
 }
 // view type enum
 enum WithdrawViewType {
@@ -76,7 +76,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
     }
 
     private func refresh() {
-        notify(.loader(isHidden: false)) // start loader
+        notify(.isLoading(loading: true))
         // 0. reset state
         reset()
         // 1. fetch limits
@@ -84,6 +84,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
         // 2. fetch account/card list
         accountListRepository.list(params: .init(providerType: params.serviceType.providerType, paymentType: .withdraw)) { [weak self] result in
             guard let self = self else { return }
+            defer { self.notify(.isLoading(loading: false)) }
             switch result {
             case .success(let list):
                 self.accounts = list                            // 3. update accounts
@@ -95,7 +96,6 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                     let viewAccounts = self.accounts.map { $0.accountVisual }
                     self.cashOutViewModel.update(accounts: viewAccounts) // 5. update accounts on shown view
                 }
-                self.notify(.loader(isHidden: true))
             case .failure(let error):
                 self.disable()
                 self.show(error: error)

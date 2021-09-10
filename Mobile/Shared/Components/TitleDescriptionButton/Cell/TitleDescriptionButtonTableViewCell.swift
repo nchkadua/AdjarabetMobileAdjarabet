@@ -9,7 +9,7 @@
 public class TitleDescriptionButtonTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: TitleDescriptionButtonComponentView!
 //    override public class var identifier: Identifierable { R.nib.TitleDescriptionButtonTableViewCell.name } //TODO 
-    
+
     public override var dataProvider: AppCellDataProvider? {
         didSet {
             guard let dataProvider = dataProvider as? TitleDescriptionButtonTableViewCellDataProvider else {

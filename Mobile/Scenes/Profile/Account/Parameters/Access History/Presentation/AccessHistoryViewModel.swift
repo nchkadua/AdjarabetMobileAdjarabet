@@ -18,7 +18,7 @@ public struct AccessHistoryViewModelParams {
 public protocol AccessHistoryViewModelInput: AnyObject {
     var params: AccessHistoryViewModelParams { get set }
     func calendarTabItemClicked()
-    func viewDidLoad()
+    func viewDidAppear()
 }
 
 public protocol AccessHistoryViewModelOutput {
@@ -29,6 +29,7 @@ public protocol AccessHistoryViewModelOutput {
 public enum AccessHistoryViewModelOutputAction {
     case initialize(AppListDataProvider)
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
+    case isLoading(loading: Bool)
 }
 
 public enum AccessHistoryViewModelRoute {
@@ -61,7 +62,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
     public var action: Observable<AccessHistoryViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<AccessHistoryViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    public func viewDidAppear() {
         displayUnfilteredAccessHistory()
     }
 
@@ -117,6 +118,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
 
     private func displayAccessHistory(params: DisplayAccessListUseCaseParams) {
         self.displayEmptyList()
+        actionSubject.onNext(.isLoading(loading: true))
         displayAccessListUseCase.execute(params: params) { [weak self] result in
             guard let self = self else {return}
             switch result {
@@ -134,6 +136,7 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
                     self.accessHistoryDataProvider.append(componentViewModel)
                 }
                 self.actionSubject.onNext(.initialize(self.accessHistoryDataProvider.makeList()))
+                self.actionSubject.onNext(.isLoading(loading: false))
             case .failure(let error):
                 self.displayEmptyList()
                 self.show(error: error)

@@ -71,6 +71,7 @@ public class NotificationsViewController: ABViewController {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertions, deletionIndexPathes: deletions)
             }
         case .setTotalItemsCount(let count): setTotalNumberOfUnreadNotifications(count)
+        case .isLoading(let loading): loading ? startLoading() : stopLoading()
         default:
             break
         }

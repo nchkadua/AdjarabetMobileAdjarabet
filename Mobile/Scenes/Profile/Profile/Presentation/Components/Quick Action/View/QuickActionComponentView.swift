@@ -97,6 +97,6 @@ extension QuickActionComponentView: Xibable {
         iconImageView.setTintColor(to: .primaryText())
 
         titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
+        titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .regular))
     }
 }

@@ -79,6 +79,9 @@ public class AccountInfoViewController: ABViewController {
             communicationLanguageComponent.setAndBind(viewModel: viewModel)
         case .setPersonalID(let id): personalIdView.set(titleText: id)
         case .setAddress(let address): addressView.set(titleText: address)
+        case .isLoading(let loading):
+            scrollView.isHidden = loading
+            loading ? startLoading() : stopLoading()
         }
     }
 

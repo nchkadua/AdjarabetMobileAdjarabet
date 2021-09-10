@@ -133,7 +133,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
 
         load(query: query, loadingType: .fullScreen)
     }
-    
+
     public var keyboardHeight = Constants.estimatedKeyboardHeight {
         didSet {
             actionSubject.onNext(.configureEmptyState(viewModel: emptyStateViewModel))

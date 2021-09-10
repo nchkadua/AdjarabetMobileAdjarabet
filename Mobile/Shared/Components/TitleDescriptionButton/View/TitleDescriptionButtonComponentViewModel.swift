@@ -41,7 +41,6 @@ public class DefaultTitleDescriptionButtonComponentViewModel {
 }
 
 extension DefaultTitleDescriptionButtonComponentViewModel: TitleDescriptionButtonComponentViewModel {
-    
     public var action: Observable<TitleDescriptionButtonComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }

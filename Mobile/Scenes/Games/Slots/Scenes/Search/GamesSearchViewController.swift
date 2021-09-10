@@ -28,7 +28,7 @@ public class GamesSearchViewController: ABViewController {
         viewModel.viewDidLoad()
         addNotificationCenterObservers()
     }
-    
+
     private func addNotificationCenterObservers() {
         NotificationCenter.default.addObserver(
             self,
@@ -37,7 +37,7 @@ public class GamesSearchViewController: ABViewController {
             object: nil
         )
     }
-    
+
     @objc public override func keyboardWillShow(notification: NSNotification) {
         super.keyboardWillShow(notification: notification)
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
@@ -88,5 +88,4 @@ public class GamesSearchViewController: ABViewController {
         collectionViewController.view.backgroundColor = view.backgroundColor
         collectionViewController.viewModel = viewModel
     }
-    
 }

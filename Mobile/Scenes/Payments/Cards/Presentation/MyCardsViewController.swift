@@ -41,6 +41,8 @@ public class MyCardsViewController: ABViewController {
             self.appTableViewController.dataProvider = dataProvider
         case .didDeleteCell(let indexPath):
             deleteCell(at: indexPath)
+        case .isLoading(let loading):
+            loading ? startLoading() : stopLoading()
         }
     }
 

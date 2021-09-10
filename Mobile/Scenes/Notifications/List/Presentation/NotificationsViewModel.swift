@@ -28,6 +28,7 @@ public enum NotificationsViewModelOutputAction {
     case reload(atIndexPath: IndexPath)
     case reloadItems(items: AppCellDataProviders, insertionIndexPathes: [IndexPath], deletionIndexPathes: [IndexPath])
     case setTotalItemsCount(count: Int)
+    case isLoading(loading: Bool)
 }
 
 public enum NotificationsViewModelRoute {
@@ -63,11 +64,13 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     public var route: Observable<NotificationsViewModelRoute> { routeSubject.asObserver() }
 
     private func load(loadingType: LoadingType) {
+        actionSubject.onNext(.isLoading(loading: true))
         self.loadingType = loadingType
         notificationsUseCase.notifications(page: page.current, domain: "com") { result in //TODO: dynamic domain
-            defer { 
+            defer {
                 self.loadingType = .none
                 self.actionSubject.onNext(.didLoadingFinished)
+                self.actionSubject.onNext(.isLoading(loading: false))
             }
 
             switch result {
