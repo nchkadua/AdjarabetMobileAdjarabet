@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Lng-og-gwY" userLabel="Loader">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szb-sI-Zm5" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -65,15 +62,12 @@
                             <constraint firstItem="Szb-sI-Zm5" firstAttribute="leading" secondItem="Amw-MT-c7e" secondAttribute="leading" id="0hE-xB-WgV"/>
                             <constraint firstItem="Szb-sI-Zm5" firstAttribute="top" secondItem="Amw-MT-c7e" secondAttribute="top" id="M99-MJ-8VP"/>
                             <constraint firstAttribute="trailing" secondItem="Szb-sI-Zm5" secondAttribute="trailing" id="T3J-uN-T7C"/>
-                            <constraint firstItem="Lng-og-gwY" firstAttribute="centerY" secondItem="Amw-MT-c7e" secondAttribute="centerY" id="TEk-aj-01i"/>
                             <constraint firstAttribute="bottom" secondItem="Szb-sI-Zm5" secondAttribute="bottom" id="k4M-5g-A4s"/>
-                            <constraint firstItem="Lng-og-gwY" firstAttribute="centerX" secondItem="Amw-MT-c7e" secondAttribute="centerX" id="xNF-Rg-PSD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="Szb-sI-Zm5" id="nMj-BZ-xo9"/>
                         <outlet property="descriptionLabel" destination="LAU-6N-TPV" id="fVS-PS-x4V"/>
-                        <outlet property="loader" destination="Lng-og-gwY" id="da3-x2-b9a"/>
                         <outlet property="onOffButton" destination="t9b-9h-ive" id="mce-zN-W1N"/>
                         <outlet property="titleLabel" destination="4Bq-dh-S30" id="n5G-CJ-XEw"/>
                     </connections>

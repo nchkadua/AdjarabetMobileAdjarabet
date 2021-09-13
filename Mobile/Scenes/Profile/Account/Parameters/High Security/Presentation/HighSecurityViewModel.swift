@@ -23,9 +23,9 @@ protocol HighSecurityViewModelOutput {
 }
 
 enum HighSecurityViewModelOutputAction {
-    case setupView(loaderIsHiden: Bool)
     case setButtonState(isOn: Bool)
     case close
+    case isLoading(loading: Bool)
 }
 
 enum HighSecurityViewModelRoute {
@@ -47,12 +47,12 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
     var route: Observable<HighSecurityViewModelRoute> { routeSubject.asObserver() }
 
     func viewDidLoad() {
-        notify(.setupView(loaderIsHiden: false))
+        notify(.isLoading(loading: true))
         useCase.isEnabled(handler(onSuccessHandler: { isEnabled in
             self.isEnabled = isEnabled // update state
             self.notify(.setButtonState(isOn: isEnabled))
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-                self?.notify(.setupView(loaderIsHiden: true))
+                self?.notify(.isLoading(loading: false))
             }
         }))
     }
@@ -83,12 +83,12 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
     }
 
     private func handleSuccessOTP(with code: String) {
-        notify(.setupView(loaderIsHiden: false))
+        notify(.isLoading(loading: true))
         useCase.set(isEnabled: !isEnabled, otp: code, handler(onSuccessHandler: { _ in
             self.isEnabled.toggle() // update state
             self.notify(.setButtonState(isOn: self.isEnabled))
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-                self?.notify(.setupView(loaderIsHiden: true))
+                self?.notify(.isLoading(loading: false))
             }
         }))
     }
