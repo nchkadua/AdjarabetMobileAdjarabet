@@ -77,8 +77,8 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
     public func createPrivacyPolicyRequest() {
         repo.getUrl { result in
             switch result {
-            case .success(let entity): print("asdasdasdasd ", entity.ge)
-            case .failure(_): print("asdasdasdasd failutre")
+            case .success(let entity): self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.ge))))
+            case .failure(_): break
             }
         }
 
