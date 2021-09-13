@@ -32,7 +32,8 @@ public class WebViewController: ABViewController {
 
     private func didRecive(action: WebViewModelOutputAction) {
         switch action {
-        case .load(let request): load(request)
+        case .loadRequst(let request): load(request)
+        case .loadHtml(let html): load(html)
         }
     }
 
@@ -58,5 +59,9 @@ public class WebViewController: ABViewController {
     // MARK: Action methods
     private func load(_ request: URLRequest) {
         webView.load(request as URLRequest)
+    }
+
+    private func load(_ html: String) {
+        webView.loadHTMLString(html, baseURL: nil)
     }
 }

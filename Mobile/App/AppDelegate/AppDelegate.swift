@@ -152,6 +152,8 @@ public extension DependencyContainer {
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
         Module { CoreApiAccessListRepository() as AccessListRepository }
         Module { CoreApiUpdateOtpRepository() as UpdateOtpRepository }
+
+        Module { DefaultPrivacyPolicyRepository() as PrivacyPolicyRepository }
     }
 
     static var factories = DependencyContainer {
