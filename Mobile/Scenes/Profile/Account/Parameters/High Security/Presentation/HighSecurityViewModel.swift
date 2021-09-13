@@ -26,6 +26,7 @@ enum HighSecurityViewModelOutputAction {
     case setupView(loaderIsHiden: Bool)
     case setButtonState(isOn: Bool)
     case close
+    case isLoading(loading: Bool)
 }
 
 enum HighSecurityViewModelRoute {
@@ -48,11 +49,13 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
 
     func viewDidLoad() {
         notify(.setupView(loaderIsHiden: false))
+        notify(.isLoading(loading: true))
         useCase.isEnabled(handler(onSuccessHandler: { isEnabled in
             self.isEnabled = isEnabled // update state
             self.notify(.setButtonState(isOn: isEnabled))
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
                 self?.notify(.setupView(loaderIsHiden: true))
+                self?.notify(.isLoading(loading: false))
             }
         }))
     }
