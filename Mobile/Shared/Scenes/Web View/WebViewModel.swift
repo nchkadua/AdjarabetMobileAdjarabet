@@ -11,11 +11,16 @@ import RxSwift
 protocol WebViewModel: BaseViewModel, WebViewModelInput, WebViewModelOutput {
 }
 
-public struct WebViewModelParams {
-    public let request: URLRequest
+public enum LoadType {
+    case urlRequst(request: URLRequest)
+    case html(html: String)
+}
 
-    public init(request: URLRequest) {
-        self.request = request
+public struct WebViewModelParams {
+    public let loadType: LoadType
+
+    public init(loadType: LoadType) {
+        self.loadType = loadType
     }
 }
 
@@ -30,7 +35,8 @@ public protocol WebViewModelOutput {
 }
 
 public enum WebViewModelOutputAction {
-    case load(_ request: URLRequest)
+    case loadRequst(_ request: URLRequest)
+    case loadHtml(_ html: String)
 }
 
 public enum WebViewModelRoute {
@@ -51,6 +57,9 @@ extension DefaultWebViewModel: WebViewModel {
     public var route: Observable<WebViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        actionSubject.onNext(.load(params.request))
+        switch params.loadType {
+        case .urlRequst(let request): actionSubject.onNext(.loadRequst(request))
+        case .html(let html): actionSubject.onNext(.loadHtml(html))
+        }
     }
 }

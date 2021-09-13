@@ -41,6 +41,7 @@ public class DefaultDocumentationViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<DocumentationViewModelOutputAction>()
     private let routeSubject = PublishSubject<DocumentationViewModelRoute>()
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
+    @Inject(from: .repositories) private var repo: PrivacyPolicyRepository
 
     public init(params: DocumentationViewModelParams) {
         self.params = params
@@ -74,16 +75,15 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
     }
 
     public func createPrivacyPolicyRequest() {
-        let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/Privacy")
-            .set(method: HttpMethodGet())
-            .build()
-        routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(request: request)))
+        repo.getUrl(handler: handler(onSuccessHandler: { entity in
+            self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.ge))))
+        }))
     }
 
     public func createAboutUsRequest() {
         let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/About")
             .set(method: HttpMethodGet())
             .build()
-        routeSubject.onNext(.navigateToAboutUs(params: .init(request: request)))
+        routeSubject.onNext(.navigateToAboutUs(params: .init(loadType: .urlRequst(request: request))))
     }
 }

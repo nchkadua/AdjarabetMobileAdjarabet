@@ -32,7 +32,7 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var biometryButton: ABButton!
 
     @IBOutlet private weak var footerComponentView: FooterComponentView!
-	@IBOutlet weak var footerHeightConstraint: NSLayoutConstraint!
+	@IBOutlet private weak var footerHeightConstraint: NSLayoutConstraint!
 	private var passwordReminderComponentView: PasswordReminderComponentView?
 
     // MARK: Overrides

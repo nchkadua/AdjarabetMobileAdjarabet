@@ -13,6 +13,7 @@ public class DocumentationViewController: ABViewController {
     public lazy var navigator = DocumentationNavigator(viewController: self)
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
+    @IBOutlet weak var containerView: UIView!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -78,7 +79,7 @@ public class DocumentationViewController: ABViewController {
     private func setupTableView() {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        appTableViewController.view.pin(to: view)
+        appTableViewController.view.pin(to: containerView)
         appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
         appTableViewController.tableView.isScrollEnabled = false
 
