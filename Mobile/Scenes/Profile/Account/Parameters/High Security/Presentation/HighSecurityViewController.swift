@@ -16,7 +16,6 @@ class HighSecurityViewController: ABPopupViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var onOffButton: UIButton!
-    @IBOutlet private weak var loader: UIActivityIndicatorView!
 
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
@@ -60,10 +59,11 @@ class HighSecurityViewController: ABPopupViewController {
 
     private func didRecive(action: HighSecurityViewModelOutputAction) {
         switch action {
-        case .setupView(let loaderIsHiden):
-            setupView(loaderIsHiden: loaderIsHiden)
         case .setButtonState(let isOn):
             setButtonState(isOn: isOn)
+        case .isLoading(let loading):
+            loading ? startLoading() : stopLoading()
+            contentView.isHidden = loading
         case .close:
             navigationController?.dismiss(animated: true, completion: nil)
         }
@@ -74,12 +74,6 @@ class HighSecurityViewController: ABPopupViewController {
         case .otp(let params):
             navigator.navigate(to: .otp(params: params))
         }
-    }
-
-    private func setupView(loaderIsHiden: Bool) {
-        contentView.isHidden = !loaderIsHiden
-        loader.isHidden = loaderIsHiden
-        (loaderIsHiden ? loader.stopAnimating : loader.startAnimating)()
     }
 
     private func setButtonState(isOn: Bool) {
