@@ -229,7 +229,7 @@ public class LoginViewController: ABViewController {
         footerComponentView.delegate = self
         footerComponentView.contactUsButton.addTarget(self, action: #selector(navigateToContactUs), for: .touchUpInside)
     }
-	
+
 	private func setupStatusMessage() {
 		guard  let heightConstraint = self.statusMessage.view.constraints.first(where: {$0.identifier == StatusMessageComponentConstants.heightConstraintIdentifier}) else { return }
 		if NetworkConnectionManager.shared.isConnected {
@@ -309,9 +309,9 @@ public class LoginViewController: ABViewController {
         let title = loading ? "" : R.string.localization.login_button_title.localized()
         loginButton.setTitleWithoutAnimation(title, for: .normal)
     }
-    
+
     // MARK: - Network connection status message
-    
+
     public override func networkConnectionEstablished() {
         super.networkConnectionEstablished()
 		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.connectionEstablishedViewDuration) {
@@ -324,7 +324,7 @@ public class LoginViewController: ABViewController {
             })
         }
     }
-    
+
     public override func networkConnectionLost() {
         super.networkConnectionLost()
 		UIView.animate(withDuration: Constants.StatusMessage.animationDuration, animations: {

@@ -9,7 +9,6 @@
 import RxSwift
 
 public class ABViewController: UIViewController, KeyboardListening, UIGestureRecognizerDelegate, NetworkConnectionObserver {
-    
     public var disposeBag = DisposeBag()
     var errorThrowing: ErrorThrowing? {
         willSet {
@@ -62,7 +61,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
         return (error, constraint)
     }()
-    
+
     lazy var statusMessage: (view: StatusMessageComponentView, viewModel: StatusMessageComponentViewModel) = {
         let view = StatusMessageComponentView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -134,25 +133,25 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
         setupAsNetworkConnectionObserver()
         setupStatusMessage()
     }
-    
+
      private func setupAsNetworkConnectionObserver() {
           NetworkConnectionManager.shared.addObserver(self)
      }
-    
+
      private func setupStatusMessage() {
 		view.addSubview(statusMessage.view)
 		view.bringSubviewToFront(statusMessage.view)
-     
+
 		let heightConstraint = statusMessage.view.heightAnchor.constraint(equalToConstant: StatusMessageComponentConstants.preferredHeight)
 		heightConstraint.identifier = StatusMessageComponentConstants.heightConstraintIdentifier
-		
+
 		NSLayoutConstraint.activate([
 			heightConstraint,
 			statusMessage.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 			statusMessage.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-			statusMessage.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			statusMessage.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
 		])
-		
+
 		setupNetworkConnectionState()
 	}
 
@@ -339,11 +338,11 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
     @objc public func closeKeyboard() {
         view.endEditing(true)
     }
-    
+
     // MARK: - NetworkConnectionObserver -
-    
+
 	internal var networkConnectionObserverId: Int = NetworkConnectionManager.shared.newObserverId
-    
+
 	public func networkConnectionEstablished() {
 		statusMessage.viewModel.type = .connectionEstablished
 		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.connectionEstablishedViewDuration) {
@@ -353,13 +352,13 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 			}
 		}
 	}
-    
+
 	public func networkConnectionLost() {
 		mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
 		statusMessage.viewModel.type = .connectionFailed
 		statusMessage.view.show()
 	}
-	
+
 	private func setupNetworkConnectionState() {
 		if !NetworkConnectionManager.shared.isConnected {
 			mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
@@ -367,7 +366,6 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 			statusMessage.view.show()
 		}
 	}
-
 }
 
 extension ABViewController {

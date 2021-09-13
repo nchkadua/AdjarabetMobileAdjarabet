@@ -32,7 +32,7 @@ public enum StatusMessageComponentType {
     case initial
     case connectionEstablished
     case connectionFailed
-    
+
     var color: UIColor {
         switch self {
         case .initial: return .clear
@@ -40,7 +40,7 @@ public enum StatusMessageComponentType {
 		case .connectionFailed: return StatusMessageComponentConstants.Colors.red
         }
     }
-    
+
     var description: String {
         switch self {
         case .initial: return ""
@@ -48,7 +48,6 @@ public enum StatusMessageComponentType {
 		case .connectionFailed: return R.string.localization.status_message_interter_connection_lost.localized()
         }
     }
-
 }
 
 public class DefaultStatusMessageComponentViewModel: DefaultBaseViewModel {

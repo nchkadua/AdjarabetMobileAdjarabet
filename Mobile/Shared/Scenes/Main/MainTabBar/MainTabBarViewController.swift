@@ -59,7 +59,7 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
     }
 
     public var tabBarOriginY: CGFloat = 0
-    
+
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
@@ -199,22 +199,21 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
 
         self.selectedIndex = index
     }
-    
-    
+
     // MARK: - Network connection status message -
-    
-    private let tabBarMovementLock = DispatchSemaphore.init(value: 1)
+
+    private let tabBarMovementLock = DispatchSemaphore(value: 1)
 
     private enum TabBarPosition {
         case movedUp
         case normal
     }
-    
+
     private var tabBarPosition: TabBarPosition = .normal
-        
+
     public func tryMoveUpTabBarSafely(by height: CGFloat, isAnimated: Bool = true, animationDuration: Double = 0.5) {
         guard height > 0 else { return }
-		
+
         tabBarMovementLock.wait()
         if tabBarPosition == .normal {
             tabBarPosition = .movedUp
@@ -222,7 +221,7 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
         }
         tabBarMovementLock.signal()
     }
-    
+
     public func tryMoveDownTabBarSafely(by height: CGFloat, isAnimated: Bool = true, animationDuration: Double = 0.5) {
         guard height > 0 else { return }
 
@@ -233,7 +232,7 @@ public class MainTabBarViewController: UITabBarController, PageViewControllerPro
         }
         tabBarMovementLock.signal()
     }
-    
+
     private func moveTabBarVertically(by height: CGFloat, isAnimated: Bool = true, animationDuration: Double = 0.5) {
         let animationDuration: Double = isAnimated ? animationDuration : 0
         UIView.animate(withDuration: animationDuration, animations: {

@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (5.4.3)
   - CocoaAsyncSocket (7.6.5)
   - EMPageViewController (4.0.0)
   - Firebase/Analytics (7.0.0):
@@ -132,7 +131,6 @@ PODS:
   - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
   - EMPageViewController
   - Firebase/Analytics
   - Firebase/Core
@@ -155,7 +153,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - CocoaAsyncSocket
     - EMPageViewController
     - Firebase
@@ -195,7 +192,6 @@ SPEC REPOS:
     - ZIPFoundation
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   EMPageViewController: de8c8d6ea44c77bc2463f2cb9b4128390d2391f2
   Firebase: 50be68416f50eb4eb2ecb0e78acab9a051ef95df
@@ -234,6 +230,6 @@ SPEC CHECKSUMS:
   UAParserSwift: dc5e2717debc6e78a40487148d29649a0b311caf
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: a2e1a8b959087dab8912d123eed3e6f79e4b69aa
+PODFILE CHECKSUM: c7b35866057c1f1f0d25f22ee9a06c4cf6d8723c
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.10.1

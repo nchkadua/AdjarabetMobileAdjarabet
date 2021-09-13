@@ -9,9 +9,8 @@
 import RxSwift
 
 class StatusMessageComponentView: UIView {
-    
     typealias ViewModel = StatusMessageComponentViewModel
-    
+
     private var disposeBag = DisposeBag()
     private var viewModel: ViewModel!
 
@@ -34,7 +33,7 @@ class StatusMessageComponentView: UIView {
         configure(with: viewModel)
         bind()
     }
-    
+
     public func configure(with viewModel: ViewModel) {
         DispatchQueue.main.async {
             self.statusLabel.text = viewModel.type.description
@@ -42,7 +41,7 @@ class StatusMessageComponentView: UIView {
             self.configureViewAppearance(with: viewModel)
         }
     }
-    
+
     private func configureViewAppearance(with viewModel: ViewModel) {
         switch viewModel.type {
         case .initial: break
