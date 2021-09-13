@@ -8,7 +8,6 @@
 
 import Foundation
 import SDWebImageSVGCoder
-import IQKeyboardManagerSwift
 
 public class AppDelegateServices: NSObject, UIApplicationDelegate {
     private var services: [AppDelegateServiceProvider]
