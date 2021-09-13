@@ -418,9 +418,6 @@
 "security_levels_switched_to_individual" = "გსურთ ინდივიდუალური პაკეტის გააქტიურება?";
 "security_levels_individual_is_empty" = "ინდივიდუალური პაკეტის არჩევისას უნდა აირჩიოთ მინიმუმ ერთი ტიპის სმს შეტყობინება, წინააღმდეგ შემთხვევაში ჩაირთვება სტანდარტული პაკეტი";
 
-/* MyCards */
-"my_cards_add_card" = "ბარათის დამატება";
-"my_cards_manage" = "ბარათების მართვა";
 /* Dates */
 "january" = "იანვარი";
 "february" = "თებერვალი";
@@ -479,6 +476,17 @@
 "contact_addresses" = "მისამართები";
 "contact_mail_title1" = "კლიენტთა მომსახურების ცენტრთან დასაკავშირებლად მოგვწერეთ ამ მისამართზე";
 "contact_mail_title2" = "თქვენი დოკუმენტის გოგზავნა შეგიძლიათ ამ მისამართზე";
+
+/* MyCards */
+"my_cards_add_card" = "ბარათის დამატება";
+"my_cards_manage" = "ბარათების მართვა";
+
+/* Not verified user */
+"not_verified_user_title" = "You can’t log in";
+"not_verified_user_subtitle" = "Please verify your identity";
+"not_verified_user_description" = "You have not completed the registration process, in order to be able to use the account please complete the verification.";
+"not_verified_user_goto_button_title" = "Go to verification page";
+"not_verified_user_dismiss_button_title" = "Log with different id";
 
 /* Countries */
 "georgia" = "Georgia";

@@ -410,6 +410,11 @@
 		CE0F767C26EF6E7D008980F6 /* PrivacyPolicyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F767B26EF6E7D008980F6 /* PrivacyPolicyEntity.swift */; };
 		CE0F767E26EF6EE7008980F6 /* MobileAPIPrivacyPolicyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F767D26EF6EE7008980F6 /* MobileAPIPrivacyPolicyRepository.swift */; };
 		CE0F768026EF6EF6008980F6 /* MobileAPIPrivacyPolicyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F767F26EF6EF6008980F6 /* MobileAPIPrivacyPolicyDTO.swift */; };
+		CE0F768926EF8E18008980F6 /* NotVerifiedUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0F768426EF8E18008980F6 /* NotVerifiedUser.storyboard */; };
+		CE0F768A26EF8E18008980F6 /* NotVerifiedUserNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F768526EF8E18008980F6 /* NotVerifiedUserNavigator.swift */; };
+		CE0F768B26EF8E18008980F6 /* NotVerifiedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F768626EF8E18008980F6 /* NotVerifiedUserViewController.swift */; };
+		CE0F768C26EF8E18008980F6 /* NotVerifiedUserViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F768726EF8E18008980F6 /* NotVerifiedUserViewControllerFactory.swift */; };
+		CE0F768D26EF8E18008980F6 /* NotVerifiedUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F768826EF8E18008980F6 /* NotVerifiedUserViewModel.swift */; };
 		CE14202B2636EE8900E022C7 /* Bonus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1420262636EE8900E022C7 /* Bonus.storyboard */; };
 		CE14202C2636EE8900E022C7 /* BonusNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1420272636EE8900E022C7 /* BonusNavigator.swift */; };
 		CE14202D2636EE8900E022C7 /* BonusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1420282636EE8900E022C7 /* BonusViewController.swift */; };
@@ -1359,6 +1364,11 @@
 		CE0F767B26EF6E7D008980F6 /* PrivacyPolicyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyEntity.swift; sourceTree = "<group>"; };
 		CE0F767D26EF6EE7008980F6 /* MobileAPIPrivacyPolicyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAPIPrivacyPolicyRepository.swift; sourceTree = "<group>"; };
 		CE0F767F26EF6EF6008980F6 /* MobileAPIPrivacyPolicyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAPIPrivacyPolicyDTO.swift; sourceTree = "<group>"; };
+		CE0F768426EF8E18008980F6 /* NotVerifiedUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotVerifiedUser.storyboard; sourceTree = "<group>"; };
+		CE0F768526EF8E18008980F6 /* NotVerifiedUserNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotVerifiedUserNavigator.swift; sourceTree = "<group>"; };
+		CE0F768626EF8E18008980F6 /* NotVerifiedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotVerifiedUserViewController.swift; sourceTree = "<group>"; };
+		CE0F768726EF8E18008980F6 /* NotVerifiedUserViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotVerifiedUserViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE0F768826EF8E18008980F6 /* NotVerifiedUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotVerifiedUserViewModel.swift; sourceTree = "<group>"; };
 		CE1420262636EE8900E022C7 /* Bonus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bonus.storyboard; sourceTree = "<group>"; };
 		CE1420272636EE8900E022C7 /* BonusNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusNavigator.swift; sourceTree = "<group>"; };
 		CE1420282636EE8900E022C7 /* BonusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewController.swift; sourceTree = "<group>"; };
@@ -2920,6 +2930,7 @@
 		C784C1C3266A3D9400D328D3 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				CE0F768126EF8DCD008980F6 /* Not Verified User */,
 				CE2AB425266A2D6600C88262 /* Login */,
 			);
 			path = Authentication;
@@ -4462,6 +4473,34 @@
 				CE0F767B26EF6E7D008980F6 /* PrivacyPolicyEntity.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE0F768126EF8DCD008980F6 /* Not Verified User */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F768326EF8DE7008980F6 /* Presentation */,
+				CE0F768226EF8DE3008980F6 /* Data */,
+			);
+			path = "Not Verified User";
+			sourceTree = "<group>";
+		};
+		CE0F768226EF8DE3008980F6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE0F768326EF8DE7008980F6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F768826EF8E18008980F6 /* NotVerifiedUserViewModel.swift */,
+				CE0F768726EF8E18008980F6 /* NotVerifiedUserViewControllerFactory.swift */,
+				CE0F768626EF8E18008980F6 /* NotVerifiedUserViewController.swift */,
+				CE0F768526EF8E18008980F6 /* NotVerifiedUserNavigator.swift */,
+				CE0F768426EF8E18008980F6 /* NotVerifiedUser.storyboard */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		CE1693692541AB100043B1A4 /* Account Info */ = {
@@ -7350,6 +7389,7 @@
 				CE7698A6269F02F6009972B2 /* ResetOptionComponentView.xib in Resources */,
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
 				C75D1AF6261205F4002AF763 /* OGJSlot.zip in Resources */,
+				CE0F768926EF8E18008980F6 /* NotVerifiedUser.storyboard in Resources */,
 				CEE44E882600B5C100A83BD2 /* AdjaraMont-Light.ttf in Resources */,
 				FB8116AF26E5B173009D9AE5 /* StatusMessageComponentView.xib in Resources */,
 				CEA7779D256D4250008A4F6C /* MailChange.storyboard in Resources */,
@@ -7627,6 +7667,7 @@
 				76DCF6B225B8262300150EE1 /* MyCardComponentViewModel.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
+				CE0F768A26EF8E18008980F6 /* NotVerifiedUserNavigator.swift in Sources */,
 				C701C71A25C051C400B059A6 /* CoreApiPaymentAccountCountDTO.swift in Sources */,
 				CE7698AB269F02F6009972B2 /* ResetOptionTableViewCell.swift in Sources */,
 				CEB49873268C987A00004A45 /* PasswordResetControllerFactory.swift in Sources */,
@@ -7691,6 +7732,7 @@
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				CE9B7FEC257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift in Sources */,
 				CE2AABC9267A015200B45A0A /* CorePasswordResetRepository.swift in Sources */,
+				CE0F768D26EF8E18008980F6 /* NotVerifiedUserViewModel.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				C782D26B26544C4C00594A65 /* ABSliderCellModel.swift in Sources */,
 				CECF7F43256D5A77001C0E50 /* AddressChangeNavigator.swift in Sources */,
@@ -8008,10 +8050,12 @@
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
 				C7667FFF26A815C4005EB6E8 /* CloseAccountViewControllerFactory.swift in Sources */,
 				C7C1D33D261B9D48009F01C3 /* WithdrawVisaViewModel.swift in Sources */,
+				CE0F768C26EF8E18008980F6 /* NotVerifiedUserViewControllerFactory.swift in Sources */,
 				C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */,
 				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
 				FB8116B426E5B173009D9AE5 /* StatusMessageTableViewCell.swift in Sources */,
 				C75F61EA2657048A009CB6A1 /* LayoutChooserCollectionViewCellDataProvider.swift in Sources */,
+				CE0F768B26EF8E18008980F6 /* NotVerifiedUserViewController.swift in Sources */,
 				C75F61F326570884009CB6A1 /* LayoutChooserView.swift in Sources */,
 				C7FAA3C82600C4D600265995 /* UFCInitWithdrawDTO.swift in Sources */,
 				CE76989B269EF341009972B2 /* PasswordResetOptionsViewModel.swift in Sources */,

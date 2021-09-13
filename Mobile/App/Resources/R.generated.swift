@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 45 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 46 storyboards.
   struct storyboard {
     /// Storyboard `AccessHistoryCalendar`.
     static let accessHistoryCalendar = _R.storyboard.accessHistoryCalendar()
@@ -144,6 +144,8 @@ struct R: Rswift.Validatable {
     static let mainTabBar = _R.storyboard.mainTabBar()
     /// Storyboard `MyCards`.
     static let myCards = _R.storyboard.myCards()
+    /// Storyboard `NotVerifiedUser`.
+    static let notVerifiedUser = _R.storyboard.notVerifiedUser()
     /// Storyboard `NotificationContent`.
     static let notificationContent = _R.storyboard.notificationContent()
     /// Storyboard `Notifications`.
@@ -362,6 +364,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "MyCards", bundle: ...)`
     static func myCards(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.myCards)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "NotVerifiedUser", bundle: ...)`
+    static func notVerifiedUser(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.notVerifiedUser)
     }
     #endif
 
@@ -4056,6 +4065,30 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.notVerified` struct is generated, and contains static references to 2 images.
+    struct notVerified {
+      /// Image `goTo`.
+      static let goTo = Rswift.ImageResource(bundle: R.hostingBundle, name: "NotVerified/goTo")
+      /// Image `icon`.
+      static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "NotVerified/icon")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "goTo", bundle: ..., traitCollection: ...)`
+      static func goTo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.notVerified.goTo, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "icon", bundle: ..., traitCollection: ...)`
+      static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.notVerified.icon, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.notifications` struct is generated, and contains static references to 6 images.
     struct notifications {
       /// Image `empty_state_icon`.
@@ -7645,7 +7678,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localization` struct is generated, and contains static references to 617 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 622 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -8511,6 +8544,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let gibraltar = Rswift.StringResource(key: "gibraltar", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Go to verification page
+      ///
+      /// Locales: en, ka, hy, ru
+      static let not_verified_user_goto_button_title = Rswift.StringResource(key: "not_verified_user_goto_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Got It
       ///
       /// Locales: en, ka, hy, ru
@@ -8795,6 +8832,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let login_with_touch_id_title = Rswift.StringResource(key: "login_with_touch_id_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Log with different id
+      ///
+      /// Locales: en, ka, hy, ru
+      static let not_verified_user_dismiss_button_title = Rswift.StringResource(key: "not_verified_user_dismiss_button_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Login
       ///
       /// Locales: en, ka, hy, ru
@@ -9171,6 +9212,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let withdraw_add_card_description = Rswift.StringResource(key: "withdraw_add_card_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Please verify your identity
+      ///
+      /// Locales: en, ka, hy, ru
+      static let not_verified_user_subtitle = Rswift.StringResource(key: "not_verified_user_subtitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Please, enter all required fields to make transaction
       ///
       /// Locales: en, ka, hy, ru
@@ -9827,6 +9872,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let p2p_transfer_you_are_transfering_to = Rswift.StringResource(key: "p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: You can’t log in
+      ///
+      /// Locales: en, ka, hy, ru
+      static let not_verified_user_title = Rswift.StringResource(key: "not_verified_user_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: You have not completed the registration process, in order to be able to use the account please complete the verification.
+      ///
+      /// Locales: en, ka, hy, ru
+      static let not_verified_user_description = Rswift.StringResource(key: "not_verified_user_description", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: You have not finished any transaction yet
       ///
       /// Locales: en, ka, hy, ru
@@ -13356,6 +13409,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("gibraltar", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Go to verification page
+      ///
+      /// Locales: en, ka, hy, ru
+      static func not_verified_user_goto_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("not_verified_user_goto_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "not_verified_user_goto_button_title"
+        }
+
+        return NSLocalizedString("not_verified_user_goto_button_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Got It
       ///
       /// Locales: en, ka, hy, ru
@@ -14419,6 +14487,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login_with_touch_id_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Log with different id
+      ///
+      /// Locales: en, ka, hy, ru
+      static func not_verified_user_dismiss_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("not_verified_user_dismiss_button_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "not_verified_user_dismiss_button_title"
+        }
+
+        return NSLocalizedString("not_verified_user_dismiss_button_title", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Login
@@ -15829,6 +15912,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("withdraw_add_card_description", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please verify your identity
+      ///
+      /// Locales: en, ka, hy, ru
+      static func not_verified_user_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("not_verified_user_subtitle", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "not_verified_user_subtitle"
+        }
+
+        return NSLocalizedString("not_verified_user_subtitle", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Please, enter all required fields to make transaction
@@ -18291,6 +18389,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("p2p_transfer_you_are_transfering_to", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: You can’t log in
+      ///
+      /// Locales: en, ka, hy, ru
+      static func not_verified_user_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("not_verified_user_title", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "not_verified_user_title"
+        }
+
+        return NSLocalizedString("not_verified_user_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You have not completed the registration process, in order to be able to use the account please complete the verification.
+      ///
+      /// Locales: en, ka, hy, ru
+      static func not_verified_user_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("not_verified_user_description", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "not_verified_user_description"
+        }
+
+        return NSLocalizedString("not_verified_user_description", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: You have not finished any transaction yet
       ///
       /// Locales: en, ka, hy, ru
@@ -19528,8 +19656,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "AccountParameters/BlockSelf", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AccountParameters/BlockSelf' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Components/ProfileCell/arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Components/ProfileCell/arrow' is used in nib 'AccountParametersComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -19702,8 +19830,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -19731,8 +19859,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TransactionsHistory/arrow-left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-left' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "TransactionsHistory/arrow-right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TransactionsHistory/arrow-right' is used in nib 'CalendarComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -20036,8 +20164,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/legal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/legal' is used in nib 'FooterComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Contact/contact", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Contact/contact' is used in nib 'FooterComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -20909,6 +21037,9 @@ struct _R: Rswift.Validatable {
       try myCards.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try notVerifiedUser.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try notificationContent.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -21080,9 +21211,9 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/querternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/querternary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
         }
         if _R.storyboard.addressChange().addressChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addressChangeViewController' could not be loaded from storyboard 'AddressChange' as 'AddressChangeViewController'.") }
       }
@@ -21163,14 +21294,14 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         }
         if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
       }
@@ -21413,8 +21544,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
@@ -21500,6 +21631,28 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.myCards().myCardsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'myCardsViewController' could not be loaded from storyboard 'MyCards' as 'MyCardsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct notVerifiedUser: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "NotVerifiedUser"
+      let notVerifiedUserViewController = StoryboardViewControllerResource<NotVerifiedUserViewController>(identifier: "NotVerifiedUserViewController")
+
+      func notVerifiedUserViewController(_: Void = ()) -> NotVerifiedUserViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: notVerifiedUserViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "NotVerified/goTo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NotVerified/goTo' is used in storyboard 'NotVerifiedUser', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "ColorGuide/SystemTints/systemBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemTints/systemBlue' is used in storyboard 'NotVerifiedUser', but couldn't be loaded.") }
+        }
+        if _R.storyboard.notVerifiedUser().notVerifiedUserViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'notVerifiedUserViewController' could not be loaded from storyboard 'NotVerifiedUser' as 'NotVerifiedUserViewController'.") }
       }
 
       fileprivate init() {}
