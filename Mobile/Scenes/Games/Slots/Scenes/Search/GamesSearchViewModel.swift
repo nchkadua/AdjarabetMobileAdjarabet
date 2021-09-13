@@ -145,7 +145,10 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
                 icon: R.image.shared.searchEmptyStateIcon()!,
                 title: "",
                 description: R.string.localization.search_empty_state_description(),
-                position: .centeredWithBottomSpace(space: keyboardHeight)))
+                position: .centeredWithBottomSpace(space: keyboardHeight),
+				numItems: 1
+			)
+		)
 }
 
 extension DefaultGamesSearchViewModel: GamesSearchViewModel {

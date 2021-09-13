@@ -16,23 +16,33 @@ public struct EmptyStateComponentViewModelParams {
     public let title: String
     public let description: String
     public let position: EmptyStatePosition
+	public var isEnabled: Bool
+	public let numItems: Int		/// number of items in empty collection
 
     init(
         icon: UIImage = R.image.promotions.casino_icon()!,
         title: String = "",
         description: String = "",
-        position: EmptyStatePosition = .centered
+        position: EmptyStatePosition = .centered,
+		isEnabled: Bool = false,
+		numItems: Int = 0
     ) {
         self.icon = icon
         self.title = title
         self.description = description
         self.position = position
+		self.isEnabled = isEnabled
+		self.numItems = numItems
     }
 }
 
 public protocol EmptyStateComponentViewModelInput {
     func didBind()
     func set(title: String)
+	func enable()
+	func disable()
+	var numItems: Int { get }
+	var isEnabled: Bool { get set }
 }
 
 public protocol EmptyStateComponentViewModelOutput {
@@ -41,7 +51,9 @@ public protocol EmptyStateComponentViewModelOutput {
 }
 
 public enum EmptyStateComponentViewModelOutputAction {
-    case titleUpdate(title: String)
+	case hide
+	case show
+	case titleUpdate(title: String)
 }
 
 public class DefaultEmptyStateComponentViewModel {
@@ -58,15 +70,38 @@ public enum EmptyStatePosition {
 }
 
 extension DefaultEmptyStateComponentViewModel: EmptyStateComponentViewModel {
-    public func set(title: String) {
-        actionSubject.onNext(.titleUpdate(title: title))
-    }
+	
+	public var numItems: Int {
+		get {
+			params.numItems
+		}
+	}
+	
+	public var isEnabled: Bool {
+		get {
+			params.isEnabled
+		}
+		set {
+			params.isEnabled = newValue
+		}
+	}
 
     public var action: Observable<EmptyStateComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
 
-    public func didBind() {
-//        actionSubject.onNext()
-    }
+    public func didBind() { }
+	
+	public func enable() {
+		actionSubject.onNext(.show)
+	}
+	
+	public func disable() {
+		actionSubject.onNext(.hide)
+	}
+	
+	public func set(title: String) {
+		actionSubject.onNext(.titleUpdate(title: title))
+	}
+	
 }

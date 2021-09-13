@@ -13,7 +13,7 @@ class TransactionsViewController: ABViewController {
     @Inject(from: .viewModels) private var viewModel: TransactionsViewModel
     public lazy var navigator = TransactionsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
-        .configureEmptyState(with: viewModel.emptyStateViewModel)
+		.configureEmptyState(with: viewModel.emptyStateViewModel)
         .enableEmptyState()
 
     // MARK: - Lifecycle methods

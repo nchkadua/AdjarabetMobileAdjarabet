@@ -52,8 +52,9 @@ public class EmptyStateComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .titleUpdate(let title):
-                self?.titleLabel.text = title
+			case .hide: self?.hide()
+			case .show: self?.show()
+            case .titleUpdate(let title): self?.titleLabel.text = title
             }
         }).disposed(by: disposeBag)
 

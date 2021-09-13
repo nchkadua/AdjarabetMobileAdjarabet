@@ -11,7 +11,7 @@ import RxSwift
 public class GamesSearchViewController: ABViewController {
     var viewModel: GamesSearchViewModel = DefaultGamesSearchViewModel(params: .init())
     public lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        .configureEmptyState(with: viewModel.emptyStateViewModel, numItemsInEmptyCollection: 1)
+        .configureEmptyState(with: viewModel.emptyStateViewModel)
         .enableEmptyState()
 
     // shimmer loader
@@ -57,7 +57,7 @@ public class GamesSearchViewController: ABViewController {
     private func didReceive(action: GamesSearchViewModelOutputAction) {
         switch action {
         case .configureEmptyState(let emptyStateViewModel):
-            collectionViewController.configureEmptyState(with: emptyStateViewModel, numItemsInEmptyCollection: 1)
+            collectionViewController.configureEmptyState(with: emptyStateViewModel)
         case .setLoading(let loadingType):
             UIView.animate(withDuration: 0.3) { self.loader.alpha = loadingType == .fullScreen ? 1 : 0 }
         case .initialize(let appListDataProvider):

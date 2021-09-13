@@ -21,43 +21,41 @@ public class ABTableViewController: AppTableViewController {
     public var isTabBarManagementEnabled: Bool = false
     public var canEditRow: Bool = false
 
-    private lazy var isEmptyStateEnabled = false
-    private lazy var emptyStateView: EmptyStateComponentView = {
-        let emptyStateView = EmptyStateComponentView()
-        tableView.backgroundView = emptyStateView
-        emptyStateView.hide()
-        return emptyStateView
-    }()
-    private var numItemsInEmptyCollection = 0
+	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {
+		let view = EmptyStateComponentView()
+        view.hide()
+		let viewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init())
+		return (viewModel, view)
+	}()
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView?.register(types: [
-            PromotionTableViewCell.self,
-            NotificationTableViewCell.self,
-            NotificationsHeaderCell.self,
-            TransactionHistoryTableViewCell.self,
-            DateHeaderCell.self,
-            TransactionDetailsTableViewCell.self,
-            TransactionFilterTableViewCell.self,
-            AccountParametersTableViewCell.self,
-            AccountSecurityMessagesTableViewCell.self,
-            AccountParametersHeaderTableViewCell.self,
-            AccessHistoryTableViewCell.self,
-            SecurityLevelTableViewCell.self,
-            SecurityLevelTypeTableViewCell.self,
-            MyCardTableViewCell.self,
-            AddMyCardTableViewCell.self,
-            VideoCardTableViewCell.self,
-            CloseAccountButtonTableViewCell.self
-        ])
-
         setupTableView()
     }
 
     private func setupTableView () {
+		tableView?.register(types: [
+			PromotionTableViewCell.self,
+			NotificationTableViewCell.self,
+			NotificationsHeaderCell.self,
+			TransactionHistoryTableViewCell.self,
+			DateHeaderCell.self,
+			TransactionDetailsTableViewCell.self,
+			TransactionFilterTableViewCell.self,
+			AccountParametersTableViewCell.self,
+			AccountSecurityMessagesTableViewCell.self,
+			AccountParametersHeaderTableViewCell.self,
+			AccessHistoryTableViewCell.self,
+			SecurityLevelTableViewCell.self,
+			SecurityLevelTypeTableViewCell.self,
+			MyCardTableViewCell.self,
+			AddMyCardTableViewCell.self,
+			VideoCardTableViewCell.self,
+			CloseAccountButtonTableViewCell.self
+		])
+		
         tableView.backgroundColor = .clear
+		tableView.backgroundView = emptyState.view
     }
 
     // MARK: TabBar management
@@ -77,30 +75,30 @@ public class ABTableViewController: AppTableViewController {
         }
     }
 
-    // MARK: Empty state
+    // MARK: - Empty state
+	
     @discardableResult
-    public func configureEmptyState(with viewModel: EmptyStateComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
-        self.numItemsInEmptyCollection = numItemsInEmptyCollection
-        emptyStateView.setAndBind(viewModel: viewModel)
+    public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
+		emptyState.viewModel = viewModel
+		emptyState.view.setAndBind(viewModel: viewModel)
         return self
     }
 
 	@discardableResult
     public func enableEmptyState() -> Self {
-        emptyStateView.show()
-        isEmptyStateEnabled = true
+		emptyState.viewModel.enable()
         return self
     }
 
+	@discardableResult
     public func disableEmptyState() -> Self {
-        emptyStateView.hide()
-        isEmptyStateEnabled = false
+		emptyState.viewModel.disable()
         return self
     }
 
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
-        emptyStateView.isHidden = !isEmptyStateEnabled || (numberOfRowsInSection > numItemsInEmptyCollection)
+		emptyState.view.isHidden = (!emptyState.viewModel.isEnabled) || (numberOfRowsInSection > emptyState.viewModel.numItems)
         return numberOfRowsInSection
     }
 

@@ -12,7 +12,7 @@ public class DocumentationViewController: ABViewController {
     @Inject(from: .viewModels) var viewModel: DocumentationViewModel
     public lazy var navigator = DocumentationNavigator(viewController: self)
 
-    private lazy var appTableViewController: AppTableViewController = AppTableViewController()
+    private lazy var appTableViewController: AppTableViewController = ABTableViewController()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
