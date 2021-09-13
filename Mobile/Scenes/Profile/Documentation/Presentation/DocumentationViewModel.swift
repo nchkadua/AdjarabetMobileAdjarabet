@@ -75,17 +75,9 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
     }
 
     public func createPrivacyPolicyRequest() {
-        repo.getUrl { result in
-            switch result {
-            case .success(let entity): self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.ge))))
-            case .failure(_): break
-            }
-        }
-
-//        let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/Privacy")
-//            .set(method: HttpMethodGet())
-//            .build()
-//        routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(request: request)))
+        repo.getUrl(handler: handler(onSuccessHandler: { entity in
+            self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.ge))))
+        }))
     }
 
     public func createAboutUsRequest() {
