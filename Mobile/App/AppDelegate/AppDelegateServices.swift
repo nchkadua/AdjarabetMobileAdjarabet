@@ -19,11 +19,6 @@ public class AppDelegateServices: NSObject, UIApplicationDelegate {
         //SVG
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
-        //Keyboard
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = false
-
-        IQKeyboardManager.shared.keyboardDistanceFromTextField = UIScreen.main.nativeBounds.height / 8.2
     }
 
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {

@@ -9,7 +9,6 @@ def pods
 	pod 'Firebase/Crashlytics'
 	pod 'Firebase/Performance'
 	pod 'FSCalendar'
-	pod 'IQKeyboardManagerSwift'
 	pod 'Nuke', '8.4.1'
 	pod 'R.swift'
 	pod 'ReachabilitySwift'
