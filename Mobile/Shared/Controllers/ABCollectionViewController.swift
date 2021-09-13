@@ -22,7 +22,6 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 
 	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {
 		let view = EmptyStateComponentView()
-		view.hide()
 		let viewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init())
 		return (viewModel, view)
 	}()
@@ -53,6 +52,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 		])
 		
         collectionView.backgroundColor = .clear
+		collectionView.backgroundView = emptyState.view
         collectionView.alwaysBounceVertical = true
     }
 
@@ -72,12 +72,6 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         return self
     }
 
-    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
-		emptyState.view.isHidden = (!emptyState.viewModel.isEnabled) || (numberOfItemsInSection > emptyState.viewModel.numItems)
-        return numberOfItemsInSection
-    }
-
 	@discardableResult
     public func enableEmptyState() -> Self {
 		emptyState.viewModel.enable()
@@ -89,6 +83,12 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 		emptyState.viewModel.disable()
         return self
     }
+	
+	public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
+		emptyState.view.isHidden = (!emptyState.viewModel.isEnabled) || (numberOfItemsInSection > emptyState.viewModel.numItems)
+		return numberOfItemsInSection
+	}
 
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.numberOfSections - 1 == indexPath.section && collectionView.numberOfItems(inSection: indexPath.section) - 10 == indexPath.item {

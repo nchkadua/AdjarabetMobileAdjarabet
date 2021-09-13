@@ -23,7 +23,7 @@ public class ABTableViewController: AppTableViewController {
 
 	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {
 		let view = EmptyStateComponentView()
-        view.hide()
+		print("view should have been added as backgroundView")
 		let viewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init())
 		return (viewModel, view)
 	}()
@@ -79,6 +79,7 @@ public class ABTableViewController: AppTableViewController {
 	
     @discardableResult
     public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
+		print("*** ABTableViewController: configureEmptyState")
 		emptyState.viewModel = viewModel
 		emptyState.view.setAndBind(viewModel: viewModel)
         return self
@@ -86,19 +87,24 @@ public class ABTableViewController: AppTableViewController {
 
 	@discardableResult
     public func enableEmptyState() -> Self {
+		print("*** ABTableViewController: enableEmptyState")
 		emptyState.viewModel.enable()
         return self
     }
 
 	@discardableResult
     public func disableEmptyState() -> Self {
+		print("*** ABTableViewController: disableEmptyState")
 		emptyState.viewModel.disable()
         return self
     }
 
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
+		print("*** ABTableViewController: numberOfRowsInSection = \(numberOfRowsInSection)")
 		emptyState.view.isHidden = (!emptyState.viewModel.isEnabled) || (numberOfRowsInSection > emptyState.viewModel.numItems)
+		print("*** ABTableViewController: (!emptyState.viewModel.isEnabled) = \((!emptyState.viewModel.isEnabled))")
+		print("*** ABTableViewController: emptyState.view.isHidden = \(emptyState.view.isHidden)")
         return numberOfRowsInSection
     }
 

@@ -41,6 +41,7 @@ public protocol EmptyStateComponentViewModelInput {
     func set(title: String)
 	func enable()
 	func disable()
+	
 	var numItems: Int { get }
 	var isEnabled: Bool { get set }
 }
@@ -83,6 +84,7 @@ extension DefaultEmptyStateComponentViewModel: EmptyStateComponentViewModel {
 		}
 		set {
 			params.isEnabled = newValue
+			print("*** DefaultEmptyStateComponentViewModel isEnabled updated to -> \(isEnabled)")
 		}
 	}
 
@@ -93,10 +95,14 @@ extension DefaultEmptyStateComponentViewModel: EmptyStateComponentViewModel {
     public func didBind() { }
 	
 	public func enable() {
+		print("*** DefaultEmptyStateComponentViewModel: enable")
+		isEnabled = true
 		actionSubject.onNext(.show)
 	}
 	
 	public func disable() {
+		print("*** DefaultEmptyStateComponentViewModel: disable")
+		isEnabled = false
 		actionSubject.onNext(.hide)
 	}
 	
