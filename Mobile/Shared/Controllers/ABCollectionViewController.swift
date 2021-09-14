@@ -67,6 +67,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 	
     @discardableResult
     public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
+		print("*** ABCollectionViewController.configureEmptyState")
 		emptyState.viewModel = viewModel
 		emptyState.view.setAndBind(viewModel: viewModel)
         return self
@@ -74,19 +75,19 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 
 	@discardableResult
     public func enableEmptyState() -> Self {
-		emptyState.viewModel.enable()
+		emptyState.viewModel.isEnabled = true
         return self
     }
 
 	@discardableResult
     public func disableEmptyState() -> Self {
-		emptyState.viewModel.disable()
+		emptyState.viewModel.isEnabled = false
         return self
     }
 	
 	public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
-		emptyState.view.isHidden = (!emptyState.viewModel.isEnabled) || (numberOfItemsInSection > emptyState.viewModel.numItems)
+		emptyState.viewModel.isRequired = numberOfItemsInSection <= emptyState.viewModel.numItems
 		return numberOfItemsInSection
 	}
 

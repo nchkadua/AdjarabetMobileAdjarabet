@@ -43,10 +43,11 @@ enum BonusViewModelRoute {
 
 class DefaultBonusViewModel: DefaultBaseViewModel {
     var params: BonusViewModelParams
-    public lazy var emptyStateViewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init(
-                                                                                                            icon: R.image.bonus.empty_state_icon()!,
-                                                                                                            title: R.string.localization.bonus_empty_state_title(),
-                                                                                                            description: R.string.localization.bonus_empty_state_description()))
+    public lazy var emptyStateViewModel: EmptyStateComponentViewModel =
+		DefaultEmptyStateComponentViewModel(params: .init(
+												icon: R.image.bonus.empty_state_icon()!,
+												title: R.string.localization.bonus_empty_state_title(),
+												description: R.string.localization.bonus_empty_state_description()))
     private let actionSubject = PublishSubject<BonusViewModelOutputAction>()
     private let routeSubject = PublishSubject<BonusViewModelRoute>()
 

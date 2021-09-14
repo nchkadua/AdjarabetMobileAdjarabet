@@ -16,15 +16,18 @@ public struct EmptyStateComponentViewModelParams {
     public let title: String
     public let description: String
     public let position: EmptyStatePosition
-	public var isEnabled: Bool
+	/// view will be displayed only when it is enabled and required
+	public var isEnabled: Bool		/// is allowed from customer to display
+	public var isRequired: Bool		/// should be displayed, seems like collections is empty
 	public let numItems: Int		/// number of items in empty collection
-
+	
     init(
         icon: UIImage = R.image.promotions.casino_icon()!,
         title: String = "",
         description: String = "",
         position: EmptyStatePosition = .centered,
 		isEnabled: Bool = false,
+		isRequired: Bool = true,
 		numItems: Int = 0
     ) {
         self.icon = icon
@@ -32,6 +35,7 @@ public struct EmptyStateComponentViewModelParams {
         self.description = description
         self.position = position
 		self.isEnabled = isEnabled
+		self.isRequired = isRequired
 		self.numItems = numItems
     }
 }
@@ -39,11 +43,10 @@ public struct EmptyStateComponentViewModelParams {
 public protocol EmptyStateComponentViewModelInput {
     func didBind()
     func set(title: String)
-	func enable()
-	func disable()
 	
 	var numItems: Int { get }
 	var isEnabled: Bool { get set }
+	var isRequired: Bool { get set }
 }
 
 public protocol EmptyStateComponentViewModelOutput {
@@ -84,27 +87,34 @@ extension DefaultEmptyStateComponentViewModel: EmptyStateComponentViewModel {
 		}
 		set {
 			params.isEnabled = newValue
+			refreshHideness()
 			print("*** DefaultEmptyStateComponentViewModel isEnabled updated to -> \(isEnabled)")
 		}
 	}
+	
+	public var isRequired: Bool {
+		get {
+			params.isRequired
+		}
+		set {
+			params.isRequired = newValue
+			refreshHideness()
+		}
+	}
 
+	private func refreshHideness() {
+		if isEnabled && isRequired {
+			actionSubject.onNext(.show)
+		} else {
+			actionSubject.onNext(.hide)
+		}
+	}
+	
     public var action: Observable<EmptyStateComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
 
     public func didBind() { }
-	
-	public func enable() {
-		print("*** DefaultEmptyStateComponentViewModel: enable")
-		isEnabled = true
-		actionSubject.onNext(.show)
-	}
-	
-	public func disable() {
-		print("*** DefaultEmptyStateComponentViewModel: disable")
-		isEnabled = false
-		actionSubject.onNext(.hide)
-	}
 	
 	public func set(title: String) {
 		actionSubject.onNext(.titleUpdate(title: title))

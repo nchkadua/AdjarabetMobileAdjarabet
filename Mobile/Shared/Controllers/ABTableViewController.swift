@@ -88,21 +88,21 @@ public class ABTableViewController: AppTableViewController {
 	@discardableResult
     public func enableEmptyState() -> Self {
 		print("*** ABTableViewController: enableEmptyState")
-		emptyState.viewModel.enable()
+		emptyState.viewModel.isEnabled = true
         return self
     }
 
 	@discardableResult
     public func disableEmptyState() -> Self {
 		print("*** ABTableViewController: disableEmptyState")
-		emptyState.viewModel.disable()
+		emptyState.viewModel.isEnabled = false
         return self
     }
 
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
 		print("*** ABTableViewController: numberOfRowsInSection = \(numberOfRowsInSection)")
-		emptyState.view.isHidden = (!emptyState.viewModel.isEnabled) || (numberOfRowsInSection > emptyState.viewModel.numItems)
+		emptyState.viewModel.isRequired = numberOfRowsInSection <= emptyState.viewModel.numItems
 		print("*** ABTableViewController: (!emptyState.viewModel.isEnabled) = \((!emptyState.viewModel.isEnabled))")
 		print("*** ABTableViewController: emptyState.view.isHidden = \(emptyState.view.isHidden)")
         return numberOfRowsInSection
