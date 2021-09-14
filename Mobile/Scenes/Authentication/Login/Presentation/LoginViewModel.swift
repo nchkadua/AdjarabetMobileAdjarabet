@@ -45,6 +45,7 @@ enum LoginViewModelRoute {
     case openOTP(params: OTPViewModelParams)
     case openMainTabBar(params: MainContainerViewModelParams)
     case openAlert(title: String, message: String? = nil)
+    case openNotVerifiedUserPage
 }
 
 class DefaultLoginViewModel: DefaultBaseViewModel {
@@ -69,6 +70,7 @@ class DefaultLoginViewModel: DefaultBaseViewModel {
             case .success(let params):
                 routeSubject.onNext(.openMainTabBar(params: params))
             case .otpRequried(let username): openOTP(username, otpType: .loginOTP)
+            case .openNotVerifiedUserPage: routeSubject.onNext(.openNotVerifiedUserPage)
             }
         case .failure(let error): show(error: error)
         }
