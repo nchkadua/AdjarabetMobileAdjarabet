@@ -9,370 +9,376 @@
 import RxSwift
 
 public class ABViewController: UIViewController, KeyboardListening, UIGestureRecognizerDelegate, NetworkConnectionObserver {
-    public var disposeBag = DisposeBag()
-    var errorThrowing: ErrorThrowing? {
-        willSet {
-            newValue?.errorObservable.subscribe(onNext: { [weak self] error in
-                self?.show(error: error)
-            }).disposed(by: disposeBag)
-        }
-    }
+     public var disposeBag = DisposeBag()
+     var errorThrowing: ErrorThrowing? {
+          willSet {
+               newValue?.errorObservable.subscribe(onNext: { [weak self] error in
+                    self?.show(error: error)
+               }).disposed(by: disposeBag)
+          }
+     }
 
-    private lazy var v: UIView = {
-        return UIApplication.shared.windows.first(where: { $0.isKeyWindow })
-    }() ?? view
+     private lazy var v: UIView = {
+          return UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+     }() ?? view
 
-    private lazy var popupBgView: UIView = {
-        let bg = UIView(frame: CGRect(x: 0, y: 0, width: v.frame.width, height: v.frame.height))
-        bg.setBackgorundColor(to: .primaryBg(alpha: 0.5))
-        bg.alpha = 0.0
+     private lazy var popupBgView: UIView = {
+          let bg = UIView(frame: CGRect(x: 0, y: 0, width: v.frame.width, height: v.frame.height))
+          bg.setBackgorundColor(to: .primaryBg(alpha: 0.5))
+          bg.alpha = 0.0
 
-        return bg
-    }()
+          return bg
+     }()
 
-    private lazy var popupError: PopupErrorView = {
-        let error: PopupErrorView = .init()
-        error.viewModel.action.subscribe(onNext: { [weak self] action in
-            guard let self = self else { return }
-            switch action {
-            case .tapped(let buttonType, let error):
-                self.errorThrowing?.errorActionHandler(buttonType: buttonType, error: error)
-                self.hidePopupError()
-            default: break
-            }
-        }).disposed(by: disposeBag)
-        error.translatesAutoresizingMaskIntoConstraints = false
-        return error
-    }()
+     private lazy var popupError: PopupErrorView = {
+          let error: PopupErrorView = .init()
+          error.viewModel.action.subscribe(onNext: { [weak self] action in
+               guard let self = self else { return }
+               switch action {
+               case .tapped(let buttonType, let error):
+                    self.errorThrowing?.errorActionHandler(buttonType: buttonType, error: error)
+                    self.hidePopupError()
+               default: break
+               }
+          }).disposed(by: disposeBag)
+          error.translatesAutoresizingMaskIntoConstraints = false
+          return error
+     }()
 
-    private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint) = {
-        let error: NotificationErrorView = .init()
+     private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint) = {
+          let error: NotificationErrorView = .init()
 
-        view.addSubview(error)
-        error.translatesAutoresizingMaskIntoConstraints = false
+          view.addSubview(error)
+          error.translatesAutoresizingMaskIntoConstraints = false
 
-        let constraint = error.topAnchor.constraint(equalTo: view.bottomAnchor)
-        NSLayoutConstraint.activate([
-            constraint,
-            error.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 23),
-            error.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -23),
-            error.heightAnchor.constraint(equalToConstant: 84)
-        ])
+          let constraint = error.topAnchor.constraint(equalTo: view.bottomAnchor)
+          NSLayoutConstraint.activate([
+               constraint,
+               error.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 23),
+               error.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -23),
+               error.heightAnchor.constraint(equalToConstant: 84)
+          ])
 
-        return (error, constraint)
-    }()
+          return (error, constraint)
+     }()
 
-    lazy var statusMessage: (view: StatusMessageComponentView, viewModel: StatusMessageComponentViewModel) = {
-        let view = StatusMessageComponentView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let viewModel: StatusMessageComponentViewModel = DefaultStatusMessageComponentViewModel(params: .init())
-		view.setAndBind(viewModel: viewModel)
-		view.hide()
-        return (view, viewModel)
-    }()
+     lazy var statusMessage: (view: StatusMessageComponentView, viewModel: StatusMessageComponentViewModel) = {
+          let view = StatusMessageComponentView()
+          view.translatesAutoresizingMaskIntoConstraints = false
+          let viewModel: StatusMessageComponentViewModel = DefaultStatusMessageComponentViewModel(params: .init())
+          view.setAndBind(viewModel: viewModel)
+          view.hide()
+          return (view, viewModel)
+     }()
 
-    //Success
-    private lazy var successBg: UIView = {
-        let bg = UIImageView(frame: CGRect(x: view.bounds.origin.x / 2, y: view.bounds.origin.y / 2, width: 72, height: 72))
-        bg.translatesAutoresizingMaskIntoConstraints = false
-        bg.setBackgorundColor(to: .primaryText())
-        bg.layer.cornerRadius = 13
+     //Success
+     private lazy var successBg: UIView = {
+          let bg = UIImageView(frame: CGRect(x: view.bounds.origin.x / 2, y: view.bounds.origin.y / 2, width: 72, height: 72))
+          bg.translatesAutoresizingMaskIntoConstraints = false
+          bg.setBackgorundColor(to: .primaryText())
+          bg.layer.cornerRadius = 13
 
-        return bg
-    }()
+          return bg
+     }()
 
-    private lazy var success: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+     private lazy var success: UIImageView = {
+          let imageView = UIImageView()
+          imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        imageView.animationImages = animatedImages(for: "Success/Success_")
-        imageView.animationDuration = 2.38
-        imageView.animationRepeatCount = 1
-        imageView.image = imageView.animationImages?.first
+          imageView.animationImages = animatedImages(for: "Success/Success_")
+          imageView.animationDuration = 2.38
+          imageView.animationRepeatCount = 1
+          imageView.image = imageView.animationImages?.first
 
-        return imageView
-    }()
+          return imageView
+     }()
 
-    private lazy var loader: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+     private lazy var loader: UIImageView = {
+          let imageView = UIImageView()
+          imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        imageView.animationImages = animatedImages(for: "Loader/loader_")
-        imageView.animationDuration = 1.2
-        imageView.animationRepeatCount = .max
-        imageView.image = imageView.animationImages?.first
+          imageView.animationImages = animatedImages(for: "Loader/loader_")
+          imageView.animationDuration = 1.2
+          imageView.animationRepeatCount = .max
+          imageView.image = imageView.animationImages?.first
 
-        return imageView
-    }()
+          return imageView
+     }()
 
-    func animatedImages(for name: String) -> [UIImage] {
-        var i = 0
-        var images = [UIImage]()
-        while let image = UIImage(named: "\(name)\(i)") {
-            images.append(image)
-            i += 1
-        }
-        return images
-    }
+     func animatedImages(for name: String) -> [UIImage] {
+          var i = 0
+          var images = [UIImage]()
+          while let image = UIImage(named: "\(name)\(i)") {
+               images.append(image)
+               i += 1
+          }
+          return images
+     }
 
- // private lazy var statusError: StatusErrorView = .init()
+     // private lazy var statusError: StatusErrorView = .init()
 
-    public var keyScrollView: UIScrollView? { nil }
-    public private(set) var isKeyboardOpen: Bool = false
-    public private(set) var keyboardFrame: CGRect = .zero
-    public var additionalBottomContentInset: CGFloat { 0 }
-    public var defaultBottomContentInset: CGFloat { 0 }
-    public var setInteractivePopGestureRecognizer = true
+     public var keyScrollView: UIScrollView? { nil }
+     public private(set) var isKeyboardOpen: Bool = false
+     public private(set) var keyboardFrame: CGRect = .zero
+     public var additionalBottomContentInset: CGFloat { 0 }
+     public var defaultBottomContentInset: CGFloat { 0 }
+     public var setInteractivePopGestureRecognizer = true
 
-    public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
+     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        guard setInteractivePopGestureRecognizer else {return}
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-        setupAsNetworkConnectionObserver()
-        setupStatusMessage()
-    }
+     public override func viewDidLoad() {
+          super.viewDidLoad()
+          guard setInteractivePopGestureRecognizer else {return}
+          navigationController?.interactivePopGestureRecognizer?.delegate = self
+          setupAsNetworkConnectionObserver()
+          setupStatusMessage()
+     }
 
      private func setupAsNetworkConnectionObserver() {
           NetworkConnectionManager.shared.addObserver(self)
      }
 
      private func setupStatusMessage() {
-		view.addSubview(statusMessage.view)
-		view.bringSubviewToFront(statusMessage.view)
+          view.addSubview(statusMessage.view)
+          view.bringSubviewToFront(statusMessage.view)
 
-		let heightConstraint = statusMessage.view.heightAnchor.constraint(equalToConstant: StatusMessageComponentConstants.preferredHeight)
-		heightConstraint.identifier = StatusMessageComponentConstants.heightConstraintIdentifier
+          let heightConstraint = statusMessage.view.heightAnchor.constraint(equalToConstant: StatusMessageComponentConstants.preferredHeight)
+          heightConstraint.identifier = StatusMessageComponentConstants.heightConstraintIdentifier
 
-		NSLayoutConstraint.activate([
-			heightConstraint,
-			statusMessage.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-			statusMessage.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-			statusMessage.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-		])
+          NSLayoutConstraint.activate([
+               heightConstraint,
+               statusMessage.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+               statusMessage.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+               statusMessage.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+          ])
 
-		setupNetworkConnectionState()
-	}
+          setupNetworkConnectionState()
+     }
 
-    public override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        stopLoading()
-    }
+     public override func viewWillDisappear(_ animated: Bool) {
+          super.viewWillDisappear(animated)
+          stopLoading()
+     }
 
-    public func showSuccess(completion: @escaping () -> Void) {
-        guard !success.isAnimating else {return}
+     public func showSuccess(completion: @escaping () -> Void) {
+          guard !success.isAnimating else {return}
 
-        view.addSubview(successBg)
-        successBg.alpha = 0.0
-        NSLayoutConstraint.activate([
-            successBg.widthAnchor.constraint(equalToConstant: 96),
-            successBg.heightAnchor.constraint(equalToConstant: 96),
-            successBg.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            successBg.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+          view.addSubview(successBg)
+          successBg.alpha = 0.0
+          NSLayoutConstraint.activate([
+               successBg.widthAnchor.constraint(equalToConstant: 96),
+               successBg.heightAnchor.constraint(equalToConstant: 96),
+               successBg.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+               successBg.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+          ])
 
-        successBg.addSubview(success)
-        NSLayoutConstraint.activate([
-            success.widthAnchor.constraint(equalToConstant: 86),
-            success.heightAnchor.constraint(equalToConstant: 86),
-            success.centerXAnchor.constraint(equalTo: successBg.centerXAnchor),
-            success.centerYAnchor.constraint(equalTo: successBg.centerYAnchor)
-        ])
-        //
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.19) { [self] in
-            UIView.animate(withDuration: 0.4, animations: {
-                self.successBg.alpha = 0.0
-            }, completion: { _ in
-                self.success.stopAnimating()
-                self.successBg.removeFromSuperview()
-                self.success.removeFromSuperview()
+          successBg.addSubview(success)
+          NSLayoutConstraint.activate([
+               success.widthAnchor.constraint(equalToConstant: 86),
+               success.heightAnchor.constraint(equalToConstant: 86),
+               success.centerXAnchor.constraint(equalTo: successBg.centerXAnchor),
+               success.centerYAnchor.constraint(equalTo: successBg.centerYAnchor)
+          ])
+          //
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1.19) { [self] in
+               UIView.animate(withDuration: 0.4, animations: {
+                    self.successBg.alpha = 0.0
+               }, completion: { _ in
+                    self.success.stopAnimating()
+                    self.successBg.removeFromSuperview()
+                    self.success.removeFromSuperview()
 
-                completion()
-            })
-        }
+                    completion()
+               })
+          }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.145) { SoundPlayer.shared.playSound("success") }
-        UIView.animate(withDuration: 0.5, animations: {
-            self.successBg.alpha = 1.0
-        })
-        self.success.startAnimating()
-    }
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.145) { SoundPlayer.shared.playSound("success") }
+          UIView.animate(withDuration: 0.5, animations: {
+               self.successBg.alpha = 1.0
+          })
+          self.success.startAnimating()
+     }
 
-    public func startLoading() {
-        guard !loader.isAnimating else {return}
+     public func startLoading() {
+          guard !loader.isAnimating else {return}
 
-        view.addSubview(loader)
-        NSLayoutConstraint.activate([
-            loader.widthAnchor.constraint(equalToConstant: 80),
-            loader.heightAnchor.constraint(equalToConstant: 80),
-            loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loader.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+          view.addSubview(loader)
+          NSLayoutConstraint.activate([
+               loader.widthAnchor.constraint(equalToConstant: 80),
+               loader.heightAnchor.constraint(equalToConstant: 80),
+               loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+               loader.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+          ])
 
-        loader.startAnimating()
-    }
+          loader.startAnimating()
+     }
 
-    public func stopLoading() {
-        guard loader.isAnimating else {return}
+     public func stopLoading() {
+          guard loader.isAnimating else {return}
 
-        loader.stopAnimating()
-        loader.removeFromSuperview()
-    }
+          loader.stopAnimating()
+          loader.removeFromSuperview()
+     }
 
-    func show(error: ABError) {
-        switch error.description {
-        case .popup(let description):
-            showPopupError(error: error, description: description)
-        case .notification(let description):
-            showNotificationError(with: description)
-        case .status(let description):
-            showStatusError(with: description)
-        }
-    }
+     func show(error: ABError) {
+          stopLoading()
+          switch error.description {
+          case .popup(let description):
+               showPopupError(error: error, description: description)
+          case .notification(let description):
+               showNotificationError(with: description)
+          case .status(let description):
+               showStatusError(with: description)
+          }
+     }
 
-    func showPopupError(error: ABError, description: ABError.Description.Popup) {
-        popupError.viewModel.set(error: error, description: description)
-        DispatchQueue.main.async { self.showPopupError() }
-    }
+     func showPopupError(error: ABError, description: ABError.Description.Popup) {
+          popupError.viewModel.set(error: error, description: description)
+          DispatchQueue.main.async { self.showPopupError() }
+     }
 
-    func showNotificationError(with description: ABError.Description.Notification) {
-        notificationError.view.configure(from: description)
-        DispatchQueue.main.async { self.showNotificationError() }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { self.hideNotificationError() }
-    }
+     private var isNotificationErrorShown = false
+     func showNotificationError(with description: ABError.Description.Notification) {
+          guard !isNotificationErrorShown else {return}
 
-    func showStatusError(with description: ABError.Description.Status) {
-        showAlert(title: "Status: \(description.description)")
-    }
+          notificationError.view.configure(from: description)
+          DispatchQueue.main.async { self.showNotificationError() }
+          DispatchQueue.main.asyncAfter(deadline: .now() + 2) { self.hideNotificationError() }
+     }
 
-    private func showPopupError() {
-        v.addSubview(popupBgView)
-        v.addSubview(popupError)
-        popupError.pin(to: v)
-        self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+     func showStatusError(with description: ABError.Description.Status) {
+          showAlert(title: "Status: \(description.description)")
+     }
 
-        UIView.animate(
-            withDuration: 0.2,
-            animations: {
-                self.popupBgView.alpha = 1.0
-                UIView.animate(withDuration: 0.25) { self.popupError.transform = CGAffineTransform.identity }
-            }
-        )
+     private func showPopupError() {
+          v.addSubview(popupBgView)
+          v.addSubview(popupError)
+          popupError.pin(to: v)
+          self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
 
-        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-    }
+          UIView.animate(
+               withDuration: 0.2,
+               animations: {
+                    self.popupBgView.alpha = 1.0
+                    UIView.animate(withDuration: 0.25) { self.popupError.transform = CGAffineTransform.identity }
+               }
+          )
 
-    func hidePopupError() {
-        UIView.animate(
-            withDuration: 0.15,
-            animations: {
-                self.popupBgView.alpha = 0.0
-                self.popupError.alpha = 0.0
-                self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-            },
-            completion: { _ in
-                self.v.addSubview(self.popupBgView)
-                self.popupError.removeFromSuperview()
-            }
-        )
-    }
+          UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+     }
 
-    private func showNotificationError() {
-        notificationError.constraint.constant -= 114
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
-    }
+     func hidePopupError() {
+          UIView.animate(
+               withDuration: 0.15,
+               animations: {
+                    self.popupBgView.alpha = 0.0
+                    self.popupError.alpha = 0.0
+                    self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+               },
+               completion: { _ in
+                    self.v.addSubview(self.popupBgView)
+                    self.popupError.removeFromSuperview()
+               }
+          )
+     }
 
-    private func hideNotificationError() {
-        notificationError.constraint.constant += 114
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
-    }
+     private func showNotificationError() {
+          notificationError.constraint.constant -= 114
+          UIView.animate(withDuration: 0.5) {
+               self.view.layoutIfNeeded()
+          }
+          isNotificationErrorShown = true
+     }
 
-    public func addKeyboardDismissOnTap() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
-        tap.cancelsTouchesInView = false
-        tap.delegate = self
-        view.addGestureRecognizer(tap)
-    }
+     private func hideNotificationError() {
+          notificationError.constraint.constant += 114
+          UIView.animate(withDuration: 0.5) {
+               self.view.layoutIfNeeded()
+          }
+          isNotificationErrorShown = false
+     }
 
-    public func setupKeyboard() {
-        observeKeyboardNotifications()
-        addKeyboardDismissOnTap()
-    }
+     public func addKeyboardDismissOnTap() {
+          let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
+          tap.cancelsTouchesInView = false
+          tap.delegate = self
+          view.addGestureRecognizer(tap)
+     }
 
-    // MARK: KeyboardListening
-    public func keyboardWillShow(notification: NSNotification) {
-        isKeyboardOpen = true
-        keyScrollView?.contentInset.bottom = getKeyboardHeight(notification) + additionalBottomContentInset
-    }
+     public func setupKeyboard() {
+          observeKeyboardNotifications()
+          addKeyboardDismissOnTap()
+     }
 
-    public func keyboardWillHide(notification: NSNotification) {
-        isKeyboardOpen = false
-        keyScrollView?.contentInset.bottom = defaultBottomContentInset
-    }
+     // MARK: KeyboardListening
+     public func keyboardWillShow(notification: NSNotification) {
+          isKeyboardOpen = true
+          keyScrollView?.contentInset.bottom = getKeyboardHeight(notification) + additionalBottomContentInset
+     }
 
-    public func keyboardWillChangeFrame(notification: NSNotification) {
-        guard let keyboardFrameEndUserInfoValue = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
-        keyboardFrame = keyboardFrameEndUserInfoValue.cgRectValue
-    }
+     public func keyboardWillHide(notification: NSNotification) {
+          isKeyboardOpen = false
+          keyScrollView?.contentInset.bottom = defaultBottomContentInset
+     }
 
-    public func keyboardDidChangeFrame(notification: NSNotification) {
-    }
+     public func keyboardWillChangeFrame(notification: NSNotification) {
+          guard let keyboardFrameEndUserInfoValue = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+          keyboardFrame = keyboardFrameEndUserInfoValue.cgRectValue
+     }
 
-    public func setMainContainerSwipeEnabled(_ enabled: Bool) {
-        if let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController {
-            vc.setPageViewControllerSwipeEnabled(enabled)
-        }
-    }
+     public func keyboardDidChangeFrame(notification: NSNotification) {
+     }
 
-    // MARK: UIGestureRecognizerDelegate
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        !(touch.view is UIControl)
-    }
+     public func setMainContainerSwipeEnabled(_ enabled: Bool) {
+          if let vc = UIApplication.shared.currentWindow?.rootViewController as? MainContainerViewController {
+               vc.setPageViewControllerSwipeEnabled(enabled)
+          }
+     }
 
-    // MARK: Actions
-    @objc public func closeKeyboard() {
-        view.endEditing(true)
-    }
+     // MARK: UIGestureRecognizerDelegate
+     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+          !(touch.view is UIControl)
+     }
 
-    // MARK: - NetworkConnectionObserver -
+     // MARK: Actions
+     @objc public func closeKeyboard() {
+          view.endEditing(true)
+     }
 
-	internal var networkConnectionObserverId: Int = NetworkConnectionManager.shared.newObserverId
+     // MARK: - NetworkConnectionObserver -
 
-	public func networkConnectionEstablished() {
-		statusMessage.viewModel.type = .connectionEstablished
-		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.connectionEstablishedViewDuration) {
-			self.mainTabBarViewController?.tryMoveDownTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
-			DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.animationDuration) {
-				self.statusMessage.view.hide()
-			}
-		}
-	}
+     internal var networkConnectionObserverId: Int = NetworkConnectionManager.shared.newObserverId
 
-	public func networkConnectionLost() {
-		mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
-		statusMessage.viewModel.type = .connectionFailed
-		statusMessage.view.show()
-	}
+     public func networkConnectionEstablished() {
+          statusMessage.viewModel.type = .connectionEstablished
+          DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.connectionEstablishedViewDuration) {
+               self.mainTabBarViewController?.tryMoveDownTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
+               DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.animationDuration) {
+                    self.statusMessage.view.hide()
+               }
+          }
+     }
 
-	private func setupNetworkConnectionState() {
-		if !NetworkConnectionManager.shared.isConnected {
-			mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
-			statusMessage.viewModel.type = .connectionFailed
-			statusMessage.view.show()
-		}
-	}
+     public func networkConnectionLost() {
+          mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
+          statusMessage.viewModel.type = .connectionFailed
+          statusMessage.view.show()
+     }
+
+     private func setupNetworkConnectionState() {
+          if !NetworkConnectionManager.shared.isConnected {
+               mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
+               statusMessage.viewModel.type = .connectionFailed
+               statusMessage.view.show()
+          }
+     }
 }
 
 extension ABViewController {
-	struct Constants {
-		struct StatusMessage {
-			static let animationDuration = 0.5
-			static let connectionEstablishedViewDuration = 2.5
-		}
-	}
+     struct Constants {
+          struct StatusMessage {
+               static let animationDuration = 0.5
+               static let connectionEstablishedViewDuration = 2.5
+          }
+     }
 }

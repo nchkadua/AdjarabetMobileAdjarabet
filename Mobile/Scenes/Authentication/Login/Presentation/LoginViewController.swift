@@ -255,7 +255,9 @@ public class LoginViewController: ABViewController {
 
     @objc private func smsLoginDidTap() {
         guard let username = usernameInputView.mainTextField.text, !username.isEmpty else {
-            showAlert(title: R.string.localization.fill_username.localized())
+            DispatchQueue.main.async {
+                self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.fill_username.localized())))))
+            }
             return
         }
 
