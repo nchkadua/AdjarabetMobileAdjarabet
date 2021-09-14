@@ -43,8 +43,10 @@ public class AddressChangeViewController: ABViewController {
 
     private func didRecive(action: AddressChangeViewModelOutputAction) {
         switch action {
-        case .dismiss:
-            dismiss(animated: true, completion: nil)
+        case .showSuccess:
+            showSuccess(completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { self.dismissViewController() }
+            })
         }
     }
 
