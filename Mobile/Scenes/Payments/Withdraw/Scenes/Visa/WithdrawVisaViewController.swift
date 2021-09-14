@@ -51,6 +51,10 @@ class WithdrawVisaViewController: ABViewController {
             infoView.setAndBind(viewModel: viewModel)
         case .isLoading(let loading):
             handle(loading: loading)
+        case .showSuccess:
+            showSuccess(completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { self.dismissViewController() }
+            })
         }
     }
 
@@ -83,5 +87,9 @@ class WithdrawVisaViewController: ABViewController {
         mainContentView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.pin(to: mainContentView)
+    }
+
+    @objc private func dismissViewController() {
+        dismiss(animated: true, completion: nil)
     }
 }

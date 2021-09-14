@@ -66,6 +66,8 @@ class HighSecurityViewController: ABPopupViewController {
             contentView.isHidden = loading
         case .close:
             navigationController?.dismiss(animated: true, completion: nil)
+        case .showSuccess:
+            showSuccess(completion: {})
         }
     }
 

@@ -152,7 +152,7 @@ extension DefaultOTPViewModel: OTPViewModel {
             case .success: print(result)
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+//                    self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
                 }
             }
         }
@@ -164,7 +164,7 @@ extension DefaultOTPViewModel: OTPViewModel {
             case .success: print(result)
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+//                    self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
                 }
             }
         }
@@ -176,7 +176,7 @@ extension DefaultOTPViewModel: OTPViewModel {
             case .success(let entity): self.userId = String(entity.userId)
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+//                    self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
                 }
             }
         }
@@ -214,7 +214,7 @@ extension DefaultOTPViewModel: OTPViewModel {
                     self?.show(error: error)
                 } else {
                     DispatchQueue.main.async {
-                        self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+//                        self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
                     }
                 }
             }

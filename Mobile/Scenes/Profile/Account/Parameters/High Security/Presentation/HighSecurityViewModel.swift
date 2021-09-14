@@ -26,6 +26,7 @@ enum HighSecurityViewModelOutputAction {
     case setButtonState(isOn: Bool)
     case close
     case isLoading(loading: Bool)
+    case showSuccess
 }
 
 enum HighSecurityViewModelRoute {
@@ -87,6 +88,7 @@ extension DefaultHighSecurityViewModel: HighSecurityViewModel {
         useCase.set(isEnabled: !isEnabled, otp: code, handler(onSuccessHandler: { _ in
             self.isEnabled.toggle() // update state
             self.notify(.setButtonState(isOn: self.isEnabled))
+            self.actionSubject.onNext(.showSuccess)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
                 self?.notify(.isLoading(loading: false))
             }

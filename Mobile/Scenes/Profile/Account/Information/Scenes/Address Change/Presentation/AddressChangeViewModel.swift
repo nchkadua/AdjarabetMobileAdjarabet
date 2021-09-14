@@ -30,7 +30,7 @@ public protocol AddressChangeViewModelOutput {
 }
 
 public enum AddressChangeViewModelOutputAction {
-    case dismiss
+    case showSuccess
 }
 
 public enum AddressChangeViewModelRoute {
@@ -83,7 +83,7 @@ extension DefaultAddressChangeViewModel: AddressChangeViewModel {
             switch result {
             case .success:
                 self?.params.paramsOutputAction.onNext(.success(newAddress: address))
-                self?.actionSubject.onNext(.dismiss)
+                self?.actionSubject.onNext(.showSuccess)
             case .failure(let error):
                 self?.show(error: error)
             }

@@ -23,6 +23,7 @@ public protocol MailChangeViewModelOutput {
 
 public enum MailChangeViewModelOutputAction {
     case setButton(loading: Bool)
+    case showSuccess
 }
 
 public enum MailChangeViewModelRoute {
@@ -94,6 +95,7 @@ extension DefaultMailChangeViewModel: MailChangeViewModel {
             case .success:
                 // TODO: add correct icon
                 self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: .init(), description: "Mail Changed Successfully")))))
+                self.actionSubject.onNext(.showSuccess)
             case .failure(let error):
                 self.show(error: error)
             }
