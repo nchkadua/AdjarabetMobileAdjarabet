@@ -30,6 +30,7 @@ enum WithdrawVisaViewModelOutputAction {
     case setAndBindCashOut(viewModel: CashOutVisaViewModel)
     case setAndBindInfo(viewModel: WithdrawVisaInfoViewModel)
     case isLoading(loading: Bool)
+    case showSuccess
 }
 // view type enum
 enum WithdrawViewType {
@@ -245,6 +246,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                 let success = R.string.localization.withdraw_transaction_successed.localized()
                 self.show(error: .init(type: .`init`(description: .popup(description: .init(description: success))))) // TODO: add correct icon
                 // reset state for next transaction
+                notify(.showSuccess)
                 self.cashOutViewModel.update(amount: "")
                 self.disable()
             case .failure(let error):
