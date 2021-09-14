@@ -50,6 +50,10 @@ public class MailChangeViewController: ABViewController {
     private func didRecive(action: MailChangeViewModelOutputAction) {
         switch action {
         case .setButton(let loading): changeButton.set(isLoading: loading)
+        case .showSuccess:
+            showSuccess(completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { self.dismissViewController() }
+            })
         }
     }
 
