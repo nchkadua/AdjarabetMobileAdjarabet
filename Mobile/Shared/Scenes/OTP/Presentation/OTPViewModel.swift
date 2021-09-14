@@ -61,8 +61,6 @@ public enum OTPViewModelOutputAction {
 
 public enum OTPViewModelRoute {
     case openMainTabBar
-    case showErrorMessage(title: String, message: String? = nil)
-    case showSuccessMessage
     case dismiss
 }
 
@@ -153,8 +151,9 @@ extension DefaultOTPViewModel: OTPViewModel {
             switch result {
             case .success: print(result)
             case .failure(let error):
-                self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
-                self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+                DispatchQueue.main.async {
+                    self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+                }
             }
         }
     }
@@ -164,8 +163,9 @@ extension DefaultOTPViewModel: OTPViewModel {
             switch result {
             case .success: print(result)
             case .failure(let error):
-                self.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
-                self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+                DispatchQueue.main.async {
+                    self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+                }
             }
         }
     }
@@ -175,8 +175,9 @@ extension DefaultOTPViewModel: OTPViewModel {
             switch result {
             case .success(let entity): self.userId = String(entity.userId)
             case .failure(let error):
-                self.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
-                self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+                DispatchQueue.main.async {
+                    self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+                }
             }
         }
     }
@@ -207,14 +208,14 @@ extension DefaultOTPViewModel: OTPViewModel {
             defer { self?.actionSubject.onNext(.setLoginButton(isLoading: false)) }
             switch result {
             case .success:
-                self?.routeSubject.onNext(.showSuccessMessage)
                 self?.routeSubject.onNext(.openMainTabBar)
             case .failure(let error):
                 if case .unknown(let error) = error {
                     self?.show(error: error)
                 } else {
-                    self?.routeSubject.onNext(.showErrorMessage(title: error.localizedDescription))
-                    self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+                    DispatchQueue.main.async {
+                        self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
+                    }
                 }
             }
         }
