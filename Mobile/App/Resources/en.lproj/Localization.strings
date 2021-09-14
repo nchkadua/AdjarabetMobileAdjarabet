@@ -40,7 +40,7 @@
 "shared_aberror_payment_account_is_not_verified" = "Payment Account Is Not Verified";
 "shared_aberror_unable_to_send_email_verification_email_is_missing" = "Unable To Send Email Verification Email Is Missing";
 "shared_aberror_bonus_is_expired" = "Bonus Is Expired";
-"shared_aberror_wrong_credentials" = "Enter the username or password correctly";
+"shared_aberror_wrong_credentials" = "Enter the username and password correctly";
 "shared_aberror_unable_to_generate_otp" = "System error, please try again later";
 "shared_aberror_failed_to_send_otp" = "System error, please try again later";
 "shared_aberror_unable_to_send_otp_tel_is_missing" = "ანგარიშზე SMS-ით შესვლისთვის, დაამატე მობილურის ნომერი";
