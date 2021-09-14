@@ -75,7 +75,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
         fetchUserInfo()
         fetchUserLang()
 
-        userInfoRepo.getIDDocuments { [weak self] result in
+        userInfoRepo.getIDDocuments(params: .init(userId: nil, header: nil)) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let entity): self.actionSubject.onNext(.setPersonalID(id: entity.idDocuments.first?.personalID ?? "-----------"))

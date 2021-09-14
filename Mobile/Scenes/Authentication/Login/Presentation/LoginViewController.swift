@@ -84,6 +84,7 @@ public class LoginViewController: ABViewController {
             navigator.navigate(to: .mainTabBar(params: params), animated: true)
         case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         case .openAlert(let title, _): showAlert(title: title)
+        case .openNotVerifiedUserPage: navigator.navigate(to: .notVerifiedUser, animated: true)
         }
     }
 

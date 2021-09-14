@@ -14,6 +14,7 @@ protocol LoginUseCase {
 enum LoginUseCaseSuccess {
     case success(params: MainContainerViewModelParams)
     case otpRequried(username: String)
+    case openNotVerifiedUserPage
 }
 
 public enum LoginUseCaseError: Error, LocalizedError {
@@ -33,6 +34,7 @@ public enum LoginUseCaseError: Error, LocalizedError {
 public final class DefaultLoginUseCase: LoginUseCase {
     @Inject(from: .repositories) private var authenticationRepository: AuthenticationRepository
     @Inject(from: .repositories) private var cookieStorageRepository: CookieStorageRepository
+    @Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository
     @Inject private var userSession: UserSessionServices
 
     private func save(params: AdjarabetCoreResult.Login, password: String) {
@@ -69,14 +71,24 @@ public final class DefaultLoginUseCase: LoginUseCase {
                 if params.codable.isOTPRequired && params.codable.errorCode == .OTP_IS_REQUIRED {
                     completion(.success(.otpRequried(username: username)))
                 } else if params.codable.isLoggedOn && params.codable.userID != nil {
-                    self?.save(params: params, password: password)
-                    let pageParams = { () -> MainContainerViewModelParams in
-                        if params.codable.errorCode == .LAST_ACCESS_FROM_DIFFERENT_IP {
-                            return .init(homeParams: .init(error: .init(type: .lastAccessFromDifferentIP)))
+                    self?.userInfoRepo.getIDDocuments(params: .init(userId: String(params.codable.userID ?? -1), header: params.header?.sessionId)) { [weak self] result in
+                        switch result {
+                        case .success(let entity):
+                            if entity.idDocuments.first?.documentStatus == 1 {
+                                self?.save(params: params, password: password)
+                                let pageParams = { () -> MainContainerViewModelParams in
+                                    if params.codable.errorCode == .LAST_ACCESS_FROM_DIFFERENT_IP {
+                                        return .init(homeParams: .init(error: .init(type: .lastAccessFromDifferentIP)))
+                                    }
+                                    return .init()
+                                }()
+                                completion(.success(.success(params: pageParams)))
+                            } else {
+                                completion(.success(.openNotVerifiedUserPage))
+                            }
+                        case .failure(_): completion(.failure(.init()))
                         }
-                        return .init()
-                    }()
-                    completion(.success(.success(params: pageParams)))
+                    }
                 } else {
                     completion(.failure(.init()))
                 }
