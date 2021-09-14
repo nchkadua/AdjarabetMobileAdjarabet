@@ -88,7 +88,7 @@ class WithdrawVisaViewController: ABViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.pin(to: mainContentView)
     }
-    
+
     @objc private func dismissViewController() {
         dismiss(animated: true, completion: nil)
     }

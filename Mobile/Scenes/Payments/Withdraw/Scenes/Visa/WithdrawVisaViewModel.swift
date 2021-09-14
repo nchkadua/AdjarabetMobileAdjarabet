@@ -246,7 +246,7 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
                 let success = R.string.localization.withdraw_transaction_successed.localized()
                 self.show(error: .init(type: .`init`(description: .popup(description: .init(description: success))))) // TODO: add correct icon
                 // reset state for next transaction
-                notify(.showSuccess)
+                self.notify(.showSuccess)
                 self.cashOutViewModel.update(amount: "")
                 self.disable()
             case .failure(let error):
