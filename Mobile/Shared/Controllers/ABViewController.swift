@@ -237,7 +237,10 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           DispatchQueue.main.async { self.showPopupError() }
      }
 
+     private var isNotificationErrorShown = false
      func showNotificationError(with description: ABError.Description.Notification) {
+          guard !isNotificationErrorShown else {return}
+
           notificationError.view.configure(from: description)
           DispatchQueue.main.async { self.showNotificationError() }
           DispatchQueue.main.asyncAfter(deadline: .now() + 2) { self.hideNotificationError() }
@@ -284,6 +287,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           UIView.animate(withDuration: 0.5) {
                self.view.layoutIfNeeded()
           }
+          isNotificationErrorShown = true
      }
 
      private func hideNotificationError() {
@@ -291,6 +295,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           UIView.animate(withDuration: 0.5) {
                self.view.layoutIfNeeded()
           }
+          isNotificationErrorShown = false
      }
 
      public func addKeyboardDismissOnTap() {
