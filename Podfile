@@ -3,7 +3,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 def pods
-	pod 'Alamofire', '~> 5.2'
 	pod 'EMPageViewController'
 	pod 'Firebase/Analytics'  
 	pod 'Firebase/Core'
