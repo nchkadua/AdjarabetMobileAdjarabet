@@ -20,7 +20,7 @@ public struct EmptyStateComponentViewModelParams {
 	public var isEnabled: Bool		/// is allowed from customer to display
 	public var isRequired: Bool		/// should be displayed, seems like collections is empty
 	public let numItems: Int		/// number of items in empty collection
-	
+
     init(
         icon: UIImage = R.image.promotions.casino_icon()!,
         title: String = "",
@@ -43,7 +43,7 @@ public struct EmptyStateComponentViewModelParams {
 public protocol EmptyStateComponentViewModelInput {
     func didBind()
     func set(title: String)
-	
+
 	var numItems: Int { get }
 	var isEnabled: Bool { get set }
 	var isRequired: Bool { get set }
@@ -74,13 +74,12 @@ public enum EmptyStatePosition {
 }
 
 extension DefaultEmptyStateComponentViewModel: EmptyStateComponentViewModel {
-	
 	public var numItems: Int {
 		get {
 			params.numItems
 		}
 	}
-	
+
 	public var isEnabled: Bool {
 		get {
 			params.isEnabled
@@ -91,7 +90,7 @@ extension DefaultEmptyStateComponentViewModel: EmptyStateComponentViewModel {
 			print("*** DefaultEmptyStateComponentViewModel isEnabled updated to -> \(isEnabled)")
 		}
 	}
-	
+
 	public var isRequired: Bool {
 		get {
 			params.isRequired
@@ -109,15 +108,14 @@ extension DefaultEmptyStateComponentViewModel: EmptyStateComponentViewModel {
 			actionSubject.onNext(.hide)
 		}
 	}
-	
+
     public var action: Observable<EmptyStateComponentViewModelOutputAction> {
         actionSubject.asObserver()
     }
 
     public func didBind() { }
-	
+
 	public func set(title: String) {
 		actionSubject.onNext(.titleUpdate(title: title))
 	}
-	
 }

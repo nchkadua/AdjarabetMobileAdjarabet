@@ -53,7 +53,7 @@ public class ABTableViewController: AppTableViewController {
 			VideoCardTableViewCell.self,
 			CloseAccountButtonTableViewCell.self
 		])
-		
+
         tableView.backgroundColor = .clear
 		tableView.backgroundView = emptyState.view
     }
@@ -76,7 +76,7 @@ public class ABTableViewController: AppTableViewController {
     }
 
     // MARK: - Empty state
-	
+
     @discardableResult
     public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
 		print("*** ABTableViewController: configureEmptyState")

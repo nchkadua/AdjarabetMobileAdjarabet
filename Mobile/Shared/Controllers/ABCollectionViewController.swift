@@ -50,7 +50,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 			ABSliderCollectionViewCell.self,
 			LayoutChooserCollectionViewCell.self
 		])
-		
+
         collectionView.backgroundColor = .clear
 		collectionView.backgroundView = emptyState.view
         collectionView.alwaysBounceVertical = true
@@ -64,7 +64,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
     }
 
     // MARK: - Empty state
-	
+
     @discardableResult
     public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
 		print("*** ABCollectionViewController.configureEmptyState")
@@ -84,7 +84,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 		emptyState.viewModel.isEnabled = false
         return self
     }
-	
+
 	public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
 		emptyState.viewModel.isRequired = numberOfItemsInSection <= emptyState.viewModel.numItems
