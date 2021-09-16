@@ -13,7 +13,7 @@ protocol GamesSearchViewModel: BaseViewModel, GamesSearchViewModelInput, GamesSe
 
 public struct GamesSearchViewModelParams {
 	public var keyboardHeight: CGFloat
-	
+
 	init() {
 		keyboardHeight = GamesSearchConstants.estimatedKeyboardHeight
 	}
@@ -117,7 +117,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
                 self.show(error: error)
 				if let query = query {
 					self.emptyStateViewModel.set(title: "\"\(query)\"")
-				}	
+				}
             }
         }
     }
