@@ -53,6 +53,7 @@
 "shared_aberror_old_and_new_values_match_error" = "მიმდინარე და ახალი პაროლი ემთხვევა ერთმანეთს";
 "shared_aberror_account_is_blocked" = "მიმდინარე და ახალი პაროლი ემთხვევა ერთმანეთს";
 "shared_aberror_otp_is_required" = "მიუთითე SMS კოდი";
+"shared_aberror_contact_channel_not_verified" = "“მობილურის ნომერი/ელ.ფოსტა არ არის ვერიფიცირებული. გაიარე ვერიფიკაცია”";
 
 "login" = "Login";
 

@@ -22,6 +22,8 @@ class ABError {
     let type: Type
     lazy var description: Description = {
         switch type {
+        case .contactChannelNotVerified:
+            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_contact_channel_not_verified.localized(), buttons: [.gotIt]))
         case .otpIsRequired:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_otp_is_required.localized(), buttons: [.gotIt]))
         case .accountIsBlocked:
@@ -68,6 +70,8 @@ class ABError {
     }()
 
     enum `Type` {
+        case contactChannelNotVerified
+        case currencyNotFound
         case otpIsRequired
         case accountIsBlocked
         case oldAndNewValuesMatchError
@@ -186,6 +190,7 @@ extension ABError {
         else { return nil }
         let type: Type
         switch coreStatusCode {
+        case .CONTACT_CHANNEL_NOT_VERIFIED:               type = .contactChannelNotVerified
         case .OTP_IS_REQUIRED:                            type = .otpIsRequired
         case .ACCOUNT_IS_BLOCKED:                         type = .accountIsBlocked
         case .OLD_AND_NEW_VALUES_MATCH_ERROR:             type = .oldAndNewValuesMatchError
