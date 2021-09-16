@@ -41,7 +41,8 @@ public class DefaultDocumentationViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<DocumentationViewModelOutputAction>()
     private let routeSubject = PublishSubject<DocumentationViewModelRoute>()
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
-    @Inject(from: .repositories) private var repo: PrivacyPolicyRepository
+    @Inject(from: .repositories) private var privacyPolicyRepo: PrivacyPolicyRepository
+	@Inject(from: .repositories) private var termsAndConditionsRepository: TermsAndConditionsRepository
 
     public init(params: DocumentationViewModelParams) {
         self.params = params
@@ -75,7 +76,7 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
     }
 
     public func createPrivacyPolicyRequest() {
-        repo.getUrl(handler: handler(onSuccessHandler: { entity in
+		privacyPolicyRepo.getUrl(handler: handler(onSuccessHandler: { entity in
             self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.ge))))
         }))
     }

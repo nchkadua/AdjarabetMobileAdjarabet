@@ -912,6 +912,10 @@
 		D8FBA4FC2449C0060015C03C /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FB2449C0060015C03C /* LocalizationTests.swift */; };
 		D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FD2449C50B0015C03C /* Rswift+Extension.swift */; };
 		D8FBA5002449C7090015C03C /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBA4FF2449C7090015C03C /* LanguageTests.swift */; };
+		FB06F54826F2EB5200E1766E /* TermsAndConditionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06F54726F2EB5200E1766E /* TermsAndConditionsRepository.swift */; };
+		FB06F54A26F2EB6100E1766E /* TermsAndConditionsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06F54926F2EB6100E1766E /* TermsAndConditionsEntity.swift */; };
+		FB06F54D26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06F54C26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift */; };
+		FB06F54F26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06F54E26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift */; };
 		FB15A64726EBCD3F00E5F985 /* StatusMessageComponentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */; };
 		FB25307E26E7349900F09490 /* NetworkConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB25307D26E7349900F09490 /* NetworkConnectionManager.swift */; };
 		FB584B4126B7C1E800FA25DB /* TermsAndConditionsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */; };
@@ -1882,6 +1886,10 @@
 		D8FBA5022449C90A0015C03C /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = hy.lproj/Localization.strings; sourceTree = "<group>"; };
 		EEAA12F9166ABDC8D1A023CB /* Pods-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		F55E1653702CCB3A72657CF6 /* Pods_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB06F54726F2EB5200E1766E /* TermsAndConditionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsRepository.swift; sourceTree = "<group>"; };
+		FB06F54926F2EB6100E1766E /* TermsAndConditionsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsEntity.swift; sourceTree = "<group>"; };
+		FB06F54C26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTermsAndConditionsRepository.swift; sourceTree = "<group>"; };
+		FB06F54E26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiTermsAndConditionsDTO.swift; sourceTree = "<group>"; };
 		FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessageComponentConstants.swift; sourceTree = "<group>"; };
 		FB25307D26E7349900F09490 /* NetworkConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionManager.swift; sourceTree = "<group>"; };
 		FB2DD1E126D4BAAE002B0AFF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -6806,6 +6814,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FB06F54626F2EB3200E1766E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FB06F54726F2EB5200E1766E /* TermsAndConditionsRepository.swift */,
+				FB06F54926F2EB6100E1766E /* TermsAndConditionsEntity.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		FB06F54B26F2EC0B00E1766E /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				FB06F54C26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift */,
+				FB06F54E26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 		FB25307C26E7348000F09490 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -6948,6 +6974,8 @@
 		FBBF89FF26B83CD000DF9CC8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FB06F54626F2EB3200E1766E /* Protocol */,
+				FB06F54B26F2EC0B00E1766E /* Implementation */,
 				FBBF8A0026B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift */,
 			);
 			path = Data;
@@ -7799,6 +7827,7 @@
 				7665D960257E5CA600E5B35F /* AccessHistoryNavigator.swift in Sources */,
 				C7FAA3CC2600C4F000265995 /* UFCInitWithdrawEntity.swift in Sources */,
 				CE693B1026A70C340049D665 /* FAQQuestionTableViewCellDataProvider.swift in Sources */,
+				FB06F54F26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift in Sources */,
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
 				C7405182256FA99A00EAC904 /* Formatter.swift in Sources */,
 				CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */,
@@ -7883,6 +7912,7 @@
 				7682CF9325B8581600717090 /* AddMyCardComponentViewModel.swift in Sources */,
 				CE679FDD2578334B00F2EC1C /* AddCardNavigator.swift in Sources */,
 				CEB285BE256D20B600584A65 /* SelfSuspendViewModel.swift in Sources */,
+				FB06F54D26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift in Sources */,
 				D85C9BF72433678000F1D4FE /* AdjarabetCoreClientError.swift in Sources */,
 				CE3AC9E226A17931000BF338 /* DocumentationActionComponentViewModel.swift in Sources */,
 				CEF52CDA2673694C00D2386C /* PasswordChangeUseCase.swift in Sources */,
@@ -8040,6 +8070,7 @@
 				CE341BC026A83DFC0040A83B /* FAQAnswersNavigator.swift in Sources */,
 				CE693B0226A7071E0049D665 /* FAQQuestionsNavigator.swift in Sources */,
 				CE95A3F4261DE23A0004330E /* ApplePayViewControllerFactory.swift in Sources */,
+				FB06F54826F2EB5200E1766E /* TermsAndConditionsRepository.swift in Sources */,
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				C78E52EA2683A20E00EE1C18 /* SuspendDuration.swift in Sources */,
 				CE3AC9DE26A17931000BF338 /* DocumentationNavigator.swift in Sources */,
@@ -8087,6 +8118,7 @@
 				C78E52A826837D5100EE1C18 /* UpdateMailUseCase.swift in Sources */,
 				CE0F767E26EF6EE7008980F6 /* MobileAPIPrivacyPolicyRepository.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
+				FB06F54A26F2EB6100E1766E /* TermsAndConditionsEntity.swift in Sources */,
 				76E43EE025B95303007B2D97 /* VideoCardTableViewCell.swift in Sources */,
 				CEBB00912609D40400D1B510 /* VisaViewControllerFactory.swift in Sources */,
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,

@@ -155,6 +155,7 @@ public extension DependencyContainer {
         Module { CoreApiUpdateOtpRepository() as UpdateOtpRepository }
 
         Module { DefaultPrivacyPolicyRepository() as PrivacyPolicyRepository }
+		Module { DefaultTermsAndConditionsRepository() as TermsAndConditionsRepository }
     }
 
     static var factories = DependencyContainer {
