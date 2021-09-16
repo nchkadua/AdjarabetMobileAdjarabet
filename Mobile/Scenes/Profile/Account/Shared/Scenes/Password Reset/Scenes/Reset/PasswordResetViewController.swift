@@ -56,6 +56,10 @@ public class PasswordResetViewController: ABViewController {
         case .setupPhoneNumber(let number):
             contactInputView.set(text: number)
         case .setupWith(let resetType, let contact): setupTitles(resetType: resetType, contact: contact)
+        case .showSuccess:
+            showSuccess(completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { self.dismissViewController() }
+            })
         }
     }
 
@@ -63,6 +67,10 @@ public class PasswordResetViewController: ABViewController {
         switch route {
         case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         }
+    }
+
+    @objc private func dismissViewController() {
+        dismiss(animated: true, completion: nil)
     }
 
     //

@@ -38,6 +38,6 @@ extension DefaultEmoneyViewModel: EmoneyViewModel {
             .setUrlParam(key: "id", value: "1157")
             .set(method: HttpMethodGet())
             .build()
-        routeSubject.onNext(.navigate(.init(request: request)))
+        routeSubject.onNext(.navigate(.init(loadType: .urlRequst(request: request))))
     }
 }

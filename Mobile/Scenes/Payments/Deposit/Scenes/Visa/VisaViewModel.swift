@@ -182,7 +182,7 @@ extension DefaultVisaViewModel: VisaViewModel {
                                amount: damount,
                                accountId: accounts[account].id,
                                handler: handler(onSuccessHandler: { request in
-                                   self.routeSubject.onNext(.webView(with: .init(request: request)))
+                                self.routeSubject.onNext(.webView(with: .init(loadType: .urlRequst(request: request))))
                                }))
     }
 

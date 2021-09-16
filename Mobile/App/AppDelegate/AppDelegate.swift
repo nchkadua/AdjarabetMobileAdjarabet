@@ -96,6 +96,7 @@ public extension DependencyContainer {
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
         Module { DefaultEmptyStateComponentViewModel(params: .init()) as EmptyStateComponentViewModel }
         Module { DefaultStatusMessageComponentViewModel(params: .init()) as StatusMessageComponentViewModel }
+        Module { DefaultNotVerifiedUserViewModel(params: .init()) as NotVerifiedUserViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -152,6 +153,8 @@ public extension DependencyContainer {
         Module { CoreApiTransactionHistoryRepository() as TransactionHistoryRepository }
         Module { CoreApiAccessListRepository() as AccessListRepository }
         Module { CoreApiUpdateOtpRepository() as UpdateOtpRepository }
+
+        Module { DefaultPrivacyPolicyRepository() as PrivacyPolicyRepository }
     }
 
     static var factories = DependencyContainer {
@@ -191,6 +194,7 @@ public extension DependencyContainer {
         Module { DefaultFAQAnswersViewControllerFactory() as FAQAnswersViewControllerFactory }
         Module { DefaultTermsAndConditionsViewControllerFactory() as TermsAndConditionsViewControllerFactory }
         Module { DefaultContactUsViewControllerFactory() as ContactUsViewControllerFactory }
+        Module { DefaultNotVerifiedUserViewControllerFactory() as NotVerifiedUserViewControllerFactory }
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }
         Module { DefaultVisaViewControllerFactory() as VisaViewControllerFactory }

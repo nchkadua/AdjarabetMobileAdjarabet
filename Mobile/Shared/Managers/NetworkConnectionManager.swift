@@ -24,25 +24,24 @@ protocol NetworkConnectionObservable {
 }
 
 class NetworkConnectionManager: NetworkConnectionObservable {
-    
     static let shared = NetworkConnectionManager()
-    
+
     public var isConnected = false
-    
+
     let reachability = Reachability()!
-    
+
     private init() {
         reachability.whenReachable = { _ in
             self.notifyNetworkConnectionEstablish()
             self.isConnected = true
         }
-        
+
         reachability.whenUnreachable = { _ in
             self.notifyNetworkConnectionLose()
             self.isConnected = false
         }
     }
-    
+
     func startMonitoringConnectivity() {
         do {
             try reachability.startNotifier()
@@ -50,37 +49,37 @@ class NetworkConnectionManager: NetworkConnectionObservable {
 			print("NetworkConnectionManager: Could not start monitoring of the connectivity")
 		}
     }
-    
+
 	// MARK: - NetworkConnectionObservable
     var observers: [NetworkConnectionObserver] = []
-    
+
     private var currentObserverId: Int = 0
-    
+
     var newObserverId: Int {
         get {
             currentObserverId += 1
             return currentObserverId
         }
     }
-    
+
     func addObserver(_ observer: NetworkConnectionObserver) {
         guard !observers.contains(where: {$0.networkConnectionObserverId == observer.networkConnectionObserverId}) else { return }
         observers.append(observer)
     }
-    
+
     func removeObserver(_ observer: NetworkConnectionObserver) {
         guard let index = observers.firstIndex(where: { $0.networkConnectionObserverId == observer.networkConnectionObserverId }) else { return }
         observers.remove(at: index)
     }
-    
+
     func notifyNetworkConnectionEstablish() {
         observers.forEach({ $0.networkConnectionEstablished()})
     }
-    
+
     func notifyNetworkConnectionLose() {
         observers.forEach({ $0.networkConnectionLost()})
     }
-    
+
     deinit {
         observers.removeAll()
     }

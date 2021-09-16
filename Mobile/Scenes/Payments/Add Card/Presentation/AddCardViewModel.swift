@@ -83,7 +83,7 @@ extension DefaultAddCardViewModel: AddCardViewModel {
                                   amount: amount,
                                   saveAccount: hasAgreedToTerms,
                                   handler: handler(onSuccessHandler: { request in
-                                      self.routeSubject.onNext(.webView(.init(request: request)))
+                                    self.routeSubject.onNext(.webView(.init(loadType: .urlRequst(request: request))))
                                   }))
     }
 }

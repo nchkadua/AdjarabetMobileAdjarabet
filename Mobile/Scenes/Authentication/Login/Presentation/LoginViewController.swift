@@ -32,7 +32,7 @@ public class LoginViewController: ABViewController {
     @IBOutlet private weak var biometryButton: ABButton!
 
     @IBOutlet private weak var footerComponentView: FooterComponentView!
-	@IBOutlet weak var footerHeightConstraint: NSLayoutConstraint!
+	@IBOutlet private weak var footerHeightConstraint: NSLayoutConstraint!
 	private var passwordReminderComponentView: PasswordReminderComponentView?
 
     // MARK: Overrides
@@ -84,6 +84,7 @@ public class LoginViewController: ABViewController {
             navigator.navigate(to: .mainTabBar(params: params), animated: true)
         case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         case .openAlert(let title, _): showAlert(title: title)
+        case .openNotVerifiedUserPage: navigator.navigate(to: .notVerifiedUser, animated: true)
         }
     }
 
@@ -229,7 +230,7 @@ public class LoginViewController: ABViewController {
         footerComponentView.delegate = self
         footerComponentView.contactUsButton.addTarget(self, action: #selector(navigateToContactUs), for: .touchUpInside)
     }
-	
+
 	private func setupStatusMessage() {
 		guard  let heightConstraint = self.statusMessage.view.constraints.first(where: {$0.identifier == StatusMessageComponentConstants.heightConstraintIdentifier}) else { return }
 		if NetworkConnectionManager.shared.isConnected {
@@ -255,7 +256,9 @@ public class LoginViewController: ABViewController {
 
     @objc private func smsLoginDidTap() {
         guard let username = usernameInputView.mainTextField.text, !username.isEmpty else {
-            showAlert(title: R.string.localization.fill_username.localized())
+            DispatchQueue.main.async {
+                self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.fill_username.localized())))))
+            }
             return
         }
 
@@ -272,6 +275,7 @@ public class LoginViewController: ABViewController {
 
     @objc private func registrationDidTap() {
         closeKeyboard()
+        navigator.navigate(to: .notVerifiedUser, animated: true)
     }
 
     @objc private func biometryButtonDidTap() {
@@ -309,9 +313,9 @@ public class LoginViewController: ABViewController {
         let title = loading ? "" : R.string.localization.login_button_title.localized()
         loginButton.setTitleWithoutAnimation(title, for: .normal)
     }
-    
+
     // MARK: - Network connection status message
-    
+
     public override func networkConnectionEstablished() {
         super.networkConnectionEstablished()
 		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.connectionEstablishedViewDuration) {
@@ -324,7 +328,7 @@ public class LoginViewController: ABViewController {
             })
         }
     }
-    
+
     public override func networkConnectionLost() {
         super.networkConnectionLost()
 		UIView.animate(withDuration: Constants.StatusMessage.animationDuration, animations: {

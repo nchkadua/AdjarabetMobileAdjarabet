@@ -18,16 +18,19 @@ extension CoreApiUserInfoRepository: UserInfoRepository {
         }
     }
 
-    func getIDDocuments(handler: @escaping IDDocumentsHandler) {
-        guard let userId = userSession.userId else {
+    func getIDDocuments(params: IdDocumentsParams, handler: @escaping IDDocumentsHandler) {
+        guard let userId = userSession.userId,
+              let sessionId = userSession.sessionId else {
             handler(.failure(.init(type: .sessionNotFound)))
             return
         }
 
-        performTask(expecting: IDDocumentsDTO.self, completion: handler) { requestBuilder in
-            return requestBuilder
-                .setBody(key: .req, value: "getIDDocuments")
-                .setBody(key: .userId, value: String(userId))
-        }
+        let request = requestBuilder
+            .setHeader(key: .cookie, value: params.header ?? sessionId)
+            .setBody(key: .req, value: "getIDDocuments")
+            .setBody(key: .userId, value: params.userId ?? String(userId))
+            .build()
+
+        dataTransferService.performTask(expecting: IDDocumentsDTO.self, request: request, respondOnQueue: .main, completion: handler)
     }
 }

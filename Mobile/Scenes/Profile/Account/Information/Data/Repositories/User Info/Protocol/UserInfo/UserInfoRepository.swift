@@ -23,11 +23,17 @@ protocol UserInfoReadableRepository {
      Returns user id document
      */
     typealias IDDocumentsHandler = (Result<IDDocumentsEntity, ABError>) -> Void
-    func getIDDocuments(handler: @escaping IDDocumentsHandler)
+    func getIDDocuments(params: IdDocumentsParams, handler: @escaping IDDocumentsHandler)
 }
 
 // for currentUserInfo
 struct CurrentUserInfoParams { }
+
+// for idDocuments
+struct IdDocumentsParams {
+    let userId: String?
+    let header: String?
+}
 
 // MARK: - Writable Repository
 protocol UserInfoWritableRepository { }

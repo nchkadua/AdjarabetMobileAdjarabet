@@ -35,6 +35,7 @@ public enum PasswordResetViewModelOutputAction {
     case setupPhoneNumber(_ number: String)
     case setButton(loading: Bool)
     case setupWith(_ resetType: PasswordResetType, _ contact: String)
+    case showSuccess
 }
 
 public enum PasswordResetViewModelRoute {
@@ -96,6 +97,7 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
             case .success:
                 // TODO: add correct icon
                 self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: .init(), description: "Password Reseted Succesfully")))))
+                self.actionSubject.onNext(.showSuccess)
             case .failure(let error):
                 self.show(error: error)
             }

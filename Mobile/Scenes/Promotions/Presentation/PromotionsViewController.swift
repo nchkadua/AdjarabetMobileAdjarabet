@@ -60,7 +60,7 @@ public class PromotionsViewController: ABViewController {
         appTableViewController.view.pin(to: view)
         appTableViewController.isTabBarManagementEnabled = true
     }
-	
+
 	private func setupStatusMessage() {
 		view.bringSubviewToFront(statusMessage.view)
 	}
