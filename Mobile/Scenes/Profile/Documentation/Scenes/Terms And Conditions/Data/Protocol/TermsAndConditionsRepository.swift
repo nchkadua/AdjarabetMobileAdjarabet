@@ -10,5 +10,5 @@ import Foundation
 
 protocol TermsAndConditionsRepository {
 	typealias TermsAndConditionsHandler = (Result<TermsAndConditionsEntity, ABError>) -> Void
-	func getUrl(handler: @escaping TermsAndConditionsHandler)
+	func execute(handler: @escaping TermsAndConditionsHandler)
 }

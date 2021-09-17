@@ -92,7 +92,6 @@ public extension DependencyContainer {
         Module { DefaultFAQQuestionsViewModel(params: .init(showDismissButton: true)) as FAQQuestionsViewModel }
         Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as TermsAndConditionsViewModel }
-        Module { DefaultTermsAndConditionsViewModel(params: .init()) as DefaultTermsAndConditionsViewModel }
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
         Module { DefaultEmptyStateComponentViewModel(params: .init()) as EmptyStateComponentViewModel }
         Module { DefaultStatusMessageComponentViewModel(params: .init()) as StatusMessageComponentViewModel }

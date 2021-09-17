@@ -19,6 +19,7 @@ public protocol DocumentationViewModelInput: AnyObject {
     func viewDidLoad()
     func createAboutUsRequest()
     func createPrivacyPolicyRequest()
+	func createTermsAndConditionsRequest()
 }
 
 public protocol DocumentationViewModelOutput {
@@ -34,6 +35,7 @@ public enum DocumentationViewModelRoute {
     case openPage(destionation: DocumentationDestination)
     case navigateToPrivacyPolicy(params: WebViewModelParams)
     case navigateToAboutUs(params: WebViewModelParams)
+	case navigateToTermsAndConditions(params: TermsAndConditionsEntity)
 }
 
 public class DefaultDocumentationViewModel: DefaultBaseViewModel {
@@ -74,17 +76,26 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
         }
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
+	
+	public func createAboutUsRequest() {
+		let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/About")
+			.set(method: HttpMethodGet())
+			.build()
+		routeSubject.onNext(.navigateToAboutUs(params: .init(loadType: .urlRequst(request: request))))
+	}
 
     public func createPrivacyPolicyRequest() {
 		privacyPolicyRepo.getUrl(handler: handler(onSuccessHandler: { entity in
-            self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.ge))))
+			self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.ge))))
         }))
     }
-
-    public func createAboutUsRequest() {
-        let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/About")
-            .set(method: HttpMethodGet())
-            .build()
-        routeSubject.onNext(.navigateToAboutUs(params: .init(loadType: .urlRequst(request: request))))
-    }
+	
+	public func createTermsAndConditionsRequest() {
+		print("*** createTermsAndConditionsRequest")
+		termsAndConditionsRepository.execute(handler: handler(onSuccessHandler: { entity in
+			print("*** createTermsAndConditionsRequest.entity: \(entity)")
+			self.routeSubject.onNext(.navigateToTermsAndConditions(params: entity))
+		}))
+	}
+	
 }

@@ -8,9 +8,11 @@
 
 import Foundation
 
-struct TermsAndConditionsEntity {
-//	let am: String
-	let en: String
-	let ge: String
-	let ru: String
+public struct TermsAndConditionsEntity {
+	let list: [Category]
+	
+	public struct Category {
+		let title: String
+		let html: String
+	}
 }

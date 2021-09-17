@@ -50,6 +50,8 @@ public class DocumentationViewController: ABViewController {
             navigator.navigate(to: .aboutUs(with: params), animated: true)
         case .navigateToPrivacyPolicy(let params):
             navigator.navigate(to: .privacyPolicy(with: params), animated: true)
+		case .navigateToTermsAndConditions(let params):
+			navigator.navigate(to: .termsAndConditions(with: .init(categories: params.list)), animated: true)
         }
     }
 
@@ -58,7 +60,7 @@ public class DocumentationViewController: ABViewController {
         case .aboutUs:
             viewModel.createAboutUsRequest()
         case .termsAndConditions:
-            navigator.navigate(to: .termsAndConditions(with: .init()), animated: true)
+			viewModel.createTermsAndConditionsRequest()
         case .privacyPolicy:
             viewModel.createPrivacyPolicyRequest()
         }

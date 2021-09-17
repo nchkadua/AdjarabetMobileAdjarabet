@@ -10,28 +10,29 @@ import Foundation
 
 struct TermsAndConditionsDTO: DataTransferResponse {
 	struct Body: Codable {
-		let html: PPHtml
-
-		struct PPHtml: Codable {
-			var en: String
-			var ge: String
-			var ru: String
-
+		let list: [Category]?
+		
+		struct Category: Codable {
+			let title: String
+			let html: String
+			
 			enum CodingKeys: String, CodingKey {
-				case en
-				case ge
-				case ru
+				case title
+				case html
 			}
 		}
-
+		
 		enum CodingKeys: String, CodingKey {
-			case html
+			case list
 		}
 	}
 
 	typealias Entity = TermsAndConditionsEntity
 
 	static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-		return .success(.init(en: body.html.en, ge: body.html.ge, ru: body.html.ru))
+		let list = body.list == nil ? [] : body.list!
+		let categories = list.map({ Entity.Category.init(title: $0.title, html: $0.html) })
+//		return .success(.init(title: body.title, html: body.html))
+		return .success(Entity(list: categories))
 	}
 }
