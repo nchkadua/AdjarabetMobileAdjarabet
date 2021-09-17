@@ -51,14 +51,6 @@ public enum Language: Int, CaseIterable {
         }
     }
 
-	public var key: String {
-		switch self {
-		case .armenian: return "am"
-		case .georgian: return "ge"
-		case .english: return "en"
-		}
-	}
-
     public var currency: String {
         switch self {
         case .english: return "$"

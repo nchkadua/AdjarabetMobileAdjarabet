@@ -15,7 +15,7 @@ public class DefaultTermsAndConditionsRepository: TermsAndConditionsRepository {
 	func execute(handler: @escaping Handler, language: Language) {
 		let request = self.requestBuilder
 			.set(host: "https://mobileapi.adjarabet.com/documentation/terms-and-conditions")
-			.set(urlParams: ["language": language.key])
+			.set(urlParams: ["language": language.mobileApiLocalizableIdentifier])
 			.set(method: HttpMethodGet())
 			.build()
 
