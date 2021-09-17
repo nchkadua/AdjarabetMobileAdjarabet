@@ -12,6 +12,11 @@ protocol GamesSearchViewModel: BaseViewModel, GamesSearchViewModelInput, GamesSe
 }
 
 public struct GamesSearchViewModelParams {
+	public var keyboardHeight: CGFloat
+
+	init() {
+		keyboardHeight = GamesSearchConstants.estimatedKeyboardHeight
+	}
 }
 
 public protocol GamesSearchViewModelInput {
@@ -46,7 +51,7 @@ public enum GamesSearchViewModelRoute {
 public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<GamesSearchViewModelOutputAction>()
     private let routeSubject = PublishSubject<GamesSearchViewModelRoute>()
-    public let params: GamesSearchViewModelParams
+    public var params: GamesSearchViewModelParams
 
     @Inject(from: .useCases) private var lobbyGamesUseCase: LobbyGamesUseCase
 
@@ -84,7 +89,10 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
         self.query = query ?? ""
 
         gamesLoadTask = lobbyGamesUseCase.execute(request: .init(page: page.current, itemsPerPage: page.itemsPerPage, searchTerm: query)) { result in
-            defer { self.loadingType = .none }
+            defer {
+				self.loadingType = .none
+				self.emptyStateViewModel.isEnabled = true
+			}
 
             switch result {
             case .success(let params):
@@ -107,9 +115,9 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
                 }
             case .failure(let error):
                 self.show(error: error)
-                if let query = query {
-                    self.emptyStateViewModel.set(title: "\"\(query)\"")
-                }
+				if let query = query {
+					self.emptyStateViewModel.set(title: "\"\(query)\"")
+				}
             }
         }
     }
@@ -127,6 +135,7 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
     }
 
     private func update(query: String?) {
+		print("*** update")
         page.reset()
         games.removeAll()
         actionSubject.onNext(.initialize(defaultAppListDataProvider))
@@ -134,10 +143,15 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
         load(query: query, loadingType: .fullScreen)
     }
 
-    public var keyboardHeight = Constants.estimatedKeyboardHeight {
-        didSet {
-            actionSubject.onNext(.configureEmptyState(viewModel: emptyStateViewModel))
-        }
+	public var keyboardHeight: CGFloat {
+		get {
+			params.keyboardHeight
+		}
+		set {
+			guard newValue > keyboardHeight else { return }
+			params.keyboardHeight = newValue
+			actionSubject.onNext(.configureEmptyState(viewModel: emptyStateViewModel))
+		}
     }
 
     public lazy var emptyStateViewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(
@@ -145,7 +159,10 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
                 icon: R.image.shared.searchEmptyStateIcon()!,
                 title: "",
                 description: R.string.localization.search_empty_state_description(),
-                position: .centeredWithBottomSpace(space: keyboardHeight)))
+                position: .centeredWithBottomSpace(space: keyboardHeight),
+				numItems: 1
+			)
+		)
 }
 
 extension DefaultGamesSearchViewModel: GamesSearchViewModel {
@@ -178,10 +195,12 @@ extension DefaultGamesSearchViewModel: GamesSearchViewModel {
     }
 
     public func didUpdateQuary(text: String?) {
+		print("*** didUpdateQuary")
         querySubject.onNext(text)
     }
 
     public func didSearch(query: String?) {
+		print("*** didSearch")
         update(query: query)
     }
 
@@ -191,8 +210,6 @@ extension DefaultGamesSearchViewModel: GamesSearchViewModel {
     }
 }
 
-extension DefaultGamesSearchViewModel {
-    struct Constants {
-        static let estimatedKeyboardHeight: CGFloat = 216
-    }
+public struct GamesSearchConstants {
+	static let estimatedKeyboardHeight: CGFloat = 216
 }

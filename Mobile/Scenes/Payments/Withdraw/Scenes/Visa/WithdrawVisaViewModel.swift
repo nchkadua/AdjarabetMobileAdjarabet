@@ -243,8 +243,6 @@ extension DefaultWithdrawVisaViewModel: WithdrawVisaViewModel {
             switch result {
             case .success:
                 self.userBalanceService.update()
-                let success = R.string.localization.withdraw_transaction_successed.localized()
-                self.show(error: .init(type: .`init`(description: .popup(description: .init(description: success))))) // TODO: add correct icon
                 // reset state for next transaction
                 self.notify(.showSuccess)
                 self.cashOutViewModel.update(amount: "")

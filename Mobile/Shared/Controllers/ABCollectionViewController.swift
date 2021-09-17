@@ -20,13 +20,11 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
     private var numItemsInEmptyCollection = 0
     public var isTabBarManagementEnabled: Bool = false
 
-    private lazy var isEmptyStateEnabled = false
-    private lazy var emptyStateView: EmptyStateComponentView = {
-        let emptyStateView = EmptyStateComponentView()
-        collectionView.backgroundView = emptyStateView
-        emptyStateView.hide()
-        return emptyStateView
-    }()
+	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {
+		let view = EmptyStateComponentView()
+		let viewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init())
+		return (viewModel, view)
+	}()
 
     public var safeAreaRect: CGRect {
         collectionView.bounds
@@ -37,23 +35,24 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView?.register(types: [
-            RecentlyPlayedCollectionViewCell.self,
-            PlayedGameLauncherCollectionViewCell.self,
-            GameLauncherCollectionViewCell.self,
-            LoadingCollectionViewCell.self,
-            GameLauncherGridCollectionViewCell.self,
-            EmptyCollectionViewCell.self,
-            ABSliderCollectionViewCell.self,
-            LayoutChooserCollectionViewCell.self
-        ])
-
         setupCollectionView()
         setupFlowLayout()
     }
 
     public func setupCollectionView() {
+		collectionView?.register(types: [
+			RecentlyPlayedCollectionViewCell.self,
+			PlayedGameLauncherCollectionViewCell.self,
+			GameLauncherCollectionViewCell.self,
+			LoadingCollectionViewCell.self,
+			GameLauncherGridCollectionViewCell.self,
+			EmptyCollectionViewCell.self,
+			ABSliderCollectionViewCell.self,
+			LayoutChooserCollectionViewCell.self
+		])
+
         collectionView.backgroundColor = .clear
+		collectionView.backgroundView = emptyState.view
         collectionView.alwaysBounceVertical = true
     }
 
@@ -64,31 +63,33 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
         flowLayout?.sectionInset = .zero
     }
 
-    // MARK: Empty state
+    // MARK: - Empty state
+
     @discardableResult
-    public func configureEmptyState(with viewModel: EmptyStateComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
-        self.numItemsInEmptyCollection = numItemsInEmptyCollection
-        emptyStateView.setAndBind(viewModel: viewModel)
+    public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
+		print("*** ABCollectionViewController.configureEmptyState")
+		emptyState.viewModel = viewModel
+		emptyState.view.setAndBind(viewModel: viewModel)
         return self
     }
 
-    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
-        emptyStateView.isHidden = !isEmptyStateEnabled || (numberOfItemsInSection > numItemsInEmptyCollection)
-        return numberOfItemsInSection
-    }
-
+	@discardableResult
     public func enableEmptyState() -> Self {
-        emptyStateView.show()
-        isEmptyStateEnabled = true
+		emptyState.viewModel.isEnabled = true
         return self
     }
 
+	@discardableResult
     public func disableEmptyState() -> Self {
-        emptyStateView.hide()
-        isEmptyStateEnabled = false
+		emptyState.viewModel.isEnabled = false
         return self
     }
+
+	public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		let numberOfItemsInSection = super.collectionView(collectionView, numberOfItemsInSection: section)
+		emptyState.viewModel.isRequired = numberOfItemsInSection <= emptyState.viewModel.numItems
+		return numberOfItemsInSection
+	}
 
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.numberOfSections - 1 == indexPath.section && collectionView.numberOfItems(inSection: indexPath.section) - 10 == indexPath.item {

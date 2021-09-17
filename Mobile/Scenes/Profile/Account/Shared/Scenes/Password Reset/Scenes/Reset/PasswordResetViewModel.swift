@@ -95,8 +95,6 @@ extension DefaultPasswordResetViewModel: PasswordResetViewModel {
             defer { self.actionSubject.onNext(.setButton(loading: false)) }
             switch result {
             case .success:
-                // TODO: add correct icon
-                self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: .init(), description: "Password Reseted Succesfully")))))
                 self.actionSubject.onNext(.showSuccess)
             case .failure(let error):
                 self.show(error: error)

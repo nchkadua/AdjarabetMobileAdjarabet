@@ -29,23 +29,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qii-XC-4Fc" userLabel="contentView">
-                    <rect key="frame" x="16" y="73.5" width="397" height="110.5"/>
+                    <rect key="frame" x="0.0" y="70" width="429" height="117"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6B6-2e-xvz" userLabel="icon">
-                            <rect key="frame" x="173.5" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="189.5" y="0.0" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="L6Q-Me-1Eo"/>
                                 <constraint firstAttribute="width" constant="50" id="frU-IM-tHP"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-tx-DBK" userLabel="description">
-                            <rect key="frame" x="182.5" y="95" width="32" height="15.5"/>
+                            <rect key="frame" x="196.5" y="99" width="36" height="18"/>
                             <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="13"/>
                             <color key="textColor" name="ColorGuide/TextColors/secondary"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eh-wo-Iwt" userLabel="title">
-                            <rect key="frame" x="176.5" y="66" width="44.5" height="21"/>
+                            <rect key="frame" x="189.5" y="66" width="50" height="25"/>
                             <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="18"/>
                             <color key="textColor" name="ColorGuide/TextColors/primary"/>
                             <nil key="highlightedColor"/>
@@ -65,9 +65,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
                 <constraint firstItem="Qii-XC-4Fc" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="EP5-do-sTZ"/>
-                <constraint firstItem="Qii-XC-4Fc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="HC0-o6-STl"/>
+                <constraint firstItem="Qii-XC-4Fc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cCX-EW-Fci"/>
                 <constraint firstItem="Qii-XC-4Fc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="qI5-PM-LNB"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qii-XC-4Fc" secondAttribute="trailing" constant="16" id="rqc-BE-CLd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="100.72463768115942" y="178.45982142857142"/>

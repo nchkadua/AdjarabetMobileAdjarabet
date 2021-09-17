@@ -21,43 +21,41 @@ public class ABTableViewController: AppTableViewController {
     public var isTabBarManagementEnabled: Bool = false
     public var canEditRow: Bool = false
 
-    private lazy var isEmptyStateEnabled = false
-    private lazy var emptyStateView: EmptyStateComponentView = {
-        let emptyStateView = EmptyStateComponentView()
-        tableView.backgroundView = emptyStateView
-        emptyStateView.hide()
-        return emptyStateView
-    }()
-    private var numItemsInEmptyCollection = 0
+	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {
+		let view = EmptyStateComponentView()
+		print("view should have been added as backgroundView")
+		let viewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init())
+		return (viewModel, view)
+	}()
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView?.register(types: [
-            PromotionTableViewCell.self,
-            NotificationTableViewCell.self,
-            NotificationsHeaderCell.self,
-            TransactionHistoryTableViewCell.self,
-            DateHeaderCell.self,
-            TransactionDetailsTableViewCell.self,
-            TransactionFilterTableViewCell.self,
-            AccountParametersTableViewCell.self,
-            AccountSecurityMessagesTableViewCell.self,
-            AccountParametersHeaderTableViewCell.self,
-            AccessHistoryTableViewCell.self,
-            SecurityLevelTableViewCell.self,
-            SecurityLevelTypeTableViewCell.self,
-            MyCardTableViewCell.self,
-            AddMyCardTableViewCell.self,
-            VideoCardTableViewCell.self,
-            CloseAccountButtonTableViewCell.self
-        ])
-
         setupTableView()
     }
 
     private func setupTableView () {
+		tableView?.register(types: [
+			PromotionTableViewCell.self,
+			NotificationTableViewCell.self,
+			NotificationsHeaderCell.self,
+			TransactionHistoryTableViewCell.self,
+			DateHeaderCell.self,
+			TransactionDetailsTableViewCell.self,
+			TransactionFilterTableViewCell.self,
+			AccountParametersTableViewCell.self,
+			AccountSecurityMessagesTableViewCell.self,
+			AccountParametersHeaderTableViewCell.self,
+			AccessHistoryTableViewCell.self,
+			SecurityLevelTableViewCell.self,
+			SecurityLevelTypeTableViewCell.self,
+			MyCardTableViewCell.self,
+			AddMyCardTableViewCell.self,
+			VideoCardTableViewCell.self,
+			CloseAccountButtonTableViewCell.self
+		])
+
         tableView.backgroundColor = .clear
+		tableView.backgroundView = emptyState.view
     }
 
     // MARK: TabBar management
@@ -77,30 +75,36 @@ public class ABTableViewController: AppTableViewController {
         }
     }
 
-    // MARK: Empty state
+    // MARK: - Empty state
+
     @discardableResult
-    public func configureEmptyState(with viewModel: EmptyStateComponentViewModel, numItemsInEmptyCollection: Int = 0) -> Self {
-        self.numItemsInEmptyCollection = numItemsInEmptyCollection
-        emptyStateView.setAndBind(viewModel: viewModel)
+    public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
+		print("*** ABTableViewController: configureEmptyState")
+		emptyState.viewModel = viewModel
+		emptyState.view.setAndBind(viewModel: viewModel)
         return self
     }
 
 	@discardableResult
     public func enableEmptyState() -> Self {
-        emptyStateView.show()
-        isEmptyStateEnabled = true
+		print("*** ABTableViewController: enableEmptyState")
+		emptyState.viewModel.isEnabled = true
         return self
     }
 
+	@discardableResult
     public func disableEmptyState() -> Self {
-        emptyStateView.hide()
-        isEmptyStateEnabled = false
+		print("*** ABTableViewController: disableEmptyState")
+		emptyState.viewModel.isEnabled = false
         return self
     }
 
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = super.tableView(tableView, numberOfRowsInSection: section)
-        emptyStateView.isHidden = !isEmptyStateEnabled || (numberOfRowsInSection > numItemsInEmptyCollection)
+		print("*** ABTableViewController: numberOfRowsInSection = \(numberOfRowsInSection)")
+		emptyState.viewModel.isRequired = numberOfRowsInSection <= emptyState.viewModel.numItems
+		print("*** ABTableViewController: (!emptyState.viewModel.isEnabled) = \((!emptyState.viewModel.isEnabled))")
+		print("*** ABTableViewController: emptyState.view.isHidden = \(emptyState.view.isHidden)")
         return numberOfRowsInSection
     }
 

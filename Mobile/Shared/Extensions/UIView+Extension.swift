@@ -95,12 +95,16 @@ public extension UIView {
         layer.borderColor = toColor.cgColor
     }
 
-    func show() {
+	@discardableResult
+    func show() -> Self {
         isHidden = false
+		return self
     }
 
-    func hide() {
+	@discardableResult
+    func hide() -> Self {
         isHidden = true
+		return self
     }
 }
 

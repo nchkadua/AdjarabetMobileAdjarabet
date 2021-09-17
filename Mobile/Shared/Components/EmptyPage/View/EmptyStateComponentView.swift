@@ -31,6 +31,7 @@ public class EmptyStateComponentView: UIView {
     }
 
     public func setAndBind(viewModel: EmptyStateComponentViewModel) {
+		print("*** EmptyStateComponentView: setAndBind")
         self.viewModel = viewModel
 
         iconImageView.image = viewModel.params.icon
@@ -52,8 +53,9 @@ public class EmptyStateComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .titleUpdate(let title):
-                self?.titleLabel.text = title
+			case .hide: print("*** EmptyStateComponentView: hide"); self?.hide()
+			case .show: print("*** EmptyStateComponentView: show"); self?.show()
+			case .titleUpdate(let title): self?.titleLabel.text = title
             }
         }).disposed(by: disposeBag)
 
