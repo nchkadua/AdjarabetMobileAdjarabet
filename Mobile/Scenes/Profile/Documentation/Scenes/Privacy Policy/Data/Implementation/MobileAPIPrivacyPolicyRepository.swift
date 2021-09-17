@@ -15,7 +15,7 @@ public class DefaultPrivacyPolicyRepository: PrivacyPolicyRepository {
 
     func getUrl(handler: @escaping PrivacyPolicyHandler) {
         let request = self.requestBuilder
-            .set(host: "https://mobileapi.adjarabet.com/documentation/privacy-policy")
+            .set(host: "https://mobileapi.adjarabet.com/documentation/privacy-policy?language=\(languageStorage.currentLanguage.mobileApiLocalizableIdentifier)")
             .set(method: HttpMethodGet())
             .build()
 
