@@ -275,7 +275,6 @@ public class LoginViewController: ABViewController {
 
     @objc private func registrationDidTap() {
         closeKeyboard()
-        navigator.navigate(to: .notVerifiedUser, animated: true)
     }
 
     @objc private func biometryButtonDidTap() {

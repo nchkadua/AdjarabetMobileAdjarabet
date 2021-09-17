@@ -88,7 +88,7 @@ public class NotVerifiedUserViewController: ABPopupViewController {
         dismissButton.setTitle(R.string.localization.not_verified_user_dismiss_button_title.localized(), for: .normal)
         dismissButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
 
-        closeButton.setImage(R.image.shared.close(), for: .normal)
+        closeButton.setImage(R.image.notVerified.close(), for: .normal)
         closeButton.setTintColor(to: .primaryText())
         closeButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }
