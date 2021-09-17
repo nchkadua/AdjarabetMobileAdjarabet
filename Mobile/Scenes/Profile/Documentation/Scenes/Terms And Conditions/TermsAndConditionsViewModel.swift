@@ -13,7 +13,7 @@ protocol TermsAndConditionsViewModel: BaseViewModel, TermsAndConditionsViewModel
 
 public struct TermsAndConditionsViewModelParams {
 	var categories: [TermsAndConditionsEntity.Category]
-	
+
 	init(categories: [TermsAndConditionsEntity.Category] = []) {
 		self.categories = categories
 	}
@@ -55,7 +55,7 @@ extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = []
 //        for (i, item) in TermsAndConditionsActionItemsProvider.items().enumerated() {
-		for(i, item) in params.categories.enumerated() { 
+		for(i, item) in params.categories.enumerated() {
             let viewModel = DefaultTermsAndConditionsComponentViewModel(params: .init(number: i+1, title: item.title))
 
             viewModel.action.subscribe(onNext: { [weak self] action in
@@ -70,9 +70,9 @@ extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
-	
+
 	public func getCategoryContentToDisplay(with title: String) -> String {
 		let content = params.categories.first(where: {$0.title == title})?.html
-		return String.init(describing: content)
+		return String(describing: content)
 	}
 }

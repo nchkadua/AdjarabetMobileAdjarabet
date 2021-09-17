@@ -10,19 +10,7 @@ import Foundation
 
 struct PrivacyPolicyDTO: DataTransferResponse {
     struct Body: Codable {
-        let html: PPHtml
-
-        struct PPHtml: Codable {
-            var en: String
-            var ge: String
-            var ru: String
-
-            enum CodingKeys: String, CodingKey {
-                case en
-                case ge
-                case ru
-            }
-        }
+        let html: String
 
         enum CodingKeys: String, CodingKey {
             case html
@@ -32,6 +20,6 @@ struct PrivacyPolicyDTO: DataTransferResponse {
     typealias Entity = PrivacyPolicyEntity
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-        return .success(.init(en: body.html.en, ge: body.html.ge, ru: body.html.ru))
+        return .success(.init(html: body.html))
     }
 }

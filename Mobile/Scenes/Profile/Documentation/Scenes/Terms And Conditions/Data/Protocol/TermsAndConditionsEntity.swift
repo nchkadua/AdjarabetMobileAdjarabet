@@ -10,7 +10,7 @@ import Foundation
 
 public struct TermsAndConditionsEntity {
 	let list: [Category]
-	
+
 	public struct Category {
 		let title: String
 		let html: String

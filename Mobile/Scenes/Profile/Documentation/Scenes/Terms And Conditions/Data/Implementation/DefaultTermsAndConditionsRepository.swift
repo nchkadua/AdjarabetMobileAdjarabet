@@ -11,14 +11,14 @@ import Foundation
 public class DefaultTermsAndConditionsRepository: TermsAndConditionsRepository {
 	@Inject private var dataTransferService: DataTransferService
 	private var requestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
-	
+
 	func execute(handler: @escaping Handler, language: Language) {
 		let request = self.requestBuilder
 			.set(host: "https://mobileapi.adjarabet.com/documentation/terms-and-conditions")
 			.set(urlParams: ["language": language.key])
 			.set(method: HttpMethodGet())
 			.build()
-		
+
 		dataTransferService.performTask(expecting: TermsAndConditionsDTO.self,
 										request: request,
 										respondOnQueue: .main,

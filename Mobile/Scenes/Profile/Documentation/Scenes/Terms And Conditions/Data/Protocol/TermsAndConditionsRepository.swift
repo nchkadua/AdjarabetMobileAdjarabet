@@ -10,6 +10,6 @@ import Foundation
 
 protocol TermsAndConditionsRepository {
 	typealias Handler = (Result<TermsAndConditionsEntity, ABError>) -> Void
-	
+
 	func execute(handler: @escaping Handler, language: Language)
 }

@@ -76,7 +76,7 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
         }
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
-	
+
 	public func createAboutUsRequest() {
 		let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/About")
 			.set(method: HttpMethodGet())
@@ -85,15 +85,14 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
 	}
 
     public func createPrivacyPolicyRequest() {
-		privacyPolicyRepo.getUrl(handler: handler(onSuccessHandler: { entity in
-			self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.ge))))
+        privacyPolicyRepo.getUrl(handler: handler(onSuccessHandler: { entity in
+            self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.html))))
         }))
     }
-	
+
 	public func createTermsAndConditionsRequest() {
 		termsAndConditionsUseCase.process(handler: handler(onSuccessHandler: { entity in
 			self.routeSubject.onNext(.navigateToTermsAndConditions(params: entity))
 		}))
 	}
-	
 }

@@ -11,7 +11,7 @@ import RxSwift
 public class TermsAndConditionsViewController: ABViewController {
     @Inject(from: .viewModels) var viewModel: TermsAndConditionsViewModel
 	@Inject(from: .factories) private var webViewControllerFactory: WebViewControllerFactory
-	
+
     public lazy var navigator = TermsAndConditionsNavigator(viewController: self)
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()

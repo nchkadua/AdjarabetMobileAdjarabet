@@ -19,6 +19,7 @@ public class NotVerifiedUserViewController: ABPopupViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var goToButton: UIButton!
     @IBOutlet private weak var dismissButton: UIButton!
+    @IBOutlet private weak var closeButton: UIButton!
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -86,6 +87,10 @@ public class NotVerifiedUserViewController: ABPopupViewController {
         dismissButton.setTitleColor(to: .primaryText(), for: .normal)
         dismissButton.setTitle(R.string.localization.not_verified_user_dismiss_button_title.localized(), for: .normal)
         dismissButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+
+        closeButton.setImage(R.image.notVerified.close(), for: .normal)
+        closeButton.setTintColor(to: .primaryText())
+        closeButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }
 
     @objc private func goToVerification() {

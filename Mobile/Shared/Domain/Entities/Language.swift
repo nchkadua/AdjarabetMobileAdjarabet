@@ -19,6 +19,14 @@ public enum Language: Int, CaseIterable {
         }
     }
 
+    public var mobileApiLocalizableIdentifier: String {
+        switch self {
+        case .english: return "en"
+        case .georgian: return "ge"
+        case .armenian: return "en"
+        }
+    }
+
     public var flag: String {
         switch self {
         case .english: return "🇬🇧"
@@ -42,7 +50,7 @@ public enum Language: Int, CaseIterable {
         case .armenian: return "AMD"
         }
     }
-	
+
 	public var key: String {
 		switch self {
 		case .armenian: return "am"

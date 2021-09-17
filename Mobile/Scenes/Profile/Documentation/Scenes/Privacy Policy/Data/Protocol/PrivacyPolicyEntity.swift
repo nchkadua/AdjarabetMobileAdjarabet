@@ -9,7 +9,5 @@
 import Foundation
 
 struct PrivacyPolicyEntity {
-    let en: String
-    let ge: String
-    let ru: String
+    let html: String
 }
