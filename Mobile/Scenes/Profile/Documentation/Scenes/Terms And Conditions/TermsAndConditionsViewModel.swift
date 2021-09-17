@@ -22,6 +22,7 @@ public struct TermsAndConditionsViewModelParams {
 public protocol TermsAndConditionsViewModelInput: AnyObject {
     var params: TermsAndConditionsViewModelParams { get set }
     func viewDidLoad()
+	func getCategoryContentToDisplay(with title: String) -> String
 }
 
 public protocol TermsAndConditionsViewModelOutput {
@@ -69,4 +70,9 @@ extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
+	
+	public func getCategoryContentToDisplay(with title: String) -> String {
+		let content = params.categories.first(where: {$0.title == title})?.html
+		return String.init(describing: content)
+	}
 }

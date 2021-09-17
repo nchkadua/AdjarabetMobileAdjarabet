@@ -10,7 +10,7 @@ import Foundation
 
 struct TermsAndConditionsDTO: DataTransferResponse {
 	struct Body: Codable {
-		let list: [Category]?
+		let list: [Category]
 		
 		struct Category: Codable {
 			let title: String
@@ -30,9 +30,7 @@ struct TermsAndConditionsDTO: DataTransferResponse {
 	typealias Entity = TermsAndConditionsEntity
 
 	static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-		let list = body.list == nil ? [] : body.list!
-		let categories = list.map({ Entity.Category.init(title: $0.title, html: $0.html) })
-//		return .success(.init(title: body.title, html: body.html))
+		let categories = body.list.map({ Entity.Category.init(title: $0.title, html: $0.html) })
 		return .success(Entity(list: categories))
 	}
 }

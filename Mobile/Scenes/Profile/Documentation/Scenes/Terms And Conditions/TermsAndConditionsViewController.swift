@@ -48,13 +48,11 @@ public class TermsAndConditionsViewController: ABViewController {
     private func didRecive(route: TermsAndConditionsViewModelRoute) {
         switch route {
         case .openPage(let destination):
-//            showAlert(title: destination)
-			if let content = viewModel.params.categories.first(where: {$0.title == destination})?.html {
-				let vc = webViewControllerFactory.make(params: .init(loadType: .html(html: content)))
-				let navc = vc.wrapInNavWith(presentationStyle: .fullScreen)
-				navc.navigationBar.styleForPrimaryPage()
-				navigationController?.present(navc, animated: true, completion: nil)
-			}
+			let content = viewModel.getCategoryContentToDisplay(with: destination)
+			let vc = webViewControllerFactory.make(params: .init(loadType: .html(html: content)))
+			let navc = vc.wrapInNavWith(presentationStyle: .fullScreen)
+			navc.navigationBar.styleForPrimaryPage()
+			navigationController?.present(navc, animated: true, completion: nil)
         }
     }
 

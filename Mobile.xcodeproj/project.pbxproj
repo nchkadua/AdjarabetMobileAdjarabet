@@ -948,6 +948,8 @@
 		FBAE9C4426B3D0C1002E9D72 /* TermsAndConditionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3F26B3D0C1002E9D72 /* TermsAndConditionsViewControllerFactory.swift */; };
 		FBAE9C4526B3D0C1002E9D72 /* TermsAndConditionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C4026B3D0C1002E9D72 /* TermsAndConditionsViewModel.swift */; };
 		FBBF8A0126B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF8A0026B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift */; };
+		FBE4632B26F485DA00F77339 /* TermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */; };
+		FBE4632D26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1924,6 +1926,8 @@
 		FBAE9C3F26B3D0C1002E9D72 /* TermsAndConditionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewControllerFactory.swift; sourceTree = "<group>"; };
 		FBAE9C4026B3D0C1002E9D72 /* TermsAndConditionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewModel.swift; sourceTree = "<group>"; };
 		FBBF8A0026B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsActionItemsProvider.swift; sourceTree = "<group>"; };
+		FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
+		FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
 		FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-production.xcconfig"; sourceTree = "<group>"; };
 		FDFC63146B84761D3EA657AA /* Pods-Mobile.debug-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.debug-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.debug-production.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -6819,6 +6823,7 @@
 			children = (
 				FB06F54726F2EB5200E1766E /* TermsAndConditionsRepository.swift */,
 				FB06F54926F2EB6100E1766E /* TermsAndConditionsEntity.swift */,
+				FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -6828,6 +6833,7 @@
 			children = (
 				FB06F54C26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift */,
 				FB06F54E26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift */,
+				FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -7624,6 +7630,7 @@
 				FB612A0426C5FBEC00022F24 /* EmptyStateComponentViewModel.swift in Sources */,
 				CEB49871268C987A00004A45 /* PasswordResetNavigator.swift in Sources */,
 				CE920609268493D600670AD8 /* ServiceAuthTokenRepository.swift in Sources */,
+				FBE4632B26F485DA00F77339 /* TermsAndConditionsUseCase.swift in Sources */,
 				C78E53122685B12300EE1C18 /* HighSecurityViewController.swift in Sources */,
 				CEA77792256D4237008A4F6C /* MailChangeViewController.swift in Sources */,
 				D8CFD8AF244C850D001F4BAA /* GameLauncherComponentView.swift in Sources */,
@@ -8040,6 +8047,7 @@
 				76BA7BDD25E7AA1A00CB77A5 /* GameLauncherGridCollectionViewCell.swift in Sources */,
 				C782D25D26544A6000594A65 /* ABSliderCell.swift in Sources */,
 				CE4A31502617320F0039C078 /* NotificationsUseCase.swift in Sources */,
+				FBE4632D26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift in Sources */,
 				CE2F03D6252CD6B0006D8001 /* QuickActionTableViewCellDataProvider.swift in Sources */,
 				765EDFD325BAE08300089B49 /* EditableCell.swift in Sources */,
 				D86253AD2464197500F7DE0C /* Cancelable.swift in Sources */,

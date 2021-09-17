@@ -44,7 +44,7 @@ public class DefaultDocumentationViewModel: DefaultBaseViewModel {
     private let routeSubject = PublishSubject<DocumentationViewModelRoute>()
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
     @Inject(from: .repositories) private var privacyPolicyRepo: PrivacyPolicyRepository
-	@Inject(from: .repositories) private var termsAndConditionsRepository: TermsAndConditionsRepository
+	@Inject(from: .useCases) private var termsAndConditionsUseCase: TermsAndConditionsUseCase
 
     public init(params: DocumentationViewModelParams) {
         self.params = params
@@ -91,9 +91,7 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
     }
 	
 	public func createTermsAndConditionsRequest() {
-		print("*** createTermsAndConditionsRequest")
-		termsAndConditionsRepository.execute(handler: handler(onSuccessHandler: { entity in
-			print("*** createTermsAndConditionsRequest.entity: \(entity)")
+		termsAndConditionsUseCase.process(handler: handler(onSuccessHandler: { entity in
 			self.routeSubject.onNext(.navigateToTermsAndConditions(params: entity))
 		}))
 	}

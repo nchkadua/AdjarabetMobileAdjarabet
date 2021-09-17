@@ -59,10 +59,10 @@ public class DocumentationViewController: ABViewController {
         switch destination {
         case .aboutUs:
             viewModel.createAboutUsRequest()
-        case .termsAndConditions:
-			viewModel.createTermsAndConditionsRequest()
         case .privacyPolicy:
             viewModel.createPrivacyPolicyRequest()
+		case .termsAndConditions:
+			viewModel.createTermsAndConditionsRequest()
         }
     }
 

@@ -210,6 +210,7 @@ public extension DependencyContainer {
         Module { DefaultLobbyGamesUseCase() as LobbyGamesUseCase }
         Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
         Module { DefaultNotificationsUseCase() as NotificationsUseCase }
+		Module { DefaultTermsAndConditionsUseCase() as TermsAndConditionsUseCase }
         // Core
         Module { DefaultLoginUseCase() as LoginUseCase }
         Module { DefaultBiometricLoginUseCase(loginUseCase: DefaultLoginUseCase()) as BiometricLoginUseCase }
