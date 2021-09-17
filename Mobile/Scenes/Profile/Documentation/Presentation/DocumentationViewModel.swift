@@ -19,6 +19,7 @@ public protocol DocumentationViewModelInput: AnyObject {
     func viewDidLoad()
     func createAboutUsRequest()
     func createPrivacyPolicyRequest()
+	func createTermsAndConditionsRequest()
 }
 
 public protocol DocumentationViewModelOutput {
@@ -34,6 +35,7 @@ public enum DocumentationViewModelRoute {
     case openPage(destionation: DocumentationDestination)
     case navigateToPrivacyPolicy(params: WebViewModelParams)
     case navigateToAboutUs(params: WebViewModelParams)
+	case navigateToTermsAndConditions(params: TermsAndConditionsEntity)
 }
 
 public class DefaultDocumentationViewModel: DefaultBaseViewModel {
@@ -41,7 +43,8 @@ public class DefaultDocumentationViewModel: DefaultBaseViewModel {
     private let actionSubject = PublishSubject<DocumentationViewModelOutputAction>()
     private let routeSubject = PublishSubject<DocumentationViewModelRoute>()
     private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
-    @Inject(from: .repositories) private var repo: PrivacyPolicyRepository
+    @Inject(from: .repositories) private var privacyPolicyRepo: PrivacyPolicyRepository
+	@Inject(from: .useCases) private var termsAndConditionsUseCase: TermsAndConditionsUseCase
 
     public init(params: DocumentationViewModelParams) {
         self.params = params
@@ -74,16 +77,22 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
         actionSubject.onNext(.initialize(dataProviders.makeList()))
     }
 
+	public func createAboutUsRequest() {
+		let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/About")
+			.set(method: HttpMethodGet())
+			.build()
+		routeSubject.onNext(.navigateToAboutUs(params: .init(loadType: .urlRequst(request: request))))
+	}
+
     public func createPrivacyPolicyRequest() {
-        repo.getUrl(handler: handler(onSuccessHandler: { entity in
+        privacyPolicyRepo.getUrl(handler: handler(onSuccessHandler: { entity in
             self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.html))))
         }))
     }
 
-    public func createAboutUsRequest() {
-        let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/" + languageStorage.currentLanguage.localizableIdentifier + "/About")
-            .set(method: HttpMethodGet())
-            .build()
-        routeSubject.onNext(.navigateToAboutUs(params: .init(loadType: .urlRequst(request: request))))
-    }
+	public func createTermsAndConditionsRequest() {
+		termsAndConditionsUseCase.process(handler: handler(onSuccessHandler: { entity in
+			self.routeSubject.onNext(.navigateToTermsAndConditions(params: entity))
+		}))
+	}
 }

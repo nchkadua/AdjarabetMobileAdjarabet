@@ -17,8 +17,8 @@ public class DocumentationNavigator: Navigator {
 
     public enum Destination {
         case aboutUs(with: WebViewModelParams)
-        case termsAndConditions(with: TermsAndConditionsViewModelParams)
         case privacyPolicy(with: WebViewModelParams)
+		case termsAndConditions(with: TermsAndConditionsViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -28,7 +28,7 @@ public class DocumentationNavigator: Navigator {
         case .privacyPolicy(let params):
             navigateToWebView(with: params, animate: animate)
         case .termsAndConditions(let params):
-            navigateToTermsAndConditions(with: params, animate: animate)
+			navigateToTermsAndConditions(with: .init(categories: params.categories), animate: animate)
         }
     }
 

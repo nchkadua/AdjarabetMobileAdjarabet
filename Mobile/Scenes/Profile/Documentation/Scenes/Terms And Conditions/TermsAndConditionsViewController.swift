@@ -10,6 +10,8 @@ import RxSwift
 
 public class TermsAndConditionsViewController: ABViewController {
     @Inject(from: .viewModels) var viewModel: TermsAndConditionsViewModel
+	@Inject(from: .factories) private var webViewControllerFactory: WebViewControllerFactory
+
     public lazy var navigator = TermsAndConditionsNavigator(viewController: self)
 
     private lazy var appTableViewController: AppTableViewController = AppTableViewController()
@@ -46,7 +48,11 @@ public class TermsAndConditionsViewController: ABViewController {
     private func didRecive(route: TermsAndConditionsViewModelRoute) {
         switch route {
         case .openPage(let destination):
-            showAlert(title: destination)
+			let content = viewModel.getCategoryContentToDisplay(with: destination)
+			let vc = webViewControllerFactory.make(params: .init(loadType: .html(html: content)))
+			let navc = vc.wrapInNavWith(presentationStyle: .fullScreen)
+			navc.navigationBar.styleForPrimaryPage()
+			navigationController?.present(navc, animated: true, completion: nil)
         }
     }
 

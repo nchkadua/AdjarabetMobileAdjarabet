@@ -92,7 +92,6 @@ public extension DependencyContainer {
         Module { DefaultFAQQuestionsViewModel(params: .init(showDismissButton: true)) as FAQQuestionsViewModel }
         Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as TermsAndConditionsViewModel }
-        Module { DefaultTermsAndConditionsViewModel(params: .init()) as DefaultTermsAndConditionsViewModel }
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
         Module { DefaultEmptyStateComponentViewModel(params: .init()) as EmptyStateComponentViewModel }
         Module { DefaultStatusMessageComponentViewModel(params: .init()) as StatusMessageComponentViewModel }
@@ -155,6 +154,7 @@ public extension DependencyContainer {
         Module { CoreApiUpdateOtpRepository() as UpdateOtpRepository }
 
         Module { DefaultPrivacyPolicyRepository() as PrivacyPolicyRepository }
+		Module { DefaultTermsAndConditionsRepository() as TermsAndConditionsRepository }
     }
 
     static var factories = DependencyContainer {
@@ -210,6 +210,7 @@ public extension DependencyContainer {
         Module { DefaultLobbyGamesUseCase() as LobbyGamesUseCase }
         Module { DefaultRecentlyPlayedGamesUseCase() as RecentlyPlayedGamesUseCase }
         Module { DefaultNotificationsUseCase() as NotificationsUseCase }
+		Module { DefaultTermsAndConditionsUseCase() as TermsAndConditionsUseCase }
         // Core
         Module { DefaultLoginUseCase() as LoginUseCase }
         Module { DefaultBiometricLoginUseCase(loginUseCase: DefaultLoginUseCase()) as BiometricLoginUseCase }
