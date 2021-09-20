@@ -75,8 +75,6 @@ public class OTPViewController: ABViewController {
         switch route {
         case .openMainTabBar: navigator.navigate(to: .mainTabBar, animated: true)
         case .dismiss: dismiss(animated: true, completion: nil)
-        default:
-            break
         }
     }
 

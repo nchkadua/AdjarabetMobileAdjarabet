@@ -22,6 +22,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 
 	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {
 		let view = EmptyStateComponentView()
+		view.hide()
 		let viewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init())
 		return (viewModel, view)
 	}()
@@ -67,7 +68,6 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 
     @discardableResult
     public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
-		print("*** ABCollectionViewController.configureEmptyState")
 		emptyState.viewModel = viewModel
 		emptyState.view.setAndBind(viewModel: viewModel)
         return self

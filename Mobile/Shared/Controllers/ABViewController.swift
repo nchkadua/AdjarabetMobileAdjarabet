@@ -48,27 +48,18 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint) = {
           let error: NotificationErrorView = .init()
 
-          view.addSubview(error)
+          v.addSubview(error)
           error.translatesAutoresizingMaskIntoConstraints = false
 
-          let constraint = error.topAnchor.constraint(equalTo: view.bottomAnchor)
+          let constraint = error.topAnchor.constraint(equalTo: v.bottomAnchor)
           NSLayoutConstraint.activate([
                constraint,
-               error.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 23),
-               error.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -23),
+               error.leadingAnchor.constraint(equalTo: v.leadingAnchor, constant: 23),
+               error.trailingAnchor.constraint(equalTo: v.trailingAnchor, constant: -23),
                error.heightAnchor.constraint(equalToConstant: 84)
           ])
 
           return (error, constraint)
-     }()
-
-     lazy var statusMessage: (view: StatusMessageComponentView, viewModel: StatusMessageComponentViewModel) = {
-          let view = StatusMessageComponentView()
-          view.translatesAutoresizingMaskIntoConstraints = false
-          let viewModel: StatusMessageComponentViewModel = DefaultStatusMessageComponentViewModel(params: .init())
-          view.setAndBind(viewModel: viewModel)
-          view.hide()
-          return (view, viewModel)
      }()
 
      //Success
@@ -131,28 +122,10 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           guard setInteractivePopGestureRecognizer else {return}
           navigationController?.interactivePopGestureRecognizer?.delegate = self
           setupAsNetworkConnectionObserver()
-          setupStatusMessage()
      }
 
      private func setupAsNetworkConnectionObserver() {
           NetworkConnectionManager.shared.addObserver(self)
-     }
-
-     private func setupStatusMessage() {
-          view.addSubview(statusMessage.view)
-          view.bringSubviewToFront(statusMessage.view)
-
-          let heightConstraint = statusMessage.view.heightAnchor.constraint(equalToConstant: StatusMessageComponentConstants.preferredHeight)
-          heightConstraint.identifier = StatusMessageComponentConstants.heightConstraintIdentifier
-
-          NSLayoutConstraint.activate([
-               heightConstraint,
-               statusMessage.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-               statusMessage.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-               statusMessage.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-          ])
-
-          setupNetworkConnectionState()
      }
 
      public override func viewWillDisappear(_ animated: Bool) {
@@ -239,7 +212,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
      private var isNotificationErrorShown = false
      func showNotificationError(with description: ABError.Description.Notification) {
-          guard !isNotificationErrorShown else {return}
+          guard !isNotificationErrorShown else { return }
 
           notificationError.view.configure(from: description)
           DispatchQueue.main.async { self.showNotificationError() }
@@ -345,40 +318,50 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           view.endEditing(true)
      }
 
-     // MARK: - NetworkConnectionObserver -
+     // MARK: - NetworkConnectionObserver
 
      internal var networkConnectionObserverId: Int = NetworkConnectionManager.shared.newObserverId
 
      public func networkConnectionEstablished() {
-          statusMessage.viewModel.type = .connectionEstablished
-          DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.connectionEstablishedViewDuration) {
-               self.mainTabBarViewController?.tryMoveDownTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
-               DispatchQueue.main.asyncAfter(deadline: .now() + Constants.StatusMessage.animationDuration) {
-                    self.statusMessage.view.hide()
-               }
-          }
+		DispatchQueue.main.async {
+			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionEstablished.icon, description: Constants.InternetConnectionStatus.connectionEstablished.description)))))
+		}
      }
 
-     public func networkConnectionLost() {
-          mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
-          statusMessage.viewModel.type = .connectionFailed
-          statusMessage.view.show()
-     }
+	public func networkConnectionLost() {
+		DispatchQueue.main.async {
+			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
+		}
+	}
 
-     private func setupNetworkConnectionState() {
-          if !NetworkConnectionManager.shared.isConnected {
-               mainTabBarViewController?.tryMoveUpTabBarSafely(by: StatusMessageComponentConstants.preferredHeight)
-               statusMessage.viewModel.type = .connectionFailed
-               statusMessage.view.show()
-          }
-     }
+	private func setupNetworkConnectionState() {
+		if !NetworkConnectionManager.shared.isConnected {
+			DispatchQueue.main.async {
+				self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
+			}
+		}
+	}
 }
 
 extension ABViewController {
-     struct Constants {
-          struct StatusMessage {
-               static let animationDuration = 0.5
-               static let connectionEstablishedViewDuration = 2.5
-          }
-     }
+	struct Constants {
+		enum InternetConnectionStatus {
+			case connectionLost
+			case connectionEstablished
+			
+			var icon: UIImage {
+				switch self {
+				case .connectionLost: return R.image.deposit.add_card_red()!
+				case .connectionEstablished: return R.image.deposit.add_card_red()!
+				}
+			}
+			
+			var description: String {
+				switch self {
+				case .connectionLost: return R.string.localization.status_message_internet_connection_lost.localized()
+				case .connectionEstablished: return R.string.localization.status_message_internet_connection_established.localized()
+				}
+			}
+	   }
+	}
 }
