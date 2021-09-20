@@ -105,7 +105,6 @@ public extension DependencyContainer {
         Module { DefaultGameLoaderComponentViewModel() as GameLoaderComponentViewModel }
         Module { DefaultPaymentMethodGridComponentViewModel(params: .init(paymentMethods: [])) as PaymentMethodGridComponentViewModel }
         Module { DefaultSuggestedAmountGridComponentViewModel(params: .init(suggestedAmouns: [])) as SuggestedAmountGridComponentViewModel }
-        Module { DefaultVideoCardComponentViewModel(params: .init(pathType: .url(url: ""))) as VideoCardComponentViewModel }
         // Withdraw
         Module { DefaultCashOutVisaViewModel() as CashOutVisaViewModel }
         Module { DefaultWithdrawVisaInfoViewModel() as WithdrawVisaInfoViewModel }
