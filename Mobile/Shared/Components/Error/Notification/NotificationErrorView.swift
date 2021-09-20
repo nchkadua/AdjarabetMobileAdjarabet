@@ -30,12 +30,12 @@ class NotificationErrorView: UIView, Xibable {
     }
 
     func setupUI() {
-        contentView.setBackgorundColor(to: .ultrathin())
-        messageLabel.setFont(to: .subHeadline(fontCase: .lower, fontStyle: .semiBold))
+        contentView.setBackgorundColor(to: .thick())
+        messageLabel.setFont(to: .callout(fontCase: .upper, fontStyle: .semiBold))
     }
 
     func configure(from model: ABError.Description.Notification) {
         iconImageView.image = model.icon
-        messageLabel.text = model.description
+        messageLabel.text = model.description.uppercased()
     }
 }
