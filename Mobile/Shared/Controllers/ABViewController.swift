@@ -56,7 +56,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
                constraint,
                error.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 23),
                error.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -23),
-               error.heightAnchor.constraint(equalToConstant: 84)
+               error.heightAnchor.constraint(equalToConstant: 72)
           ])
 
           return (error, constraint)

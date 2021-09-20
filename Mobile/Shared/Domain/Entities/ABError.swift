@@ -51,13 +51,13 @@ class ABError {
         case .ipIsBlocked:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_ip_is_blocked.localized(), buttons: [.call, .gotIt]))
         case .wrongAuthCredentials:
-            return .notification(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_wrong_credentials.localized()))
+            return .notification(description: .init(icon: R.image.popup.success()!, description: R.string.localization.shared_aberror_wrong_credentials.localized()))
         case .lastAccessFromDifferentIP:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_last_access_from_different_ip.localized(), buttons: [.lastAccesses, .gotIt]))
         case .wrongRequest, .genericError, .missingParameters, .originDomainNotAllowed:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_technical_issue.localized(), buttons: [.gotIt]))
         case .otpNotFound:
-            return .notification(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_otp_not_found.localized()))
+            return .notification(description: .init(icon: R.image.popup.success()!, description: R.string.localization.shared_aberror_otp_not_found.localized()))
         case .notConnected:
             return .status(description: .init(description: R.string.localization.shared_aberror_not_connected.localized()))
         case .`init`(let description):
