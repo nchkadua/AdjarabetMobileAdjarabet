@@ -12,6 +12,7 @@ import AVFoundation
 class VideoCardComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: VideoCardComponentViewModel!
+
     private var playerLooper: AVPlayerLooper!
     private var queuePlayer: AVQueuePlayer!
     private var playerLayer: AVPlayerLayer!
