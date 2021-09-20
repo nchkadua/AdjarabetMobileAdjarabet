@@ -8,10 +8,16 @@
 
 import RxSwift
 
+public enum AssetPathType {
+    case bundle(name: String, extenstion: String = "mp4")
+    case url(url: String)
+}
+
 public protocol VideoCardComponentViewModel: VideoCardComponentViewModelInput,
                                                 VideoCardComponentViewModelOutput {}
 
 public struct VideoCardComponentViewModelParams {
+    let pathType: AssetPathType
 }
 
 public protocol VideoCardComponentViewModelInput {
@@ -24,6 +30,7 @@ public protocol VideoCardComponentViewModelOutput {
 }
 
 public enum VideoCardComponentViewModelOutputAction {
+    case setAssetWith(pathType: AssetPathType)
 }
 
 public class DefaultVideoCardComponentViewModel {
@@ -40,5 +47,6 @@ extension DefaultVideoCardComponentViewModel: VideoCardComponentViewModel {
     }
 
     public func didBind() {
+        actionSubject.onNext(.setAssetWith(pathType: params.pathType))
     }
 }
