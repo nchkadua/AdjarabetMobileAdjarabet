@@ -351,8 +351,8 @@ extension ABViewController {
 			
 			var icon: UIImage {
 				switch self {
-				case .connectionLost: return R.image.deposit.add_card_red()!
-				case .connectionEstablished: return R.image.deposit.add_card_red()!
+				case .connectionLost: return R.image.shared.connectionLost()!
+				case .connectionEstablished: return R.image.shared.connectionEstablished()!
 				}
 			}
 			
