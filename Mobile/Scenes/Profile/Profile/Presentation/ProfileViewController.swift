@@ -13,7 +13,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
     @Inject(from: .viewModels) var viewModel: ProfileViewModel
     public lazy var navigator = ProfileNavigator(viewController: self)
 
-    private lazy var appTableViewController: AppTableViewController = AppTableViewController()
+    private lazy var appTableViewController: AppTableViewController = ABTableViewController()
 
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
@@ -98,12 +98,12 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         appTableViewController.setBaseBackgroundColor(to: .secondaryBg())
 
         appTableViewController.tableView?.register(types: [
-            ProfileInfoTableViewCell.self,
             BalanceTableViewCell.self,
+			FooterTableViewCell.self,
+			LogOutTableViewCell.self,
+			ProfileInfoTableViewCell.self,
             QuickActionsHeaderCell.self,
             QuickActionTableViewCell.self,
-            LogOutTableViewCell.self,
-            FooterTableViewCell.self
         ])
     }
 

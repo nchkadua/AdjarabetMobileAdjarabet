@@ -124,6 +124,7 @@
 
 "balance_title" = "My Balance";
 "total_balance" = "Total Balance";
+"balance_is_unavailable" = "Balance is unavailable";
 "poker_balance" = "Poker Balance";
 "withdraw_button_title" = "Withdraw";
 "deposit_button_title" = "Deposit";

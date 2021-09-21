@@ -87,7 +87,6 @@ extension DefaultEmptyStateComponentViewModel: EmptyStateComponentViewModel {
 		set {
 			params.isEnabled = newValue
 			refreshHideness()
-			print("*** DefaultEmptyStateComponentViewModel isEnabled updated to -> \(isEnabled)")
 		}
 	}
 

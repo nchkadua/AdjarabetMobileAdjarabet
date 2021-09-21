@@ -64,61 +64,95 @@ extension DefaultProfileViewModel: ProfileViewModel {
     public func setupDataProviders() {
         setupAppCellDataProviders()
     }
+	
+	// MARK: - View Models for profile table view
+	
+	private var profileViewModel: AppCellDataProvider {
+		let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
+		profileViewModel.action.subscribe(onNext: { [weak self] action in
+			switch action {
+			case .didCopyUserId: self?.actionSubject.onNext(.didCopyUserId(userId: "userID"))
+			default: break
+			}
+		}).disposed(by: self.disposeBag)
+		
+		return profileViewModel
+	}
+	
+	private var balanceViewModel: AppCellDataProvider {
+		let balanceViewModel = DefaultBalanceComponentViewModel(params: .init(totalBalance: userBalanceService.balance ?? 0, pokerBalance: 0, balancePlaceholder: R.string.localization.balance_is_unavailable.localized()))
+		
+		if userBalanceService.balance != nil {
+			balanceViewModel.showBalance()
+		} else {
+			balanceViewModel.hideBalance()
+		}
+		
+		balanceViewModel.action.subscribe(onNext: { [weak self] action in
+			switch action {
+			case .didClickDeposit: self?.routeSubject.onNext(.openDeposit)
+			case .didClickWithdraw: self?.routeSubject.onNext(.openWithdraw)
+			default: break
+			}
+		}).disposed(by: self.disposeBag)
+		
+		return balanceViewModel
+	}
+	
+	private var logOutViewModel: AppCellDataProvider {
+		let logOutViewModel = DefaultLogOutComponentViewModel(params: .init(title: R.string.localization.log_out.localized()))
+		logOutViewModel.action.subscribe(onNext: { [weak self] action in
+			switch action {
+			case .didTapButton: self?.routeSubject.onNext(.openPage(destionation: .loginPage))
+			default:
+				break
+			}
+		}).disposed(by: self.disposeBag)
+		return logOutViewModel
+	}
+	
+	private var footerViewModel: AppCellDataProvider {
+		let footerViewModel = DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(backgroundColor: DesignSystem.Color.secondaryBg()))
+		footerViewModel.action.subscribe(onNext: {[weak self] action in
+			switch action {
+			case .contactUsDidClick: self?.routeSubject.onNext(.openContactUs)
+			case .didChangeLanguage: self?.actionSubject.onNext(.languageDidChange)
+			default:
+				break
+			}
+		}).disposed(by: self.disposeBag)
+		return footerViewModel
+	}
+	
+	private var quickActionViewModels: AppCellDataProviders {
+		var viewModels: AppCellDataProviders = []
+		QuickActionItemProvider.items(biometryQuickActionIcon()).forEach {
+			let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, destination: $0.destionation))
+			
+			quickActionViewModel.action.subscribe(onNext: { [weak self] action in
+				switch action {
+				case .didSelect: self?.routeSubject.onNext(.openPage(destionation: quickActionViewModel.params.destination))
+				default: break
+				}
+			}).disposed(by: self.disposeBag)
+			viewModels.append(quickActionViewModel)
+		}
+		return viewModels
+	}
 
     private func setupAppCellDataProviders() {
         var dataProviders: AppCellDataProviders = []
+		
+		userBalanceService.update()
 
-        let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
-        profileViewModel.action.subscribe(onNext: { [weak self] action in
-            switch action {
-            case .didCopyUserId: self?.actionSubject.onNext(.didCopyUserId(userId: "userID"))
-            default: break
-            }
-        }).disposed(by: self.disposeBag)
-        dataProviders.insert(profileViewModel, at: 0)
-
-        let balanceViewModel = DefaultBalanceComponentViewModel(params: BalanceComponentViewModelParams(totalBalance: userBalanceService.balance ?? 0, pokerBalance: 0))
-        balanceViewModel.action.subscribe(onNext: { [weak self] action in
-            switch action {
-            case .didClickDeposit: self?.routeSubject.onNext(.openDeposit)
-            case .didClickWithdraw: self?.routeSubject.onNext(.openWithdraw)
-            default: break
-            }
-        }).disposed(by: self.disposeBag)
-        dataProviders.insert(balanceViewModel, at: 1)
-
-        logoutViewModel = DefaultLogOutComponentViewModel(params: .init(title: R.string.localization.log_out.localized()))
-        logoutViewModel.action.subscribe(onNext: { [weak self] action in
-            switch action {
-            case .didTapButton: self?.routeSubject.onNext(.openPage(destionation: .loginPage))
-            default:
-                break
-            }
-        }).disposed(by: self.disposeBag)
-        dataProviders.insert(logoutViewModel, at: 2)
-
-        QuickActionItemProvider.items(biometryQuickActionIcon()).reversed().forEach {
-            let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, destination: $0.destionation))
-
-            quickActionViewModel.action.subscribe(onNext: { [weak self] action in
-                switch action {
-                case .didSelect: self?.routeSubject.onNext(.openPage(destionation: quickActionViewModel.params.destination))
-                default: break
-                }
-            }).disposed(by: self.disposeBag)
-
-            dataProviders.insert(quickActionViewModel, at: 2)
-        }
-
-        let footerViewModel = DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(backgroundColor: DesignSystem.Color.secondaryBg()))
-        footerViewModel.action.subscribe(onNext: {[weak self] action in
-            switch action {
-            case .contactUsDidClick: self?.routeSubject.onNext(.openContactUs)
-            case .didChangeLanguage: self?.actionSubject.onNext(.languageDidChange)
-            default:
-                break
-            }
-        }).disposed(by: self.disposeBag)
+        dataProviders.append(profileViewModel)
+        dataProviders.append(balanceViewModel)
+		for quickActionViewModel in quickActionViewModels {
+			dataProviders.append(quickActionViewModel)
+		}
+	
+		logoutViewModel = logOutViewModel as! DefaultLogOutComponentViewModel	// update stored var
+		dataProviders.append(logoutViewModel)
         dataProviders.append(footerViewModel)
 
         actionSubject.onNext(.initialize(dataProviders.makeList()))

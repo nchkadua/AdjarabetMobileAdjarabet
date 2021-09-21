@@ -66,6 +66,7 @@ extension DefaultUserBalanceService: UserBalanceService {
     public var balanceObservable: Observable<Double?> { balanceSubject.asObserver() }
 
     public func update() {
+		return
         guard let userId = userSession.userId, let sessionId = userSession.sessionId else {return}
 
         balanceManagementRepository.balance(userId: userId,

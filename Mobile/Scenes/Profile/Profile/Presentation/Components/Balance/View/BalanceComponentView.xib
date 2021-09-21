@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AdjaraMont-Regular.ttf">
+            <string>AdjaraMont-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BalanceComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
+                <outlet property="balancePlaceholderLabel" destination="1FU-X9-Koq" id="r6z-Po-LtC"/>
                 <outlet property="bgView" destination="421-Iu-9aG" id="Pkd-sc-pAz"/>
                 <outlet property="depositButton" destination="2v0-ZI-gXK" id="3Cg-lD-7rc"/>
                 <outlet property="totalBalanceValueLabel" destination="RXm-hM-CUW" id="9ry-2Q-kj1"/>
@@ -45,17 +52,27 @@
                             </constraints>
                             <state key="normal" image="Profile/minus"/>
                         </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FU-X9-Koq" userLabel="placeholder">
+                            <rect key="frame" x="22" y="12" width="228" height="48"/>
+                            <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="13"/>
+                            <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="RXm-hM-CUW" firstAttribute="top" secondItem="421-Iu-9aG" secondAttribute="top" constant="20" id="GxS-Oq-7PD"/>
+                        <constraint firstItem="1FU-X9-Koq" firstAttribute="trailing" secondItem="RXm-hM-CUW" secondAttribute="trailing" id="KhX-W3-ddW"/>
                         <constraint firstAttribute="bottom" secondItem="RXm-hM-CUW" secondAttribute="bottom" constant="20" id="SrM-Qn-jEQ"/>
+                        <constraint firstItem="1FU-X9-Koq" firstAttribute="top" secondItem="RXm-hM-CUW" secondAttribute="top" constant="-8" id="Uxp-we-axE"/>
                         <constraint firstItem="RXm-hM-CUW" firstAttribute="leading" secondItem="421-Iu-9aG" secondAttribute="leading" constant="22" id="VBN-fU-sfl"/>
                         <constraint firstAttribute="trailing" secondItem="2v0-ZI-gXK" secondAttribute="trailing" constant="19" id="fld-5p-HBE"/>
                         <constraint firstItem="2v0-ZI-gXK" firstAttribute="top" secondItem="421-Iu-9aG" secondAttribute="top" constant="18" id="fxN-xf-9xk"/>
+                        <constraint firstItem="RXm-hM-CUW" firstAttribute="bottom" secondItem="1FU-X9-Koq" secondAttribute="bottom" constant="-8" id="iki-gC-Wdn"/>
                         <constraint firstItem="2v0-ZI-gXK" firstAttribute="leading" secondItem="6H2-Un-rhJ" secondAttribute="trailing" constant="13" id="jNQ-0f-eZi"/>
                         <constraint firstItem="6H2-Un-rhJ" firstAttribute="leading" secondItem="RXm-hM-CUW" secondAttribute="trailing" constant="36" id="oKT-0b-KOL"/>
                         <constraint firstItem="6H2-Un-rhJ" firstAttribute="top" secondItem="421-Iu-9aG" secondAttribute="top" constant="18" id="tDF-MU-zoH"/>
+                        <constraint firstItem="RXm-hM-CUW" firstAttribute="leading" secondItem="1FU-X9-Koq" secondAttribute="leading" id="uuD-g8-1K2"/>
                         <constraint firstAttribute="bottom" secondItem="6H2-Un-rhJ" secondAttribute="bottom" constant="18" id="wqI-St-M92"/>
                         <constraint firstAttribute="bottom" secondItem="2v0-ZI-gXK" secondAttribute="bottom" constant="18" id="z4h-dU-Guj"/>
                     </constraints>
@@ -76,5 +93,8 @@
     <resources>
         <image name="Profile/minus" width="36" height="36"/>
         <image name="Profile/plus" width="36" height="36"/>
+        <namedColor name="ColorGuide/TextColors/secondary">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.96078431372549022" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

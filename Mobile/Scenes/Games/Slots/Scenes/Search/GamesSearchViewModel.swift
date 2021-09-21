@@ -135,7 +135,6 @@ public class DefaultGamesSearchViewModel: DefaultBaseViewModel {
     }
 
     private func update(query: String?) {
-		print("*** update")
         page.reset()
         games.removeAll()
         actionSubject.onNext(.initialize(defaultAppListDataProvider))
@@ -195,12 +194,10 @@ extension DefaultGamesSearchViewModel: GamesSearchViewModel {
     }
 
     public func didUpdateQuary(text: String?) {
-		print("*** didUpdateQuary")
         querySubject.onNext(text)
     }
 
     public func didSearch(query: String?) {
-		print("*** didSearch")
         update(query: query)
     }
 

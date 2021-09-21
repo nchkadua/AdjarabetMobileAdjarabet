@@ -67,7 +67,6 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 
     @discardableResult
     public func configureEmptyState(with viewModel: EmptyStateComponentViewModel) -> Self {
-		print("*** ABCollectionViewController.configureEmptyState")
 		emptyState.viewModel = viewModel
 		emptyState.view.setAndBind(viewModel: viewModel)
         return self

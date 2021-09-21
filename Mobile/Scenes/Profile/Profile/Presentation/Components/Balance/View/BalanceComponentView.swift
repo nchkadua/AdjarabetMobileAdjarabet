@@ -18,7 +18,8 @@ class BalanceComponentView: UIView {
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var bgView: UIView!
     @IBOutlet weak private var totalBalanceValueLabel: UILabel!
-    @IBOutlet weak private var withdrawButton: UIButton!
+	@IBOutlet weak private var balancePlaceholderLabel: UILabel!
+	@IBOutlet weak private var withdrawButton: UIButton!
     @IBOutlet weak private var depositButton: UIButton!
 
     public override init(frame: CGRect) {
@@ -41,16 +42,35 @@ class BalanceComponentView: UIView {
 
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let totalBalance): self?.setupUI(totalBalance: totalBalance)
-            default: break
+            case .setup(let viewModel): self?.setupUI(viewModel: viewModel)
+			case .didClickDeposit(_): break
+			case .didClickWithdraw(_): break
+			case .showTotalBalance: self?.showMainBalance()
+			case .showBalancePlaceholder(let placeholder): self?.showBalancePlaceholder(placeholderText: placeholder)
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }
+	
+	private func showMainBalance() {
+		totalBalanceValueLabel.show()
+		balancePlaceholderLabel.hide()
+	}
+	
+	private func showBalancePlaceholder(placeholderText: String) {
+		totalBalanceValueLabel.hide()
+		balancePlaceholderLabel.text = placeholderText
+		balancePlaceholderLabel.show()
+	}
 
-    private func setupUI(totalBalance: String) {
-        totalBalanceValueLabel.text = totalBalance
+    private func setupUI(viewModel: BalanceComponentViewModel) {
+		totalBalanceValueLabel.text = viewModel.formattedAmount
+		if viewModel.isBalanceShown {
+			showMainBalance()
+		} else {
+			showBalancePlaceholder(placeholderText: viewModel.params.balancePlaceholder)
+		}
     }
 
     @objc private func withdrawButtonAction() {
