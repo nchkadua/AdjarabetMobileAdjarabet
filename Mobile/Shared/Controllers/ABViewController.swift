@@ -258,7 +258,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      private func showNotificationError() {
           notificationError.constraint.constant -= 114
           UIView.animate(withDuration: 0.5) {
-               self.view.layoutIfNeeded()
+               self.v.layoutIfNeeded()
           }
           isNotificationErrorShown = true
      }
@@ -266,7 +266,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      private func hideNotificationError() {
           notificationError.constraint.constant += 114
           UIView.animate(withDuration: 0.5) {
-               self.view.layoutIfNeeded()
+               self.v.layoutIfNeeded()
           }
           isNotificationErrorShown = false
      }
