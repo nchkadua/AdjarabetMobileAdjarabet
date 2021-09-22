@@ -249,8 +249,8 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
                     self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
                },
                completion: { _ in
-                    self.keyWindow.addSubview(self.popupBgView)
                     self.popupError.removeFromSuperview()
+                    self.popupBgView.removeFromSuperview()
                }
           )
      }
