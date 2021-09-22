@@ -18,12 +18,12 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           }
      }
 
-     private lazy var v: UIView = {
+     private lazy var keyWindow: UIView = {
           return UIApplication.shared.windows.first(where: { $0.isKeyWindow })
      }() ?? view
 
      private lazy var popupBgView: UIView = {
-          let bg = UIView(frame: CGRect(x: 0, y: 0, width: v.frame.width, height: v.frame.height))
+          let bg = UIView(frame: CGRect(x: 0, y: 0, width: keyWindow.frame.width, height: keyWindow.frame.height))
           bg.setBackgorundColor(to: .primaryBg(alpha: 0.5))
           bg.alpha = 0.0
 
@@ -48,14 +48,14 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint) = {
           let error: NotificationErrorView = .init()
 
-          v.addSubview(error)
+          keyWindow.addSubview(error)
           error.translatesAutoresizingMaskIntoConstraints = false
 
-          let constraint = error.topAnchor.constraint(equalTo: v.bottomAnchor)
+          let constraint = error.topAnchor.constraint(equalTo: keyWindow.bottomAnchor)
           NSLayoutConstraint.activate([
                constraint,
-               error.leadingAnchor.constraint(equalTo: v.leadingAnchor, constant: 23),
-               error.trailingAnchor.constraint(equalTo: v.trailingAnchor, constant: -23),
+               error.leadingAnchor.constraint(equalTo: keyWindow.leadingAnchor, constant: 23),
+               error.trailingAnchor.constraint(equalTo: keyWindow.trailingAnchor, constant: -23),
                error.heightAnchor.constraint(equalToConstant: 84)
           ])
 
@@ -224,9 +224,9 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      }
 
      private func showPopupError() {
-          v.addSubview(popupBgView)
-          v.addSubview(popupError)
-          popupError.pin(to: v)
+          keyWindow.addSubview(popupBgView)
+          keyWindow.addSubview(popupError)
+          popupError.pin(to: keyWindow)
           self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
 
           UIView.animate(
@@ -249,7 +249,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
                     self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
                },
                completion: { _ in
-                    self.v.addSubview(self.popupBgView)
+                    self.keyWindow.addSubview(self.popupBgView)
                     self.popupError.removeFromSuperview()
                }
           )
@@ -258,7 +258,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      private func showNotificationError() {
           notificationError.constraint.constant -= 114
           UIView.animate(withDuration: 0.5) {
-               self.v.layoutIfNeeded()
+               self.keyWindow.layoutIfNeeded()
           }
           isNotificationErrorShown = true
      }
@@ -266,7 +266,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      private func hideNotificationError() {
           notificationError.constraint.constant += 114
           UIView.animate(withDuration: 0.5) {
-               self.v.layoutIfNeeded()
+               self.keyWindow.layoutIfNeeded()
           }
           isNotificationErrorShown = false
      }
