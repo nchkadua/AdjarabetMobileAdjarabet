@@ -22,6 +22,7 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
 
 	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {
 		let view = EmptyStateComponentView()
+		view.hide()
 		let viewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init())
 		return (viewModel, view)
 	}()

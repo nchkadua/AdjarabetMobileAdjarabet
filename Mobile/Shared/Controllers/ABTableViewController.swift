@@ -23,6 +23,7 @@ public class ABTableViewController: AppTableViewController {
 
 	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {
 		let view = EmptyStateComponentView()
+		view.hide()
 		let viewModel: EmptyStateComponentViewModel = DefaultEmptyStateComponentViewModel(params: .init())
 		return (viewModel, view)
 	}()

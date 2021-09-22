@@ -20,6 +20,7 @@ class HomeHeaderView: UIView, Xibable {
     // state
     private var prevStyle: Style = .large  // by default
     private var currStyle: Style = .large  // large style is set
+    private var duration: TimeInterval = 0
 
     weak var delegate: HomeHeaderViewDelegate?
     var bar: UISearchBar { searchBar }
@@ -88,7 +89,8 @@ class HomeHeaderView: UIView, Xibable {
             focusStyleConstraints.forEach { $0.priority = .required }
             balanceIsHiden = true
         }
-        UIView.animate(withDuration: 0.3) { [weak self] in
+        UIView.animate(withDuration: duration) { [weak self] in
+            self?.duration = 0.3
             self?.balance.alpha = balanceIsHiden ? 0 : 1
             self?.layoutIfNeeded()
             self?.superview?.layoutIfNeeded()

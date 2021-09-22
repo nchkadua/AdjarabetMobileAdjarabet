@@ -47,7 +47,6 @@ public class PromotionsViewController: ABViewController {
         setBaseBackgroundColor(to: .primaryBg())
         setupNavigationItems()
         setupTableView()
-		setupStatusMessage()
     }
 
     private func setupNavigationItems() {
@@ -61,9 +60,6 @@ public class PromotionsViewController: ABViewController {
         appTableViewController.isTabBarManagementEnabled = true
     }
 
-	private func setupStatusMessage() {
-		view.bringSubviewToFront(statusMessage.view)
-	}
 }
 
 extension PromotionsViewController: CommonBarButtonProviding { }

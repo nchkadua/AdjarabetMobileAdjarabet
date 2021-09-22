@@ -44,8 +44,8 @@ public enum StatusMessageComponentType {
     var description: String {
         switch self {
         case .initial: return ""
-		case .connectionEstablished: return R.string.localization.status_message_interter_connection_established.localized()
-		case .connectionFailed: return R.string.localization.status_message_interter_connection_lost.localized()
+		case .connectionEstablished: return R.string.localization.status_message_internet_connection_established.localized()
+		case .connectionFailed: return R.string.localization.status_message_internet_connection_lost.localized()
         }
     }
 }
