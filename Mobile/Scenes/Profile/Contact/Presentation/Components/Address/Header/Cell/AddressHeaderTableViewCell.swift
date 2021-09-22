@@ -8,7 +8,7 @@
 
 public class AddressHeaderTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: AddressHeaderComponentView!
-    override public class var identifier: Identifierable { R.nib.addressHeaderTableViewCell.name } //TODO 
+    override public class var identifier: Identifierable { R.nib.addressHeaderTableViewCell.name } // TODO 
 
     public override var dataProvider: AppCellDataProvider? {
         didSet {

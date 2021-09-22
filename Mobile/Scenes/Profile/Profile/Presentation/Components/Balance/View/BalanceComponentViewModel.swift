@@ -16,7 +16,7 @@ public struct BalanceComponentViewModelParams {
     public var pokerBalance: Double
 	public var balancePlaceholder: String
 	public var isBalanceShown: Bool
-	
+
 	public init(totalBalance: Double, pokerBalance: Double, balancePlaceholder: String, isBalanceShown: Bool = true) {
 		self.totalBalance = totalBalance
 		self.pokerBalance = pokerBalance
@@ -59,15 +59,14 @@ public class DefaultBalanceComponentViewModel {
 }
 
 extension DefaultBalanceComponentViewModel: BalanceComponentViewModel {
-	
     public var action: Observable<BalanceComponentViewModelOutputAction> { actionSubject.asObserver() }
-	
+
 	public var formattedAmount: String {
 		get {
 			amountFormatter.format(number: params.totalBalance, in: .s_n_a)
 		}
 	}
-	
+
 	public var isBalanceShown: Bool {
 		get {
 			params.isBalanceShown
@@ -85,12 +84,12 @@ extension DefaultBalanceComponentViewModel: BalanceComponentViewModel {
     public func didClickDeposit() {
         actionSubject.onNext(.didClickDeposit(self))
     }
-	
+
 	public func hideBalance() {
 		params.isBalanceShown = false
 		actionSubject.onNext(.showBalancePlaceholder(params.balancePlaceholder))
 	}
-	
+
 	public func showBalance() {
 		params.isBalanceShown = true
 		actionSubject.onNext(.showTotalBalance)

@@ -86,7 +86,7 @@ public final class DefaultLoginUseCase: LoginUseCase {
                             } else {
                                 completion(.success(.openNotVerifiedUserPage))
                             }
-                        case .failure(_): completion(.failure(.init()))
+                        case .failure: completion(.failure(.init()))
                         }
                     }
                 } else {

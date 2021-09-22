@@ -43,8 +43,8 @@ class BalanceComponentView: UIView {
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .setup(let viewModel): self?.setupUI(viewModel: viewModel)
-			case .didClickDeposit(_): break
-			case .didClickWithdraw(_): break
+			case .didClickDeposit: break
+			case .didClickWithdraw: break
 			case .showTotalBalance: self?.showMainBalance()
 			case .showBalancePlaceholder(let placeholder): self?.showBalancePlaceholder(placeholderText: placeholder)
             }
@@ -52,12 +52,12 @@ class BalanceComponentView: UIView {
 
         viewModel.didBind()
     }
-	
+
 	private func showMainBalance() {
 		totalBalanceValueLabel.show()
 		balancePlaceholderLabel.hide()
 	}
-	
+
 	private func showBalancePlaceholder(placeholderText: String) {
 		totalBalanceValueLabel.hide()
 		balancePlaceholderLabel.text = placeholderText

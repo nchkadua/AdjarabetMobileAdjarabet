@@ -53,10 +53,10 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = []
 
-        //Phone
+        // Phone
         let contactPhoneViewModel = DefaultContactPhoneComponentViewModel(params: .init())
         dataProviders.append(contactPhoneViewModel)
-        //Mail
+        // Mail
         MailListProvider.items().forEach {
             let mailViewModel = DefaultContactMailComponentViewModel(params: .init(title: $0.title, mail: $0.mail))
             mailViewModel.action.subscribe(onNext: { [weak self] action in
@@ -68,7 +68,7 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
             }).disposed(by: disposeBag)
             dataProviders.append(mailViewModel)
         }
-        //Address
+        // Address
         let headerViewModel = DefaultAddressHeaderComponentViewModel(params: .init(title: R.string.localization.contact_addresses.localized().uppercased()))
         dataProviders.append(headerViewModel)
 

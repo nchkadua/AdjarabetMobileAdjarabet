@@ -301,7 +301,6 @@ public class LoginViewController: ABViewController {
         let title = loading ? "" : R.string.localization.login_button_title.localized()
         loginButton.setTitleWithoutAnimation(title, for: .normal)
     }
-	
 }
 
 extension LoginViewController: InputViewsProviding {

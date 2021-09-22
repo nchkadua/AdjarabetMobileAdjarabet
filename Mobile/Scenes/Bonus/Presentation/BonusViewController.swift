@@ -56,7 +56,7 @@ public class BonusViewController: ABViewController {
         switch action {
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
-        case .reload(_):
+        case .reload:
             break // TODO
         case .reloadItems(let items, let insertions, let deletions):
             UIView.performWithoutAnimation {
@@ -66,7 +66,7 @@ public class BonusViewController: ABViewController {
             appTableViewController.reloadItems()
         case .didDeleteCell(let indexPath):
             deleteCell(at: indexPath)
-        case .setTotalItemsCount(_):
+        case .setTotalItemsCount:
             break // TODO
         }
     }

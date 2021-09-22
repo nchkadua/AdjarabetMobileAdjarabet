@@ -86,7 +86,7 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
     private func setupResetOptions(_ phone: String, _ email: String) {
         var dataProviders: AppCellDataProviders = []
 
-        //Phone
+        // Phone
         let phoneViewModel = DefaultResetOptionComponentViewModel(params: .init(title: R.string.localization.reset_with_sms.localized(), roundCorners: [.topLeft, .topRight], hidesSeparator: false, isDisabled: phone.isEmpty))
         phoneViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {
@@ -97,7 +97,7 @@ extension DefaultResetOptionsViewModel: ResetOptionsViewModel {
         }).disposed(by: self.disposeBag)
         dataProviders.append(phoneViewModel)
 
-        //Email
+        // Email
         let emailViewModel = DefaultResetOptionComponentViewModel(params: .init(title: R.string.localization.reset_with_mail.localized(), roundCorners: [.bottomLeft, .bottomRight], hidesSeparator: true, isDisabled: email.isEmpty))
         emailViewModel.action.subscribe(onNext: { [weak self] action in
             switch action {

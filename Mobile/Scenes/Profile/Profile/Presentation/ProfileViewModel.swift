@@ -64,10 +64,10 @@ extension DefaultProfileViewModel: ProfileViewModel {
     public func setupDataProviders() {
         setupAppCellDataProviders()
     }
-	
+
 	// MARK: - View Models for profile table view
-	
-	private var profileViewModel: AppCellDataProvider {
+
+	private var profileViewModel: DefaultProfileInfoComponentViewModel {
 		let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
 		profileViewModel.action.subscribe(onNext: { [weak self] action in
 			switch action {
@@ -75,19 +75,19 @@ extension DefaultProfileViewModel: ProfileViewModel {
 			default: break
 			}
 		}).disposed(by: self.disposeBag)
-		
+
 		return profileViewModel
 	}
-	
-	private var balanceViewModel: AppCellDataProvider {
+
+	private var balanceViewModel: DefaultBalanceComponentViewModel {
 		let balanceViewModel = DefaultBalanceComponentViewModel(params: .init(totalBalance: userBalanceService.balance ?? 0, pokerBalance: 0, balancePlaceholder: R.string.localization.balance_is_unavailable.localized()))
-		
+
 		if userBalanceService.balance != nil {
 			balanceViewModel.showBalance()
 		} else {
 			balanceViewModel.hideBalance()
 		}
-		
+
 		balanceViewModel.action.subscribe(onNext: { [weak self] action in
 			switch action {
 			case .didClickDeposit: self?.routeSubject.onNext(.openDeposit)
@@ -95,11 +95,11 @@ extension DefaultProfileViewModel: ProfileViewModel {
 			default: break
 			}
 		}).disposed(by: self.disposeBag)
-		
+
 		return balanceViewModel
 	}
-	
-	private var logOutViewModel: AppCellDataProvider {
+
+	private var logOutViewModel: DefaultLogOutComponentViewModel {
 		let logOutViewModel = DefaultLogOutComponentViewModel(params: .init(title: R.string.localization.log_out.localized()))
 		logOutViewModel.action.subscribe(onNext: { [weak self] action in
 			switch action {
@@ -110,8 +110,8 @@ extension DefaultProfileViewModel: ProfileViewModel {
 		}).disposed(by: self.disposeBag)
 		return logOutViewModel
 	}
-	
-	private var footerViewModel: AppCellDataProvider {
+
+	private var footerViewModel: DefaultFooterComponentViewModel {
 		let footerViewModel = DefaultFooterComponentViewModel(params: FooterComponentViewModelParams(backgroundColor: DesignSystem.Color.secondaryBg()))
 		footerViewModel.action.subscribe(onNext: {[weak self] action in
 			switch action {
@@ -123,12 +123,12 @@ extension DefaultProfileViewModel: ProfileViewModel {
 		}).disposed(by: self.disposeBag)
 		return footerViewModel
 	}
-	
+
 	private var quickActionViewModels: AppCellDataProviders {
 		var viewModels: AppCellDataProviders = []
 		QuickActionItemProvider.items(biometryQuickActionIcon()).forEach {
 			let quickActionViewModel = DefaultQuickActionComponentViewModel(params: QuickActionComponentViewModelParams(icon: $0.icon, title: $0.title, destination: $0.destionation))
-			
+
 			quickActionViewModel.action.subscribe(onNext: { [weak self] action in
 				switch action {
 				case .didSelect: self?.routeSubject.onNext(.openPage(destionation: quickActionViewModel.params.destination))
@@ -142,7 +142,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
 
     private func setupAppCellDataProviders() {
         var dataProviders: AppCellDataProviders = []
-		
+
 		userBalanceService.update()
 
         dataProviders.append(profileViewModel)
@@ -150,8 +150,8 @@ extension DefaultProfileViewModel: ProfileViewModel {
 		for quickActionViewModel in quickActionViewModels {
 			dataProviders.append(quickActionViewModel)
 		}
-	
-		logoutViewModel = logOutViewModel as! DefaultLogOutComponentViewModel	// update stored var
+
+		logoutViewModel = logOutViewModel
 		dataProviders.append(logoutViewModel)
         dataProviders.append(footerViewModel)
 

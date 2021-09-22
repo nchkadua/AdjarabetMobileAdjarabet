@@ -88,7 +88,7 @@ public class ContactUsViewController: ABViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
-    //Apple Maps
+    // Apple Maps
     private func openMapItem(_ mapItem: MKMapItem, with options: [String: Any]) {
         mapItem.openInMaps(launchOptions: options)
     }

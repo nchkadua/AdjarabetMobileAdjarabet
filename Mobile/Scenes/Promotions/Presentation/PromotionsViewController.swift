@@ -59,7 +59,6 @@ public class PromotionsViewController: ABViewController {
         appTableViewController.view.pin(to: view)
         appTableViewController.isTabBarManagementEnabled = true
     }
-
 }
 
 extension PromotionsViewController: CommonBarButtonProviding { }

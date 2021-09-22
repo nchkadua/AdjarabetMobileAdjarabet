@@ -247,7 +247,7 @@ extension PasswordResetViewController: InputViewsProviding {
 
 extension PasswordResetViewController: CommonBarButtonProviding { }
 
-//Limit characters
+// Limit characters
 extension PasswordResetViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard viewModel.params.resetType == .sms else {return true}
@@ -265,6 +265,6 @@ extension PasswordResetViewController: UITextFieldDelegate {
             updatePasswordButton(isEnabled: false)
         }
 
-        return (count >= 8 && count <= 12 ) //TODO number of characters in AM
+        return (count >= 8 && count <= 12 ) // TODO number of characters in AM
     }
 }

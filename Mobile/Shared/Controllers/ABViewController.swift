@@ -62,7 +62,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           return (error, constraint)
      }()
 
-     //Success
+     // Success
      private lazy var successBg: UIView = {
           let bg = UIImageView(frame: CGRect(x: view.bounds.origin.x / 2, y: view.bounds.origin.y / 2, width: 72, height: 72))
           bg.translatesAutoresizingMaskIntoConstraints = false
@@ -348,14 +348,14 @@ extension ABViewController {
 		enum InternetConnectionStatus {
 			case connectionLost
 			case connectionEstablished
-			
+
 			var icon: UIImage {
 				switch self {
 				case .connectionLost: return R.image.shared.connectionLost()!
 				case .connectionEstablished: return R.image.shared.connectionEstablished()!
 				}
 			}
-			
+
 			var description: String {
 				switch self {
 				case .connectionLost: return R.string.localization.status_message_internet_connection_lost.localized()

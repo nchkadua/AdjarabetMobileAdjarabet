@@ -150,7 +150,7 @@ extension DefaultOTPViewModel: OTPViewModel {
             defer { self?.actionSubject.onNext(.setResendSMSButton(isLoading: false)) }
             switch result {
             case .success: print(result)
-            case .failure(_):
+            case .failure:
                 DispatchQueue.main.async {
 //                    self?.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
                 }
@@ -162,7 +162,7 @@ extension DefaultOTPViewModel: OTPViewModel {
         actionTOPRepo.actionOTP { result in
             switch result {
             case .success: print(result)
-			case .failure(_):
+			case .failure:
                 DispatchQueue.main.async {
 //                    self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
                 }
@@ -174,7 +174,7 @@ extension DefaultOTPViewModel: OTPViewModel {
         resetPasswordUseCase.getPasswordResetCode(params: .init(username: username, address: contact, channelType: deliveryType)) { result in
             switch result {
             case .success(let entity): self.userId = String(entity.userId)
-			case .failure(_):
+			case .failure:
                 DispatchQueue.main.async {
 //                    self.show(error: .init(type: .`init`(description: .popup(description: .init(icon: UIImage(), description: error.localizedDescription, buttons: [.gotIt])))))
                 }

@@ -8,7 +8,7 @@
 
 public class ResetOptionTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: ResetOptionComponentView!
-    override public class var identifier: Identifierable { R.nib.resetOptionTableViewCell.name } //TODO 
+    override public class var identifier: Identifierable { R.nib.resetOptionTableViewCell.name } // TODO 
 
     public override var dataProvider: AppCellDataProvider? {
         didSet {

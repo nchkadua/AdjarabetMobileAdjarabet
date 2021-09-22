@@ -66,7 +66,7 @@ extension DefaultNotificationsViewModel: NotificationsViewModel {
     private func load(loadingType: LoadingType) {
         actionSubject.onNext(.isLoading(loading: true))
         self.loadingType = loadingType
-        notificationsUseCase.notifications(page: page.current, domain: "com") { result in //TODO: dynamic domain
+        notificationsUseCase.notifications(page: page.current, domain: "com") { result in // TODO: dynamic domain
             defer {
                 self.loadingType = .none
                 self.actionSubject.onNext(.didLoadingFinished)

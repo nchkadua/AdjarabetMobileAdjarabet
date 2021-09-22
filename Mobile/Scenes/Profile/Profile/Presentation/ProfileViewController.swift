@@ -103,7 +103,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 			LogOutTableViewCell.self,
 			ProfileInfoTableViewCell.self,
             QuickActionsHeaderCell.self,
-            QuickActionTableViewCell.self,
+            QuickActionTableViewCell.self
         ])
     }
 

@@ -8,7 +8,7 @@
 
 public class FAQCategoryTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: FAQCategoryComponentView!
-    override public class var identifier: Identifierable { R.nib.faqCategoryTableViewCell.name } //TODO 
+    override public class var identifier: Identifierable { R.nib.faqCategoryTableViewCell.name } // TODO 
 
     public override var dataProvider: AppCellDataProvider? {
         didSet {

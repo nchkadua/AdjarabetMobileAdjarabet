@@ -8,7 +8,7 @@
 
 public class ContactAddressTableViewCell: AppTableViewCell {
     @IBOutlet weak private var componentView: ContactAddressComponentView!
-    override public class var identifier: Identifierable { R.nib.contactAddressTableViewCell.name } //TODO 
+    override public class var identifier: Identifierable { R.nib.contactAddressTableViewCell.name } // TODO 
 
     public override var dataProvider: AppCellDataProvider? {
         didSet {

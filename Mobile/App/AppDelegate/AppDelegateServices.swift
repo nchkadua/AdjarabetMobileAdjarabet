@@ -15,7 +15,7 @@ public class AppDelegateServices: NSObject, UIApplicationDelegate {
     public init(services: [AppDelegateServiceProvider]) {
         self.services = services
         super.init()
-        //SVG
+        // SVG
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
     }
