@@ -225,8 +225,9 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
      private func showPopupError() {
           keyWindow.addSubview(popupBgView)
-          keyWindow.addSubview(popupError)
-          popupError.pin(to: keyWindow)
+          popupBgView.addSubview(popupError)
+          popupError.pin(to: popupBgView)
+
           self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
 
           UIView.animate(
@@ -245,7 +246,6 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
                withDuration: 0.15,
                animations: {
                     self.popupBgView.alpha = 0.0
-                    self.popupError.alpha = 0.0
                     self.popupError.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
                },
                completion: { _ in
