@@ -15,6 +15,9 @@ public class PromotionsViewController: ABViewController {
     public lazy var navigator = PromotionsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
 
+    @IBOutlet private weak var tableViewContainer: UIView!
+    @IBOutlet private weak var promoTab: PromoTabComponentView!
+
     // MARK: Overrides
     public override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
@@ -25,6 +28,16 @@ public class PromotionsViewController: ABViewController {
         bind(to: viewModel)
         errorThrowing = viewModel
         viewModel.viewDidLoad()
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     private func bind(to viewModel: PromotionsViewModel) {
@@ -39,6 +52,8 @@ public class PromotionsViewController: ABViewController {
             setup()
         case .initialize(let appListDataProvider):
             appTableViewController.dataProvider = appListDataProvider
+        case .bindToPromoTabViewModel(let viewModel):
+            bindToTab(viewModel)
         }
     }
 
@@ -50,14 +65,32 @@ public class PromotionsViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
-        makeAdjarabetLogo()
     }
 
     private func setupTableView() {
         add(child: appTableViewController)
         appTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        appTableViewController.view.pin(to: view)
+        appTableViewController.view.pin(to: tableViewContainer)
         appTableViewController.isTabBarManagementEnabled = true
+    }
+
+    /// Promo Tab
+    private func bindToTab(_ viewModel: PromoTabComponentViewModel) {
+        promoTab.setAndBind(viewModel: viewModel)
+        bind(to: viewModel)
+    }
+
+    private func bind(to viewModel: PromoTabComponentViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: PromoTabComponentViewModelOutputAction) {
+        switch action {
+        case .buttonPublicDidTap: viewModel.fetchPublicPromos()
+        case .buttonPrivateDidTap: viewModel.fetchPrivatePromos()
+        }
     }
 }
 

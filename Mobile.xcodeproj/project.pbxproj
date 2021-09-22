@@ -671,6 +671,9 @@
 		CEBC95E426B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95DE26B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift */; };
 		CEBC95E526B0257F00A5DD73 /* AddressHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95DF26B0257F00A5DD73 /* AddressHeaderComponentView.swift */; };
 		CEBC95E626B0257F00A5DD73 /* AddressHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95E026B0257F00A5DD73 /* AddressHeaderTableViewCell.swift */; };
+		CEC03E4426FB3B5D00904F2B /* PromoTabComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC03E3E26FB3B5D00904F2B /* PromoTabComponentView.xib */; };
+		CEC03E4726FB3B5D00904F2B /* PromoTabComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E4126FB3B5D00904F2B /* PromoTabComponentViewModel.swift */; };
+		CEC03E4826FB3B5D00904F2B /* PromoTabComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E4226FB3B5D00904F2B /* PromoTabComponentView.swift */; };
 		CEC2F5292608B5C00000904C /* Deposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC2F5242608B5C00000904C /* Deposit.storyboard */; };
 		CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5252608B5C00000904C /* DepositNavigator.swift */; };
 		CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5262608B5C00000904C /* DepositViewController.swift */; };
@@ -1632,6 +1635,9 @@
 		CEBC95DE26B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderComponentViewModel.swift; sourceTree = "<group>"; };
 		CEBC95DF26B0257F00A5DD73 /* AddressHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderComponentView.swift; sourceTree = "<group>"; };
 		CEBC95E026B0257F00A5DD73 /* AddressHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		CEC03E3E26FB3B5D00904F2B /* PromoTabComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoTabComponentView.xib; sourceTree = "<group>"; };
+		CEC03E4126FB3B5D00904F2B /* PromoTabComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoTabComponentViewModel.swift; sourceTree = "<group>"; };
+		CEC03E4226FB3B5D00904F2B /* PromoTabComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoTabComponentView.swift; sourceTree = "<group>"; };
 		CEC2F5242608B5C00000904C /* Deposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Deposit.storyboard; sourceTree = "<group>"; };
 		CEC2F5252608B5C00000904C /* DepositNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositNavigator.swift; sourceTree = "<group>"; };
 		CEC2F5262608B5C00000904C /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
@@ -4745,6 +4751,7 @@
 		CE2AB491266A440F00C88262 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CEC03E3826FB398E00904F2B /* Tab */,
 				CE2AB493266A445000C88262 /* Components */,
 				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
 				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
@@ -4767,6 +4774,7 @@
 			isa = PBXGroup;
 			children = (
 				C784C2A6266FA8BD00D328D3 /* Promotion */,
+				CEC03E3B26FB3AD600904F2B /* Tab */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -5955,6 +5963,23 @@
 				CECA7EC526AEEA4900BCF04A /* Cell */,
 			);
 			path = Address;
+			sourceTree = "<group>";
+		};
+		CEC03E3826FB398E00904F2B /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		CEC03E3B26FB3AD600904F2B /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03E4226FB3B5D00904F2B /* PromoTabComponentView.swift */,
+				CEC03E4126FB3B5D00904F2B /* PromoTabComponentViewModel.swift */,
+				CEC03E3E26FB3B5D00904F2B /* PromoTabComponentView.xib */,
+			);
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		CEC9A34225C096E800BE853D /* Game Launch Manager */ = {
@@ -7433,6 +7458,7 @@
 				76DCF6B125B8262300150EE1 /* MyCardTableViewCell.xib in Resources */,
 				C75D1AC7261205F4002AF763 /* FLKJSlot.zip in Resources */,
 				FBAE9C4126B3D0C1002E9D72 /* TermsAndConditions.storyboard in Resources */,
+				CEC03E4426FB3B5D00904F2B /* PromoTabComponentView.xib in Resources */,
 				C75D1AC6261205F4002AF763 /* HSHJSlot.zip in Resources */,
 				C75D1B1F261205F4002AF763 /* MLAWJSlot.zip in Resources */,
 				C75D1B21261205F4002AF763 /* TDHJSlot.zip in Resources */,
@@ -7959,6 +7985,7 @@
 				CE38ED852681EECF00B02A9E /* LogOutTableViewCell.swift in Sources */,
 				CE55ED59252B38BA003E168F /* ProfileInfoComponentViewModel.swift in Sources */,
 				D8AC996B244F1A8600B16600 /* RecentlyPlayedCollectionViewCellDataProvider.swift in Sources */,
+				CEC03E4726FB3B5D00904F2B /* PromoTabComponentViewModel.swift in Sources */,
 				D85C9C2224336CA400F1D4FE /* UserSessionCareTaker.swift in Sources */,
 				C782D29E26553B2B00594A65 /* ABSliderCollectionViewCellDataProvider.swift in Sources */,
 				D8BF4045244ECA8F008F0BAF /* GameLauncherCollectionViewCellDataProvider.swift in Sources */,
@@ -8145,6 +8172,7 @@
 				CE95FBC9252DC3A7003E539B /* QuickActionItemProvider.swift in Sources */,
 				CE5874A2260B8B3C00F03AB5 /* EmoneyInstructionsView.swift in Sources */,
 				D894CEB924BE2AD700FE143D /* ShimmerView.swift in Sources */,
+				CEC03E4826FB3B5D00904F2B /* PromoTabComponentView.swift in Sources */,
 				D8AB80692460133E001C4E8A /* UserSessionServices.swift in Sources */,
 				D8A47DEE24335EBA0077AA8E /* Bundle+Extension.swift in Sources */,
 				D8863698246C485500FF061D /* SMSCodeInputView.swift in Sources */,

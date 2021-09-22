@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,9 +16,35 @@
                     <view key="view" contentMode="scaleToFill" id="p81-JJ-Zq6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bP2-9a-qRx" customClass="PromoTabComponentView" customModule="Mobile" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Avf-ep-SPE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eg0-eu-UR0">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8Gb-az-nJJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bP2-9a-qRx" firstAttribute="leading" secondItem="8Gb-az-nJJ" secondAttribute="leading" id="8Qp-qF-Jk0"/>
+                            <constraint firstItem="8Gb-az-nJJ" firstAttribute="trailing" secondItem="bP2-9a-qRx" secondAttribute="trailing" id="D9e-bp-t4i"/>
+                            <constraint firstItem="Eg0-eu-UR0" firstAttribute="top" secondItem="bP2-9a-qRx" secondAttribute="bottom" id="QuT-jE-0DV"/>
+                            <constraint firstItem="8Gb-az-nJJ" firstAttribute="trailing" secondItem="Eg0-eu-UR0" secondAttribute="trailing" id="XRS-gV-EMR"/>
+                            <constraint firstItem="Eg0-eu-UR0" firstAttribute="leading" secondItem="8Gb-az-nJJ" secondAttribute="leading" id="dkl-az-4Mu"/>
+                            <constraint firstItem="8Gb-az-nJJ" firstAttribute="bottom" secondItem="Eg0-eu-UR0" secondAttribute="bottom" id="s0R-wH-Apj"/>
+                            <constraint firstItem="bP2-9a-qRx" firstAttribute="top" secondItem="8Gb-az-nJJ" secondAttribute="top" id="y04-SC-aXH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="promoTab" destination="bP2-9a-qRx" id="9NR-oG-gXg"/>
+                        <outlet property="tableViewContainer" destination="Eg0-eu-UR0" id="xlQ-BF-d9w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoN-kc-0bk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
