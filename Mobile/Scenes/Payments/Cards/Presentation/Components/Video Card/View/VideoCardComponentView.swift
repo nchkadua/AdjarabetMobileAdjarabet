@@ -12,6 +12,7 @@ import AVFoundation
 class VideoCardComponentView: UIView {
     private var disposeBag = DisposeBag()
     private var viewModel: VideoCardComponentViewModel!
+
     private var playerLooper: AVPlayerLooper!
     private var queuePlayer: AVQueuePlayer!
     private var playerLayer: AVPlayerLayer!
@@ -25,7 +26,9 @@ class VideoCardComponentView: UIView {
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
-        setupPlayer()
+
+        guard viewModel != nil else {return}
+        setupPlayer(with: viewModel.params.pathType)
     }
 
     override func layoutSubviews() {
@@ -46,14 +49,18 @@ class VideoCardComponentView: UIView {
 
     private func bind() {
         disposeBag = DisposeBag()
-        viewModel?.action.subscribe(onNext: { _ in
+        viewModel?.action.subscribe(onNext: { [weak self] action in
+            guard let self = self else { return }
+            switch action {
+            case .setAssetWith(let pathType): self.setupPlayer(with: pathType)
+            }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }
 
-    private func setupPlayer() {
-        let playerItem = AVPlayerItem(asset: VideoCardComponentView.videoAssetFlyweight)
+    private func setupPlayer(with pathType: AssetPathType) {
+        let playerItem = AVPlayerItem(asset: videoAssetFlyweight(with: pathType))
         queuePlayer = AVQueuePlayer(playerItem: playerItem)
         playerLooper = AVPlayerLooper(player: queuePlayer, templateItem: playerItem)
         playerLayer = AVPlayerLayer(player: queuePlayer)
@@ -61,6 +68,18 @@ class VideoCardComponentView: UIView {
         playerLayer.videoGravity = .resizeAspectFill
         queuePlayer.isMuted = true
         queuePlayer.play()
+    }
+
+    private func videoAssetFlyweight(with pathType: AssetPathType) -> AVAsset {
+        switch pathType {
+        case .bundle(let name, let extenstion):
+            return AVAsset(url: URL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: extenstion)!))
+        case .url(let url):
+            if let url = URL(string: url) {
+                return AVAsset(url: url)
+            }
+        }
+        return AVAsset()
     }
 }
 
@@ -76,11 +95,5 @@ extension VideoCardComponentView: Xibable {
 
     func setupUI() {
         view.setBackgorundColor(to: .secondaryBg())
-    }
-}
-
-extension VideoCardComponentView {
-    private static var videoAssetFlyweight: AVAsset {
-        return AVAsset(url: URL(fileURLWithPath: Bundle.main.path(forResource: "incognito-card", ofType: "mp4")!))
     }
 }

@@ -97,7 +97,7 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
              if $0 is AddCard {
                 componentViewModel = DefaultAddMyCardComponentViewModel()
             } else if $0 is VideoCard {
-                componentViewModel = DefaultVideoCardComponentViewModel(params: .init())
+                componentViewModel = DefaultVideoCardComponentViewModel(params: .init(pathType: .bundle(name: "incognito-card")))
             }
             if let componentViewModel = componentViewModel {
                 self.dataProvider.append(componentViewModel)
