@@ -71,6 +71,8 @@
 
 /* Promotions */
 "promotions_page_title" = "Ակցիաներ";
+"promotions_public_button_title" = "სიახლეები";
+"promotions_private_button_title" = "პირადი აქციები";
 
 /* Notifications */
 "notifications_page_title" = "Ծանուցումներ";
