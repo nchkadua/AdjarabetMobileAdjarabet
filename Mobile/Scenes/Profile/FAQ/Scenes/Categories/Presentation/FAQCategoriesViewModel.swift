@@ -37,6 +37,7 @@ public class DefaultFAQCategoriesViewModel: DefaultBaseViewModel {
     public var params: FAQCategoriesViewModelParams
     private let actionSubject = PublishSubject<FAQCategoriesViewModelOutputAction>()
     private let routeSubject = PublishSubject<FAQCategoriesViewModelRoute>()
+    @Inject(from: .repositories) private var faqRepo: FAQRepository
 
     public init(params: FAQCategoriesViewModelParams) {
         self.params = params
@@ -49,6 +50,10 @@ extension DefaultFAQCategoriesViewModel: FAQCategoriesViewModel {
 
     public func viewDidLoad() {
         setupCategories()
+
+        faqRepo.getList(handler: handler(onSuccessHandler: { entity in
+            print(entity)
+        }))
     }
 
     private func setupCategories() {
