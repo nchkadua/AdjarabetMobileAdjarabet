@@ -15,14 +15,6 @@ public class PromotionComponentView: UIView {
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
     @IBOutlet weak private var coverImageView: UIImageView!
-    @IBOutlet weak private var iconImageView: UIImageView!
-    @IBOutlet weak private var titleBgView: UIView!
-    @IBOutlet weak private var titleLabel: UILabel!
-
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        setupViews()
-    }
 
     public override init(frame: CGRect) {
        super.init(frame: frame)
@@ -53,16 +45,7 @@ public class PromotionComponentView: UIView {
     }
 
     private func setupUI(title: String, cover: UIImage, icon: UIImage) {
-        titleLabel.text = title
         coverImageView.image = cover
-        iconImageView.image = icon
-    }
-
-    private func setupViews() {
-        coverImageView.roundCorners(radius: 5)
-        titleBgView.roundCornersBezier([.bottomLeft, .bottomRight], radius: 5)
-        titleBgView.blurred()
-        titleBgView.bringSubviewToFront(titleLabel)
     }
 }
 
@@ -78,11 +61,5 @@ extension PromotionComponentView: Xibable {
 
     func setupUI() {
         view.backgroundColor = DesignSystem.Color.primaryBg().value
-
-        titleBgView.setBackgorundColor(to: .ultrathin())
-        titleBgView.roundCornersBezier([.bottomLeft, .bottomRight], radius: 5)
-
-        titleLabel.setTextColor(to: .primaryText())
-        titleLabel.setFont(to: .headline(fontCase: .upper, fontStyle: .bold))
     }
 }
