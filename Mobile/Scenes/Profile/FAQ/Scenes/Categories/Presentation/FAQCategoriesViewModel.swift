@@ -27,10 +27,11 @@ public protocol FAQCategoriesViewModelOutput {
 
 public enum FAQCategoriesViewModelOutputAction {
     case initialize(AppListDataProvider)
+    case isLoading(loading: Bool)
 }
 
 public enum FAQCategoriesViewModelRoute {
-    case navigateToQuestions
+    case navigateToQuestions(questions: [FAQQuestion])
 }
 
 public class DefaultFAQCategoriesViewModel: DefaultBaseViewModel {
@@ -50,27 +51,24 @@ extension DefaultFAQCategoriesViewModel: FAQCategoriesViewModel {
 
     public func viewDidLoad() {
         setupCategories()
-
-        faqRepo.getList(handler: handler(onSuccessHandler: { entity in
-            print(entity)
-        }))
     }
 
     private func setupCategories() {
+        actionSubject.onNext(.isLoading(loading: true))
         var dataProviders: AppCellDataProviders = []
-
-        FAQCategoriesProvider.items().forEach {
-            let viewModel = DefaultFAQCategoryComponentViewModel(params: .init(title: $0.title, subtitle: $0.subtitle, icon: $0.icon))
-
-            viewModel.action.subscribe(onNext: { [weak self] action in
-                switch action {
-                case .didSelect: self?.routeSubject.onNext(.navigateToQuestions)
-                default: break
-                }
-            }).disposed(by: self.disposeBag)
-
-            dataProviders.append(viewModel)
-        }
-        actionSubject.onNext(.initialize(dataProviders.makeList()))
+        faqRepo.getList(handler: handler(onSuccessHandler: { entity in
+            entity.categories.forEach {
+                let viewModel = DefaultFAQCategoryComponentViewModel(params: .init(category: $0))
+                viewModel.action.subscribe(onNext: { action in
+                    switch action {
+                    case .didSelect(let category, _): self.routeSubject.onNext(.navigateToQuestions(questions: category.questions))
+                    default: break
+                    }
+                }).disposed(by: self.disposeBag)
+                dataProviders.append(viewModel)
+            }
+            self.actionSubject.onNext(.initialize(dataProviders.makeList()))
+            self.actionSubject.onNext(.isLoading(loading: false))
+        }))
     }
 }

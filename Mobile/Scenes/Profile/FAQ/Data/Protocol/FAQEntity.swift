@@ -10,16 +10,16 @@ import Foundation
 
 public struct FAQEntity {
     var categories: [FAQCategory]
+}
 
-    public struct FAQCategory {
-        let icon: String
-        let title: String
-        let description: String
-        let questions: [FAQQuestion]
+public struct FAQCategory {
+    let icon: String
+    let title: String
+    let description: String
+    let questions: [FAQQuestion]
+}
 
-        public struct FAQQuestion {
-            let title: String
-            let answer: String
-        }
-    }
+public struct FAQQuestion {
+    let title: String
+    let answer: String
 }

@@ -25,7 +25,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U9g-l7-5NP">
                                 <rect key="frame" x="18" y="74" width="375" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">1. ნებისმიერი საბანკო ბარათით მიუთითე თანხა, მიუთითე ბარათის მონაცემები, ჩარიცვხვა.  2. სწრაფი გადახდის აპარატებით აირჩიე აჭარაბეთზე ჩარიცხვა, მიუთითე ანგარიშის ნომერი, User ID და მიუთითე სასურველი თანხა.  3. ქეშ დესკები ნახე სალაროების რუკა  4. ელექტრონული გადახდის მეთოდები  5. ელ.საფულე  დეტალური ინფორმაციისთვის მიყევით ბმულს</mutableString>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

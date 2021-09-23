@@ -13,7 +13,7 @@ protocol FAQAnswersViewModel: BaseViewModel, FAQAnswersViewModelInput, FAQAnswer
 
 public struct FAQAnswersViewModelParams {
     let showDismissButton: Bool
-    let questionTitle: String
+    let question: FAQQuestion
 }
 
 public protocol FAQAnswersViewModelInput: AnyObject {
@@ -27,7 +27,7 @@ public protocol FAQAnswersViewModelOutput {
 }
 
 public enum FAQAnswersViewModelOutputAction {
-    case setTitle(title: String)
+    case setupWithQuestion(question: FAQQuestion)
 }
 
 public enum FAQAnswersViewModelRoute {
@@ -48,6 +48,6 @@ extension DefaultFAQAnswersViewModel: FAQAnswersViewModel {
     public var route: Observable<FAQAnswersViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
-        actionSubject.onNext(.setTitle(title: params.questionTitle))
+        actionSubject.onNext(.setupWithQuestion(question: params.question))
     }
 }

@@ -45,21 +45,21 @@ struct FAQDTO: DataTransferResponse {
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         guard let list = body.categories else {return nil}
-        var categories: [FAQEntity.FAQCategory] = []
+        var categories: [FAQCategory] = []
 
         list.forEach {
             if let icon = $0.icon,
                let title = $0.title,
                let description = $0.description {
-                var questions: [FAQEntity.FAQCategory.FAQQuestion] = []
+                var questions: [FAQQuestion] = []
                 $0.questions?.forEach {
                     if let questionTitle = $0.title,
                        let questionAnswer = $0.answer {
-                        let question = FAQEntity.FAQCategory.FAQQuestion(title: questionTitle, answer: questionAnswer)
+                        let question = FAQQuestion(title: questionTitle, answer: questionAnswer)
                         questions.append(question)
                     }
                 }
-                let category = FAQEntity.FAQCategory(icon: icon, title: title, description: description, questions: questions)
+                let category = FAQCategory(icon: icon, title: title, description: description, questions: questions)
                 categories.append(category)
             }
         }

@@ -42,12 +42,14 @@ public class FAQCategoriesViewController: ABViewController {
     private func didRecive(action: FAQCategoriesViewModelOutputAction) {
         switch action {
         case .initialize(let appListDataProvider): appTableViewController.dataProvider = appListDataProvider
+        case .isLoading(let loading):
+            loading ? startLoading() : stopLoading()
         }
     }
 
     private func didRecive(route: FAQCategoriesViewModelRoute) {
         switch route {
-        case .navigateToQuestions: navigator.navigate(to: .questions(shouldShowDismissButton: viewModel.params.showDismissButton), animated: true)
+        case .navigateToQuestions(let questions): navigator.navigate(to: .questions(questions: questions, shouldShowDismissButton: viewModel.params.showDismissButton), animated: true)
         }
     }
 
