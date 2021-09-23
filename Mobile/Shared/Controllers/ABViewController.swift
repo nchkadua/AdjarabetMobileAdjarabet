@@ -329,7 +329,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      }
 
 	public func networkConnectionLost() {
-		DispatchQueue.main.async {
+     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
 		}
 	}
