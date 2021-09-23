@@ -102,6 +102,7 @@ class ABError {
     }
 
     enum Description {
+		case blockedUserNotification(description: BlockedUserNotification)
         case popup(description: Popup = .init())
         case notification(description: Notification)
         case status(description: Status)
@@ -146,6 +147,25 @@ class ABError {
                 self.buttons = buttons
             }
         }
+
+		class BlockedUserNotification {
+			var icon: UIImage
+			var description: String
+			var upperNote: String
+			var lowerNote: String
+
+			init(
+				icon: UIImage = R.image.deposit.add_card_red()!,
+				description: String = "here is the desc",
+				upperNote: String = "1 Day",
+				lowerNote: String = "23:59"
+			) {
+				self.icon = icon
+				self.description = description
+				self.upperNote = upperNote
+				self.lowerNote = lowerNote
+			}
+		}
 
         class Notification {
             var icon: UIImage
@@ -228,9 +248,10 @@ extension ABError {
 extension ABError: LocalizedError {
     var errorDescription: String? {
         switch description {
-        case .popup(let description):        return description.description
-        case .notification(let description): return description.description
-        case .status(let description):       return description.description
-        }
+        case .popup(let description):        				return description.description
+        case .notification(let description): 				return description.description
+        case .status(let description):       				return description.description
+		case .blockedUserNotification(let description): 	return description.description
+		}
     }
 }

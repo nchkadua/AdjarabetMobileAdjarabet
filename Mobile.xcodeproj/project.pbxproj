@@ -950,6 +950,12 @@
 		FBAE9C4326B3D0C1002E9D72 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */; };
 		FBAE9C4426B3D0C1002E9D72 /* TermsAndConditionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3F26B3D0C1002E9D72 /* TermsAndConditionsViewControllerFactory.swift */; };
 		FBAE9C4526B3D0C1002E9D72 /* TermsAndConditionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C4026B3D0C1002E9D72 /* TermsAndConditionsViewModel.swift */; };
+		FBBAD4F426FC2810001B0DE7 /* BlockedUserNotificationComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBBAD4EE26FC2810001B0DE7 /* BlockedUserNotificationComponentView.xib */; };
+		FBBAD4F526FC2810001B0DE7 /* BlockedUserNotificationTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD4EF26FC2810001B0DE7 /* BlockedUserNotificationTableViewCellDataProvider.swift */; };
+		FBBAD4F626FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBBAD4F026FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.xib */; };
+		FBBAD4F726FC2810001B0DE7 /* BlockedUserNotificationComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD4F126FC2810001B0DE7 /* BlockedUserNotificationComponentViewModel.swift */; };
+		FBBAD4F826FC2810001B0DE7 /* BlockedUserNotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD4F226FC2810001B0DE7 /* BlockedUserNotificationComponentView.swift */; };
+		FBBAD4F926FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD4F326FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.swift */; };
 		FBBF8A0126B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF8A0026B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift */; };
 		FBE4632B26F485DA00F77339 /* TermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */; };
 		FBE4632D26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */; };
@@ -1931,6 +1937,12 @@
 		FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		FBAE9C3F26B3D0C1002E9D72 /* TermsAndConditionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewControllerFactory.swift; sourceTree = "<group>"; };
 		FBAE9C4026B3D0C1002E9D72 /* TermsAndConditionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewModel.swift; sourceTree = "<group>"; };
+		FBBAD4EE26FC2810001B0DE7 /* BlockedUserNotificationComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockedUserNotificationComponentView.xib; sourceTree = "<group>"; };
+		FBBAD4EF26FC2810001B0DE7 /* BlockedUserNotificationTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserNotificationTableViewCellDataProvider.swift; sourceTree = "<group>"; };
+		FBBAD4F026FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockedUserNotificationTableViewCell.xib; sourceTree = "<group>"; };
+		FBBAD4F126FC2810001B0DE7 /* BlockedUserNotificationComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserNotificationComponentViewModel.swift; sourceTree = "<group>"; };
+		FBBAD4F226FC2810001B0DE7 /* BlockedUserNotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserNotificationComponentView.swift; sourceTree = "<group>"; };
+		FBBAD4F326FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		FBBF8A0026B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsActionItemsProvider.swift; sourceTree = "<group>"; };
 		FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
 		FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
@@ -4092,6 +4104,7 @@
 		C7A047FC26C3F9360035D93D /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				FBBAD4FB26FC282E001B0DE7 /* BlockedUserNotification */,
 				C72C879E26CD7D490000BDA8 /* Popup */,
 				C7A047FD26C3F93D0035D93D /* Notification */,
 			);
@@ -7002,6 +7015,35 @@
 			path = "Terms And Conditions";
 			sourceTree = "<group>";
 		};
+		FBBAD4FA26FC2822001B0DE7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBBAD4EF26FC2810001B0DE7 /* BlockedUserNotificationTableViewCellDataProvider.swift */,
+				FBBAD4F026FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.xib */,
+				FBBAD4F326FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FBBAD4FB26FC282E001B0DE7 /* BlockedUserNotification */ = {
+			isa = PBXGroup;
+			children = (
+				FBBAD4FC26FC2849001B0DE7 /* View */,
+				FBBAD4FA26FC2822001B0DE7 /* Cell */,
+			);
+			path = BlockedUserNotification;
+			sourceTree = "<group>";
+		};
+		FBBAD4FC26FC2849001B0DE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBBAD4F226FC2810001B0DE7 /* BlockedUserNotificationComponentView.swift */,
+				FBBAD4EE26FC2810001B0DE7 /* BlockedUserNotificationComponentView.xib */,
+				FBBAD4F126FC2810001B0DE7 /* BlockedUserNotificationComponentViewModel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FBBF89FF26B83CD000DF9CC8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -7296,6 +7338,7 @@
 				C7DB6EFE2637100F00EC1CB9 /* EmptyCollectionViewCell.xib in Resources */,
 				CE91C11825702C5700A18255 /* CalendarComponentView.xib in Resources */,
 				C75D1AD8261205F4002AF763 /* HCJSlot.zip in Resources */,
+				FBBAD4F426FC2810001B0DE7 /* BlockedUserNotificationComponentView.xib in Resources */,
 				CE3AC9E426A17931000BF338 /* DocumentationActionComponentView.xib in Resources */,
 				C78E53102685B12300EE1C18 /* HighSecurity.storyboard in Resources */,
 				C75D1AE3261205F4002AF763 /* RTSJSlot.zip in Resources */,
@@ -7329,6 +7372,7 @@
 				CEB49870268C987A00004A45 /* PasswordReset.storyboard in Resources */,
 				C766804A26A86D83005EB6E8 /* CloseAccountButtonTableViewCell.xib in Resources */,
 				CECA7EE926AEEADD00BCF04A /* ContactAddressComponentView.xib in Resources */,
+				FBBAD4F626FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.xib in Resources */,
 				C77206DB25DAAC5E0037D8A0 /* exitButton.png in Resources */,
 				CE95FC12252DE60F003E539B /* FooterComponentView.xib in Resources */,
 				CEE3566E252B5FFF00A0A25C /* ProfileInfoTableViewCell.xib in Resources */,
@@ -7913,12 +7957,14 @@
 				D821425F24C45ACE00F9895B /* BiometricLoginUseCase.swift in Sources */,
 				CEA77799256D4244008A4F6C /* MailChangeViewControllerFactory.swift in Sources */,
 				CE2AABBB2679FF7800B45A0A /* InitPasswordResetEntity.swift in Sources */,
+				FBBAD4F926FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.swift in Sources */,
 				76BDF46D25760512007B27A7 /* AccountParametersTableViewCellDataProvider.swift in Sources */,
 				FB612A0226C5FBEC00022F24 /* EmptyPageTableViewCellDataProvider.swift in Sources */,
 				D8BF4042244EC949008F0BAF /* GameLauncherCollectionViewCell.swift in Sources */,
 				CECA7ED626AEEA8700BCF04A /* ContactPhoneTableViewCell.swift in Sources */,
 				C701C60925C00CAE00B059A6 /* PaymentAccountEntity.swift in Sources */,
 				D809B7D12446FFC4000E861E /* UIViewController+Extension.swift in Sources */,
+				FBBAD4F726FC2810001B0DE7 /* BlockedUserNotificationComponentViewModel.swift in Sources */,
 				C74334F12601232700945C8C /* UFCTransactionEntities.swift in Sources */,
 				CEC9A36E25C1A47C00BE853D /* FileExtractor.swift in Sources */,
 				CE76989A269EF341009972B2 /* PasswordResetOptionsViewControllerFactory.swift in Sources */,
@@ -8040,6 +8086,7 @@
 				CEBC95E626B0257F00A5DD73 /* AddressHeaderTableViewCell.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				C78E53132685B12300EE1C18 /* HighSecurityViewControllerFactory.swift in Sources */,
+				FBBAD4F526FC2810001B0DE7 /* BlockedUserNotificationTableViewCellDataProvider.swift in Sources */,
 				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
 				CE0F768026EF6EF6008980F6 /* MobileAPIPrivacyPolicyDTO.swift in Sources */,
 				7668C7AD2576785F0024DDE4 /* AccountParametersHeaderComponentView.swift in Sources */,
@@ -8154,6 +8201,7 @@
 				CE0F767E26EF6EE7008980F6 /* MobileAPIPrivacyPolicyRepository.swift in Sources */,
 				D8880FE224C4301400356CD3 /* GamesSearchViewModel.swift in Sources */,
 				FB06F54A26F2EB6100E1766E /* TermsAndConditionsEntity.swift in Sources */,
+				FBBAD4F826FC2810001B0DE7 /* BlockedUserNotificationComponentView.swift in Sources */,
 				76E43EE025B95303007B2D97 /* VideoCardTableViewCell.swift in Sources */,
 				CEBB00912609D40400D1B510 /* VisaViewControllerFactory.swift in Sources */,
 				D8C637A22471BB7C00B9A50E /* BalanceProfileButton.swift in Sources */,

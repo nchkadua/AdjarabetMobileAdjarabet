@@ -45,22 +45,39 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           return error
      }()
 
-     private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint) = {
-          let error: NotificationErrorView = .init()
+	private lazy var notificationError: (view: NotificationErrorView, constraint: NSLayoutConstraint) = {
+		let error: NotificationErrorView = .init()
 
-          keyWindow.addSubview(error)
-          error.translatesAutoresizingMaskIntoConstraints = false
+		keyWindow.addSubview(error)
+		error.translatesAutoresizingMaskIntoConstraints = false
 
-          let constraint = error.topAnchor.constraint(equalTo: keyWindow.bottomAnchor)
-          NSLayoutConstraint.activate([
-               constraint,
-               error.leadingAnchor.constraint(equalTo: keyWindow.leadingAnchor, constant: 23),
-               error.trailingAnchor.constraint(equalTo: keyWindow.trailingAnchor, constant: -23),
-               error.heightAnchor.constraint(equalToConstant: 84)
-          ])
+		let constraint = error.topAnchor.constraint(equalTo: keyWindow.bottomAnchor)
+		NSLayoutConstraint.activate([
+			constraint,
+			error.leadingAnchor.constraint(equalTo: keyWindow.leadingAnchor, constant: Constants.NotificationError.leadingSpace),
+			error.trailingAnchor.constraint(equalTo: keyWindow.trailingAnchor, constant: -Constants.NotificationError.leadingSpace),
+			error.heightAnchor.constraint(equalToConstant: Constants.NotificationError.height)
+		])
 
-          return (error, constraint)
-     }()
+		return (error, constraint)
+	}()
+
+	private lazy var blockedUserNotificationError: (view: BlockedUserNotificationComponentView, constraint: NSLayoutConstraint) = {
+		let errorView: BlockedUserNotificationComponentView = .init()
+
+		keyWindow.addSubview(errorView)
+		errorView.translatesAutoresizingMaskIntoConstraints = false
+
+		let constraint = errorView.topAnchor.constraint(equalTo: keyWindow.bottomAnchor)
+		NSLayoutConstraint.activate([
+			constraint,
+			errorView.leadingAnchor.constraint(equalTo: keyWindow.leadingAnchor, constant: Constants.NotificationError.leadingSpace),
+			errorView.trailingAnchor.constraint(equalTo: keyWindow.trailingAnchor, constant: -Constants.NotificationError.leadingSpace),
+			errorView.heightAnchor.constraint(equalToConstant: Constants.NotificationError.height)
+		])
+
+		return (errorView, constraint)
+	}()
 
      // Success
      private lazy var successBg: UIView = {
@@ -119,7 +136,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
      public override func viewDidLoad() {
           super.viewDidLoad()
-          guard setInteractivePopGestureRecognizer else {return}
+          guard setInteractivePopGestureRecognizer else { return }
           navigationController?.interactivePopGestureRecognizer?.delegate = self
           setupAsNetworkConnectionObserver()
      }
@@ -152,7 +169,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
                success.centerXAnchor.constraint(equalTo: successBg.centerXAnchor),
                success.centerYAnchor.constraint(equalTo: successBg.centerYAnchor)
           ])
-          //
+
           DispatchQueue.main.asyncAfter(deadline: .now() + 1.19) { [self] in
                UIView.animate(withDuration: 0.4, animations: {
                     self.successBg.alpha = 0.0
@@ -186,38 +203,52 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           loader.startAnimating()
      }
 
-     public func stopLoading() {
-          guard loader.isAnimating else {return}
+	public func stopLoading() {
+		guard loader.isAnimating else {return}
 
-          loader.stopAnimating()
-          loader.removeFromSuperview()
-     }
+		loader.stopAnimating()
+		loader.removeFromSuperview()
+	}
 
-     func show(error: ABError) {
-          stopLoading()
-          switch error.description {
-          case .popup(let description):
-               showPopupError(error: error, description: description)
-          case .notification(let description):
-               showNotificationError(with: description)
-          case .status(let description):
-               showStatusError(with: description)
-          }
-     }
+	func show(error: ABError) {
+		stopLoading()
+		switch error.description {
+		case .popup(let description):
+			showPopupError(error: error, description: description)
+		case .notification(let description):
+			showNotificationError(with: description)
+		case .blockedUserNotification(let description):
+			showBlockedUserNotificationError(with: description)
+		case .status(let description):
+			showStatusError(with: description)
+		}
+	}
 
      func showPopupError(error: ABError, description: ABError.Description.Popup) {
           popupError.viewModel.set(error: error, description: description)
           DispatchQueue.main.async { self.showPopupError() }
      }
 
-     private var isNotificationErrorShown = false
-     func showNotificationError(with description: ABError.Description.Notification) {
-          guard !isNotificationErrorShown else { return }
+	private var isNotificationErrorShown = false
+	func showNotificationError(with description: ABError.Description.Notification) {
+		guard !isNotificationErrorShown else { return }
 
-          notificationError.view.configure(from: description)
-          DispatchQueue.main.async { self.showNotificationError() }
-          DispatchQueue.main.asyncAfter(deadline: .now() + 2) { self.hideNotificationError() }
-     }
+		notificationError.view.configure(from: description)
+		DispatchQueue.main.async { self.showNotificationError() }
+		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.NotificationError.secondsBeforeHiding) {
+			self.hideNotificationError()
+		}
+	}
+
+	func showBlockedUserNotificationError(with description: ABError.Description.BlockedUserNotification) {
+		guard !isNotificationErrorShown else { return }
+
+		blockedUserNotificationError.view.configure(with: description)
+		DispatchQueue.main.async { self.showBlockedUserNotificationError() }
+		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.NotificationError.secondsBeforeHiding) {
+			self.hideBlockedUserNotificationError()
+		}
+	}
 
      func showStatusError(with description: ABError.Description.Status) {
           showAlert(title: "Status: \(description.description)")
@@ -255,21 +286,37 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           )
      }
 
-     private func showNotificationError() {
-          notificationError.constraint.constant -= 114
-          UIView.animate(withDuration: 0.5) {
-               self.keyWindow.layoutIfNeeded()
-          }
-          isNotificationErrorShown = true
-     }
+	private func showNotificationError() {
+		notificationError.constraint.constant -= Constants.NotificationError.verticalMovementSpace
+		UIView.animate(withDuration: Constants.NotificationError.animationDuration) {
+			self.keyWindow.layoutIfNeeded()
+		}
+		isNotificationErrorShown = true
+	}
 
-     private func hideNotificationError() {
-          notificationError.constraint.constant += 114
-          UIView.animate(withDuration: 0.5) {
-               self.keyWindow.layoutIfNeeded()
-          }
-          isNotificationErrorShown = false
-     }
+	private func hideNotificationError() {
+		notificationError.constraint.constant += Constants.NotificationError.verticalMovementSpace
+		UIView.animate(withDuration: Constants.NotificationError.animationDuration) {
+			self.keyWindow.layoutIfNeeded()
+		}
+		isNotificationErrorShown = false
+	}
+
+	private func showBlockedUserNotificationError() {
+		blockedUserNotificationError.constraint.constant -= Constants.NotificationError.verticalMovementSpace
+		UIView.animate(withDuration: Constants.NotificationError.animationDuration) {
+			self.keyWindow.layoutIfNeeded()
+		}
+		isNotificationErrorShown = true
+	}
+
+	private func hideBlockedUserNotificationError() {
+		blockedUserNotificationError.constraint.constant += Constants.NotificationError.verticalMovementSpace
+		UIView.animate(withDuration: Constants.NotificationError.animationDuration) {
+			self.keyWindow.layoutIfNeeded()
+		}
+		isNotificationErrorShown = false
+	}
 
      public func addKeyboardDismissOnTap() {
           let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
@@ -325,19 +372,22 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      public func networkConnectionEstablished() {
 		DispatchQueue.main.async {
 			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionEstablished.icon, description: Constants.InternetConnectionStatus.connectionEstablished.description)))))
+//			self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init()))))
 		}
      }
 
 	public func networkConnectionLost() {
 		DispatchQueue.main.async {
 			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
+//			self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init()))))
 		}
 	}
 
 	private func setupNetworkConnectionState() {
 		if !NetworkConnectionManager.shared.isConnected {
 			DispatchQueue.main.async {
-				self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
+//				self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
+				self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init()))))
 			}
 		}
 	}
@@ -362,6 +412,14 @@ extension ABViewController {
 				case .connectionEstablished: return R.string.localization.status_message_internet_connection_established.localized()
 				}
 			}
-	   }
+		}
+
+		struct NotificationError {
+			static let leadingSpace: CGFloat = 23.0
+			static let height: CGFloat = 84.0
+			static let verticalMovementSpace: CGFloat = 144.0
+			static let animationDuration = 0.5
+			static let secondsBeforeHiding = 20.0
+		}
 	}
 }

@@ -54,7 +54,7 @@ class PromoTabComponentView: UIView {
         viewModel.buttonPrivateDidTap()
     }
 
-    //Button animation
+    // Button animation
     private func buttonPublicSetActive(_ active: Bool) {
         switch active {
         case true:

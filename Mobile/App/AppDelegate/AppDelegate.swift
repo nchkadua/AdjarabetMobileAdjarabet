@@ -93,8 +93,6 @@ public extension DependencyContainer {
         Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as TermsAndConditionsViewModel }
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
-        Module { DefaultEmptyStateComponentViewModel(params: .init()) as EmptyStateComponentViewModel }
-        Module { DefaultStatusMessageComponentViewModel(params: .init()) as StatusMessageComponentViewModel }
         Module { DefaultNotVerifiedUserViewModel(params: .init()) as NotVerifiedUserViewModel }
     }
 
@@ -105,7 +103,10 @@ public extension DependencyContainer {
         Module { DefaultGameLoaderComponentViewModel() as GameLoaderComponentViewModel }
         Module { DefaultPaymentMethodGridComponentViewModel(params: .init(paymentMethods: [])) as PaymentMethodGridComponentViewModel }
         Module { DefaultSuggestedAmountGridComponentViewModel(params: .init(suggestedAmouns: [])) as SuggestedAmountGridComponentViewModel }
+		Module { DefaultEmptyStateComponentViewModel(params: .init()) as EmptyStateComponentViewModel }
+		Module { DefaultStatusMessageComponentViewModel(params: .init()) as StatusMessageComponentViewModel }
         Module { DefaultPromoTabComponentViewModel(params: .init()) as PromoTabComponentViewModel }
+		Module { DefaultBlockedUserNotificationComponentViewModel(params: .init()) as BlockedUserNotificationComponentViewModel}
         // Withdraw
         Module { DefaultCashOutVisaViewModel() as CashOutVisaViewModel }
         Module { DefaultWithdrawVisaInfoViewModel() as WithdrawVisaInfoViewModel }
