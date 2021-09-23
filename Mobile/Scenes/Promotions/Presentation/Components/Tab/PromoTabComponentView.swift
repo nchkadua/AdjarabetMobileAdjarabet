@@ -62,8 +62,8 @@ class PromoTabComponentView: UIView {
                 buttonPublic.setFont(to: .title2(fontCase: .upper, fontStyle: .bold))
                 buttonPublic.setTitleColor(to: .primaryText(), for: .normal)
 
-                buttonPublicCenterConstraint.constant = -67
-                buttonPrivateCenterConstraint.constant = 90
+                buttonPublicCenterConstraint.constant = -(UIScreen.main.bounds.width / 5.6)
+                buttonPrivateCenterConstraint.constant = UIScreen.main.bounds.width / 4
 
                 layoutIfNeeded()
             })
@@ -72,8 +72,8 @@ class PromoTabComponentView: UIView {
                 buttonPublic.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))
                 buttonPublic.setTitleColor(to: .tertiaryText(), for: .normal)
 
-                buttonPublicCenterConstraint.constant = -90
-                buttonPrivateCenterConstraint.constant = 67
+                buttonPublicCenterConstraint.constant = -(UIScreen.main.bounds.width / 4)
+                buttonPrivateCenterConstraint.constant = UIScreen.main.bounds.width / 5.6
 
                 layoutIfNeeded()
             })
