@@ -19,6 +19,7 @@ class PromoTabComponentView: UIView {
     // MARK: Constraint Outlets
     @IBOutlet weak private var buttonPublicCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak private var buttonPrivateCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var buttonContainerCenterConstraint: NSLayoutConstraint!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,8 +63,7 @@ class PromoTabComponentView: UIView {
                 buttonPublic.setFont(to: .title2(fontCase: .upper, fontStyle: .bold))
                 buttonPublic.setTitleColor(to: .primaryText(), for: .normal)
 
-                buttonPublicCenterConstraint.constant = -(UIScreen.main.bounds.width / 5.6)
-                buttonPrivateCenterConstraint.constant = UIScreen.main.bounds.width / 4
+                buttonContainerCenterConstraint.constant = 30
 
                 layoutIfNeeded()
             })
@@ -72,8 +72,7 @@ class PromoTabComponentView: UIView {
                 buttonPublic.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))
                 buttonPublic.setTitleColor(to: .tertiaryText(), for: .normal)
 
-                buttonPublicCenterConstraint.constant = -(UIScreen.main.bounds.width / 4)
-                buttonPrivateCenterConstraint.constant = UIScreen.main.bounds.width / 5.6
+                buttonContainerCenterConstraint.constant = -20
 
                 layoutIfNeeded()
             })
