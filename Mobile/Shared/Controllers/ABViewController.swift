@@ -58,6 +58,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 			error.trailingAnchor.constraint(equalTo: keyWindow.trailingAnchor, constant: -Constants.NotificationError.leadingSpace),
 			error.heightAnchor.constraint(equalToConstant: Constants.NotificationError.height)
 		])
+		keyWindow.layoutIfNeeded()
 
 		return (error, constraint)
 	}()
@@ -68,13 +69,14 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 		keyWindow.addSubview(errorView)
 		errorView.translatesAutoresizingMaskIntoConstraints = false
 
-		let constraint = errorView.topAnchor.constraint(equalTo: keyWindow.bottomAnchor)
+		let constraint = errorView.topAnchor.constraint(equalTo: keyWindow.bottomAnchor, constant: 0)
 		NSLayoutConstraint.activate([
 			constraint,
 			errorView.leadingAnchor.constraint(equalTo: keyWindow.leadingAnchor, constant: Constants.NotificationError.leadingSpace),
 			errorView.trailingAnchor.constraint(equalTo: keyWindow.trailingAnchor, constant: -Constants.NotificationError.leadingSpace),
-			errorView.heightAnchor.constraint(equalToConstant: Constants.NotificationError.height)
+			errorView.heightAnchor.constraint(equalToConstant: Constants.BlockedUserNotificationError.height)
 		])
+		keyWindow.layoutIfNeeded()
 
 		return (errorView, constraint)
 	}()
@@ -372,22 +374,22 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      public func networkConnectionEstablished() {
 		DispatchQueue.main.async {
 			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionEstablished.icon, description: Constants.InternetConnectionStatus.connectionEstablished.description)))))
-//			self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init()))))
+//			self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init())))) // FIXME
 		}
      }
 
 	public func networkConnectionLost() {
 		DispatchQueue.main.async {
 			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
-//			self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init()))))
+//			self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init())))) // FIXME
 		}
 	}
 
 	private func setupNetworkConnectionState() {
 		if !NetworkConnectionManager.shared.isConnected {
 			DispatchQueue.main.async {
-//				self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
-				self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init()))))
+				self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
+//				self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init())))) // FIXME
 			}
 		}
 	}
@@ -415,11 +417,15 @@ extension ABViewController {
 		}
 
 		struct NotificationError {
-			static let leadingSpace: CGFloat = 23.0
-			static let height: CGFloat = 84.0
-			static let verticalMovementSpace: CGFloat = 144.0
+			static let leadingSpace: CGFloat = 23
+			static let height: CGFloat = 84
+			static let verticalMovementSpace: CGFloat = 144
 			static let animationDuration = 0.5
-			static let secondsBeforeHiding = 20.0
+			static let secondsBeforeHiding = 2.0
+		}
+
+		struct BlockedUserNotificationError {
+			static let height: CGFloat = 96
 		}
 	}
 }
