@@ -674,6 +674,10 @@
 		CEC03E4426FB3B5D00904F2B /* PromoTabComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC03E3E26FB3B5D00904F2B /* PromoTabComponentView.xib */; };
 		CEC03E4726FB3B5D00904F2B /* PromoTabComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E4126FB3B5D00904F2B /* PromoTabComponentViewModel.swift */; };
 		CEC03E4826FB3B5D00904F2B /* PromoTabComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E4226FB3B5D00904F2B /* PromoTabComponentView.swift */; };
+		CEC03E4D26FB717000904F2B /* FAQEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E4C26FB717000904F2B /* FAQEntity.swift */; };
+		CEC03E4F26FB717C00904F2B /* FAQRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E4E26FB717C00904F2B /* FAQRepository.swift */; };
+		CEC03E5126FB719700904F2B /* FAQDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E5026FB719700904F2B /* FAQDTO.swift */; };
+		CEC03E5326FB71A300904F2B /* MobileFAQRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E5226FB71A300904F2B /* MobileFAQRepository.swift */; };
 		CEC2F5292608B5C00000904C /* Deposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC2F5242608B5C00000904C /* Deposit.storyboard */; };
 		CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5252608B5C00000904C /* DepositNavigator.swift */; };
 		CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5262608B5C00000904C /* DepositViewController.swift */; };
@@ -1638,6 +1642,10 @@
 		CEC03E3E26FB3B5D00904F2B /* PromoTabComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoTabComponentView.xib; sourceTree = "<group>"; };
 		CEC03E4126FB3B5D00904F2B /* PromoTabComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoTabComponentViewModel.swift; sourceTree = "<group>"; };
 		CEC03E4226FB3B5D00904F2B /* PromoTabComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoTabComponentView.swift; sourceTree = "<group>"; };
+		CEC03E4C26FB717000904F2B /* FAQEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQEntity.swift; sourceTree = "<group>"; };
+		CEC03E4E26FB717C00904F2B /* FAQRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQRepository.swift; sourceTree = "<group>"; };
+		CEC03E5026FB719700904F2B /* FAQDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDTO.swift; sourceTree = "<group>"; };
+		CEC03E5226FB71A300904F2B /* MobileFAQRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileFAQRepository.swift; sourceTree = "<group>"; };
 		CEC2F5242608B5C00000904C /* Deposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Deposit.storyboard; sourceTree = "<group>"; };
 		CEC2F5252608B5C00000904C /* DepositNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositNavigator.swift; sourceTree = "<group>"; };
 		CEC2F5262608B5C00000904C /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
@@ -5456,6 +5464,8 @@
 		CE693ADB26A6C78C0049D665 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CEC03E4B26FB715900904F2B /* Protocol */,
+				CEC03E4A26FB715100904F2B /* Implementation */,
 				CE693AEC26A6C9F70049D665 /* FAQCategoriesProvider.swift */,
 			);
 			path = Data;
@@ -5980,6 +5990,24 @@
 				CEC03E3E26FB3B5D00904F2B /* PromoTabComponentView.xib */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		CEC03E4A26FB715100904F2B /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03E5026FB719700904F2B /* FAQDTO.swift */,
+				CEC03E5226FB71A300904F2B /* MobileFAQRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CEC03E4B26FB715900904F2B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03E4E26FB717C00904F2B /* FAQRepository.swift */,
+				CEC03E4C26FB717000904F2B /* FAQEntity.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		CEC9A34225C096E800BE853D /* Game Launch Manager */ = {
@@ -7733,6 +7761,7 @@
 				CE7698AB269F02F6009972B2 /* ResetOptionTableViewCell.swift in Sources */,
 				CEB49873268C987A00004A45 /* PasswordResetControllerFactory.swift in Sources */,
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
+				CEC03E5126FB719700904F2B /* FAQDTO.swift in Sources */,
 				CE4A30D72611E5420039C078 /* SuggestedAmountComponentView.swift in Sources */,
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
@@ -7851,6 +7880,7 @@
 				CE64EA9B25D2D51A00438974 /* GameLoaderComponentView.swift in Sources */,
 				CEF52CD02673603900D2386C /* PasswordChangeEntity.swift in Sources */,
 				C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */,
+				CEC03E4F26FB717C00904F2B /* FAQRepository.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
 				CE38ED892681EEDD00B02A9E /* LogOutTableViewCellDataProvider.swift in Sources */,
 				FB25307E26E7349900F09490 /* NetworkConnectionManager.swift in Sources */,
@@ -7962,6 +7992,7 @@
 				D86253B7246429D000F7DE0C /* DataTransferService.swift in Sources */,
 				CE55ECF825265CDA003E168F /* ProfileNavigator.swift in Sources */,
 				CE2F03D2252CD6A7006D8001 /* QuickActionTableViewCell.swift in Sources */,
+				CEC03E4D26FB717000904F2B /* FAQEntity.swift in Sources */,
 				FB584B4526B7C1E800FA25DB /* TermsAndConditionsComponentView.swift in Sources */,
 				FB612A0526C5FBEC00022F24 /* EmptyStateComponentView.swift in Sources */,
 				C7DB6EF626370F9600EC1CB9 /* EmptyCollectionViewCell.swift in Sources */,
@@ -8110,6 +8141,7 @@
 				C78E52EA2683A20E00EE1C18 /* SuspendDuration.swift in Sources */,
 				CE3AC9DE26A17931000BF338 /* DocumentationNavigator.swift in Sources */,
 				CE3B2BE2269C574600301F6C /* CommunicationLanguageComponentView.swift in Sources */,
+				CEC03E5326FB71A300904F2B /* MobileFAQRepository.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
 				CE2AABD7267B3F5100B45A0A /* GetPasswordResetCodeDTO.swift in Sources */,
 				C79923022660EE7100FD7033 /* ABError.swift in Sources */,
@@ -8761,7 +8793,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 611;
+				CURRENT_PROJECT_VERSION = 612;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8794,7 +8826,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 611;
+				CURRENT_PROJECT_VERSION = 612;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -8887,7 +8919,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 611;
+				CURRENT_PROJECT_VERSION = 612;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8976,7 +9008,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 611;
+				CURRENT_PROJECT_VERSION = 612;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;

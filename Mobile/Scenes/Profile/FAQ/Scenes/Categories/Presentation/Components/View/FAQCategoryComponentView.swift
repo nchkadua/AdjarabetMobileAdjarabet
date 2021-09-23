@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import Nuke
 
 class FAQCategoryComponentView: UIView {
     private var disposeBag = DisposeBag()
@@ -42,7 +43,7 @@ class FAQCategoryComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title, let subtitle, let icon): self?.setupUI(title: title, subTitle: subtitle, image: icon)
+            case .set(let title, let subtitle, let icon): self?.setupUI(title: title, subTitle: subtitle, iconUrl: icon)
             default:
                 break
             }
@@ -51,10 +52,12 @@ class FAQCategoryComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setupUI(title: String, subTitle: String, image: UIImage) {
+    private func setupUI(title: String, subTitle: String, iconUrl: String) {
         titleLabel.text = title.uppercased()
         subtitleLabel.text = title
-        imageView.image = image
+
+        let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
+        loadImage(with: URL(string: iconUrl) ?? URL(fileURLWithPath: ""), options: options, into: imageView, progress: .none, completion: nil)
     }
 }
 

@@ -49,6 +49,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           let error: NotificationErrorView = .init()
 
           keyWindow.addSubview(error)
+          keyWindow.bringSubviewToFront(error)
           error.translatesAutoresizingMaskIntoConstraints = false
 
           let constraint = error.topAnchor.constraint(equalTo: keyWindow.bottomAnchor)
@@ -223,7 +224,10 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
           showAlert(title: "Status: \(description.description)")
      }
 
+     private var isErrorPopupShown = false
      private func showPopupError() {
+          guard !isErrorPopupShown else {return}
+
           keyWindow.addSubview(popupBgView)
           popupBgView.addSubview(popupError)
           popupError.pin(to: popupBgView)
@@ -235,6 +239,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
                animations: {
                     self.popupBgView.alpha = 1.0
                     UIView.animate(withDuration: 0.25) { self.popupError.transform = CGAffineTransform.identity }
+                    self.isErrorPopupShown = true
                }
           )
 
@@ -251,6 +256,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
                completion: { _ in
                     self.popupError.removeFromSuperview()
                     self.popupBgView.removeFromSuperview()
+                    self.isErrorPopupShown = false
                }
           )
      }
@@ -329,7 +335,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      }
 
 	public func networkConnectionLost() {
-		DispatchQueue.main.async {
+     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
 		}
 	}

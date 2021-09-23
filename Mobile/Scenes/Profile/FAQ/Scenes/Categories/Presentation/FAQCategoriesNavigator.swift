@@ -16,17 +16,17 @@ public class FAQCategoriesNavigator: Navigator {
     }
 
     public enum Destination {
-        case questions(shouldShowDismissButton: Bool)
+        case questions(questions: [FAQQuestion], shouldShowDismissButton: Bool)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
-        case .questions(let shouldShowDismissButton): navigateToQuestions(showDismissButton: shouldShowDismissButton, animate: animate)
+        case .questions(let questions, let shouldShowDismissButton): navigateToQuestions(questions: questions, showDismissButton: shouldShowDismissButton, animate: animate)
         }
     }
 
-    private func navigateToQuestions(showDismissButton: Bool, animate: Bool) {
-        let vc = questionsViewControllerFactory.make(params: .init(showDismissButton: showDismissButton))
+    private func navigateToQuestions(questions: [FAQQuestion], showDismissButton: Bool, animate: Bool) {
+        let vc = questionsViewControllerFactory.make(params: .init(questions: questions, showDismissButton: showDismissButton))
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
 }

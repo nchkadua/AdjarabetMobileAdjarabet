@@ -10,10 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromoTabComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
+                <outlet property="buttonContainerCenterConstraint" destination="4O4-hz-lxz" id="uAW-dX-5s3"/>
                 <outlet property="buttonPrivate" destination="63l-qD-QZ9" id="dk9-DK-KKY"/>
-                <outlet property="buttonPrivateCenterConstraint" destination="gv4-fT-19g" id="Yp0-hx-oSE"/>
                 <outlet property="buttonPublic" destination="5o7-s3-4Jd" id="xVX-Qj-It0"/>
-                <outlet property="buttonPublicCenterConstraint" destination="IJj-sC-UvT" id="CxN-Wo-2yv"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
             </connections>
         </placeholder>
@@ -22,32 +21,41 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5o7-s3-4Jd">
-                    <rect key="frame" x="0.5" y="0.0" width="240" height="60"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="000-Si-UZD">
+                    <rect key="frame" x="30" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63l-qD-QZ9">
+                            <rect key="frame" x="147.5" y="0.0" width="227.5" height="60"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5o7-s3-4Jd">
+                            <rect key="frame" x="0.0" y="0.0" width="147.5" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="240" id="2lw-1n-bap"/>
+                        <constraint firstAttribute="trailing" secondItem="63l-qD-QZ9" secondAttribute="trailing" id="59Q-Dg-f8x"/>
+                        <constraint firstItem="63l-qD-QZ9" firstAttribute="width" secondItem="5o7-s3-4Jd" secondAttribute="width" constant="80" id="Jhq-bz-9Gy"/>
+                        <constraint firstAttribute="trailing" secondItem="63l-qD-QZ9" secondAttribute="trailing" id="Jmw-GH-OTA"/>
+                        <constraint firstItem="5o7-s3-4Jd" firstAttribute="leading" secondItem="000-Si-UZD" secondAttribute="leading" id="MCg-vA-Wvc"/>
+                        <constraint firstItem="63l-qD-QZ9" firstAttribute="top" secondItem="000-Si-UZD" secondAttribute="top" id="MkD-7n-McF"/>
+                        <constraint firstItem="5o7-s3-4Jd" firstAttribute="top" secondItem="000-Si-UZD" secondAttribute="top" id="RK4-07-Ykp"/>
+                        <constraint firstAttribute="bottom" secondItem="5o7-s3-4Jd" secondAttribute="bottom" id="xfu-qK-sAM"/>
+                        <constraint firstAttribute="bottom" secondItem="63l-qD-QZ9" secondAttribute="bottom" id="xt2-eS-zog"/>
+                        <constraint firstItem="63l-qD-QZ9" firstAttribute="leading" secondItem="5o7-s3-4Jd" secondAttribute="trailing" id="yjY-uE-rjV"/>
                     </constraints>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63l-qD-QZ9">
-                    <rect key="frame" x="157.5" y="0.0" width="240" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="240" id="gGF-cU-Ihx"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                </button>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="5o7-s3-4Jd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Ze-s8-jJc"/>
-                <constraint firstItem="5o7-s3-4Jd" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="FYZ-UG-vHs"/>
-                <constraint firstItem="5o7-s3-4Jd" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="-67" id="IJj-sC-UvT"/>
-                <constraint firstItem="63l-qD-QZ9" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="TRs-sz-h6Y"/>
-                <constraint firstItem="63l-qD-QZ9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ggE-fE-7l8"/>
-                <constraint firstItem="63l-qD-QZ9" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="90" id="gv4-fT-19g"/>
+                <constraint firstItem="000-Si-UZD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="089-WW-5Ml"/>
+                <constraint firstItem="000-Si-UZD" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="30" id="4O4-hz-lxz"/>
+                <constraint firstAttribute="bottom" secondItem="000-Si-UZD" secondAttribute="bottom" id="vJ5-vC-kf8"/>
+                <constraint firstItem="000-Si-UZD" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="wCv-zK-ABi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="62" y="108"/>
+            <point key="canvasLocation" x="61.594202898550726" y="107.8125"/>
         </view>
     </objects>
 </document>
