@@ -12,7 +12,7 @@ public protocol ContactAddressComponentViewModel: ContactAddressComponentViewMod
                                                 ContactAddressComponentViewModelOutput {}
 
 public struct ContactAddressComponentViewModelParams {
-    let address: Address
+    let address: ContactAddress
 }
 
 public protocol ContactAddressComponentViewModelInput {
@@ -26,8 +26,8 @@ public protocol ContactAddressComponentViewModelOutput {
 }
 
 public enum ContactAddressComponentViewModelOutputAction {
-    case setupWith(address: Address)
-    case didSelect(address: Address, indexPath: IndexPath)
+    case setupWith(address: ContactAddress)
+    case didSelect(address: ContactAddress, indexPath: IndexPath)
 }
 
 public class DefaultContactAddressComponentViewModel {

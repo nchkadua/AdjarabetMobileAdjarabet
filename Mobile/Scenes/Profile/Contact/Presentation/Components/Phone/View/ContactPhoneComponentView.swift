@@ -8,9 +8,9 @@
 
 import RxSwift
 
-enum ContactNumbers: String {
-    case number1 = "+995322711010"
-    case number2 = "+995322971010"
+struct ContactNumbers {
+    let number1: String?
+    let number2: String?
 }
 
 class ContactPhoneComponentView: UIView {
@@ -23,6 +23,8 @@ class ContactPhoneComponentView: UIView {
     @IBOutlet weak private var call1Button: UIButton!
     @IBOutlet weak private var call2Button: UIButton!
     @IBOutlet weak private var separator: UIView!
+
+    var contactNumbers = ContactNumbers(number1: "", number2: "")
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +41,13 @@ class ContactPhoneComponentView: UIView {
         bind()
     }
 
-    private func bind() {
+    private func bind() {disposeBag = DisposeBag()
+        viewModel?.action.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .setupWithPhoneNumbers(let numbers): self?.setupWith(numbers)
+            }
+        }).disposed(by: disposeBag)
+
         viewModel.didBind()
     }
 
@@ -51,12 +59,28 @@ class ContactPhoneComponentView: UIView {
         call2Button.addTarget(self, action: #selector(callToNumber2), for: .touchUpInside)
     }
 
+    private func setupWith(_ phoneNumbers: [String]) {
+        switch phoneNumbers.count {
+        case 1:
+            contactNumbers = ContactNumbers(number1: phoneNumbers[0], number2: "")
+            call2Button.isHidden = true
+        case 2:
+            contactNumbers = ContactNumbers(number1: phoneNumbers[0], number2: phoneNumbers[1])
+            call2Button.isHidden = false
+        default:
+            call1Button.alpha = 0.3
+            call2Button.alpha = 0.3
+            call1Button.isUserInteractionEnabled = false
+            call2Button.isUserInteractionEnabled = false
+        }
+    }
+
     @objc private func callToNumber1() {
-        call(ContactNumbers.number1.rawValue)
+        call(contactNumbers.number1 ?? "")
     }
 
     @objc private func callToNumber2() {
-        call(ContactNumbers.number2.rawValue)
+        call(contactNumbers.number2 ?? "")
     }
 
     private func call(_ number: String) {

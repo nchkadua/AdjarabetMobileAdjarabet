@@ -40,6 +40,7 @@ public class DefaultContactUsViewModel: DefaultBaseViewModel {
     public var params: ContactUsViewModelParams
     private let actionSubject = PublishSubject<ContactUsViewModelOutputAction>()
     private let routeSubject = PublishSubject<ContactUsViewModelRoute>()
+    @Inject(from: .repositories) private var contactInfoRepo: ContactRepository
 
     public init(params: ContactUsViewModelParams) {
         self.params = params
@@ -53,38 +54,45 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = []
 
-        // Phone
-        let contactPhoneViewModel = DefaultContactPhoneComponentViewModel(params: .init())
-        dataProviders.append(contactPhoneViewModel)
-        // Mail
-        MailListProvider.items().forEach {
-            let mailViewModel = DefaultContactMailComponentViewModel(params: .init(title: $0.title, mail: $0.mail))
-            mailViewModel.action.subscribe(onNext: { [weak self] action in
-                switch action {
-                case .didSelect(let mail, _): self?.didSelectMail(mail)
-                default:
-                    break
-                }
-            }).disposed(by: disposeBag)
-            dataProviders.append(mailViewModel)
-        }
-        // Address
-        let headerViewModel = DefaultAddressHeaderComponentViewModel(params: .init(title: R.string.localization.contact_addresses.localized().uppercased()))
-        dataProviders.append(headerViewModel)
+        contactInfoRepo.getContactInfo(handler: handler(onSuccessHandler: { entity in
+            // Phone
+            let contactPhoneViewModel = DefaultContactPhoneComponentViewModel(params: .init(phones: entity.phones))
+            dataProviders.append(contactPhoneViewModel)
 
-        AddressListProvider.list().forEach {
-            let addressViewModel = DefaultContactAddressComponentViewModel(params: .init(address: $0))
-            addressViewModel.action.subscribe(onNext: { [weak self] action in
-                switch action {
-                case .didSelect(let address, _): self?.didSelectAddress(address)
-                default:
-                    break
-                }
-            }).disposed(by: disposeBag)
-            dataProviders.append(addressViewModel)
-        }
+            // Mail
+            let titles = [R.string.localization.contact_mail_title1.localized(),
+                        R.string.localization.contact_mail_title2.localized()]
+            let mails = [entity.contactMail, entity.docsMail]
+            for index in 0...1 {
+                let mailViewModel = DefaultContactMailComponentViewModel(params: .init(title: titles[index], mail: mails[index]))
+                mailViewModel.action.subscribe(onNext: { [weak self] action in
+                    switch action {
+                    case .didSelect(let mail, _): self?.didSelectMail(mail)
+                    default:
+                        break
+                    }
+                }).disposed(by: self.disposeBag)
+                dataProviders.append(mailViewModel)
+            }
 
-        actionSubject.onNext(.initialize(dataProviders.makeList()))
+            // Address
+            let headerViewModel = DefaultAddressHeaderComponentViewModel(params: .init(title: R.string.localization.contact_addresses.localized().uppercased()))
+            dataProviders.append(headerViewModel)
+
+            entity.addresses.forEach {
+                let addressViewModel = DefaultContactAddressComponentViewModel(params: .init(address: $0))
+                addressViewModel.action.subscribe(onNext: { [weak self] action in
+                    switch action {
+                    case .didSelect(let address, _): self?.didSelectAddress(address)
+                    default:
+                        break
+                    }
+                }).disposed(by: self.disposeBag)
+                dataProviders.append(addressViewModel)
+            }
+
+            self.actionSubject.onNext(.initialize(dataProviders.makeList()))
+        }))
     }
 
     private func didSelectMail(_ mail: String) {
@@ -98,7 +106,7 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
         }
     }
 
-    private func didSelectAddress(_ address: Address) {
+    private func didSelectAddress(_ address: ContactAddress) {
         if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
             guard let url = URL(string: "comgooglemaps://?center=\(address.coordinates.latitude),\(address.coordinates.longitude)&directionsmode=driving&zoom=14&views=traffic") else {
                 createAppleMapsOptions(from: address)
@@ -110,12 +118,12 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
         }
     }
 
-    private func createAppleMapsOptions(from address: Address) {
+    private func createAppleMapsOptions(from address: ContactAddress) {
         if UIApplication.shared.canOpenURL(URL(string: "maps://")!) {
             let latitude = address.coordinates.latitude
             let longitude = address.coordinates.longitude
             let regionDistance: CLLocationDistance = 10000
-            let coordinates = CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longitude))
+            let coordinates = CLLocationCoordinate2DMake(CLLocationDegrees(latitude) ?? 0.0, CLLocationDegrees(longitude) ?? 0.0)
             let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
             let options = [
                 MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),

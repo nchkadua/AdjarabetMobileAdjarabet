@@ -9,7 +9,7 @@
 import Foundation
 
 public struct FAQEntity {
-    var categories: [FAQCategory]
+    let categories: [FAQCategory]
 }
 
 public struct FAQCategory {

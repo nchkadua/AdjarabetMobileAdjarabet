@@ -525,7 +525,6 @@
 		CE693AE926A6C8920049D665 /* FAQCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AE426A6C8920049D665 /* FAQCategoriesViewController.swift */; };
 		CE693AEA26A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AE526A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift */; };
 		CE693AEB26A6C8920049D665 /* FAQCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AE626A6C8920049D665 /* FAQCategoriesViewModel.swift */; };
-		CE693AED26A6C9F70049D665 /* FAQCategoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AEC26A6C9F70049D665 /* FAQCategoriesProvider.swift */; };
 		CE693AF626A6D80F0049D665 /* FAQCategoryComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE693AF026A6D80F0049D665 /* FAQCategoryComponentView.xib */; };
 		CE693AF726A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693AF126A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift */; };
 		CE693AF826A6D80F0049D665 /* FAQCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE693AF226A6D80F0049D665 /* FAQCategoryTableViewCell.xib */; };
@@ -547,7 +546,6 @@
 		CE726EE426EA21B3004C3D16 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE726EE326EA21B3004C3D16 /* success.mp3 */; };
 		CE726EE626EA21C9004C3D16 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE726EE526EA21C9004C3D16 /* SoundPlayer.swift */; };
 		CE752DF126B02B08000FB8A4 /* ContactAddressComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */; };
-		CE752DF326B02C75000FB8A4 /* AddressListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */; };
 		CE769897269EF341009972B2 /* PasswordResetOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */; };
 		CE769898269EF341009972B2 /* PasswordResetOptionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */; };
 		CE769899269EF341009972B2 /* PasswordResetOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE769894269EF341009972B2 /* PasswordResetOptionsViewController.swift */; };
@@ -565,6 +563,10 @@
 		CE7A241125796AD500A94E89 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A241025796AD500A94E89 /* Collection+Extension.swift */; };
 		CE7A2415257C17A600A94E89 /* ABDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A2414257C17A500A94E89 /* ABDatePickerView.swift */; };
 		CE7A241E257C19B200A94E89 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A241D257C19B200A94E89 /* Helper.swift */; };
+		CE8644F626FDD79700F13400 /* ContactEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8644F526FDD79700F13400 /* ContactEntity.swift */; };
+		CE8644F826FDD7A500F13400 /* ContactRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8644F726FDD7A500F13400 /* ContactRepository.swift */; };
+		CE8644FA26FDD7B500F13400 /* MobileApiContactRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8644F926FDD7B500F13400 /* MobileApiContactRepository.swift */; };
+		CE8644FC26FDD81400F13400 /* ContactDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8644FB26FDD81400F13400 /* ContactDTO.swift */; };
 		CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */; };
 		CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786B6261B4A680060EBD1 /* Array+Extension.swift */; };
 		CE8786C2261C96830060EBD1 /* ABView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786C1261C96830060EBD1 /* ABView.swift */; };
@@ -664,7 +666,6 @@
 		CEBBB06C2579150A0024D213 /* AgreementComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */; };
 		CEBBB070257915100024D213 /* AgreementComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB06F257915100024D213 /* AgreementComponentView.xib */; };
 		CEBBB0742579151A0024D213 /* AgreementComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */; };
-		CEBC95D626B01FFA00A5DD73 /* MailListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95D526B01FFA00A5DD73 /* MailListProvider.swift */; };
 		CEBC95E126B0257F00A5DD73 /* AddressHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBC95DB26B0257F00A5DD73 /* AddressHeaderComponentView.xib */; };
 		CEBC95E226B0257F00A5DD73 /* AddressHeaderTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC95DC26B0257F00A5DD73 /* AddressHeaderTableViewCellDataProvider.swift */; };
 		CEBC95E326B0257F00A5DD73 /* AddressHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBC95DD26B0257F00A5DD73 /* AddressHeaderTableViewCell.xib */; };
@@ -677,7 +678,7 @@
 		CEC03E4D26FB717000904F2B /* FAQEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E4C26FB717000904F2B /* FAQEntity.swift */; };
 		CEC03E4F26FB717C00904F2B /* FAQRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E4E26FB717C00904F2B /* FAQRepository.swift */; };
 		CEC03E5126FB719700904F2B /* FAQDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E5026FB719700904F2B /* FAQDTO.swift */; };
-		CEC03E5326FB71A300904F2B /* MobileFAQRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E5226FB71A300904F2B /* MobileFAQRepository.swift */; };
+		CEC03E5326FB71A300904F2B /* MobileApiFAQRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03E5226FB71A300904F2B /* MobileApiFAQRepository.swift */; };
 		CEC2F5292608B5C00000904C /* Deposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC2F5242608B5C00000904C /* Deposit.storyboard */; };
 		CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5252608B5C00000904C /* DepositNavigator.swift */; };
 		CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2F5262608B5C00000904C /* DepositViewController.swift */; };
@@ -1492,7 +1493,6 @@
 		CE693AE426A6C8920049D665 /* FAQCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesViewController.swift; sourceTree = "<group>"; };
 		CE693AE526A6C8920049D665 /* FAQCategoriesViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE693AE626A6C8920049D665 /* FAQCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesViewModel.swift; sourceTree = "<group>"; };
-		CE693AEC26A6C9F70049D665 /* FAQCategoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoriesProvider.swift; sourceTree = "<group>"; };
 		CE693AF026A6D80F0049D665 /* FAQCategoryComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQCategoryComponentView.xib; sourceTree = "<group>"; };
 		CE693AF126A6D80F0049D665 /* FAQCategoryTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCategoryTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CE693AF226A6D80F0049D665 /* FAQCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQCategoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -1514,7 +1514,6 @@
 		CE726EE326EA21B3004C3D16 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
 		CE726EE526EA21C9004C3D16 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		CE752DF026B02B08000FB8A4 /* ContactAddressComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddressComponentView.swift; sourceTree = "<group>"; };
-		CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListProvider.swift; sourceTree = "<group>"; };
 		CE752DF426B0389E000FB8A4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CE769892269EF341009972B2 /* PasswordResetOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordResetOptions.storyboard; sourceTree = "<group>"; };
 		CE769893269EF341009972B2 /* PasswordResetOptionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetOptionsNavigator.swift; sourceTree = "<group>"; };
@@ -1533,6 +1532,10 @@
 		CE7A241025796AD500A94E89 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		CE7A2414257C17A500A94E89 /* ABDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABDatePickerView.swift; sourceTree = "<group>"; };
 		CE7A241D257C19B200A94E89 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		CE8644F526FDD79700F13400 /* ContactEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntity.swift; sourceTree = "<group>"; };
+		CE8644F726FDD7A500F13400 /* ContactRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRepository.swift; sourceTree = "<group>"; };
+		CE8644F926FDD7B500F13400 /* MobileApiContactRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiContactRepository.swift; sourceTree = "<group>"; };
+		CE8644FB26FDD81400F13400 /* ContactDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDTO.swift; sourceTree = "<group>"; };
 		CE8786AE2617482C0060EBD1 /* NotificatinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificatinEntity.swift; sourceTree = "<group>"; };
 		CE8786B6261B4A680060EBD1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		CE8786C1261C96830060EBD1 /* ABView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABView.swift; sourceTree = "<group>"; };
@@ -1632,7 +1635,6 @@
 		CEBBB06B2579150A0024D213 /* AgreementComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentView.swift; sourceTree = "<group>"; };
 		CEBBB06F257915100024D213 /* AgreementComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementComponentView.xib; sourceTree = "<group>"; };
 		CEBBB0732579151A0024D213 /* AgreementComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementComponentViewModel.swift; sourceTree = "<group>"; };
-		CEBC95D526B01FFA00A5DD73 /* MailListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailListProvider.swift; sourceTree = "<group>"; };
 		CEBC95DB26B0257F00A5DD73 /* AddressHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressHeaderComponentView.xib; sourceTree = "<group>"; };
 		CEBC95DC26B0257F00A5DD73 /* AddressHeaderTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHeaderTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CEBC95DD26B0257F00A5DD73 /* AddressHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressHeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -1645,7 +1647,7 @@
 		CEC03E4C26FB717000904F2B /* FAQEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQEntity.swift; sourceTree = "<group>"; };
 		CEC03E4E26FB717C00904F2B /* FAQRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQRepository.swift; sourceTree = "<group>"; };
 		CEC03E5026FB719700904F2B /* FAQDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDTO.swift; sourceTree = "<group>"; };
-		CEC03E5226FB71A300904F2B /* MobileFAQRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileFAQRepository.swift; sourceTree = "<group>"; };
+		CEC03E5226FB71A300904F2B /* MobileApiFAQRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiFAQRepository.swift; sourceTree = "<group>"; };
 		CEC2F5242608B5C00000904C /* Deposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Deposit.storyboard; sourceTree = "<group>"; };
 		CEC2F5252608B5C00000904C /* DepositNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositNavigator.swift; sourceTree = "<group>"; };
 		CEC2F5262608B5C00000904C /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
@@ -5466,7 +5468,6 @@
 			children = (
 				CEC03E4B26FB715900904F2B /* Protocol */,
 				CEC03E4A26FB715100904F2B /* Implementation */,
-				CE693AEC26A6C9F70049D665 /* FAQCategoriesProvider.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -5649,6 +5650,24 @@
 				CE7A241D257C19B200A94E89 /* Helper.swift */,
 			);
 			path = AbDatePicker;
+			sourceTree = "<group>";
+		};
+		CE8644F326FDD77500F13400 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CE8644F926FDD7B500F13400 /* MobileApiContactRepository.swift */,
+				CE8644FB26FDD81400F13400 /* ContactDTO.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE8644F426FDD77B00F13400 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE8644F526FDD79700F13400 /* ContactEntity.swift */,
+				CE8644F726FDD7A500F13400 /* ContactRepository.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		CE8786C9261DBF5D0060EBD1 /* Add Card View */ = {
@@ -5996,7 +6015,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC03E5026FB719700904F2B /* FAQDTO.swift */,
-				CEC03E5226FB71A300904F2B /* MobileFAQRepository.swift */,
+				CEC03E5226FB71A300904F2B /* MobileApiFAQRepository.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -6152,8 +6171,8 @@
 		CECA7EB526AED03C00BCF04A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CEBC95D526B01FFA00A5DD73 /* MailListProvider.swift */,
-				CE752DF226B02C75000FB8A4 /* AddressListProvider.swift */,
+				CE8644F426FDD77B00F13400 /* Protocol */,
+				CE8644F326FDD77500F13400 /* Implementation */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -7711,14 +7730,12 @@
 				C7C973AF2580EC990062C713 /* SecurityLevelTypeTableViewCell.swift in Sources */,
 				D85C9C1724336C0B00F1D4FE /* LoadingButton.swift in Sources */,
 				CE4A3155261732920039C078 /* NotificationDTO.swift in Sources */,
-				CEBC95D626B01FFA00A5DD73 /* MailListProvider.swift in Sources */,
 				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
 				CE3AC9E126A17931000BF338 /* DocumentationActionTableViewCellDataProvider.swift in Sources */,
 				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
 				7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */,
-				CE693AED26A6C9F70049D665 /* FAQCategoriesProvider.swift in Sources */,
 				CEB49874268C987A00004A45 /* PasswordResetViewModel.swift in Sources */,
 				D8509407248260E900722040 /* MobileRequestBuilder.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
@@ -7816,6 +7833,7 @@
 				C7FAA3B22600C04A00265995 /* UFCInitDepositEntity.swift in Sources */,
 				CE587497260B66C300F03AB5 /* EmoneyButton.swift in Sources */,
 				76BA7BDC25E7AA1A00CB77A5 /* GameLauncherGridComponentView.swift in Sources */,
+				CE8644FC26FDD81400F13400 /* ContactDTO.swift in Sources */,
 				CEF1D4F4251C9D7D008E3DE0 /* UITextView+Extension.swift in Sources */,
 				CE4A30F6261224E50039C078 /* SuggestedAmountGridComponentView.swift in Sources */,
 				C78E52C826838B3F00EE1C18 /* CoreApiPhoneVerificationCodeRepository.swift in Sources */,
@@ -7860,6 +7878,7 @@
 				CEB2860D256D2D6D00584A65 /* DurationProvider.swift in Sources */,
 				CECA7EBF26AED0A700BCF04A /* ContactUsViewController.swift in Sources */,
 				CECA7EC026AED0A700BCF04A /* ContactUsViewControllerFactory.swift in Sources */,
+				CE8644FA26FDD7B500F13400 /* MobileApiContactRepository.swift in Sources */,
 				CEBB00722608F64100D1B510 /* PaymentMethodGridComponentView.swift in Sources */,
 				CEBB002D2608EC4100D1B510 /* PaymentMethodComponentViewModel.swift in Sources */,
 				76EBDB43257E426200C8DC6A /* AccessListEntity.swift in Sources */,
@@ -8141,7 +8160,7 @@
 				C78E52EA2683A20E00EE1C18 /* SuspendDuration.swift in Sources */,
 				CE3AC9DE26A17931000BF338 /* DocumentationNavigator.swift in Sources */,
 				CE3B2BE2269C574600301F6C /* CommunicationLanguageComponentView.swift in Sources */,
-				CEC03E5326FB71A300904F2B /* MobileFAQRepository.swift in Sources */,
+				CEC03E5326FB71A300904F2B /* MobileApiFAQRepository.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
 				CE2AABD7267B3F5100B45A0A /* GetPasswordResetCodeDTO.swift in Sources */,
 				C79923022660EE7100FD7033 /* ABError.swift in Sources */,
@@ -8246,6 +8265,7 @@
 				D83ED2F9244C97DE0037DDEB /* GameLauncherComponentViewModel.swift in Sources */,
 				D87F49FB2452001A004D67A2 /* NotificationsViewModel.swift in Sources */,
 				CE55ED55252B3881003E168F /* ProfileInfoComponentView.swift in Sources */,
+				CE8644F826FDD7A500F13400 /* ContactRepository.swift in Sources */,
 				CE95FC8C252F2B16003E539B /* PromotionComponentView.swift in Sources */,
 				CE3AC9E526A17931000BF338 /* DocumentationViewModel.swift in Sources */,
 				CECF7F6F256D9F99001C0E50 /* PasswordChangeNavigator.swift in Sources */,
@@ -8324,8 +8344,8 @@
 				C7CE2D8D2600DCC100251FE3 /* UFCTransactionRepository.swift in Sources */,
 				C78127C22671411E0007F7E3 /* IsOTPEnabledRepository.swift in Sources */,
 				CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */,
+				CE8644F626FDD79700F13400 /* ContactEntity.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
-				CE752DF326B02C75000FB8A4 /* AddressListProvider.swift in Sources */,
 				76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */,
 				7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
@@ -8793,7 +8813,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 612;
+				CURRENT_PROJECT_VERSION = 613;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8826,7 +8846,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 612;
+				CURRENT_PROJECT_VERSION = 613;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -8919,7 +8939,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 612;
+				CURRENT_PROJECT_VERSION = 613;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -9008,7 +9028,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 612;
+				CURRENT_PROJECT_VERSION = 613;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;

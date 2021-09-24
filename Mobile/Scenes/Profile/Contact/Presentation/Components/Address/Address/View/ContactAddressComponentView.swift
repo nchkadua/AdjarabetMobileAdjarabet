@@ -48,9 +48,9 @@ class ContactAddressComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setup(with address: Address) {
-        addressLabel.text = address.title
-        cityLabel.text = address.city
+    private func setup(with address: ContactAddress) {
+        addressLabel.text = address.address
+        cityLabel.text = address.cityName
     }
 }
 

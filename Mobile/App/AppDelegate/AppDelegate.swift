@@ -157,6 +157,7 @@ public extension DependencyContainer {
         Module { DefaultPrivacyPolicyRepository() as PrivacyPolicyRepository }
 		Module { DefaultTermsAndConditionsRepository() as TermsAndConditionsRepository }
         Module { DefaultFAQRepository() as FAQRepository }
+        Module { DefaultContactRepository() as ContactRepository }
     }
 
     static var factories = DependencyContainer {
