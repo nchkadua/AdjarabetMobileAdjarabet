@@ -31,6 +31,7 @@ public enum ContactUsViewModelOutputAction {
     case openUrl(_ url: URL)
     case sendMail(_ mail: String)
     case openMapItem(_ mapItem: MKMapItem, options: [String: Any])
+    case isLoading(loading: Bool)
 }
 
 public enum ContactUsViewModelRoute {
@@ -52,6 +53,7 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
     public var route: Observable<ContactUsViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        actionSubject.onNext(.isLoading(loading: true))
         var dataProviders: AppCellDataProviders = []
 
         contactInfoRepo.getContactInfo(handler: handler(onSuccessHandler: { entity in
@@ -91,6 +93,7 @@ extension DefaultContactUsViewModel: ContactUsViewModel {
                 dataProviders.append(addressViewModel)
             }
 
+            self.actionSubject.onNext(.isLoading(loading: false))
             self.actionSubject.onNext(.initialize(dataProviders.makeList()))
         }))
     }

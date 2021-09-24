@@ -43,6 +43,7 @@ public class ContactUsViewController: ABViewController {
         case .openUrl(let url): openUrl(url)
         case .sendMail(let mail): sendMail(mail)
         case .openMapItem(let mapItem, let options): openMapItem(mapItem, with: options)
+        case .isLoading(let loading): loading ? startLoading() : stopLoading()
         }
     }
 
