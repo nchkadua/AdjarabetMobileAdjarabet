@@ -506,6 +506,10 @@
 		CE58749B260B66CB00F03AB5 /* EmoneyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE58749A260B66CB00F03AB5 /* EmoneyButton.xib */; };
 		CE5874A2260B8B3C00F03AB5 /* EmoneyInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5874A1260B8B3C00F03AB5 /* EmoneyInstructionsView.swift */; };
 		CE5874A8260B8B4100F03AB5 /* EmoneyInstructionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5874A7260B8B4100F03AB5 /* EmoneyInstructionsView.xib */; };
+		CE5F37DC2701DC05005C3426 /* AboutUsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F37DB2701DC05005C3426 /* AboutUsEntity.swift */; };
+		CE5F37DE2701DC11005C3426 /* AboutUsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F37DD2701DC11005C3426 /* AboutUsRepository.swift */; };
+		CE5F37E02701DC23005C3426 /* MobileApiAboutUsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F37DF2701DC23005C3426 /* MobileApiAboutUsDTO.swift */; };
+		CE5F37E22701DC2C005C3426 /* MobileApiAboutUsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F37E12701DC2C005C3426 /* MobileApiAboutUsRepository.swift */; };
 		CE64EA7A25D1695400438974 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE64EA7525D1695400438974 /* Game.storyboard */; };
 		CE64EA7B25D1695400438974 /* GameNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA7625D1695400438974 /* GameNavigator.swift */; };
 		CE64EA7C25D1695400438974 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EA7725D1695400438974 /* GameViewController.swift */; };
@@ -1480,6 +1484,10 @@
 		CE58749A260B66CB00F03AB5 /* EmoneyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoneyButton.xib; sourceTree = "<group>"; };
 		CE5874A1260B8B3C00F03AB5 /* EmoneyInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoneyInstructionsView.swift; sourceTree = "<group>"; };
 		CE5874A7260B8B4100F03AB5 /* EmoneyInstructionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoneyInstructionsView.xib; sourceTree = "<group>"; };
+		CE5F37DB2701DC05005C3426 /* AboutUsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsEntity.swift; sourceTree = "<group>"; };
+		CE5F37DD2701DC11005C3426 /* AboutUsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsRepository.swift; sourceTree = "<group>"; };
+		CE5F37DF2701DC23005C3426 /* MobileApiAboutUsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiAboutUsDTO.swift; sourceTree = "<group>"; };
+		CE5F37E12701DC2C005C3426 /* MobileApiAboutUsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiAboutUsRepository.swift; sourceTree = "<group>"; };
 		CE64EA7525D1695400438974 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		CE64EA7625D1695400438974 /* GameNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNavigator.swift; sourceTree = "<group>"; };
 		CE64EA7725D1695400438974 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -4475,6 +4483,7 @@
 		CE0F767426EF6DA6008980F6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE5F37D72701DBCF005C3426 /* About Us */,
 				CE0F767526EF6DE3008980F6 /* Privacy Policy */,
 				FBAE9C3B26B3D0A3002E9D72 /* Terms And Conditions */,
 			);
@@ -5432,6 +5441,41 @@
 				C7EF9E7025702AFA00D2908C /* User Info */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE5F37D72701DBCF005C3426 /* About Us */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F37D82701DBDE005C3426 /* Data */,
+			);
+			path = "About Us";
+			sourceTree = "<group>";
+		};
+		CE5F37D82701DBDE005C3426 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F37DA2701DBF0005C3426 /* Protocol */,
+				CE5F37D92701DBE7005C3426 /* Implementation */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE5F37D92701DBE7005C3426 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F37E12701DC2C005C3426 /* MobileApiAboutUsRepository.swift */,
+				CE5F37DF2701DC23005C3426 /* MobileApiAboutUsDTO.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE5F37DA2701DBF0005C3426 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F37DB2701DC05005C3426 /* AboutUsEntity.swift */,
+				CE5F37DD2701DC11005C3426 /* AboutUsRepository.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		CE64EA7425D168EF00438974 /* Game */ = {
@@ -7782,6 +7826,7 @@
 				7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */,
 				CEB49874268C987A00004A45 /* PasswordResetViewModel.swift in Sources */,
 				D8509407248260E900722040 /* MobileRequestBuilder.swift in Sources */,
+				CE5F37E22701DC2C005C3426 /* MobileApiAboutUsRepository.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
 				C707548925F396130033050E /* PaymentListUseCase.swift in Sources */,
@@ -7891,6 +7936,7 @@
 				CE7A241E257C19B200A94E89 /* Helper.swift in Sources */,
 				769886B92571091D00FA339E /* ABCheckbox.swift in Sources */,
 				C7553B29267B5B6200813FAC /* AddressRepository.swift in Sources */,
+				CE5F37DC2701DC05005C3426 /* AboutUsEntity.swift in Sources */,
 				D815850E24B0C81800FFCA95 /* LoaderViewController.swift in Sources */,
 				CE08189C2538731900AD3B3B /* NotificationContentViewControllerFactory.swift in Sources */,
 				CECA7EEA26AEEADD00BCF04A /* ContactAddressTableViewCellDataProvider.swift in Sources */,
@@ -8206,6 +8252,7 @@
 				CEA287842540C28F00E6590C /* AccountInfoViewController.swift in Sources */,
 				C78E52EA2683A20E00EE1C18 /* SuspendDuration.swift in Sources */,
 				CE3AC9DE26A17931000BF338 /* DocumentationNavigator.swift in Sources */,
+				CE5F37E02701DC23005C3426 /* MobileApiAboutUsDTO.swift in Sources */,
 				CE3B2BE2269C574600301F6C /* CommunicationLanguageComponentView.swift in Sources */,
 				CEC03E5326FB71A300904F2B /* MobileApiFAQRepository.swift in Sources */,
 				76BDF44825755D0A007B27A7 /* TransactionHistoryEntity.swift in Sources */,
@@ -8394,6 +8441,7 @@
 				CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */,
 				CE8644F626FDD79700F13400 /* ContactEntity.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
+				CE5F37DE2701DC11005C3426 /* AboutUsRepository.swift in Sources */,
 				76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */,
 				7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,

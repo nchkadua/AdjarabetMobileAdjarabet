@@ -1,14 +1,14 @@
 //
-//  MobileAPIPrivacyPolicyDTO.swift
+//  MobileApiAboutUsDTO.swift
 //  Mobile
 //
-//  Created by Nika Chkadua on 13.09.21.
+//  Created by Nika Chkadua on 27.09.21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
 import Foundation
 
-struct PrivacyPolicyDTO: DataTransferResponse {
+struct MobileApiAboutUsDTO: DataTransferResponse {
     struct Body: Codable {
         let html: String
 
@@ -17,7 +17,7 @@ struct PrivacyPolicyDTO: DataTransferResponse {
         }
     }
 
-    typealias Entity = PrivacyPolicyEntity
+    typealias Entity = AboutUsEntity
 
     static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
         .success(.init(html: body.html))

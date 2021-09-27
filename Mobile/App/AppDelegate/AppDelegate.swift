@@ -159,6 +159,7 @@ public extension DependencyContainer {
 		Module { DefaultTermsAndConditionsRepository() as TermsAndConditionsRepository }
         Module { DefaultFAQRepository() as FAQRepository }
         Module { DefaultContactRepository() as ContactRepository }
+        Module { DefaultAboutUsRepository() as AboutUsRepository }
     }
 
     static var factories = DependencyContainer {
