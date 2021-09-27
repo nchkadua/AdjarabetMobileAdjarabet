@@ -12,6 +12,7 @@ import WebKit
 public class WebViewController: ABViewController {
     var viewModel: WebViewModel!
     private let webView = WKWebView()
+    private var refreshController = UIRefreshControl()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -45,6 +46,7 @@ public class WebViewController: ABViewController {
     }
 
     private func setupNavigationItems() {
+        setTitle(title: "www.adjarabet.com", uppercase: false)
         setDismissBarButtonItemIfNeeded(width: 44)
     }
 
