@@ -173,6 +173,7 @@ public enum DesignSystem {
                 case .georgian: return adjaraMont(with: fontStyle, pointSize: pointSize)
                 case .armenian: return adjaraMont(with: fontStyle, pointSize: pointSize)
                 case .english:  return adjaraMont(with: fontStyle, pointSize: pointSize)
+                case .russian:  return adjaraMont(with: fontStyle, pointSize: pointSize)
                 }
             }
 

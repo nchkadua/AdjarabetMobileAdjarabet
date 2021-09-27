@@ -122,6 +122,7 @@ extension DefaultLoginViewModel: LoginViewModel {
         case .georgian: image = R.image.login.qa_geo()
         case .english: image = R.image.login.qa_eng()
         case .armenian: image = R.image.login.qa_eng()
+        case .russian: image = R.image.login.qa_eng()
         }
 
         actionSubject.onNext(.configureQaButton(image: image ?? UIImage()))
