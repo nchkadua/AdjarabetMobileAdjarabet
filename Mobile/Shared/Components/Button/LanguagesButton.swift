@@ -25,7 +25,6 @@ class LanguagesButton: UIButton {
         layer.cornerRadius = 0
         clipsToBounds = true
         titleLabel?.textAlignment = .left
-//        titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
         imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         setFont(to: .subHeadline(fontCase: .upper, fontStyle: .semiBold))
@@ -63,7 +62,6 @@ class LanguagesButton: UIButton {
         let nextLanguage = languageStorage.currentLanguage.next()
 
         changeLanguage(to: nextLanguage)
-//        setTitleWithoutAnimation(getLanguage(by: nextLanguage.localizableIdentifier), for: .normal)
         setImage(getIcon(by: nextLanguage.localizableIdentifier).withRenderingMode(.alwaysOriginal), for: .normal)
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }

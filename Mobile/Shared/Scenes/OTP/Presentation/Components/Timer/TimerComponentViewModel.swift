@@ -42,6 +42,7 @@ extension DefaultTimerComponentViewModel: TimerComponentViewModel {
         case .georgian: actionSubject.onNext(.setAdditionalConstraint(constraint: 38))
         case .english: actionSubject.onNext(.setAdditionalConstraint(constraint: -15))
         case .armenian: actionSubject.onNext(.setAdditionalConstraint(constraint: -15))
+        case .russian: actionSubject.onNext(.setAdditionalConstraint(constraint: -15))
         }
     }
 
