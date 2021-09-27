@@ -12,6 +12,7 @@ protocol FAQQuestionsViewModel: BaseViewModel, FAQQuestionsViewModelInput, FAQQu
 }
 
 public struct FAQQuestionsViewModelParams {
+    let questions: [FAQQuestion]
     let showDismissButton: Bool
 }
 
@@ -30,7 +31,7 @@ public enum FAQQuestionsViewModelOutputAction {
 }
 
 public enum FAQQuestionsViewModelRoute {
-    case navigateToAnswers(questionTitle: String)
+    case navigateToAnswers(question: FAQQuestion)
 }
 
 public class DefaultFAQQuestionsViewModel: DefaultBaseViewModel {
@@ -54,12 +55,12 @@ extension DefaultFAQQuestionsViewModel: FAQQuestionsViewModel {
     private func setupQuestions() {
         var dataProviders: AppCellDataProviders = []
 
-        FAQCategoriesProvider.questions().forEach {
-            let viewModel = DefaultFAQQuestionComponentViewModel(params: .init(question: $0.question))
+        params.questions.forEach {
+            let viewModel = DefaultFAQQuestionComponentViewModel(params: .init(question: $0))
 
             viewModel.action.subscribe(onNext: { [weak self] action in
                 switch action {
-                case .didSelect(let indexPath): self?.routeSubject.onNext(.navigateToAnswers(questionTitle: FAQCategoriesProvider.questions()[indexPath.row].question))
+                case .didSelect(let indexPath): self?.routeSubject.onNext(.navigateToAnswers(question: self?.params.questions[indexPath.row] ?? FAQQuestion(title: "", answer: "")))
                 default: break
                 }
             }).disposed(by: self.disposeBag)

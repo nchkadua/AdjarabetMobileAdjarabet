@@ -12,9 +12,7 @@ public protocol FAQCategoryComponentViewModel: FAQCategoryComponentViewModelInpu
                                                 FAQCategoryComponentViewModelOutput {}
 
 public struct FAQCategoryComponentViewModelParams {
-    public var title: String
-    public var subtitle: String
-    public var icon: UIImage
+    public var category: FAQCategory
 }
 
 public protocol FAQCategoryComponentViewModelInput {
@@ -28,8 +26,8 @@ public protocol FAQCategoryComponentViewModelOutput {
 }
 
 public enum FAQCategoryComponentViewModelOutputAction {
-    case set(title: String, subTitle: String, image: UIImage)
-    case didSelect(indexPath: IndexPath)
+    case set(title: String, description: String, iconUrl: String)
+    case didSelect(category: FAQCategory, indexPath: IndexPath)
 }
 
 public class DefaultFAQCategoryComponentViewModel {
@@ -46,10 +44,10 @@ extension DefaultFAQCategoryComponentViewModel: FAQCategoryComponentViewModel {
     }
 
     public func didBind() {
-        actionSubject.onNext(.set(title: params.title, subTitle: params.subtitle, image: params.icon))
+        actionSubject.onNext(.set(title: params.category.title, description: params.category.description, iconUrl: params.category.icon))
     }
 
     public func didSelect(at indexPath: IndexPath) {
-        actionSubject.onNext(.didSelect(indexPath: indexPath))
+        actionSubject.onNext(.didSelect(category: params.category, indexPath: indexPath))
     }
 }

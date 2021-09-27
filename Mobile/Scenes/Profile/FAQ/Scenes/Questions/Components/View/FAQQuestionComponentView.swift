@@ -36,7 +36,7 @@ class FAQQuestionComponentView: UIView {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title): self?.setTitle(title)
+            case .setUpWith(let question): self?.setupWith(question)
             default:
                 break
             }
@@ -45,8 +45,8 @@ class FAQQuestionComponentView: UIView {
         viewModel.didBind()
     }
 
-    private func setTitle(_ title: String) {
-        titleLabel.text = title
+    private func setupWith(_ question: FAQQuestion) {
+        titleLabel.text = question.title
     }
 }
 

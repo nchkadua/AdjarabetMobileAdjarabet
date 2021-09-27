@@ -19,6 +19,7 @@ class PromoTabComponentView: UIView {
     // MARK: Constraint Outlets
     @IBOutlet weak private var buttonPublicCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak private var buttonPrivateCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var buttonContainerCenterConstraint: NSLayoutConstraint!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,21 +60,15 @@ class PromoTabComponentView: UIView {
         switch active {
         case true:
             UIView.animate(withDuration: 0.3, animations: { [self] in
-                buttonPublic.setFont(to: .title2(fontCase: .upper, fontStyle: .bold))
                 buttonPublic.setTitleColor(to: .primaryText(), for: .normal)
-
-                buttonPublicCenterConstraint.constant = -67
-                buttonPrivateCenterConstraint.constant = 90
+                buttonContainerCenterConstraint.constant = 30
 
                 layoutIfNeeded()
             })
         case false:
             UIView.animate(withDuration: 0.3, animations: { [self] in
-                buttonPublic.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))
                 buttonPublic.setTitleColor(to: .tertiaryText(), for: .normal)
-
-                buttonPublicCenterConstraint.constant = -90
-                buttonPrivateCenterConstraint.constant = 67
+                buttonContainerCenterConstraint.constant = -20
 
                 layoutIfNeeded()
             })
@@ -84,12 +79,10 @@ class PromoTabComponentView: UIView {
         switch active {
         case true:
             UIView.animate(withDuration: 0.3, animations: { [self] in
-                buttonPrivate.setFont(to: .title2(fontCase: .upper, fontStyle: .bold))
                 buttonPrivate.setTitleColor(to: .primaryText(), for: .normal)
             })
         case false:
             UIView.animate(withDuration: 0.3, animations: { [self] in
-                buttonPrivate.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))
                 buttonPrivate.setTitleColor(to: .tertiaryText(), for: .normal)
             })
         }
@@ -115,7 +108,7 @@ extension PromoTabComponentView: Xibable {
         buttonPublic.isHighlighted = false
         buttonPublic.addTarget(self, action: #selector(buttonPublicDidTap), for: .touchUpInside)
 
-        buttonPrivate.setFont(to: .title2(fontCase: .upper, fontStyle: .semiBold))
+        buttonPrivate.setFont(to: .title2(fontCase: .upper, fontStyle: .bold))
         buttonPrivate.setTitleColor(to: .tertiaryText(), for: .normal)
         buttonPrivate.setTitle(R.string.localization.promotions_private_button_title.localized().uppercased(), for: .normal)
         buttonPrivate.isHighlighted = false

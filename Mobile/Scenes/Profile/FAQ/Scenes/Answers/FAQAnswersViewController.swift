@@ -39,7 +39,7 @@ public class FAQAnswersViewController: ABViewController {
 
     private func didRecive(action: FAQAnswersViewModelOutputAction) {
         switch action {
-        case .setTitle(let title): titleLabel.text = title
+        case .setupWithQuestion(let question): setupWithQuestion(question)
         }
     }
 
@@ -79,6 +79,11 @@ public class FAQAnswersViewController: ABViewController {
         textView.setTextColor(to: .secondaryText())
         textView.isEditable = false
         textView.isSelectable = false
+    }
+
+    private func setupWithQuestion(_ question: FAQQuestion) {
+        titleLabel.text = question.title
+        textView.attributedText = question.answer.htmlToAttributedString
     }
 }
 

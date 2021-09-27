@@ -89,8 +89,8 @@ public extension DependencyContainer {
         Module { DefaultDocumentationViewModel(params: .init()) as DocumentationViewModel }
         Module { DefaultCloseAccountViewModel(params: .init()) as CloseAccountViewModel }
         Module { DefaultFAQCategoriesViewModel(params: .init(showDismissButton: true)) as FAQCategoriesViewModel }
-        Module { DefaultFAQQuestionsViewModel(params: .init(showDismissButton: true)) as FAQQuestionsViewModel }
-        Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, questionTitle: "")) as FAQAnswersViewModel }
+        Module { DefaultFAQQuestionsViewModel(params: .init(questions: [], showDismissButton: true)) as FAQQuestionsViewModel }
+        Module { DefaultFAQAnswersViewModel(params: .init(showDismissButton: true, question: .init(title: "", answer: ""))) as FAQAnswersViewModel }
         Module { DefaultTermsAndConditionsViewModel(params: .init()) as TermsAndConditionsViewModel }
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
         Module { DefaultNotVerifiedUserViewModel(params: .init()) as NotVerifiedUserViewModel }
@@ -157,6 +157,8 @@ public extension DependencyContainer {
 
         Module { DefaultPrivacyPolicyRepository() as PrivacyPolicyRepository }
 		Module { DefaultTermsAndConditionsRepository() as TermsAndConditionsRepository }
+        Module { DefaultFAQRepository() as FAQRepository }
+        Module { DefaultContactRepository() as ContactRepository }
     }
 
     static var factories = DependencyContainer {

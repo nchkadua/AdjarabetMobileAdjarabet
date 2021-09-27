@@ -12,7 +12,7 @@ public protocol FAQQuestionComponentViewModel: FAQQuestionComponentViewModelInpu
                                                 FAQQuestionComponentViewModelOutput {}
 
 public struct FAQQuestionComponentViewModelParams {
-    let question: String
+    let question: FAQQuestion
 }
 
 public protocol FAQQuestionComponentViewModelInput {
@@ -26,7 +26,7 @@ public protocol FAQQuestionComponentViewModelOutput {
 }
 
 public enum FAQQuestionComponentViewModelOutputAction {
-    case set(title: String)
+    case setUpWith(question: FAQQuestion)
     case didSelect(indexPath: IndexPath)
 }
 
@@ -44,7 +44,7 @@ extension DefaultFAQQuestionComponentViewModel: FAQQuestionComponentViewModel {
     }
 
     public func didBind() {
-        actionSubject.onNext(.set(title: params.question))
+        actionSubject.onNext(.setUpWith(question: params.question))
     }
 
     public func didSelect(at indexPath: IndexPath) {

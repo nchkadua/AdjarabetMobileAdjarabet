@@ -12,6 +12,7 @@ public protocol ContactPhoneComponentViewModel: ContactPhoneComponentViewModelIn
                                                 ContactPhoneComponentViewModelOutput {}
 
 public struct ContactPhoneComponentViewModelParams {
+    let phones: [String]
 }
 
 public protocol ContactPhoneComponentViewModelInput {
@@ -24,6 +25,7 @@ public protocol ContactPhoneComponentViewModelOutput {
 }
 
 public enum ContactPhoneComponentViewModelOutputAction {
+    case setupWithPhoneNumbers(numbers: [String])
 }
 
 public class DefaultContactPhoneComponentViewModel {
@@ -40,6 +42,6 @@ extension DefaultContactPhoneComponentViewModel: ContactPhoneComponentViewModel 
     }
 
     public func didBind() {
-//        actionSubject.onNext()
+        actionSubject.onNext(.setupWithPhoneNumbers(numbers: params.phones))
     }
 }
