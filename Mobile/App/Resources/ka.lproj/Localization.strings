@@ -9,6 +9,7 @@
 /* Shared */
 "status_message_internet_connection_established" = "ინტერნეტთან კავშირი აღდგა";
 "status_message_internet_connection_lost" = "ინტერნეტთან კავშირი არ არის";
+"blocked_user_message_text" = "თქვენი ანგარიში დროებით დაბლოკილია";
 
 /* Main Tab Bar */
 "slots_item_title" = "სლოტები";

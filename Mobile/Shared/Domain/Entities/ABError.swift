@@ -155,10 +155,10 @@ class ABError {
 			var lowerNote: String
 
 			init(
-				icon: UIImage = R.image.deposit.add_card_red()!,
-				description: String = "here is the desc",
-				upperNote: String = "1 Day",
-				lowerNote: String = "23:59"
+				icon: UIImage = R.image.shared.blocked_user()!,
+				description: String = R.string.localization.blocked_user_message_text.localized(),
+				upperNote: String = "",
+				lowerNote: String = ""
 			) {
 				self.icon = icon
 				self.description = description

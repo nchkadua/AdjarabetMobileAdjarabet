@@ -374,14 +374,12 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
      public func networkConnectionEstablished() {
 		DispatchQueue.main.async {
 			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionEstablished.icon, description: Constants.InternetConnectionStatus.connectionEstablished.description)))))
-//			self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init())))) // FIXME
 		}
      }
 
 	public func networkConnectionLost() {
 		DispatchQueue.main.async {
 			self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
-//			self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init())))) // FIXME
 		}
 	}
 
@@ -389,7 +387,6 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 		if !NetworkConnectionManager.shared.isConnected {
 			DispatchQueue.main.async {
 				self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: Constants.InternetConnectionStatus.connectionLost.icon, description: Constants.InternetConnectionStatus.connectionLost.description)))))
-//				self.show(error: .init(type: .`init`(description: .blockedUserNotification(description: .init())))) // FIXME
 			}
 		}
 	}

@@ -9,6 +9,7 @@
 /* Shared */
 "status_message_internet_connection_established" = "Internet connection has established";
 "status_message_internet_connection_lost" = "No internet connection";
+"blocked_user_message_text" = "Your user is temporarily blocked";
 
 /* Main Tab Bar */
 "slots_item_title" = "Slots";
