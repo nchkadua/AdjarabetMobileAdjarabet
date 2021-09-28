@@ -25,6 +25,7 @@ protocol LoginViewModelInput {
     func login(username: String, password: String)
     func biometricLogin()
     func languageDidChange()
+    func createRegistrationUrlRequest()
 }
 
 protocol LoginViewModelOutput {
@@ -46,6 +47,7 @@ enum LoginViewModelRoute {
     case openMainTabBar(params: MainContainerViewModelParams)
     case openAlert(title: String, message: String? = nil)
     case openNotVerifiedUserPage
+    case openRegistration(request: URLRequest)
 }
 
 class DefaultLoginViewModel: DefaultBaseViewModel {
@@ -100,6 +102,7 @@ class DefaultLoginViewModel: DefaultBaseViewModel {
 extension DefaultLoginViewModel: LoginViewModel {
     var action: Observable<LoginViewModelOutputAction> { actionSubject.asObserver() }
     var route: Observable<LoginViewModelRoute> { routeSubject.asObserver() }
+    private var httpRequestBuilder: HttpRequestBuilder { HttpRequestBuilderImpl.createInstance() }
 
     private var biometryIsOn: Bool {
         biometryStateStorage.currentState == .on
@@ -148,5 +151,12 @@ extension DefaultLoginViewModel: LoginViewModel {
         biometricLoginUseCase.execute(biometricSuccess: { [weak self] in
             self?.actionSubject.onNext(.setLoginButton(isLoading: true))
         }, completion: handleLogin(result:))
+    }
+
+    func createRegistrationUrlRequest() {
+        let request = httpRequestBuilder.set(host: "https://www.adjarabet.com/ka/SignUp/ThreeSteps/First")
+                    .set(method: HttpMethodGet())
+                    .build()
+        routeSubject.onNext(.openRegistration(request: request))
     }
 }

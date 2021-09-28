@@ -49,7 +49,7 @@ public class TermsAndConditionsViewController: ABViewController {
         switch route {
         case .openPage(let destination):
 			let content = viewModel.getCategoryContentToDisplay(with: destination)
-			let vc = webViewControllerFactory.make(params: .init(loadType: .html(html: content)))
+            let vc = webViewControllerFactory.make(params: .init(loadType: .html(html: content), canNavigate: false))
 			let navc = vc.wrapInNavWith(presentationStyle: .fullScreen)
 			navc.navigationBar.styleForPrimaryPage()
 			navigationController?.present(navc, animated: true, completion: nil)

@@ -62,7 +62,7 @@ public class DocumentationViewController: ABViewController {
         case .privacyPolicy:
             viewModel.createPrivacyPolicyRequest()
 		case .termsAndConditions:
-			viewModel.createTermsAndConditionsRequest()
+            viewModel.createTermsAndConditionsRequest()
         }
     }
 

@@ -12,12 +12,12 @@ public protocol WebViewHeaderComponentViewModel: WebViewHeaderComponentViewModel
                                                 WebViewHeaderComponentViewModelOutput {}
 
 public struct WebViewHeaderComponentViewModelParams {
-    let shouldNavigate: Bool
-    let title: String
 }
 
 public protocol WebViewHeaderComponentViewModelInput {
     func didBind()
+    func set(_ title: String, _ shouldNavigate: Bool)
+    func activateBackButton()
     func goBack()
     func goForward()
     func reload()
@@ -35,6 +35,7 @@ public enum WebViewHeaderComponentViewModelOutputAction {
     case goForward
     case reload
     case dismiss
+    case activateBackButton
 }
 
 public class DefaultWebViewHeaderComponentViewModel {
@@ -50,8 +51,10 @@ extension DefaultWebViewHeaderComponentViewModel: WebViewHeaderComponentViewMode
         actionSubject.asObserver()
     }
 
-    public func didBind() {
-        actionSubject.onNext(.setupWith(title: params.title, navigation: params.shouldNavigate))
+    public func didBind() {}
+
+    public func set(_ title: String, _ shouldNavigate: Bool) {
+        actionSubject.onNext(.setupWith(title: title, navigation: shouldNavigate))
     }
 
     public func goBack() {
@@ -68,5 +71,9 @@ extension DefaultWebViewHeaderComponentViewModel: WebViewHeaderComponentViewMode
 
     public func dismiss() {
         actionSubject.onNext(.dismiss)
+    }
+
+    public func activateBackButton() {
+        actionSubject.onNext(.activateBackButton)
     }
 }

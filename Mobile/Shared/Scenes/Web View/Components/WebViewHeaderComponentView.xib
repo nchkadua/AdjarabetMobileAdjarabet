@@ -24,62 +24,58 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-Kn-6AX">
-                    <rect key="frame" x="21" y="21" width="17" height="17"/>
+                    <rect key="frame" x="16" y="11" width="37" height="37"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="17" id="3w9-Cs-CQc"/>
-                        <constraint firstAttribute="width" constant="17" id="5sq-mk-GIt"/>
+                        <constraint firstAttribute="height" constant="37" id="3w9-Cs-CQc"/>
+                        <constraint firstAttribute="width" constant="37" id="5sq-mk-GIt"/>
                     </constraints>
-                    <state key="normal" image="Shared/close"/>
+                    <state key="normal" image="WebView/close"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-kl-SYv">
-                    <rect key="frame" x="79" y="21" width="17" height="17"/>
+                    <rect key="frame" x="44.5" y="11" width="37" height="37"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="17" id="K3U-0Q-axL"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="17" id="d3Q-SM-XBF"/>
-                        <constraint firstAttribute="width" constant="17" id="hY7-vb-tu5"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="j5O-TH-Yv1"/>
+                        <constraint firstAttribute="height" constant="37" id="K3U-0Q-axL"/>
+                        <constraint firstAttribute="width" constant="37" id="hY7-vb-tu5"/>
                     </constraints>
-                    <state key="normal" image="Shared/back"/>
+                    <state key="normal" image="WebView/arrow-left"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-iE-I2D">
-                    <rect key="frame" x="278" y="21" width="17" height="17"/>
+                    <rect key="frame" x="292.5" y="11" width="37" height="37"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="ZaO-fw-iNk"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="17" id="icf-Bc-Dnj"/>
-                        <constraint firstAttribute="width" constant="17" id="vFG-s0-AyB"/>
-                        <constraint firstAttribute="height" constant="17" id="vhH-gX-teN"/>
+                        <constraint firstAttribute="width" constant="37" id="vFG-s0-AyB"/>
+                        <constraint firstAttribute="height" constant="37" id="vhH-gX-teN"/>
                     </constraints>
-                    <state key="normal" image="Components/GameLauncher/in"/>
+                    <state key="normal" image="WebView/arrow-right"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.adjarabet.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL9-VI-Qye">
-                    <rect key="frame" x="112" y="19" width="151" height="21"/>
+                    <rect key="frame" x="97.5" y="19" width="180" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Yu3-iA-W3U"/>
-                        <constraint firstAttribute="width" constant="151" id="aSV-kc-eGa"/>
+                        <constraint firstAttribute="width" constant="180" id="aSV-kc-eGa"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M10-F1-Y6V">
-                    <rect key="frame" x="337" y="21" width="17" height="17"/>
+                    <rect key="frame" x="322" y="11" width="37" height="37"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="17" id="2Ex-oh-wWA"/>
-                        <constraint firstAttribute="width" constant="17" id="FS9-VN-woo"/>
+                        <constraint firstAttribute="height" constant="37" id="2Ex-oh-wWA"/>
+                        <constraint firstAttribute="width" constant="37" id="FS9-VN-woo"/>
                     </constraints>
-                    <state key="normal" image="Shared/dropDown"/>
+                    <state key="normal" image="WebView/refresh"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="Ncc-Kn-6AX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="21" id="01i-On-Y9h"/>
-                <constraint firstAttribute="trailing" secondItem="M10-F1-Y6V" secondAttribute="trailing" constant="21" id="4sO-tt-jIA"/>
+                <constraint firstItem="Ncc-Kn-6AX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="01i-On-Y9h"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="YL9-VI-Qye" secondAttribute="bottom" constant="20" id="2hQ-3e-Mip"/>
+                <constraint firstAttribute="trailing" secondItem="M10-F1-Y6V" secondAttribute="trailing" constant="16" id="4sO-tt-jIA"/>
                 <constraint firstItem="sMu-iE-I2D" firstAttribute="leading" secondItem="YL9-VI-Qye" secondAttribute="trailing" constant="15" id="K6g-Va-SGv"/>
                 <constraint firstItem="UUY-kl-SYv" firstAttribute="centerY" secondItem="YL9-VI-Qye" secondAttribute="centerY" id="P7o-mU-q6J"/>
                 <constraint firstItem="sMu-iE-I2D" firstAttribute="centerY" secondItem="YL9-VI-Qye" secondAttribute="centerY" id="aMt-8h-3Pt"/>
                 <constraint firstItem="YL9-VI-Qye" firstAttribute="leading" secondItem="UUY-kl-SYv" secondAttribute="trailing" constant="16" id="dOs-rs-lae"/>
                 <constraint firstItem="Ncc-Kn-6AX" firstAttribute="centerY" secondItem="UUY-kl-SYv" secondAttribute="centerY" id="evb-Tb-LjC"/>
-                <constraint firstItem="YL9-VI-Qye" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-22.5" id="kWS-Hv-6PC"/>
                 <constraint firstItem="YL9-VI-Qye" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="mOz-OJ-33W"/>
                 <constraint firstItem="M10-F1-Y6V" firstAttribute="centerY" secondItem="sMu-iE-I2D" secondAttribute="centerY" id="rzp-w4-5MZ"/>
             </constraints>
@@ -88,9 +84,9 @@
         </view>
     </objects>
     <resources>
-        <image name="Components/GameLauncher/in" width="21" height="36"/>
-        <image name="Shared/back" width="11" height="18"/>
-        <image name="Shared/close" width="16" height="16"/>
-        <image name="Shared/dropDown" width="12" height="8"/>
+        <image name="WebView/arrow-left" width="11.5" height="21"/>
+        <image name="WebView/arrow-right" width="11.5" height="21"/>
+        <image name="WebView/close" width="21" height="21"/>
+        <image name="WebView/refresh" width="21" height="21.5"/>
     </resources>
 </document>

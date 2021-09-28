@@ -40,6 +40,9 @@ class WebViewHeaderComponentView: UIView {
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .setupWith(let title, let navigation): self?.set(title, navigation)
+            case .activateBackButton:
+                self?.backButton.alpha = 1.0
+                self?.backButton.isUserInteractionEnabled = true
             default:
                 break
             }
@@ -51,13 +54,20 @@ class WebViewHeaderComponentView: UIView {
     private func set(_ title: String, _ navigation: Bool) {
         titleLabel.text = title
 
-        backButton.isHidden = navigation
-        forwardButton.isHidden = navigation
-        reloadButton.isHidden = navigation
+        backButton.isHidden = !navigation
+        forwardButton.isHidden = !navigation
+        reloadButton.isHidden = !navigation
+    }
+
+    @objc private func dismiss() {
+        viewModel.dismiss()
     }
 
     @objc private func goBack() {
         viewModel.goBack()
+
+        forwardButton.alpha = 1.0
+        forwardButton.isUserInteractionEnabled = true
     }
 
     @objc private func goForward() {
@@ -80,11 +90,13 @@ extension WebViewHeaderComponentView: Xibable {
     }
 
     func setupUI() {
-        view.backgroundColor = DesignSystem.Color.secondaryBg().value
+        view.setBackgorundColor(to: .primaryBg())
 
         titleLabel.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         titleLabel.setTextColor(to: .primaryText())
         titleLabel.text = "www.adjarabet.com"
+
+        closeButton.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
 
         backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         backButton.isHidden = true

@@ -12,8 +12,9 @@ import WebKit
 public class WebViewController: ABViewController {
     var viewModel: WebViewModel!
     private let webView = WKWebView()
-    @IBOutlet weak var headerComponentView: WebViewHeaderComponentView!
-    
+    @IBOutlet private weak var webViewContainer: UIView!
+    @IBOutlet private weak var headerComponentView: WebViewHeaderComponentView!
+    private var isLoaded = false
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -24,7 +25,7 @@ public class WebViewController: ABViewController {
         errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
-    
+
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -46,31 +47,24 @@ public class WebViewController: ABViewController {
         switch action {
         case .loadRequst(let request): load(request)
         case .loadHtml(let html): load(html)
-        case .bindToGridViewModel(let viewModel): bind(to: viewModel)
-        }
-    }
-    
-    /// Header
-    private func bindToGrid(_ viewModel: WebViewHeaderComponentViewModel) {
-        headerComponentView.setAndBind(viewModel: viewModel)
-        bind(to: viewModel)
-    }
-
-    private func bind(to viewModel: WebViewHeaderComponentViewModel) {
-        viewModel.action.subscribe(onNext: { [weak self] action in
-            self?.didRecive(action: action)
-        }).disposed(by: disposeBag)
-    }
-
-    private func didRecive(action: WebViewHeaderComponentViewModelOutputAction) {
-        switch action {
+        case .bindToHeaderViewModel(let viewModel, let navigationEnabled): bindToHeader(viewModel, navigationEnabled)
         case .dismiss: dismiss(animated: true, completion: nil)
-        case .goBack: webView.goBack()
-        case .goForward: webView.goForward()
-        case .refresh: webView.reload()
-        default:
-            break
+        case .goBack:
+            guard webView.canGoBack else {return}
+            webView.goBack()
+        case .goForward:
+            guard webView.canGoForward else {return}
+            webView.goForward()
+        case .reload:
+            webView.reload()
         }
+    }
+
+    /// Header
+    private func bindToHeader(_ headerViewModel: WebViewHeaderComponentViewModel, _ navigationEnabled: Bool) {
+        headerComponentView.setAndBind(viewModel: headerViewModel)
+        headerViewModel.set("www.adjarabet.com", navigationEnabled)
+        viewModel.subscribeTo(headerViewModel)
     }
 
     // MARK: Setup methods
@@ -84,7 +78,7 @@ public class WebViewController: ABViewController {
         webView.backgroundColor = .clear
         webView.isOpaque = false
         view.addSubview(webView)
-        webView.pinSafely(to: view)
+        webView.pinSafely(to: webViewContainer)
     }
 
     // MARK: Action methods
