@@ -107,6 +107,7 @@ public extension DependencyContainer {
 		Module { DefaultStatusMessageComponentViewModel(params: .init()) as StatusMessageComponentViewModel }
         Module { DefaultPromoTabComponentViewModel(params: .init()) as PromoTabComponentViewModel }
 		Module { DefaultBlockedUserNotificationComponentViewModel(params: .init()) as BlockedUserNotificationComponentViewModel}
+        Module { DefaultWebViewHeaderComponentViewModel(params: .init(shouldNavigate: false, title: "")) }
         // Withdraw
         Module { DefaultCashOutVisaViewModel() as CashOutVisaViewModel }
         Module { DefaultWithdrawVisaInfoViewModel() as WithdrawVisaInfoViewModel }

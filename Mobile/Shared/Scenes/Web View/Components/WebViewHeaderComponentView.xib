@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewHeaderComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="UUY-kl-SYv" id="NFd-9B-t5e"/>
+                <outlet property="closeButton" destination="Ncc-Kn-6AX" id="eTk-1K-78Q"/>
+                <outlet property="forwardButton" destination="sMu-iE-I2D" id="Yq2-Ga-Jc1"/>
+                <outlet property="refreshButton" destination="M10-F1-Y6V" id="VQv-1z-ftn"/>
+                <outlet property="titleLabel" destination="YL9-VI-Qye" id="FRM-bz-dRt"/>
+                <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-Kn-6AX">
+                    <rect key="frame" x="21" y="21" width="17" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="3w9-Cs-CQc"/>
+                        <constraint firstAttribute="width" constant="17" id="5sq-mk-GIt"/>
+                    </constraints>
+                    <state key="normal" image="Shared/close"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-kl-SYv">
+                    <rect key="frame" x="79" y="21" width="17" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="K3U-0Q-axL"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="17" id="d3Q-SM-XBF"/>
+                        <constraint firstAttribute="width" constant="17" id="hY7-vb-tu5"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="j5O-TH-Yv1"/>
+                    </constraints>
+                    <state key="normal" image="Shared/back"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-iE-I2D">
+                    <rect key="frame" x="278" y="21" width="17" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="ZaO-fw-iNk"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="17" id="icf-Bc-Dnj"/>
+                        <constraint firstAttribute="width" constant="17" id="vFG-s0-AyB"/>
+                        <constraint firstAttribute="height" constant="17" id="vhH-gX-teN"/>
+                    </constraints>
+                    <state key="normal" image="Components/GameLauncher/in"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.adjarabet.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL9-VI-Qye">
+                    <rect key="frame" x="112" y="19" width="151" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Yu3-iA-W3U"/>
+                        <constraint firstAttribute="width" constant="151" id="aSV-kc-eGa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M10-F1-Y6V">
+                    <rect key="frame" x="337" y="21" width="17" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="2Ex-oh-wWA"/>
+                        <constraint firstAttribute="width" constant="17" id="FS9-VN-woo"/>
+                    </constraints>
+                    <state key="normal" image="Shared/dropDown"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="Ncc-Kn-6AX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="21" id="01i-On-Y9h"/>
+                <constraint firstAttribute="trailing" secondItem="M10-F1-Y6V" secondAttribute="trailing" constant="21" id="4sO-tt-jIA"/>
+                <constraint firstItem="sMu-iE-I2D" firstAttribute="leading" secondItem="YL9-VI-Qye" secondAttribute="trailing" constant="15" id="K6g-Va-SGv"/>
+                <constraint firstItem="UUY-kl-SYv" firstAttribute="centerY" secondItem="YL9-VI-Qye" secondAttribute="centerY" id="P7o-mU-q6J"/>
+                <constraint firstItem="sMu-iE-I2D" firstAttribute="centerY" secondItem="YL9-VI-Qye" secondAttribute="centerY" id="aMt-8h-3Pt"/>
+                <constraint firstItem="YL9-VI-Qye" firstAttribute="leading" secondItem="UUY-kl-SYv" secondAttribute="trailing" constant="16" id="dOs-rs-lae"/>
+                <constraint firstItem="Ncc-Kn-6AX" firstAttribute="centerY" secondItem="UUY-kl-SYv" secondAttribute="centerY" id="evb-Tb-LjC"/>
+                <constraint firstItem="YL9-VI-Qye" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-22.5" id="kWS-Hv-6PC"/>
+                <constraint firstItem="YL9-VI-Qye" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="mOz-OJ-33W"/>
+                <constraint firstItem="M10-F1-Y6V" firstAttribute="centerY" secondItem="sMu-iE-I2D" secondAttribute="centerY" id="rzp-w4-5MZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="62" y="108"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Components/GameLauncher/in" width="21" height="36"/>
+        <image name="Shared/back" width="11" height="18"/>
+        <image name="Shared/close" width="16" height="16"/>
+        <image name="Shared/dropDown" width="12" height="8"/>
+    </resources>
+</document>
