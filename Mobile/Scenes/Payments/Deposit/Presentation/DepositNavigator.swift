@@ -6,28 +6,52 @@
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
-public class DepositNavigator: Navigator {
-    private weak var viewController: UIViewController?
+public class DepositNavigator {
+    private weak var parent: UIViewController?
+    private weak var superview: UIView?
     @Inject(from: .factories) public var visaViewControllerFactory: VisaViewControllerFactory
     @Inject(from: .factories) public var emoneyViewControllerFactory: EmoneyViewControllerFactory
     @Inject(from: .factories) public var applePayViewControllerFactory: ApplePayViewControllerFactory
 
-    public init(viewController: UIViewController) {
-        self.viewController = viewController
+    // MARK: View Controllers
+    private lazy var visaVipViewController: UIViewController = { visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self) }()
+    private lazy var visaRegularViewController: UIViewController = { visaViewControllerFactory.make(params: .init(serviceType: .regular)).wrap(in: ABNavigationController.self) }()
+    private lazy var emoneyViewController: UIViewController = { emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self) }()
+    private lazy var applePayViewController: UIViewController = { applePayViewControllerFactory.make().wrap(in: ABNavigationController.self) }()
+
+    public init(parent: UIViewController, superview: UIView) {
+        self.parent = parent
+        self.superview = superview
     }
 
-    public enum Destination {
+    enum Destination {
+        case visaRegular
+        case visaVip
+        case emoney
+        case applePay
     }
 
-    public func navigate(to destination: Destination, animated animate: Bool) {
-    }
-
-    public func viewController(by paymentMethodType: PaymentMethodType) -> UIViewController? {
-        switch paymentMethodType {
-        case .tbcVip: return visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)
-        case .tbcRegular: return visaViewControllerFactory.make(params: .init(serviceType: .regular)).wrap(in: ABNavigationController.self)
-        case .eMoney: return emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self)
-        case .aPay: return applePayViewControllerFactory.make().wrap(in: ABNavigationController.self)
+    func navigate(to destination: Destination) {
+        switch destination {
+        case .visaRegular: navigate(to: visaRegularViewController)
+        case .visaVip: navigate(to: visaVipViewController)
+        case .emoney: navigate(to: emoneyViewController)
+        case .applePay: navigate(to: applePayViewController)
         }
+    }
+
+    public func navigate(to viewController: UIViewController) {
+        guard let parent = parent,
+              let superview = superview
+        else { return }
+
+        parent.addChild(viewController)
+
+        superview.removeAllSubViews()
+        superview.addSubview(viewController.view)
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        viewController.view.pin(to: superview)
+
+        parent.didMove(toParent: parent)
     }
 }

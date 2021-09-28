@@ -63,7 +63,6 @@ extension DefaultDepositViewModel: DepositViewModel {
 
         // fetch payment list
         paymentListUseCase.list { [weak self] result in
-            self?.notify(.isLoading(loading: false))
             switch result {
             case .success(let entity):
                 let viewModels: [PaymentMethodCollectionViewCellDataProvider] = entity.filter { $0.flowId.contains("deposit") }.compactMap { payment in
@@ -71,6 +70,7 @@ extension DefaultDepositViewModel: DepositViewModel {
                     return vm
                 }
 
+                self?.notify(.isLoading(loading: false))
                 self?.paymentGridComponentViewModel.reloadCollectionView(with: viewModels)
                 self?.actionSubject.onNext(.didLoadPaymentMethods(methods: entity))
             case .failure(let error):

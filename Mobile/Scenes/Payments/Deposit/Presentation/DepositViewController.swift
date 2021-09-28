@@ -10,7 +10,7 @@ import RxSwift
 
 public class DepositViewController: ABViewController {
     @Inject(from: .viewModels) var viewModel: DepositViewModel
-    public lazy var navigator = DepositNavigator(viewController: self)
+    private lazy var navigator = DepositNavigator(parent: self, superview: childrenVCFrameView)
 
     @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var depositLabel: UILabel!
@@ -19,7 +19,6 @@ public class DepositViewController: ABViewController {
 
     @IBOutlet private weak var paymentGridComponentView: PaymentMethodGridComponentView!
     @IBOutlet private weak var childrenVCFrameView: UIView!
-    private var appPageViewController: ABPageViewController?
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -45,33 +44,21 @@ public class DepositViewController: ABViewController {
 
     private func didRecive(action: DepositViewModelOutputAction) {
         switch action {
-        case .set(let totalBalance):
-            set(totalBalance)
-        case .bindToGridViewModel(let viewModel):
-            bindToGrid(viewModel)
-        case .didLoadPaymentMethods(let methods):
-            setChildViewControllers(methods)
+        case .set(let totalBalance): set(totalBalance)
+        case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
+        case .didLoadPaymentMethods(let methods): navigateToViewController(by: methods[0].flowId)
         case .isLoading(let loading):
-            loading ? startLoading() : startLoading()
-            appPageViewController?.view.isHidden = loading
+            DispatchQueue.main.async { [self] in
+                loading ? startLoading() : startLoading()
+            }
         }
     }
 
     // MARK: Setup methods
     private func setup() {
         setBaseBackgroundColor()
-        // setupPageViewController()
         setupLabels()
         setupImageView()
-    }
-
-    private func setupPageViewController(with viewControllers: [UIViewController]) {
-        appPageViewController = ABPageViewController(viewControllers: viewControllers)
-
-        add(child: appPageViewController ?? ABPageViewController(viewControllers: []))
-        appPageViewController?.view.translatesAutoresizingMaskIntoConstraints = false
-        appPageViewController?.view.pin(to: childrenVCFrameView)
-        appPageViewController?.setSwipeEnabled(false)
     }
 
     private func setupImageView() {
@@ -119,28 +106,42 @@ public class DepositViewController: ABViewController {
 
     private func didRecive(action: PaymentMethodGridComponentViewModelOutputAction) {
         switch action {
-        case .didSelectPaymentMethod(let method, let indexPath): jumpToViewController(method, indexPath)
+        case .didSelectPaymentMethod(let method, _): navigateToViewController(method)
         default:
             break
         }
     }
 
     // MARK: Action methods
-    private func setChildViewControllers(_ paymentMethodList: [PaymentMethodEntity]) {
-        let visaVC = navigator.visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)
-        let emoneyVC = navigator.emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self)
-        let applePayVC = navigator.applePayViewControllerFactory.make().wrap(in: ABNavigationController.self)
-
-        setupPageViewController(with: [visaVC, emoneyVC, applePayVC])
-        jumpToViewController(by: PaymentMethodType(flowId: paymentMethodList[0].flowId) ?? .tbcRegular)
+    private func navigateToViewController(_ method: PaymentMethodComponentViewModel) {
+        print("ASdadsasds ", method.params.flowId)
+        guard let destination = DepositNavigator.Destination(flowId: method.params.flowId) else {
+            let message = "Unknown Deposit method"
+            self.show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
+            return
+        }
+        navigator.navigate(to: destination)
     }
 
-    private func jumpToViewController(_ method: PaymentMethodComponentViewModel, _ indexPath: IndexPath) {
-        jumpToViewController(by: PaymentMethodType(flowId: method.params.flowId) ?? .tbcRegular)
+    private func navigateToViewController(by flowId: String) {
+        guard let destination = DepositNavigator.Destination(flowId: flowId) else {
+            let message = "Unknown Deposit method"
+            self.show(error: .init(type: .`init`(description: .popup(description: .init(description: message)))))
+            return
+        }
+        navigator.navigate(to: destination)
     }
+}
 
-    private func jumpToViewController(by paymentMethodType: PaymentMethodType) {
-        guard let vc = navigator.viewController(by: paymentMethodType) else { return }
-        appPageViewController?.jump(to: vc, direction: .forward, animated: false)
+// MARK: WithdrawNavigator.Destination initializer from flowId
+fileprivate extension DepositNavigator.Destination {
+    init?(flowId: String) {
+        switch flowId {
+        case "deposite_tbc_ufc_vip":     self = .visaVip
+        case "deposite_tbc_ufc_regular": self = .visaRegular
+        case "deposit_applepay":         self = .applePay
+        case "deposite_emoney":          self = .emoney
+        default: return nil
+        }
     }
 }
