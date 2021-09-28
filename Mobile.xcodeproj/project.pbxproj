@@ -471,6 +471,9 @@
 		CE3B2BDE269C574600301F6C /* CommunicationLanguageComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3B2BD8269C574600301F6C /* CommunicationLanguageComponentView.xib */; };
 		CE3B2BE1269C574600301F6C /* CommunicationLanguageComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B2BDB269C574600301F6C /* CommunicationLanguageComponentViewModel.swift */; };
 		CE3B2BE2269C574600301F6C /* CommunicationLanguageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B2BDC269C574600301F6C /* CommunicationLanguageComponentView.swift */; };
+		CE3E325A27031AD100E5D0AA /* WebViewHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3E325427031AD100E5D0AA /* WebViewHeaderComponentView.xib */; };
+		CE3E325D27031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E325727031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift */; };
+		CE3E325E27031AD100E5D0AA /* WebViewHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E325827031AD100E5D0AA /* WebViewHeaderComponentView.swift */; };
 		CE454654260C89EC00B01E19 /* VisaLimitComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */; };
 		CE454658260C89F900B01E19 /* VisaLimitComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */; };
 		CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */; };
@@ -1449,6 +1452,9 @@
 		CE3B2BD8269C574600301F6C /* CommunicationLanguageComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunicationLanguageComponentView.xib; sourceTree = "<group>"; };
 		CE3B2BDB269C574600301F6C /* CommunicationLanguageComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationLanguageComponentViewModel.swift; sourceTree = "<group>"; };
 		CE3B2BDC269C574600301F6C /* CommunicationLanguageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationLanguageComponentView.swift; sourceTree = "<group>"; };
+		CE3E325427031AD100E5D0AA /* WebViewHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewHeaderComponentView.xib; sourceTree = "<group>"; };
+		CE3E325727031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHeaderComponentViewModel.swift; sourceTree = "<group>"; };
+		CE3E325827031AD100E5D0AA /* WebViewHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHeaderComponentView.swift; sourceTree = "<group>"; };
 		CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaLimitComponentView.swift; sourceTree = "<group>"; };
 		CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaLimitComponentView.xib; sourceTree = "<group>"; };
 		CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaInstructionsComponentView.swift; sourceTree = "<group>"; };
@@ -4452,6 +4458,7 @@
 		CE03746825F8D6F00061F507 /* Web View */ = {
 			isa = PBXGroup;
 			children = (
+				CE3E325327031AB800E5D0AA /* Components */,
 				CE03746D25F8D7180061F507 /* WebViewModel.swift */,
 				CE03746B25F8D7180061F507 /* WebViewController.swift */,
 				CE03746C25F8D7180061F507 /* WebViewControllerFactory.swift */,
@@ -4783,7 +4790,6 @@
 		CE2AB491266A440F00C88262 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CEC03E3826FB398E00904F2B /* Tab */,
 				CE2AB493266A445000C88262 /* Components */,
 				D87F49F82451FED9004D67A2 /* PromotionsViewModel.swift */,
 				D87E3C512445FDD5004A4BDF /* PromotionsViewController.swift */,
@@ -5113,6 +5119,16 @@
 				CE3B2BD8269C574600301F6C /* CommunicationLanguageComponentView.xib */,
 			);
 			path = "Communication Language";
+			sourceTree = "<group>";
+		};
+		CE3E325327031AB800E5D0AA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E325827031AD100E5D0AA /* WebViewHeaderComponentView.swift */,
+				CE3E325727031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift */,
+				CE3E325427031AD100E5D0AA /* WebViewHeaderComponentView.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		CE454651260C89C000B01E19 /* Instructions */ = {
@@ -6049,13 +6065,6 @@
 				CECA7EC526AEEA4900BCF04A /* Cell */,
 			);
 			path = Address;
-			sourceTree = "<group>";
-		};
-		CEC03E3826FB398E00904F2B /* Tab */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tab;
 			sourceTree = "<group>";
 		};
 		CEC03E3B26FB3AD600904F2B /* Tab */ = {
@@ -7489,6 +7498,7 @@
 				C75D1AE5261205F4002AF763 /* HBHJSlot.zip in Resources */,
 				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
 				76BDF46E25760512007B27A7 /* AccountParametersTableViewCell.xib in Resources */,
+				CE3E325A27031AD100E5D0AA /* WebViewHeaderComponentView.xib in Resources */,
 				D8CFD8B3244C8529001F4BAA /* GameLauncherComponentView.xib in Resources */,
 				C75D1B00261205F4002AF763 /* SPJSlot.zip in Resources */,
 				C75D1AE8261205F4002AF763 /* FHSJSlot.zip in Resources */,
@@ -7955,6 +7965,7 @@
 				CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */,
 				C766804926A86D83005EB6E8 /* CloseAccountButtonTableViewCellDataProvider.swift in Sources */,
 				76BDF45E2576043A007B27A7 /* AccountParametersViewController.swift in Sources */,
+				CE3E325E27031AD100E5D0AA /* WebViewHeaderComponentView.swift in Sources */,
 				C78E53112685B12300EE1C18 /* HighSecurityNavigator.swift in Sources */,
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
 				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
@@ -8107,6 +8118,7 @@
 				FB584B4526B7C1E800FA25DB /* TermsAndConditionsComponentView.swift in Sources */,
 				FB612A0526C5FBEC00022F24 /* EmptyStateComponentView.swift in Sources */,
 				C7DB6EF626370F9600EC1CB9 /* EmptyCollectionViewCell.swift in Sources */,
+				CE3E325D27031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift in Sources */,
 				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
 				CE693AF926A6D80F0049D665 /* FAQCategoryComponentViewModel.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
