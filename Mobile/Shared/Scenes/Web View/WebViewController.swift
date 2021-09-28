@@ -12,7 +12,8 @@ import WebKit
 public class WebViewController: ABViewController {
     var viewModel: WebViewModel!
     private let webView = WKWebView()
-    private var refreshController = UIRefreshControl()
+    @IBOutlet weak var headerComponentView: WebViewHeaderComponentView!
+    
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -22,6 +23,16 @@ public class WebViewController: ABViewController {
         bind(to: viewModel)
         errorThrowing = viewModel
         viewModel.viewDidLoad()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -35,19 +46,37 @@ public class WebViewController: ABViewController {
         switch action {
         case .loadRequst(let request): load(request)
         case .loadHtml(let html): load(html)
+        case .bindToGridViewModel(let viewModel): bind(to: viewModel)
+        }
+    }
+    
+    /// Header
+    private func bindToGrid(_ viewModel: WebViewHeaderComponentViewModel) {
+        headerComponentView.setAndBind(viewModel: viewModel)
+        bind(to: viewModel)
+    }
+
+    private func bind(to viewModel: WebViewHeaderComponentViewModel) {
+        viewModel.action.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: WebViewHeaderComponentViewModelOutputAction) {
+        switch action {
+        case .dismiss: dismiss(animated: true, completion: nil)
+        case .goBack: webView.goBack()
+        case .goForward: webView.goForward()
+        case .refresh: webView.reload()
+        default:
+            break
         }
     }
 
     // MARK: Setup methods
     private func setup() {
         setBaseBackgroundColor(to: .primaryBg())
-        setupNavigationItems()
         setupWebView()
-    }
-
-    private func setupNavigationItems() {
-        setTitle(title: "www.adjarabet.com", uppercase: false)
-        setDismissBarButtonItemIfNeeded(width: 44)
     }
 
     private func setupWebView() {

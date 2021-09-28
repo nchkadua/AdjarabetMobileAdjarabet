@@ -13,7 +13,7 @@
                 <outlet property="backButton" destination="UUY-kl-SYv" id="NFd-9B-t5e"/>
                 <outlet property="closeButton" destination="Ncc-Kn-6AX" id="eTk-1K-78Q"/>
                 <outlet property="forwardButton" destination="sMu-iE-I2D" id="Yq2-Ga-Jc1"/>
-                <outlet property="refreshButton" destination="M10-F1-Y6V" id="VQv-1z-ftn"/>
+                <outlet property="reloadButton" destination="M10-F1-Y6V" id="qmR-xu-sFv"/>
                 <outlet property="titleLabel" destination="YL9-VI-Qye" id="FRM-bz-dRt"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
             </connections>

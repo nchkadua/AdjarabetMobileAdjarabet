@@ -20,7 +20,7 @@ public protocol WebViewHeaderComponentViewModelInput {
     func didBind()
     func goBack()
     func goForward()
-    func refresh()
+    func reload()
     func dismiss()
 }
 
@@ -33,7 +33,7 @@ public enum WebViewHeaderComponentViewModelOutputAction {
     case setupWith(title: String, navigation: Bool)
     case goBack
     case goForward
-    case refresh
+    case reload
     case dismiss
 }
 
@@ -62,8 +62,8 @@ extension DefaultWebViewHeaderComponentViewModel: WebViewHeaderComponentViewMode
         actionSubject.onNext(.goForward)
     }
 
-    public func refresh() {
-        actionSubject.onNext(.refresh)
+    public func reload() {
+        actionSubject.onNext(.reload)
     }
 
     public func dismiss() {

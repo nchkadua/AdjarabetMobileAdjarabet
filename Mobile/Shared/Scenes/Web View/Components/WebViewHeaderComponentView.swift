@@ -18,7 +18,7 @@ class WebViewHeaderComponentView: UIView {
     @IBOutlet weak private var closeButton: UIButton!
     @IBOutlet weak private var backButton: UIButton!
     @IBOutlet weak private var forwardButton: UIButton!
-    @IBOutlet weak private var refreshButton: UIButton!
+    @IBOutlet weak private var reloadButton: UIButton!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,7 +53,7 @@ class WebViewHeaderComponentView: UIView {
 
         backButton.isHidden = navigation
         forwardButton.isHidden = navigation
-        refreshButton.isHidden = navigation
+        reloadButton.isHidden = navigation
     }
 
     @objc private func goBack() {
@@ -65,7 +65,7 @@ class WebViewHeaderComponentView: UIView {
     }
 
     @objc private func refresh() {
-        viewModel.refresh()
+        viewModel.reload()
     }
 }
 
@@ -92,7 +92,7 @@ extension WebViewHeaderComponentView: Xibable {
         forwardButton.addTarget(self, action: #selector(goForward), for: .touchUpInside)
         forwardButton.isHidden = true
 
-        refreshButton.addTarget(self, action: #selector(refresh), for: .touchUpInside)
-        refreshButton.isHidden = true
+        reloadButton.addTarget(self, action: #selector(refresh), for: .touchUpInside)
+        reloadButton.isHidden = true
     }
 }
