@@ -13,6 +13,7 @@ class LoginNavigator: Navigator {
     @Inject(from: .factories) public var faqViewControllerFactory: FAQCategoriesViewControllerFactory
     @Inject(from: .factories) public var contactUsViewControllerFactory: ContactUsViewControllerFactory
     @Inject(from: .factories) public var notVerifiedUserViewControllerFactory: NotVerifiedUserViewControllerFactory
+    @Inject(from: .factories) private var webViewControllerFactory: WebViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -27,6 +28,7 @@ class LoginNavigator: Navigator {
         case passwordReset
         case contactUs
         case notVerifiedUser
+        case webView(params: WebViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
@@ -40,6 +42,7 @@ class LoginNavigator: Navigator {
             navigateToPasswordReset(animate: animate)
         case .contactUs: navigateToContactUs(animate: animate)
         case .notVerifiedUser: navigateToNotVerifiedUser(animate: animate)
+        case .webView(let params): navigateToWebView(with: params, animate: animate)
         }
     }
 
@@ -78,5 +81,12 @@ class LoginNavigator: Navigator {
     private func navigateToNotVerifiedUser(animate: Bool) {
         let vc = notVerifiedUserViewControllerFactory.make(params: .init())
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
+    }
+
+    private func navigateToWebView(with params: WebViewModelParams, animate: Bool) {
+        let vc = webViewControllerFactory.make(params: params)
+        let navc = vc.wrapInNavWith(presentationStyle: .fullScreen)
+        navc.navigationBar.styleForPrimaryPage()
+        viewController?.navigationController?.present(navc, animated: true, completion: nil)
     }
 }

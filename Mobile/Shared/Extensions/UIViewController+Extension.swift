@@ -45,9 +45,15 @@ public extension UIViewController {
     }
 
     @discardableResult
-    func setTitle(title: String) -> UILabel {
+    func setTitle(title: String, uppercase: Bool = true) -> UILabel {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        label.text = title.uppercased()
+
+        if uppercase {
+            label.text = title.uppercased()
+        } else {
+            label.text = title
+        }
+
         label.setFont(to: .callout(fontCase: .lower, fontStyle: .semiBold))
         label.setTextColor(to: .primaryText())
         label.adjustsFontSizeToFitWidth = true

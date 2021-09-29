@@ -81,13 +81,13 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
 
 	public func createAboutUsRequest() {
         aboutUsRepo.getUrl(handler: handler(onSuccessHandler: { entity in
-            self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.html))))
+            self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.html), canNavigate: false)))
         }))
 	}
 
     public func createPrivacyPolicyRequest() {
         privacyPolicyRepo.getUrl(handler: handler(onSuccessHandler: { entity in
-            self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.html))))
+            self.routeSubject.onNext(.navigateToPrivacyPolicy(params: .init(loadType: .html(html: entity.html), canNavigate: false)))
         }))
     }
 

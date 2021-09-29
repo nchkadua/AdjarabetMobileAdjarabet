@@ -85,6 +85,7 @@ public class LoginViewController: ABViewController {
         case .openOTP(let params): navigator.navigate(to: .OTP(params: params), animated: true)
         case .openAlert(let title, _): showAlert(title: title)
         case .openNotVerifiedUserPage: navigator.navigate(to: .notVerifiedUser, animated: true)
+        case .openRegistration(let request): navigator.navigate(to: .webView(params: .init(loadType: .urlRequst(request: request), canNavigate: true)), animated: true)
         }
     }
 
@@ -273,6 +274,7 @@ public class LoginViewController: ABViewController {
 
     @objc private func registrationDidTap() {
         closeKeyboard()
+        viewModel.createRegistrationUrlRequest()
     }
 
     @objc private func biometryButtonDidTap() {
