@@ -151,17 +151,8 @@ public class LoginViewController: ABViewController {
     }
 
     private func setupInputViews() {
-        usernameInputView.mainTextField.textContentType = .username
-        usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title.localized())
-        usernameInputView.setSize(to: .large)
-        usernameInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
-
-        passwordInputView.mainTextField.textContentType = .password
-        passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
-        passwordInputView.setSize(to: .large)
-        passwordInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
-        passwordInputView.becomeSecureTextEntry()
-        passwordInputView.setRightButtonImage(R.image.shared.hideText() ?? UIImage(), for: .normal)
+		setupUsernameInputView()
+		setupPasswordInputView()
 
         separatorView.setBackgorundColor(to: .nonOpaque())
         separatorView2.setBackgorundColor(to: .nonOpaque())
@@ -180,6 +171,24 @@ public class LoginViewController: ABViewController {
 
         setupPasswordReminderView()
     }
+
+	private func setupUsernameInputView() {
+		usernameInputView.mainTextField.textContentType = .username
+		usernameInputView.setPlaceholder(text: R.string.localization.login_username_input_title.localized())
+		usernameInputView.setSize(to: .large)
+		usernameInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
+		usernameInputView.set(textFieldType: .username)
+	}
+
+	private func setupPasswordInputView() {
+		passwordInputView.mainTextField.textContentType = .password
+		passwordInputView.setPlaceholder(text: R.string.localization.login_password_input_title.localized())
+		passwordInputView.setSize(to: .large)
+		passwordInputView.setupWith(backgroundColor: .secondaryBg(), borderWidth: 0.0)
+		passwordInputView.becomeSecureTextEntry()
+		passwordInputView.setRightButtonImage(R.image.shared.hideText() ?? UIImage(), for: .normal)
+		passwordInputView.set(textFieldType: .password)
+	}
 
     private func subscribeTo(_ inputView: ABInputView, indicator: UIView) {
         inputView.mainTextField.rx.controlEvent([.editingDidBegin])

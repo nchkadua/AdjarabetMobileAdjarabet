@@ -121,6 +121,7 @@ public class AddCardViewController: ABViewController {
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title.localized())
         amountInputView.formatter = AmountFormatter()
+		amountInputView.set(textFieldType: .amount)
 
         amountInputView.mainTextField.rx.controlEvent([.editingChanged]).subscribe(onNext: { [weak self] in
             self?.updateAmountInputViewImage()

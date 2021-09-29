@@ -83,6 +83,7 @@ public class AddressChangeViewController: ABViewController {
     private func setupInputView() {
         addressInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         addressInputView.setPlaceholder(text: R.string.localization.new_address_placeholder.localized())
+		addressInputView.set(textFieldType: .address)
 
         Observable.combineLatest([addressInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }

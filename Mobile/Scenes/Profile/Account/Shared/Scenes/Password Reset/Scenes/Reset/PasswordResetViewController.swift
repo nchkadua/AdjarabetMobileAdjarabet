@@ -149,8 +149,10 @@ public class PasswordResetViewController: ABViewController {
 
         styleInputView(newPasswordInputView, with: R.string.localization.new_password.localized())
         newPasswordInputView.mainTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+		newPasswordInputView.set(textFieldType: .password)
 
         styleInputView(repeatePasswordInputView, with: R.string.localization.repeat_password.localized())
+		repeatePasswordInputView.set(textFieldType: .password)
     }
 
     private func styleInputView(_ inputView: ABInputView, with placeholder: String) {

@@ -90,6 +90,7 @@ class CashOutVisaView: UIView, Xibable {
         amountInputView.setPlaceholder(text: R.string.localization.withdraw_amount.localized())
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidEnd), for: .editingDidEnd)
+		amountInputView.set(textFieldType: .amount)
     }
 
     @objc private func amountEditingDidBegin() {

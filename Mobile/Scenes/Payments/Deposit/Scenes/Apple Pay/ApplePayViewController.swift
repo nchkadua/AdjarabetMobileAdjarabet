@@ -69,6 +69,7 @@ public class ApplePayViewController: ABViewController {
         amountInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
         amountInputView.mainTextField.keyboardType = .decimalPad
         amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title.localized())
+		amountInputView.set(textFieldType: .amount)
 
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidBegin), for: .editingDidBegin)
         amountInputView.mainTextField.addTarget(self, action: #selector(amountEditingDidEnd), for: .editingDidEnd)

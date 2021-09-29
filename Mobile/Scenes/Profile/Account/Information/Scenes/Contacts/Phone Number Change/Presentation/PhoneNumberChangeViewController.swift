@@ -98,6 +98,7 @@ public class PhoneNumberChangeViewController: ABViewController {
         phoneNumberInputView.setPlaceholder(text: R.string.localization.new_phone_number.localized())
         phoneNumberInputView.mainTextField.keyboardType = .numberPad
         phoneNumberInputView.animateSelection = false
+		phoneNumberInputView.set(textFieldType: .phoneNumber)
 
         Observable.combineLatest([phoneNumberInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }

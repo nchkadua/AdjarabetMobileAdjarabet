@@ -121,14 +121,24 @@ public class VisaViewController: ABViewController {
     }
 
     private func setupInputViews() {
-        amountInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
-        amountInputView.mainTextField.keyboardType = .decimalPad
-        amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title.localized())
+        setupAmountInputView()
 
-        cardNumberInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
-        cardNumberInputView.setPlaceholder(text: R.string.localization.visa_card_title.localized())
-        cardNumberInputView.delegate = self
+        setupCardNumberInputView()
     }
+
+	private func setupCardNumberInputView() {
+		cardNumberInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
+		cardNumberInputView.setPlaceholder(text: R.string.localization.visa_card_title.localized())
+		cardNumberInputView.delegate = self
+		cardNumberInputView.set(textFieldType: .number)
+	}
+
+	private func setupAmountInputView() {
+		amountInputView.setupWith(backgroundColor: .tertiaryBg(), borderWidth: 0)
+		amountInputView.mainTextField.keyboardType = .decimalPad
+		amountInputView.setPlaceholder(text: R.string.localization.visa_amount_title.localized())
+		amountInputView.set(textFieldType: .amount)
+	}
 
     private func setupButtons() {
         addCardButton.setBackgorundColor(to: .tertiaryBg())

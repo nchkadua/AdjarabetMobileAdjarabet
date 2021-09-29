@@ -121,6 +121,7 @@ public class PasswordResetOptionsViewController: ABViewController {
         usernameInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         usernameInputView.setPlaceholder(text: R.string.localization.reset_username_placeholder.localized())
         usernameInputView.mainTextField.delegate = self
+		usernameInputView.set(textFieldType: .username)
 
         Observable.combineLatest([usernameInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }

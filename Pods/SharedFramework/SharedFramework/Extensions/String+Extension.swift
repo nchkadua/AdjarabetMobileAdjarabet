@@ -20,36 +20,4 @@ extension String {
         return htmlToAttributedString?.string ?? ""
     }
 	
-	// MARK: - Text Validations
-	
-	public func isValidEmail() -> Bool {
-		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-		
-		let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-		return emailPred.evaluate(with: self)
-	}
-	
-	// TODO: - validating phone number using exact policies
-	public func isValidPhoneNumberPrefix() -> Bool {
-		let regEx = "^\\d{0,9}$"
-		
-		let phoneCheck = NSPredicate(format: "SELF MATCHES[c] %@", regEx)
-		return phoneCheck.evaluate(with: self)
-	}
-	
-	public func isValidPhoneNumber() -> Bool {
-		let regEx = "^\\d{9}$"
-		
-		let phoneCheck = NSPredicate(format: "SELF MATCHES[c] %@", regEx)
-		return phoneCheck.evaluate(with: self)
-	}
-	
-	public func isValidPassword() -> Bool {
-		// TODO - validate
-		return true
-	}
-	
-	private func isValidPlainText() -> Bool {
-		return true
-	}
 }

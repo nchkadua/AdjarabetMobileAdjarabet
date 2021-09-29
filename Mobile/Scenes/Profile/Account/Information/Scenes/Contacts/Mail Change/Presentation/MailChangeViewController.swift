@@ -27,7 +27,6 @@ public class MailChangeViewController: ABViewController {
         bind(to: viewModel)
         errorThrowing = viewModel
         viewModel.viewDidLoad()
-        // {}() // TODO
         // setupAccessibilityIdentifiers()
     }
 
@@ -94,12 +93,14 @@ public class MailChangeViewController: ABViewController {
         mailInputView.mainTextField.keyboardType = .emailAddress
         mailInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         mailInputView.setPlaceholder(text: R.string.localization.new_mail_title.localized())
+		mailInputView.set(textFieldType: .email)
 
         passwordInputView.mainTextField.textContentType = .password
         passwordInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         passwordInputView.setPlaceholder(text: R.string.localization.mail_change_password.localized())
         passwordInputView.becomeSecureTextEntry()
         passwordInputView.setRightButtonImage(R.image.shared.hideText() ?? UIImage(), for: .normal)
+		passwordInputView.set(textFieldType: .password)
 
         Observable.combineLatest([mailInputView.rx.text.orEmpty, passwordInputView.rx.text.orEmpty])
             .map { $0.map { !$0.isEmpty } }

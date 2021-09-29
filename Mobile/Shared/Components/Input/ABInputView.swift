@@ -37,6 +37,7 @@ public class ABInputView: UIView {
     public var rx: Reactive<UITextField> { textField.rx }
     private var size: DesignSystem.Input.Size = .large
     private var textFieldBottomInset: CGFloat { size == .large ? 4 : 0 }
+	private var textFieldType: TextFieldType = .plain
     private var placeholderLabelTopInset: CGFloat { size == .large ? 7 : 3 }
 
     public var mainTextField: UITextField { textField }
@@ -73,6 +74,10 @@ public class ABInputView: UIView {
     public func set(text: String?) {
         setTextAndConfigure(text: text)
     }
+
+	public func set(textFieldType: TextFieldType) {
+		self.textFieldType = textFieldType
+	}
 
     public var text: String? { textField.text }
 
@@ -350,9 +355,7 @@ extension ABInputView: UIPickerViewDataSource {
         dataSourceItems.count
     }
 
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         dataSourceItems[row]
@@ -378,13 +381,51 @@ extension ABInputView: UITextFieldDelegate {
     }
 
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard maxLength > -1 else { return true }
-
-        let currentString: NSString = (textField.text ?? "") as NSString
-        let newString: NSString =
-            currentString.replacingCharacters(in: range, with: string) as NSString
-        return newString.length <= maxLength
+		let currentString: NSString = (textField.text ?? "") as NSString
+		let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+		return (maxLength == -1 || newString.length <= maxLength) && textFieldType.isValidPrefix(newString as String)
     }
+}
+
+// MARK: - Text Field Type [Validations]
+
+public extension ABInputView {
+	/// Is used for validating appropriate type of text field
+	enum TextFieldType {
+		case address
+		case amount
+		case email
+		case number
+		case phoneNumber
+		case password
+		case plain
+		case username
+
+		func isValid(_ text: String) -> Bool {
+			switch self {
+			case .address: 		return text.isValidAddress()
+			case .amount:		return text.isValidAmount()
+			case .email: 		return text.isValidEmail()
+			case .number:		return text.isValidNumber()
+			case .phoneNumber: 	return text.isValidPhoneNumber()
+			case .password:		return text.isValidPassword()
+			case .plain:		return text.isValidPlainText()
+			case .username:		return text.isValidUsername()
+			}
+		}
+
+		/// is used when checking if user is typing appropriate string
+		func isValidPrefix(_ text: String) -> Bool {
+			print("*** isValidPrefix: text: \(text)")
+			switch self {
+			case .email: 		return text.isValidEmailPrefix()
+			case .number:		return text.isValidNumberPrefix()
+			case .phoneNumber: 	return text.isValidPhoneNumberPrefix()
+			case .username:		return text.isValidUsernamePrefix()
+			default: 			return true
+			}
+		}
+	}
 }
 
 public protocol ABInputViewDelegate: AnyObject {
