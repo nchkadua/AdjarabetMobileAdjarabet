@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import Nuke
 
 public class PromotionComponentView: UIView {
     private var disposeBag = DisposeBag()
@@ -36,16 +37,22 @@ public class PromotionComponentView: UIView {
 
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
-            case .set(let title, let cover, let icon):
-                self?.setupUI(title: title, cover: cover, icon: icon)
+            case .setUpWithPublicPromo(let promo): self?.setupUI(with: promo)
+            case .setUpWithPrivatePromo(let promo): self?.setupUI(with: promo)
             }
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
     }
 
-    private func setupUI(title: String, cover: UIImage, icon: UIImage) {
-        coverImageView.image = cover
+    private func setupUI(with promo: PublicPromosEntity.PublicPromo) {
+        let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
+        loadImage(with: URL(string: promo.image) ?? URL(fileURLWithPath: ""), options: options, into: coverImageView, progress: .none, completion: nil)
+    }
+
+    private func setupUI(with promo: PrivatePromosEntity.PrivatePromo) {
+        let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
+        loadImage(with: URL(string: promo.image) ?? URL(fileURLWithPath: ""), options: options, into: coverImageView, progress: .none, completion: nil)
     }
 }
 

@@ -30,6 +30,11 @@ public class PromotionsViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
+    }
+
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -54,6 +59,7 @@ public class PromotionsViewController: ABViewController {
             appTableViewController.dataProvider = appListDataProvider
         case .bindToPromoTabViewModel(let viewModel):
             bindToTab(viewModel)
+        case .isLoading(let loading): loading ? startLoading() : stopLoading()
         }
     }
 
