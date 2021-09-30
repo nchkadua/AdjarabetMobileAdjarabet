@@ -50,6 +50,7 @@ class DefaultBonusViewModel: DefaultBaseViewModel {
 												description: R.string.localization.bonus_empty_state_description()))
     private let actionSubject = PublishSubject<BonusViewModelOutputAction>()
     private let routeSubject = PublishSubject<BonusViewModelRoute>()
+    @Inject(from: .repositories) private var bonusesRepo: BonusesRepository
 
     init(params: BonusViewModelParams) {
         self.params = params
@@ -60,7 +61,17 @@ extension DefaultBonusViewModel: BonusViewModel {
     var action: Observable<BonusViewModelOutputAction> { actionSubject.asObserver() }
     var route: Observable<BonusViewModelRoute> { routeSubject.asObserver() }
 
-    func viewDidLoad() {}
+    func viewDidLoad() {
+        bonusesRepo.getActiveBonuses(pageIndex: 1, handler: handler(onSuccessHandler: { entity in
+            //In pagination login check entity.pageCount before loading next pageIndex
+            print("Active bonuses: ", entity)
+        }))
+
+        bonusesRepo.getCompletedBonuses(pageIndex: 2, handler: handler(onSuccessHandler: { entity in
+            //In pagination login check entity.pageCount before loading next pageIndex
+            print("Completed bonuses: ", entity)
+        }))
+    }
 
     // MARK: - ABTableViewControllerDelegate
 
