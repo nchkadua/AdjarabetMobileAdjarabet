@@ -22,7 +22,7 @@ public struct EmptyStateComponentViewModelParams {
 	public let numItems: Int		/// number of items in empty collection
 
     init(
-        icon: UIImage = R.image.promotions.casino_icon()!,
+        icon: UIImage = R.image.tabBar.promotions()!,
         title: String = "",
         description: String = "",
         position: EmptyStatePosition = .centered,

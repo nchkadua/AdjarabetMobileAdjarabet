@@ -44,6 +44,11 @@ public class HomeViewController: ABViewController, PageViewControllerProtocol {
         viewModel.viewWillAppear()
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
+    }
+
     // MARK: Binding
     private func bind(to viewModel: HomeViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in

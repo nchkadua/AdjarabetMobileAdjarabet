@@ -48,7 +48,7 @@ public class WebViewController: ABViewController {
         case .loadRequst(let request): load(request)
         case .loadHtml(let html): load(html)
         case .bindToHeaderViewModel(let viewModel, let navigationEnabled): bindToHeader(viewModel, navigationEnabled)
-        case .dismiss: dismiss(animated: true, completion: nil)
+        case .dismiss: navigateBack()
         case .goBack:
             guard webView.canGoBack else {return}
             webView.goBack()
@@ -57,6 +57,14 @@ public class WebViewController: ABViewController {
             webView.goForward()
         case .reload:
             webView.reload()
+        }
+    }
+
+    private func navigateBack() {
+        if isModal {
+            dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
         }
     }
 
@@ -88,5 +96,15 @@ public class WebViewController: ABViewController {
 
     private func load(_ html: String) {
         webView.loadHTMLString(html, baseURL: nil)
+    }
+}
+
+extension WebViewController {
+    var isModal: Bool {
+        let presentingIsModal = presentingViewController != nil
+        let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
+        let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
+
+        return presentingIsModal || presentingIsNavigation || presentingIsTabBar
     }
 }

@@ -8,6 +8,7 @@
 
 public class PromotionsNavigator: Navigator {
     @Inject(from: .factories) public var profileFactory: ProfileFactory
+    @Inject(from: .factories) private var webViewControllerFactory: WebViewControllerFactory
 
     private weak var viewController: UIViewController?
 
@@ -16,17 +17,20 @@ public class PromotionsNavigator: Navigator {
     }
 
     public enum Destination {
-        case profile
+        case webView(params: WebViewModelParams)
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
-        case .profile:
-            let vc = profileFactory.make()
-            let navC = vc.wrapInNavWith(presentationStyle: .fullScreen)
-            navC.navigationBar.styleForSecondaryPage()
-
-            viewController?.navigationController?.present(navC, animated: animate, completion: nil)
+        case .webView(let params): navigateToWebView(with: params, animate: animate)
         }
+    }
+
+    private func navigateToWebView(with params: WebViewModelParams, animate: Bool) {
+        let vc = webViewControllerFactory.make(params: params)
+//        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
+//        navc.navigationBar.styleForPrimaryPage()
+//        viewController?.navigationController?.present(navc, animated: true, completion: nil)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -210,6 +210,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
 		loader.stopAnimating()
 		loader.removeFromSuperview()
+        popupBgView.removeFromSuperview()
 	}
 
 	func show(error: ABError) {
