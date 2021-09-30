@@ -22,6 +22,7 @@ class HomeViewModelParams {
 protocol HomeViewModelInput {
     func viewDidLoad()
     func viewWillAppear()
+    func viewDidAppear()
     func didLoadNextPage()
 }
 
@@ -260,6 +261,7 @@ extension DefaultHomeViewModel: HomeViewModel {
     public var route: Observable<HomeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewWillAppear() {
+        displayEmptyGames()
         userBalanceService.update()
     }
 
@@ -267,8 +269,9 @@ extension DefaultHomeViewModel: HomeViewModel {
         showErrorIfNeeded()
         observeLanguageChange()
         observeLayoutChange()
-        displayEmptyGames()
+    }
 
+    public func viewDidAppear() {
         loadRecentryPlayedGames()
         load(loadingType: .fullScreen)
     }
