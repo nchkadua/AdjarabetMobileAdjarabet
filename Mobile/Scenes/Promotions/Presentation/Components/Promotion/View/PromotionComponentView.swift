@@ -39,6 +39,8 @@ public class PromotionComponentView: UIView {
             switch action {
             case .setUpWithPublicPromo(let promo): self?.setupUI(with: promo)
             case .setUpWithPrivatePromo(let promo): self?.setupUI(with: promo)
+            default:
+                break
             }
         }).disposed(by: disposeBag)
 

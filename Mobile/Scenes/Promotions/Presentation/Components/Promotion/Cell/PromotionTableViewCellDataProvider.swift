@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adjarabet. All rights reserved.
 //
 
-public protocol PromotionTableViewCellDataProvider: PromotionComponentViewModel, StaticHeightDataProvider { }
+public protocol PromotionTableViewCellDataProvider: AppCellDelegate, PromotionComponentViewModel, StaticHeightDataProvider { }
 
 public extension PromotionTableViewCellDataProvider {
     var identifier: String { PromotionTableViewCell.identifierValue }

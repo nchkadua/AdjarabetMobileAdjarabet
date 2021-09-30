@@ -22,6 +22,7 @@ public struct PromotionComponentViewModelParams {
 
 public protocol PromotionComponentViewModelInput {
     func didBind()
+    func didSelect(at indexPath: IndexPath)
 }
 
 public protocol PromotionComponentViewModelOutput {
@@ -32,6 +33,8 @@ public protocol PromotionComponentViewModelOutput {
 public enum PromotionComponentViewModelOutputAction {
     case setUpWithPublicPromo(promo: PublicPromosEntity.PublicPromo)
     case setUpWithPrivatePromo(promo: PrivatePromosEntity.PrivatePromo)
+    case didSelectPublicPromo(promo: PublicPromosEntity.PublicPromo)
+    case didSelectPrivatePromo(promo: PrivatePromosEntity.PrivatePromo)
 }
 
 public class DefaultPromotionComponentViewModel {
@@ -50,6 +53,13 @@ extension DefaultPromotionComponentViewModel: PromotionComponentViewModel {
         switch params.promoType {
         case .publicPromo(let publicPromo): actionSubject.onNext(.setUpWithPublicPromo(promo: publicPromo))
         case .privatePromo(let privatePromo): actionSubject.onNext(.setUpWithPrivatePromo(promo: privatePromo))
+        }
+    }
+
+    public func didSelect(at indexPath: IndexPath) {
+        switch params.promoType {
+        case .publicPromo(let promo): actionSubject.onNext(.didSelectPublicPromo(promo: promo))
+        case .privatePromo(let promo): actionSubject.onNext(.didSelectPrivatePromo(promo: promo))
         }
     }
 }
