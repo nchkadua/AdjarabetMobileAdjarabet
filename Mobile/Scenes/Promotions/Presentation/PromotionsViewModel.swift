@@ -60,8 +60,9 @@ extension DefaultPromotionsViewModel: PromotionsViewModel {
 
     public func fetchPublicPromos() {
         var dataProvider: AppCellDataProviders = []
-        actionSubject.onNext(.isLoading(loading: true))
+        actionSubject.onNext(.initialize(dataProvider.makeList()))
 
+        actionSubject.onNext(.isLoading(loading: true))
         promosUseCase.getPublicPromos(handler: handler(onSuccessHandler: { entity in
             entity.list.forEach {
                 let model = DefaultPromotionComponentViewModel(params: .init(promoType: .publicPromo(promo: $0)))
@@ -74,6 +75,7 @@ extension DefaultPromotionsViewModel: PromotionsViewModel {
 
     public func fetchPrivatePromos() {
         var dataProvider: AppCellDataProviders = []
+        actionSubject.onNext(.initialize(dataProvider.makeList()))
 
         actionSubject.onNext(.isLoading(loading: true))
         promosUseCase.getPrivatePromos(handler: handler(onSuccessHandler: { entity in

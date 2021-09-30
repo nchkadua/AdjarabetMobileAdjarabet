@@ -193,7 +193,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
      public func startLoading() {
           guard !loader.isAnimating else {return}
-
+          
           view.addSubview(loader)
           NSLayoutConstraint.activate([
                loader.widthAnchor.constraint(equalToConstant: 80),
@@ -210,6 +210,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
 		loader.stopAnimating()
 		loader.removeFromSuperview()
+        popupBgView.removeFromSuperview()
 	}
 
 	func show(error: ABError) {
