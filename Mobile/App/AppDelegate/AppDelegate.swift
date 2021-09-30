@@ -164,6 +164,7 @@ public extension DependencyContainer {
 
         Module { DefaultPublicPromosRepository() as PublicPromosRepository }
         Module { DefaultPrivatePromosRepository() as PrivatePromosRepository }
+        Module { DefaultBonusesRepository() as BonusesRepository }
     }
 
     static var factories = DependencyContainer {
