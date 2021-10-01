@@ -2,7 +2,7 @@
 //  EndedMyBonusesHeaderCollectionViewCell.swift
 //  Mobile
 //
-//  Created by Giga Khizanishvili on 30.09.21.
+//  Created by Giga Khizanishvili on 01.10.21.
 //  Copyright © 2021 Adjarabet. All rights reserved.
 //
 
