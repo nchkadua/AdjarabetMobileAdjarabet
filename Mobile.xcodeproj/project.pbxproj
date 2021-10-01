@@ -932,7 +932,36 @@
 		FB06F54D26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06F54C26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift */; };
 		FB06F54F26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06F54E26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift */; };
 		FB15A64726EBCD3F00E5F985 /* StatusMessageComponentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */; };
+		FB1FEDA52705CB81002A3A26 /* EndedMyBonusesHeaderCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDA42705CB81002A3A26 /* EndedMyBonusesHeaderCollectionViewCellDataProvider.swift */; };
+		FB1FEDA72705CC4D002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDA62705CC4D002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.swift */; };
+		FB1FEDA92705CCD8002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1FEDA82705CCD8002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.xib */; };
+		FB1FEDB72705DAA8002A3A26 /* EndedMyBonusItemCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDB62705DAA8002A3A26 /* EndedMyBonusItemCollectionViewCellDataProvider.swift */; };
+		FB1FEDBA2705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDB82705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.swift */; };
+		FB1FEDBB2705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1FEDB92705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.xib */; };
+		FB1FEDBD27060645002A3A26 /* ActiveMyBonusesHeaderCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDBC27060645002A3A26 /* ActiveMyBonusesHeaderCollectionViewCellDataProvider.swift */; };
+		FB1FEDC427060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDC227060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.swift */; };
+		FB1FEDC527060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1FEDC327060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.xib */; };
+		FB1FEDC72706115F002A3A26 /* ActiveMyBonusItemCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDC62706115F002A3A26 /* ActiveMyBonusItemCollectionViewCellDataProvider.swift */; };
+		FB1FEDCA270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDC8270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.swift */; };
+		FB1FEDCB270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1FEDC9270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.xib */; };
 		FB25307E26E7349900F09490 /* NetworkConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB25307D26E7349900F09490 /* NetworkConnectionManager.swift */; };
+		FB311FFE270483E50012728C /* MyBonuses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB311FF9270483E50012728C /* MyBonuses.storyboard */; };
+		FB311FFF270483E50012728C /* MyBonusesNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB311FFA270483E50012728C /* MyBonusesNavigator.swift */; };
+		FB312000270483E50012728C /* MyBonusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB311FFB270483E50012728C /* MyBonusesViewController.swift */; };
+		FB312001270483E50012728C /* MyBonusesViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB311FFC270483E50012728C /* MyBonusesViewControllerFactory.swift */; };
+		FB312002270483E50012728C /* MyBonusesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB311FFD270483E50012728C /* MyBonusesViewModel.swift */; };
+		FB3120192704FBE40012728C /* EndedMyBonusItemComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB3120132704FBE40012728C /* EndedMyBonusItemComponentView.xib */; };
+		FB31201C2704FBE40012728C /* EndedMyBonusItemComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3120162704FBE40012728C /* EndedMyBonusItemComponentViewModel.swift */; };
+		FB31201D2704FBE40012728C /* EndedMyBonusItemComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3120172704FBE40012728C /* EndedMyBonusItemComponentView.swift */; };
+		FB3120252704FC150012728C /* ActiveMyBonusItemComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB31201F2704FC150012728C /* ActiveMyBonusItemComponentView.xib */; };
+		FB3120282704FC150012728C /* ActiveMyBonusItemComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3120222704FC150012728C /* ActiveMyBonusItemComponentViewModel.swift */; };
+		FB3120292704FC150012728C /* ActiveMyBonusItemComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3120232704FC150012728C /* ActiveMyBonusItemComponentView.swift */; };
+		FB31203627056E920012728C /* ActiveMyBonusesHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB31203027056E920012728C /* ActiveMyBonusesHeaderComponentView.xib */; };
+		FB31203927056E920012728C /* ActiveMyBonusesHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31203327056E920012728C /* ActiveMyBonusesHeaderComponentViewModel.swift */; };
+		FB31203A27056E920012728C /* ActiveMyBonusesHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31203427056E920012728C /* ActiveMyBonusesHeaderComponentView.swift */; };
+		FB31204627056F840012728C /* EndedMyBonusesHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB31204027056F840012728C /* EndedMyBonusesHeaderComponentView.xib */; };
+		FB31204927056F840012728C /* EndedMyBonusesHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31204327056F840012728C /* EndedMyBonusesHeaderComponentViewModel.swift */; };
+		FB31204A27056F840012728C /* EndedMyBonusesHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB31204427056F840012728C /* EndedMyBonusesHeaderComponentView.swift */; };
 		FB584B4126B7C1E800FA25DB /* TermsAndConditionsComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */; };
 		FB584B4226B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */; };
 		FB584B4326B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB584B3D26B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib */; };
@@ -1929,9 +1958,38 @@
 		FB06F54C26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTermsAndConditionsRepository.swift; sourceTree = "<group>"; };
 		FB06F54E26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiTermsAndConditionsDTO.swift; sourceTree = "<group>"; };
 		FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessageComponentConstants.swift; sourceTree = "<group>"; };
+		FB1FEDA42705CB81002A3A26 /* EndedMyBonusesHeaderCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusesHeaderCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		FB1FEDA62705CC4D002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusesHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB1FEDA82705CCD8002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndedMyBonusesHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		FB1FEDB62705DAA8002A3A26 /* EndedMyBonusItemCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusItemCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		FB1FEDB82705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB1FEDB92705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndedMyBonusItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		FB1FEDBC27060645002A3A26 /* ActiveMyBonusesHeaderCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMyBonusesHeaderCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		FB1FEDC227060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMyBonusesHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB1FEDC327060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveMyBonusesHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		FB1FEDC62706115F002A3A26 /* ActiveMyBonusItemCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMyBonusItemCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
+		FB1FEDC8270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMyBonusItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB1FEDC9270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveMyBonusItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		FB25307D26E7349900F09490 /* NetworkConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionManager.swift; sourceTree = "<group>"; };
 		FB2DD1E126D4BAAE002B0AFF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB2DD1E226D4BAAE002B0AFF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localization.strings; sourceTree = "<group>"; };
+		FB311FF9270483E50012728C /* MyBonuses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyBonuses.storyboard; sourceTree = "<group>"; };
+		FB311FFA270483E50012728C /* MyBonusesNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBonusesNavigator.swift; sourceTree = "<group>"; };
+		FB311FFB270483E50012728C /* MyBonusesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBonusesViewController.swift; sourceTree = "<group>"; };
+		FB311FFC270483E50012728C /* MyBonusesViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBonusesViewControllerFactory.swift; sourceTree = "<group>"; };
+		FB311FFD270483E50012728C /* MyBonusesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBonusesViewModel.swift; sourceTree = "<group>"; };
+		FB3120132704FBE40012728C /* EndedMyBonusItemComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndedMyBonusItemComponentView.xib; sourceTree = "<group>"; };
+		FB3120162704FBE40012728C /* EndedMyBonusItemComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusItemComponentViewModel.swift; sourceTree = "<group>"; };
+		FB3120172704FBE40012728C /* EndedMyBonusItemComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusItemComponentView.swift; sourceTree = "<group>"; };
+		FB31201F2704FC150012728C /* ActiveMyBonusItemComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveMyBonusItemComponentView.xib; sourceTree = "<group>"; };
+		FB3120222704FC150012728C /* ActiveMyBonusItemComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMyBonusItemComponentViewModel.swift; sourceTree = "<group>"; };
+		FB3120232704FC150012728C /* ActiveMyBonusItemComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMyBonusItemComponentView.swift; sourceTree = "<group>"; };
+		FB31203027056E920012728C /* ActiveMyBonusesHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveMyBonusesHeaderComponentView.xib; sourceTree = "<group>"; };
+		FB31203327056E920012728C /* ActiveMyBonusesHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMyBonusesHeaderComponentViewModel.swift; sourceTree = "<group>"; };
+		FB31203427056E920012728C /* ActiveMyBonusesHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMyBonusesHeaderComponentView.swift; sourceTree = "<group>"; };
+		FB31204027056F840012728C /* EndedMyBonusesHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndedMyBonusesHeaderComponentView.xib; sourceTree = "<group>"; };
+		FB31204327056F840012728C /* EndedMyBonusesHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusesHeaderComponentViewModel.swift; sourceTree = "<group>"; };
+		FB31204427056F840012728C /* EndedMyBonusesHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusesHeaderComponentView.swift; sourceTree = "<group>"; };
 		FB584B3B26B7C1E800FA25DB /* TermsAndConditionsComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsComponentView.xib; sourceTree = "<group>"; };
 		FB584B3C26B7C1E800FA25DB /* TermsAndConditionsTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		FB584B3D26B7C1E800FA25DB /* TermsAndConditionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsTableViewCell.xib; sourceTree = "<group>"; };
@@ -4820,6 +4878,7 @@
 		CE2AB49C266A474000C88262 /* Bonus */ = {
 			isa = PBXGroup;
 			children = (
+				FB311FF82704835C0012728C /* MyBonuses */,
 				CE2AB49D266A475900C88262 /* Presentation */,
 			);
 			path = Bonus;
@@ -6984,6 +7043,162 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		FB311FF82704835C0012728C /* MyBonuses */ = {
+			isa = PBXGroup;
+			children = (
+				FB31202F27056E3D0012728C /* Cell */,
+				FB311FF9270483E50012728C /* MyBonuses.storyboard */,
+				FB311FFA270483E50012728C /* MyBonusesNavigator.swift */,
+				FB311FFB270483E50012728C /* MyBonusesViewController.swift */,
+				FB311FFC270483E50012728C /* MyBonusesViewControllerFactory.swift */,
+				FB311FFD270483E50012728C /* MyBonusesViewModel.swift */,
+			);
+			path = MyBonuses;
+			sourceTree = "<group>";
+		};
+		FB3120032704FB520012728C /* ActiveMyBonusItem */ = {
+			isa = PBXGroup;
+			children = (
+				FB31202B2704FC190012728C /* View */,
+				FB31202C2704FC1E0012728C /* Cell */,
+			);
+			path = ActiveMyBonusItem;
+			sourceTree = "<group>";
+		};
+		FB3120102704FBAD0012728C /* EndedBonuses */ = {
+			isa = PBXGroup;
+			children = (
+				FB31203F27056EE90012728C /* EndedMyBonusesHeader */,
+				FB3120122704FBCA0012728C /* EndedMyBonusItem */,
+			);
+			path = EndedBonuses;
+			sourceTree = "<group>";
+		};
+		FB3120112704FBBD0012728C /* ActiveBonuses */ = {
+			isa = PBXGroup;
+			children = (
+				FB31203C27056E990012728C /* ActiveMyBonusesHeader */,
+				FB3120032704FB520012728C /* ActiveMyBonusItem */,
+			);
+			path = ActiveBonuses;
+			sourceTree = "<group>";
+		};
+		FB3120122704FBCA0012728C /* EndedMyBonusItem */ = {
+			isa = PBXGroup;
+			children = (
+				FB31202D2704FC340012728C /* View */,
+				FB31202E2704FC3E0012728C /* CollectionViewCell */,
+			);
+			path = EndedMyBonusItem;
+			sourceTree = "<group>";
+		};
+		FB31202B2704FC190012728C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB31201F2704FC150012728C /* ActiveMyBonusItemComponentView.xib */,
+				FB3120222704FC150012728C /* ActiveMyBonusItemComponentViewModel.swift */,
+				FB3120232704FC150012728C /* ActiveMyBonusItemComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB31202C2704FC1E0012728C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB1FEDC62706115F002A3A26 /* ActiveMyBonusItemCollectionViewCellDataProvider.swift */,
+				FB1FEDC8270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.swift */,
+				FB1FEDC9270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FB31202D2704FC340012728C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB3120132704FBE40012728C /* EndedMyBonusItemComponentView.xib */,
+				FB3120162704FBE40012728C /* EndedMyBonusItemComponentViewModel.swift */,
+				FB3120172704FBE40012728C /* EndedMyBonusItemComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB31202E2704FC3E0012728C /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB1FEDB62705DAA8002A3A26 /* EndedMyBonusItemCollectionViewCellDataProvider.swift */,
+				FB1FEDB82705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.swift */,
+				FB1FEDB92705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		FB31202F27056E3D0012728C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB3120112704FBBD0012728C /* ActiveBonuses */,
+				FB3120102704FBAD0012728C /* EndedBonuses */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FB31203C27056E990012728C /* ActiveMyBonusesHeader */ = {
+			isa = PBXGroup;
+			children = (
+				FB31203E27056EAF0012728C /* View */,
+				FB31203D27056EA90012728C /* Cell */,
+			);
+			path = ActiveMyBonusesHeader;
+			sourceTree = "<group>";
+		};
+		FB31203D27056EA90012728C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB1FEDBC27060645002A3A26 /* ActiveMyBonusesHeaderCollectionViewCellDataProvider.swift */,
+				FB1FEDC227060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.swift */,
+				FB1FEDC327060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FB31203E27056EAF0012728C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB31203027056E920012728C /* ActiveMyBonusesHeaderComponentView.xib */,
+				FB31203327056E920012728C /* ActiveMyBonusesHeaderComponentViewModel.swift */,
+				FB31203427056E920012728C /* ActiveMyBonusesHeaderComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB31203F27056EE90012728C /* EndedMyBonusesHeader */ = {
+			isa = PBXGroup;
+			children = (
+				FB31204D27056F8E0012728C /* View */,
+				FB31204C27056F890012728C /* Cell */,
+			);
+			path = EndedMyBonusesHeader;
+			sourceTree = "<group>";
+		};
+		FB31204C27056F890012728C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB1FEDA42705CB81002A3A26 /* EndedMyBonusesHeaderCollectionViewCellDataProvider.swift */,
+				FB1FEDA62705CC4D002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.swift */,
+				FB1FEDA82705CCD8002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FB31204D27056F8E0012728C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB31204027056F840012728C /* EndedMyBonusesHeaderComponentView.xib */,
+				FB31204327056F840012728C /* EndedMyBonusesHeaderComponentViewModel.swift */,
+				FB31204427056F840012728C /* EndedMyBonusesHeaderComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FB584B3826B7C1AF00FA25DB /* Action */ = {
 			isa = PBXGroup;
 			children = (
@@ -7355,8 +7570,10 @@
 				D8A47DDB24335B4C0077AA8E /* LaunchScreen.storyboard in Resources */,
 				C75D1B0B261205F4002AF763 /* TSFJSlot.zip in Resources */,
 				C75D1AFA261205F4002AF763 /* FBHJSlot.zip in Resources */,
+				FB3120192704FBE40012728C /* EndedMyBonusItemComponentView.xib in Resources */,
 				CEBB00802609D3F900D1B510 /* Emoney.storyboard in Resources */,
 				C75D1AEF261205F4002AF763 /* GTSJSlot.zip in Resources */,
+				FB31203627056E920012728C /* ActiveMyBonusesHeaderComponentView.xib in Resources */,
 				C75D1B1A261205F4002AF763 /* TGCJSlot.zip in Resources */,
 				CECF7F7B256D9FAB001C0E50 /* PasswordChange.storyboard in Resources */,
 				C75D1AF7261205F4002AF763 /* ADJSlot.zip in Resources */,
@@ -7382,6 +7599,7 @@
 				CE454662260C8A7500B01E19 /* VisaInstructionsComponentView.xib in Resources */,
 				CEE25089256FE3C10089F805 /* TimerComponentView.xib in Resources */,
 				C75D1B04261205F4002AF763 /* BHTJSlot.zip in Resources */,
+				FB311FFE270483E50012728C /* MyBonuses.storyboard in Resources */,
 				C71F18A125641E3C0026CEA2 /* BiometricSettingsView.storyboard in Resources */,
 				CE03746E25F8D7180061F507 /* Web.storyboard in Resources */,
 				D86B5961244F0E4F00AB7350 /* PlayedGameLauncherComponentView.xib in Resources */,
@@ -7419,6 +7637,7 @@
 				CEE44E8E2600B5C100A83BD2 /* AdjaraMont-Heavy.ttf in Resources */,
 				CE95A431261DF1D40004330E /* ApplePayButton.xib in Resources */,
 				D85C9C3024336D0000F1D4FE /* MainTabBar.storyboard in Resources */,
+				FB1FEDA92705CCD8002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.xib in Resources */,
 				C75D1AF8261205F4002AF763 /* WHJSlot.zip in Resources */,
 				C75D1AFE261205F4002AF763 /* FSHJSlot.zip in Resources */,
 				CE64EA7A25D1695400438974 /* Game.storyboard in Resources */,
@@ -7440,6 +7659,7 @@
 				C75D1AD8261205F4002AF763 /* HCJSlot.zip in Resources */,
 				FBBAD4F426FC2810001B0DE7 /* BlockedUserNotificationComponentView.xib in Resources */,
 				CE3AC9E426A17931000BF338 /* DocumentationActionComponentView.xib in Resources */,
+				FB1FEDBB2705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.xib in Resources */,
 				C78E53102685B12300EE1C18 /* HighSecurity.storyboard in Resources */,
 				C75D1AE3261205F4002AF763 /* RTSJSlot.zip in Resources */,
 				C71F18A625642CFA0026CEA2 /* Assets.xcassets in Resources */,
@@ -7466,6 +7686,7 @@
 				CEBB008E2609D40400D1B510 /* Visa.storyboard in Resources */,
 				FB612A0126C5FBEC00022F24 /* EmptyStateComponentView.xib in Resources */,
 				C75D1ADA261205F4002AF763 /* CDJSlot.zip in Resources */,
+				FB3120252704FC150012728C /* ActiveMyBonusItemComponentView.xib in Resources */,
 				CEE15C5125349EEC0033BF93 /* NotificationTableViewCell.xib in Resources */,
 				7668C7AB2576785F0024DDE4 /* AccountParametersHeaderTableViewCell.xib in Resources */,
 				CEE44E8B2600B5C100A83BD2 /* AdjaraMont-SemiBold.ttf in Resources */,
@@ -7494,6 +7715,7 @@
 				C75D1AEB261205F4002AF763 /* KHJSlot.zip in Resources */,
 				C75D1AE2261205F4002AF763 /* FBJSlot.zip in Resources */,
 				CE9B7FE9257544F5006FF756 /* PhoneNumberChange.storyboard in Resources */,
+				FB1FEDC527060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.xib in Resources */,
 				CE4A3136261478D80039C078 /* MainContainer.storyboard in Resources */,
 				C75D1AE5261205F4002AF763 /* HBHJSlot.zip in Resources */,
 				CE0818CA25389B8D00AD3B3B /* NotificationsHeaderComponentView.xib in Resources */,
@@ -7521,6 +7743,7 @@
 				76404F0B257625F900D14E0C /* AccountSecurityMessagesTableViewCell.xib in Resources */,
 				CE693AE726A6C8920049D665 /* FAQCategories.storyboard in Resources */,
 				C7CA531626543E42008AFDAA /* ABSlider.xib in Resources */,
+				FB1FEDCB270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.xib in Resources */,
 				C77206E525DAB0BF0037D8A0 /* localhost.p12 in Resources */,
 				C75D1B0F261205F4002AF763 /* IGTJSlot.zip in Resources */,
 				C75D1B15261205F4002AF763 /* GETJSlot.zip in Resources */,
@@ -7594,6 +7817,7 @@
 				D87E3C582445FE08004A4BDF /* Promotions.storyboard in Resources */,
 				C75D1AF6261205F4002AF763 /* OGJSlot.zip in Resources */,
 				CE0F768926EF8E18008980F6 /* NotVerifiedUser.storyboard in Resources */,
+				FB31204627056F840012728C /* EndedMyBonusesHeaderComponentView.xib in Resources */,
 				CEE44E882600B5C100A83BD2 /* AdjaraMont-Light.ttf in Resources */,
 				FB8116AF26E5B173009D9AE5 /* StatusMessageComponentView.xib in Resources */,
 				CEA7779D256D4250008A4F6C /* MailChange.storyboard in Resources */,
@@ -7832,6 +8056,7 @@
 				CE3AC9E126A17931000BF338 /* DocumentationActionTableViewCellDataProvider.swift in Sources */,
 				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
+				FB312002270483E50012728C /* MyBonusesViewModel.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
 				7665D97C257F4C0E00E5B35F /* AccessHistoryTableViewCellDataProvider.swift in Sources */,
 				CEB49874268C987A00004A45 /* PasswordResetViewModel.swift in Sources */,
@@ -7861,6 +8086,7 @@
 				CEC2F52D2608B5C00000904C /* DepositViewModel.swift in Sources */,
 				CE693AFB26A6D80F0049D665 /* FAQCategoryTableViewCell.swift in Sources */,
 				C747734E25B5C1030083C845 /* Currency.swift in Sources */,
+				FB1FEDC72706115F002A3A26 /* ActiveMyBonusItemCollectionViewCellDataProvider.swift in Sources */,
 				76DCF69A25B823F000150EE1 /* VideoCard.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
@@ -7870,6 +8096,7 @@
 				C7DE3ADB25F5293E0082D5EF /* UserLoggedInDTO.swift in Sources */,
 				CEE25060256FE3B40089F805 /* TimerComponentView.swift in Sources */,
 				76DCF6B225B8262300150EE1 /* MyCardComponentViewModel.swift in Sources */,
+				FB1FEDBD27060645002A3A26 /* ActiveMyBonusesHeaderCollectionViewCellDataProvider.swift in Sources */,
 				D86B5967244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.swift in Sources */,
 				C71F1892256411720026CEA2 /* BiometricSettingsNavigator.swift in Sources */,
 				CE0F768A26EF8E18008980F6 /* NotVerifiedUserNavigator.swift in Sources */,
@@ -7898,6 +8125,7 @@
 				C766804C26A86D83005EB6E8 /* CloseAccountButtonComponentView.swift in Sources */,
 				CE679FE02578334B00F2EC1C /* AddCardViewModel.swift in Sources */,
 				CEB9637A2681E4D8002EBF4C /* LogOutComponentViewModel.swift in Sources */,
+				FB3120282704FC150012728C /* ActiveMyBonusItemComponentViewModel.swift in Sources */,
 				C72FA7432600BC0400A9C493 /* UFCWithdrawUseCase.swift in Sources */,
 				769886B12571055000FA339E /* TransactionFilterComponentViewModel.swift in Sources */,
 				76404F0C257625F900D14E0C /* AccountSecurityMessagesComponentViewModel.swift in Sources */,
@@ -7919,6 +8147,7 @@
 				C71B4B74257EC57000538697 /* SecurityLevelsViewControllerFactory.swift in Sources */,
 				7644B6002563E201006778B2 /* DateHeaderCell.swift in Sources */,
 				C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */,
+				FB31203A27056E920012728C /* ActiveMyBonusesHeaderComponentView.swift in Sources */,
 				CE7698AA269F02F6009972B2 /* ResetOptionComponentView.swift in Sources */,
 				C754317F25F5605900E485DD /* PaymentListDTO.swift in Sources */,
 				76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */,
@@ -7939,6 +8168,7 @@
 				D8C637A02471BA7B00B9A50E /* ABFormatter.swift in Sources */,
 				CE9B7FEC257544F5006FF756 /* PhoneNumberChangeViewControllerFactory.swift in Sources */,
 				CE2AABC9267A015200B45A0A /* CorePasswordResetRepository.swift in Sources */,
+				FB31204927056F840012728C /* EndedMyBonusesHeaderComponentViewModel.swift in Sources */,
 				CE0F768D26EF8E18008980F6 /* NotVerifiedUserViewModel.swift in Sources */,
 				D8442AAC2469A7A400F32676 /* LoginViewModel.swift in Sources */,
 				C782D26B26544C4C00594A65 /* ABSliderCellModel.swift in Sources */,
@@ -7999,6 +8229,7 @@
 				CE3AC9DC26A17931000BF338 /* ActionItemsProvider.swift in Sources */,
 				CE64EA9B25D2D51A00438974 /* GameLoaderComponentView.swift in Sources */,
 				CEF52CD02673603900D2386C /* PasswordChangeEntity.swift in Sources */,
+				FB1FEDA52705CB81002A3A26 /* EndedMyBonusesHeaderCollectionViewCellDataProvider.swift in Sources */,
 				C701C5FE25C00A6700B059A6 /* CoreApiPaymentAccountRepository.swift in Sources */,
 				CEC03E4F26FB717C00904F2B /* FAQRepository.swift in Sources */,
 				D8A47DCF24335B4B0077AA8E /* AppDelegate.swift in Sources */,
@@ -8052,6 +8283,7 @@
 				76BDF46F25760512007B27A7 /* AccountParametersComponentViewModel.swift in Sources */,
 				D8212F042485846C00B74AB9 /* LoadingCollectionViewCell.swift in Sources */,
 				CE4A3139261478D80039C078 /* MainContainerViewControllerFactory.swift in Sources */,
+				FB1FEDB72705DAA8002A3A26 /* EndedMyBonusItemCollectionViewCellDataProvider.swift in Sources */,
 				D86253B52464219E00F7DE0C /* NetworkErrorLogger.swift in Sources */,
 				CEB81E02253868A9006BEDEC /* NotificationContentNavigator.swift in Sources */,
 				CE8786C2261C96830060EBD1 /* ABView.swift in Sources */,
@@ -8088,11 +8320,13 @@
 				CE64EAAB25DD466D00438974 /* LogoutUseCase.swift in Sources */,
 				C766804B26A86D83005EB6E8 /* CloseAccountButtonComponentViewModel.swift in Sources */,
 				D83ED2F3244C8DDE0037DDEB /* UILabel+Extension.swift in Sources */,
+				FB31204A27056F840012728C /* EndedMyBonusesHeaderComponentView.swift in Sources */,
 				D85C9BFA2433678000F1D4FE /* AdjarabetCoreStatusCode.swift in Sources */,
 				D84202D82451AD8400F0F056 /* BaseViewModel.swift in Sources */,
 				C78E53142685B12300EE1C18 /* HighSecurityViewModel.swift in Sources */,
 				D8863696246C42CB00FF061D /* SMSCodeDigitView.swift in Sources */,
 				C78E528F268279B000EE1C18 /* ContactInfoRepository.swift in Sources */,
+				FB1FEDA72705CC4D002A3A26 /* EndedMyBonusesHeaderCollectionViewCell.swift in Sources */,
 				FB612A0626C5FBEC00022F24 /* EmptyPageTableViewCell.swift in Sources */,
 				7682CF9325B8581600717090 /* AddMyCardComponentViewModel.swift in Sources */,
 				CE679FDD2578334B00F2EC1C /* AddCardNavigator.swift in Sources */,
@@ -8129,6 +8363,7 @@
 				C7023EE7261F772E00C0980F /* WithdrawPaymentListUseCase.swift in Sources */,
 				CE693B1426A70C340049D665 /* FAQQuestionTableViewCell.swift in Sources */,
 				FBAE9C4326B3D0C1002E9D72 /* TermsAndConditionsViewController.swift in Sources */,
+				FB1FEDBA2705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.swift in Sources */,
 				C78E5293268376B400EE1C18 /* CoreApiContactInfoRepository.swift in Sources */,
 				CE95FC1D252DF36C003E539B /* FooterTableViewCell.swift in Sources */,
 				CEC2F52B2608B5C00000904C /* DepositViewController.swift in Sources */,
@@ -8191,20 +8426,24 @@
 				CE769898269EF341009972B2 /* PasswordResetOptionsNavigator.swift in Sources */,
 				C78E52C2268388D600EE1C18 /* PhoneVerificationCodeRepository.swift in Sources */,
 				7665D980257F4C0E00E5B35F /* AccessHistoryTableViewCell.swift in Sources */,
+				FB31201D2704FBE40012728C /* EndedMyBonusItemComponentView.swift in Sources */,
 				CEBC95E626B0257F00A5DD73 /* AddressHeaderTableViewCell.swift in Sources */,
 				CEE356F6252C9C8900A0A25C /* BalanceComponentView.swift in Sources */,
 				C78E53132685B12300EE1C18 /* HighSecurityViewControllerFactory.swift in Sources */,
 				FBBAD4F526FC2810001B0DE7 /* BlockedUserNotificationTableViewCellDataProvider.swift in Sources */,
 				763171A72566398F00F6FD90 /* TransactionDetailsNavigator.swift in Sources */,
 				CE0F768026EF6EF6008980F6 /* MobileAPIPrivacyPolicyDTO.swift in Sources */,
+				FB312001270483E50012728C /* MyBonusesViewControllerFactory.swift in Sources */,
 				7668C7AD2576785F0024DDE4 /* AccountParametersHeaderComponentView.swift in Sources */,
 				CEA2CC7D2626E28500F27A45 /* UserIdButton.swift in Sources */,
+				FB31203927056E920012728C /* ActiveMyBonusesHeaderComponentViewModel.swift in Sources */,
 				FBAE9C4526B3D0C1002E9D72 /* TermsAndConditionsViewModel.swift in Sources */,
 				CE03747025F8D7180061F507 /* WebViewController.swift in Sources */,
 				C7553B47267B72E500813FAC /* CoreApiCommunicationLanguageRepository.swift in Sources */,
 				CEBB00832609D3F900D1B510 /* EmoneyViewControllerFactory.swift in Sources */,
 				D8C73F7F2445A64E004C96DB /* HomeViewController.swift in Sources */,
 				C7405189256FAA8200EAC904 /* AmountFormatter.swift in Sources */,
+				FB3120292704FC150012728C /* ActiveMyBonusItemComponentView.swift in Sources */,
 				CECA7ED526AEEA8700BCF04A /* ContactPhoneComponentView.swift in Sources */,
 				C7CBFDCD268FB0DB009A8365 /* UpdateOtpRepository.swift in Sources */,
 				D86B5963244F0FA100AB7350 /* PlayedGameLauncherComponentViewModel.swift in Sources */,
@@ -8220,6 +8459,7 @@
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */,
+				FB312000270483E50012728C /* MyBonusesViewController.swift in Sources */,
 				C7C1D33A261B9D48009F01C3 /* WithdrawVisaNavigator.swift in Sources */,
 				7644B6072563E516006778B2 /* DateHeaderComponentView.swift in Sources */,
 				D80784682443968D00003892 /* DesignSystem.swift in Sources */,
@@ -8244,6 +8484,7 @@
 				CEF29DAC26B17D5100F32EC2 /* IDDocumentsDTO.swift in Sources */,
 				76404F0A257625F900D14E0C /* AccountSecurityMessagesTableViewCellDataProvider.swift in Sources */,
 				C71B4B75257EC57000538697 /* SecurityLevelsViewModel.swift in Sources */,
+				FB1FEDC427060A63002A3A26 /* ActiveMyBonusesHeaderCollectionViewCell.swift in Sources */,
 				D87F49FD2452BF10004D67A2 /* UIApplication+Extension.swift in Sources */,
 				CE693B1326A70C340049D665 /* FAQQuestionComponentView.swift in Sources */,
 				76BDF47025760512007B27A7 /* AccountParametersComponentView.swift in Sources */,
@@ -8273,6 +8514,7 @@
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
 				C7667FFF26A815C4005EB6E8 /* CloseAccountViewControllerFactory.swift in Sources */,
 				C7C1D33D261B9D48009F01C3 /* WithdrawVisaViewModel.swift in Sources */,
+				FB311FFF270483E50012728C /* MyBonusesNavigator.swift in Sources */,
 				CE0F768C26EF8E18008980F6 /* NotVerifiedUserViewControllerFactory.swift in Sources */,
 				C7FAA3BE2600C26F00265995 /* UFCDepositDTO.swift in Sources */,
 				76DCF6B325B8262300150EE1 /* MyCardComponentView.swift in Sources */,
@@ -8341,6 +8583,7 @@
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
 				C78E52F12683A2F100EE1C18 /* SuspendRepository.swift in Sources */,
 				76DCF67525B80FB500150EE1 /* MyCardsNavigator.swift in Sources */,
+				FB1FEDCA270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.swift in Sources */,
 				C78127E42676A1390007F7E3 /* CoreDataTransferResponse.swift in Sources */,
 				CECF7F71256D9F99001C0E50 /* PasswordChangeViewModel.swift in Sources */,
 				76BDF45D2576043A007B27A7 /* AccountParametersNavigator.swift in Sources */,
@@ -8381,6 +8624,7 @@
 				D86B596A244F132900AB7350 /* PlayedGameLauncherCollectionViewCellDataProvider.swift in Sources */,
 				D8FBA4F82449BE7D0015C03C /* Language.swift in Sources */,
 				CE29FC3C2578F14700402D0D /* MinAmountComponentViewModel.swift in Sources */,
+				FB31201C2704FBE40012728C /* EndedMyBonusItemComponentViewModel.swift in Sources */,
 				CEF52CD42673604400D2386C /* PasswordChangeDTO.swift in Sources */,
 				CE3AC9DF26A17931000BF338 /* DocumentationActionTableViewCell.swift in Sources */,
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
@@ -8921,7 +9165,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 614;
+				CURRENT_PROJECT_VERSION = 619;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -8954,7 +9198,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 614;
+				CURRENT_PROJECT_VERSION = 619;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -9047,7 +9291,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 614;
+				CURRENT_PROJECT_VERSION = 619;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -9136,7 +9380,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 614;
+				CURRENT_PROJECT_VERSION = 619;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;

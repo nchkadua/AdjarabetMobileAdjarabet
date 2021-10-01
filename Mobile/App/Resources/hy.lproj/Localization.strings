@@ -329,6 +329,15 @@
 "bonus_empty_state_title" = "Bonuses are empty";
 "bonus_empty_state_description" = "You have not finished any transaction yet";
 
+/* My Bonuses */
+"my_bonuses_title" = "My Bonuses";
+"your_bonus" = "Your Bonus";
+"blocked_amount" = "Blocked Amount";
+"active_bonuses" = "Active Bonuses";
+"ended_bonuses" = "Ended Bonuses";
+"my_bonuses_balance_tips" = "Balance Tips";
+"my_bonuses_play_now" = "Play Now";
+
 /* P2P Transfer */
 "p2p_transfer_p2p_transfer" = "P2P transfer";
 "p2p_transfer_friend_id" = "friend id";

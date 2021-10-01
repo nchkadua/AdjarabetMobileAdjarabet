@@ -17,7 +17,6 @@ public class ABCollectionViewController: AppCollectionViewController, UICollecti
     public var viewModel: ABCollectionViewModel?
 
     private let disposeBag = DisposeBag()
-    private var numItemsInEmptyCollection = 0
     public var isTabBarManagementEnabled: Bool = false
 
 	private lazy var emptyState: (viewModel: EmptyStateComponentViewModel, view: EmptyStateComponentView) = {

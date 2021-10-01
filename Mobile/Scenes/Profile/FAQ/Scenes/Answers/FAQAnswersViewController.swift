@@ -58,9 +58,9 @@ public class FAQAnswersViewController: ABViewController {
         setTitle(title: R.string.localization.faq_title.localized())
         setBackBarButtonItemIfNeeded()
 
-        guard viewModel.params.showDismissButton else {return}
+        guard viewModel.params.showDismissButton else { return }
 
-        let dismissButtonGroup = makeBarrButtonWith(title: R.string.localization.reset_password_dismiss_button_title.localized())
+        let dismissButtonGroup = makeBarButtonWith(title: R.string.localization.reset_password_dismiss_button_title.localized())
         navigationItem.rightBarButtonItem = dismissButtonGroup.barButtonItem
         dismissButtonGroup.button.addTarget(self, action: #selector(dismissButtonClick), for: .touchUpInside)
     }

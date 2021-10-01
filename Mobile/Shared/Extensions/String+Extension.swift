@@ -61,25 +61,30 @@ public extension String {
 
 	// MARK: - Text Validations
 
-	func isValidAddress() -> Bool { true }
+	func isValidAddress() -> Bool {
+		isValidInput()
+	}
 
-	func isValidAmount() -> Bool { true }
+	func isValidAmount() -> Bool {
+		isValidInput()
+	}
 
 	func isValidEmail() -> Bool {
-		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-		return NSPredicate(format: "SELF MATCHES %@", emailRegEx).evaluate(with: self)
+		isMatch(regEx: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
 	}
 
 	func isValidEmailPrefix() -> Bool {
-		count(char: "@") < 2
+		isValidInput() && count(char: "@") < 2
+	}
+
+	func isValidInput() -> Bool {
+		!contains(where: { c in !c.isASCII || c.asciiValue! < 32 || c.asciiValue! > 126 })
 	}
 
 	func isValidNumber() -> Bool {
 		let numberStr = self.trimmingCharacters(in: .whitespacesAndNewlines)
 		let regEx = "^\\d{\(count)}$"
-
-		return NSPredicate(format: "SELF MATCHES[c] %@", regEx).evaluate(with: numberStr)
+		return numberStr.isMatch(regEx: regEx)
 	}
 
 	func isValidNumberPrefix() -> Bool {
@@ -87,36 +92,63 @@ public extension String {
 	}
 
 	func isValidUsername() -> Bool {
-		let regEx = "^[a-zA-Z0-9_]{4,20}$"
-
-		return NSPredicate(format: "SELF MATCHES[c] %@", regEx).evaluate(with: self)
+//		isMatch(regEx: "^[a-zA-Z0-9_]{4,20}$")
+		isValidInput()
 	}
 
 	func isValidUsernamePrefix() -> Bool {
-		let regEx = "^[a-zA-Z0-9_]{0,20}$"
-
-		return NSPredicate(format: "SELF MATCHES[c] %@", regEx).evaluate(with: self)
+//		isMatch(regEx: "^[a-zA-Z0-9_]{0,20}$")
+		isValidInput()
 	}
 
-	// TODO: - validating phone number using exact policies
 	func isValidPhoneNumberPrefix() -> Bool {
-		let regEx = "^\\d{0,9}$"
-
-		let phoneCheck = NSPredicate(format: "SELF MATCHES[c] %@", regEx)
-		return phoneCheck.evaluate(with: self)
+		isMatch(regEx: "^\\d{0,9}$")
 	}
 
 	func isValidPhoneNumber() -> Bool {
-		let regEx = "^\\d{9}$"
-
-		return NSPredicate(format: "SELF MATCHES[c] %@", regEx).evaluate(with: self)
+		isMatch(regEx: "^\\d{9}$")
 	}
 
-	func isValidPassword() -> Bool { count >= 6 }
+	func isValidPassword() -> Bool {
+		isValidInput() && count >= 6
+	}
 
-	func isValidPlainText() -> Bool { true }
+	func isValidPlainText() -> Bool {
+		isValidInput()
+	}
 
 	func count(char: Character) -> Int {
 		map({ $0 == char ? 1 : 0 }).reduce(0, { $0 + $1 })
+	}
+
+	/// Checks if string matches appropriate regex
+	func isMatch(regEx: String) -> Bool {
+		NSPredicate(format: "SELF MATCHES[c] %@", regEx).evaluate(with: self)
+	}
+
+	// MARK: - [] - Subscripts
+
+	var length: Int {
+		return count
+	}
+
+	subscript (i: Int) -> String {
+		return self[i ..< i + 1]
+	}
+
+	func substring(fromIndex: Int) -> String {
+		return self[min(fromIndex, length) ..< length]
+	}
+
+	func substring(toIndex: Int) -> String {
+		return self[0 ..< max(0, toIndex)]
+	}
+
+	subscript (r: Range<Int>) -> String {
+		let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
+											upper: min(length, max(0, r.upperBound))))
+		let start = index(startIndex, offsetBy: range.lowerBound)
+		let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+		return String(self[start ..< end])
 	}
 }

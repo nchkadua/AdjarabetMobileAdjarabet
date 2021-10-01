@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AdjaraMont-Regular.ttf">
+            <string>AdjaraMont-Regular</string>
+        </array>
+        <array key="AdjaraMont-SemiBold.ttf">
+            <string>AdjaraMont-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActiveMyBonusItemComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="dateLabel" destination="0uA-Nx-zmg" id="XKs-6K-dXD"/>
+                <outlet property="nameLabel" destination="n5I-Jk-FQ4" id="c4C-hN-kRc"/>
+                <outlet property="playNowButton" destination="QQV-mC-PCa" id="08d-6G-W6C"/>
+                <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="247" height="185"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-Ap-Spw" userLabel="contentView">
+                    <rect key="frame" x="0.0" y="4" width="247" height="181"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5I-Jk-FQ4" userLabel="nameLabel">
+                            <rect key="frame" x="14" y="80.5" width="222" height="20"/>
+                            <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="17"/>
+                            <color key="textColor" name="ColorGuide/TextColors/primary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uA-Nx-zmg" userLabel="dateLabel">
+                            <rect key="frame" x="14" y="14" width="34.5" height="16.5"/>
+                            <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
+                            <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgg-vW-KPd" userLabel="playNowView">
+                            <rect key="frame" x="14" y="137" width="222" height="34"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQV-mC-PCa" userLabel="playNowButton">
+                                    <rect key="frame" x="0.0" y="2.5" width="43" height="29"/>
+                                    <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="14"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" name="ColorGuide/TextColors/primary"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="playNowButtonHandler:" destination="-1" eventType="touchUpInside" id="oIV-Dp-Sgw"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bed-cZ-CVb">
+                                    <rect key="frame" x="184" y="0.0" width="38" height="34"/>
+                                    <color key="backgroundColor" name="ColorGuide/SystemBackground/querternary"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="38" id="bPU-gI-FGy"/>
+                                        <constraint firstAttribute="height" constant="34" id="zpw-cJ-wNG"/>
+                                    </constraints>
+                                    <state key="normal" title="?">
+                                        <color key="titleColor" name="ColorGuide/TextColors/primary"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="hintButtonHandler:" destination="-1" eventType="touchUpInside" id="ojG-VT-Wg9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="bed-cZ-CVb" firstAttribute="top" secondItem="Jgg-vW-KPd" secondAttribute="top" id="6tp-Cr-LIh"/>
+                                <constraint firstAttribute="trailing" secondItem="bed-cZ-CVb" secondAttribute="trailing" id="DVY-JZ-5L7"/>
+                                <constraint firstItem="QQV-mC-PCa" firstAttribute="centerY" secondItem="Jgg-vW-KPd" secondAttribute="centerY" id="IRW-cp-Xxv"/>
+                                <constraint firstItem="QQV-mC-PCa" firstAttribute="leading" secondItem="Jgg-vW-KPd" secondAttribute="leading" id="Sur-lg-f1G"/>
+                                <constraint firstAttribute="bottom" secondItem="bed-cZ-CVb" secondAttribute="bottom" id="oXi-V7-tYm"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="ColorGuide/SystemBackground/tertiary"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Jgg-vW-KPd" secondAttribute="bottom" constant="10" id="GRW-MH-d4R"/>
+                        <constraint firstItem="n5I-Jk-FQ4" firstAttribute="leading" secondItem="gEK-Ap-Spw" secondAttribute="leading" constant="14" id="GfQ-FZ-zb3"/>
+                        <constraint firstItem="0uA-Nx-zmg" firstAttribute="leading" secondItem="gEK-Ap-Spw" secondAttribute="leading" constant="14" id="LQk-PL-PxP"/>
+                        <constraint firstItem="0uA-Nx-zmg" firstAttribute="top" secondItem="gEK-Ap-Spw" secondAttribute="top" constant="14" id="RUd-XT-vIX"/>
+                        <constraint firstAttribute="trailing" secondItem="n5I-Jk-FQ4" secondAttribute="trailing" constant="11" id="T5U-FV-XO0"/>
+                        <constraint firstItem="Jgg-vW-KPd" firstAttribute="leading" secondItem="gEK-Ap-Spw" secondAttribute="leading" constant="14" id="d4g-rc-W0c"/>
+                        <constraint firstAttribute="trailing" secondItem="Jgg-vW-KPd" secondAttribute="trailing" constant="11" id="gxN-tN-g1x"/>
+                        <constraint firstItem="n5I-Jk-FQ4" firstAttribute="centerY" secondItem="gEK-Ap-Spw" secondAttribute="centerY" id="k7K-ZT-dXn"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="gEK-Ap-Spw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="6m2-oj-4q2"/>
+                <constraint firstAttribute="trailing" secondItem="gEK-Ap-Spw" secondAttribute="trailing" id="dfm-1q-zyS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gEK-Ap-Spw" secondAttribute="bottom" id="uPj-C1-rno"/>
+                <constraint firstItem="gEK-Ap-Spw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zBg-39-uFz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="12"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="-31.159420289855074" y="157.70089285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ColorGuide/SystemBackground/querternary">
+            <color red="0.22745098039215686" green="0.22745098039215686" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/SystemBackground/tertiary">
+            <color red="0.17254901960784313" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/primary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/secondary">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.96078431372549022" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

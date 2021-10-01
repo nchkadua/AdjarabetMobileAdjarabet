@@ -329,6 +329,15 @@
 "bonus_empty_state_title" = "Bonuses are empty";
 "bonus_empty_state_description" = "You have not finished any transaction yet";
 
+/* My Bonuses */
+"my_bonuses_title" = "ჩემი ბონუსები";
+"your_bonus" = "შენი ბონუსი";
+"blocked_amount" = "დაბლოკილი თანხა";
+"active_bonuses" = "აქტიური ბონუსები";
+"ended_bonuses" = "დასრულებული ბონუსები";
+"my_bonuses_balance_tips" = "ბალანსის განმარტებები";
+"my_bonuses_play_now" = "ითამაშე";
+
 /* P2P Transfer */
 "p2p_transfer_p2p_transfer" = "P2P ტრანსფერი";
 "p2p_transfer_friend_id" = "მეგობრის ID";

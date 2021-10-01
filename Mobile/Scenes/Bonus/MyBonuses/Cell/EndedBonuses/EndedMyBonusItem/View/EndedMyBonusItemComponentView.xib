@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AdjaraMont-Regular.ttf">
+            <string>AdjaraMont-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EndedMyBonusItemComponentView" customModule="Mobile" customModuleProvider="target">
+            <connections>
+                <outlet property="endDateLabel" destination="gIs-HT-Te3" id="YlC-bu-ABh"/>
+                <outlet property="nameLabel" destination="dVG-G1-zyC" id="5ul-25-gxF"/>
+                <outlet property="startDateLabel" destination="DKM-Zv-9Jn" id="G7F-85-mBA"/>
+                <outlet property="view" destination="iN0-l3-epB" id="rdE-MW-9xH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="85"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Mk-jF-7j9" userLabel="divider">
+                    <rect key="frame" x="0.0" y="84" width="363" height="1"/>
+                    <color key="backgroundColor" name="ColorGuide/Separator/non_opaque"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="xgt-MY-pmJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-Rj-PRT" userLabel="contentView">
+                    <rect key="frame" x="5" y="10" width="353" height="57"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4rn-G0-hb7">
+                            <rect key="frame" x="0.0" y="0.0" width="46" height="57"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-Zv-9Jn" userLabel="startDate">
+                                    <rect key="frame" x="0.0" y="0.0" width="46" height="27.5"/>
+                                    <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="12"/>
+                                    <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIs-HT-Te3" userLabel="endDate">
+                                    <rect key="frame" x="0.0" y="29.5" width="46" height="27.5"/>
+                                    <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="12"/>
+                                    <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="YAj-gh-H1h"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-G1-zyC">
+                            <rect key="frame" x="68" y="20.5" width="209" height="16.5"/>
+                            <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
+                            <color key="textColor" name="ColorGuide/TextColors/primary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jv-c1-Yyh">
+                            <rect key="frame" x="315" y="11.5" width="38" height="34"/>
+                            <color key="backgroundColor" name="ColorGuide/SystemBackground/querternary"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="38" id="f3r-1b-8Fh"/>
+                                <constraint firstAttribute="height" constant="34" id="zhD-f8-Rq9"/>
+                            </constraints>
+                            <state key="normal" title="?">
+                                <color key="titleColor" name="ColorGuide/TextColors/primary"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="hintButtonClicked:" destination="-1" eventType="touchUpInside" id="uLK-t3-6Ab"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dVG-G1-zyC" firstAttribute="centerY" secondItem="oQz-Rj-PRT" secondAttribute="centerY" id="3BW-TM-pkQ"/>
+                        <constraint firstItem="2Jv-c1-Yyh" firstAttribute="centerY" secondItem="oQz-Rj-PRT" secondAttribute="centerY" id="7Dq-M2-4pb"/>
+                        <constraint firstAttribute="trailing" secondItem="2Jv-c1-Yyh" secondAttribute="trailing" id="LuG-pt-Qe8"/>
+                        <constraint firstItem="4rn-G0-hb7" firstAttribute="leading" secondItem="oQz-Rj-PRT" secondAttribute="leading" id="aiK-dX-PRI"/>
+                        <constraint firstItem="dVG-G1-zyC" firstAttribute="leading" secondItem="4rn-G0-hb7" secondAttribute="trailing" constant="22" id="liv-gX-GXY"/>
+                        <constraint firstAttribute="bottom" secondItem="4rn-G0-hb7" secondAttribute="bottom" id="n9x-rS-F0W"/>
+                        <constraint firstItem="4rn-G0-hb7" firstAttribute="top" secondItem="oQz-Rj-PRT" secondAttribute="top" id="rBN-ws-IHN"/>
+                        <constraint firstItem="2Jv-c1-Yyh" firstAttribute="leading" secondItem="dVG-G1-zyC" secondAttribute="trailing" constant="38" id="wB8-Ic-Mpy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oQz-Rj-PRT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="7NJ-G5-Iko"/>
+                <constraint firstAttribute="bottom" secondItem="oQz-Rj-PRT" secondAttribute="bottom" constant="18" id="Kh8-h0-FgX"/>
+                <constraint firstItem="6Mk-jF-7j9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PyT-lc-dKd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oQz-Rj-PRT" secondAttribute="trailing" constant="5" id="R2R-Fa-xgu"/>
+                <constraint firstItem="oQz-Rj-PRT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="dXb-j0-R1N"/>
+                <constraint firstAttribute="bottom" secondItem="6Mk-jF-7j9" secondAttribute="bottom" id="h5R-if-Dqi"/>
+                <constraint firstAttribute="trailing" secondItem="6Mk-jF-7j9" secondAttribute="trailing" id="p9f-yD-Gcj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="52.898550724637687" y="124.21875"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ColorGuide/Separator/non_opaque">
+            <color red="0.32941176470588235" green="0.32941176470588235" blue="0.34509803921568627" alpha="0.64999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/SystemBackground/querternary">
+            <color red="0.22745098039215686" green="0.22745098039215686" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/primary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/secondary">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.96078431372549022" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

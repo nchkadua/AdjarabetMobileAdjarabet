@@ -25,8 +25,8 @@ public class GamesSearchViewController: ABViewController {
         setup()
         bind(to: viewModel)
         errorThrowing = viewModel
-        viewModel.viewDidLoad()
-        addNotificationCenterObservers()
+		addNotificationCenterObservers()
+		viewModel.viewDidLoad()
     }
 
     private func addNotificationCenterObservers() {

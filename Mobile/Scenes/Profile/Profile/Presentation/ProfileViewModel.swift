@@ -151,7 +151,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
 			dataProviders.append(quickActionViewModel)
 		}
 
-		logoutViewModel = logOutViewModel
+		logoutViewModel = logOutViewModel	// FIXME
 		dataProviders.append(logoutViewModel)
         dataProviders.append(footerViewModel)
 

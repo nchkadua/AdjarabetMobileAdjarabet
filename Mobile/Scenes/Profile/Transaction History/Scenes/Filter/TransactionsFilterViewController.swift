@@ -144,7 +144,7 @@ public class TransactionsFilterViewController: ABViewController {
 
     private func setupNavigationItems() {
         setTitle(title: R.string.localization.transactions_filter_title.localized())
-        let saveButton = makeBarrButtonWith(title: "შენახვა")
+        let saveButton = makeBarButtonWith(title: "შენახვა")
         navigationItem.rightBarButtonItem = saveButton.barButtonItem
         saveButton.button.addTarget(self, action: #selector(saveClicked), for: .touchUpInside)
     }

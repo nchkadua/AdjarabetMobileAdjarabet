@@ -10,31 +10,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PlayedGameLauncherCollectionViewCell" customModule="Mobile" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="363" height="185"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ActiveMyBonusesHeaderCollectionViewCell" customModule="Mobile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="148" height="140"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="363" height="185"/>
+                <rect key="frame" x="0.0" y="0.0" width="148" height="140"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhb-04-PR3" customClass="PlayedGameLauncherComponentView" customModule="Mobile" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="363" height="185"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGb-Bs-Q0s" userLabel="componentView" customClass="ActiveMyBonusesHeaderComponentView" customModule="Mobile" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="148" height="140"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="Qhb-04-PR3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5hU-mt-PZ1"/>
-                <constraint firstItem="Qhb-04-PR3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ikw-7X-3o0"/>
-                <constraint firstAttribute="bottom" secondItem="Qhb-04-PR3" secondAttribute="bottom" id="YJw-zi-vag"/>
-                <constraint firstAttribute="trailing" secondItem="Qhb-04-PR3" secondAttribute="trailing" id="bqf-Xz-Sdy"/>
+                <constraint firstAttribute="bottom" secondItem="JGb-Bs-Q0s" secondAttribute="bottom" id="Fo4-6u-D1v"/>
+                <constraint firstAttribute="trailing" secondItem="JGb-Bs-Q0s" secondAttribute="trailing" id="QvV-Jd-8dV"/>
+                <constraint firstItem="JGb-Bs-Q0s" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VaJ-li-hRP"/>
+                <constraint firstItem="JGb-Bs-Q0s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qtn-sR-LHY"/>
             </constraints>
-            <size key="customSize" width="363" height="185"/>
+            <size key="customSize" width="148" height="140"/>
             <connections>
-                <outlet property="playedGameLauncherComponentView" destination="Qhb-04-PR3" id="pfi-F5-Qcj"/>
+                <outlet property="componentView" destination="JGb-Bs-Q0s" id="hG1-t4-8pm"/>
             </connections>
-            <point key="canvasLocation" x="-61.594202898550726" y="147.65625"/>
+            <point key="canvasLocation" x="302.89855072463769" y="152.67857142857142"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -124,11 +124,11 @@ public extension CommonBarButtonProviding {
     }
 
     @discardableResult
-    func makeBarrButtonWith(title: String) -> UIBarButtonItem.Coupled {
+	func makeBarButtonWith(title: String, color: DesignSystem.Color = .primaryText(), font: DesignSystem.Typography = .subHeadline(fontCase: .lower)) -> UIBarButtonItem.Coupled {
         let button = UIButton()
         button.setTitle(title, for: .normal)
-        button.setTitleColor(DesignSystem.Color.primaryText().value, for: .normal)
-        button.setFont(to: .subHeadline(fontCase: .lower))
+		button.setTitleColor(color.value, for: .normal)
+        button.setFont(to: font)
         return (UIBarButtonItem(customView: button), button)
     }
 

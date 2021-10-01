@@ -416,13 +416,12 @@ public extension ABInputView {
 
 		/// is used when checking if user is typing appropriate string
 		func isValidPrefix(_ text: String) -> Bool {
-			print("*** isValidPrefix: text: \(text)")
 			switch self {
 			case .email: 		return text.isValidEmailPrefix()
 			case .number:		return text.isValidNumberPrefix()
 			case .phoneNumber: 	return text.isValidPhoneNumberPrefix()
 			case .username:		return text.isValidUsernamePrefix()
-			default: 			return true
+			default: 			return text.isValidInput()
 			}
 		}
 	}

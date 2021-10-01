@@ -13,6 +13,7 @@ public class ProfileNavigator: Navigator {
     @Inject(from: .factories) public var depositViewControllerFactory: DepositViewControllerFactory
     @Inject(from: .factories) public var withdrawViewControllerFactory: WithdrawViewControllerFactory
     @Inject(from: .factories) private var transactionHistoryViewControllerFactory: TransactionsViewControllerFactory
+	@Inject(from: .factories) private var myBonusesViewControllerFactory: MyBonusesViewControllerFactory
     @Inject(from: .factories) public var biometricSettingsViewControllerFactory: BiometricSettingsViewControllerFactory
     @Inject(from: .factories) public var accountParametersViewControllerFactory: AccountParametersViewControllerFactory
     @Inject(from: .factories) public var myCardsViewControllerFactory: MyCardsViewControllerFactory
@@ -25,34 +26,35 @@ public class ProfileNavigator: Navigator {
     }
 
     public enum Destination {
-        case deposit
-        case withdraw
-        case transactionHistory
+		case accountInformation
+		case accountParameters
+		case biometryParameters
+		case contactUs
+		case deposit
+		case documentation
+		case faq
+		case incognitoCard
+		case loginPage
         case myCards
         case myBonuses
-        case faq
-        case biometryParameters
-        case incognitoCard
-        case accountInformation
-        case accountParameters
-        case documentation
-        case contactUs
-        case loginPage
+		case transactionHistory
+		case withdraw
     }
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
-        case .deposit: navigateToDeposit(animate: animate)
-        case .withdraw: navigateToWithdraw(animate: animate)
-        case .transactionHistory: navigateToTransactionHistory(animate: animate)
-        case .myCards: navigateToMyCards(animate: animate)
-        case .faq: navigateToFAQ(animate: animate)
-        case .biometryParameters: navigateToBiometricSettings(animate: animate)
-        case .accountInformation: navigateToAccountInformation(animate: animate)
-        case .accountParameters: navigateToAccountParameters(animate: animate)
-        case .documentation: navigateDocumentation(animate: animate)
-        case .contactUs: navigateToContactUs(animate: animate)
-        case .loginPage: navigateToLogin(animate: animate)
+        case .deposit: 				navigateToDeposit(animate: animate)
+        case .withdraw: 			navigateToWithdraw(animate: animate)
+        case .transactionHistory: 	navigateToTransactionHistory(animate: animate)
+		case .myBonuses: 			navigateToMyBonuses(animate: animate)
+        case .myCards: 				navigateToMyCards(animate: animate)
+        case .faq: 					navigateToFAQ(animate: animate)
+        case .biometryParameters: 	navigateToBiometricSettings(animate: animate)
+        case .accountInformation: 	navigateToAccountInformation(animate: animate)
+        case .accountParameters: 	navigateToAccountParameters(animate: animate)
+        case .documentation: 		navigateDocumentation(animate: animate)
+        case .contactUs: 			navigateToContactUs(animate: animate)
+        case .loginPage:			navigateToLogin(animate: animate)
         default:
             break
         }
@@ -78,6 +80,11 @@ public class ProfileNavigator: Navigator {
         let vc = transactionHistoryViewControllerFactory.make()
         viewController?.navigationController?.pushViewController(vc, animated: animate)
     }
+
+	private func navigateToMyBonuses(animate: Bool) {
+		let vc = myBonusesViewControllerFactory.make(params: .init())
+		viewController?.navigationController?.pushViewController(vc, animated: animate)
+	}
 
     private func navigateToMyCards(animate: Bool) {
         let vc = myCardsViewControllerFactory.make()

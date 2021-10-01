@@ -10,11 +10,11 @@ import UIKit
 
 public extension UIView {
     @discardableResult
-    func pin(to parentView: UIView) -> EdgeConstraint {
-        let top = topAnchor.constraint(equalTo: parentView.topAnchor)
-        let bottom = bottomAnchor.constraint(equalTo: parentView.bottomAnchor)
-        let left = leadingAnchor.constraint(equalTo: parentView.leadingAnchor)
-        let right = trailingAnchor.constraint(equalTo: parentView.trailingAnchor)
+	func pin(to parentView: UIView, topConstant: CGFloat = 0, bottomConstant: CGFloat = 0, leadingConstant: CGFloat = 0, trailingConstant: CGFloat = 0) -> EdgeConstraint {
+        let top = topAnchor.constraint(equalTo: parentView.topAnchor, constant: topConstant)
+        let bottom = bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: bottomConstant)
+        let left = leadingAnchor.constraint(equalTo: parentView.leadingAnchor, constant: leadingConstant)
+        let right = trailingAnchor.constraint(equalTo: parentView.trailingAnchor, constant: trailingConstant)
 
         NSLayoutConstraint.activate([top, bottom, left, right])
 
