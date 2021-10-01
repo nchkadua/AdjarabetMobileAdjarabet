@@ -162,6 +162,10 @@ public extension DependencyContainer {
         Module { DefaultFAQRepository() as FAQRepository }
         Module { DefaultContactRepository() as ContactRepository }
         Module { DefaultAboutUsRepository() as AboutUsRepository }
+
+        Module { DefaultPublicPromosRepository() as PublicPromosRepository }
+        Module { DefaultPrivatePromosRepository() as PrivatePromosRepository }
+        Module { DefaultBonusesRepository() as BonusesRepository }
     }
 
     static var factories = DependencyContainer {
@@ -241,5 +245,7 @@ public extension DependencyContainer {
         Module { UFCDepositUseCase() as UFCDepositUseCase }
         Module { UFCWithdrawUseCase() as UFCWithdrawUseCase }
         Module { DefaultApplePayUseCase() as ApplePayUseCase }
+
+        Module { DefaultPromosUseCase() as PromosUseCase }
     }
 }

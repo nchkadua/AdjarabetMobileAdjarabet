@@ -44,6 +44,10 @@ public class PromotionsViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didReceive(action: action)
         }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didReceive(action: PromotionsViewModelOutputAction) {
@@ -54,6 +58,13 @@ public class PromotionsViewController: ABViewController {
             appTableViewController.dataProvider = appListDataProvider
         case .bindToPromoTabViewModel(let viewModel):
             bindToTab(viewModel)
+        case .isLoading(let loading): loading ? startLoading() : stopLoading()
+        }
+    }
+
+    private func didRecive(route: PromotionsViewModelRoute) {
+        switch route {
+        case .openPromo(let request): navigator.navigate(to: .webView(params: .init(loadType: .urlRequst(request: request), canNavigate: true)), animated: true)
         }
     }
 

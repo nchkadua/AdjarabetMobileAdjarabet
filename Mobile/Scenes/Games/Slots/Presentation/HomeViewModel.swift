@@ -264,10 +264,10 @@ extension DefaultHomeViewModel: HomeViewModel {
     }
 
     public func viewDidLoad() {
+        displayEmptyGames()
         showErrorIfNeeded()
         observeLanguageChange()
         observeLayoutChange()
-        displayEmptyGames()
 
         loadRecentryPlayedGames()
         load(loadingType: .fullScreen)

@@ -425,7 +425,6 @@
 		CE1D6EC7252F373E0091F6D9 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */; };
 		CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */; };
 		CE1D6ECF252F37510091F6D9 /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */; };
-		CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D6ED3252F38CF0091F6D9 /* PromotionsProvider.swift */; };
 		CE29FC382578F13E00402D0D /* MinAmountComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE29FC372578F13E00402D0D /* MinAmountComponentView.xib */; };
 		CE29FC3C2578F14700402D0D /* MinAmountComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29FC3B2578F14700402D0D /* MinAmountComponentViewModel.swift */; };
 		CE29FC402578F14D00402D0D /* MinAmountComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29FC3F2578F14D00402D0D /* MinAmountComponentView.swift */; };
@@ -474,6 +473,21 @@
 		CE3E325A27031AD100E5D0AA /* WebViewHeaderComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3E325427031AD100E5D0AA /* WebViewHeaderComponentView.xib */; };
 		CE3E325D27031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E325727031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift */; };
 		CE3E325E27031AD100E5D0AA /* WebViewHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E325827031AD100E5D0AA /* WebViewHeaderComponentView.swift */; };
+		CE3E32672705BC4A00E5D0AA /* PublicPromosEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E32662705BC4A00E5D0AA /* PublicPromosEntity.swift */; };
+		CE3E32692705BC5300E5D0AA /* PublicPromosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E32682705BC5300E5D0AA /* PublicPromosRepository.swift */; };
+		CE3E326B2705BC7300E5D0AA /* PublicPromosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E326A2705BC7300E5D0AA /* PublicPromosDTO.swift */; };
+		CE3E326D2705BC8000E5D0AA /* MobileApiPublicPromosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E326C2705BC8000E5D0AA /* MobileApiPublicPromosRepository.swift */; };
+		CE3E326F2705C42400E5D0AA /* PromosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E326E2705C42400E5D0AA /* PromosUseCase.swift */; };
+		CE3E32712705D9FD00E5D0AA /* PrivatePromosEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E32702705D9FD00E5D0AA /* PrivatePromosEntity.swift */; };
+		CE3E32742705DA1100E5D0AA /* PrivatePromosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E32732705DA1100E5D0AA /* PrivatePromosRepository.swift */; };
+		CE3E32762705DA2100E5D0AA /* PrivatePromosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E32752705DA2100E5D0AA /* PrivatePromosDTO.swift */; };
+		CE3E32792705DA3900E5D0AA /* MobileApiPrivatePromosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E32782705DA3900E5D0AA /* MobileApiPrivatePromosRepository.swift */; };
+		CE3E328027060B2300E5D0AA /* BonusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E327F27060B2300E5D0AA /* BonusesRepository.swift */; };
+		CE3E328227060B3200E5D0AA /* ActiveBonusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E328127060B3200E5D0AA /* ActiveBonusEntity.swift */; };
+		CE3E328427060B4900E5D0AA /* CompletedBonusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E328327060B4900E5D0AA /* CompletedBonusEntity.swift */; };
+		CE3E328627060B5500E5D0AA /* MobileApiBonusesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E328527060B5500E5D0AA /* MobileApiBonusesRepository.swift */; };
+		CE3E328827060B5F00E5D0AA /* ActiveBonusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E328727060B5F00E5D0AA /* ActiveBonusDTO.swift */; };
+		CE3E328A27060B6D00E5D0AA /* CompletedBonusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E328927060B6D00E5D0AA /* CompletedBonusDTO.swift */; };
 		CE454654260C89EC00B01E19 /* VisaLimitComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */; };
 		CE454658260C89F900B01E19 /* VisaLimitComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */; };
 		CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */; };
@@ -1435,7 +1449,6 @@
 		CE1D6EC6252F373E0091F6D9 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
 		CE1D6ECA252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		CE1D6ECE252F37510091F6D9 /* PromotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionTableViewCell.xib; sourceTree = "<group>"; };
-		CE1D6ED3252F38CF0091F6D9 /* PromotionsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsProvider.swift; sourceTree = "<group>"; };
 		CE29FC372578F13E00402D0D /* MinAmountComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MinAmountComponentView.xib; sourceTree = "<group>"; };
 		CE29FC3B2578F14700402D0D /* MinAmountComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinAmountComponentViewModel.swift; sourceTree = "<group>"; };
 		CE29FC3F2578F14D00402D0D /* MinAmountComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinAmountComponentView.swift; sourceTree = "<group>"; };
@@ -1484,6 +1497,21 @@
 		CE3E325427031AD100E5D0AA /* WebViewHeaderComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewHeaderComponentView.xib; sourceTree = "<group>"; };
 		CE3E325727031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHeaderComponentViewModel.swift; sourceTree = "<group>"; };
 		CE3E325827031AD100E5D0AA /* WebViewHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHeaderComponentView.swift; sourceTree = "<group>"; };
+		CE3E32662705BC4A00E5D0AA /* PublicPromosEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPromosEntity.swift; sourceTree = "<group>"; };
+		CE3E32682705BC5300E5D0AA /* PublicPromosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPromosRepository.swift; sourceTree = "<group>"; };
+		CE3E326A2705BC7300E5D0AA /* PublicPromosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPromosDTO.swift; sourceTree = "<group>"; };
+		CE3E326C2705BC8000E5D0AA /* MobileApiPublicPromosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiPublicPromosRepository.swift; sourceTree = "<group>"; };
+		CE3E326E2705C42400E5D0AA /* PromosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromosUseCase.swift; sourceTree = "<group>"; };
+		CE3E32702705D9FD00E5D0AA /* PrivatePromosEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivatePromosEntity.swift; sourceTree = "<group>"; };
+		CE3E32732705DA1100E5D0AA /* PrivatePromosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivatePromosRepository.swift; sourceTree = "<group>"; };
+		CE3E32752705DA2100E5D0AA /* PrivatePromosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivatePromosDTO.swift; sourceTree = "<group>"; };
+		CE3E32782705DA3900E5D0AA /* MobileApiPrivatePromosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiPrivatePromosRepository.swift; sourceTree = "<group>"; };
+		CE3E327F27060B2300E5D0AA /* BonusesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusesRepository.swift; sourceTree = "<group>"; };
+		CE3E328127060B3200E5D0AA /* ActiveBonusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBonusEntity.swift; sourceTree = "<group>"; };
+		CE3E328327060B4900E5D0AA /* CompletedBonusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedBonusEntity.swift; sourceTree = "<group>"; };
+		CE3E328527060B5500E5D0AA /* MobileApiBonusesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiBonusesRepository.swift; sourceTree = "<group>"; };
+		CE3E328727060B5F00E5D0AA /* ActiveBonusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBonusDTO.swift; sourceTree = "<group>"; };
+		CE3E328927060B6D00E5D0AA /* CompletedBonusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedBonusDTO.swift; sourceTree = "<group>"; };
 		CE454653260C89EC00B01E19 /* VisaLimitComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaLimitComponentView.swift; sourceTree = "<group>"; };
 		CE454657260C89F900B01E19 /* VisaLimitComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaLimitComponentView.xib; sourceTree = "<group>"; };
 		CE45465D260C8A6700B01E19 /* VisaInstructionsComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaInstructionsComponentView.swift; sourceTree = "<group>"; };
@@ -4861,7 +4889,8 @@
 		CE2AB492266A443F00C88262 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D6ED3252F38CF0091F6D9 /* PromotionsProvider.swift */,
+				CE3E32602705BBF200E5D0AA /* Use Cases */,
+				CE3E32612705BBFB00E5D0AA /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -4880,6 +4909,7 @@
 			children = (
 				FB311FF82704835C0012728C /* MyBonuses */,
 				CE2AB49D266A475900C88262 /* Presentation */,
+				CE3E327A27060AB700E5D0AA /* Data */,
 			);
 			path = Bonus;
 			sourceTree = "<group>";
@@ -5188,6 +5218,122 @@
 				CE3E325427031AD100E5D0AA /* WebViewHeaderComponentView.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CE3E32602705BBF200E5D0AA /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E326E2705C42400E5D0AA /* PromosUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		CE3E32612705BBFB00E5D0AA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E32632705BC0F00E5D0AA /* Protocol */,
+				CE3E32622705BC0800E5D0AA /* Implementation */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE3E32622705BC0800E5D0AA /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E32652705BC3A00E5D0AA /* Entities */,
+				CE3E32772705DA2800E5D0AA /* Repositories */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE3E32632705BC0F00E5D0AA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E32642705BC3200E5D0AA /* Entities */,
+				CE3E32722705DA0400E5D0AA /* Repositories */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE3E32642705BC3200E5D0AA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E32662705BC4A00E5D0AA /* PublicPromosEntity.swift */,
+				CE3E32702705D9FD00E5D0AA /* PrivatePromosEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE3E32652705BC3A00E5D0AA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E326A2705BC7300E5D0AA /* PublicPromosDTO.swift */,
+				CE3E32752705DA2100E5D0AA /* PrivatePromosDTO.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE3E32722705DA0400E5D0AA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E32682705BC5300E5D0AA /* PublicPromosRepository.swift */,
+				CE3E32732705DA1100E5D0AA /* PrivatePromosRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE3E32772705DA2800E5D0AA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E326C2705BC8000E5D0AA /* MobileApiPublicPromosRepository.swift */,
+				CE3E32782705DA3900E5D0AA /* MobileApiPrivatePromosRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CE3E327A27060AB700E5D0AA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E327C27060AED00E5D0AA /* Protocol */,
+				CE3E327B27060AE800E5D0AA /* Implementation */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE3E327B27060AE800E5D0AA /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E327E27060B0A00E5D0AA /* Entities */,
+				CE3E328527060B5500E5D0AA /* MobileApiBonusesRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE3E327C27060AED00E5D0AA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E327D27060B0500E5D0AA /* Entities */,
+				CE3E327F27060B2300E5D0AA /* BonusesRepository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE3E327D27060B0500E5D0AA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E328127060B3200E5D0AA /* ActiveBonusEntity.swift */,
+				CE3E328327060B4900E5D0AA /* CompletedBonusEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE3E327E27060B0A00E5D0AA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E328727060B5F00E5D0AA /* ActiveBonusDTO.swift */,
+				CE3E328927060B6D00E5D0AA /* CompletedBonusDTO.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		CE454651260C89C000B01E19 /* Instructions */ = {
@@ -8054,7 +8200,6 @@
 				CE4A3155261732920039C078 /* NotificationDTO.swift in Sources */,
 				CE0818DF2539A47C00AD3B3B /* NotificationsButton.swift in Sources */,
 				CE3AC9E126A17931000BF338 /* DocumentationActionTableViewCellDataProvider.swift in Sources */,
-				CE1D6ED4252F38CF0091F6D9 /* PromotionsProvider.swift in Sources */,
 				D85C9C2124336CA400F1D4FE /* UserSession.swift in Sources */,
 				FB312002270483E50012728C /* MyBonusesViewModel.swift in Sources */,
 				CEB81E03253868A9006BEDEC /* NotificationContentViewController.swift in Sources */,
@@ -8064,6 +8209,7 @@
 				CE5F37E22701DC2C005C3426 /* MobileApiAboutUsRepository.swift in Sources */,
 				D8AC492924CFE58B000B2D80 /* FirebaseAppService.swift in Sources */,
 				C7C9732C2580D9550062C713 /* SecurityLevelComponentViewModel.swift in Sources */,
+				CE3E326B2705BC7300E5D0AA /* PublicPromosDTO.swift in Sources */,
 				C707548925F396130033050E /* PaymentListUseCase.swift in Sources */,
 				CEF52C9A26721D7800D2386C /* ActionOTPRepository.swift in Sources */,
 				CEF52C9E26721D9600D2386C /* CoreApiActionOTPRepository.swift in Sources */,
@@ -8088,6 +8234,7 @@
 				C747734E25B5C1030083C845 /* Currency.swift in Sources */,
 				FB1FEDC72706115F002A3A26 /* ActiveMyBonusItemCollectionViewCellDataProvider.swift in Sources */,
 				76DCF69A25B823F000150EE1 /* VideoCard.swift in Sources */,
+				CE3E328027060B2300E5D0AA /* BonusesRepository.swift in Sources */,
 				CEEBDFE5253095C1000C62D0 /* UINavigationBar+Extension.swift in Sources */,
 				CEB81E04253868A9006BEDEC /* NotificationContentViewModel.swift in Sources */,
 				76BADBA3257756650080AB76 /* DisplayTransactionHistoriesUseCase.swift in Sources */,
@@ -8135,6 +8282,7 @@
 				76DCF68925B815AC00150EE1 /* MyCardsCreditCard.swift in Sources */,
 				C72C87AC26CE74230000BDA8 /* PopupErrorViewModel.swift in Sources */,
 				D8CFD8B5244C85AC001F4BAA /* Xibable.swift in Sources */,
+				CE3E32792705DA3900E5D0AA /* MobileApiPrivatePromosRepository.swift in Sources */,
 				76BDF4602576043A007B27A7 /* AccountParametersViewModel.swift in Sources */,
 				D8029CF3251A79E200ABF3D9 /* LoginViewControllerFactory.swift in Sources */,
 				7665D963257E5CA600E5B35F /* AccessHistoryViewModel.swift in Sources */,
@@ -8149,6 +8297,7 @@
 				C7FB268A25CD8A0900111106 /* LaunchUrlDTO.swift in Sources */,
 				FB31203A27056E920012728C /* ActiveMyBonusesHeaderComponentView.swift in Sources */,
 				CE7698AA269F02F6009972B2 /* ResetOptionComponentView.swift in Sources */,
+				CE3E32692705BC5300E5D0AA /* PublicPromosRepository.swift in Sources */,
 				C754317F25F5605900E485DD /* PaymentListDTO.swift in Sources */,
 				76EBDB3A257E417D00C8DC6A /* AccessListUseCase.swift in Sources */,
 				CE4A3100261224F70039C078 /* SuggestedAmountGridComponentViewModel.swift in Sources */,
@@ -8200,6 +8349,7 @@
 				7676E54F2562856600234026 /* TransactionsViewController.swift in Sources */,
 				CE95FC92252F2B28003E539B /* PromotionComponentViewModel.swift in Sources */,
 				CE2AABC12679FF8000B45A0A /* InitPasswordResetDTO.swift in Sources */,
+				CE3E32742705DA1100E5D0AA /* PrivatePromosRepository.swift in Sources */,
 				CE4A3138261478D80039C078 /* MainContainerViewController.swift in Sources */,
 				CEB9637B2681E4D8002EBF4C /* LogOutComponentView.swift in Sources */,
 				D88EB3D12475972A00E1CC0C /* InputViewsProviding.swift in Sources */,
@@ -8254,6 +8404,7 @@
 				C707549325F3963C0033050E /* PaymentListRepository.swift in Sources */,
 				CECA7EEC26AEEADD00BCF04A /* ContactAddressComponentViewModel.swift in Sources */,
 				C75F61E22657046E009CB6A1 /* LayoutChooserCollectionViewCell.swift in Sources */,
+				CE3E328A27060B6D00E5D0AA /* CompletedBonusDTO.swift in Sources */,
 				C7C35FD925C93C0000ADCBB6 /* GameLaunchInteractor.swift in Sources */,
 				76404F0D257625F900D14E0C /* AccountSecurityMessagesComponentView.swift in Sources */,
 				D8FBA4FE2449C50B0015C03C /* Rswift+Extension.swift in Sources */,
@@ -8338,6 +8489,7 @@
 				CE95FBC0252CDEF7003E539B /* QuickActionsHeaderView.swift in Sources */,
 				CE6E294D256E8F1F001FE225 /* Double+Extension.swift in Sources */,
 				C7E3F14B261CCF5E009B6D6A /* CashOutVisaView.swift in Sources */,
+				CE3E32672705BC4A00E5D0AA /* PublicPromosEntity.swift in Sources */,
 				76EBDB3D257E417D00C8DC6A /* CoreApiAccessListRepository.swift in Sources */,
 				CE45465E260C8A6700B01E19 /* VisaInstructionsComponentView.swift in Sources */,
 				CE91C10E25702C4700A18255 /* CalendarComponentView.swift in Sources */,
@@ -8545,6 +8697,7 @@
 				C7A047FF26C3FD300035D93D /* NotificationErrorView.swift in Sources */,
 				CED4D95E26565D38003F35AF /* PasswordReminderComponentView.swift in Sources */,
 				CE91C0E1257028D400A18255 /* TransactionsFilterViewControllerFactory.swift in Sources */,
+				CE3E328627060B5500E5D0AA /* MobileApiBonusesRepository.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
 				7665D97F257F4C0E00E5B35F /* AccessHistoryComponentView.swift in Sources */,
 				769EDC2325D294F000C18B52 /* Accessible.swift in Sources */,
@@ -8581,6 +8734,7 @@
 				FB8116C226E5B482009D9AE5 /* TitleDescriptionButtonComponentView.swift in Sources */,
 				7698869A2571042A00FA339E /* TransactionFilterTableViewCellDataProvider.swift in Sources */,
 				7676E5502562856600234026 /* TransactionsViewModel.swift in Sources */,
+				CE3E328427060B4900E5D0AA /* CompletedBonusEntity.swift in Sources */,
 				C78E52F12683A2F100EE1C18 /* SuspendRepository.swift in Sources */,
 				76DCF67525B80FB500150EE1 /* MyCardsNavigator.swift in Sources */,
 				FB1FEDCA270611D1002A3A26 /* ActiveMyBonusItemCollectionViewCell.swift in Sources */,
@@ -8594,6 +8748,7 @@
 				D85C9BF92433678000F1D4FE /* AdjarabetCoreResult.swift in Sources */,
 				CECF7F45256D5A77001C0E50 /* AddressChangeViewModel.swift in Sources */,
 				CEE15C3A25349C330033BF93 /* NotificationComponentView.swift in Sources */,
+				CE3E328827060B5F00E5D0AA /* ActiveBonusDTO.swift in Sources */,
 				CEF29DAA26B17D3D00F32EC2 /* IDDocumentsEntity.swift in Sources */,
 				C78E5297268377C300EE1C18 /* CoreApiStatusCodeDTO.swift in Sources */,
 				7644B5F72563A7CC006778B2 /* TransactionHistoryTableViewCellDataProvider.swift in Sources */,
@@ -8626,6 +8781,7 @@
 				CE29FC3C2578F14700402D0D /* MinAmountComponentViewModel.swift in Sources */,
 				FB31201C2704FBE40012728C /* EndedMyBonusItemComponentViewModel.swift in Sources */,
 				CEF52CD42673604400D2386C /* PasswordChangeDTO.swift in Sources */,
+				CE3E326D2705BC8000E5D0AA /* MobileApiPublicPromosRepository.swift in Sources */,
 				CE3AC9DF26A17931000BF338 /* DocumentationActionTableViewCell.swift in Sources */,
 				D861DA8F2466BC980054D058 /* AuthenticationRepository.swift in Sources */,
 				7676E55D2562D73100234026 /* TransactionHistoryProvider.swift in Sources */,
@@ -8646,9 +8802,11 @@
 				76EFF7C52582383000898819 /* AccessHistoryCalendarViewController.swift in Sources */,
 				CE1D6ECB252F374C0091F6D9 /* PromotionTableViewCellDataProvider.swift in Sources */,
 				D8390E74246B14AA00EF8CB5 /* KeyboardListening.swift in Sources */,
+				CE3E32762705DA2100E5D0AA /* PrivatePromosDTO.swift in Sources */,
 				C7A517B42631EB1600933DF8 /* PaymentAccountPagingableRepository.swift in Sources */,
 				CEE15C3E25349C3E0033BF93 /* NotificationComponentViewModel.swift in Sources */,
 				CE64EA7D25D1695400438974 /* GameViewControllerFactory.swift in Sources */,
+				CE3E328227060B3200E5D0AA /* ActiveBonusEntity.swift in Sources */,
 				D87E3C542445FDE5004A4BDF /* NotificationsViewController.swift in Sources */,
 				CE4A30D62611E5420039C078 /* SuggestedAmountComponentViewModel.swift in Sources */,
 				C7C9732E2580D9550062C713 /* SecurityLevelTableViewCell.swift in Sources */,
@@ -8667,6 +8825,7 @@
 				CE2AABDB267B47F300B45A0A /* ResetPasswordEntity.swift in Sources */,
 				76EFF7C42582383000898819 /* AccessHistoryCalendarNavigator.swift in Sources */,
 				D8BA5A1C24993A0000F88433 /* CookieStorageRepository.swift in Sources */,
+				CE3E326F2705C42400E5D0AA /* PromosUseCase.swift in Sources */,
 				C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */,
 				D8BA5A1A2499391C00F88433 /* AppConstant.swift in Sources */,
 				CE3AC9E626A17931000BF338 /* DocumentationViewControllerFactory.swift in Sources */,
@@ -8697,6 +8856,7 @@
 				CE91C11225702C4E00A18255 /* CalendarComponentViewModel.swift in Sources */,
 				CE8644F626FDD79700F13400 /* ContactEntity.swift in Sources */,
 				D8BE830E24B1B5D900D7E94D /* JSONMessage.swift in Sources */,
+				CE3E32712705D9FD00E5D0AA /* PrivatePromosEntity.swift in Sources */,
 				CE5F37DE2701DC11005C3426 /* AboutUsRepository.swift in Sources */,
 				76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */,
 				7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */,

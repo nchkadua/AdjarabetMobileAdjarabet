@@ -45,11 +45,15 @@ public class MainContainerViewController: UIViewController {
 
     // MARK: Public methods
     public func jumpToMainTabBar() {
-        pageViewController.previous()
+        DispatchQueue.main.async {
+            self.pageViewController.previous()
+        }
     }
 
     public func jumpToProfile() {
-        pageViewController.next()
+        DispatchQueue.main.async {
+            self.pageViewController.next()
+        }
     }
 
     public func setPageViewControllerSwipeEnabled(_ enable: Bool) {
