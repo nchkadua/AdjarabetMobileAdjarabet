@@ -95,6 +95,7 @@ public extension DependencyContainer {
         Module { DefaultContactUsViewModel(params: .init(showDismiss: true)) as ContactUsViewModel }
         Module { DefaultNotVerifiedUserViewModel(params: .init()) as NotVerifiedUserViewModel }
 		Module { DefaultMyBonusesViewModel(params: .init()) as MyBonusesViewModel }
+		Module { DefaultBonusConditionViewModel(params: .init()) as BonusConditionViewModel }
     }
 
     static var componentViewModels = DependencyContainer {
@@ -207,6 +208,7 @@ public extension DependencyContainer {
         Module { DefaultContactUsViewControllerFactory() as ContactUsViewControllerFactory }
         Module { DefaultNotVerifiedUserViewControllerFactory() as NotVerifiedUserViewControllerFactory }
 		Module { DefaultMyBonusesViewControllerFactory() as MyBonusesViewControllerFactory }
+		Module { DefaultBonusConditionViewControllerFactory() as BonusConditionViewControllerFactory }
 
         // Payments
         Module { UFCTransactionParamsFactory() as UFCTransactionParamsFactory }

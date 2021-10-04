@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLB-36-Kz5" userLabel="contentView">
-                    <rect key="frame" x="0.0" y="0.0" width="287" height="90"/>
+                    <rect key="frame" x="5" y="0.0" width="282" height="90"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-eJ-fmk">
-                            <rect key="frame" x="0.0" y="32" width="54" height="26"/>
+                            <rect key="frame" x="0.0" y="30" width="61" height="30.5"/>
                             <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="22"/>
                             <color key="textColor" name="ColorGuide/TextColors/primary"/>
                             <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                 <constraint firstItem="fLB-36-Kz5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="54R-m5-I7m"/>
                 <constraint firstAttribute="bottom" secondItem="fLB-36-Kz5" secondAttribute="bottom" id="8uf-Q3-VGf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fLB-36-Kz5" secondAttribute="trailing" id="eAI-cf-sec"/>
-                <constraint firstItem="fLB-36-Kz5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="guD-4K-CvD"/>
+                <constraint firstItem="fLB-36-Kz5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="guD-4K-CvD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-2.1739130434782612" y="125.89285714285714"/>

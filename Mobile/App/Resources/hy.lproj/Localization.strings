@@ -337,6 +337,8 @@
 "ended_bonuses" = "Ended Bonuses";
 "my_bonuses_balance_tips" = "Balance Tips";
 "my_bonuses_play_now" = "Play Now";
+"my_bonuses_condition_title" = "Terms";
+"my_bonuses_condition_close" = "Close";
 
 /* P2P Transfer */
 "p2p_transfer_p2p_transfer" = "P2P transfer";

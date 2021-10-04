@@ -26,6 +26,7 @@ public protocol ActiveMyBonusesHeaderComponentViewModelInput {
 }
 
 public protocol ActiveMyBonusesHeaderComponentViewModelOutput {
+	func configure(count: Int)
     var action: Observable<ActiveMyBonusesHeaderComponentViewModelOutputAction> { get }
     var params: ActiveMyBonusesHeaderComponentViewModelParams { get }
 	var title: String { get }
@@ -41,7 +42,11 @@ public class DefaultActiveMyBonusesHeaderComponentViewModel {
 	public var title: String { get { params.title.uppercased() } }
 	public var count: Int { get { params.count } }
 
-    public init(params: ActiveMyBonusesHeaderComponentViewModelParams) {
+	public func configure(count: Int) {
+		params.count = count
+	}
+
+	public init(params: ActiveMyBonusesHeaderComponentViewModelParams) {
         self.params = params
     }
 }

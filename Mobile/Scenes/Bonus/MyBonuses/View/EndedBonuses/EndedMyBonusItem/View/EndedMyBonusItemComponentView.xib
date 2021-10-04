@@ -38,16 +38,16 @@
                     <rect key="frame" x="5" y="10" width="353" height="57"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4rn-G0-hb7">
-                            <rect key="frame" x="0.0" y="0.0" width="46" height="57"/>
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="57"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-Zv-9Jn" userLabel="startDate">
-                                    <rect key="frame" x="0.0" y="0.0" width="46" height="27.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="27.5"/>
                                     <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="12"/>
                                     <color key="textColor" name="ColorGuide/TextColors/secondary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIs-HT-Te3" userLabel="endDate">
-                                    <rect key="frame" x="0.0" y="29.5" width="46" height="27.5"/>
+                                    <rect key="frame" x="0.0" y="29.5" width="50" height="27.5"/>
                                     <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="12"/>
                                     <color key="textColor" name="ColorGuide/TextColors/secondary"/>
                                     <nil key="highlightedColor"/>
@@ -55,11 +55,11 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="46" id="YAj-gh-H1h"/>
+                                <constraint firstAttribute="width" constant="50" id="bRi-R1-SwB"/>
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-G1-zyC">
-                            <rect key="frame" x="68" y="20.5" width="209" height="16.5"/>
+                            <rect key="frame" x="65" y="20.5" width="212" height="16.5"/>
                             <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
                             <color key="textColor" name="ColorGuide/TextColors/primary"/>
                             <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                         <constraint firstItem="2Jv-c1-Yyh" firstAttribute="centerY" secondItem="oQz-Rj-PRT" secondAttribute="centerY" id="7Dq-M2-4pb"/>
                         <constraint firstAttribute="trailing" secondItem="2Jv-c1-Yyh" secondAttribute="trailing" id="LuG-pt-Qe8"/>
                         <constraint firstItem="4rn-G0-hb7" firstAttribute="leading" secondItem="oQz-Rj-PRT" secondAttribute="leading" id="aiK-dX-PRI"/>
-                        <constraint firstItem="dVG-G1-zyC" firstAttribute="leading" secondItem="4rn-G0-hb7" secondAttribute="trailing" constant="22" id="liv-gX-GXY"/>
+                        <constraint firstItem="dVG-G1-zyC" firstAttribute="leading" secondItem="4rn-G0-hb7" secondAttribute="trailing" constant="15" id="liv-gX-GXY"/>
                         <constraint firstAttribute="bottom" secondItem="4rn-G0-hb7" secondAttribute="bottom" id="n9x-rS-F0W"/>
                         <constraint firstItem="4rn-G0-hb7" firstAttribute="top" secondItem="oQz-Rj-PRT" secondAttribute="top" id="rBN-ws-IHN"/>
                         <constraint firstItem="2Jv-c1-Yyh" firstAttribute="leading" secondItem="dVG-G1-zyC" secondAttribute="trailing" constant="38" id="wB8-Ic-Mpy"/>

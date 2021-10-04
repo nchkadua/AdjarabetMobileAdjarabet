@@ -151,4 +151,15 @@ public extension String {
 		let end = index(start, offsetBy: range.upperBound - range.lowerBound)
 		return String(self[start ..< end])
 	}
+
+	func changeDateFormat(from fromFormat: String, to toFormat: String) -> String? {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = fromFormat
+		if let date = dateFormatter.date(from: self) {
+			dateFormatter.dateFormat = toFormat
+			return dateFormatter.string(from: date)
+		} else {
+			return nil
+		}
+	}
 }

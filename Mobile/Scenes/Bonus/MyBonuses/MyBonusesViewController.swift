@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public class MyBonusesViewController: UIViewController {
+public class MyBonusesViewController: ABViewController {
 	public typealias ViewModel = MyBonusesViewModel
 
 	// MARK: - Outlets
@@ -21,7 +21,6 @@ public class MyBonusesViewController: UIViewController {
 	// MARK: - Properties
     @Inject(from: .viewModels) public var viewModel: ViewModel
     public lazy var navigator = MyBonusesNavigator(viewController: self)
-    private let disposeBag = DisposeBag()
 	public lazy var collectionViewController = ABCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
 
     // MARK: - Lifecycle methods
@@ -81,6 +80,7 @@ public class MyBonusesViewController: UIViewController {
 	}
 
 	private func setupTotalAmountValueLabel() {
+		totalAmountValueLabel.text = "\(viewModel.params.totalBonusAmount)"
 	}
 
 	private func setupBlockedAmountKeyLabel() {
@@ -88,6 +88,7 @@ public class MyBonusesViewController: UIViewController {
 	}
 
 	private func setupBlockedAmountValueLabel() {
+		blockedAmountValueLabel.text = "\(viewModel.params.blockedAmount)"
 	}
 
 	private func setupNavigationItems() {
@@ -96,8 +97,9 @@ public class MyBonusesViewController: UIViewController {
 	}
 
 	private func setupRightBarButtonItem() {
-		let balanceTipsButton = makeBarButtonWith(title: R.string.localization.my_bonuses_balance_tips.localized(),
-												  color: DesignSystem.Color.secondaryText(alpha: 0.6))
+		let balanceTipsButton = makeBarButtonWith(
+			title: R.string.localization.my_bonuses_balance_tips.localized(),
+			color: DesignSystem.Color.secondaryText(alpha: 0.6))
 		navigationItem.rightBarButtonItem = balanceTipsButton.barButtonItem
 		balanceTipsButton.button.addTarget(self, action: #selector(balanceTipsClickHandler), for: .touchUpInside)
 	}
@@ -132,14 +134,24 @@ public class MyBonusesViewController: UIViewController {
 			collectionViewController.reloadItems(items: items, insertionIndexPathes: insertionIndexPathes, deletionIndexPathes: deletionIndexPathes)
 		case .setLoading(let loadingType):
 			break	// TODO
+		case .isLoading(let loading):
+			loading ? startLoading() : stopLoading()
 		}
     }
 
     private func didRecive(route: MyBonusesViewModelRoute) {
 		switch route {
 		case .open(let game): break // TODO
+		case .showCondition(let description, let gameId):
+			self.navigator.navigate(to: .condition(description, gameId), animated: true)
 		}
     }
 }
 
 extension MyBonusesViewController: CommonBarButtonProviding { }
+
+extension MyBonusesViewController: BonusConditionDelegate {
+	public func close() {
+		navigator.navigate(to: .withoutChildren, animated: true)
+	}
+}

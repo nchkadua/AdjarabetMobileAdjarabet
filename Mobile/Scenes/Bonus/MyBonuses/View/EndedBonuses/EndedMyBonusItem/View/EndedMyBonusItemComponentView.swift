@@ -8,6 +8,10 @@
 
 import RxSwift
 
+public protocol CompletedBonusItemDelegate: AnyObject {
+	func hintButtonClicked(description: String, gameId: Int?)
+}
+
 class EndedMyBonusItemComponentView: UIView {
 	typealias ViewModel = EndedMyBonusItemComponentViewModel
 
@@ -70,6 +74,7 @@ class EndedMyBonusItemComponentView: UIView {
 	}
 
 	@IBAction func hintButtonClicked(_ sender: Any) {
+		viewModel.delegate?.hintButtonClicked(description: viewModel.condition, gameId: viewModel.gameId)
 	}
 }
 

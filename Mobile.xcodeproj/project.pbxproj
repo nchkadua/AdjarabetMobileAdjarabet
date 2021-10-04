@@ -1012,6 +1012,11 @@
 		FBBAD4F826FC2810001B0DE7 /* BlockedUserNotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD4F226FC2810001B0DE7 /* BlockedUserNotificationComponentView.swift */; };
 		FBBAD4F926FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD4F326FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.swift */; };
 		FBBF8A0126B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF8A0026B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift */; };
+		FBBFA432270A85BE006F52AC /* BonusCondition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBFA42D270A85BE006F52AC /* BonusCondition.storyboard */; };
+		FBBFA433270A85BE006F52AC /* BonusConditionNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA42E270A85BE006F52AC /* BonusConditionNavigator.swift */; };
+		FBBFA434270A85BE006F52AC /* BonusConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA42F270A85BE006F52AC /* BonusConditionViewController.swift */; };
+		FBBFA435270A85BE006F52AC /* BonusConditionViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA430270A85BE006F52AC /* BonusConditionViewControllerFactory.swift */; };
+		FBBFA436270A85BE006F52AC /* BonusConditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA431270A85BE006F52AC /* BonusConditionViewModel.swift */; };
 		FBE4632B26F485DA00F77339 /* TermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */; };
 		FBE4632D26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */; };
 /* End PBXBuildFile section */
@@ -2054,6 +2059,11 @@
 		FBBAD4F226FC2810001B0DE7 /* BlockedUserNotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserNotificationComponentView.swift; sourceTree = "<group>"; };
 		FBBAD4F326FC2810001B0DE7 /* BlockedUserNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		FBBF8A0026B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsActionItemsProvider.swift; sourceTree = "<group>"; };
+		FBBFA42D270A85BE006F52AC /* BonusCondition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BonusCondition.storyboard; sourceTree = "<group>"; };
+		FBBFA42E270A85BE006F52AC /* BonusConditionNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionNavigator.swift; sourceTree = "<group>"; };
+		FBBFA42F270A85BE006F52AC /* BonusConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionViewController.swift; sourceTree = "<group>"; };
+		FBBFA430270A85BE006F52AC /* BonusConditionViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionViewControllerFactory.swift; sourceTree = "<group>"; };
+		FBBFA431270A85BE006F52AC /* BonusConditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionViewModel.swift; sourceTree = "<group>"; };
 		FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
 		FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
 		FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-production.xcconfig"; sourceTree = "<group>"; };
@@ -7192,7 +7202,8 @@
 		FB311FF82704835C0012728C /* MyBonuses */ = {
 			isa = PBXGroup;
 			children = (
-				FB31202F27056E3D0012728C /* Cell */,
+				FBBFA42C270A85A2006F52AC /* BonusCondition */,
+				FB31202F27056E3D0012728C /* View */,
 				FB311FF9270483E50012728C /* MyBonuses.storyboard */,
 				FB311FFA270483E50012728C /* MyBonusesNavigator.swift */,
 				FB311FFB270483E50012728C /* MyBonusesViewController.swift */,
@@ -7278,13 +7289,13 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
-		FB31202F27056E3D0012728C /* Cell */ = {
+		FB31202F27056E3D0012728C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				FB3120112704FBBD0012728C /* ActiveBonuses */,
 				FB3120102704FBAD0012728C /* EndedBonuses */,
 			);
-			path = Cell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		FB31203C27056E990012728C /* ActiveMyBonusesHeader */ = {
@@ -7513,6 +7524,18 @@
 				FBBF8A0026B83CE400DF9CC8 /* TermsAndConditionsActionItemsProvider.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		FBBFA42C270A85A2006F52AC /* BonusCondition */ = {
+			isa = PBXGroup;
+			children = (
+				FBBFA42D270A85BE006F52AC /* BonusCondition.storyboard */,
+				FBBFA42E270A85BE006F52AC /* BonusConditionNavigator.swift */,
+				FBBFA42F270A85BE006F52AC /* BonusConditionViewController.swift */,
+				FBBFA430270A85BE006F52AC /* BonusConditionViewControllerFactory.swift */,
+				FBBFA431270A85BE006F52AC /* BonusConditionViewModel.swift */,
+			);
+			path = BonusCondition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -7772,6 +7795,7 @@
 				C75D1AF2261205F4002AF763 /* FGSJSlot.zip in Resources */,
 				C75D1AEC261205F4002AF763 /* VNJSlot.zip in Resources */,
 				D86B5968244F12F500AB7350 /* PlayedGameLauncherCollectionViewCell.xib in Resources */,
+				FBBFA432270A85BE006F52AC /* BonusCondition.storyboard in Resources */,
 				76E43EDD25B95303007B2D97 /* VideoCardTableViewCell.xib in Resources */,
 				CECA7EDF26AEEAC500BCF04A /* ContactMailTableViewCell.xib in Resources */,
 				C75D1B10261205F4002AF763 /* RLJSlot.zip in Resources */,
@@ -8254,12 +8278,14 @@
 				CEC03E5126FB719700904F2B /* FAQDTO.swift in Sources */,
 				CE4A30D72611E5420039C078 /* SuggestedAmountComponentView.swift in Sources */,
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
+				FBBFA436270A85BE006F52AC /* BonusConditionViewModel.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
 				D84209832448248D0001ADC1 /* MainTabBarViewModel.swift in Sources */,
 				CE9205DE2684930600670AD8 /* ApplePayUseCase.swift in Sources */,
 				CE0818C625389B8600AD3B3B /* NotificationsHeaderComponentViewModel.swift in Sources */,
 				C71B4B72257EC57000538697 /* SecurityLevelsNavigator.swift in Sources */,
 				CE14202F2636EE8900E022C7 /* BonusViewModel.swift in Sources */,
+				FBBFA435270A85BE006F52AC /* BonusConditionViewControllerFactory.swift in Sources */,
 				D815850824B09BC300FFCA95 /* Game.swift in Sources */,
 				CEF368602549C361009FD456 /* WithdrawNavigator.swift in Sources */,
 				C78E52CC26838CFC00EE1C18 /* CoreApiSendVerificationCodeDTO.swift in Sources */,
@@ -8610,6 +8636,7 @@
 				76BDF45F2576043A007B27A7 /* AccountParametersViewControllerFactory.swift in Sources */,
 				CEF368622549C361009FD456 /* WithdrawViewModel.swift in Sources */,
 				76B667A12596345C001441BD /* ABDateFormatter.swift in Sources */,
+				FBBFA433270A85BE006F52AC /* BonusConditionNavigator.swift in Sources */,
 				FB312000270483E50012728C /* MyBonusesViewController.swift in Sources */,
 				C7C1D33A261B9D48009F01C3 /* WithdrawVisaNavigator.swift in Sources */,
 				7644B6072563E516006778B2 /* DateHeaderComponentView.swift in Sources */,
@@ -8815,6 +8842,7 @@
 				CECA7ED426AEEA8700BCF04A /* ContactPhoneComponentViewModel.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
 				C78127CB2671426E0007F7E3 /* CoreApiIsOTPEnabledDTO.swift in Sources */,
+				FBBFA434270A85BE006F52AC /* BonusConditionViewController.swift in Sources */,
 				7665D97E257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
 				CE2F03C3252CC8E0006D8001 /* QuickActionComponentView.swift in Sources */,

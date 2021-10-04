@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AdjaraMont-Regular.ttf">
+            <string>AdjaraMont-Regular</string>
+        </array>
+        <array key="AdjaraMont-SemiBold.ttf">
+            <string>AdjaraMont-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Bonus Condition View Controller-->
+        <scene sceneID="63S-qV-cRC">
+            <objects>
+                <viewController storyboardIdentifier="BonusConditionViewController" id="gAa-dD-eZu" customClass="BonusConditionViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amw-MT-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZJ-Bq-eEQ">
+                                <rect key="frame" x="32" y="73" width="352" height="225"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-I5-r0E" userLabel="topView">
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="30.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIb-Ns-aZg" userLabel="titleLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="61.5" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="22"/>
+                                                <color key="textColor" name="ColorGuide/TextColors/primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud2-Cx-CCY" userLabel="closeButton">
+                                                <rect key="frame" x="304" y="-0.5" width="48" height="32"/>
+                                                <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" systemColor="systemGrayColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeButtonTapHandler:" destination="gAa-dD-eZu" eventType="touchUpInside" id="GD0-CH-MEw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="xIb-Ns-aZg" firstAttribute="centerY" secondItem="7bD-I5-r0E" secondAttribute="centerY" id="BHd-9a-WXe"/>
+                                            <constraint firstItem="Ud2-Cx-CCY" firstAttribute="centerY" secondItem="7bD-I5-r0E" secondAttribute="centerY" id="IVn-z3-VIc"/>
+                                            <constraint firstAttribute="bottom" secondItem="xIb-Ns-aZg" secondAttribute="bottom" id="cKO-Ig-0kq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ud2-Cx-CCY" secondAttribute="trailing" id="nHM-B1-KcU"/>
+                                            <constraint firstItem="xIb-Ns-aZg" firstAttribute="leading" secondItem="7bD-I5-r0E" secondAttribute="leading" id="zVE-Tk-3Qm"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adu-Bp-i7Z" userLabel="description">
+                                        <rect key="frame" x="0.0" y="103" width="352" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
+                                        <color key="textColor" name="ColorGuide/TextColors/primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fer-qk-PkP" userLabel="playNow">
+                                        <rect key="frame" x="0.0" y="171" width="352" height="54"/>
+                                        <color key="backgroundColor" name="ColorGuide/SystemBackground/tertiary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="4yd-7T-xUH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="14"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="ColorGuide/TextColors/primary"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playNowButtonTapHandler:" destination="gAa-dD-eZu" eventType="touchUpInside" id="1YU-DE-9Te"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Fer-qk-PkP" secondAttribute="bottom" id="5FJ-En-WNj"/>
+                                    <constraint firstItem="Adu-Bp-i7Z" firstAttribute="centerY" secondItem="RZJ-Bq-eEQ" secondAttribute="centerY" id="ESL-Xw-nl4"/>
+                                    <constraint firstAttribute="height" constant="225" id="JRX-ZN-cRp"/>
+                                    <constraint firstItem="7bD-I5-r0E" firstAttribute="leading" secondItem="RZJ-Bq-eEQ" secondAttribute="leading" id="eHv-2c-PN5"/>
+                                    <constraint firstItem="Fer-qk-PkP" firstAttribute="leading" secondItem="RZJ-Bq-eEQ" secondAttribute="leading" id="iLe-LM-cnc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Adu-Bp-i7Z" secondAttribute="trailing" id="iYv-iO-0NF"/>
+                                    <constraint firstItem="7bD-I5-r0E" firstAttribute="top" secondItem="RZJ-Bq-eEQ" secondAttribute="top" id="q3c-59-mxQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="7bD-I5-r0E" secondAttribute="trailing" id="rNw-bC-4EJ"/>
+                                    <constraint firstItem="Adu-Bp-i7Z" firstAttribute="leading" secondItem="RZJ-Bq-eEQ" secondAttribute="leading" id="skT-9H-43E"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fer-qk-PkP" secondAttribute="trailing" id="v1k-8d-qH8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63T-C1-oPl"/>
+                        <color key="backgroundColor" name="ColorGuide/SystemBackground/secondary"/>
+                        <constraints>
+                            <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="RZJ-Bq-eEQ" secondAttribute="trailing" constant="30" id="EsV-AG-1Ue"/>
+                            <constraint firstItem="RZJ-Bq-eEQ" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="29" id="Esw-bL-Yrh"/>
+                            <constraint firstItem="RZJ-Bq-eEQ" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="32" id="VJU-cc-QZj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="Ud2-Cx-CCY" id="ipl-2o-uBZ"/>
+                        <outlet property="descriptionLabel" destination="Adu-Bp-i7Z" id="zKG-gG-HkS"/>
+                        <outlet property="playNowButton" destination="Fer-qk-PkP" id="OOV-53-Isd"/>
+                        <outlet property="titleLabel" destination="xIb-Ns-aZg" id="7eD-QF-BUs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yK-2V-hWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="30"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ColorGuide/SystemBackground/secondary">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/SystemBackground/tertiary">
+            <color red="0.17254901960784313" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGuide/TextColors/primary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

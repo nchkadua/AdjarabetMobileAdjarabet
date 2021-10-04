@@ -12,9 +12,19 @@ public protocol ActiveMyBonusItemComponentViewModel: ActiveMyBonusItemComponentV
                                                 ActiveMyBonusItemComponentViewModelOutput {}
 
 public struct ActiveMyBonusItemComponentViewModelParams {
-	var startDate: String
-	var endDate: String
-	var name: String
+	let name: String
+	let startDate: String
+	let endDate: String?
+	let condition: String
+	let gameId: Int?
+
+	init(name: String = "", startDate: String = "", endDate: String? = nil, condition: String, gameId: Int? = nil) {
+		self.name = name
+		self.startDate = startDate
+		self.endDate = endDate
+		self.condition = condition
+		self.gameId = gameId
+	}
 }
 
 public protocol ActiveMyBonusItemComponentViewModelInput {
@@ -28,6 +38,8 @@ public protocol ActiveMyBonusItemComponentViewModelOutput {
     var params: ActiveMyBonusItemComponentViewModelParams { get }
 	var date: String { get }
 	var name: String { get }
+	var condition: String { get }
+	var gameId: Int? { get }
 }
 
 public enum ActiveMyBonusItemComponentViewModelOutputAction {
@@ -36,8 +48,18 @@ public enum ActiveMyBonusItemComponentViewModelOutputAction {
 public class DefaultActiveMyBonusItemComponentViewModel {
     public var params: ActiveMyBonusItemComponentViewModelParams
     private let actionSubject = PublishSubject<ActiveMyBonusItemComponentViewModelOutputAction>()
-	public var date: String { get { "\(params.startDate) - \(params.endDate)" } }
+	public var date: String {
+		get {
+			if let endDate = params.endDate {
+				return "\(params.startDate) - \(endDate)"
+			} else {
+				return params.startDate
+			}
+		}
+	}
 	public var name: String { get { params.name } }
+	public var condition: String { get { params.condition } }
+	public var gameId: Int? { get { params.gameId } }
 
     public init(params: ActiveMyBonusItemComponentViewModelParams) {
         self.params = params

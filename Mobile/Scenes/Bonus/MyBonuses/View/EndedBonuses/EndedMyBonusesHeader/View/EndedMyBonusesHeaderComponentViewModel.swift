@@ -38,7 +38,7 @@ public class DefaultEndedMyBonusesHeaderComponentViewModel {
 
 	public var title: String { get { params.title.uppercased() } }
 
-    public init(params: EndedMyBonusesHeaderComponentViewModelParams) {
+	public init(params: EndedMyBonusesHeaderComponentViewModelParams) {
         self.params = params
     }
 }
