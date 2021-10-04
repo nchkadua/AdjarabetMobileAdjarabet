@@ -1000,6 +1000,7 @@
 		FB8116C126E5B482009D9AE5 /* TitleDescriptionButtonComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8116BB26E5B482009D9AE5 /* TitleDescriptionButtonComponentViewModel.swift */; };
 		FB8116C226E5B482009D9AE5 /* TitleDescriptionButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8116BC26E5B482009D9AE5 /* TitleDescriptionButtonComponentView.swift */; };
 		FB8116C326E5B482009D9AE5 /* TitleDescriptionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8116BD26E5B482009D9AE5 /* TitleDescriptionButtonTableViewCell.swift */; };
+		FB906C7F270B2832002A3A1F /* BonusItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB906C7E270B2832002A3A1F /* BonusItemDelegate.swift */; };
 		FBAE9C4126B3D0C1002E9D72 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */; };
 		FBAE9C4226B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */; };
 		FBAE9C4326B3D0C1002E9D72 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */; };
@@ -2047,6 +2048,7 @@
 		FB8116BB26E5B482009D9AE5 /* TitleDescriptionButtonComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionButtonComponentViewModel.swift; sourceTree = "<group>"; };
 		FB8116BC26E5B482009D9AE5 /* TitleDescriptionButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionButtonComponentView.swift; sourceTree = "<group>"; };
 		FB8116BD26E5B482009D9AE5 /* TitleDescriptionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionButtonTableViewCell.swift; sourceTree = "<group>"; };
+		FB906C7E270B2832002A3A1F /* BonusItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusItemDelegate.swift; sourceTree = "<group>"; };
 		FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
 		FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsNavigator.swift; sourceTree = "<group>"; };
 		FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
@@ -7202,6 +7204,7 @@
 		FB311FF82704835C0012728C /* MyBonuses */ = {
 			isa = PBXGroup;
 			children = (
+				FB906C7D270B2818002A3A1F /* Protocols */,
 				FBBFA42C270A85A2006F52AC /* BonusCondition */,
 				FB31202F27056E3D0012728C /* View */,
 				FB311FF9270483E50012728C /* MyBonuses.storyboard */,
@@ -7292,6 +7295,7 @@
 		FB31202F27056E3D0012728C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FB906C7C270B2811002A3A1F /* New Group */,
 				FB3120112704FBBD0012728C /* ActiveBonuses */,
 				FB3120102704FBAD0012728C /* EndedBonuses */,
 			);
@@ -7471,6 +7475,21 @@
 				FB8116BD26E5B482009D9AE5 /* TitleDescriptionButtonTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		FB906C7C270B2811002A3A1F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		FB906C7D270B2818002A3A1F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FB906C7E270B2832002A3A1F /* BonusItemDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		FBAE9C3B26B3D0A3002E9D72 /* Terms And Conditions */ = {
@@ -8466,6 +8485,7 @@
 				CE8786C2261C96830060EBD1 /* ABView.swift in Sources */,
 				CE8786AF2617482C0060EBD1 /* NotificatinEntity.swift in Sources */,
 				C78E52B426837DEA00EE1C18 /* UpdatePhoneNumberUseCase.swift in Sources */,
+				FB906C7F270B2832002A3A1F /* BonusItemDelegate.swift in Sources */,
 				C7D202352636E41B009710C9 /* HomeHeaderView.swift in Sources */,
 				763171A92566398F00F6FD90 /* TransactionDetailsViewModel.swift in Sources */,
 				76404EED2576120800D14E0C /* AccountParametersModel.swift in Sources */,
@@ -9353,7 +9373,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 619;
+				CURRENT_PROJECT_VERSION = 621;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -9386,7 +9406,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 619;
+				CURRENT_PROJECT_VERSION = 621;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -9479,7 +9499,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 619;
+				CURRENT_PROJECT_VERSION = 621;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -9568,7 +9588,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 619;
+				CURRENT_PROJECT_VERSION = 621;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;

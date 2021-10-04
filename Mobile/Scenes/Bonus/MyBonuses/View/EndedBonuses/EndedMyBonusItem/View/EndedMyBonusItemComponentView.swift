@@ -8,10 +8,6 @@
 
 import RxSwift
 
-public protocol CompletedBonusItemDelegate: AnyObject {
-	func hintButtonClicked(description: String, gameId: Int?)
-}
-
 class EndedMyBonusItemComponentView: UIView {
 	typealias ViewModel = EndedMyBonusItemComponentViewModel
 
@@ -88,6 +84,5 @@ extension EndedMyBonusItemComponentView: Xibable {
         }
     }
 
-    func setupUI() {
-    }
+    func setupUI() { }
 }

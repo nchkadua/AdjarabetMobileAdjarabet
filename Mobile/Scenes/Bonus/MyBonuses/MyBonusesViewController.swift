@@ -151,7 +151,7 @@ public class MyBonusesViewController: ABViewController {
 extension MyBonusesViewController: CommonBarButtonProviding { }
 
 extension MyBonusesViewController: BonusConditionDelegate {
-	public func close() {
+	public func closeButtonTapped() {
 		navigator.navigate(to: .withoutChildren, animated: true)
 	}
 }

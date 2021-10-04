@@ -18,9 +18,9 @@ public struct EndedMyBonusItemComponentViewModelParams {
 	let condition: String
 	let gameId: Int?
 
-	var delegate: CompletedBonusItemDelegate?
+	var delegate: BonusItemDelegate?
 
-	init(name: String = "", startDate: String = "", endDate: String? = nil, condition: String, gameId: Int? = nil, delegate: CompletedBonusItemDelegate? = nil) {
+	init(name: String = "", startDate: String = "", endDate: String? = nil, condition: String, gameId: Int? = nil, delegate: BonusItemDelegate? = nil) {
 		self.name = name
 		self.startDate = startDate
 		self.endDate = endDate
@@ -32,12 +32,13 @@ public struct EndedMyBonusItemComponentViewModelParams {
 
 public protocol EndedMyBonusItemComponentViewModelInput {
     func didBind()
+	func hintButtonTapped()
 }
 
 public protocol EndedMyBonusItemComponentViewModelOutput {
     var action: Observable<EndedMyBonusItemComponentViewModelOutputAction> { get }
     var params: EndedMyBonusItemComponentViewModelParams { get }
-	var delegate: CompletedBonusItemDelegate? { get set }
+	var delegate: BonusItemDelegate? { get set }
 	var startDate: String { get }
 	var endDate: String { get }
 	var name: String { get }
@@ -52,12 +53,12 @@ public class DefaultEndedMyBonusItemComponentViewModel {
     public var params: EndedMyBonusItemComponentViewModelParams
     private let actionSubject = PublishSubject<EndedMyBonusItemComponentViewModelOutputAction>()
 
-	public var startDate: String { get { getDateLabel(params.startDate).uppercased() } }
-	public var endDate: String { get { getDateLabel(params.endDate).uppercased() } }
+	public var startDate: String { get { getDateLabel(params.startDate)?.uppercased() ?? "" } }
+	public var endDate: String { get { getDateLabel(params.endDate)?.uppercased() ?? "" } }
 	public var name: String { get { params.name.uppercased() } }
 	public var condition: String { get { params.condition } }
 	public var gameId: Int? { get { params.gameId } }
-	public var delegate: CompletedBonusItemDelegate? {
+	public var delegate: BonusItemDelegate? {
 		get { params.delegate }
 		set { params.delegate = newValue }
 	}
@@ -66,13 +67,9 @@ public class DefaultEndedMyBonusItemComponentViewModel {
         self.params = params
     }
 
-	private func getDateLabel(_ str: String?) -> String {
+	private func getDateLabel(_ str: String?) -> String? {
 		guard let str = str else { return "" }
-		if let dateLabel = str.changeDateFormat(from: "dd-MMM-yy HH:mm", to: "MMM dd") {
-			return dateLabel
-		} else {
-			return ""
-		}
+		return str.changeDateFormat(from: "dd-MMM-yy HH:mm", to: "MMM dd")
 	}
 }
 
@@ -81,7 +78,9 @@ extension DefaultEndedMyBonusItemComponentViewModel: EndedMyBonusItemComponentVi
         actionSubject.asObserver()
     }
 
-    public func didBind() {
-//        actionSubject.onNext()
-    }
+    public func didBind() { }
+
+	public func hintButtonTapped() {
+		delegate?.hintButtonClicked(description: condition, gameId: gameId)
+	}
 }

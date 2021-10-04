@@ -92,6 +92,5 @@ extension ActiveMyBonusItemComponentView: Xibable {
         }
     }
 
-    func setupUI() {
-    }
+    func setupUI() { }
 }
