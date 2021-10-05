@@ -1,6 +1,6 @@
-![Telegraph: Secure Web Server for iOS, tvOS and macOS](https://github.com/Building42/Telegraph/raw/master/Resources/logo.png)
+![Telegraph: Secure Web Server for iOS, tvOS and macOS](https://github.com/Building42/Telegraph/raw/main/Resources/logo.png)
 
-![Telegraph CI](https://github.com/Building42/Telegraph/workflows/Telegraph%20CI/badge.svg)
+[![Telegraph CI](https://github.com/Building42/Telegraph/actions/workflows/ci.yml/badge.svg)](https://github.com/Building42/Telegraph/actions/workflows/ci.yml)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
@@ -14,7 +14,6 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 - [Installation](#installation)
 - [Build](#build)
 - [Usage](#usage)
-- [TODOs](#todos)
 - [FAQ](#faq)
 - [Authors](#authors)
 - [License](#license)
@@ -31,13 +30,13 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 
 ## Platforms
 
-- iOS 8.0+
+- iOS 9.0+
 - tvOS 9.0+
 - macOS 10.10+
 
 ## Versions
 
-- Swift 5.0: [master branch](https://github.com/Building42/Telegraph/tree/master)
+- Swift 5.x: [main branch](https://github.com/Building42/Telegraph/tree/main)
 - Swift 4.2: [swift-4.2 branch](https://github.com/Building42/Telegraph/tree/swift-4.2)
 - Swift 4.0: [swift-4 branch](https://github.com/Building42/Telegraph/tree/swift-4)
 - Swift 3.0: [swift-3 branch](https://github.com/Building42/Telegraph/tree/swift-3)
@@ -73,8 +72,10 @@ See [Carthage - Quick Start](https://github.com/Carthage/Carthage/#quick-start) 
 CocoaPods is a dependency manager for Cocoa projects that makes dependencies a part of your workspace.
 
 ```ruby
-target '<Your Target Name>'
+source 'https://cdn.cocoapods.org/'
 use_frameworks!
+
+target '<Your Target Name>'
 
 pod 'Telegraph'
 ```
@@ -436,4 +437,4 @@ Thank you to our contributors, your pull requests are most welcome and appreciat
 
 ## License
 
-Telegraph is released under the MIT license. See [LICENSE](https://github.com/Building42/Telegraph/blob/master/LICENSE) for details.
+Telegraph is released under the MIT license. See [LICENSE](https://github.com/Building42/Telegraph/blob/main/LICENSE) for details.
