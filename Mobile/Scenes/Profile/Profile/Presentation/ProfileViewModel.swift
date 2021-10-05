@@ -61,7 +61,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
     public func viewDidLoad() {
         setupDataProviders()
     }
-    
+
     public func viewDidAppear() {
         userBalanceService.update()
     }

@@ -497,6 +497,7 @@
 /* MyCards */
 "my_cards_add_card" = "ბარათის დამატება";
 "my_cards_manage" = "ბარათების მართვა";
+"my_cards_deletion_success_message" = "ბარათი წარმატებით წაიშალა";
 
 /* Not verified user */
 "not_verified_user_title" = "You can’t log in";

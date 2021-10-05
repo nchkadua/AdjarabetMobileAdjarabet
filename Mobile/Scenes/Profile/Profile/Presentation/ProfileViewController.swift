@@ -27,7 +27,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         errorThrowing = viewModel
         viewModel.viewDidLoad()
     }
-    
+
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.viewDidAppear()

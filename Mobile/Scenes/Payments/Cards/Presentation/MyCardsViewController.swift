@@ -39,8 +39,8 @@ public class MyCardsViewController: ABViewController {
         switch action {
         case .initialize(let dataProvider):
             self.appTableViewController.dataProvider = dataProvider
-        case .didDeleteCell(let indexPath):
-            deleteCell(at: indexPath)
+        case .didDeleteCell(let id, let indexPath):
+            deleteCell(with: id, at: indexPath)
         case .isLoading(let loading):
             loading ? startLoading() : stopLoading()
         }
@@ -69,8 +69,8 @@ public class MyCardsViewController: ABViewController {
         appTableViewController.canEditRow = true
     }
 
-    private func deleteCell(at indexPath: IndexPath) {
-        viewModel.deleteCell(at: indexPath.row)
+    private func deleteCell(with id: Int64, at indexPath: IndexPath) {
+        viewModel.deleteCell(with: id, at: indexPath.row)
         appTableViewController.reloadItems(deletionIndexPathes: [indexPath])
     }
 
