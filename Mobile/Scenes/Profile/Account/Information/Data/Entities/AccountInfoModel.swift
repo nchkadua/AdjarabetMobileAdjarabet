@@ -22,6 +22,7 @@ public struct AccountInfoModel {
     public let gender: String
     public let country: String
     public let address: String
+	public let suspendTill: String // TODO: toDate
 }
 
 public extension AccountInfoModel {
@@ -39,7 +40,8 @@ public extension AccountInfoModel {
             birthDate: e.birthDate ?? "",
             gender: e.gender?.description.stringValue ?? "",
             country: e.country?.description.name ?? "",
-            address: e.address ?? ""
+            address: e.address ?? "",
+			suspendTill: e.suspendTill ?? ""
         )
     }
 }

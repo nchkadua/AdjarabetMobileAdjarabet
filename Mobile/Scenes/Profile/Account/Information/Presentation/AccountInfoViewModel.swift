@@ -78,7 +78,8 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
         userInfoRepo.getIDDocuments(params: .init(userId: nil, header: nil)) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let entity): self.actionSubject.onNext(.setPersonalID(id: entity.idDocuments.first?.personalID ?? "-----------"))
+            case .success(let entity):
+				self.actionSubject.onNext(.setPersonalID(id: entity.idDocuments.first?.personalID ?? "-----------"))
             case .failure(let error): self.show(error: error)
             }
         }
@@ -91,6 +92,7 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             switch result {
             case .success(let userInfo):
                 let accountInfoModel = AccountInfoModel.create(from: userInfo)
+				print("*** suspendTill: \(accountInfoModel.suspendTill)")
                 self.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
             case .failure(let error):
                 self.show(error: error)

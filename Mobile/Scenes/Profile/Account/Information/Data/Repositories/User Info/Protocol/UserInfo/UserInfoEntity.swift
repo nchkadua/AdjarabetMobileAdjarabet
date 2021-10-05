@@ -21,6 +21,7 @@ public struct UserInfoEntity {
     public let email: String?
     public let phone: String?
     public let statusId: Int? // TODO: change with enum
+	public let suspendTill: String?
     /*
     public let isOtpOn: Bool?
     public let hasClubCard: Bool?

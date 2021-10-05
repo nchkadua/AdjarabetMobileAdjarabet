@@ -30,6 +30,7 @@ struct UserInfoDataTransferResponse: CoreDataTransferResponse {
         let email: String?
         let tel: String?
         let statusId: Int?
+		let suspendTill: String?
         /*
         let isOtpOn: Bool?
         let hasClubCard: Bool?
@@ -55,6 +56,7 @@ struct UserInfoDataTransferResponse: CoreDataTransferResponse {
             case email = "Email"
             case tel = "Tel"
             case statusId = "StatusID"
+			case suspendTill = "SuspendTill"
             /*
             case isOtpOn = "IsOTPOn"
             case hasClubCard = "HasClubCard"
@@ -83,7 +85,9 @@ struct UserInfoDataTransferResponse: CoreDataTransferResponse {
             birthDate: body.birthDate,
             email: body.email,
             phone: body.tel,
-            statusId: body.statusId
-        ))
+			statusId: body.statusId,
+			suspendTill: body.suspendTill
+			)
+		)
     }
 }

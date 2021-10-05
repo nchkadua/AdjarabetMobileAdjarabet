@@ -1000,6 +1000,10 @@
 		FB8116C126E5B482009D9AE5 /* TitleDescriptionButtonComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8116BB26E5B482009D9AE5 /* TitleDescriptionButtonComponentViewModel.swift */; };
 		FB8116C226E5B482009D9AE5 /* TitleDescriptionButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8116BC26E5B482009D9AE5 /* TitleDescriptionButtonComponentView.swift */; };
 		FB8116C326E5B482009D9AE5 /* TitleDescriptionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8116BD26E5B482009D9AE5 /* TitleDescriptionButtonTableViewCell.swift */; };
+		FB906C9E270C246A002A3A1F /* AccountAccessLimitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB906C9D270C246A002A3A1F /* AccountAccessLimitRepository.swift */; };
+		FB906CA0270C247C002A3A1F /* DefaultAccountAccessLimitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB906C9F270C247C002A3A1F /* DefaultAccountAccessLimitRepository.swift */; };
+		FB906CA2270C24B4002A3A1F /* AccountAccessLimitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB906CA1270C24B4002A3A1F /* AccountAccessLimitEntity.swift */; };
+		FB906CA4270C24E2002A3A1F /* AccountAccessLimitDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB906CA3270C24E2002A3A1F /* AccountAccessLimitDTO.swift */; };
 		FBAE9C4126B3D0C1002E9D72 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */; };
 		FBAE9C4226B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */; };
 		FBAE9C4326B3D0C1002E9D72 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */; };
@@ -2047,6 +2051,10 @@
 		FB8116BB26E5B482009D9AE5 /* TitleDescriptionButtonComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionButtonComponentViewModel.swift; sourceTree = "<group>"; };
 		FB8116BC26E5B482009D9AE5 /* TitleDescriptionButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionButtonComponentView.swift; sourceTree = "<group>"; };
 		FB8116BD26E5B482009D9AE5 /* TitleDescriptionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionButtonTableViewCell.swift; sourceTree = "<group>"; };
+		FB906C9D270C246A002A3A1F /* AccountAccessLimitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAccessLimitRepository.swift; sourceTree = "<group>"; };
+		FB906C9F270C247C002A3A1F /* DefaultAccountAccessLimitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAccountAccessLimitRepository.swift; sourceTree = "<group>"; };
+		FB906CA1270C24B4002A3A1F /* AccountAccessLimitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAccessLimitEntity.swift; sourceTree = "<group>"; };
+		FB906CA3270C24E2002A3A1F /* AccountAccessLimitDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAccessLimitDTO.swift; sourceTree = "<group>"; };
 		FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
 		FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsNavigator.swift; sourceTree = "<group>"; };
 		FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
@@ -3080,6 +3088,7 @@
 		C784C1C3266A3D9400D328D3 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				FB906C80270B9536002A3A1F /* Blocked User */,
 				CE0F768126EF8DCD008980F6 /* Not Verified User */,
 				CE2AB425266A2D6600C88262 /* Login */,
 			);
@@ -7473,6 +7482,97 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		FB906C80270B9536002A3A1F /* Blocked User */ = {
+			isa = PBXGroup;
+			children = (
+				FB906C8B270B957B002A3A1F /* Data */,
+			);
+			path = "Blocked User";
+			sourceTree = "<group>";
+		};
+		FB906C8B270B957B002A3A1F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FB906C96270B9A20002A3A1F /* Entities */,
+				FB906C95270B9A11002A3A1F /* Repositories */,
+				FB906C94270B9A09002A3A1F /* UseCases */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FB906C94270B9A09002A3A1F /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				FB906C97270B9A27002A3A1F /* Protocols */,
+				FB906C9C270B9A4D002A3A1F /* Implementation */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		FB906C95270B9A11002A3A1F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FB906C98270B9A32002A3A1F /* Protocols */,
+				FB906C9B270B9A46002A3A1F /* Implementation */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FB906C96270B9A20002A3A1F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FB906C99270B9A39002A3A1F /* Protocols */,
+				FB906C9A270B9A3E002A3A1F /* Implementation */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FB906C97270B9A27002A3A1F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FB906C98270B9A32002A3A1F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FB906C9D270C246A002A3A1F /* AccountAccessLimitRepository.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FB906C99270B9A39002A3A1F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FB906CA1270C24B4002A3A1F /* AccountAccessLimitEntity.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FB906C9A270B9A3E002A3A1F /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				FB906CA3270C24E2002A3A1F /* AccountAccessLimitDTO.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		FB906C9B270B9A46002A3A1F /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				FB906C9F270C247C002A3A1F /* DefaultAccountAccessLimitRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		FB906C9C270B9A4D002A3A1F /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 		FBAE9C3B26B3D0A3002E9D72 /* Terms And Conditions */ = {
 			isa = PBXGroup;
 			children = (
@@ -8277,6 +8377,7 @@
 				763171B125663EFD00F6FD90 /* TransactionDetailsViewControllerFactory.swift in Sources */,
 				CEC03E5126FB719700904F2B /* FAQDTO.swift in Sources */,
 				CE4A30D72611E5420039C078 /* SuggestedAmountComponentView.swift in Sources */,
+				FB906CA4270C24E2002A3A1F /* AccountAccessLimitDTO.swift in Sources */,
 				76BDF42625752D0F007B27A7 /* GetUserTransactionsResponse.swift in Sources */,
 				FBBFA436270A85BE006F52AC /* BonusConditionViewModel.swift in Sources */,
 				CE95FBEF252DE608003E539B /* FooterComponentView.swift in Sources */,
@@ -8419,6 +8520,7 @@
 				CE693B1026A70C340049D665 /* FAQQuestionTableViewCellDataProvider.swift in Sources */,
 				FB06F54F26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift in Sources */,
 				D850940C24828D8900722040 /* DefaultLobbyGamesRepository.swift in Sources */,
+				FB906CA2270C24B4002A3A1F /* AccountAccessLimitEntity.swift in Sources */,
 				C7405182256FA99A00EAC904 /* Formatter.swift in Sources */,
 				CEB6643F255027E1003D7D6D /* ABConstant.swift in Sources */,
 				C7E3F159261CCFD3009B6D6A /* WithdrawVisaInfoView.swift in Sources */,
@@ -8857,6 +8959,7 @@
 				C71F1895256411720026CEA2 /* BiometricSettingsViewController.swift in Sources */,
 				D8BA5A1A2499391C00F88433 /* AppConstant.swift in Sources */,
 				CE3AC9E626A17931000BF338 /* DocumentationViewControllerFactory.swift in Sources */,
+				FB906CA0270C247C002A3A1F /* DefaultAccountAccessLimitRepository.swift in Sources */,
 				C7FAA3B62600C06100265995 /* UFCInitDepositDTO.swift in Sources */,
 				CEE356FA252C9C9100A0A25C /* BalanceComponentViewModel.swift in Sources */,
 				CEF368612549C361009FD456 /* WithdrawViewController.swift in Sources */,
@@ -8892,6 +8995,7 @@
 				CE2AABC5267A014C00B45A0A /* PasswordResetRepository.swift in Sources */,
 				7644B5EC25639786006778B2 /* TransactionHistoryComponentViewModel.swift in Sources */,
 				D8AC492C24CFE835000B2D80 /* AppDelegateServices.swift in Sources */,
+				FB906C9E270C246A002A3A1F /* AccountAccessLimitRepository.swift in Sources */,
 				76EFF7C62582383000898819 /* AccessHistoryCalendarViewControllerFactory.swift in Sources */,
 				D87E3C522445FDD5004A4BDF /* PromotionsViewController.swift in Sources */,
 				D85C9C1A24336C7100F1D4FE /* KeychainContainer.swift in Sources */,

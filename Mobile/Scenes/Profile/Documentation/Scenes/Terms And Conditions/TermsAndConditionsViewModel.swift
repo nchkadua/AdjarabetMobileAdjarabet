@@ -54,7 +54,7 @@ extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
 
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = []
-//        for (i, item) in TermsAndConditionsActionItemsProvider.items().enumerated() {
+
 		for(i, item) in params.categories.enumerated() {
             let viewModel = DefaultTermsAndConditionsComponentViewModel(params: .init(number: i+1, title: item.title))
 

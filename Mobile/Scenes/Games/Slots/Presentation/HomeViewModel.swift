@@ -58,6 +58,8 @@ class DefaultHomeViewModel: DefaultBaseViewModel {
     @Inject(from: .useCases) private var recentlyPlayedGamesUseCase: RecentlyPlayedGamesUseCase
     @Inject private var userBalanceService: UserBalanceService
 
+	@Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository // FIXME: remove after testing
+
     private var page: PageDescription = .init()
     private var recentlyPlayedGames: AppCellDataProviders = []
     private var games: AppCellDataProviders = []
@@ -264,6 +266,14 @@ extension DefaultHomeViewModel: HomeViewModel {
     }
 
     public func viewDidLoad() {
+		userInfoRepo.currentUserInfo(params: .init()) { result in // FIXME: remove after testing
+			switch result {
+			case .success(let entity):
+				print("*** HomeViewModel: suspendTill: \(entity.suspendTill ?? "PZDC")")
+			case .failure(let error):
+				print(error)
+			}
+		}
         displayEmptyGames()
         showErrorIfNeeded()
         observeLanguageChange()
