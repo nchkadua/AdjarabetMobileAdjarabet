@@ -16,7 +16,7 @@ class EndedMyBonusesHeaderComponentView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak private var view: UIView!
-	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak private var titleLabel: UILabel!
 
 	public override init(frame: CGRect) {
         super.init(frame: frame)

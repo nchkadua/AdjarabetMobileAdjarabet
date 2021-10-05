@@ -332,7 +332,7 @@
 /* My Bonuses */
 "my_bonuses_title" = "ჩემი ბონუსები";
 "your_bonus" = "შენი ბონუსი";
-"blocked_amount" = "დაბლოკილი თანხა";
+"blocked_amount" = "დაბლოკილი";
 "active_bonuses" = "აქტიური ბონუსები";
 "ended_bonuses" = "დასრულებული ბონუსები";
 "my_bonuses_balance_tips" = "ბალანსის განმარტებები";

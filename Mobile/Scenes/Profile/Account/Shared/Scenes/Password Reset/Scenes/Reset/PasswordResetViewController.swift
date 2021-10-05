@@ -109,7 +109,7 @@ public class PasswordResetViewController: ABViewController {
         navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
         backButtonGroup.button.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
 
-        guard viewModel.params.showDismissButton else {return}
+        guard viewModel.params.showDismissButton else { return }
 
         let dismissButtonGroup = makeBarButtonWith(title: R.string.localization.reset_password_dismiss_button_title.localized())
         navigationItem.rightBarButtonItem = dismissButtonGroup.barButtonItem

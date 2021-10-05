@@ -15,11 +15,11 @@ public struct ActiveMyBonusItemComponentViewModelParams {
 	let name: String
 	let startDate: String
 	let endDate: String?
-	let condition: String
+	let condition: String?
 	let gameId: Int?
 	var delegate: BonusItemDelegate?
 
-	init(name: String = "", startDate: String = "", endDate: String? = nil, condition: String, gameId: Int? = nil, delegate: BonusItemDelegate? = nil) {
+	init(name: String = "", startDate: String = "", endDate: String? = nil, condition: String? = nil, gameId: Int? = nil, delegate: BonusItemDelegate? = nil) {
 		self.name = name
 		self.startDate = startDate
 		self.endDate = endDate
@@ -43,9 +43,11 @@ public protocol ActiveMyBonusItemComponentViewModelOutput {
 	var condition: String { get }
 	var gameId: Int? { get }
 	var delegate: BonusItemDelegate? { get set }
+	var playNowButtonTitle: String { get }
 }
 
 public enum ActiveMyBonusItemComponentViewModelOutputAction {
+	case hideConditionButton
 }
 
 public class DefaultActiveMyBonusItemComponentViewModel {
@@ -62,11 +64,25 @@ public class DefaultActiveMyBonusItemComponentViewModel {
 		}
 	}
 	public var name: String { get { params.name } }
-	public var condition: String { get { params.condition } }
+	public var condition: String {
+		get {
+			if let condition = params.condition {
+				return condition
+			} else {
+				actionSubject.onNext(.hideConditionButton)
+				return ""
+			}
+		}
+	}
 	public var gameId: Int? { get { params.gameId } }
 	public var delegate: BonusItemDelegate? {
 		get { params.delegate }
 		set { params.delegate = newValue }
+	}
+	public var playNowButtonTitle: String {
+		get {
+			R.string.localization.my_bonuses_play_now.localized().uppercased()
+		}
 	}
 
 	private func getDateLabel(_ str: String?) -> String? {

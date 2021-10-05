@@ -19,6 +19,7 @@ class ActiveMyBonusItemComponentView: UIView {
 	@IBOutlet weak private var dateLabel: UILabel!
 	@IBOutlet weak private var nameLabel: UILabel!
 	@IBOutlet weak private var playNowButton: UIButton!
+	@IBOutlet weak private var conditionButton: UIButton!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,9 +41,10 @@ class ActiveMyBonusItemComponentView: UIView {
     private func bind() {
         disposeBag = DisposeBag()
         viewModel?.action.subscribe(onNext: { [weak self] action in
+			guard let self = self else { return }
             switch action {
-            default:
-                break
+			case .hideConditionButton:
+				self.conditionButton.hide()
             }
         }).disposed(by: disposeBag)
 
@@ -54,7 +56,7 @@ class ActiveMyBonusItemComponentView: UIView {
 	}
 
 	private func setupPlayNowButton() {
-		playNowButton.setTitle(R.string.localization.my_bonuses_play_now.localized().uppercased(), for: .normal)
+		playNowButton.setTitle(viewModel.playNowButtonTitle, for: .normal)
 	}
 
 	// MARK: - Configure
