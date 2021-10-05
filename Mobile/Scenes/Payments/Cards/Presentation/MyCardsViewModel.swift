@@ -17,7 +17,7 @@ public struct MyCardsViewModelParams {
 public protocol MyCardsViewModelInput: AnyObject {
     func viewDidLoad()
     func addCardsClicked()
-    func deleteCell(at index: Int)
+    func deleteCell(with id: Int64, at index: Int)
 }
 
 public protocol MyCardsViewModelOutput {
@@ -27,7 +27,7 @@ public protocol MyCardsViewModelOutput {
 
 public enum MyCardsViewModelOutputAction {
     case initialize(AppListDataProvider)
-    case didDeleteCell(atIndexPath: IndexPath)
+    case didDeleteCell(id: Int64, atIndexPath: IndexPath)
     case isLoading(loading: Bool)
 }
 
@@ -109,15 +109,18 @@ extension DefaultMyCardsViewModel: MyCardsViewModel {
         myCardComponent.action.subscribe(onNext: { [weak self] action in
             guard let self = self else { return }
             switch action {
-            case .didDelete(let indexPath):
-                self.actionSubject.onNext(.didDeleteCell(atIndexPath: indexPath))
+            case .didDelete(let id, let indexPath):
+                self.actionSubject.onNext(.didDeleteCell(id: id, atIndexPath: indexPath))
             default:
                 break
             }
         }).disposed(by: disposeBag)
     }
 
-    public func deleteCell(at index: Int) {
+    public func deleteCell(with id: Int64, at index: Int) {
+        paymentAccountUseCase.execute(params: .init(id: id), completion: handler(onSuccessHandler: { _ in
+            self.show(error: .init(type: .`init`(description: .notification(description: .init(icon: R.image.shared.connectionEstablished()!, description: R.string.localization.my_cards_deletion_success_message.localized())))))
+        }))
     }
 
     // MARK: Helper methods for future

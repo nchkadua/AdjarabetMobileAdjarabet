@@ -8196,7 +8196,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localization` struct is generated, and contains static references to 637 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 638 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -8602,6 +8602,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let card_number_title = Rswift.StringResource(key: "card_number_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Card was deleted successfully
+      ///
+      /// Locales: en, ka, hy, ru
+      static let my_cards_deletion_success_message = Rswift.StringResource(key: "my_cards_deletion_success_message", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Cash Out
       ///
       /// Locales: en, ka, hy, ru
@@ -12260,6 +12264,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("card_number_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Card was deleted successfully
+      ///
+      /// Locales: en, ka, hy, ru
+      static func my_cards_deletion_success_message(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_cards_deletion_success_message", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "my_cards_deletion_success_message"
+        }
+
+        return NSLocalizedString("my_cards_deletion_success_message", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Cash Out

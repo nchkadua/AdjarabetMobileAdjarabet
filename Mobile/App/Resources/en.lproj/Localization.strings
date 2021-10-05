@@ -497,6 +497,7 @@
 /* MyCards */
 "my_cards_add_card" = "Add card";
 "my_cards_manage" = "Manage my cards";
+"my_cards_deletion_success_message" = "Card was deleted successfully";
 
 /* Not verified user */
 "not_verified_user_title" = "You can’t log in";
