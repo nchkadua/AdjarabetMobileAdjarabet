@@ -14,7 +14,6 @@ class TransactionsViewController: ABViewController {
     public lazy var navigator = TransactionsNavigator(viewController: self)
     private lazy var appTableViewController = ABTableViewController()
 		.configureEmptyState(with: viewModel.emptyStateViewModel)
-        .enableEmptyState()
 
     // MARK: - Lifecycle methods
     public override func viewDidLoad() {
@@ -48,7 +47,13 @@ class TransactionsViewController: ABViewController {
                 appTableViewController.reloadItems(items: items, insertionIndexPathes: insertionIndexPathes, deletionIndexPathes: deletionIndexPathes)
             }
         case .isLoading(let loading):
-            loading ? startLoading() : stopLoading()
+			if loading {
+				startLoading()
+				appTableViewController.disableEmptyState()
+			} else {
+				appTableViewController.enableEmptyState()
+				stopLoading()
+			}
         }
     }
 
