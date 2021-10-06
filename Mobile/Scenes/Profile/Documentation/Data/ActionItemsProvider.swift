@@ -11,7 +11,8 @@ class ActionItemsProvider {
         [
             Action(title: R.string.localization.terms_and_conditions.localized(), destination: .termsAndConditions),
             Action(title: R.string.localization.privacy_policy.localized(), destination: .privacyPolicy),
-            Action(title: R.string.localization.about_us.localized(), destination: .aboutUs)
+            Action(title: R.string.localization.about_us.localized(), destination: .aboutUs),
+            Action(title: R.string.localization.documentation_payment_accounts.localized(), destination: .paymentAccounts)
         ]
     }
 }
@@ -25,4 +26,5 @@ public enum DocumentationDestination {
     case termsAndConditions
     case privacyPolicy
     case aboutUs
+    case paymentAccounts
 }
