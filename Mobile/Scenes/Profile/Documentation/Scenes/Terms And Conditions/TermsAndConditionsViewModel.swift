@@ -55,7 +55,7 @@ extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = []
 		for(i, item) in params.categories.enumerated() {
-            let viewModel = DefaultTermsAndConditionsComponentViewModel(params: .init(number: i+1, title: "This is testing title with more than one line and see how it works"))
+			let viewModel = DefaultTermsAndConditionsComponentViewModel(params: .init(number: i+1, title: item.title))
 
             viewModel.action.subscribe(onNext: { [weak self] action in
                 switch action {
