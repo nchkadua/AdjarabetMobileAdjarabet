@@ -10,17 +10,17 @@ import Foundation
 
 public struct AccountAccessLimitDTO: DataTransferResponse {
 	struct Body: Codable {
-		let statusCode: String
+		let statusCode: Int
 		let accountAccessLimits: [AccountAccessLimitObject]
-		
+
 		struct AccountAccessLimitObject: Codable {
 			let limitType: String // TODO: Int or string
-			let periodType: Int
+			let periodType: String
 			let periodStartDate: String
 			let periodEndDate: String
 			let limitSetDate: String
 			let dateModified: String
-			
+
 			enum CodingKeys: String, CodingKey {
 				case limitType = "LimitType"
 				case periodType = "PeriodType"
@@ -30,15 +30,15 @@ public struct AccountAccessLimitDTO: DataTransferResponse {
 				case dateModified = "DateModified"
 			}
 		}
-		
+
 		enum CodingKeys: String, CodingKey {
 			case statusCode = "StatusCode"
 			case accountAccessLimits = "AccountAccessLimit"
 		}
 	}
-	
+
 	typealias Entity = AccountAccessLimitEntity
-	
+
 	static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
 		.success(.init(limits: body.accountAccessLimits.map { limit in
 			.init(

@@ -10,6 +10,6 @@ import Foundation
 
 protocol AccountAccessLimitRepository {
 	typealias Handler = (Result<AccountAccessLimitEntity, ABError>) -> Void
-	
-	func execute(handler: Handler)
+
+	func execute(limitType: SelfRestrictionType, handler: @escaping Handler)
 }

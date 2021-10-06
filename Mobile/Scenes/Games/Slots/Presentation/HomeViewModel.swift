@@ -269,7 +269,8 @@ extension DefaultHomeViewModel: HomeViewModel {
 		userInfoRepo.currentUserInfo(params: .init()) { result in // FIXME: remove after testing
 			switch result {
 			case .success(let entity):
-				print("*** HomeViewModel: suspendTill: \(entity.suspendTill ?? "PZDC")")
+				print("*** HomdeViewModel: entity.statusId: \(entity.statusId ?? -1)")
+				print("*** HomeViewModel: suspendTill: \(entity.suspendTill ?? "NIL")")
 			case .failure(let error):
 				print(error)
 			}

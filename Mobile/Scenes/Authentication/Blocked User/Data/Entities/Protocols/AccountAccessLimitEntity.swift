@@ -10,10 +10,10 @@ import Foundation
 
 public struct AccountAccessLimitEntity {
 	let limits: [AccountAccessLimitObject]
-	
+
 	public struct AccountAccessLimitObject {
 		let limitType: String 			// TODO change to int or enum
-		let periodType: Int 			// TODO change to date
+		let periodType: String 			// TODO change to enum
 		let periodStartDate: String 	// TODO change to date
 		let periodEndDate: String 		// TODO change to date
 		let limitSetDate: String 		// TODO change to date

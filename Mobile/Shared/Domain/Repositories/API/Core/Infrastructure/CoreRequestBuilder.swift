@@ -77,6 +77,7 @@ public class CoreRequestBuilder {
         case pageIndex
         case oldPassword
         case newPassword
+		case limitType
     }
 }
 

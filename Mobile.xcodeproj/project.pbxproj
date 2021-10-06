@@ -946,6 +946,7 @@
 		FB06F54D26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06F54C26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift */; };
 		FB06F54F26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06F54E26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift */; };
 		FB15A64726EBCD3F00E5F985 /* StatusMessageComponentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */; };
+		FB199EFA270D5CE100C1B8C1 /* SelfRestrictionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB199EF9270D5CE100C1B8C1 /* SelfRestrictionType.swift */; };
 		FB1FEDA52705CB81002A3A26 /* EndedMyBonusesHeaderCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDA42705CB81002A3A26 /* EndedMyBonusesHeaderCollectionViewCellDataProvider.swift */; };
 		FB1FEDB72705DAA8002A3A26 /* EndedMyBonusItemCollectionViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDB62705DAA8002A3A26 /* EndedMyBonusItemCollectionViewCellDataProvider.swift */; };
 		FB1FEDBA2705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FEDB82705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.swift */; };
@@ -1021,6 +1022,7 @@
 		FBBFA434270A85BE006F52AC /* BonusConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA42F270A85BE006F52AC /* BonusConditionViewController.swift */; };
 		FBBFA435270A85BE006F52AC /* BonusConditionViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA430270A85BE006F52AC /* BonusConditionViewControllerFactory.swift */; };
 		FBBFA436270A85BE006F52AC /* BonusConditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA431270A85BE006F52AC /* BonusConditionViewModel.swift */; };
+		FBC7D75D270D7E9A00AE37D4 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7D75C270D7E9A00AE37D4 /* UserStatus.swift */; };
 		FBE4632B26F485DA00F77339 /* TermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */; };
 		FBE4632D26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */; };
 /* End PBXBuildFile section */
@@ -1995,6 +1997,7 @@
 		FB06F54C26F2EC5C00E1766E /* DefaultTermsAndConditionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTermsAndConditionsRepository.swift; sourceTree = "<group>"; };
 		FB06F54E26F2EC6F00E1766E /* MobileApiTermsAndConditionsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiTermsAndConditionsDTO.swift; sourceTree = "<group>"; };
 		FB15A64626EBCD3F00E5F985 /* StatusMessageComponentConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessageComponentConstants.swift; sourceTree = "<group>"; };
+		FB199EF9270D5CE100C1B8C1 /* SelfRestrictionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfRestrictionType.swift; sourceTree = "<group>"; };
 		FB1FEDA42705CB81002A3A26 /* EndedMyBonusesHeaderCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusesHeaderCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		FB1FEDB62705DAA8002A3A26 /* EndedMyBonusItemCollectionViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusItemCollectionViewCellDataProvider.swift; sourceTree = "<group>"; };
 		FB1FEDB82705DB1A002A3A26 /* EndedMyBonusItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -2072,6 +2075,7 @@
 		FBBFA42F270A85BE006F52AC /* BonusConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionViewController.swift; sourceTree = "<group>"; };
 		FBBFA430270A85BE006F52AC /* BonusConditionViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionViewControllerFactory.swift; sourceTree = "<group>"; };
 		FBBFA431270A85BE006F52AC /* BonusConditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionViewModel.swift; sourceTree = "<group>"; };
+		FBC7D75C270D7E9A00AE37D4 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
 		FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
 		FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-production.xcconfig"; sourceTree = "<group>"; };
@@ -6668,6 +6672,7 @@
 			children = (
 				C7EF9E7125702B8C00D2908C /* UserInfoRepository.swift */,
 				C7EF9EBE2570440300D2908C /* UserInfoEntity.swift */,
+				FBC7D75C270D7E9A00AE37D4 /* UserStatus.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -7496,6 +7501,7 @@
 				FB906C96270B9A20002A3A1F /* Entities */,
 				FB906C95270B9A11002A3A1F /* Repositories */,
 				FB906C94270B9A09002A3A1F /* UseCases */,
+				FB199EF9270D5CE100C1B8C1 /* SelfRestrictionType.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -8693,6 +8699,7 @@
 				C71F1893256411720026CEA2 /* BiometricSettingsViewControllerFactory.swift in Sources */,
 				C70754E325F3B84F0033050E /* PostLoginRepository.swift in Sources */,
 				CE693B0326A7071E0049D665 /* FAQQuestionsViewController.swift in Sources */,
+				FB199EFA270D5CE100C1B8C1 /* SelfRestrictionType.swift in Sources */,
 				D85C9BF12433677100F1D4FE /* CoreRequestBuilder.swift in Sources */,
 				C7A517C12631EB7800933DF8 /* PaymentAccountDeletableRepository.swift in Sources */,
 				CEF3686C2549C373009FD456 /* WithdrawViewControllerFactory.swift in Sources */,
@@ -8819,6 +8826,7 @@
 				7698869E2571042A00FA339E /* TransactionFilterTableViewCell.swift in Sources */,
 				C7DB6EFA26370FC000EC1CB9 /* EmptyCollectionViewCellDataProvider.swift in Sources */,
 				D83ED2F1244C8C860037DDEB /* CircularImageView.swift in Sources */,
+				FBC7D75D270D7E9A00AE37D4 /* UserStatus.swift in Sources */,
 				FB8116C326E5B482009D9AE5 /* TitleDescriptionButtonTableViewCell.swift in Sources */,
 				CEBB008F2609D40400D1B510 /* VisaNavigator.swift in Sources */,
 				CEBC95E426B0257F00A5DD73 /* AddressHeaderComponentViewModel.swift in Sources */,
