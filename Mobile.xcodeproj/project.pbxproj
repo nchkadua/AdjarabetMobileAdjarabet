@@ -989,6 +989,7 @@
 		FB612A0626C5FBEC00022F24 /* EmptyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612A0026C5FBEC00022F24 /* EmptyPageTableViewCell.swift */; };
 		FB6425F127072D060016F562 /* EndedMyBonusesHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6425EF27072D060016F562 /* EndedMyBonusesHeaderCollectionViewCell.swift */; };
 		FB6425F227072D060016F562 /* EndedMyBonusesHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6425F027072D060016F562 /* EndedMyBonusesHeaderCollectionViewCell.xib */; };
+		FB767ECE270E406100628CF0 /* UserLimitPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB767ECD270E406100628CF0 /* UserLimitPeriod.swift */; };
 		FB8116AF26E5B173009D9AE5 /* StatusMessageComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8116A926E5B173009D9AE5 /* StatusMessageComponentView.xib */; };
 		FB8116B026E5B173009D9AE5 /* StatusMessageTableViewCellDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8116AA26E5B173009D9AE5 /* StatusMessageTableViewCellDataProvider.swift */; };
 		FB8116B126E5B173009D9AE5 /* StatusMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8116AB26E5B173009D9AE5 /* StatusMessageTableViewCell.xib */; };
@@ -2042,6 +2043,7 @@
 		FB612A0026C5FBEC00022F24 /* EmptyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageTableViewCell.swift; sourceTree = "<group>"; };
 		FB6425EF27072D060016F562 /* EndedMyBonusesHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedMyBonusesHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		FB6425F027072D060016F562 /* EndedMyBonusesHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndedMyBonusesHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		FB767ECD270E406100628CF0 /* UserLimitPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLimitPeriod.swift; sourceTree = "<group>"; };
 		FB8116A926E5B173009D9AE5 /* StatusMessageComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusMessageComponentView.xib; sourceTree = "<group>"; };
 		FB8116AA26E5B173009D9AE5 /* StatusMessageTableViewCellDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessageTableViewCellDataProvider.swift; sourceTree = "<group>"; };
 		FB8116AB26E5B173009D9AE5 /* StatusMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusMessageTableViewCell.xib; sourceTree = "<group>"; };
@@ -7502,6 +7504,7 @@
 				FB906C95270B9A11002A3A1F /* Repositories */,
 				FB906C94270B9A09002A3A1F /* UseCases */,
 				FB199EF9270D5CE100C1B8C1 /* SelfRestrictionType.swift */,
+				FB767ECD270E406100628CF0 /* UserLimitPeriod.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -8799,6 +8802,7 @@
 				CE2AABD7267B3F5100B45A0A /* GetPasswordResetCodeDTO.swift in Sources */,
 				C79923022660EE7100FD7033 /* ABError.swift in Sources */,
 				7665D962257E5CA600E5B35F /* AccessHistoryViewControllerFactory.swift in Sources */,
+				FB767ECE270E406100628CF0 /* UserLimitPeriod.swift in Sources */,
 				C7667FFF26A815C4005EB6E8 /* CloseAccountViewControllerFactory.swift in Sources */,
 				C7C1D33D261B9D48009F01C3 /* WithdrawVisaViewModel.swift in Sources */,
 				FB311FFF270483E50012728C /* MyBonusesNavigator.swift in Sources */,

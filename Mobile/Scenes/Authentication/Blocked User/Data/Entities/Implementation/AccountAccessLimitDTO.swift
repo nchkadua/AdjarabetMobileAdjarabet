@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct AccountAccessLimitDTO: DataTransferResponse {
-	struct Body: Codable {
+public struct AccountAccessLimitDTO: CoreDataTransferResponse {
+	struct Body: CoreStatusCodeable {
 		let statusCode: Int
-		let accountAccessLimits: [AccountAccessLimitObject]?
+		let accountAccessLimit: AccountAccessLimitObject?
 
 		struct AccountAccessLimitObject: Codable {
 			let limitType: Int
@@ -33,26 +33,24 @@ public struct AccountAccessLimitDTO: DataTransferResponse {
 
 		enum CodingKeys: String, CodingKey {
 			case statusCode = "StatusCode"
-			case accountAccessLimits = "AccountAccessLimit"
+			case accountAccessLimit = "AccountAccessLimit"
 		}
 	}
 
 	typealias Entity = AccountAccessLimitEntity
 
-	static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-		// TODO: add guard about status codes
-		if let accountAccessLimits = body.accountAccessLimits {
-			return .success(.init(limits: accountAccessLimits.map { limit in
-				.init(
-					limitType: limit.limitType,
-					periodType: limit.periodType,
-					periodStartDate: limit.periodStartDate,
-					periodEndDate: limit.periodEndDate,
-					limitSetDate: limit.limitSetDate,
-					dateModified: limit.dateModified)
-			}))
+	static func entitySafely(header: Header, body: Body) -> Result<Entity, ABError>? {
+		if let limit = body.accountAccessLimit {
+			return .success(
+				.init(limit: .init(limitType: limit.limitType,
+								   periodType: limit.periodType,
+								   periodStartDate: limit.periodStartDate,
+								   periodEndDate: limit.periodEndDate,
+								   limitSetDate: limit.limitSetDate,
+								   dateModified: limit.dateModified))
+			)
 		} else {
-			return .failure(.init(type: .notFound))
+			return .success(.init(limit: nil))
 		}
 	}
 }

@@ -266,23 +266,10 @@ extension DefaultHomeViewModel: HomeViewModel {
     }
 
     public func viewDidLoad() {
-		userInfoRepo.currentUserInfo(params: .init()) { result in // FIXME: remove after testing
+		accountAccessLimitRepo.execute(limitType: .selfSuspension) { result in
 			switch result {
-			case .success(let entity):
-				print("*** HomdeViewModel: entity.statusId: \(entity.statusId ?? -1)")
-				print("*** HomeViewModel: suspendTill: \(entity.suspendTill ?? "NIL")")
-			case .failure(let error):
-				print(error)
-			}
-		}
-
-		accountAccessLimitRepo.execute(limitType: .selfExclusion) { result in
-			switch result {
-				case .success(let entity):
-					print("*** HomeViewController: accountAccessLimitRepo.execute -> success")
-					print(entity.limits.count)
-				case .failure:
-					print("*** HomeViewController: accountAccessLimitRepo.execute -> error")
+			case .success(let entity): break
+			case .failure: break
 			}
 		}
 

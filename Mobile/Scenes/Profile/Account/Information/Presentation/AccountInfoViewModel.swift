@@ -42,7 +42,6 @@ class DefaultAccountInfoViewModel: DefaultBaseViewModel {
     @Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository
     @Inject(from: .repositories) private var langRepo: CommunicationLanguageRepository
     @Inject(from: .repositories) private var actionOTPRepo: IsOTPEnabledRepository
-	@Inject(from: .repositories) private var accountAccessLimitRepo: AccountAccessLimitRepository
 }
 
 extension DefaultAccountInfoViewModel: AccountInfoViewModel {
@@ -93,7 +92,6 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             switch result {
             case .success(let userInfo):
                 let accountInfoModel = AccountInfoModel.create(from: userInfo)
-				print("*** suspendTill: \(accountInfoModel.suspendTill)")
                 self.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
             case .failure(let error):
                 self.show(error: error)
@@ -107,7 +105,6 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let language):
-				print("*** accInfo: language")
                 let viewModel = DefaultCommunicationLanguageComponentViewModel(params: .init(language: language))
                 viewModel.action.subscribe(onNext: { [weak self] action in
                     guard let self = self else { return }
@@ -123,16 +120,6 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
                 self.show(error: error)
             }
         }
-
-		accountAccessLimitRepo.execute(limitType: .selfExclusion) { [weak self] result in
-			guard let self = self else { return }
-			switch result {
-				case .success(let entity):
-					print("*** accInfo: accountAccessLimitRepo.execute")
-				case .failure(let error):
-					print("*** accInfo: accountAccessLimitRepo.execute: error")
-			}
-		}
     }
 
     private func changeLanguage(selected language: CommunicationLanguageEntity) {

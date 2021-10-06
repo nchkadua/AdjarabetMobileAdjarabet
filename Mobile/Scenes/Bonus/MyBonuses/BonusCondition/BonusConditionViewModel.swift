@@ -51,9 +51,6 @@ public class DefaultBonusConditionViewModel {
 	public var description: String { get { params.description } }
 	public var gameId: Int? { get { params.gameId } }
 
-	@Inject(from: .repositories) private var accountAccessLimitRepo: AccountAccessLimitRepository // FIXME: Giga: remove
-	@Inject(from: .repositories) private var languageRepo: CommunicationLanguageRepository// FIXME: Giga: remove
-
     public init(params: BonusConditionViewModelParams) {
         self.params = params
     }
@@ -63,23 +60,5 @@ extension DefaultBonusConditionViewModel: BonusConditionViewModel {
     public var action: Observable<BonusConditionViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<BonusConditionViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
-		print("*** Bonus.viewDidLoad")
-		accountAccessLimitRepo.execute(limitType: .selfExclusion) { [weak self] result in
-			guard let self = self else { return }
-			switch result {
-				case .success: print("*** DefaultBonusConditionViewModel: accountAccessLimitRepo.execute: success")
-				case .failure(let error): print("*** DefaultBonusConditionViewModel: accountAccessLimitRepo.execute: error: \(String(describing: error.errorDescription))")
-			}
-		}
-
-		languageRepo.getUserLang { [weak self]  result in
-			guard let self = self else { return }
-
-			switch result {
-				case .success: print("*** DefaultBonusConditionViewModel: languageRepo.getUserLang: success")
-				case .failure: print("*** DefaultBonusConditionViewModel: languageRepo.getUserLang: error")
-			}
-		}
-    }
+    public func viewDidLoad() { }
 }
