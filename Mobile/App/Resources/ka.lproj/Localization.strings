@@ -146,6 +146,7 @@
 "account_parameters" = "ანგარიშის პარამეტრები";
 
 /* Documentation */
+"documentation_payment_accounts" = "გადახდის მეთოდები";
 "documentation" = "დოკუმენტაცია";
 "terms_and_conditions" = "წესები და პირობები";
 "privacy_policy" = "კონფიდენციალურობის პოლიტიკა";
@@ -332,7 +333,7 @@
 /* My Bonuses */
 "my_bonuses_title" = "ჩემი ბონუსები";
 "your_bonus" = "შენი ბონუსი";
-"blocked_amount" = "დაბლოკილი თანხა";
+"blocked_amount" = "დაბლოკილი";
 "active_bonuses" = "აქტიური ბონუსები";
 "ended_bonuses" = "დასრულებული ბონუსები";
 "my_bonuses_balance_tips" = "ბალანსის განმარტებები";
@@ -497,6 +498,7 @@
 /* MyCards */
 "my_cards_add_card" = "ბარათის დამატება";
 "my_cards_manage" = "ბარათების მართვა";
+"my_cards_deletion_success_message" = "ბარათი წარმატებით წაიშალა";
 
 /* Not verified user */
 "not_verified_user_title" = "You can’t log in";

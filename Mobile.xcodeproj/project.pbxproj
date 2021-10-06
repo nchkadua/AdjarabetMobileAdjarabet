@@ -593,6 +593,10 @@
 		CE8786C2261C96830060EBD1 /* ABView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786C1261C96830060EBD1 /* ABView.swift */; };
 		CE8786CB261DBF810060EBD1 /* AddCardComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8786CA261DBF800060EBD1 /* AddCardComponentView.xib */; };
 		CE8786CF261DBF980060EBD1 /* AddCardComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8786CE261DBF980060EBD1 /* AddCardComponentView.swift */; };
+		CE8A7794270DB50E002EEF77 /* PaymentAccountsDocEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A7793270DB50E002EEF77 /* PaymentAccountsDocEntity.swift */; };
+		CE8A7796270DB518002EEF77 /* PaymentAccountsDocDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A7795270DB518002EEF77 /* PaymentAccountsDocDTO.swift */; };
+		CE8A7798270DB527002EEF77 /* PaymentAccountsDocRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A7797270DB527002EEF77 /* PaymentAccountsDocRepository.swift */; };
+		CE8A779A270DB535002EEF77 /* MobileApiPaymentAccountsDocRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A7799270DB535002EEF77 /* MobileApiPaymentAccountsDocRepository.swift */; };
 		CE91C0D9257028C400A18255 /* TransactionsFilterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */; };
 		CE91C0DA257028C400A18255 /* TransactionsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */; };
 		CE91C0DB257028C400A18255 /* TransactionsFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */; };
@@ -1624,6 +1628,10 @@
 		CE8786C1261C96830060EBD1 /* ABView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABView.swift; sourceTree = "<group>"; };
 		CE8786CA261DBF800060EBD1 /* AddCardComponentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardComponentView.xib; sourceTree = "<group>"; };
 		CE8786CE261DBF980060EBD1 /* AddCardComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardComponentView.swift; sourceTree = "<group>"; };
+		CE8A7793270DB50E002EEF77 /* PaymentAccountsDocEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountsDocEntity.swift; sourceTree = "<group>"; };
+		CE8A7795270DB518002EEF77 /* PaymentAccountsDocDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountsDocDTO.swift; sourceTree = "<group>"; };
+		CE8A7797270DB527002EEF77 /* PaymentAccountsDocRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAccountsDocRepository.swift; sourceTree = "<group>"; };
+		CE8A7799270DB535002EEF77 /* MobileApiPaymentAccountsDocRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileApiPaymentAccountsDocRepository.swift; sourceTree = "<group>"; };
 		CE91C0D6257028C400A18255 /* TransactionsFilterNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterNavigator.swift; sourceTree = "<group>"; };
 		CE91C0D7257028C400A18255 /* TransactionsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewController.swift; sourceTree = "<group>"; };
 		CE91C0D8257028C400A18255 /* TransactionsFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewModel.swift; sourceTree = "<group>"; };
@@ -4588,6 +4596,7 @@
 		CE0F767426EF6DA6008980F6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE8A778F270DB4CC002EEF77 /* PaymentAccounts */,
 				CE5F37D72701DBCF005C3426 /* About Us */,
 				CE0F767526EF6DE3008980F6 /* Privacy Policy */,
 				FBAE9C3B26B3D0A3002E9D72 /* Terms And Conditions */,
@@ -5967,6 +5976,41 @@
 				CE8786CA261DBF800060EBD1 /* AddCardComponentView.xib */,
 			);
 			path = "Add Card View";
+			sourceTree = "<group>";
+		};
+		CE8A778F270DB4CC002EEF77 /* PaymentAccounts */ = {
+			isa = PBXGroup;
+			children = (
+				CE8A7790270DB4D6002EEF77 /* Data */,
+			);
+			path = PaymentAccounts;
+			sourceTree = "<group>";
+		};
+		CE8A7790270DB4D6002EEF77 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE8A7792270DB4E3002EEF77 /* Data */,
+				CE8A7791270DB4DD002EEF77 /* Implementation */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE8A7791270DB4DD002EEF77 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CE8A7795270DB518002EEF77 /* PaymentAccountsDocDTO.swift */,
+				CE8A7799270DB535002EEF77 /* MobileApiPaymentAccountsDocRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE8A7792270DB4E3002EEF77 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE8A7793270DB50E002EEF77 /* PaymentAccountsDocEntity.swift */,
+				CE8A7797270DB527002EEF77 /* PaymentAccountsDocRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		CE91C0D5257028AB00A18255 /* Filter */ = {
@@ -8264,6 +8308,7 @@
 				CE8786B7261B4A680060EBD1 /* Array+Extension.swift in Sources */,
 				76DCF68E25B8203D00150EE1 /* AddCard.swift in Sources */,
 				D861DA912466BCDC0054D058 /* SessionManagementRepository.swift in Sources */,
+				CE8A7798270DB527002EEF77 /* PaymentAccountsDocRepository.swift in Sources */,
 				D8BA5A1E249A5A0B00F88433 /* OTPDeliveryChannel.swift in Sources */,
 				CEBBB0742579151A0024D213 /* AgreementComponentViewModel.swift in Sources */,
 				CECA7EBE26AED0A700BCF04A /* ContactUsNavigator.swift in Sources */,
@@ -8585,6 +8630,7 @@
 				CEBB00902609D40400D1B510 /* VisaViewController.swift in Sources */,
 				7676E56A2562E31F00234026 /* TransactionHistoryComponentView.swift in Sources */,
 				CE64EA7C25D1695400438974 /* GameViewController.swift in Sources */,
+				CE8A7796270DB518002EEF77 /* PaymentAccountsDocDTO.swift in Sources */,
 				D850940E24839A4A00722040 /* PageDescription.swift in Sources */,
 				7644B6222564F8E4006778B2 /* TransactionDetailComponentView.swift in Sources */,
 				D8442AA62469801A00F32676 /* UITextField+Extension.swift in Sources */,
@@ -8834,6 +8880,7 @@
 				7676E55D2562D73100234026 /* TransactionHistoryProvider.swift in Sources */,
 				C7553B43267B729100813FAC /* CommunicationLanguageEntity.swift in Sources */,
 				FB15A64726EBCD3F00E5F985 /* StatusMessageComponentConstants.swift in Sources */,
+				CE8A779A270DB535002EEF77 /* MobileApiPaymentAccountsDocRepository.swift in Sources */,
 				C78127C7267142080007F7E3 /* CoreApiIsOTPEnabledRepository.swift in Sources */,
 				D86253B9246444A300F7DE0C /* ABButton.swift in Sources */,
 				D8AC9968244F1A3E00B16600 /* RecentlyPlayedCollectionViewCell.swift in Sources */,
@@ -8907,6 +8954,7 @@
 				CE3E32712705D9FD00E5D0AA /* PrivatePromosEntity.swift in Sources */,
 				CE5F37DE2701DC11005C3426 /* AboutUsRepository.swift in Sources */,
 				76BDF43B257543AF007B27A7 /* TransactionHistoryRepository.swift in Sources */,
+				CE8A7794270DB50E002EEF77 /* PaymentAccountsDocEntity.swift in Sources */,
 				7676E55825628F5B00234026 /* TransactionsViewControllerFactory.swift in Sources */,
 				D8C6379E2471B89F00B9A50E /* UserBalanceService.swift in Sources */,
 				CE2AABC5267A014C00B45A0A /* PasswordResetRepository.swift in Sources */,

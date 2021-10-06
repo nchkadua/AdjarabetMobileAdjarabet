@@ -17,8 +17,8 @@ class ABDateFormater: DateFormatter {
     }
     public init(with formatting: Formatting) {
         super.init()
-        locale = Locale(identifier: "en_US_POSIX")
-        timeZone = TimeZone(secondsFromGMT: 0)
+        locale = Locale.current
+        timeZone = TimeZone.current
         setFormmatting(formatting)
     }
 

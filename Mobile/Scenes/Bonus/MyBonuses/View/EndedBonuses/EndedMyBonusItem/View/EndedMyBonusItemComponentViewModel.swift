@@ -15,12 +15,12 @@ public struct EndedMyBonusItemComponentViewModelParams {
 	let name: String
 	let startDate: String
 	let endDate: String?
-	let condition: String
+	let condition: String?
 	let gameId: Int?
 
 	var delegate: BonusItemDelegate?
 
-	init(name: String = "", startDate: String = "", endDate: String? = nil, condition: String, gameId: Int? = nil, delegate: BonusItemDelegate? = nil) {
+	init(name: String = "", startDate: String = "", endDate: String? = nil, condition: String? = nil, gameId: Int? = nil, delegate: BonusItemDelegate? = nil) {
 		self.name = name
 		self.startDate = startDate
 		self.endDate = endDate
@@ -47,6 +47,8 @@ public protocol EndedMyBonusItemComponentViewModelOutput {
 }
 
 public enum EndedMyBonusItemComponentViewModelOutputAction {
+	case hideEndDate
+	case hideHintButton
 }
 
 public class DefaultEndedMyBonusItemComponentViewModel {
@@ -54,9 +56,28 @@ public class DefaultEndedMyBonusItemComponentViewModel {
     private let actionSubject = PublishSubject<EndedMyBonusItemComponentViewModelOutputAction>()
 
 	public var startDate: String { get { getDateLabel(params.startDate)?.uppercased() ?? "" } }
-	public var endDate: String { get { getDateLabel(params.endDate)?.uppercased() ?? "" } }
+	public var endDate: String {
+		get {
+			if let endDateFormatted = getDateLabel(params.endDate) {
+				return endDateFormatted.uppercased()
+			} else {
+				print("*** hide end date called")
+				actionSubject.onNext(.hideEndDate)
+				return ""
+			}
+		}
+	}
 	public var name: String { get { params.name.uppercased() } }
-	public var condition: String { get { params.condition } }
+	public var condition: String {
+		get {
+			if let condition = params.condition {
+				return condition
+			} else {
+				actionSubject.onNext(.hideHintButton)
+				return ""
+			}
+		}
+	}
 	public var gameId: Int? { get { params.gameId } }
 	public var delegate: BonusItemDelegate? {
 		get { params.delegate }

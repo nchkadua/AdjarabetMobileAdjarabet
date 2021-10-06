@@ -146,6 +146,7 @@
 "account_parameters" = "Account Parameters";
 
 /* Documentation */
+"documentation_payment_accounts" = "Payment Methods";
 "documentation" = "Documentation";
 "terms_and_conditions" = "Terms and Conditions";
 "privacy_policy" = "Privacy Policy";
@@ -497,6 +498,7 @@
 /* MyCards */
 "my_cards_add_card" = "Add card";
 "my_cards_manage" = "Manage my cards";
+"my_cards_deletion_success_message" = "Card was deleted successfully";
 
 /* Not verified user */
 "not_verified_user_title" = "You can’t log in";
