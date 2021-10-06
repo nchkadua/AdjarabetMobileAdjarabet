@@ -16,6 +16,7 @@ public class DocumentationNavigator: Navigator {
     }
 
     public enum Destination {
+        case paymentAccounts(with: WebViewModelParams)
         case aboutUs(with: WebViewModelParams)
         case privacyPolicy(with: WebViewModelParams)
 		case termsAndConditions(with: TermsAndConditionsViewModelParams)
@@ -23,6 +24,8 @@ public class DocumentationNavigator: Navigator {
 
     public func navigate(to destination: Destination, animated animate: Bool) {
         switch destination {
+        case .paymentAccounts(let params):
+            navigateToWebView(with: params, animate: animate)
         case .aboutUs(let params):
             navigateToWebView(with: params, animate: animate)
         case .privacyPolicy(let params):

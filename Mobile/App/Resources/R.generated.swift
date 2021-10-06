@@ -8196,7 +8196,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localization` struct is generated, and contains static references to 638 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 639 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -9718,6 +9718,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let shared_aberror_payment_account_not_found = Rswift.StringResource(key: "shared_aberror_payment_account_not_found", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Payment Methods
+      ///
+      /// Locales: en, ka, hy, ru
+      static let documentation_payment_accounts = Rswift.StringResource(key: "documentation_payment_accounts", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Payment provider
       ///
       /// Locales: en, ka, hy, ru
@@ -16449,6 +16453,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("shared_aberror_payment_account_not_found", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Payment Methods
+      ///
+      /// Locales: en, ka, hy, ru
+      static func documentation_payment_accounts(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("documentation_payment_accounts", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "documentation_payment_accounts"
+        }
+
+        return NSLocalizedString("documentation_payment_accounts", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Payment provider

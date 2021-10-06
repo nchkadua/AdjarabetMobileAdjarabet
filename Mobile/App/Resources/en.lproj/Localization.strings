@@ -146,6 +146,7 @@
 "account_parameters" = "Account Parameters";
 
 /* Documentation */
+"documentation_payment_accounts" = "Payment Methods";
 "documentation" = "Documentation";
 "terms_and_conditions" = "Terms and Conditions";
 "privacy_policy" = "Privacy Policy";

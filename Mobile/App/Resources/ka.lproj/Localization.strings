@@ -146,6 +146,7 @@
 "account_parameters" = "ანგარიშის პარამეტრები";
 
 /* Documentation */
+"documentation_payment_accounts" = "გადახდის მეთოდები";
 "documentation" = "დოკუმენტაცია";
 "terms_and_conditions" = "წესები და პირობები";
 "privacy_policy" = "კონფიდენციალურობის პოლიტიკა";
