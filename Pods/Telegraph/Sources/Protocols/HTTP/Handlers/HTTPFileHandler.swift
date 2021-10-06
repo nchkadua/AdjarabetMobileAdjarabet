@@ -55,6 +55,12 @@ open class HTTPFileHandler: HTTPRequestHandler {
     guard let rawResourceType = attributes.fileType() else { return HTTPResponse(.forbidden) }
     let resourceType = FileAttributeType(rawValue: rawResourceType)
 
+    // Check for symbolic link destination
+    if resourceType == .typeSymbolicLink,
+       let destination = try? fileManager.destinationOfSymbolicLink(atPath: url.path) {
+        return try responseForURL(URL(fileURLWithPath: destination), byteRange: byteRange)
+    }
+
     // Allow directories
     if resourceType == .typeDirectory {
       guard let index = index else { return HTTPResponse(.forbidden) }
@@ -71,8 +77,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
 
     // Construct a response
     let response = HTTPResponse()
-    response.headers.accessControlAllowOrigin = "*" // TODO: configure from app (somehow)
-    response.headers.contentType = fileManager.mimeType(of: url)
+    response.headers.contentType = url.mimeType
     response.headers.lastModified = attributes.fileModificationDate()?.rfc1123
 
     // Is a range requested?

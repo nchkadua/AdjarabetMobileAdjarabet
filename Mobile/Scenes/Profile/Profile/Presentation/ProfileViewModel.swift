@@ -17,6 +17,7 @@ public struct ProfileViewModelParams {
 
 public protocol ProfileViewModelInput {
     func viewDidLoad()
+    func viewDidAppear()
     func logout()
     func setupDataProviders()
 }
@@ -61,12 +62,15 @@ extension DefaultProfileViewModel: ProfileViewModel {
         setupDataProviders()
     }
 
+    public func viewDidAppear() {
+        userBalanceService.update()
+    }
+
     public func setupDataProviders() {
         setupAppCellDataProviders()
     }
 
 	// MARK: - View Models for profile table view
-
 	private var profileViewModel: DefaultProfileInfoComponentViewModel {
 		let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
 		profileViewModel.action.subscribe(onNext: { [weak self] action in
