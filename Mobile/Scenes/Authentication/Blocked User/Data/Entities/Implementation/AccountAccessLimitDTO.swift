@@ -11,11 +11,11 @@ import Foundation
 public struct AccountAccessLimitDTO: DataTransferResponse {
 	struct Body: Codable {
 		let statusCode: Int
-		let accountAccessLimits: [AccountAccessLimitObject]
+		let accountAccessLimits: [AccountAccessLimitObject]?
 
 		struct AccountAccessLimitObject: Codable {
-			let limitType: String // TODO: Int or string
-			let periodType: String
+			let limitType: Int
+			let periodType: Int
 			let periodStartDate: String
 			let periodEndDate: String
 			let limitSetDate: String
@@ -40,14 +40,19 @@ public struct AccountAccessLimitDTO: DataTransferResponse {
 	typealias Entity = AccountAccessLimitEntity
 
 	static func entity(header: DataTransferResponseDefaultHeader, body: Body) -> Result<Entity, ABError>? {
-		.success(.init(limits: body.accountAccessLimits.map { limit in
-			.init(
-				limitType: limit.limitType,
-				periodType: limit.periodType,
-				periodStartDate: limit.periodStartDate,
-				periodEndDate: limit.periodEndDate,
-				limitSetDate: limit.limitSetDate,
-				dateModified: limit.dateModified)
-		}))
+		// TODO: add guard about status codes
+		if let accountAccessLimits = body.accountAccessLimits {
+			return .success(.init(limits: accountAccessLimits.map { limit in
+				.init(
+					limitType: limit.limitType,
+					periodType: limit.periodType,
+					periodStartDate: limit.periodStartDate,
+					periodEndDate: limit.periodEndDate,
+					limitSetDate: limit.limitSetDate,
+					dateModified: limit.dateModified)
+			}))
+		} else {
+			return .failure(.init(type: .notFound))
+		}
 	}
 }

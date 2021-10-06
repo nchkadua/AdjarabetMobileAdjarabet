@@ -59,6 +59,7 @@ class DefaultHomeViewModel: DefaultBaseViewModel {
     @Inject private var userBalanceService: UserBalanceService
 
 	@Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository // FIXME: remove after testing
+	@Inject(from: .repositories) private var accountAccessLimitRepo: AccountAccessLimitRepository // FIXME: remove after testing
 
     private var page: PageDescription = .init()
     private var recentlyPlayedGames: AppCellDataProviders = []
@@ -258,7 +259,6 @@ class DefaultHomeViewModel: DefaultBaseViewModel {
 
 extension DefaultHomeViewModel: HomeViewModel {
     public var action: Observable<HomeViewModelOutputAction> { actionSubject.asObserver() }
-
     public var route: Observable<HomeViewModelRoute> { routeSubject.asObserver() }
 
     public func viewWillAppear() {
@@ -275,6 +275,17 @@ extension DefaultHomeViewModel: HomeViewModel {
 				print(error)
 			}
 		}
+
+		accountAccessLimitRepo.execute(limitType: .selfExclusion) { result in
+			switch result {
+				case .success(let entity):
+					print("*** HomeViewController: accountAccessLimitRepo.execute -> success")
+					print(entity.limits.count)
+				case .failure:
+					print("*** HomeViewController: accountAccessLimitRepo.execute -> error")
+			}
+		}
+
         displayEmptyGames()
         showErrorIfNeeded()
         observeLanguageChange()
