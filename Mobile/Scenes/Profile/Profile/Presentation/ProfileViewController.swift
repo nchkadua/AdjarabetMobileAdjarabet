@@ -25,17 +25,16 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         setup()
         bind(to: viewModel)
         errorThrowing = viewModel
-        viewModel.viewDidLoad()
-    }
-
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewModel.viewDidAppear()
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewDidLoad()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -79,6 +78,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 
     private func openDeposit() {
         navigator.navigate(to: .deposit, animated: true)
+        navigator.destinationViewController?.presentationController?.delegate = self
     }
 
     private func openWithdraw() {
@@ -131,3 +131,11 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 }
 
 extension ProfileViewController: CommonBarButtonProviding { }
+
+extension ProfileViewController: UIAdaptivePresentationControllerDelegate {
+    public func presentationControllerDidDismiss( _ presentationController: UIPresentationController) {
+        if #available(iOS 13, *) {
+            viewModel.updateBalance()
+        }
+    }
+}

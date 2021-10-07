@@ -8,6 +8,8 @@
 
 public class ProfileNavigator: Navigator {
     private weak var viewController: UIViewController?
+    public var destinationViewController: UIViewController?
+
     @Inject(from: .factories) private var loginViewControllerFactory: LoginViewControllerFactory
     @Inject(from: .factories) public var accountInfoViewControllerFactory: AccountInfoViewControllerFactory
     @Inject(from: .factories) public var depositViewControllerFactory: DepositViewControllerFactory
@@ -68,6 +70,7 @@ public class ProfileNavigator: Navigator {
     // MARK: Navigations
     private func navigateToDeposit(animate: Bool) {
         let vc = depositViewControllerFactory.make(params: .init())
+        destinationViewController = vc
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 
