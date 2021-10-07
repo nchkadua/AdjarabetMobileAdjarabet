@@ -34,7 +34,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.viewDidLoad()
+        viewModel.viewWillAppear()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -78,7 +78,6 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 
     private func openDeposit() {
         navigator.navigate(to: .deposit, animated: true)
-        navigator.destinationViewController?.presentationController?.delegate = self
     }
 
     private func openWithdraw() {
@@ -133,7 +132,7 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 extension ProfileViewController: CommonBarButtonProviding { }
 
 extension ProfileViewController: UIAdaptivePresentationControllerDelegate {
-    public func presentationControllerDidDismiss( _ presentationController: UIPresentationController) {
+    public func presentationControllerWillDismiss( _ presentationController: UIPresentationController) {
         if #available(iOS 13, *) {
             viewModel.updateBalance()
         }

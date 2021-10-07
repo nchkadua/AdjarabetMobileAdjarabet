@@ -16,7 +16,7 @@ public struct ProfileViewModelParams {
 }
 
 public protocol ProfileViewModelInput {
-    func viewDidLoad()
+    func viewWillAppear()
     func updateBalance()
     func logout()
     func setupDataProviders()
@@ -59,7 +59,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
     public var action: Observable<ProfileViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<ProfileViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    public func viewWillAppear() {
         setupDataProviders()
     }
 

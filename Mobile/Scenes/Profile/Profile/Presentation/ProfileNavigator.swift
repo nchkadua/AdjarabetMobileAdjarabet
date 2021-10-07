@@ -70,12 +70,13 @@ public class ProfileNavigator: Navigator {
     // MARK: Navigations
     private func navigateToDeposit(animate: Bool) {
         let vc = depositViewControllerFactory.make(params: .init())
-        destinationViewController = vc
+        vc.presentationController?.delegate = viewController as? UIAdaptivePresentationControllerDelegate
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 
     private func navigateToWithdraw(animate: Bool) {
         let vc = withdrawViewControllerFactory.make()
+        vc.presentationController?.delegate = viewController as? UIAdaptivePresentationControllerDelegate
         viewController?.navigationController?.present(vc, animated: animate, completion: nil)
     }
 
