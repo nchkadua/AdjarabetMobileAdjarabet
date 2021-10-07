@@ -17,7 +17,6 @@ public struct DepositViewModelParams {
 public protocol DepositViewModelInput: AnyObject {
     var params: DepositViewModelParams { get set }
     func viewDidLoad()
-    func viewDidAppear()
 }
 
 public protocol DepositViewModelOutput {
@@ -55,9 +54,7 @@ extension DefaultDepositViewModel: DepositViewModel {
 
     public func viewDidLoad() {
         actionSubject.onNext(.set(totalBalance: userBalanceService.balance ?? 0.0))
-    }
 
-    public func viewDidAppear() {
         notify(.isLoading(loading: true))
         actionSubject.onNext(.bindToGridViewModel(viewModel: paymentGridComponentViewModel))
 

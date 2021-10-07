@@ -67,6 +67,7 @@ public class VisaViewController: ABViewController {
         case .updateDisposable(let disposable): self.limitView.updateDaily(disposable)
         case .updateMax(let max): self.limitView.updateMax(max)
         case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
+        case .setButton(let isLoading): continueButton.set(isLoading: isLoading)
         }
     }
 

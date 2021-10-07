@@ -37,6 +37,7 @@ enum VisaViewModelOutputAction {
     case updateDisposable(with: String)
     case updateMax(with: String)
     case bindToGridViewModel(viewModel: SuggestedAmountGridComponentViewModel)
+    case setButton(isLoading: Bool)
 }
 // view type enum
 enum VisaViewType {
@@ -170,6 +171,7 @@ extension DefaultVisaViewModel: VisaViewModel {
     }
 
     func continued(amount: String, account: Int) {
+        notify(.setButton(isLoading: true))
         // sanity check
         guard (0..<accounts.count).contains(account),                              // sanity check
               let damount = amountFormatter.unformat(number: amount, from: .s_n_a) // amount is valid
@@ -183,6 +185,7 @@ extension DefaultVisaViewModel: VisaViewModel {
                                accountId: accounts[account].id,
                                handler: handler(onSuccessHandler: { request in
                                 self.routeSubject.onNext(.webView(with: .init(loadType: .urlRequst(request: request), canNavigate: false)))
+                                self.notify(.setButton(isLoading: false))
                                }))
     }
 
