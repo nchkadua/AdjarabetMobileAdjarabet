@@ -32,13 +32,15 @@ struct VisaNavigator {
         let vc = webViewFactory.make(params: params)
         let navC = vc.wrapInNavWith(presentationStyle: .automatic)
         navC.navigationBar.styleForPrimaryPage()
+        navC.presentationController?.delegate = viewController as? UIAdaptivePresentationControllerDelegate
         viewController?.navigationController?.present(navC, animated: animated, completion: nil)
     }
 
     private func navigate2AddAccount(with params: AddCardViewModelParams, animated: Bool) {
         let vc = addAccountFactory.make(params: params)
-        let navc = vc.wrapInNavWith(presentationStyle: .automatic)
-        navc.navigationBar.styleForPrimaryPage()
-        viewController?.navigationController?.present(navc, animated: animated, completion: nil)
+        let navC = vc.wrapInNavWith(presentationStyle: .automatic)
+        navC.navigationBar.styleForPrimaryPage()
+        navC.presentationController?.delegate = viewController as? UIAdaptivePresentationControllerDelegate
+        viewController?.navigationController?.present(navC, animated: animated, completion: nil)
     }
 }

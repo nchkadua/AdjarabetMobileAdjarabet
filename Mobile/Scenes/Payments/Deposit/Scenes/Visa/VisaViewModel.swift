@@ -11,6 +11,11 @@ import RxSwift
 protocol VisaViewModel: BaseViewModel, VisaViewModelInput, VisaViewModelOutput { }
 
 public struct VisaViewModelParams {
+    public enum Action {
+        case shouldUpdatePage
+    }
+    public let paramsOutputAction = PublishSubject<Action>()
+
     let serviceType: UFCServiceType
 }
 
@@ -21,6 +26,7 @@ protocol VisaViewModelInput {
     func selected(account: Int, amount: String)  // call on selecting account
     func continued(amount: String, account: Int) // call on tapping continue button
     func added()
+    func viewWillAppear()
 }
 
 protocol VisaViewModelOutput {
@@ -75,6 +81,10 @@ extension DefaultVisaViewModel: VisaViewModel {
 
     func viewDidLoad() {
         refresh()
+    }
+
+    func viewWillAppear() {
+        params.paramsOutputAction.onNext(.shouldUpdatePage)
     }
 
     private func refresh() {

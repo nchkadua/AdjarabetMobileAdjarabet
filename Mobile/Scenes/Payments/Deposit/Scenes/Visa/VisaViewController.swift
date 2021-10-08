@@ -223,3 +223,11 @@ extension VisaViewController: ABInputViewDelegate {
         viewModel.selected(account: account, amount: amount)
     }
 }
+
+extension VisaViewController: UIAdaptivePresentationControllerDelegate {
+    public func presentationControllerWillDismiss( _ presentationController: UIPresentationController) {
+        if #available(iOS 13, *) {
+            viewModel.viewWillAppear()
+        }
+    }
+}

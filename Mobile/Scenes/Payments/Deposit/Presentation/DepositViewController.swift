@@ -122,7 +122,10 @@ public class DepositViewController: ABViewController {
 
     // MARK: Action methods
     private func setChildViewControllers(_ paymentMethodList: [PaymentMethodEntity]) {
-        let visaVC = navigator.visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)
+        let params: VisaViewModelParams = .init(serviceType: .vip)
+        let visaVC = navigator.visaViewControllerFactory.make(params: params).wrap(in: ABNavigationController.self)
+        viewModel.subscribeTo(visaViewModelParams: params)
+
         let emoneyVC = navigator.emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self)
         let applePayVC = navigator.applePayViewControllerFactory.make().wrap(in: ABNavigationController.self)
 
