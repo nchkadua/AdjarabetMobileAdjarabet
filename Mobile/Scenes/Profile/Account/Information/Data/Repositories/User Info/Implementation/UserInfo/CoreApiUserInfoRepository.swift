@@ -19,8 +19,8 @@ extension CoreApiUserInfoRepository: UserInfoRepository {
     }
 
     func getIDDocuments(params: IdDocumentsParams, handler: @escaping IDDocumentsHandler) {
-        guard let userId = userSession.userId,
-              let sessionId = userSession.sessionId else {
+        guard let userId = params.userId,
+              let sessionId = params.header else {
             handler(.failure(.init(type: .sessionNotFound)))
             return
         }
