@@ -11,6 +11,11 @@ import RxSwift
 protocol VisaViewModel: BaseViewModel, VisaViewModelInput, VisaViewModelOutput { }
 
 public struct VisaViewModelParams {
+    public enum Action {
+        case shouldUpdatePage
+    }
+    public let paramsOutputAction = PublishSubject<Action>()
+
     let serviceType: UFCServiceType
 }
 
@@ -21,6 +26,7 @@ protocol VisaViewModelInput {
     func selected(account: Int, amount: String)  // call on selecting account
     func continued(amount: String, account: Int) // call on tapping continue button
     func added()
+    func viewWillAppear()
 }
 
 protocol VisaViewModelOutput {
@@ -37,6 +43,7 @@ enum VisaViewModelOutputAction {
     case updateDisposable(with: String)
     case updateMax(with: String)
     case bindToGridViewModel(viewModel: SuggestedAmountGridComponentViewModel)
+    case setButton(isLoading: Bool)
 }
 // view type enum
 enum VisaViewType {
@@ -74,6 +81,10 @@ extension DefaultVisaViewModel: VisaViewModel {
 
     func viewDidLoad() {
         refresh()
+    }
+
+    func viewWillAppear() {
+        params.paramsOutputAction.onNext(.shouldUpdatePage)
     }
 
     private func refresh() {
@@ -170,6 +181,7 @@ extension DefaultVisaViewModel: VisaViewModel {
     }
 
     func continued(amount: String, account: Int) {
+        notify(.setButton(isLoading: true))
         // sanity check
         guard (0..<accounts.count).contains(account),                              // sanity check
               let damount = amountFormatter.unformat(number: amount, from: .s_n_a) // amount is valid
@@ -183,6 +195,7 @@ extension DefaultVisaViewModel: VisaViewModel {
                                accountId: accounts[account].id,
                                handler: handler(onSuccessHandler: { request in
                                 self.routeSubject.onNext(.webView(with: .init(loadType: .urlRequst(request: request), canNavigate: false)))
+                                self.notify(.setButton(isLoading: false))
                                }))
     }
 

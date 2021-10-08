@@ -31,6 +31,7 @@ public protocol BalanceComponentViewModelInput {
     func didClickDeposit()
 	func hideBalance()
 	func showBalance()
+    func updateBalance(_ balance: Double)
 }
 
 public protocol BalanceComponentViewModelOutput {
@@ -46,6 +47,7 @@ public enum BalanceComponentViewModelOutputAction {
 	case setup(BalanceComponentViewModel)
 	case showTotalBalance
 	case showBalancePlaceholder(String)
+    case updateBalance(balance: String)
 }
 
 public class DefaultBalanceComponentViewModel {
@@ -94,4 +96,8 @@ extension DefaultBalanceComponentViewModel: BalanceComponentViewModel {
 		params.isBalanceShown = true
 		actionSubject.onNext(.showTotalBalance)
 	}
+
+    public func updateBalance(_ balance: Double) {
+        actionSubject.onNext(.updateBalance(balance: amountFormatter.format(number: balance, in: .s_n_a)))
+    }
 }
