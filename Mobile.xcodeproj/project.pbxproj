@@ -1006,6 +1006,9 @@
 		FB906CA0270C247C002A3A1F /* DefaultAccountAccessLimitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB906C9F270C247C002A3A1F /* DefaultAccountAccessLimitRepository.swift */; };
 		FB906CA2270C24B4002A3A1F /* AccountAccessLimitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB906CA1270C24B4002A3A1F /* AccountAccessLimitEntity.swift */; };
 		FB906CA4270C24E2002A3A1F /* AccountAccessLimitDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB906CA3270C24E2002A3A1F /* AccountAccessLimitDTO.swift */; };
+		FBA61434270F1F31005842FE /* AccountRestrictionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA61433270F1F31005842FE /* AccountRestrictionType.swift */; };
+		FBA61436270F20E0005842FE /* AccountRestrictionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA61435270F20E0005842FE /* AccountRestrictionUseCase.swift */; };
+		FBA61438270FA13A005842FE /* AccountRestriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA61437270FA13A005842FE /* AccountRestriction.swift */; };
 		FBAE9C4126B3D0C1002E9D72 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */; };
 		FBAE9C4226B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */; };
 		FBAE9C4326B3D0C1002E9D72 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */; };
@@ -1024,6 +1027,7 @@
 		FBBFA435270A85BE006F52AC /* BonusConditionViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA430270A85BE006F52AC /* BonusConditionViewControllerFactory.swift */; };
 		FBBFA436270A85BE006F52AC /* BonusConditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFA431270A85BE006F52AC /* BonusConditionViewModel.swift */; };
 		FBC7D75D270D7E9A00AE37D4 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7D75C270D7E9A00AE37D4 /* UserStatus.swift */; };
+		FBCFF6F227137A65009A83E7 /* DefaultAccountRestrictionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFF6F127137A65009A83E7 /* DefaultAccountRestrictionUseCase.swift */; };
 		FBE4632B26F485DA00F77339 /* TermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */; };
 		FBE4632D26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */; };
 /* End PBXBuildFile section */
@@ -2060,6 +2064,9 @@
 		FB906C9F270C247C002A3A1F /* DefaultAccountAccessLimitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAccountAccessLimitRepository.swift; sourceTree = "<group>"; };
 		FB906CA1270C24B4002A3A1F /* AccountAccessLimitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAccessLimitEntity.swift; sourceTree = "<group>"; };
 		FB906CA3270C24E2002A3A1F /* AccountAccessLimitDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAccessLimitDTO.swift; sourceTree = "<group>"; };
+		FBA61433270F1F31005842FE /* AccountRestrictionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRestrictionType.swift; sourceTree = "<group>"; };
+		FBA61435270F20E0005842FE /* AccountRestrictionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRestrictionUseCase.swift; sourceTree = "<group>"; };
+		FBA61437270FA13A005842FE /* AccountRestriction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRestriction.swift; sourceTree = "<group>"; };
 		FBAE9C3C26B3D0C1002E9D72 /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
 		FBAE9C3D26B3D0C1002E9D72 /* TermsAndConditionsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsNavigator.swift; sourceTree = "<group>"; };
 		FBAE9C3E26B3D0C1002E9D72 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
@@ -2078,6 +2085,7 @@
 		FBBFA430270A85BE006F52AC /* BonusConditionViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionViewControllerFactory.swift; sourceTree = "<group>"; };
 		FBBFA431270A85BE006F52AC /* BonusConditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusConditionViewModel.swift; sourceTree = "<group>"; };
 		FBC7D75C270D7E9A00AE37D4 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
+		FBCFF6F127137A65009A83E7 /* DefaultAccountRestrictionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAccountRestrictionUseCase.swift; sourceTree = "<group>"; };
 		FBE4632A26F485DA00F77339 /* TermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
 		FBE4632C26F485F500F77339 /* DefaultTermsAndConditionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTermsAndConditionsUseCase.swift; sourceTree = "<group>"; };
 		FC646B72A19D44DAF6585C2D /* Pods-Mobile.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile.release-production.xcconfig"; path = "Target Support Files/Pods-Mobile/Pods-Mobile.release-production.xcconfig"; sourceTree = "<group>"; };
@@ -7492,6 +7500,10 @@
 		FB906C80270B9536002A3A1F /* Blocked User */ = {
 			isa = PBXGroup;
 			children = (
+				FBA61433270F1F31005842FE /* AccountRestrictionType.swift */,
+				FB199EF9270D5CE100C1B8C1 /* SelfRestrictionType.swift */,
+				FB767ECD270E406100628CF0 /* UserLimitPeriod.swift */,
+				FBA61437270FA13A005842FE /* AccountRestriction.swift */,
 				FB906C8B270B957B002A3A1F /* Data */,
 			);
 			path = "Blocked User";
@@ -7503,8 +7515,6 @@
 				FB906C96270B9A20002A3A1F /* Entities */,
 				FB906C95270B9A11002A3A1F /* Repositories */,
 				FB906C94270B9A09002A3A1F /* UseCases */,
-				FB199EF9270D5CE100C1B8C1 /* SelfRestrictionType.swift */,
-				FB767ECD270E406100628CF0 /* UserLimitPeriod.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -7539,6 +7549,7 @@
 		FB906C97270B9A27002A3A1F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				FBA61435270F20E0005842FE /* AccountRestrictionUseCase.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -7578,6 +7589,7 @@
 		FB906C9C270B9A4D002A3A1F /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				FBCFF6F127137A65009A83E7 /* DefaultAccountRestrictionUseCase.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -8641,6 +8653,7 @@
 				FB612A0526C5FBEC00022F24 /* EmptyStateComponentView.swift in Sources */,
 				C7DB6EF626370F9600EC1CB9 /* EmptyCollectionViewCell.swift in Sources */,
 				CE3E325D27031AD100E5D0AA /* WebViewHeaderComponentViewModel.swift in Sources */,
+				FBA61434270F1F31005842FE /* AccountRestrictionType.swift in Sources */,
 				7682CF9125B8581600717090 /* AddMyCardTableViewCellDataProvider.swift in Sources */,
 				CE693AF926A6D80F0049D665 /* FAQCategoryComponentViewModel.swift in Sources */,
 				D85C9C2724336CDD00F1D4FE /* MainTabBarViewController.swift in Sources */,
@@ -8784,6 +8797,7 @@
 				D83E4226247A92D800E9615F /* UserSessionUseCase.swift in Sources */,
 				C701C71625C051AC00B059A6 /* CoreApiPaymentAccountDTO.swift in Sources */,
 				D86B595F244F0E4800AB7350 /* PlayedGameLauncherComponentView.swift in Sources */,
+				FBA61438270FA13A005842FE /* AccountRestriction.swift in Sources */,
 				CEC2F52A2608B5C00000904C /* DepositNavigator.swift in Sources */,
 				CE679FDE2578334B00F2EC1C /* AddCardViewController.swift in Sources */,
 				C7667FFD26A815C4005EB6E8 /* CloseAccountNavigator.swift in Sources */,
@@ -8837,6 +8851,7 @@
 				C7A047FF26C3FD300035D93D /* NotificationErrorView.swift in Sources */,
 				CED4D95E26565D38003F35AF /* PasswordReminderComponentView.swift in Sources */,
 				CE91C0E1257028D400A18255 /* TransactionsFilterViewControllerFactory.swift in Sources */,
+				FBA61436270F20E0005842FE /* AccountRestrictionUseCase.swift in Sources */,
 				CE3E328627060B5500E5D0AA /* MobileApiBonusesRepository.swift in Sources */,
 				D861DA952466BD390054D058 /* DefaultSessionManagementRepository.swift in Sources */,
 				7665D97F257F4C0E00E5B35F /* AccessHistoryComponentView.swift in Sources */,
@@ -8956,6 +8971,7 @@
 				CECA7ED426AEEA8700BCF04A /* ContactPhoneComponentViewModel.swift in Sources */,
 				D8212EF9248582AD00B74AB9 /* LoadingComponentView.swift in Sources */,
 				C78127CB2671426E0007F7E3 /* CoreApiIsOTPEnabledDTO.swift in Sources */,
+				FBCFF6F227137A65009A83E7 /* DefaultAccountRestrictionUseCase.swift in Sources */,
 				FBBFA434270A85BE006F52AC /* BonusConditionViewController.swift in Sources */,
 				7665D97E257F4C0E00E5B35F /* AccessHistoryComponentViewModel.swift in Sources */,
 				D845BFB92445F93900419A2C /* UIView+Extension.swift in Sources */,
@@ -9469,7 +9485,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 619;
+				CURRENT_PROJECT_VERSION = 625;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -9502,7 +9518,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet-stage.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 619;
+				CURRENT_PROJECT_VERSION = 625;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -9595,7 +9611,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 619;
+				CURRENT_PROJECT_VERSION = 625;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;
@@ -9684,7 +9700,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CORE_API_URL = "https://coreapi.adjarabet.com/WebsiteService";
-				CURRENT_PROJECT_VERSION = 619;
+				CURRENT_PROJECT_VERSION = 625;
 				DEVELOPMENT_TEAM = RDJN6C84H4;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Mobile/App/Resources/Info.plist;

@@ -42,6 +42,7 @@ class DefaultAccountInfoViewModel: DefaultBaseViewModel {
     @Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository
     @Inject(from: .repositories) private var langRepo: CommunicationLanguageRepository
     @Inject(from: .repositories) private var actionOTPRepo: IsOTPEnabledRepository
+    @Inject(from: .useCases) private var accountRestrictionUseCase: AccountRestrictionUseCase
 }
 
 extension DefaultAccountInfoViewModel: AccountInfoViewModel {
@@ -91,8 +92,15 @@ extension DefaultAccountInfoViewModel: AccountInfoViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let userInfo):
-                let accountInfoModel = AccountInfoModel.create(from: userInfo)
-                self.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
+                self.accountRestrictionUseCase.getStatus { result in
+                    switch result {
+                    case .success(let restriction):
+                        let accountInfoModel = AccountInfoModel.create(from: userInfo, restrictionTill: restriction.until)
+                        self.actionSubject.onNext(.setupWithAccountInfoModel(accountInfoModel))
+                    case .failure(let error):
+                        self.show(error: error)
+                    }
+                }
             case .failure(let error):
                 self.show(error: error)
             }

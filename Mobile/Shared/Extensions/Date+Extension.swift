@@ -62,4 +62,26 @@ extension Date {
     static func minutesBetweenDates(_ date1: Date, _ date2: Date) -> CGFloat {
         CGFloat(date2.timeIntervalSinceReferenceDate/60 - date1.timeIntervalSinceReferenceDate/60)
     }
+
+    var timeLeftTexted: String {
+        let numTotalSecondsLeft = Int(self.timeIntervalSinceNow)
+        let numTotalMinutesLeft = numTotalSecondsLeft / 60
+        let numTotalHoursLeft = numTotalMinutesLeft / 60
+        let numTotalDaysLeft = numTotalHoursLeft / 24
+
+        let numSecondsLeft = numTotalSecondsLeft % 60
+        let numMinutesLeft = numTotalMinutesLeft % 60
+        let numHoursLeft = numTotalHoursLeft % 24
+        let numDaysLeft = numTotalDaysLeft
+
+        return "\(numDaysLeft) \(R.string.localization.day.localized()) \(numHoursLeft):\(numMinutesLeft):\(numSecondsLeft)"
+    }
+
+    var isPast: Bool {
+        timeIntervalSinceNow.sign == .minus
+    }
+
+    var isFuture: Bool {
+        timeIntervalSinceNow.sign == .plus
+    }
 }

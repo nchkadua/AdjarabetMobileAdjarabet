@@ -81,7 +81,5 @@ extension DefaultEndedMyBonusItemComponentViewModel: EndedMyBonusItemComponentVi
         actionSubject.asObserver()
     }
 
-    public func didBind() {
-//        actionSubject.onNext()
-    }
+    public func didBind() { }
 }

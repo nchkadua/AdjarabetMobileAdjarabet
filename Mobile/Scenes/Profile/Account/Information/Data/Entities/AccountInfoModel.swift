@@ -22,11 +22,11 @@ public struct AccountInfoModel {
     public let gender: String
     public let country: String
     public let address: String
-	public let suspendTill: String // TODO: toDate
+	public let restrictionTill: Date?
 }
 
 public extension AccountInfoModel {
-    static func create(from e: UserInfoEntity) -> AccountInfoModel {
+    static func create(from e: UserInfoEntity, restrictionTill: Date? = nil) -> AccountInfoModel {
         AccountInfoModel(
             userName: e.userName ?? "",
             userId: e.userId == nil ? "" : String(e.userId!),
@@ -41,7 +41,7 @@ public extension AccountInfoModel {
             gender: e.gender?.description.stringValue ?? "",
             country: e.country?.description.name ?? "",
             address: e.address ?? "",
-			suspendTill: e.suspendTill ?? ""
+            restrictionTill: restrictionTill
         )
     }
 }

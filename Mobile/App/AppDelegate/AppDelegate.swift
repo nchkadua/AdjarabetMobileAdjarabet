@@ -250,5 +250,6 @@ public extension DependencyContainer {
         Module { DefaultApplePayUseCase() as ApplePayUseCase }
 
         Module { DefaultPromosUseCase() as PromosUseCase }
+        Module { DefaultAccountRestrictionUseCase() as AccountRestrictionUseCase }
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum SelfRestrictionType: Int {
+public enum SelfRestrictionType: Int, CaseIterable {
 	case selfExclusion = 3
 	case selfSuspension = 4
 }

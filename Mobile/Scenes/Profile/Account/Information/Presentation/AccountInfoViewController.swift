@@ -172,8 +172,7 @@ public class AccountInfoViewController: ABViewController {
         // Personal ID
         personalIdView.set(placeholderText: R.string.localization.account_info_personal_id(), titleText: accountInfoModel.personalId)
         // Status
-        statusView.set(placeholderText: R.string.localization.account_info_status(), titleText: accountInfoModel.status)
-        statusView.isClickable = true
+        setupStatusView(accountInfoModel: accountInfoModel)
         // Password
         passwordView.set(placeholderText: R.string.localization.account_info_password(), titleText: accountInfoModel.password)
         passwordView.isClickable = true
@@ -199,6 +198,26 @@ public class AccountInfoViewController: ABViewController {
         addressView.set(placeholderText: R.string.localization.account_info_address(), titleText: accountInfoModel.address)
         addressView.isClickable = true
         addressView.hidesSeparator = true
+    }
+
+    private func setupStatusView(accountInfoModel: AccountInfoModel) {
+        if let restrictionTill = accountInfoModel.restrictionTill {
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                if restrictionTill.isPast {
+                    self.statusView.set(placeholderText: R.string.localization.account_info_status(), titleText: accountInfoModel.status)
+                    self.statusView.set(titleTextColor: .secondaryText())
+                    // TODO: recheck for status
+                    timer.invalidate()
+                } else {
+                    self.statusView.set(placeholderText: R.string.localization.account_info_status(), titleText: "\(R.string.localization.blocked.localized()) \(restrictionTill.timeLeftTexted)")
+                }
+            }
+
+            statusView.set(titleTextColor: .primaryRedDark())
+        } else {
+            statusView.set(placeholderText: R.string.localization.account_info_status(), titleText: accountInfoModel.status)
+        }
+        statusView.isClickable = true
     }
 
     // MARK: Action methods

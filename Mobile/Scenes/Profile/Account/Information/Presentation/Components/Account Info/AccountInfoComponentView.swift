@@ -47,6 +47,10 @@ public class AccountInfoComponentView: UIView {
             titleLabel.text = titleText
         }
     }
+
+    public func set(titleTextColor: DesignSystem.Color) {
+        titleLabel.setTextColor(to: titleTextColor)
+    }
 }
 
 extension AccountInfoComponentView: Xibable {
