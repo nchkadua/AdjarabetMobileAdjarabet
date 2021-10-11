@@ -20,6 +20,11 @@ class BlockedUserNotificationComponentView: UIView {
 	@IBOutlet weak private var upperNoteLabel: UILabel!
 	@IBOutlet weak private var lowerNoteLabel: UILabel!
 
+    @Inject(from: .useCases) private var accountRestrictionUseCase: AccountRestrictionUseCase
+
+    private var suspendTill: Date?
+    private var timer: Timer?
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -37,11 +42,7 @@ class BlockedUserNotificationComponentView: UIView {
 
     private func bind() {
         disposeBag = DisposeBag()
-        viewModel?.action.subscribe(onNext: { [weak self] action in
-            switch action {
-            default:
-                break
-            }
+        viewModel?.action.subscribe(onNext: { [weak self] _ in
         }).disposed(by: disposeBag)
 
         viewModel.didBind()
@@ -50,9 +51,37 @@ class BlockedUserNotificationComponentView: UIView {
 	public func configure(with model: ABError.Description.BlockedUserNotification) {
 		iconView.image = model.icon
 		descriptionLabel.text = model.description.uppercased()
-		upperNoteLabel.text = model.upperNote.uppercased()
-		lowerNoteLabel.text = model.lowerNote.uppercased()
+
+        configureSuspendTill()
 	}
+
+    private func configureSuspendTill() {
+        accountRestrictionUseCase.getStatus { result in
+            switch result {
+            case .success(let restriction):
+                print("*** restriction is send from viewModel")
+                if let restrictionTill = restriction.until {
+                    self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                        if restrictionTill.isPast {
+                            self.deactivateCountdownTimer()
+                        } else {
+                            self.upperNoteLabel.text = restrictionTill.daysLeftTexted.uppercased()
+                            self.lowerNoteLabel.text = restrictionTill.clockLeftTexted.uppercased()
+                        }
+                    }
+                } else {
+                    self.deactivateCountdownTimer()
+                }
+            case .failure: break
+            }
+        }
+    }
+
+    private func deactivateCountdownTimer() {
+        upperNoteLabel.text = ""
+        lowerNoteLabel.text = ""
+        timer?.invalidate()
+    }
 }
 
 extension BlockedUserNotificationComponentView: Xibable {

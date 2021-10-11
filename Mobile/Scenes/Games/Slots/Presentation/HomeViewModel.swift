@@ -56,10 +56,8 @@ class DefaultHomeViewModel: DefaultBaseViewModel {
 
     @Inject(from: .useCases) private var lobbyGamesUseCase: LobbyGamesUseCase
     @Inject(from: .useCases) private var recentlyPlayedGamesUseCase: RecentlyPlayedGamesUseCase
+    @Inject(from: .useCases) private var accountRestrictionUseCase: AccountRestrictionUseCase
     @Inject private var userBalanceService: UserBalanceService
-
-	@Inject(from: .repositories) private var userInfoRepo: UserInfoReadableRepository // FIXME: remove after testing
-	@Inject(from: .repositories) private var accountAccessLimitRepo: AccountAccessLimitRepository // FIXME: remove after testing
 
     private var page: PageDescription = .init()
     private var recentlyPlayedGames: AppCellDataProviders = []
@@ -266,13 +264,7 @@ extension DefaultHomeViewModel: HomeViewModel {
     }
 
     public func viewDidLoad() {
-		accountAccessLimitRepo.execute(limitType: .selfSuspension) { result in
-			switch result {
-			case .success(let entity): break
-			case .failure: break
-			}
-		}
-
+        checkIfUserIsBlocked()
         displayEmptyGames()
         showErrorIfNeeded()
         observeLanguageChange()
@@ -280,6 +272,16 @@ extension DefaultHomeViewModel: HomeViewModel {
 
         loadRecentryPlayedGames()
         load(loadingType: .fullScreen)
+    }
+
+    private func checkIfUserIsBlocked() {
+        accountRestrictionUseCase.getStatus { result in
+            switch result {
+            case .success(let restriction):
+                self.show(error: .init(type: .accountIsBlocked))
+            case .failure: break
+            }
+        }
     }
 
     private func showErrorIfNeeded() {

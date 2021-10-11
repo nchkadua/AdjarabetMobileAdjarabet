@@ -29,11 +29,13 @@ public protocol BlockedUserNotificationComponentViewModelOutput {
 }
 
 public enum BlockedUserNotificationComponentViewModelOutputAction {
+    case suspendTillSet(suspendTill: Date?)
 }
 
 public class DefaultBlockedUserNotificationComponentViewModel {
     public var params: BlockedUserNotificationComponentViewModelParams
     private let actionSubject = PublishSubject<BlockedUserNotificationComponentViewModelOutputAction>()
+
     public init(params: BlockedUserNotificationComponentViewModelParams) {
         self.params = params
     }
@@ -45,6 +47,5 @@ extension DefaultBlockedUserNotificationComponentViewModel: BlockedUserNotificat
     }
 
     public func didBind() {
-//        actionSubject.onNext()
     }
 }
