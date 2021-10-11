@@ -61,7 +61,6 @@ public class DefaultEndedMyBonusItemComponentViewModel {
 			if let endDateFormatted = getDateLabel(params.endDate) {
 				return endDateFormatted.uppercased()
 			} else {
-				print("*** hide end date called")
 				actionSubject.onNext(.hideEndDate)
 				return ""
 			}

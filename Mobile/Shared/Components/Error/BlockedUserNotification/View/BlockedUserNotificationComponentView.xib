@@ -49,7 +49,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KQ-S9-yCp">
-                                        <rect key="frame" x="71" y="68" width="225" height="16.5"/>
+                                        <rect key="frame" x="71" y="66.5" width="225" height="19.5"/>
                                         <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
                                         <color key="textColor" name="ColorGuide/TextColors/primary"/>
                                         <nil key="highlightedColor"/>
@@ -57,13 +57,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xo1-UF-R8z">
                                         <rect key="frame" x="311" y="58.5" width="46" height="35"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Au-Hf-nSm">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Au-Hf-nSm">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="AdjaraMont-Bold" family="Adjara Mont" pointSize="14"/>
                                                 <color key="textColor" name="ColorGuide/TextColors/primary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSB-6G-4mg">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSB-6G-4mg">
                                                 <rect key="frame" x="0.0" y="17.5" width="46" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="AdjaraMont-Bold" family="Adjara Mont" pointSize="14"/>
                                                 <color key="textColor" name="ColorGuide/TextColors/primary"/>

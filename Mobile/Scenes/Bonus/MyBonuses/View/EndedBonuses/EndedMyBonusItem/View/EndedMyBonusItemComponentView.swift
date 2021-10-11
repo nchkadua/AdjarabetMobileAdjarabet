@@ -32,14 +32,12 @@ class EndedMyBonusItemComponentView: UIView {
     }
 
     public func setAndBind(viewModel: ViewModel) {
-		print("*** set and bind")
         self.viewModel = viewModel
 		configure(with: viewModel)
         bind()
     }
 
     private func bind() {
-		print("*** bind")
         disposeBag = DisposeBag()
 
         viewModel?.action.subscribe(onNext: { [weak self] action in

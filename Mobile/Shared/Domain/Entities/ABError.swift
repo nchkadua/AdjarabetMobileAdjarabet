@@ -27,7 +27,8 @@ class ABError {
         case .otpIsRequired:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_otp_is_required.localized(), buttons: [.gotIt]))
         case .accountIsBlocked:
-            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_account_is_blocked.localized(), buttons: [.gotIt, .call]))
+//            return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_account_is_blocked.localized(), buttons: [.gotIt, .call]))
+            return .blockedUserNotification(description: .init(icon: R.image.shared.blocked_user()!, description: R.string.localization.blocked_user_message_text.localized(), suspendTill: nil))
         case .oldAndNewValuesMatchError:
             return .popup(description: .init(icon: R.image.deposit.add_card_red()!, description: R.string.localization.shared_aberror_old_and_new_values_match_error.localized(), buttons: [.gotIt]))
         case .accountNotFound:
@@ -151,19 +152,16 @@ class ABError {
 		class BlockedUserNotification {
 			var icon: UIImage
 			var description: String
-			var upperNote: String
-			var lowerNote: String
+            var suspendTill: Date?
 
 			init(
 				icon: UIImage = R.image.shared.blocked_user()!,
 				description: String = R.string.localization.blocked_user_message_text.localized(),
-				upperNote: String = "",
-				lowerNote: String = ""
+                suspendTill: Date? = nil
 			) {
 				self.icon = icon
 				self.description = description
-				self.upperNote = upperNote
-				self.lowerNote = lowerNote
+                self.suspendTill = suspendTill
 			}
 		}
 
@@ -251,7 +249,7 @@ extension ABError: LocalizedError {
         case .popup(let description):        				return description.description
         case .notification(let description): 				return description.description
         case .status(let description):       				return description.description
-		case .blockedUserNotification(let description): 	return description.description
+        case .blockedUserNotification(let description): 	return description.description
 		}
     }
 }

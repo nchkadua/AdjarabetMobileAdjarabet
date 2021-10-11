@@ -248,7 +248,7 @@ public class ABViewController: UIViewController, KeyboardListening, UIGestureRec
 
 		blockedUserNotificationError.view.configure(with: description)
 		DispatchQueue.main.async { self.showBlockedUserNotificationError() }
-		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.NotificationError.secondsBeforeHiding) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + Constants.NotificationError.secondsBeforeHiding*3) {
 			self.hideBlockedUserNotificationError()
 		}
 	}

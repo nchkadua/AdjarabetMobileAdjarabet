@@ -63,23 +63,29 @@ extension Date {
         CGFloat(date2.timeIntervalSinceReferenceDate/60 - date1.timeIntervalSinceReferenceDate/60)
     }
 
-    var timeLeftTexted: String {
+    var daysLeftTexted: String {
+        let daysText = Int(timeIntervalSinceNow) / 60 / 60 / 24
+        return "\(daysText) \(R.string.localization.day.localized())"
+    }
+
+    var clockLeftTexted: String {
         let numTotalSecondsLeft = Int(self.timeIntervalSinceNow)
         let numTotalMinutesLeft = numTotalSecondsLeft / 60
         let numTotalHoursLeft = numTotalMinutesLeft / 60
-        let numTotalDaysLeft = numTotalHoursLeft / 24
 
         let numSecondsLeft = numTotalSecondsLeft % 60
         let numMinutesLeft = numTotalMinutesLeft % 60
         let numHoursLeft = numTotalHoursLeft % 24
-        let numDaysLeft = numTotalDaysLeft
 
         let secondsText = (numSecondsLeft < 10 ? "0" : "") + "\(numSecondsLeft)"
         let minutesText = (numMinutesLeft < 10 ? "0" : "") + "\(numMinutesLeft)"
         let hoursText = (numHoursLeft < 10 ? "0" : "") + "\(numHoursLeft)"
-        let daysText = "\(numDaysLeft)"
 
-        return "\(daysText) \(R.string.localization.day.localized()) \(hoursText):\(minutesText):\(secondsText)"
+        return "\(hoursText):\(minutesText)" // TODO: secondsText?
+    }
+
+    var timeLeftTexted: String {
+        "\(daysLeftTexted) \(clockLeftTexted)"
     }
 
     var isPast: Bool {
