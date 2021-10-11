@@ -127,7 +127,7 @@ extension DefaultTransactionsViewModel: TransactionsViewModel {
     private func displayTransactions(params: DisplayTransactionHistoriesUseCaseParams) {
         actionSubject.onNext(.isLoading(loading: true))
         displayTransactionsUseCase.execute(params: params) { [weak self] result in
-            guard let self = self else {return}
+            guard let self = self else { return }
             switch result {
             case .success(let transactions):
                 var viewModels: AppCellDataProviders = []

@@ -580,6 +580,38 @@ struct R: Rswift.Validatable {
         }
         #endif
 
+        #if os(watchOS)
+        /// `UIColor(named: "primaryGreenNeutral", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func primaryGreenNeutral(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.adjaraSolids.primaryGreenNeutral.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "primaryRed", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func primaryRed(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.adjaraSolids.primaryRed.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "primaryRedDark", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func primaryRedDark(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.adjaraSolids.primaryRedDark.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "primaryRedNeutral", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func primaryRedNeutral(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.adjaraSolids.primaryRedNeutral.name)
+        }
+        #endif
+
         fileprivate init() {}
       }
 
@@ -627,6 +659,38 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func tertiary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.fillColors.tertiary, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "primary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func primary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.fillColors.primary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "querternary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func querternary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.fillColors.querternary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "secondary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func secondary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.fillColors.secondary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "tertiary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func tertiary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.fillColors.tertiary.name)
         }
         #endif
 
@@ -702,6 +766,54 @@ struct R: Rswift.Validatable {
         }
         #endif
 
+        #if os(watchOS)
+        /// `UIColor(named: "Ultrathin", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func ultrathin(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.materials.ultrathin.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "navBar", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func navBar(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.materials.navBar.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "regular", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func regular(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.materials.regular.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "tabBar", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func tabBar(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.materials.tabBar.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "thick", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func thick(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.materials.thick.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "thin", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func thin(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.materials.thin.name)
+        }
+        #endif
+
         fileprivate init() {}
       }
 
@@ -727,6 +839,22 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func opaque(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.separator.opaque, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "non_opaque", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func non_opaque(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.separator.non_opaque.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "opaque", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func opaque(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.separator.opaque.name)
         }
         #endif
 
@@ -777,6 +905,38 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func tertiary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.systemBackground.tertiary, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "primary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func primary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemBackground.primary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "querternary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func querternary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemBackground.querternary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "secondary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func secondary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemBackground.secondary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "tertiary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func tertiary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemBackground.tertiary.name)
         }
         #endif
 
@@ -849,6 +1009,54 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func systemGrey6(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.systemGrays.systemGrey6, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemGrey", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemGrey(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemGrays.systemGrey.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemGrey2", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemGrey2(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemGrays.systemGrey2.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemGrey3", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemGrey3(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemGrays.systemGrey3.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemGrey4", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemGrey4(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemGrays.systemGrey4.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemGrey5", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemGrey5(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemGrays.systemGrey5.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemGrey6", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemGrey6(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemGrays.systemGrey6.name)
         }
         #endif
 
@@ -935,6 +1143,62 @@ struct R: Rswift.Validatable {
         }
         #endif
 
+        #if os(watchOS)
+        /// `UIColor(named: "systemBlue", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemBlue(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemTints.systemBlue.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemGreen", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemGreen(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemTints.systemGreen.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemIndigo", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemIndigo(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemTints.systemIndigo.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemOrange", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemOrange(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemTints.systemOrange.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemRed", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemRed(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemTints.systemRed.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemTeal", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemTeal(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemTints.systemTeal.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "systemYellow", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func systemYellow(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.systemTints.systemYellow.name)
+        }
+        #endif
+
         fileprivate init() {}
       }
 
@@ -982,6 +1246,38 @@ struct R: Rswift.Validatable {
         @available(iOS 11.0, *)
         static func tertiary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
           return UIKit.UIColor(resource: R.color.colorGuide.textColors.tertiary, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "primary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func primary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.textColors.primary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "querternary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func querternary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.textColors.querternary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "secondary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func secondary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.textColors.secondary.name)
+        }
+        #endif
+
+        #if os(watchOS)
+        /// `UIColor(named: "tertiary", bundle: ..., traitCollection: ...)`
+        @available(watchOSApplicationExtension 4.0, *)
+        static func tertiary(_: Void = ()) -> UIKit.UIColor? {
+          return UIKit.UIColor(named: R.color.colorGuide.textColors.tertiary.name)
         }
         #endif
 
@@ -7900,7 +8196,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localization` struct is generated, and contains static references to 639 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 641 localization keys.
     struct localization {
       /// en translation: 4 Digit Code
       ///
@@ -8310,6 +8606,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let card_number_title = Rswift.StringResource(key: "card_number_title", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Card was deleted successfully
+      ///
+      /// Locales: en, ka, hy, ru
+      static let my_cards_deletion_success_message = Rswift.StringResource(key: "my_cards_deletion_success_message", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Cash Out
       ///
       /// Locales: en, ka, hy, ru
@@ -9426,6 +9726,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ka, hy, ru
       static let shared_aberror_payment_account_not_found = Rswift.StringResource(key: "shared_aberror_payment_account_not_found", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
+      /// en translation: Payment Methods
+      ///
+      /// Locales: en, ka, hy, ru
+      static let documentation_payment_accounts = Rswift.StringResource(key: "documentation_payment_accounts", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "ka", "hy", "ru"], comment: nil)
       /// en translation: Payment provider
       ///
       /// Locales: en, ka, hy, ru
@@ -11987,6 +12291,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("card_number_title", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Card was deleted successfully
+      ///
+      /// Locales: en, ka, hy, ru
+      static func my_cards_deletion_success_message(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_cards_deletion_success_message", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "my_cards_deletion_success_message"
+        }
+
+        return NSLocalizedString("my_cards_deletion_success_message", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Cash Out
@@ -16172,6 +16491,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("shared_aberror_payment_account_not_found", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Payment Methods
+      ///
+      /// Locales: en, ka, hy, ru
+      static func documentation_payment_accounts(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("documentation_payment_accounts", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "documentation_payment_accounts"
+        }
+
+        return NSLocalizedString("documentation_payment_accounts", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Payment provider
@@ -20428,8 +20762,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Profile/minus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/minus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Profile/plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Profile/plus' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in nib 'BalanceComponentView', but couldn't be loaded.") }
         }
@@ -21913,9 +22247,9 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "ColorGuide/Materials/regular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Materials/regular' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/querternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/querternary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'AddressChange', but couldn't be loaded.") }
         }
         if _R.storyboard.addressChange().addressChangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addressChangeViewController' could not be loaded from storyboard 'AddressChange' as 'AddressChangeViewController'.") }
       }
@@ -21997,9 +22331,9 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'BonusCondition', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'BonusCondition', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'BonusCondition', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'BonusCondition', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'BonusCondition', but couldn't be loaded.") }
         }
         if _R.storyboard.bonusCondition().bonusConditionViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bonusConditionViewController' could not be loaded from storyboard 'BonusCondition' as 'BonusConditionViewController'.") }
       }
@@ -22019,14 +22353,14 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/CloseAccountCover", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/CloseAccountCover' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "CloseAccount/Phone1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone1' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if UIKit.UIImage(named: "CloseAccount/Phone2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'CloseAccount/Phone2' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/tertiary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/tertiary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'CloseAccount', but couldn't be loaded.") }
         }
         if _R.storyboard.closeAccount().closeAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closeAccountViewController' could not be loaded from storyboard 'CloseAccount' as 'CloseAccountViewController'.") }
       }
@@ -22267,9 +22601,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Login/logo_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/logo_red' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Login/qa_geo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Login/qa_geo' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Shared/faceID", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shared/faceID' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
@@ -22354,10 +22688,9 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'MyBonuses', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "ColorGuide/TextColors/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/secondary' is used in storyboard 'MyBonuses', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/Separator/non_opaque", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/Separator/non_opaque' is used in storyboard 'MyBonuses', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ColorGuide/SystemBackground/secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/SystemBackground/secondary' is used in storyboard 'MyBonuses', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ColorGuide/TextColors/primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ColorGuide/TextColors/primary' is used in storyboard 'MyBonuses', but couldn't be loaded.") }
         }
         if _R.storyboard.myBonuses().myBonusesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'myBonusesViewController' could not be loaded from storyboard 'MyBonuses' as 'MyBonusesViewController'.") }
       }

@@ -27,19 +27,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZJ-Bq-eEQ">
-                                <rect key="frame" x="32" y="73" width="352" height="225"/>
+                                <rect key="frame" x="32" y="44" width="352" height="275"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-I5-r0E" userLabel="topView">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="30" width="352" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIb-Ns-aZg" userLabel="titleLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="61.5" height="30.5"/>
+                                                <rect key="frame" x="0.0" y="5" width="61.5" height="30.5"/>
                                                 <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="22"/>
                                                 <color key="textColor" name="ColorGuide/TextColors/primary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud2-Cx-CCY" userLabel="closeButton">
-                                                <rect key="frame" x="304" y="-0.5" width="48" height="32"/>
+                                                <rect key="frame" x="304" y="4" width="48" height="32"/>
                                                 <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" systemColor="systemGrayColor"/>
@@ -52,20 +52,20 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="xIb-Ns-aZg" firstAttribute="centerY" secondItem="7bD-I5-r0E" secondAttribute="centerY" id="BHd-9a-WXe"/>
+                                            <constraint firstAttribute="height" constant="40" id="Cse-eK-k35"/>
                                             <constraint firstItem="Ud2-Cx-CCY" firstAttribute="centerY" secondItem="7bD-I5-r0E" secondAttribute="centerY" id="IVn-z3-VIc"/>
-                                            <constraint firstAttribute="bottom" secondItem="xIb-Ns-aZg" secondAttribute="bottom" id="cKO-Ig-0kq"/>
                                             <constraint firstAttribute="trailing" secondItem="Ud2-Cx-CCY" secondAttribute="trailing" id="nHM-B1-KcU"/>
                                             <constraint firstItem="xIb-Ns-aZg" firstAttribute="leading" secondItem="7bD-I5-r0E" secondAttribute="leading" id="zVE-Tk-3Qm"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adu-Bp-i7Z" userLabel="description">
-                                        <rect key="frame" x="0.0" y="103" width="352" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="86" width="352" height="71"/>
                                         <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
                                         <color key="textColor" name="ColorGuide/TextColors/primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fer-qk-PkP" userLabel="playNow">
-                                        <rect key="frame" x="0.0" y="171" width="352" height="54"/>
+                                        <rect key="frame" x="0.0" y="183" width="352" height="54"/>
                                         <color key="backgroundColor" name="ColorGuide/SystemBackground/tertiary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="4yd-7T-xUH"/>
@@ -86,13 +86,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Fer-qk-PkP" secondAttribute="bottom" id="5FJ-En-WNj"/>
-                                    <constraint firstItem="Adu-Bp-i7Z" firstAttribute="centerY" secondItem="RZJ-Bq-eEQ" secondAttribute="centerY" id="ESL-Xw-nl4"/>
-                                    <constraint firstAttribute="height" constant="225" id="JRX-ZN-cRp"/>
+                                    <constraint firstItem="Fer-qk-PkP" firstAttribute="top" secondItem="Adu-Bp-i7Z" secondAttribute="bottom" constant="26" id="FQF-VF-7Fw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fer-qk-PkP" secondAttribute="bottom" constant="38" id="FVX-hP-P29"/>
+                                    <constraint firstAttribute="height" constant="275" id="JRX-ZN-cRp"/>
                                     <constraint firstItem="7bD-I5-r0E" firstAttribute="leading" secondItem="RZJ-Bq-eEQ" secondAttribute="leading" id="eHv-2c-PN5"/>
                                     <constraint firstItem="Fer-qk-PkP" firstAttribute="leading" secondItem="RZJ-Bq-eEQ" secondAttribute="leading" id="iLe-LM-cnc"/>
                                     <constraint firstAttribute="trailing" secondItem="Adu-Bp-i7Z" secondAttribute="trailing" id="iYv-iO-0NF"/>
-                                    <constraint firstItem="7bD-I5-r0E" firstAttribute="top" secondItem="RZJ-Bq-eEQ" secondAttribute="top" id="q3c-59-mxQ"/>
+                                    <constraint firstItem="7bD-I5-r0E" firstAttribute="top" secondItem="RZJ-Bq-eEQ" secondAttribute="top" constant="30" id="q3c-59-mxQ"/>
+                                    <constraint firstItem="Adu-Bp-i7Z" firstAttribute="top" secondItem="7bD-I5-r0E" secondAttribute="bottom" constant="16" id="r2E-nC-qof"/>
                                     <constraint firstAttribute="trailing" secondItem="7bD-I5-r0E" secondAttribute="trailing" id="rNw-bC-4EJ"/>
                                     <constraint firstItem="Adu-Bp-i7Z" firstAttribute="leading" secondItem="RZJ-Bq-eEQ" secondAttribute="leading" id="skT-9H-43E"/>
                                     <constraint firstAttribute="trailing" secondItem="Fer-qk-PkP" secondAttribute="trailing" id="v1k-8d-qH8"/>
@@ -103,8 +104,8 @@
                         <color key="backgroundColor" name="ColorGuide/SystemBackground/secondary"/>
                         <constraints>
                             <constraint firstItem="63T-C1-oPl" firstAttribute="trailing" secondItem="RZJ-Bq-eEQ" secondAttribute="trailing" constant="30" id="EsV-AG-1Ue"/>
-                            <constraint firstItem="RZJ-Bq-eEQ" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" constant="29" id="Esw-bL-Yrh"/>
                             <constraint firstItem="RZJ-Bq-eEQ" firstAttribute="leading" secondItem="63T-C1-oPl" secondAttribute="leading" constant="32" id="VJU-cc-QZj"/>
+                            <constraint firstItem="RZJ-Bq-eEQ" firstAttribute="top" secondItem="63T-C1-oPl" secondAttribute="top" id="gVg-PB-iqc"/>
                         </constraints>
                     </view>
                     <connections>

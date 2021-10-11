@@ -25,12 +25,16 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
         setup()
         bind(to: viewModel)
         errorThrowing = viewModel
-        viewModel.viewDidLoad()
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         mainContainerViewController?.setPageViewControllerSwipeEnabled(false)
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
     }
 
     // MARK: Bind to viewModel's observable properties
@@ -126,3 +130,11 @@ public class ProfileViewController: ABViewController, PageViewControllerProtocol
 }
 
 extension ProfileViewController: CommonBarButtonProviding { }
+
+extension ProfileViewController: UIAdaptivePresentationControllerDelegate {
+    public func presentationControllerWillDismiss( _ presentationController: UIPresentationController) {
+        if #available(iOS 13, *) {
+            viewModel.updateBalance()
+        }
+    }
+}

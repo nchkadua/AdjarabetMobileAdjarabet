@@ -54,9 +54,8 @@ extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
 
     public func viewDidLoad() {
         var dataProviders: AppCellDataProviders = []
-
 		for(i, item) in params.categories.enumerated() {
-            let viewModel = DefaultTermsAndConditionsComponentViewModel(params: .init(number: i+1, title: item.title))
+			let viewModel = DefaultTermsAndConditionsComponentViewModel(params: .init(number: i+1, title: item.title))
 
             viewModel.action.subscribe(onNext: { [weak self] action in
                 switch action {
@@ -72,7 +71,6 @@ extension DefaultTermsAndConditionsViewModel: TermsAndConditionsViewModel {
     }
 
 	public func getCategoryContentToDisplay(with title: String) -> String {
-		let content = params.categories.first(where: {$0.title == title})?.html
-		return String(describing: content)
+		String(describing: params.categories.first(where: {$0.title == title})?.html)
 	}
 }

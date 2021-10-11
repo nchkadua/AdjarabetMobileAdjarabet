@@ -21,6 +21,7 @@ public protocol DocumentationViewModelInput: AnyObject {
     func createAboutUsRequest()
     func createPrivacyPolicyRequest()
 	func createTermsAndConditionsRequest()
+    func createPaymentAccountsRequest()
 }
 
 public protocol DocumentationViewModelOutput {
@@ -37,6 +38,7 @@ public enum DocumentationViewModelRoute {
     case navigateToPrivacyPolicy(params: WebViewModelParams)
     case navigateToAboutUs(params: WebViewModelParams)
 	case navigateToTermsAndConditions(params: TermsAndConditionsEntity)
+    case navigateToPaymentAccounts(params: WebViewModelParams)
 }
 
 public class DefaultDocumentationViewModel: DefaultBaseViewModel {
@@ -47,6 +49,7 @@ public class DefaultDocumentationViewModel: DefaultBaseViewModel {
     @Inject(from: .repositories) private var privacyPolicyRepo: PrivacyPolicyRepository
     @Inject(from: .repositories) private var aboutUsRepo: AboutUsRepository
 	@Inject(from: .useCases) private var termsAndConditionsUseCase: TermsAndConditionsUseCase
+    @Inject(from: .repositories) private var paymentAccountsDocRepo: PaymentAccountsDocRepository
 
     public init(params: DocumentationViewModelParams) {
         self.params = params
@@ -96,4 +99,10 @@ extension DefaultDocumentationViewModel: DocumentationViewModel {
 			self.routeSubject.onNext(.navigateToTermsAndConditions(params: entity))
 		}))
 	}
+
+    public func createPaymentAccountsRequest() {
+        paymentAccountsDocRepo.getUrl(handler: handler(onSuccessHandler: { entity in
+            self.routeSubject.onNext(.navigateToPaymentAccounts(params: .init(loadType: .html(html: entity.html), canNavigate: false)))
+        }))
+    }
 }

@@ -6,11 +6,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AdjaraMont-Regular.ttf">
-            <string>AdjaraMont-Regular</string>
+        <array key="AdjaraMont-Heavy.ttf">
+            <string>AdjaraMont-Heavy</string>
         </array>
         <array key="AdjaraMont-SemiBold.ttf">
             <string>AdjaraMont-SemiBold</string>
@@ -19,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActiveMyBonusItemComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
+                <outlet property="conditionButton" destination="bed-cZ-CVb" id="d1R-fL-slC"/>
                 <outlet property="dateLabel" destination="0uA-Nx-zmg" id="XKs-6K-dXD"/>
                 <outlet property="nameLabel" destination="n5I-Jk-FQ4" id="c4C-hN-kRc"/>
                 <outlet property="playNowButton" destination="QQV-mC-PCa" id="08d-6G-W6C"/>
@@ -35,14 +37,14 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5I-Jk-FQ4" userLabel="nameLabel">
                             <rect key="frame" x="14" y="80.5" width="222" height="20"/>
-                            <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="17"/>
                             <color key="textColor" name="ColorGuide/TextColors/primary"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uA-Nx-zmg" userLabel="dateLabel">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uA-Nx-zmg" userLabel="dateLabel">
                             <rect key="frame" x="14" y="14" width="34.5" height="16.5"/>
-                            <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
-                            <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                            <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="14"/>
+                            <color key="textColor" systemColor="systemGrayColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgg-vW-KPd" userLabel="playNowView">
@@ -50,7 +52,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQV-mC-PCa" userLabel="playNowButton">
                                     <rect key="frame" x="0.0" y="2.5" width="43" height="29"/>
-                                    <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="14"/>
+                                    <fontDescription key="fontDescription" name="AdjaraMont-Heavy" family="Adjara Mont" pointSize="14"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" name="ColorGuide/TextColors/primary"/>
                                     </state>
@@ -132,8 +134,8 @@
         <namedColor name="ColorGuide/TextColors/primary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ColorGuide/TextColors/secondary">
-            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.96078431372549022" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

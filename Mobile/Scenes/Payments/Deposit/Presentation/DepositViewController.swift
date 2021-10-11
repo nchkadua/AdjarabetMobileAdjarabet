@@ -31,11 +31,6 @@ public class DepositViewController: ABViewController {
         viewModel.viewDidLoad()
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewModel.viewDidAppear()
-    }
-
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: DepositViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
@@ -127,7 +122,10 @@ public class DepositViewController: ABViewController {
 
     // MARK: Action methods
     private func setChildViewControllers(_ paymentMethodList: [PaymentMethodEntity]) {
-        let visaVC = navigator.visaViewControllerFactory.make(params: .init(serviceType: .vip)).wrap(in: ABNavigationController.self)
+        let params: VisaViewModelParams = .init(serviceType: .vip)
+        let visaVC = navigator.visaViewControllerFactory.make(params: params).wrap(in: ABNavigationController.self)
+        viewModel.subscribeTo(visaViewModelParams: params)
+
         let emoneyVC = navigator.emoneyViewControllerFactory.make().wrap(in: ABNavigationController.self)
         let applePayVC = navigator.applePayViewControllerFactory.make().wrap(in: ABNavigationController.self)
 

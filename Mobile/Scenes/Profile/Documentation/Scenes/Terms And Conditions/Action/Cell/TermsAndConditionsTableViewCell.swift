@@ -16,6 +16,7 @@ public class TermsAndConditionsTableViewCell: AppTableViewCell {
                 fatalError("error")
             }
             componentView.setAndBind(viewModel: dataProvider)
+			layoutIfNeeded()
         }
     }
 }

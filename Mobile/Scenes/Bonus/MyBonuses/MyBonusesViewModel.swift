@@ -133,7 +133,8 @@ public class DefaultMyBonusesViewModel: DefaultBaseViewModel {
 				startDate: entity.startDate,
 				endDate: entity.endDate,
 				condition: entity.condition,
-				gameId: entity.gameId))
+				gameId: entity.gameId,
+				delegate: self))
 	}
 
 	private func createCompletedBonusComponent(from entity: CompletedBonusEntity.BonusEntity) -> AppCellDataProvider {
@@ -191,7 +192,11 @@ extension DefaultMyBonusesViewModel: MyBonusesViewModel {
 	}
 }
 
-extension DefaultMyBonusesViewModel: CompletedBonusItemDelegate {
+extension DefaultMyBonusesViewModel: BonusItemDelegate {
+	public func playButtonClicked(gameId: Int?) {
+//		routeSubject.onNext(.open(game: )) // TODO
+	}
+
 	public func hintButtonClicked(description: String, gameId: Int?) {
 		routeSubject.onNext(.showCondition(description: description, gameId: gameId))
 	}

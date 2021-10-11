@@ -164,6 +164,7 @@ public extension DependencyContainer {
         Module { DefaultFAQRepository() as FAQRepository }
         Module { DefaultContactRepository() as ContactRepository }
         Module { DefaultAboutUsRepository() as AboutUsRepository }
+        Module { DefaultPaymentAccountsDocRepository() as PaymentAccountsDocRepository }
 
         Module { DefaultPublicPromosRepository() as PublicPromosRepository }
         Module { DefaultPrivatePromosRepository() as PrivatePromosRepository }

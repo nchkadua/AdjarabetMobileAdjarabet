@@ -92,8 +92,19 @@ public class MyBonusesViewController: ABViewController {
 	}
 
 	private func setupNavigationItems() {
-		setBackBarButtonItemIfNeeded()
+//		setBackBarButtonItemIfNeeded()
+		setupLeftBarButtonItem()
 		setupRightBarButtonItem()
+	}
+
+	private func setupLeftBarButtonItem() {
+		let backButtonGroup = makeBackBarButtonItem(width: 60, title: R.string.localization.back_button_title.localized())
+		navigationItem.leftBarButtonItem = backButtonGroup.barButtonItem
+		backButtonGroup.button.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
+	}
+
+	@objc private func backButtonClick() {
+		navigationController?.popViewController(animated: true)
 	}
 
 	private func setupRightBarButtonItem() {
@@ -112,11 +123,13 @@ public class MyBonusesViewController: ABViewController {
     // MARK: Bind to viewModel's observable properties
     private func bind(to viewModel: ViewModel) {
         viewModel.action.subscribe(onNext: { [weak self] action in
-            self?.didRecive(action: action)
+			guard let self = self else { return }
+            self.didRecive(action: action)
         }).disposed(by: disposeBag)
 
         viewModel.route.subscribe(onNext: { [weak self] route in
-            self?.didRecive(route: route)
+			guard let self = self else { return }
+            self.didRecive(route: route)
         }).disposed(by: disposeBag)
     }
 
@@ -151,7 +164,7 @@ public class MyBonusesViewController: ABViewController {
 extension MyBonusesViewController: CommonBarButtonProviding { }
 
 extension MyBonusesViewController: BonusConditionDelegate {
-	public func close() {
+	public func closeButtonTapped() {
 		navigator.navigate(to: .withoutChildren, animated: true)
 	}
 }

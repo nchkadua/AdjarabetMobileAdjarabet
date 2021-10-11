@@ -195,7 +195,6 @@ extension DefaultAccessHistoryViewModel: AccessHistoryViewModel {
 
     private func constructHeaderComponentViewModel(from entity: AccessListEntity, index: Int) -> DefaultDateHeaderComponentViewModel {
         let stringDate = dayDateFormatter.string(from: entity.date)
-
         let shouldShowSeparator = index > 0
         return DefaultDateHeaderComponentViewModel(params: .init(title: stringDate, showSeparator: shouldShowSeparator))
     }

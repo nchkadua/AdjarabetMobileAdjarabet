@@ -28,6 +28,7 @@ struct WithdrawVisaNavigator {
 
     private func navigate2AddCard(with params: AddCardViewModelParams) {
         let vc = addAccountFactory.make(params: params)
+        vc.presentationController?.delegate = viewController as? UIAdaptivePresentationControllerDelegate
         let navc = vc.wrap(in: ABNavigationController.self)
         navc.navigationBar.styleForPrimaryPage()
         viewController?.navigationController?.present(navc, animated: true, completion: nil)

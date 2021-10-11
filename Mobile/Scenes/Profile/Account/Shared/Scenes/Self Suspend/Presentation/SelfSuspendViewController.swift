@@ -38,11 +38,26 @@ public class SelfSuspendViewController: ABViewController {
         viewModel.action.subscribe(onNext: { [weak self] action in
             self?.didRecive(action: action)
         }).disposed(by: disposeBag)
+
+        viewModel.route.subscribe(onNext: { [weak self] route in
+            self?.didRecive(route: route)
+        }).disposed(by: disposeBag)
     }
 
     private func didRecive(action: SelfSuspendViewModelOutputAction) {
         switch action {
         case .setupDurations(let durations): setup(durations)
+        case .showSuccess:
+            showSuccess(completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { self.dismissViewController() }
+            })
+        }
+    }
+
+    private func didRecive(route: SelfSuspendViewModelRoute) {
+        switch route {
+        case .openOTP(let params):
+            navigator.navigate(to: .otp(params: params), animated: true)
         }
     }
 
@@ -76,6 +91,7 @@ public class SelfSuspendViewController: ABViewController {
     private func setupInputView() {
         durationsInputView.setupWith(backgroundColor: .querternaryFill(), borderWidth: 0)
         durationsInputView.setPlaceholder(text: R.string.localization.suspend_duration.localized())
+        durationsInputView.delegate = self
     }
 
     private func setupButtons() {
@@ -89,6 +105,7 @@ public class SelfSuspendViewController: ABViewController {
     }
 
     @objc private func blockButtonDidTap() {
+        viewModel.blockButtonDidTap()
     }
 
     private func setupLabel() {
@@ -99,3 +116,9 @@ public class SelfSuspendViewController: ABViewController {
 }
 
 extension SelfSuspendViewController: CommonBarButtonProviding { }
+
+extension SelfSuspendViewController: ABInputViewDelegate {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.selected(duration: row)
+    }
+}

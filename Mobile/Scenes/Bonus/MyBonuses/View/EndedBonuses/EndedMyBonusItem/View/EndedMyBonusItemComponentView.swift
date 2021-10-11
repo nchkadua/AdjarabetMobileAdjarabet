@@ -8,10 +8,6 @@
 
 import RxSwift
 
-public protocol CompletedBonusItemDelegate: AnyObject {
-	func hintButtonClicked(description: String, gameId: Int?)
-}
-
 class EndedMyBonusItemComponentView: UIView {
 	typealias ViewModel = EndedMyBonusItemComponentViewModel
 
@@ -23,6 +19,7 @@ class EndedMyBonusItemComponentView: UIView {
 	@IBOutlet weak private var startDateLabel: UILabel!
 	@IBOutlet weak private var endDateLabel: UILabel!
 	@IBOutlet weak private var nameLabel: UILabel!
+	@IBOutlet weak private var conditionButton: UIButton!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,18 +32,23 @@ class EndedMyBonusItemComponentView: UIView {
     }
 
     public func setAndBind(viewModel: ViewModel) {
+		print("*** set and bind")
         self.viewModel = viewModel
-
+		configure(with: viewModel)
         bind()
     }
 
     private func bind() {
+		print("*** bind")
         disposeBag = DisposeBag()
-		configure(with: viewModel)
+
         viewModel?.action.subscribe(onNext: { [weak self] action in
-            switch action {
-            default:
-                break
+			guard let self = self else { return }
+			switch action {
+				case .hideHintButton:
+					self.conditionButton.hide()
+				case .hideEndDate:
+					self.endDateLabel.hide()
             }
         }).disposed(by: disposeBag)
 
@@ -59,6 +61,7 @@ class EndedMyBonusItemComponentView: UIView {
 		configure(startDate: viewModel.startDate)
 		configure(endDate: viewModel.endDate)
 		configure(name: viewModel.name)
+		configureConditionButton()
 	}
 
 	private func configure(startDate: String) {
@@ -67,10 +70,19 @@ class EndedMyBonusItemComponentView: UIView {
 
 	private func configure(endDate: String) {
 		endDateLabel.text = endDate
+		if endDate.isEmpty { // TODO: replace by viewModel initing
+			endDateLabel.hide()
+		}
 	}
 
 	private func configure(name: String) {
 		nameLabel.text = name
+	}
+
+	private func configureConditionButton() {
+		if viewModel.condition.isEmpty { // TODO change bt viewModel initing
+			conditionButton.hide()
+		}
 	}
 
 	@IBAction func hintButtonClicked(_ sender: Any) {
@@ -88,6 +100,5 @@ extension EndedMyBonusItemComponentView: Xibable {
         }
     }
 
-    func setupUI() {
-    }
+    func setupUI() { }
 }

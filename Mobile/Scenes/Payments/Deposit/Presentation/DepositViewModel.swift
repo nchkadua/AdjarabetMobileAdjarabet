@@ -17,7 +17,9 @@ public struct DepositViewModelParams {
 public protocol DepositViewModelInput: AnyObject {
     var params: DepositViewModelParams { get set }
     func viewDidLoad()
-    func viewDidAppear()
+    func updateBalance()
+    func getPaymentMethods()
+    func subscribeTo(visaViewModelParams: VisaViewModelParams)
 }
 
 public protocol DepositViewModelOutput {
@@ -54,10 +56,29 @@ extension DefaultDepositViewModel: DepositViewModel {
     public var route: Observable<DepositViewModelRoute> { routeSubject.asObserver() }
 
     public func viewDidLoad() {
+        updateBalance()
+        getPaymentMethods()
+    }
+
+    public func subscribeTo(visaViewModelParams: VisaViewModelParams) {
+        visaViewModelParams.paramsOutputAction.subscribe(onNext: { [weak self] action in
+            self?.didRecive(action: action)
+        }).disposed(by: disposeBag)
+    }
+
+    private func didRecive(action: VisaViewModelParams.Action) {
+        switch action {
+        case .shouldUpdatePage:
+            updateBalance()
+            print("asdadasdasdas")
+        }
+    }
+
+    public func updateBalance() {
         actionSubject.onNext(.set(totalBalance: userBalanceService.balance ?? 0.0))
     }
 
-    public func viewDidAppear() {
+    public func getPaymentMethods() {
         notify(.isLoading(loading: true))
         actionSubject.onNext(.bindToGridViewModel(viewModel: paymentGridComponentViewModel))
 

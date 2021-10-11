@@ -6,16 +6,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AdjaraMont-Regular.ttf">
-            <string>AdjaraMont-Regular</string>
+        <array key="AdjaraMont-SemiBold.ttf">
+            <string>AdjaraMont-SemiBold</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EndedMyBonusItemComponentView" customModule="Mobile" customModuleProvider="target">
             <connections>
+                <outlet property="conditionButton" destination="2Jv-c1-Yyh" id="S15-OV-Rnf"/>
                 <outlet property="endDateLabel" destination="gIs-HT-Te3" id="YlC-bu-ABh"/>
                 <outlet property="nameLabel" destination="dVG-G1-zyC" id="5ul-25-gxF"/>
                 <outlet property="startDateLabel" destination="DKM-Zv-9Jn" id="G7F-85-mBA"/>
@@ -42,14 +44,14 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-Zv-9Jn" userLabel="startDate">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="27.5"/>
-                                    <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="12"/>
-                                    <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                                    <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="12"/>
+                                    <color key="textColor" systemColor="systemGrayColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIs-HT-Te3" userLabel="endDate">
                                     <rect key="frame" x="0.0" y="29.5" width="50" height="27.5"/>
-                                    <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="12"/>
-                                    <color key="textColor" name="ColorGuide/TextColors/secondary"/>
+                                    <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="12"/>
+                                    <color key="textColor" systemColor="systemGrayColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -59,8 +61,8 @@
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-G1-zyC">
-                            <rect key="frame" x="65" y="20.5" width="212" height="16.5"/>
-                            <fontDescription key="fontDescription" name="AdjaraMont-Regular" family="Adjara Mont" pointSize="14"/>
+                            <rect key="frame" x="65" y="19" width="212" height="19.5"/>
+                            <fontDescription key="fontDescription" name="AdjaraMont-SemiBold" family="Adjara Mont" pointSize="14"/>
                             <color key="textColor" name="ColorGuide/TextColors/primary"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -122,8 +124,8 @@
         <namedColor name="ColorGuide/TextColors/primary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ColorGuide/TextColors/secondary">
-            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.96078431372549022" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

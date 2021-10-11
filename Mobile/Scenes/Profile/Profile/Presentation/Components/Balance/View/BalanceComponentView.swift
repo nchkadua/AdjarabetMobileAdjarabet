@@ -43,10 +43,11 @@ class BalanceComponentView: UIView {
         viewModel?.action.subscribe(onNext: { [weak self] action in
             switch action {
             case .setup(let viewModel): self?.setupUI(viewModel: viewModel)
-			case .didClickDeposit: break
-			case .didClickWithdraw: break
 			case .showTotalBalance: self?.showMainBalance()
 			case .showBalancePlaceholder(let placeholder): self?.showBalancePlaceholder(placeholderText: placeholder)
+            case .updateBalance(let balance): self?.totalBalanceValueLabel.text = balance
+            default:
+                break
             }
         }).disposed(by: disposeBag)
 

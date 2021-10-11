@@ -16,7 +16,8 @@ public struct ProfileViewModelParams {
 }
 
 public protocol ProfileViewModelInput {
-    func viewDidLoad()
+    func viewWillAppear()
+    func updateBalance()
     func logout()
     func setupDataProviders()
 }
@@ -51,14 +52,22 @@ public class DefaultProfileViewModel: DefaultBaseViewModel {
     @Inject private var biometryInfoService: BiometricAuthentication
 
     private var logoutViewModel = DefaultLogOutComponentViewModel(params: .init(title: ""))
+    private var balanceViewModelInstance: DefaultBalanceComponentViewModel?
 }
 
 extension DefaultProfileViewModel: ProfileViewModel {
     public var action: Observable<ProfileViewModelOutputAction> { actionSubject.asObserver() }
     public var route: Observable<ProfileViewModelRoute> { routeSubject.asObserver() }
 
-    public func viewDidLoad() {
+    public func viewWillAppear() {
         setupDataProviders()
+    }
+
+    public func updateBalance() {
+        userBalanceService.update()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [self] in
+            balanceViewModelInstance?.updateBalance(userBalanceService.balance ?? 0)
+        }
     }
 
     public func setupDataProviders() {
@@ -66,7 +75,6 @@ extension DefaultProfileViewModel: ProfileViewModel {
     }
 
 	// MARK: - View Models for profile table view
-
 	private var profileViewModel: DefaultProfileInfoComponentViewModel {
 		let profileViewModel = DefaultProfileInfoComponentViewModel(params: ProfileInfoComponentViewModelParams(username: userSession.username ?? "Guest", userId: userSession.userId ?? 0))
 		profileViewModel.action.subscribe(onNext: { [weak self] action in
@@ -80,15 +88,15 @@ extension DefaultProfileViewModel: ProfileViewModel {
 	}
 
 	private var balanceViewModel: DefaultBalanceComponentViewModel {
-		let balanceViewModel = DefaultBalanceComponentViewModel(params: .init(totalBalance: userBalanceService.balance ?? 0, pokerBalance: 0, balancePlaceholder: R.string.localization.balance_is_unavailable.localized()))
+        balanceViewModelInstance = DefaultBalanceComponentViewModel(params: .init(totalBalance: userBalanceService.balance ?? 0, pokerBalance: 0, balancePlaceholder: R.string.localization.balance_is_unavailable.localized()))
 
 		if userBalanceService.balance != nil {
-			balanceViewModel.showBalance()
+            balanceViewModelInstance?.showBalance()
 		} else {
-			balanceViewModel.hideBalance()
+            balanceViewModelInstance?.hideBalance()
 		}
 
-		balanceViewModel.action.subscribe(onNext: { [weak self] action in
+        balanceViewModelInstance?.action.subscribe(onNext: { [weak self] action in
 			switch action {
 			case .didClickDeposit: self?.routeSubject.onNext(.openDeposit)
 			case .didClickWithdraw: self?.routeSubject.onNext(.openWithdraw)
@@ -96,7 +104,7 @@ extension DefaultProfileViewModel: ProfileViewModel {
 			}
 		}).disposed(by: self.disposeBag)
 
-		return balanceViewModel
+        return balanceViewModelInstance ?? DefaultBalanceComponentViewModel(params: .init(totalBalance: 0, pokerBalance: 0, balancePlaceholder: ""))
 	}
 
 	private var logOutViewModel: DefaultLogOutComponentViewModel {

@@ -9,7 +9,7 @@
 import RxSwift
 
 public protocol BonusConditionDelegate: AnyObject {
-	func close()
+	func closeButtonTapped()
 }
 
 public class BonusConditionViewController: UIViewController {
@@ -75,7 +75,7 @@ public class BonusConditionViewController: UIViewController {
     }
 
 	@IBAction func closeButtonTapHandler(_ sender: Any) {
-		delegate?.close()
+		delegate?.closeButtonTapped()
 	}
 
 	@IBAction func playNowButtonTapHandler(_ sender: Any) {

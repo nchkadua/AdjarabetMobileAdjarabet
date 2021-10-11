@@ -44,6 +44,8 @@ public class DocumentationViewController: ABViewController {
 
     private func didRecive(route: DocumentationViewModelRoute) {
         switch route {
+        case .navigateToPaymentAccounts(let params):
+            navigator.navigate(to: .paymentAccounts(with: params), animated: true)
         case .openPage(let destination):
             navigateTo(destination)
         case .navigateToAboutUs(let params):
@@ -57,6 +59,8 @@ public class DocumentationViewController: ABViewController {
 
     private func navigateTo(_ destination: DocumentationDestination) {
         switch destination {
+        case .paymentAccounts:
+            viewModel.createPaymentAccountsRequest()
         case .aboutUs:
             viewModel.createAboutUsRequest()
         case .privacyPolicy:

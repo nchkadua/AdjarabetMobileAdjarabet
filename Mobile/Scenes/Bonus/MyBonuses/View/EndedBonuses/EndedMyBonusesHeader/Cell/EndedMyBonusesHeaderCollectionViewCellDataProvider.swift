@@ -18,6 +18,6 @@ extension DefaultEndedMyBonusesHeaderComponentViewModel: EndedMyBonusesHeaderCol
 
 public extension EndedMyBonusesHeaderCollectionViewCellDataProvider {
 	func size(for rect: CGRect, safeArea: CGRect, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat) -> CGSize {
-		CGSize(width: UIScreen.main.bounds.width - 30, height: 32 + 12)
+		CGSize(width: UIScreen.main.bounds.width - 30, height: 32 + 20)
 	}
 }

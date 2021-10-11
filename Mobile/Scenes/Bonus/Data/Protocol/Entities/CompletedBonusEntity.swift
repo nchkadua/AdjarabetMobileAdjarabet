@@ -18,7 +18,7 @@ public struct CompletedBonusEntity {
         var name: String
         var startDate: String
         var endDate: String?
-        var condition: String
+        var condition: String?
         var gameId: Int?
     }
 }

@@ -67,6 +67,7 @@ public class VisaViewController: ABViewController {
         case .updateDisposable(let disposable): self.limitView.updateDaily(disposable)
         case .updateMax(let max): self.limitView.updateMax(max)
         case .bindToGridViewModel(let viewModel): bindToGrid(viewModel)
+        case .setButton(let isLoading): continueButton.set(isLoading: isLoading)
         }
     }
 
@@ -220,5 +221,13 @@ public class VisaViewController: ABViewController {
 extension VisaViewController: ABInputViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel.selected(account: account, amount: amount)
+    }
+}
+
+extension VisaViewController: UIAdaptivePresentationControllerDelegate {
+    public func presentationControllerWillDismiss( _ presentationController: UIPresentationController) {
+        if #available(iOS 13, *) {
+            viewModel.viewWillAppear()
+        }
     }
 }

@@ -74,7 +74,12 @@ extension Date {
         let numHoursLeft = numTotalHoursLeft % 24
         let numDaysLeft = numTotalDaysLeft
 
-        return "\(numDaysLeft) \(R.string.localization.day.localized()) \(numHoursLeft):\(numMinutesLeft):\(numSecondsLeft)"
+        let secondsText = (numSecondsLeft < 10 ? "0" : "") + "\(numSecondsLeft)"
+        let minutesText = (numMinutesLeft < 10 ? "0" : "") + "\(numMinutesLeft)"
+        let hoursText = (numHoursLeft < 10 ? "0" : "") + "\(numHoursLeft)"
+        let daysText = "\(numDaysLeft)"
+
+        return "\(daysText) \(R.string.localization.day.localized()) \(hoursText):\(minutesText):\(secondsText)"
     }
 
     var isPast: Bool {
